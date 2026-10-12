@@ -4,4 +4,5 @@
 - `knowledge/seed.md`: fixture provenance and inherited constraints; `knowledge/2026-10-12-production-checklist.md`: production surfaces still unprobed.
 - `lessons/r1-headless-verification.md`: decision table, observed errors, reproduction checklist and source pointers.
 - `lessons/r1-initial.json`, `lessons/r1-passing.json`: full per-case stdout/stderr and verdicts from the first failing run and corrected passing run.
-- `lessons/r2-camera-headless.md`, `lessons/r2-camera-verifier.json`: camera-center decision boundaries and independent 17/17 replay; rendered viewport behavior remains unprobed. Live scratch under `live/runs/` is ignored and disposable.
+- `lessons/r2-camera-headless.md`, `lessons/r2-camera-verifier.json`: camera-center decision boundaries and independent 17/17 replay; rendered viewport behavior remains unprobed.
+- `lessons/r3-ui-headless.md`, `lessons/r3-ui-verifier.json`: synthetic UI signal-to-Label decision boundaries and independent 19/19 replay; production/rendered UI remains unprobed. Live scratch under `live/runs/` is ignored and disposable.
