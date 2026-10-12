@@ -6,8 +6,8 @@ quality rubric; a row count is a measurement, not a score or verdict.
 | axis | score | evidence / counting command | last change |
 |---|---|---|---|
 | depth | unscored | `test -f .shokunin/game-dev-2d/corpus/lessons/r1-headless-verification.md` → true; cited decision/error tables at 4468c15740ecbf7c53340cb8c85023df2fd35177 | r1 |
-| coverage | unscored | `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing` → 21/21 PASS including loaded-level metadata positive/mutant and prior 19; independent `corpus/lessons/r4-level-verifier.json` at 543fe2c43cd77e8edd8aac8037493422e786c9c8 | r4 |
+| coverage | unscored | `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing` → 23/23 PASS including animation-property positive/stuck and prior 21; independent `corpus/lessons/r5-animation-verifier.json` (work commit in r5 report) | r5 |
 | calibration | unscored | `git show 4468c15740ecbf7c53340cb8c85023df2fd35177:.shokunin/game-dev-2d/corpus/knowledge/2026-10-12-production-checklist.md` → camera/UI/export unprobed | r1 |
 
-planned: coverage — runtime tile contact, juice/export and real/rendered HUD remain unprobed; authored level collision metadata positive and polygon-removed control 21/21 at r4 (`python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing`, `corpus/lessons/r4-level-verifier.json`). Rendered viewport tracking remains unprobed.
+planned: coverage — audio/export and real rendered juice/HUD remain unprobed; headless in-memory AnimationPlayer property positive/stuck 23/23 at r5 (`python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing`, `corpus/lessons/r5-animation-verifier.json`). Runtime tile contact and rendered viewport tracking remain unprobed.
 retired: none.
