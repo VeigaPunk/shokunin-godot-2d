@@ -46,6 +46,7 @@ def main():
     parser.add_argument("--fault-injection", action="store_true", help="run isolated executor fault probes (separate from seeded battery)")
     parser.add_argument("--probe-unrelated-error", action="store_true", help="append unrelated ERROR diagnostics to real export outputs and reclassify")
     parser.add_argument("--probe-export-launch", action="store_true", help="export and launch positive/control startup scenes in bounded scratch Linux/X11 builds")
+    parser.add_argument("--probe-godot-error", action="store_true", help="run paired real Godot push_error diagnostic classification probes")
     parser.add_argument("--godot", default="godot")
     parser.add_argument("--runs", type=Path, default=HERE.parent / "live" / "runs")
     args = parser.parse_args()
@@ -371,6 +372,62 @@ def main():
                         "positive_assertion": launch_results[0]["same_signature_assertion"],
                         "negative_assertion": launch_results[1]["same_signature_assertion"]})
         print(f"{launch_payload['verdict']} export launch probe: {run_dir / 'export-launch-verdicts.json'}", flush=True)
+
+    if args.probe_godot_error:
+        expected_error = "ERROR: " + "EXPECTED_NEGATIVE: deliberate assertion rejected"
+        unrelated_error = "ERROR: " + "UNRELATED_FAULT: unrelated engine diagnostic"
+        probe_results = []
+        for label, flags in (("godot_error_expected_negative", []),
+                             ("godot_error_unrelated", ["--unrelated-error"])):
+            command = [args.godot, "--headless", "--path", str(scratch), "--script",
+                       "res://godot_error_probe.gd", "--", *flags]
+            output, code, error = run_process(command, 8)
+            inner = classify_process(code, error, output, 1,
+                                     "EXPECTED_NEGATIVE: deliberate assertion rejected",
+                                     (expected_error,))
+            record = {"case": label, "command": command, "expected_exit": 1,
+                      "actual_exit": code, "error": error,
+                      "signature": "EXPECTED_NEGATIVE: deliberate assertion rejected",
+                      "inner_classification": inner, "raw_output": output,
+                      "raw_output_lines": output.strip().splitlines()}
+            probe_results.append(record)
+            print(f"{'PASS' if inner else 'FAIL'} {label}: exit={code} classification={inner}", flush=True)
+        clean, fault = probe_results
+        def exact_error_lines(record, diagnostic):
+            return [line.strip() for line in record["raw_output_lines"]
+                    if line.strip().startswith("ERROR:") and line.strip() == diagnostic]
+
+        clean_expected_lines = exact_error_lines(clean, expected_error)
+        fault_expected_lines = exact_error_lines(fault, expected_error)
+        fault_unrelated_lines = exact_error_lines(fault, unrelated_error)
+        script_paths = [record["command"][record["command"].index("--script") + 1]
+                        for record in probe_results]
+        same_script = len(set(script_paths)) == 1 and script_paths[0] == "res://godot_error_probe.gd"
+        same_expected_exit = clean["expected_exit"] == fault["expected_exit"] == 1
+        same_signature = clean["signature"] == fault["signature"]
+        clean_emitted_expected = len(clean_expected_lines) == 1
+        fault_emitted_expected = len(fault_expected_lines) == 1
+        fault_emitted_unrelated = len(fault_unrelated_lines) == 1
+        meta_pass = (clean["inner_classification"] and not fault["inner_classification"]
+                     and clean_emitted_expected and fault_emitted_expected and fault_emitted_unrelated
+                     and clean["actual_exit"] == fault["actual_exit"] == 1
+                     and same_script and same_expected_exit and same_signature)
+        probe_payload = {"mode": "real_godot_push_error", "same_script": same_script,
+                         "script_paths": script_paths, "same_expected_exit": same_expected_exit,
+                         "same_signature": same_signature,
+                         "expected_diagnostic": expected_error,
+                         "unrelated_diagnostic": unrelated_error, "results": probe_results,
+                         "expected_error_lines": {"clean": clean_expected_lines, "fault": fault_expected_lines},
+                         "unrelated_error_lines": fault_unrelated_lines,
+                         "emitted_expected_once_in_both": clean_emitted_expected and fault_emitted_expected,
+                         "unrelated_emitted_once_in_fault": fault_emitted_unrelated,
+                         "verdict": "PASS" if meta_pass else "FAIL"}
+        artifact = run_dir / "godot-error-verdicts.json"
+        artifact.write_text(json.dumps(probe_payload, indent=2) + "\n")
+        results.append({"case": "probe_godot_error", "verdict": probe_payload["verdict"],
+                        "artifact": str(artifact), "inner_classifications":
+                        [r["inner_classification"] for r in probe_results]})
+        print(f"{probe_payload['verdict']} Godot diagnostic probe: {artifact}")
 
     payload = {"godot": args.godot, "seed": str(HERE), "scratch": str(scratch),
                "probe_failing": args.probe_failing, "results": results,
