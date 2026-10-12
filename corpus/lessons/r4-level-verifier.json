@@ -1,0 +1,362 @@
+{
+  "godot": "godot",
+  "seed": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/fixtures",
+  "scratch": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/runs/20261012T163249328551Z/scratch",
+  "probe_failing": true,
+  "results": [
+    {
+      "case": "mechanic",
+      "script": "controls/mechanic_test.gd",
+      "flags": [],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS first=true",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS first=true second=false consumed=true"
+      ]
+    },
+    {
+      "case": "scene_signal",
+      "script": "controls/test_scene_signal.gd",
+      "flags": [],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS scene_loaded=true",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS scene_loaded=true SceneTree_dispatched_event=E consumed=true signal_count=1 repeat_suppressed=true"
+      ]
+    },
+    {
+      "case": "input_route",
+      "script": "controls/input_route.gd",
+      "flags": [],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS route=parse_input_event-to-Node._input",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS route=parse_input_event-to-Node._input key=R receipt_count=1 frames=3"
+      ]
+    },
+    {
+      "case": "route_toggle",
+      "script": "controls/input_route_toggle.gd",
+      "flags": [],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS toggle=disabled-to-inherit",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS toggle=disabled-to-inherit first_receipts=0 second_receipts=1 late_receipts=0 frames=15"
+      ]
+    },
+    {
+      "case": "overlap",
+      "script": "controls/overlap_probe.gd",
+      "flags": [],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS packed_scene=true",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS packed_scene=true area_shape=true layers=1/2 masks=2/0 pre_overlap_signals=0 overlap_signal_count=1 consumed=true"
+      ]
+    },
+    {
+      "case": "transition",
+      "script": "controls/scene_transition_probe.gd",
+      "flags": [],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS valid_transition=true",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS valid_transition=true current_scene_replaced=true marker=B old_scene_freed=true frames=4"
+      ]
+    },
+    {
+      "case": "causal",
+      "script": "causal_chain.gd",
+      "flags": [],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS positive input=1",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS positive input=1 physics_moves=10 collections=1 scene=B old_freed=true"
+      ]
+    },
+    {
+      "case": "wrong_key",
+      "script": "causal_chain.gd",
+      "flags": [
+        "--wrong-key-negative"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "signature": "PASS wrong_key=F",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS wrong_key=F receipts=0 intent=false physics_moves=0 collections=0 scene=A old_alive=true frames=30"
+      ]
+    },
+    {
+      "case": "release",
+      "script": "causal_chain.gd",
+      "flags": [
+        "--release-test"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS release press_receipts=1",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS release press_receipts=1 release_receipts=1 held_moves=3 post_release_moves=0 scene=A"
+      ]
+    },
+    {
+      "case": "keyup",
+      "script": "causal_chain.gd",
+      "flags": [
+        "--keyup-test"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS keyup E_press_receipts=1",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS keyup E_press_receipts=1 F_release_receipts=0 E_release_receipts=1 unrelated_release_moves=6 post_E_release_moves=0 scene=A"
+      ]
+    },
+    {
+      "case": "negative_route",
+      "script": "controls/input_route_negative.gd",
+      "flags": [],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "signature": "PASS negative_route=disabled_node",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS negative_route=disabled_node receipt_count=0 frames=10 expected_exit=1 (intentional negative-control status)"
+      ]
+    },
+    {
+      "case": "negative_overlap",
+      "script": "controls/overlap_negative.gd",
+      "flags": [],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "signature": "negative control: expected collected signal was absent",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "ERROR: negative control: expected collected signal was absent with disabled mask",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] _run (res://controls/overlap_negative.gd:28)"
+      ]
+    },
+    {
+      "case": "negative_transition",
+      "script": "controls/scene_transition_negative.gd",
+      "flags": [],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "signature": "PASS invalid_destination_rejected=true",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS invalid_destination_rejected=true current_scene_preserved=true old_scene_alive=true frames=3",
+        "ERROR: Can't change to a null scene. Use unload_current_scene() if you wish to unload it.",
+        "   at: change_scene_to_packed (scene/main/scene_tree.cpp:1714)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] _run (res://controls/scene_transition_negative.gd:24)",
+        "ERROR: negative control: deliberately invalid scene destination rejected",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] _run (res://controls/scene_transition_negative.gd:30)"
+      ]
+    },
+    {
+      "case": "negative_signal",
+      "script": "controls/test_scene_signal_negative.gd",
+      "flags": [],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "signature": "negative control: expected collected signal was absent",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "ERROR: negative control: expected collected signal was absent (dispatch deliberately disabled)",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] _initialize (res://controls/test_scene_signal_negative.gd:22)"
+      ]
+    },
+    {
+      "case": "camera_follow",
+      "script": "camera_follow.gd",
+      "flags": [],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS camera_follow moved=true current=true center_matches_target=true",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS camera_follow moved=true current=true center_matches_target=true"
+      ]
+    },
+    {
+      "case": "camera_no_follow",
+      "script": "camera_follow.gd",
+      "flags": [
+        "--no-follow"
+      ],
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "signature": "camera follow assertion failed: target moved but active center did not track",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "ERROR: camera follow assertion failed: target moved but active center did not track",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] _initialize (res://camera_follow.gd:26)"
+      ]
+    },
+    {
+      "case": "ui_signal_hud",
+      "script": "ui_signal_hud.gd",
+      "flags": [],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS ui_signal connected=true hud_in_tree=true initial=Score: 0 hud_text=Score: 7",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS ui_signal connected=true hud_in_tree=true initial=Score: 0 hud_text=Score: 7"
+      ]
+    },
+    {
+      "case": "ui_signal_disconnected",
+      "script": "ui_signal_hud.gd",
+      "flags": [
+        "--disconnect-signal"
+      ],
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "signature": "UI assertion failed: expected in-tree HUD text=Score: 7",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "ERROR: UI assertion failed: expected in-tree HUD text=Score: 7",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] _initialize (res://ui_signal_hud.gd:23)"
+      ]
+    },
+    {
+      "case": "level_collision",
+      "script": "level_collision/level_probe.gd",
+      "flags": [],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS level_packed_scene=true cell=2,3 collision_vertices=4",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS level_packed_scene=true cell=2,3 collision_vertices=4"
+      ]
+    },
+    {
+      "case": "mutant_broken_scene_route",
+      "script": "causal_chain.gd",
+      "flags": [],
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "signature": "chain incomplete",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "ERROR: chain incomplete collections=1 scene=SceneB:<Node#28672263640> old_alive=false",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] _run (res://causal_chain.gd:217)"
+      ]
+    },
+    {
+      "case": "mutant_level_collision_removed",
+      "script": "level_collision/level_probe.gd",
+      "flags": [
+        "--no-collision"
+      ],
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "signature": "LEVEL ASSERTION FAILED: loaded level cell lacks collision geometry",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "ERROR: LEVEL ASSERTION FAILED: loaded level cell lacks collision geometry",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] run (res://level_collision/level_probe.gd:25)"
+      ]
+    }
+  ],
+  "verdict": "PASS"
+}

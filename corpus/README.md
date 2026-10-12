@@ -5,4 +5,5 @@
 - `lessons/r1-headless-verification.md`: decision table, observed errors, reproduction checklist and source pointers.
 - `lessons/r1-initial.json`, `lessons/r1-passing.json`: full per-case stdout/stderr and verdicts from the first failing run and corrected passing run.
 - `lessons/r2-camera-headless.md`, `lessons/r2-camera-verifier.json`: camera-center decision boundaries and independent 17/17 replay; rendered viewport behavior remains unprobed.
-- `lessons/r3-ui-headless.md`, `lessons/r3-ui-verifier.json`: synthetic UI signal-to-Label decision boundaries and independent 19/19 replay; production/rendered UI remains unprobed. Live scratch under `live/runs/` is ignored and disposable.
+- `lessons/r3-ui-headless.md`, `lessons/r3-ui-verifier.json`: synthetic UI signal-to-Label decision boundaries and independent 19/19 replay; production/rendered UI remains unprobed.
+- `lessons/r4-level-headless.md`, `lessons/r4-level-verifier.json`: authored level tile collision metadata and independent 21/21 replay; runtime contact/rendering remain unprobed. Live scratch under `live/runs/` is ignored and disposable.

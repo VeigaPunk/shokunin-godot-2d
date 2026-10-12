@@ -28,6 +28,7 @@ CASES = [
     ("camera_no_follow", "camera_follow.gd", ["--no-follow"], 2, "camera follow assertion failed: target moved but active center did not track"),
     ("ui_signal_hud", "ui_signal_hud.gd", [], 0, "PASS ui_signal connected=true hud_in_tree=true initial=Score: 0 hud_text=Score: 7"),
     ("ui_signal_disconnected", "ui_signal_hud.gd", ["--disconnect-signal"], 2, "UI assertion failed: expected in-tree HUD text=Score: 7"),
+    ("level_collision", "level_collision/level_probe.gd", [], 0, "PASS level_packed_scene=true cell=2,3 collision_vertices=4"),
 ]
 
 
@@ -75,10 +76,17 @@ def main():
             code = None
             error = f"launch error: {exc}"
         # The mutant is intentionally expected to violate the positive assertion.
-        detected = code == 2 and "chain incomplete" in output and "PASS positive input=1" not in output
+        detected = (code == 2 and evidence in output and "PASS " not in output
+                    and "SCRIPT ERROR:" not in output and "Parse Error:" not in output
+                    and error is None)
+        if mutate and name == "mutant_broken_scene_route":
+            detected = (code == 2 and "chain incomplete" in output
+                        and "PASS positive input=1" not in output
+                        and "SCRIPT ERROR:" not in output and "Parse Error:" not in output
+                        and error is None)
         passed = detected if mutate else code == expected_exit and evidence in output
-        # Any unanticipated Godot error invalidates a passing signature, even for exit-1 controls.
-        if not mutate and ("SCRIPT ERROR:" in output or "Parse Error:" in output):
+        # A script/parse error never counts as intended mutant detection.
+        if "SCRIPT ERROR:" in output or "Parse Error:" in output:
             passed = False
         record = {"case": name, "script": script, "flags": flags, "expected_exit": expected_exit,
                   "actual_exit": code, "signature": evidence, "verdict": "PASS" if passed else "FAIL",
@@ -94,6 +102,8 @@ def main():
         assert 'marker = "B"' in original, "seeded scene B marker changed; cannot run mutation"
         destination.write_text(original.replace('marker = "B"', 'marker = "BROKEN"', 1))
         execute("mutant_broken_scene_route", "causal_chain.gd", [], 2, "chain incomplete", mutate=True)
+        execute("mutant_level_collision_removed", "level_collision/level_probe.gd", ["--no-collision"], 2,
+                "LEVEL ASSERTION FAILED: loaded level cell lacks collision geometry", mutate=True)
     payload = {"godot": args.godot, "seed": str(HERE), "scratch": str(scratch),
                "probe_failing": args.probe_failing, "results": results,
                "verdict": "PASS" if all(r["verdict"] == "PASS" for r in results) else "FAIL"}
