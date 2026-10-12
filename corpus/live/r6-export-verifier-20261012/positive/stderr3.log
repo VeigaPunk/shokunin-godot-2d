@@ -1,6 +1,0 @@
-WARNING: Detected another project.godot at res://controls. The folder will be ignored.
-     at: _should_skip_directory (editor/file_system/editor_file_system.cpp:3497)
-ERROR: Prepare Template: The given export path doesn't exist.
-   at: add_message (./editor/export/editor_export_platform.h:270)
-ERROR: Project export for preset "Linux/X11" failed.
-   at: _fs_changed (editor/editor_node.cpp:1417)
