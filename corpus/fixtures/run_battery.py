@@ -35,7 +35,7 @@ CASES = [
     ("animation_property", "animation_property.gd", [], 0, "PASS animation_property_changed=true started=true"),
     ("animation_stuck", "animation_property.gd", ["--stuck"], 2, "ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance"),
     ("export_readiness", "__godot_export__", [], 0, "EXPORT PASS preset=Linux/X11 executable=nonempty"),
-    ("export_preset_missing", "__godot_export_missing__", [], 2, "No export preset 'Missing preset' found"),
+    ("export_preset_missing", "__godot_export_missing__", [], 1, "No export preset 'Missing preset' found"),
 ]
 
 
@@ -43,6 +43,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--probe-failing", action="store_true", help="also mutate scratch scene B and prove detection")
     parser.add_argument("--fault-injection", action="store_true", help="run isolated executor fault probes (separate from seeded battery)")
+    parser.add_argument("--probe-unrelated-error", action="store_true", help="append unrelated ERROR diagnostics to real export outputs and reclassify")
     parser.add_argument("--godot", default="godot")
     parser.add_argument("--runs", type=Path, default=HERE.parent / "live" / "runs")
     args = parser.parse_args()
@@ -153,9 +154,32 @@ def main():
         if script == "__godot_export__":
             size = export_path.stat().st_size if export_path.is_file() else 0
             digest = hashlib.sha256(export_path.read_bytes()).hexdigest() if size else None
-            passed = (code == 0 and error is None and size > 0
-                      and "ERROR:" not in output and "SCRIPT ERROR:" not in output)
             evidence = f"EXPORT PASS preset=Linux/X11 executable_bytes={size}"
+            def classify_export(candidate_output):
+                return (classify_process(code, error, candidate_output, 0, "[ DONE ]")
+                        and "savepack" in candidate_output
+                        and export_path.is_file() and export_path.stat().st_size > 0)
+            passed = classify_export(output)
+            if args.probe_unrelated_error:
+                clean_verdict = classify_export(output)
+                injected_output = output + "\nERROR: unrelated injected diagnostic\n"
+                injected_verdict = classify_export(injected_output)
+                marker_line = next(line for line in output.splitlines() if "savepack" in line)
+                suffix_spoof = output.replace(marker_line, marker_line + " ERROR: unrelated injected diagnostic", 1)
+                prefix_spoof = output.replace(marker_line, "ERROR: unrelated injected diagnostic " + marker_line, 1)
+                suffix_verdict = classify_export(suffix_spoof)
+                prefix_verdict = classify_export(prefix_spoof)
+                results.append({"case": "probe_unrelated_error_export_readiness", "verdict":
+                                "PASS" if clean_verdict and not injected_verdict and not suffix_verdict and not prefix_verdict else "FAIL",
+                                "clean_classification": clean_verdict,
+                                "injected_classification": injected_verdict,
+                                "same_line_suffix_classification": suffix_verdict,
+                                "same_line_prefix_classification": prefix_verdict,
+                                "raw_output": output.strip().splitlines(),
+                                "injected_output": injected_output.strip().splitlines(),
+                                "same_line_suffix_output": suffix_spoof.strip().splitlines(),
+                                "same_line_prefix_output": prefix_spoof.strip().splitlines(),
+                                "injected_line": "ERROR: unrelated injected diagnostic"})
             products = sorted(p.name for p in out_dir.iterdir())
             export_record = {"artifact_bytes": size, "artifact_sha256": digest, "products_created": products, "artifacts_deleted": False}
             for product in out_dir.iterdir():
@@ -163,24 +187,62 @@ def main():
                     product.unlink()
             export_record["artifacts_deleted"] = not any(out_dir.iterdir())
         elif script == "__godot_export_missing__":
-            passed = (code is not None and code != 0 and error is None
-                      and "ERROR: Invalid export preset name: Missing preset." in output
-                      and not any(out_dir.iterdir()))
             evidence = "ERROR: Invalid export preset name: Missing preset."
+            def classify_export(candidate_output):
+                return (classify_process(code, error, candidate_output, expected_exit, evidence, (evidence,))
+                        and not any(out_dir.iterdir()))
+            passed = classify_export(output)
+            if args.probe_unrelated_error:
+                clean_verdict = classify_export(output)
+                injected_output = output + "\nERROR: unrelated injected diagnostic\n"
+                injected_verdict = classify_export(injected_output)
+                spoof_output = output.replace(evidence, evidence + " ERROR: unrelated injected diagnostic", 1)
+                spoof_verdict = classify_export(spoof_output)
+                results.append({"case": "probe_unrelated_error_export_preset_missing", "verdict":
+                                "PASS" if clean_verdict and not injected_verdict and not spoof_verdict else "FAIL",
+                                "clean_classification": clean_verdict,
+                                "injected_classification": injected_verdict,
+                                "same_line_spoof_classification": spoof_verdict,
+                                "raw_output": output.strip().splitlines(),
+                                "injected_output": injected_output.strip().splitlines(),
+                                "same_line_spoof_output": spoof_output.strip().splitlines(),
+                                "injected_line": "ERROR: unrelated injected diagnostic"})
         else:
             passed = None
         # The mutant is intentionally expected to violate the positive assertion.
-        detected = (classify_process(code, error, output, 2, evidence,
-                                     ("ERROR: " + evidence,))
-                    and "PASS " not in output)
-        if mutate and name == "mutant_broken_scene_route":
-            detected = (classify_process(code, error, output, 2, "chain incomplete",
-                                         ("ERROR: chain incomplete",))
-                        and "PASS positive input=1" not in output)
-        if mutate and name == "mutant_level_collision_removed":
-            detected = (classify_process(code, error, output, 2, evidence,
-                                         ("ERROR: LEVEL ASSERTION FAILED: loaded level cell lacks collision geometry",))
-                        and "PASS level_packed_scene=true" not in output)
+        def classify_mutant(candidate_output):
+            candidate = (classify_process(code, error, candidate_output, 2, evidence,
+                                          ("ERROR: " + evidence,))
+                         and "PASS " not in candidate_output)
+            if name == "mutant_broken_scene_route":
+                candidate = (classify_process(code, error, candidate_output, 2, "chain incomplete",
+                                              ("ERROR: chain incomplete",))
+                             and "PASS positive input=1" not in candidate_output)
+            if name == "mutant_level_collision_removed":
+                candidate = (classify_process(code, error, candidate_output, 2, evidence,
+                                              ("ERROR: LEVEL ASSERTION FAILED: loaded level cell lacks collision geometry",))
+                             and "PASS level_packed_scene=true" not in candidate_output)
+            return candidate
+        detected = classify_mutant(output)
+        if mutate and args.probe_unrelated_error:
+            injected_output = output + "\nERROR: unrelated injected diagnostic\n"
+            injected_detected = classify_mutant(injected_output)
+            first_error_line = next(line for line in output.splitlines() if "ERROR:" in line)
+            suffix_spoof = output.replace(first_error_line, first_error_line + " ERROR: unrelated injected diagnostic", 1)
+            prefix_spoof = output.replace(first_error_line, "ERROR: unrelated injected diagnostic " + first_error_line, 1)
+            suffix_detected = classify_mutant(suffix_spoof)
+            prefix_detected = classify_mutant(prefix_spoof)
+            results.append({"case": "probe_unrelated_error_" + name, "verdict":
+                            "PASS" if detected and not injected_detected and not suffix_detected and not prefix_detected else "FAIL",
+                            "clean_classification": detected,
+                            "injected_classification": injected_detected,
+                            "same_line_suffix_classification": suffix_detected,
+                            "same_line_prefix_classification": prefix_detected,
+                            "raw_output": output.strip().splitlines(),
+                            "injected_output": injected_output.strip().splitlines(),
+                            "same_line_suffix_output": suffix_spoof.strip().splitlines(),
+                            "same_line_prefix_output": prefix_spoof.strip().splitlines(),
+                            "injected_line": "ERROR: unrelated injected diagnostic"})
         if passed is None:
             expected_errors = {
                 "negative_overlap": ("ERROR: negative control: expected collected signal was absent with disabled mask",),

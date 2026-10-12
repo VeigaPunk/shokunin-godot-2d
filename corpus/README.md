@@ -10,4 +10,5 @@
 - `lessons/r5-animation-headless.md`, `lessons/r5-animation-verifier.json`: deterministic in-memory property animation and independent 23/23 replay; rendered motion remains unprobed.
 - `lessons/r6-export-headless.md`, `lessons/r6-export-verifier.json`: actual scratch Linux/X11 export plus missing-preset control, independent 25/25; generated artifacts deleted, app launch and production project remain unprobed.
 - `lessons/r7-fault-classification.md`, `lessons/r7-fault-verifier.json`, `lessons/r7-normal-verifier.json`: shared subprocess/classifier fault probes and independent 25/25 replay.
-- `lessons/r8-runtime-contact.md`, `lessons/r8-contact-verifier.json`: finite CharacterBody2D contact at authored tile `(2,3)` and scratch polygon-removed pass-through; independent 27/27 replay. Live scratch under `live/runs/` is ignored and disposable.
+- `lessons/r8-runtime-contact.md`, `lessons/r8-contact-verifier.json`: finite CharacterBody2D contact at authored tile `(2,3)` and scratch polygon-removed pass-through; independent 27/27 replay.
+- `lessons/r9-diagnostic-calibration.md`, `lessons/r9-diagnostic-verifier.json`, `lessons/r9-fault-regression.json`: captured-output export/mutant ERROR calibration, independent 27 + four probes and r7 fault regression. Live scratch under `live/runs/` is ignored and disposable.
