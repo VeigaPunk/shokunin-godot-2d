@@ -31,7 +31,7 @@ CASES = [
     ("camera_no_follow", "camera_follow.gd", ["--no-follow"], 2, "camera follow assertion failed: target moved but active center did not track"),
     ("ui_signal_hud", "ui_signal_hud.gd", [], 0, "PASS ui_signal connected=true hud_in_tree=true initial=Score: 0 hud_text=Score: 7"),
     ("ui_signal_disconnected", "ui_signal_hud.gd", ["--disconnect-signal"], 2, "UI assertion failed: expected in-tree HUD text=Score: 7"),
-    ("health_gauge", "health_gauge.gd", [], 0, "PASS health_gauge in_tree=true range=0..100 value=35 value_changed_count=1 receipt=35"),
+    ("health_gauge", "health_gauge.gd", [], 0, "PASS health_gauge in_tree=true range=0..100 values=35,0.0,100.0,100.0 receipts=35,0,100"),
     ("health_gauge_disconnected", "health_gauge.gd", ["--disconnect-signal"], 2, "Health gauge assertion failed: expected in-tree TextureProgressBar value=35 value_changed=1 receipt=35"),
     ("level_collision", "level_collision/level_probe.gd", [], 0, "PASS level_packed_scene=true cell=2,3 collision_vertices=4"),
     ("contact_runtime", "contact_probe.gd", [], 0, "PASS runtime_tile_contact=true cell=2,3,"),
