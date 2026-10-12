@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -51,6 +52,7 @@ def main():
     parser.add_argument("--probe-unrelated-error", action="store_true", help="append unrelated ERROR diagnostics to real export outputs and reclassify")
     parser.add_argument("--probe-export-launch", action="store_true", help="export and launch positive/control startup scenes in bounded scratch Linux/X11 builds")
     parser.add_argument("--probe-godot-error", action="store_true", help="run paired real Godot push_error diagnostic classification probes")
+    parser.add_argument("--probe-audio-warning", action="store_true", help="classify captured r12 leaked and clean audio outputs with the production audio verdict")
     parser.add_argument("--godot", default="godot")
     parser.add_argument("--runs", type=Path, default=HERE.parent / "live" / "runs")
     args = parser.parse_args()
@@ -105,6 +107,15 @@ def main():
         return (code == expected_exit and error is None and signature in output
                 and not unrelated_errors and "SCRIPT ERROR:" not in output and "Parse Error:" not in output)
 
+    def classify_audio_process(code, error, output, expected_exit, signature, allowed_errors=()):
+        # Scope this known ObjectDB shutdown leak warning to audio_playback only;
+        # export cases can legitimately print nested-project WARNING lines.
+        leaked_objectdb = any(
+            re.fullmatch(r"WARNING: [1-9][0-9]* ObjectDB instances were leaked at exit(?: \(run with `--verbose` for details\)\.)?", line.strip())
+            for line in output.splitlines())
+        return (classify_process(code, error, output, expected_exit, signature, allowed_errors)
+                and not leaked_objectdb)
+
     if args.fault_injection:
         # Fault probes use Python subprocesses, not seeded fixtures or Godot. The
         # deliberately long sleep is bounded only here; the normal CLI is unchanged.
@@ -138,6 +149,30 @@ def main():
         (run_dir / "fault-verdicts.json").write_text(json.dumps(payload, indent=2) + "\n")
         print(f"{payload['verdict']} fault injection: {run_dir / 'fault-verdicts.json'}")
         return 0 if payload["verdict"] == "PASS" else 1
+
+    if args.probe_audio_warning:
+        captured = []
+        for label, filename in (("captured_leak", "r12-initial-hold.json"),
+                                ("captured_clean", "r12-battery-verifier.json")):
+            payload = json.loads((HERE.parent / "lessons" / filename).read_text())
+            matches = [item for item in payload["results"] if item.get("case") == "audio_playback"]
+            if len(matches) != 1 or not isinstance(matches[0].get("output"), list):
+                raise ValueError(f"{filename} lacks exactly one captured audio_playback output")
+            record = matches[0]
+            raw = "\n".join(record["output"])
+            verdict = classify_audio_process(record["actual_exit"], record["error"], raw,
+                                             record["expected_exit"], record["signature"])
+            captured.append({"case": label, "source": filename, "actual_exit": record["actual_exit"],
+                             "verdict": "PASS" if verdict else "FAIL", "output": record["output"]})
+        expected = ["FAIL", "PASS"]
+        meta = {"case": "probe_audio_warning_captured_r12", "verdict":
+                "PASS" if [item["verdict"] for item in captured] == expected
+                and "WARNING: 2 ObjectDB instances were leaked at exit" in "\n".join(captured[0]["output"])
+                and "WARNING: 2 ObjectDB instances were leaked at exit" not in "\n".join(captured[1]["output"])
+                else "FAIL",
+                "classifier": "production classify_audio_process", "results": captured}
+        results.append(meta)
+        print(f"{meta['verdict']} captured r12 audio-warning classifier probe", flush=True)
 
     def execute(name, script, flags, expected_exit, evidence, mutate=False):
         if script in ("__godot_export__", "__godot_export_missing__"):
@@ -264,7 +299,8 @@ def main():
                 "contact_no_collision": ("ERROR: CONTACT ASSERTION FAILED: body motion did not contact level tile at cell=2,3,",),
                 "audio_no_play": ("ERROR: AUDIO ASSERTION FAILED: expected in-tree player playback to advance,",),
             }.get(name, ())
-            passed = detected if mutate else classify_process(code, error, output, expected_exit, evidence, expected_errors)
+            classifier = classify_audio_process if name == "audio_playback" else classify_process
+            passed = detected if mutate else classifier(code, error, output, expected_exit, evidence, expected_errors)
         # A script/parse error never counts as intended mutant detection.
         if "SCRIPT ERROR:" in output or "Parse Error:" in output:
             passed = False
