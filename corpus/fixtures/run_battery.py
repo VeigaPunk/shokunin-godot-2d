@@ -35,6 +35,8 @@ CASES = [
     ("contact_no_collision", "contact_probe.gd", ["--no-collision"], 2, "CONTACT ASSERTION FAILED: body motion did not contact level tile at cell=2,3"),
     ("animation_property", "animation_property.gd", [], 0, "PASS animation_property_changed=true started=true"),
     ("animation_stuck", "animation_property.gd", ["--stuck"], 2, "ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance"),
+    ("audio_playback", "audio_playback.gd", [], 0, "PASS audio_playback in_tree=true playing=true position_advanced=true"),
+    ("audio_no_play", "audio_playback.gd", ["--no-play"], 2, "AUDIO ASSERTION FAILED: expected in-tree player playback to advance"),
     ("export_readiness", "__godot_export__", [], 0, "EXPORT PASS preset=Linux/X11 executable=nonempty"),
     ("export_preset_missing", "__godot_export_missing__", [], 1, "No export preset 'Missing preset' found"),
 ]
@@ -257,6 +259,7 @@ def main():
                 "animation_stuck": ("ERROR: ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance,",),
                 "export_preset_missing": ("ERROR: Invalid export preset name: Missing preset.",),
                 "contact_no_collision": ("ERROR: CONTACT ASSERTION FAILED: body motion did not contact level tile at cell=2,3,",),
+                "audio_no_play": ("ERROR: AUDIO ASSERTION FAILED: expected in-tree player playback to advance,",),
             }.get(name, ())
             passed = detected if mutate else classify_process(code, error, output, expected_exit, evidence, expected_errors)
         # A script/parse error never counts as intended mutant detection.
