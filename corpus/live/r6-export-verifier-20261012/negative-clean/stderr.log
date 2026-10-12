@@ -1,0 +1,8 @@
+WARNING: Detected another project.godot at res://controls. The folder will be ignored.
+     at: _should_skip_directory (editor/file_system/editor_file_system.cpp:3497)
+ERROR: Invalid export preset name: Missing preset.
+The following presets were detected in this project's `export_presets.cfg`:
+
+        "Linux/X11"
+
+   at: _fs_changed (editor/editor_node.cpp:1417)

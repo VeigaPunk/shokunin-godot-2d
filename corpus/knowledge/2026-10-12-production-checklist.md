@@ -14,4 +14,4 @@ Each row becomes falsifiable when a fixture names its counting command.
 | animation | state change at frame k, no stuck state | r5 deterministic AnimationPlayer property advance and zero-speed stuck control, 23/23 (`corpus/lessons/r5-animation-verifier.json`); rendered/production juice unprobed |
 | audio | bus routing resolves, silent headless | unprobed |
 | save/load | round-trip JSON stable | unprobed |
-| export | headless export dry-run flags missing deps | unprobed |
+| export | headless export dry-run flags missing deps | r6 actual Linux/X11 scratch export + missing-preset negative, 25/25 (`corpus/lessons/r6-export-verifier.json`); generated artifacts deleted, app launch/production project unprobed |

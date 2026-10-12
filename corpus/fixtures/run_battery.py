@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Run the read-only Godot fixtures serially in an isolated scratch project."""
 import argparse
+import hashlib
 import json
 import shutil
 import subprocess
@@ -31,6 +32,8 @@ CASES = [
     ("level_collision", "level_collision/level_probe.gd", [], 0, "PASS level_packed_scene=true cell=2,3 collision_vertices=4"),
     ("animation_property", "animation_property.gd", [], 0, "PASS animation_property_changed=true started=true"),
     ("animation_stuck", "animation_property.gd", ["--stuck"], 2, "ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance"),
+    ("export_readiness", "__godot_export__", [], 0, "EXPORT PASS preset=Linux/X11 executable=nonempty"),
+    ("export_preset_missing", "__godot_export_missing__", [], 2, "No export preset 'Missing preset' found"),
 ]
 
 
@@ -62,9 +65,24 @@ def main():
     results = []
 
     def execute(name, script, flags, expected_exit, evidence, mutate=False):
-        command = [args.godot, "--headless", "--path", str(scratch), "--script", "res://" + script, "--", *flags]
+        if script in ("__godot_export__", "__godot_export_missing__"):
+            export_project = scratch
+            preset_name = "Linux/X11"
+            if script == "__godot_export_missing__":
+                export_project = run_dir / "missing-preset-scratch"
+                shutil.copytree(scratch, export_project, ignore=shutil.ignore_patterns(".godot", "out"))
+                preset_name = "Missing preset"
+            out_dir = export_project / "out"
+            out_dir.mkdir(exist_ok=True)
+            assert not any(out_dir.iterdir()), "export output directory must start empty"
+            export_path = out_dir / "fixture.x86_64"
+            command = [args.godot, "--headless", "--path", str(export_project),
+                       "--export-debug", preset_name, str(export_path)]
+        else:
+            command = [args.godot, "--headless", "--path", str(scratch), "--script", "res://" + script, "--", *flags]
         try:
-            proc = subprocess.run(command, capture_output=True, text=True, timeout=8)
+            proc = subprocess.run(command, capture_output=True, text=True,
+                                  timeout=60 if script.startswith("__godot_export") else 8)
             output = proc.stdout + proc.stderr
             code = proc.returncode
             error = None
@@ -72,11 +90,31 @@ def main():
             output = (exc.stdout or b"").decode(errors="replace") if isinstance(exc.stdout, bytes) else (exc.stdout or "")
             output += (exc.stderr or b"").decode(errors="replace") if isinstance(exc.stderr, bytes) else (exc.stderr or "")
             code = None
-            error = "TIMEOUT after 8 seconds"
+            error = f"TIMEOUT after {60 if script.startswith('__godot_export') else 8} seconds"
         except OSError as exc:
             output = str(exc)
             code = None
             error = f"launch error: {exc}"
+        export_record = None
+        if script == "__godot_export__":
+            size = export_path.stat().st_size if export_path.is_file() else 0
+            digest = hashlib.sha256(export_path.read_bytes()).hexdigest() if size else None
+            passed = (code == 0 and error is None and size > 0
+                      and "ERROR:" not in output and "SCRIPT ERROR:" not in output)
+            evidence = f"EXPORT PASS preset=Linux/X11 executable_bytes={size}"
+            products = sorted(p.name for p in out_dir.iterdir())
+            export_record = {"artifact_bytes": size, "artifact_sha256": digest, "products_created": products, "artifacts_deleted": False}
+            for product in out_dir.iterdir():
+                if product.is_file():
+                    product.unlink()
+            export_record["artifacts_deleted"] = not any(out_dir.iterdir())
+        elif script == "__godot_export_missing__":
+            passed = (code is not None and code != 0 and error is None
+                      and "ERROR: Invalid export preset name: Missing preset." in output
+                      and not any(out_dir.iterdir()))
+            evidence = "ERROR: Invalid export preset name: Missing preset."
+        else:
+            passed = None
         # The mutant is intentionally expected to violate the positive assertion.
         detected = (code == 2 and evidence in output and "PASS " not in output
                     and "SCRIPT ERROR:" not in output and "Parse Error:" not in output
@@ -86,13 +124,16 @@ def main():
                         and "PASS positive input=1" not in output
                         and "SCRIPT ERROR:" not in output and "Parse Error:" not in output
                         and error is None)
-        passed = detected if mutate else code == expected_exit and evidence in output
+        if passed is None:
+            passed = detected if mutate else code == expected_exit and evidence in output
         # A script/parse error never counts as intended mutant detection.
         if "SCRIPT ERROR:" in output or "Parse Error:" in output:
             passed = False
         record = {"case": name, "script": script, "flags": flags, "expected_exit": expected_exit,
                   "actual_exit": code, "signature": evidence, "verdict": "PASS" if passed else "FAIL",
                   "error": error, "output": output.strip().splitlines()}
+        if export_record is not None:
+            record["export_artifact"] = export_record
         results.append(record)
         print(f"{record['verdict']} {name}: exit={code} signature={evidence!r}", flush=True)
 
