@@ -1,0 +1,17 @@
+# 2D production checklist — initial (mint)
+
+Each row becomes falsifiable when a fixture names its counting command.
+
+| system | falsifiable probe sketch | status |
+|---|---|---|
+| game loop | headless N-frame run exits 0 within bound | inherited r10 |
+| input | synthetic event → receipt; wrong-key rejected | inherited r11b/r13 |
+| physics | overlap collects once; mask-zero negative | inherited r4/r10 |
+| scene flow | transition replaces current_scene, old freed | inherited r5 |
+| camera | follow target within delta after k frames | unprobed |
+| tilemap/level | load .tscn level, count solid cells | unprobed |
+| UI/HUD | canvas item updates on signal | unprobed |
+| animation | state change at frame k, no stuck state | unprobed |
+| audio | bus routing resolves, silent headless | unprobed |
+| save/load | round-trip JSON stable | unprobed |
+| export | headless export dry-run flags missing deps | unprobed |
