@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -44,6 +45,7 @@ def main():
     parser.add_argument("--probe-failing", action="store_true", help="also mutate scratch scene B and prove detection")
     parser.add_argument("--fault-injection", action="store_true", help="run isolated executor fault probes (separate from seeded battery)")
     parser.add_argument("--probe-unrelated-error", action="store_true", help="append unrelated ERROR diagnostics to real export outputs and reclassify")
+    parser.add_argument("--probe-export-launch", action="store_true", help="export and launch positive/control startup scenes in bounded scratch Linux/X11 builds")
     parser.add_argument("--godot", default="godot")
     parser.add_argument("--runs", type=Path, default=HERE.parent / "live" / "runs")
     args = parser.parse_args()
@@ -277,6 +279,99 @@ def main():
         execute("mutant_broken_scene_route", "causal_chain.gd", [], 2, "chain incomplete", mutate=True)
         execute("mutant_level_collision_removed", "level_collision/level_probe.gd", ["--no-collision"], 2,
                 "LEVEL ASSERTION FAILED: loaded level cell lacks collision geometry", mutate=True)
+    if args.probe_export_launch:
+        # Isolated Linux/X11 exported-app launch probe. Both variants are scratch-only;
+        # the negative removes only the startup script attachment, then exercises
+        # the exact same signature assertion against the launched process.
+        launch_root = run_dir / "export-launch"
+        positive = launch_root / "positive"
+        negative = launch_root / "negative"
+        shutil.copytree(scratch, positive, ignore=shutil.ignore_patterns(".godot", "out"))
+        shutil.copytree(scratch, negative, ignore=shutil.ignore_patterns(".godot", "out"))
+        expected_launch = "EXPORT_LAUNCH_READY scene=fixture"
+        launch_results = []
+
+        def configure_launch(project, with_event):
+            scene = project / "export_launch.tscn"
+            script = project / "export_launch.gd"
+            scene.write_text('[gd_scene load_steps=2 format=3]\n\n[ext_resource type="Script" path="res://export_launch.gd" id="1"]\n\n[node name="ExportLaunch" type="Node"]\nscript = ExtResource("1")\n')
+            event_code = ('    print("EXPORT_LAUNCH_READY scene=fixture")\n' if with_event else '')
+            script.write_text('extends Node\n\nfunc _ready() -> void:\n' + event_code + '    get_tree().quit()\n')
+            project_file = project / "project.godot"
+            config = project_file.read_text()
+            config = config.replace('config/features=PackedStringArray("4.7")\n', 'config/features=PackedStringArray("4.7")\nrun/main_scene="res://export_launch.tscn"\n', 1)
+            project_file.write_text(config)
+
+        def launch_variant(label, project, with_event):
+            configure_launch(project, with_event)
+            out_dir = project / "out"
+            out_dir.mkdir(exist_ok=True)
+            executable = out_dir / "fixture-launch.x86_64"
+            export_cmd = [args.godot, "--headless", "--path", str(project), "--export-debug", "Linux/X11", str(executable)]
+            exp_output, exp_code, exp_error = run_process(export_cmd, 60)
+            exp_ok = (classify_process(exp_code, exp_error, exp_output, 0, "[ DONE ]")
+                      and "savepack" in exp_output and executable.is_file() and executable.stat().st_size > 0)
+            export_bytes = executable.stat().st_size if executable.is_file() else 0
+            pack_path = executable.with_suffix(".pck")
+            pack_bytes = pack_path.stat().st_size if pack_path.is_file() else 0
+            pack_sha256 = hashlib.sha256(pack_path.read_bytes()).hexdigest() if pack_bytes else None
+            launch_cmd = [str(executable), "--headless"]
+            # Run with cwd containing only exported products, never source project files.
+            launch_cwd = str(out_dir)
+            launch_output, launch_code, launch_error = "", None, "export failed; launch skipped"
+            if exp_ok:
+                try:
+                    proc = subprocess.run(launch_cmd, cwd=launch_cwd, capture_output=True, text=True, timeout=5)
+                    launch_output, launch_code, launch_error = proc.stdout + proc.stderr, proc.returncode, None
+                except subprocess.TimeoutExpired as exc:
+                    launch_output = (exc.stdout or b"").decode(errors="replace") if isinstance(exc.stdout, bytes) else (exc.stdout or "")
+                    launch_output += (exc.stderr or b"").decode(errors="replace") if isinstance(exc.stderr, bytes) else (exc.stderr or "")
+                    launch_code, launch_error = None, "TIMEOUT after 5 seconds"
+            signature_lines = [line.strip() for line in launch_output.splitlines() if line.strip() == expected_launch]
+            asserted = (exp_ok and classify_process(launch_code, launch_error, launch_output, 0, expected_launch)
+                        and len(signature_lines) == 1 and not (Path(launch_cwd) / "project.godot").exists()
+                        and not (Path(launch_cwd) / "export_launch.gd").exists()
+                        and not (Path(launch_cwd) / "export_launch.tscn").exists())
+            clean_without_signature = (launch_code == 0 and launch_error is None
+                and "SCRIPT ERROR:" not in launch_output and "Parse Error:" not in launch_output
+                and "ERROR:" not in launch_output)
+            products = sorted(item.name for item in out_dir.iterdir())
+            executable_sha256 = hashlib.sha256(executable.read_bytes()).hexdigest() if executable.is_file() else None
+            for item in list(out_dir.iterdir()):
+                if item.is_file() or item.is_symlink():
+                    item.unlink()
+                elif item.is_dir():
+                    shutil.rmtree(item)
+            launch_results.append({"case": label, "expected_signature": expected_launch,
+                "expected_startup_event": with_event, "export_command": export_cmd,
+                "export_exit": exp_code, "export_error": exp_error,
+                "export_output": exp_output.strip().splitlines(), "export_bytes": export_bytes,
+                "executable_sha256": executable_sha256, "pack_bytes": pack_bytes,
+                "pack_sha256": pack_sha256,
+                "launch_command": launch_cmd, "launch_cwd": launch_cwd, "launch_exit": launch_code,
+                "launch_error": launch_error, "launch_output": launch_output.strip().splitlines(),
+                "clean_process_without_signature": clean_without_signature,
+                "same_signature_assertion": asserted, "products_before_cleanup": products,
+                "products_after_cleanup": sorted(item.name for item in out_dir.iterdir())})
+
+        launch_variant("export_launch_positive", positive, True)
+        launch_variant("export_launch_missing_startup_event", negative, False)
+        launch_payload = {"display": os.environ.get("DISPLAY"), "expected_signature": expected_launch,
+                          "results": launch_results,
+                          "verdict": "PASS" if launch_results[0]["same_signature_assertion"]
+                          and launch_results[1]["export_exit"] == 0
+                          and launch_results[1]["export_bytes"] > 0
+                          and not launch_results[1]["same_signature_assertion"]
+                          and launch_results[1]["clean_process_without_signature"]
+                          and launch_results[0]["pack_sha256"] != launch_results[1]["pack_sha256"]
+                          and all(not r["products_after_cleanup"] for r in launch_results) else "FAIL"}
+        (run_dir / "export-launch-verdicts.json").write_text(json.dumps(launch_payload, indent=2) + "\n")
+        results.append({"case": "probe_export_launch", "verdict": launch_payload["verdict"],
+                        "artifact": str(run_dir / "export-launch-verdicts.json"),
+                        "positive_assertion": launch_results[0]["same_signature_assertion"],
+                        "negative_assertion": launch_results[1]["same_signature_assertion"]})
+        print(f"{launch_payload['verdict']} export launch probe: {run_dir / 'export-launch-verdicts.json'}", flush=True)
+
     payload = {"godot": args.godot, "seed": str(HERE), "scratch": str(scratch),
                "probe_failing": args.probe_failing, "results": results,
                "verdict": "PASS" if all(r["verdict"] == "PASS" for r in results) else "FAIL"}
