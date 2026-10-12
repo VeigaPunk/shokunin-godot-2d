@@ -56,6 +56,7 @@ def main():
     parser.add_argument("--probe-unrelated-error", action="store_true", help="append unrelated ERROR diagnostics to real export outputs and reclassify")
     parser.add_argument("--probe-export-launch", action="store_true", help="export and launch positive/control startup scenes in bounded scratch Linux/X11 builds")
     parser.add_argument("--probe-godot-error", action="store_true", help="run paired real Godot push_error diagnostic classification probes")
+    parser.add_argument("--probe-stream-attribution", action="store_true", help="run paired real Godot stdout/stderr stream-attribution classification probes")
     parser.add_argument("--probe-audio-warning", action="store_true", help="classify captured r12 leaked and clean audio outputs with the production audio verdict")
     parser.add_argument("--godot", default="godot")
     parser.add_argument("--runs", type=Path, default=HERE.parent / "live" / "runs")
@@ -110,6 +111,37 @@ def main():
                             and not any(allowed_error(line, allowed) for allowed in allowed_errors)]
         return (code == expected_exit and error is None and signature in output
                 and not unrelated_errors and "SCRIPT ERROR:" not in output and "Parse Error:" not in output)
+
+    def classify_streams(code, error, stdout, stderr, expected_exit, signature, allowed_stderr=()):
+        """Classify using separate stdout/stderr. Signature must appear on stdout."""
+        if code != expected_exit or error is not None:
+            return False
+        if signature not in stdout:
+            return False
+        if "SCRIPT ERROR:" in stdout or "SCRIPT ERROR:" in stderr:
+            return False
+        if "Parse Error:" in stdout or "Parse Error:" in stderr:
+            return False
+        stderr_lines = stderr.splitlines()
+        allowed = set(allowed_stderr)
+
+        def line_allowed(stripped):
+            if stripped in allowed:
+                return True
+            for a in allowed:
+                if a.endswith(",") and stripped.startswith(a) and stripped.count("ERROR:") == 1:
+                    return True
+            return False
+
+        for line in stderr_lines:
+            stripped = line.strip()
+            if not stripped:
+                continue
+            # Any unexpected stderr line rejects. Prefix-only checks would
+            # false-admit a printerr that is neither ERROR: nor STREAM_STDERR:.
+            if not line_allowed(stripped):
+                return False
+        return True
 
     def classify_audio_process(code, error, output, expected_exit, signature, allowed_errors=()):
         # Scope this known ObjectDB shutdown leak warning to audio_playback only;
@@ -476,6 +508,97 @@ def main():
                         "artifact": str(artifact), "inner_classifications":
                         [r["inner_classification"] for r in probe_results]})
         print(f"{probe_payload['verdict']} Godot diagnostic probe: {artifact}")
+
+    if args.probe_stream_attribution:
+        def run_process_streams(command, timeout_seconds):
+            try:
+                proc = subprocess.run(command, capture_output=True, text=True, timeout=timeout_seconds)
+                return proc.stdout, proc.stderr, proc.returncode, None
+            except subprocess.TimeoutExpired as exc:
+                out = (exc.stdout or b"").decode(errors="replace") if isinstance(exc.stdout, bytes) else (exc.stdout or "")
+                err = (exc.stderr or b"").decode(errors="replace") if isinstance(exc.stderr, bytes) else (exc.stderr or "")
+                return out, err, None, f"TIMEOUT after {timeout_seconds} seconds"
+            except OSError as exc:
+                return "", str(exc), None, f"launch error: {exc}"
+
+        stdout_sig = "STREAM_STDOUT: expected attribution marker"
+        stderr_diag = "STREAM_STDERR: unrelated attribution diagnostic"
+        probe_results = []
+        for label, flags in (("stream_accept", []),
+                             ("stream_reject", ["--stderr-unrelated"])):
+            command = [args.godot, "--headless", "--path", str(scratch), "--script",
+                       "res://stream_attribution_probe.gd", "--", *flags]
+            stdout, stderr, code, error = run_process_streams(command, 8)
+            inner = classify_streams(code, error, stdout, stderr, 0, stdout_sig, allowed_stderr=())
+            record = {
+                "case": label,
+                "command": command,
+                "expected_exit": 0,
+                "actual_exit": code,
+                "error": error,
+                "signature": stdout_sig,
+                "inner_classification": inner,
+                "raw_stdout": stdout,
+                "raw_stderr": stderr,
+                "raw_stdout_lines": stdout.strip().splitlines() if stdout else [],
+                "raw_stderr_lines": stderr.strip().splitlines() if stderr else [],
+            }
+            probe_results.append(record)
+            print(f"{'PASS' if inner else 'FAIL'} {label}: exit={code} classification={inner}", flush=True)
+
+        accept, reject = probe_results
+
+        def has_exact_stdout(record, marker_text):
+            return any(line.strip() == marker_text for line in record["raw_stdout_lines"])
+
+        def has_exact_stderr(record, marker_text):
+            return any(line.strip() == marker_text for line in record["raw_stderr_lines"])
+
+        script_paths = [record["command"][record["command"].index("--script") + 1]
+                        for record in probe_results]
+        same_script = (len(set(script_paths)) == 1
+                       and script_paths[0] == "res://stream_attribution_probe.gd")
+        accept_stdout_ok = has_exact_stdout(accept, stdout_sig)
+        reject_stdout_ok = has_exact_stdout(reject, stdout_sig)
+        accept_no_stderr_diag = not has_exact_stderr(accept, stderr_diag)
+        reject_has_stderr_diag = has_exact_stderr(reject, stderr_diag)
+        same_exit = accept["actual_exit"] == reject["actual_exit"] == 0
+        meta_pass = (
+            accept["inner_classification"] is True
+            and reject["inner_classification"] is False
+            and accept_stdout_ok and reject_stdout_ok
+            and accept_no_stderr_diag and reject_has_stderr_diag
+            and same_exit and same_script
+            and accept["error"] is None and reject["error"] is None
+        )
+        probe_payload = {
+            "mode": "real_godot_stream_attribution",
+            "same_script": same_script,
+            "script_paths": script_paths,
+            "stdout_signature": stdout_sig,
+            "stderr_diagnostic": stderr_diag,
+            "results": probe_results,
+            "accept_emitted_stdout_marker": accept_stdout_ok,
+            "reject_emitted_stdout_marker": reject_stdout_ok,
+            "accept_lacks_stderr_diagnostic": accept_no_stderr_diag,
+            "reject_emitted_stderr_diagnostic": reject_has_stderr_diag,
+            "same_exit_zero": same_exit,
+            "verdict": "PASS" if meta_pass else "FAIL",
+            "bounded_claim": (
+                "one Godot 4.7.2 headless stream-attribution pair; "
+                "not crash classification, not process-tree timeout, "
+                "not export reliability, not rendered output"
+            ),
+        }
+        artifact = run_dir / "stream-attribution-verdicts.json"
+        artifact.write_text(json.dumps(probe_payload, indent=2) + "\n")
+        results.append({
+            "case": "probe_stream_attribution",
+            "verdict": probe_payload["verdict"],
+            "artifact": str(artifact),
+            "inner_classifications": [r["inner_classification"] for r in probe_results],
+        })
+        print(f"{probe_payload['verdict']} stream attribution probe: {artifact}")
 
     payload = {"godot": args.godot, "seed": str(HERE), "scratch": str(scratch),
                "probe_failing": args.probe_failing, "results": results,
