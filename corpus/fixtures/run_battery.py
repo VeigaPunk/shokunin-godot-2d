@@ -55,6 +55,8 @@ CASES = [
     ("audio_no_play", "audio_playback.gd", ["--no-play"], 2, "AUDIO ASSERTION FAILED: expected in-tree player playback to advance"),
     ("export_readiness", "__godot_export__", [], 0, "EXPORT PASS preset=Linux/X11 executable=nonempty"),
     ("export_preset_missing", "__godot_export_missing__", [], 1, "No export preset 'Missing preset' found"),
+    ("button_activation", "button_activation.gd", [], 0, "PASS button_activation in_tree=true initial=Ready pressed_receipts=1 final=Activated"),
+    ("button_activation_disconnected", "button_activation.gd", ["--disconnect-signal"], 2, "UI BUTTON ASSERTION FAILED: expected in-tree Label text=Activated after pressed signal"),
 ]
 
 
@@ -344,6 +346,7 @@ def main():
                 "camera_far_left_bound": ("ERROR: camera limit assertion failed: expected active center within left boundary and distinct from target",),
                 "camera_far_bottom_bound": ("ERROR: camera limit assertion failed: expected active center within bottom boundary and distinct from target",),
                 "ui_signal_disconnected": ("ERROR: UI assertion failed: expected in-tree HUD text=Score: 7",),
+                "button_activation_disconnected": ("ERROR: UI BUTTON ASSERTION FAILED: expected in-tree Label text=Activated after pressed signal,",),
                 "health_gauge_disconnected": ("ERROR: Health gauge assertion failed: expected in-tree TextureProgressBar value=35 value_changed=1 receipt=35",),
                 "animation_stuck": ("ERROR: ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance,",),
                 "tween_no_start": ("ERROR: TWEEN ASSERTION FAILED: modulate did not show flash then return to baseline,",),
