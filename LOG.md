@@ -576,3 +576,10 @@
 - Declared move (derived from SCORECARD planned): spontaneous-crash classification — harness-sent SIGTERM and one real timeout are probed, spontaneous crashes unprobed. Author `reports/round-60/r60-author.md` (host: devin): seven-flag battery 89/89 PASS on this host, 0 field mismatches vs `corpus/lessons/r59-audio-non-author.json`; fault-injection outer PASS; scratch spontaneous-crash probe meta PASS — accept exit1 True; `OS.crash`×2 → -6 SIGABRT + own `ERROR:` marker classify False; self-`OS.kill` → -9 classify False; expected -9 → True unmodified, expected -6 needs crash-`ERROR:` allowlist (zero-runner-change path identified).
 - Non-author `reports/round-60/r60-verifier.md`: fresh 89/89 battery byte-identical modulo paths, fault-injection identical shape, probe independently re-derived via own `ast` extractor (runner sha `42104d95…` confirmed) — all four arms reproduced; disagreements ZERO. Caveats recorded: CASES=77 vs "78 ordinary" is the save-process meta row lumped in (arithmetic consistent); naturally-varying fields outside 7-field compare scope; signal-origin indistinguishability retained UNKNOWN.
 - Per-axis verdict: calibration **improved** (bounded — scratch contrast verified, tracked row pending); depth **unchanged**; coverage **unchanged**. No axis harmed. Work commit then report-last; no push/merge.
+
+## 2026-10-13 — HOURS.md ledger opened
+
+- Operator seed per PROTOCOL.md §Craft-hours: shonen→shokunin now requires
+  ≥10,000 verified craft-hours AND the SHONEN gate. Ledger starts at 0;
+  instrumented rounds accrue collective in-domain lane-minutes.
+- Evidence: fleet commit; PROTOCOL.md §Craft-hours.
