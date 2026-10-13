@@ -1,0 +1,18 @@
+# Round 24 bottom-edge camera-limit adversarial review
+
+## Scope and status
+Read-only review of the assigned bottom-edge claim against the current `camera_limit.gd` and battery cases. No fixture was run and no source or fixture was edited. At review time the fixture contains right, top, and left modes only; bottom mode is not yet implemented here. This is a design-level falsification review, not implementation or admission evidence.
+
+## Geometry and competing edges
+For target `(0, 2000)` and authored `limit_bottom=1000`, the expected active center is `1000 - viewport_height/2`; with the battery's 64px viewport this is y=968. The target is 1032 units beyond that expected center. The required checks are the lower-side analogue of other edges: center y `<= 1000 + 0.01`, equality to dynamic `bottom - half-height` within 0.01, meaningful center movement, and separation from the target.
+
+The unchanged right limit 1000 does not compete: x=0 is inside the horizontal interval and no horizontal target movement occurs. Existing top=-1000 and left=-1000 also do not compete with y=2000/x=0. For the far-bottom control, change only `camera.limit_bottom` to 100000; keep the authored assertion boundary at 1000, target `(0,2000)`, and all other limits unchanged. Since the target is then inside the vertical interval, center follows it near y=2000 and violates the same authored-boundary/clamp assertion. A control that changes the asserted boundary along with the camera limit would be self-invalidating and not causal.
+
+## Mode selection and overlap risks
+The current script has `far_bound`, `far_top_bound`, `far_left_bound`, with `left_test` and `top_test`; no bottom selector exists. Add an explicit bottom mode derived from `--bottom-bound` or `--far-bottom-bound`. Ensure the default remains right, and bottom mode does not accidentally select top/left behavior. In particular, the current nested x/y and boundary ternaries need an explicit, unambiguous bottom branch: use y and viewport half-height, authored boundary `+1000`, expected clamp `boundary - half-height`, and the upper-side `center_y <= boundary` predicate. Preserve the existing right/top/left branches and arguments. Include bottom-specific status fields only if useful; do not let output wording or classification stand in for the actual numeric assertion.
+
+## Same assertion and setup guard
+Both bottom positive and far-bottom control must reach the exact same final camera-limit assertion. The control should exit 2 with a bottom-specific instance of that assertion, not a new control-only failure. Existing setup guards must remain ahead of it and unchanged in meaning: camera is current after activation, target moved by >1000, camera remains current after movement. Bottom must not bypass or weaken those checks. If either arm reports a setup error, it does not demonstrate the control and should be held.
+
+## Verdict
+The proposed bottom pair is geometrically discriminating and does not overlap the right/top/left bounds if it uses `(0,2000)`, authored bottom 1000, dynamic half-height, and a control-only far-bottom change. This review does not establish that implementation uses that geometry, that the paired case records are wired correctly, or that Godot observes the expected values. For admission, inspect the final fixture and independently replay: positive at `bottom - viewport_height/2`; far-bottom following the target; both setup guards clean; control failing the same intended bottom assertion; and all previous right/top/left rows unchanged. Headless center state only, not rendered framing or production camera behavior.
