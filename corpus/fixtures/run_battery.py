@@ -74,6 +74,7 @@ CASES = [
     ("slider_adjust_repeat_right_focus_restore", "slider_adjust.gd", ["--repeat-right", "--focus-restore"], 0, "PASS slider_adjust_repeat_focus_restore focused=true range=0..10 step=1 values=6,6,6,5,5,4,4 receipts=6,5,4 Labels=Value 6,Value 5,Value 4"),
     ("slider_adjust_repeat_right_second_focus_loss", "slider_adjust.gd", ["--repeat-right", "--second-focus-loss"], 2, "SLIDER REPEAT SECOND-FOCUS-LOSS ASSERTION FAILED: expected final restored-focus adjustment after seven checks"),
     ("slider_adjust_repeat_right_second_focus_restore", "slider_adjust.gd", ["--repeat-right", "--second-focus-restore"], 0, "PASS slider_adjust_repeat_second_focus_restore focused=true values=6,6,6,5,5,5,5,4,4 receipts=6,5,4 Labels=Value 6,Value 5,Value 4"),
+    ("slider_adjust_repeat_right_second_focus_restore_disconnected", "slider_adjust.gd", ["--repeat-right", "--second-focus-restore", "--disconnect-signal"], 2, "SLIDER DOUBLE-RESTORE DISCONNECTED ASSERTION FAILED: expected signal-consumer updates"),
 ]
 
 
@@ -376,6 +377,7 @@ def main():
                 "slider_adjust_repeat_right_focus_restore": (),
                 "slider_adjust_repeat_right_second_focus_loss": ("ERROR: SLIDER REPEAT SECOND-FOCUS-LOSS ASSERTION FAILED: expected final restored-focus adjustment after seven checks",),
                 "slider_adjust_repeat_right_second_focus_restore": (),
+                "slider_adjust_repeat_right_second_focus_restore_disconnected": ("ERROR: SLIDER DOUBLE-RESTORE DISCONNECTED ASSERTION FAILED: expected signal-consumer updates",),
                 "health_gauge_disconnected": ("ERROR: Health gauge assertion failed: expected in-tree TextureProgressBar value=35 value_changed=1 receipt=35",),
                 "animation_stuck": ("ERROR: ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance,",),
                 "tween_no_start": ("ERROR: TWEEN ASSERTION FAILED: modulate did not show flash then return to baseline,",),
