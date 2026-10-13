@@ -88,6 +88,9 @@ CASES = [
     ("slider_adjust_repeat_right_second_focus_restore_disconnect_after_first", "slider_adjust.gd", ["--repeat-right", "--second-focus-restore", "--disconnect-after-first"], 2, "SLIDER MID-DISCONNECT ASSERTION FAILED: expected cumulative callback history to stay [6]"),
     ("save_roundtrip", "save_roundtrip.gd", [], 0, "PASS save_roundtrip structured=true reopened=true values_match=true user_path="),
     ("save_corrupt_negative", "save_roundtrip.gd", ["--corrupt-negative"], 2, "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"),
+    ("save_process_writer", "__save_process_writer__", [], 0, "PASS save_process writer=true pid="),
+    ("save_process_reader", "__save_process_reader__", [], 0, "PASS save_process reader=true pid="),
+    ("save_process_missing", "__save_process_missing__", [], 2, "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND"),
 ]
 
 
@@ -274,11 +277,16 @@ def main():
             export_path = (out_dir / "fixture.x86_64").resolve()
             command = [args.godot, "--headless", "--path", str(export_project),
                        "--export-debug", preset_name, str(export_path)]
+        elif script.startswith("__save_process_"):
+            mode = script.removeprefix("__save_process_").removesuffix("__")
+            script_path = "res://save_process.gd"
+            process_flags = {"writer": [], "reader": ["--reader"], "missing": ["--missing"]}[mode]
+            command = [args.godot, "--headless", "--path", str(scratch), "--script", script_path, "--", *process_flags]
         else:
             command = [args.godot, "--headless", "--path", str(scratch), "--script", "res://" + script, "--", *flags]
         timeout_seconds = 60 if script.startswith("__godot_export") else 8
         env = None
-        if script == "save_roundtrip.gd":
+        if script == "save_roundtrip.gd" or script.startswith("__save_process_"):
             user_data = (run_dir / "xdg-data").resolve()
             user_data.mkdir(exist_ok=True)
             env = os.environ.copy()
@@ -384,6 +392,7 @@ def main():
                                       "ERROR: negative control: deliberately invalid scene destination rejected"),
                 "negative_signal": ("ERROR: negative control: expected collected signal was absent (dispatch deliberately disabled)",),
                 "save_corrupt_negative": ("ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR",),
+                "save_process_missing": ("ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND,",),
                 "camera_no_follow": ("ERROR: camera follow assertion failed: target moved but active center did not track",),
                 "camera_far_bound": ("ERROR: camera limit assertion failed: expected active center within right boundary and distinct from target",),
                 "camera_far_top_bound": ("ERROR: camera limit assertion failed: expected active center within top boundary and distinct from target",),
@@ -426,8 +435,10 @@ def main():
         # A script/parse error never counts as intended mutant detection.
         if "SCRIPT ERROR:" in output or "Parse Error:" in output:
             passed = False
-        record = {"case": name, "script": script, "flags": flags, "expected_exit": expected_exit,
-                  "actual_exit": code, "signature": evidence, "verdict": "PASS" if passed else "FAIL",
+        record = {"case": name, "script": script, "flags": flags, "command": command,
+                  "xdg_data_home": env.get("XDG_DATA_HOME") if env else None,
+                  "expected_exit": expected_exit, "actual_exit": code, "signature": evidence,
+                  "verdict": "PASS" if passed else "FAIL",
                   "error": error, "output": output.strip().splitlines()}
         if export_record is not None:
             record["export_artifact"] = export_record
@@ -436,6 +447,58 @@ def main():
 
     for case in CASES:
         execute(*case)
+    process_records = {r["case"]: r for r in results if r["case"] in {
+        "save_process_writer", "save_process_reader", "save_process_missing"}}
+    def process_evidence(record, role):
+        text = "\n".join(record["output"])
+        match = re.search(r"pid=(\d+).*path=(\S+)", text)
+        return {"pid": int(match.group(1)) if match else None,
+                "path": match.group(2) if match else None,
+                "signature": record["signature"], "output": record["output"],
+                "command": record["command"], "actual_exit": record["actual_exit"],
+                "role": role}
+    process_evidence_rows = {
+        name: process_evidence(record, name.removeprefix("save_process_"))
+        for name, record in process_records.items()}
+    writer = process_evidence_rows["save_process_writer"]
+    reader = process_evidence_rows["save_process_reader"]
+    negative = process_records["save_process_missing"]
+    user_data = str((run_dir / "xdg-data").resolve())
+    writer_path = Path(writer["path"]) if writer["path"] else None
+    user_data_path = Path(user_data)
+    try:
+        writer_inside_xdg = writer_path is not None and writer_path.is_relative_to(user_data_path)
+    except ValueError:
+        writer_inside_xdg = False
+    process_meta_ok = (
+        writer["pid"] is not None and reader["pid"] is not None and writer["pid"] != reader["pid"]
+        and writer["path"] == reader["path"] and writer_path is not None
+        and writer_inside_xdg
+        and "--script" in writer["command"] and "--script" in reader["command"]
+        and writer["command"][writer["command"].index("--script") + 1] == reader["command"][reader["command"].index("--script") + 1]
+        and process_records["save_process_writer"].get("xdg_data_home") == user_data
+        and process_records["save_process_reader"].get("xdg_data_home") == user_data
+        and process_records["save_process_missing"].get("xdg_data_home") == user_data
+        and all(record["command"][record["command"].index("--path") + 1] == str(scratch)
+                for record in process_records.values())
+        and process_records["save_process_writer"]["verdict"] == "PASS"
+        and process_records["save_process_reader"]["verdict"] == "PASS"
+        and negative["verdict"] == "PASS"
+        and negative["actual_exit"] == 2
+        and "--missing" in negative["command"]
+    )
+    process_payload = {"mode": "independent_godot_process_save_read",
+                       "same_project": True, "same_absolute_xdg_data_home": user_data,
+                       "writer_reader_distinct_pid": writer["pid"] != reader["pid"],
+                       "evidence": process_evidence_rows,
+                       "negative_missing_file_rejected": negative["verdict"] == "PASS",
+                       "verdict": "PASS" if process_meta_ok else "FAIL",
+                       "bounded_claim": "headless Godot process writes JSON then a distinct Godot process reads exact structure; paired separate-process missing-file rejection; not crash/power-loss durability or arbitrary corruption detection"}
+    process_artifact = run_dir / "save-process-verdicts.json"
+    process_artifact.write_text(json.dumps(process_payload, indent=2) + "\n")
+    results.append({"case": "probe_save_independent_process", "verdict": process_payload["verdict"],
+                    "artifact": str(process_artifact), "pids": [writer["pid"], reader["pid"]]})
+    print(f"{process_payload['verdict']} independent save process probe: {process_artifact}", flush=True)
     if args.probe_failing:
         destination = scratch / "scene_b.tscn"
         original = destination.read_text()
