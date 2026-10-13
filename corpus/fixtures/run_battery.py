@@ -57,6 +57,7 @@ CASES = [
     ("export_preset_missing", "__godot_export_missing__", [], 1, "No export preset 'Missing preset' found"),
     ("button_activation", "button_activation.gd", [], 0, "PASS button_activation in_tree=true initial=Ready step_texts=[Activated 1,Activated 2] receipts=[1,2]"),
     ("button_activation_disconnected", "button_activation.gd", ["--disconnect-signal"], 2, "UI BUTTON ASSERTION FAILED: expected step1 text=Activated 1 receipts=1"),
+    ("button_activation_unfocused", "button_activation.gd", ["--no-focus"], 2, "UI BUTTON ASSERTION FAILED: expected step1 text=Activated 1 receipts=1"),
 ]
 
 
@@ -347,6 +348,7 @@ def main():
                 "camera_far_bottom_bound": ("ERROR: camera limit assertion failed: expected active center within bottom boundary and distinct from target",),
                 "ui_signal_disconnected": ("ERROR: UI assertion failed: expected in-tree HUD text=Score: 7",),
                 "button_activation_disconnected": ("ERROR: UI BUTTON ASSERTION FAILED: expected step1 text=Activated 1 receipts=1,",),
+                "button_activation_unfocused": ("ERROR: UI BUTTON ASSERTION FAILED: expected step1 text=Activated 1 receipts=1,",),
                 "health_gauge_disconnected": ("ERROR: Health gauge assertion failed: expected in-tree TextureProgressBar value=35 value_changed=1 receipt=35",),
                 "animation_stuck": ("ERROR: ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance,",),
                 "tween_no_start": ("ERROR: TWEEN ASSERTION FAILED: modulate did not show flash then return to baseline,",),

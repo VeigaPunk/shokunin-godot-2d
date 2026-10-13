@@ -11,7 +11,6 @@ func _on_button_pressed() -> void:
     label.text = "Activated %d" % pressed_receipts
 
 func _send_action(button: Button) -> void:
-    button.grab_focus()
     var activation := InputEventAction.new()
     activation.action = "ui_accept"
     activation.pressed = true
@@ -22,7 +21,9 @@ func _send_action(button: Button) -> void:
     root.push_input(release)
 
 func run() -> void:
-    var disconnected := "--disconnect-signal" in OS.get_cmdline_user_args()
+    var args := OS.get_cmdline_user_args()
+    var disconnected := "--disconnect-signal" in args
+    var no_focus := "--no-focus" in args
     var ui := CanvasLayer.new()
     var button := Button.new()
     button.name = "ActivateButton"
@@ -40,14 +41,34 @@ func run() -> void:
         push_error("UI BUTTON setup assertion failed: expected in-tree Button and Label text=Ready")
         quit(2)
         return
+    if no_focus:
+        button.release_focus()
+        await process_frame
+        var focus_owner := get_root().get_viewport().gui_get_focus_owner()
+        if button.has_focus() or focus_owner != null:
+            push_error("UI BUTTON no-focus setup assertion failed: expected no focused Button and no focus owner")
+            quit(2)
+            return
+    else:
+        button.grab_focus()
+        await process_frame
+        var focus_owner := get_root().get_viewport().gui_get_focus_owner()
+        if not button.has_focus() or focus_owner != button:
+            push_error("UI BUTTON focused setup assertion failed: expected ActivateButton to own focus")
+            quit(2)
+            return
     await _send_action(button)
     await process_frame
+    var owner_after_step1 := get_root().get_viewport().gui_get_focus_owner() == button
+    print("BUTTON_FOCUS step=1 focused=%s button_has_focus=%s receipts=%d text=%s" % [owner_after_step1, button.has_focus(), pressed_receipts, label.text])
     if label.text != "Activated 1" or pressed_receipts != 1:
         push_error("UI BUTTON ASSERTION FAILED: expected step1 text=Activated 1 receipts=1, got receipts=%d text=%s" % [pressed_receipts, label.text])
         quit(2)
         return
     await _send_action(button)
     await process_frame
+    var owner_after_step2 := get_root().get_viewport().gui_get_focus_owner() == button
+    print("BUTTON_FOCUS step=2 focused=%s button_has_focus=%s receipts=%d text=%s" % [owner_after_step2, button.has_focus(), pressed_receipts, label.text])
     if label.text != "Activated 2" or pressed_receipts != 2:
         push_error("UI BUTTON ASSERTION FAILED: expected step2 text=Activated 2 receipts=2, got receipts=%d text=%s" % [pressed_receipts, label.text])
         quit(2)
