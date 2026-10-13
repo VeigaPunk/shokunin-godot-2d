@@ -37,6 +37,34 @@ func _initialize() -> void:
         push_error("SLIDER focus assertion failed before ui_right")
         quit(2)
         return
+    if OS.get_cmdline_user_args().has("--repeat-right"):
+        var edges := [["ui_right", true], ["ui_right", true], ["ui_right", false], ["ui_left", true], ["ui_left", false], ["ui_left", true], ["ui_left", false]]
+        var expected_values: Array[float] = [6.0, 7.0, 7.0, 6.0, 6.0, 5.0, 5.0]
+        var expected_receipt_history: Array[float] = [6.0, 7.0, 6.0, 5.0]
+        for i in range(edges.size()):
+            if not slider.has_focus() or get_root().gui_get_focus_owner() != slider:
+                push_error("SLIDER repeat focus assertion failed before edge %d" % i)
+                quit(2)
+                return
+            _action(edges[i][0], edges[i][1])
+            await process_frame
+            var expected_receipts: Array[float] = []
+            if not disconnected:
+                var receipt_count: int = [1, 2, 2, 3, 3, 4, 4][i]
+                expected_receipts = expected_receipt_history.slice(0, receipt_count)
+            var expected_label := "Value %d" % int(expected_values[i]) if not disconnected else "Value 5"
+            if slider.value != expected_values[i] or value_receipts != expected_receipts or label.text != expected_label:
+                push_error("SLIDER repeat edge assertion failed: %s %s" % [edges[i][0], "press" if edges[i][1] else "release"])
+                quit(2)
+                return
+        if disconnected:
+            print("SLIDER_REPEAT_DISCONNECTED values=%s receipts=%s label=%s" % [expected_values, value_receipts, label.text])
+            push_error("SLIDER REPEAT SIGNAL ASSERTION FAILED: expected value_changed receipts [6,7,6,5] and Labels [Value 6,Value 7,Value 6,Value 5]")
+            quit(2)
+            return
+        print("PASS slider_adjust_repeat focused=true range=0..10 step=1 values=6,7,7,6,6,5,5 receipts=6,7,6,5 Labels=Value 6,Value 7,Value 6,Value 5")
+        quit(0)
+        return
     var right_expected_value := 5.0 if no_focus else 6.0
     var right_expected_receipts: Array[float] = []
     if not disconnected and not no_focus:
