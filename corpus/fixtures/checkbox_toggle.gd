@@ -39,30 +39,50 @@ func run() -> void:
         push_error("CHECKBOX setup assertion failed: expected CheckBox focus")
         quit(2)
         return
+    var prior := false
     for expected in [true, false]:
         await _send_action_edge(true)
         await process_frame
-        await _send_action_edge(false)
-        await process_frame
-        if checkbox.button_pressed != expected:
-            push_error("CHECKBOX state assertion failed: expected checked=%s got=%s" % [expected, checkbox.button_pressed])
+        if checkbox.button_pressed != prior:
+            push_error("CHECKBOX press-only assertion failed: expected checked=%s got=%s" % [prior, checkbox.button_pressed])
             quit(2)
             return
         if disconnected:
             if receipts.size() != 0 or label.text != "Ready":
-                push_error("CHECKBOX disconnected control assertion failed: expected no signal receipt and Ready label")
+                push_error("CHECKBOX disconnected press-only assertion failed: expected receipts=[] label=Ready")
                 quit(2)
                 return
-            print("CHECKBOX_DISCONNECTED state=%s receipts=[] label=Ready" % checkbox.button_pressed)
+        else:
+            var prior_receipts: Array[bool] = []
+            if prior:
+                prior_receipts.append(true)
+            var prior_label := "On" if prior else "Ready"
+            if receipts != prior_receipts or label.text != prior_label:
+                push_error("CHECKBOX press-only assertion failed: expected receipts=%s label=%s got receipts=%s label=%s" % [prior_receipts, prior_label, receipts, label.text])
+                quit(2)
+                return
+        await _send_action_edge(false)
+        await process_frame
+        if checkbox.button_pressed != expected:
+            push_error("CHECKBOX release-only state assertion failed: expected checked=%s got=%s" % [expected, checkbox.button_pressed])
+            quit(2)
+            return
+        if disconnected:
+            if receipts.size() != 0 or label.text != "Ready":
+                push_error("CHECKBOX disconnected release assertion failed: expected no signal receipt and Ready label")
+                quit(2)
+                return
+            print("CHECKBOX_DISCONNECTED press=%s release_state=%s receipts=[] label=Ready" % [prior, checkbox.button_pressed])
         else:
             if receipts.size() != (1 if expected else 2) or receipts[-1] != expected or label.text != ("On" if expected else "Off"):
                 push_error("CHECKBOX SIGNAL ASSERTION FAILED: expected toggled=%s receipts=%s label=%s" % [expected, receipts, label.text])
                 quit(2)
                 return
-            print("CHECKBOX state=%s receipts=%s label=%s" % [checkbox.button_pressed, receipts, label.text])
+            print("CHECKBOX press=%s release_state=%s receipts=%s label=%s" % [prior, checkbox.button_pressed, receipts, label.text])
+        prior = expected
     if disconnected:
         push_error("CHECKBOX SIGNAL ASSERTION FAILED: expected toggled sequence [true,false], got []")
         quit(2)
         return
-    print("PASS checkbox_toggle states=[true,false] toggled=[true,false] labels=[On,Off]")
+    print("PASS checkbox_toggle edge_states=[false,true,true,false] toggled=[true,false] labels=[On,Off]")
     quit(0)
