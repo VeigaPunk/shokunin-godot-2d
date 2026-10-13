@@ -6,8 +6,11 @@ import json
 import os
 import re
 import shutil
+import signal
 import subprocess
 import sys
+import time
+import selectors
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -59,6 +62,7 @@ def main():
     parser.add_argument("--probe-export-launch", action="store_true", help="export and launch positive/control startup scenes in bounded scratch Linux/X11 builds")
     parser.add_argument("--probe-godot-error", action="store_true", help="run paired real Godot push_error diagnostic classification probes")
     parser.add_argument("--probe-stream-attribution", action="store_true", help="run paired real Godot stdout/stderr stream-attribution classification probes")
+    parser.add_argument("--probe-crash-exit", action="store_true", help="run a paired real-Godot normal-exit versus signal-termination probe")
     parser.add_argument("--probe-audio-warning", action="store_true", help="classify captured r12 leaked and clean audio outputs with the production audio verdict")
     parser.add_argument("--godot", default="godot")
     parser.add_argument("--runs", type=Path, default=HERE.parent / "live" / "runs")
@@ -602,6 +606,123 @@ def main():
             "inner_classifications": [r["inner_classification"] for r in probe_results],
         })
         print(f"{probe_payload['verdict']} stream attribution probe: {artifact}")
+
+    if args.probe_crash_exit:
+        marker_text = "CRASH_EXIT_PROBE: expected signature"
+        script_path = "res://crash_exit_probe.gd"
+        timeout_seconds = 8
+        cleanup_seconds = 3
+        expected_exit = 1
+        probe_results = []
+        accept_command = [args.godot, "--headless", "--path", str(scratch), "--script",
+                          script_path, "--"]
+        accept_output, accept_code, accept_error = run_process(accept_command, timeout_seconds)
+        accept_classification = classify_process(accept_code, accept_error, accept_output,
+                                                 expected_exit, marker_text)
+        probe_results.append({"case": "crash_exit_accept", "command": accept_command,
+                              "expected_exit": expected_exit, "actual_exit": accept_code,
+                              "error": accept_error, "marker_observed": marker_text in accept_output,
+                              "inner_classification": accept_classification,
+                              "raw_output": accept_output,
+                              "raw_output_lines": accept_output.strip().splitlines()})
+
+        reject_command = [args.godot, "--headless", "--path", str(scratch), "--script",
+                          script_path, "--", "--hold-open"]
+        reject = {"case": "crash_exit_signal_reject", "command": reject_command,
+                  "expected_exit": expected_exit, "signal_name": "SIGTERM", "timeout_seconds": timeout_seconds,
+                  "cleanup_seconds": cleanup_seconds, "actual_exit": None,
+                  "error": None, "marker_observed": False, "process_was_running": False,
+                  "signal_sent": False, "inner_classification": False,
+                  "raw_stdout": "", "raw_stderr": ""}
+        process = None
+        try:
+            if os.name != "posix" or not hasattr(signal, "SIGTERM"):
+                reject["error"] = "SIGTERM probe unsupported on this platform"
+            else:
+                process = subprocess.Popen(reject_command, stdout=subprocess.PIPE,
+                                           stderr=subprocess.PIPE, text=True, bufsize=1)
+                selector = selectors.DefaultSelector()
+                selector.register(process.stdout, selectors.EVENT_READ)
+                deadline = time.monotonic() + timeout_seconds
+                observed_line = False
+                while time.monotonic() < deadline and not observed_line:
+                    if process.poll() is not None:
+                        break
+                    events = selector.select(min(0.1, max(0.0, deadline - time.monotonic())))
+                    for key, _ in events:
+                        line = key.fileobj.readline()
+                        if line:
+                            reject["raw_stdout"] += line
+                            observed_line = line.strip() == marker_text
+                selector.close()
+                reject["marker_observed"] = observed_line
+                reject["process_was_running"] = process.poll() is None
+                if not reject["marker_observed"]:
+                    reject["error"] = "marker not observed before bounded timeout or process exit"
+                elif not reject["process_was_running"]:
+                    reject["error"] = "process was not live after marker observation"
+                else:
+                    process.send_signal(signal.SIGTERM)
+                    reject["signal_sent"] = True
+                try:
+                    remaining_out, reject["raw_stderr"] = process.communicate(timeout=cleanup_seconds)
+                    reject["raw_stdout"] += remaining_out
+                except subprocess.TimeoutExpired:
+                    reject["error"] = "signal cleanup timed out; forced kill used"
+                    process.kill()
+                    remaining_out, reject["raw_stderr"] = process.communicate(timeout=cleanup_seconds)
+                    reject["raw_stdout"] += remaining_out
+                reject["actual_exit"] = process.returncode
+                if reject["signal_sent"] and process.returncode == -signal.SIGTERM:
+                    reject["inner_classification"] = classify_process(
+                        process.returncode, None, reject["raw_stdout"] + reject["raw_stderr"],
+                        expected_exit, marker_text)
+                elif reject["signal_sent"] and reject["error"] is None:
+                    reject["error"] = f"expected return code {-signal.SIGTERM}, got {process.returncode}"
+        except (OSError, ValueError) as exc:
+            reject["error"] = f"signal probe launch/read error: {exc}"
+            if process is not None and process.poll() is None:
+                process.kill()
+                try:
+                    out, err = process.communicate(timeout=cleanup_seconds)
+                    reject["raw_stdout"] += out
+                    reject["raw_stderr"] += err
+                    reject["actual_exit"] = process.returncode
+                except subprocess.TimeoutExpired:
+                    reject["error"] += "; forced cleanup timed out"
+        finally:
+            if process is not None and process.poll() is None:
+                process.kill()
+                try:
+                    out, err = process.communicate(timeout=cleanup_seconds)
+                    reject["raw_stdout"] += out
+                    reject["raw_stderr"] += err
+                    reject["actual_exit"] = process.returncode
+                except subprocess.TimeoutExpired:
+                    reject["error"] = (reject["error"] or "") + "; bounded forced cleanup timed out"
+        probe_results.append(reject)
+        accept = probe_results[0]
+        same_script = all(record["command"][record["command"].index("--script") + 1] == script_path
+                          for record in probe_results)
+        same_marker = all(record.get("marker_observed") for record in probe_results)
+        same_expected_exit = all(record["expected_exit"] == expected_exit for record in probe_results)
+        meta_pass = (accept["inner_classification"] is True
+                     and reject["inner_classification"] is False
+                     and reject["process_was_running"] and reject["signal_sent"]
+                     and reject["actual_exit"] == -signal.SIGTERM
+                     and reject["error"] is None and same_script and same_marker and same_expected_exit)
+        probe_payload = {"mode": "real_godot_crash_exit", "platform": sys.platform,
+                         "signal": "SIGTERM", "signal_return_code": -signal.SIGTERM,
+                         "same_script": same_script, "same_expected_exit": same_expected_exit,
+                         "signature": marker_text, "results": probe_results,
+                         "bounded_claim": "one real Godot normal exit versus POSIX SIGTERM; no general crash or process-tree guarantee",
+                         "verdict": "PASS" if meta_pass else "FAIL"}
+        artifact = run_dir / "crash-exit-verdicts.json"
+        artifact.write_text(json.dumps(probe_payload, indent=2) + "\n")
+        results.append({"case": "probe_crash_exit", "verdict": probe_payload["verdict"],
+                        "artifact": str(artifact),
+                        "inner_classifications": [r["inner_classification"] for r in probe_results]})
+        print(f"{probe_payload['verdict']} crash-exit probe: {artifact}")
 
     payload = {"godot": args.godot, "seed": str(HERE), "scratch": str(scratch),
                "probe_failing": args.probe_failing, "results": results,
