@@ -734,98 +734,85 @@ def main():
     if args.probe_timeout:
         marker_text = "TIMEOUT_PROBE: expected signature"
         script_path = "res://timeout_probe.gd"
-        timeout_seconds = 0.75
+        old_timeout_seconds = 0.75
+        measured_delay_seconds = 1.5
+        timeout_seconds = 3.0
         cleanup_seconds = 3
         expected_exit = 0
-        probe_results = []
-        accept_command = [args.godot, "--headless", "--path", str(scratch), "--script",
-                          script_path, "--"]
-        accept_output, accept_code, accept_error = run_process(accept_command, 8)
-        accept_classification = classify_process(accept_code, accept_error, accept_output,
-                                                 expected_exit, marker_text)
-        probe_results.append({"case": "timeout_accept", "command": accept_command,
-                              "expected_exit": expected_exit, "actual_exit": accept_code,
-                              "error": accept_error, "marker_observed": marker_text in accept_output,
-                              "inner_classification": accept_classification,
-                              "raw_output": accept_output,
-                              "raw_output_lines": accept_output.strip().splitlines()})
-
-        reject_command = [args.godot, "--headless", "--path", str(scratch), "--script",
-                          script_path, "--", "--hold-open"]
-        reject = {"case": "timeout_reject", "command": reject_command,
-                  "expected_exit": expected_exit, "timeout_seconds": timeout_seconds,
-                  "cleanup_seconds": cleanup_seconds, "actual_exit": None,
-                  "error": None, "marker_observed": False, "process_was_running": False,
-                  "timed_out": False, "direct_child_alive_after_cleanup": None,
-                  "inner_classification": False, "raw_stdout": "", "raw_stderr": ""}
-        process = None
-        try:
-            process = subprocess.Popen(reject_command, stdout=subprocess.PIPE,
-                                       stderr=subprocess.PIPE, text=True, bufsize=1)
+        def bounded_run(case, extra_args, bound):
+            command = [args.godot, "--headless", "--path", str(scratch), "--script",
+                       script_path, "--"] + extra_args
+            record = {"case": case, "command": command, "expected_exit": expected_exit,
+                      "timeout_seconds": bound, "cleanup_seconds": cleanup_seconds,
+                      "actual_exit": None, "error": None, "marker_observed": False,
+                      "timed_out": False, "process_was_running": False,
+                      "direct_child_alive_after_cleanup": None, "raw_stdout": "", "raw_stderr": ""}
+            process = None
+            started_at = time.monotonic()
             try:
-                stdout, stderr = process.communicate(timeout=timeout_seconds)
-                reject["raw_stdout"], reject["raw_stderr"] = stdout, stderr
-                reject["actual_exit"] = process.returncode
-            except subprocess.TimeoutExpired as exc:
-                reject["timed_out"] = True
-                out = exc.stdout.decode(errors="replace") if isinstance(exc.stdout, bytes) else (exc.stdout or "")
-                err = exc.stderr.decode(errors="replace") if isinstance(exc.stderr, bytes) else (exc.stderr or "")
-                reject["raw_stdout"], reject["raw_stderr"] = out, err
-                reject["marker_observed"] = marker_text in out
-                reject["process_was_running"] = process.poll() is None
-                reject["error"] = f"TIMEOUT after {timeout_seconds} seconds"
-                if process.poll() is None:
-                    process.kill()
+                process = subprocess.Popen(command, stdout=subprocess.PIPE,
+                                           stderr=subprocess.PIPE, text=True, bufsize=1)
                 try:
+                    out, err = process.communicate(timeout=bound)
+                    record["raw_stdout"], record["raw_stderr"] = out, err
+                    record["actual_exit"] = process.returncode
+                except subprocess.TimeoutExpired as exc:
+                    record["timed_out"] = True
+                    out = exc.stdout.decode(errors="replace") if isinstance(exc.stdout, bytes) else (exc.stdout or "")
+                    err = exc.stderr.decode(errors="replace") if isinstance(exc.stderr, bytes) else (exc.stderr or "")
+                    record["raw_stdout"], record["raw_stderr"] = out, err
+                    record["marker_observed"] = marker_text in out
+                    record["process_was_running"] = process.poll() is None
+                    record["error"] = f"TIMEOUT after {bound} seconds"
+                    if process.poll() is None:
+                        process.kill()
                     more_out, more_err = process.communicate(timeout=cleanup_seconds)
-                    reject["raw_stdout"], reject["raw_stderr"] = more_out or "", more_err or ""
-                    reject["cleanup_exit_code"] = process.returncode
-                except subprocess.TimeoutExpired:
-                    reject["error"] += "; direct-child cleanup timed out"
-                reject["direct_child_alive_after_cleanup"] = process.poll() is None
-        except (OSError, ValueError) as exc:
-            reject["error"] = f"launch/read error: {exc}"
-            if process is not None and process.poll() is None:
-                process.kill()
-                try:
-                    process.communicate(timeout=cleanup_seconds)
-                except subprocess.TimeoutExpired:
-                    reject["error"] += "; direct-child cleanup timed out"
-            if process is not None:
-                reject["actual_exit"] = process.poll()
-                reject["direct_child_alive_after_cleanup"] = process.poll() is None
-        finally:
-            if process is not None and process.poll() is None:
-                process.kill()
-                try:
-                    out, err = process.communicate(timeout=cleanup_seconds)
-                    reject["raw_stdout"] += out or ""
-                    reject["raw_stderr"] += err or ""
-                    reject["actual_exit"] = process.returncode
-                except subprocess.TimeoutExpired:
-                    reject["error"] = (reject["error"] or "") + "; direct-child cleanup timed out"
-            if process is not None:
-                reject["direct_child_alive_after_cleanup"] = process.poll() is None
-        reject["inner_classification"] = classify_process(
-            reject["actual_exit"], reject["error"],
-            reject["raw_stdout"] + reject["raw_stderr"], expected_exit, marker_text)
-        probe_results.append(reject)
-        accept = probe_results[0]
+                    record["raw_stdout"], record["raw_stderr"] = more_out or "", more_err or ""
+                    record["cleanup_exit_code"] = process.returncode
+            except (OSError, ValueError, subprocess.TimeoutExpired) as exc:
+                record["error"] = f"launch/read/cleanup error: {exc}"
+                if process is not None and process.poll() is None:
+                    process.kill()
+                    try:
+                        process.communicate(timeout=cleanup_seconds)
+                    except subprocess.TimeoutExpired:
+                        record["error"] += "; direct-child cleanup timed out"
+            finally:
+                if process is not None:
+                    record["actual_exit"] = None if record["timed_out"] else process.poll()
+                    record["direct_child_alive_after_cleanup"] = process.poll() is None
+            record["elapsed_seconds"] = round(time.monotonic() - started_at, 3)
+            record["marker_observed"] = marker_text in record["raw_stdout"]
+            record["inner_classification"] = classify_process(
+                record["actual_exit"], record["error"], record["raw_stdout"] + record["raw_stderr"],
+                expected_exit, marker_text)
+            return record
+
+        old_positive = bounded_run("slow_clean_old_bound", ["--delay-clean"], old_timeout_seconds)
+        new_positive = bounded_run("slow_clean_new_bound", ["--delay-clean"], timeout_seconds)
+        hold_open = bounded_run("hold_open_new_bound", ["--hold-open"], timeout_seconds)
+        probe_results = [old_positive, new_positive, hold_open]
+        old_rejects = (old_positive["timed_out"] and old_positive["marker_observed"]
+                       and old_positive["inner_classification"] is False
+                       and old_positive["direct_child_alive_after_cleanup"] is False)
+        new_accepts = (not new_positive["timed_out"] and new_positive["actual_exit"] == expected_exit
+                       and new_positive["marker_observed"]
+                       and new_positive["inner_classification"] is True)
+        hold_rejects = (hold_open["timed_out"] and hold_open["marker_observed"]
+                        and hold_open["inner_classification"] is False
+                        and hold_open["direct_child_alive_after_cleanup"] is False)
         same_script = all(record["command"][record["command"].index("--script") + 1] == script_path
                           for record in probe_results)
-        same_marker = all(record.get("marker_observed") for record in probe_results)
         same_expected_exit = all(record["expected_exit"] == expected_exit for record in probe_results)
-        meta_pass = (accept["inner_classification"] is True
-                     and reject["inner_classification"] is False
-                     and reject["timed_out"] and reject["process_was_running"]
-                     and reject["actual_exit"] is None
-                     and reject["error"] == f"TIMEOUT after {timeout_seconds} seconds"
-                     and reject["direct_child_alive_after_cleanup"] is False
-                     and same_script and same_marker and same_expected_exit)
-        probe_payload = {"mode": "real_godot_timeout", "platform": sys.platform,
+        meta_pass = old_rejects and new_accepts and hold_rejects and same_script and same_expected_exit
+        probe_payload = {"mode": "real_godot_timeout_three_arm", "platform": sys.platform,
                          "same_script": same_script, "same_expected_exit": same_expected_exit,
                          "signature": marker_text, "results": probe_results,
-                         "bounded_claim": "one real Godot normal exit versus timeout with same marker; direct child cleanup only, no process-tree guarantee",
+                         "constants": {"old_timeout_seconds": old_timeout_seconds,
+                                       "measured_delay_seconds": measured_delay_seconds,
+                                       "new_timeout_seconds": timeout_seconds,
+                                       "cleanup_seconds": cleanup_seconds},
+                         "bounded_claim": "controlled delayed clean startup is rejected by old bound and accepted by new bound; hold-open marker still times out; direct child cleanup only",
                          "verdict": "PASS" if meta_pass else "FAIL"}
         artifact = run_dir / "timeout-verdicts.json"
         artifact.write_text(json.dumps(probe_payload, indent=2) + "\n")
