@@ -1,0 +1,8 @@
+# Round 43 second-loss scout — direct Godot scratch
+
+- Scratch: `.shokunin/game-dev-2d/corpus/live/r43-second-loss-scout/` (`probe.gd`, `project.godot`, `run.log`, `exit-code`).
+- Ran `godot --headless --path .shokunin/game-dev-2d/corpus/live/r43-second-loss-scout --script probe.gd`; actual exit **2**, after all seven checks and `R43_EXPECTED_NEGATIVE_CONFIRMED`. Engine identifies itself as Godot **4.7.2.stable**.
+- One connected HSlider (0..10, step 1, initial 5), Label callback, and focusable Button. Fresh parsed action and one process frame per edge. Before each edge, asserted GUI focus owner and HSlider focus state; after each edge asserted slider value, complete `value_changed` receipts, and Label.
+- Observed edges: first slider right press `6/[6]/Value 6`; Button right press `6/[6]/Value 6`; Button right release unchanged; restored slider left press `5/[6,5]/Value 5`; slider left release unchanged; Button reacquired focus before second left press, which held `5/[6,5]/Value 5`; Button left release likewise held.
+- This matches the r43 hypothesis and is the paired contrast to r42 scratch (`r42-depth-scratch`): same first five states; keeping slider focus for final left press produced `4/[6,5,4]/Value 4`, and release held. Therefore the second loss isolates the final adjustment response as expected. No fixture/battery changes made.
+- Evidence scope is synthetic parsed actions + process frames in headless Godot. This does not establish OS auto-repeat, physical timing, rendered/pointer behavior, accessibility, production behavior, or consumption of unchanged edges internally; it is not a generic slider guarantee.

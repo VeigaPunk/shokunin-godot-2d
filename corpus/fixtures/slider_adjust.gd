@@ -37,6 +37,41 @@ func _initialize() -> void:
         push_error("SLIDER focus assertion failed before ui_right")
         quit(2)
         return
+    if OS.get_cmdline_user_args().has("--repeat-right") and OS.get_cmdline_user_args().has("--second-focus-loss"):
+        var other := Button.new()
+        other.text = "Other"
+        other.focus_mode = Control.FOCUS_ALL
+        ui.add_child(other)
+        var edges := [["ui_right", true], ["ui_right", true], ["ui_right", false], ["ui_left", true], ["ui_left", false], ["ui_left", true], ["ui_left", false]]
+        var expected_values: Array[float] = [6.0, 6.0, 6.0, 5.0, 5.0, 5.0, 5.0]
+        var expected_receipts: Array[float] = [6.0, 5.0]
+        var prior_receipt_counts: Array[int] = [1, 1, 1, 2, 2, 2, 2]
+        for i in range(edges.size()):
+            if i == 1 or i == 5:
+                other.grab_focus()
+                await process_frame
+            elif i == 3:
+                slider.grab_focus()
+                await process_frame
+            var expected_owner: Control = other if i in [1, 2, 5, 6] else slider
+            if get_root().gui_get_focus_owner() != expected_owner or slider.has_focus() != (expected_owner == slider):
+                push_error("SLIDER second-focus-loss owner assertion failed before edge %d" % i)
+                quit(2)
+                return
+            _action(edges[i][0], edges[i][1])
+            await process_frame
+            var edge_receipts: Array[float] = []
+            if not disconnected:
+                edge_receipts = expected_receipts.slice(0, prior_receipt_counts[i])
+            var edge_label := "Value %d" % int(expected_values[i]) if not disconnected else "Value 5"
+            if slider.value != expected_values[i] or value_receipts != edge_receipts or label.text != edge_label:
+                push_error("SLIDER second-focus-loss edge assertion failed: edge=%d action=%s %s" % [i, edges[i][0], "press" if edges[i][1] else "release"])
+                quit(2)
+                return
+        print("SLIDER_REPEAT_SECOND_FOCUS_LOSS values=6,6,6,5,5,5,5 receipts=6,5 Labels=Value 6,Value 5")
+        push_error("SLIDER REPEAT SECOND-FOCUS-LOSS ASSERTION FAILED: expected final restored-focus adjustment after seven checks")
+        quit(2)
+        return
     if OS.get_cmdline_user_args().has("--repeat-right") and OS.get_cmdline_user_args().has("--focus-restore"):
         var other := Button.new()
         other.text = "Other"
