@@ -4,6 +4,14 @@ var label: Label
 var value_receipts: Array[float] = []
 var disconnected := OS.get_cmdline_user_args().has("--disconnect-signal")
 var no_focus := OS.get_cmdline_user_args().has("--no-focus")
+var parsed_release_observer: ParsedReleaseObserver
+
+class ParsedReleaseObserver extends Node:
+    var ui_left_releases: int = 0
+    func _input(event: InputEvent) -> void:
+        if event is InputEventAction and event.action == "ui_left" and not event.pressed:
+            ui_left_releases += 1
+
 
 func _initialize() -> void:
     var ui := CanvasLayer.new()
@@ -18,6 +26,9 @@ func _initialize() -> void:
     ui.add_child(slider)
     ui.add_child(label)
     root.add_child(ui)
+    if OS.get_cmdline_user_args().has("--observe-parsed-release"):
+        parsed_release_observer = ParsedReleaseObserver.new()
+        root.add_child(parsed_release_observer)
     if not disconnected:
         slider.value_changed.connect(_on_value_changed)
     await process_frame
@@ -128,6 +139,69 @@ func _initialize() -> void:
                     return
         print("SLIDER_RELEASE_AFTER_LATE_RECONNECT_PRESS values=6,6,6,5,5,5,5,4,4,3,3 receipts=6,3 Labels=Value 6,Value 3 callback_connected=true")
         push_error("SLIDER RELEASE AFTER LATE-RECONNECT PRESS ASSERTION FAILED: expected no new receipt after eleven checks")
+        quit(2)
+        return
+    if OS.get_cmdline_user_args().has("--repeat-right") and OS.get_cmdline_user_args().has("--second-focus-restore") and OS.get_cmdline_user_args().has("--observe-parsed-release"):
+        var other := Button.new()
+        other.text = "Other"
+        other.focus_mode = Control.FOCUS_ALL
+        ui.add_child(other)
+        var edges := [["ui_right", true], ["ui_right", true], ["ui_right", false], ["ui_left", true], ["ui_left", false], ["ui_left", true], ["ui_left", false], ["ui_left", true], ["ui_left", false], ["ui_left", true], ["ui_left", false]]
+        var expected_values: Array[float] = [6.0, 6.0, 6.0, 5.0, 5.0, 5.0, 5.0, 4.0, 4.0, 3.0, 3.0]
+        var expected_receipts: Array[float] = [6.0, 3.0]
+        var receipt_counts: Array[int] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2]
+        for i in range(edges.size()):
+            if i == 1 or i == 5:
+                other.grab_focus()
+                await process_frame
+            elif i == 3 or i == 7:
+                slider.grab_focus()
+                await process_frame
+            var expected_owner: Control = other if i in [1, 2, 5, 6] else slider
+            if get_root().gui_get_focus_owner() != expected_owner or slider.has_focus() != (expected_owner == slider):
+                push_error("SLIDER observe-parsed-release owner assertion failed before edge %d" % i)
+                quit(2)
+                return
+            var should_connect := i == 0 or i >= 8
+            if slider.value_changed.is_connected(_on_value_changed) != should_connect:
+                push_error("SLIDER observe-parsed-release callback assertion failed before edge %d" % i)
+                quit(2)
+                return
+            if i == 10 and not Input.is_action_pressed("ui_left"):
+                push_error("SLIDER input-state pre-release assertion failed: ui_left not pressed")
+                quit(2)
+                return
+            var release_count_before: int = parsed_release_observer.ui_left_releases
+            _action(edges[i][0], edges[i][1])
+            await process_frame
+            if i == 10 and parsed_release_observer.ui_left_releases != release_count_before + 1:
+                push_error("SLIDER parsed ui_left release observer failed: expected exactly one delivered release")
+                quit(2)
+                return
+            if i == 10 and Input.is_action_pressed("ui_left"):
+                push_error("SLIDER input-state post-release assertion failed: ui_left remains pressed")
+                quit(2)
+                return
+            var expected_edge_receipts: Array[float] = expected_receipts.slice(0, receipt_counts[i])
+            var expected_edge_label := "Value %d" % int(expected_values[i]) if i >= 9 else "Value 6"
+            if slider.value != expected_values[i] or value_receipts != expected_edge_receipts or label.text != expected_edge_label:
+                push_error("SLIDER observe-parsed-release edge assertion failed: edge=%d action=%s %s" % [i, edges[i][0], "press" if edges[i][1] else "release"])
+                quit(2)
+                return
+            if i == 0:
+                slider.value_changed.disconnect(_on_value_changed)
+                if slider.value_changed.is_connected(_on_value_changed):
+                    push_error("SLIDER observe-parsed-release disconnect assertion failed after edge0")
+                    quit(2)
+                    return
+            elif i == 7:
+                slider.value_changed.connect(_on_value_changed)
+                if not slider.value_changed.is_connected(_on_value_changed):
+                    push_error("SLIDER observe-parsed-release connect assertion failed after edge7")
+                    quit(2)
+                    return
+        print("SLIDER_PARSED_RELEASE_OBSERVER values=6,6,6,5,5,5,5,4,4,3,3 receipts=6,3 Labels=Value 6,Value 3 callback_connected=true")
+        push_error("SLIDER PARSED RELEASE OBSERVER ASSERTION FAILED: expected no new receipt after eleven checks")
         quit(2)
         return
     if OS.get_cmdline_user_args().has("--repeat-right") and OS.get_cmdline_user_args().has("--second-focus-restore") and OS.get_cmdline_user_args().has("--press-after-late-reconnect"):
