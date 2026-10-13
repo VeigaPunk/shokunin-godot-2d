@@ -37,6 +37,35 @@ func _initialize() -> void:
         push_error("SLIDER focus assertion failed before ui_right")
         quit(2)
         return
+    if OS.get_cmdline_user_args().has("--repeat-right") and OS.get_cmdline_user_args().has("--focus-handoff"):
+        var other := Button.new()
+        other.text = "Other"
+        other.focus_mode = Control.FOCUS_ALL
+        ui.add_child(other)
+        var edges := [["ui_right", true], ["ui_right", true], ["ui_right", false], ["ui_left", true], ["ui_left", false], ["ui_left", true], ["ui_left", false]]
+        for i in range(edges.size()):
+            if i == 1:
+                other.grab_focus()
+                await process_frame
+            var expected_owner: Control = slider if i == 0 else other
+            if get_root().gui_get_focus_owner() != expected_owner or slider.has_focus() != (i == 0):
+                push_error("SLIDER focus-handoff owner assertion failed before edge %d" % i)
+                quit(2)
+                return
+            _action(edges[i][0], edges[i][1])
+            await process_frame
+            var expected_receipts: Array[float] = []
+            if not disconnected:
+                expected_receipts.append(6.0)
+            var expected_label := "Value 6" if not disconnected else "Value 5"
+            if slider.value != 6.0 or value_receipts != expected_receipts or label.text != expected_label:
+                push_error("SLIDER focus-handoff edge assertion failed: edge=%d action=%s %s" % [i, edges[i][0], "press" if edges[i][1] else "release"])
+                quit(2)
+                return
+        print("SLIDER_REPEAT_FOCUS_HANDOFF values=6,6,6,6,6,6,6 receipts=%s label=%s owner_other=%s" % [value_receipts, label.text, get_root().gui_get_focus_owner() == other])
+        push_error("SLIDER REPEAT FOCUS-HANDOFF ASSERTION FAILED: expected post-handoff adjustment after seven checks")
+        quit(2)
+        return
     if OS.get_cmdline_user_args().has("--repeat-right"):
         var edges := [["ui_right", true], ["ui_right", true], ["ui_right", false], ["ui_left", true], ["ui_left", false], ["ui_left", true], ["ui_left", false]]
         var expected_values: Array[float] = [6.0, 7.0, 7.0, 6.0, 6.0, 5.0, 5.0]

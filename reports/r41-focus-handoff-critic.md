@@ -1,0 +1,7 @@
+# Round 41 focus-handoff critic
+
+Read-only adversarial scratch verification, Godot `4.7.2.stable.arch_linux.ed1daf0bf` (`--headless --script`). Scratch: `corpus/live/r41-focus-handoff-critic/`.
+
+A connected in-tree HSlider (0..10, step 1, initial 5) and separate focusable Button were created. After slider focus, one fresh parsed `ui_right` press plus frame gave value 6, receipts `[6]`, and Label `Value 6`. The Button then received focus before the next `ui_right` press. Before and after each of the six remaining distinct edges (right press/release, two left press/release pairs), checks confirmed focus owner remained the Button, slider `has_focus()` remained false, and value/receipts/Label remained exactly `6` / `[6]` / `Value 6`. The unmodified scratch command exited 0 with all checks. A second run removed the intervening right-release dispatch and still passed, confirming the handoff invariant is not reliant on releasing that prior action; the remainder was still dispatched and checked. No code reset value, receipts, or Label during the sequence.
+
+Conclusion: the specified focus-routing effect reproduces in this real Godot version, and the six post-handoff checks directly detect value/signal/Label changes while asserting the other Control owns focus. Limitation: these are synthetic parsed actions and frame-delimited observations, not physical input/OS auto-repeat or independent proof of every GUI routing internals. No fixture/runner/engine/seeded source was modified; scratch is critic-owned.
