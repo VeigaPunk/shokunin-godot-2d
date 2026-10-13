@@ -86,6 +86,8 @@ CASES = [
     ("slider_adjust_repeat_right_second_focus_restore_press_after_late_reconnect", "slider_adjust.gd", ["--repeat-right", "--second-focus-restore", "--press-after-late-reconnect"], 0, "PASS slider_adjust_repeat_second_focus_restore_press_after_late_reconnect values=6,6,6,5,5,5,5,4,4,3 receipts=6,3 Labels=Value 6,Value 3"),
     ("slider_adjust_repeat_right_second_focus_restore_reconnect_after_final_left", "slider_adjust.gd", ["--repeat-right", "--second-focus-restore", "--reconnect-after-final-left"], 2, "SLIDER LATE-RECONNECT ASSERTION FAILED: expected no retroactive receipt after nine checks"),
     ("slider_adjust_repeat_right_second_focus_restore_disconnect_after_first", "slider_adjust.gd", ["--repeat-right", "--second-focus-restore", "--disconnect-after-first"], 2, "SLIDER MID-DISCONNECT ASSERTION FAILED: expected cumulative callback history to stay [6]"),
+    ("save_roundtrip", "save_roundtrip.gd", [], 0, "PASS save_roundtrip structured=true reopened=true values_match=true user_path="),
+    ("save_corrupt_negative", "save_roundtrip.gd", ["--corrupt-negative"], 2, "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"),
 ]
 
 
@@ -114,6 +116,12 @@ def main():
             shutil.copytree(item, scratch / item.name)
         else:
             shutil.copy2(item, scratch / item.name)
+    # Give this copied project a unique app_userdata directory for user:// isolation.
+    project_file = scratch / "project.godot"
+    project_text = project_file.read_text()
+    project_text = project_text.replace('config/name="MechanicOneShotTest"',
+                                        f'config/name="MechanicOneShotTest-{stamp}"', 1)
+    project_file.write_text(project_text)
     # Seeded controls/pickup.tscn references root pickup.gd; stage its scene in scratch.
     shutil.copy2(scratch / "controls" / "pickup.tscn", scratch / "pickup.tscn")
     # Godot 4.7.2 may install current_scene one process frame after the change.
@@ -124,9 +132,9 @@ def main():
     chain.write_text(text.replace(anchor, "    await process_frame\n    await process_frame\n    var old := current_scene", 1))
     results = []
 
-    def run_process(command, timeout_seconds):
+    def run_process(command, timeout_seconds, env=None):
         try:
-            proc = subprocess.run(command, capture_output=True, text=True, timeout=timeout_seconds)
+            proc = subprocess.run(command, capture_output=True, text=True, timeout=timeout_seconds, env=env)
             return proc.stdout + proc.stderr, proc.returncode, None
         except subprocess.TimeoutExpired as exc:
             output = (exc.stdout or b"").decode(errors="replace") if isinstance(exc.stdout, bytes) else (exc.stdout or "")
@@ -269,7 +277,13 @@ def main():
         else:
             command = [args.godot, "--headless", "--path", str(scratch), "--script", "res://" + script, "--", *flags]
         timeout_seconds = 60 if script.startswith("__godot_export") else 8
-        output, code, error = run_process(command, timeout_seconds)
+        env = None
+        if script == "save_roundtrip.gd":
+            user_data = (run_dir / "xdg-data").resolve()
+            user_data.mkdir(exist_ok=True)
+            env = os.environ.copy()
+            env["XDG_DATA_HOME"] = str(user_data)
+        output, code, error = run_process(command, timeout_seconds, env=env)
         export_record = None
         if script == "__godot_export__":
             size = export_path.stat().st_size if export_path.is_file() else 0
@@ -369,6 +383,7 @@ def main():
                 "negative_transition": ("ERROR: Can't change to a null scene. Use unload_current_scene() if you wish to unload it.",
                                       "ERROR: negative control: deliberately invalid scene destination rejected"),
                 "negative_signal": ("ERROR: negative control: expected collected signal was absent (dispatch deliberately disabled)",),
+                "save_corrupt_negative": ("ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR",),
                 "camera_no_follow": ("ERROR: camera follow assertion failed: target moved but active center did not track",),
                 "camera_far_bound": ("ERROR: camera limit assertion failed: expected active center within right boundary and distinct from target",),
                 "camera_far_top_bound": ("ERROR: camera limit assertion failed: expected active center within top boundary and distinct from target",),
