@@ -59,6 +59,8 @@ CASES = [
     ("button_activation_disconnected", "button_activation.gd", ["--disconnect-signal"], 2, "UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1"),
     ("button_activation_unfocused", "button_activation.gd", ["--no-focus"], 2, "UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1"),
     ("button_activation_focus_loss", "button_activation.gd", ["--lose-focus-after-first"], 0, "PASS button_activation_focus_loss initial=focused release1=Activated1 mid_sequence=no_focus release2=Activated1 receipts=1"),
+    ("checkbox_toggle", "checkbox_toggle.gd", [], 0, "PASS checkbox_toggle states=[true,false] toggled=[true,false] labels=[On,Off]"),
+    ("checkbox_toggle_disconnected", "checkbox_toggle.gd", ["--disconnect-signal"], 2, "ERROR: CHECKBOX SIGNAL ASSERTION FAILED: expected toggled sequence [true,false], got []"),
 ]
 
 
@@ -350,6 +352,7 @@ def main():
                 "ui_signal_disconnected": ("ERROR: UI assertion failed: expected in-tree HUD text=Score: 7",),
                 "button_activation_disconnected": ("ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1,",),
                 "button_activation_unfocused": ("ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1,",),
+                "checkbox_toggle_disconnected": ("ERROR: CHECKBOX SIGNAL ASSERTION FAILED: expected toggled sequence [true,false], got []",),
                 "health_gauge_disconnected": ("ERROR: Health gauge assertion failed: expected in-tree TextureProgressBar value=35 value_changed=1 receipt=35",),
                 "animation_stuck": ("ERROR: ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance,",),
                 "tween_no_start": ("ERROR: TWEEN ASSERTION FAILED: modulate did not show flash then return to baseline,",),
