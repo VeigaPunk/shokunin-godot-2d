@@ -1,0 +1,21 @@
+# Round 46 regression scout — mid-run signal disconnect
+
+Read-only regression review. I read the standing mission and Round 46 declaration in `LOG.md`; no tracked fixture or runner edits, no seeded fixture mutation, and no engine/editor/commit/push/merge actions. Direct Godot checks used a temporary copy of the in-tree fixture project in `/tmp`.
+
+## Scratch evidence and candidate boundary
+
+Available executable is `/usr/bin/godot`, version `4.7.2.stable.arch_linux.ed1daf0bf`. In the scratch copy, connected `--repeat-right --second-focus-restore` exits 0 with `values=6,6,6,5,5,5,5,4,4`, receipts `6,5,4`, Labels `Value 6,Value 5,Value 4`. Existing `--disconnect-signal` arm exits 2 only after printing its nine-edge terminal marker; it has the same numeric history, empty receipts and `Label=Value 5`. Thus the declared comparator behavior is locally reproduced, but this scout did not execute the proposed disconnect-after-first candidate because implementing that candidate belongs to the authorized executor after scratch evidence; no candidate-specific causal result is asserted here.
+
+Integration safeguards if scratch supports the move: add a distinct `--disconnect-after-first` path gated by both `--repeat-right` and `--second-focus-restore`; do not alter the connected r44 or disconnect-at-start r45 command path/rows. The new path must connect initially, prove edge 0 numeric 6 / receipt `[6]` / Label `Value 6`, disconnect the callback only then and before edge 1, then assert focus owner before each edge and numeric value, cumulative receipt `[6]`, and Label `Value 6` after every edge 1–8. Emit unique expected-negative diagnostic only after all nine successful assertions, so an early failure cannot satisfy the runner's exit-2 signature. Compare full prior case tuples and stable opt-in classifications; do not infer continuity from the terminal signature alone.
+
+The claim is the effect of a callback-disconnection discontinuity on observable signal receipts and callback-driven Label while this particular synthetic parsed-event/focus sequence still changes numeric HSlider value. It does not demonstrate OS key repeat, physical timing, internal consumption of unchanged edges, rendering/pointer/accessibility behavior, production UI, or generic HSlider semantics. HOLD if Godot's edge-0 receipt, disconnect timing, focus ownership, numeric sequence, or post-disconnect state differs from the declared values.
+
+## Regression caveats
+
+- r44 connected nine-edge baseline: same HSlider (0..10, step 1, initial 5), focus transfers at edges 1/5 to Button and restoration before edges 3/7; owner-before and value/receipt/Label-after assertions; `6,6,6,5,5,5,5,4,4`, receipts `[6,5,4]`, Label ends `Value 4`, positive exit 0. r44 verified 58 ordinary / 69 full; preserve all prior rows.
+- r45 disconnect-at-start control: same nine edges, values as above, no receipts and Label `Value 5`; expected-negative exit 2 only after checks. r45 verified 59 ordinary / 70 full and all 60 prior tuple-bearing rows unchanged. This is an arm to preserve, not evidence for disconnecting after edge 0.
+- r39 regression scout warns expected-negative classification must require its intended diagnostic, not arbitrary exit 2, and must check through the final edge before emitting that diagnostic. Keep unique terminal marker after all assertions.
+- Fault-injection outer/meta PASS can intentionally wrap inner hang/timeout and unrelated-error FAILs; only clean expected-negative inner case is PASS. Never report meta PASS as injected faults passing. Timeouts are bounded evidence for tested child behavior, not general descendant cleanup guarantees.
+- Export work is separate from this UI calibration. Historical r25 verifier found export readiness could pass while `probe_export_launch` failed on a relative target (`Prepare Template: The given export path doesn't exist.`); readiness/launch passes do not establish generic export reliability. Do not touch export, timeout, or fault paths for this claim.
+
+No engine/editor or seeded fixture mutation, and no tracked code edit was made. The scratch is under `/tmp`; it can be removed independently. This report is scoped to the regression-scout role and does not replace executor, reviewer, or named verifier evidence.
