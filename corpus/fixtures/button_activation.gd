@@ -20,6 +20,7 @@ func run() -> void:
     var args := OS.get_cmdline_user_args()
     var disconnected := "--disconnect-signal" in args
     var no_focus := "--no-focus" in args
+    var lose_focus := "--lose-focus-after-first" in args
     var ui := CanvasLayer.new()
     var button := Button.new()
     button.name = "ActivateButton"
@@ -67,8 +68,23 @@ func run() -> void:
         push_error("UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1, got focused=%s receipts=%d text=%s" % [owner_after_release1, pressed_receipts, label.text])
         quit(2)
         return
+    if lose_focus:
+        button.release_focus()
+        await process_frame
+        var lost_owner := get_root().get_viewport().gui_get_focus_owner()
+        print("BUTTON_FOCUS mid_sequence focused=%s button_has_focus=%s" % [lost_owner == button, button.has_focus()])
+        if button.has_focus() or lost_owner != null:
+            push_error("UI BUTTON mid-sequence focus loss setup assertion failed")
+            quit(2)
+            return
     await _send_action_edge(true)
     await process_frame
+    if lose_focus:
+        var owner_after_press2 := get_root().get_viewport().gui_get_focus_owner()
+        if button.has_focus() or owner_after_press2 != null:
+            push_error("UI BUTTON mid-sequence press2 focus assertion failed: expected no focus owner")
+            quit(2)
+            return
     if label.text != "Activated 1" or pressed_receipts != 1:
         push_error("UI BUTTON ASSERTION FAILED: expected press2 text=Activated 1 receipts=1, got receipts=%d text=%s" % [pressed_receipts, label.text])
         quit(2)
@@ -77,9 +93,21 @@ func run() -> void:
     await process_frame
     var owner_after_step2 := get_root().get_viewport().gui_get_focus_owner() == button
     print("BUTTON_FOCUS step=2 focused=%s button_has_focus=%s receipts=%d text=%s" % [owner_after_step2, button.has_focus(), pressed_receipts, label.text])
-    if label.text != "Activated 2" or pressed_receipts != 2:
+    if lose_focus and (button.has_focus() or get_root().get_viewport().gui_get_focus_owner() != null):
+        push_error("UI BUTTON mid-sequence release2 focus assertion failed: expected no focus owner")
+        quit(2)
+        return
+    if lose_focus:
+        if label.text != "Activated 1" or pressed_receipts != 1:
+            push_error("UI BUTTON ASSERTION FAILED: expected lost-focus release2 text=Activated 1 receipts=1, got receipts=%d text=%s" % [pressed_receipts, label.text])
+            quit(2)
+            return
+    elif label.text != "Activated 2" or pressed_receipts != 2:
         push_error("UI BUTTON ASSERTION FAILED: expected release2 text=Activated 2 receipts=2, got receipts=%d text=%s" % [pressed_receipts, label.text])
         quit(2)
         return
-    print("PASS button_activation in_tree=true initial=Ready edge_texts=[Ready,Activated 1,Activated 1,Activated 2] receipts=[0,1,1,2]")
+    if lose_focus:
+        print("PASS button_activation_focus_loss initial=focused release1=Activated1 mid_sequence=no_focus release2=Activated1 receipts=1")
+    else:
+        print("PASS button_activation in_tree=true initial=Ready edge_texts=[Ready,Activated 1,Activated 1,Activated 2] receipts=[0,1,1,2]")
     quit(0)
