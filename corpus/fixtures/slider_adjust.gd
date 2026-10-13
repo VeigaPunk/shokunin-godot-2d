@@ -37,10 +37,23 @@ func _initialize() -> void:
         push_error("SLIDER focus assertion failed before ui_right")
         quit(2)
         return
+    var right_expected_value := 5.0 if no_focus else 6.0
+    var right_expected_receipts: Array[float] = []
+    if not disconnected and not no_focus:
+        right_expected_receipts.append(6.0)
+    var right_expected_label := "Value 5" if disconnected or no_focus else "Value 6"
     _action("ui_right", true)
     await process_frame
+    if slider.value != right_expected_value or value_receipts != right_expected_receipts or label.text != right_expected_label:
+        push_error("SLIDER edge assertion failed: ui_right press")
+        quit(2)
+        return
     _action("ui_right", false)
     await process_frame
+    if slider.value != right_expected_value or value_receipts != right_expected_receipts or label.text != right_expected_label:
+        push_error("SLIDER edge assertion failed: ui_right release")
+        quit(2)
+        return
     var right_value := slider.value
     var right_receipts := value_receipts.duplicate()
     var right_label := label.text
@@ -57,10 +70,22 @@ func _initialize() -> void:
         push_error("SLIDER focus assertion failed before ui_left")
         quit(2)
         return
+    var left_expected_receipts: Array[float] = []
+    if not disconnected and not no_focus:
+        left_expected_receipts.append(6.0)
+        left_expected_receipts.append(5.0)
     _action("ui_left", true)
     await process_frame
+    if slider.value != 5.0 or value_receipts != left_expected_receipts or label.text != "Value 5":
+        push_error("SLIDER edge assertion failed: ui_left press")
+        quit(2)
+        return
     _action("ui_left", false)
     await process_frame
+    if slider.value != 5.0 or value_receipts != left_expected_receipts or label.text != "Value 5":
+        push_error("SLIDER edge assertion failed: ui_left release")
+        quit(2)
+        return
     var left_value := slider.value
     if no_focus:
         print("SLIDER_NO_FOCUS values=%s,%s receipts=%s label=%s focus_owner=%s" % [right_value, left_value, value_receipts, label.text, get_root().gui_get_focus_owner()])
