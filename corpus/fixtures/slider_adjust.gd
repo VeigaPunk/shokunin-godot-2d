@@ -3,6 +3,7 @@ var slider: HSlider
 var label: Label
 var value_receipts: Array[float] = []
 var disconnected := OS.get_cmdline_user_args().has("--disconnect-signal")
+var no_focus := OS.get_cmdline_user_args().has("--no-focus")
 
 func _initialize() -> void:
     var ui := CanvasLayer.new()
@@ -20,13 +21,19 @@ func _initialize() -> void:
     if not disconnected:
         slider.value_changed.connect(_on_value_changed)
     await process_frame
-    slider.grab_focus()
+    if not no_focus:
+        slider.grab_focus()
     await process_frame
-    if not slider.is_inside_tree() or not slider.has_focus() or get_root().gui_get_focus_owner() != slider or slider.value != 5.0 or value_receipts != [] or label.text != "Value 5":
-        push_error("SLIDER setup assertion failed: expected focused in-tree value=5 Label=Value 5")
+    if not slider.is_inside_tree() or slider.value != 5.0 or value_receipts != [] or label.text != "Value 5":
+        push_error("SLIDER setup assertion failed: expected in-tree value=5 Label=Value 5")
         quit(2)
         return
-    if get_root().gui_get_focus_owner() != slider:
+    if no_focus:
+        if slider.has_focus() or get_root().gui_get_focus_owner() == slider:
+            push_error("SLIDER no-focus setup assertion failed: slider owns GUI focus")
+            quit(2)
+            return
+    elif not slider.has_focus() or get_root().gui_get_focus_owner() != slider:
         push_error("SLIDER focus assertion failed before ui_right")
         quit(2)
         return
@@ -37,11 +44,16 @@ func _initialize() -> void:
     var right_value := slider.value
     var right_receipts := value_receipts.duplicate()
     var right_label := label.text
-    if disconnected and (right_value != 6.0 or right_receipts != [] or right_label != "Value 5"):
+    if disconnected and not no_focus and (right_value != 6.0 or right_receipts != [] or right_label != "Value 5"):
         push_error("SLIDER DISCONNECTED CONTROL ASSERTION FAILED after ui_right: expected value=6 receipts=[] Label=Value 5")
         quit(2)
         return
-    if get_root().gui_get_focus_owner() != slider:
+    if no_focus:
+        if slider.has_focus() or get_root().gui_get_focus_owner() == slider:
+            push_error("SLIDER no-focus assertion failed before ui_left: slider owns GUI focus")
+            quit(2)
+            return
+    elif get_root().gui_get_focus_owner() != slider:
         push_error("SLIDER focus assertion failed before ui_left")
         quit(2)
         return
@@ -50,6 +62,15 @@ func _initialize() -> void:
     _action("ui_left", false)
     await process_frame
     var left_value := slider.value
+    if no_focus:
+        print("SLIDER_NO_FOCUS values=%s,%s receipts=%s label=%s focus_owner=%s" % [right_value, left_value, value_receipts, label.text, get_root().gui_get_focus_owner()])
+        if right_value != 5.0 or left_value != 5.0 or value_receipts != [] or label.text != "Value 5":
+            push_error("SLIDER NO-FOCUS CONTROL ASSERTION FAILED: expected values=5,5 receipts=[] Label=Value 5")
+            quit(2)
+            return
+        push_error("SLIDER NO-FOCUS ASSERTION FAILED: expected focus-dependent adjustment values=6,5")
+        quit(2)
+        return
     if disconnected:
         print("SLIDER_DISCONNECTED values=%s,%s receipts=%s label=%s" % [right_value, left_value, value_receipts, label.text])
         if right_value != 6.0 or left_value != 5.0 or value_receipts != [] or label.text != "Value 5":

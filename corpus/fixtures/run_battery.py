@@ -66,6 +66,7 @@ CASES = [
     ("button_group_selection_ungroup_b", "button_group_selection.gd", ["--ungroup-b"], 2, "BUTTON_GROUP ABSENCE ASSERTION FAILED after B→A: expected exclusive selection, got A=true B=true"),
     ("slider_adjust", "slider_adjust.gd", [], 0, "PASS slider_adjust focused=true range=0..10 step=1 values=6,5 receipts=6,5 Labels=Value 6,Value 5"),
     ("slider_adjust_disconnected", "slider_adjust.gd", ["--disconnect-signal"], 2, "SLIDER SIGNAL ASSERTION FAILED: expected value_changed receipts [6,5] and Labels [Value 6,Value 5]"),
+    ("slider_adjust_no_focus", "slider_adjust.gd", ["--no-focus"], 2, "SLIDER NO-FOCUS ASSERTION FAILED: expected focus-dependent adjustment values=6,5"),
 ]
 
 
@@ -361,6 +362,7 @@ def main():
                 "button_group_selection_disconnected": ("ERROR: BUTTON_GROUP SIGNAL ASSERTION FAILED: expected transitions [A:false,B:true,B:false,A:true], got []",),
                 "button_group_selection_ungroup_b": ("ERROR: BUTTON_GROUP ABSENCE ASSERTION FAILED after B→A: expected exclusive selection, got A=true B=true",),
                 "slider_adjust_disconnected": ("ERROR: SLIDER SIGNAL ASSERTION FAILED: expected value_changed receipts [6,5] and Labels [Value 6,Value 5]",),
+                "slider_adjust_no_focus": ("ERROR: SLIDER NO-FOCUS ASSERTION FAILED: expected focus-dependent adjustment values=6,5",),
                 "health_gauge_disconnected": ("ERROR: Health gauge assertion failed: expected in-tree TextureProgressBar value=35 value_changed=1 receipt=35",),
                 "animation_stuck": ("ERROR: ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance,",),
                 "tween_no_start": ("ERROR: TWEEN ASSERTION FAILED: modulate did not show flash then return to baseline,",),
