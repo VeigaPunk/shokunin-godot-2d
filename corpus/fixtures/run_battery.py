@@ -53,6 +53,8 @@ CASES = [
     ("tween_no_start", "tween_flash.gd", ["--no-tween"], 2, "TWEEN ASSERTION FAILED: modulate did not show flash then return to baseline,"),
     ("audio_playback", "audio_playback.gd", [], 0, "PASS audio_playback in_tree=true playing=true position_advanced=true"),
     ("audio_no_play", "audio_playback.gd", ["--no-play"], 2, "AUDIO ASSERTION FAILED: expected in-tree player playback to advance"),
+    ("audio_bus_route", "audio_bus_route.gd", [], 0, "PASS audio_bus_route in_tree=true requested=FixtureBus resolved_index=1 resolved_bus=FixtureBus playing=true position_advanced=true"),
+    ("audio_bus_route_invalid_control", "audio_bus_route.gd", ["--invalid"], 2, "AUDIO BUS CONTROL ASSERTION FAILED: requested invalid route silently fell back to Master"),
     ("export_readiness", "__godot_export__", [], 0, "EXPORT PASS preset=Linux/X11 executable=nonempty"),
     ("export_preset_missing", "__godot_export_missing__", [], 1, "No export preset 'Missing preset' found"),
     ("button_activation", "button_activation.gd", [], 0, "PASS button_activation in_tree=true initial=Ready edge_texts=[Ready,Activated 1,Activated 1,Activated 2] receipts=[0,1,1,2]"),
@@ -429,6 +431,7 @@ def main():
                 "export_preset_missing": ("ERROR: Invalid export preset name: Missing preset.",),
                 "contact_no_collision": ("ERROR: CONTACT ASSERTION FAILED: body motion did not contact level tile at cell=2,3,",),
                 "audio_no_play": ("ERROR: AUDIO ASSERTION FAILED: expected in-tree player playback to advance,",),
+                "audio_bus_route_invalid_control": ("ERROR: AUDIO BUS CONTROL ASSERTION FAILED: requested invalid route silently fell back to Master,",),
             }.get(name, ())
             classifier = classify_audio_process if name == "audio_playback" else classify_process
             passed = detected if mutate else classifier(code, error, output, expected_exit, evidence, expected_errors)
