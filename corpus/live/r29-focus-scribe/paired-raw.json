@@ -1,0 +1,16 @@
+{
+  "godot_version": "4.7.2.stable.arch_linux.ed1daf0bf",
+  "script": ".shokunin/game-dev-2d/corpus/live/r29-focus-scribe/paired.gd",
+  "script_sha256": "067624c23a7d1ce3716eb55b6bcb03435f8aee4514130ce0ed8e6c4867af49fc",
+  "focused_run": {
+    "exit_code": 0,
+    "stdout": "4.7.2.stable.arch_linux.ed1daf0bf\nGodot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nBEFORE mode=focused owner=ActivateButton:<Button#201242715342> is_focused=true\nSTEP mode=focused step=1 receipts=1 label=Activated 1 focused=true\nSTEP mode=focused step=2 receipts=2 label=Activated 2 focused=true\n"
+  },
+  "unfocused_run": {
+    "exit_code": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nBEFORE mode=unfocused owner=@LineEdit@23:<LineEdit#50516200266> is_focused=false\nSTEP mode=unfocused step=1 receipts=0 label=Ready focused=false\nSTEP mode=unfocused step=2 receipts=0 label=Ready focused=false\n"
+  },
+  "tracked_fixture_sha256": "9373e361e4adaf20d6ef012c883799522f700846e672889f589596ad91983c22",
+  "tracked_runner_sha256": "c178aea2cfdfd16f31f3c4c0d192ab82988bfd31faba96dc2f053b4ca8d60260",
+  "interpretation": "Focused Button explicitly has focus and receives two ui_accept pairs. In fresh unfocused run Button.has_focus=false before and after; input yields 0 receipts and Ready. No tracked files edited."
+}

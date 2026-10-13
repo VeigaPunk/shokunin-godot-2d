@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS save_corrupt_negative copied_bytes=true corrupted=true rejected=true source_unchanged=true signature=JSON_PARSE_ERROR user_path=/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r57-save-executor/negative/xdg-data/godot/app_userdata/MechanicOneShotTest-r57-save-executor-smoke/r57-save-corrupt-copy.json

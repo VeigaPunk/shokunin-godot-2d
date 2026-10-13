@@ -1,0 +1,47 @@
+[
+  {
+    "pid": 3206694,
+    "script": "writer.gd",
+    "exit": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nWRITER wrote=/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-boundary/run1/xdg-data/godot/app_userdata/R58BoundaryProbe/boundary.json\n",
+    "stderr": "",
+    "xdg": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-boundary/run1/xdg-data",
+    "project": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-boundary"
+  },
+  {
+    "pid": 3206734,
+    "script": "reader.gd",
+    "exit": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nREADER content={\"run\":\"writer\"} path=/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-boundary/run1/xdg-data/godot/app_userdata/R58BoundaryProbe/boundary.json\n",
+    "stderr": "",
+    "xdg": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-boundary/run1/xdg-data",
+    "project": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-boundary"
+  },
+  {
+    "pid": 3206774,
+    "script": "reader.gd",
+    "exit": 2,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\n",
+    "stderr": "ERROR: READER_MISSING /home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-boundary/run2/xdg-data/godot/app_userdata/R58BoundaryProbe/boundary.json\n   at: push_error (core/variant/variant_utility.cpp:1023)\n   GDScript backtrace (most recent call first):\n       [0] _initialize (res://reader.gd:5)\n",
+    "xdg": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-boundary/run2/xdg-data",
+    "project": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-boundary"
+  },
+  {
+    "pid": 3206812,
+    "script": "reader.gd",
+    "exit": 2,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\n",
+    "stderr": "ERROR: READER_MISSING /home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-boundary/run1/xdg-data/godot/app_userdata/R58WrongIdentity/boundary.json\n   at: push_error (core/variant/variant_utility.cpp:1023)\n   GDScript backtrace (most recent call first):\n       [0] _initialize (res://reader.gd:5)\n",
+    "xdg": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-boundary/run1/xdg-data",
+    "project": ".shokunin/game-dev-2d/corpus/live/r58-process-boundary/other-project"
+  },
+  {
+    "pid": 3206864,
+    "script": "reader.gd",
+    "exit": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nREADER content={\"run\":\"writer\"} path=/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-boundary/run1/xdg-data/godot/app_userdata/R58BoundaryProbe/boundary.json\n",
+    "stderr": "",
+    "xdg": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-boundary/run1/xdg-data",
+    "project": ".shokunin/game-dev-2d/corpus/live/r58-process-boundary/same-identity-project"
+  }
+]

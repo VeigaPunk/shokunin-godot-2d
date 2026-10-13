@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+BUTTON_FOCUS edge=release1 focused=true button_has_focus=true receipts=1 text=Activated 1
+BUTTON_FOCUS edge=after_release_focus focused=false button_has_focus=false owner_is_null=true receipts=1 text=Activated 1
+BUTTON_FOCUS step=2 focused=false button_has_focus=false receipts=1 text=Activated 1
+BUTTON_FOCUS edge=release2 focused=false button_has_focus=false owner_is_null=true receipts=1 text=Activated 1
+PASS button_focus_loss receipts=[0,1,1,1] texts=[Ready,Activated 1,Activated 1,Activated 1]

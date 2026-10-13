@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC)
+
+BEFORE_RIGHT owner=<Object#null> has_focus=false value=5.0
+AFTER_RIGHT owner=<Object#null> has_focus=false value=5.0 receipts=[] label=Value 5
+BEFORE_LEFT owner=<Object#null> has_focus=false value=5.0
+AFTER_LEFT owner=<Object#null> has_focus=false value=5.0 receipts=[] label=Value 5
+MEASUREMENT_COMPLETE

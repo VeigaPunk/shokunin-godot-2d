@@ -1,0 +1,3 @@
+[application]
+config/name="CheckboxProbe"
+config/features=PackedStringArray("4.7")

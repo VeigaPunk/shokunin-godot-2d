@@ -1,0 +1,30 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+SPONTANEOUS_CRASH_PROBE: expected signature
+ERROR: r60 spontaneous crash probe
+   at: crash (core/core_bind.cpp:349)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://spontaneous_crash_probe.gd:15)
+
+================================================================
+handle_crash: Program crashed with signal 4
+Engine version: Godot Engine v4.7.2.stable.arch_linux (ed1daf0bf001b61586d9930840f2f1394092c079)
+Dumping the backtrace. Please include this when reporting the bug on: https://github.com/godotengine/godot/issues
+Load address: 55cb6d0cb000
+
+[1] 7f177643e6f0 (libc.so.6+3e6f0) - /usr/lib/libc.so.6(+0x3e6f0) [0x7f177643e6f0]
+[2] 55cb7318b5c2 (main+60c05c2) - godot(+0x60c05c2) [0x55cb7318b5c2]
+[3] 55cb6ea15d4c (main+194ad4c) - godot(+0x194ad4c) [0x55cb6ea15d4c]
+[4] 55cb6e894106 (main+17c9106) - godot(+0x17c9106) [0x55cb6e894106]
+[5] 55cb73264d1a (main+6199d1a) - godot(+0x6199d1a) [0x55cb73264d1a]
+[6] 55cb711e805f (main+411d05f) - godot(+0x411d05f) [0x55cb711e805f]
+[7] 55cb6e12702b (main+105c02b) - godot(+0x105c02b) [0x55cb6e12702b]
+[8] 7f1776427781 (libc.so.6+27781) - /usr/lib/libc.so.6(+0x27781) [0x7f1776427781]
+[9] 7f17764278b9 (libc.so.6+278b9) - /usr/lib/libc.so.6(__libc_start_main+0x89) [0x7f17764278b9]
+[10] 55cb6e19b6d5 (main+10d06d5) - godot(+0x10d06d5) [0x55cb6e19b6d5]
+-- END OF C++ BACKTRACE --
+================================================================
+GDScript backtrace (most recent call first):
+    [0] _initialize (res://spontaneous_crash_probe.gd:15)
+-- END OF GDSCRIPT BACKTRACE --
+================================================================

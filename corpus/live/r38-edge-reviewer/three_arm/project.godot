@@ -1,0 +1,5 @@
+[application]
+config/name="edge review"
+[display]
+window/size/viewport_width=320
+window/size/viewport_height=180

@@ -1,0 +1,80 @@
+{
+  "mode": "independent_godot_process_save_read",
+  "same_project": true,
+  "same_absolute_xdg_data_home": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/xdg-data",
+  "writer_reader_distinct_pid": true,
+  "evidence": {
+    "save_process_writer": {
+      "pid": 3256826,
+      "path": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261013T132838657775Z/r58-process-save.json",
+      "signature": "PASS save_process writer=true pid=",
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS save_process writer=true pid=3256826 path=/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261013T132838657775Z/r58-process-save.json"
+      ],
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+        "--script",
+        "res://save_process.gd",
+        "--"
+      ],
+      "actual_exit": 0,
+      "role": "writer"
+    },
+    "save_process_reader": {
+      "pid": 3256864,
+      "path": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261013T132838657775Z/r58-process-save.json",
+      "signature": "PASS save_process reader=true pid=",
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS save_process reader=true pid=3256864 path=/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261013T132838657775Z/r58-process-save.json values_match=true"
+      ],
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+        "--script",
+        "res://save_process.gd",
+        "--",
+        "--reader"
+      ],
+      "actual_exit": 0,
+      "role": "reader"
+    },
+    "save_process_missing": {
+      "pid": 3256911,
+      "path": "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261013T132838657775Z/r58-process-missing.json",
+      "signature": "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND",
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS save_process missing=true pid=3256911 path=/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261013T132838657775Z/r58-process-missing.json",
+        "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND,",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] run (res://save_process.gd:33)"
+      ],
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+        "--script",
+        "res://save_process.gd",
+        "--",
+        "--missing"
+      ],
+      "actual_exit": 2,
+      "role": "missing"
+    }
+  },
+  "negative_missing_file_rejected": true,
+  "verdict": "PASS",
+  "bounded_claim": "headless Godot process writes JSON then a distinct Godot process reads exact structure; paired separate-process missing-file rejection; not crash/power-loss durability or arbitrary corruption detection"
+}

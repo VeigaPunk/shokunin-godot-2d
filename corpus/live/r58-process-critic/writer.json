@@ -1,0 +1,14 @@
+{
+  "cmd": [
+    "godot",
+    "--headless",
+    "--path",
+    "/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-critic/project",
+    "--script",
+    "res://r58_writer.gd",
+    "--"
+  ],
+  "exit": 0,
+  "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nWRITER pid=3205860 path=/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r58-process-critic/xdg-data/godot/app_userdata/MechanicOneShotTest/r58.json\n",
+  "stderr": ""
+}

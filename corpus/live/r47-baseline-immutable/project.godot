@@ -1,0 +1,3 @@
+[application]
+config/name="r47 baseline"
+config/features=PackedStringArray("4.7")

@@ -1,0 +1,3 @@
+[application]
+config/name="R57CriticScratch"
+config/features=PackedStringArray("4.7")
