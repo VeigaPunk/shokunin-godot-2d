@@ -42,21 +42,32 @@ func _initialize() -> void:
         var expected_values: Array[float] = [6.0, 7.0, 7.0, 6.0, 6.0, 5.0, 5.0]
         var expected_receipt_history: Array[float] = [6.0, 7.0, 6.0, 5.0]
         for i in range(edges.size()):
-            if not slider.has_focus() or get_root().gui_get_focus_owner() != slider:
+            if no_focus:
+                if slider.has_focus() or get_root().gui_get_focus_owner() == slider:
+                    push_error("SLIDER repeat no-focus assertion failed before edge %d" % i)
+                    quit(2)
+                    return
+            elif not slider.has_focus() or get_root().gui_get_focus_owner() != slider:
                 push_error("SLIDER repeat focus assertion failed before edge %d" % i)
                 quit(2)
                 return
             _action(edges[i][0], edges[i][1])
             await process_frame
+            var edge_expected_value := 5.0 if no_focus else expected_values[i]
             var expected_receipts: Array[float] = []
-            if not disconnected:
+            if not disconnected and not no_focus:
                 var receipt_count: int = [1, 2, 2, 3, 3, 4, 4][i]
                 expected_receipts = expected_receipt_history.slice(0, receipt_count)
-            var expected_label := "Value %d" % int(expected_values[i]) if not disconnected else "Value 5"
-            if slider.value != expected_values[i] or value_receipts != expected_receipts or label.text != expected_label:
+            var expected_label := "Value %d" % int(expected_values[i]) if not disconnected and not no_focus else "Value 5"
+            if slider.value != edge_expected_value or value_receipts != expected_receipts or label.text != expected_label:
                 push_error("SLIDER repeat edge assertion failed: %s %s" % [edges[i][0], "press" if edges[i][1] else "release"])
                 quit(2)
                 return
+        if no_focus:
+            print("SLIDER_REPEAT_NO_FOCUS values=%s receipts=%s label=%s focus_owner=%s" % [[5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0], value_receipts, label.text, get_root().gui_get_focus_owner()])
+            push_error("SLIDER REPEAT NO-FOCUS ASSERTION FAILED: expected focus-dependent adjustment values=6,7,7,6,6,5,5")
+            quit(2)
+            return
         if disconnected:
             print("SLIDER_REPEAT_DISCONNECTED values=%s receipts=%s label=%s" % [expected_values, value_receipts, label.text])
             push_error("SLIDER REPEAT SIGNAL ASSERTION FAILED: expected value_changed receipts [6,7,6,5] and Labels [Value 6,Value 7,Value 6,Value 5]")
