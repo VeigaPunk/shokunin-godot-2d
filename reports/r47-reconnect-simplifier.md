@@ -1,0 +1,15 @@
+# Round 47 reconnect simplifier review
+
+## Scope
+Read-only review of the minimum distinct implementation branch for `--reconnect-after-first-left`, preserving the existing r44 connected, r45 disconnected-at-start, and r46 disconnect-after-edge0 controls. No tracked fixture or runner edits were made. This lane's scratch is `.shokunin/game-dev-2d/corpus/live/r47-reconnect-simplifier-scratch/`.
+
+## Independent Godot 4.7.2 scratch
+Ran a standalone headless Godot 4.7.2 script with HSlider initial value 5, connected callback, r44's nine action edges, and focus transfers to Button on edges 1/5 and back to slider on edges 3/7. Focus owner was checked before every action; slider value, cumulative callback receipts, and label were checked after every frame. At edge0, asserted connected then disconnected and asserted disconnected. At edge3, asserted disconnected, verified the left press changed numeric 6→5 without receipt or label change, then reconnected and asserted connected. Result: numeric `6,6,6,5,5,5,5,4,4`; receipts `[6]` through edge6 then `[6,4]` edges7–8; label `Value 6` through edge6 then `Value 4`. All nine checks passed, scratch exit 0. The target differs from the predeclared expectation only in wording: edge3's callback is reconnected **after** its left press and frame, as requested; the observed `connected=false` at the edge0 log is after the explicit disconnect.
+
+## Minimal distinct branch
+The least disruptive implementation is an additional branch immediately before the existing `--disconnect-after-first` branch in `slider_adjust.gd`, gated by all three flags `--repeat-right`, `--second-focus-restore`, and `--reconnect-after-first-left`. Reuse the exact nine edges, owner transfer schedule, and owner-before-action assertion from the r46 branch. Assert initial callback connection; after edge0's frame check edge0 state, disconnect, then assert disconnected. At edge3, check the disconnected-state expected edge (numeric 5, receipts `[6]`, label `Value 6`), reconnect, and assert connected. Check all other post-frame expected states including `[6,4]` / `Value 4` for edges7–8. After all nine states, emit a unique `PASS ...` marker and `quit(0)`; unlike prior negative controls, this is positive classification only after complete evidence.
+
+Add one runner row for this unique opt-in, expected exit 0 and unique marker, adjacent to existing second-focus-restore signal rows. Do not alter the existing rows or their branch conditions. Keep mode precedence distinct so the new flag cannot accidentally fall through into the r46 or always-connected branch. Before any executor patch, preserve baseline runner/fixture hashes and verify ordinary battery counts; after patch, prove all prior rows unchanged and new classification count increases exactly by one.
+
+## Caveat
+This is headless synthetic parsed input plus process frames. It does not establish OS key repeat, physical timing/input, rendered or pointer UI, accessibility, production behavior, or consumption of unchanged slider values. The scratch validates Godot behavior only; it does not validate integration or battery acceptance.
