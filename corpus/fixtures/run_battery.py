@@ -232,7 +232,7 @@ def main():
             out_dir = export_project / "out"
             out_dir.mkdir(exist_ok=True)
             assert not any(out_dir.iterdir()), "export output directory must start empty"
-            export_path = out_dir / "fixture.x86_64"
+            export_path = (out_dir / "fixture.x86_64").resolve()
             command = [args.godot, "--headless", "--path", str(export_project),
                        "--export-debug", preset_name, str(export_path)]
         else:
@@ -401,7 +401,7 @@ def main():
             configure_launch(project, with_event)
             out_dir = project / "out"
             out_dir.mkdir(exist_ok=True)
-            executable = out_dir / "fixture-launch.x86_64"
+            executable = (out_dir / "fixture-launch.x86_64").resolve()
             export_cmd = [args.godot, "--headless", "--path", str(project), "--export-debug", "Linux/X11", str(executable)]
             exp_output, exp_code, exp_error = run_process(export_cmd, 60)
             exp_ok = (classify_process(exp_code, exp_error, exp_output, 0, "[ DONE ]")
