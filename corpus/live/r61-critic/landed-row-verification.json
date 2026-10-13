@@ -1,0 +1,40 @@
+{
+  "landed_sigabrt": {
+    "case": "landed_sigabrt",
+    "actual_exit": -6,
+    "error": null,
+    "marker": true,
+    "cls_landed_row_-6": true,
+    "cls_landed_row_-9": false,
+    "cls_-6_noallow": false,
+    "cls_-6_wrongallow": false,
+    "sig": "SIGABRT",
+    "error_lines": [
+      "ERROR: r60 spontaneous crash probe"
+    ]
+  },
+  "landed_selfsigkill": {
+    "case": "landed_selfsigkill",
+    "actual_exit": -9,
+    "error": null,
+    "marker": true,
+    "cls_landed_row_-6": false,
+    "cls_landed_row_-9": true,
+    "cls_-6_noallow": false,
+    "cls_-6_wrongallow": false,
+    "sig": "SIGKILL",
+    "error_lines": []
+  },
+  "landed_clean_exit1": {
+    "case": "landed_clean_exit1",
+    "actual_exit": 1,
+    "error": null,
+    "marker": true,
+    "cls_landed_row_-6": false,
+    "cls_landed_row_-9": false,
+    "cls_-6_noallow": false,
+    "cls_-6_wrongallow": false,
+    "sig": null,
+    "error_lines": []
+  }
+}

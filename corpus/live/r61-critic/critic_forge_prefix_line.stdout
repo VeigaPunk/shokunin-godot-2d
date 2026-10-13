@@ -1,0 +1,31 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R61_CRITIC_SPONTANEOUS: expected signature
+ERROR: r61 critic abort, EXTRA_UNRELATED_CONTENT
+ERROR: r61 critic abort
+   at: crash (core/core_bind.cpp:349)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://r61_critic_probe.gd:53)
+
+================================================================
+handle_crash: Program crashed with signal 4
+Engine version: Godot Engine v4.7.2.stable.arch_linux (ed1daf0bf001b61586d9930840f2f1394092c079)
+Dumping the backtrace. Please include this when reporting the bug on: https://github.com/godotengine/godot/issues
+Load address: 55fa14d4e000
+
+[1] 7f304da3e6f0 (libc.so.6+3e6f0) - /usr/lib/libc.so.6(+0x3e6f0) [0x7f304da3e6f0]
+[2] 55fa1ae0e5c2 (main+60c05c2) - godot(+0x60c05c2) [0x55fa1ae0e5c2]
+[3] 55fa16698d4c (main+194ad4c) - godot(+0x194ad4c) [0x55fa16698d4c]
+[4] 55fa16517106 (main+17c9106) - godot(+0x17c9106) [0x55fa16517106]
+[5] 55fa1aee7d1a (main+6199d1a) - godot(+0x6199d1a) [0x55fa1aee7d1a]
+[6] 55fa18e6b05f (main+411d05f) - godot(+0x411d05f) [0x55fa18e6b05f]
+[7] 55fa15daa02b (main+105c02b) - godot(+0x105c02b) [0x55fa15daa02b]
+[8] 7f304da27781 (libc.so.6+27781) - /usr/lib/libc.so.6(+0x27781) [0x7f304da27781]
+[9] 7f304da278b9 (libc.so.6+278b9) - /usr/lib/libc.so.6(__libc_start_main+0x89) [0x7f304da278b9]
+[10] 55fa15e1e6d5 (main+10d06d5) - godot(+0x10d06d5) [0x55fa15e1e6d5]
+-- END OF C++ BACKTRACE --
+================================================================
+GDScript backtrace (most recent call first):
+    [0] _initialize (res://r61_critic_probe.gd:53)
+-- END OF GDSCRIPT BACKTRACE --
+================================================================

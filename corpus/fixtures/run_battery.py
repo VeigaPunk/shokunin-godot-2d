@@ -93,6 +93,8 @@ CASES = [
     ("save_process_writer", "__save_process_writer__", [], 0, "PASS save_process writer=true pid="),
     ("save_process_reader", "__save_process_reader__", [], 0, "PASS save_process reader=true pid="),
     ("save_process_missing", "__save_process_missing__", [], 2, "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND"),
+    ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
+    ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
 ]
 
 
@@ -432,6 +434,7 @@ def main():
                 "contact_no_collision": ("ERROR: CONTACT ASSERTION FAILED: body motion did not contact level tile at cell=2,3,",),
                 "audio_no_play": ("ERROR: AUDIO ASSERTION FAILED: expected in-tree player playback to advance,",),
                 "audio_bus_route_invalid_control": ("ERROR: AUDIO BUS CONTROL ASSERTION FAILED: requested invalid route silently fell back to Master,",),
+                "crash_spontaneous_sigabrt": ("ERROR: r60 spontaneous crash probe",),
             }.get(name, ())
             classifier = classify_audio_process if name == "audio_playback" else classify_process
             passed = detected if mutate else classifier(code, error, output, expected_exit, evidence, expected_errors)
@@ -502,6 +505,46 @@ def main():
     results.append({"case": "probe_save_independent_process", "verdict": process_payload["verdict"],
                     "artifact": str(process_artifact), "pids": [writer["pid"], reader["pid"]]})
     print(f"{process_payload['verdict']} independent save process probe: {process_artifact}", flush=True)
+    # r61 meta: spontaneous-crash classification discrimination. Re-classifies
+    # the already-captured crash-row outputs under mismatched expectations —
+    # no extra Godot invocations. Each discriminating arm must reject.
+    crash_marker = "SPONTANEOUS_CRASH_PROBE: expected signature"
+    crash_allowlist = ("ERROR: r60 spontaneous crash probe",)
+    crash_records = {r["case"]: r for r in results
+                     if r.get("script") == "spontaneous_crash_probe.gd"}
+
+    def reclassify_crash(record, expected, allowed):
+        return classify_process(record["actual_exit"], record["error"],
+                                "\n".join(record["output"]), expected,
+                                crash_marker, allowed)
+
+    sigabrt = crash_records.get("crash_spontaneous_sigabrt")
+    self_sigkill = crash_records.get("crash_self_sigkill")
+    crash_discriminations = {
+        "sigabrt_expected_-9_rejects": sigabrt is not None and not reclassify_crash(
+            sigabrt, -9, crash_allowlist),
+        "sigabrt_missing_allowlist_rejects": sigabrt is not None and not reclassify_crash(
+            sigabrt, -6, ()),
+        "sigabrt_wrong_allowlist_rejects": sigabrt is not None and not reclassify_crash(
+            sigabrt, -6, ("ERROR: unrelated different diagnostic",)),
+        "self_sigkill_expected_-6_rejects": self_sigkill is not None and not reclassify_crash(
+            self_sigkill, -6, crash_allowlist),
+    }
+    crash_meta_ok = (
+        sigabrt is not None and sigabrt["verdict"] == "PASS" and sigabrt["actual_exit"] == -6
+        and "ERROR: r60 spontaneous crash probe" in "\n".join(sigabrt["output"])
+        and self_sigkill is not None and self_sigkill["verdict"] == "PASS"
+        and self_sigkill["actual_exit"] == -9
+        and all(crash_discriminations.values()))
+    results.append({"case": "probe_spontaneous_crash_classification",
+                    "verdict": "PASS" if crash_meta_ok else "FAIL",
+                    "mode": "captured_output_reclassification",
+                    "sigabrt_exit": sigabrt["actual_exit"] if sigabrt else None,
+                    "self_sigkill_exit": self_sigkill["actual_exit"] if self_sigkill else None,
+                    "crash_allowlist": list(crash_allowlist),
+                    "discriminations": crash_discriminations,
+                    "bounded_claim": "spontaneous SIGABRT/SIGKILL exit-shape classification on Linux headless Godot 4.7.2 only; signal origin unprovable from returncode"})
+    print(f"{results[-1]['verdict']} spontaneous crash classification meta", flush=True)
     if args.probe_failing:
         destination = scratch / "scene_b.tscn"
         original = destination.read_text()
