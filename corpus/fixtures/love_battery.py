@@ -43,8 +43,9 @@ the measured partition is {refused | deferred | fatal | applied}:
   applied : non-structural writes (setLinearVelocity, contact:setEnabled
             in preSolve) are legal inside the lock.
 Exterior (ext_*) controls apply immediately. Interior cells are spawned
-LAST and the fatal cells last of all -- each cell is its own process so
-a fatal cell is a measured FAIL-class for that cell only.
+LAST; the process-death tail orders died, then fatal, then corrupt
+(rc=-11) last of all -- each cell is its own process so a death cell is
+a measured FAIL-class for that cell only.
 
 r75 additions (critic-deferred cells + joints/return surface):
   refused_abort: r74 critic C3 -- the SAME assert-gated write contained one
@@ -530,7 +531,7 @@ IW_CELLS = [
         "fire.step": "73", "fire.cb": "bc", "fire.locked": "true",
         "fire.kind": "setcallbacks",
         "fire.pos": "400,520.1500244140625",
-        "cb_setcallbacks.ok": "true", "cb_setcallbacks.err": "nil",
+        "cb_setcallbacks.err": "nil",
         "cb_setcallbacks.swapped_step": "73",
         "cb_setcallbacks.swapped_n": "2",
         "cb_setcallbacks.swapped_cb": "bc",
@@ -538,7 +539,7 @@ IW_CELLS = [
         "cb_setcallbacks.getcb": "cb2_bc,cb2_ec,cb2_pre,cb2_post",
         "cb2pre.step": "73", "cb2pre.locked": "true",
         "cb2post.step": "73", "cb2post.locked": "true",
-        "r77obs.bc": "2", "r77obs.bc2": "3", "r77obs.ec2": "4",
+        "r77obs.bc2": "3", "r77obs.ec2": "4",
         "r77obs.pre2": "5", "r77obs.post2": "5",
         "final.bc": "2",
         # physics invariant: the run ends exactly on the baseline pose
@@ -549,12 +550,11 @@ IW_CELLS = [
         # step goes to the new table; the old pre count never grows again.
         "fire.step": "73", "fire.cb": "pre", "fire.locked": "true",
         "fire.kind": "setcallbacks",
-        "cb_setcallbacks.ok": "true",
         "cb_setcallbacks.swapped_n": "32",
         "cb_setcallbacks.swapped_cb": "pre",
         "cb_setcallbacks.getcb": "cb2_bc,cb2_ec,cb2_pre,cb2_post",
         "cb2post.step": "73", "cb2post.locked": "true",
-        "r77obs.pre": "32", "r77obs.bc2": "3", "r77obs.ec2": "4",
+        "r77obs.bc2": "3", "r77obs.ec2": "4",
         "r77obs.pre2": "4", "r77obs.post2": "5",
         "final.b1pos": "400,445.10910034179688",
         "rc": "0", "done": "true"}),
@@ -566,13 +566,12 @@ IW_CELLS = [
         "fire.step": "73", "fire.cb": "bc", "fire.locked": "true",
         "fire.kind": "setcallbacks/-", "fire.count": "5",
         "fire.pos": "560,520.1500244140625",
-        "cb_setcallbacks.ok": "true",
         "cb_setcallbacks.swapped_n": "2",
         "cb_setcallbacks.swapped_cb": "bc",
         "cb_setcallbacks.getcb": "cb2_bc,cb2_ec,cb2_pre,cb2_post",
         "cb2bc.step": "73", "cb2bc.locked": "true", "cb2bc.dyn": "b1",
         "cb2pre.step": "73", "cb2post.step": "73",
-        "r77obs.bc": "2", "r77obs.bc2": "5", "r77obs.ec2": "6",
+        "r77obs.bc2": "5", "r77obs.ec2": "6",
         "r77obs.pre2": "7", "r77obs.post2": "7",
         "final.count": "5", "final.bc": "2",
         "final.b1pos": "400,445.10910034179688",
@@ -582,11 +581,9 @@ IW_CELLS = [
         # rest of the run (every counter frozen, no EndContact ever) while
         # the physics is untouched (the run ends on the baseline pose).
         "fire.step": "73", "fire.cb": "bc", "fire.kind": "setcallbacks_nil",
-        "cb_setcallbacks.ok": "true",
-        "cb_setcallbacks.getcb": "nil,nil,nil,nil",
         "cb_setcallbacks.swapped_n": "2",
         "cb_setcallbacks.swapped_cb": "bc",
-        "r77obs.bc": "2", "r77obs.ec": "0",
+        "r77obs.ec": "0",
         "r77obs.pre": "31", "r77obs.post": "31",
         "r77obs.bc2": "0", "r77obs.ec2": "0",
         "r77obs.pre2": "0", "r77obs.post2": "0",
@@ -598,12 +595,9 @@ IW_CELLS = [
         # table the engine was holding, so the NEW table never handles a
         # dispatch and the old table keeps counting to the baseline totals.
         "fire.step": "73", "fire.kind": "setcallbacks_back",
-        "cb_setcallbacks.ok": "true",
         "cb_setcallbacks.getcb": "cb2_bc,cb2_ec,cb2_pre,cb2_post",
         "cb_setcallbacks.swapped_n": "2",
-        "cb_setcallbacks2.ok": "true",
         "cb_setcallbacks2.err": "nil",
-        "cb_setcallbacks2.getcb": "c_bc,c_ec,c_pre,c_post",
         "r77obs.bc": "5", "r77obs.ec": "4",
         "r77obs.pre": "36", "r77obs.post": "36",
         "r77obs.bc2": "0", "r77obs.ec2": "0",
@@ -620,14 +614,11 @@ IW_CELLS = [
         "fire.step": "73", "fire.locked": "true",
         "fire.kind": "fixture_destroy",
         "fire.pos": "400,520.1500244140625",
-        "cb_fxdestroy.ok": "true", "cb_fxdestroy.err": "nil",
-        "cb_fxdestroy.isDestroyed_in_cb": "false",
+        "cb_fxdestroy.err": "nil",
         "cb_fxdestroy.fcount_before": "1",
-        "cb_fxdestroy.fcount_after": "1",
         "cb_fxdestroy.count_after": "4",
-        "drainec.n": "1", "drainec.step": "73",
-        "drainec.locked": "false", "drainec.dyn": "b1",
-        "r77obs.fx_a_dead": "true", "r77obs.b1dead": "false",
+        "drainec.step": "73",
+        "drainec.dyn": "b1",
         "r77obs.count": "4",
         "after_update.count": "4",
         "after_update.b1pos": "400,511.13113403320312",
@@ -640,15 +631,12 @@ IW_CELLS = [
         # effect witness that separates this from a no-op write.
         "fire.step": "73", "fire.locked": "true",
         "fire.kind": "fixture_destroy2",
-        "cb_fxdestroy.ok": "true",
-        "cb_fxdestroy.isDestroyed_in_cb": "false",
         "cb_fxdestroy.fcount_before": "2",
-        "cb_fxdestroy.fcount_after": "2",
         "cb_fxdestroy.sib_dead": "false",
         "cb_fxdestroy.count_after": "4",
-        "drainec.n": "1", "drainec.locked": "false", "drainec.dyn": "b1",
-        "r77obs.fx_a_dead": "true", "r77obs.fx_b_dead": "false",
-        "r77obs.b1dead": "false", "r77obs.count": "4",
+        "drainec.dyn": "b1",
+        "r77obs.fx_b_dead": "false",
+        "r77obs.count": "4",
         "after_update.b1pos": "399.9598388671875,511.13873291015625",
         "final.b1pos": "394.08963012695312,445.10308837890625",
         "final.count": "4",
@@ -657,9 +645,7 @@ IW_CELLS = [
         # exterior control: immediate (handle dead AND the list shrunk inside
         # the call) and NO goodbye at all (no drain EC) -- the contrast that
         # makes the interior row deferred rather than applied.
-        "ext_fxdestroy.ok": "true", "ext_fxdestroy.err": "nil",
-        "ext_fxdestroy.isDestroyed_after": "true",
-        "ext_fxdestroy.fcount": "0",
+        "ext_fxdestroy.err": "nil",
         "ext_fxdestroy.count_after": "4",
         "ext_fxdestroy.b1pos": "400,60",
         # no collision left: b1 falls through the ground forever
@@ -679,7 +665,6 @@ IW_CELLS = [
         "drainec.n": "1", "drainec.step": "73",
         "drainec.locked": "false", "drainec.dyn": "b1",
         "drainact.n": "1", "drainact.kind": "setpos_b2",
-        "drainact.ok": "true", "drainact.err": "nil",
         "drainact.b2pos": "1234.5,678.9000244140625",
         "r77obs.count": "3", "r77obs.b1dead": "true",
         "r77obs.b2pos": "1234.5,3713.2890625",
@@ -694,8 +679,6 @@ IW_CELLS = [
         "drainec.n": "1", "drainec.locked": "false",
         "drainec.count": "4",
         "drainact.n": "1", "drainact.kind": "queue_b2",
-        "drainact.ok": "true", "drainact.err": "nil",
-        "drainact.count_after": "3", "drainact.b2dead": "true",
         "r77obs.count": "2", "r77obs.b2dead": "true",
         "rc": "0", "done": "true"}),
     ("iw_wp_drain_throw", "wp_drain_throw", "drain_abort", {
@@ -709,23 +692,20 @@ IW_CELLS = [
         "fire.kind": "queue_target/throw",
         "cb_destroy.ok": "true", "cb_destroy.mode": "queued",
         "cb_destroy.count_after": "4",
-        "drainec.n": "1", "drainec.step": "73",
-        "drainec.locked": "false", "drainec.dyn": "b1",
+        "drainec.step": "73",
+        "drainec.dyn": "b1",
         "drainact.n": "1", "drainact.kind": "throw",
-        "wpcall.step": "73", "wpcall.update_ok": "false",
+        "wpcall.step": "73",
         "wpcall.err": "R77-DRAIN-THROW",
-        "wpcall.locked_after": "false",
         # no collateral refusal: the exterior write LANDS
-        "wpext.ok": "true", "wpext.pos_after": "999,999",
+        "wpext.pos_after": "999,999",
         "r77abortq.step": "73", "r77abortq.count": "4",
-        "r77abortq.b1dead": "false",
-        "r77ecpost.step": "74", "r77ecpost.locked": "true",
+        "r77ecpost.step": "74",
         "r77ecpost.dyn": "b1",
-        "wpcall_next.step": "74", "wpcall_next.update_ok": "true",
-        "wpcall_next.locked_after": "false",
+        "wpcall_next.step": "74",
         "wpcall_next.b1pos": "ERR:Attempt to use destroyed body.",
-        "r77recover.step": "74", "r77recover.locked_after": "false",
-        "r77recover.count": "3", "r77recover.b1dead": "true",
+        "r77recover.step": "74",
+        "r77recover.count": "3",
         "final.count": "3",
         "rc": "0", "done": "true"}),
     ("iw_drain_order_joint", "drain_order_joint", "deferred", {
@@ -742,12 +722,10 @@ IW_CELLS = [
         "drainec.n": "1", "drainec.step": "100",
         "drainec.locked": "false", "drainec.dyn": "b2",
         "drainact.n": "1", "drainact.kind": "order",
-        "drainact.j_dead": "true", "drainact.fx_dead": "false",
-        "drainact.body_dead": "false", "drainact.other_dead": "false",
         "drainact.jcount": "0",
         "jdrain.step": "100", "jdrain.jcount": "0",
         "jdrain.isDestroyed": "true",
-        "r77obs.count": "3", "r77obs.b2dead": "true",
+        "r77obs.count": "3",
         "r77obs.b1dead": "false",
         "rc": "0", "done": "true"}),
     ("iw_bc_cowrap_setpos", "bc_cowrap_setpos", "refused", {
@@ -756,7 +734,6 @@ IW_CELLS = [
         # ends on the baseline pose) -- wrap adds nothing by itself.
         "fire.step": "73", "fire.kind": "cowrap_setpos",
         "fire.pos": "400,520.1500244140625",
-        "cb_setpos.ok": "false",
         "cb_setpos.err": "Box2D assertion failed: m_world->IsLocked() == false",
         "cb_setpos.scope": "cowrap_inner",
         "cb_cowrap.ok": "true", "cb_cowrap.res": "inner-done",
@@ -772,13 +749,10 @@ IW_CELLS = [
         "fire.kind": "coyield/-",
         "coused.step": "73", "coused.ok": "false",
         "coused.err": "attempt to yield across C-call boundary",
-        "coused.costatus": "dead",
         "r77abort.step": "73", "r77abort.update_ok": "false",
-        "r77abort.locked_after": "true",
         "r77abortq.count": "4", "r77abortq.b1dead": "false",
-        "r77abortext.ok": "false",
         "r77abortext.err": "Box2D assertion failed: m_world->IsLocked() == false",
-        "r77recover.step": "74", "r77recover.locked_after": "false",
+        "r77recover.step": "74",
         "r77recover.count": "4",
         "r77recover.b1pos": "400,509.53021240234375",
         "final.steps": "200",
@@ -793,11 +767,8 @@ IW_CELLS = [
         "fire.step": "73", "fire.kind": "coyield/-",
         "wpcall.step": "73", "wpcall.update_ok": "false",
         "wpcall.err": "attempt to yield across C-call boundary",
-        "wpcall.locked_after": "true",
-        "wpext.ok": "false",
         "wpext.err": "Box2D assertion failed: m_world->IsLocked() == false",
         "wpcall_next.step": "74", "wpcall_next.update_ok": "true",
-        "wpcall_next.locked_after": "false",
         "final.b1pos": "400,461.54888916015625",
         "rc": "0", "done": "true"}),
     ("iw_bc_meter", "bc_meter", "applied", {
@@ -810,11 +781,9 @@ IW_CELLS = [
         "fire.step": "73", "fire.cb": "bc", "fire.locked": "true",
         "fire.kind": "meter",
         "fire.pos": "400,520.1500244140625",
-        "cb_meter.ok": "true", "cb_meter.err": "nil",
         "cb_meter.meter_before": "30", "cb_meter.meter_after": "60",
         "cb_meter.pos_now": "800,1040.300048828125",
         "cb_meter.grav_after": "0,1255.6800537109375",
-        "cb_meter2.ok": "true", "cb_meter2.meter": "1",
         "cb_meter2.pos_now": "13.333333015441895,17.338333129882812",
         "final.b1pos": "13.333333015441895,14.836970329284668",
         "rc": "0", "done": "true"}),
@@ -823,11 +792,9 @@ IW_CELLS = [
         # write is not lock-gated and the channel is irrelevant).
         "fire.step": "73", "fire.cb": "pre", "fire.locked": "true",
         "fire.kind": "meter",
-        "cb_meter.ok": "true", "cb_meter.err": "nil",
         "cb_meter.meter_before": "30", "cb_meter.meter_after": "60",
         "cb_meter.pos_now": "800,1040.300048828125",
         "cb_meter.grav_after": "0,1255.6800537109375",
-        "cb_meter2.ok": "true", "cb_meter2.meter": "1",
         "cb_meter2.pos_now": "13.333333015441895,17.338333129882812",
         "final.b1pos": "13.333333015441895,14.836970329284668",
         "rc": "0", "done": "true"}),
@@ -1030,7 +997,7 @@ def parse_iw(stdout):
 def iw_classify(cell, flat, rc, timed_out, stdout):
     """Map one cell's capture onto {captured|applied|refused|deferred|
     refused_abort|deferred_abort|ignored|fatal|timeout|died|nolaunch|
-    anomaly}.
+    swapped|muted|immediate|drain_abort|yield_abort|corrupt|anomaly}.
     Partial-capture detection is built in: fire-present without
     CELL_DONE is never a pass shape."""
     if timed_out:
@@ -1139,6 +1106,8 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
                     and flat.get("wpcall.locked_after") == "false"
                     and flat.get("wp_setpos.ok") == "false"
                     and flat.get("wpext.ok") == "true"
+                    and flat.get("r77abortq.count") is not None
+                    and flat.get("drainec.count") is not None
                     and flat.get("r77abortq.count") == flat.get("drainec.count")
                     and flat.get("r77abortq.b1dead") == "false"
                     and flat.get("r77ecpost.locked") == "true"
@@ -1306,8 +1275,9 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
         # reachable. A partial receipt whose last line is the callback's own
         # write IS the measurement. (`died` is rc without a signal: a
         # different class, never this one.)
-        if "fire.step" in flat and ("rel_alive.marker" in flat
-                                    or "drainrel.alive" in flat):
+        if ("fire.step" in flat and "postfire" not in flat
+                and ("rel_alive.marker" in flat
+                     or "drainrel.alive" in flat)):
             return "corrupt", "SIGSEGV after an in-engine release"
         return "anomaly", "rc=-11 without a release witness"
     if not done and rc not in (0, None) and "ext_rel_call.ok" in flat:

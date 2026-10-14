@@ -13,8 +13,8 @@
 -- only its own process. stdout is flushed per line so pre-crash receipts
 -- survive on the pipe; the battery requires the CELL_DONE marker, so a
 -- crash mid-cell is a measured FAIL (truncated receipt), never a silent
--- partial pass. Interior cells are spawned LAST by the battery, the
--- fatal cells last of all.
+-- partial pass. Interior cells are spawned LAST by the battery; the
+-- process-death tail orders died, then fatal, then corrupt last of all.
 --
 -- Cell grammar: <when>_<kind>
 --   when: bc | pre | post | ext        (ext = outside any callback, control)
@@ -113,7 +113,7 @@ local R77 = {
   bc_setcallbacks_back = { cb = "bc",   act = "setcallbacks_back" },
   bc_fixture_destroy   = { cb = "bc",   act = "fixture_destroy" },
   bc_fixture_destroy2  = { cb = "bc",   act = "fixture_destroy2", extra_fx = true },
-  ext_fixture_destroy  = { ext = "fixture_destroy" },
+  ext_fixture_destroy  = {},
   drain_setpos_b2      = { cb = "bc",   act = "queue_target", drain = "setpos_b2" },
   drain_queue_b2       = { cb = "bc",   act = "queue_target", drain = "queue_b2" },
   wp_drain_throw       = { cb = "bc",   act = "queue_target", drain = "throw",
@@ -128,7 +128,7 @@ local R77 = {
   cowrap_update_yield  = { cb = "bc",   act = "coyield", cowrap = true },
   bc_meter             = { cb = "bc",   act = "meter" },
   pre_meter            = { cb = "pre",  act = "meter" },
-  ext_worldrelease     = { ext = "worldrelease" },
+  ext_worldrelease     = {},
 }
 local RS = R77[CELL]        -- nil for every pre-r77 cell
 local r77_target = RS and RS.target or nil
@@ -394,7 +394,7 @@ local function do_mutation(mkind, contact, body)
     local ok2, err2 = pcall_str(love.physics.setMeter, 1)
     EM(string.format("cb_meter2 ok=%s err=%s meter=%s pos_now=%s",
       tostring(ok2), tostring(err2), tostring(love.physics.getMeter()), pos(body)))
-  elseif mkind == "coyield" or mkind == "update_yield" then
+  elseif mkind == "coyield" then
     -- r77 seed 5: a yield across the C-call boundary (the engine is inside a
     -- C frame) is an ERROR, never a suspension. (`co_update_yield` and
     -- `cowrap_update_yield` parse to kind=update_yield: the container is the
@@ -539,7 +539,7 @@ local function on_event(ev, fa, fb, contact)
   -- world touch in this callback, so the engine (not Lua) is the thing that
   -- dies -- exactly the pre-measured shape.
   if RS ~= nil and ev == "ec" and not world:isLocked() then
-    r77_drain_hook(contact, fa, fb, dyn)
+    r77_drain_hook(fa, dyn)
   end
 end
 
@@ -579,7 +579,7 @@ end
 -- freeze is visible; the trace is bounded to the swap step + 1 and each
 -- channel carries its OWN tag (a shared tag would lose the same-step witness
 -- to last-wins in the flat reader).
-r77_cb2_bc = function(fa, fb, c)
+r77_cb2_bc = function(fa, fb)
   r77_counts2.bc = r77_counts2.bc + 1
   if r77_counts2.bc <= 4 and step <= r77_swap_step + 1 then
     EM(string.format("cb2bc cb=bc n=%d step=%d locked=%s dyn=%s",
@@ -587,15 +587,15 @@ r77_cb2_bc = function(fa, fb, c)
       tostring(dyn_of(fa, fb):getUserData())))
   end
 end
-r77_cb2_ec = function(fa, fb, c) r77_counts2.ec = r77_counts2.ec + 1 end
-r77_cb2_pre = function(fa, fb, c)
+r77_cb2_ec = function() r77_counts2.ec = r77_counts2.ec + 1 end
+r77_cb2_pre = function()
   r77_counts2.pre = r77_counts2.pre + 1
   if r77_counts2.pre <= 4 and step <= r77_swap_step + 1 then
     EM(string.format("cb2pre cb=pre n=%d step=%d locked=%s",
       r77_counts2.pre, step, tostring(world:isLocked())))
   end
 end
-r77_cb2_post = function(fa, fb, c)
+r77_cb2_post = function()
   r77_counts2.post = r77_counts2.post + 1
   if r77_counts2.post <= 4 and step <= r77_swap_step + 1 then
     EM(string.format("cb2post cb=post n=%d step=%d locked=%s",
@@ -634,7 +634,7 @@ end
 
 -- drain-time hook (locked=false, inside the update epilogue). Emitted for
 -- every r77 cell that sees a drain EC; the action only for the drain cells.
-r77_drain_hook = function(contact, fa, fb, dyn)
+r77_drain_hook = function(fa, dyn)
   r77_drain_n = r77_drain_n + 1
   EM(string.format("drainec n=%d step=%d locked=%s count=%d jcount=%d dyn=%s",
     r77_drain_n, step, tostring(world:isLocked()), world:getBodyCount(),
