@@ -1,0 +1,122 @@
+[
+  {
+    "case": "clean_control",
+    "merged": true,
+    "streams": true,
+    "divergent": false
+  },
+  {
+    "case": "error_on_stdout",
+    "merged": false,
+    "streams": true,
+    "divergent": true
+  },
+  {
+    "case": "error_on_stderr",
+    "merged": false,
+    "streams": false,
+    "divergent": false
+  },
+  {
+    "case": "error_on_both",
+    "merged": false,
+    "streams": false,
+    "divergent": false
+  },
+  {
+    "case": "sig_on_stderr",
+    "merged": true,
+    "streams": false,
+    "divergent": true
+  },
+  {
+    "case": "stderr_error_allowlisted",
+    "merged": true,
+    "streams": true,
+    "divergent": false
+  },
+  {
+    "case": "stdout_error_allowlisted",
+    "merged": true,
+    "streams": true,
+    "divergent": false
+  },
+  {
+    "case": "stderr_error_foreign_allow",
+    "merged": false,
+    "streams": false,
+    "divergent": false
+  },
+  {
+    "case": "seam_fabricated",
+    "merged": false,
+    "streams": false,
+    "divergent": false
+  },
+  {
+    "case": "seam_stderr_allowlisted",
+    "merged": false,
+    "streams": true,
+    "divergent": true
+  },
+  {
+    "case": "script_error_stdout",
+    "merged": false,
+    "streams": false,
+    "divergent": false
+  },
+  {
+    "case": "script_error_seam",
+    "merged": false,
+    "streams": true,
+    "divergent": true
+  },
+  {
+    "case": "parse_error_stderr",
+    "merged": false,
+    "streams": false,
+    "divergent": false
+  },
+  {
+    "case": "stderr_blank_only",
+    "merged": true,
+    "streams": true,
+    "divergent": false
+  },
+  {
+    "case": "stderr_noise_no_error",
+    "merged": true,
+    "streams": false,
+    "divergent": true
+  },
+  {
+    "case": "stderr_split_evasion",
+    "merged": true,
+    "streams": false,
+    "divergent": true
+  },
+  {
+    "case": "stderr_comma_allow",
+    "merged": true,
+    "streams": true,
+    "divergent": false
+  },
+  {
+    "case": "script_error_true_seam",
+    "merged": false,
+    "streams": false,
+    "divergent": false
+  },
+  {
+    "case": "sig_seam_fabricated",
+    "merged": true,
+    "streams": false,
+    "divergent": true
+  },
+  {
+    "case": "exit_mismatch",
+    "merged": false,
+    "streams": false,
+    "divergent": false
+  }
+]

@@ -1,0 +1,3 @@
+[application]
+config/name="MechanicOneShotTest-r67-scribe"
+config/features=PackedStringArray("4.7")

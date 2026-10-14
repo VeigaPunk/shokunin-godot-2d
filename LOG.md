@@ -634,3 +634,42 @@
 - Beyond the claim: post-death `\xff` → `UnicodeDecodeError` denial-of-verdict (scribe); composite single-writer split+phantom measured.
 - Integration: simplifier's `reparent_gate` extraction applied (6 copies, byte-identical argv); `export_preset_missing` deletion candidate **rejected** (coverage-unsafe).
 - Per-axis verdicts (Sol `reports/round-66/r66-adjudicator.md`): **ADMIT** — coverage **improved locally** (surface map receipt-pinned incl. census), depth **improved locally** (three forgery directions + composite), calibration **unchanged**. Bounded: 4.7.2 headless, this host, pid-1573 subreaper env. Work commit `cb84d0a`; report-last follows verifier.
+
+## Round 67 — devin host — depth/coverage: classify_streams ↔ merged per-channel divergence
+
+- Declared (author dispatch brief; retroactive record): map
+  `classify_streams`' per-channel divergence from merged
+  `classify_process` as a measured axis — stdout-carried `ERROR:`
+  absorbed PASS-shaped where merged rejects; per-stream records +
+  divergent-verdict pins incl. per-stream seam positions and the
+  allowlist's per-stream match; additive meta arm; 88/88 + surface 34/34
+  stay green.
+- Wave `shokunin-train-20261014-w7`: leaf set
+  `reports/round-67/r67-{author,baseline,boundary,critic,reviewer,
+  scout,scribe,simplifier,verifier}.md`, disjoint scratch
+  `corpus/live/r67-*/`. Frozen baseline 88/88, surface 34/34.
+- Author `reports/round-67/r67-author.md`: `run_battery.py` +~265 —
+  `streamdiv_*` meta arm inside `--probe-stream-attribution` (7 real
+  Godot arms + 6 allowlist reclasses + pair dual, 20 discriminations,
+  9-row divergence_table); `stream_attribution_probe.gd` +58 per-channel
+  byte placement. Flagged replay 89/89, surface 34/34, meta PASS.
+- Measured (scribe 54 real-pipe records + landed replay): 12/27 arms
+  divergent — absorb (stdout `ERROR:` invisible to streams, 2); strict
+  (stderr chatter, stderr-only sig incl. allowlist-exempted, seam sig,
+  allowlist+noise, `ERR\nOR:` evasion, merged-only structured entry, 8);
+  seam×allowlist (exempted fragment completes phantom line merged-only,
+  2). Shipped reject arm itself diverges (T/F) — latent since r19.
+  Boundary: seam is stdout-tail|stderr-head only; reverse
+  unfabricatable. Critic converged e2e.
+- Integration: simplifier's `sd_sig_head` finding resolved by making it
+  load-bearing (`raw_stdout.endswith(sd_sig_head)`, `9e946c9`) — battery
+  re-verified 88/88 + 89/89.
+- Non-author `reports/round-67/r67-verifier.md`: **AGREE 5/5** on
+  `9e946c9` — 88/88 + 89/89 + 34/34 + 20/20 + 9/9 divergence rows.
+- Per-axis verdicts (Sol `reports/round-67/r67-adjudicator.md`):
+  **ADMIT** — depth improved locally (four-family enumerated map +
+  latent shipped-arm divergence pinned), coverage improved locally
+  (20 discriminations + seam-position bound), calibration unchanged.
+  Bounded: classifier-level, 4.7.2 headless, POSIX pipes this host;
+  latent for default path. Work commits `d44ba86`+`9e946c9`; report-last
+  follows.

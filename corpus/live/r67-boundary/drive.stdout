@@ -1,0 +1,188 @@
+{
+  "runner_sha": "3d5b0721d582a0b9",
+  "git_head": "d44ba8673d",
+  "edge1_landed": {
+    "accept": {
+      "exit": 0,
+      "error": null,
+      "bare": {
+        "merged": true,
+        "streams": true,
+        "divergent": false
+      },
+      "author_allowlist": {
+        "merged": true,
+        "streams": true,
+        "divergent": false
+      },
+      "stdout_tail": "STREAM_STDOUT: expected attribution marker",
+      "stderr_head": null,
+      "sig_in_stdout": true,
+      "sig_in_stderr": false,
+      "sig_in_merged": true
+    },
+    "reject": {
+      "exit": 0,
+      "error": null,
+      "bare": {
+        "merged": true,
+        "streams": false,
+        "divergent": true
+      },
+      "author_allowlist": {
+        "merged": true,
+        "streams": false,
+        "divergent": true
+      },
+      "stdout_tail": "STREAM_STDOUT: expected attribution marker",
+      "stderr_head": "STREAM_STDERR: unrelated attribution diagnostic",
+      "sig_in_stdout": true,
+      "sig_in_stderr": false,
+      "sig_in_merged": true
+    },
+    "stdout_error": {
+      "exit": 0,
+      "error": null,
+      "bare": {
+        "merged": false,
+        "streams": true,
+        "divergent": true
+      },
+      "author_allowlist": {
+        "merged": false,
+        "streams": true,
+        "divergent": true
+      },
+      "stdout_tail": "ERROR: STREAMDIV stdout-carried diagnostic",
+      "stderr_head": null,
+      "sig_in_stdout": true,
+      "sig_in_stderr": false,
+      "sig_in_merged": true
+    },
+    "stderr_error": {
+      "exit": 0,
+      "error": null,
+      "bare": {
+        "merged": false,
+        "streams": false,
+        "divergent": false
+      },
+      "author_allowlist": {
+        "merged": false,
+        "streams": false,
+        "divergent": false
+      },
+      "stdout_tail": "STREAM_STDOUT: expected attribution marker",
+      "stderr_head": "ERROR: STREAMDIV stderr-carried diagnostic",
+      "sig_in_stdout": true,
+      "sig_in_stderr": false,
+      "sig_in_merged": true
+    },
+    "stderr_structured": {
+      "exit": 0,
+      "error": null,
+      "bare": {
+        "merged": false,
+        "streams": false,
+        "divergent": false
+      },
+      "author_allowlist": {
+        "merged": true,
+        "streams": false,
+        "divergent": true
+      },
+      "stdout_tail": "STREAM_STDOUT: expected attribution marker",
+      "stderr_head": "ERROR: chain incomplete collections=streamdiv scene=SceneB:<Node#6700> old_alive=false",
+      "sig_in_stdout": true,
+      "sig_in_stderr": false,
+      "sig_in_merged": true
+    },
+    "sig_on_stderr": {
+      "exit": 0,
+      "error": null,
+      "bare": {
+        "merged": true,
+        "streams": false,
+        "divergent": true
+      },
+      "author_allowlist": {
+        "merged": true,
+        "streams": false,
+        "divergent": true
+      },
+      "stdout_tail": "",
+      "stderr_head": "STREAM_STDOUT: expected attribution marker",
+      "sig_in_stdout": false,
+      "sig_in_stderr": true,
+      "sig_in_merged": true
+    },
+    "seam_error": {
+      "exit": 0,
+      "error": null,
+      "bare": {
+        "merged": false,
+        "streams": false,
+        "divergent": false
+      },
+      "author_allowlist": {
+        "merged": false,
+        "streams": true,
+        "divergent": true
+      },
+      "stdout_tail": "STREAMDIV seam tail ends in ERROR",
+      "stderr_head": ": STREAMDIV seam phantom merged-only line",
+      "sig_in_stdout": true,
+      "sig_in_stderr": false,
+      "sig_in_merged": true
+    },
+    "seam_script": {
+      "exit": 0,
+      "error": null,
+      "bare": {
+        "merged": false,
+        "streams": false,
+        "divergent": false
+      },
+      "author_allowlist": {
+        "merged": false,
+        "streams": true,
+        "divergent": true
+      },
+      "stdout_tail": "STREAMDIV seam tail ends in SCRIPT ERR",
+      "stderr_head": "OR: STREAMDIV seamed blob clause",
+      "sig_in_stdout": true,
+      "sig_in_stderr": false,
+      "sig_in_merged": true
+    },
+    "seam_sig": {
+      "exit": 0,
+      "error": null,
+      "bare": {
+        "merged": true,
+        "streams": false,
+        "divergent": true
+      },
+      "author_allowlist": {
+        "merged": true,
+        "streams": false,
+        "divergent": true
+      },
+      "stdout_tail": "STREAM_STDOUT: expected attribution ",
+      "stderr_head": "marker",
+      "sig_in_stdout": false,
+      "sig_in_stderr": false,
+      "sig_in_merged": true
+    }
+  },
+  "replay": {
+    "r67_baseline": {
+      "rows": 81,
+      "mismatches": 0
+    },
+    "r67_author": {
+      "rows": 83,
+      "mismatches": 0
+    }
+  }
+}
+wrote /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r67-boundary/boundary-verdicts.json

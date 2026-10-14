@@ -42,3 +42,13 @@ Non-author `reports/round-65/r65-verifier.md`: **AGREE 6/6** — 87/87 committed
 | calibration | **unchanged** | additive meta probe + fixture arms; verdict logic untouched except warranted `reparent_gate` dedup (byte-identical argv proven). |
 
 Sol `r66-adjudicator.md`: seamforge reproduced directly (fabricated `ERROR:` line from split-stream bytes, exit-0 + genuine signature); independent full-battery replay 88/88 PASS incl. `error-clause surface meta`. Non-author verifier pending at write (rate-limit respawn in flight). Bounded: Godot 4.7.2 headless this host; census "reachable" bounded to shipped fixtures; DoV is decode-bound (`text=True`). Work commit `cb84d0a`; report-last commit follows.
+
+## Round 67 verdict — 2026-10-14
+
+| axis | Sol verdict | evidence |
+|---|---|---|
+| depth | **improved locally** | `classify_streams`↔`classify_process` divergence mapped as enumerated four-family table (12/27 divergent, rep-stable): absorb / strict×4 / seam×allowlist / agree; shipped `--probe-stream-attribution` reject arm itself diverges (T/F — latent since r19); signature channel-pin + seam-position bound (stdout-tail\|stderr-head only) measured. |
+| coverage | **improved locally** | `streamdiv_*` meta arm: 7 real-Godot + 6 allowlist reclass + pair dual = 20 discriminations all true; 9-row divergence_table; opt-in flag only, default path untouched. |
+| calibration | **unchanged** | additive probe; classifiers byte-identical (three seats, AST + sha); prior 88 rows stable. |
+
+Sol `r67-adjudicator.md`: adjudicator replay — flagless 88/88, flagged 89/89, discriminations 20/20, table 9/9. Non-author `r67-verifier.md`: **AGREE 5/5** on `9e946c9`. Bounded: classifier-level verdicts, Godot 4.7.2 headless, CPython POSIX pipes, this host; divergence latent in default battery. Work commits `d44ba86` + `9e946c9` (sd_sig_head load-bearing pin); report-last commit follows.

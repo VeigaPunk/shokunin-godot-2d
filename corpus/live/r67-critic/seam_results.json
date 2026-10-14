@@ -1,0 +1,18 @@
+{
+  "stdout_repr": "CRITIC_E2E: expected marker\nERR",
+  "stderr_repr": "OR: allowlisted tail\n",
+  "merged_repr": "CRITIC_E2E: expected marker\nERROR: allowlisted tail\n",
+  "merged_contains_ERROR": true,
+  "either_stream_contains_ERROR": false,
+  "merged_verdict": false,
+  "streams_verdict": true,
+  "sig_seam": {
+    "stdout_repr": "banner\nCRITIC_E2E",
+    "stderr_repr": ": expected marker\n",
+    "sig_in_merged": true,
+    "sig_in_stdout": false,
+    "sig_in_stderr": false,
+    "merged_verdict": true,
+    "streams_verdict": false
+  }
+}
