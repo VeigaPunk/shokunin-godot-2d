@@ -1104,6 +1104,441 @@ def main():
                     "discriminations": gate_discriminations,
                     "bounded_claim": "a poll()-gated signature read accepts the expected marker only when observed while the direct child is alive: genuine child signatures (default and detached-descendant arms) were observed while-live in every rep; reparenting-gated forged signatures (--spawn-forge-release/--spawn-forge-hold) arrived after observed child death in every rep and were rejected though present — on this fixture the gate discriminates forged post-death writes from genuine writes; not a claim that observation-time liveness proves authorship in general (a pre-death-scheduled or faster-racing forge is out of scope); Linux headless Godot 4.7.2 POSIX semantics only"})
     print(f"{results[-1]['verdict']} while-live signature-gate meta", flush=True)
+    # r65 meta: forged-REJECTION dual — the error-axis mirror of the r63
+    # signature-spoof boundary the r64 gate narrowed. classify_process's
+    # error clause is a presence scan over the merged captured bytes: any
+    # line containing "ERROR:" outside the per-case allowlist rejects,
+    # regardless of which process wrote it or when. The new fixture arms
+    # keep the CHILD clean (genuine signature printed while alive, exit 0)
+    # and move the un-allowlisted error marker into a reparenting-gated
+    # descendant write AFTER the child's death:
+    #   release arm (--spawn-errforge-release): post-death error + write_ppid
+    #     provenance, pipes release before the bound -> a clean exit-0 +
+    #     signature-present record that FAILs only on the descendant's line.
+    #   hold arm (--spawn-errforge-hold): same forged write with pipes held
+    #     ~6s -> the error lands inside the TIMEOUT record (double-axis
+    #     rejection: error + timeout) and the still-alive descendant's
+    #     /proc ppid kernel-corroborates write_ppid.
+    #   genuine control (--emit-errforge): the CHILD emits byte-identical
+    #     error text pre-death via push_error (engine stderr path) -> the
+    #     genuine-error control; classification-visible fields match the
+    #     forged release record modulo the provenance lines (banner /
+    #     spawned_pid / write_ppid / push_error at-line).
+    # The arms are meta-driven bounded Popens, NOT CASES tuples: an
+    # expected-FAIL record is inexpressible in the all-PASS battery (the
+    # r62 hold-arm precedent). A dual-marker gated read then documents the
+    # while-live gate's interplay: it accepts the genuine while-live
+    # signature and never evaluates the error line — the forged error is
+    # gate-invisible; rejection stays in the un-gated classifier.
+    errforge_signature = "DESCENDANT_PIPE_PROBE: expected signature"
+    errforge_error = "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic"
+    errforge_bound = 3.0
+
+    def errforge_run(case, extra_args, bound=errforge_bound):
+        # Bounded Popen producing the record shape a CASES row would carry:
+        # exit/error/output through the same communicate(timeout) bound.
+        record = {"case": case, "flags": list(extra_args),
+                  "bound_seconds": bound, "timed_out": False,
+                  "child_exit_at_timeout": None, "actual_exit": None,
+                  "error": None, "elapsed_seconds": None,
+                  "signature_observed": False, "error_marker_captured": False,
+                  "banner": None, "write_ppid": None, "godot_pid": None,
+                  "descendant_pid": None, "descendant_alive_at_return": None,
+                  "descendant_kernel_ppid_at_return": None,
+                  "error_lines": [], "inner_classification": False,
+                  "stripped_classification": None, "output_lines": []}
+        record["command"] = [args.godot, "--headless", "--path", str(scratch),
+                             "--script", "res://descendant_pipe_probe.gd",
+                             "--"] + list(extra_args)
+        proc = None
+        started = time.monotonic()
+        text = ""
+        try:
+            proc = subprocess.Popen(record["command"], stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE, text=True,
+                                    bufsize=1)
+            try:
+                ef_out, ef_err = proc.communicate(timeout=bound)
+                text = (ef_out or "") + (ef_err or "")
+                record["actual_exit"] = proc.returncode
+            except subprocess.TimeoutExpired as exc:
+                record["timed_out"] = True
+                # poll() reaps the direct child: a non-None exit code here
+                # proves the bound fired on pipe EOF with the child dead.
+                record["child_exit_at_timeout"] = proc.poll()
+                ef_out = (exc.stdout.decode(errors="replace")
+                          if isinstance(exc.stdout, bytes) else (exc.stdout or ""))
+                ef_err = (exc.stderr.decode(errors="replace")
+                          if isinstance(exc.stderr, bytes) else (exc.stderr or ""))
+                text = ef_out + ef_err
+                record["error"] = f"TIMEOUT after {bound} seconds"
+                for stream in (proc.stdout, proc.stderr):
+                    try:
+                        stream.close()
+                    except OSError:
+                        pass
+                try:
+                    proc.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    proc.kill()
+                    try:
+                        proc.wait(timeout=3)
+                    except subprocess.TimeoutExpired:
+                        record["error"] += "; post-kill wait timed out"
+        except (OSError, ValueError) as exc:
+            record["error"] = f"launch/read error: {exc}"
+        finally:
+            if proc is not None and proc.poll() is None:
+                proc.kill()
+                try:
+                    proc.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    record["error"] = (record["error"] or "") + "; forced cleanup timed out"
+        record["elapsed_seconds"] = round(time.monotonic() - started, 3)
+        record["signature_observed"] = errforge_signature in text
+        record["error_marker_captured"] = errforge_error in text
+        record["error_lines"] = sorted(
+            {line.strip() for line in text.splitlines() if "ERROR:" in line})
+        for banner_line in text.splitlines():
+            if banner_line.startswith("DESCENDANT_PIPE_ERRFORGE child"):
+                record["banner"] = banner_line.strip()
+        pid_match = re.search(r"DESCENDANT_PIPE godot_pid=(\d+)", text)
+        record["godot_pid"] = int(pid_match.group(1)) if pid_match else None
+        pid_match = re.search(r"DESCENDANT_PIPE spawned_pid=(\d+)", text)
+        record["descendant_pid"] = int(pid_match.group(1)) if pid_match else None
+        pid_match = re.search(r"DESCENDANT_PIPE_ERRFORGE write_ppid=(\d+)", text)
+        record["write_ppid"] = int(pid_match.group(1)) if pid_match else None
+        record["descendant_alive_at_return"] = pid_alive(record["descendant_pid"])
+        record["descendant_kernel_ppid_at_return"] = kernel_ppid(
+            record["descendant_pid"])
+        record["inner_classification"] = classify_process(
+            record["actual_exit"], record["error"], text, 0, errforge_signature)
+        # Counterfactual: the same captured bytes minus every ERROR: line —
+        # isolates the forged error as the sole flip cause on clean records.
+        stripped_text = "\n".join(
+            line for line in text.splitlines() if "ERROR:" not in line)
+        record["stripped_classification"] = classify_process(
+            record["actual_exit"], record["error"], stripped_text, 0,
+            errforge_signature)
+        record["output_lines"] = text.strip().splitlines()
+        return record
+
+    def gated_errforge_run(case, extra_args):
+        # Dual-marker variant of the r64 gated_signature_run: tracks BOTH
+        # the signature marker and the ERROR: marker, pinning liveness at
+        # each completing read — measures whether a while-live criterion on
+        # the error axis would discriminate, and whether the built gate's
+        # signature-only criterion sees the forged-error arm at all.
+        record = {"case": case, "flags": list(extra_args),
+                  "bound_seconds": errforge_bound, "timed_out": False,
+                  "actual_exit": None, "error": None,
+                  "signature_observed": False, "signature_observed_at": None,
+                  "child_alive_at_signature_observation": None,
+                  "child_alive_after_signature_read": None,
+                  "error_observed": False, "error_observed_at": None,
+                  "child_alive_at_error_observation": None,
+                  "child_alive_after_error_read": None,
+                  "dead_observed_at": None, "elapsed_seconds": None,
+                  "banner": None, "write_ppid": None, "godot_pid": None,
+                  "descendant_pid": None, "descendant_alive_at_return": None,
+                  "descendant_kernel_ppid_at_return": None,
+                  "gated_signature_accepted": False,
+                  "inner_classification": False}
+        record["command"] = [args.godot, "--headless", "--path", str(scratch),
+                             "--script", "res://descendant_pipe_probe.gd",
+                             "--"] + list(extra_args)
+        process = None
+        started = time.monotonic()
+        captured = bytearray()
+        signature_bytes = errforge_signature.encode()
+        error_bytes = errforge_error.encode()
+        try:
+            process = subprocess.Popen(record["command"], stdout=subprocess.PIPE,
+                                       stderr=subprocess.PIPE)
+            deadline = started + errforge_bound
+            with selectors.DefaultSelector() as ef_selector:
+                ef_selector.register(process.stdout, selectors.EVENT_READ)
+                ef_selector.register(process.stderr, selectors.EVENT_READ)
+                while ef_selector.get_map():
+                    remaining = deadline - time.monotonic()
+                    if remaining <= 0:
+                        record["timed_out"] = True
+                        break
+                    events = ef_selector.select(
+                        min(gate_poll_tick, max(0.0, remaining)))
+                    now = time.monotonic()
+                    if (record["dead_observed_at"] is None
+                            and process.poll() is not None):
+                        record["dead_observed_at"] = round(now - started, 6)
+                    for key, _ in events:
+                        alive_before = process.poll() is None
+                        try:
+                            chunk = os.read(key.fileobj.fileno(), 65536)
+                        except OSError:
+                            chunk = b""
+                        if not chunk:
+                            ef_selector.unregister(key.fileobj)
+                            continue
+                        captured += chunk
+                        if (not record["signature_observed"]
+                                and signature_bytes in captured):
+                            record["signature_observed"] = True
+                            record["signature_observed_at"] = round(now - started, 6)
+                            record["child_alive_at_signature_observation"] = alive_before
+                            record["child_alive_after_signature_read"] = (
+                                process.poll() is None)
+                        if (not record["error_observed"]
+                                and error_bytes in captured):
+                            record["error_observed"] = True
+                            record["error_observed_at"] = round(now - started, 6)
+                            record["child_alive_at_error_observation"] = alive_before
+                            record["child_alive_after_error_read"] = (
+                                process.poll() is None)
+            if (record["dead_observed_at"] is None
+                    and process.poll() is not None):
+                record["dead_observed_at"] = round(time.monotonic() - started, 6)
+            if record["timed_out"]:
+                record["error"] = f"TIMEOUT after {errforge_bound} seconds"
+            for stream in (process.stdout, process.stderr):
+                try:
+                    stream.close()
+                except OSError:
+                    pass
+            try:
+                process.wait(timeout=3)
+            except subprocess.TimeoutExpired:
+                process.kill()
+                try:
+                    process.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    record["error"] = (record["error"] or "") + "; post-kill wait timed out"
+            record["actual_exit"] = process.returncode
+        except (OSError, ValueError) as exc:
+            record["error"] = f"launch/read error: {exc}"
+        finally:
+            if process is not None and process.poll() is None:
+                process.kill()
+                try:
+                    process.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    record["error"] = (record["error"] or "") + "; forced cleanup timed out"
+        record["elapsed_seconds"] = round(time.monotonic() - started, 3)
+        ef_gate_text = captured.decode(errors="replace")
+        for banner_line in ef_gate_text.splitlines():
+            if banner_line.startswith("DESCENDANT_PIPE_ERRFORGE child"):
+                record["banner"] = banner_line.strip()
+        pid_match = re.search(r"DESCENDANT_PIPE godot_pid=(\d+)", ef_gate_text)
+        record["godot_pid"] = int(pid_match.group(1)) if pid_match else None
+        pid_match = re.search(r"DESCENDANT_PIPE spawned_pid=(\d+)", ef_gate_text)
+        record["descendant_pid"] = int(pid_match.group(1)) if pid_match else None
+        pid_match = re.search(r"DESCENDANT_PIPE_ERRFORGE write_ppid=(\d+)", ef_gate_text)
+        record["write_ppid"] = int(pid_match.group(1)) if pid_match else None
+        record["descendant_alive_at_return"] = pid_alive(record["descendant_pid"])
+        record["descendant_kernel_ppid_at_return"] = kernel_ppid(
+            record["descendant_pid"])
+        record["gated_signature_accepted"] = bool(
+            record["signature_observed"]
+            and record["child_alive_at_signature_observation"])
+        record["inner_classification"] = classify_process(
+            record["actual_exit"], record["error"], ef_gate_text, 0,
+            errforge_signature)
+        record["output_lines"] = ef_gate_text.strip().splitlines()
+        return record
+
+    def split_errforge_run(case, extra_args, bound=errforge_bound):
+        # Separate-PIPE capture: which stream carries the error marker is
+        # classification-invisible after the merge — this records it anyway.
+        record = {"case": case, "flags": list(extra_args),
+                  "bound_seconds": bound, "actual_exit": None, "error": None,
+                  "error_on_stdout": False, "error_on_stderr": False,
+                  "merged_classification": None,
+                  "raw_stdout_lines": [], "raw_stderr_lines": []}
+        record["command"] = [args.godot, "--headless", "--path", str(scratch),
+                             "--script", "res://descendant_pipe_probe.gd",
+                             "--"] + list(extra_args)
+        stdout_text, stderr_text = "", ""
+        try:
+            proc = subprocess.run(record["command"], capture_output=True,
+                                  text=True, timeout=bound)
+            stdout_text, stderr_text = proc.stdout or "", proc.stderr or ""
+            record["actual_exit"] = proc.returncode
+        except subprocess.TimeoutExpired as exc:
+            stdout_text = (exc.stdout.decode(errors="replace")
+                           if isinstance(exc.stdout, bytes) else (exc.stdout or ""))
+            stderr_text = (exc.stderr.decode(errors="replace")
+                           if isinstance(exc.stderr, bytes) else (exc.stderr or ""))
+            record["error"] = f"TIMEOUT after {bound} seconds"
+        except OSError as exc:
+            record["error"] = f"launch error: {exc}"
+        record["error_on_stdout"] = errforge_error in stdout_text
+        record["error_on_stderr"] = errforge_error in stderr_text
+        record["merged_classification"] = classify_process(
+            record["actual_exit"], record["error"], stdout_text + stderr_text,
+            0, errforge_signature)
+        record["raw_stdout_lines"] = stdout_text.strip().splitlines()
+        record["raw_stderr_lines"] = stderr_text.strip().splitlines()
+        return record
+
+    ef_release = errforge_run("errforge_release", ["--spawn-errforge-release"])
+    ef_hold = errforge_run("errforge_hold", ["--spawn-errforge-hold"])
+    ef_genuine = errforge_run("errforge_genuine", ["--emit-errforge"])
+    ef_gate_release = [gated_errforge_run(f"errforge_release_gate_r{i}",
+                                          ["--spawn-errforge-release"])
+                       for i in range(3)]
+    ef_gate_genuine = [gated_errforge_run(f"errforge_genuine_gate_r{i}",
+                                          ["--emit-errforge"])
+                       for i in range(2)]
+    ef_release_split = split_errforge_run("errforge_release_split",
+                                          ["--spawn-errforge-release"])
+    ef_genuine_split = split_errforge_run("errforge_genuine_split",
+                                          ["--emit-errforge"])
+
+    def cases_visible(rec):
+        # The fields a CASES row / classify_process verdict actually reads:
+        # exit, runner error, signature presence, and the ERROR: line set.
+        return {"actual_exit": rec["actual_exit"], "error": rec["error"],
+                "signature_observed": rec["signature_observed"],
+                "error_lines": rec["error_lines"],
+                "classification": rec["inner_classification"]}
+
+    ef_line_diff = sorted(
+        set(ef_release["output_lines"]) ^ set(ef_genuine["output_lines"]))
+    ef_diff_is_provenance_only = all(
+        "ERROR:" not in line and errforge_signature not in line
+        for line in ef_line_diff)
+    ef_discriminations = {
+        # The release arm is the CASES-row shape the claim targets: clean
+        # exit 0, no timeout error, genuine signature present — FAILing only
+        # because the descendant's post-death ERROR line is in the bytes.
+        "release_clean_exit0_record": (
+            not ef_release["timed_out"] and ef_release["actual_exit"] == 0
+            and ef_release["error"] is None),
+        "release_genuine_signature_present": ef_release["signature_observed"],
+        "release_forged_error_captured": ef_release["error_marker_captured"],
+        "release_error_write_post_orphan": (
+            ef_release["write_ppid"] is not None
+            and ef_release["godot_pid"] is not None
+            and ef_release["write_ppid"] != ef_release["godot_pid"]),
+        "release_flips_to_fail": ef_release["inner_classification"] is False,
+        # Sole-cause isolation: stripping only the ERROR: lines from the
+        # SAME captured bytes restores the PASS — the forged error is the
+        # whole of the flip.
+        "release_counterfactual_passes_without_error": (
+            ef_release["stripped_classification"] is True),
+        # Genuine-error control: byte-identical marker, child-authored
+        # pre-death, no descendant provenance in the record.
+        "genuine_clean_exit0_record": (
+            not ef_genuine["timed_out"] and ef_genuine["actual_exit"] == 0
+            and ef_genuine["error"] is None),
+        "genuine_error_captured": ef_genuine["error_marker_captured"],
+        "genuine_error_rejects": ef_genuine["inner_classification"] is False,
+        "genuine_counterfactual_passes_without_error": (
+            ef_genuine["stripped_classification"] is True),
+        "genuine_carries_no_descendant_provenance": (
+            ef_genuine["descendant_pid"] is None
+            and ef_genuine["write_ppid"] is None),
+        # Origin-blindness of the rejection axis: forged and genuine error
+        # records agree on every classification-visible field; the output
+        # line sets differ only in classification-invisible provenance lines
+        # (banner / godot_pid / spawned_pid / write_ppid / push_error
+        # at-line) — the r63-style withheld/ppid provenance, nothing else.
+        "error_marker_bytes_identical": (
+            ef_release["error_lines"] == ef_genuine["error_lines"]
+            == [errforge_error]),
+        "forged_vs_genuine_cases_fields_identical": (
+            cases_visible(ef_release) == cases_visible(ef_genuine)),
+        "forged_vs_genuine_differ_only_in_provenance": ef_diff_is_provenance_only,
+        # The sibling CASES-row baseline: detached control stays a clean
+        # exit-0 PASS — the forged error line is the only added content.
+        "detached_control_row_still_passes": (
+            detached is not None and detached["verdict"] == "PASS"
+            and detached["actual_exit"] == 0 and detached["error"] is None),
+        # Hold arm: the same forged write lands inside the TIMEOUT record —
+        # rejection via the error axis AND the timeout axis together.
+        "hold_timed_out_with_child_dead": (
+            ef_hold["timed_out"] and ef_hold["child_exit_at_timeout"] == 0),
+        "hold_forged_error_captured": ef_hold["error_marker_captured"],
+        "hold_rejects": ef_hold["inner_classification"] is False,
+        # Double-axis: strip every ERROR: line from the SAME captured bytes
+        # and the hold record still rejects — the timeout axis alone does it.
+        "hold_timeout_alone_rejects": (
+            ef_hold["stripped_classification"] is False),
+        "hold_write_ppid_kernel_corroborated": (
+            ef_hold["write_ppid"] is not None
+            and ef_hold["descendant_kernel_ppid_at_return"]
+                == ef_hold["write_ppid"]
+            and ef_hold["godot_pid"] is not None
+            and ef_hold["write_ppid"] != ef_hold["godot_pid"]),
+        "hold_descendant_orphaned_alive": (
+            ef_hold["descendant_alive_at_return"] is True),
+        # While-live gate interplay: the r64 criterion tracks the signature
+        # marker only. On the forged-error arm the signature is genuinely
+        # while-live -> the gate ACCEPTS; the forged error is captured
+        # post-death but is gate-invisible. Rejection stays downstream in
+        # the un-gated classifier: gate-accepted and still FAIL.
+        "gate_release_signature_accepted_while_live": all(
+            r["signature_observed"]
+            and r["child_alive_at_signature_observation"] is True
+            and r["gated_signature_accepted"] for r in ef_gate_release),
+        "gate_release_forged_error_observed_post_death": all(
+            r["error_observed"]
+            and r["child_alive_at_error_observation"] is False
+            and r["dead_observed_at"] is not None
+            and r["error_observed_at"] is not None
+            and r["dead_observed_at"] <= r["error_observed_at"]
+            for r in ef_gate_release),
+        "gate_does_not_reject_forged_error_arm": all(
+            r["gated_signature_accepted"] and r["error_observed"]
+            and r["inner_classification"] is False for r in ef_gate_release),
+        "gate_genuine_error_observed_while_live": all(
+            r["error_observed"]
+            and r["child_alive_at_error_observation"] is True
+            for r in ef_gate_genuine),
+        # The timing data an error-axis gate would need is captured: forged
+        # errors observed only post-death, genuine errors only while-live —
+        # the same split r64 proved for the signature axis.
+        "gate_error_axis_timing_split": (
+            all(r["child_alive_at_error_observation"] is False
+                for r in ef_gate_release)
+            and all(r["child_alive_at_error_observation"] is True
+                    for r in ef_gate_genuine)),
+        # Stream split: descendant echo -> stdout, engine push_error ->
+        # stderr; the merged classifier cannot see either origin.
+        "forged_error_lands_on_stdout": (
+            ef_release_split["error_on_stdout"]
+            and not ef_release_split["error_on_stderr"]),
+        "genuine_error_lands_on_stderr": (
+            ef_genuine_split["error_on_stderr"]
+            and not ef_genuine_split["error_on_stdout"]),
+        "merged_classification_stream_blind": (
+            ef_release_split["merged_classification"] is False
+            and ef_genuine_split["merged_classification"] is False),
+    }
+    # Harness-side hygiene: reap the orphaned errforge descendants (bounded
+    # sleeps that would self-exit in seconds anyway); never gated.
+    for ef_orphan in {r["descendant_pid"] for r in
+                      [ef_release, ef_hold, ef_genuine] + ef_gate_release}:
+        if pid_alive(ef_orphan):
+            try:
+                os.kill(ef_orphan, signal.SIGKILL)
+            except OSError:
+                pass
+    ef_meta_ok = all(ef_discriminations.values())
+    results.append({"case": "probe_descendant_error_spoof",
+                    "verdict": "PASS" if ef_meta_ok else "FAIL",
+                    "mode": "bounded_popen_dual_marker_gate_and_stream_split",
+                    "bound_seconds": errforge_bound,
+                    "release_arm": ef_release,
+                    "hold_arm": ef_hold,
+                    "genuine_control": ef_genuine,
+                    "gated_release_reps": ef_gate_release,
+                    "gated_genuine_reps": ef_gate_genuine,
+                    "split_release": ef_release_split,
+                    "split_genuine": ef_genuine_split,
+                    "provenance_only_line_diff": ef_line_diff,
+                    "discriminations": ef_discriminations,
+                    "bounded_claim": "the un-allowlisted-ERROR rejection axis is as origin-blind as the signature axis: a reparenting-gated descendant's post-death error write lands in the merged capture and flips a clean exit-0 + signature-present record to FAIL, byte-identical in classification-visible fields to the child-authored push_error control, separable only by the r63-style provenance lines (banner/spawned_pid/write_ppid) and write timing; the r64 while-live gate does NOT reject the forged-error arm — its criterion is the signature marker only, so the genuine while-live signature is accepted and the post-death error is gate-invisible, though the gated read does record the error arriving only after observed child death; Linux headless Godot 4.7.2 POSIX pipe semantics only"})
+    print(f"{results[-1]['verdict']} descendant error-spoof meta", flush=True)
     if args.probe_failing:
         destination = scratch / "scene_b.tscn"
         original = destination.read_text()

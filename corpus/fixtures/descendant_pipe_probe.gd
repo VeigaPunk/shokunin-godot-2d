@@ -39,18 +39,49 @@ extends SceneTree
 #                      inside the bound and the runner returns exit 0 with
 #                      the forged signature present — the tracked
 #                      known-accepting forgery row.
+#   --spawn-errforge-release / --spawn-errforge-hold (r65 additions,
+#                      the forged-REJECTION dual) -> this process runs
+#                      CLEAN: the genuine signature is printed while alive
+#                      and it exits 0; the reparenting-gated descendant
+#                      echoes an UN-ALLOWLISTED "ERROR:"-class marker
+#                      (ERRFORGE_ERROR, byte-identical to the genuine arm's
+#                      push_error text) and DESCENDANT_PIPE_ERRFORGE
+#                      write_ppid=<ppid> post-exit. -release exits right
+#                      after writing (clean exit-0 + signature-present
+#                      record that FAILs only on the descendant's line);
+#                      -hold keeps the pipes ~6s (the forged error lands
+#                      inside the TIMEOUT record and the still-alive
+#                      descendant's /proc ppid corroborates write_ppid).
+#                      Meta-driven via probe_descendant_error_spoof, not a
+#                      CASES arm: an expected-FAIL record is inexpressible
+#                      in the all-PASS battery (r62 hold-arm precedent).
+#   --emit-errforge    -> genuine-error control: this process emits the
+#                      identical ERROR: marker bytes itself, pre-death, via
+#                      push_error (the engine stderr path), then exits 0 —
+#                      child-authored error, no descendant.
 const MARKER := "DESCENDANT_PIPE_PROBE: expected signature"
 const POST_EXIT_WRITE := "DESCENDANT_PIPE_AFTER_EXIT_WRITE"
 const FORGE_PPID_WRITE := "DESCENDANT_PIPE_FORGE write_ppid="
+const ERRFORGE_PPID_WRITE := "DESCENDANT_PIPE_ERRFORGE write_ppid="
+const ERRFORGE_ERROR_BODY := "DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic"
+const ERRFORGE_ERROR := "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic"
 
 func _initialize() -> void:
 	var user_args := OS.get_cmdline_user_args()
 	var forge_hold := "--spawn-forge-hold" in user_args
 	var forge_release := "--spawn-forge-release" in user_args
+	var errforge_hold := "--spawn-errforge-hold" in user_args
+	var errforge_release := "--spawn-errforge-release" in user_args
+	var emit_errforge := "--emit-errforge" in user_args
 	if forge_hold or forge_release:
 		print("DESCENDANT_PIPE_FORGE child_signature=withheld")
 	else:
 		print(MARKER)
+	if errforge_hold or errforge_release:
+		print("DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit")
+	elif emit_errforge:
+		print("DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit")
+		push_error(ERRFORGE_ERROR_BODY)
 	print("DESCENDANT_PIPE godot_pid=", OS.get_process_id())
 	var spawned := -1
 	if "--spawn-hold" in user_args:
@@ -63,6 +94,10 @@ func _initialize() -> void:
 		var tail := "; sleep 6" if forge_hold else ""
 		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
 			"while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \"" + str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; echo " + MARKER + "; echo " + FORGE_PPID_WRITE + "$pp" + tail]))
+	elif errforge_hold or errforge_release:
+		var err_tail := "; sleep 6" if errforge_hold else ""
+		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
+			"while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \"" + str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; echo " + ERRFORGE_ERROR + "; echo " + ERRFORGE_PPID_WRITE + "$pp" + err_tail]))
 	if spawned > 0:
 		print("DESCENDANT_PIPE spawned_pid=", spawned)
 	quit(0)

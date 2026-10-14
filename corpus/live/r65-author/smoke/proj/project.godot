@@ -1,0 +1,3 @@
+[application]
+config/name="MechanicOneShotTest-r65smoke"
+config/features=PackedStringArray("4.7")
