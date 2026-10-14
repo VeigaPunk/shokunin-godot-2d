@@ -465,7 +465,7 @@ def main():
 
     # --- node_census: node as fd1-OWNER (r73, xconnector X1) -----------
     if NODE_EXE is None:
-        node_ver, node_major = "absent", "absent"
+        node_ver = "absent"
     else:
         try:
             vout = subprocess.run([NODE_EXE, "--version"],
@@ -474,10 +474,8 @@ def main():
             node_ver = vout.stdout.strip() or "error"
         except (OSError, subprocess.SubprocessError):
             node_ver = "error"
-        node_major = node_ver.lstrip("v").split(".")[0] \
-            if node_ver.startswith("v") else node_ver
     emit("node_census", node_present=NODE_EXE is not None,
-         node_version=node_ver, node_major=node_major)
+         node_version=node_ver)
     node_arm("node_small", NODE_SRC_SMALL)
     node_arm("node_big", NODE_SRC_BIG)
     node_arm("node_sync", NODE_SRC_SYNC)

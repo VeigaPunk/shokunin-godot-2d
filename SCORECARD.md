@@ -99,3 +99,13 @@ Sol (provisional): ADMIT-with-falsification — claim refuted at the engine laye
 | calibration | **unchanged** | insertion-only (+171/−0); prior 36 cases byte-stable; env hygiene hardened (PYTHONUNBUFFERED popped probe-side, env=CHILD_ENV on all children — folds r71 verifier defect) |
 
 Sol `r72-adjudicator.md`: ADMIT — composition CONFIRMED with corrected referent; verifier AGREE 5/5 on `fee5563` (55/55 ×3 + PYTHONUNBUFFERED sweep + 7/7 independent); baseline zero-drift on freeze `44127af` across all 5 battery families. Bounded: CPython 3.14.7 block-buffering (131072), pipe capture regime (fd1_isatty recorded), this host. Work commit `fee5563`; report-last commit follows.
+
+## Round 73 verdict — 2026-11-01
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | topology set closed: {prefix, infix, midline, append} all pinned + fd2-merge inversion; Node.js v24.21.0 joined as 4th owner runtime (3rd 2D-adjacent); node-absent honest-blocked gate |
+| depth | **improved** | third withholding layer measured (libuv event-loop queue past libc/Python buffers); infix = flush-epoch constant not a band; detach-EOF harness-integrity cell pinned |
+| calibration | **unchanged** | insertion-only (+165/-0 probe, +146/-17 battery removing only the r72 classifier block); 55 prior cases byte-stable; 80/80 x4 reps |
+
+Sol `r73-adjudicator.md`: ADMIT — topology depth pinned, non-Python census confirms splice/infix predictions. Verifier AGREE 10/10 on `43bef2d`. Bounded: CPython 3.14.7, Node v24.21.0, this host.

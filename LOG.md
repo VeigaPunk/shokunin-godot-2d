@@ -840,3 +840,24 @@
 - Verifier AGREE 5/5 on fee5563 (55/55 ×3 + env sweep + own 7/7 repro).
 - Baseline zero-drift on freeze 44127af across all 5 battery families.
 - Verdict: ADMIT (Sol final, wave-12).
+
+## Round 73 — topology depth + Node.js owner census (wave-13)
+
+- MOVE: infix pin (paced-flush parent + timed mid-chunk child write),
+  detach-child EOF-hold, fd2-merge inversion + non-Python owner census
+  (Node.js v24.21.0, C control).
+- Measured: infix is byte-exact deterministic — inj_rel=126011 x4 at
+  the textio-layer flush epoch (two-layer edge: textio quanta 126000 vs
+  binary-layer 131000; simplifier n-sweep); detach holds capture EOF
+  ~0.9s past clean exit (stuck variant = bounded FAIL not hang);
+  fd2-merge follows the fd1-OWNER's mode; Node small-write/writeSync ->
+  midline_splice (libuv try-write), Node >64KB single write -> INFIX at
+  pipe-capacity boundary (65536; remainder queued on the event loop —
+  a third withholding layer beyond libc/Python).
+- Critic corrections folded by author: execSync needs stdio:'inherit'
+  (default pipe swallows the seam); infix classifier wrong-sign fixed
+  via _rel keys; bimodal offset (reader-drain race) pinned as bounds.
+- Verifier AGREE 10/10 on 43bef2d incl. PYTHONUNBUFFERED=1 sweep +
+  node-absent honest-FAIL gate (65/80, all 15 node rows blocked).
+- Verdict: ADMIT (Sol, wave-13). Bounded CPython 3.14.7 (131072B),
+  Node v24.21.0/libuv, pygame 2.6.1 dummy-driver, this host.

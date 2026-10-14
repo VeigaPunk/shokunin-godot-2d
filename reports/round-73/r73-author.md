@@ -66,7 +66,9 @@ bounded blocked verdict, never fabricated."
       sh, -c, "sleep 0.9; printf 'DETACH-LATE\n' >&1"],
       start_new_session=True, stdin=DEVNULL)` holds the capture pipe
       ~0.9s past probe exit. `timeout` absent -> `status=blocked`.
-- `corpus/fixtures/pygame_battery.py` (+146/-17; the -17 are all inside
+- `corpus/fixtures/pygame_battery.py` (+129/-17 as committed — the
+  pre-commit draft line read +146 by double-counting the 17 replaced
+  lines; reviewer R1; the -17 are all inside
   the raw-wire processing block — machinery generalization, ZERO removed
   CASES/RAW_CASES rows; probe diff has 0 deletions):
   - r73 lattice paragraph in the docstring.
