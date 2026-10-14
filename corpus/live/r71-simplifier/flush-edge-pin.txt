@@ -1,0 +1,6 @@
+python=3.14.7  reps=3
+       default bulk= 131071  reps_ms=[605.5, 605.3, 605.3]  verdicts=['WITHHELD', 'WITHHELD', 'WITHHELD']
+       default bulk= 131072  reps_ms=[305.7, 305.5, 305.3]  verdicts=['EARLY', 'EARLY', 'EARLY']
+       default bulk= 131073  reps_ms=[304.9, 305.3, 305.1]  verdicts=['EARLY', 'EARLY', 'EARLY']
+ explicit:8192 bulk=   8191  reps_ms=[605.1, 605.5, 606.2]  verdicts=['WITHHELD', 'WITHHELD', 'WITHHELD']
+ explicit:8192 bulk=   8192  reps_ms=[305.3, 305.2, 305.1]  verdicts=['EARLY', 'EARLY', 'EARLY']

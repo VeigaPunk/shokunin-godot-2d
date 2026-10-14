@@ -1,132 +1,96 @@
 PHYS-VIABILITY | version=11.5.0 codename=Mysterious Mysteries jit=true physics=true window=false graphics=false data=true
 PHYS-VIABILITY | build=true err=nil
-PHYS-STEP | i=65 y_pre=422.75201416015625 vy_pre=669.69622802734375 y_post=434.0880126953125 vy_post=680.1602783203125
-PHYS-STEP | i=66 y_pre=434.0880126953125 vy_pre=680.1602783203125 y_post=445.59841918945312 vy_post=690.624267578125
-PHYS-STEP | i=67 y_pre=445.59841918945312 vy_pre=690.624267578125 y_post=457.28326416015625 vy_post=701.08831787109375
-PHYS-STEP | i=68 y_pre=457.28326416015625 vy_pre=701.08831787109375 y_post=469.1424560546875 vy_post=711.55230712890625
-PHYS-STEP | i=69 y_pre=469.1424560546875 vy_pre=711.55230712890625 y_post=481.17605590820312 vy_post=722.016357421875
-PHYS-STEP | i=70 y_pre=481.17605590820312 vy_pre=722.016357421875 y_post=493.384033203125 vy_post=732.4803466796875
-PHYS-STEP | i=71 y_pre=493.384033203125 vy_pre=732.4803466796875 y_post=505.76641845703125 vy_post=742.94439697265625
-PHYS-STEP | i=72 y_pre=505.76641845703125 vy_pre=742.94439697265625 y_post=518.3232421875 vy_post=753.40838623046875
-PHYS-STEP | i=73 y_pre=518.3232421875 vy_pre=753.40838623046875 y_post=511.13113403320312 vy_post=-611.09796142578125
-PHYS-EVT | i=73 BC in_step=true y=520.1500244140625 vy=763.8724365234375 ;; PRE in_step=true y=520.1500244140625 vy=763.8724365234375 ;; POST in_step=true y=511.13113403320312 vy=-611.09796142578125 nargs=2 types=number,number
-PHYS-STEP | i=74 y_pre=511.13113403320312 vy_pre=-611.09796142578125 y_post=501.12057495117188 vy_post=-600.63397216796875
-PHYS-EVT | i=74 EC in_step=true y=511.13113403320312 vy=-611.09796142578125
-PHYS-STEP | i=75 y_pre=501.12057495117188 vy_pre=-600.63397216796875 y_post=491.28445434570312 vy_post=-590.169921875
-PHYS-STEP | i=76 y_pre=491.28445434570312 vy_pre=-590.169921875 y_post=481.62265014648438 vy_post=-579.7059326171875
-PHYS-STEP | i=77 y_pre=481.62265014648438 vy_pre=-579.7059326171875 y_post=472.13531494140625 vy_post=-569.24188232421875
-PHYS-STEP | i=78 y_pre=472.13531494140625 vy_pre=-569.24188232421875 y_post=462.82232666015625 vy_post=-558.77789306640625
-PHYS-STEP | i=79 y_pre=462.82232666015625 vy_pre=-558.77789306640625 y_post=453.68377685546875 vy_post=-548.3138427734375
-PHYS-STEP | i=80 y_pre=453.68377685546875 vy_pre=-548.3138427734375 y_post=444.7196044921875 vy_post=-537.849853515625
-PHYS-STEP | i=81 y_pre=444.7196044921875 vy_pre=-537.849853515625 y_post=435.92984008789062 vy_post=-527.38580322265625
-PHYS-EVT | i=81 BC in_step=true y=526.1500244140625 vy=847.5845947265625 ;; PRE in_step=true y=526.1500244140625 vy=847.5845947265625 ;; POST in_step=true y=519.33843994140625 vy=-423.79232788085938 nargs=2 types=number,number
-PHYS-STEP | i=82 y_pre=435.92984008789062 vy_pre=-527.38580322265625 y_post=427.314453125 vy_post=-516.92181396484375
-PHYS-EVT | i=82 EC in_step=true y=519.33843994140625 vy=-423.79232788085938
-PHYS-STEP | i=83 y_pre=427.314453125 vy_pre=-516.92181396484375 y_post=418.87350463867188 vy_post=-506.457763671875
-PHYS-STEP | i=84 y_pre=418.87350463867188 vy_pre=-506.457763671875 y_post=410.60693359375 vy_post=-495.99374389648438
-PHYS-STEP | i=85 y_pre=410.60693359375 vy_pre=-495.99374389648438 y_post=402.5147705078125 vy_post=-485.52972412109375
-PHYS-STEP | i=86 y_pre=402.5147705078125 vy_pre=-485.52972412109375 y_post=394.59701538085938 vy_post=-475.06573486328125
-PHYS-STEP | i=87 y_pre=394.59701538085938 vy_pre=-475.06573486328125 y_post=386.8536376953125 vy_post=-464.60174560546875
-PHYS-STEP | i=88 y_pre=386.8536376953125 vy_pre=-464.60174560546875 y_post=379.28469848632812 vy_post=-454.13775634765625
-PHYS-STEP | i=89 y_pre=379.28469848632812 vy_pre=-454.13775634765625 y_post=371.89013671875 vy_post=-443.67376708984375
-PHYS-STEP | i=90 y_pre=371.89013671875 vy_pre=-443.67376708984375 y_post=364.66995239257812 vy_post=-433.20977783203125
-PHYS-STEP | i=162 y_pre=297.8046875 vy_pre=309.734130859375 y_post=303.14132690429688 vy_post=320.1981201171875
-PHYS-EVT | i=162 BC in_step=true y=526.1500244140625 vy=423.79150390625 ;; PRE in_step=true y=526.1500244140625 vy=423.79150390625 ;; POST in_step=true y=525.7291259765625 vy=-211.89576721191406 nargs=2 types=number,number
-PHYS-STEP | i=163 y_pre=303.14132690429688 vy_pre=320.1981201171875 y_post=308.65237426757812 vy_post=330.66213989257812
-PHYS-EVT | i=163 PRE in_step=true y=525.7291259765625 vy=-211.89576721191406 ;; POST in_step=true y=522.3719482421875 vy=-201.4317626953125 nargs=2 types=number,number
-PHYS-STEP | i=164 y_pre=308.65237426757812 vy_pre=330.66213989257812 y_post=314.33779907226562 vy_post=341.12612915039062
-PHYS-EVT | i=164 EC in_step=true y=522.3719482421875 vy=-201.4317626953125
-PHYS-STEP | i=190 y_pre=513.1536865234375 vy_pre=602.7261962890625 y_post=517.27581787109375 vy_post=-490.55218505859375
-PHYS-EVT | i=190 BC in_step=true y=520.1500244140625 vy=613.19024658203125 ;; PRE in_step=true y=520.1500244140625 vy=613.19024658203125 ;; POST in_step=true y=517.27581787109375 vy=-490.55218505859375 nargs=2 types=number,number
-PHYS-STEP | i=191 y_pre=517.27581787109375 vy_pre=-490.55218505859375 y_post=509.27432250976562 vy_post=-480.08816528320312
-PHYS-EVT | i=191 EC in_step=true y=517.27581787109375 vy=-490.55218505859375
-PHYS-STEP | i=202 y_pre=438.85165405273438 vy_pre=-375.44827270507812 y_post=432.76858520507812 vy_post=-364.98428344726562
-PHYS-EVT | i=202 BC in_step=true y=526.1500244140625 vy=206.66432189941406 ;; PRE in_step=true y=526.1500244140625 vy=206.66432189941406 ;; POST in_step=true y=525.19305419921875 vy=-103.33216857910156 nargs=2 types=number,number
-PHYS-STEP | i=203 y_pre=432.76858520507812 vy_pre=-364.98428344726562 y_post=426.85989379882812 vy_post=-354.52029418945312
-PHYS-EVT | i=203 EC in_step=true y=525.19305419921875 vy=-103.33216857910156
-PHYS-STEP | i=222 y_pre=350.32620239257812 vy_pre=-166.1683349609375 y_post=347.73114013671875 vy_post=-155.70431518554688
-PHYS-EVT | i=222 BC in_step=true y=526.1500244140625 vy=105.94783782958984 ;; PRE in_step=true y=526.1500244140625 vy=105.94783782958984 ;; POST in_step=true y=525.2431640625 vy=-52.973922729492188 nargs=2 types=number,number
-PHYS-STEP | i=223 y_pre=347.73114013671875 vy_pre=-155.70431518554688 y_post=345.31045532226562 vy_post=-145.24031066894531
-PHYS-EVT | i=223 EC in_step=true y=525.2431640625 vy=-52.973922729492188
-PHYS-STEP | i=233 y_pre=331.37240600585938 vy_pre=-51.064311981201172 y_post=330.69573974609375 vy_post=-40.600311279296875
-PHYS-EVT | i=233 BC in_step=true y=526.0062255859375 vy=51.666095733642578 ;; PRE in_step=true y=526.0062255859375 vy=51.666095733642578 ;; POST in_step=true y=525.48846435546875 vy=-31.065052032470703 nargs=2 types=number,number
-PHYS-STEP | i=234 y_pre=330.69573974609375 vy_pre=-40.600311279296875 y_post=330.19345092773438 vy_post=-30.136310577392578
-PHYS-EVT | i=234 EC in_step=true y=525.48846435546875 vy=-31.065052032470703
-PHYS-STEP | i=240 y_pre=330.298095703125 vy_pre=22.183696746826172 y_post=330.84222412109375 vy_post=32.647697448730469
-PHYS-EVT | i=240 BC in_step=true y=526.04437255859375 vy=31.718955993652344 ;; PRE in_step=true y=526.04437255859375 vy=31.718955993652344 ;; POST in_step=true y=525.69287109375 vy=-21.091476440429688 nargs=2 types=number,number
-PHYS-STEP | i=241 y_pre=330.84222412109375 vy_pre=32.647697448730469 y_post=331.56072998046875 vy_post=43.111698150634766
-PHYS-EVT | i=241 EC in_step=true y=525.69287109375 vy=-21.091476440429688
-PHYS-STEP | i=245 y_pre=334.76275634765625 vy_pre=74.503700256347656 y_post=336.17886352539062 vy_post=84.967697143554688
-PHYS-EVT | i=245 BC in_step=true y=526.03076171875 vy=20.7645263671875 ;; PRE in_step=true y=526.03076171875 vy=20.7645263671875 ;; POST in_step=true y=525.7705078125 vy=-15.614265441894531 nargs=2 types=number,number
-PHYS-STEP | i=246 y_pre=336.17886352539062 vy_pre=84.967697143554688 y_post=337.7694091796875 vy_post=95.431694030761719
-PHYS-EVT | i=246 PRE in_step=true y=525.7705078125 vy=-15.614265441894531 ;; POST in_step=true y=525.6846923828125 vy=-5.1502633094787598 nargs=2 types=number,number
-PHYS-STEP | i=247 y_pre=337.7694091796875 vy_pre=95.431694030761719 y_post=339.53433227539062 vy_post=105.89569091796875
-PHYS-EVT | i=247 EC in_step=true y=525.6846923828125 vy=-5.1502633094787598
-PHYS-STEP | i=248 y_pre=339.53433227539062 vy_pre=105.89569091796875 y_post=341.4736328125 vy_post=116.35969543457031
-PHYS-EVT | i=248 BC in_step=true y=525.77325439453125 vy=5.3137378692626953 ;; PRE in_step=true y=525.77325439453125 vy=5.3137378692626953 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=249 y_pre=341.4736328125 vy_pre=116.35969543457031 y_post=343.58737182617188 vy_post=126.82369995117188
-PHYS-EVT | i=249 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=250 y_pre=343.58737182617188 vy_pre=126.82369995117188 y_post=345.87548828125 vy_post=137.28770446777344
-PHYS-EVT | i=250 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=251 y_pre=345.87548828125 vy_pre=137.28770446777344 y_post=348.33804321289062 vy_post=147.751708984375
-PHYS-EVT | i=251 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=252 y_pre=348.33804321289062 vy_pre=147.751708984375 y_post=350.9749755859375 vy_post=158.21571350097656
-PHYS-EVT | i=252 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=253 y_pre=350.9749755859375 vy_pre=158.21571350097656 y_post=353.78628540039062 vy_post=168.67971801757812
-PHYS-EVT | i=253 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=254 y_pre=353.78628540039062 vy_pre=168.67971801757812 y_post=356.77203369140625 vy_post=179.14372253417969
-PHYS-EVT | i=254 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=255 y_pre=356.77203369140625 vy_pre=179.14372253417969 y_post=359.93215942382812 vy_post=189.60772705078125
-PHYS-EVT | i=255 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=256 y_pre=359.93215942382812 vy_pre=189.60772705078125 y_post=363.26669311523438 vy_post=200.07173156738281
-PHYS-EVT | i=256 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=257 y_pre=363.26669311523438 vy_pre=200.07173156738281 y_post=366.77560424804688 vy_post=210.53573608398438
-PHYS-EVT | i=257 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=258 y_pre=366.77560424804688 vy_pre=210.53573608398438 y_post=370.45895385742188 vy_post=220.99974060058594
-PHYS-EVT | i=258 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=259 y_pre=370.45895385742188 vy_pre=220.99974060058594 y_post=374.31668090820312 vy_post=231.4637451171875
-PHYS-EVT | i=259 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=260 y_pre=374.31668090820312 vy_pre=231.4637451171875 y_post=378.34878540039062 vy_post=241.92776489257812
-PHYS-EVT | i=260 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=261 y_pre=378.34878540039062 vy_pre=241.92776489257812 y_post=382.55532836914062 vy_post=252.39175415039062
-PHYS-EVT | i=261 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=262 y_pre=382.55532836914062 vy_pre=252.39175415039062 y_post=386.936279296875 vy_post=262.85574340820312
-PHYS-EVT | i=262 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=263 y_pre=386.936279296875 vy_pre=262.85574340820312 y_post=391.49160766601562 vy_post=273.31973266601562
-PHYS-EVT | i=263 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=264 y_pre=391.49160766601562 vy_pre=273.31973266601562 y_post=396.2213134765625 vy_post=283.78372192382812
-PHYS-EVT | i=264 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=265 y_pre=396.2213134765625 vy_pre=283.78372192382812 y_post=401.12545776367188 vy_post=294.24771118164062
-PHYS-EVT | i=265 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=266 y_pre=401.12545776367188 vy_pre=294.24771118164062 y_post=406.2039794921875 vy_post=304.71170043945312
-PHYS-EVT | i=266 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=267 y_pre=406.2039794921875 vy_pre=304.71170043945312 y_post=411.4569091796875 vy_post=315.17568969726562
-PHYS-EVT | i=267 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=268 y_pre=411.4569091796875 vy_pre=315.17568969726562 y_post=416.88421630859375 vy_post=325.63967895507812
-PHYS-EVT | i=268 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=269 y_pre=416.88421630859375 vy_pre=325.63967895507812 y_post=422.4859619140625 vy_post=336.10366821289062
-PHYS-EVT | i=269 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=270 y_pre=422.4859619140625 vy_pre=336.10366821289062 y_post=428.2620849609375 vy_post=346.56765747070312
-PHYS-EVT | i=270 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=271 y_pre=428.2620849609375 vy_pre=346.56765747070312 y_post=434.21261596679688 vy_post=357.03164672851562
-PHYS-EVT | i=271 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=272 y_pre=434.21261596679688 vy_pre=357.03164672851562 y_post=440.33755493164062 vy_post=367.49566650390625
-PHYS-EVT | i=272 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=273 y_pre=440.33755493164062 vy_pre=367.49566650390625 y_post=446.63687133789062 vy_post=377.95965576171875
-PHYS-EVT | i=273 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=274 y_pre=446.63687133789062 vy_pre=377.95965576171875 y_post=453.110595703125 vy_post=388.42364501953125
-PHYS-EVT | i=274 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=275 y_pre=453.110595703125 vy_pre=388.42364501953125 y_post=459.75872802734375 vy_post=398.88763427734375
-PHYS-EVT | i=275 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=276 y_pre=459.75872802734375 vy_pre=398.88763427734375 y_post=466.58126831054688 vy_post=409.35162353515625
-PHYS-EVT | i=276 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=277 y_pre=466.58126831054688 vy_pre=409.35162353515625 y_post=473.57818603515625 vy_post=419.81561279296875
-PHYS-EVT | i=277 PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
-PHYS-STEP | i=284 y_pre=519.22216796875 vy_pre=482.59957885742188 y_post=514.02276611328125 vy_post=-394.450927734375
-PHYS-EVT | i=284 BC in_step=true y=520.1500244140625 vy=493.0635986328125 ;; PRE in_step=true y=520.1500244140625 vy=493.0635986328125 ;; POST in_step=true y=514.02276611328125 vy=-394.450927734375 nargs=2 types=number,number
-PHYS-STEP | i=285 y_pre=514.02276611328125 vy_pre=-394.450927734375 y_post=507.62301635742188 vy_post=-383.9869384765625
-PHYS-EVT | i=285 EC in_step=true y=514.02276611328125 vy=-394.450927734375
-PHYS-COUNTS | steps=300 BC=11 EC=10 PRE=42 POST=42
+PHYS-EVT | i=4 body=b3 y_pre=519.94647216796875 vy_pre=31.392002105712891 y_post=519.87139892578125 vy_post=-4.1856012344360352 :: BC in_step=true y=519.94647216796875 vy=31.392002105712891 ;; PRE in_step=true y=519.94647216796875 vy=31.392002105712891 ;; POST in_step=true y=519.87139892578125 vy=-4.1856012344360352 nargs=2 types=number,number
+PHYS-EVT | i=5 body=b3 y_pre=519.87139892578125 vy_pre=-4.1856012344360352 y_post=519.8670654296875 vy_post=0 :: PRE in_step=true y=519.87139892578125 vy=-4.1856012344360352 ;; POST in_step=true y=519.8670654296875 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=6 body=b3 y_pre=519.8670654296875 vy_pre=0 y_post=519.8636474609375 vy_post=-1.9329534950429661e-07 :: PRE in_step=true y=519.8670654296875 vy=0 ;; POST in_step=true y=519.8636474609375 vy=-1.9329534950429661e-07 nargs=2 types=number,number
+PHYS-EVT | i=7 body=b3 y_pre=519.8636474609375 vy_pre=-1.9329534950429661e-07 y_post=519.86090087890625 vy_post=0 :: PRE in_step=true y=519.8636474609375 vy=-1.9329534950429661e-07 ;; POST in_step=true y=519.86090087890625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=8 body=b3 y_pre=519.86090087890625 vy_pre=0 y_post=519.8587646484375 vy_post=0 :: PRE in_step=true y=519.86090087890625 vy=0 ;; POST in_step=true y=519.8587646484375 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=9 body=b3 y_pre=519.8587646484375 vy_pre=0 y_post=519.85699462890625 vy_post=0 :: PRE in_step=true y=519.8587646484375 vy=0 ;; POST in_step=true y=519.85699462890625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=10 body=b3 y_pre=519.85699462890625 vy_pre=0 y_post=519.8555908203125 vy_post=0 :: PRE in_step=true y=519.85699462890625 vy=0 ;; POST in_step=true y=519.8555908203125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=11 body=b3 y_pre=519.8555908203125 vy_pre=0 y_post=519.85443115234375 vy_post=0 :: PRE in_step=true y=519.8555908203125 vy=0 ;; POST in_step=true y=519.85443115234375 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=12 body=b3 y_pre=519.85443115234375 vy_pre=0 y_post=519.853515625 vy_post=0 :: PRE in_step=true y=519.85443115234375 vy=0 ;; POST in_step=true y=519.853515625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=13 body=b3 y_pre=519.853515625 vy_pre=0 y_post=519.85284423828125 vy_post=0 :: PRE in_step=true y=519.853515625 vy=0 ;; POST in_step=true y=519.85284423828125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=14 body=b3 y_pre=519.85284423828125 vy_pre=0 y_post=519.852294921875 vy_post=0 :: PRE in_step=true y=519.85284423828125 vy=0 ;; POST in_step=true y=519.852294921875 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=15 body=b3 y_pre=519.852294921875 vy_pre=0 y_post=519.851806640625 vy_post=0 :: PRE in_step=true y=519.852294921875 vy=0 ;; POST in_step=true y=519.851806640625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=16 body=b3 y_pre=519.851806640625 vy_pre=0 y_post=519.85150146484375 vy_post=0 :: PRE in_step=true y=519.851806640625 vy=0 ;; POST in_step=true y=519.85150146484375 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=17 body=b3 y_pre=519.85150146484375 vy_pre=0 y_post=519.8511962890625 vy_post=0 :: PRE in_step=true y=519.85150146484375 vy=0 ;; POST in_step=true y=519.8511962890625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=18 body=b3 y_pre=519.8511962890625 vy_pre=0 y_post=519.8509521484375 vy_post=0 :: PRE in_step=true y=519.8511962890625 vy=0 ;; POST in_step=true y=519.8509521484375 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=19 body=b3 y_pre=519.8509521484375 vy_pre=0 y_post=519.85076904296875 vy_post=0 :: PRE in_step=true y=519.8509521484375 vy=0 ;; POST in_step=true y=519.85076904296875 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=20 body=b3 y_pre=519.85076904296875 vy_pre=0 y_post=519.8505859375 vy_post=0 :: PRE in_step=true y=519.85076904296875 vy=0 ;; POST in_step=true y=519.8505859375 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=21 body=b3 y_pre=519.8505859375 vy_pre=0 y_post=519.85052490234375 vy_post=0 :: PRE in_step=true y=519.8505859375 vy=0 ;; POST in_step=true y=519.85052490234375 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=22 body=b3 y_pre=519.85052490234375 vy_pre=0 y_post=519.85040283203125 vy_post=0 :: PRE in_step=true y=519.85052490234375 vy=0 ;; POST in_step=true y=519.85040283203125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=23 body=b3 y_pre=519.85040283203125 vy_pre=0 y_post=519.850341796875 vy_post=0 :: PRE in_step=true y=519.85040283203125 vy=0 ;; POST in_step=true y=519.850341796875 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=24 body=b3 y_pre=519.850341796875 vy_pre=0 y_post=519.85028076171875 vy_post=0 :: PRE in_step=true y=519.850341796875 vy=0 ;; POST in_step=true y=519.85028076171875 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=25 body=b3 y_pre=519.85028076171875 vy_pre=0 y_post=519.8502197265625 vy_post=0 :: PRE in_step=true y=519.85028076171875 vy=0 ;; POST in_step=true y=519.8502197265625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=26 body=b3 y_pre=519.8502197265625 vy_pre=0 y_post=519.85015869140625 vy_post=0 :: PRE in_step=true y=519.8502197265625 vy=0 ;; POST in_step=true y=519.85015869140625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=27 body=b3 y_pre=519.85015869140625 vy_pre=0 y_post=519.85009765625 vy_post=0 :: PRE in_step=true y=519.85015869140625 vy=0 ;; POST in_step=true y=519.85009765625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=28 body=b3 y_pre=519.85009765625 vy_pre=0 y_post=519.85009765625 vy_post=0 :: PRE in_step=true y=519.85009765625 vy=0 ;; POST in_step=true y=519.85009765625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=29 body=b3 y_pre=519.85009765625 vy_pre=0 y_post=519.85009765625 vy_post=0 :: PRE in_step=true y=519.85009765625 vy=0 ;; POST in_step=true y=519.85009765625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=30 body=b3 y_pre=519.85009765625 vy_pre=0 y_post=519.85009765625 vy_post=0 :: PRE in_step=true y=519.85009765625 vy=0 ;; POST in_step=true y=519.85009765625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=31 body=b3 y_pre=519.85009765625 vy_pre=0 y_post=519.85009765625 vy_post=0 :: PRE in_step=true y=519.85009765625 vy=0 ;; POST in_step=true y=519.85009765625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=32 body=b3 y_pre=519.85009765625 vy_pre=0 y_post=519.85009765625 vy_post=0 :: PRE in_step=true y=519.85009765625 vy=0 ;; POST in_step=true y=519.85009765625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=33 body=b3 y_pre=519.85009765625 vy_pre=0 y_post=519.85009765625 vy_post=0 :: PRE in_step=true y=519.85009765625 vy=0 ;; POST in_step=true y=519.85009765625 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=34 body=b3 y_pre=519.85009765625 vy_pre=0 y_post=519.85009765625 vy_post=0 :: PRE in_step=true y=519.85009765625 vy=0 ;; POST in_step=true y=519.85009765625 vy=0 nargs=2 types=number,number
+PHYS-STEP | i=70 b1 y_pre=481.17605590820312 y_post=493.384033203125 vy_post=732.4803466796875
+PHYS-STEP | i=71 b1 y_pre=493.384033203125 y_post=505.76641845703125 vy_post=742.94439697265625
+PHYS-STEP | i=72 b1 y_pre=505.76641845703125 y_post=518.3232421875 vy_post=753.40838623046875
+PHYS-STEP | i=73 b1 y_pre=518.3232421875 y_post=511.13113403320312 vy_post=-611.09796142578125
+PHYS-EVT | i=73 body=b1 y_pre=518.3232421875 vy_pre=753.40838623046875 y_post=511.13113403320312 vy_post=-611.09796142578125 :: BC in_step=true y=520.1500244140625 vy=763.8724365234375 ;; PRE in_step=true y=520.1500244140625 vy=763.8724365234375 ;; POST in_step=true y=511.13113403320312 vy=-611.09796142578125 nargs=2 types=number,number
+PHYS-STEP | i=74 b1 y_pre=511.13113403320312 y_post=501.12057495117188 vy_post=-600.63397216796875
+PHYS-EVT | i=74 body=b1 y_pre=511.13113403320312 vy_pre=-611.09796142578125 y_post=501.12057495117188 vy_post=-600.63397216796875 :: EC in_step=true y=511.13113403320312 vy=-611.09796142578125
+PHYS-STEP | i=75 b1 y_pre=501.12057495117188 y_post=491.28445434570312 vy_post=-590.169921875
+PHYS-STEP | i=76 b1 y_pre=491.28445434570312 y_post=481.62265014648438 vy_post=-579.7059326171875
+PHYS-EVT | i=81 body=b2 y_pre=525.05609130859375 vy_pre=837.12054443359375 y_post=519.33843994140625 vy_post=-423.79232788085938 :: BC in_step=true y=526.1500244140625 vy=847.5845947265625 ;; PRE in_step=true y=526.1500244140625 vy=847.5845947265625 ;; POST in_step=true y=519.33843994140625 vy=-423.79232788085938 nargs=2 types=number,number
+PHYS-EVT | i=82 body=b2 y_pre=519.33843994140625 vy_pre=-423.79232788085938 y_post=512.4495849609375 vy_post=-413.32830810546875 :: EC in_step=true y=519.33843994140625 vy=-423.79232788085938
+PHYS-EVT | i=162 body=b2 y_pre=519.33795166015625 vy_pre=413.3275146484375 y_post=525.7291259765625 vy_post=-211.89576721191406 :: BC in_step=true y=526.1500244140625 vy=423.79150390625 ;; PRE in_step=true y=526.1500244140625 vy=423.79150390625 ;; POST in_step=true y=525.7291259765625 vy=-211.89576721191406 nargs=2 types=number,number
+PHYS-EVT | i=163 body=b2 y_pre=525.7291259765625 vy_pre=-211.89576721191406 y_post=522.3719482421875 vy_post=-201.4317626953125 :: PRE in_step=true y=525.7291259765625 vy=-211.89576721191406 ;; POST in_step=true y=522.3719482421875 vy=-201.4317626953125 nargs=2 types=number,number
+PHYS-EVT | i=164 body=b2 y_pre=522.3719482421875 vy_pre=-201.4317626953125 y_post=519.18914794921875 vy_post=-190.96775817871094 :: EC in_step=true y=522.3719482421875 vy=-201.4317626953125
+PHYS-EVT | i=190 body=b1 y_pre=513.1536865234375 vy_pre=602.7261962890625 y_post=517.27581787109375 vy_post=-490.55218505859375 :: BC in_step=true y=520.1500244140625 vy=613.19024658203125 ;; PRE in_step=true y=520.1500244140625 vy=613.19024658203125 ;; POST in_step=true y=517.27581787109375 vy=-490.55218505859375 nargs=2 types=number,number
+PHYS-EVT | i=191 body=b1 y_pre=517.27581787109375 vy_pre=-490.55218505859375 y_post=509.27432250976562 vy_post=-480.08816528320312 :: EC in_step=true y=517.27581787109375 vy=-490.55218505859375
+PHYS-EVT | i=202 body=b2 y_pre=524.0289306640625 vy_pre=196.2003173828125 y_post=525.19305419921875 vy_post=-103.33216857910156 :: BC in_step=true y=526.1500244140625 vy=206.66432189941406 ;; PRE in_step=true y=526.1500244140625 vy=206.66432189941406 ;; POST in_step=true y=525.19305419921875 vy=-103.33216857910156 nargs=2 types=number,number
+PHYS-EVT | i=203 body=b2 y_pre=525.19305419921875 vy_pre=-103.33216857910156 y_post=523.645263671875 vy_post=-92.868171691894531 :: EC in_step=true y=525.19305419921875 vy=-103.33216857910156
+PHYS-EVT | i=222 body=b2 y_pre=525.60723876953125 vy_pre=95.483840942382812 y_post=525.2431640625 vy_post=-52.973922729492188 :: BC in_step=true y=526.1500244140625 vy=105.94783782958984 ;; PRE in_step=true y=526.1500244140625 vy=105.94783782958984 ;; POST in_step=true y=525.2431640625 vy=-52.973922729492188 nargs=2 types=number,number
+PHYS-EVT | i=223 body=b2 y_pre=525.2431640625 vy_pre=-52.973922729492188 y_post=524.53466796875 vy_post=-42.509918212890625 :: EC in_step=true y=525.2431640625 vy=-52.973922729492188
+PHYS-EVT | i=233 body=b2 y_pre=526.0062255859375 vy_pre=51.666095733642578 y_post=525.48846435546875 vy_post=-31.065052032470703 :: BC in_step=true y=526.0062255859375 vy=51.666095733642578 ;; PRE in_step=true y=526.0062255859375 vy=51.666095733642578 ;; POST in_step=true y=525.48846435546875 vy=-31.065052032470703 nargs=2 types=number,number
+PHYS-EVT | i=234 body=b2 y_pre=525.48846435546875 vy_pre=-31.065052032470703 y_post=525.1451416015625 vy_post=-20.601049423217773 :: EC in_step=true y=525.48846435546875 vy=-31.065052032470703
+PHYS-EVT | i=240 body=b2 y_pre=526.04437255859375 vy_pre=31.718955993652344 y_post=525.69287109375 vy_post=-21.091476440429688 :: BC in_step=true y=526.04437255859375 vy=31.718955993652344 ;; PRE in_step=true y=526.04437255859375 vy=31.718955993652344 ;; POST in_step=true y=525.69287109375 vy=-21.091476440429688 nargs=2 types=number,number
+PHYS-EVT | i=241 body=b2 y_pre=525.69287109375 vy_pre=-21.091476440429688 y_post=525.51580810546875 vy_post=-10.627476692199707 :: EC in_step=true y=525.69287109375 vy=-21.091476440429688
+PHYS-EVT | i=245 body=b2 y_pre=526.03076171875 vy_pre=20.7645263671875 y_post=525.7705078125 vy_post=-15.614265441894531 :: BC in_step=true y=526.03076171875 vy=20.7645263671875 ;; PRE in_step=true y=526.03076171875 vy=20.7645263671875 ;; POST in_step=true y=525.7705078125 vy=-15.614265441894531 nargs=2 types=number,number
+PHYS-EVT | i=246 body=b2 y_pre=525.7705078125 vy_pre=-15.614265441894531 y_post=525.6846923828125 vy_post=-5.1502633094787598 :: PRE in_step=true y=525.7705078125 vy=-15.614265441894531 ;; POST in_step=true y=525.6846923828125 vy=-5.1502633094787598 nargs=2 types=number,number
+PHYS-EVT | i=247 body=b2 y_pre=525.6846923828125 vy_pre=-5.1502633094787598 y_post=525.77325439453125 vy_post=5.3137378692626953 :: EC in_step=true y=525.6846923828125 vy=-5.1502633094787598
+PHYS-EVT | i=248 body=b2 y_pre=525.77325439453125 vy_pre=5.3137378692626953 y_post=525.77325439453125 vy_post=0 :: BC in_step=true y=525.77325439453125 vy=5.3137378692626953 ;; PRE in_step=true y=525.77325439453125 vy=5.3137378692626953 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=249 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=250 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=251 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=252 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=253 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=254 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=255 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=256 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=257 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=258 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=259 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=260 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=261 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=262 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=263 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=264 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=265 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=266 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=267 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=268 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=269 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=270 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=271 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=272 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=273 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=274 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=275 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=276 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=277 body=b2 y_pre=525.77325439453125 vy_pre=0 y_post=525.77325439453125 vy_post=0 :: PRE in_step=true y=525.77325439453125 vy=0 ;; POST in_step=true y=525.77325439453125 vy=0 nargs=2 types=number,number
+PHYS-EVT | i=284 body=b1 y_pre=519.22216796875 vy_pre=482.59957885742188 y_post=514.02276611328125 vy_post=-394.450927734375 :: BC in_step=true y=520.1500244140625 vy=493.0635986328125 ;; PRE in_step=true y=520.1500244140625 vy=493.0635986328125 ;; POST in_step=true y=514.02276611328125 vy=-394.450927734375 nargs=2 types=number,number
+PHYS-EVT | i=285 body=b1 y_pre=514.02276611328125 vy_pre=-394.450927734375 y_post=507.62301635742188 vy_post=-383.9869384765625 :: EC in_step=true y=514.02276611328125 vy=-394.450927734375
+PHYS-COUNTS | steps=300 BC=12 EC=10 PRE=73 POST=73
 PHYS-DET | s=30 i=1 x=400 y=560 a=0 vx=0 vy=0 w=0
 PHYS-DET | s=30 i=2 x=381.07623291015625 y=519.62640380859375 a=0.0051873046904802322 vx=10.83405590057373 vy=-1.3969822987291991e-07 w=-9.1691756409773006e-09
 PHYS-DET | s=30 i=3 x=405.09475708007812 y=479.77279663085938 a=0.082312300801277161 vx=45.694019317626953 vy=2.3162949085235596 w=1.035021185874939
@@ -227,127 +191,127 @@ PHYS-DET | s=600 i=2 x=384.89950561523438 y=519.55029296875 a=1.8277806930200313
 PHYS-DET | s=600 i=3 x=426.55029296875 y=519.55029296875 a=1.5707987546920776 vx=0 vy=0 w=0
 PHYS-DET | s=600 i=4 x=1099.4580078125 y=5089.2880859375 a=28.496122360229492 vx=78.588470458984375 vy=2398.812255859375 w=4.3848690986633301
 PHYS-DET | s=600 i=5 x=291.41009521484375 y=531.612548828125 a=-1.0516458749771118 vx=0 vy=0 w=0
-PHYS-DETERM | sha256=˘lùP:lo;Õ¿.∏è+£qI„ö»pâ GÏ]$
-PHYS-PERF | steps=600 total_ms=0.846 step_mean_ms=0.0014 step_min_ms=0.0004 step_max_ms=0.0263
-PHYS-ACC | tick=1 dt_ms=2.033 stepped=0 rem_ms=2.033
-PHYS-ACC | tick=2 dt_ms=1.066 stepped=0 rem_ms=3.099
-PHYS-ACC | tick=3 dt_ms=1.094 stepped=0 rem_ms=4.193
-PHYS-ACC | tick=4 dt_ms=1.067 stepped=0 rem_ms=5.260
-PHYS-ACC | tick=5 dt_ms=1.057 stepped=0 rem_ms=6.317
-PHYS-ACC | tick=6 dt_ms=1.054 stepped=0 rem_ms=7.372
-PHYS-ACC | tick=7 dt_ms=1.053 stepped=0 rem_ms=8.425
-PHYS-ACC | tick=8 dt_ms=1.053 stepped=0 rem_ms=9.478
-PHYS-ACC | tick=9 dt_ms=1.053 stepped=0 rem_ms=10.531
-PHYS-ACC | tick=10 dt_ms=1.052 stepped=0 rem_ms=11.584
-PHYS-ACC | tick=11 dt_ms=1.078 stepped=0 rem_ms=12.661
-PHYS-ACC | tick=12 dt_ms=1.062 stepped=0 rem_ms=13.723
-PHYS-ACC | tick=13 dt_ms=1.058 stepped=0 rem_ms=14.781
-PHYS-ACC | tick=14 dt_ms=1.053 stepped=0 rem_ms=15.834
-PHYS-ACC | tick=15 dt_ms=1.052 stepped=1 rem_ms=0.219
-PHYS-ACC | tick=16 dt_ms=1.055 stepped=0 rem_ms=1.274
-PHYS-ACC | tick=17 dt_ms=1.052 stepped=0 rem_ms=2.326
-PHYS-ACC | tick=18 dt_ms=1.053 stepped=0 rem_ms=3.379
-PHYS-ACC | tick=19 dt_ms=1.053 stepped=0 rem_ms=4.432
-PHYS-ACC | tick=20 dt_ms=1.053 stepped=0 rem_ms=5.485
-PHYS-ACC | tick=21 dt_ms=1.029 stepped=0 rem_ms=6.514
-PHYS-ACC | tick=22 dt_ms=1.053 stepped=0 rem_ms=7.567
-PHYS-ACC | tick=23 dt_ms=1.053 stepped=0 rem_ms=8.619
-PHYS-ACC | tick=24 dt_ms=1.053 stepped=0 rem_ms=9.672
-PHYS-ACC | tick=25 dt_ms=1.052 stepped=0 rem_ms=10.725
-PHYS-ACC | tick=26 dt_ms=1.053 stepped=0 rem_ms=11.777
-PHYS-ACC | tick=27 dt_ms=1.054 stepped=0 rem_ms=12.832
-PHYS-ACC | tick=28 dt_ms=1.053 stepped=0 rem_ms=13.885
-PHYS-ACC | tick=29 dt_ms=1.053 stepped=0 rem_ms=14.938
-PHYS-ACC | tick=30 dt_ms=1.053 stepped=0 rem_ms=15.990
-PHYS-ACC | tick=31 dt_ms=1.052 stepped=1 rem_ms=0.376
-PHYS-ACC | tick=32 dt_ms=1.056 stepped=0 rem_ms=1.433
-PHYS-ACC | tick=33 dt_ms=1.053 stepped=0 rem_ms=2.486
-PHYS-ACC | tick=34 dt_ms=1.054 stepped=0 rem_ms=3.539
-PHYS-ACC | tick=35 dt_ms=1.052 stepped=0 rem_ms=4.592
-PHYS-ACC | tick=36 dt_ms=1.053 stepped=0 rem_ms=5.644
-PHYS-ACC | tick=37 dt_ms=1.053 stepped=0 rem_ms=6.698
-PHYS-ACC | tick=38 dt_ms=1.053 stepped=0 rem_ms=7.751
-PHYS-ACC | tick=39 dt_ms=1.053 stepped=0 rem_ms=8.804
-PHYS-ACC | tick=40 dt_ms=1.044 stepped=0 rem_ms=9.848
-PHYS-ACC | tick=41 dt_ms=1.010 stepped=0 rem_ms=10.857
-PHYS-ACC | tick=42 dt_ms=1.053 stepped=0 rem_ms=11.911
-PHYS-ACC | tick=43 dt_ms=1.053 stepped=0 rem_ms=12.964
-PHYS-ACC | tick=44 dt_ms=1.052 stepped=0 rem_ms=14.016
-PHYS-ACC | tick=45 dt_ms=1.052 stepped=0 rem_ms=15.069
-PHYS-ACC | tick=46 dt_ms=1.053 stepped=0 rem_ms=16.122
-PHYS-ACC | tick=47 dt_ms=1.052 stepped=1 rem_ms=0.507
-PHYS-ACC | tick=48 dt_ms=1.055 stepped=0 rem_ms=1.562
-PHYS-ACC | tick=49 dt_ms=1.052 stepped=0 rem_ms=2.614
-PHYS-ACC | tick=50 dt_ms=1.053 stepped=0 rem_ms=3.666
-PHYS-ACC | tick=51 dt_ms=1.052 stepped=0 rem_ms=4.719
-PHYS-ACC | tick=52 dt_ms=1.052 stepped=0 rem_ms=5.771
-PHYS-ACC | tick=53 dt_ms=1.052 stepped=0 rem_ms=6.824
-PHYS-ACC | tick=54 dt_ms=1.053 stepped=0 rem_ms=7.876
-PHYS-ACC | tick=55 dt_ms=1.053 stepped=0 rem_ms=8.929
-PHYS-ACC | tick=56 dt_ms=1.052 stepped=0 rem_ms=9.982
-PHYS-ACC | tick=57 dt_ms=1.052 stepped=0 rem_ms=11.034
-PHYS-ACC | tick=58 dt_ms=1.053 stepped=0 rem_ms=12.087
-PHYS-ACC | tick=59 dt_ms=1.052 stepped=0 rem_ms=13.139
-PHYS-ACC | tick=60 dt_ms=1.041 stepped=0 rem_ms=14.180
-PHYS-ACC | tick=61 dt_ms=1.010 stepped=0 rem_ms=15.190
-PHYS-ACC | tick=62 dt_ms=1.054 stepped=0 rem_ms=16.244
-PHYS-ACC | tick=63 dt_ms=1.053 stepped=1 rem_ms=0.630
-PHYS-ACC | tick=64 dt_ms=1.054 stepped=0 rem_ms=1.684
-PHYS-ACC | tick=65 dt_ms=1.053 stepped=0 rem_ms=2.736
-PHYS-ACC | tick=66 dt_ms=1.052 stepped=0 rem_ms=3.789
-PHYS-ACC | tick=67 dt_ms=1.053 stepped=0 rem_ms=4.842
-PHYS-ACC | tick=68 dt_ms=1.053 stepped=0 rem_ms=5.895
-PHYS-ACC | tick=69 dt_ms=1.061 stepped=0 rem_ms=6.956
-PHYS-ACC | tick=70 dt_ms=1.057 stepped=0 rem_ms=8.013
-PHYS-ACC | tick=71 dt_ms=1.053 stepped=0 rem_ms=9.066
-PHYS-ACC | tick=72 dt_ms=1.053 stepped=0 rem_ms=10.119
-PHYS-ACC | tick=73 dt_ms=1.052 stepped=0 rem_ms=11.171
-PHYS-ACC | tick=74 dt_ms=1.053 stepped=0 rem_ms=12.223
-PHYS-ACC | tick=75 dt_ms=1.053 stepped=0 rem_ms=13.276
-PHYS-ACC | tick=76 dt_ms=1.055 stepped=0 rem_ms=14.331
-PHYS-ACC | tick=77 dt_ms=1.053 stepped=0 rem_ms=15.384
-PHYS-ACC | tick=78 dt_ms=1.053 stepped=0 rem_ms=16.437
-PHYS-ACC | tick=79 dt_ms=1.053 stepped=1 rem_ms=0.823
-PHYS-ACC | tick=80 dt_ms=1.025 stepped=0 rem_ms=1.848
-PHYS-ACC | tick=81 dt_ms=1.008 stepped=0 rem_ms=2.856
-PHYS-ACC | tick=82 dt_ms=1.053 stepped=0 rem_ms=3.909
-PHYS-ACC | tick=83 dt_ms=1.055 stepped=0 rem_ms=4.964
-PHYS-ACC | tick=84 dt_ms=1.053 stepped=0 rem_ms=6.017
-PHYS-ACC | tick=85 dt_ms=1.053 stepped=0 rem_ms=7.070
-PHYS-ACC | tick=86 dt_ms=1.053 stepped=0 rem_ms=8.123
-PHYS-ACC | tick=87 dt_ms=1.053 stepped=0 rem_ms=9.176
-PHYS-ACC | tick=88 dt_ms=1.053 stepped=0 rem_ms=10.229
-PHYS-ACC | tick=89 dt_ms=1.053 stepped=0 rem_ms=11.282
-PHYS-ACC | tick=90 dt_ms=1.053 stepped=0 rem_ms=12.335
-PHYS-ACC | tick=91 dt_ms=1.053 stepped=0 rem_ms=13.387
-PHYS-ACC | tick=92 dt_ms=1.052 stepped=0 rem_ms=14.440
-PHYS-ACC | tick=93 dt_ms=1.052 stepped=0 rem_ms=15.492
-PHYS-ACC | tick=94 dt_ms=1.053 stepped=0 rem_ms=16.545
-PHYS-ACC | tick=95 dt_ms=1.052 stepped=1 rem_ms=0.931
-PHYS-ACC | tick=96 dt_ms=1.056 stepped=0 rem_ms=1.986
-PHYS-ACC | tick=97 dt_ms=1.053 stepped=0 rem_ms=3.039
-PHYS-ACC | tick=98 dt_ms=1.053 stepped=0 rem_ms=4.092
-PHYS-ACC | tick=99 dt_ms=1.053 stepped=0 rem_ms=5.145
-PHYS-ACC | tick=100 dt_ms=1.036 stepped=0 rem_ms=6.180
-PHYS-ACC | tick=101 dt_ms=1.009 stepped=0 rem_ms=7.190
-PHYS-ACC | tick=102 dt_ms=1.053 stepped=0 rem_ms=8.243
-PHYS-ACC | tick=103 dt_ms=1.053 stepped=0 rem_ms=9.295
-PHYS-ACC | tick=104 dt_ms=1.054 stepped=0 rem_ms=10.349
-PHYS-ACC | tick=105 dt_ms=1.053 stepped=0 rem_ms=11.402
-PHYS-ACC | tick=106 dt_ms=1.053 stepped=0 rem_ms=12.455
-PHYS-ACC | tick=107 dt_ms=1.063 stepped=0 rem_ms=13.518
-PHYS-ACC | tick=108 dt_ms=1.053 stepped=0 rem_ms=14.571
-PHYS-ACC | tick=109 dt_ms=1.053 stepped=0 rem_ms=15.624
-PHYS-ACC | tick=110 dt_ms=1.053 stepped=1 rem_ms=0.010
-PHYS-ACC | tick=111 dt_ms=1.055 stepped=0 rem_ms=1.065
-PHYS-ACC | tick=112 dt_ms=1.052 stepped=0 rem_ms=2.117
-PHYS-ACC | tick=113 dt_ms=1.053 stepped=0 rem_ms=3.170
-PHYS-ACC | tick=114 dt_ms=1.052 stepped=0 rem_ms=4.222
-PHYS-ACC | tick=115 dt_ms=1.056 stepped=0 rem_ms=5.278
-PHYS-ACC | tick=116 dt_ms=1.054 stepped=0 rem_ms=6.332
-PHYS-ACC | tick=117 dt_ms=1.052 stepped=0 rem_ms=7.384
-PHYS-ACC | tick=118 dt_ms=1.053 stepped=0 rem_ms=8.437
-PHYS-ACC | tick=119 dt_ms=1.054 stepped=0 rem_ms=9.491
-PHYS-ACC | tick=120 dt_ms=1.023 stepped=0 rem_ms=10.513
-PHYS-ACCSUM | ticks=1500 wall_s=1.578465 sim_s=1.566667 steps=94 drift_ms=11.7978 rem_ms=11.7978 n0=1406 n1=94 n2p=0 maxs=1
+PHYS-DETERM | sha256=f96c129d503a6c136f3bcdc0122eb88f2ba3171d7149e39ac87089ca47ec5d24
+PHYS-PERF | steps=600 total_ms=0.718 step_mean_ms=0.0012 step_min_ms=0.0004 step_max_ms=0.0082
+PHYS-ACC | tick=1 dt_ms=1.911 stepped=0 rem_ms=1.911
+PHYS-ACC | tick=2 dt_ms=1.068 stepped=0 rem_ms=2.979
+PHYS-ACC | tick=3 dt_ms=1.068 stepped=0 rem_ms=4.047
+PHYS-ACC | tick=4 dt_ms=1.068 stepped=0 rem_ms=5.115
+PHYS-ACC | tick=5 dt_ms=1.066 stepped=0 rem_ms=6.181
+PHYS-ACC | tick=6 dt_ms=1.068 stepped=0 rem_ms=7.249
+PHYS-ACC | tick=7 dt_ms=1.073 stepped=0 rem_ms=8.322
+PHYS-ACC | tick=8 dt_ms=1.068 stepped=0 rem_ms=9.389
+PHYS-ACC | tick=9 dt_ms=1.052 stepped=0 rem_ms=10.442
+PHYS-ACC | tick=10 dt_ms=1.053 stepped=0 rem_ms=11.495
+PHYS-ACC | tick=11 dt_ms=1.098 stepped=0 rem_ms=12.593
+PHYS-ACC | tick=12 dt_ms=1.081 stepped=0 rem_ms=13.674
+PHYS-ACC | tick=13 dt_ms=1.069 stepped=0 rem_ms=14.743
+PHYS-ACC | tick=14 dt_ms=1.053 stepped=0 rem_ms=15.796
+PHYS-ACC | tick=15 dt_ms=1.053 stepped=1 rem_ms=0.183
+PHYS-ACC | tick=16 dt_ms=1.058 stepped=0 rem_ms=1.241
+PHYS-ACC | tick=17 dt_ms=1.053 stepped=0 rem_ms=2.294
+PHYS-ACC | tick=18 dt_ms=1.054 stepped=0 rem_ms=3.348
+PHYS-ACC | tick=19 dt_ms=1.053 stepped=0 rem_ms=4.401
+PHYS-ACC | tick=20 dt_ms=1.064 stepped=0 rem_ms=5.465
+PHYS-ACC | tick=21 dt_ms=1.054 stepped=0 rem_ms=6.519
+PHYS-ACC | tick=22 dt_ms=1.053 stepped=0 rem_ms=7.572
+PHYS-ACC | tick=23 dt_ms=1.053 stepped=0 rem_ms=8.624
+PHYS-ACC | tick=24 dt_ms=1.057 stepped=0 rem_ms=9.682
+PHYS-ACC | tick=25 dt_ms=1.053 stepped=0 rem_ms=10.735
+PHYS-ACC | tick=26 dt_ms=1.040 stepped=0 rem_ms=11.775
+PHYS-ACC | tick=27 dt_ms=1.060 stepped=0 rem_ms=12.836
+PHYS-ACC | tick=28 dt_ms=1.054 stepped=0 rem_ms=13.890
+PHYS-ACC | tick=29 dt_ms=1.054 stepped=0 rem_ms=14.943
+PHYS-ACC | tick=30 dt_ms=1.054 stepped=0 rem_ms=15.997
+PHYS-ACC | tick=31 dt_ms=1.053 stepped=1 rem_ms=0.384
+PHYS-ACC | tick=32 dt_ms=1.056 stepped=0 rem_ms=1.440
+PHYS-ACC | tick=33 dt_ms=1.054 stepped=0 rem_ms=2.493
+PHYS-ACC | tick=34 dt_ms=1.062 stepped=0 rem_ms=3.555
+PHYS-ACC | tick=35 dt_ms=1.054 stepped=0 rem_ms=4.609
+PHYS-ACC | tick=36 dt_ms=1.054 stepped=0 rem_ms=5.663
+PHYS-ACC | tick=37 dt_ms=1.053 stepped=0 rem_ms=6.716
+PHYS-ACC | tick=38 dt_ms=1.053 stepped=0 rem_ms=7.769
+PHYS-ACC | tick=39 dt_ms=1.053 stepped=0 rem_ms=8.822
+PHYS-ACC | tick=40 dt_ms=1.053 stepped=0 rem_ms=9.875
+PHYS-ACC | tick=41 dt_ms=1.058 stepped=0 rem_ms=10.934
+PHYS-ACC | tick=42 dt_ms=1.054 stepped=0 rem_ms=11.988
+PHYS-ACC | tick=43 dt_ms=1.053 stepped=0 rem_ms=13.041
+PHYS-ACC | tick=44 dt_ms=1.058 stepped=0 rem_ms=14.099
+PHYS-ACC | tick=45 dt_ms=1.009 stepped=0 rem_ms=15.107
+PHYS-ACC | tick=46 dt_ms=1.054 stepped=0 rem_ms=16.161
+PHYS-ACC | tick=47 dt_ms=1.064 stepped=1 rem_ms=0.558
+PHYS-ACC | tick=48 dt_ms=1.070 stepped=0 rem_ms=1.628
+PHYS-ACC | tick=49 dt_ms=1.054 stepped=0 rem_ms=2.682
+PHYS-ACC | tick=50 dt_ms=1.054 stepped=0 rem_ms=3.736
+PHYS-ACC | tick=51 dt_ms=1.054 stepped=0 rem_ms=4.790
+PHYS-ACC | tick=52 dt_ms=1.054 stepped=0 rem_ms=5.844
+PHYS-ACC | tick=53 dt_ms=1.053 stepped=0 rem_ms=6.897
+PHYS-ACC | tick=54 dt_ms=1.054 stepped=0 rem_ms=7.951
+PHYS-ACC | tick=55 dt_ms=1.061 stepped=0 rem_ms=9.013
+PHYS-ACC | tick=56 dt_ms=1.053 stepped=0 rem_ms=10.066
+PHYS-ACC | tick=57 dt_ms=1.063 stepped=0 rem_ms=11.129
+PHYS-ACC | tick=58 dt_ms=1.060 stepped=0 rem_ms=12.189
+PHYS-ACC | tick=59 dt_ms=1.054 stepped=0 rem_ms=13.244
+PHYS-ACC | tick=60 dt_ms=1.053 stepped=0 rem_ms=14.297
+PHYS-ACC | tick=61 dt_ms=1.053 stepped=0 rem_ms=15.350
+PHYS-ACC | tick=62 dt_ms=1.057 stepped=0 rem_ms=16.407
+PHYS-ACC | tick=63 dt_ms=1.035 stepped=1 rem_ms=0.775
+PHYS-ACC | tick=64 dt_ms=1.060 stepped=0 rem_ms=1.836
+PHYS-ACC | tick=65 dt_ms=1.053 stepped=0 rem_ms=2.889
+PHYS-ACC | tick=66 dt_ms=1.053 stepped=0 rem_ms=3.942
+PHYS-ACC | tick=67 dt_ms=1.053 stepped=0 rem_ms=4.995
+PHYS-ACC | tick=68 dt_ms=1.053 stepped=0 rem_ms=6.048
+PHYS-ACC | tick=69 dt_ms=1.062 stepped=0 rem_ms=7.110
+PHYS-ACC | tick=70 dt_ms=1.053 stepped=0 rem_ms=8.163
+PHYS-ACC | tick=71 dt_ms=1.053 stepped=0 rem_ms=9.216
+PHYS-ACC | tick=72 dt_ms=1.053 stepped=0 rem_ms=10.269
+PHYS-ACC | tick=73 dt_ms=1.054 stepped=0 rem_ms=11.324
+PHYS-ACC | tick=74 dt_ms=1.053 stepped=0 rem_ms=12.376
+PHYS-ACC | tick=75 dt_ms=1.063 stepped=0 rem_ms=13.439
+PHYS-ACC | tick=76 dt_ms=1.063 stepped=0 rem_ms=14.502
+PHYS-ACC | tick=77 dt_ms=1.054 stepped=0 rem_ms=15.556
+PHYS-ACC | tick=78 dt_ms=1.054 stepped=0 rem_ms=16.610
+PHYS-ACC | tick=79 dt_ms=1.053 stepped=1 rem_ms=0.995
+PHYS-ACC | tick=80 dt_ms=1.059 stepped=0 rem_ms=2.054
+PHYS-ACC | tick=81 dt_ms=1.055 stepped=0 rem_ms=3.109
+PHYS-ACC | tick=82 dt_ms=1.054 stepped=0 rem_ms=4.162
+PHYS-ACC | tick=83 dt_ms=1.070 stepped=0 rem_ms=5.233
+PHYS-ACC | tick=84 dt_ms=1.053 stepped=0 rem_ms=6.286
+PHYS-ACC | tick=85 dt_ms=1.053 stepped=0 rem_ms=7.339
+PHYS-ACC | tick=86 dt_ms=1.053 stepped=0 rem_ms=8.392
+PHYS-ACC | tick=87 dt_ms=1.053 stepped=0 rem_ms=9.445
+PHYS-ACC | tick=88 dt_ms=1.053 stepped=0 rem_ms=10.498
+PHYS-ACC | tick=89 dt_ms=1.053 stepped=0 rem_ms=11.551
+PHYS-ACC | tick=90 dt_ms=1.057 stepped=0 rem_ms=12.608
+PHYS-ACC | tick=91 dt_ms=1.053 stepped=0 rem_ms=13.661
+PHYS-ACC | tick=92 dt_ms=1.053 stepped=0 rem_ms=14.714
+PHYS-ACC | tick=93 dt_ms=1.053 stepped=0 rem_ms=15.768
+PHYS-ACC | tick=94 dt_ms=1.054 stepped=1 rem_ms=0.155
+PHYS-ACC | tick=95 dt_ms=1.055 stepped=0 rem_ms=1.210
+PHYS-ACC | tick=96 dt_ms=1.053 stepped=0 rem_ms=2.263
+PHYS-ACC | tick=97 dt_ms=1.053 stepped=0 rem_ms=3.317
+PHYS-ACC | tick=98 dt_ms=1.055 stepped=0 rem_ms=4.372
+PHYS-ACC | tick=99 dt_ms=1.053 stepped=0 rem_ms=5.425
+PHYS-ACC | tick=100 dt_ms=1.016 stepped=0 rem_ms=6.441
+PHYS-ACC | tick=101 dt_ms=1.053 stepped=0 rem_ms=7.494
+PHYS-ACC | tick=102 dt_ms=1.054 stepped=0 rem_ms=8.548
+PHYS-ACC | tick=103 dt_ms=1.054 stepped=0 rem_ms=9.602
+PHYS-ACC | tick=104 dt_ms=1.053 stepped=0 rem_ms=10.655
+PHYS-ACC | tick=105 dt_ms=1.053 stepped=0 rem_ms=11.708
+PHYS-ACC | tick=106 dt_ms=1.053 stepped=0 rem_ms=12.761
+PHYS-ACC | tick=107 dt_ms=1.054 stepped=0 rem_ms=13.815
+PHYS-ACC | tick=108 dt_ms=1.053 stepped=0 rem_ms=14.868
+PHYS-ACC | tick=109 dt_ms=1.053 stepped=0 rem_ms=15.921
+PHYS-ACC | tick=110 dt_ms=1.054 stepped=1 rem_ms=0.308
+PHYS-ACC | tick=111 dt_ms=1.054 stepped=0 rem_ms=1.362
+PHYS-ACC | tick=112 dt_ms=1.053 stepped=0 rem_ms=2.416
+PHYS-ACC | tick=113 dt_ms=1.053 stepped=0 rem_ms=3.469
+PHYS-ACC | tick=114 dt_ms=1.053 stepped=0 rem_ms=4.522
+PHYS-ACC | tick=115 dt_ms=1.053 stepped=0 rem_ms=5.575
+PHYS-ACC | tick=116 dt_ms=1.053 stepped=0 rem_ms=6.628
+PHYS-ACC | tick=117 dt_ms=1.053 stepped=0 rem_ms=7.682
+PHYS-ACC | tick=118 dt_ms=1.054 stepped=0 rem_ms=8.736
+PHYS-ACC | tick=119 dt_ms=1.041 stepped=0 rem_ms=9.776
+PHYS-ACC | tick=120 dt_ms=1.053 stepped=0 rem_ms=10.830
+PHYS-ACCSUM | ticks=1500 wall_s=1.580401 sim_s=1.566667 steps=94 drift_ms=13.7345 rem_ms=13.7345 n0=1406 n1=94 n2p=0 maxs=1
 PHYS_PROBE_DONE

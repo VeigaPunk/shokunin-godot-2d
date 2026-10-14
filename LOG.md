@@ -801,3 +801,22 @@
   spawn-layer seam (os.execute fd1 inheritance) confirmed cell-for-cell
   (critic F1, folded 16d003c, 19/19); verifier AGREE 4/4. Bounded LOVE 11.5
   headless, this host. (Sol final, wave-10)
+
+## Round 71 — pygame headless first contact (wave-11)
+
+- MOVE: `corpus/fixtures/pygame_probe.py` + `pygame_battery.py` sibling
+  (36 pinned cases; SDL_VIDEODRIVER=dummy + PYGAME_HIDE_SUPPORT_PROMPT=1
+  env contract carried in-fixture).
+- Measured: withholding window is LANGUAGE-layer (CPython stdio);
+  frontier's ~8KB bound FALSIFIED — edge is `io.DEFAULT_BUFFER_SIZE` =
+  131072 on 3.14.7; compound 2-layer window (textio 8192 pending +
+  BufferedWriter 131072): 139263 B fully invisible, byte 139264 surfaces
+  the buffered 131072; granularity-conditional (single big write passes
+  through).
+- tick(60) → 62.1-62.3 Hz (int(1000/fps)+SDL_Delay undershoot); fps
+  1000/1001 knife-edge; popen writer-bound byte-exact; pump-free;
+  event queue cap exactly 65535.
+- Seat corrections folded: critic's load-fragility (relation pins, env
+  pinning), simplifier's metric-rule bug (pin re-tightened post-fix).
+- Verdict: ADMIT-with-correction. 36/36 ×3 + under load; Godot/LOVE
+  byte-stable. Sol final.

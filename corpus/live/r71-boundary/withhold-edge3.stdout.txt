@@ -1,0 +1,11 @@
+e_16x8k_then_8191 rep0 rc=0 first_out_ms=689.103 early=0 withheld=139263 total=139263 exit_ms=692.486
+e_16x8k_then_8191 rep1 rc=0 first_out_ms=689.252 early=0 withheld=139263 total=139263 exit_ms=692.837
+e_16x8k_then_8191_then_1 rep0 rc=0 first_out_ms=358.361 early=131072 withheld=8192 total=139264 exit_ms=712.159
+e_16x8k_then_8191_then_1 rep1 rc=0 first_out_ms=359.264 early=131072 withheld=8192 total=139264 exit_ms=712.93
+e_single_139263 rep0 rc=0 first_out_ms=17.895 early=139263 withheld=0 total=139263 exit_ms=371.447
+e_single_139264 rep0 rc=0 first_out_ms=18.297 early=139264 withheld=0 total=139264 exit_ms=371.756
+e_100_then_131072 rep0 rc=0 first_out_ms=78.215 early=131172 withheld=0 total=131172 exit_ms=431.821
+e_100_then_131072 rep1 rc=0 first_out_ms=78.107 early=131172 withheld=0 total=131172 exit_ms=431.68
+e_131071_then_131072 rep0 rc=0 first_out_ms=78.345 early=262143 withheld=0 total=262143 exit_ms=432.007
+e_131072_then_131071 rep0 rc=0 first_out_ms=18.561 early=131072 withheld=131071 total=262143 exit_ms=432.248
+json: withhold-edge3.json

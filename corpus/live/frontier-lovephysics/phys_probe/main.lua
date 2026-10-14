@@ -28,20 +28,25 @@ local in_step  = false
 local cur_step = 0
 local evts     = {}
 local nbc, nec, npre, npost = 0, 0, 0, 0
-local dyn
+local dyn                       -- b1: fast drop, restitution 0.8
 local world1
+local cbodies = {}              -- ordered dynamic bodies
+local cpre_state, cpost_state = {}, {}  -- label -> "y vy" snapshots
 
 local function cbstate(tag, a, b, extra)
   local body = a:getBody()
   if body:getType() == "static" then body = b:getBody() end
   local _, y = body:getPosition()
   local _, vy = body:getLinearVelocity()
-  return string.format("%s in_step=%s y=%s vy=%s%s",
+  local label = body:getUserData() or "?"
+  return label, string.format("%s in_step=%s y=%s vy=%s%s",
     tag, tostring(in_step), F(y), F(vy), extra or "")
 end
 local function push(tag, a, b, extra)
-  local s = cbstate(tag, a, b, extra)
-  evts[cur_step] = evts[cur_step] and (evts[cur_step] .. " ;; " .. s) or s
+  local label, s = cbstate(tag, a, b, extra)
+  evts[cur_step] = evts[cur_step] or {}
+  local prev = evts[cur_step][label]
+  evts[cur_step][label] = prev and (prev .. " ;; " .. s) or s
 end
 
 local function cbc(a, b, c)  nbc = nbc + 1;  push("BC",   a, b) end
@@ -56,17 +61,35 @@ local function cpost(a, b, c, ...)
     n, table.concat(types, ",")))
 end
 
+local function snap(body)
+  local _, y = body:getPosition()
+  local _, vy = body:getLinearVelocity()
+  return F(y), F(vy)
+end
+
 local function build_contact_world()
   world1 = love.physics.newWorld(0, GRAV, true)
   world1:setCallbacks(cbc, cec, cpre, cpost)
   local g = love.physics.newBody(world1, 400, 560, "static")
   love.physics.newFixture(g, love.physics.newRectangleShape(800, 40))
+  -- b1: fast first touch (falls ~460px -> TOI-path contact expected)
   dyn = love.physics.newBody(world1, 400, 60, "dynamic")
+  dyn:setUserData("b1")
   local bf = love.physics.newFixture(dyn, love.physics.newCircleShape(20), 1)
   bf:setRestitution(0.8); bf:setFriction(0.3)
+  cbodies[1] = dyn
+  -- b2: second fast body, offset; interleaved events with b1
   local b2 = love.physics.newBody(world1, 240, -40, "dynamic")
+  b2:setUserData("b2")
   local bf2 = love.physics.newFixture(b2, love.physics.newCircleShape(14), 1)
   bf2:setRestitution(0.5); bf2:setFriction(0.5)
+  cbodies[2] = b2
+  -- b3: slow first touch (starts ~1px above contact) -> narrowphase-path
+  local b3 = love.physics.newBody(world1, 650, 518.9, "dynamic")
+  b3:setUserData("b3")
+  local bf3 = love.physics.newFixture(b3, love.physics.newCircleShape(20), 1)
+  bf3:setRestitution(0.1); bf3:setFriction(0.5)
+  cbodies[3] = b3
 end
 
 -- ---- determinism scene ------------------------------------------------
@@ -112,7 +135,8 @@ local function run_determ()
   end
   local total = (love.timer.getTime() - t0) * 1000
   for _, l in ipairs(det_dump) do print(l) end
-  EM("DETERM", "sha256=" .. love.data.hash("sha256", table.concat(det_dump, "\n")))
+  local raw = love.data.hash("sha256", table.concat(det_dump, "\n"))
+  EM("DETERM", "sha256=" .. love.data.encode("string", "hex", raw))
   EM("PERF", string.format(
     "steps=600 total_ms=%.3f step_mean_ms=%.4f step_min_ms=%.4f step_max_ms=%.4f",
     total, total / 600, smin, smax))
@@ -146,6 +170,47 @@ local function run_accum_tick(dt)
   end
 end
 
+-- scripted-dt accumulator: same math, fed a jitter pattern with stalls to
+-- show burst stepping. Script: 30x1.1ms, 50ms stall, 30x1.1ms, 33ms stall,
+-- 30x8.3ms. Not engine dt -- pure accumulator-math measurement.
+local acc2 = { a = 0, wall = 0, steps = 0, n0 = 0, n1 = 0, n2p = 0, maxs = 0 }
+local acc2_script
+local acc2_i = 0
+
+local function build_acc2()
+  local s = {}
+  for _ = 1, 30 do s[#s + 1] = 0.0011 end
+  s[#s + 1] = 0.050
+  for _ = 1, 30 do s[#s + 1] = 0.0011 end
+  s[#s + 1] = 0.033
+  for _ = 1, 30 do s[#s + 1] = 0.0083 end
+  acc2_script = s
+end
+
+local function run_acc2_tick()
+  acc2_i = acc2_i + 1
+  local dt = acc2_script[acc2_i]
+  if not dt then return false end
+  acc2.a = acc2.a + dt
+  acc2.wall = acc2.wall + dt
+  local s = 0
+  while acc2.a >= FIXED do
+    aworld:update(FIXED)
+    acc2.a = acc2.a - FIXED
+    s = s + 1
+  end
+  acc2.steps = acc2.steps + s
+  if s == 0 then acc2.n0 = acc2.n0 + 1
+  elseif s == 1 then acc2.n1 = acc2.n1 + 1
+  else acc2.n2p = acc2.n2p + 1 end
+  if s > acc2.maxs then acc2.maxs = s end
+  if s > 1 or dt > 0.02 then
+    EM("ACC2", string.format("tick=%d dt_ms=%.2f stepped=%d rem_ms=%.3f",
+      acc2_i, dt * 1000, s, acc2.a * 1000))
+  end
+  return acc2_i < #acc2_script
+end
+
 local function build_accum_world()
   aworld = love.physics.newWorld(0, GRAV, true)
   local g = love.physics.newBody(aworld, 400, 560, "static")
@@ -171,17 +236,35 @@ function love.update(dt)
     phase = "contact"
   elseif phase == "contact" then
     cur_step = cur_step + 1
-    local y0 = dyn:getY()
-    local _, vy0 = dyn:getLinearVelocity()
+    for _, b in ipairs(cbodies) do
+      local y, vy = snap(b)
+      cpre_state[b:getUserData()] = y .. " " .. vy
+    end
     in_step = true
     world1:update(FIXED)
     in_step = false
-    local y1 = dyn:getY()
-    local _, vy1 = dyn:getLinearVelocity()
-    if evts[cur_step] or (cur_step >= 65 and cur_step <= 90) then
-      EM("STEP", string.format("i=%d y_pre=%s vy_pre=%s y_post=%s vy_post=%s",
-        cur_step, F(y0), F(vy0), F(y1), F(vy1)))
-      if evts[cur_step] then EM("EVT", "i=" .. cur_step .. " " .. evts[cur_step]) end
+    for _, b in ipairs(cbodies) do
+      local y, vy = snap(b)
+      cpost_state[b:getUserData()] = y .. " " .. vy
+    end
+    -- trajectory window around b1's expected first contact
+    if cur_step >= 70 and cur_step <= 76 then
+      local y, vy = cpost_state.b1:match("(%S+) (%S+)")
+      EM("STEP", string.format("i=%d b1 y_pre=%s y_post=%s vy_post=%s",
+        cur_step, (cpre_state.b1:match("(%S+)")), y, vy))
+    end
+    if evts[cur_step] then
+      for _, b in ipairs(cbodies) do
+        local label = b:getUserData()
+        if evts[cur_step][label] then
+          local ypre, vypre = cpre_state[label]:match("(%S+) (%S+)")
+          local ypost, vypost = cpost_state[label]:match("(%S+) (%S+)")
+          EM("EVT", string.format(
+            "i=%d body=%s y_pre=%s vy_pre=%s y_post=%s vy_post=%s :: %s",
+            cur_step, label, ypre, vypre, ypost, vypost,
+            evts[cur_step][label]))
+        end
+      end
     end
     if cur_step >= 300 then
       EM("COUNTS", string.format("steps=%d BC=%d EC=%d PRE=%d POST=%d",
@@ -199,6 +282,17 @@ function love.update(dt)
         acc.tick0, acc.wall, sim, acc.steps,
         (acc.wall - sim) * 1000, acc.a * 1000,
         acc.n0, acc.n1, acc.n2p, acc.maxs))
+      build_acc2()
+      phase = "acc2"
+    end
+  elseif phase == "acc2" then
+    if not run_acc2_tick() then
+      local sim = acc2.steps * FIXED
+      EM("ACC2SUM", string.format(
+        "ticks=%d wall_s=%.6f sim_s=%.6f steps=%d drift_ms=%.4f rem_ms=%.4f n0=%d n1=%d n2p=%d maxs=%d",
+        acc2_i, acc2.wall, sim, acc2.steps,
+        (acc2.wall - sim) * 1000, acc2.a * 1000,
+        acc2.n0, acc2.n1, acc2.n2p, acc2.maxs))
       print("PHYS_PROBE_DONE")
       love.event.quit(0)
     end

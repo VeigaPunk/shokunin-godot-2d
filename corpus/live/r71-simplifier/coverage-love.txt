@@ -1,0 +1,14 @@
+emitted arms=5 keys=21  cases=15
+
+-- emitted but UNPINNED (measured surface with no assertion):
+   osx|ms = '1.51'
+   osx|ret_c = 'nil'
+   popen|open_ms = '0.11'
+   popen|ticks_before = '121'
+   splice|gap_ms = '200'
+   splice|offset_ms = '80'
+
+-- pinned but NEVER EMITTED (row cannot pass):
+
+-- pinned value is a probe LITERAL (assertion-carried):
+   pump_not_needed          pump|pump_needed='false' (probe emits a literal)

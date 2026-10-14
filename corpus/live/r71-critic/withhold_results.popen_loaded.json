@@ -1,0 +1,93 @@
+{
+  "tag": "popen_loaded",
+  "modes": [
+    {
+      "mode": "exit",
+      "exit_ms": 418.7,
+      "total_bytes": 7,
+      "first_ms": 416.9,
+      "first_bytes": 7,
+      "first_cum": 7,
+      "first_head": "LINE-1\n",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 416.9,
+          "bytes": 7,
+          "cum": 7,
+          "head": "LINE-1\n"
+        }
+      ],
+      "child_stdio": {
+        "mode": "exit",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=exit isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "exit_unbuffered",
+      "exit_ms": 414.62,
+      "total_bytes": 7,
+      "first_ms": 12.2,
+      "first_bytes": 7,
+      "first_cum": 7,
+      "first_head": "LINE-1\n",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 12.2,
+          "bytes": 7,
+          "cum": 7,
+          "head": "LINE-1\n"
+        }
+      ],
+      "child_stdio": {
+        "mode": "exit",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "True",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=exit isatty=False line_buffering=False write_through=True unbuffered=False"
+    }
+  ],
+  "popen": [
+    {
+      "l1": "CHILD-MARK-1",
+      "l2": "CHILD-MARK-2",
+      "l1_wait_ms": 11.12,
+      "l2_wait_ms": 131.28,
+      "close_wait_ms": 1.7,
+      "rest_len": 0,
+      "ret": 0,
+      "total_ms": 135.83
+    },
+    {
+      "l1": "CHILD-MARK-1",
+      "l2": "CHILD-MARK-2",
+      "l1_wait_ms": 12.48,
+      "l2_wait_ms": 132.54,
+      "close_wait_ms": 4.26,
+      "rest_len": 0,
+      "ret": 0,
+      "total_ms": 136.82
+    },
+    {
+      "l1": "CHILD-MARK-1",
+      "l2": "CHILD-MARK-2",
+      "l1_wait_ms": 14.64,
+      "l2_wait_ms": 136.47,
+      "close_wait_ms": 0.0,
+      "rest_len": 0,
+      "ret": 0,
+      "total_ms": 139.31
+    }
+  ],
+  "host_env": {
+    "PYTHONUNBUFFERED": null,
+    "PYTHONIOENCODING": null
+  }
+}
