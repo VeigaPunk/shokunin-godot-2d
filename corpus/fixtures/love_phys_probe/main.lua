@@ -80,6 +80,75 @@ local jw_prev = nil
 local rf1_falses, rf1_passes = 0, 0
 local f_mask = nil          -- extra b1 fixture for retfalse1
 
+-- ---- r77 additions: release / callback-swap / drain-EC / coroutine / meter --
+--
+-- Six fronts, each pre-measured live by the r77 scout before arming:
+--   1 release      : world:release() INSIDE a callback -> SIGSEGV (rc=-11),
+--                    partial receipt, no CELL_DONE reachable; five channels.
+--   2 setcallbacks : world:setCallbacks mid-dispatch -> the NEW table handles
+--                    the rest of the step (later channels AND later contacts);
+--                    a swapped-out table never fires again.
+--   3 fxdestroy    : Fixture:destroy() in a callback -> deferred-family, but
+--                    the tracked body gate is fixture-blind (count and body
+--                    untouched): its own fixture-scoped witness set.
+--   4 drain edges  : at the drain EC (locked=false) writes APPLY on the spot
+--                    and an abort there leaves the world UNLOCKED.
+--   5 coroutine    : coroutine.resume is a containment level; wrap is not.
+--   6 meter        : love.physics.setMeter in-cb applies (module global).
+--
+-- Insertion-only: every branch below is gated on R77[CELL] ~= nil, so a
+-- pre-r77 cell takes exactly the pre-r77 path (receipts unchanged modulo the
+-- declared-unpinned main.lua:NNN tokens).
+local R77 = {
+  bc_worldrelease      = { cb = "bc",   act = "worldrelease" },
+  pre_worldrelease     = { cb = "pre",  act = "worldrelease" },
+  post_worldrelease    = { cb = "post", act = "worldrelease" },
+  ec_worldrelease      = { cb = "ec",   act = "worldrelease" },
+  drain_worldrelease   = { cb = "bc",   act = "queue_target", drain = "worldrelease" },
+  bc_setcallbacks      = { cb = "bc",   act = "setcallbacks" },
+  pre_setcallbacks     = { cb = "pre",  act = "setcallbacks" },
+  multi_setcallbacks   = { cb = "bc",   act = "setcallbacks", scene = "multi",
+                           target = "b4" },
+  bc_setcallbacks_nil  = { cb = "bc",   act = "setcallbacks_nil" },
+  bc_setcallbacks_back = { cb = "bc",   act = "setcallbacks_back" },
+  bc_fixture_destroy   = { cb = "bc",   act = "fixture_destroy" },
+  bc_fixture_destroy2  = { cb = "bc",   act = "fixture_destroy2", extra_fx = true },
+  ext_fixture_destroy  = { ext = "fixture_destroy" },
+  drain_setpos_b2      = { cb = "bc",   act = "queue_target", drain = "setpos_b2" },
+  drain_queue_b2       = { cb = "bc",   act = "queue_target", drain = "queue_b2" },
+  wp_drain_throw       = { cb = "bc",   act = "queue_target", drain = "throw",
+                           wp = true },
+  drain_order_joint    = { cb = "bc",   act = "queue_target", drain = "order",
+                           target = "b2", joint = true },
+  bc_coyield           = { cb = "bc",   act = "coyield" },
+  bc_cowrap_unp        = { cb = "bc",   act = "cowrap_unp" },
+  bc_cowrap_setpos     = { cb = "bc",   act = "cowrap_setpos" },
+  co_update_yield      = { cb = "bc",   act = "coyield", co = true },
+  wp_coyield           = { cb = "bc",   act = "coyield", wp = true },
+  cowrap_update_yield  = { cb = "bc",   act = "coyield", cowrap = true },
+  bc_meter             = { cb = "bc",   act = "meter" },
+  pre_meter            = { cb = "pre",  act = "meter" },
+  ext_worldrelease     = { ext = "worldrelease" },
+}
+local RS = R77[CELL]        -- nil for every pre-r77 cell
+local r77_target = RS and RS.target or nil
+local r77_cb = RS and RS.cb or nil
+local r77_drain = RS and RS.drain or nil
+if RS ~= nil and RS.wp then wp_mode = true end  -- reuse the tracked wp pcall
+local r77_fx_a, r77_fx_b    -- fixture handles (fxdestroy cells)
+local r77_drain_n = 0
+local r77_counts2 = { bc = 0, ec = 0, pre = 0, post = 0 }
+local r77_swap_step = -1
+local r77_ec_n = 0
+local r77_ecpost = false
+local r77_aborted, r77_recovered = false, false
+local r77_costatus = ""
+local r77_labels = {}
+-- forward declarations (assigned in the r77 helper block further down)
+local r77_dead, r77_fxcount, r77_getcb, r77_obs, r77_drain_hook
+local r77_cb2_bc, r77_cb2_ec, r77_cb2_pre, r77_cb2_post
+local r77_install_container
+
 local world, g, b1, b2, b3
 local fired = false
 local fire_step = -1
@@ -256,6 +325,105 @@ local function do_mutation(mkind, contact, body)
       EM(string.format("cb_joint_destroy ok=%s err=%s isDestroyed_in_cb=%s jcount_before=%d jcount_after=%d",
         tostring(ok), tostring(err), res_str(dok, d), j0, world:getJointCount()))
     end
+  elseif mkind == "worldrelease" then
+    -- r77 seed 1: release() from INSIDE the engine's own execution. The
+    -- wrapper nulls the proxy and deletes the object while the engine is
+    -- still running inside it; the process dies with SIGSEGV once the
+    -- callback returns. No CELL_DONE is reachable -- a partial receipt with
+    -- the callback's last write as the witness line IS the measurement.
+    EM("rel_pre kind=worldrelease")
+    local ok, err = pcall_str(world.release, world)
+    EM(string.format("rel_call ok=%s err=%s", tostring(ok), tostring(err)))
+    EM("rel_alive marker=1")   -- plain write: no world access after the release
+    EM("rel_post marker=1")    -- callback body complete; the next WORLD touch
+                               -- (the caller's own count/pose report) is the
+                               -- death site -- it never reaches the pipe.
+  elseif mkind == "setcallbacks" or mkind == "setcallbacks_nil"
+         or mkind == "setcallbacks_back" then
+    -- r77 seed 2: world:setCallbacks mid-dispatch. The engine reads the
+    -- reference at EACH dispatch, so the swap takes effect for every later
+    -- dispatch of the step -- later channels AND later contacts. The swap
+    -- call itself is the last entry the old table ever sees.
+    local n_old = counts[r77_cb]
+    -- capture the table the engine is CURRENTLY holding (before the swap):
+    -- this is what "swap back" must restore.
+    local ob, oe, op, oq = world:getCallbacks()
+    local a1, a2, a3, a4 = r77_cb2_bc, r77_cb2_ec, r77_cb2_pre, r77_cb2_post
+    if mkind == "setcallbacks_nil" then a1, a2, a3, a4 = nil, nil, nil, nil end
+    local ok, err = pcall_str(world.setCallbacks, world, a1, a2, a3, a4)
+    r77_swap_step = step
+    EM(string.format("cb_setcallbacks ok=%s err=%s swapped_step=%d swapped_n=%d swapped_cb=%s getcb=%s",
+      tostring(ok), tostring(err), step, n_old, tostring(r77_cb), r77_getcb()))
+    if mkind == "setcallbacks_back" then
+      -- last write wins: swap straight back to the captured table
+      local ok2, err2 = pcall_str(world.setCallbacks, world, ob, oe, op, oq)
+      EM(string.format("cb_setcallbacks2 ok=%s err=%s getcb=%s",
+        tostring(ok2), tostring(err2), r77_getcb()))
+    end
+  elseif mkind == "fixture_destroy" or mkind == "fixture_destroy2" then
+    -- r77 seed 3: Fixture:destroy() inside a callback. Deferred-family, but
+    -- the tracked body gate cannot see it (count and body are untouched), so
+    -- the witness set is fixture-scoped: the handle is STILL alive inside the
+    -- call and the fixture list is unchanged; the goodbye is the drain EC at
+    -- locked=false; the effect witness is the live sibling (two-fixture cell)
+    -- or the tunneling pose (single fixture).
+    local fxs = body:getFixtures()
+    r77_fx_a, r77_fx_b = fxs[1], fxs[2]   -- list[1] is the LAST created
+    local before = r77_fxcount(body)
+    local ok, err = pcall_str(r77_fx_a.destroy, r77_fx_a)
+    EM(string.format("cb_fxdestroy ok=%s err=%s isDestroyed_in_cb=%s fcount_before=%s fcount_after=%s sib_dead=%s count_after=%d",
+      tostring(ok), tostring(err), r77_dead(r77_fx_a), before, r77_fxcount(body),
+      r77_dead(r77_fx_b), world:getBodyCount()))
+  elseif mkind == "queue_target" then
+    -- r77 seed 4: an ACCEPTED queued destroy opens the drain window; the
+    -- drain-time action (if any) runs in the update epilogue at locked=false.
+    local ok, err = pcall_str(body.destroy, body)
+    EM(string.format("cb_destroy ok=%s err=%s mode=queued alive_in_cb=%s count_after=%d",
+      tostring(ok), tostring(err), pos(body), world:getBodyCount()))
+  elseif mkind == "meter" then
+    -- r77 seed 6: setMeter is a module-global write -- there is nothing for
+    -- the lock to gate. Decisive witness is the RATIO: every reported
+    -- quantity is scaled at the Lua boundary (pos doubles at meter 60) while
+    -- the solver's own trajectory is untouched.
+    local m0 = love.physics.getMeter()
+    local ok, err = pcall_str(love.physics.setMeter, 60)
+    local gx, gy = world:getGravity()
+    EM(string.format("cb_meter ok=%s err=%s meter_before=%s meter_after=%s pos_now=%s grav_after=%s,%s",
+      tostring(ok), tostring(err), tostring(m0),
+      tostring(love.physics.getMeter()), pos(body), F(gx), F(gy)))
+    local ok2, err2 = pcall_str(love.physics.setMeter, 1)
+    EM(string.format("cb_meter2 ok=%s err=%s meter=%s pos_now=%s",
+      tostring(ok2), tostring(err2), tostring(love.physics.getMeter()), pos(body)))
+  elseif mkind == "coyield" or mkind == "update_yield" then
+    -- r77 seed 5: a yield across the C-call boundary (the engine is inside a
+    -- C frame) is an ERROR, never a suspension. (`co_update_yield` and
+    -- `cowrap_update_yield` parse to kind=update_yield: the container is the
+    -- only difference between the three yield cells.)
+    EM("cb_coyield before")
+    coroutine.yield("r77")
+    EM("cb_coyield after_unreached")
+  elseif mkind == "cowrap_unp" then
+    -- coroutine.wrap is NOT a containment level: the error is re-raised in
+    -- the caller (esc_fn = co) and the assert still escapes the callback.
+    local co = coroutine.wrap(function()
+      body:setPosition(1234.5, 678.9)
+      EM("cb_cowrap_unp inner_after_unreached")
+    end)
+    EM("cb_cowrap_unp outer_before")
+    co()
+    EM("cb_cowrap_unp outer_after_unreached")
+  elseif mkind == "cowrap_setpos" then
+    -- the container is wherever the pcall sits: with the pcall INSIDE the
+    -- wrap body the write is a plain refused write (rc=0, step completes).
+    local co = coroutine.wrap(function()
+      local ok, err = pcall_str(body.setPosition, body, 1234.5, 678.9)
+      EM(string.format("cb_setpos ok=%s err=%s scope=cowrap_inner",
+        tostring(ok), tostring(err)))
+      return "inner-done"
+    end)
+    local ok, res = pcall(co)
+    EM(string.format("cb_cowrap ok=%s res=%s pos_after=%s",
+      tostring(ok), tostring(res), pos(body)))
   end
 end
 
@@ -307,12 +475,43 @@ local function on_event(ev, fa, fb, contact)
   end
   local dyn = dyn_of(fa, fb)
   local label = dyn:getUserData() or "?"
+  if RS ~= nil and ev == "ec" then
+    r77_ec_n = r77_ec_n + 1
+    if r77_ec_n <= 4 then
+      EM(string.format("r77ec n=%d step=%d locked=%s dyn=%s",
+        r77_ec_n, step, tostring(world:isLocked()), label))
+    end
+    -- the drain-EC abort's retry witness: the FIRST endContact after the
+    -- abort, dispatched inside the next step at locked=true (the abandoned
+    -- destroy completes silently one step late).
+    if r77_drain == "throw" and wp_aborted and not r77_ecpost and world:isLocked() then
+      r77_ecpost = true
+      EM(string.format("r77ecpost step=%d locked=true dyn=%s", step, label))
+    end
+  end
   if target_cb == ev and not fired and label == target_label then
     fired = true
     fire_step = step
     EM(string.format("fire cb=%s kind=%s step=%d locked=%s count=%d pos=%s vel=%s",
       ev, kind, step, tostring(world:isLocked()), world:getBodyCount(), pos(dyn), vel(dyn)))
     do_mutation(kind, contact, dyn)
+    EM(string.format("postfire cb=%s step=%d count=%d b1pos=%s", ev, step, world:getBodyCount(), pos(b1)))
+  end
+  -- r77 arming path: cells whose channel prefix is not bc/pre/post (ec-natural,
+  -- multi-contact, drain, coroutine containers) or whose target is not b1.
+  -- Cells with a standard prefix keep using the pre-r77 gate above (the two
+  -- are disjoint: this one requires target_cb == nil). The mutation is the
+  -- SPEC's act (the cell NAME carries the drain flavour), so the fire line
+  -- reports act/drain like the pre-measured frontier.
+  if target_cb == nil and not fired and r77_cb == ev
+     and label == (r77_target or target_label)
+     and (r77_cb ~= "ec" or world:isLocked()) then
+    fired = true
+    fire_step = step
+    EM(string.format("fire cb=%s kind=%s step=%d locked=%s count=%d pos=%s vel=%s",
+      ev, (RS.act or "none") .. "/" .. (RS.drain or "-"), step,
+      tostring(world:isLocked()), world:getBodyCount(), pos(dyn), vel(dyn)))
+    do_mutation(RS.act, contact, dyn)
     EM(string.format("postfire cb=%s step=%d count=%d b1pos=%s", ev, step, world:getBodyCount(), pos(b1)))
   end
   if jw_mode and fired and step <= fire_step + 1 then
@@ -334,6 +533,14 @@ local function on_event(ev, fa, fb, contact)
     end
     jw_prev = jc
   end
+  -- r77: drain-time (locked=false) endContact -- the epilogue-synthesized
+  -- goodbye, and the only point inside an update where the world is unlocked.
+  -- Deliberately LAST: a release() armed here must be followed by no further
+  -- world touch in this callback, so the engine (not Lua) is the thing that
+  -- dies -- exactly the pre-measured shape.
+  if RS ~= nil and ev == "ec" and not world:isLocked() then
+    r77_drain_hook(contact, fa, fb, dyn)
+  end
 end
 
 local function c_bc(fa, fb, contact) on_event("bc", fa, fb, contact) end
@@ -354,6 +561,163 @@ local function c_pre(fa, fb, contact)
 end
 local function c_post(fa, fb, contact) on_event("post", fa, fb, contact) end
 
+-- ---- r77 helpers ---------------------------------------------------------
+
+r77_dead = function(o)
+  if o == nil then return "n/a" end
+  local ok, v = pcall(o.isDestroyed, o)
+  return res_str(ok, v)
+end
+
+r77_fxcount = function(b)
+  local ok, t = pcall(b.getFixtures, b)
+  if not ok then return "ERR:" .. tostring(t) end
+  return tostring(#t)
+end
+
+-- replacement callback table (seed 2): separate counters so the old table's
+-- freeze is visible; the trace is bounded to the swap step + 1 and each
+-- channel carries its OWN tag (a shared tag would lose the same-step witness
+-- to last-wins in the flat reader).
+r77_cb2_bc = function(fa, fb, c)
+  r77_counts2.bc = r77_counts2.bc + 1
+  if r77_counts2.bc <= 4 and step <= r77_swap_step + 1 then
+    EM(string.format("cb2bc cb=bc n=%d step=%d locked=%s dyn=%s",
+      r77_counts2.bc, step, tostring(world:isLocked()),
+      tostring(dyn_of(fa, fb):getUserData())))
+  end
+end
+r77_cb2_ec = function(fa, fb, c) r77_counts2.ec = r77_counts2.ec + 1 end
+r77_cb2_pre = function(fa, fb, c)
+  r77_counts2.pre = r77_counts2.pre + 1
+  if r77_counts2.pre <= 4 and step <= r77_swap_step + 1 then
+    EM(string.format("cb2pre cb=pre n=%d step=%d locked=%s",
+      r77_counts2.pre, step, tostring(world:isLocked())))
+  end
+end
+r77_cb2_post = function(fa, fb, c)
+  r77_counts2.post = r77_counts2.post + 1
+  if r77_counts2.post <= 4 and step <= r77_swap_step + 1 then
+    EM(string.format("cb2post cb=post n=%d step=%d locked=%s",
+      r77_counts2.post, step, tostring(world:isLocked())))
+  end
+end
+
+-- stable identity readback: tostring(f) embeds a per-process address, so the
+-- four values from getCallbacks() are mapped through labels, never printed.
+r77_labels[c_bc] = "c_bc"; r77_labels[c_ec] = "c_ec"
+r77_labels[c_pre] = "c_pre"; r77_labels[c_post] = "c_post"
+r77_labels[r77_cb2_bc] = "cb2_bc"; r77_labels[r77_cb2_ec] = "cb2_ec"
+r77_labels[r77_cb2_pre] = "cb2_pre"; r77_labels[r77_cb2_post] = "cb2_post"
+
+r77_getcb = function()
+  local ok, a, b, c, d = pcall(world.getCallbacks, world)
+  if not ok then return "ERR:" .. tostring(a) end
+  local function nm(f)
+    if f == nil then return "nil" end
+    return r77_labels[f] or "other"
+  end
+  return table.concat({ nm(a), nm(b), nm(c), nm(d) }, ",")
+end
+
+-- one bounded state line, emitted at the fire step and at the final step
+-- (last-wins). Carries every r77 witness that is not a mutation line.
+r77_obs = function(tag)
+  EM(string.format(
+    "%s step=%d locked=%s count=%d b1pos=%s b2pos=%s b1dead=%s b2dead=%s fx_a_dead=%s fx_b_dead=%s jcount=%d bc=%d ec=%d pre=%d post=%d bc2=%d ec2=%d pre2=%d post2=%d swap_step=%d drain_n=%d",
+    tag, step, tostring(world:isLocked()), world:getBodyCount(), pos(b1), pos(b2),
+    r77_dead(b1), r77_dead(b2), r77_dead(r77_fx_a), r77_dead(r77_fx_b),
+    world:getJointCount(), counts.bc, counts.ec, counts.pre, counts.post,
+    r77_counts2.bc, r77_counts2.ec, r77_counts2.pre, r77_counts2.post,
+    r77_swap_step, r77_drain_n))
+end
+
+-- drain-time hook (locked=false, inside the update epilogue). Emitted for
+-- every r77 cell that sees a drain EC; the action only for the drain cells.
+r77_drain_hook = function(contact, fa, fb, dyn)
+  r77_drain_n = r77_drain_n + 1
+  EM(string.format("drainec n=%d step=%d locked=%s count=%d jcount=%d dyn=%s",
+    r77_drain_n, step, tostring(world:isLocked()), world:getBodyCount(),
+    world:getJointCount(), tostring(dyn and dyn:getUserData() or "?")))
+  local d = r77_drain
+  if d == nil then return end
+  if d == "worldrelease" then
+    -- own tag: the flat reader's key/value split needs space-free values, and
+    -- `drainact.n` must stay a bare count.
+    EM(string.format("drainrel kind=worldrelease n=%d", r77_drain_n))
+    local ok, err = pcall_str(world.release, world)
+    EM(string.format("drainrel call_ok=%s call_ret=%s",
+      tostring(ok), tostring(err)))
+    EM("drainrel alive=1")
+  elseif d == "setpos_b2" then
+    local ok, err = pcall_str(b2.setPosition, b2, 1234.5, 678.9)
+    EM(string.format("drainact n=%d kind=setpos_b2 ok=%s err=%s b2pos=%s",
+      r77_drain_n, tostring(ok), tostring(err), pos(b2)))
+  elseif d == "queue_b2" then
+    local ok, err = pcall_str(b2.destroy, b2)
+    EM(string.format("drainact n=%d kind=queue_b2 ok=%s err=%s count_after=%d b2dead=%s",
+      r77_drain_n, tostring(ok), tostring(err), world:getBodyCount(), r77_dead(b2)))
+  elseif d == "order" then
+    -- DestroyBody ordering: attached joints (SayGoodbye) FIRST, then the
+    -- contacts (this EndContact), then the fixtures, then the body.
+    local fd = res_str(pcall_str(fa.isDestroyed, fa))
+    local other = (dyn == b2) and b3 or b2
+    EM(string.format("drainact n=%d kind=order j_dead=%s fx_dead=%s body_dead=%s other_dead=%s jcount=%d",
+      r77_drain_n, r77_dead(j_pre), fd, r77_dead(dyn), r77_dead(other),
+      world:getJointCount()))
+  elseif d == "throw" then
+    if r77_drain_n == 1 then
+      EM(string.format("drainact n=%d kind=throw", r77_drain_n))
+      error("R77-DRAIN-THROW")   -- uncontained: escapes the drain loop
+    end
+    EM(string.format("drainact n=%d kind=retry_noop", r77_drain_n))
+  end
+end
+
+-- r77 seed 5: coroutine containment, installed as the OUTERMOST container.
+-- The World wrapper is a userdata (its methods cannot be replaced), and
+-- callbacks.lua:162 reads the global `love.update` at every frame, so the
+-- container is installed by wrapping love.update: the engine call under test
+-- then runs inside the coroutine and nowhere else.
+r77_install_container = function()
+  local orig = love.update
+  if RS.co then
+    love.update = function(dt)
+      local co = coroutine.create(function() return orig(dt) end)
+      local ok, err = coroutine.resume(co)
+      r77_costatus = tostring(coroutine.status(co))
+      if not ok then
+        -- the error comes BACK AS A VALUE: this line exists only because
+        -- resume returned instead of propagating.
+        r77_aborted = true
+        local stripped = tostring(err):gsub("^[^:]+:%d+: ", "")
+        EM(string.format("coused step=%d ok=false err=%s costatus=%s",
+          step, stripped, r77_costatus))
+        EM(string.format("r77abort step=%d update_ok=false err=%s locked_after=%s",
+          step, stripped, tostring(world:isLocked())))
+        EM(string.format("r77abortq step=%d count=%d b1pos=%s b1dead=%s",
+          step, world:getBodyCount(), pos(b1), r77_dead(b1)))
+        local sok, serr = pcall_str(b1.setPosition, b1, 999, 999)
+        EM(string.format("r77abortext ok=%s err=%s pos_after=%s",
+          tostring(sok), tostring(serr), pos(b1)))
+      elseif r77_aborted and not r77_recovered then
+        r77_recovered = true
+        EM(string.format("r77recover step=%d locked_after=%s count=%d b1pos=%s",
+          step, tostring(world:isLocked()), world:getBodyCount(), pos(b1)))
+      end
+      return ok, err
+    end
+  else
+    love.update = function(dt)
+      local f = coroutine.wrap(function() return orig(dt) end)
+      f()                          -- the error is re-raised HERE (esc_fn = f)
+      if fire_step >= 0 and step >= fire_step then
+        EM(string.format("r77cowrap_after_unreached step=%d", step))
+      end
+    end
+  end
+end
+
 -- ---- exterior controls (outside any callback) ----------------------------
 
 local function run_ext()
@@ -372,6 +736,28 @@ local function run_ext()
     local ok, err = pcall_str(b1.destroy, b1)
     EM(string.format("ext_destroy ok=%s err=%s count_before=%d count_after=%d b1pos_after=%s",
       tostring(ok), tostring(err), c0, world:getBodyCount(), pos(b1)))
+  elseif kind == "worldrelease" then
+    -- r77 seed 1 control: the same release() from OUTSIDE the engine's own
+    -- execution. The proxy is nulled and the object deleted, but every later
+    -- Lua touch is a CATCHABLE error (no signal) -- the process then dies
+    -- rc=1 at the first UNGUARDED touch (love.update's own world call).
+    EM("ext_rel_pre")
+    local ok, err = pcall_str(world.release, world)
+    EM(string.format("ext_rel_call ok=%s err=%s", tostring(ok), tostring(err)))
+    local wok, werr = pcall(world.getBodyCount, world)
+    EM(string.format("ext_rel_world_access ok=%s err=%s", tostring(wok), tostring(werr)))
+    local bok, bres = pcall(b1.getPosition, b1)
+    EM(string.format("ext_rel_body_access ok=%s err=%s", tostring(bok), tostring(bres)))
+  elseif kind == "fixture_destroy" then
+    -- r77 seed 3 control: the same fixture destroy from outside is IMMEDIATE
+    -- (handle dead and list shrunk inside the call, no goodbye) and the body
+    -- loses its only collision -> it falls through the ground forever.
+    local fx = b1:getFixtures()[1]
+    r77_fx_a = fx
+    local ok, err = pcall_str(fx.destroy, fx)
+    EM(string.format("ext_fxdestroy ok=%s err=%s isDestroyed_after=%s fcount=%s count_after=%d b1pos=%s",
+      tostring(ok), tostring(err), r77_dead(fx), r77_fxcount(b1),
+      world:getBodyCount(), pos(b1)))
   end
 end
 
@@ -383,7 +769,30 @@ function love.load()
     maj, min, rev, tostring(cod), tostring(love.physics ~= nil),
     tostring(jit ~= nil and jit.version or "none")))
   build()
+  if RS ~= nil then
+    if RS.scene == "multi" then
+      -- second pair: b4's begin is dispatched FIRST at the fire step, so the
+      -- swap armed there takes effect for b1's begin in the SAME step.
+      local b4 = love.physics.newBody(world, 560, 60, "dynamic")
+      b4:setUserData("b4")
+      local f4 = love.physics.newFixture(b4, love.physics.newCircleShape(20), 1)
+      f4:setRestitution(0.8); f4:setFriction(0.3)
+    end
+    if RS.extra_fx then
+      -- second circle on b1 -> a live sibling witness for a partial destroy
+      f_mask = love.physics.newFixture(b1, love.physics.newCircleShape(25, 0, 20), 1)
+      f_mask:setRestitution(0.8); f_mask:setFriction(0.3)
+    end
+    if RS.joint then
+      j_pre = love.physics.newDistanceJoint(b2, b3, 240, -40, 650, 518.9, false)
+    end
+  end
   world:setCallbacks(c_bc, c_ec, c_pre, c_post)
+  if RS ~= nil and (RS.co or RS.cowrap) then
+    -- install the coroutine container around love.update (the engine call
+    -- under test then runs inside the coroutine and nowhere else).
+    r77_install_container()
+  end
   EM(string.format("built bodies=%d locked=%s", world:getBodyCount(), tostring(world:isLocked())))
   if kind == "joint_destroy" or jw_mode then
     j_pre = love.physics.newDistanceJoint(b2, b3, 240, -40, 650, 518.9, false)
@@ -417,6 +826,12 @@ function love.update(dt)
       EM(string.format("abortq step=%d count=%d b1pos=%s",
         step, world:getBodyCount(), pos(b1)))
     end
+    if r77_drain == "throw" then
+      -- r77 seed 4: the abort came from INSIDE the drain EC. The world is
+      -- left UNLOCKED and the queued destroy survived (body still readable).
+      EM(string.format("r77abortq step=%d count=%d b1pos=%s b1dead=%s",
+        step, world:getBodyCount(), pos(b1), r77_dead(b1)))
+    end
   elseif wp_aborted and not wp_recovered then
     wp_recovered = true
     EM(string.format("wpcall_next step=%d update_ok=true locked_after=%s b1pos=%s",
@@ -425,6 +840,11 @@ function love.update(dt)
       -- the queued destroy drained inside THIS update (one step late)
       EM(string.format("drainlate step=%d count=%d b1pos=%s",
         step, world:getBodyCount(), pos(b1)))
+    end
+    if r77_drain == "throw" then
+      -- the abandoned drain loop completed one step late, with no goodbye
+      EM(string.format("r77recover step=%d locked_after=%s count=%d b1pos=%s b1dead=%s",
+        step, tostring(world:isLocked()), world:getBodyCount(), pos(b1), r77_dead(b1)))
     end
   end
   if uok and fired and not after_done and step == fire_step then
@@ -454,12 +874,14 @@ function love.update(dt)
     if rf1_mode then
       EM(string.format("rf1counts falses=%d passes=%d", rf1_falses, rf1_passes))
     end
+    if RS ~= nil then r77_obs("r77obs") end
   end
   if step >= STEPS then
     EM(string.format(
       "final steps=%d count=%d b1pos=%s b2pos=%s bc=%d ec=%d pre=%d post=%d fired=%s fire_step=%d",
       step, world:getBodyCount(), pos(b1), pos(b2),
       counts.bc, counts.ec, counts.pre, counts.post, tostring(fired), fire_step))
+    if RS ~= nil then r77_obs("r77obs") end
     EM("CELL_DONE")
     love.event.quit(0)
   end

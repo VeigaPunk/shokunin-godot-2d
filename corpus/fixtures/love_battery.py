@@ -98,6 +98,47 @@ r76 additions (drain observers + destroy edges):
   retfalse1: return false armed on ONE contact of a two-contact b1/ground
             pair -- the discrimination executes (falses=1 passes=1) and
             the return is still not consumed (impulse lands) -> ignored.
+
+r77 additions (release / callback-swap / drain-EC legality / coroutine
+containment / meter), each pre-measured live by the r77 scout before arming:
+  corrupt : world:release() INSIDE a callback. The object is freed while the
+            engine is still running inside it -> SIGSEGV (rc=-11, no assert
+            text, stderr empty), a partial receipt, no CELL_DONE reachable.
+            Measured on all five channels (beginContact / preSolve /
+            postSolve / a natural endContact / the drain endContact). The
+            exterior twin is `died` (rc=1, catchable, no signal): the class
+            is interior-only.
+  swapped : world:setCallbacks mid-dispatch. The engine reads the table per
+            dispatch, so the new table handles the rest of the step (later
+            channels AND later contacts) and the swapped-out table never
+            fires again. `muted` is the nil-table member: the surface goes
+            mute for the rest of the run with the physics untouched.
+  deferred (fixture member): Fixture:destroy() in a callback is the same
+            gated write (retained + drained in the update epilogue), but the
+            tracked body gate is fixture-BLIND -- the fixture branch gates on
+            its own witness set (in-cb handle alive, list unchanged, drain EC
+            at locked=false, post-drain fixture dead + body alive + count
+            unchanged) instead of forcing the body gate.
+  applied (drain member): at the drain EC the world is UNLOCKED, so the very
+            write that is refused inside the step applies on the spot. The
+            deferred rule is a lock-state rule, not a phase rule.
+  immediate: a structural destroy at the drain EC executes on the spot
+            (count drops and the handle dies inside the call), i.e. NOT
+            deferred -- the contrast member of the same window.
+  drain_abort: an abort INSIDE the drain EC. Distinct signature: the world
+            is left UNLOCKED (locked_after=false) and the legal exterior
+            write is NOT refused as collateral; the accepted queued destroy
+            survives (body readable) and completes one step late with the
+            same contact's EndContact re-firing inside the next step.
+  yield_abort: a yield across the C-call boundary contained at the update
+            level. Measured under both containers: coroutine.resume (the
+            error comes back as a VALUE, `coused`) and pcall -- same abort
+            shape (transient lock + collateral refusal + recovery), so
+            resume IS a containment level while coroutine.wrap is not.
+  applied (meter member): love.physics.setMeter is a module-global write --
+            nothing for the lock to gate; the decisive witness is the RATIO
+            (every reported quantity is scaled at the Lua boundary while the
+            solver trajectory is untouched).
 """
 
 import argparse
@@ -479,6 +520,317 @@ IW_CELLS = [
         "final.bc": "6", "final.ec": "5",
         "final.pre": "37", "final.post": "37",
         "done": "true", "rc": "0"}),
+    # ---- r77 additive cells: callback swap / fixture drain / drain-EC
+    # legality / coroutine containment / meter. Each row carries its rc, and
+    # the process-death rows are spawned after these, at the table's very end.
+    ("iw_bc_setcallbacks", "bc_setcallbacks", "swapped", {
+        # the engine reads the callback table per DISPATCH: the same step's
+        # later channels (preSolve/postSolve of the firing contact) go to the
+        # NEW table, and the old table's counters freeze at the swap value.
+        "fire.step": "73", "fire.cb": "bc", "fire.locked": "true",
+        "fire.kind": "setcallbacks",
+        "fire.pos": "400,520.1500244140625",
+        "cb_setcallbacks.ok": "true", "cb_setcallbacks.err": "nil",
+        "cb_setcallbacks.swapped_step": "73",
+        "cb_setcallbacks.swapped_n": "2",
+        "cb_setcallbacks.swapped_cb": "bc",
+        # identity readback through labels -- never a tostring of a function
+        "cb_setcallbacks.getcb": "cb2_bc,cb2_ec,cb2_pre,cb2_post",
+        "cb2pre.step": "73", "cb2pre.locked": "true",
+        "cb2post.step": "73", "cb2post.locked": "true",
+        "r77obs.bc": "2", "r77obs.bc2": "3", "r77obs.ec2": "4",
+        "r77obs.pre2": "5", "r77obs.post2": "5",
+        "final.bc": "2",
+        # physics invariant: the run ends exactly on the baseline pose
+        "final.b1pos": "400,445.10910034179688",
+        "rc": "0", "done": "true"}),
+    ("iw_pre_setcallbacks", "pre_setcallbacks", "swapped", {
+        # swap armed in preSolve: the SAME contact's postSolve in the same
+        # step goes to the new table; the old pre count never grows again.
+        "fire.step": "73", "fire.cb": "pre", "fire.locked": "true",
+        "fire.kind": "setcallbacks",
+        "cb_setcallbacks.ok": "true",
+        "cb_setcallbacks.swapped_n": "32",
+        "cb_setcallbacks.swapped_cb": "pre",
+        "cb_setcallbacks.getcb": "cb2_bc,cb2_ec,cb2_pre,cb2_post",
+        "cb2post.step": "73", "cb2post.locked": "true",
+        "r77obs.pre": "32", "r77obs.bc2": "3", "r77obs.ec2": "4",
+        "r77obs.pre2": "4", "r77obs.post2": "5",
+        "final.b1pos": "400,445.10910034179688",
+        "rc": "0", "done": "true"}),
+    ("iw_multi_setcallbacks", "multi_setcallbacks", "swapped", {
+        # two pairs land in the same step; the swap is armed on the FIRST
+        # (b4's begin), so the LATER contact's begin in the SAME step already
+        # goes to the new table -- the old bc count never grows again.
+        "built.bodies": "5",
+        "fire.step": "73", "fire.cb": "bc", "fire.locked": "true",
+        "fire.kind": "setcallbacks/-", "fire.count": "5",
+        "fire.pos": "560,520.1500244140625",
+        "cb_setcallbacks.ok": "true",
+        "cb_setcallbacks.swapped_n": "2",
+        "cb_setcallbacks.swapped_cb": "bc",
+        "cb_setcallbacks.getcb": "cb2_bc,cb2_ec,cb2_pre,cb2_post",
+        "cb2bc.step": "73", "cb2bc.locked": "true", "cb2bc.dyn": "b1",
+        "cb2pre.step": "73", "cb2post.step": "73",
+        "r77obs.bc": "2", "r77obs.bc2": "5", "r77obs.ec2": "6",
+        "r77obs.pre2": "7", "r77obs.post2": "7",
+        "final.count": "5", "final.bc": "2",
+        "final.b1pos": "400,445.10910034179688",
+        "rc": "0", "done": "true"}),
+    ("iw_bc_setcallbacks_nil", "bc_setcallbacks_nil", "muted", {
+        # nil,nil,nil,nil is legal: the callback surface goes MUTE for the
+        # rest of the run (every counter frozen, no EndContact ever) while
+        # the physics is untouched (the run ends on the baseline pose).
+        "fire.step": "73", "fire.cb": "bc", "fire.kind": "setcallbacks_nil",
+        "cb_setcallbacks.ok": "true",
+        "cb_setcallbacks.getcb": "nil,nil,nil,nil",
+        "cb_setcallbacks.swapped_n": "2",
+        "cb_setcallbacks.swapped_cb": "bc",
+        "r77obs.bc": "2", "r77obs.ec": "0",
+        "r77obs.pre": "31", "r77obs.post": "31",
+        "r77obs.bc2": "0", "r77obs.ec2": "0",
+        "r77obs.pre2": "0", "r77obs.post2": "0",
+        "final.ec": "0", "final.pre": "31", "final.post": "31",
+        "final.b1pos": "400,445.10910034179688",
+        "rc": "0", "done": "true"}),
+    ("iw_bc_setcallbacks_back", "bc_setcallbacks_back", "swapped", {
+        # last write wins inside one callback: the second swap restores the
+        # table the engine was holding, so the NEW table never handles a
+        # dispatch and the old table keeps counting to the baseline totals.
+        "fire.step": "73", "fire.kind": "setcallbacks_back",
+        "cb_setcallbacks.ok": "true",
+        "cb_setcallbacks.getcb": "cb2_bc,cb2_ec,cb2_pre,cb2_post",
+        "cb_setcallbacks.swapped_n": "2",
+        "cb_setcallbacks2.ok": "true",
+        "cb_setcallbacks2.err": "nil",
+        "cb_setcallbacks2.getcb": "c_bc,c_ec,c_pre,c_post",
+        "r77obs.bc": "5", "r77obs.ec": "4",
+        "r77obs.pre": "36", "r77obs.post": "36",
+        "r77obs.bc2": "0", "r77obs.ec2": "0",
+        "r77obs.pre2": "0", "r77obs.post2": "0",
+        "final.b1pos": "400,445.10910034179688",
+        "rc": "0", "done": "true"}),
+    ("iw_bc_fixture_destroy", "bc_fixture_destroy", "deferred", {
+        # Fixture:destroy() in-cb is the same gated write, but the tracked
+        # body gate is fixture-blind: the fixture-scoped witness set is what
+        # this row pins (in-cb handle alive + list unchanged, the goodbye is
+        # the drain EC at locked=false, post-drain fixture dead / body alive
+        # / count unchanged). Effect witness: b1 loses its collision and
+        # tunnels through the ground (final y ~635).
+        "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "fixture_destroy",
+        "fire.pos": "400,520.1500244140625",
+        "cb_fxdestroy.ok": "true", "cb_fxdestroy.err": "nil",
+        "cb_fxdestroy.isDestroyed_in_cb": "false",
+        "cb_fxdestroy.fcount_before": "1",
+        "cb_fxdestroy.fcount_after": "1",
+        "cb_fxdestroy.count_after": "4",
+        "drainec.n": "1", "drainec.step": "73",
+        "drainec.locked": "false", "drainec.dyn": "b1",
+        "r77obs.fx_a_dead": "true", "r77obs.b1dead": "false",
+        "r77obs.count": "4",
+        "after_update.count": "4",
+        "after_update.b1pos": "400,511.13113403320312",
+        "final.b1pos": "400,635.1639404296875",
+        "rc": "0", "done": "true"}),
+    ("iw_bc_fixture_destroy2", "bc_fixture_destroy2", "deferred", {
+        # two fixtures on b1: the destroyed one is the LAST created (list[1]);
+        # the live sibling keeps the collision, so b1 does NOT tunnel -- the
+        # sibling's isDestroyed=false plus the non-tunneling pose is the
+        # effect witness that separates this from a no-op write.
+        "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "fixture_destroy2",
+        "cb_fxdestroy.ok": "true",
+        "cb_fxdestroy.isDestroyed_in_cb": "false",
+        "cb_fxdestroy.fcount_before": "2",
+        "cb_fxdestroy.fcount_after": "2",
+        "cb_fxdestroy.sib_dead": "false",
+        "cb_fxdestroy.count_after": "4",
+        "drainec.n": "1", "drainec.locked": "false", "drainec.dyn": "b1",
+        "r77obs.fx_a_dead": "true", "r77obs.fx_b_dead": "false",
+        "r77obs.b1dead": "false", "r77obs.count": "4",
+        "after_update.b1pos": "399.9598388671875,511.13873291015625",
+        "final.b1pos": "394.08963012695312,445.10308837890625",
+        "final.count": "4",
+        "rc": "0", "done": "true"}),
+    ("iw_ext_fixture_destroy", "ext_fixture_destroy", "applied", {
+        # exterior control: immediate (handle dead AND the list shrunk inside
+        # the call) and NO goodbye at all (no drain EC) -- the contrast that
+        # makes the interior row deferred rather than applied.
+        "ext_fxdestroy.ok": "true", "ext_fxdestroy.err": "nil",
+        "ext_fxdestroy.isDestroyed_after": "true",
+        "ext_fxdestroy.fcount": "0",
+        "ext_fxdestroy.count_after": "4",
+        "ext_fxdestroy.b1pos": "400,60",
+        # no collision left: b1 falls through the ground forever
+        "final.b1pos": "400,3565.44384765625",
+        "final.fired": "false", "final.fire_step": "-1",
+        "rc": "0", "done": "true"}),
+    ("iw_drain_setpos_b2", "drain_setpos_b2", "applied", {
+        # the deferred rule is a LOCK-STATE rule, not a phase rule: at the
+        # drain EC (locked=false) the very write that is refused inside the
+        # step applies on the spot and persists (b2 keeps falling from
+        # 1234.5,678.9), while the queued b1 destroy completes in the same
+        # epilogue.
+        "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "queue_target/setpos_b2",
+        "cb_destroy.ok": "true", "cb_destroy.err": "nil",
+        "cb_destroy.mode": "queued", "cb_destroy.count_after": "4",
+        "drainec.n": "1", "drainec.step": "73",
+        "drainec.locked": "false", "drainec.dyn": "b1",
+        "drainact.n": "1", "drainact.kind": "setpos_b2",
+        "drainact.ok": "true", "drainact.err": "nil",
+        "drainact.b2pos": "1234.5,678.9000244140625",
+        "r77obs.count": "3", "r77obs.b1dead": "true",
+        "r77obs.b2pos": "1234.5,3713.2890625",
+        "after_update.count": "3",
+        "rc": "0", "done": "true"}),
+    ("iw_drain_queue_b2", "drain_queue_b2", "immediate", {
+        # a structural destroy at the drain EC executes ON THE SPOT: the
+        # count drops and the handle dies INSIDE the call -- not deferred.
+        "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "queue_target/queue_b2",
+        "cb_destroy.mode": "queued", "cb_destroy.count_after": "4",
+        "drainec.n": "1", "drainec.locked": "false",
+        "drainec.count": "4",
+        "drainact.n": "1", "drainact.kind": "queue_b2",
+        "drainact.ok": "true", "drainact.err": "nil",
+        "drainact.count_after": "3", "drainact.b2dead": "true",
+        "r77obs.count": "2", "r77obs.b2dead": "true",
+        "rc": "0", "done": "true"}),
+    ("iw_wp_drain_throw", "wp_drain_throw", "drain_abort", {
+        # an abort INSIDE the drain EC: the world is left UNLOCKED
+        # (locked_after=false) and the legal exterior write is NOT refused as
+        # collateral -- the distinct signature. The accepted queued destroy
+        # survives the abort (body readable, count still = fire count) and
+        # completes one step late, with the same contact's EndContact
+        # re-firing inside the next step at locked=true.
+        "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "queue_target/throw",
+        "cb_destroy.ok": "true", "cb_destroy.mode": "queued",
+        "cb_destroy.count_after": "4",
+        "drainec.n": "1", "drainec.step": "73",
+        "drainec.locked": "false", "drainec.dyn": "b1",
+        "drainact.n": "1", "drainact.kind": "throw",
+        "wpcall.step": "73", "wpcall.update_ok": "false",
+        "wpcall.err": "R77-DRAIN-THROW",
+        "wpcall.locked_after": "false",
+        # no collateral refusal: the exterior write LANDS
+        "wpext.ok": "true", "wpext.pos_after": "999,999",
+        "r77abortq.step": "73", "r77abortq.count": "4",
+        "r77abortq.b1dead": "false",
+        "r77ecpost.step": "74", "r77ecpost.locked": "true",
+        "r77ecpost.dyn": "b1",
+        "wpcall_next.step": "74", "wpcall_next.update_ok": "true",
+        "wpcall_next.locked_after": "false",
+        "wpcall_next.b1pos": "ERR:Attempt to use destroyed body.",
+        "r77recover.step": "74", "r77recover.locked_after": "false",
+        "r77recover.count": "3", "r77recover.b1dead": "true",
+        "final.count": "3",
+        "rc": "0", "done": "true"}),
+    ("iw_drain_order_joint", "drain_order_joint", "deferred", {
+        # DestroyBody ordering inside the drain EC: the attached joint
+        # (SayGoodbye) is ALREADY destroyed while the contact's fixture, the
+        # body itself and the other body are still valid -- the drain-EC
+        # window the r76 jwatch bracket could only bound.
+        "built.bodies": "4",
+        "fire.step": "100", "fire.locked": "true",
+        "fire.kind": "queue_target/order",
+        "fire.pos": "26.118637084960938,526.02276611328125",
+        "cb_destroy.ok": "true", "cb_destroy.mode": "queued",
+        "cb_destroy.count_after": "4",
+        "drainec.n": "1", "drainec.step": "100",
+        "drainec.locked": "false", "drainec.dyn": "b2",
+        "drainact.n": "1", "drainact.kind": "order",
+        "drainact.j_dead": "true", "drainact.fx_dead": "false",
+        "drainact.body_dead": "false", "drainact.other_dead": "false",
+        "drainact.jcount": "0",
+        "jdrain.step": "100", "jdrain.jcount": "0",
+        "jdrain.isDestroyed": "true",
+        "r77obs.count": "3", "r77obs.b2dead": "true",
+        "r77obs.b1dead": "false",
+        "rc": "0", "done": "true"}),
+    ("iw_bc_cowrap_setpos", "bc_cowrap_setpos", "refused", {
+        # the container is wherever the pcall sits: with the pcall INSIDE the
+        # wrap body this is a plain refused write (rc=0, step completes, run
+        # ends on the baseline pose) -- wrap adds nothing by itself.
+        "fire.step": "73", "fire.kind": "cowrap_setpos",
+        "fire.pos": "400,520.1500244140625",
+        "cb_setpos.ok": "false",
+        "cb_setpos.err": "Box2D assertion failed: m_world->IsLocked() == false",
+        "cb_setpos.scope": "cowrap_inner",
+        "cb_cowrap.ok": "true", "cb_cowrap.res": "inner-done",
+        "cb_cowrap.pos_after": "400,520.1500244140625",
+        "final.b1pos": "400,445.10910034179688",
+        "rc": "0", "done": "true"}),
+    ("iw_co_update_yield", "co_update_yield", "yield_abort", {
+        # coroutine.resume around the engine call IS a containment level: the
+        # yield error comes BACK AS A VALUE (the coused line exists only
+        # because resume returned), the run survives to step 200, and the
+        # world is transiently locked with the full collateral signature.
+        "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "coyield/-",
+        "coused.step": "73", "coused.ok": "false",
+        "coused.err": "attempt to yield across C-call boundary",
+        "coused.costatus": "dead",
+        "r77abort.step": "73", "r77abort.update_ok": "false",
+        "r77abort.locked_after": "true",
+        "r77abortq.count": "4", "r77abortq.b1dead": "false",
+        "r77abortext.ok": "false",
+        "r77abortext.err": "Box2D assertion failed: m_world->IsLocked() == false",
+        "r77recover.step": "74", "r77recover.locked_after": "false",
+        "r77recover.count": "4",
+        "r77recover.b1pos": "400,509.53021240234375",
+        "final.steps": "200",
+        "final.b1pos": "400,461.54888916015625",
+        "rc": "0", "done": "true"}),
+    ("iw_wp_coyield", "wp_coyield", "yield_abort", {
+        # the pcall rung of the same ladder: identical abort signature
+        # (transient lock + collateral refusal + recovery) and the SAME final
+        # pose as the resume cell -- the container differs, the shape does
+        # not. esc_fn names setPosition: the collateral write is what the
+        # still-locked world refuses.
+        "fire.step": "73", "fire.kind": "coyield/-",
+        "wpcall.step": "73", "wpcall.update_ok": "false",
+        "wpcall.err": "attempt to yield across C-call boundary",
+        "wpcall.locked_after": "true",
+        "wpext.ok": "false",
+        "wpext.err": "Box2D assertion failed: m_world->IsLocked() == false",
+        "wpcall_next.step": "74", "wpcall_next.update_ok": "true",
+        "wpcall_next.locked_after": "false",
+        "final.b1pos": "400,461.54888916015625",
+        "rc": "0", "done": "true"}),
+    ("iw_bc_meter", "bc_meter", "applied", {
+        # love.physics.setMeter is a module-global write: nothing for the lock
+        # to gate. Decisive witness is the RATIO -- at meter 60 the same world
+        # position reports doubled (800,1040.3 = 2x the fire pose) and the
+        # reported gravity doubles; after the restore to meter 1 the report is
+        # /30 (13.33,17.34). The solver trajectory is untouched: the final
+        # pose x30 is the baseline's 400,445.109...
+        "fire.step": "73", "fire.cb": "bc", "fire.locked": "true",
+        "fire.kind": "meter",
+        "fire.pos": "400,520.1500244140625",
+        "cb_meter.ok": "true", "cb_meter.err": "nil",
+        "cb_meter.meter_before": "30", "cb_meter.meter_after": "60",
+        "cb_meter.pos_now": "800,1040.300048828125",
+        "cb_meter.grav_after": "0,1255.6800537109375",
+        "cb_meter2.ok": "true", "cb_meter2.meter": "1",
+        "cb_meter2.pos_now": "13.333333015441895,17.338333129882812",
+        "final.b1pos": "13.333333015441895,14.836970329284668",
+        "rc": "0", "done": "true"}),
+    ("iw_pre_meter", "pre_meter", "applied", {
+        # preSolve channel: identical shape to the beginContact cell (the
+        # write is not lock-gated and the channel is irrelevant).
+        "fire.step": "73", "fire.cb": "pre", "fire.locked": "true",
+        "fire.kind": "meter",
+        "cb_meter.ok": "true", "cb_meter.err": "nil",
+        "cb_meter.meter_before": "30", "cb_meter.meter_after": "60",
+        "cb_meter.pos_now": "800,1040.300048828125",
+        "cb_meter.grav_after": "0,1255.6800537109375",
+        "cb_meter2.ok": "true", "cb_meter2.meter": "1",
+        "cb_meter2.pos_now": "13.333333015441895,17.338333129882812",
+        "final.b1pos": "13.333333015441895,14.836970329284668",
+        "rc": "0", "done": "true"}),
     # r75 critic-C1 uncontained twins: measured non-fatal (fatal is
     # derived = assert-gated write x uncontained, not uncontained alone)
     ("iw_bc_destroy_unp", "bc_destroy_unp", "deferred", {
@@ -537,6 +889,104 @@ IW_CELLS = [
         "rc": "1", "done": "false",
         "err_on": "stdout", "assert_txt": "islocked",
         "esc_fn": "newBody"}),
+    # ---- r77 process-death cells: spawned LAST, after every cell whose
+    # witness could otherwise be lost. `died` first, then `fatal`, then the
+    # corrupt tail (rc=-11) last of all.
+    ("iw_bc_coyield", "bc_coyield", "died", {
+        # a yield across the C-call boundary with NO container: an error that
+        # escapes love.update. rc=1, no assert text; esc_fn names the yield
+        # itself (the wrap twin names the wrap function instead).
+        "fire.step": "73", "fire.kind": "coyield", "fire.locked": "true",
+        "rc": "1", "done": "false",
+        "err_on": "none", "assert_txt": "none", "esc_fn": "yield"}),
+    ("iw_cowrap_update_yield", "cowrap_update_yield", "died", {
+        # the same yield under coroutine.wrap at the update level: wrap is NOT
+        # a containment level -- the error is re-raised in the caller.
+        "fire.step": "73", "fire.kind": "coyield/-", "fire.locked": "true",
+        "rc": "1", "done": "false",
+        "err_on": "none", "assert_txt": "none", "esc_fn": "f"}),
+    ("iw_ext_worldrelease", "ext_worldrelease", "died", {
+        # exterior control: release() outside the engine's own execution is a
+        # CATCHABLE error (no signal) on every later Lua touch -- world access
+        # hits the proxy guard, body access the lifetime guard -- and the
+        # process dies rc=1 at the first UNGUARDED world touch (love.update's
+        # own call). Interior-only is what makes `corrupt` mean something.
+        # `ext_rel_call.err=true` is release()'s RETURN VALUE, not an error.
+        "ext_rel_call.ok": "true", "ext_rel_call.err": "true",
+        "ext_rel_world_access.ok": "false",
+        "ext_rel_world_access.err":
+            "Cannot use object after it has been released.",
+        "ext_rel_body_access.ok": "false",
+        "ext_rel_body_access.err": "Attempt to use destroyed body.",
+        "rc": "1", "done": "false",
+        "err_on": "none", "assert_txt": "none", "esc_fn": "update"}),
+    ("iw_bc_cowrap_unp", "bc_cowrap_unp", "fatal", {
+        # uncontained assert-gated write inside coroutine.wrap: the error is
+        # re-raised in the caller, so the assert still escapes the callback --
+        # fatal, with esc_fn=co naming the wrap frame.
+        "fire.step": "73", "fire.kind": "cowrap_unp", "fire.locked": "true",
+        "rc": "1", "done": "false",
+        "err_on": "stdout", "assert_txt": "m_world_islocked", "esc_fn": "co"}),
+    # corrupt (rc=-11): world:release() INSIDE the engine's own execution, on
+    # every dispatch channel. The last emitted line is the callback's own
+    # final write (the caller's own count/pose report is the death site and
+    # never reaches the pipe); no CELL_DONE is reachable.
+    ("iw_bc_worldrelease", "bc_worldrelease", "corrupt", {
+        "fire.step": "73", "fire.cb": "bc", "fire.locked": "true",
+        "fire.kind": "worldrelease",
+        "fire.pos": "400,520.1500244140625",
+        "rel_pre.kind": "worldrelease",
+        "rel_call.ok": "true", "rel_call.err": "true",
+        "rel_alive.marker": "1", "rel_post.marker": "1",
+        "rc": "-11", "done": "false",
+        "err_on": "none", "assert_txt": "none", "esc_fn": "none"}),
+    ("iw_pre_worldrelease", "pre_worldrelease", "corrupt", {
+        "fire.step": "73", "fire.cb": "pre", "fire.locked": "true",
+        "fire.kind": "worldrelease",
+        "fire.pos": "400,520.1500244140625",
+        "rel_pre.kind": "worldrelease",
+        "rel_call.ok": "true", "rel_call.err": "true",
+        "rel_alive.marker": "1", "rel_post.marker": "1",
+        "rc": "-11", "done": "false",
+        "err_on": "none", "assert_txt": "none", "esc_fn": "none"}),
+    ("iw_post_worldrelease", "post_worldrelease", "corrupt", {
+        # postSolve sees the POST-step pose, like every other postSolve cell
+        "fire.step": "73", "fire.cb": "post", "fire.locked": "true",
+        "fire.kind": "worldrelease",
+        "fire.pos": "400,511.13113403320312",
+        "rel_pre.kind": "worldrelease",
+        "rel_call.ok": "true", "rel_call.err": "true",
+        "rel_alive.marker": "1", "rel_post.marker": "1",
+        "rc": "-11", "done": "false",
+        "err_on": "none", "assert_txt": "none", "esc_fn": "none"}),
+    ("iw_ec_worldrelease", "ec_worldrelease", "corrupt", {
+        # the NATURAL endContact (locked=true, inside the step): the release
+        # is not a channel property -- it destroys the world the engine is
+        # executing inside, whichever dispatch reaches it.
+        "fire.step": "74", "fire.cb": "ec", "fire.locked": "true",
+        "fire.kind": "worldrelease/-",
+        "fire.pos": "400,511.13113403320312",
+        "rel_pre.kind": "worldrelease",
+        "rel_call.ok": "true", "rel_call.err": "true",
+        "rel_alive.marker": "1", "rel_post.marker": "1",
+        "rc": "-11", "done": "false",
+        "err_on": "none", "assert_txt": "none", "esc_fn": "none"}),
+    ("iw_drain_worldrelease", "drain_worldrelease", "corrupt", {
+        # the DRAIN endContact (locked=false, inside the update epilogue):
+        # the same crash from the one window where the world is unlocked.
+        # The release is the drain hook's LAST action -- no Lua world touch
+        # follows it, so the engine (not a Lua guard) is what dies.
+        "fire.step": "73", "fire.cb": "bc", "fire.locked": "true",
+        "fire.kind": "queue_target/worldrelease",
+        "cb_destroy.ok": "true", "cb_destroy.mode": "queued",
+        "cb_destroy.count_after": "4",
+        "drainec.n": "1", "drainec.step": "73",
+        "drainec.locked": "false", "drainec.dyn": "b1",
+        "drainrel.kind": "worldrelease", "drainrel.n": "1",
+        "drainrel.call_ok": "true", "drainrel.call_ret": "true",
+        "drainrel.alive": "1",
+        "rc": "-11", "done": "false",
+        "err_on": "none", "assert_txt": "none", "esc_fn": "none"}),
 ]
 
 IW_LINE = re.compile(r"^IW \| cell=(\S+) \| (.*)$")
@@ -590,6 +1040,169 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
     if done and rc == 0:
         if cell == "baseline":
             return "captured", "availability lattice"
+        # ---- r77 measured shapes (inserted ahead of the pre-r77 gates) ----
+        # Each branch gates on its own decisive witness VALUES and returns
+        # anomaly when they are incomplete: no r77 receipt can satisfy a
+        # pre-r77 gate by accident, and a partial r77 receipt cannot pass.
+        if "cb_meter.ok" in flat:
+            # seed 6: love.physics.setMeter is a module-global write -- there
+            # is nothing for the lock to gate. The ratio (pos doubling at
+            # meter 60, the /30 report afterwards) is pinned per cell.
+            if (flat.get("cb_meter.ok") == "true"
+                    and flat.get("cb_meter.err") == "nil"
+                    and flat.get("cb_meter.meter_after")
+                        != flat.get("cb_meter.meter_before")
+                    and flat.get("cb_meter2.ok") == "true"
+                    and flat.get("cb_meter2.meter") == "1"):
+                return "applied", "meter global write under the lock"
+            return "anomaly", "meter witness incomplete"
+        if "cb_fxdestroy.ok" in flat:
+            # seed 3: Fixture:destroy() in a callback is deferred-family, but
+            # the tracked body gate is fixture-BLIND (count and body are both
+            # untouched by it), so this branch gates on the fixture-scoped
+            # witness set: accepted call, handle still alive in-cb, fixture
+            # list unchanged, the goodbye is the drain EC at locked=false, and
+            # after the drain the fixture is dead while the body is alive and
+            # the count is unchanged.
+            if (flat.get("cb_fxdestroy.ok") == "true"
+                    and flat.get("cb_fxdestroy.isDestroyed_in_cb") == "false"
+                    and flat.get("cb_fxdestroy.fcount_after")
+                        == flat.get("cb_fxdestroy.fcount_before")
+                    and flat.get("drainec.n") == "1"
+                    and flat.get("drainec.locked") == "false"
+                    and flat.get("r77obs.fx_a_dead") == "true"
+                    and flat.get("r77obs.b1dead") == "false"
+                    and flat.get("r77obs.count") == flat.get("built.bodies")):
+                return "deferred", "fixture drained at locked=false (fixture witness)"
+            return "anomaly", "fixture destroy without deferred witness"
+        if "ext_fxdestroy.ok" in flat:
+            # the exterior control: immediate (handle dead AND the list shrunk
+            # inside the call) and there is no goodbye at all.
+            if (flat.get("ext_fxdestroy.ok") == "true"
+                    and flat.get("ext_fxdestroy.isDestroyed_after") == "true"
+                    and flat.get("ext_fxdestroy.fcount") == "0"
+                    and "drainec.n" not in flat):
+                return "applied", "exterior fixture destroy (immediate)"
+            return "anomaly", "exterior fixture destroy witness incomplete"
+        if "cb_setcallbacks.ok" in flat:
+            # seed 2: world:setCallbacks mid-dispatch. The engine reads the
+            # table at each dispatch, so the swap is effective for every later
+            # dispatch of the step -- later channels AND later contacts -- and
+            # a swapped-out table never fires again. Identity is read back
+            # through labels (never a tostring of a function).
+            if flat.get("cb_setcallbacks.ok") != "true":
+                return "anomaly", "setCallbacks refused"
+            labels = flat.get("cb_setcallbacks.getcb", "")
+            swapped_cb = flat.get("cb_setcallbacks.swapped_cb", "")
+            new_ran = any(flat.get(f"r77obs.{k}2", "0") != "0"
+                          for k in ("bc", "ec", "pre", "post"))
+            old_at_swap = flat.get("cb_setcallbacks.swapped_n", "")
+            old_final = flat.get(f"r77obs.{swapped_cb}", "")
+            if labels == "nil,nil,nil,nil":
+                # a nil table is legal: the callback surface goes mute for the
+                # rest of the run while the physics stays untouched (pinned).
+                if not new_ran and old_final == old_at_swap:
+                    return "muted", "nil table: surface mute, physics untouched"
+                return "anomaly", "nil-table mute witness incomplete"
+            if "cb2_" in labels:
+                if flat.get("cb_setcallbacks2.ok") == "true":
+                    # the revert member: the first readback shows the new
+                    # table, the second swap restores the old one, so the new
+                    # table never handled a dispatch while the old table kept
+                    # counting to its baseline totals.
+                    try:
+                        grew = int(old_final) > int(old_at_swap)
+                    except (TypeError, ValueError):
+                        grew = False
+                    if (flat.get("cb_setcallbacks2.getcb")
+                            == "c_bc,c_ec,c_pre,c_post"
+                            and not new_ran and grew):
+                        return "swapped", "last write wins; new table never fired"
+                    return "anomaly", "revert witness incomplete"
+                if new_ran and old_final == old_at_swap:
+                    return "swapped", "new table handled the rest; old table frozen"
+                return "anomaly", "swap witness incomplete"
+            if labels == "c_bc,c_ec,c_pre,c_post":
+                # a swap that never took: the readback is still the old table
+                # and no new-table dispatch happened -- not this class.
+                return "anomaly", "setCallbacks did not change the table"
+            return "anomaly", f"unreadable getcb {labels!r}"
+        if flat.get("drainact.kind") == "throw":
+            # seed 4: an abort INSIDE the drain EC. Distinct signature: the
+            # world is left UNLOCKED (locked_after=false) and the legal
+            # exterior write is NOT refused as collateral; the accepted queued
+            # destroy survives (body readable) and completes one step late.
+            if (flat.get("drainec.n") == "1"
+                    and flat.get("drainec.locked") == "false"
+                    and flat.get("wpcall.update_ok") == "false"
+                    and "R77-DRAIN-THROW" in flat.get("wpcall.err", "")
+                    and flat.get("wpcall.locked_after") == "false"
+                    and flat.get("wp_setpos.ok") == "false"
+                    and flat.get("wpext.ok") == "true"
+                    and flat.get("r77abortq.count") == flat.get("drainec.count")
+                    and flat.get("r77abortq.b1dead") == "false"
+                    and flat.get("r77ecpost.locked") == "true"
+                    and flat.get("wpcall_next.update_ok") == "true"
+                    and flat.get("wpcall_next.locked_after") == "false"
+                    and flat.get("wpcall_next.b1pos", "").startswith("ERR:")
+                    and flat.get("r77recover.locked_after") == "false"
+                    and flat.get("r77recover.b1dead") == "true"):
+                return "drain_abort", "abort at locked=false; no collateral refusal"
+            return "anomaly", "drain-EC abort witness incomplete"
+        if "coused.ok" in flat:
+            # seed 5, resume rung: coroutine.resume around the engine call.
+            # The error comes BACK AS A VALUE -- the coused line exists only
+            # because resume returned instead of propagating -- the run
+            # survives, and the world is transiently locked with the full
+            # collateral signature.
+            if ("attempt to yield across C-call boundary" in flat.get("coused.err", "")
+                    and flat.get("coused.costatus") == "dead"
+                    and flat.get("r77abort.locked_after") == "true"
+                    and flat.get("r77abortext.ok") == "false"
+                    and flat.get("r77recover.locked_after") == "false"):
+                return "yield_abort", "resume returned the yield error; run survived"
+            return "anomaly", "resume containment witness incomplete"
+        if ("wpcall.update_ok" in flat
+                and "attempt to yield across C-call boundary"
+                    in flat.get("wpcall.err", "")):
+            # seed 5, pcall rung: the SAME abort shape under update-level
+            # pcall containment (no resume anywhere in the receipt).
+            if (flat.get("wpcall.locked_after") == "true"
+                    and flat.get("wpext.ok") == "false"
+                    and flat.get("wpcall_next.locked_after") == "false"):
+                return "yield_abort", "pcall containment of a yield abort"
+            return "anomaly", "yield abort under pcall without witness"
+        if flat.get("drainact.kind") == "setpos_b2":
+            # seed 4: the deferred rule is a LOCK-STATE rule, not a phase
+            # rule. At the drain EC (locked=false) the very write that is
+            # refused inside the step applies on the spot and persists.
+            if (flat.get("drainact.ok") == "true"
+                    and flat.get("drainact.err") == "nil"
+                    and flat.get("drainact.b2pos", "").startswith("1234.5,")
+                    and flat.get("r77obs.b2pos", "").startswith("1234.5,")):
+                return "applied", "drain-EC write applied (world unlocked)"
+            return "anomaly", "drain-EC write without applied witness"
+        if flat.get("drainact.kind") == "queue_b2":
+            # seed 4: a structural destroy at the drain EC is IMMEDIATE, not
+            # deferred -- the count drops and the handle dies inside the call.
+            if (flat.get("drainact.ok") == "true"
+                    and flat.get("drainact.err") == "nil"
+                    and flat.get("drainact.b2dead") == "true"
+                    and flat.get("drainact.count_after")
+                        == str(int(flat.get("drainec.count", "0")) - 1)):
+                return "immediate", "drain-EC destroy executed on the spot"
+            return "anomaly", "drain-EC destroy without immediate witness"
+        if flat.get("drainact.kind") == "order":
+            # seed 4: DestroyBody ordering inside the drain EC -- the attached
+            # joints (SayGoodbye) are already destroyed, the contact's fixture
+            # and the body are still valid, the other body is alive.
+            if (flat.get("drainact.j_dead") == "true"
+                    and flat.get("drainact.fx_dead") == "false"
+                    and flat.get("drainact.body_dead") == "false"
+                    and flat.get("drainact.other_dead") == "false"
+                    and flat.get("r77obs.b2dead") == "true"):
+                return "deferred", "body drained after its joints (order witness)"
+            return "anomaly", "drain-order witness incomplete"
         if flat.get("wpcall.update_ok") == "false":
             # r75 C3 + critic F2: gate on the abort VALUE, not key
             # presence -- a receipt that merely mentions wpcall.* (e.g.
@@ -685,6 +1298,24 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
                 return "anomaly", "joint destroy ok without deferred witness"
             return "applied", mut
         return "anomaly", f"unhandled ok={flat[f'{mut}.ok']!r}"
+    if not done and rc == -11:
+        # seed 1 (r77): world:release() INSIDE the engine's own execution.
+        # The wrapper nulls the proxy and deletes the object while the engine
+        # is still running inside it, so the process dies with SIGSEGV --
+        # rc=-11, no assert text anywhere, stderr empty, and NO CELL_DONE is
+        # reachable. A partial receipt whose last line is the callback's own
+        # write IS the measurement. (`died` is rc without a signal: a
+        # different class, never this one.)
+        if "fire.step" in flat and ("rel_alive.marker" in flat
+                                    or "drainrel.alive" in flat):
+            return "corrupt", "SIGSEGV after an in-engine release"
+        return "anomaly", "rc=-11 without a release witness"
+    if not done and rc not in (0, None) and "ext_rel_call.ok" in flat:
+        # seed 1 control: the SAME release from OUTSIDE the engine's own
+        # execution is a CATCHABLE Lua error (no signal): every later Lua
+        # touch errors, and the process dies rc=1 at the first unguarded
+        # world touch. Interior-only is what makes `corrupt` mean something.
+        return "died", "exterior release: catchable error, no signal"
     if has_fire and not done and rc not in (0, None):
         if "Box2D assertion" in stdout:
             return "fatal", f"rc={rc}, assert text on stdout"
