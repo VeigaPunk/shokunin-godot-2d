@@ -10,3 +10,5 @@ live/*/head/
 live/*/snapshot/
 live/*/base/
 live/*/*extract*/
+# xsentinel w9: *tree* dirs at ANY depth (same class as audio fix)
+live/**/*tree*/
