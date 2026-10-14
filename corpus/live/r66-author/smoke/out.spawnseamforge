@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+DESCENDANT_PIPE_PROBE: expected signature
+DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit
+DESCENDANT_PIPE godot_pid=1970716
+DESCENDANT_PIPE spawned_pid=1970761
+DESCENDANT_PIPE_SEAMFORGE post_death_write=1
+DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR: SEAMFORGE phantom fabricated line
+DESCENDANT_PIPE_SEAMFORGE write_ppid=1573

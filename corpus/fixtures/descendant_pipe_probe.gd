@@ -59,12 +59,49 @@ extends SceneTree
 #                      identical ERROR: marker bytes itself, pre-death, via
 #                      push_error (the engine stderr path), then exits 0 —
 #                      child-authored error, no descendant.
+#   r66 rejection-clause SURFACE arms (meta-driven via
+#   probe_error_clause_surface, never CASES tuples — expected-FAIL/evading
+#   records are inexpressible in the all-PASS battery, r62 precedent):
+#   --spawn-allowforge  -> child runs CLEAN (genuine signature, exit 0);
+#                      reparenting-gated descendant echoes save_corrupt_
+#                      negative's byte-exact ALLOWLISTED error string
+#                      post-death + ALLOWFORGE write_ppid=<ppid> — the
+#                      forged error is verdict-inert iff classified under
+#                      that allowlist entry (the preemptor row).
+#   --spawn-splitforge  -> child runs CLEAN; reparenting-gated descendant
+#                      writes "ERR\n" then "OR: DESCENDANT_PIPE_SPLITFORGE
+#                      newline-split diagnostic\n" post-death + write_ppid —
+#                      the ERROR: token is split across a newline, so no
+#                      captured LINE contains it: line-local-scan evasion.
+#   --spawn-seamforge   -> child runs CLEAN; reparenting-gated descendant
+#                      leaves "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR"
+#                      as the UNTERMINATED last bytes of stdout and ": ...
+#                      phantom fabricated line" as the first bytes of
+#                      stderr post-death — the runner's stdout+stderr concat
+#                      FABRICATES a reject line present in neither stream.
+#   --spawn-midlineforge -> descendant is spawned while the child is ALIVE
+#                      (fixed 80ms offset, write_ppid==godot_pid); the child
+#                      emits the signature as two printraw halves with a
+#                      200ms gap after all bookkeeping lines — the splice
+#                      lands mid-line: the ERROR: line is fabricated AND
+#                      the signature substring is destroyed (dual-clause
+#                      corruption; a post-death gate cannot produce it).
 const MARKER := "DESCENDANT_PIPE_PROBE: expected signature"
+const MARKER_SPLICE_HEAD := "DESCENDANT_PIPE_PROBE: expected "
+const MARKER_SPLICE_TAIL := "signature"
 const POST_EXIT_WRITE := "DESCENDANT_PIPE_AFTER_EXIT_WRITE"
 const FORGE_PPID_WRITE := "DESCENDANT_PIPE_FORGE write_ppid="
 const ERRFORGE_PPID_WRITE := "DESCENDANT_PIPE_ERRFORGE write_ppid="
 const ERRFORGE_ERROR_BODY := "DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic"
 const ERRFORGE_ERROR := "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic"
+const ALLOWFORGE_ERROR := "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"
+const ALLOWFORGE_PPID_WRITE := "DESCENDANT_PIPE_ALLOWFORGE write_ppid="
+const SPLITFORGE_PPID_WRITE := "DESCENDANT_PIPE_SPLITFORGE write_ppid="
+const SEAMFORGE_STDOUT_TAIL := "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR"
+const SEAMFORGE_STDERR_HEAD := ": SEAMFORGE phantom fabricated line"
+const SEAMFORGE_PPID_WRITE := "DESCENDANT_PIPE_SEAMFORGE write_ppid="
+const MIDLINE_ERROR := "ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+const MIDLINE_PPID_WRITE := "DESCENDANT_PIPE_MIDLINE write_ppid="
 
 func _initialize() -> void:
 	var user_args := OS.get_cmdline_user_args()
@@ -73,31 +110,60 @@ func _initialize() -> void:
 	var errforge_hold := "--spawn-errforge-hold" in user_args
 	var errforge_release := "--spawn-errforge-release" in user_args
 	var emit_errforge := "--emit-errforge" in user_args
+	var allowforge := "--spawn-allowforge" in user_args
+	var splitforge := "--spawn-splitforge" in user_args
+	var seamforge := "--spawn-seamforge" in user_args
+	var midline_forge := "--spawn-midlineforge" in user_args
 	if forge_hold or forge_release:
 		print("DESCENDANT_PIPE_FORGE child_signature=withheld")
-	else:
+	elif not midline_forge:
 		print(MARKER)
 	if errforge_hold or errforge_release:
 		print("DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit")
 	elif emit_errforge:
 		print("DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit")
 		push_error(ERRFORGE_ERROR_BODY)
+	elif allowforge or splitforge or seamforge:
+		print("DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit")
+	elif midline_forge:
+		print("DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200")
 	print("DESCENDANT_PIPE godot_pid=", OS.get_process_id())
+	var reparent_gate := ("while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \""
+		+ str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; ")
 	var spawned := -1
 	if "--spawn-hold" in user_args:
 		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
-			"while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \"" + str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; echo " + POST_EXIT_WRITE + "; sleep 6"]))
+			reparent_gate + "echo " + POST_EXIT_WRITE + "; sleep 6"]))
 	elif "--spawn-detach" in user_args:
 		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
 			"exec sh -c 'sleep 8' </dev/null >/dev/null 2>&1"]))
 	elif forge_hold or forge_release:
 		var tail := "; sleep 6" if forge_hold else ""
 		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
-			"while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \"" + str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; echo " + MARKER + "; echo " + FORGE_PPID_WRITE + "$pp" + tail]))
+			reparent_gate + "echo " + MARKER + "; echo " + FORGE_PPID_WRITE + "$pp" + tail]))
 	elif errforge_hold or errforge_release:
 		var err_tail := "; sleep 6" if errforge_hold else ""
 		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
-			"while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \"" + str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; echo " + ERRFORGE_ERROR + "; echo " + ERRFORGE_PPID_WRITE + "$pp" + err_tail]))
+			reparent_gate + "echo " + ERRFORGE_ERROR + "; echo " + ERRFORGE_PPID_WRITE + "$pp" + err_tail]))
+	elif allowforge:
+		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
+			reparent_gate + "echo '" + ALLOWFORGE_ERROR + "'; echo " + ALLOWFORGE_PPID_WRITE + "$pp"]))
+	elif splitforge:
+		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
+			reparent_gate + "printf 'ERR\\n'; sleep 0.05; printf 'OR: DESCENDANT_PIPE_SPLITFORGE newline-split diagnostic\\n'; echo " + SPLITFORGE_PPID_WRITE + "$pp"]))
+	elif seamforge:
+		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
+			reparent_gate + "echo DESCENDANT_PIPE_SEAMFORGE post_death_write=1; printf '" + SEAMFORGE_STDOUT_TAIL + "'; echo '" + SEAMFORGE_STDERR_HEAD + "' >&2; echo " + SEAMFORGE_PPID_WRITE + "$pp >&2"]))
+	elif midline_forge:
+		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
+			"sleep 0.08; read -r _ _ _ pp _ < /proc/self/stat; printf '" + MIDLINE_ERROR + "\\n'; echo " + MIDLINE_PPID_WRITE + "$pp"]))
 	if spawned > 0:
 		print("DESCENDANT_PIPE spawned_pid=", spawned)
+	if midline_forge:
+		# The halves are emitted last so no child line can intervene; the
+		# descendant's fixed-offset write splices into the 200ms gap —
+		# write_ppid==godot_pid proves the write was pre-death.
+		printraw(MARKER_SPLICE_HEAD)
+		OS.delay_msec(200)
+		print(MARKER_SPLICE_TAIL)
 	quit(0)

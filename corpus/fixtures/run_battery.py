@@ -396,6 +396,7 @@ def main():
                             "same_line_suffix_output": suffix_spoof.strip().splitlines(),
                             "same_line_prefix_output": prefix_spoof.strip().splitlines(),
                             "injected_line": "ERROR: unrelated injected diagnostic"})
+        expected_errors = ()
         if passed is None:
             expected_errors = {
                 "negative_overlap": ("ERROR: negative control: expected collected signal was absent with disabled mask",),
@@ -453,6 +454,7 @@ def main():
                   "expected_exit": expected_exit, "actual_exit": code, "signature": evidence,
                   "verdict": "PASS" if passed else "FAIL",
                   "error": error, "output": output.strip().splitlines()}
+        record["expected_errors"] = list(expected_errors)
         if export_record is not None:
             record["export_artifact"] = export_record
         results.append(record)
@@ -1539,6 +1541,504 @@ def main():
                     "discriminations": ef_discriminations,
                     "bounded_claim": "the un-allowlisted-ERROR rejection axis is as origin-blind as the signature axis: a reparenting-gated descendant's post-death error write lands in the merged capture and flips a clean exit-0 + signature-present record to FAIL, byte-identical in classification-visible fields to the child-authored push_error control, separable only by the r63-style provenance lines (banner/spawned_pid/write_ppid) and write timing; the r64 while-live gate does NOT reject the forged-error arm — its criterion is the signature marker only, so the genuine while-live signature is accepted and the post-death error is gate-invisible, though the gated read does record the error arriving only after observed child death; Linux headless Godot 4.7.2 POSIX pipe semantics only"})
     print(f"{results[-1]['verdict']} descendant error-spoof meta", flush=True)
+    # r66 meta: rejection-clause SURFACE map — tracks the r65 critic/boundary
+    # measured edges that never became rows. Declared falsifiable claim: the
+    # rejection clause's verdict is a pure function of merged-output line
+    # presence modulo the allowlist — forgeable in BOTH directions (evasion
+    # and fabrication) by a post-death descendant. Four new fixture arms are
+    # meta-driven bounded Popens (never CASES tuples: expected-FAIL/evading
+    # records are inexpressible in the all-PASS battery, r62 precedent):
+    #   --spawn-allowforge   descendant echoes save_corrupt_negative's
+    #     byte-exact ALLOWLISTED error post-death -> (a) the allowlist is the
+    #     clause's preemptor row: identical captured bytes reject under ()
+    #     and are verdict-inert under the matching entry (absorbed), and a
+    #     foreign entry does not absorb.
+    #   --spawn-splitforge   descendant writes "ERR\n" then "OR: ..." — the
+    #     ERROR: token split across a newline EVADES the line-local scan:
+    #     forged bytes captured, zero lines contain "ERROR:" -> PASS.
+    #   --spawn-seamforge    descendant leaves an UNTERMINATED "...ERROR"
+    #     stdout tail and a ": ..." stderr head post-death -> the runner's
+    #     stdout+stderr concat FABRICATES a reject line present in neither
+    #     stream (paired split-stream run proves the line's non-existence).
+    #   --spawn-midlineforge descendant writes pre-death (write_ppid ==
+    #     godot_pid) into the 200ms gap between the signature's two printraw
+    #     halves -> fabricated ERROR: line AND destroyed signature substring
+    #     (dual-clause corruption; the r65 stripped counterfactual cannot
+    #     isolate the error as sole cause).
+    # (b) the allowlist's three entry shapes (exact / `,`-prefix+count==1 /
+    #   structured chain-incomplete) are re-measured through the REAL
+    #   classify_process on captured + synthetic lines — the hcom-shaped
+    #   gates.
+    # (d) dead-entry census: every per-case expected_errors entry checked
+    #   against this run's captured outputs (which entries no reachable
+    #   child output tripped), plus the whole-blob SCRIPT ERROR:/Parse
+    #   Error: clauses and the audio ObjectDB clause — carried as data,
+    #   self-validated by the real classifier (bare vs allowlisted).
+    surface_bound = 3.0
+    surface_signature = "DESCENDANT_PIPE_PROBE: expected signature"
+    allowforge_error = ("ERROR: SAVE EXPECTED NEGATIVE: malformed JSON "
+                        "rejected signature=JSON_PARSE_ERROR")
+    splitforge_tail = "OR: DESCENDANT_PIPE_SPLITFORGE newline-split diagnostic"
+    seam_stdout_tail = "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR"
+    seam_stderr_head = ": SEAMFORGE phantom fabricated line"
+    seam_fabricated = seam_stdout_tail + seam_stderr_head
+    midline_error = "ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+
+    def surface_run(case, extra_args, ppid_token, bound=surface_bound):
+        # Bounded Popen producing the record shape a CASES row would carry:
+        # exit/error/output through the same communicate(timeout) bound.
+        record = {"case": case, "flags": list(extra_args),
+                  "bound_seconds": bound, "timed_out": False,
+                  "child_exit_at_timeout": None, "actual_exit": None,
+                  "error": None, "elapsed_seconds": None,
+                  "signature_observed": False, "error_lines": [],
+                  "write_ppid": None, "godot_pid": None,
+                  "descendant_pid": None, "descendant_alive_at_return": None,
+                  "descendant_kernel_ppid_at_return": None,
+                  "inner_classification": False, "output_lines": []}
+        record["command"] = [args.godot, "--headless", "--path", str(scratch),
+                             "--script", "res://descendant_pipe_probe.gd",
+                             "--"] + list(extra_args)
+        proc = None
+        started = time.monotonic()
+        text = ""
+        try:
+            proc = subprocess.Popen(record["command"], stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE, text=True,
+                                    bufsize=1)
+            try:
+                sf_out, sf_err = proc.communicate(timeout=bound)
+                text = (sf_out or "") + (sf_err or "")
+                record["actual_exit"] = proc.returncode
+            except subprocess.TimeoutExpired as exc:
+                record["timed_out"] = True
+                record["child_exit_at_timeout"] = proc.poll()
+                sf_out = (exc.stdout.decode(errors="replace")
+                          if isinstance(exc.stdout, bytes) else (exc.stdout or ""))
+                sf_err = (exc.stderr.decode(errors="replace")
+                          if isinstance(exc.stderr, bytes) else (exc.stderr or ""))
+                text = sf_out + sf_err
+                record["error"] = f"TIMEOUT after {bound} seconds"
+                for stream in (proc.stdout, proc.stderr):
+                    try:
+                        stream.close()
+                    except OSError:
+                        pass
+                try:
+                    proc.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    proc.kill()
+                    try:
+                        proc.wait(timeout=3)
+                    except subprocess.TimeoutExpired:
+                        record["error"] += "; post-kill wait timed out"
+        except (OSError, ValueError) as exc:
+            record["error"] = f"launch/read error: {exc}"
+        finally:
+            if proc is not None and proc.poll() is None:
+                proc.kill()
+                try:
+                    proc.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    record["error"] = (record["error"] or "") + "; forced cleanup timed out"
+        record["elapsed_seconds"] = round(time.monotonic() - started, 3)
+        record["signature_observed"] = surface_signature in text
+        record["error_lines"] = sorted(
+            {line.strip() for line in text.splitlines() if "ERROR:" in line})
+        pid_match = re.search(r"DESCENDANT_PIPE godot_pid=(\d+)", text)
+        record["godot_pid"] = int(pid_match.group(1)) if pid_match else None
+        pid_match = re.search(r"DESCENDANT_PIPE spawned_pid=(\d+)", text)
+        record["descendant_pid"] = int(pid_match.group(1)) if pid_match else None
+        pid_match = re.search(re.escape(ppid_token) + r"(\d+)", text)
+        record["write_ppid"] = int(pid_match.group(1)) if pid_match else None
+        record["descendant_alive_at_return"] = pid_alive(record["descendant_pid"])
+        record["descendant_kernel_ppid_at_return"] = kernel_ppid(
+            record["descendant_pid"])
+        record["inner_classification"] = classify_process(
+            record["actual_exit"], record["error"], text, 0, surface_signature)
+        record["output_lines"] = text.strip().splitlines()
+        return record, text
+
+    def surface_split_run(case, extra_args, bound=surface_bound):
+        # Separate-PIPE capture: the fabricated seam line's non-existence is
+        # stream-level data the merged clause can never see — record it.
+        record = {"case": case, "flags": list(extra_args),
+                  "bound_seconds": bound, "actual_exit": None, "error": None,
+                  "merged_classification": None,
+                  "raw_stdout_lines": [], "raw_stderr_lines": []}
+        record["command"] = [args.godot, "--headless", "--path", str(scratch),
+                             "--script", "res://descendant_pipe_probe.gd",
+                             "--"] + list(extra_args)
+        try:
+            proc = subprocess.run(record["command"], capture_output=True,
+                                  text=True, timeout=bound)
+            stdout_text, stderr_text = proc.stdout or "", proc.stderr or ""
+            record["actual_exit"] = proc.returncode
+        except subprocess.TimeoutExpired as exc:
+            stdout_text = (exc.stdout.decode(errors="replace")
+                           if isinstance(exc.stdout, bytes) else (exc.stdout or ""))
+            stderr_text = (exc.stderr.decode(errors="replace")
+                           if isinstance(exc.stderr, bytes) else (exc.stderr or ""))
+            record["error"] = f"TIMEOUT after {bound} seconds"
+        except OSError as exc:
+            stdout_text, stderr_text = "", ""
+            record["error"] = f"launch error: {exc}"
+        record["raw_stdout_lines"] = stdout_text.strip().splitlines()
+        record["raw_stderr_lines"] = stderr_text.strip().splitlines()
+        record["stdout_tail_line"] = (record["raw_stdout_lines"][-1]
+                                    if record["raw_stdout_lines"] else None)
+        record["stderr_head_line"] = (record["raw_stderr_lines"][0]
+                                    if record["raw_stderr_lines"] else None)
+        record["merged_classification"] = classify_process(
+            record["actual_exit"], record["error"], stdout_text + stderr_text,
+            0, surface_signature)
+        return record
+
+    sf_allow, sf_allow_text = surface_run(
+        "surface_allowforge", ["--spawn-allowforge"],
+        "DESCENDANT_PIPE_ALLOWFORGE write_ppid=")
+    sf_split, sf_split_text = surface_run(
+        "surface_splitforge", ["--spawn-splitforge"],
+        "DESCENDANT_PIPE_SPLITFORGE write_ppid=")
+    sf_seam, sf_seam_text = surface_run(
+        "surface_seamforge", ["--spawn-seamforge"],
+        "DESCENDANT_PIPE_SEAMFORGE write_ppid=")
+    sf_mid, sf_mid_text = surface_run(
+        "surface_midlineforge", ["--spawn-midlineforge"],
+        "DESCENDANT_PIPE_MIDLINE write_ppid=")
+    sf_seam_split = surface_split_run(
+        "surface_seamforge_split", ["--spawn-seamforge"])
+
+    def surface_classify(text, allowed=()):
+        return classify_process(0, None, text, 0, surface_signature, allowed)
+
+    def shape_text(line):
+        return f"Godot banner\n{surface_signature}\n{line}\n"
+
+    allowforge_stripped = "\n".join(
+        line for line in sf_allow_text.splitlines() if "ERROR:" not in line)
+    splitforge_stripped_lines = [line.strip() for line in
+                                 sf_split_text.splitlines()]
+    splitforge_contiguous = sf_split_text.replace("ERR\nOR:", "ERROR:")
+    mid_stripped = "\n".join(
+        line for line in sf_mid_text.splitlines() if "ERROR:" not in line)
+    midline_spliced = next(
+        (line.strip() for line in sf_mid_text.splitlines()
+         if "DESCENDANT_PIPE_PROBE: expected " in line
+         and midline_error in line), None)
+
+    comma_entry = ("ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file "
+                   "rejected signature=FILE_NOT_FOUND,")
+    comma_line = ("ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file "
+                  "rejected signature=FILE_NOT_FOUND, path=/tmp/x")
+    structured_entry = "ERROR: chain incomplete"
+    structured_line = ("ERROR: chain incomplete collections=1 "
+                       "scene=SceneB:<Node#7> old_alive=false")
+    # (b) hcom-shaped entry gates re-measured through the REAL classifier —
+    # each cell is (entry, line, expected_absorbed): the observed verdict is
+    # `absorbed` = classify under (entry,) on a record whose only ERROR: is
+    # that line.
+    shape_matrix = {
+        "exact__exact_line": {
+            "entry_shape": "exact", "line": allowforge_error,
+            "expected_absorbed": True,
+            "absorbed": surface_classify(shape_text(allowforge_error),
+                                         (allowforge_error,))},
+        "exact__suffixed_twin": {
+            "entry_shape": "exact",
+            "line": allowforge_error + " ERROR: tail-forged",
+            "expected_absorbed": False,
+            "absorbed": surface_classify(
+                shape_text(allowforge_error + " ERROR: tail-forged"),
+                (allowforge_error,))},
+        "comma__prefix_line": {
+            "entry_shape": "comma_prefix", "line": comma_line,
+            "expected_absorbed": True,
+            "absorbed": surface_classify(shape_text(comma_line),
+                                         (comma_entry,))},
+        "comma__count2_tail_forge": {
+            "entry_shape": "comma_prefix",
+            "line": comma_line + " ERROR: tail-forged",
+            "expected_absorbed": False,
+            "absorbed": surface_classify(
+                shape_text(comma_line + " ERROR: tail-forged"),
+                (comma_entry,))},
+        "comma__unanchored_line": {
+            "entry_shape": "comma_prefix",
+            "line": "prefix text " + comma_line,
+            "expected_absorbed": False,
+            "absorbed": surface_classify(
+                shape_text("prefix text " + comma_line), (comma_entry,))},
+        "comma_entry__exact_shaped_line": {
+            "entry_shape": "comma_prefix", "line": allowforge_error,
+            "expected_absorbed": False,
+            "absorbed": surface_classify(sf_allow_text,
+                                         (allowforge_error + ",",))},
+        "structured__full_shape": {
+            "entry_shape": "structured", "line": structured_line,
+            "expected_absorbed": True,
+            "absorbed": surface_classify(shape_text(structured_line),
+                                         (structured_entry,))},
+        "structured__missing_conjunct": {
+            "entry_shape": "structured",
+            "line": ("ERROR: chain incomplete collections=1 "
+                     "scene=SceneB:<Node#7>"),
+            "expected_absorbed": False,
+            "absorbed": surface_classify(
+                shape_text("ERROR: chain incomplete collections=1 "
+                           "scene=SceneB:<Node#7>"), (structured_entry,))},
+        "structured__count2_tail_forge": {
+            "entry_shape": "structured",
+            "line": structured_line + " ERROR: tail-forged",
+            "expected_absorbed": False,
+            "absorbed": surface_classify(
+                shape_text(structured_line + " ERROR: tail-forged"),
+                (structured_entry,))},
+    }
+
+    # (d) dead-entry census — data, self-validated by the real classifier.
+    # surface_allowed_error mirrors allowed_error (nested in
+    # classify_process) solely to attribute WHICH entry matched WHICH line;
+    # the load-bearing verdict is re-derived via classify_process itself.
+    def surface_allowed_error(line, allowed):
+        stripped = line.strip()
+        if stripped == allowed:
+            return True
+        if allowed.endswith(","):
+            return stripped.startswith(allowed) and stripped.count("ERROR:") == 1
+        if allowed == "ERROR: chain incomplete":
+            return (stripped.startswith("ERROR: chain incomplete collections=")
+                    and "scene=SceneB:<Node#" in stripped
+                    and "old_alive=false" in stripped
+                    and stripped.count("ERROR:") == 1)
+        return False
+
+    def entry_shape(entry):
+        if entry == "ERROR: chain incomplete":
+            return "structured"
+        if entry.endswith(","):
+            return "comma_prefix"
+        return "exact"
+
+    census_rows = []
+    for row in results:
+        entries = row.get("expected_errors") or []
+        if not entries or not isinstance(row.get("output"), list):
+            continue
+        row_text = "\n".join(row["output"])
+        entry_records = []
+        for entry in entries:
+            matched = [line.strip() for line in row["output"]
+                       if surface_allowed_error(line, entry)]
+            entry_records.append({"entry": entry, "shape": entry_shape(entry),
+                                  "matched_lines": len(matched),
+                                  "first_match": matched[0] if matched else None,
+                                  "dead_in_run": not matched})
+        bare_rejects = not classify_process(
+            row["actual_exit"], row["error"], row_text,
+            row["expected_exit"], row["signature"], ())
+        allowlisted_passes = classify_process(
+            row["actual_exit"], row["error"], row_text,
+            row["expected_exit"], row["signature"], tuple(entries))
+        census_rows.append({
+            "case": row["case"], "verdict": row["verdict"],
+            "entries": entry_records,
+            "any_entry_matched": any(not e["dead_in_run"]
+                                     for e in entry_records),
+            "bare_classification_rejects": bare_rejects,
+            "allowlisted_classification_passes": allowlisted_passes})
+    dead_entries = [{"case": r["case"], "entry": e["entry"],
+                     "shape": e["shape"]}
+                    for r in census_rows for e in r["entries"]
+                    if e["dead_in_run"]]
+    blob_clause_counts = {
+        "SCRIPT ERROR:": 0, "Parse Error:": 0,
+        "ERROR:_per_line_lines": 0,
+        "objectdb_leak_audio_lines": 0}
+    for row in results:
+        for line in row.get("output") or []:
+            if "SCRIPT ERROR:" in line:
+                blob_clause_counts["SCRIPT ERROR:"] += 1
+            if "Parse Error:" in line:
+                blob_clause_counts["Parse Error:"] += 1
+            if "ERROR:" in line:
+                blob_clause_counts["ERROR:_per_line_lines"] += 1
+            if re.fullmatch(
+                    r"WARNING: [1-9][0-9]* ObjectDB instances were leaked at exit"
+                    r"(?: \(run with `--verbose` for details\)\.)?",
+                    line.strip()):
+                blob_clause_counts["objectdb_leak_audio_lines"] += 1
+    surface_census = {
+        "scope": "every CASES row carrying expected_errors in this battery "
+                 "run; opt-in probe rows execute after this census (their "
+                 "inline allowlists are listed, not censused)",
+        "rows_with_expected_errors": len(census_rows),
+        "rows": census_rows,
+        "dead_entry_count": len(dead_entries),
+        "dead_entries": dead_entries,
+        "scan_clause_census": blob_clause_counts,
+        "clause_granularity": ("\"ERROR:\" is per-line "
+                               "(output.splitlines() scan); \"SCRIPT ERROR:\" "
+                               "and \"Parse Error:\" are whole-blob "
+                               "substrings — the labrat-flagged granularity "
+                               "asymmetry: a newline-split SCRIPT/parse "
+                               "token evades entirely"),
+        "allowlists_outside_expected_errors": [
+            "export_preset_missing executes classify with (evidence,) inline",
+            "classify_mutant holds three inline tuples (probe-failing only)",
+            "stream probe uses classify_streams allowed_stderr=()",
+            "probe_audio_warning uses default allowlist ()"],
+    }
+
+    error_spoof_row = next((r for r in results
+                            if r["case"] == "probe_descendant_error_spoof"), None)
+    prior_meta_stable = (
+        error_spoof_row is not None and error_spoof_row["verdict"] == "PASS"
+        and len(error_spoof_row.get("discriminations", {})) == 29
+        and all(error_spoof_row["discriminations"].values())
+        and all((next((r for r in results if r["case"] == name), None) or {})
+                .get("verdict") == "PASS"
+                for name in ("probe_save_independent_process",
+                             "probe_spontaneous_crash_classification",
+                             "probe_descendant_pipe_eof",
+                             "probe_descendant_signature_spoof",
+                             "probe_while_live_signature_gate")))
+    seam_stdout_last = sf_seam_split["raw_stdout_lines"][-1].strip() \
+        if sf_seam_split["raw_stdout_lines"] else None
+    seam_stderr_first = sf_seam_split["raw_stderr_lines"][0].strip() \
+        if sf_seam_split["raw_stderr_lines"] else None
+    seam_fabricated_lines = [line.strip() for line in
+                             sf_seam_text.splitlines()
+                             if line.strip() == seam_fabricated]
+    sf_discriminations = {
+        # (a) allowlist-as-preemptor on REAL captured bytes: the forged
+        # allowlisted line is verdict-inert iff the matching entry is given.
+        "allowforge_clean_exit0_record": (
+            not sf_allow["timed_out"] and sf_allow["actual_exit"] == 0
+            and sf_allow["error"] is None),
+        "allowforge_signature_present": sf_allow["signature_observed"],
+        "allowforge_forged_error_captured": (
+            sf_allow["error_lines"] == [allowforge_error]),
+        "allowforge_write_post_orphan": (
+            sf_allow["write_ppid"] is not None
+            and sf_allow["godot_pid"] is not None
+            and sf_allow["write_ppid"] != sf_allow["godot_pid"]),
+        "allowforge_rejects_without_allowlist": (
+            surface_classify(sf_allow_text, ()) is False),
+        "allowforge_absorbed_by_matching_allowlist": (
+            surface_classify(sf_allow_text, (allowforge_error,)) is True),
+        "allowforge_rejects_under_foreign_allowlist": (
+            surface_classify(sf_allow_text,
+                             ("ERROR: unrelated different diagnostic",))
+            is False),
+        "allowforge_counterfactual_passes_without_error": (
+            surface_classify(allowforge_stripped, ()) is True),
+        # (b) the hcom-shaped entry gates — all nine cells land as declared.
+        "allowlist_shape_matrix_all_expected": all(
+            cell["absorbed"] == cell["expected_absorbed"]
+            for cell in shape_matrix.values()),
+        # (c) line-faithfulness — evasion: the split token's bytes are in
+        # the record yet no line contains "ERROR:" -> merged scan accepts.
+        "splitforge_clean_exit0_record": (
+            not sf_split["timed_out"] and sf_split["actual_exit"] == 0
+            and sf_split["error"] is None),
+        "splitforge_signature_present": sf_split["signature_observed"],
+        "splitforge_forged_bytes_in_record": (
+            "ERR" in splitforge_stripped_lines
+            and splitforge_tail in splitforge_stripped_lines),
+        "splitforge_no_error_line_captured": sf_split["error_lines"] == [],
+        "splitforge_evades_merged_scan": (
+            sf_split["inner_classification"] is True),
+        "splitforge_contiguous_twin_rejects": (
+            surface_classify(splitforge_contiguous, ()) is False),
+        "splitforge_write_post_orphan": (
+            sf_split["write_ppid"] is not None
+            and sf_split["godot_pid"] is not None
+            and sf_split["write_ppid"] != sf_split["godot_pid"]),
+        # (c) line-faithfulness — fabrication: the reject line exists only
+        # in the merged concat; the split-stream run proves it is present
+        # in neither stdout nor stderr's own line set.
+        "seamforge_clean_exit0_record": (
+            not sf_seam["timed_out"] and sf_seam["actual_exit"] == 0
+            and sf_seam["error"] is None),
+        "seamforge_signature_present": sf_seam["signature_observed"],
+        "seamforge_fabricated_line_in_merged": len(seam_fabricated_lines) == 1,
+        "seamforge_fabricated_line_rejects": (
+            sf_seam["inner_classification"] is False),
+        "seamforge_line_in_neither_stream": (
+            seam_fabricated not in sf_seam_split["raw_stdout_lines"]
+            and seam_fabricated not in sf_seam_split["raw_stderr_lines"]
+            and seam_stdout_last == seam_stdout_tail
+            and seam_stderr_first == seam_stderr_head),
+        "seamforge_split_run_also_rejects_post_merge": (
+            sf_seam_split["merged_classification"] is False),
+        "seamforge_write_post_orphan": (
+            sf_seam["write_ppid"] is not None
+            and sf_seam["godot_pid"] is not None
+            and sf_seam["write_ppid"] != sf_seam["godot_pid"]),
+        # (c) mid-signature splice: fabricated ERROR: line AND destroyed
+        # signature substring — the r65 sole-cause counterfactual cannot
+        # isolate the error (strip the error lines and the record still
+        # rejects on the signature axis).
+        "midlineforge_error_spliced_into_signature": (
+            midline_spliced is not None),
+        "midlineforge_signature_destroyed": (
+            sf_mid["signature_observed"] is False),
+        "midlineforge_rejects": sf_mid["inner_classification"] is False,
+        "midlineforge_counterfactual_defeated": (
+            surface_classify(mid_stripped, ()) is False),
+        "midlineforge_write_pre_death": (
+            sf_mid["write_ppid"] is not None
+            and sf_mid["godot_pid"] is not None
+            and sf_mid["write_ppid"] == sf_mid["godot_pid"]),
+        # Headline: each arm's verdict follows merged-output line presence
+        # modulo the allowlist — forgeable in both directions.
+        "surface_verdicts_follow_merged_line_presence": (
+            surface_classify(sf_allow_text, ()) is False
+            and surface_classify(sf_allow_text, (allowforge_error,)) is True
+            and sf_split["inner_classification"] is True
+            and sf_seam["inner_classification"] is False
+            and sf_mid["inner_classification"] is False),
+        # (d) census integrity — carried as data; only coverage/consistency
+        # is gated (dead entries themselves are data, not a failure).
+        "census_covers_all_allowlisted_rows": all(
+            (r.get("expected_errors") or []) == [] or any(
+                cr["case"] == r["case"] for cr in census_rows)
+            for r in results if isinstance(r.get("output"), list)),
+        "census_bare_classifier_consistent": all(
+            r["any_entry_matched"] == r["bare_classification_rejects"]
+            for r in census_rows),
+        "census_allowlisted_reproduces_verdicts": all(
+            r["allowlisted_classification_passes"] == (r["verdict"] == "PASS")
+            for r in census_rows),
+        # Within-run prior-row stability anchors.
+        "detached_control_row_still_passes": (
+            detached is not None and detached["verdict"] == "PASS"
+            and detached["actual_exit"] == 0 and detached["error"] is None),
+        "prior_meta_rows_stable_29_discriminations": prior_meta_stable,
+    }
+    # Harness-side hygiene: reap any lingering surface descendants (all arms
+    # self-exit in well under a second; never gated).
+    for sf_orphan in (sf_allow["descendant_pid"], sf_split["descendant_pid"],
+                      sf_seam["descendant_pid"], sf_mid["descendant_pid"]):
+        if pid_alive(sf_orphan):
+            try:
+                os.kill(sf_orphan, signal.SIGKILL)
+            except OSError:
+                pass
+    sf_meta_ok = all(sf_discriminations.values())
+    results.append({"case": "probe_error_clause_surface",
+                    "verdict": "PASS" if sf_meta_ok else "FAIL",
+                    "mode": "bounded_popen_surface_arms_plus_allowlist_census",
+                    "bound_seconds": surface_bound,
+                    "arms": [sf_allow, sf_split, sf_seam, sf_mid],
+                    "seam_split_run": sf_seam_split,
+                    "midline_spliced_line": midline_spliced,
+                    "shape_matrix": shape_matrix,
+                    "census": surface_census,
+                    "discriminations": sf_discriminations,
+                    "bounded_claim": "the rejection clause's verdict is a pure function of merged-output line presence modulo the per-case allowlist — measured forgeable in both directions by a post-death descendant on this fixture: (a) a forged error matching the allowlist is verdict-inert (absorbed) while the identical captured bytes reject under () and under a foreign entry; (b) exact/, -prefix/count==1/structured entry shapes all gate as declared incl. tail-forge count==2 defeats; (c) ERR\\n+OR: newline-split EVADES the line-local scan while a stdout-tail+stderr-head seam FABRICATES a reject line present in neither stream, and a pre-death mid-signature splice fabricates an error line AND destroys the signature substring (dual-clause corruption); (d) dead-entry census over expected_errors carried as data, self-validated by the real classifier; Linux headless Godot 4.7.2 POSIX pipe semantics only"})
+    print(f"{results[-1]['verdict']} error-clause surface meta", flush=True)
     if args.probe_failing:
         destination = scratch / "scene_b.tscn"
         original = destination.read_text()

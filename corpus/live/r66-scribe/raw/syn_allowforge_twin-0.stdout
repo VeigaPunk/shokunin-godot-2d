@@ -1,0 +1,5 @@
+R66 child_pid=2277758
+DESCENDANT_PIPE spawned_pid=2277759
+R66_SURFACE_PROBE: expected signature
+ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERR0R
+R66 write_ppid=1573

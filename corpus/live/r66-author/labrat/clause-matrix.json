@@ -1,0 +1,38 @@
+{
+  "probe": "r66 labrat: classify_process rejection-clause forgeability",
+  "dispatch": "one bounded read-only ufo-labrat (depth-2) pre-landing; tool surface resolved read/grep/glob only — no exec, no write; matrix evaluated by STRICT STATIC SIMULATION of the verbatim clause and returned as answer text; persisted verbatim here by the author seat",
+  "method": "verbatim nested classify_process/allowed_error at corpus/fixtures/run_battery.py (nested inside main); 14 synthetic merged outputs each carrying the signature line; classify_process(0, None, TEXT, 0, 'DESCENDANT_PIPE_PROBE: expected signature', allowed_errors=...)",
+  "labrat_verbatim_clause_ref": "run_battery.py classify_process (exact/`,`-prefix+count==1/structured allowed_error shapes + per-line ERROR: scan + whole-blob SCRIPT ERROR:/Parse Error: clauses)",
+  "arms": [
+    {"arm": "A1", "expected": false, "observed": false, "match": true, "note": "un-allowlisted ERROR: twin line -> unrelated_errors nonempty -> reject"},
+    {"arm": "A2", "expected": true,  "observed": true,  "match": true, "note": "stripped == allowed exact-equality absorbs line; verdict-inert"},
+    {"arm": "A3", "expected": false, "observed": false, "match": true, "note": "foreign entry hits terminal return False; no absorption"},
+    {"arm": "A4", "expected": false, "observed": false, "match": true, "note": "entry ends ',' -> startswith(allowed) fails: line is a strict prefix of entry, shorter by the comma"},
+    {"arm": "A5", "expected": false, "observed": false, "match": true, "note": "exact entry vs suffixed line: equality fails, no comma gate, no chain-incomplete gate -> reject"},
+    {"arm": "B1", "expected": true,  "observed": true,  "match": true, "note": "','-entry: startswith(allowed) anchored prefix + count('ERROR:')==1 -> absorbed"},
+    {"arm": "B2", "expected": false, "observed": false, "match": true, "note": "count('ERROR:')==2 on the same line defeats the ','-prefix gate"},
+    {"arm": "B3", "expected": false, "observed": false, "match": true, "note": "leading 'prefix text' breaks anchored startswith"},
+    {"arm": "C1", "expected": true,  "observed": true,  "match": true, "note": "chain-incomplete structured gate: prefix + scene=SceneB:<Node# + old_alive=false + count==1 -> absorbed"},
+    {"arm": "C2", "expected": false, "observed": false, "match": true, "note": "missing 'old_alive=false' conjunct -> not absorbed"},
+    {"arm": "C3", "expected": false, "observed": false, "match": true, "note": "second 'ERROR:' token -> count==2 -> not absorbed"},
+    {"arm": "D1", "expected": true,  "observed": true,  "match": true, "note": "EVASION: 'ERR\\nOR:' split -> no captured line contains 'ERROR:' -> PASS"},
+    {"arm": "D2", "expected": false, "observed": false, "match": true, "note": "contiguous twin line contains 'ERROR:' -> reject"},
+    {"arm": "D3", "expected": false, "observed": false, "match": true, "note": "FABRICATION: phantom seam line containing 'ERROR:' rejects identically to a real line"}
+  ],
+  "matched": 14,
+  "total": 14,
+  "labrat_conclusion": "hypothesis HELD on the verbatim classifier by static evaluation; flagged as inference (no interpreter on that tool surface)",
+  "labrat_adjacent_notes": [
+    "granularity asymmetry — \"ERROR:\" is gated per captured line, but \"SCRIPT ERROR:\"/\"Parse Error:\" are whole-output substrings; a newline-split parse/script token would evade entirely",
+    "count(\"ERROR:\")==1 in the ','-prefix and structured gates is line-local: a forged trailing ERROR: on the same line defeats absorption",
+    "rejection is provenance-blind symmetrically: split-real evades (D1) while never-real rejects (D3); signature presence is a raw substring check (out of scope)"
+  ],
+  "author_corroboration": {
+    "method": "ast.get_source_segment extraction of the same classify_process + exec on CPython 3.14.7 (author's own run)",
+    "spot_matrix": {
+      "A1_bare": false, "A2_exact": true, "A3_foreign": false, "A4_comma_entry": false,
+      "D1_split": true, "D2_contiguous": false, "D3_seam": false
+    },
+    "result": "7/7 spot-checks match the labrat's static expectations on a real interpreter; full live coverage in probe_error_clause_surface (34 discriminations, verdicts.json runs/20261014T051301624764Z and runs/20261014T051140112142Z)"
+  }
+}

@@ -1,0 +1,8 @@
+[landed-a] {"bare_rejects": true, "matched_absorbs": true, "foreign_rejects": true, "stripped_counterfactual_passes": true, "write_post_orphan": true, "error_lines_exact": true}
+[landed-c-split] {"clean_exit0": true, "signature_present": true, "forged_bytes_in_record": true, "no_error_line": true, "evades_merged_scan": true, "contiguous_twin_rejects": true, "write_post_orphan": true}
+[landed-c-seam] {"clean_exit0": true, "fabricated_line_in_merged": true, "merged_rejects": true, "line_in_neither_stream": true, "split_run_merged_also_rejects": true, "split_run_streams_classification": false, "stderr_lines": [": SEAMFORGE phantom fabricated line", "DESCENDANT_PIPE_SEAMFORGE write_ppid=1573"], "write_post_orphan": true}
+[landed-c-mid r0] spliced=True sig_destroyed=True pre_death=True
+[landed-c-mid r1] spliced=True sig_destroyed=True pre_death=True
+[landed-c-mid r2] spliced=True sig_destroyed=True pre_death=True
+[landed-extras] {"splitforge_streams_accept": true, "splitforge_merged_accept": true, "allowforge_streams_accept": true, "allowforge_merged_rejects": false, "seamforge_gate_sig_observed": true, "seamforge_gate_accepted": true, "seamforge_inner_classification": false}
+wrote /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r66-boundary/landed-verdicts.json

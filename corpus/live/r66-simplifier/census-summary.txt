@@ -1,0 +1,5 @@
+shape histogram: {'exact': 33, 'comma-prefix': 8, 'structured': 0}
+entries solely-covering no line (redundant): 0
+negative_transition
+   matched 1 <- ERROR: Can't change to a null scene. Use unload_current_scen
+   matched 1 <- ERROR: negative control: deliberately invalid scene destinat

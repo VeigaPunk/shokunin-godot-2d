@@ -1,0 +1,220 @@
+{
+  "runs": [
+    {
+      "case": "splice-phantom_r0",
+      "flags": [
+        "--splice-phantom"
+      ],
+      "actual_exit": 0,
+      "timed_out": false,
+      "elapsed": 0.534,
+      "stdout_blob": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_PROBE: expected signature\nDESCENDANT_PIPE godot_pid=2043078\nDESCENDANT_PIPE spawned_pid=2043234\ndescendant tail ERROR",
+      "stderr_blob": ": PHANTOM post-death splice\nCRITIC_SURFACE write_ppid=1573\n",
+      "signature_observed": true,
+      "merged_error_lines": [
+        "descendant tail ERROR: PHANTOM post-death splice"
+      ],
+      "stdout_error_lines": [],
+      "stderr_error_lines": [],
+      "write_ppid": 1573,
+      "godot_pid": 2043078,
+      "descendant_pid": 2043234,
+      "descendant_alive_at_return": false,
+      "descendant_kernel_ppid_at_return": null,
+      "inner_cls_no_allowlist": false,
+      "inner_cls_save_allowlist": false
+    },
+    {
+      "case": "splice-phantom_r1",
+      "flags": [
+        "--splice-phantom"
+      ],
+      "actual_exit": 0,
+      "timed_out": false,
+      "elapsed": 0.53,
+      "stdout_blob": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_PROBE: expected signature\nDESCENDANT_PIPE godot_pid=2043311\nDESCENDANT_PIPE spawned_pid=2043394\ndescendant tail ERROR",
+      "stderr_blob": ": PHANTOM post-death splice\nCRITIC_SURFACE write_ppid=1573\n",
+      "signature_observed": true,
+      "merged_error_lines": [
+        "descendant tail ERROR: PHANTOM post-death splice"
+      ],
+      "stdout_error_lines": [],
+      "stderr_error_lines": [],
+      "write_ppid": 1573,
+      "godot_pid": 2043311,
+      "descendant_pid": 2043394,
+      "descendant_alive_at_return": true,
+      "descendant_kernel_ppid_at_return": null,
+      "inner_cls_no_allowlist": false,
+      "inner_cls_save_allowlist": false
+    },
+    {
+      "case": "splice-phantom_r2",
+      "flags": [
+        "--splice-phantom"
+      ],
+      "actual_exit": 0,
+      "timed_out": false,
+      "elapsed": 0.517,
+      "stdout_blob": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_PROBE: expected signature\nDESCENDANT_PIPE godot_pid=2043401\nDESCENDANT_PIPE spawned_pid=2043550\ndescendant tail ERROR",
+      "stderr_blob": ": PHANTOM post-death splice\nCRITIC_SURFACE write_ppid=1573\n",
+      "signature_observed": true,
+      "merged_error_lines": [
+        "descendant tail ERROR: PHANTOM post-death splice"
+      ],
+      "stdout_error_lines": [],
+      "stderr_error_lines": [],
+      "write_ppid": 1573,
+      "godot_pid": 2043401,
+      "descendant_pid": 2043550,
+      "descendant_alive_at_return": true,
+      "descendant_kernel_ppid_at_return": null,
+      "inner_cls_no_allowlist": false,
+      "inner_cls_save_allowlist": false
+    },
+    {
+      "case": "splice-allowlisted_r0",
+      "flags": [
+        "--splice-allowlisted"
+      ],
+      "actual_exit": 0,
+      "timed_out": false,
+      "elapsed": 0.553,
+      "stdout_blob": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_PROBE: expected signature\nDESCENDANT_PIPE godot_pid=2043557\nDESCENDANT_PIPE spawned_pid=2043704\nERROR",
+      "stderr_blob": ": SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR\nCRITIC_SURFACE write_ppid=1573\n",
+      "signature_observed": true,
+      "merged_error_lines": [
+        "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"
+      ],
+      "stdout_error_lines": [],
+      "stderr_error_lines": [],
+      "write_ppid": 1573,
+      "godot_pid": 2043557,
+      "descendant_pid": 2043704,
+      "descendant_alive_at_return": true,
+      "descendant_kernel_ppid_at_return": null,
+      "inner_cls_no_allowlist": false,
+      "inner_cls_save_allowlist": true
+    },
+    {
+      "case": "splice-allowlisted_r1",
+      "flags": [
+        "--splice-allowlisted"
+      ],
+      "actual_exit": 0,
+      "timed_out": false,
+      "elapsed": 0.565,
+      "stdout_blob": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_PROBE: expected signature\nDESCENDANT_PIPE godot_pid=2043749\nDESCENDANT_PIPE spawned_pid=2043869\nERROR",
+      "stderr_blob": ": SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR\nCRITIC_SURFACE write_ppid=1573\n",
+      "signature_observed": true,
+      "merged_error_lines": [
+        "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"
+      ],
+      "stdout_error_lines": [],
+      "stderr_error_lines": [],
+      "write_ppid": 1573,
+      "godot_pid": 2043749,
+      "descendant_pid": 2043869,
+      "descendant_alive_at_return": true,
+      "descendant_kernel_ppid_at_return": null,
+      "inner_cls_no_allowlist": false,
+      "inner_cls_save_allowlist": true
+    },
+    {
+      "case": "splice-allowlisted_r2",
+      "flags": [
+        "--splice-allowlisted"
+      ],
+      "actual_exit": 0,
+      "timed_out": false,
+      "elapsed": 0.563,
+      "stdout_blob": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_PROBE: expected signature\nDESCENDANT_PIPE godot_pid=2043878\nDESCENDANT_PIPE spawned_pid=2043992\nERROR",
+      "stderr_blob": ": SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR\nCRITIC_SURFACE write_ppid=1573\n",
+      "signature_observed": true,
+      "merged_error_lines": [
+        "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"
+      ],
+      "stdout_error_lines": [],
+      "stderr_error_lines": [],
+      "write_ppid": 1573,
+      "godot_pid": 2043878,
+      "descendant_pid": 2043992,
+      "descendant_alive_at_return": true,
+      "descendant_kernel_ppid_at_return": 1573,
+      "inner_cls_no_allowlist": false,
+      "inner_cls_save_allowlist": true
+    },
+    {
+      "case": "double_r0",
+      "flags": [
+        "--double"
+      ],
+      "actual_exit": 0,
+      "timed_out": false,
+      "elapsed": 0.548,
+      "stdout_blob": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_PROBE: expected signature\nDESCENDANT_PIPE godot_pid=2044072\nDESCENDANT_PIPE spawned_pid=2044164\ndesc tail ERROR",
+      "stderr_blob": ": PHANTOM fabricated\nERR\nOR: real emitted diagnostic\nCRITIC_SURFACE write_ppid=1573\n",
+      "signature_observed": true,
+      "merged_error_lines": [
+        "desc tail ERROR: PHANTOM fabricated"
+      ],
+      "stdout_error_lines": [],
+      "stderr_error_lines": [],
+      "write_ppid": 1573,
+      "godot_pid": 2044072,
+      "descendant_pid": 2044164,
+      "descendant_alive_at_return": true,
+      "descendant_kernel_ppid_at_return": null,
+      "inner_cls_no_allowlist": false,
+      "inner_cls_save_allowlist": false
+    },
+    {
+      "case": "double_r1",
+      "flags": [
+        "--double"
+      ],
+      "actual_exit": 0,
+      "timed_out": false,
+      "elapsed": 0.534,
+      "stdout_blob": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_PROBE: expected signature\nDESCENDANT_PIPE godot_pid=2044243\nDESCENDANT_PIPE spawned_pid=2044324\ndesc tail ERROR",
+      "stderr_blob": ": PHANTOM fabricated\nERR\nOR: real emitted diagnostic\nCRITIC_SURFACE write_ppid=1573\n",
+      "signature_observed": true,
+      "merged_error_lines": [
+        "desc tail ERROR: PHANTOM fabricated"
+      ],
+      "stdout_error_lines": [],
+      "stderr_error_lines": [],
+      "write_ppid": 1573,
+      "godot_pid": 2044243,
+      "descendant_pid": 2044324,
+      "descendant_alive_at_return": true,
+      "descendant_kernel_ppid_at_return": null,
+      "inner_cls_no_allowlist": false,
+      "inner_cls_save_allowlist": false
+    },
+    {
+      "case": "double_r2",
+      "flags": [
+        "--double"
+      ],
+      "actual_exit": 0,
+      "timed_out": false,
+      "elapsed": 0.513,
+      "stdout_blob": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_PROBE: expected signature\nDESCENDANT_PIPE godot_pid=2044403\nDESCENDANT_PIPE spawned_pid=2044493\ndesc tail ERROR",
+      "stderr_blob": ": PHANTOM fabricated\nERR\nOR: real emitted diagnostic\nCRITIC_SURFACE write_ppid=1573\n",
+      "signature_observed": true,
+      "merged_error_lines": [
+        "desc tail ERROR: PHANTOM fabricated"
+      ],
+      "stdout_error_lines": [],
+      "stderr_error_lines": [],
+      "write_ppid": 1573,
+      "godot_pid": 2044403,
+      "descendant_pid": 2044493,
+      "descendant_alive_at_return": true,
+      "descendant_kernel_ppid_at_return": null,
+      "inner_cls_no_allowlist": false,
+      "inner_cls_save_allowlist": false
+    }
+  ]
+}
