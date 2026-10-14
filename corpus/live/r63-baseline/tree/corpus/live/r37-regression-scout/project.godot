@@ -1,0 +1,4 @@
+[application]
+config/name="r37-focus-absence-probe"
+[rendering]
+renderer/rendering_method="gl_compatibility"

@@ -1,0 +1,11 @@
+# Round 22 baseline scout — read-only
+
+- Baseline HEAD is `8f87c585bfcf6a7eb56b8b84cb4f95420aa66f90` (`game-dev-2d r21: report signal-exit calibration`). Worktree had unrelated in-progress LOG and scratch changes; I did not alter them.
+- `corpus/lessons/r21-crash-verifier.json` contains 45 rows, all verdict `PASS`: 35 ordinary seeded rows, 2 mutants, and 8 opt-in/meta records. Its final 10 include eight preceding ordinary tail rows and four opt-in records (`probe_export_launch`, `probe_godot_error`, `probe_stream_attribution`, `probe_crash_exit`) with rows as recorded; round-21 report summarizes 35 ordinary + 2 mutants + 8 opt-in. Existing aggregate `verdict` is PASS.
+- `corpus/lessons/r21-crash-detail.json` is the real-Godot paired SIGTERM artifact; PASS, Linux, identical `res://crash_exit_probe.gd` / marker, normal code 1 accepted, SIGTERM return -15 rejected. Existing Python fault artifact `r21-fault-verifier.json` is PASS and includes `fault_hang` with `TIMEOUT after 0.25 seconds` and `FAULT_HANG_STARTED`; this is not a real Godot timeout.
+- HEAD fixture hashes (SHA-256): `corpus/fixtures/run_battery.py` 50489 bytes, `2f00636388a7b98d2ddc51ac78ac020df3717b7fa70768000c315666ff47ec1b`; `corpus/fixtures/crash_exit_probe.gd` 239 bytes, `ef8bccb7ab0118552d2e1baa4a9194faa4201d0bf2b352276fa2052e9df7bb63`.
+- No r22-baseline-scout report existed when checked; no HEAD/source/editor/seeded fixture changes made by this scout.
+
+## Bounded scratch feasibility observation
+
+Using only a copy of HEAD's `crash_exit_probe.gd` in `corpus/live/r22-timeout-scout/`, ran real `godot` headless 4.7.2 twice. The normal arm exited 1 with marker `CRASH_EXIT_PROBE: expected signature`. The existing `--hold-open` arm emitted the same marker and remained live; a 1-second local wait timed out, then the harness's cleanup killed/reaped its direct child (observed return -9). Output was captured; no child remained. This is a feasibility check only, not battery integration/full replay or final verifier evidence. My scratch invocation used a 1-second wait; it did not measure the battery's configured timeout. It demonstrates a viable same-marker control. Do not infer descendant cleanup or general timeout robustness.

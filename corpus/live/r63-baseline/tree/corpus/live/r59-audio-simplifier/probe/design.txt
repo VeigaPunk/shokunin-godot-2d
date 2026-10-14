@@ -1,0 +1,1 @@
+Read-only design scratch: use a per-invocation synthetic WAV, add FixtureBus after Master, compare explicit FixtureBus vs nonexistent name, capture requested and effective route plus playback progression. See reports/r59-audio-simplifier.md. No engine executed here.

@@ -1,0 +1,12 @@
+# Round 12 — bounded headless audio playback state
+
+Reproduce with Godot 4.7.2: `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error`. Independent named non-author verifier `r12-audio-reverify` replayed **35/35 PASS** in `r12-battery-verifier.json`; fault-classification regression meta PASS in `r12-fault-regression.json`. The in-memory WAV fixture generates 44,100 sample bytes (16-bit mono, 22,050 Hz), attaches `AudioStreamPlayer` to the tree, observes 12 process frames, and checks live `is_playing()` plus playback-position advancement >0.001 s.
+
+| Variant | Observed Godot process | Interpretation |
+|---|---|---|
+| `audio_playback` | exit 0; `in_tree=true`, `playing=true`, position `0.00580498855561 → 0.09868481010199`; no warning in independent replay or two direct repeats | Headless player state and position advanced for generated WAV. No audible output established. |
+| `audio_no_play` | same fixture, only skips `play()`; exit 2 at same assertion, `in_tree=true`, `playing=false`, position `0.0 → 0.0`; no warning | Rejects absent playback after successful setup, not a parse or missing-stream failure. |
+| Initial positive before cleanup repair | functional 35/35, but `WARNING: 2 ObjectDB instances were leaked at exit`; verbose scratch identified `AudioStreamWAV` and `AudioStreamPlaybackWAV` | Named verifier **HOLD** retained in `r12-initial-hold.json` and `reports/r12-audio-verifier.md`; functional pass alone was insufficient. |
+| Bounded cleanup repair | stop/free player, detach stream, clear samples, wait **120** process frames instead of 4; author replay 29/29 no audio warning (`r12-cleanup-author.json`), then independent 35/35 no audio warning | Warning absent across these finite replays. The cause and generality of the 120-frame drain remain unproved. |
+
+The runner copies fixtures into ignored scratch, captures Godot output/exit and allows only the exact `AUDIO ASSERTION FAILED` error for the expected no-play negative. Earlier 27 cases and opt-in calibration/export-launch probes remain passing. Verifier hashed 38 tracked fixture paths unchanged before/after. The Godot process uses the local headless environment; the evidence cannot establish audible sound, mixer/device behavior, sound quality, gameplay integration, asset rights, or production readiness. No seeded fixture was edited; live scratch is disposable.

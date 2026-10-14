@@ -1,0 +1,3 @@
+[application]
+config/name="r45-baseline-reviewer"
+config/features=PackedStringArray("4.7")

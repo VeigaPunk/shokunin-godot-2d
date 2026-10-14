@@ -1,0 +1,143 @@
+{
+  "runner": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/fixtures/run_battery.py",
+  "runner_sha256": "d705bca719fcdf24009f2302866ecf8066d49baa2adbc81dbd044c77b3bc5019",
+  "extracted_function_lines": 18,
+  "all_timeout_records_classify_false": true,
+  "control_exit0_classifies_true": true,
+  "matrix": [
+    {
+      "expected_exit": 0,
+      "code": null,
+      "error": "TIMEOUT after 3 seconds",
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": 0,
+      "code": null,
+      "error": "TIMEOUT after 8 seconds",
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": 0,
+      "code": 0,
+      "error": null,
+      "signature_present": true,
+      "classify": true
+    },
+    {
+      "expected_exit": 1,
+      "code": null,
+      "error": "TIMEOUT after 3 seconds",
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": 1,
+      "code": null,
+      "error": "TIMEOUT after 8 seconds",
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": 1,
+      "code": 0,
+      "error": null,
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": 2,
+      "code": null,
+      "error": "TIMEOUT after 3 seconds",
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": 2,
+      "code": null,
+      "error": "TIMEOUT after 8 seconds",
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": 2,
+      "code": 0,
+      "error": null,
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": -6,
+      "code": null,
+      "error": "TIMEOUT after 3 seconds",
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": -6,
+      "code": null,
+      "error": "TIMEOUT after 8 seconds",
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": -6,
+      "code": 0,
+      "error": null,
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": -9,
+      "code": null,
+      "error": "TIMEOUT after 3 seconds",
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": -9,
+      "code": null,
+      "error": "TIMEOUT after 8 seconds",
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": -9,
+      "code": 0,
+      "error": null,
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": null,
+      "code": null,
+      "error": "TIMEOUT after 3 seconds",
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": null,
+      "code": null,
+      "error": "TIMEOUT after 8 seconds",
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": null,
+      "code": 0,
+      "error": null,
+      "signature_present": true,
+      "classify": false
+    },
+    {
+      "expected_exit": 0,
+      "code": 0,
+      "error": null,
+      "signature_present": true,
+      "classify": true,
+      "note": "control: exit observed -> True"
+    }
+  ]
+}

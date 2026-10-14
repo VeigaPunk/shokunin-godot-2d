@@ -1,0 +1,72 @@
+{
+  "mode": "real_godot_stream_attribution",
+  "same_script": true,
+  "script_paths": [
+    "res://stream_attribution_probe.gd",
+    "res://stream_attribution_probe.gd"
+  ],
+  "stdout_signature": "STREAM_STDOUT: expected attribution marker",
+  "stderr_diagnostic": "STREAM_STDERR: unrelated attribution diagnostic",
+  "results": [
+    {
+      "case": "stream_accept",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        ".shokunin/game-dev-2d/corpus/live/r41-focus-handoff-executor/full-probe-runs/20261013T065522876723Z/scratch",
+        "--script",
+        "res://stream_attribution_probe.gd",
+        "--"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "inner_classification": true,
+      "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "",
+      "raw_stdout_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "raw_stderr_lines": []
+    },
+    {
+      "case": "stream_reject",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        ".shokunin/game-dev-2d/corpus/live/r41-focus-handoff-executor/full-probe-runs/20261013T065522876723Z/scratch",
+        "--script",
+        "res://stream_attribution_probe.gd",
+        "--",
+        "--stderr-unrelated"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "inner_classification": false,
+      "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "STREAM_STDERR: unrelated attribution diagnostic\n",
+      "raw_stdout_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "raw_stderr_lines": [
+        "STREAM_STDERR: unrelated attribution diagnostic"
+      ]
+    }
+  ],
+  "accept_emitted_stdout_marker": true,
+  "reject_emitted_stdout_marker": true,
+  "accept_lacks_stderr_diagnostic": true,
+  "reject_emitted_stderr_diagnostic": true,
+  "same_exit_zero": true,
+  "verdict": "PASS",
+  "bounded_claim": "one Godot 4.7.2 headless stream-attribution pair; not crash classification, not process-tree timeout, not export reliability, not rendered output"
+}

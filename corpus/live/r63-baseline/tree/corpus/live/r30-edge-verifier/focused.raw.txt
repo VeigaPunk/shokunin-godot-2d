@@ -1,0 +1,4 @@
+EXIT 0
+BUTTON_FOCUS edge=release1 focused=true button_has_focus=true receipts=1 text=Activated 1
+BUTTON_FOCUS step=2 focused=true button_has_focus=true receipts=2 text=Activated 2
+PASS button_activation in_tree=true initial=Ready edge_texts=[Ready,Activated 1,Activated 1,Activated 2] receipts=[0,1,1,2]

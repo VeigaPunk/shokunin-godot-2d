@@ -1,0 +1,13 @@
+# Round 53 composite simplifier — read-only tracked proposal
+
+## Causal scratch result
+
+I did not edit tracked `slider_adjust.gd` or `run_battery.py`. In unique scratch `.shokunin/game-dev-2d/corpus/live/r53-composite-simplifier-unique/project/slider_adjust.gd`, I added a separate `--composite-push-and-clear` branch cloned from the r51 parsed-release branch. The original ten edges, focus transfers, callback reconnection, per-edge ownership/connection and numeric/full receipt/Label assertions remained in place. At edge10 only, scratch calls `root.push_input(matching ui_left release)` and `Input.action_release("ui_left")`, then awaits one frame.
+
+Godot 4.7.2 result: observer count **3→4**, action pressed **false**, value **3.0**, receipts **[6.0, 3.0]**, Label **Value 3**, focus **true**, callback **true**. Eleven-edge output reached the dedicated `SLIDER_COMPOSITE_PUSH_AND_CLEAR` terminal, with expected exit 2. First scratch invocation failed because I had not included the new flag in the copied observer initialization condition (nil observer, externally terminated); I corrected only my scratch and reran successfully. This first failure is not evidence. Independently, scout report `reports/r53-composite-scout.md` records parsed and push-only controls plus the same composite result. Baseline scratch output at `.shokunin/game-dev-2d/corpus/live/r53-baseline-reviewer-scratch/composite.stdout` also records the measured composite state.
+
+## Bounded proposal
+
+The observed composite reproduces the parsed route's observer+pressed-state evidence without `Input.parse_input_event` for edge10. This supports one dedicated exact expected-negative `--composite-push-and-clear` terminal (exit 2) in addition to r51/r52. Minimal expected tracked delta: one separate fixture branch and one runner case/allowlist entry; widen observer initialization only for the new flag. Do not alter paired r51/r52 branches/cases/allowlists; compare their tracked bytes before accepting executor work. Expected ordinary/full totals per LOG: 67/78, contingent on exact classifier and independent named verification. I made no tracked edits; only scratch fixture content changed, no constants.
+
+Calibration claim is only that observer delivery plus cleared global action state does not distinguish the parsed edge10 route from this explicit composite in this focused/reconnected synthetic Godot 4.7.2 sequence. It says nothing about HSlider internal consumption, OS/physical input/timing, rendering, pointer/accessibility, production, or generic event provenance. Recommend causal candidate proceed to independent controls and named non-author gate; HOLD admission until that gate and regressions settle.

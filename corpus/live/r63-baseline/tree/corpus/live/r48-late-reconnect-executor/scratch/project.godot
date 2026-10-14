@@ -1,0 +1,3 @@
+[application]
+config/name="R47ReconnectScratch"
+config/features=PackedStringArray("4.7")

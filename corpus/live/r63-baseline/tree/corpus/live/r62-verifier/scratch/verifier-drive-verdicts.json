@@ -1,0 +1,306 @@
+{
+ "mode": "r62_verifier_independent_descendant_pipe_eof",
+ "godot": "4.7.2.stable.arch_linux.ed1daf0bf",
+ "runner_sha256_note": "classify_process ast-extracted from committed corpus/fixtures/run_battery.py @81a100c",
+ "bound_seconds": 3.0,
+ "results": [
+  {
+   "case": "committed_hold",
+   "script": "descendant_pipe_probe.gd",
+   "flags": [
+    "--spawn-hold"
+   ],
+   "bound_seconds": 3.0,
+   "timed_out": true,
+   "child_exit_at_timeout": 0,
+   "actual_exit": null,
+   "error": "TIMEOUT after 3.0 seconds",
+   "marker_observed": true,
+   "post_exit_write_captured": true,
+   "godot_pid": 886230,
+   "descendant_pid": 886269,
+   "godot_alive_at_return": false,
+   "descendant_alive_at_return": true,
+   "inner_classification": false,
+   "descendant_pid_sighted": 886269,
+   "elapsed_seconds": 3.015,
+   "sampler": {
+    "samples": 195,
+    "first_desc_ppid": 886230,
+    "ppid_flip_observation": {
+     "t": 0.3699,
+     "godot_state": "Z",
+     "desc_ppid": 1573,
+     "desc_state": "S"
+    },
+    "godot_dead_observation": {
+     "t": 0.3699,
+     "godot_state": "Z",
+     "desc_ppid": 1573,
+     "desc_state": "S"
+    },
+    "descendant_sighted": 886269
+   },
+   "output_lines": [
+    "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+    "",
+    "DESCENDANT_PIPE_PROBE: expected signature",
+    "DESCENDANT_PIPE godot_pid=886230",
+    "DESCENDANT_PIPE spawned_pid=886269",
+    "DESCENDANT_PIPE_AFTER_EXIT_WRITE"
+   ],
+   "arm_started_utc": "2026-10-14T00:19:13.874004+00:00",
+   "descendant_trace_lines": []
+  },
+  {
+   "case": "gate_trace_d500",
+   "script": "verifier_pipe_probe.gd",
+   "flags": [
+    "--gate-trace",
+    "--trace-log=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r62-verifier/scratch/ppid_trace.log",
+    "--parent-delay-ms=500"
+   ],
+   "bound_seconds": 3.0,
+   "timed_out": true,
+   "child_exit_at_timeout": 0,
+   "actual_exit": null,
+   "error": "TIMEOUT after 3.0 seconds",
+   "marker_observed": true,
+   "post_exit_write_captured": true,
+   "godot_pid": 886274,
+   "descendant_pid": 886313,
+   "godot_alive_at_return": false,
+   "descendant_alive_at_return": true,
+   "inner_classification": false,
+   "descendant_pid_sighted": 886313,
+   "elapsed_seconds": 3.008,
+   "sampler": {
+    "samples": 194,
+    "first_desc_ppid": 886274,
+    "ppid_flip_observation": {
+     "t": 0.877,
+     "godot_state": "Z",
+     "desc_ppid": 1573,
+     "desc_state": "S"
+    },
+    "godot_dead_observation": {
+     "t": 0.877,
+     "godot_state": "Z",
+     "desc_ppid": 1573,
+     "desc_state": "S"
+    },
+    "descendant_sighted": 886313
+   },
+   "output_lines": [
+    "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+    "",
+    "DESCENDANT_PIPE_PROBE: expected signature",
+    "DESCENDANT_PIPE godot_pid=886274",
+    "DESCENDANT_PIPE spawned_pid=886313",
+    "DESCENDANT_PIPE_AFTER_EXIT_WRITE"
+   ],
+   "arm_started_utc": "2026-10-14T00:19:16.889679+00:00",
+   "descendant_trace_lines": [
+    "first_pp=886274 godot_pid=886274 t=1791937157.222978384",
+    "release_pp=1573 gate_iters=11 godot_state_at_release=Z t=1791937157.780253661"
+   ]
+  },
+  {
+   "case": "gate_trace_d0",
+   "script": "verifier_pipe_probe.gd",
+   "flags": [
+    "--gate-trace",
+    "--trace-log=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r62-verifier/scratch/ppid_trace.log"
+   ],
+   "bound_seconds": 3.0,
+   "timed_out": true,
+   "child_exit_at_timeout": 0,
+   "actual_exit": null,
+   "error": "TIMEOUT after 3.0 seconds",
+   "marker_observed": true,
+   "post_exit_write_captured": true,
+   "godot_pid": 886332,
+   "descendant_pid": 886371,
+   "godot_alive_at_return": false,
+   "descendant_alive_at_return": true,
+   "inner_classification": false,
+   "descendant_pid_sighted": 886371,
+   "elapsed_seconds": 3.013,
+   "sampler": {
+    "samples": 194,
+    "first_desc_ppid": 886332,
+    "ppid_flip_observation": {
+     "t": 0.3972,
+     "godot_state": "Z",
+     "desc_ppid": 1573,
+     "desc_state": "S"
+    },
+    "godot_dead_observation": {
+     "t": 0.3972,
+     "godot_state": "Z",
+     "desc_ppid": 1573,
+     "desc_state": "S"
+    },
+    "descendant_sighted": 886371
+   },
+   "output_lines": [
+    "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+    "",
+    "DESCENDANT_PIPE_PROBE: expected signature",
+    "DESCENDANT_PIPE godot_pid=886332",
+    "DESCENDANT_PIPE spawned_pid=886371",
+    "DESCENDANT_PIPE_AFTER_EXIT_WRITE"
+   ],
+   "arm_started_utc": "2026-10-14T00:19:19.898431+00:00",
+   "descendant_trace_lines": [
+    "first_pp=886332 godot_pid=886332 t=1791937160.220508362",
+    "release_pp=1573 gate_iters=2 godot_state_at_release=Z t=1791937160.322829656"
+   ]
+  },
+  {
+   "case": "forge_d2000",
+   "script": "verifier_pipe_probe.gd",
+   "flags": [
+    "--forge-immediate",
+    "--trace-log=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r62-verifier/scratch/ppid_trace.log",
+    "--parent-delay-ms=2000"
+   ],
+   "bound_seconds": 3.0,
+   "timed_out": true,
+   "child_exit_at_timeout": 0,
+   "actual_exit": null,
+   "error": "TIMEOUT after 3.0 seconds",
+   "marker_observed": true,
+   "post_exit_write_captured": true,
+   "godot_pid": 886451,
+   "descendant_pid": 886490,
+   "godot_alive_at_return": false,
+   "descendant_alive_at_return": true,
+   "inner_classification": false,
+   "descendant_pid_sighted": 886490,
+   "elapsed_seconds": 3.01,
+   "sampler": {
+    "samples": 194,
+    "first_desc_ppid": 886451,
+    "ppid_flip_observation": {
+     "t": 2.3295,
+     "godot_state": "Z",
+     "desc_ppid": 1573,
+     "desc_state": "S"
+    },
+    "godot_dead_observation": {
+     "t": 2.3295,
+     "godot_state": "Z",
+     "desc_ppid": 1573,
+     "desc_state": "S"
+    },
+    "descendant_sighted": 886490
+   },
+   "output_lines": [
+    "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+    "",
+    "DESCENDANT_PIPE_PROBE: expected signature",
+    "DESCENDANT_PIPE godot_pid=886451",
+    "DESCENDANT_PIPE spawned_pid=886490",
+    "DESCENDANT_PIPE_AFTER_EXIT_WRITE"
+   ],
+   "arm_started_utc": "2026-10-14T00:19:22.911776+00:00",
+   "descendant_trace_lines": [
+    "pre_write pp=886451 godot_state=S t=1791937163.224457893"
+   ]
+  },
+  {
+   "case": "forge_d0",
+   "script": "verifier_pipe_probe.gd",
+   "flags": [
+    "--forge-immediate",
+    "--trace-log=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r62-verifier/scratch/ppid_trace.log"
+   ],
+   "bound_seconds": 3.0,
+   "timed_out": true,
+   "child_exit_at_timeout": 0,
+   "actual_exit": null,
+   "error": "TIMEOUT after 3.0 seconds",
+   "marker_observed": true,
+   "post_exit_write_captured": true,
+   "godot_pid": 886514,
+   "descendant_pid": 886553,
+   "godot_alive_at_return": false,
+   "descendant_alive_at_return": true,
+   "inner_classification": false,
+   "descendant_pid_sighted": 886553,
+   "elapsed_seconds": 3.01,
+   "sampler": {
+    "samples": 194,
+    "first_desc_ppid": 886514,
+    "ppid_flip_observation": {
+     "t": 0.393,
+     "godot_state": "Z",
+     "desc_ppid": 1573,
+     "desc_state": "S"
+    },
+    "godot_dead_observation": {
+     "t": 0.393,
+     "godot_state": "Z",
+     "desc_ppid": 1573,
+     "desc_state": "S"
+    },
+    "descendant_sighted": 886553
+   },
+   "output_lines": [
+    "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+    "",
+    "DESCENDANT_PIPE_PROBE: expected signature",
+    "DESCENDANT_PIPE godot_pid=886514",
+    "DESCENDANT_PIPE spawned_pid=886553",
+    "DESCENDANT_PIPE_AFTER_EXIT_WRITE"
+   ],
+   "arm_started_utc": "2026-10-14T00:19:25.922414+00:00",
+   "descendant_trace_lines": [
+    "pre_write pp=886514 godot_state=S t=1791937166.241847782"
+   ]
+  },
+  {
+   "case": "forge_detach",
+   "script": "verifier_pipe_probe.gd",
+   "flags": [
+    "--forge-detach",
+    "--trace-log=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r62-verifier/scratch/ppid_trace.log",
+    "--parent-delay-ms=300"
+   ],
+   "bound_seconds": 3.0,
+   "timed_out": false,
+   "child_exit_at_timeout": null,
+   "actual_exit": 0,
+   "error": null,
+   "marker_observed": true,
+   "post_exit_write_captured": true,
+   "godot_pid": 886558,
+   "descendant_pid": 886597,
+   "godot_alive_at_return": false,
+   "descendant_alive_at_return": true,
+   "inner_classification": true,
+   "descendant_pid_sighted": 886597,
+   "elapsed_seconds": 0.698,
+   "sampler": {
+    "samples": 41,
+    "first_desc_ppid": 886558,
+    "ppid_flip_observation": null,
+    "godot_dead_observation": null,
+    "descendant_sighted": 886597
+   },
+   "output_lines": [
+    "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+    "",
+    "DESCENDANT_PIPE_PROBE: expected signature",
+    "DESCENDANT_PIPE godot_pid=886558",
+    "DESCENDANT_PIPE spawned_pid=886597",
+    "DESCENDANT_PIPE_AFTER_EXIT_WRITE"
+   ],
+   "arm_started_utc": "2026-10-14T00:19:28.933102+00:00",
+   "descendant_trace_lines": [
+    "pre_write pp=886558 godot_state=S t=1791937169.282256484"
+   ]
+  }
+ ]
+}

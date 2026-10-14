@@ -1,0 +1,158 @@
+{
+  "mode": "r62_critic_sabotage_eval",
+  "note": "predicates mirrored from working-tree run_battery.py r62 meta; arm outcomes measured by drive_attacks.py / timeline_probe.py through the verbatim production run_process/classify_process",
+  "verdicts": [
+    {
+      "mutant": "hold_write_as_authored",
+      "arm": "hold_write",
+      "side": "hold",
+      "discriminations": {
+        "hold_timed_out_with_child_dead": true,
+        "hold_post_exit_write_captured": true,
+        "hold_misattributed_rejects": true,
+        "hold_descendant_orphaned_alive": true
+      },
+      "meta_hold_side_passes": true
+    },
+    {
+      "mutant": "early_write_sabotage",
+      "arm": "early_write",
+      "side": "hold",
+      "discriminations": {
+        "hold_timed_out_with_child_dead": true,
+        "hold_post_exit_write_captured": true,
+        "hold_misattributed_rejects": true,
+        "hold_descendant_orphaned_alive": true
+      },
+      "meta_hold_side_passes": true
+    },
+    {
+      "mutant": "hang_hold_sabotage",
+      "arm": "hang_hold",
+      "side": "hold",
+      "discriminations": {
+        "hold_timed_out_with_child_dead": false,
+        "hold_post_exit_write_captured": false,
+        "hold_misattributed_rejects": true,
+        "hold_descendant_orphaned_alive": true
+      },
+      "meta_hold_side_passes": false
+    },
+    {
+      "mutant": "early_release_sabotage",
+      "arm": "early_release",
+      "side": "hold",
+      "discriminations": {
+        "hold_timed_out_with_child_dead": false,
+        "hold_post_exit_write_captured": false,
+        "hold_misattributed_rejects": false,
+        "hold_descendant_orphaned_alive": false
+      },
+      "meta_hold_side_passes": false
+    },
+    {
+      "mutant": "silent_hold_sabotage",
+      "arm": "hold_silent",
+      "side": "hold",
+      "discriminations": {
+        "hold_timed_out_with_child_dead": true,
+        "hold_post_exit_write_captured": false,
+        "hold_misattributed_rejects": true,
+        "hold_descendant_orphaned_alive": true
+      },
+      "meta_hold_side_passes": false
+    },
+    {
+      "mutant": "stderr_only_sabotage",
+      "arm": "stderr_only",
+      "side": "hold",
+      "discriminations": {
+        "hold_timed_out_with_child_dead": true,
+        "hold_post_exit_write_captured": false,
+        "hold_misattributed_rejects": true,
+        "hold_descendant_orphaned_alive": true
+      },
+      "meta_hold_side_passes": false
+    },
+    {
+      "mutant": "stdout_only_sabotage",
+      "arm": "stdout_only",
+      "side": "hold",
+      "discriminations": {
+        "hold_timed_out_with_child_dead": true,
+        "hold_post_exit_write_captured": false,
+        "hold_misattributed_rejects": true,
+        "hold_descendant_orphaned_alive": true
+      },
+      "meta_hold_side_passes": false
+    },
+    {
+      "mutant": "flood_sabotage",
+      "arm": "flood",
+      "side": "hold",
+      "discriminations": {
+        "hold_timed_out_with_child_dead": true,
+        "hold_post_exit_write_captured": false,
+        "hold_misattributed_rejects": true,
+        "hold_descendant_orphaned_alive": true
+      },
+      "meta_hold_side_passes": false
+    },
+    {
+      "mutant": "spoof_hold_sabotage",
+      "arm": "spoof_hold",
+      "side": "hold",
+      "discriminations": {
+        "hold_timed_out_with_child_dead": true,
+        "hold_post_exit_write_captured": false,
+        "hold_misattributed_rejects": true,
+        "hold_descendant_orphaned_alive": true
+      },
+      "meta_hold_side_passes": false
+    },
+    {
+      "mutant": "detached_control_as_authored",
+      "arm": "detach_alive",
+      "side": "control",
+      "discriminations": {
+        "detached_case_passes_clean": true,
+        "detached_lacks_post_exit_write": true,
+        "detached_descendant_orphaned_alive": true
+      },
+      "meta_control_side_passes": true
+    },
+    {
+      "mutant": "control_descendant_dies_early",
+      "arm": "detach_alive",
+      "side": "control",
+      "discriminations": {
+        "detached_case_passes_clean": true,
+        "detached_lacks_post_exit_write": true,
+        "detached_descendant_orphaned_alive": false
+      },
+      "meta_control_side_passes": false
+    },
+    {
+      "mutant": "control_actually_holds_pipes",
+      "arm": "hold_silent",
+      "side": "control",
+      "discriminations": {
+        "detached_case_passes_clean": false,
+        "detached_lacks_post_exit_write": true,
+        "detached_descendant_orphaned_alive": true
+      },
+      "meta_control_side_passes": false
+    },
+    {
+      "mutant": "control_emits_post_exit_marker",
+      "arm": "detach_alive+spoof",
+      "side": "control",
+      "discriminations": {
+        "detached_case_passes_clean": true,
+        "detached_lacks_post_exit_write": false,
+        "detached_descendant_orphaned_alive": true
+      },
+      "meta_control_side_passes": false
+    }
+  ]
+}

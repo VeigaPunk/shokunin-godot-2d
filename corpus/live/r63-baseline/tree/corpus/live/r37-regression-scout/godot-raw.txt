@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+SETUP focus_owner=<Object#null> has_focus=false value=5.0 receipts=[] label=Value 5
+BEFORE action=ui_right focus_owner=<Object#null> has_focus=false
+AFTER action=ui_right value=5.0 receipts=[] label=Value 5 focus_owner=<Object#null> has_focus=false
+BEFORE action=ui_left focus_owner=<Object#null> has_focus=false
+AFTER action=ui_left value=5.0 receipts=[] label=Value 5 focus_owner=<Object#null> has_focus=false

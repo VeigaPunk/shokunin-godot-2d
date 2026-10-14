@@ -1,0 +1,3 @@
+[application]
+config/name="R45 reviewer scratch"
+config/features=PackedStringArray("4.7")

@@ -1,0 +1,14 @@
+# Round 18 limit critic — read-only review
+
+## Verdict
+The evolving fixture corrects the material center/boundary flaw: it now tests the right-edge camera-center clamp at `limit_right - visible_viewport_width/2`, not merely `center.x <= limit_right`. In a fresh `/tmp/r18critic-cam` Godot 4.7.2 replay (640×360 project), the positive passed with center at the expected 680 (=1000−320) and the `--no-limit` control failed at center 2000 with the expected camera-limit assertion. The target was explicitly moved from its initial position to (2000,0), and current-camera checks precede the clamp assertion. This is good headless center evidence, not rendered framing.
+
+## Challenge / calibration
+- The visible viewport width must be the *actual camera viewport's* visible rect width; do not substitute project window size or logical window size. The evolving expression `camera.get_viewport().get_visible_rect().size.x / 2.0` is appropriate for the tested unzoomed, unrotated default anchor camera. The criterion is specifically a right-edge clamp; it does not prove left/top/bottom behavior or zoom/rotation/offset composition.
+- Positive assertion now requires exact expected clamp, center movement from baseline, target movement, current status, and separation from target. These guards make a static/unattached camera or unmoved target a setup failure rather than an apparent clamp pass.
+- Control differs only in configured right bound (100000 vs 1000), leaving the camera enabled. That is a valid “boundary not reached” control at target x=2000, but calling it `no_limit` is literally inaccurate: Camera2D limits remain enabled, and a target beyond 100000 could still be clamped. Prefer name/claim “far-bound control” or disable limits explicitly while retaining an assertion that fails for the same behavioral reason. Do not claim disabled-limit behavior from this test as currently written.
+- With current script/control, observed expected negative diagnostic is `camera limit assertion failed...`; setup guards use distinct `camera limit setup failed...` diagnostics. Battery must classify only the exact expected assertion and ensure the setup diagnostic does not count as a clean negative. I did not run the battery/replay its classification here.
+- Scout-era `/tmp/r18-limit-scout/probe.gd` prints viewport and camera state but is not evidence for the evolved fixture or the run battery.
+
+## Required before admission
+Confirm independent replay against the exact committed/evolving fixture and battery with actual default fixture viewport; inspect raw per-case exit, output, and classification. Verify positive checks `center.x == limit_right - viewport_width/2` and that the negative record is precisely the clamp assertion (not setup failure). Also retain existing cases. No source edits made; only this report was written.

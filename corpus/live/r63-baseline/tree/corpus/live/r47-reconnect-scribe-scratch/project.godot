@@ -1,0 +1,3 @@
+[application]
+config/name="r46 scratch"
+config/features=PackedStringArray("4.7")

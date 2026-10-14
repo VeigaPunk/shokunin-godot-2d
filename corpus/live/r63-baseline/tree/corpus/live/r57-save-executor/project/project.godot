@@ -1,0 +1,4 @@
+[application]
+config/name="MechanicOneShotTest-r57-save-executor-smoke"
+config/user_data_dir="/home/vgpnk/Projects/prymeagnt/game-dev-2d/.shokunin/game-dev-2d/corpus/live/r57-save-executor/smoke_userdata"
+config/features=PackedStringArray("4.7")

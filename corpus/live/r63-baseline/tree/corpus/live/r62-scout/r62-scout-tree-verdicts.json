@@ -1,0 +1,108 @@
+{
+  "mode": "r62_scout_tree_timeout_recheck",
+  "runner": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/fixtures/run_battery.py",
+  "runner_sha256": "d705bca719fcdf24009f2302866ecf8066d49baa2adbc81dbd044c77b3bc5019",
+  "extracted_function_sha256": {
+    "run_process": "88728b2303f64fc48b094d358f0a217ae7b07aaf85b446b014e35c31d76207c5",
+    "classify_process": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3"
+  },
+  "bound_seconds": 3.0,
+  "python": "3.14.7",
+  "results": [
+    {
+      "arm": "clean",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r62-scout/proj",
+        "--script",
+        "res://tree_timeout_probe.gd",
+        "--"
+      ],
+      "bound_seconds": 3.0,
+      "elapsed_seconds": 0.662,
+      "actual_exit": 0,
+      "error": null,
+      "marker_in_output": true,
+      "descendant_line_in_output": false,
+      "godot_pid": 794929,
+      "descendant_pid": null,
+      "godot_alive_at_return": false,
+      "descendant_alive_at_return": null,
+      "descendant_ppid_at_return": null,
+      "expected0_classification": true,
+      "raw_output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "TREE_TIMEOUT_PROBE: expected signature",
+        "TREE_TIMEOUT_PROBE godot_pid=794929"
+      ]
+    },
+    {
+      "arm": "hold",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r62-scout/proj",
+        "--script",
+        "res://tree_timeout_probe.gd",
+        "--",
+        "--spawn-hold"
+      ],
+      "bound_seconds": 3.0,
+      "elapsed_seconds": 3.002,
+      "actual_exit": null,
+      "error": "TIMEOUT after 3.0 seconds",
+      "marker_in_output": true,
+      "descendant_line_in_output": true,
+      "godot_pid": 795243,
+      "descendant_pid": 795493,
+      "godot_alive_at_return": false,
+      "descendant_alive_at_return": true,
+      "descendant_ppid_at_return": 1573,
+      "expected0_classification": false,
+      "raw_output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "TREE_TIMEOUT_PROBE: expected signature",
+        "TREE_TIMEOUT_PROBE godot_pid=795243",
+        "TREE_TIMEOUT_PROBE spawned_pid=795493",
+        "TREE_DESC_AFTER_PARENT_WRITE"
+      ]
+    },
+    {
+      "arm": "detach",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r62-scout/proj",
+        "--script",
+        "res://tree_timeout_probe.gd",
+        "--",
+        "--spawn-detach"
+      ],
+      "bound_seconds": 3.0,
+      "elapsed_seconds": 0.55,
+      "actual_exit": 0,
+      "error": null,
+      "marker_in_output": true,
+      "descendant_line_in_output": false,
+      "godot_pid": 796496,
+      "descendant_pid": 796613,
+      "godot_alive_at_return": false,
+      "descendant_alive_at_return": true,
+      "descendant_ppid_at_return": 1573,
+      "expected0_classification": true,
+      "raw_output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "TREE_TIMEOUT_PROBE: expected signature",
+        "TREE_TIMEOUT_PROBE godot_pid=796496",
+        "TREE_TIMEOUT_PROBE spawned_pid=796613"
+      ]
+    }
+  ]
+}

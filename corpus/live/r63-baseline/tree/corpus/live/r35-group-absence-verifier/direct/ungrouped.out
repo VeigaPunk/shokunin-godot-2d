@@ -1,0 +1,11 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PRE_B groupA=true groupB=false focusB=true
+BUTTON_GROUP_UNGROUPED after_B A=true B=true receipts=["B:true"] label=B
+PRE_A groupA=true groupB=false focusA=true
+BUTTON_GROUP_UNGROUPED after_A A=true B=true receipts=["B:true", "A:true"] label=A
+ERROR: BUTTON_GROUP ABSENCE ASSERTION FAILED after B→A: expected exclusive selection, got A=true B=true
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] run (res://probe.gd:123)
+       [1] _send_accept (res://probe.gd:29)

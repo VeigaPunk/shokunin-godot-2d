@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+EDGE_OBSERVER i=0 before=0 after=0 pressed=false
+EDGE_OBSERVER i=1 before=0 after=0 pressed=false
+EDGE_OBSERVER i=2 before=0 after=0 pressed=false
+EDGE_OBSERVER i=3 before=0 after=0 pressed=true
+EDGE_OBSERVER i=4 before=0 after=1 pressed=false
+EDGE_OBSERVER i=5 before=1 after=1 pressed=true
+EDGE_OBSERVER i=6 before=1 after=2 pressed=false
+EDGE_OBSERVER i=7 before=2 after=2 pressed=true
+EDGE_OBSERVER i=8 before=2 after=3 pressed=false
+EDGE_OBSERVER i=9 before=3 after=3 pressed=true
+EDGE_OBSERVER i=10 before=3 after=4 pressed=false
+SLIDER_RELEASE_AFTER_LATE_RECONNECT_PRESS values=6,6,6,5,5,5,5,4,4,3,3 receipts=6,3 Labels=Value 6,Value 3 callback_connected=true
+ERROR: SLIDER RELEASE AFTER LATE-RECONNECT PRESS ASSERTION FAILED: expected no new receipt after eleven checks
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://slider_adjust.gd:148)

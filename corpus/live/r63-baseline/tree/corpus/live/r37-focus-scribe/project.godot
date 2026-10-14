@@ -1,0 +1,3 @@
+[application]
+config/name="r37 focus absence measurement"
+config/features=PackedStringArray("4.7")

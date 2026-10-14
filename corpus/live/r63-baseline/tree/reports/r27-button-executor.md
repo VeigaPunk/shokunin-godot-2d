@@ -1,0 +1,9 @@
+# Round 27 button activation executor
+
+Implemented the new headless UI fixture and paired battery cases. `button_activation.gd` creates a `Button` and `Label` under an in-tree `CanvasLayer`, verifies initial `Ready`, connects the button's `pressed` signal to a receiver that changes the label and increments a receipt count, and activates via focused `ui_accept` input through `root.push_input` (pressed and released). It never calls the receiver directly. With `--disconnect-signal`, the same activation path runs but final assertion fails with `receipts=0 text=Ready`.
+
+Replay: `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py` using Godot 4.7.2. Final result PASS, 41/41 cases (39 prior ordinary + 2 new). Positive: exit 0, one pressed receipt, final text `Activated`. Disconnected control: exit 2 at final text assertion, observed `receipts=0 text=Ready`; battery classifies this expected failure as PASS. Raw artifact: `.shokunin/game-dev-2d/corpus/live/runs/20261013T015204134168Z/verdicts.json`.
+
+During implementation the first replay exposed a mismatch between the fixture's comma-form diagnostic and battery classifier's semicolon-form exact signature; updated the classifier expectation to the actual diagnostic, then replayed the full battery successfully. No engine/editor or seeded control changes. No constants changed. This fixture measures headless Button signal activation/wiring, not pointer hit-testing or rendered UI.
+
+Adversarial limitation: a critic demonstrated that an injected direct call to the receiver in the disconnected arm can spoof the final state. The tracked fixture contains no direct receiver call and no manual `pressed.emit`; both arms use only focused `ui_accept` routed through `root.push_input`. The replay establishes the behavior of the actual tracked source and its paired disconnect control only; it does not establish resistance to arbitrary source mutations.

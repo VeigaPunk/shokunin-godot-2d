@@ -1,0 +1,7 @@
+# Round 23 baseline scout — read-only
+
+- Immutable baseline is `HEAD=0d73a4c09300f201ba0233b73e4f3548c15201bb` (`game-dev-2d r22: report real timeout calibration`). I read fixture bytes from `git show HEAD:<path>`; I did not modify or execute the fixtures.
+- The HEAD `run_battery.py` `CASES` declaration contains **35 ordinary seeded cases**. The latest committed full replay, `corpus/lessons/r22-timeout-verifier.json`, records **46 results, all PASS** (35 ordinary + 2 mutants + 9 opt-in, per round-22 report/LOG). Aggregate verdict is PASS. Thus before adding the proposed pair, baseline is 35 ordinary / 46 full.
+- Immutable HEAD SHA-256: `corpus/fixtures/run_battery.py` (57,229 bytes) `3d41153339cdea549dcda008bce157c8134409a8ab35cc1ee71b612ea53b8f84`; `corpus/fixtures/camera_limit.gd` (2,904 bytes) `c3953ce103ed382ef288adb306b7783672181e7555457f62721f1b648bfefd79`.
+- HEAD camera fixture covers right and top positive/far-bound cases, not left. Existing implementation derives expected center as `limit - half viewport` on right and `limit + half viewport` on top. The declared r23 target is left positive/far-left control, with the same active center-state assertion; this scout makes no claim about runtime feasibility or final outcome.
+- Worktree already contained an in-progress r23 LOG entry and unrelated r20-r22 scratch paths when inspected. I left them unchanged. No source, fixture, engine/editor, or baseline artifacts were changed; no Godot runtime was run.

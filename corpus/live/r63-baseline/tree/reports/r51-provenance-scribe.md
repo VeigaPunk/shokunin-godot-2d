@@ -1,0 +1,22 @@
+# Round 51 parsed-release provenance scribe — evidence and admission checklist
+
+## Read-only baseline
+
+I read the standing brief, the round 51 pre-dispatch claim and wave plan in `LOG.md`, the r50 executor/verifier/critic/scribe reports, tracked `slider_adjust.gd` and `run_battery.py`, and repaired r50 raw artifacts. The repaired r50 ordinary/fault raw files remain unchanged. Raw ordinary has 75/75 PASS = 64 ordinary + 2 mutants + 9 opt-ins; the previous no-dispatch false-PASS and later `Input.action_release` bypass remain adverse evidence and must not be erased. Current r50 branch has eleven edges; edge10 normally delivers parsed `InputEventAction(action="ui_left", pressed=false)`, leaves value3 / receipts `[6,3]` / Label `Value 3`, and clears `Input.is_action_pressed` true→false. These outcomes do not prove parsed release delivery.
+
+## Independent causal scratch (Godot 4.7.2)
+
+Scratch only: `corpus/live/r51-provenance-scribe-scratch/`; no tracked source changed. I copied the current tracked Godot project and slider fixture, added a child Node observer with `_input(event)` recording `event is InputEventAction`, `event.action == "ui_left"`, `not event.pressed`, then logged observer count before/after each edge. Normal eleven-edge history passes all existing edge owner/callback and per-frame value/full-receipt/Label assertions and reaches the existing exact terminal expected-negative (exit 2 only after eleven checks). Observer totals: before/after edges 0..10 were `0/0, 0/0, 0/0, 0/0, 0/1, 1/1, 1/2, 2/2, 2/3, 3/3, 3/4`; only edge10 delta is +1. Final is numeric3, `[6,3]`, `Value 3`, connected; action state false. Log `run.log` at scratch root.
+
+Two isolated scratch mutations retain owner/callback checks, frame wait, and value/full-receipt/Label checks. Direct-state-clear at edge10 calls `Input.action_release("ui_left")` without `_action`: action state becomes false and all old observations would otherwise be unchanged, but observer delta is 0; new exact observer assertion reports `SLIDER parsed-release observer assertion failed` before the eleven-edge terminal marker (exit2). No-dispatch edge10 skips `_action`: observer delta is 0 and `ui_left` remains pressed; the pre-existing post-release state assertion fails before observer assertion/terminal marker (exit2). Logs at `direct-clear/run.log` and `omit-edge10/run.log`. The causal separation is demonstrated; it is not evidence that the slider consumes or reacts to release.
+
+## Independent evidence/admission checklist for executor and later verifier
+
+- [ ] Add only additive `--observe-parsed-release` mode, gated by the r50 flags; do not alter existing r50/r49 modes or expectations.
+- [ ] Observer must be an in-tree Node receiving `_input(event)` and count only parsed `InputEventAction` with exact `action == "ui_left"` and `pressed == false`. Assert count before/after edge10 (delta exactly one); do not imply the HSlider consumed it.
+- [ ] Preserve per-edge focus-owner and callback-before checks, each frame wait, numeric/full receipt/Label assertions, plus r50 true→false `Input.is_action_pressed` checks. Ensure exact expected-negative terminal exit2 is reachable only after all eleven checks. Add one exact row and diagnostic only.
+- [ ] Validate clean normal invocation: unique parsed-release receipt at edge10 and all old state ends unchanged; paired direct-state-clear fails specifically on observer count, no-dispatch fails on pressed-state, both before accepted terminal. Preserve logs/raw; do not let generic `ERROR:` allowance swallow early failures.
+- [ ] Replay existing clean r50 and r49 positive cases; default battery expected 65 ordinary / 76 full with all prior tuple-bearing rows exact by case and opt-in/fault classifications stable. Named non-author must independently replay full default and fault paths, sabotage both, and compare the r50 prior rows/raw without overwrite.
+- [ ] No engine/editor or seeded fixture edits, no commit/push/merge by this scribe. Keep synthetic parsed-event/frame-only scope. Do not claim OS/physical timing, repeat, rendered/pointer/accessibility/production behavior, or HSlider internal consumption.
+
+**Status:** causal scratch supports the planned observer discriminator; this scribe makes no tracked edits and makes no axis verdict. Executor may now proceed with the single additive change; HOLD admission until named non-author full verification and all checklist items pass.
