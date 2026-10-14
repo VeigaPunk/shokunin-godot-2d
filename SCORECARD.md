@@ -127,3 +127,12 @@ Sol `r74-adjudicator.md`: ADMIT-corr — partition confirmed, class names scoped
 | calibration | **improved** | F2 gate defect corrected (presence -> value); arm identity pinned (fire.kind x21 + mode=unp); collateral witness pinned; per-cell rc persisted; insertion-only still (prior rows byte-identical modulo declared unpinned traceback lines + mode=unp) |
 
 Sol `r75-adjudicator.md`: ADMIT-corr — deferred/uncontained partition confirmed at byte level, two new classes with full witness sets, F2 gate defect folded. Verifier AGREE 18/18 on `2e3ae8e`; baseline zero-drift. Bounded: LOVE 11.5-3/LuaJIT, this host. Work `2e3ae8e` + folds `be79ad1`.
+## Round 76 verdict — 2026-10-14
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | 5 new cells: drain-deferral hazard (bc_draindefer), world-destroy + double-destroy edges (bc_worlddestroy/bc_destroy2), joint drain observer (bc_jwatch), per-contact retfalse (pre_retfalse1) |
+| depth | **improved** | new class deferred_abort (accepted write + abort; drain catches up one step late — third abort-adjacent class); world:destroy deferral + next-access death measured; drain bounded inside step-73 epilogue (jwlive->jdrain); retfalse inertness proven at 3-granularity control |
+| calibration | **improved** | abort_w single-sources the abort witness; latent fail-open closed (abortq.b1pos); stale enumeration replaced by authority pointer; drain-point overclaim scoped (window measured / line inferred) |
+
+Sol `r76-adjudicator.md`: ADMIT-corr — deferred_abort admitted, destroy-edge lifecycle split, drain bound measured, retfalse refuted at every granularity. Verifier AGREE all claims on `6ca715d`; baseline zero-drift. Bounded: LOVE 11.5/LuaJIT, this host. Work `6ca715d` + folds `c8fa307`.

@@ -905,3 +905,29 @@
 - Boundary: drain-deferral hazard (queued destroy + throw skips
   epilogue drain) -> r76 frontier cell; joint drain point inferred.
 - Verdict: ADMIT-corr (Sol, wave-15). LOVE 11.5-3/LuaJIT, this host.
+
+## Round 76 — 2026-10-14 (wave-16)
+
+- MOVE: drain-deferral hazard cell (queued destroy + escaped throw),
+  world:destroy()/double-destroy edges, joint drain observers,
+  per-contact preSolve retfalse discrimination (r75 boundary seeds).
+- Landed `6ca715d`: +174/-1 battery, +131/-3 probe; 5 new iw cells; NEW
+  class deferred_abort (accepted write + abort: drain skipped, catches
+  up one step late); bc_worlddestroy->died; bc_destroy2 deferred
+  (double-destroy lifecycle split); bc_jwatch bounded drain bracket;
+  pre_retfalse1 ignored (retfalse inert at every granularity).
+- Folds `c8fa307`: abort_w hoist single-sources the shared abort
+  witness (P1, 200k-case fuzz 0 divergences); abortq.b1pos positive
+  gate closes latent fail-open (F1); expected_class enumeration ->
+  iw_classify pointer (P2/F2); jwatch comment bracket corrected
+  jwlive->jdrain, cite 289-294 (D1/F3). Declined: D3 fall-through
+  (anomaly is fail-loud), W1 branch merge (breaks insertion-only).
+- Verified post-fold: 49/49 + pygame 80/80; 46/49 iw byte-identical,
+  3 diffs = unpinned main.lua:NNN +2 lines only.
+- Verifier AGREE all claims; reviewer ACCEPT (3 LOW folded); baseline
+  zero-drift; critic 4 hunts (ablation matrix proves the class,
+  strongest attack self-refuted); boundary ran read-only substrate
+  (source trace + r77 predictions; exec-capable profile needed next).
+- Scout: world:release in-cb = SIGSEGV (corrupt class); setCallbacks
+  mid-dispatch swap; endContact locked=false census.
+- Verdict: ADMIT-corr (Sol, wave-16). LOVE 11.5/LuaJIT, this host.
