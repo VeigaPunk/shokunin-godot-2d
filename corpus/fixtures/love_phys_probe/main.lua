@@ -211,58 +211,65 @@ local r77_install_container
 
 -- ---- r78 cell registry ---------------------------------------------------
 --
--- (cell, cb channel, callback act, drain-EC act). `mut` = the queued body for
--- the nested-queue acts; `what` = the object the mid-nested-step destroy
--- targets; `target` = the body whose first ground contact arms the cell
--- (b3 rests on the ground from step 4 -> a PERSISTENT touching contact;
+-- (cell, callback act, drain-EC act). `what` = the object the mid-nested-step
+-- destroy targets; `target` = the body whose first ground contact arms the
+-- cell (b3 rests on the ground from step 4 -> a PERSISTENT touching contact;
 -- b1 is the bouncing default -> a TRANSIENT one); `wp` = contain the OUTER
 -- update with pcall; `stop` = the abort budget of the throw_stop drain act.
+-- (the nested_queue acts queue b3; every row arms on beginContact.)
 local R78 = {
   -- 1 lock-clear / inner bracket
-  n_baseline              = { cb = "bc", act = "nested_probe" },
-  n_inner_cb              = { cb = "bc", act = "nested_inner_cb" },
-  n_depth2_seq            = { cb = "bc", act = "nested_twice" },
+  n_baseline              = { act = "nested_probe" },
+  n_inner_cb              = { act = "nested_inner_cb" },
+  n_depth2_seq            = { act = "nested_twice" },
   -- 2 inner-epilogue drain ownership
-  n_queue_inner_drain     = { cb = "bc", act = "nested_queue", mut = "b3" },
+  n_queue_inner_drain     = { act = "nested_queue" },
   -- 3 contacting-destroy dispatch escape (contained / uncontained)
-  n_destroy_contacting    = { cb = "bc", act = "nested_destroy", what = "b1" },
-  n_destroy_contacting_wp = { cb = "bc", act = "nested_destroy", what = "b1",
+  n_destroy_contacting    = { act = "nested_destroy", what = "b1" },
+  n_destroy_contacting_wp = { act = "nested_destroy", what = "b1",
                               wp = true },
-  n_destroy_ground_wp     = { cb = "bc", act = "nested_destroy", what = "g",
+  n_destroy_ground_wp     = { act = "nested_destroy", what = "g",
                               wp = true },
-  n_destroy_fx_wp         = { cb = "bc", act = "nested_destroy_fx", wp = true },
+  n_destroy_fx_wp         = { act = "nested_destroy_fx", wp = true },
   -- 4 depth-2 from the drain EC (body -> SIGSEGV / fixture -> refused)
-  n_depth2_drain          = { cb = "bc", act = "nested_queue", mut = "b3",
+  n_depth2_drain          = { act = "nested_queue",
                               drain = "nested_update" },
-  n_depth2_drain_wp       = { cb = "bc", act = "nested_queue", mut = "b3",
+  n_depth2_drain_wp       = { act = "nested_queue",
                               drain = "nested_update", wp = true },
-  n_depth2_fxdrain        = { cb = "bc", act = "queue_fixture",
+  n_depth2_fxdrain        = { act = "queue_fixture",
                               drain = "nested_update" },
   -- 5 contact zombie handles
-  z_drain_use_after       = { cb = "bc", act = "queue_body", target = "b3",
+  z_drain_use_after       = { act = "queue_body", target = "b3",
                               drain = "capture" },
-  z_abort_use_after       = { cb = "bc", act = "queue_body", target = "b3",
+  z_abort_use_after       = { act = "queue_body", target = "b3",
                               drain = "capture_throw", wp = true },
-  z_touch_then_end        = { cb = "bc", act = "capture_bc" },
+  z_touch_then_end        = { act = "capture_bc" },
   -- 6 livelock / convergence
-  livelock_all            = { cb = "bc", act = "queue_body", target = "b3",
+  livelock_all            = { act = "queue_body", target = "b3",
                               drain = "throwall", wp = true },
-  livelock_stop2          = { cb = "bc", act = "queue_body", target = "b3",
+  livelock_stop2          = { act = "queue_body", target = "b3",
                               drain = "throw_stop", stop = 2, wp = true },
-  livelock_transient      = { cb = "bc", act = "queue_body",
+  livelock_transient      = { act = "queue_body",
                               drain = "throwall", wp = true },
 }
 local R78S = R78[CELL]        -- nil for every pre-r78 cell
-local r78_cb = R78S and R78S.cb or nil
+local r78_cb = "bc"    -- the r78 channel: every row arms on beginContact
 local r78_target = R78S and R78S.target or nil
 local r78_drain = R78S and R78S.drain or nil
-local r78_mut = R78S and R78S.mut or nil
+local r78_mut = "b3"   -- the nested_queue acts queue b3 by construction
 local r78_stop = R78S and R78S.stop or 0
 if R78S ~= nil and R78S.wp then wp_mode = true end
 local r78_depth, r78_in_cb = 0, false
 local r78_nest_n, r78_nest_ok = 0, 0
 local r78_inner_fired = false
 local r78_drain_n, r78_aborts = 0, 0
+-- drain-EC provenance (boundary §8.1 / critic C2): `r78_pending` is the label
+-- of a body the cell itself queued for destruction (queue_body/queue_fixture/
+-- nested_queue) and `r78_own_n` counts drain-EC lines that actually drain it.
+-- An EndContact emitted for an immediate destroy (nested_destroy*) or a
+-- foreign contact is `own=false` — field-identical to a real drain otherwise.
+local r78_pending = nil
+local r78_own_n = 0
 local r78_zh, r78_zfx_a, r78_zfx_b   -- captured contact handle + its fixtures
 -- forward declarations (assigned in the r78 helper block further down)
 local r78_drain_hook, r78_nested_update, r78_obs
@@ -571,14 +578,15 @@ local function do_mutation(mkind, contact, body)
     -- an update. The nested update's own epilogue drains the queue (its
     -- EndContact is the drain EC at locked=false with depth/in_cb witnesses),
     -- so the target is dead before the outer callback returns.
-    local mb = r78_body_of(r78_mut or "b1")
+    local mb = r78_body_of(r78_mut)
     local ok, err = pcall_str(mb.destroy, mb)
     EM(string.format("r78queue what=%s ok=%s err=%s dead_in_cb=%s count=%d",
-      tostring(r78_mut or "b1"), tostring(ok), tostring(err), r78_dead(mb),
+      tostring(r78_mut), tostring(ok), tostring(err), r78_dead(mb),
       world:getBodyCount()))
+    if ok and r78_dead(mb) == "false" then r78_pending = r78_mut end
     r78_nested_update()
     EM(string.format("r78destroy what=%s dead=%s count=%d drain_n=%d",
-      tostring(r78_mut or "b1"), r78_dead(mb), world:getBodyCount(),
+      tostring(r78_mut), r78_dead(mb), world:getBodyCount(),
       r78_drain_n))
     local sok, serr = pcall_str(b1.setPosition, b1, 1234.5, 678.9)
     EM(string.format("r78setpos ok=%s err=%s pos_after=%s",
@@ -627,6 +635,9 @@ local function do_mutation(mkind, contact, body)
     EM(string.format("r78queue what=%s ok=%s err=%s dead_in_cb=%s count=%d",
       tostring(body:getUserData() or "?"), tostring(ok), tostring(err),
       r78_dead(body), world:getBodyCount()))
+    if ok and r78_dead(body) == "false" then
+      r78_pending = tostring(body:getUserData() or "?")
+    end
   elseif mkind == "queue_fixture" then
     -- queue the CONTACT's own fixture destroy: the drain EC then comes from
     -- the fixture drain loop (World::update's destructFixtures), and the
@@ -641,6 +652,9 @@ local function do_mutation(mkind, contact, body)
         "r78queue what=fx ok=%s err=%s dead_in_cb=%s fcount_before=%s fcount_after=%s count=%d",
         tostring(ok), tostring(err), r78_dead(fx), fb, r78_fxcount(body),
         world:getBodyCount()))
+      if ok and r78_dead(fx) == "false" then
+        r78_pending = tostring(body:getUserData() or "?")
+      end
     end
   elseif mkind == "capture_bc" then
     -- capture the contact handle at the natural beginContact (control for the
@@ -764,7 +778,7 @@ local function on_event(ev, fa, fb, contact)
     fired = true
     fire_step = step
     EM(string.format("fire cb=%s kind=%s step=%d locked=%s count=%d pos=%s vel=%s",
-      ev, (R78S.act or "none") .. "/" .. (R78S.drain or "-"), step,
+      ev, R78S.act .. "/" .. (R78S.drain or "-"), step,
       tostring(world:isLocked()), world:getBodyCount(), pos(dyn), vel(dyn)))
     r78_in_cb = true
     do_mutation(R78S.act, contact, dyn)
@@ -802,7 +816,7 @@ local function on_event(ev, fa, fb, contact)
   -- r78: the same drain-time endContact, with the contact handle (the zombie
   -- lattice needs the handle itself) and the nested-depth/in-cb witnesses.
   if R78S ~= nil and ev == "ec" and not world:isLocked() then
-    r78_drain_hook(contact, fa, fb, dyn)
+    r78_drain_hook(contact, dyn)
   end
 end
 
@@ -1007,8 +1021,8 @@ r78_lbl_of = function(fx)
 end
 
 r78_body_of = function(l)
-  if l == "b1" then return b1 elseif l == "b2" then return b2
-  elseif l == "b3" then return b3 elseif l == "g" then return g end
+  -- every nested_queue row queues b3; the b1/b2/g arms were never passed
+  if l == "b3" then return b3 end
   return nil
 end
 
@@ -1072,13 +1086,16 @@ end
 
 -- drain-time hook (locked=false, inside an update epilogue). Emitted for every
 -- r78 cell that sees a drain EC; the action only for the drain cells.
-r78_drain_hook = function(contact, fa, fb, dyn)
+r78_drain_hook = function(contact, dyn)
   r78_drain_n = r78_drain_n + 1
+  local dyn_lbl = tostring(dyn and dyn:getUserData() or "?")
+  local own = r78_pending ~= nil and dyn_lbl == r78_pending
+  if own then r78_own_n = r78_own_n + 1 end
   EM(string.format(
-    "r78drainec n=%d step=%d locked=%s depth=%d in_cb=%s count=%d dyn=%s",
+    "r78drainec n=%d step=%d locked=%s depth=%d in_cb=%s count=%d dyn=%s own=%s own_n=%d",
     r78_drain_n, step, tostring(world:isLocked()), r78_depth,
-    tostring(r78_in_cb), world:getBodyCount(),
-    tostring(dyn and dyn:getUserData() or "?")))
+    tostring(r78_in_cb), world:getBodyCount(), dyn_lbl, tostring(own),
+    r78_own_n))
   local d = r78_drain
   if d == nil then return end
   if d == "nested_update" then

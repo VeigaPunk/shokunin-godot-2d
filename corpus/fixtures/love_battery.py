@@ -904,9 +904,10 @@ IW_CELLS = [
         # when the nested update returns -- and the run survives to step 200.
         "fire.step": "73", "fire.kind": "nested_queue/-",
         "r78queue.what": "b3", "r78queue.ok": "true",
-        "r78queue.dead_in_cb": "false", "r78queue.count": "4",
+        "r78queue.count": "4",
         "r78drainec.n": "1", "r78drainec.step": "73",
         "r78drainec.dyn": "b3", "r78drainec.count": "4",
+        "r78drainec.own": "true", "r78drainec.own_n": "1",
         "r78destroy.what": "b3", "r78destroy.drain_n": "1",
         "r78nest1.count": "3",
         "postfire.count": "3", "postfire.drain_n": "1",
@@ -924,8 +925,9 @@ IW_CELLS = [
         # exterior write is refused by the LIFETIME guard, not by a lock.
         "fire.step": "73", "fire.kind": "nested_destroy/-",
         "r78destroy.what": "b1", "r78destroy.err": "nil",
-        "r78destroy.dead": "true", "r78destroy.count": "3",
+        "r78destroy.count": "3",
         "r78drainec.n": "1", "r78drainec.dyn": "b1",
+        "r78drainec.own": "false", "r78drainec.own_n": "0",
         "r78wpcall.err": "A fixture has escaped Memoizer!",
         "r78wpext.ok": "false",
         "r78wpext.err": "Attempt to use destroyed body.",
@@ -936,13 +938,15 @@ IW_CELLS = [
         "final.b1pos": "ERR:Attempt to use destroyed body.",
         "done": "true", "rc": "0"}),
     ("iw_n_destroy_ground_wp", "n_destroy_ground_wp", "dispatch_escape", {
-        # the static side of the same escape: TWO drain ECs (b1's contact and
-        # b3's), then the same Memoizer text -- and the exterior write is NOT
+        # the static side of the same escape: two immediate-destroy EndContacts
+        # (b1's and b3's, own=false -- nothing was queued, the destroy ran on
+        # the spot), then the same Memoizer text -- and the exterior write is NOT
         # refused as collateral (the world is unlocked): 999,999 lands.
         "fire.step": "73", "fire.kind": "nested_destroy/-",
         "r78destroy.what": "g", "r78destroy.err": "nil",
-        "r78destroy.dead": "true", "r78destroy.count": "3",
+        "r78destroy.count": "3",
         "r78drainec.n": "2", "r78drainec.dyn": "b3",
+        "r78drainec.own": "false", "r78drainec.own_n": "0",
         "r78wpcall.err": "A fixture has escaped Memoizer!",
         "r78wpext.ok": "true", "r78wpext.pos_after": "999,999",
         "r78recover.count": "3",
@@ -958,10 +962,10 @@ IW_CELLS = [
         # survives, then the same escape. Same text, different escape site.
         "fire.step": "73", "fire.kind": "nested_destroy_fx/-",
         "r78destroy.what": "fx", "r78destroy.err": "nil",
-        "r78destroy.dead": "true",
         "r78destroy.fcount_before": "1", "r78destroy.fcount_after": "0",
         "r78destroy.count": "4",
         "r78drainec.n": "1", "r78drainec.dyn": "b1",
+        "r78drainec.own": "false", "r78drainec.own_n": "0",
         "r78wpcall.err": "A fixture has escaped Memoizer!",
         "r78wpext.ok": "true", "r78wpext.pos_after": "999,999",
         "r78obs.aborts": "1", "r78obs.count": "4",
@@ -978,7 +982,7 @@ IW_CELLS = [
         "r78queue.what": "fx", "r78queue.dead_in_cb": "false",
         "r78queue.fcount_before": "1", "r78queue.fcount_after": "1",
         "r78drainact.n": "1", "r78drainact.depth_before": "0",
-        "r78nest1.ok": "false",
+        "r78drainec.own": "true", "r78drainec.own_n": "1",
         "r78nest1.err": "Box2D assertion failed: found",
         "r78nest1.in_cb": "false", "r78nest1.count": "4",
         "r78obs.nest_ok": "0", "r78obs.drain_n": "1",
@@ -997,10 +1001,10 @@ IW_CELLS = [
         "r78queue.what": "b3", "r78queue.dead_in_cb": "false",
         "r78drainec.n": "1", "r78drainec.step": "4",
         "r78drainec.dyn": "b3",
-        "r78zcap.where": "drain", "r78zcap.touch": "true",
+        "r78drainec.own": "true", "r78drainec.own_n": "1",
+        "r78zcap.touch": "true",
         "r78zcap.fa": "g", "r78zcap.fb": "b3",
-        "r78zpost.fxa": "false", "r78zpost.fxb": "true",
-        "r78zpost.fxa_body": "g",
+        "r78zpost.fxb": "true",
         "r78obs.count": "3", "r78obs.b3dead": "true",
         "final.count": "3", "final.bc": "5", "final.ec": "5",
         "final.pre": "6", "final.post": "6",
@@ -1013,6 +1017,7 @@ IW_CELLS = [
         # and only dies after the retry completes one step late.
         "fire.step": "4", "fire.kind": "queue_body/capture_throw",
         "r78drainec.n": "2", "r78drainec.step": "5",
+        "r78drainec.own": "true", "r78drainec.own_n": "2",
         "r78drainact.kind": "throw", "r78drainact.n": "1",
         "r78wpcall.err": "R78-DRAIN-ABORT",
         "r78wpext.ok": "true",
@@ -1031,9 +1036,8 @@ IW_CELLS = [
         # probed after the natural EndContact -- invalidated, fixtures alive,
         # no drain and no abort anywhere in the receipt.
         "fire.step": "73", "fire.kind": "capture_bc/-",
-        "r78zcap.where": "bc", "r78zcap.fa": "g", "r78zcap.fb": "b1",
-        "r78zend.fxa": "false", "r78zend.fxb": "false",
-        "r78zend.fxa_body": "g",
+        "r78zcap.fa": "g", "r78zcap.fb": "b1",
+        "r78zend.fxb": "false",
         "r78obs.drain_n": "0", "r78obs.aborts": "0",
         "final.count": "4", "final.bc": "5", "final.ec": "4",
         "final.pre": "36", "final.post": "36",
@@ -1051,11 +1055,11 @@ IW_CELLS = [
         "r78queue.what": "b3", "r78queue.dead_in_cb": "false",
         "r78drainec.n": "197", "r78drainec.step": "200",
         "r78drainec.dyn": "b3",
+        "r78drainec.own": "true", "r78drainec.own_n": "197",
         "r78drainact.kind": "throwall", "r78drainact.n": "197",
         "r78wpcall.err": "R78-DRAIN-THROWALL",
-        "r78wpext.ok": "true", "r78wpext.pos_after": "999,999",
-        "r78obs.drain_n": "197", "r78obs.aborts": "197",
-        "r78obs.count": "4", "r78obs.b3dead": "false",
+        "r78wpext.pos_after": "999,999",
+        "r78obs.count": "4",
         "r78obs.b3pos": "650,519.85009765625",
         "final.steps": "200", "final.count": "4",
         "final.bc": "3", "final.ec": "199",
@@ -1071,6 +1075,7 @@ IW_CELLS = [
         "r78queue.what": "b3", "r78queue.dead_in_cb": "false",
         "r78drainec.n": "3", "r78drainec.step": "6",
         "r78drainec.dyn": "b3",
+        "r78drainec.own": "true", "r78drainec.own_n": "3",
         "r78drainact.kind": "noop", "r78drainact.n": "3",
         "r78wpcall.err": "R78-DRAIN-THROW-2",
         "r78wpext.ok": "true",
@@ -1089,6 +1094,7 @@ IW_CELLS = [
         "r78queue.what": "b1", "r78queue.dead_in_cb": "false",
         "r78drainec.n": "1", "r78drainec.step": "73",
         "r78drainec.dyn": "b1",
+        "r78drainec.own": "true", "r78drainec.own_n": "1",
         "r78wpcall.err": "R78-DRAIN-THROWALL",
         "r78wpext.ok": "true",
         "r78recover.step": "74", "r78recover.count": "3",
@@ -1200,10 +1206,11 @@ IW_CELLS = [
     # escape's) and not a signal (`died`). Spawned with the death tail.
     ("iw_n_destroy_contacting", "n_destroy_contacting", "dispatch_escape", {
         "fire.step": "73", "fire.kind": "nested_destroy/-",
-        "r78destroy.what": "b1", "r78destroy.ok": "true",
-        "r78destroy.err": "nil", "r78destroy.dead": "true",
+        "r78destroy.what": "b1",
+        "r78destroy.err": "nil",
         "r78destroy.count": "3",
         "r78drainec.n": "1", "r78drainec.dyn": "b1",
+        "r78drainec.own": "false", "r78drainec.own_n": "0",
         "r78nest1.count": "4",
         "postfire.count": "3", "postfire.drain_n": "1",
         # the death site: the escape surfaces out of love.update
@@ -1281,12 +1288,10 @@ IW_CELLS = [
         "fire.locked": "true",
         "r78queue.what": "b3", "r78queue.ok": "true",
         "r78queue.dead_in_cb": "false", "r78queue.count": "4",
-        "r78drainact.n": "1", "r78drainact.kind": "nested_update",
+        "r78drainact.n": "1",
         "r78drainact.depth_before": "1", "r78drainact.lock": "false",
-        "r78drainec.n": "2", "r78drainec.depth": "2",
-        "r78drainec.dyn": "b3", "r78drainec.in_cb": "true",
-        "r78nest2.ok": "true", "r78nest2.lock_after": "false",
-        "r78nest2.depth": "2", "r78nest2.in_cb": "true",
+        "r78drainec.dyn": "b3", "r78drainec.own": "true",
+        "r78drainec.own_n": "2",
         "r78nest2.count": "3",
         "rc": "-11", "done": "false"}),
     ("iw_n_depth2_drain_wp", "n_depth2_drain_wp", "corrupt", {
@@ -1296,12 +1301,10 @@ IW_CELLS = [
         "fire.locked": "true",
         "r78queue.what": "b3", "r78queue.ok": "true",
         "r78queue.dead_in_cb": "false", "r78queue.count": "4",
-        "r78drainact.n": "1", "r78drainact.kind": "nested_update",
+        "r78drainact.n": "1",
         "r78drainact.depth_before": "1", "r78drainact.lock": "false",
-        "r78drainec.n": "2", "r78drainec.depth": "2",
-        "r78drainec.dyn": "b3", "r78drainec.in_cb": "true",
-        "r78nest2.ok": "true", "r78nest2.lock_after": "false",
-        "r78nest2.depth": "2", "r78nest2.in_cb": "true",
+        "r78drainec.dyn": "b3", "r78drainec.own": "true",
+        "r78drainec.own_n": "2",
         "r78nest2.count": "3",
         "rc": "-11", "done": "false"}),
 ]
@@ -1670,7 +1673,14 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
                     and flat.get("r78wpext.ok") == "true"):
                 return ("livelock",
                         "one drain EC + one abort per step; nothing destroyed")
-            if (aborts >= 1 and drain_n <= aborts + 1 and aborts < rate
+            # critic C3: converge requires abort<->drain identity -- a real
+            # drain act (throw/throwall/noop), the abort text this cell's
+            # drain hook threw, and at least one drain. A forged drainec +
+            # any aborts would satisfy the bare numerics otherwise.
+            if (flat.get("r78drainact.kind") in ("throw", "throwall", "noop")
+                    and flat.get("r78wpcall.err", "").startswith("R78-DRAIN-")
+                    and aborts >= 1 and drain_n >= 1
+                    and drain_n <= aborts + 1 and aborts < rate
                     and count == bodies - 1):
                 return "drain_converge", "retry stopped aborting; destroy completed"
             return "anomaly", "livelock/converge witness incomplete"
@@ -1808,12 +1818,19 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
         # re-entrant update re-runs the same drain loop over the vector the
         # outer loop is iterating and clears it mid-iteration, then re-enters
         # b2World::DestroyBody on a body whose teardown is in flight. The
-        # depth-2 nested update RETURNS first (its receipt is on the pipe) and
-        # the process dies before any further Lua frame -- pcall does NOT
-        # contain a signal, so the _wp twin dies identically (its witness set
-        # is the same, which is why this gate reads the shared keys).
+        # causal bound is the drain-EC ORIGIN (a body queue drained in an
+        # epilogue), not the nest count -- boundary measured the same crash
+        # from a depth-1 drain EC, and critic/labrat confirmed the depth==2
+        # keys are member descriptors. `depth_before` pins the origin; the
+        # nest2/drainec depth==2 conjuncts pin the armed member's shape.
+        # The inner update RETURNS first (its receipt is on the pipe) and the
+        # process dies before any further Lua frame -- pcall does NOT contain
+        # a signal, so the _wp twin dies identically (its witness set is the
+        # same, which is why this gate reads the shared keys).
         if ("fire.step" in flat and "postfire.step" not in flat
                 and flat.get("r78drainact.kind") == "nested_update"
+                and flat.get("r78drainact.depth_before") in ("0", "1")
+                and flat.get("r78drainec.own_n", "0") != "0"
                 and flat.get("r78nest2.ok") == "true"
                 and flat.get("r78nest2.lock_after") == "false"
                 and flat.get("r78nest2.depth") == "2"
@@ -1822,7 +1839,7 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
                 and flat.get("r78drainec.depth") == "2"
                 and flat.get("r78drainec.in_cb") == "true"):
             return ("corrupt",
-                    "SIGSEGV after a depth-2 nested update from a body-drain EC")
+                    "SIGSEGV after a nested update from a body-drain EC")
         return "anomaly", "rc=-11 without a release or nested-drain witness"
     if not done and rc not in (0, None) and "ext_rel_call.ok" in flat:
         # seed 1 control: the SAME release from OUTSIDE the engine's own
