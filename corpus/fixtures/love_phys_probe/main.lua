@@ -14,7 +14,7 @@
 -- survive on the pipe; the battery requires the CELL_DONE marker, so a
 -- crash mid-cell is a measured FAIL (truncated receipt), never a silent
 -- partial pass. Interior cells are spawned LAST by the battery, the
--- uncontained (*_unp) cells last of all.
+-- fatal cells last of all.
 --
 -- Cell grammar: <when>_<kind>
 --   when: bc | pre | post | ext        (ext = outside any callback, control)
@@ -142,13 +142,18 @@ local function do_mutation(mkind, contact, body)
   elseif mkind == "destroy_unp" then
     -- r75 C1 twin: uncontained destroy (no pcall). If the class were
     -- containment-dependent this would escape; measured deferred instead.
+    -- mode=unp is this branch's self-declared identity (r75 critic F1):
+    -- the contained twin's EM emits no mode field, so a misdirected cell
+    -- fails the cb_destroy.mode pin. For non-throwing writes the
+    -- containment axis itself is observational-inert -- that inertness
+    -- is the measured C1 claim.
     body:destroy()
-    EM(string.format("cb_destroy ok=true err=nil alive_in_cb=%s count_after=%d",
+    EM(string.format("cb_destroy ok=true err=nil mode=unp alive_in_cb=%s count_after=%d",
       pos(body), world:getBodyCount()))
   elseif mkind == "setvel_unp" then
     -- r75 C1 twin: uncontained non-structural write.
     body:setLinearVelocity(55, -7)
-    EM(string.format("cb_setvel ok=true err=nil vel_after=%s", vel(body)))
+    EM(string.format("cb_setvel ok=true err=nil mode=unp vel_after=%s", vel(body)))
   elseif mkind == "setpos_wp" then
     -- r75 C3: write UNCONTAINED at the callback level; the escape is
     -- caught one level up by the pcall around world:update (love.update).

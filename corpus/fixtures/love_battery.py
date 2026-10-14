@@ -43,8 +43,8 @@ the measured partition is {refused | deferred | fatal | applied}:
   applied : non-structural writes (setLinearVelocity, contact:setEnabled
             in preSolve) are legal inside the lock.
 Exterior (ext_*) controls apply immediately. Interior cells are spawned
-LAST and the uncontained (*_unp) cells last of all -- each cell is its
-own process so a fatal cell is a measured FAIL-class for that cell only.
+LAST and the fatal cells last of all -- each cell is its own process so
+a fatal cell is a measured FAIL-class for that cell only.
 
 r75 additions (critic-deferred cells + joints/return surface):
   refused_abort: r74 critic C3 -- the SAME assert-gated write contained one
@@ -58,11 +58,14 @@ r75 additions (critic-deferred cells + joints/return surface):
             binding (Box2D PreSolve is void): the full impulse still lands
             (b1vel 0,-611.09 vs the masked 0,763.87). A silently-ignored
             write attempt is neither refused (no assert) nor applied.
+            (`cb_retfalse.returned` is a harness echo of the intent; the
+            landed impulse is the falsifiable witness.)
   C1 twins: bc_destroy_unp / bc_setvel_unp stay deferred/applied
             uncontained -- fatal is derived (assert-gated x uncontained).
   joints  : newDistanceJoint inside cb -> refused (world-level IsLocked
             assert); joint:destroy() inside cb -> deferred (jcount drains
-            1->0 in the update epilogue, isDestroyed_after=true).
+            1->0 by update end; the epilogue drain POINT is inferred --
+            jdrain.isDestroyed=true is the landed witness).
   setfilter: Fixture:setFilterData inside cb -> applied on this build
             (no IsLocked assert); downstream witness is the refilter
             tunneling b1 through the ground (final b1pos y>540).
@@ -179,6 +182,7 @@ IW_CELLS = [
     # interior structural writes -> refused (catchable Lua assert)
     ("iw_bc_setpos", "bc_setpos", "refused", {
         "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "setpos",
         "cb_setpos.ok": "false",
         "cb_setpos.err": "Box2D assertion failed: m_world->IsLocked() == false",
         "cb_setpos.pos_after": "400,520.1500244140625",
@@ -186,6 +190,7 @@ IW_CELLS = [
         "evpin_ec_lck": "true", "done": "true", "rc": "0"}),
     ("iw_pre_setpos", "pre_setpos", "refused", {
         "fire.step": "73", "fire.cb": "pre",
+        "fire.kind": "setpos",
         "cb_setpos.ok": "false",
         "cb_setpos.err": "Box2D assertion failed: m_world->IsLocked() == false",
         "cb_setpos.pos_after": "400,520.1500244140625",
@@ -193,6 +198,7 @@ IW_CELLS = [
     ("iw_post_setpos", "post_setpos", "refused", {
         # postSolve channel sees the POST-step pose (frontier channel split)
         "fire.step": "73", "fire.cb": "post",
+        "fire.kind": "setpos",
         "fire.pos": "400,511.13113403320312",
         "cb_setpos.ok": "false",
         "cb_setpos.err": "Box2D assertion failed: m_world->IsLocked() == false",
@@ -201,17 +207,20 @@ IW_CELLS = [
     ("iw_bc_newbody", "bc_newbody", "refused", {
         # world-level fn: assert text drops the m_world-> prefix
         "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "newbody",
         "cb_newbody.ok": "false",
         "cb_newbody.err": "Box2D assertion failed: IsLocked() == false",
         "cb_newbody.count_before": "4", "cb_newbody.count_after": "4",
         "done": "true", "rc": "0"}),
     ("iw_pre_newbody", "pre_newbody", "refused", {
         "fire.cb": "pre",
+        "fire.kind": "newbody",
         "cb_newbody.ok": "false",
         "cb_newbody.err": "Box2D assertion failed: IsLocked() == false",
         "cb_newbody.count_after": "4", "done": "true", "rc": "0"}),
     ("iw_post_newbody", "post_newbody", "refused", {
         "fire.cb": "post",
+        "fire.kind": "newbody",
         "cb_newbody.ok": "false",
         "cb_newbody.err": "Box2D assertion failed: IsLocked() == false",
         "cb_newbody.count_after": "4", "done": "true", "rc": "0"}),
@@ -219,6 +228,7 @@ IW_CELLS = [
     # locked=false inside the update epilogue)
     ("iw_bc_destroy", "bc_destroy", "deferred", {
         "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "destroy",
         "cb_destroy.ok": "true", "cb_destroy.err": "nil",
         "cb_destroy.alive_in_cb": "400,520.1500244140625",
         "cb_destroy.count_after": "4",
@@ -228,6 +238,7 @@ IW_CELLS = [
         "done": "true", "rc": "0"}),
     ("iw_pre_destroy", "pre_destroy", "deferred", {
         "fire.cb": "pre",
+        "fire.kind": "destroy",
         "cb_destroy.ok": "true",
         "cb_destroy.alive_in_cb": "400,520.1500244140625",
         "cb_destroy.count_after": "4",
@@ -236,6 +247,7 @@ IW_CELLS = [
         "done": "true", "rc": "0"}),
     ("iw_post_destroy", "post_destroy", "deferred", {
         "fire.cb": "post",
+        "fire.kind": "destroy",
         "cb_destroy.ok": "true",
         "cb_destroy.alive_in_cb": "400,511.13113403320312",
         "cb_destroy.count_after": "4",
@@ -245,6 +257,7 @@ IW_CELLS = [
     # edges: active-body write refused; contact mask + velocity accepted
     ("iw_bc_setactive", "bc_setactive", "refused", {
         "fire.step": "73",
+        "fire.kind": "setactive",
         "cb_setactive.ok": "false",
         "cb_setactive.err": "Box2D assertion failed: m_world->IsLocked() == false",
         "cb_setactive.isActive_after": "true",
@@ -252,6 +265,7 @@ IW_CELLS = [
     ("iw_pre_contactmask", "pre_contactmask", "applied", {
         # legal single-step mask: no impulse lands that update
         "fire.cb": "pre", "fire.step": "73",
+        "fire.kind": "contactmask",
         "cb_contactmask.ok": "true",
         "cb_contactmask.isEnabled_after": "false",
         "cb_contactmask.isTouching": "true",
@@ -261,8 +275,12 @@ IW_CELLS = [
     ("iw_bc_setvel", "bc_setvel", "applied", {
         # non-structural write has no locked assert
         "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "setvel",
         "cb_setvel.ok": "true", "cb_setvel.err": "nil",
         "cb_setvel.vel_after": "55,-7",
+        # r74-critic rank 5: the write is effect-bearing -- the velocity
+        # is still 55,-7 after the rest of the step ran
+        "after_update.b1vel": "55,-7",
         "done": "true", "rc": "0"}),
     # ---- r75 additive cells (all measured non-fatal on this build) ----
     ("iw_bc_setpos_wp", "bc_setpos_wp", "refused_abort", {
@@ -270,13 +288,20 @@ IW_CELLS = [
         # (pcall around world:update). Refused write + aborted step +
         # transient lock + collateral exterior refusal + next-step recovery.
         "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "setpos_wp",
         "wpcall.step": "73", "wpcall.update_ok": "false",
         "wpcall.err": "Box2D assertion failed: m_world->IsLocked() == false",
         "wpcall.locked_after": "true",
         "wp_setpos.ok": "false",
         "wp_setpos.err": "Box2D assertion failed: m_world->IsLocked() == false",
+        # refused write moved nothing: pos_after == fire.pos
         "wp_setpos.pos_after": "400,520.1500244140625",
+        "fire.pos": "400,520.1500244140625",
         "wpext.ok": "false",
+        # exterior collateral refusal carries the same assert text and
+        # leaves the pose untouched
+        "wpext.err": "Box2D assertion failed: m_world->IsLocked() == false",
+        "wpext.pos_after": "400,520.1500244140625",
         "wpcall_next.step": "74", "wpcall_next.update_ok": "true",
         "wpcall_next.locked_after": "false",
         "wpcall_next.b1pos": "400,509.53021240234375",
@@ -285,6 +310,7 @@ IW_CELLS = [
     ("iw_bc_joint_new", "bc_joint_new", "refused", {
         # joints surface: newDistanceJoint inside cb -> world-level assert
         "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "joint_new",
         "cb_joint_new.ok": "false",
         "cb_joint_new.err": "Box2D assertion failed: IsLocked() == false",
         "cb_joint_new.jcount_before": "0",
@@ -292,9 +318,12 @@ IW_CELLS = [
         "after_update.b1pos": "400,511.13113403320312",
         "done": "true", "rc": "0"}),
     ("iw_bc_joint_destroy", "bc_joint_destroy", "deferred", {
-        # joint:destroy() inside cb drains in the update epilogue like
-        # body:destroy() (jcount 1->0, handle flips isDestroyed after)
+        # joint:destroy() inside cb drains by update end like
+        # body:destroy() (jcount 1->0, handle flips isDestroyed after);
+        # unlike bodies there is no locked=false drain event -- the
+        # drain point is inferred from the count pair, not witnessed
         "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "joint_destroy",
         "pre_joint.jtype": "distance", "pre_joint.jcount": "1",
         "cb_joint_destroy.ok": "true", "cb_joint_destroy.err": "nil",
         "cb_joint_destroy.isDestroyed_in_cb": "false",
@@ -307,6 +336,7 @@ IW_CELLS = [
         # Fixture:setFilterData is NOT locked-asserted on this build;
         # the refilter tunnels b1 through the ground after the write
         "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "setfilter",
         "cb_setfilter.ok": "true", "cb_setfilter.err": "nil",
         "cb_setfilter.filter_after": "2,2,0",
         "after_update.b1vel": "0,-611.09796142578125",
@@ -317,6 +347,7 @@ IW_CELLS = [
         # preSolve `return false` is not consumed: the full impulse lands
         # (contrast pre_contactmask's suppressed 0,763.87)
         "fire.cb": "pre", "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "retfalse",
         "cb_retfalse.returned": "false",
         "after_update.b1vel": "0,-611.09796142578125",
         "final.pre": "36", "final.post": "36",
@@ -325,6 +356,13 @@ IW_CELLS = [
     # derived = assert-gated write x uncontained, not uncontained alone)
     ("iw_bc_destroy_unp", "bc_destroy_unp", "deferred", {
         "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "destroy_unp",
+        # mode= is the uncontained branch's self-declared identity
+        # (r75 critic F1): the contained twin emits no mode field, so a
+        # misdirected/wrong-branch receipt fails this pin. The
+        # containment axis itself is observational-inert for this
+        # non-throwing write -- that inertness is the C1 claim.
+        "cb_destroy.mode": "unp",
         "cb_destroy.ok": "true", "cb_destroy.err": "nil",
         "cb_destroy.alive_in_cb": "400,520.1500244140625",
         "cb_destroy.count_after": "4",
@@ -334,6 +372,8 @@ IW_CELLS = [
         "done": "true", "rc": "0"}),
     ("iw_bc_setvel_unp", "bc_setvel_unp", "applied", {
         "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "setvel_unp",
+        "cb_setvel.mode": "unp",  # unp-branch identity (see destroy_unp)
         "cb_setvel.ok": "true", "cb_setvel.err": "nil",
         "cb_setvel.vel_after": "55,-7",
         "after_update.b1vel": "55,-7",
@@ -341,11 +381,13 @@ IW_CELLS = [
     # uncontained escapes -> fatal, spawned LAST
     ("iw_bc_setpos_unp", "bc_setpos_unp", "fatal", {
         "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "setpos_unp",
         "rc": "1", "done": "false",
         "err_on": "stdout", "assert_txt": "m_world_islocked",
         "esc_fn": "setPosition"}),
     ("iw_bc_newbody_unp", "bc_newbody_unp", "fatal", {
         "fire.step": "73",
+        "fire.kind": "newbody_unp",
         "rc": "1", "done": "false",
         "err_on": "stdout", "assert_txt": "islocked",
         "esc_fn": "newBody"}),
@@ -391,8 +433,9 @@ def parse_iw(stdout):
 
 def iw_classify(cell, flat, rc, timed_out, stdout):
     """Map one cell's capture onto {captured|applied|refused|deferred|
-    fatal|timeout|died|nolaunch|anomaly}. Partial-capture detection is
-    built in: fire-present without CELL_DONE is never a pass shape."""
+    refused_abort|ignored|fatal|timeout|died|nolaunch|anomaly}.
+    Partial-capture detection is built in: fire-present without
+    CELL_DONE is never a pass shape."""
     if timed_out:
         return "timeout", f"exceeded {TIMEOUT_S}s"
     done = flat.get("done") == "true"
@@ -400,13 +443,12 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
     if done and rc == 0:
         if cell == "baseline":
             return "captured", "availability lattice"
-        if "wpcall.update_ok" in flat:
-            # r75 C3: update-level containment -- the write was refused
-            # AND the step aborted with a transient lock that recovers on
-            # the next update. All witnesses required; anything less is
-            # an anomaly, never a silent "refused".
-            if (flat.get("wpcall.update_ok") == "false"
-                    and flat.get("wpcall.locked_after") == "true"
+        if flat.get("wpcall.update_ok") == "false":
+            # r75 C3 + critic F2: gate on the abort VALUE, not key
+            # presence -- a receipt that merely mentions wpcall.* (e.g.
+            # scout L1 captures where last-wins left update_ok=true)
+            # falls through to the decisive cb_* evidence below.
+            if (flat.get("wpcall.locked_after") == "true"
                     and flat.get("wp_setpos.ok") == "false"
                     and "assertion" in flat.get("wp_setpos.err", "")
                     and flat.get("wpext.ok") == "false"
@@ -459,7 +501,7 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
                 except ValueError:
                     jdrop = False
                 if jdrop and flat.get("jdrain.isDestroyed") == "true":
-                    return "deferred", "joint drained inside update epilogue"
+                    return "deferred", "joint drained by update end (epilogue inferred)"
                 return "anomaly", "joint destroy ok without deferred witness"
             return "applied", mut
         return "anomaly", f"unhandled ok={flat[f'{mut}.ok']!r}"
@@ -593,8 +635,8 @@ def main():
                                     [f"expected {expected}"])})
 
     # r74 interior-write lattice: one love process per cell, spawned last
-    # (uncontained *_unp cells are last in the table -- a fatal cell kills
-    # only its own launch and its truncated receipt is the measurement).
+    # (fatal cells are last in the table -- a fatal cell kills only its
+    # own launch and its truncated receipt is the measurement).
     for name, cell, expected, pins in IW_CELLS:
         c_stdout, c_stderr, c_code, c_err = run_process(
             [args.love, str(IW_PROBE_DIR)], TIMEOUT_S,
@@ -616,7 +658,7 @@ def main():
             if reason is not None:
                 reasons.append(f"{k}: {reason}")
         results.append({"case": name, "arm": "iw",
-                        "key": f"cell={cell}",
+                        "key": f"cell={cell}", "rc": c_code,
                         "pinned": expected, "observed": cls,
                         "verdict": "PASS" if not reasons else "FAIL",
                         "reasons": reasons})
