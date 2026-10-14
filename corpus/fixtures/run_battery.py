@@ -876,6 +876,234 @@ def main():
                     "discriminations": spoof_discriminations,
                     "bounded_claim": "signature presence over merged captured output is origin-blind: a descendant's post-child-exit write of the expected signature satisfies it; accepted (verdict PASS) whenever the pipes release before the bound, separable only via the timed_out/child_exit_at_timeout evidence when held past it — documented forgery-accepting boundary, not a fix; Linux headless Godot 4.7.2 POSIX pipe semantics only"})
     print(f"{results[-1]['verdict']} descendant signature-spoof meta", flush=True)
+    # r64 meta: while-live signature gate — the XConnector wave-3 synthesis
+    # proposal ported to this fixture as a NEW observation path (additive;
+    # classify_process is untouched). The pinned r63 boundary showed the
+    # signature clause is origin-blind: a descendant's post-death write
+    # satisfies it. This arm re-runs the SAME fixture arms under a
+    # poll()-gated read: the marker is accepted only when observed while the
+    # direct child is alive (poll() is None at the marker-completing read).
+    # Prediction under test: forged signatures are reparenting-gated
+    # post-death writes, so they can never be observed while-live — the gate
+    # rejects a PRESENT marker; genuine child signatures are written before
+    # quit() and observed inside the child's teardown window. A genuine rep
+    # whose marker observation lands post-death falsifies the gate's
+    # discrimination; the per-rep timing fields bound that nondeterminism
+    # instead of hiding it.
+    gate_marker = "DESCENDANT_PIPE_PROBE: expected signature"
+    gate_bound = 3.0
+    gate_poll_tick = 0.005
+    # Load-bearing primitive: process.poll() (waitpid) — it REAPS the child,
+    # so a dead process never reads alive. os.kill(pid,0)/pid_alive must NOT
+    # be substituted: an unreaped zombie satisfies kill(pid,0) and measured
+    # 13/13 false-accepts of the forged post-death signature (r64 critic).
+
+    def gated_signature_run(case, extra_args):
+        record = {"case": case, "flags": list(extra_args),
+                  "bound_seconds": gate_bound, "timed_out": False,
+                  "actual_exit": None, "error": None,
+                  "marker_observed": False, "marker_observed_at": None,
+                  "child_alive_at_marker_observation": None,
+                  "child_alive_after_marker_read": None,
+                  "dead_observed_at": None, "elapsed_seconds": None,
+                  "withheld_banner": False, "write_ppid": None,
+                  "godot_pid": None, "descendant_pid": None,
+                  "descendant_alive_at_return": None,
+                  "descendant_kernel_ppid_at_return": None,
+                  "gated_signature_accepted": False,
+                  "inner_classification": False}
+        record["command"] = [args.godot, "--headless", "--path", str(scratch),
+                             "--script", "res://descendant_pipe_probe.gd",
+                             "--"] + list(extra_args)
+        process = None
+        started = time.monotonic()
+        captured = bytearray()
+        try:
+            process = subprocess.Popen(record["command"], stdout=subprocess.PIPE,
+                                       stderr=subprocess.PIPE)
+            deadline = started + gate_bound
+            with selectors.DefaultSelector() as gate_selector:
+                gate_selector.register(process.stdout, selectors.EVENT_READ)
+                gate_selector.register(process.stderr, selectors.EVENT_READ)
+                while gate_selector.get_map():
+                    remaining = deadline - time.monotonic()
+                    if remaining <= 0:
+                        record["timed_out"] = True
+                        break
+                    events = gate_selector.select(
+                        min(gate_poll_tick, max(0.0, remaining)))
+                    now = time.monotonic()
+                    if (record["dead_observed_at"] is None
+                            and process.poll() is not None):
+                        record["dead_observed_at"] = round(now - started, 6)
+                    for key, _ in events:
+                        alive_before = process.poll() is None
+                        try:
+                            chunk = os.read(key.fileobj.fileno(), 65536)
+                        except OSError:
+                            chunk = b""
+                        if not chunk:
+                            gate_selector.unregister(key.fileobj)
+                            continue
+                        captured += chunk
+                        if (not record["marker_observed"]
+                                and gate_marker.encode() in captured):
+                            record["marker_observed"] = True
+                            record["marker_observed_at"] = round(now - started, 6)
+                            record["child_alive_at_marker_observation"] = alive_before
+                            record["child_alive_after_marker_read"] = (
+                                process.poll() is None)
+            # dead_observed_at: first gated-read tick that saw the child dead;
+            # None means the loop ended on pipe EOF before poll() observed the
+            # exit (EOF can precede zombie reapability by microseconds) — for a
+            # genuine arm that is itself while-live evidence.
+            if (record["dead_observed_at"] is None
+                    and process.poll() is not None):
+                record["dead_observed_at"] = round(time.monotonic() - started, 6)
+            if record["timed_out"]:
+                record["error"] = f"TIMEOUT after {gate_bound} seconds"
+            for stream in (process.stdout, process.stderr):
+                try:
+                    stream.close()
+                except OSError:
+                    pass
+            try:
+                process.wait(timeout=3)
+            except subprocess.TimeoutExpired:
+                process.kill()
+                try:
+                    process.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    record["error"] = (record["error"] or "") + "; post-kill wait timed out"
+            record["actual_exit"] = process.returncode
+        except (OSError, ValueError) as exc:
+            record["error"] = f"launch/read error: {exc}"
+        finally:
+            if process is not None and process.poll() is None:
+                process.kill()
+                try:
+                    process.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    record["error"] = (record["error"] or "") + "; forced cleanup timed out"
+        record["elapsed_seconds"] = round(time.monotonic() - started, 3)
+        gate_text = captured.decode(errors="replace")
+        record["withheld_banner"] = (
+            "DESCENDANT_PIPE_FORGE child_signature=withheld" in gate_text)
+        pid_match = re.search(r"DESCENDANT_PIPE godot_pid=(\d+)", gate_text)
+        record["godot_pid"] = int(pid_match.group(1)) if pid_match else None
+        pid_match = re.search(r"DESCENDANT_PIPE spawned_pid=(\d+)", gate_text)
+        record["descendant_pid"] = int(pid_match.group(1)) if pid_match else None
+        pid_match = re.search(r"DESCENDANT_PIPE_FORGE write_ppid=(\d+)", gate_text)
+        record["write_ppid"] = int(pid_match.group(1)) if pid_match else None
+        record["descendant_alive_at_return"] = pid_alive(record["descendant_pid"])
+        record["descendant_kernel_ppid_at_return"] = kernel_ppid(
+            record["descendant_pid"])
+        record["gated_signature_accepted"] = bool(
+            record["marker_observed"]
+            and record["child_alive_at_marker_observation"])
+        # The same captured bytes under the un-gated classifier: on the
+        # release arm this is True while the gate rejects — the divergence
+        # the pinned r63 boundary predicts.
+        record["inner_classification"] = classify_process(
+            record["actual_exit"], record["error"], gate_text, 0, gate_marker)
+        record["output_lines"] = gate_text.strip().splitlines()
+        return record
+
+    gate_genuine = [gated_signature_run(f"genuine_default_r{i}", [])
+                    for i in range(3)]
+    gate_detach = [gated_signature_run("genuine_detach", ["--spawn-detach"])]
+    gate_release = [gated_signature_run(f"forge_release_r{i}",
+                                        ["--spawn-forge-release"])
+                    for i in range(3)]
+    gate_hold = gated_signature_run("forge_hold", ["--spawn-forge-hold"])
+    gate_forged = gate_release + [gate_hold]
+    gate_discriminations = {
+        # Genuine signature: every default-arm rep's marker was captured and
+        # observed while the child was still alive -> the gate accepts.
+        "genuine_marker_accepted_while_live": all(
+            r["marker_observed"]
+            and r["child_alive_at_marker_observation"] is True
+            and r["gated_signature_accepted"] for r in gate_genuine),
+        # No genuine rep's marker ever landed post-death: zero observed
+        # post-death observations across the reps (the falsification axis —
+        # one False here means the gate cannot distinguish).
+        "genuine_never_observed_post_death": all(
+            r["child_alive_at_marker_observation"] is not False
+            for r in gate_genuine),
+        # Detached-descendant control: a genuine marker is not penalized for
+        # a descendant that outlives the child with detached fds — the gate
+        # discriminates the write's timing, not descendant existence.
+        "detach_marker_accepted_while_live": (
+            gate_detach[0]["marker_observed"]
+            and gate_detach[0]["child_alive_at_marker_observation"] is True
+            and gate_detach[0]["gated_signature_accepted"]),
+        # The forged release-arm signature IS captured — provably after the
+        # child's death was already observed (dead_observed_at precedes
+        # marker_observed_at; the write is reparenting-gated): the gate
+        # rejects a present marker, never an absent one.
+        "forge_release_marker_captured_post_death": all(
+            r["marker_observed"]
+            and r["child_alive_at_marker_observation"] is False
+            and r["dead_observed_at"] is not None
+            and r["marker_observed_at"] is not None
+            and r["dead_observed_at"] <= r["marker_observed_at"]
+            for r in gate_release),
+        # The un-gated classifier accepts exactly what the gate rejects:
+        # same captured bytes, inner_classification True, gate False.
+        "forge_release_gate_rejects_what_classifier_accepts": all(
+            (not r["gated_signature_accepted"])
+            and r["inner_classification"] is True for r in gate_release),
+        # Hold arm: the same post-death forged write lands inside the bound
+        # record and the gate rejects it there too.
+        "forge_hold_marker_captured_post_death": (
+            gate_hold["marker_observed"]
+            and gate_hold["child_alive_at_marker_observation"] is False
+            and gate_hold["dead_observed_at"] is not None
+            and gate_hold["marker_observed_at"] is not None
+            and gate_hold["dead_observed_at"] <= gate_hold["marker_observed_at"]),
+        "forge_hold_gate_rejects": not gate_hold["gated_signature_accepted"],
+        # Provenance: forged outputs carry the child's withheld banner plus a
+        # write_ppid != godot_pid — the signature is descendant-authored.
+        "forge_withheld_banner_present": all(
+            r["withheld_banner"] for r in gate_forged),
+        "forge_write_post_orphan": all(
+            r["write_ppid"] is not None and r["godot_pid"] is not None
+            and r["write_ppid"] != r["godot_pid"] for r in gate_forged),
+        # Kernel corroboration on the hold arm (its descendant is still alive
+        # at return — ~6s hold past the 3.0s bound): /proc ppid equals the
+        # self-reported write_ppid. Release descendants exit before return;
+        # their write_ppid stays fixture-asserted (r63 disclosure).
+        "forge_hold_write_ppid_kernel_corroborated": (
+            gate_hold["write_ppid"] is not None
+            and gate_hold["descendant_kernel_ppid_at_return"]
+                == gate_hold["write_ppid"]),
+        "hold_descendant_orphaned_alive": (
+            gate_hold["descendant_alive_at_return"] is True),
+        # Headline divergence: every genuine arm accepted, every forged arm
+        # rejected, on the same fixture and marker.
+        "gate_discriminates_forged_from_genuine": (
+            all(r["gated_signature_accepted"]
+                for r in gate_genuine + gate_detach)
+            and not any(r["gated_signature_accepted"] for r in gate_forged)),
+    }
+    # Harness-side hygiene: reap the orphaned descendants (bounded sleeps
+    # that self-exit in seconds anyway); never gated.
+    for gate_orphan in {r["descendant_pid"] for r in gate_detach + gate_forged}:
+        if pid_alive(gate_orphan):
+            try:
+                os.kill(gate_orphan, signal.SIGKILL)
+            except OSError:
+                pass
+    gate_meta_ok = all(gate_discriminations.values())
+    results.append({"case": "probe_while_live_signature_gate",
+                    "verdict": "PASS" if gate_meta_ok else "FAIL",
+                    "mode": "poll_gated_bounded_popen_signature_read",
+                    "bound_seconds": gate_bound,
+                    "poll_tick_seconds": gate_poll_tick,
+                    "arms": gate_genuine + gate_detach + gate_release + [gate_hold],
+                    "discriminations": gate_discriminations,
+                    "bounded_claim": "a poll()-gated signature read accepts the expected marker only when observed while the direct child is alive: genuine child signatures (default and detached-descendant arms) were observed while-live in every rep; reparenting-gated forged signatures (--spawn-forge-release/--spawn-forge-hold) arrived after observed child death in every rep and were rejected though present — on this fixture the gate discriminates forged post-death writes from genuine writes; not a claim that observation-time liveness proves authorship in general (a pre-death-scheduled or faster-racing forge is out of scope); Linux headless Godot 4.7.2 POSIX semantics only"})
+    print(f"{results[-1]['verdict']} while-live signature-gate meta", flush=True)
     if args.probe_failing:
         destination = scratch / "scene_b.tscn"
         original = destination.read_text()
