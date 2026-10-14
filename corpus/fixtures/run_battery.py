@@ -116,7 +116,7 @@ def main():
     parser.add_argument("--probe-crash-exit", action="store_true", help="run a paired real-Godot normal-exit versus signal-termination probe")
     parser.add_argument("--probe-timeout", action="store_true", help="run a paired real-Godot normal-exit versus timeout probe")
     parser.add_argument("--probe-midlineforge-ladder", action="store_true", help="run the midlineforge descendant-write offset ladder across the 200ms signature gap (fabrication-window bound measurement)")
-    parser.add_argument("--probe-midlineforge-gapladder", action="store_true", help="run the midlineforge crossed gap ladder — fixed 80ms write offset across signature gaps {50,100,200,400,800}ms (pins the fabrication bound's referent: gap-relative vs absolute)")
+    parser.add_argument("--probe-midlineforge-gapladder", action="store_true", help="run the midlineforge crossed gap ladder — fixed 80ms write offset across signature gaps {50,100,200,400,800}ms plus crossed cells (300,400)/(300,800)/(600,800) (pins the fabrication bound's referent: gap-relative vs absolute)")
     parser.add_argument("--probe-audio-warning", action="store_true", help="classify captured r12 leaked and clean audio outputs with the production audio verdict")
     parser.add_argument("--godot", default="godot")
     parser.add_argument("--runs", type=Path, default=HERE.parent / "live" / "runs")

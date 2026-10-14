@@ -62,3 +62,13 @@ Sol `r67-adjudicator.md`: adjudicator replay — flagless 88/88, flagged 89/89, 
 | calibration | **unchanged** | opt-in flags only; flagless 88/88 unchanged; classifiers byte-identical since r65; bare midlineforge arm unchanged (default offset stays 80). |
 
 Sol `r68-adjudicator.md`: declared-grid claim falsified as written (~80× resolution overstated — critic) and recorded honestly; the measured bound (write-lands-between-flushes; nominal edge = gap − spawn overhead) is what landed. Non-author `r68-verifier.md`: **AGREE 5/5** on `f754546` — 18/18 grid exact, from-spec clause recompute 9/9, 24/24 discriminations, prior 0-mismatch ×5. Bounded: nominal-offset space on this host (edge ≈198.3–198.5ms stochastic ~1ms); receipt fields bind decoded text; timeout records nondeterministic. Work commit `f754546`; report-last commit follows.
+
+## Round 69 verdict — 2026-10-14
+
+| axis | Sol verdict | evidence |
+|---|---|---|
+| depth | **improved locally** | Fabrication-window REFERENT pinned gap-relative: splice iff write pos in [0,gap) — r68's ~198ms edge shown to be `gap − spawn_overhead`, not a constant. Crossed cells (300,400)/(300,800)/(600,800) in the tracked ladder refute any absolute edge <~602ms; edge re-located ~295–300 at gap=300; jitter floor ~2–5ms; knife-edge miss<=81/mixed82/fab>=83 (boundary). |
+| coverage | **improved locally** | `--probe-midlineforge-gapladder` meta (8 cells x 3 reps, 12 discriminations, referent_verdict 3-way); `raw_merged_sha256` on all dual_classify records + same-input gate (concat-order binding; additive-only, verifier-confirmed equal to sha(so+se) on every record). |
+| calibration | **unchanged** | opt-in flag only; flagless 88/88 + surface 34/34 unchanged; classifiers byte-identical since r65; default arm (gap=200) byte-stable. |
+
+Sol `r69-adjudicator.md`: declared claim CONFIRMED in measured semantics — the critic's grid-power falsification corrected the DESIGN (crossed cells folded into the tracked ladder), not the conclusion. Non-author: verifier seat lost to free-model rate limits; operator adjudicator replay on `ec2cda6` = 88/88 + gapladder PASS + referent gap_relative; reviewer + scribe + boundary independent replays all green. Bounded: classifier-level verdicts, Godot 4.7.2 headless, CPython POSIX pipes, this host — referent portable, nominal edges not. Work commit `ec2cda6`; report-last commit follows.

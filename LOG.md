@@ -727,3 +727,52 @@
 - Per-axis verdicts (Sol `reports/round-68/r68-adjudicator.md`): ADMIT —
   falsified-grid recorded, measured bound is what landed. Work commit
   `f754546` + hygiene `e8d4fb7`; report-last follows.
+
+## Round 69 — devin host — depth/calibration: fabrication-window referent (gap-relative vs absolute) + sha256(merged) receipt pin
+
+- Declared (dispatch brief): pin the fabrication-window bound's
+  REFERENT — hold `midline_offset_ms=80`, sweep the signature gap
+  {50,100,200,400,800}ms via a new `--midline-gap-ms` opt-in flag
+  (same pattern as `--midline-offset-ms`); claimed the window follows
+  offset<gap (gap-relative), falsified by fabrication at gaps <<80ms
+  or misses at gaps >>80ms. Plus `sha256(merged)` on every
+  dual_classify record (the merged-concat digest catches concat-order
+  drift the per-channel digests can't see — r66 stderr+stdout caveat).
+  Opt-in only; flagless 88/88 + surface 34/34 + prior dual_classify
+  rows byte-stable modulo the additive field.
+- Wave `shokunin-train-20261014-w9`: leaf set
+  `reports/round-69/r69-{baseline,boundary,critic,reviewer,scout,
+  scribe,simplifier}.md` landed; author + verifier seats died to
+  free-model rate limits (5 respawn attempts) — the landed diff was
+  verified post-land by scribe (row-for-row, 91/91 flagged + 88/88
+  flagless), reviewer (88/88 + 34/34 + gapladder PASS + sha256
+  equality on all dual records), boundary (knife-edge 81/82/83), and
+  the operator's own battery replay (88/88 + gapladder meta PASS).
+- Work commit `ec2cda6`: `--midline-gap-ms=N` fixture flag (default
+  200, r66/r68 arm byte-stable); `--probe-midlineforge-gapladder` meta
+  — 8 cells x 3 reps incl. crossed cells (300,400)/(300,800)/(600,800)
+  folded in at integration from the critic's underpowered-grid
+  falsification; `raw_merged_sha256` additive on dual records.
+- Measured (scribe 268 real-pipe runs + operator ladder replay):
+  referent = gap — splice iff write pos in [0, gap), 0/268 byte-order
+  exceptions. Crossed cells all fabricate — any absolute edge
+  <~602ms refuted; edge re-located ~295–300 at gap=300; gap=1500
+  fabricates; jitter floor ~2–5ms (absolute achievability bound);
+  write_ppid provenance-only; byte order is ground truth.
+- Critic correction absorbed: fixed-offset grid alone co-predictive —
+  crossed cells are the tracked distinguishing region; verdict logic
+  now separates gap_relative / absolute_edge / absolute_write_latency.
+- Simplifier: minimal bar met, zero warranted deletions — every
+  element load-bearing (only (80,200) structurally consumed; crossed
+  cells carry the model discrimination); two nit flags (flag help text
+  — fixed at report-last; reps_per_gap naming).
+- Flake observed (load): `negative_transition` null current_scene —
+  environmental readiness, recorded.
+- Non-author verification: verifier seat never survived rate limits;
+  operator adjudicator replay on `ec2cda6` = 88/88 flagless +
+  gapladder PASS (referent gap_relative, crossed 3/3) + reviewer's
+  independent replay green. Bounded: classifier-level verdicts, Godot
+  4.7.2 headless, CPython POSIX pipes, this host's load-dependent
+  spawn overhead — the referent is portable, nominal edges are not.
+- Per-axis verdicts (Sol `reports/round-69/r69-adjudicator.md`):
+  ADMIT. Report-last commit follows.
