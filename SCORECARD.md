@@ -22,3 +22,13 @@ retired: none.
 | calibration | **unchanged** | gate is an observation path; bound 3.0s inside established margins; thresholds untouched. |
 
 Non-author `reports/round-64/r64-verifier.md`: claims 2/3/4a/4b AGREE; claims 1+5 DISAGREE-as-worded on pre-fix commit `a32920b` (runner diff left uncommitted — adjudicator's integration defect); resolved by follow-up commit landing the verified blob `66a18a00` byte-identical. Sol `r64-adjudicator.md` admits no demonstrated scoped harm post-fix. Bounded: Linux headless Godot 4.7.2, CPython subprocess semantics, subreaper host; observation-order not authorship; the r63 documented-accepting boundary is unchanged policy. Work commits `a32920b` + `5265da6`; report-last commit follows.
+
+## Round 65 verdict — 2026-10-14
+
+| axis | Sol verdict | evidence |
+|---|---|---|
+| depth | **improved locally** | forged-REJECTION dual of r63 pinned: reparent-gated descendant's post-death un-allowlisted `ERROR:` flips a clean exit-0/signature-present record to FAIL on classification-identical fields; counterfactual strip = sole cause; hold arm double-axis (`hold_timeout_alone_rejects`); kernel ppid corroborated; 29 discriminations all True. |
+| coverage | **improved locally** | new measured shapes: quiet zero-provenance forged FAIL, stderr-forge parity, withhold dual-marker batch, gated dual-marker timing split (forged errors only post-death / genuine only while-live), stream-blindness of merged vs stderr-only classify_streams asymmetry. |
+| calibration | **unchanged** | observation-path documentation only; classifiers untouched; same bounds. |
+
+Non-author `reports/round-65/r65-verifier.md`: **AGREE 6/6** — 87/87 committed-state replay, 29/29 discriminations, 97 prior rows 0-mismatch on 7-field tuples, own `/proc` corroboration. Sol `r65-adjudicator.md` admits no demonstrated scoped harm. Critic bounds absorbed: capture-before-pipe-EOF is the operative precondition; merged concat is not line-faithful. Bounded: Godot 4.7.2 headless, CPython POSIX subprocess semantics, this host's subreaper/margins; origin not authorship; live-window error forge open. Work commit `414eb8e`; report-last commit follows.
