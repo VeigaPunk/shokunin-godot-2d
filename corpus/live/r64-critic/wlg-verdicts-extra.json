@@ -1,0 +1,3036 @@
+[
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "stale",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.647657,
+    "t_first_byte": 0.015143,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.647657,
+    "alive_at_marker": true,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.015143,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.540122,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.577821,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.577909,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.578533,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.647657,
+        "n": 78,
+        "fd": 1,
+        "alive": true,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.648,
+    "withheld_banner": true,
+    "godot_pid": 1327940,
+    "descendant_pid": 1328210,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1327940",
+      "WLG_CRITIC spawned_pid=1328210",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_stale#0"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "stale",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.644329,
+    "t_first_byte": 0.014343,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.644329,
+    "alive_at_marker": true,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.014343,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.53687,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.574816,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.57489,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.575526,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.644329,
+        "n": 78,
+        "fd": 1,
+        "alive": true,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.644,
+    "withheld_banner": true,
+    "godot_pid": 1328216,
+    "descendant_pid": 1328495,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1328216",
+      "WLG_CRITIC spawned_pid=1328495",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_stale#1"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "stale",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.669347,
+    "t_first_byte": 0.014166,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.669347,
+    "alive_at_marker": true,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.014166,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.561501,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.599137,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.599207,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.599819,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.669347,
+        "n": 78,
+        "fd": 1,
+        "alive": true,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.669,
+    "withheld_banner": true,
+    "godot_pid": 1328519,
+    "descendant_pid": 1328793,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1328519",
+      "WLG_CRITIC spawned_pid=1328793",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_stale#2"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "stale",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.638123,
+    "t_first_byte": 0.014782,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.638123,
+    "alive_at_marker": true,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.014782,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.530721,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.568216,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.568311,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.568948,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.638123,
+        "n": 78,
+        "fd": 1,
+        "alive": true,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.638,
+    "withheld_banner": true,
+    "godot_pid": 1328838,
+    "descendant_pid": 1329132,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1328838",
+      "WLG_CRITIC spawned_pid=1329132",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_stale#3"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "stale",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.614481,
+    "t_first_byte": 0.014147,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.614481,
+    "alive_at_marker": true,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.014147,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.50732,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.545455,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.545565,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.546257,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.614481,
+        "n": 78,
+        "fd": 1,
+        "alive": true,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.615,
+    "withheld_banner": true,
+    "godot_pid": 1329156,
+    "descendant_pid": 1329404,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1329156",
+      "WLG_CRITIC spawned_pid=1329404",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_stale#4"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "stale",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.61323,
+    "t_first_byte": 0.014077,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.61323,
+    "alive_at_marker": true,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.014077,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.505066,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.543317,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.543406,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.544012,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.61323,
+        "n": 78,
+        "fd": 1,
+        "alive": true,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.613,
+    "withheld_banner": true,
+    "godot_pid": 1329449,
+    "descendant_pid": 1329718,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1329449",
+      "WLG_CRITIC spawned_pid=1329718",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_stale#5"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "stale",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.667931,
+    "t_first_byte": 0.014079,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.667931,
+    "alive_at_marker": true,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.014079,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.560188,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.597807,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.597905,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.59854,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.667931,
+        "n": 78,
+        "fd": 1,
+        "alive": true,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.668,
+    "withheld_banner": true,
+    "godot_pid": 1329742,
+    "descendant_pid": 1330043,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1329742",
+      "WLG_CRITIC spawned_pid=1330043",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_stale#6"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "stale",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.655389,
+    "t_first_byte": 0.01401,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.655389,
+    "alive_at_marker": true,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.01401,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.549154,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.586423,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.586495,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.587115,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.655389,
+        "n": 78,
+        "fd": 1,
+        "alive": true,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.655,
+    "withheld_banner": true,
+    "godot_pid": 1330088,
+    "descendant_pid": 1330379,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1330088",
+      "WLG_CRITIC spawned_pid=1330379",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_stale#7"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "stale",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.63701,
+    "t_first_byte": 0.013545,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.63701,
+    "alive_at_marker": true,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.013545,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.528613,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.56756,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.567661,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.568445,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.63701,
+        "n": 78,
+        "fd": 1,
+        "alive": true,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.637,
+    "withheld_banner": true,
+    "godot_pid": 1330405,
+    "descendant_pid": 1330675,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1330405",
+      "WLG_CRITIC spawned_pid=1330675",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_stale#8"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "stale",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.634616,
+    "t_first_byte": 0.01461,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.634616,
+    "alive_at_marker": true,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.01461,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.52677,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.56479,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.564869,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.565627,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.634616,
+        "n": 78,
+        "fd": 1,
+        "alive": true,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.635,
+    "withheld_banner": true,
+    "godot_pid": 1330701,
+    "descendant_pid": 1330887,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1330701",
+      "WLG_CRITIC spawned_pid=1330887",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_stale#9"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "stale",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.663024,
+    "t_first_byte": 0.015362,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.663024,
+    "alive_at_marker": true,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.015362,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.554672,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.591975,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.592057,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.592752,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.663024,
+        "n": 78,
+        "fd": 1,
+        "alive": true,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.663,
+    "withheld_banner": true,
+    "godot_pid": 1330913,
+    "descendant_pid": 1331227,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1330913",
+      "WLG_CRITIC spawned_pid=1331227",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_stale#10"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "stale",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.634565,
+    "t_first_byte": 0.014099,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.634565,
+    "alive_at_marker": true,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.014099,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.52742,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.566882,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.566977,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.567629,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.634565,
+        "n": 78,
+        "fd": 1,
+        "alive": true,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.635,
+    "withheld_banner": true,
+    "godot_pid": 1331251,
+    "descendant_pid": 1331501,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1331251",
+      "WLG_CRITIC spawned_pid=1331501",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_stale#11"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "poll",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.638515,
+    "t_first_byte": 0.01449,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.638515,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.01449,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.530805,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.568707,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.568786,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.56948,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.638515,
+        "n": 78,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.639,
+    "withheld_banner": true,
+    "godot_pid": 1331546,
+    "descendant_pid": 1331816,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1331546",
+      "WLG_CRITIC spawned_pid=1331816",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_poll#0"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "poll",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.613894,
+    "t_first_byte": 0.01412,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.613894,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.01412,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.506293,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.543806,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.543887,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.544481,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.613894,
+        "n": 78,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.614,
+    "withheld_banner": true,
+    "godot_pid": 1331840,
+    "descendant_pid": 1332111,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1331840",
+      "WLG_CRITIC spawned_pid=1332111",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_poll#1"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "poll",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.658402,
+    "t_first_byte": 0.013993,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.658402,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.013993,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.551893,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.589874,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.589941,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.590564,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.658402,
+        "n": 78,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.659,
+    "withheld_banner": true,
+    "godot_pid": 1332156,
+    "descendant_pid": 1332408,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1332156",
+      "WLG_CRITIC spawned_pid=1332408",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_poll#2"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "poll",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.602247,
+    "t_first_byte": 0.014172,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.602247,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.014172,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.494462,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.532249,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.532321,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.533166,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.602247,
+        "n": 78,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.602,
+    "withheld_banner": true,
+    "godot_pid": 1332411,
+    "descendant_pid": 1332636,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1332411",
+      "WLG_CRITIC spawned_pid=1332636",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_poll#3"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "poll",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.646093,
+    "t_first_byte": 0.015706,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.646093,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.015706,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.540046,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.576554,
+        "n": 71,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.577186,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.646093,
+        "n": 78,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.646,
+    "withheld_banner": true,
+    "godot_pid": 1332681,
+    "descendant_pid": 1332929,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1332681",
+      "WLG_CRITIC spawned_pid=1332929",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_poll#4"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "poll",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.625607,
+    "t_first_byte": 0.014391,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.625607,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.014391,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.517899,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.555931,
+        "n": 71,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.556713,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.625607,
+        "n": 78,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.626,
+    "withheld_banner": true,
+    "godot_pid": 1332930,
+    "descendant_pid": 1333238,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1332930",
+      "WLG_CRITIC spawned_pid=1333238",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_poll#5"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "fine",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.625671,
+    "t_first_byte": 0.013746,
+    "t_dead_pidfd": 0.625649,
+    "t_dead_poll": 0.625649,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.013746,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.518505,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.556695,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.556765,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.557374,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.625671,
+        "n": 78,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.626,
+    "withheld_banner": true,
+    "godot_pid": 1333262,
+    "descendant_pid": 1333487,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": -2.2e-05,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1333262",
+      "WLG_CRITIC spawned_pid=1333487",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_fine#0"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "fine",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.651533,
+    "t_first_byte": 0.014513,
+    "t_dead_pidfd": 0.651509,
+    "t_dead_poll": 0.651509,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.014513,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.543014,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.580716,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.580793,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.581415,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.651533,
+        "n": 78,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.652,
+    "withheld_banner": true,
+    "godot_pid": 1333512,
+    "descendant_pid": 1333846,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": -2.4e-05,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1333512",
+      "WLG_CRITIC spawned_pid=1333846",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_fine#1"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "fine",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.619665,
+    "t_first_byte": 0.014755,
+    "t_dead_pidfd": 0.619645,
+    "t_dead_poll": 0.619645,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.014755,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.512262,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.549547,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.549618,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.550239,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.619665,
+        "n": 78,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.62,
+    "withheld_banner": true,
+    "godot_pid": 1333919,
+    "descendant_pid": 1334147,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": -2e-05,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1333919",
+      "WLG_CRITIC spawned_pid=1334147",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_fine#2"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "fine",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.639637,
+    "t_first_byte": 0.014079,
+    "t_dead_pidfd": 0.639614,
+    "t_dead_poll": 0.639614,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.014079,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.531586,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.56889,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.568967,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.56961,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.639637,
+        "n": 78,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.64,
+    "withheld_banner": true,
+    "godot_pid": 1334173,
+    "descendant_pid": 1334462,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": -2.3e-05,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1334173",
+      "WLG_CRITIC spawned_pid=1334462",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_fine#3"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "fine",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.650413,
+    "t_first_byte": 0.015835,
+    "t_dead_pidfd": 0.650413,
+    "t_dead_poll": 0.650389,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.015835,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.542987,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.581283,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.581379,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.582172,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.650413,
+        "n": 78,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.651,
+    "withheld_banner": true,
+    "godot_pid": 1334486,
+    "descendant_pid": 1334737,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": 0.0,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1334486",
+      "WLG_CRITIC spawned_pid=1334737",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_fine#4"
+  },
+  {
+    "script": "wlg_critic_probe.gd",
+    "flags": [
+      "--forge-fastpost"
+    ],
+    "gate": "fine",
+    "delay_s": 0.0,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.649538,
+    "t_first_byte": 0.014449,
+    "t_dead_pidfd": 0.649514,
+    "t_dead_poll": 0.649514,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.014449,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.541821,
+        "n": 1,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.580308,
+        "n": 42,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.580377,
+        "n": 29,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.581028,
+        "n": 31,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.649538,
+        "n": 78,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.65,
+    "withheld_banner": true,
+    "godot_pid": 1334782,
+    "descendant_pid": 1335054,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": -2.4e-05,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "WLG_CRITIC_FORGE child_signature=withheld",
+      "WLG_CRITIC godot_pid=1334782",
+      "WLG_CRITIC spawned_pid=1335054",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "WLG_CRITIC_FORGE fastpost_ppid=1573"
+    ],
+    "case": "fastpost_fine#5"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.07,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.591173,
+    "t_first_byte": 0.145321,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.666388,
+    "alive_at_marker": true,
+    "marker_proc_state": "S",
+    "chunks": [
+      {
+        "t": 0.145321,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.591173,
+        "n": 77,
+        "fd": 1,
+        "alive": true,
+        "state": "S"
+      }
+    ],
+    "elapsed_seconds": 0.737,
+    "withheld_banner": false,
+    "godot_pid": 1335056,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1335056"
+    ],
+    "case": "genuine_delay70ms#0"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.07,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.591282,
+    "t_first_byte": 0.145371,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.666499,
+    "alive_at_marker": true,
+    "marker_proc_state": "S",
+    "chunks": [
+      {
+        "t": 0.145371,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.591282,
+        "n": 77,
+        "fd": 1,
+        "alive": true,
+        "state": "S"
+      }
+    ],
+    "elapsed_seconds": 0.737,
+    "withheld_banner": false,
+    "godot_pid": 1335396,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1335396"
+    ],
+    "case": "genuine_delay70ms#1"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.07,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.666416,
+    "t_first_byte": 0.145399,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.741658,
+    "alive_at_marker": true,
+    "marker_proc_state": "R",
+    "chunks": [
+      {
+        "t": 0.145399,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.666416,
+        "n": 77,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      }
+    ],
+    "elapsed_seconds": 0.812,
+    "withheld_banner": false,
+    "godot_pid": 1335727,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1335727"
+    ],
+    "case": "genuine_delay70ms#2"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.07,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.666354,
+    "t_first_byte": 0.145341,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.741616,
+    "alive_at_marker": true,
+    "marker_proc_state": "R",
+    "chunks": [
+      {
+        "t": 0.145341,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.666354,
+        "n": 77,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      }
+    ],
+    "elapsed_seconds": 0.812,
+    "withheld_banner": false,
+    "godot_pid": 1336241,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1336241"
+    ],
+    "case": "genuine_delay70ms#3"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.07,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.666363,
+    "t_first_byte": 0.145347,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.666363,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.145347,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      },
+      {
+        "t": 0.666363,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.737,
+    "withheld_banner": false,
+    "godot_pid": 1336926,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1336926"
+    ],
+    "case": "genuine_delay70ms#4"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.07,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.666412,
+    "t_first_byte": 0.145377,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.666412,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.145377,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.666412,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.737,
+    "withheld_banner": false,
+    "godot_pid": 1337247,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1337247"
+    ],
+    "case": "genuine_delay70ms#5"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.08,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.671256,
+    "t_first_byte": 0.165369,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.75377,
+    "alive_at_marker": true,
+    "marker_proc_state": "R",
+    "chunks": [
+      {
+        "t": 0.165369,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.671256,
+        "n": 77,
+        "fd": 1,
+        "alive": true,
+        "state": "R"
+      }
+    ],
+    "elapsed_seconds": 0.754,
+    "withheld_banner": false,
+    "godot_pid": 1337544,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": true,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1337544"
+    ],
+    "case": "genuine_delay80ms#0"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.08,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.671197,
+    "t_first_byte": 0.165333,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.671197,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.165333,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.671197,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.751,
+    "withheld_banner": false,
+    "godot_pid": 1337938,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1337938"
+    ],
+    "case": "genuine_delay80ms#1"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.08,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.671213,
+    "t_first_byte": 0.165359,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.671213,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.165359,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.671213,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.751,
+    "withheld_banner": false,
+    "godot_pid": 1338262,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1338262"
+    ],
+    "case": "genuine_delay80ms#2"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.08,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.671205,
+    "t_first_byte": 0.165325,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.671205,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.165325,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.671205,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.751,
+    "withheld_banner": false,
+    "godot_pid": 1338580,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1338580"
+    ],
+    "case": "genuine_delay80ms#3"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.08,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.756385,
+    "t_first_byte": 0.16539,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.756385,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.16539,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.756385,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.837,
+    "withheld_banner": false,
+    "godot_pid": 1338909,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1338909"
+    ],
+    "case": "genuine_delay80ms#4"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.08,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.671254,
+    "t_first_byte": 0.165387,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.671254,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.165387,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.671254,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.751,
+    "withheld_banner": false,
+    "godot_pid": 1339315,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1339315"
+    ],
+    "case": "genuine_delay80ms#5"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.1,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.726124,
+    "t_first_byte": 0.205355,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.726124,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.205355,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.726124,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.826,
+    "withheld_banner": false,
+    "godot_pid": 1339661,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1339661"
+    ],
+    "case": "genuine_delay100ms#0"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.1,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.726055,
+    "t_first_byte": 0.205353,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.726055,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.205353,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.726055,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.826,
+    "withheld_banner": false,
+    "godot_pid": 1340195,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1340195"
+    ],
+    "case": "genuine_delay100ms#1"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.1,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.726113,
+    "t_first_byte": 0.205405,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.726113,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.205405,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.726113,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.826,
+    "withheld_banner": false,
+    "godot_pid": 1340537,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1340537"
+    ],
+    "case": "genuine_delay100ms#2"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.1,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.726121,
+    "t_first_byte": 0.205374,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.726121,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.205374,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.726121,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.826,
+    "withheld_banner": false,
+    "godot_pid": 1340943,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1340943"
+    ],
+    "case": "genuine_delay100ms#3"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.1,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.620946,
+    "t_first_byte": 0.205343,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.620946,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.205343,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.620946,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.721,
+    "withheld_banner": false,
+    "godot_pid": 1341324,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1341324"
+    ],
+    "case": "genuine_delay100ms#4"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.1,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.726058,
+    "t_first_byte": 0.205354,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.726058,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.205354,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.726058,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.826,
+    "withheld_banner": false,
+    "godot_pid": 1341622,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1341622"
+    ],
+    "case": "genuine_delay100ms#5"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.15,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.765812,
+    "t_first_byte": 0.305376,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.765812,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.305376,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.765812,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.916,
+    "withheld_banner": false,
+    "godot_pid": 1341964,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1341964"
+    ],
+    "case": "genuine_delay150ms#0"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.15,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.765849,
+    "t_first_byte": 0.305379,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.615736,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.305379,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.765849,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.916,
+    "withheld_banner": false,
+    "godot_pid": 1342396,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1342396"
+    ],
+    "case": "genuine_delay150ms#1"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.15,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.765836,
+    "t_first_byte": 0.305396,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.765836,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.305396,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.765836,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.916,
+    "withheld_banner": false,
+    "godot_pid": 1342806,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1342806"
+    ],
+    "case": "genuine_delay150ms#2"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.15,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.76575,
+    "t_first_byte": 0.305352,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.76575,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.305352,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.76575,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.916,
+    "withheld_banner": false,
+    "godot_pid": 1343214,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1343214"
+    ],
+    "case": "genuine_delay150ms#3"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.15,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.765818,
+    "t_first_byte": 0.305372,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.765818,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.305372,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.765818,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.916,
+    "withheld_banner": false,
+    "godot_pid": 1343606,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1343606"
+    ],
+    "case": "genuine_delay150ms#4"
+  },
+  {
+    "script": "descendant_pipe_probe.gd",
+    "flags": [],
+    "gate": "delayed",
+    "delay_s": 0.15,
+    "bound_seconds": 3.0,
+    "timed_out": false,
+    "actual_exit": 0,
+    "error": null,
+    "marker_observed": true,
+    "t_marker": 0.765767,
+    "t_first_byte": 0.305347,
+    "t_dead_pidfd": null,
+    "t_dead_poll": 0.765767,
+    "alive_at_marker": false,
+    "marker_proc_state": null,
+    "chunks": [
+      {
+        "t": 0.305347,
+        "n": 100,
+        "fd": 1,
+        "alive": true,
+        "state": "D"
+      },
+      {
+        "t": 0.765767,
+        "n": 77,
+        "fd": 1,
+        "alive": false,
+        "state": null
+      }
+    ],
+    "elapsed_seconds": 0.916,
+    "withheld_banner": false,
+    "godot_pid": 1343995,
+    "descendant_pid": null,
+    "write_ppid": null,
+    "margin_dead_minus_marker_s": null,
+    "gated_signature_accepted": false,
+    "text_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "DESCENDANT_PIPE_PROBE: expected signature",
+      "DESCENDANT_PIPE godot_pid=1343995"
+    ],
+    "case": "genuine_delay150ms#5"
+  }
+]
