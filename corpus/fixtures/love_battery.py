@@ -19,6 +19,26 @@ r70 measured lattice (operator first-contact, 3 stable reps):
 Case model: each CASES row asserts keys on an emitted
 `LOVE-ARM <arm> | k=v` line; values pin either an exact byte or a numeric
 bound tuple (lo, hi) -- jittered quantities carry measured bounds only.
+
+r74 lattice (love.physics callback-interior writes, IW_CELLS): one
+`love love_phys_probe` process per cell (IW_CELL env). Writes inside
+Box2D callbacks (beginContact/preSolve/postSolve) are gated per class --
+the measured partition is {refused | deferred | fatal | applied}:
+  refused : structural mutation (setPosition/newBody/setActive) -> catchable
+            "Box2D assertion failed: ...IsLocked() == false" Lua error
+            (this build surfaces b2Assert via loveAssert as a Lua error,
+            not a silent no-op and not a process abort).
+  deferred: body:destroy() -> ok=true, body alive for the rest of the
+            callback+step; drained after world:update with a synthesized
+            EndContact at locked=false.
+  fatal   : the same structural write NOT pcall-contained -> error escapes
+            world:update -> LOVE error handler -> rc=1, "Error:" on stdout,
+            no CELL_DONE (partial capture, measured not silent).
+  applied : non-structural writes (setLinearVelocity, contact:setEnabled
+            in preSolve) are legal inside the lock.
+Exterior (ext_*) controls apply immediately. Interior cells are spawned
+LAST and the uncontained (*_unp) cells last of all -- each cell is its
+own process so a fatal cell is a measured FAIL-class for that cell only.
 """
 
 import argparse
@@ -32,6 +52,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 PROBE_DIR = HERE / "love_probe"
+IW_PROBE_DIR = HERE / "love_phys_probe"
 TIMEOUT_S = 30
 
 # (name, arm, key, pinned)  pinned: exact value or (lo, hi) float bound
@@ -83,6 +104,248 @@ def splice_verdict(stdout):
                 return "clean"
             return "ambiguous:" + tail[:40]
     return "missing"
+
+
+# ---- r74 interior-write lattice ------------------------------------------
+#
+# (case, cell, expected_class, {flat_key: pinned})
+# expected_class in {captured, applied, refused, deferred, fatal} -- the
+# falsifiable partition the arm pins. flat keys are `<tag>.<key>` from the
+# probe's `IW | cell=<cell> | <tag> k=v ...` lines, plus synthesized keys:
+#   rc / done / err_on / assert_txt / evpin_<cb>_lck / evpin_<cb>_step
+# Measured on this host (18 cells x>=2 stable reps; the r74-scout scratch
+# receipts are byte-identical twins of this probe's output).
+IW_CELLS = [
+    # availability lattice: reads inside callbacks are legal; locked=true
+    ("iw_avail_lattice", "baseline", "captured", {
+        "built.bodies": "4", "built.locked": "false",
+        "viability.love": "11.5.0",
+        "evpin_bc_lck": "true", "evpin_pre_lck": "true",
+        "evpin_post_lck": "true", "evpin_ec_lck": "true",
+        "evpin_ec_step": "74",
+        "final.steps": "200", "final.count": "4",
+        "final.bc": "5", "final.ec": "4",
+        "final.pre": "36", "final.post": "36",
+        "final.fired": "false", "done": "true", "rc": "0"}),
+    # exterior controls -- the same mutations outside any callback apply
+    ("iw_ext_setpos", "ext_setpos", "applied", {
+        "ext_setpos.ok": "true", "ext_setpos.err": "nil",
+        "ext_before.pos": "400,60",
+        "ext_setpos.pos_after": "1234.5,678.9000244140625",
+        "done": "true", "rc": "0"}),
+    ("iw_ext_newbody", "ext_newbody", "applied", {
+        "ext_newbody.ok": "true",
+        "ext_newbody.count_before": "4", "ext_newbody.count_after": "5",
+        "ext_newbody.nb_pos": "700,100",
+        "done": "true", "rc": "0"}),
+    ("iw_ext_destroy", "ext_destroy", "applied", {
+        # immediate: body is dead the instant the call returns (contrast
+        # with the deferred interior class below)
+        "ext_destroy.ok": "true",
+        "ext_destroy.count_before": "4", "ext_destroy.count_after": "3",
+        "ext_destroy.b1pos_after": "ERR:Attempt to use destroyed body.",
+        "done": "true", "rc": "0"}),
+    # interior structural writes -> refused (catchable Lua assert)
+    ("iw_bc_setpos", "bc_setpos", "refused", {
+        "fire.step": "73", "fire.locked": "true",
+        "cb_setpos.ok": "false",
+        "cb_setpos.err": "Box2D assertion failed: m_world->IsLocked() == false",
+        "cb_setpos.pos_after": "400,520.1500244140625",
+        "after_update.b1pos": "400,511.13113403320312",
+        "evpin_ec_lck": "true", "done": "true", "rc": "0"}),
+    ("iw_pre_setpos", "pre_setpos", "refused", {
+        "fire.step": "73", "fire.cb": "pre",
+        "cb_setpos.ok": "false",
+        "cb_setpos.err": "Box2D assertion failed: m_world->IsLocked() == false",
+        "cb_setpos.pos_after": "400,520.1500244140625",
+        "done": "true", "rc": "0"}),
+    ("iw_post_setpos", "post_setpos", "refused", {
+        # postSolve channel sees the POST-step pose (frontier channel split)
+        "fire.step": "73", "fire.cb": "post",
+        "fire.pos": "400,511.13113403320312",
+        "cb_setpos.ok": "false",
+        "cb_setpos.err": "Box2D assertion failed: m_world->IsLocked() == false",
+        "cb_setpos.pos_after": "400,511.13113403320312",
+        "done": "true", "rc": "0"}),
+    ("iw_bc_newbody", "bc_newbody", "refused", {
+        # world-level fn: assert text drops the m_world-> prefix
+        "fire.step": "73", "fire.locked": "true",
+        "cb_newbody.ok": "false",
+        "cb_newbody.err": "Box2D assertion failed: IsLocked() == false",
+        "cb_newbody.count_before": "4", "cb_newbody.count_after": "4",
+        "done": "true", "rc": "0"}),
+    ("iw_pre_newbody", "pre_newbody", "refused", {
+        "fire.cb": "pre",
+        "cb_newbody.ok": "false",
+        "cb_newbody.err": "Box2D assertion failed: IsLocked() == false",
+        "cb_newbody.count_after": "4", "done": "true", "rc": "0"}),
+    ("iw_post_newbody", "post_newbody", "refused", {
+        "fire.cb": "post",
+        "cb_newbody.ok": "false",
+        "cb_newbody.err": "Box2D assertion failed: IsLocked() == false",
+        "cb_newbody.count_after": "4", "done": "true", "rc": "0"}),
+    # interior destroy -> deferred (drained after world:update, ec at
+    # locked=false inside the update epilogue)
+    ("iw_bc_destroy", "bc_destroy", "deferred", {
+        "fire.step": "73", "fire.locked": "true",
+        "cb_destroy.ok": "true", "cb_destroy.err": "nil",
+        "cb_destroy.alive_in_cb": "400,520.1500244140625",
+        "cb_destroy.count_after": "4",
+        "after_update.count": "3",
+        "after_update.b1pos": "ERR:Attempt to use destroyed body.",
+        "evpin_ec_lck": "false", "evpin_ec_step": "73",
+        "done": "true", "rc": "0"}),
+    ("iw_pre_destroy", "pre_destroy", "deferred", {
+        "fire.cb": "pre",
+        "cb_destroy.ok": "true",
+        "cb_destroy.alive_in_cb": "400,520.1500244140625",
+        "cb_destroy.count_after": "4",
+        "after_update.count": "3",
+        "evpin_ec_lck": "false", "evpin_ec_step": "73",
+        "done": "true", "rc": "0"}),
+    ("iw_post_destroy", "post_destroy", "deferred", {
+        "fire.cb": "post",
+        "cb_destroy.ok": "true",
+        "cb_destroy.alive_in_cb": "400,511.13113403320312",
+        "cb_destroy.count_after": "4",
+        "after_update.count": "3",
+        "evpin_ec_lck": "false", "evpin_ec_step": "73",
+        "done": "true", "rc": "0"}),
+    # edges: active-body write refused; contact mask + velocity accepted
+    ("iw_bc_setactive", "bc_setactive", "refused", {
+        "fire.step": "73",
+        "cb_setactive.ok": "false",
+        "cb_setactive.err": "Box2D assertion failed: m_world->IsLocked() == false",
+        "cb_setactive.isActive_after": "true",
+        "cb_setactive.count_after": "4", "done": "true", "rc": "0"}),
+    ("iw_pre_contactmask", "pre_contactmask", "applied", {
+        # legal single-step mask: no impulse lands that update
+        "fire.cb": "pre", "fire.step": "73",
+        "cb_contactmask.ok": "true",
+        "cb_contactmask.isEnabled_after": "false",
+        "cb_contactmask.isTouching": "true",
+        "after_update.b1pos": "400,531.054443359375",
+        "after_update.b1vel": "0,763.8724365234375",
+        "done": "true", "rc": "0"}),
+    ("iw_bc_setvel", "bc_setvel", "applied", {
+        # non-structural write has no locked assert
+        "fire.step": "73", "fire.locked": "true",
+        "cb_setvel.ok": "true", "cb_setvel.err": "nil",
+        "cb_setvel.vel_after": "55,-7",
+        "done": "true", "rc": "0"}),
+    # uncontained escapes -> fatal, spawned LAST
+    ("iw_bc_setpos_unp", "bc_setpos_unp", "fatal", {
+        "fire.step": "73", "fire.locked": "true",
+        "rc": "1", "done": "false",
+        "err_on": "stdout", "assert_txt": "m_world_islocked"}),
+    ("iw_bc_newbody_unp", "bc_newbody_unp", "fatal", {
+        "fire.step": "73",
+        "rc": "1", "done": "false",
+        "err_on": "stdout", "assert_txt": "islocked"}),
+]
+
+IW_LINE = re.compile(r"^IW \| cell=(\S+) \| (.*)$")
+IW_KV = re.compile(r"(\w+)=")
+
+
+def parse_iw(stdout):
+    """Parse `IW | cell=<c> | <tag> k=v ...` lines.
+
+    Values may contain spaces (assert text, ERR: strings): a value runs
+    until the next `word=` boundary or end of line. Returns
+    (flat, evpins): flat is `<tag>.<key>` -> last-wins merge across lines;
+    evpins is the ordered list of evpin kv dicts (one per cb).
+    """
+    flat, evpins = {}, []
+    for line in stdout.splitlines():
+        m = IW_LINE.match(line.strip())
+        if not m:
+            continue
+        body = m.group(2).strip()
+        if body == "CELL_DONE":
+            flat["done"] = "true"
+            continue
+        parts = [(mm.start(), mm.group(1)) for mm in IW_KV.finditer(body)]
+        if not parts:
+            continue
+        tag = body[:parts[0][0]].strip()
+        kv = {}
+        for i, (at, k) in enumerate(parts):
+            end = parts[i + 1][0] if i + 1 < len(parts) else len(body)
+            kv[k] = body[at + len(k) + 1:end].strip()
+        if tag == "evpin":
+            evpins.append(kv)
+        for k, v in kv.items():
+            flat[f"{tag}.{k}"] = v
+    for e in evpins:
+        cb = e.get("cb", "?")
+        flat[f"evpin_{cb}_lck"] = e.get("locked", "?")
+        flat[f"evpin_{cb}_step"] = e.get("step", "?")
+    flat.setdefault("done", "false")
+    return flat, evpins
+
+
+def iw_classify(cell, flat, evpins, rc, timed_out, stdout):
+    """Map one cell's capture onto {captured|applied|refused|deferred|
+    fatal|timeout|died|nolaunch|anomaly}. Partial-capture detection is
+    built in: fire-present without CELL_DONE is never a pass shape."""
+    if timed_out:
+        return "timeout", f"exceeded {TIMEOUT_S}s"
+    done = flat.get("done") == "true"
+    has_fire = "fire.step" in flat
+    if done and rc == 0:
+        if cell == "baseline":
+            return "captured", "availability lattice"
+        mut = next((t for t in ("cb_setpos", "cb_newbody", "cb_destroy",
+                              "cb_setactive", "cb_contactmask", "cb_setvel",
+                              "ext_setpos", "ext_newbody", "ext_destroy")
+                    if f"{t}.ok" in flat), None)
+        if mut is None:
+            return "anomaly", "CELL_DONE but no mutation line"
+        if flat[f"{mut}.ok"] == "false":
+            if "assertion" in flat.get(f"{mut}.err", ""):
+                return "refused", flat[f"{mut}.err"]
+            return "anomaly", "ok=false without Box2D assertion"
+        if flat[f"{mut}.ok"] == "true":
+            if mut == "cb_destroy":
+                try:
+                    drop = int(flat.get("after_update.count", "-1")) == \
+                        int(flat.get("built.bodies", "0")) - 1
+                except ValueError:
+                    drop = False
+                ec_lck = flat.get("evpin_ec_lck")
+                dead = flat.get("after_update.b1pos", "").startswith("ERR:")
+                if drop and dead and ec_lck == "false":
+                    return "deferred", "drain ec at locked=false"
+                return "anomaly", "destroy ok without deferred witness"
+            return "applied", mut
+        return "anomaly", f"unhandled ok={flat[f'{mut}.ok']!r}"
+    if has_fire and not done and rc not in (0, None):
+        if "Box2D assertion" in stdout:
+            return "fatal", f"rc={rc}, assert text on stdout"
+        return "died", f"rc={rc} without assert text"
+    if not has_fire and not done:
+        return "nolaunch", f"rc={rc} and no fire line"
+    return "anomaly", f"rc={rc} done={done} fire={has_fire}"
+
+
+def iw_flat_extras(flat, rc, stdout, stderr):
+    flat["rc"] = str(rc)
+    if "m_world->IsLocked() == false" in stdout:
+        flat["assert_txt"] = "m_world_islocked"
+    elif "IsLocked() == false" in stdout:
+        flat["assert_txt"] = "islocked"
+    elif "Box2D assertion" in stdout:
+        flat["assert_txt"] = "other"
+    else:
+        flat["assert_txt"] = "none"
+    if "Box2D assertion" in stdout:
+        flat["err_on"] = "stdout"
+    elif "Box2D assertion" in stderr:
+        flat["err_on"] = "stderr"
+    else:
+        flat["err_on"] = "none"
+    return flat
 
 
 def run_process(command, timeout_seconds, env_extra=None):
@@ -181,6 +444,35 @@ def main():
                         "verdict": "PASS" if got == expected else "FAIL",
                         "reasons": ([] if got == expected else
                                     [f"expected {expected}"])})
+
+    # r74 interior-write lattice: one love process per cell, spawned last
+    # (uncontained *_unp cells are last in the table -- a fatal cell kills
+    # only its own launch and its truncated receipt is the measurement).
+    for name, cell, expected, pins in IW_CELLS:
+        c_stdout, c_stderr, c_code, c_err = run_process(
+            [args.love, str(IW_PROBE_DIR)], TIMEOUT_S,
+            {"IW_CELL": cell})
+        (run_dir / f"iw-{cell}.stdout.txt").write_text(c_stdout)
+        (run_dir / f"iw-{cell}.stderr.txt").write_text(c_stderr)
+        flat, evpins = parse_iw(c_stdout)
+        iw_flat_extras(flat, c_code, c_stdout, c_stderr)
+        cls, detail = iw_classify(
+            cell, flat, evpins, c_code,
+            c_err is not None and c_err.startswith("TIMEOUT"), c_stdout)
+        reasons = []
+        if c_err is not None:
+            reasons.append(c_err)
+        if cls != expected:
+            reasons.append(f"class {cls} != {expected} ({detail})")
+        for k, pinned in pins.items():
+            reason = check(pinned, flat.get(k))
+            if reason is not None:
+                reasons.append(f"{k}: {reason}")
+        results.append({"case": name, "arm": "iw",
+                        "key": f"cell={cell}",
+                        "pinned": expected, "observed": cls,
+                        "verdict": "PASS" if not reasons else "FAIL",
+                        "reasons": reasons})
 
     passed = sum(1 for r in results if r["verdict"] == "PASS")
     failed = len(results) - passed
