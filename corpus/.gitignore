@@ -4,3 +4,9 @@ live/*/tree/
 live/*/frozen/
 live/*/*tree*/
 live/*/edge-verdicts.json
+# xsentinel w8-F4: non-tree snapshot side-channel names — same class as the
+# tree/frozen rules above (runs-extracted/ specimen existed at r66).
+live/*/head/
+live/*/snapshot/
+live/*/base/
+live/*/*extract*/
