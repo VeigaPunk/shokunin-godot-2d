@@ -797,5 +797,7 @@
 - Own replay: 15/15 PASS, 3 spot reps consistent within pinned bounds.
 - Remaining seats pending free-pool reset; falsification flags land
   post-reset if warranted.
-- Verdict: provisional ADMIT (honest falsification recorded); bounded to
-  LOVE 11.5, this host.
+- Verdict: ADMIT-with-correction — engine-layer refutation stands and the
+  spawn-layer seam (os.execute fd1 inheritance) confirmed cell-for-cell
+  (critic F1, folded 16d003c, 19/19); verifier AGREE 4/4. Bounded LOVE 11.5
+  headless, this host. (Sol final, wave-10)
