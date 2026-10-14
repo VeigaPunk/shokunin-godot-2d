@@ -1,5 +1,5 @@
-R66 child_pid=2277794
-DESCENDANT_PIPE spawned_pid=2277795
+R66 child_pid=2331279
+DESCENDANT_PIPE spawned_pid=2331280
 R66_SURFACE_PROBE: expected signature
 ERROR: chain incomplete collections=9 scene=SceneB:<Node#9>
 R66 write_ppid=1573

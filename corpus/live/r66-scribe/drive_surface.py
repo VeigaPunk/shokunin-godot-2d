@@ -177,6 +177,34 @@ DESC_SCRIPTS = {
     "R66S_midline":
         'sleep 0.3\necho "ERROR: R66 midline forged splice"\n'
         'echo "R66 write_ppid=$PPID"\n',
+    # CE-1a: allowlist-absorbed line carrying a blob-clause token in its
+    # tail — the scan absorbs it; the blob clause vetoes anyway.
+    "R66S_ce1a_parse_tail": GATE +
+        f'echo "{ALLOW_COMMA} tail embeds Parse Error: injected"\n'
+        'echo "R66 write_ppid=$pp"\n',
+    # CE-2 residual-fragment backstops: splits that leave an ERROR:-bearing
+    # fragment still reject.
+    "R66S_ce2_scr_ipt": GATE +
+        "printf 'SCR\\nIPT ERROR: R66 residual fragment\\n'\n"
+        'echo "R66 write_ppid=$pp"\n',
+    "R66S_ce2_script_sp": GATE +
+        "printf 'SCRIPT \\nERROR: R66 residual fragment\\n'\n"
+        'echo "R66 write_ppid=$pp"\n',
+    "R66S_ce2_parse_split": GATE +
+        "printf 'Parse Err\\nor: R66 parse token split\\n'\n"
+        'echo "R66 write_ppid=$pp"\n',
+    "R66S_ce2_error_headsplit": GATE +
+        "printf 'ERROR: R66 head line\\nrest of it\\n'\n"
+        'echo "R66 write_ppid=$pp"\n',
+    # attack-4 composite: ONE descendant evades a real emission (ERR\nOR:)
+    # AND fabricates an allowlist-shaped phantom across the concat seam —
+    # record twice-forged, verdict PASS under the allowlist.
+    "R66S_double_forge": GATE +
+        "printf 'ERR\\nOR: R66 real escaped error\\n'\n"
+        "printf 'ERROR'\n"
+        "printf ': SAVE EXPECTED NEGATIVE: malformed JSON rejected "
+        "signature=JSON_PARSE_ERROR\\n' >&2\n"
+        'echo "R66 write_ppid=$pp" >&2\n',
 }
 desc_sha = {}
 for name, body in DESC_SCRIPTS.items():
@@ -447,6 +475,28 @@ ARMS = {
         f'echo "{SIG}"; printf "\\377\\376\\n"')),
     "syn_decode_postdeath": (naive_run, sh_child(
         f'echo "{SIG}"', "R66S_decode")),
+    # ---- critic-bound reproductions on real pipes ----
+    # CE-1a: line-scan-absorbed line carrying a Parse Error: blob token.
+    "syn_ce1a_parse_tail": (naive_run, sh_child(
+        f'echo "{SIG}"', "R66S_ce1a_parse_tail")),
+    # CE-1b: Parse Error: fabricated at the seam — zero ERROR: lines yet
+    # the record rejects (blob channel independent of the line scan).
+    "syn_ce1b_parse_seam": (split_run, ["/usr/bin/sh", "-c",
+        'echo R66 child_pid=$$; '
+        f'printf "{SIG}\\nends in Parse Err"; '
+        'printf "or: R66 spliced parse clause\\n" >&2; exit 0']),
+    # CE-2 residual-fragment matrix cells.
+    "syn_ce2_scr_ipt": (naive_run, sh_child(
+        f'echo "{SIG}"', "R66S_ce2_scr_ipt")),
+    "syn_ce2_script_sp": (naive_run, sh_child(
+        f'echo "{SIG}"', "R66S_ce2_script_sp")),
+    "syn_ce2_parse_split": (naive_run, sh_child(
+        f'echo "{SIG}"', "R66S_ce2_parse_split")),
+    "syn_ce2_error_headsplit": (naive_run, sh_child(
+        f'echo "{SIG}"', "R66S_ce2_error_headsplit")),
+    # attack-4 composite: evasion + allowlisted fabrication in one record.
+    "syn_double_forge": (split_run, sh_child(
+        f'echo "{SIG}"', "R66S_double_forge")),
     # ---- real Godot children: author's worktree fixture arms ----
     "g_genuine": (naive_run, godot_cmd()),
     "g_errforge_release": (naive_run, godot_cmd("--spawn-errforge-release")),
@@ -467,6 +517,8 @@ ARM_ALLOWLISTS = {
     "syn_allowforge_comma2_tail": ((), (ALLOW_COMMA2,), (FOREIGN,)),
     "syn_allowforge_structured": ((), (ALLOW_CHAIN,), (FOREIGN,)),
     "syn_allowforge_structured_missing": ((), (ALLOW_CHAIN,), (FOREIGN,)),
+    "syn_ce1a_parse_tail": ((), (ALLOW_COMMA,), (FOREIGN,)),
+    "syn_double_forge": ((), (ALLOW_EXACT,), (FOREIGN,)),
     "g_allowforge": ((), (ALLOW_EXACT,), (FOREIGN,)),
 }
 ARM_SIG = {a: GMARK for a in ARMS if a.startswith("g_")}

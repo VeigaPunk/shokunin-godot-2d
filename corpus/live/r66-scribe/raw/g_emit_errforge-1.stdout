@@ -2,7 +2,7 @@ Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - http
 
 DESCENDANT_PIPE_PROBE: expected signature
 DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit
-DESCENDANT_PIPE godot_pid=2278177
+DESCENDANT_PIPE godot_pid=2334508
 ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic
    at: push_error (core/variant/variant_utility.cpp:1023)
    GDScript backtrace (most recent call first):

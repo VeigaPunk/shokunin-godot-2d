@@ -32,3 +32,13 @@ Non-author `reports/round-64/r64-verifier.md`: claims 2/3/4a/4b AGREE; claims 1+
 | calibration | **unchanged** | observation-path documentation only; classifiers untouched; same bounds. |
 
 Non-author `reports/round-65/r65-verifier.md`: **AGREE 6/6** — 87/87 committed-state replay, 29/29 discriminations, 97 prior rows 0-mismatch on 7-field tuples, own `/proc` corroboration. Sol `r65-adjudicator.md` admits no demonstrated scoped harm. Critic bounds absorbed: capture-before-pipe-EOF is the operative precondition; merged concat is not line-faithful. Bounded: Godot 4.7.2 headless, CPython POSIX subprocess semantics, this host's subreaper/margins; origin not authorship; live-window error forge open. Work commit `414eb8e`; report-last commit follows.
+
+## Round 66 verdict — 2026-10-14
+
+| axis | Sol verdict | evidence |
+|---|---|---|
+| coverage | **improved locally** | Rejection-clause surface mapped at receipt level: clause inventory (line-scan + 2 allowlist-immune blob conjuncts), allowlist preemptor bound (F/T/F × 3 entry shapes), evasion boundary set (all splitlines boundaries + `\x1f`), seam-fabrication geometry, dead-entry census (0/40 in-run; 6 static dead surfaces with file:line). |
+| depth | **improved locally** | Forgery works in three directions: evasion, fabrication (both clauses incl. signature dual — forged PASS no process emitted), denial-of-verdict (`\xff`→`UnicodeDecodeError`); composite single-writer split+phantom; `classify_process`/`classify_streams` divergence documented. |
+| calibration | **unchanged** | additive meta probe + fixture arms; verdict logic untouched except warranted `reparent_gate` dedup (byte-identical argv proven). |
+
+Sol `r66-adjudicator.md`: seamforge reproduced directly (fabricated `ERROR:` line from split-stream bytes, exit-0 + genuine signature); independent full-battery replay 88/88 PASS incl. `error-clause surface meta`. Non-author verifier pending at write (rate-limit respawn in flight). Bounded: Godot 4.7.2 headless this host; census "reachable" bounded to shipped fixtures; DoV is decode-bound (`text=True`). Work commit `cb84d0a`; report-last commit follows.

@@ -1,5 +1,5 @@
-R66 child_pid=2277854
-DESCENDANT_PIPE spawned_pid=2277855
+R66 child_pid=2331410
+DESCENDANT_PIPE spawned_pid=2331416
 R66_SURFACE_PROBE: expected signature
 SFD_ERROR: R66 same-fd seam fabricated
 R66 write_ppid=1573

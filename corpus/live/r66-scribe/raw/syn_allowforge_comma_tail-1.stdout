@@ -1,5 +1,5 @@
-R66 child_pid=2277766
-DESCENDANT_PIPE spawned_pid=2277767
+R66 child_pid=2331230
+DESCENDANT_PIPE spawned_pid=2331231
 R66_SURFACE_PROBE: expected signature
 ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND,forged_tail path=/tmp/x
 R66 write_ppid=1573
