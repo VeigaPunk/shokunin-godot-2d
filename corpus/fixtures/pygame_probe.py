@@ -53,11 +53,38 @@ Arms:
                  REORDER-HEAD/CHILD/TAIL markers ride this wire; under the
                  battery's pipe capture the child marker precedes HEAD --
                  the hazard a streaming parser of ARM lines would see.
+  infix          r73 depth cell on the probe's own fd1: a pre-buffered
+                 INFIX-HEAD + 140x1000B chunks force one fill-flush
+                 mid-stream; the descendant's INFIX-INJ lands strictly
+                 between that flush and the tail burst -- interior
+                 offset, owner bytes on both sides (the r72-boundary
+                 paced2 shape, pinned positionally, not by pacing).
+  fd2mrg         r73 merge cell: fd2 is dup2'd onto the fd1 capture, then
+                 a descendant writes >&2 -- its bytes reach the wire
+                 immediately, outranking the probe's own withheld fd1
+                 bytes (r72-boundary fd2mrg: a second write path beats
+                 the userspace buffer; fd1-inheritance is one instance).
+  node_census    r73 NEW-RUNTIME contact: `node -e` as the fd1-OWNER --
+                 HEAD -> execSync printf descendant -> TAIL.  Sweep:
+                   node_small  stdout.write  -> splice family (libuv
+                               try-write is synchronous for small pipes)
+                   node_big    one 200000B write -> infix (partial
+                               try-write + event-loop remainder = third
+                               withholding layer, blocked by execSync)
+                   node_sync   fs.writeSync  -> write-through control
+                 Node absent -> bounded blocked verdict, never fabricated.
+  detach         r73 harness-integrity cell: a detached descendant
+                 (start_new_session + `timeout -s KILL` self-bound)
+                 holds the capture pipe open past process exit -- the
+                 battery's EOF arrives late and DETACH-LATE lands after
+                 PYGAME_PROBE_DONE.  A stuck detach hits the kill bound
+                 -> marker missing -> measured FAIL, never a hang.
 """
 
 import io
 import os
 import select
+import shutil
 import statistics
 import subprocess
 import sys
@@ -226,6 +253,73 @@ def reorder_arm(emit_name, child_argv, env=None):
          wire_bytes=len(data), ret=proc.returncode)
 
 
+# node_census child programs (r73): `node -e` is the fd1-OWNER -- it
+# writes HEAD, spawns a printf descendant via execSync (stdio inherit ->
+# the descendant writes straight onto the wire), writes TAIL.  Same
+# HEAD/INJECTED/TAIL marker convention as the reorder cells.
+NODE_EXE = shutil.which("node")
+TIMEOUT_EXE = shutil.which("timeout")
+NODE_SRC_SMALL = ("const e=require('child_process').execSync;"
+                  "process.stdout.write('HEAD ');"
+                  "e('printf INJECTED >&1',{stdio:'inherit'});"
+                  "process.stdout.write(' TAIL\\n');")
+# 200000B single write: try-write delivers a pipe-capacity prefix
+# synchronously, the remainder rides the event-loop queue -- and
+# execSync blocks the loop, so the descendant's bytes land strictly
+# inside the stream (infix).  Third withholding layer beyond libc/Python.
+NODE_SRC_BIG = ("const e=require('child_process').execSync;"
+                "process.stdout.write('HEAD ');"
+                "process.stdout.write('A'.repeat(200000));"
+                "e('printf INJECTED >&1',{stdio:'inherit'});"
+                "process.stdout.write(' TAIL\\n');")
+NODE_SRC_SYNC = ("const fs=require('fs');"
+                 "const e=require('child_process').execSync;"
+                 "fs.writeSync(1,'HEAD ');"
+                 "e('printf INJECTED >&1',{stdio:'inherit'});"
+                 "fs.writeSync(1,' TAIL\\n');")
+# minimum owner-byte gap on each side for the infix class (the r72
+# midline cells carry a 1-byte gap; infix payloads are >= 1000B)
+INFIX_GAP_MIN = 64
+
+
+def node_arm(emit_name, src):
+    """Spawn `node -e src` as an fd1-OWNER on a piped stdout and classify
+    the delivered byte order (same marker convention as reorder_arm plus
+    the infix class: an interior INJECTED surrounded by owner payload on
+    BOTH sides).  Node absent -> a bounded blocked verdict, never a
+    fabricated wire.
+    """
+    if NODE_EXE is None:
+        emit(emit_name, status="blocked", topology="blocked_node_absent",
+             ret="NA")
+        return
+    proc = subprocess.Popen([NODE_EXE, "-e", src], stdout=subprocess.PIPE,
+                            stderr=subprocess.DEVNULL, env=CHILD_ENV)
+    try:
+        data, _ = proc.communicate(timeout=CHILD_TIMEOUT_S)
+    except subprocess.TimeoutExpired:
+        proc.kill()
+        data, _ = proc.communicate()
+    head = data.find(b"HEAD")
+    inj = data.find(b"INJECTED")
+    tail = data.find(b"TAIL")
+    if -1 in (head, inj, tail):
+        topo = "markers_missing"
+    elif inj < head:
+        topo = "prefix_reorder"
+    elif head < inj < tail:
+        gap_pre = inj - (head + len(b"HEAD"))
+        gap_post = tail - (inj + len(b"INJECTED"))
+        topo = "infix" if min(gap_pre, gap_post) > INFIX_GAP_MIN \
+            else "midline_splice"
+    elif tail < inj:
+        topo = "append"
+    else:
+        topo = "degenerate"
+    emit(emit_name, topology=topo, head_at=head, injected_at=inj,
+         tail_at=tail, wire_bytes=len(data), ret=proc.returncode)
+
+
 def main():
     if "--version" in sys.argv:
         print(f"{pygame.version.ver} "
@@ -334,6 +428,77 @@ def main():
     sys.stdout.write("REORDER-TAIL\n")
     emit("reorder_self", bufsize=BUFSIZE, fd1_isatty=sys.stdout.isatty(),
          descendant="printf")
+
+    # --- infix: interior descendant offset via fill-flush (r73) --------
+    # INFIX-HEAD + 140x1000B chunks exceed the 131072 buffer once ->
+    # exactly one fill-flush fires mid-stream; INFIX-INJ lands strictly
+    # after that flush while the remainder + INFIX-TAIL are still
+    # withheld.  Positional (not timed): the r72-boundary paced2 shape
+    # made deterministic.  The probe cannot see its own flush boundary --
+    # the battery pins the offsets from the captured wire.
+    sys.stdout.write("INFIX-HEAD\n")
+    for _ in range(140):
+        sys.stdout.write("A" * 1000)
+    os.system("printf 'INFIX-INJ' >&1")
+    for _ in range(60):
+        sys.stdout.write("B" * 1000)
+    sys.stdout.write("INFIX-TAIL\n")
+    emit("infix", bufsize=BUFSIZE, chunks_pre=140, chunks_post=60,
+         fd1_isatty=sys.stdout.isatty())
+
+    # --- fd2mrg: fd2 merged into the fd1 capture (r73) -----------------
+    # dup2(1,2) aliases fd2 onto the fd1 pipe; a descendant's >&2 write
+    # then reaches the wire immediately while FD2-HEAD sits withheld in
+    # the userspace buffer -- the fd2mrg inversion (r72-boundary F7).
+    # fd2 is restored in finally so the battery's stderr pipe is intact
+    # for every later arm.
+    sys.stdout.write("FD2-HEAD\n")
+    saved_fd2 = os.dup(2)
+    try:
+        os.dup2(1, 2)
+        os.system("printf 'FD2-ERR\\n' >&2")
+        sys.stdout.write("FD2-TAIL\n")
+    finally:
+        os.dup2(saved_fd2, 2)
+        os.close(saved_fd2)
+    emit("fd2mrg", merge="fd2_dup2_to_fd1", fd1_isatty=sys.stdout.isatty())
+
+    # --- node_census: node as fd1-OWNER (r73, xconnector X1) -----------
+    if NODE_EXE is None:
+        node_ver, node_major = "absent", "absent"
+    else:
+        try:
+            vout = subprocess.run([NODE_EXE, "--version"],
+                                  capture_output=True, text=True,
+                                  timeout=CHILD_TIMEOUT_S, env=CHILD_ENV)
+            node_ver = vout.stdout.strip() or "error"
+        except (OSError, subprocess.SubprocessError):
+            node_ver = "error"
+        node_major = node_ver.lstrip("v").split(".")[0] \
+            if node_ver.startswith("v") else node_ver
+    emit("node_census", node_present=NODE_EXE is not None,
+         node_version=node_ver, node_major=node_major)
+    node_arm("node_small", NODE_SRC_SMALL)
+    node_arm("node_big", NODE_SRC_BIG)
+    node_arm("node_sync", NODE_SRC_SYNC)
+
+    # --- detach: EOF-hold harness-integrity cell (r73) -----------------
+    # A detached descendant holds the capture pipe open ~0.9s past exit;
+    # the battery observes EOF delayed and DETACH-LATE landing after
+    # PYGAME_PROBE_DONE.  `timeout -s KILL 4` self-bounds the writer: a
+    # stuck detach loses the marker at +4s (well under the battery's 30s
+    # run timeout) -> measured FAIL, never a hang.  Spawned LAST: the
+    # 900ms sleep must straddle the exit edge.
+    if TIMEOUT_EXE is None:
+        emit("detach", status="blocked", mode="blocked_no_timeout",
+             fd1_isatty=sys.stdout.isatty())
+    else:
+        emit("detach", mode="setsid+timeout_kill", hold_ms=900,
+             kill_bound_s=4, fd1_isatty=sys.stdout.isatty())
+        subprocess.Popen([TIMEOUT_EXE, "-s", "KILL", "4", "sh", "-c",
+                          "sleep 0.9; printf 'DETACH-LATE\\n' >&1"],
+                         stdin=subprocess.DEVNULL,
+                         start_new_session=True)
 
     pygame.quit()
     print("PYGAME_PROBE_DONE", flush=True)

@@ -34,6 +34,26 @@ OWN fd1: under the battery's pipe capture the wire reads CHILD first --
 the pinned hazard for any streaming parser of these ARM lines (the
 post-exit parser cannot observe it, the RAW_CASES check does).
 
+r73 lattice addition (topology depth, xconnector X4/X1): three more
+cells ride the probe's OWN wire and are pinned by RAW_CASES bounds --
+  - infix: a pre-buffered INFIX-HEAD + 140x1000B chunks force exactly
+    one fill-flush mid-stream; a descendant's INFIX-INJ lands strictly
+    inside the delivered stream (measured offset 126011 = 11 + 126x1000,
+    the r72-boundary paced2 boundary), with owner payload on BOTH sides.
+    Pinned as topology class + bounded offsets (+/-1 chunk), never exact.
+  - fd2mrg: fd2 dup2'd onto the fd1 capture, a descendant's >&2 write
+    reaches the wire while FD2-HEAD is withheld -> prefix_reorder
+    through a second write path (r72-boundary fd2mrg).
+  - detach: a detached descendant (setsid + `timeout -s KILL 4`
+    self-bound) holds the capture pipe ~0.9s past exit -> EOF arrives
+    late and DETACH-LATE lands after PYGAME_PROBE_DONE (eof_hold).  A
+    stuck detach is killed at +4s -> marker missing -> FAIL, not hang.
+node_census is the NEW-RUNTIME contact: `node -e` as fd1-OWNER.  On
+this host (v24.21.0): small writes splice midline (libuv try-write is
+synchronous), one 200000B write goes infix (partial try-write +
+event-loop remainder blocked by execSync), fs.writeSync is
+write-through (midline control).  Absent node -> blocked verdicts.
+
 Case model: each CASES row asserts keys on an emitted
 `PYGAME-ARM <arm> | k=v` line; values pin either an exact byte or a
 numeric bound tuple (lo, hi) -- jittered quantities carry measured
@@ -132,13 +152,62 @@ CASES = [
     ("rord_late_tail",     "reorder_late",  "tail_at",     "6"),
     ("self_fd1_piped",     "reorder_self",  "fd1_isatty",  "False"),
     ("self_bufsize",       "reorder_self",  "bufsize",     "131072"),
+    # --- r73 topology depth: emitted metadata for the own-wire cells --
+    # (the wire topology + offsets themselves are pinned by RAW_CASES)
+    ("infx_piped",         "infix",       "fd1_isatty",   "False"),
+    ("infx_bufsize",       "infix",       "bufsize",      "131072"),
+    ("fd2m_piped",         "fd2mrg",      "fd1_isatty",   "False"),
+    ("det_piped",          "detach",      "fd1_isatty",   "False"),
+    # --- r73 node_census: node v24.21.0 as fd1-OWNER ------------------
+    ("node_present",       "node_census", "node_present", "True"),
+    ("node_ver",           "node_census", "node_version", "v24.21.0"),
+    # small write: libuv try-write synchronous -> midline splice
+    ("nsm_topo",           "node_small",  "topology",     "midline_splice"),
+    ("nsm_head0",          "node_small",  "head_at",      "0"),
+    ("nsm_bytes",          "node_small",  "wire_bytes",   "19"),
+    ("nsm_ret",            "node_small",  "ret",          "0"),
+    # 200000B single write: partial try-write + event-loop remainder
+    # blocked by execSync -> INJECTED strictly interior (infix).
+    # inj offset jitters with pipe drain (measured 65536/69637/131072)
+    # -> bounded, never exact.
+    ("nbig_topo",          "node_big",    "topology",     "infix"),
+    ("nbig_inj_bound",     "node_big",    "injected_at",  (40000.0, 199000.0)),
+    ("nbig_head0",         "node_big",    "head_at",      "0"),
+    ("nbig_tail",          "node_big",    "tail_at",      (199000.0, 200100.0)),
+    ("nbig_bytes",         "node_big",    "wire_bytes",   "200019"),
+    # fs.writeSync: write-through control -> honest midline order
+    ("nsy_topo",           "node_sync",   "topology",     "midline_splice"),
+    ("nsy_head0",          "node_sync",   "head_at",      "0"),
+    ("nsy_bytes",          "node_sync",   "wire_bytes",   "19"),
+    ("nsy_ret",            "node_sync",   "ret",          "0"),
 ]
 
 # Raw-wire cases (r72): the reorder_self topology lives on the probe's
 # OWN captured stream -- only the post-capture byte order can judge it.
 # (name, pinned) over the marker relation in the raw stdout.
+# r73 rows extend the row: (name, pinned, markers, offset_bounds).
+# markers defaults to the r72 REORDER-* set; a 3-marker row is
+# classified {prefix_reorder, midline_splice, infix, append}, a 2-marker
+# row is an (anchor, late) eof-hold pair; offset_bounds pin marker
+# indices as (lo, hi) ranges -- topology class + bounds, never exact.
 RAW_CASES = [
     ("self_wire_reorders", "prefix_reorder"),
+    # infix: INFIX-INJ lands at the first fill-flush boundary (measured
+    # 126011 bytes past INFIX-HEAD = 11B head + 126x1000B; +/-1 chunk
+    # pinned).  _rel keys measure from HEAD, so the pin is independent
+    # of how many bytes preceded the cell on the wire.
+    ("infx_wire_topo", "infix",
+     ("INFIX-HEAD", "INFIX-INJ", "INFIX-TAIL"),
+     {"head_at": (1500.0, 2600.0),
+      "injected_rel": (125000.0, 127500.0),
+      "tail_rel": (199500.0, 201000.0)}),
+    # fd2mrg: the merged-fd2 descendant byte precedes the withheld HEAD
+    ("fd2m_wire_topo", "prefix_reorder",
+     ("FD2-HEAD", "FD2-ERR", "FD2-TAIL"), None),
+    # detach: DETACH-LATE lands after PYGAME_PROBE_DONE -> the capture
+    # EOF was held open past probe exit by the detached descendant
+    ("det_wire_eof", "eof_hold",
+     ("PYGAME_PROBE_DONE", "DETACH-LATE"), None),
 ]
 
 ARM_LINE = re.compile(r"^PYGAME-ARM (\S+) \| (.*)$")
@@ -234,26 +303,69 @@ def main():
     # --- raw-wire cases: marker order on the captured stdout itself ----
     # reorder_self puts its markers on the probe's own fd1, so the
     # fabricated order is visible only in the raw capture, not ARM lines.
-    h, c, t = (stdout.find(m) for m in
-               ("REORDER-HEAD", "REORDER-CHILD", "REORDER-TAIL"))
-    if -1 in (h, c, t):
-        self_topo = "markers_missing"
-    elif c < h:
-        self_topo = "prefix_reorder"
-    elif h < c < t:
-        self_topo = "midline_splice"
-    elif t < c:
-        self_topo = "append"
-    else:
-        self_topo = "degenerate"
-    for name, pinned in RAW_CASES:
-        reason = None if self_topo == pinned else \
-            f"{self_topo!r} != pinned {pinned!r} (idx h={h} c={c} t={t})"
-        results.append({"case": name, "arm": "reorder_self",
+    # r73 reuses the machinery for the infix / fd2mrg / detach own-wire
+    # cells: rows may carry an explicit marker set and per-offset bounds.
+    def raw_topo3(mh, mi, mt):
+        """Classify (head, inj, tail) marker offsets; 'infix' = interior
+        inj with owner payload on BOTH sides (>64B gaps, vs the 1-byte
+        spacing of the r72 midline cells)."""
+        h, i, t = (stdout.find(m) for m in (mh, mi, mt))
+        if -1 in (h, i, t):
+            return "markers_missing", h, i, t
+        if i < h:
+            topo = "prefix_reorder"
+        elif h < i < t:
+            pre = i - (h + len(mh))
+            post = t - (i + len(mi))
+            topo = "infix" if min(pre, post) > 64 else "midline_splice"
+        elif t < i:
+            topo = "append"
+        else:
+            topo = "degenerate"
+        return topo, h, i, t
+
+    # marker-set -> emitting arm name for r73 rows
+    RAW_ARMS = {"INFIX-HEAD": "infix", "FD2-HEAD": "fd2mrg",
+                "PYGAME_PROBE_DONE": "detach"}
+    for row in RAW_CASES:
+        name, pinned = row[0], row[1]
+        markers = row[2] if len(row) > 2 else \
+            ("REORDER-HEAD", "REORDER-CHILD", "REORDER-TAIL")
+        bounds = row[3] if len(row) > 3 and row[3] else {}
+        arm = "reorder_self" if len(row) == 2 else \
+            RAW_ARMS.get(markers[0], "self_wire")
+        offs = {}
+        if len(markers) == 3:
+            topo, h, i, t = raw_topo3(*markers)
+            offs = {"head_at": h, "injected_at": i, "tail_at": t}
+            if -1 not in (h, i, t):
+                # offsets relative to HEAD: independent of preceding wire
+                offs.update({"injected_rel": i - h, "tail_rel": t - h})
+            idx = f" (idx h={h} c={i} t={t})"
+        else:
+            a, b = stdout.find(markers[0]), stdout.find(markers[1])
+            if a < 0 or b < 0:
+                topo = "markers_missing"
+            elif b > a:
+                topo = "eof_hold"
+            else:
+                topo = "premature"
+            idx = f" (idx anchor={a} late={b})"
+        reason = None if topo == pinned else \
+            f"{topo!r} != pinned {pinned!r}{idx}"
+        results.append({"case": name, "arm": arm,
                         "key": "wire_topology", "pinned": pinned,
-                        "observed": self_topo,
+                        "observed": topo,
                         "verdict": "PASS" if reason is None else "FAIL",
                         "reasons": ([] if reason is None else [reason])})
+        for bkey, (blo, bhi) in bounds.items():
+            got = offs.get(bkey)
+            breason = check((blo, bhi), None if got is None else str(got))
+            results.append({"case": f"{name}_{bkey}", "arm": arm,
+                            "key": bkey, "pinned": [blo, bhi],
+                            "observed": got,
+                            "verdict": "PASS" if breason is None else "FAIL",
+                            "reasons": ([] if breason is None else [breason])})
 
     passed = sum(1 for r in results if r["verdict"] == "PASS")
     failed = len(results) - passed
