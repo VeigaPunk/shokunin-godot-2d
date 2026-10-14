@@ -72,3 +72,13 @@ Sol `r68-adjudicator.md`: declared-grid claim falsified as written (~80× resolu
 | calibration | **unchanged** | opt-in flag only; flagless 88/88 + surface 34/34 unchanged; classifiers byte-identical since r65; default arm (gap=200) byte-stable. |
 
 Sol `r69-adjudicator.md`: declared claim CONFIRMED in measured semantics — the critic's grid-power falsification corrected the DESIGN (crossed cells folded into the tracked ladder), not the conclusion. Non-author: verifier seat lost to free-model rate limits; operator adjudicator replay on `ec2cda6` = 88/88 + gapladder PASS + referent gap_relative; reviewer + scribe + boundary independent replays all green. Bounded: classifier-level verdicts, Godot 4.7.2 headless, CPython POSIX pipes, this host — referent portable, nominal edges not. Work commit `ec2cda6`; report-last commit follows.
+
+## Round 70 verdict — 2026-10-14
+
+| axis | Sol verdict | evidence |
+|---|---|---|
+| coverage | **improved locally** | first non-Godot runtime in lane: LOVE 11.5 headless fixture + sibling battery, 15 pinned cases green |
+| depth | **improved locally** | honest falsification landed: fabrication window is Godot-runner plumbing, NOT engine-general — narrows the r66-r69 model's scope correctly; +uncapped-cadence + os.execute-shape facts |
+| calibration | **unchanged** | sibling runner only; run_battery.py untouched, prior rows byte-stable by construction |
+
+Sol (provisional): ADMIT-with-falsification — claim refuted at the engine layer, recorded honestly. Author=operator-substituted (massacre). Verifier pending post-reset. Bounded: LOVE 11.5 headless, this host.

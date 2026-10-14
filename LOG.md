@@ -776,3 +776,26 @@
   spawn overhead — the referent is portable, nominal edges are not.
 - Per-axis verdicts (Sol `reports/round-69/r69-adjudicator.md`):
   ADMIT. Report-last commit follows.
+
+## Round 70 — 2026-10-14 (wave shokunin-train-20261101-w10, runtime expansion)
+
+- Declared move (coverage/new-runtime): first-contact LOVE 11.5 headless;
+  falsifiable claim "deterministic fixed-dt loop + engine-general
+  descendant-stdout fabrication window".
+- Operator substitution (author seat died to free-pool massacre):
+  landed corpus/fixtures/love_probe/ (conf.lua headless profile +
+  main.lua 4-arm probe) + corpus/fixtures/love_battery.py sibling
+  runner (15 bound-pinned cases); run_battery.py untouched -> all
+  prior Godot rows byte-stable by construction.
+- Measured: viability POSITIVE; update loop UNCAPPED headless (~960Hz,
+  dt_mean 1.044ms -- 60Hz is a windowed property); io.popen
+  write->readable tracks the writer (l2_wait=child sleep, byte-exact,
+  no fabrication window at LOVE's layer -> Godot bound is runner-side
+  plumbing, engine-generality FALSIFIED for this seam); os.execute
+  returns raw statusx256 single-value (Lua 5.1 shape); love.event.pump
+  unneeded headless; blocking reads suspend the loop.
+- Own replay: 15/15 PASS, 3 spot reps consistent within pinned bounds.
+- Remaining seats pending free-pool reset; falsification flags land
+  post-reset if warranted.
+- Verdict: provisional ADMIT (honest falsification recorded); bounded to
+  LOVE 11.5, this host.
