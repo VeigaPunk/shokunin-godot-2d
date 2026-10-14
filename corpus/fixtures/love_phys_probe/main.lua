@@ -48,6 +48,66 @@
 -- Scene: identical to the r70/r74-scout frontier scene (static ground +
 -- b1/b2/b3 dynamic) so fire step and pose pins inherit that determinism.
 -- Mutations fire on b1's first contact of the selected channel only.
+--
+-- ---- r78 additions: the nested-update damage surface ----------------------
+--
+-- r77-boundary sec.6 (independently reproduced by the r78 scout, 31 cells x3
+-- byte-stable reps) found that a nested `world:update` INSIDE a callback
+-- clears b2World's e_locked -- b2World::Step sets m_flags |= e_locked and
+-- clears it on exit with no entry assertion (b2World.cpp:908/:960), and only
+-- CreateBody / the love-side destroy gates consult it. The r78 cells arm that
+-- hole as tracked shapes; every one is pre-measured in
+-- reports/round-78/r78-scout.md before it was written here.
+--
+--   nested_lockclear : the nested update returns with the lock CLEARED, so the
+--                      structural write the lock refused a moment ago APPLIES
+--                      (Body::destroy() -> IsLocked() is false -> the destroy
+--                      executes ON THE SPOT instead of queueing:
+--                      Body.cpp:527-538). The inner Step itself re-locks --
+--                      the inner callback bracket (locked=true + refused inner
+--                      write) is the contrast witness.
+--   inner_drain      : the nested update runs its OWN epilogue drain while the
+--                      outer callback is still on the stack, so a destroy
+--                      queued in the OUTER callback drains at the INNER
+--                      epilogue (World::update drains destructBodies then
+--                      clears the vectors).
+--   dispatch_escape  : destroying a CONTACTING object mid-nested-step. The
+--                      destroy completes and the same b2Contact::Update falls
+--                      through to its trailing PreSolve dispatch on the freed
+--                      contact -> love throws "A fixture has escaped
+--                      Memoizer!" (srcline=nil). A Lua error, not a signal:
+--                      pcall contains it (rc=0, aborts=1, run recovers), and
+--                      it is NOT the r75/r76 refused_abort shape (no assert
+--                      text, locked_after=false, no collateral lock refusal).
+--   depth2           : nesting AGAIN from a BODY-drain EC re-enters the drain
+--                      loop over the vector the outer loop is iterating and
+--                      clears it mid-iteration, then re-enters
+--                      b2World::DestroyBody on a body whose teardown is in
+--                      flight -> SIGSEGV (rc=-11). The depth-2 nested update
+--                      RETURNS first (its line is on the pipe); the death is
+--                      before any further Lua frame and pcall does NOT contain
+--                      a signal (the _wp twin dies identically). The
+--                      FIXTURE-drain twin is catchable instead: the re-entrant
+--                      Fixture::destroy re-runs b2Body::DestroyFixture and its
+--                      b2Assert(found) fires (rc=0, "Box2D assertion failed:
+--                      found").
+--   zombie_contact   : handles captured inside the drain EC. After a clean
+--                      drain (or a natural EndContact) World::EndContact ran
+--                      c->invalidate() and every accessor errors with "Attempt
+--                      to use destroyed contact." while the fixtures stay
+--                      alive; after an ABORTED drain the abort unwound before
+--                      invalidate(), so the handle is still fully LIVE at the
+--                      same step and only dies after the retry completes.
+--   livelock         : an every-entry drain-EC abort NEVER converges -- one
+--                      drain EC + one abort per subsequent step for the whole
+--                      step budget, with the target body still alive (no
+--                      internal counter, guard or backoff).
+--   converge         : the same abort converges as soon as the retry stops
+--                      aborting, or (transient contact) as soon as the queued
+--                      body's contact stops touching.
+--
+-- Insertion-only: every r78 branch is gated on R78[CELL] ~= nil, so a pre-r78
+-- cell (and every r77 cell) takes exactly its earlier path.
 
 local CELL = os.getenv("IW_CELL") or "baseline"
 
@@ -148,6 +208,66 @@ local r77_labels = {}
 local r77_dead, r77_fxcount, r77_getcb, r77_obs, r77_drain_hook
 local r77_cb2_bc, r77_cb2_ec, r77_cb2_pre, r77_cb2_post
 local r77_install_container
+
+-- ---- r78 cell registry ---------------------------------------------------
+--
+-- (cell, cb channel, callback act, drain-EC act). `mut` = the queued body for
+-- the nested-queue acts; `what` = the object the mid-nested-step destroy
+-- targets; `target` = the body whose first ground contact arms the cell
+-- (b3 rests on the ground from step 4 -> a PERSISTENT touching contact;
+-- b1 is the bouncing default -> a TRANSIENT one); `wp` = contain the OUTER
+-- update with pcall; `stop` = the abort budget of the throw_stop drain act.
+local R78 = {
+  -- 1 lock-clear / inner bracket
+  n_baseline              = { cb = "bc", act = "nested_probe" },
+  n_inner_cb              = { cb = "bc", act = "nested_inner_cb" },
+  n_depth2_seq            = { cb = "bc", act = "nested_twice" },
+  -- 2 inner-epilogue drain ownership
+  n_queue_inner_drain     = { cb = "bc", act = "nested_queue", mut = "b3" },
+  -- 3 contacting-destroy dispatch escape (contained / uncontained)
+  n_destroy_contacting    = { cb = "bc", act = "nested_destroy", what = "b1" },
+  n_destroy_contacting_wp = { cb = "bc", act = "nested_destroy", what = "b1",
+                              wp = true },
+  n_destroy_ground_wp     = { cb = "bc", act = "nested_destroy", what = "g",
+                              wp = true },
+  n_destroy_fx_wp         = { cb = "bc", act = "nested_destroy_fx", wp = true },
+  -- 4 depth-2 from the drain EC (body -> SIGSEGV / fixture -> refused)
+  n_depth2_drain          = { cb = "bc", act = "nested_queue", mut = "b3",
+                              drain = "nested_update" },
+  n_depth2_drain_wp       = { cb = "bc", act = "nested_queue", mut = "b3",
+                              drain = "nested_update", wp = true },
+  n_depth2_fxdrain        = { cb = "bc", act = "queue_fixture",
+                              drain = "nested_update" },
+  -- 5 contact zombie handles
+  z_drain_use_after       = { cb = "bc", act = "queue_body", target = "b3",
+                              drain = "capture" },
+  z_abort_use_after       = { cb = "bc", act = "queue_body", target = "b3",
+                              drain = "capture_throw", wp = true },
+  z_touch_then_end        = { cb = "bc", act = "capture_bc" },
+  -- 6 livelock / convergence
+  livelock_all            = { cb = "bc", act = "queue_body", target = "b3",
+                              drain = "throwall", wp = true },
+  livelock_stop2          = { cb = "bc", act = "queue_body", target = "b3",
+                              drain = "throw_stop", stop = 2, wp = true },
+  livelock_transient      = { cb = "bc", act = "queue_body",
+                              drain = "throwall", wp = true },
+}
+local R78S = R78[CELL]        -- nil for every pre-r78 cell
+local r78_cb = R78S and R78S.cb or nil
+local r78_target = R78S and R78S.target or nil
+local r78_drain = R78S and R78S.drain or nil
+local r78_mut = R78S and R78S.mut or nil
+local r78_stop = R78S and R78S.stop or 0
+if R78S ~= nil and R78S.wp then wp_mode = true end
+local r78_depth, r78_in_cb = 0, false
+local r78_nest_n, r78_nest_ok = 0, 0
+local r78_inner_fired = false
+local r78_drain_n, r78_aborts = 0, 0
+local r78_zh, r78_zfx_a, r78_zfx_b   -- captured contact handle + its fixtures
+-- forward declarations (assigned in the r78 helper block further down)
+local r78_drain_hook, r78_nested_update, r78_obs
+local r78_dead, r78_fxcount, r78_lbl_of, r78_body_of, r78_fx_of_contact
+local r78_zprobe, r78_zprobe_fx
 
 local world, g, b1, b2, b3
 local fired = false
@@ -424,6 +544,113 @@ local function do_mutation(mkind, contact, body)
     local ok, res = pcall(co)
     EM(string.format("cb_cowrap ok=%s res=%s pos_after=%s",
       tostring(ok), tostring(res), pos(body)))
+  -- ---- r78 acts: the nested-update damage surface ------------------------
+  elseif mkind == "nested_probe" then
+    -- lockclear: nest an update, then issue the structural write the lock
+    -- refused a moment ago. Witness: lock_after=false + the write APPLIES.
+    EM(string.format("r78npre lock=%s count=%d", tostring(world:isLocked()),
+      world:getBodyCount()))
+    r78_nested_update()
+    local ok, err = pcall_str(b1.setPosition, b1, 1234.5, 678.9)
+    EM(string.format("r78setpos ok=%s err=%s pos_after=%s",
+      tostring(ok), tostring(err), pos(b1)))
+  elseif mkind == "nested_inner_cb" then
+    -- the same nest, with a velocity write first: the inner Step re-locks
+    -- (its own callback bracket is the contrast witness, emitted in on_event)
+    -- and the post-nest write still applies.
+    local vok, verr = pcall_str(b1.setLinearVelocity, b1, 0, -900)
+    EM(string.format("r78npre lock=%s count=%d setvel_ok=%s setvel_err=%s",
+      tostring(world:isLocked()), world:getBodyCount(), tostring(vok),
+      tostring(verr)))
+    r78_nested_update()
+    local ok, err = pcall_str(b1.setPosition, b1, 1234.5, 678.9)
+    EM(string.format("r78setpos ok=%s err=%s pos_after=%s",
+      tostring(ok), tostring(err), pos(b1)))
+  elseif mkind == "nested_queue" then
+    -- inner-drain ownership: queue a destroy in the OUTER callback, then nest
+    -- an update. The nested update's own epilogue drains the queue (its
+    -- EndContact is the drain EC at locked=false with depth/in_cb witnesses),
+    -- so the target is dead before the outer callback returns.
+    local mb = r78_body_of(r78_mut or "b1")
+    local ok, err = pcall_str(mb.destroy, mb)
+    EM(string.format("r78queue what=%s ok=%s err=%s dead_in_cb=%s count=%d",
+      tostring(r78_mut or "b1"), tostring(ok), tostring(err), r78_dead(mb),
+      world:getBodyCount()))
+    r78_nested_update()
+    EM(string.format("r78destroy what=%s dead=%s count=%d drain_n=%d",
+      tostring(r78_mut or "b1"), r78_dead(mb), world:getBodyCount(),
+      r78_drain_n))
+    local sok, serr = pcall_str(b1.setPosition, b1, 1234.5, 678.9)
+    EM(string.format("r78setpos ok=%s err=%s pos_after=%s",
+      tostring(sok), tostring(serr), pos(b1)))
+  elseif mkind == "nested_destroy" then
+    -- dispatch escape: nest an update, then destroy a CONTACTING object. The
+    -- destroy executes on the spot (lock cleared) and the in-flight contact
+    -- Update falls through to a PreSolve dispatch on the freed contact.
+    r78_nested_update()
+    local target = (R78S.what == "g") and g or b1
+    local ok, err = pcall_str(target.destroy, target)
+    EM(string.format(
+      "r78destroy what=%s ok=%s err=%s dead=%s count=%d",
+      tostring(R78S.what), tostring(ok), tostring(err), r78_dead(target),
+      world:getBodyCount()))
+    local sok, serr = pcall_str(b2.setLinearVelocity, b2, 0, -10)
+    EM(string.format("r78destroy_after_write ok=%s err=%s",
+      tostring(sok), tostring(serr)))
+  elseif mkind == "nested_destroy_fx" then
+    -- the fixture member of the same escape: the contacting fixture is torn
+    -- down on the spot (the fixture list shrinks inside the callback) and the
+    -- same contact Update's trailing PreSolve dispatch escapes.
+    r78_nested_update()
+    local fx = r78_fx_of_contact(contact, body)
+    if fx == nil then
+      EM("r78destroy what=fx api_missing=contact_fixture")
+    else
+      local fb = r78_fxcount(body)
+      local ok, err = pcall_str(fx.destroy, fx)
+      EM(string.format(
+        "r78destroy what=fx ok=%s err=%s dead=%s fcount_before=%s fcount_after=%s count=%d",
+        tostring(ok), tostring(err), r78_dead(fx), fb, r78_fxcount(body),
+        world:getBodyCount()))
+    end
+  elseif mkind == "nested_twice" then
+    -- sequential depth 2: contained (the corrupt member is the drain-EC one)
+    r78_nested_update()
+    r78_nested_update()
+    local ok, err = pcall_str(b1.setPosition, b1, 1234.5, 678.9)
+    EM(string.format("r78setpos ok=%s err=%s pos_after=%s",
+      tostring(ok), tostring(err), pos(b1)))
+  elseif mkind == "queue_body" then
+    -- queue the FIRING body's destroy (drained in an update epilogue) and
+    -- hand the drain flavour to the drain hook.
+    local ok, err = pcall_str(body.destroy, body)
+    EM(string.format("r78queue what=%s ok=%s err=%s dead_in_cb=%s count=%d",
+      tostring(body:getUserData() or "?"), tostring(ok), tostring(err),
+      r78_dead(body), world:getBodyCount()))
+  elseif mkind == "queue_fixture" then
+    -- queue the CONTACT's own fixture destroy: the drain EC then comes from
+    -- the fixture drain loop (World::update's destructFixtures), and the
+    -- re-entrant nested update re-runs Fixture::destroy -> b2Assert(found).
+    local fx = r78_fx_of_contact(contact, body)
+    if fx == nil then
+      EM("r78queue what=fx api_missing=contact_fixture")
+    else
+      local fb = r78_fxcount(body)
+      local ok, err = pcall_str(fx.destroy, fx)
+      EM(string.format(
+        "r78queue what=fx ok=%s err=%s dead_in_cb=%s fcount_before=%s fcount_after=%s count=%d",
+        tostring(ok), tostring(err), r78_dead(fx), fb, r78_fxcount(body),
+        world:getBodyCount()))
+    end
+  elseif mkind == "capture_bc" then
+    -- capture the contact handle at the natural beginContact (control for the
+    -- zombie lattice: no drain, no abort, the natural EndContact invalidates)
+    r78_zh = contact
+    local ok, a, b = pcall(contact.getFixtures, contact)
+    if ok then r78_zfx_a, r78_zfx_b = a, b end
+    EM(string.format("r78zcap where=bc step=%d getfixtures_ok=%s fa=%s fb=%s",
+      step, tostring(ok), ok and r78_lbl_of(a) or tostring(a),
+      ok and r78_lbl_of(b) or tostring(b)))
   end
 end
 
@@ -432,6 +659,7 @@ end
 local function build()
   world = love.physics.newWorld(0, GRAV, true)
   g = love.physics.newBody(world, 400, 560, "static")
+  g:setUserData("g")   -- r78: the static side's label (fixture-owner witness)
   love.physics.newFixture(g, love.physics.newRectangleShape(800, 40))
   b1 = love.physics.newBody(world, 400, 60, "dynamic")
   b1:setUserData("b1")
@@ -475,6 +703,19 @@ local function on_event(ev, fa, fb, contact)
   end
   local dyn = dyn_of(fa, fb)
   local label = dyn:getUserData() or "?"
+  if R78S ~= nil and r78_depth > 0 and not r78_inner_fired
+     and (ev == "bc" or ev == "pre" or ev == "ec") then
+    -- r78 inner-Step bracket: the callback of the NESTED Step runs with
+    -- e_locked SET again (b2World::Step re-locks for its own duration), so a
+    -- structural write is refused there -- the contrast to the lock-cleared
+    -- window that opens when the nested Step returns.
+    r78_inner_fired = true
+    EM(string.format("r78inner cb=%s step=%d locked=%s depth=%d dyn=%s",
+      ev, step, tostring(world:isLocked()), r78_depth, label))
+    local sok, serr = pcall_str(b1.setPosition, b1, 1234.5, 678.9)
+    EM(string.format("r78inner_write ok=%s err=%s",
+      tostring(sok), tostring(serr)))
+  end
   if RS ~= nil and ev == "ec" then
     r77_ec_n = r77_ec_n + 1
     if r77_ec_n <= 4 then
@@ -514,6 +755,23 @@ local function on_event(ev, fa, fb, contact)
     do_mutation(RS.act, contact, dyn)
     EM(string.format("postfire cb=%s step=%d count=%d b1pos=%s", ev, step, world:getBodyCount(), pos(b1)))
   end
+  -- r78 arming path: cells whose act is a nested update / a queued drain /
+  -- a contact-handle capture. Disjoint from the two paths above by registry
+  -- (R78[CELL] and R77[CELL] share no key) -- the fire line keeps the r77
+  -- shape so `fire.step` and the act/drain identity read the same way.
+  if R78S ~= nil and not fired and r78_cb == ev
+     and label == (r78_target or target_label) then
+    fired = true
+    fire_step = step
+    EM(string.format("fire cb=%s kind=%s step=%d locked=%s count=%d pos=%s vel=%s",
+      ev, (R78S.act or "none") .. "/" .. (R78S.drain or "-"), step,
+      tostring(world:isLocked()), world:getBodyCount(), pos(dyn), vel(dyn)))
+    r78_in_cb = true
+    do_mutation(R78S.act, contact, dyn)
+    r78_in_cb = false
+    EM(string.format("postfire cb=%s step=%d count=%d drain_n=%d aborts=%d",
+      ev, step, world:getBodyCount(), r78_drain_n, r78_aborts))
+  end
   if jw_mode and fired and step <= fire_step + 1 then
     -- r76 jwatch: per-callback joint-count observation. The measured
     -- bracket is jwlive (last-wins: last step-73 cb still seeing the
@@ -540,6 +798,11 @@ local function on_event(ev, fa, fb, contact)
   -- dies -- exactly the pre-measured shape.
   if RS ~= nil and ev == "ec" and not world:isLocked() then
     r77_drain_hook(fa, dyn)
+  end
+  -- r78: the same drain-time endContact, with the contact handle (the zombie
+  -- lattice needs the handle itself) and the nested-depth/in-cb witnesses.
+  if R78S ~= nil and ev == "ec" and not world:isLocked() then
+    r78_drain_hook(contact, fa, fb, dyn)
   end
 end
 
@@ -718,6 +981,153 @@ r77_install_container = function()
   end
 end
 
+-- ---- r78 helpers ---------------------------------------------------------
+
+r78_dead = function(o)
+  if o == nil then return "n/a" end
+  local ok, v = pcall(o.isDestroyed, o)
+  return res_str(ok, v)
+end
+
+r78_fxcount = function(b)
+  if b == nil then return "n/a" end
+  local ok, t = pcall(b.getFixtures, b)
+  if not ok then return "ERR:" .. tostring(t) end
+  return tostring(#t)
+end
+
+r78_lbl_of = function(fx)
+  if fx == nil then return "nil" end
+  local ok, b = pcall(fx.getBody, fx)
+  if not ok then return "ERR:" .. tostring(b) end
+  local ok2, ud = pcall(b.getUserData, b)
+  if not ok2 then return "ERR:" .. tostring(ud) end
+  if ud == nil then return "?" end
+  return tostring(ud)
+end
+
+r78_body_of = function(l)
+  if l == "b1" then return b1 elseif l == "b2" then return b2
+  elseif l == "b3" then return b3 elseif l == "g" then return g end
+  return nil
+end
+
+r78_fx_of_contact = function(contact, body)
+  if contact == nil then return nil end
+  local ok, fa, fb = pcall(contact.getFixtures, contact)
+  if not ok then return nil end
+  if fa ~= nil and fa:getBody() == body then return fa end
+  if fb ~= nil and fb:getBody() == body then return fb end
+  return fa
+end
+
+-- Every r78 nested world:update goes through here, so depth/in_cb accounting
+-- is uniform across the callback and drain-time call sites. The receipt is
+-- emitted AFTER the call returns -- for the depth-2 drain cell that line is
+-- the last one on the pipe (the process dies before any further Lua frame).
+r78_nested_update = function()
+  r78_nest_n = r78_nest_n + 1
+  local tag = "r78nest" .. r78_nest_n
+  r78_depth = r78_depth + 1
+  local depth_now = r78_depth
+  local ok, err = pcall_str(world.update, world, FIXED)
+  r78_depth = r78_depth - 1
+  if ok then r78_nest_ok = r78_nest_ok + 1 end
+  EM(string.format("%s ok=%s err=%s lock_after=%s count=%d depth=%d in_cb=%s",
+    tag, tostring(ok), tostring(err), tostring(world:isLocked()),
+    world:getBodyCount(), depth_now, tostring(r78_in_cb)))
+  return ok, err
+end
+
+-- contact-handle probe: every read is pcall'd (an invalidated handle errors on
+-- all of them) and no per-process pointer is printed.
+r78_zprobe = function(tag)
+  if r78_zh == nil then
+    EM(string.format("%s z=nil", tag))
+    return
+  end
+  local ok1, v1 = pcall(r78_zh.isTouching, r78_zh)
+  local ok2, a, b = pcall(r78_zh.getFixtures, r78_zh)
+  local ok3, c1, c2 = pcall(r78_zh.getChildren, r78_zh)
+  local ok4 = pcall(r78_zh.getFriction, r78_zh)
+  local ok5 = pcall(r78_zh.getPositions, r78_zh)
+  EM(string.format(
+    "%s touch=%s fix_ok=%s fa=%s fb=%s ch_ok=%s ca=%s cb=%s fric_ok=%s pos_ok=%s",
+    tag, res_str(ok1, v1), tostring(ok2),
+    ok2 and r78_lbl_of(a) or tostring(a),
+    ok2 and r78_lbl_of(b) or tostring(b),
+    tostring(ok3), tostring(c1), tostring(c2),
+    tostring(ok4), tostring(ok5)))
+end
+
+r78_zprobe_fx = function(tag)
+  EM(string.format("%s fxa=%s fxb=%s", tag,
+    r78_dead(r78_zfx_a), r78_dead(r78_zfx_b)))
+  if r78_zfx_a ~= nil then
+    local ok, v = pcall(r78_zfx_a.getBody, r78_zfx_a)
+    EM(string.format("%s fxa_body=%s", tag,
+      res_str(ok, ok and r78_lbl_of(r78_zfx_a) or v)))
+  end
+end
+
+-- drain-time hook (locked=false, inside an update epilogue). Emitted for every
+-- r78 cell that sees a drain EC; the action only for the drain cells.
+r78_drain_hook = function(contact, fa, fb, dyn)
+  r78_drain_n = r78_drain_n + 1
+  EM(string.format(
+    "r78drainec n=%d step=%d locked=%s depth=%d in_cb=%s count=%d dyn=%s",
+    r78_drain_n, step, tostring(world:isLocked()), r78_depth,
+    tostring(r78_in_cb), world:getBodyCount(),
+    tostring(dyn and dyn:getUserData() or "?")))
+  local d = r78_drain
+  if d == nil then return end
+  if d == "nested_update" then
+    if r78_drain_n == 1 then
+      EM(string.format(
+        "r78drainact n=1 kind=nested_update depth_before=%d lock=%s count=%d",
+        r78_depth, tostring(world:isLocked()), world:getBodyCount()))
+      r78_nested_update()
+    end
+  elseif d == "capture" or d == "capture_throw" then
+    r78_zh = contact
+    local ok, a, b = pcall(contact.getFixtures, contact)
+    if ok then r78_zfx_a, r78_zfx_b = a, b end
+    EM(string.format(
+      "r78zcap where=drain n=%d step=%d getfixtures_ok=%s fa=%s fb=%s touch=%s",
+      r78_drain_n, step, tostring(ok),
+      ok and r78_lbl_of(a) or tostring(a),
+      ok and r78_lbl_of(b) or tostring(b),
+      res_str(pcall(contact.isTouching, contact))))
+    if d == "capture_throw" and r78_drain_n == 1 then
+      -- ONE abort (the pre-measured shape): the abort unwinds out of
+      -- b2ContactManager::Destroy after the EndContact dispatch and before
+      -- the unlink, so Contact::invalidate() never runs -- the captured
+      -- handle stays live this step and dies only after the retry completes.
+      EM(string.format("r78drainact n=%d kind=throw", r78_drain_n))
+      error("R78-DRAIN-ABORT")
+    end
+  elseif d == "throwall" then
+    EM(string.format("r78drainact n=%d kind=throwall", r78_drain_n))
+    error("R78-DRAIN-THROWALL")
+  elseif d == "throw_stop" then
+    if r78_drain_n <= r78_stop then
+      EM(string.format("r78drainact n=%d kind=throw", r78_drain_n))
+      error("R78-DRAIN-THROW-" .. r78_drain_n)
+    end
+    EM(string.format("r78drainact n=%d kind=noop", r78_drain_n))
+  end
+end
+
+-- one bounded state line at the fire step and at the final step (last-wins).
+r78_obs = function(tag)
+  EM(string.format(
+    "%s step=%d locked=%s count=%d b1pos=%s b3pos=%s b1dead=%s b3dead=%s " ..
+    "nest_n=%d nest_ok=%d depth=%d drain_n=%d aborts=%d in_cb=%s",
+    tag, step, tostring(world:isLocked()), world:getBodyCount(), pos(b1),
+    pos(b3), r78_dead(b1), r78_dead(b3), r78_nest_n, r78_nest_ok, r78_depth,
+    r78_drain_n, r78_aborts, tostring(r78_in_cb)))
+end
+
 -- ---- exterior controls (outside any callback) ----------------------------
 
 local function run_ext()
@@ -816,6 +1226,26 @@ function love.update(dt)
     wp_aborted = true
     local err = tostring(uerr)
     local stripped = err:gsub("^[^:]+:%d+: ", "")
+    -- r78 insertion: an abort can repeat once per step for the WHOLE run (the
+    -- every-entry drain-EC livelock aborts 197 times at 200 steps), so the r78
+    -- receipt is bounded -- count every abort, emit the first two -- and it
+    -- carries r78-only tags, so no r78 receipt can collide with a pre-r78 key.
+    if R78S ~= nil then
+      r78_aborts = r78_aborts + 1
+      if r78_aborts <= 2 then
+        EM(string.format("r78wpcall n=%d step=%d update_ok=false err=%s srcline=%s locked_after=%s",
+          r78_aborts, step, stripped, tostring(err:match(":(%d+):")),
+          tostring(world:isLocked())))
+        local sok, serr = pcall_str(b1.setPosition, b1, 999, 999)
+        EM(string.format("r78wpext n=%d ok=%s err=%s pos_after=%s",
+          r78_aborts, tostring(sok), tostring(serr), pos(b1)))
+      end
+    end
+    -- The pre-r78 emission block below is byte-unchanged: it is skipped for
+    -- r78 cells by this guard, whose body is deliberately left at its original
+    -- indentation so the tracked diff stays insertion-only (zero deleted
+    -- lines) while the r78 rows get their own tags.
+    if R78S == nil then
     EM(string.format("wpcall step=%d update_ok=false err=%s srcline=%s locked_after=%s",
       step, stripped, tostring(err:match(":(%d+):")), tostring(world:isLocked())))
     EM(string.format("wp_setpos ok=false err=%s pos_after=%s", stripped, pos(b1)))
@@ -832,8 +1262,18 @@ function love.update(dt)
       EM(string.format("r77abortq step=%d count=%d b1pos=%s b1dead=%s",
         step, world:getBodyCount(), pos(b1), r77_dead(b1)))
     end
+    end
   elseif wp_aborted and not wp_recovered then
     wp_recovered = true
+    -- r78 insertion: the first update after an r78 abort -- the drain loop
+    -- completed (or the retry stopped aborting) and the world is usable again.
+    if R78S ~= nil then
+      EM(string.format(
+        "r78recover step=%d locked_after=%s count=%d b1pos=%s b1dead=%s b3dead=%s",
+        step, tostring(world:isLocked()), world:getBodyCount(), pos(b1),
+        r78_dead(b1), r78_dead(b3)))
+    end
+    if R78S == nil then
     EM(string.format("wpcall_next step=%d update_ok=true locked_after=%s b1pos=%s",
       step, tostring(world:isLocked()), pos(b1)))
     if dd_mode then
@@ -845,6 +1285,7 @@ function love.update(dt)
       -- the abandoned drain loop completed one step late, with no goodbye
       EM(string.format("r77recover step=%d locked_after=%s count=%d b1pos=%s b1dead=%s",
         step, tostring(world:isLocked()), world:getBodyCount(), pos(b1), r77_dead(b1)))
+    end
     end
   end
   if uok and fired and not after_done and step == fire_step then
@@ -875,6 +1316,43 @@ function love.update(dt)
       EM(string.format("rf1counts falses=%d passes=%d", rf1_falses, rf1_passes))
     end
     if RS ~= nil then r77_obs("r77obs") end
+    if R78S ~= nil then r78_obs("r78obs") end
+  end
+  -- ---- r78 post-update witnesses -----------------------------------------
+  if R78S ~= nil and fired then
+    if r78_drain == "capture" and step == fire_step + 1 then
+      -- the handle captured INSIDE the drain EC, probed one step later: the
+      -- clean drain's EndContact ran c->invalidate(), so every accessor
+      -- errors while the fixtures stay alive.
+      r78_zprobe("r78zpost")
+      r78_zprobe_fx("r78zpost")
+    end
+    if r78_drain == "capture_throw" then
+      if step == fire_step then
+        -- the abort just unwound: EndContact never reached c->invalidate(),
+        -- so the SAME handle is still fully usable this step.
+        EM(string.format("r78zstate tag=same step=%d drain_n=%d aborts=%d count=%d",
+          step, r78_drain_n, r78_aborts, world:getBodyCount()))
+        r78_zprobe("r78zsame")
+        r78_zprobe_fx("r78zsame")
+      elseif step == fire_step + 2 then
+        -- after the retry completed: now it is invalidated.
+        EM(string.format("r78zstate tag=late step=%d drain_n=%d aborts=%d count=%d",
+          step, r78_drain_n, r78_aborts, world:getBodyCount()))
+        r78_zprobe("r78zlate")
+        r78_zprobe_fx("r78zlate")
+      end
+    end
+    if R78S.act == "capture_bc" and step == fire_step + 2 then
+      -- the natural EndContact (no drain, no abort) invalidates too
+      r78_zprobe("r78zend")
+      r78_zprobe_fx("r78zend")
+    end
+    if step == fire_step + 1 then
+      EM(string.format(
+        "r78nextstep step=%d count=%d b1pos=%s b3pos=%s drain_n=%d aborts=%d",
+        step, world:getBodyCount(), pos(b1), pos(b3), r78_drain_n, r78_aborts))
+    end
   end
   if step >= STEPS then
     EM(string.format(
@@ -882,6 +1360,7 @@ function love.update(dt)
       step, world:getBodyCount(), pos(b1), pos(b2),
       counts.bc, counts.ec, counts.pre, counts.post, tostring(fired), fire_step))
     if RS ~= nil then r77_obs("r77obs") end
+    if R78S ~= nil then r78_obs("r78obs") end
     EM("CELL_DONE")
     love.event.quit(0)
   end

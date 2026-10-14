@@ -140,6 +140,52 @@ containment / meter), each pre-measured live by the r77 scout before arming:
             nothing for the lock to gate; the decisive witness is the RATIO
             (every reported quantity is scaled at the Lua boundary while the
             solver trajectory is untouched).
+
+r78 additions (the nested-update damage surface), each pre-measured live by
+the r78 scout before arming (reports/round-78/r78-scout.md, 31 cells x3
+byte-stable reps). r77-boundary sec.6 found that a nested world:update inside
+a callback CLEARS b2World's e_locked -- b2World::Step clears its own flag on
+exit and has no entry assert (b2World.cpp:908/:960), while the love-side
+destroy gates consult it (Body.cpp:527-538, Fixture.cpp:337-345):
+  nested_lockclear: the nested update returns with the lock CLEARED, so the
+            structural write the lock refused a moment ago APPLIES
+            (Body::destroy() executes ON THE SPOT instead of queueing). The
+            inner Step itself re-locks: the inner callback bracket
+            (locked=true + a refused inner write) is the contrast witness.
+  inner_drain: the nested update runs its OWN epilogue drain while the outer
+            callback is still on the stack, so a destroy queued in the OUTER
+            callback drains THERE (World::update drains destructBodies, then
+            clears the vectors) -- the target is dead before the outer
+            callback returns.
+  dispatch_escape: destroying a CONTACTING object mid-nested-step. The destroy
+            completes and the same b2Contact::Update falls through to its
+            trailing PreSolve dispatch on the freed contact -> love throws
+            "A fixture has escaped Memoizer!" (srcline=nil). A Lua error, not
+            a signal: pcall contains it (rc=0, aborts=1, recovery to step
+            200) and it is NOT the r75/r76 refused_abort shape (no assert
+            text on the escape path, locked_after=false, no collateral lock
+            refusal). Uncontained it escapes love.update (rc=1, stderr 0 B).
+  depth2 (corrupt member): nesting AGAIN from a BODY-drain EC re-enters the
+            drain loop over the vector the outer loop is iterating -> SIGSEGV
+            (rc=-11, partial receipt, no CELL_DONE). The depth-2 nested update
+            RETURNS first (its line is on the pipe); pcall does NOT contain a
+            signal (the _wp twin dies identically). The FIXTURE-drain twin is
+            the `refused` member instead (catchable b2Assert(found)).
+  contact_invalidated / contact_live_after_abort: contact handles captured
+            inside the drain EC (or at a plain beginContact). A clean drain or
+            a natural EndContact runs c->invalidate() -> every accessor errors
+            while the fixtures stay alive; an ABORTED drain unwound before
+            invalidate(), so the handle is still fully usable at that step and
+            only dies after the retry completes.
+  livelock: an every-entry drain-EC abort NEVER converges -- one drain EC +
+            one abort per subsequent step for the whole step budget, with
+            nothing destroyed (no internal counter, guard or backoff).
+  drain_converge: the same abort converges as soon as the retry stops
+            aborting (abort budget exhausted) or the queued body's contact
+            stops touching (transient contact) -- the destroy then completes.
+The r78 rows are inserted ahead of the process-death tail; their own death
+rows join the tail (died/fatal, then the dispatch-escape rc=1 row, then the
+corrupt rows last of all).
 """
 
 import argparse
@@ -798,6 +844,260 @@ IW_CELLS = [
         "cb_meter2.pos_now": "13.333333015441895,17.338333129882812",
         "final.b1pos": "13.333333015441895,14.836970329284668",
         "rc": "0", "done": "true"}),
+    # ---- r78 additive cells: the nested-update damage surface. Inserted
+    # ahead of the process-death tail; each row pins the decisive witnesses
+    # the class gate does not already enforce (poses, counts, census, the
+    # drain-entry index) plus the identity of the object/body under test.
+    ("iw_n_baseline", "n_baseline", "nested_lockclear", {
+        # lock-clear: the nested update returns with the lock CLEARED and the
+        # write the lock refused a moment ago APPLIES (Body::destroy() would
+        # execute on the spot too). The inner Step re-locks -- its bracket is
+        # the contrast, and the pose pins are the nested update's own
+        # physics-visible effect (a no-write nest is not a no-op).
+        "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "nested_probe/-",
+        "fire.pos": "400,520.1500244140625",
+        "r78npre.lock": "true", "r78npre.count": "4",
+        "r78nest1.in_cb": "true", "r78nest1.count": "4",
+        "r78setpos.pos_after": "1234.5,678.9000244140625",
+        "r78nextstep.step": "74",
+        "r78nextstep.b1pos": "1234.5,539.9063720703125",
+        "r78obs.nest_n": "1", "r78obs.nest_ok": "1", "r78obs.count": "4",
+        "final.b1pos": "1234.5,656.3702392578125",
+        "final.bc": "4", "final.ec": "3",
+        "final.pre": "37", "final.post": "37",
+        "done": "true", "rc": "0"}),
+    ("iw_n_inner_cb", "n_inner_cb", "nested_lockclear", {
+        # the same nest with a velocity write first: the inner-Step bracket
+        # (locked=true + a refused inner write) is the measured lock bracket,
+        # and the post-nest write still applies.
+        "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "nested_inner_cb/-",
+        "r78npre.setvel_ok": "true", "r78npre.setvel_err": "nil",
+        "r78setpos.pos_after": "1234.5,678.9000244140625",
+        "r78nextstep.b1pos": "1234.5,531.55010986328125",
+        "r78obs.nest_ok": "1",
+        "final.b1pos": "1234.5,80.874465942382812",
+        "final.bc": "4", "final.ec": "3",
+        "final.pre": "37", "final.post": "37",
+        "done": "true", "rc": "0"}),
+    ("iw_n_depth2_seq", "n_depth2_seq", "nested_lockclear", {
+        # TWO sequential nested updates in one callback are contained: both
+        # return with the lock cleared (depth=1 each -- they are sequential,
+        # not nested in one another) and the write applies. The corrupt
+        # member is the drain-EC nest, not depth 2 per se.
+        "fire.step": "73", "fire.kind": "nested_twice/-",
+        "r78nest1.in_cb": "true",
+        "r78nest2.ok": "true", "r78nest2.lock_after": "false",
+        "r78nest2.depth": "1", "r78nest2.in_cb": "true",
+        "r78obs.nest_n": "2", "r78obs.nest_ok": "2",
+        "r78setpos.pos_after": "1234.5,678.9000244140625",
+        "r78nextstep.b1pos": "400,509.87939453125",
+        "final.b1pos": "400,438.03939819335938",
+        "final.bc": "7", "final.ec": "5",
+        "final.pre": "40", "final.post": "39",
+        "done": "true", "rc": "0"}),
+    ("iw_n_queue_inner_drain", "n_queue_inner_drain", "inner_drain", {
+        # inner-drain ownership: the destroy queued in the OUTER callback
+        # drains at the INNER epilogue (its EndContact is the drain EC at
+        # locked=false, depth=1, in_cb=true), so the target is already dead
+        # when the nested update returns -- and the run survives to step 200.
+        "fire.step": "73", "fire.kind": "nested_queue/-",
+        "r78queue.what": "b3", "r78queue.ok": "true",
+        "r78queue.dead_in_cb": "false", "r78queue.count": "4",
+        "r78drainec.n": "1", "r78drainec.step": "73",
+        "r78drainec.dyn": "b3", "r78drainec.count": "4",
+        "r78destroy.what": "b3", "r78destroy.drain_n": "1",
+        "r78nest1.count": "3",
+        "postfire.count": "3", "postfire.drain_n": "1",
+        "r78nextstep.b3pos": "ERR:Attempt to use destroyed body.",
+        "r78obs.b3dead": "true", "r78obs.count": "3",
+        "final.count": "3", "final.bc": "4", "final.ec": "4",
+        "final.pre": "37", "final.post": "37",
+        "final.b1pos": "1234.5,656.3702392578125",
+        "done": "true", "rc": "0"}),
+    ("iw_n_destroy_contacting_wp", "n_destroy_contacting_wp", "dispatch_escape", {
+        # contacting-destroy escape, contained: the destroy executes on the
+        # spot (dead + count 3 inside the callback) and the same contact
+        # Update's trailing PreSolve dispatch on the freed contact raises
+        # love's Memoizer error -- srcline=nil, locked_after=false, and the
+        # exterior write is refused by the LIFETIME guard, not by a lock.
+        "fire.step": "73", "fire.kind": "nested_destroy/-",
+        "r78destroy.what": "b1", "r78destroy.err": "nil",
+        "r78destroy.dead": "true", "r78destroy.count": "3",
+        "r78drainec.n": "1", "r78drainec.dyn": "b1",
+        "r78wpcall.err": "A fixture has escaped Memoizer!",
+        "r78wpext.ok": "false",
+        "r78wpext.err": "Attempt to use destroyed body.",
+        "r78recover.b1dead": "true", "r78recover.count": "3",
+        "r78obs.aborts": "1", "r78obs.count": "3",
+        "final.count": "3", "final.bc": "8", "final.ec": "6",
+        "final.pre": "67", "final.post": "67",
+        "final.b1pos": "ERR:Attempt to use destroyed body.",
+        "done": "true", "rc": "0"}),
+    ("iw_n_destroy_ground_wp", "n_destroy_ground_wp", "dispatch_escape", {
+        # the static side of the same escape: TWO drain ECs (b1's contact and
+        # b3's), then the same Memoizer text -- and the exterior write is NOT
+        # refused as collateral (the world is unlocked): 999,999 lands.
+        "fire.step": "73", "fire.kind": "nested_destroy/-",
+        "r78destroy.what": "g", "r78destroy.err": "nil",
+        "r78destroy.dead": "true", "r78destroy.count": "3",
+        "r78drainec.n": "2", "r78drainec.dyn": "b3",
+        "r78wpcall.err": "A fixture has escaped Memoizer!",
+        "r78wpext.ok": "true", "r78wpext.pos_after": "999,999",
+        "r78recover.count": "3",
+        "r78nextstep.drain_n": "2",
+        "r78obs.aborts": "1", "r78obs.drain_n": "2",
+        "final.count": "3", "final.bc": "2", "final.ec": "2",
+        "final.pre": "33", "final.post": "33",
+        "final.b1pos": "999,1105.313720703125",
+        "done": "true", "rc": "0"}),
+    ("iw_n_destroy_fx_wp", "n_destroy_fx_wp", "dispatch_escape", {
+        # the fixture member: the contacting fixture is torn down on the spot
+        # (the fixture list shrinks 1 -> 0 inside the callback) while the BODY
+        # survives, then the same escape. Same text, different escape site.
+        "fire.step": "73", "fire.kind": "nested_destroy_fx/-",
+        "r78destroy.what": "fx", "r78destroy.err": "nil",
+        "r78destroy.dead": "true",
+        "r78destroy.fcount_before": "1", "r78destroy.fcount_after": "0",
+        "r78destroy.count": "4",
+        "r78drainec.n": "1", "r78drainec.dyn": "b1",
+        "r78wpcall.err": "A fixture has escaped Memoizer!",
+        "r78wpext.ok": "true", "r78wpext.pos_after": "999,999",
+        "r78obs.aborts": "1", "r78obs.count": "4",
+        "final.count": "4", "final.bc": "4", "final.ec": "3",
+        "final.pre": "36", "final.post": "36",
+        "final.b1pos": "999,1105.313720703125",
+        "done": "true", "rc": "0"}),
+    ("iw_n_depth2_fxdrain", "n_depth2_fxdrain", "refused", {
+        # the fixture-drain twin of the depth-2 nest: the drain EC fires in
+        # the OUTER epilogue (depth=0, in_cb=false), the re-entrant
+        # Fixture::destroy re-runs b2Body::DestroyFixture, and its
+        # b2Assert(found) is CATCHABLE -- rc=0, the run continues to step 200.
+        "fire.step": "73", "fire.kind": "queue_fixture/nested_update",
+        "r78queue.what": "fx", "r78queue.dead_in_cb": "false",
+        "r78queue.fcount_before": "1", "r78queue.fcount_after": "1",
+        "r78drainact.n": "1", "r78drainact.depth_before": "0",
+        "r78nest1.ok": "false",
+        "r78nest1.err": "Box2D assertion failed: found",
+        "r78nest1.in_cb": "false", "r78nest1.count": "4",
+        "r78obs.nest_ok": "0", "r78obs.drain_n": "1",
+        "r78nextstep.b1pos": "400,491.28445434570312",
+        "final.b1pos": "400,647.3021240234375",
+        "final.bc": "4", "final.ec": "4",
+        "final.pre": "35", "final.post": "35",
+        "done": "true", "rc": "0"}),
+    ("iw_z_drain_use_after", "z_drain_use_after", "contact_invalidated", {
+        # zombie handle, clean drain: the handle captured inside the drain EC
+        # is invalidated one step later (every accessor errors) while BOTH of
+        # the contact's fixtures stay alive -- the touching path invalidates
+        # properly.
+        "fire.step": "4", "fire.kind": "queue_body/capture",
+        "fire.pos": "650,519.94647216796875",
+        "r78queue.what": "b3", "r78queue.dead_in_cb": "false",
+        "r78drainec.n": "1", "r78drainec.step": "4",
+        "r78drainec.dyn": "b3",
+        "r78zcap.where": "drain", "r78zcap.touch": "true",
+        "r78zcap.fa": "g", "r78zcap.fb": "b3",
+        "r78zpost.fxa": "false", "r78zpost.fxb": "true",
+        "r78zpost.fxa_body": "g",
+        "r78obs.count": "3", "r78obs.b3dead": "true",
+        "final.count": "3", "final.bc": "5", "final.ec": "5",
+        "final.pre": "6", "final.post": "6",
+        "final.b1pos": "400,445.10910034179688",
+        "done": "true", "rc": "0"}),
+    ("iw_z_abort_use_after", "z_abort_use_after", "contact_live_after_abort", {
+        # zombie handle, ABORTED drain: the abort unwinds before
+        # Contact::invalidate(), so the SAME handle is still fully usable at
+        # the abort step (touch/fixtures/children/friction/positions all read)
+        # and only dies after the retry completes one step late.
+        "fire.step": "4", "fire.kind": "queue_body/capture_throw",
+        "r78drainec.n": "2", "r78drainec.step": "5",
+        "r78drainact.kind": "throw", "r78drainact.n": "1",
+        "r78wpcall.err": "R78-DRAIN-ABORT",
+        "r78wpext.ok": "true",
+        "r78zsame.fa": "g", "r78zsame.fb": "b3",
+        "r78zsame.ca": "1", "r78zsame.cb": "1",
+        "r78zlate.fxa": "false", "r78zlate.fxb": "true",
+        "r78zstate.tag": "late", "r78zstate.count": "3",
+        "r78recover.step": "5", "r78recover.b3dead": "true",
+        "r78obs.drain_n": "2", "r78obs.aborts": "1", "r78obs.count": "3",
+        "final.count": "3", "final.bc": "3", "final.ec": "4",
+        "final.pre": "5", "final.post": "5",
+        "final.b1pos": "999,4502.70068359375",
+        "done": "true", "rc": "0"}),
+    ("iw_z_touch_then_end", "z_touch_then_end", "contact_invalidated", {
+        # the isolation control: a handle captured at a plain beginContact and
+        # probed after the natural EndContact -- invalidated, fixtures alive,
+        # no drain and no abort anywhere in the receipt.
+        "fire.step": "73", "fire.kind": "capture_bc/-",
+        "r78zcap.where": "bc", "r78zcap.fa": "g", "r78zcap.fb": "b1",
+        "r78zend.fxa": "false", "r78zend.fxb": "false",
+        "r78zend.fxa_body": "g",
+        "r78obs.drain_n": "0", "r78obs.aborts": "0",
+        "final.count": "4", "final.bc": "5", "final.ec": "4",
+        "final.pre": "36", "final.post": "36",
+        "final.b1pos": "400,445.10910034179688",
+        "done": "true", "rc": "0"}),
+    ("iw_livelock_all", "livelock_all", "livelock", {
+        # every-entry drain-EC abort on a PERSISTENT contact: one drain EC +
+        # one abort per subsequent step for the whole budget (fire at step 4
+        # -> 197 attempts over steps 4-200, the last one AT the final step),
+        # nothing destroyed, and the run still ends rc=0. The bound is linear
+        # in the caller's step budget -- there is no internal counter, guard
+        # or backoff. (`ec` inflates with the aborts: the abort unwinds after
+        # the EndContact dispatch, so the same goodbye re-fires.)
+        "fire.step": "4", "fire.kind": "queue_body/throwall",
+        "r78queue.what": "b3", "r78queue.dead_in_cb": "false",
+        "r78drainec.n": "197", "r78drainec.step": "200",
+        "r78drainec.dyn": "b3",
+        "r78drainact.kind": "throwall", "r78drainact.n": "197",
+        "r78wpcall.err": "R78-DRAIN-THROWALL",
+        "r78wpext.ok": "true", "r78wpext.pos_after": "999,999",
+        "r78obs.drain_n": "197", "r78obs.aborts": "197",
+        "r78obs.count": "4", "r78obs.b3dead": "false",
+        "r78obs.b3pos": "650,519.85009765625",
+        "final.steps": "200", "final.count": "4",
+        "final.bc": "3", "final.ec": "199",
+        "final.pre": "34", "final.post": "34",
+        "final.b1pos": "999,4501.82861328125",
+        "done": "true", "rc": "0"}),
+    ("iw_livelock_stop2", "livelock_stop2", "drain_converge", {
+        # the same abort with a two-entry budget: entries 1-2 abort, entry 3
+        # is a no-op, the queued destroy completes THERE (drain_n=3, aborts=2,
+        # count 4 -> 3) and the run recovers at step 6. Convergence is the
+        # retry's own outcome, not a timeout.
+        "fire.step": "4", "fire.kind": "queue_body/throw_stop",
+        "r78queue.what": "b3", "r78queue.dead_in_cb": "false",
+        "r78drainec.n": "3", "r78drainec.step": "6",
+        "r78drainec.dyn": "b3",
+        "r78drainact.kind": "noop", "r78drainact.n": "3",
+        "r78wpcall.err": "R78-DRAIN-THROW-2",
+        "r78wpext.ok": "true",
+        "r78recover.step": "6", "r78recover.count": "3",
+        "r78obs.drain_n": "3", "r78obs.aborts": "2",
+        "r78obs.count": "3", "r78obs.b3dead": "true",
+        "final.count": "3", "final.bc": "3", "final.ec": "5",
+        "final.pre": "6", "final.post": "6",
+        "done": "true", "rc": "0"}),
+    ("iw_livelock_transient", "livelock_transient", "drain_converge", {
+        # the other convergence path: the target is the BOUNCING body, so the
+        # retry at the next step finds no touching contact -> no drain EC, no
+        # abort, and the queued destroy completes silently (drain_n stays 1,
+        # count 4 -> 3). The bound shape is the CONTACT's lifetime.
+        "fire.step": "73", "fire.kind": "queue_body/throwall",
+        "r78queue.what": "b1", "r78queue.dead_in_cb": "false",
+        "r78drainec.n": "1", "r78drainec.step": "73",
+        "r78drainec.dyn": "b1",
+        "r78wpcall.err": "R78-DRAIN-THROWALL",
+        "r78wpext.ok": "true",
+        "r78recover.step": "74", "r78recover.count": "3",
+        "r78obs.drain_n": "1", "r78obs.aborts": "1",
+        "r78obs.count": "3", "r78obs.b1dead": "true",
+        "final.count": "3", "final.bc": "4", "final.ec": "4",
+        "final.pre": "35", "final.post": "35",
+        "final.b1pos": "ERR:Attempt to use destroyed body.",
+        "done": "true", "rc": "0"}),
     # r75 critic-C1 uncontained twins: measured non-fatal (fatal is
     # derived = assert-gated write x uncontained, not uncontained alone)
     ("iw_bc_destroy_unp", "bc_destroy_unp", "deferred", {
@@ -894,6 +1194,21 @@ IW_CELLS = [
         "fire.step": "73", "fire.kind": "cowrap_unp", "fire.locked": "true",
         "rc": "1", "done": "false",
         "err_on": "stdout", "assert_txt": "m_world_islocked", "esc_fn": "co"}),
+    # r78 process-death cell: the dispatch escape with NO container. It is a
+    # love::Exception from a contact dispatch -- not an assert-gated `fatal`
+    # (assert_txt here is the inner-Step bracket's refused write, not the
+    # escape's) and not a signal (`died`). Spawned with the death tail.
+    ("iw_n_destroy_contacting", "n_destroy_contacting", "dispatch_escape", {
+        "fire.step": "73", "fire.kind": "nested_destroy/-",
+        "r78destroy.what": "b1", "r78destroy.ok": "true",
+        "r78destroy.err": "nil", "r78destroy.dead": "true",
+        "r78destroy.count": "3",
+        "r78drainec.n": "1", "r78drainec.dyn": "b1",
+        "r78nest1.count": "4",
+        "postfire.count": "3", "postfire.drain_n": "1",
+        # the death site: the escape surfaces out of love.update
+        "esc_fn": "update",
+        "rc": "1", "done": "false"}),
     # corrupt (rc=-11): world:release() INSIDE the engine's own execution, on
     # every dispatch channel. The last emitted line is the callback's own
     # final write (the caller's own count/pose report is the death site and
@@ -954,6 +1269,41 @@ IW_CELLS = [
         "drainrel.alive": "1",
         "rc": "-11", "done": "false",
         "err_on": "none", "assert_txt": "none", "esc_fn": "none"}),
+    # r78 corrupt tail (rc=-11, last of all): a nested world:update issued from
+    # a BODY-drain EC. The depth-2 nested update RETURNS first -- its receipt
+    # is the last line on the pipe -- and the process then dies inside the
+    # drain loop, before any further Lua frame. The _wp twin is the SAME
+    # witness set: pcall does not contain a signal. `assert_txt` is not pinned
+    # here (the inner-Step bracket line carries the IsLocked text; the death
+    # itself has no assert text).
+    ("iw_n_depth2_drain", "n_depth2_drain", "corrupt", {
+        "fire.step": "73", "fire.kind": "nested_queue/nested_update",
+        "fire.locked": "true",
+        "r78queue.what": "b3", "r78queue.ok": "true",
+        "r78queue.dead_in_cb": "false", "r78queue.count": "4",
+        "r78drainact.n": "1", "r78drainact.kind": "nested_update",
+        "r78drainact.depth_before": "1", "r78drainact.lock": "false",
+        "r78drainec.n": "2", "r78drainec.depth": "2",
+        "r78drainec.dyn": "b3", "r78drainec.in_cb": "true",
+        "r78nest2.ok": "true", "r78nest2.lock_after": "false",
+        "r78nest2.depth": "2", "r78nest2.in_cb": "true",
+        "r78nest2.count": "3",
+        "rc": "-11", "done": "false"}),
+    ("iw_n_depth2_drain_wp", "n_depth2_drain_wp", "corrupt", {
+        # identical receipt modulo the cell name: the update-level pcall never
+        # returns, so a signal is not containable -- the class is the same.
+        "fire.step": "73", "fire.kind": "nested_queue/nested_update",
+        "fire.locked": "true",
+        "r78queue.what": "b3", "r78queue.ok": "true",
+        "r78queue.dead_in_cb": "false", "r78queue.count": "4",
+        "r78drainact.n": "1", "r78drainact.kind": "nested_update",
+        "r78drainact.depth_before": "1", "r78drainact.lock": "false",
+        "r78drainec.n": "2", "r78drainec.depth": "2",
+        "r78drainec.dyn": "b3", "r78drainec.in_cb": "true",
+        "r78nest2.ok": "true", "r78nest2.lock_after": "false",
+        "r78nest2.depth": "2", "r78nest2.in_cb": "true",
+        "r78nest2.count": "3",
+        "rc": "-11", "done": "false"}),
 ]
 
 IW_LINE = re.compile(r"^IW \| cell=(\S+) \| (.*)$")
@@ -999,7 +1349,25 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
     refused_abort|deferred_abort|ignored|fatal|timeout|died|nolaunch|
     swapped|muted|immediate|drain_abort|yield_abort|corrupt|anomaly}.
     Partial-capture detection is built in: fire-present without
-    CELL_DONE is never a pass shape."""
+    CELL_DONE is never a pass shape.
+
+    r78 classes: {nested_lockclear|inner_drain|dispatch_escape|
+    contact_invalidated|contact_live_after_abort|livelock|drain_converge}.
+
+    r78 members of existing classes (pre-measured, reports/round-78/
+    r78-scout.md):
+      refused: the r74 member is the lock-guard text ("...IsLocked() ==
+              false"); the r78 member is a nested update issued from a
+              FIXTURE-drain EC, where the re-entrant Fixture::destroy
+              re-runs b2Body::DestroyFixture and its b2Assert(found)
+              fires ("Box2D assertion failed: found") -- same shape
+              (catchable Box2D assertion refusal), different assert site.
+      corrupt: the r77 member is world:release() inside the engine's own
+              execution; the r78 member is a depth-2 nested update issued
+              from a BODY-drain EC. Both are signal deaths inside engine
+              execution (rc=-11, partial receipt, no CELL_DONE); the
+              witness sets are disjoint and each is required in full.
+    """
     if timed_out:
         return "timeout", f"exceeded {TIMEOUT_S}s"
     done = flat.get("done") == "true"
@@ -1172,6 +1540,158 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
                     and flat.get("r77obs.b2dead") == "true"):
                 return "deferred", "body drained after its joints (order witness)"
             return "anomaly", "drain-order witness incomplete"
+        # ---- r78 measured shapes (the nested-update damage surface) ----
+        # Each branch gates on its own decisive witness VALUES and returns
+        # anomaly when they are incomplete: no r78 receipt can satisfy an
+        # earlier gate by accident, and a partial r78 receipt cannot pass.
+        # Precedence (documented, not incidental): inner_drain before
+        # nested_lockclear (a cell can show both -- the drain ownership is
+        # the more specific shape); the zombie branch before the livelock
+        # branch (both carry an abort count).
+        if (flat.get("r78drainec.in_cb") == "true"
+                and flat.get("r78drainec.depth") == "1"
+                and flat.get("r78drainec.locked") == "false"):
+            # seed 2: the nested update runs its OWN epilogue drain while the
+            # outer callback is still on the stack (depth=1, in_cb=true), so
+            # the destroy queued in the OUTER callback drains THERE -- the
+            # target is already dead when the nested update returns, with the
+            # outer callback still running.
+            if (flat.get("r78nest1.ok") == "true"
+                    and flat.get("r78nest1.lock_after") == "false"
+                    and flat.get("r78queue.dead_in_cb") == "false"
+                    and flat.get("r78destroy.dead") == "true"
+                    and flat.get("r78destroy.count")
+                        == str(int(flat.get("built.bodies", "0")) - 1)):
+                return "inner_drain", "queued destroy drained at the INNER epilogue"
+            return "anomaly", "inner-drain ownership witness incomplete"
+        if flat.get("r78drainact.kind") == "nested_update":
+            # seed 4: a nested update issued FROM the drain EC. Partition:
+            # body-drain -> the re-entrant drain loop re-clears the vector the
+            # outer loop is iterating -> SIGSEGV (the rc=-11 gate below);
+            # fixture-drain -> the re-entrant Fixture::destroy re-runs
+            # b2Body::DestroyFixture, whose b2Assert(found) fires -> a
+            # CATCHABLE refusal (rc=0, run continues).
+            if (flat.get("r78nest1.ok") == "false"
+                    and "Box2D assertion failed: found"
+                        in flat.get("r78nest1.err", "")
+                    and flat.get("r78nest1.lock_after") == "false"
+                    and flat.get("r78nest1.depth") == "1"
+                    and flat.get("r78drainec.depth") == "0"
+                    and flat.get("r78drainec.in_cb") == "false"
+                    and flat.get("r78drainec.locked") == "false"):
+                return "refused", "nested update from a fixture-drain EC: b2Assert(found)"
+            return "anomaly", "drain-EC nested update without a refused witness"
+        if ("r78wpcall.update_ok" in flat
+                and "escaped Memoizer" in flat.get("r78wpcall.err", "")):
+            # seed 3 (contained): destroying a CONTACTING object right after
+            # the nested update cleared the lock. The destroy executes on the
+            # spot and the same b2Contact::Update then falls through to its
+            # trailing PreSolve dispatch on the freed contact, so love throws
+            # "A fixture has escaped Memoizer!" -- srcline=nil (the string
+            # carries no Lua line), locked_after=false, and NO collateral lock
+            # refusal (the r75/r76 refused_abort conjuncts are all false
+            # here). The run recovers and reaches step 200. Gated on the error
+            # TEXT so the drain-abort cells (whose r78wpcall carries the
+            # drain hook's own throw) fall through to their own branches.
+            if (flat.get("r78nest1.lock_after") == "false"
+                    and flat.get("r78wpcall.srcline") == "nil"
+                    and flat.get("r78wpcall.locked_after") == "false"
+                    and flat.get("r78destroy.ok") == "true"
+                    and flat.get("r78destroy.dead") == "true"
+                    and "assertion" not in flat.get("r78wpext.err", "assertion")
+                    and flat.get("r78recover.locked_after") == "false"):
+                return ("dispatch_escape",
+                        "contacting destroy mid-nested-step: Memoizer escape (contained)")
+            return "anomaly", "dispatch-escape witness incomplete"
+        if flat.get("r78zcap.where") == "bc":
+            # seed 5 (natural-end control): the handle captured at a plain
+            # beginContact. The natural EndContact runs c->invalidate(), so
+            # every accessor errors while the contact's fixtures stay alive.
+            if (flat.get("r78zend.touch", "")
+                        .startswith("ERR:Attempt to use destroyed contact.")
+                    and flat.get("r78zend.fix_ok") == "false"
+                    and flat.get("r78zend.ch_ok") == "false"
+                    and flat.get("r78zend.fric_ok") == "false"
+                    and flat.get("r78zend.pos_ok") == "false"
+                    and flat.get("r78zend.fxa") == "false"
+                    and flat.get("r78zend.fxa_body") == "g"):
+                return ("contact_invalidated",
+                        "handle invalidated by the natural EndContact; fixtures alive")
+            return "anomaly", "natural-end zombie witness incomplete"
+        if flat.get("r78zcap.where") == "drain":
+            # seed 5: the handle captured INSIDE the drain EC. A clean drain
+            # invalidates it (EndContact ran c->invalidate()); an ABORTED drain
+            # unwound before invalidate(), so the same handle is still fully
+            # usable at that step and only dies after the retry completes.
+            if (flat.get("r78zpost.touch", "")
+                        .startswith("ERR:Attempt to use destroyed contact.")
+                    and flat.get("r78zpost.fix_ok") == "false"
+                    and flat.get("r78zpost.ch_ok") == "false"
+                    and flat.get("r78zpost.fric_ok") == "false"
+                    and flat.get("r78zpost.pos_ok") == "false"
+                    and flat.get("r78zpost.fxa") == "false"
+                    and flat.get("r78zpost.fxa_body") == "g"):
+                return ("contact_invalidated",
+                        "handle invalidated by the drain; fixtures alive")
+            if (flat.get("r78zsame.touch") == "true"
+                    and flat.get("r78zsame.fix_ok") == "true"
+                    and flat.get("r78zsame.ch_ok") == "true"
+                    and flat.get("r78zsame.fric_ok") == "true"
+                    and flat.get("r78zsame.pos_ok") == "true"
+                    and flat.get("r78zsame.fxa") == "false"
+                    and flat.get("r78zsame.fxb") == "false"
+                    and flat.get("r78zlate.touch", "")
+                        .startswith("ERR:Attempt to use destroyed contact.")
+                    and flat.get("r78zlate.fix_ok") == "false"):
+                return ("contact_live_after_abort",
+                        "aborted drain skipped invalidate(); handle died after the retry")
+            return "anomaly", "zombie-contact witness incomplete"
+        if "r78obs.aborts" in flat and flat.get("r78obs.aborts") != "0":
+            # seed 2: an every-entry drain-EC abort. It NEVER converges -- one
+            # drain EC + one abort per subsequent step for the whole step
+            # budget, with nothing destroyed (no internal counter, guard or
+            # backoff). The converged members stop aborting -- the retry no
+            # longer aborts, or the queued body's contact stopped touching --
+            # and the destroy completes.
+            try:
+                steps = int(flat.get("final.steps", "-1"))
+                fire = int(flat.get("fire.step", "-2"))
+                aborts = int(flat.get("r78obs.aborts", "-1"))
+                drain_n = int(flat.get("r78obs.drain_n", "-1"))
+                bodies = int(flat.get("built.bodies", "-1"))
+                count = int(flat.get("final.count", "-1"))
+            except ValueError:
+                return "anomaly", "livelock witness not numeric"
+            rate = steps - fire + 1
+            if (aborts == drain_n == rate and count == bodies
+                    and flat.get("r78obs.b1dead") == "false"
+                    and flat.get("r78obs.b3dead") == "false"
+                    and flat.get("r78wpcall.locked_after") == "false"
+                    and flat.get("r78wpext.ok") == "true"):
+                return ("livelock",
+                        "one drain EC + one abort per step; nothing destroyed")
+            if (aborts >= 1 and drain_n <= aborts + 1 and aborts < rate
+                    and count == bodies - 1):
+                return "drain_converge", "retry stopped aborting; destroy completed"
+            return "anomaly", "livelock/converge witness incomplete"
+        if flat.get("r78nest1.ok") == "true":
+            # seed 1: a nested world:update inside a callback CLEARS e_locked
+            # (b2World::Step clears its own flag on exit and has no entry
+            # assert), so the outer step continues UNLOCKED and the structural
+            # write the lock refused a moment ago APPLIES. The inner Step
+            # re-locks -- its callback bracket (locked=true + a refused inner
+            # write) is the contrast witness.
+            if (flat.get("r78nest1.lock_after") == "false"
+                    and flat.get("r78inner.locked") == "true"
+                    and flat.get("r78inner.depth") == "1"
+                    and flat.get("r78inner_write.ok") == "false"
+                    and "IsLocked() == false" in flat.get("r78inner_write.err", "")
+                    and flat.get("r78setpos.ok") == "true"
+                    and flat.get("r78setpos.err") == "nil"
+                    and flat.get("r78setpos.pos_after", "").startswith("1234.5,678.9")):
+                return ("nested_lockclear",
+                        "nested update cleared the lock; the write applied")
+            return "anomaly", "nested lock-clear witness incomplete"
         if flat.get("wpcall.update_ok") == "false":
             # r75 C3 + critic F2: gate on the abort VALUE, not key
             # presence -- a receipt that merely mentions wpcall.* (e.g.
@@ -1275,11 +1795,35 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
         # reachable. A partial receipt whose last line is the callback's own
         # write IS the measurement. (`died` is rc without a signal: a
         # different class, never this one.)
-        if ("fire.step" in flat and "postfire" not in flat
-                and ("rel_alive.marker" in flat
-                     or "drainrel.alive" in flat)):
+        # Death-site discipline, per member: the r77 conjunct `"postfire" not
+        # in flat` tested a key parse_iw never emits (every flat key is
+        # `<tag>.<key>`), so it was vacuously true -- and the two release
+        # members die at DIFFERENT sites (the callback channels before
+        # postfire, the drain EC after it), so they are gated apart.
+        if ("fire.step" in flat
+                and (("rel_post.marker" in flat and "postfire.step" not in flat)
+                     or ("drainrel.alive" in flat and "postfire.step" in flat))):
             return "corrupt", "SIGSEGV after an in-engine release"
-        return "anomaly", "rc=-11 without a release witness"
+        # seed 4 (r78): a nested update issued from a BODY-drain EC. The
+        # re-entrant update re-runs the same drain loop over the vector the
+        # outer loop is iterating and clears it mid-iteration, then re-enters
+        # b2World::DestroyBody on a body whose teardown is in flight. The
+        # depth-2 nested update RETURNS first (its receipt is on the pipe) and
+        # the process dies before any further Lua frame -- pcall does NOT
+        # contain a signal, so the _wp twin dies identically (its witness set
+        # is the same, which is why this gate reads the shared keys).
+        if ("fire.step" in flat and "postfire.step" not in flat
+                and flat.get("r78drainact.kind") == "nested_update"
+                and flat.get("r78nest2.ok") == "true"
+                and flat.get("r78nest2.lock_after") == "false"
+                and flat.get("r78nest2.depth") == "2"
+                and flat.get("r78nest2.in_cb") == "true"
+                and flat.get("r78drainec.n") == "2"
+                and flat.get("r78drainec.depth") == "2"
+                and flat.get("r78drainec.in_cb") == "true"):
+            return ("corrupt",
+                    "SIGSEGV after a depth-2 nested update from a body-drain EC")
+        return "anomaly", "rc=-11 without a release or nested-drain witness"
     if not done and rc not in (0, None) and "ext_rel_call.ok" in flat:
         # seed 1 control: the SAME release from OUTSIDE the engine's own
         # execution is a CATCHABLE Lua error (no signal): every later Lua
@@ -1287,6 +1831,17 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
         # world touch. Interior-only is what makes `corrupt` mean something.
         return "died", "exterior release: catchable error, no signal"
     if has_fire and not done and rc not in (0, None):
+        # seed 3 (uncontained, r78): the same contacting-destroy escape with
+        # no container. It is a Lua error (rc=1, no signal, stderr empty) that
+        # escapes love.update -- NOT an assert-gated `fatal` (the text is
+        # love's, not Box2D's) and NOT a signal (`died`). The nested-destroy
+        # witness set is required in full.
+        if ("escaped Memoizer" in stdout and "postfire.step" in flat
+                and flat.get("r78nest1.lock_after") == "false"
+                and flat.get("r78destroy.ok") == "true"
+                and flat.get("r78destroy.dead") == "true"):
+            return ("dispatch_escape",
+                    "Memoizer escape escaped love.update (rc=1, no signal)")
         if "Box2D assertion" in stdout:
             return "fatal", f"rc={rc}, assert text on stdout"
         return "died", f"rc={rc} without assert text"
