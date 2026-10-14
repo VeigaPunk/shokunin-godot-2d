@@ -1,0 +1,915 @@
+{
+  "mode": "real_godot_midlineforge_offset_ladder",
+  "bound_seconds": 3.0,
+  "signature_gap_ms": 200,
+  "offsets_ms": [
+    0,
+    40,
+    80,
+    120,
+    160,
+    240
+  ],
+  "reps_per_offset": 3,
+  "ladder": [
+    {
+      "offset_ms": 0,
+      "reps": [
+        {
+          "case": "midline_ladder_0ms_r0",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=0"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.633,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3479390,
+          "godot_pid": 3479390,
+          "descendant_pid": 3479467,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3479390",
+            "DESCENDANT_PIPE spawned_pid=3479467",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3479390",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=0"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        },
+        {
+          "case": "midline_ladder_0ms_r1",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=0"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.542,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3479471,
+          "godot_pid": 3479471,
+          "descendant_pid": 3479509,
+          "descendant_alive_at_return": false,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3479471",
+            "DESCENDANT_PIPE spawned_pid=3479509",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3479471",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=0"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        },
+        {
+          "case": "midline_ladder_0ms_r2",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=0"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.711,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3479511,
+          "godot_pid": 3479511,
+          "descendant_pid": 3479621,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3479511",
+            "DESCENDANT_PIPE spawned_pid=3479621",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3479511",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=0"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        }
+      ],
+      "reps_landed": 3,
+      "outcome": "fabricated"
+    },
+    {
+      "offset_ms": 40,
+      "reps": [
+        {
+          "case": "midline_ladder_40ms_r0",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=40"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.561,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3479625,
+          "godot_pid": 3479625,
+          "descendant_pid": 3479663,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3479625",
+            "DESCENDANT_PIPE spawned_pid=3479663",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3479625",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=40"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        },
+        {
+          "case": "midline_ladder_40ms_r1",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=40"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.693,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3479703,
+          "godot_pid": 3479703,
+          "descendant_pid": 3479743,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3479703",
+            "DESCENDANT_PIPE spawned_pid=3479743",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3479703",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=40"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        },
+        {
+          "case": "midline_ladder_40ms_r2",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=40"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.58,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3479745,
+          "godot_pid": 3479745,
+          "descendant_pid": 3479783,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3479745",
+            "DESCENDANT_PIPE spawned_pid=3479783",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3479745",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=40"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        }
+      ],
+      "reps_landed": 3,
+      "outcome": "fabricated"
+    },
+    {
+      "offset_ms": 80,
+      "reps": [
+        {
+          "case": "midline_ladder_80ms_r0",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=80"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.595,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3479823,
+          "godot_pid": 3479823,
+          "descendant_pid": 3479863,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3479823",
+            "DESCENDANT_PIPE spawned_pid=3479863",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3479823",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=80"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        },
+        {
+          "case": "midline_ladder_80ms_r1",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=80"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.617,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3479865,
+          "godot_pid": 3479865,
+          "descendant_pid": 3479941,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3479865",
+            "DESCENDANT_PIPE spawned_pid=3479941",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3479865",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=80"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        },
+        {
+          "case": "midline_ladder_80ms_r2",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=80"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.54,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3479945,
+          "godot_pid": 3479945,
+          "descendant_pid": 3479983,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3479945",
+            "DESCENDANT_PIPE spawned_pid=3479983",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3479945",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=80"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        }
+      ],
+      "reps_landed": 3,
+      "outcome": "fabricated"
+    },
+    {
+      "offset_ms": 120,
+      "reps": [
+        {
+          "case": "midline_ladder_120ms_r0",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=120"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.652,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3479992,
+          "godot_pid": 3479992,
+          "descendant_pid": 3480068,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3479992",
+            "DESCENDANT_PIPE spawned_pid=3480068",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3479992",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=120"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        },
+        {
+          "case": "midline_ladder_120ms_r1",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=120"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.594,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3480072,
+          "godot_pid": 3480072,
+          "descendant_pid": 3480110,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3480072",
+            "DESCENDANT_PIPE spawned_pid=3480110",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3480072",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=120"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        },
+        {
+          "case": "midline_ladder_120ms_r2",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=120"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.665,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3480118,
+          "godot_pid": 3480118,
+          "descendant_pid": 3480190,
+          "descendant_alive_at_return": false,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3480118",
+            "DESCENDANT_PIPE spawned_pid=3480190",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3480118",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=120"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        }
+      ],
+      "reps_landed": 3,
+      "outcome": "fabricated"
+    },
+    {
+      "offset_ms": 160,
+      "reps": [
+        {
+          "case": "midline_ladder_160ms_r0",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=160"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.541,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3480192,
+          "godot_pid": 3480192,
+          "descendant_pid": 3480230,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3480192",
+            "DESCENDANT_PIPE spawned_pid=3480230",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3480192",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=160"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        },
+        {
+          "case": "midline_ladder_160ms_r1",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=160"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.622,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3480270,
+          "godot_pid": 3480270,
+          "descendant_pid": 3480310,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3480270",
+            "DESCENDANT_PIPE spawned_pid=3480310",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3480270",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=160"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        },
+        {
+          "case": "midline_ladder_160ms_r2",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=160"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.622,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3480312,
+          "godot_pid": 3480312,
+          "descendant_pid": 3480388,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3480312",
+            "DESCENDANT_PIPE spawned_pid=3480388",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3480312",
+            "signature"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=160"
+          ],
+          "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+          "fabrication_landed": true
+        }
+      ],
+      "reps_landed": 3,
+      "outcome": "fabricated"
+    },
+    {
+      "offset_ms": 240,
+      "reps": [
+        {
+          "case": "midline_ladder_240ms_r0",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=240"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.553,
+          "signature_observed": true,
+          "error_lines": [
+            "ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3480392,
+          "godot_pid": 3480392,
+          "descendant_pid": 3480430,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3480392",
+            "DESCENDANT_PIPE spawned_pid=3480430",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3480392"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=240"
+          ],
+          "spliced_line": null,
+          "fabrication_landed": false
+        },
+        {
+          "case": "midline_ladder_240ms_r1",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=240"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.754,
+          "signature_observed": true,
+          "error_lines": [
+            "ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3480436,
+          "godot_pid": 3480436,
+          "descendant_pid": 3480510,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": 1573,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3480436",
+            "DESCENDANT_PIPE spawned_pid=3480510",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3480436"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=240"
+          ],
+          "spliced_line": null,
+          "fabrication_landed": false
+        },
+        {
+          "case": "midline_ladder_240ms_r2",
+          "flags": [
+            "--spawn-midlineforge",
+            "--midline-offset-ms=240"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.594,
+          "signature_observed": true,
+          "error_lines": [
+            "ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 3480512,
+          "godot_pid": 3480512,
+          "descendant_pid": 3480550,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": 1573,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=3480512",
+            "DESCENDANT_PIPE spawned_pid=3480550",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=3480512"
+          ],
+          "command": [
+            "/usr/bin/godot",
+            "--headless",
+            "--path",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r68-simplifier/del-measure/vA-runs/20261014T113237288715Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge",
+            "--midline-offset-ms=240"
+          ],
+          "spliced_line": null,
+          "fabrication_landed": false
+        }
+      ],
+      "reps_landed": 0,
+      "outcome": "missed"
+    }
+  ],
+  "measured_window": {
+    "landed_offsets_ms": [
+      0,
+      40,
+      80,
+      120,
+      160
+    ],
+    "missed_offsets_ms": [
+      240
+    ],
+    "mixed_offsets_ms": [],
+    "lo_edge_ms": 0,
+    "hi_edge_ms": 240,
+    "nominal_gap_ms": 200,
+    "bound_semantics": "fabrication lands iff the descendant write reaches the captured pipe between the signature head flush and the tail flush; a nominal offset differs from its gap-relative position by fork/exec+sleep latency (~2-3ms measured on this host \u2014 write_ms - head_ms = offset + ~2.5), so the nominal hi edge sits just under the 200ms gap end"
+  },
+  "discriminations": {
+    "ladder_all_reps_clean_exit0": true,
+    "ladder_all_writes_pre_death": true,
+    "ladder_all_reps_reject": true,
+    "point_sample_80ms_still_fabricates": true,
+    "over_gap_240ms_never_fabricates": true,
+    "window_is_strict_threshold": true,
+    "fabrication_iff_signature_destroyed": true,
+    "spliced_line_is_head_error_fusion": true
+  },
+  "verdict": "PASS",
+  "bounded_claim": "the midlineforge fabrication window has a strict measured nominal-offset bound on this host: every offset whose descendant write reaches the captured stdout pipe between the signature head and tail flushes fabricates the merged ERROR: line AND destroys the signature; offsets at/over the gap edge miss (signature intact, error standalone); measured on Linux headless Godot 4.7.2 with ~2.5ms fork/exec+sleep latency between nominal offset and gap-relative position"
+}

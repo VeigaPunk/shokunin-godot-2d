@@ -52,3 +52,13 @@ Sol `r66-adjudicator.md`: seamforge reproduced directly (fabricated `ERROR:` lin
 | calibration | **unchanged** | additive probe; classifiers byte-identical (three seats, AST + sha); prior 88 rows stable. |
 
 Sol `r67-adjudicator.md`: adjudicator replay — flagless 88/88, flagged 89/89, discriminations 20/20, table 9/9. Non-author `r67-verifier.md`: **AGREE 5/5** on `9e946c9`. Bounded: classifier-level verdicts, Godot 4.7.2 headless, CPython POSIX pipes, this host; divergence latent in default battery. Work commits `d44ba86` + `9e946c9` (sd_sig_head load-bearing pin); report-last commit follows.
+
+## Round 68 verdict — 2026-10-14
+
+| axis | Sol verdict | evidence |
+|---|---|---|
+| depth | **improved locally** | Fabrication-window bound measured strictly: write-position space [0,gap), nominal offsets {0–198} fabricate / transition 198.05–198.35 / ≥198.5 never; three regimes pinned (miss = standalone ERROR + intact sig; in-window = fused line + destroyed sig; straddle H-E-T-E2); spawn-latency floor + ppid crossover ~250–260ms; TIMEOUT truncation nondeterminism + duplicate-write splice edges (boundary). |
+| coverage | **improved locally** | `--probe-midlineforge-ladder` meta (6 offsets × 3 reps, 8 discriminations); `divergent_clause` per-row clause attribution (exact 9-row map incl. multi-clause seam_script); `raw_*_sha256` same-input gate on 24 dual records; discriminations 20→24 all True. |
+| calibration | **unchanged** | opt-in flags only; flagless 88/88 unchanged; classifiers byte-identical since r65; bare midlineforge arm unchanged (default offset stays 80). |
+
+Sol `r68-adjudicator.md`: declared-grid claim falsified as written (~80× resolution overstated — critic) and recorded honestly; the measured bound (write-lands-between-flushes; nominal edge = gap − spawn overhead) is what landed. Non-author `r68-verifier.md`: **AGREE 5/5** on `f754546` — 18/18 grid exact, from-spec clause recompute 9/9, 24/24 discriminations, prior 0-mismatch ×5. Bounded: nominal-offset space on this host (edge ≈198.3–198.5ms stochastic ~1ms); receipt fields bind decoded text; timeout records nondeterministic. Work commit `f754546`; report-last commit follows.

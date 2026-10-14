@@ -673,3 +673,57 @@
   Bounded: classifier-level, 4.7.2 headless, POSIX pipes this host;
   latent for default path. Work commits `d44ba86`+`9e946c9`; report-last
   follows.
+
+## Round 68 — devin host — depth/calibration: midlineforge fabrication-window bound + stream-meta receipt upgrades
+
+- Declared (author dispatch brief; retroactive record): pin the
+  fabrication-window bound on midlineforge as a measured ladder — sweep
+  descendant write offsets {0,40,80,120,160,240}ms into the 200ms
+  signature gap; claimed strict bound [lo,hi) inside the gap with the r66
+  fabrication holding exactly within. Plus two receipt upgrades on the
+  r67 stream-attribution meta: `divergent_clause` per divergence_table
+  row and sha256(raw_stdout)+sha256(raw_stderr) per dual_classify record.
+  Opt-in only; prior rows + surface meta byte-stable.
+- Wave `shokunin-train-20261014-w8`: leaf set
+  `reports/round-68/r68-{author,baseline,boundary,critic,reviewer,scout,
+  scribe,simplifier,verifier}.md`, disjoint scratch `corpus/live/r68-*/`.
+- Author `reports/round-68/r68-author.md`:
+  `descendant_pipe_probe.gd` `--midline-offset-ms=N` (default 80, int-ms);
+  `run_battery.py` +302/−2 — `--probe-midlineforge-ladder` meta
+  (6 offsets × 3 reps through surface_run, 8 discriminations,
+  measured_window receipt) + `divergent_clause`/`raw_*_sha256` in
+  dual_classify (+4 discriminations → 24).
+- Measured (scribe independent, ~256 real-pipe runs + landed replay):
+  fabrication iff write reaches the pipe between head-flush and
+  tail-flush; nominal-offset space {0–198} fabricates, transition band
+  198.05–198.35 (jitter ~1ms), ≥198.5 never; nominal edge = 200ms gap −
+  ~1.4–2.5ms spawn overhead; lo edge = spawn-latency floor (negative
+  offsets all splice — downward-unbounded, boundary); three regimes —
+  pre/post-miss = standalone ERROR + intact signature (verdict still
+  FAIL), in-window = fused line + destroyed signature; edge straddle
+  H-E-T-E2 exists (~0.1ms band); write_ppid==godot_pid everywhere,
+  crossover ~250–260ms. Author caught the scout's sed-corrupted `off_*`
+  series (first-match sub hit reparent_gate's `sleep 0.05` — ran the
+  unmodified 80ms arm); reproduced artifact then corrected.
+- Critic corrections absorbed (receipt-level, measured): declared
+  {0,40,...,240} grid resolves hi only to (160,240] — ~80× overstated
+  (author records the ~2.5ms latency constant instead of a wrong edge);
+  divergent_clause labels WHICH clause not which mechanism (error_scan
+  covers 3 mechanisms; exit structurally dead); sha256 binds decoded
+  text (b"\xff"≡b"\xfe" collision; empty-vs-absent).
+- Boundary edges: TIMEOUT captures nondeterministic (stderr tail spread;
+  seam can fabricate under timeout; truncation byte-granular mid-line);
+  duplicate in-window writes splice independently (2× ERROR: defeats
+  `,`-allowlist); mixed cell at nominal 198 confirmed.
+- Integration: work commit `f754546` (diff verified by scribe on landed
+  code: 90/90 flagged, 88/88 flagless, 34/34 surface); hygiene
+  `e8d4fb7` — two simplifier-proven zero-behavior deletions (dead `exit`
+  tautology, duplicate `signature_gap_ms`), post-delete 90/90.
+- Non-author `reports/round-68/r68-verifier.md`: **AGREE 5/5** on
+  `f754546` — independent ladder replay exact grid (18/18), own
+  instrumented edge ≈198 (reproduces stochastic edge), divergent_clause
+  recomputed FROM SPEC (not mirrors) 9/9, sha256 verified, 24/24
+  discriminations, prior 0-mismatch all 5 comparisons, opt-in proven.
+- Per-axis verdicts (Sol `reports/round-68/r68-adjudicator.md`): ADMIT —
+  falsified-grid recorded, measured bound is what landed. Work commit
+  `f754546` + hygiene `e8d4fb7`; report-last follows.
