@@ -2258,6 +2258,250 @@ def main():
             and same_exit and same_script
             and accept["error"] is None and reject["error"] is None
         )
+
+        # r67 additive meta arm: PER-CHANNEL divergence map between the merged
+        # classifier (classify_process over stdout + stderr) and the
+        # per-stream classifier (classify_streams). Each arm is one real
+        # Godot run of the same fixture steering ERROR:/signature bytes per
+        # channel; the SAME captured streams are classified by BOTH
+        # classifiers and the verdict pair is recorded, alongside
+        # allowlist-shape reclassifications that need no extra runs.
+        sd_stdout_error = "ERROR: STREAMDIV stdout-carried diagnostic"
+        sd_stderr_error = "ERROR: STREAMDIV stderr-carried diagnostic"
+        sd_structured_line = ("ERROR: chain incomplete collections=streamdiv "
+                              "scene=SceneB:<Node#6700> old_alive=false")
+        sd_structured_entry = "ERROR: chain incomplete"
+        sd_seam_tail = "STREAMDIV seam tail ends in ERROR"
+        sd_seam_head = ": STREAMDIV seam phantom merged-only line"
+        sd_script_tail = "STREAMDIV seam tail ends in SCRIPT ERR"
+        sd_script_head = "OR: STREAMDIV seamed blob clause"
+        sd_sig_head = "STREAM_STDOUT: expected attribution "
+        sd_sig_tail = "marker"
+
+        def dual_classify(so, se, code, error,
+                          merged_allowed=(), stream_allowed=()):
+            """Run BOTH classifiers over the same captured streams."""
+            merged = classify_process(code, error, so + se, 0, stdout_sig,
+                                      merged_allowed)
+            streams = classify_streams(code, error, so, se, 0, stdout_sig,
+                                       stream_allowed)
+            return {"merged_allowlist": list(merged_allowed),
+                    "stream_allowlist": list(stream_allowed),
+                    "merged_classification": merged,
+                    "stream_classification": streams,
+                    "divergent": merged != streams}
+
+        def streamdiv_arm(case, flags, merged_allowed=(), stream_allowed=()):
+            command = [args.godot, "--headless", "--path", str(scratch),
+                       "--script", "res://stream_attribution_probe.gd", "--",
+                       *flags]
+            so, se, code, error = run_process_streams(command, 8)
+            merged_text = so + se
+            record = {
+                "case": case, "command": command, "flags": list(flags),
+                "expected_exit": 0, "actual_exit": code, "error": error,
+                "signature": stdout_sig,
+                "raw_stdout": so, "raw_stderr": se,
+                "raw_stdout_lines": (so.strip().splitlines() if so else []),
+                "raw_stderr_lines": (se.strip().splitlines() if se else []),
+                "stdout_tail_line": (so.splitlines()[-1].strip()
+                                     if so.splitlines() else None),
+                "stderr_head_line": (se.splitlines()[0].strip()
+                                     if se.splitlines() else None),
+                "stdout_error_lines": [line.strip() for line in so.splitlines()
+                                       if "ERROR:" in line],
+                "stderr_error_lines": [line.strip() for line in se.splitlines()
+                                       if "ERROR:" in line],
+                "merged_error_lines": [line.strip() for line
+                                       in merged_text.splitlines()
+                                       if "ERROR:" in line],
+                "signature_in_stdout": stdout_sig in so,
+                "signature_in_stderr": stdout_sig in se,
+                "signature_in_merged": stdout_sig in merged_text,
+                "script_error_in_stdout": "SCRIPT ERROR:" in so,
+                "script_error_in_stderr": "SCRIPT ERROR:" in se,
+                "script_error_in_merged": "SCRIPT ERROR:" in merged_text}
+            record.update(dual_classify(so, se, code, error,
+                                        merged_allowed, stream_allowed))
+            print(f"{record['case']}: exit={code} "
+                  f"merged={record['merged_classification']} "
+                  f"streams={record['stream_classification']} "
+                  f"divergent={record['divergent']}", flush=True)
+            return record
+
+        sd_pair_dual = {
+            "stream_accept": dual_classify(
+                accept["raw_stdout"], accept["raw_stderr"],
+                accept["actual_exit"], accept["error"]),
+            "stream_reject": dual_classify(
+                reject["raw_stdout"], reject["raw_stderr"],
+                reject["actual_exit"], reject["error"])}
+        sd1 = streamdiv_arm("streamdiv_stdout_error", ["--stdout-error"])
+        sd2 = streamdiv_arm("streamdiv_stderr_error", ["--stderr-error"])
+        sd3 = streamdiv_arm("streamdiv_stderr_structured",
+                            ["--stderr-structured"],
+                            merged_allowed=(sd_structured_entry,),
+                            stream_allowed=(sd_structured_entry,))
+        sd4 = streamdiv_arm("streamdiv_sig_on_stderr", ["--sig-on-stderr"],
+                            stream_allowed=(stdout_sig,))
+        sd5 = streamdiv_arm("streamdiv_seam_error", ["--seam-error"],
+                            stream_allowed=(sd_seam_head,))
+        sd6 = streamdiv_arm("streamdiv_seam_script", ["--seam-script"],
+                            stream_allowed=(sd_script_head,))
+        sd7 = streamdiv_arm("streamdiv_seam_sig", ["--seam-sig"],
+                            stream_allowed=(sd_sig_tail,))
+        sd_arms = [sd1, sd2, sd3, sd4, sd5, sd6, sd7]
+        sd_reclass = {
+            "stderr_error__exact_entry": dual_classify(
+                sd2["raw_stdout"], sd2["raw_stderr"], sd2["actual_exit"],
+                sd2["error"], (sd_stderr_error,), (sd_stderr_error,)),
+            "stderr_error__foreign_entry": dual_classify(
+                sd2["raw_stdout"], sd2["raw_stderr"], sd2["actual_exit"],
+                sd2["error"], ("ERROR: unrelated different diagnostic",),
+                ("ERROR: unrelated different diagnostic",)),
+            "stderr_structured__exact_line_entry": dual_classify(
+                sd3["raw_stdout"], sd3["raw_stderr"], sd3["actual_exit"],
+                sd3["error"], (sd_structured_line,), (sd_structured_line,)),
+            "stderr_structured__bare": dual_classify(
+                sd3["raw_stdout"], sd3["raw_stderr"], sd3["actual_exit"],
+                sd3["error"]),
+            "sig_on_stderr__bare": dual_classify(
+                sd4["raw_stdout"], sd4["raw_stderr"], sd4["actual_exit"],
+                sd4["error"]),
+            "seam_error__bare": dual_classify(
+                sd5["raw_stdout"], sd5["raw_stderr"], sd5["actual_exit"],
+                sd5["error"]),
+        }
+        sd5_fabricated = sd_seam_tail + sd_seam_head
+        sd6_fabricated = sd_script_tail + sd_script_head
+        divergence_table = (
+            [{"case": name, **dual} for name, dual in sd_pair_dual.items()]
+            + [{"case": a["case"],
+                "merged_allowlist": a["merged_allowlist"],
+                "stream_allowlist": a["stream_allowlist"],
+                "merged_classification": a["merged_classification"],
+                "stream_classification": a["stream_classification"],
+                "divergent": a["divergent"]} for a in sd_arms])
+        sd_discriminations = {
+            # The headline absorption: a stdout-carried ERROR: line is
+            # PASS-shaped under classify_streams — stdout is never
+            # error-scanned — while merged classification rejects.
+            "stdout_error_diverges_streams_absorbs": (
+                sd1["stream_classification"] is True
+                and sd1["merged_classification"] is False),
+            "stdout_error_line_only_on_stdout": (
+                sd1["stdout_error_lines"] == [sd_stdout_error]
+                and sd1["stderr_error_lines"] == []
+                and sd1["merged_error_lines"] == [sd_stdout_error]),
+            # Concordant control: the same ERROR: bytes on stderr reject
+            # both classifiers bare, absorb under the byte-exact entry,
+            # reject under a foreign entry — channel placement, not the
+            # bytes, is the axis.
+            "stderr_error_concordant_both_reject": (
+                sd2["merged_classification"] is False
+                and sd2["stream_classification"] is False
+                and sd2["stderr_error_lines"] == [sd_stderr_error]
+                and sd2["stdout_error_lines"] == []),
+            "stderr_error_exact_entry_absorbs_both": (
+                sd_reclass["stderr_error__exact_entry"]
+                ["merged_classification"] is True
+                and sd_reclass["stderr_error__exact_entry"]
+                ["stream_classification"] is True),
+            "stderr_error_foreign_entry_rejects_both": (
+                sd_reclass["stderr_error__foreign_entry"]
+                ["merged_classification"] is False
+                and sd_reclass["stderr_error__foreign_entry"]
+                ["stream_classification"] is False),
+            # The allowlist's per-stream match: the structured chain-
+            # incomplete entry exists only in merged's allowed_error —
+            # line_allowed knows exact and `,`-prefix shapes only.
+            "structured_entry_diverges_allowlist_shape": (
+                sd3["merged_classification"] is True
+                and sd3["stream_classification"] is False
+                and sd3["stderr_error_lines"] == [sd_structured_line]),
+            "structured_exact_line_absorbs_both": (
+                sd_reclass["stderr_structured__exact_line_entry"]
+                ["merged_classification"] is True
+                and sd_reclass["stderr_structured__exact_line_entry"]
+                ["stream_classification"] is True),
+            "structured_bare_rejects_both": (
+                sd_reclass["stderr_structured__bare"]
+                ["merged_classification"] is False
+                and sd_reclass["stderr_structured__bare"]
+                ["stream_classification"] is False),
+            # Signature channel: merged accepts signature bytes anywhere;
+            # streams requires them on stdout — stderr-carried signature
+            # rejects even with stderr fully allowlisted (signature axis
+            # is the sole cause).
+            "sig_on_stderr_diverges": (
+                sd4["merged_classification"] is True
+                and sd4["stream_classification"] is False
+                and sd4["signature_in_stderr"] is True
+                and sd4["signature_in_stdout"] is False),
+            "sig_on_stderr_streams_rejects_solely_on_signature": (
+                sd4["stream_allowlist"] == [stdout_sig]
+                and sd4["stream_classification"] is False
+                and sd_reclass["sig_on_stderr__bare"]
+                ["stream_classification"] is False),
+            # Seam position pins: fabricated reject bytes exist only in the
+            # merged concat — per-stream checks are seam-immune.
+            "seam_error_diverges_streams_absorbs": (
+                sd5["stream_classification"] is True
+                and sd5["merged_classification"] is False),
+            "seam_error_line_in_neither_stream": (
+                sd5["merged_error_lines"] == [sd5_fabricated]
+                and sd5["stdout_tail_line"] == sd_seam_tail
+                and sd5["stderr_head_line"] == sd_seam_head
+                and sd5_fabricated not in sd5["raw_stdout_lines"]
+                and sd5_fabricated not in sd5["raw_stderr_lines"]),
+            "seam_error_streams_bare_rejects_stderr_strictness": (
+                sd_reclass["seam_error__bare"]
+                ["stream_classification"] is False),
+            "seam_script_diverges_blob_clause": (
+                sd6["stream_classification"] is True
+                and sd6["merged_classification"] is False
+                and sd6["script_error_in_merged"] is True
+                and sd6["script_error_in_stdout"] is False
+                and sd6["script_error_in_stderr"] is False
+                and sd6_fabricated not in sd6["raw_stdout_lines"]
+                and sd6_fabricated not in sd6["raw_stderr_lines"]),
+            "seam_sig_diverges_signature_seam": (
+                sd7["merged_classification"] is True
+                and sd7["stream_classification"] is False
+                and sd7["signature_in_merged"] is True
+                and sd7["signature_in_stdout"] is False
+                and sd7["signature_in_stderr"] is False),
+            # The pre-existing reject arm is itself divergent: a plain
+            # non-"ERROR:" stderr line is invisible to merged yet rejects
+            # streams — stderr strictness covers ANY unallowlisted line.
+            "reject_arm_diverges_non_error_stderr": (
+                sd_pair_dual["stream_reject"]["merged_classification"] is True
+                and sd_pair_dual["stream_reject"]["stream_classification"]
+                is False),
+            "accept_arm_concordant": (
+                sd_pair_dual["stream_accept"]["merged_classification"]
+                is True
+                and sd_pair_dual["stream_accept"]["stream_classification"]
+                is True),
+            # Coverage/consistency of the measured map.
+            "divergence_rows_match_expectation": (
+                {row["case"] for row in divergence_table if row["divergent"]}
+                == {"stream_reject", "streamdiv_stdout_error",
+                    "streamdiv_stderr_structured", "streamdiv_sig_on_stderr",
+                    "streamdiv_seam_error", "streamdiv_seam_script",
+                    "streamdiv_seam_sig"}
+                and {row["case"] for row in divergence_table
+                     if not row["divergent"]}
+                == {"stream_accept", "streamdiv_stderr_error"}),
+            "all_divergence_arms_exit0_clean": all(
+                a["actual_exit"] == 0 and a["error"] is None
+                for a in sd_arms),
+            "all_divergence_arms_same_script": all(
+                a["command"][a["command"].index("--script") + 1]
+                == "res://stream_attribution_probe.gd" for a in sd_arms),
+        }
+        sd_meta_ok = all(sd_discriminations.values())
+
         probe_payload = {
             "mode": "real_godot_stream_attribution",
             "same_script": same_script,
@@ -2270,7 +2514,26 @@ def main():
             "accept_lacks_stderr_diagnostic": accept_no_stderr_diag,
             "reject_emitted_stderr_diagnostic": reject_has_stderr_diag,
             "same_exit_zero": same_exit,
-            "verdict": "PASS" if meta_pass else "FAIL",
+            "divergence": {
+                "mode": "dual_classifier_same_captured_streams",
+                "pair_reclassifications": sd_pair_dual,
+                "arms": sd_arms,
+                "allowlist_reclassifications": sd_reclass,
+                "divergence_table": divergence_table,
+                "discriminations": sd_discriminations,
+                "bounded_claim": (
+                    "same captured stdout/stderr pairs classified by BOTH "
+                    "classifiers: stdout-carried ERROR: is PASS-shaped under "
+                    "classify_streams (stdout never error-scanned) while "
+                    "merged rejects; a non-ERROR: stderr line rejects "
+                    "streams only; the structured chain-incomplete allowlist "
+                    "entry is merged-only; signature must be stdout-carried "
+                    "for streams but anywhere for merged; stdout-tail + "
+                    "stderr-head seam bytes fabricate merged-only "
+                    "ERROR:/SCRIPT ERROR:/signature text that per-stream "
+                    "checks are immune to; one Linux headless Godot 4.7.2 "
+                    "fixture, deterministic byte placement")},
+            "verdict": "PASS" if meta_pass and sd_meta_ok else "FAIL",
             "bounded_claim": (
                 "one Godot 4.7.2 headless stream-attribution pair; "
                 "not crash classification, not process-tree timeout, "
