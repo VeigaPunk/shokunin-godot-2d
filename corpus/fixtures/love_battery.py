@@ -71,6 +71,33 @@ r75 additions (critic-deferred cells + joints/return surface):
             tunneling b1 through the ground (final b1pos y>540).
   esc_fn  : traceback `in function '<name>'` pinned on the *_unp rows as
             the independent which-call-threw witness (r74 critic C4).
+
+r76 additions (drain observers + destroy edges):
+  deferred_abort: r75-boundary drain-deferral hazard -- an ACCEPTED
+            queued destroy plus an uncontained assert-gated throw in the
+            same callback, contained one level up. The abort skips that
+            step's epilogue drain (abortq: count stays = fire.count, the
+            body pose still readable); the queue persists and drains
+            inside the NEXT update (drainlate step = abort step + 1,
+            drain EC observed at locked=false -> ecunl). Accepted-write
+            + abort is a distinct measured shape, parallel to
+            refused_abort (refused write + abort).
+  destroy2: a second destroy() on the same body post-drain is refused by
+            the LIFETIME guard ("Attempt to use destroyed body."), not
+            the IsLocked assert; the run completes (class stays deferred).
+  worlddestroy: world:destroy() inside a callback is deferred too --
+            destructWorld flag (World.cpp:578-581), drained at the very
+            end of the update epilogue (World.cpp:299); the next world
+            access dies on the "Attempt to use destroyed world." guard
+            -> died (rc=1, no assert text, esc_fn = the death site).
+  jwatch  : joint_destroy with a per-callback jcount observer: the drain
+            point is bounded between the last step-73 cb (jcount=1,
+            locked) and update-73 return (jcount=0); SayGoodbye is NOT
+            exposed on this build (World method-table census) -- the
+            bound is the measured drain point.
+  retfalse1: return false armed on ONE contact of a two-contact b1/ground
+            pair -- the discrimination executes (falses=1 passes=1) and
+            the return is still not consumed (impulse lands) -> ignored.
 """
 
 import argparse
@@ -352,6 +379,103 @@ IW_CELLS = [
         "after_update.b1vel": "0,-611.09796142578125",
         "final.pre": "36", "final.post": "36",
         "done": "true", "rc": "0"}),
+    # ---- r76 additive cells (drain observers + destroy edges) ----
+    ("iw_bc_draindefer", "bc_draindefer", "deferred_abort", {
+        # r75-boundary drain-deferral hazard: an ACCEPTED queued destroy
+        # plus an uncontained assert-gated throw in the same callback,
+        # contained one level up. The abort skips the step-73 epilogue
+        # drain; the queued destroy survives and drains inside the
+        # step-74 update -- one step late.
+        "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "draindefer", "fire.count": "4",
+        "fire.pos": "400,520.1500244140625",
+        "cb_destroy.ok": "true", "cb_destroy.err": "nil",
+        "cb_destroy.mode": "queued",
+        "cb_destroy.alive_in_cb": "400,520.1500244140625",
+        "cb_destroy.count_after": "4",
+        # the escaping write is refused even as the step aborts
+        "wpcall.step": "73", "wpcall.update_ok": "false",
+        "wpcall.err": "Box2D assertion failed: m_world->IsLocked() == false",
+        "wpcall.locked_after": "true",
+        "wp_setpos.ok": "false",
+        "wp_setpos.err": "Box2D assertion failed: m_world->IsLocked() == false",
+        "wpext.ok": "false",
+        # drain-skipped witness: queue still pending, body pose readable
+        "abortq.step": "73", "abortq.count": "4",
+        "abortq.b1pos": "400,520.1500244140625",
+        # the drain lands one update late; its synthesized EC is observed
+        # at locked=false and is this run's first ec event
+        "ecunl.step": "74", "ecunl.locked": "false",
+        "evpin_ec_lck": "false", "evpin_ec_step": "74",
+        "wpcall_next.step": "74", "wpcall_next.update_ok": "true",
+        "wpcall_next.locked_after": "false",
+        "wpcall_next.b1pos": "ERR:Attempt to use destroyed body.",
+        "drainlate.step": "74", "drainlate.count": "3",
+        "drainlate.b1pos": "ERR:Attempt to use destroyed body.",
+        "final.count": "3", "final.bc": "4", "final.ec": "3",
+        "final.pre": "36", "final.post": "36",
+        "done": "true", "rc": "0"}),
+    ("iw_bc_destroy2", "bc_destroy2", "deferred", {
+        # double destroy on the same body: in-callback (queued + drained)
+        # then a second call post-update -- refused by the LIFETIME guard
+        # (luax_checkbody "Attempt to use destroyed body."), not the
+        # IsLocked assert; the count stays 3 and the run completes.
+        "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "destroy2",
+        "cb_destroy.ok": "true", "cb_destroy.err": "nil",
+        "cb_destroy.alive_in_cb": "400,520.1500244140625",
+        "cb_destroy.count_after": "4",
+        "after_update.count": "3",
+        "after_update.b1pos": "ERR:Attempt to use destroyed body.",
+        "evpin_ec_lck": "false", "evpin_ec_step": "73",
+        "post_destroy2.ok": "false",
+        "post_destroy2.err": "Attempt to use destroyed body.",
+        "post_destroy2.count": "3",
+        "post_destroy2.isDestroyed": "true",
+        "final.count": "3", "final.pre": "35", "final.post": "35",
+        "done": "true", "rc": "0"}),
+    ("iw_bc_jwatch", "bc_jwatch", "deferred", {
+        # joint drain bounded by observation: every step-73 callback still
+        # sees jcount=1 (last observer = post, locked=true), jdrain reads
+        # 0 at update-73 return, and the first callback of step 74 sees 0.
+        # The only code in that window is the update-73 epilogue
+        # (World.cpp:283-299) -- the drain point is bounded-measured, the
+        # r75-critic F3 residual closed without any SayGoodbye API.
+        "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "jwatch",
+        "pre_joint.jtype": "distance", "pre_joint.jcount": "1",
+        "cb_joint_destroy.ok": "true", "cb_joint_destroy.err": "nil",
+        "cb_joint_destroy.isDestroyed_in_cb": "false",
+        "cb_joint_destroy.jcount_before": "1",
+        "cb_joint_destroy.jcount_after": "1",
+        "jwlive.cb": "post", "jwlive.step": "73",
+        "jwlive.locked": "true", "jwlive.jcount": "1",
+        "jdrain.step": "73", "jdrain.jcount": "0",
+        "jdrain.isDestroyed": "true",
+        "jwdrop.cb": "ec", "jwdrop.step": "74",
+        "jwdrop.locked": "true", "jwdrop.jcount": "0",
+        "after_update.count": "4",
+        "after_update.b1pos": "400,511.13113403320312",
+        "final.bc": "8", "final.ec": "8",
+        "final.pre": "172", "final.post": "172",
+        "done": "true", "rc": "0"}),
+    ("iw_pre_retfalse1", "pre_retfalse1", "ignored", {
+        # return false armed on ONE contact of the b1-ground pair only
+        # (f_mask's); the sibling contact passes. On this build the return
+        # is still not consumed (the full impulse lands, vy<0) -- the cell
+        # pins that the discrimination executed (falses=1 passes=1) and
+        # the contact-scoped granularity for any future consuming build.
+        "fire.step": "73", "fire.cb": "pre", "fire.locked": "true",
+        "fire.kind": "retfalse1",
+        "cb_retfalse.returned": "false",
+        "after_update.b1pos": "399.9598388671875,511.13873291015625",
+        "after_update.b1vel": "-2.8143491744995117,-611.97412109375",
+        "rf1counts.falses": "1", "rf1counts.passes": "1",
+        "evpin_ec_lck": "true", "evpin_ec_step": "74",
+        "final.b1pos": "455.884765625,477.90667724609375",
+        "final.bc": "6", "final.ec": "5",
+        "final.pre": "37", "final.post": "37",
+        "done": "true", "rc": "0"}),
     # r75 critic-C1 uncontained twins: measured non-fatal (fatal is
     # derived = assert-gated write x uncontained, not uncontained alone)
     ("iw_bc_destroy_unp", "bc_destroy_unp", "deferred", {
@@ -378,6 +502,25 @@ IW_CELLS = [
         "cb_setvel.vel_after": "55,-7",
         "after_update.b1vel": "55,-7",
         "done": "true", "rc": "0"}),
+    # r76 process-death edge: died sits with the fatal tail; the fatal
+    # rows remain last of all.
+    ("iw_bc_worlddestroy", "bc_worlddestroy", "died", {
+        # world:destroy() inside a callback is DEFERRED like bodies (the
+        # destructWorld flag, World.cpp:578-581) and drains at the very
+        # END of the update epilogue (World.cpp:299), after the object
+        # drains. Every subsequent world access dies on the lifetime
+        # guard -- the probe's own after_update getBodyCount is the death
+        # site (rc=1, "Attempt to use destroyed world.", no assert text).
+        "fire.step": "73", "fire.locked": "true",
+        "fire.kind": "worlddestroy",
+        "cb_worlddestroy.ok": "true", "cb_worlddestroy.err": "nil",
+        "cb_worlddestroy.isDestroyed_in_cb": "false",
+        "cb_worlddestroy.count_after": "4",
+        "wdrained.step": "73", "wdrained.isDestroyed": "true",
+        "rc": "1", "done": "false",
+        "err_on": "none", "assert_txt": "none",
+        # esc_fn witnesses the death site: the next world call
+        "esc_fn": "getBodyCount"}),
     # uncontained escapes -> fatal, spawned LAST
     ("iw_bc_setpos_unp", "bc_setpos_unp", "fatal", {
         "fire.step": "73", "fire.locked": "true",
@@ -433,7 +576,8 @@ def parse_iw(stdout):
 
 def iw_classify(cell, flat, rc, timed_out, stdout):
     """Map one cell's capture onto {captured|applied|refused|deferred|
-    refused_abort|ignored|fatal|timeout|died|nolaunch|anomaly}.
+    refused_abort|deferred_abort|ignored|fatal|timeout|died|nolaunch|
+    anomaly}.
     Partial-capture detection is built in: fire-present without
     CELL_DONE is never a pass shape."""
     if timed_out:
@@ -448,6 +592,35 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
             # presence -- a receipt that merely mentions wpcall.* (e.g.
             # scout L1 captures where last-wins left update_ok=true)
             # falls through to the decisive cb_* evidence below.
+            if flat.get("cb_destroy.ok") == "true":
+                # r76 drain-deferral: an ACCEPTED queued destroy rode the
+                # aborted step. The step-73 epilogue drain was skipped
+                # (abortq: count still = fire.count, pose readable); the
+                # queue persists and drains inside the next update
+                # (drainlate step = wpcall.step + 1, handle dead, drain
+                # EC observed at locked=false). Distinct measured shape
+                # -> distinct class (accepted write + abort), parallel
+                # to refused_abort (refused write + abort).
+                try:
+                    late = int(flat.get("drainlate.step", "-2")) == \
+                        int(flat.get("wpcall.step", "-1")) + 1
+                except ValueError:
+                    late = False
+                if (flat.get("wpcall.locked_after") == "true"
+                        and flat.get("wp_setpos.ok") == "false"
+                        and "assertion" in flat.get("wp_setpos.err", "")
+                        and flat.get("wpext.ok") == "false"
+                        and flat.get("wpcall_next.update_ok") == "true"
+                        and flat.get("wpcall_next.locked_after") == "false"
+                        and flat.get("abortq.count")
+                            == flat.get("fire.count")
+                        and not flat.get("abortq.b1pos", "").startswith("ERR:")
+                        and late
+                        and flat.get("ecunl.locked") == "false"
+                        and flat.get("drainlate.b1pos", "").startswith("ERR:")):
+                    return ("deferred_abort",
+                            "queued destroy survived abort; drained one step late")
+                return "anomaly", "deferred-abort witness incomplete"
             if (flat.get("wpcall.locked_after") == "true"
                     and flat.get("wp_setpos.ok") == "false"
                     and "assertion" in flat.get("wp_setpos.err", "")

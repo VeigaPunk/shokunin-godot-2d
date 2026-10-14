@@ -29,6 +29,18 @@
 --         | joint_new | joint_destroy  (r75 joints surface)
 --         | setfilter                  (r75 Fixture:setFilterData inside cb)
 --         | retfalse                   (r75 preSolve return value consumption)
+--         | draindefer                 (r76: accepted queued destroy +
+--                                      uncontained throw in one cb, wp-level
+--                                      containment -- abort skips the
+--                                      epilogue drain; queue drains 1 late)
+--         | destroy2                   (r76: destroy in-cb + destroy again
+--                                      post-update on the same body)
+--         | worlddestroy               (r76: world:destroy() inside cb --
+--                                      deferred via destructWorld flag)
+--         | jwatch                     (r76: joint_destroy + per-cb jcount
+--                                      observer bounding the drain point)
+--         | retfalse1                  (r76: preSolve return false on ONE
+--                                      contact of a two-contact pair)
 --   baseline: no mutation (availability lattice + world:isLocked pins)
 --
 -- Emitted lines:  IW | cell=<CELL> | <tag> <k=v ...>   (CELL_DONE is bare)
@@ -57,7 +69,16 @@ local target_label = "b1"   -- mutate the body whose first contact we track
 local wp_mode = (kind == "setpos_wp")     -- contain one level up (world:update pcall)
 local retfalse_mode = (kind == "retfalse") -- preSolve returns false for every contact
 local wp_aborted, wp_recovered = false, false
-local j_pre = nil           -- pre-built joint for joint_destroy
+local j_pre = nil           -- pre-built joint for joint_destroy/jwatch
+-- r76 additions
+local dd_mode = (kind == "draindefer")    -- queued destroy + uncontained throw, wp-contained
+local d2_mode = (kind == "destroy2")      -- double destroy: in-cb + post-update
+local wd_mode = (kind == "worlddestroy")  -- world:destroy() inside a callback
+local jw_mode = (kind == "jwatch")        -- joint_destroy + per-cb jcount drain witness
+local rf1_mode = (kind == "retfalse1")    -- preSolve return false on ONE contact of a pair
+local jw_prev = nil
+local rf1_falses, rf1_passes = 0, 0
+local f_mask = nil          -- extra b1 fixture for retfalse1
 
 local world, g, b1, b2, b3
 local fired = false
@@ -194,6 +215,47 @@ local function do_mutation(mkind, contact, body)
   elseif mkind == "retfalse" then
     -- the "write" is the preSolve return value itself (c_pre returns false)
     EM("cb_retfalse returned=false")
+  elseif mkind == "retfalse1" then
+    -- r76: same return-false write but only on ONE contact of the
+    -- b1-ground pair (f_mask's contact); the sibling contact returns nil.
+    EM("cb_retfalse returned=false scope=contact mask=f_mask")
+  elseif mkind == "draindefer" then
+    -- r76 drain-deferral (r75 boundary): an ACCEPTED queued destroy plus
+    -- an uncontained assert-gated throw in the same callback; the
+    -- update-level pcall catches the throw and the abort SKIPS the
+    -- epilogue drain -- the queued destroy drains one step late.
+    local ok, err = pcall_str(body.destroy, body)
+    EM(string.format("cb_destroy ok=%s err=%s mode=queued alive_in_cb=%s count_after=%d",
+      tostring(ok), tostring(err), pos(body), world:getBodyCount()))
+    body:setPosition(1234.5, 678.9)  -- uncontained: escapes to the wp pcall
+    EM("cb_draindefer unreached")    -- unreached if assert fires
+  elseif mkind == "destroy2" then
+    -- r76: double destroy on the same body -- in-callback (queued), then
+    -- a second call post-update after the drain (emitted in love.update).
+    local ok, err = pcall_str(body.destroy, body)
+    EM(string.format("cb_destroy ok=%s err=%s alive_in_cb=%s count_after=%d",
+      tostring(ok), tostring(err), pos(body), world:getBodyCount()))
+  elseif mkind == "worlddestroy" then
+    -- r76: world:destroy() inside a callback. Source says deferred via
+    -- destructWorld (World.cpp:578-581), drained at the very end of the
+    -- update epilogue (World.cpp:299) after the object drains.
+    local ok, err = pcall_str(world.destroy, world)
+    local dok, d = pcall_str(world.isDestroyed, world)
+    local cok, cc = pcall_str(world.getBodyCount, world)
+    EM(string.format("cb_worlddestroy ok=%s err=%s isDestroyed_in_cb=%s count_after=%s",
+      tostring(ok), tostring(err), res_str(dok, d), res_str(cok, cc)))
+  elseif mkind == "jwatch" then
+    -- r76: joint:destroy() with a per-callback jcount observer armed --
+    -- the drop is first observed by the next step's first callback.
+    local j0 = world:getJointCount()
+    if j_pre == nil then
+      EM("cb_joint_destroy api_missing=pre_joint")
+    else
+      local ok, err = pcall_str(j_pre.destroy, j_pre)
+      local dok, d = pcall_str(j_pre.isDestroyed, j_pre)
+      EM(string.format("cb_joint_destroy ok=%s err=%s isDestroyed_in_cb=%s jcount_before=%d jcount_after=%d",
+        tostring(ok), tostring(err), res_str(dok, d), j0, world:getJointCount()))
+    end
   end
 end
 
@@ -215,6 +277,11 @@ local function build()
   b3:setUserData("b3")
   local f3 = love.physics.newFixture(b3, love.physics.newCircleShape(20), 1)
   f3:setRestitution(0.1); f3:setFriction(0.5)
+  if rf1_mode then
+    -- second circle on b1 -> two simultaneous (b1, ground) contacts
+    f_mask = love.physics.newFixture(b1, love.physics.newCircleShape(25, 0, 20), 1)
+    f_mask:setRestitution(0.8); f_mask:setFriction(0.3)
+  end
 end
 
 -- ---- callbacks -----------------------------------------------------------
@@ -228,6 +295,12 @@ end
 
 local function on_event(ev, fa, fb, contact)
   counts[ev] = counts[ev] + 1
+  if dd_mode and ev == "ec" and not world:isLocked() then
+    -- drain-time endContact for the deferred body: fires at locked=false
+    -- inside the update epilogue (r75 boundary's drain witness)
+    EM(string.format("ecunl cb=ec step=%d locked=false count=%d",
+      step, world:getBodyCount()))
+  end
   if not evpin[ev] then
     evpin[ev] = true
     EM(string.format("evpin cb=%s locked=%s step=%d", ev, tostring(world:isLocked()), step))
@@ -242,6 +315,23 @@ local function on_event(ev, fa, fb, contact)
     do_mutation(kind, contact, dyn)
     EM(string.format("postfire cb=%s step=%d count=%d b1pos=%s", ev, step, world:getBodyCount(), pos(b1)))
   end
+  if jw_mode and fired and step <= fire_step + 1 then
+    -- r76 jwatch: per-callback joint-count observation bounding the
+    -- drain point between the last step-73 cb (jcount=1, locked) and
+    -- the first step-74 cb (jcount=0) -- the epilogue is the only code
+    -- that runs between them (World.cpp:283-287), so the bound is the
+    -- measured drain point, not an inference. jwlive is last-wins: it
+    -- lands on the LAST callback still seeing the queued joint.
+    local jc = world:getJointCount()
+    if jc > 0 then
+      EM(string.format("jwlive cb=%s step=%d locked=%s jcount=%d",
+        ev, step, tostring(world:isLocked()), jc))
+    elseif jw_prev ~= nil and jw_prev > 0 then
+      EM(string.format("jwdrop cb=%s step=%d locked=%s jcount=%d",
+        ev, step, tostring(world:isLocked()), jc))
+    end
+    jw_prev = jc
+  end
 end
 
 local function c_bc(fa, fb, contact) on_event("bc", fa, fb, contact) end
@@ -249,6 +339,16 @@ local function c_ec(fa, fb, contact) on_event("ec", fa, fb, contact) end
 local function c_pre(fa, fb, contact)
   on_event("pre", fa, fb, contact)
   if retfalse_mode then return false end
+  if rf1_mode then
+    local A, B = fa:getBody(), fb:getBody()
+    if A == b1 or B == b1 then
+      if fa == f_mask or fb == f_mask then
+        rf1_falses = rf1_falses + 1
+        return false
+      end
+      rf1_passes = rf1_passes + 1
+    end
+  end
 end
 local function c_post(fa, fb, contact) on_event("post", fa, fb, contact) end
 
@@ -283,7 +383,7 @@ function love.load()
   build()
   world:setCallbacks(c_bc, c_ec, c_pre, c_post)
   EM(string.format("built bodies=%d locked=%s", world:getBodyCount(), tostring(world:isLocked())))
-  if kind == "joint_destroy" then
+  if kind == "joint_destroy" or jw_mode then
     j_pre = love.physics.newDistanceJoint(b2, b3, 240, -40, 650, 518.9, false)
     EM(string.format("pre_joint jtype=%s jcount=%d", tostring(j_pre:getType()), world:getJointCount()))
   end
@@ -293,7 +393,7 @@ end
 function love.update(dt)
   step = step + 1
   local uok, uerr = true, nil
-  if wp_mode then
+  if wp_mode or dd_mode then
     uok, uerr = pcall(world.update, world, FIXED)
   else
     world:update(FIXED)
@@ -310,19 +410,47 @@ function love.update(dt)
     EM(string.format("wp_setpos ok=false err=%s pos_after=%s", stripped, pos(b1)))
     local sok, serr = pcall_str(b1.setPosition, b1, 999, 999)
     EM(string.format("wpext ok=%s err=%s pos_after=%s", tostring(sok), tostring(serr), pos(b1)))
+    if dd_mode then
+      -- drain skipped by the abort: queue still pending, body readable
+      EM(string.format("abortq step=%d count=%d b1pos=%s",
+        step, world:getBodyCount(), pos(b1)))
+    end
   elseif wp_aborted and not wp_recovered then
     wp_recovered = true
     EM(string.format("wpcall_next step=%d update_ok=true locked_after=%s b1pos=%s",
       step, tostring(world:isLocked()), pos(b1)))
+    if dd_mode then
+      -- the queued destroy drained inside THIS update (one step late)
+      EM(string.format("drainlate step=%d count=%d b1pos=%s",
+        step, world:getBodyCount(), pos(b1)))
+    end
   end
   if uok and fired and not after_done and step == fire_step then
     after_done = true
+    if wd_mode then
+      -- the dead-world drain witness is emitted BEFORE after_update:
+      -- world:getBodyCount() inside after_update errors on the dead
+      -- world (wrap_World.cpp:34 "Attempt to use destroyed world."),
+      -- so the after_update line itself is the death site for this cell.
+      local dok, d = pcall_str(world.isDestroyed, world)
+      EM(string.format("wdrained step=%d isDestroyed=%s", step, res_str(dok, d)))
+    end
     EM(string.format("after_update step=%d count=%d b1pos=%s b1vel=%s",
       step, world:getBodyCount(), pos(b1), vel(b1)))
     if j_pre ~= nil then
       local dok, d = pcall_str(j_pre.isDestroyed, j_pre)
       EM(string.format("jdrain step=%d jcount=%d isDestroyed=%s",
         step, world:getJointCount(), res_str(dok, d)))
+    end
+    if d2_mode then
+      -- second destroy on the same body, post-drain (post-update)
+      local ok2, err2 = pcall_str(b1.destroy, b1)
+      local dok, dd = pcall_str(b1.isDestroyed, b1)
+      EM(string.format("post_destroy2 ok=%s err=%s count=%d isDestroyed=%s",
+        tostring(ok2), tostring(err2), world:getBodyCount(), res_str(dok, dd)))
+    end
+    if rf1_mode then
+      EM(string.format("rf1counts falses=%d passes=%d", rf1_falses, rf1_passes))
     end
   end
   if step >= STEPS then
