@@ -20,6 +20,15 @@
 --   when: bc | pre | post | ext        (ext = outside any callback, control)
 --   kind: setpos | setvel | newbody | destroy | setactive | contactmask
 --         | setpos_unp | newbody_unp   (uncontained escapes -> fatal)
+--         | destroy_unp | setvel_unp   (r75 C1 twins: uncontained, measured
+--                                      deferred/applied -- fatal is derived)
+--         | setpos_wp                  (r75 C3: write escapes the callback but
+--                                      is contained by pcall(world.update) --
+--                                      refused-write + step-abort + transient
+--                                      lock + collateral exterior refusal)
+--         | joint_new | joint_destroy  (r75 joints surface)
+--         | setfilter                  (r75 Fixture:setFilterData inside cb)
+--         | retfalse                   (r75 preSolve return value consumption)
 --   baseline: no mutation (availability lattice + world:isLocked pins)
 --
 -- Emitted lines:  IW | cell=<CELL> | <tag> <k=v ...>   (CELL_DONE is bare)
@@ -45,6 +54,10 @@ local target_cb = nil
 if when == "bc" or when == "pre" or when == "post" then target_cb = when end
 local is_ext = (when == "ext")
 local target_label = "b1"   -- mutate the body whose first contact we track
+local wp_mode = (kind == "setpos_wp")     -- contain one level up (world:update pcall)
+local retfalse_mode = (kind == "retfalse") -- preSolve returns false for every contact
+local wp_aborted, wp_recovered = false, false
+local j_pre = nil           -- pre-built joint for joint_destroy
 
 local world, g, b1, b2, b3
 local fired = false
@@ -126,6 +139,56 @@ local function do_mutation(mkind, contact, body)
       EM(string.format("cb_contactmask ok=%s err=%s isEnabled_after=%s isTouching=%s",
         tostring(ok), tostring(err), res_str(eok, e), res_str(tok, t)))
     end
+  elseif mkind == "destroy_unp" then
+    -- r75 C1 twin: uncontained destroy (no pcall). If the class were
+    -- containment-dependent this would escape; measured deferred instead.
+    body:destroy()
+    EM(string.format("cb_destroy ok=true err=nil alive_in_cb=%s count_after=%d",
+      pos(body), world:getBodyCount()))
+  elseif mkind == "setvel_unp" then
+    -- r75 C1 twin: uncontained non-structural write.
+    body:setLinearVelocity(55, -7)
+    EM(string.format("cb_setvel ok=true err=nil vel_after=%s", vel(body)))
+  elseif mkind == "setpos_wp" then
+    -- r75 C3: write UNCONTAINED at the callback level; the escape is
+    -- caught one level up by the pcall around world:update (love.update).
+    body:setPosition(1234.5, 678.9)
+    EM(string.format("cb_setpos_wp pos_after=%s", pos(body)))  -- unreached if assert fires
+  elseif mkind == "joint_new" then
+    local j0 = world:getJointCount()
+    local ok, res = pcall_str(function()
+      return love.physics.newDistanceJoint(b2, b3, 240, -40, 650, 518.9, false)
+    end)
+    if ok then
+      EM(string.format("cb_joint_new ok=true jtype=%s jcount_before=%d jcount_after=%d",
+        tostring(res:getType()), j0, world:getJointCount()))
+    else
+      EM(string.format("cb_joint_new ok=false err=%s jcount_before=%d jcount_after=%d",
+        tostring(res), j0, world:getJointCount()))
+    end
+  elseif mkind == "joint_destroy" then
+    local j0 = world:getJointCount()
+    if j_pre == nil then
+      EM("cb_joint_destroy api_missing=pre_joint")
+    else
+      local ok, err = pcall_str(j_pre.destroy, j_pre)
+      local dok, d = pcall_str(j_pre.isDestroyed, j_pre)
+      EM(string.format("cb_joint_destroy ok=%s err=%s isDestroyed_in_cb=%s jcount_before=%d jcount_after=%d",
+        tostring(ok), tostring(err), res_str(dok, d), j0, world:getJointCount()))
+    end
+  elseif mkind == "setfilter" then
+    local fx = body:getFixtures()[1]
+    if type(fx.setFilterData) ~= "function" then
+      EM("cb_setfilter api_missing=setFilterData")
+    else
+      local ok, err = pcall_str(fx.setFilterData, fx, 2, 2, 0)
+      local c, msk, grp = fx:getFilterData()
+      EM(string.format("cb_setfilter ok=%s err=%s filter_after=%d,%d,%d",
+        tostring(ok), tostring(err), c, msk, grp))
+    end
+  elseif mkind == "retfalse" then
+    -- the "write" is the preSolve return value itself (c_pre returns false)
+    EM("cb_retfalse returned=false")
   end
 end
 
@@ -178,7 +241,10 @@ end
 
 local function c_bc(fa, fb, contact) on_event("bc", fa, fb, contact) end
 local function c_ec(fa, fb, contact) on_event("ec", fa, fb, contact) end
-local function c_pre(fa, fb, contact) on_event("pre", fa, fb, contact) end
+local function c_pre(fa, fb, contact)
+  on_event("pre", fa, fb, contact)
+  if retfalse_mode then return false end
+end
 local function c_post(fa, fb, contact) on_event("post", fa, fb, contact) end
 
 -- ---- exterior controls (outside any callback) ----------------------------
@@ -212,16 +278,47 @@ function love.load()
   build()
   world:setCallbacks(c_bc, c_ec, c_pre, c_post)
   EM(string.format("built bodies=%d locked=%s", world:getBodyCount(), tostring(world:isLocked())))
+  if kind == "joint_destroy" then
+    j_pre = love.physics.newDistanceJoint(b2, b3, 240, -40, 650, 518.9, false)
+    EM(string.format("pre_joint jtype=%s jcount=%d", tostring(j_pre:getType()), world:getJointCount()))
+  end
   if is_ext then run_ext() end
 end
 
 function love.update(dt)
   step = step + 1
-  world:update(FIXED)
-  if fired and not after_done and step == fire_step then
+  local uok, uerr = true, nil
+  if wp_mode then
+    uok, uerr = pcall(world.update, world, FIXED)
+  else
+    world:update(FIXED)
+  end
+  if not uok then
+    -- r75 C3 update-level containment: the interior write aborted the step;
+    -- the world stays transiently locked until the next successful update,
+    -- which also refuses an unrelated LEGAL exterior write (collateral).
+    wp_aborted = true
+    local err = tostring(uerr)
+    local stripped = err:gsub("^[^:]+:%d+: ", "")
+    EM(string.format("wpcall step=%d update_ok=false err=%s srcline=%s locked_after=%s",
+      step, stripped, tostring(err:match(":(%d+):")), tostring(world:isLocked())))
+    EM(string.format("wp_setpos ok=false err=%s pos_after=%s", stripped, pos(b1)))
+    local sok, serr = pcall_str(b1.setPosition, b1, 999, 999)
+    EM(string.format("wpext ok=%s err=%s pos_after=%s", tostring(sok), tostring(serr), pos(b1)))
+  elseif wp_aborted and not wp_recovered then
+    wp_recovered = true
+    EM(string.format("wpcall_next step=%d update_ok=true locked_after=%s b1pos=%s",
+      step, tostring(world:isLocked()), pos(b1)))
+  end
+  if uok and fired and not after_done and step == fire_step then
     after_done = true
     EM(string.format("after_update step=%d count=%d b1pos=%s b1vel=%s",
       step, world:getBodyCount(), pos(b1), vel(b1)))
+    if j_pre ~= nil then
+      local dok, d = pcall_str(j_pre.isDestroyed, j_pre)
+      EM(string.format("jdrain step=%d jcount=%d isDestroyed=%s",
+        step, world:getJointCount(), res_str(dok, d)))
+    end
   end
   if step >= STEPS then
     EM(string.format(

@@ -45,6 +45,29 @@ the measured partition is {refused | deferred | fatal | applied}:
 Exterior (ext_*) controls apply immediately. Interior cells are spawned
 LAST and the uncontained (*_unp) cells last of all -- each cell is its
 own process so a fatal cell is a measured FAIL-class for that cell only.
+
+r75 additions (critic-deferred cells + joints/return surface):
+  refused_abort: r74 critic C3 -- the SAME assert-gated write contained one
+            level UP (pcall around world:update, the idiomatic game-loop
+            containment) is still a refused write, but the step ABORTS:
+            update_ok=false, the world stays transiently locked until the
+            next update, an unrelated legal exterior write is refused as
+            collateral, and callback counts shift. Distinct measured shape
+            -> distinct class; "refused" is containment-level relative.
+  ignored : r75 -- a Lua preSolve `return false` is NOT consumed by the
+            binding (Box2D PreSolve is void): the full impulse still lands
+            (b1vel 0,-611.09 vs the masked 0,763.87). A silently-ignored
+            write attempt is neither refused (no assert) nor applied.
+  C1 twins: bc_destroy_unp / bc_setvel_unp stay deferred/applied
+            uncontained -- fatal is derived (assert-gated x uncontained).
+  joints  : newDistanceJoint inside cb -> refused (world-level IsLocked
+            assert); joint:destroy() inside cb -> deferred (jcount drains
+            1->0 in the update epilogue, isDestroyed_after=true).
+  setfilter: Fixture:setFilterData inside cb -> applied on this build
+            (no IsLocked assert); downstream witness is the refilter
+            tunneling b1 through the ground (final b1pos y>540).
+  esc_fn  : traceback `in function '<name>'` pinned on the *_unp rows as
+            the independent which-call-threw witness (r74 critic C4).
 """
 
 import argparse
@@ -115,12 +138,14 @@ def splice_verdict(stdout):
 # ---- r74 interior-write lattice ------------------------------------------
 #
 # (case, cell, expected_class, {flat_key: pinned})
-# expected_class in {captured, applied, refused, deferred, fatal} -- the
-# falsifiable partition the arm pins. flat keys are `<tag>.<key>` from the
-# probe's `IW | cell=<cell> | <tag> k=v ...` lines, plus synthesized keys:
-#   rc / done / err_on / assert_txt / evpin_<cb>_lck / evpin_<cb>_step
-# Measured on this host (18 cells x>=2 stable reps; the r74-scout scratch
-# receipts are byte-identical twins of this probe's output).
+# expected_class in {captured, applied, refused, refused_abort, deferred,
+# ignored, fatal} -- the falsifiable partition the arm pins. flat keys are
+# `<tag>.<key>` from the probe's `IW | cell=<cell> | <tag> k=v ...` lines,
+# plus synthesized keys:
+#   rc / done / err_on / assert_txt / esc_fn / evpin_<cb>_lck / evpin_<cb>_step
+# Measured on this host (r74: 18 cells x>=2 stable reps; the r74-scout
+# scratch receipts are byte-identical twins of this probe's output; r75:
+# 7 more cells x>=2 stable reps measured in corpus/live/r75-author/cells).
 IW_CELLS = [
     # availability lattice: reads inside callbacks are legal; locked=true
     ("iw_avail_lattice", "baseline", "captured", {
@@ -239,15 +264,91 @@ IW_CELLS = [
         "cb_setvel.ok": "true", "cb_setvel.err": "nil",
         "cb_setvel.vel_after": "55,-7",
         "done": "true", "rc": "0"}),
+    # ---- r75 additive cells (all measured non-fatal on this build) ----
+    ("iw_bc_setpos_wp", "bc_setpos_wp", "refused_abort", {
+        # r74 critic C3: same setpos write, containment moved one level up
+        # (pcall around world:update). Refused write + aborted step +
+        # transient lock + collateral exterior refusal + next-step recovery.
+        "fire.step": "73", "fire.locked": "true",
+        "wpcall.step": "73", "wpcall.update_ok": "false",
+        "wpcall.err": "Box2D assertion failed: m_world->IsLocked() == false",
+        "wpcall.locked_after": "true",
+        "wp_setpos.ok": "false",
+        "wp_setpos.err": "Box2D assertion failed: m_world->IsLocked() == false",
+        "wp_setpos.pos_after": "400,520.1500244140625",
+        "wpext.ok": "false",
+        "wpcall_next.step": "74", "wpcall_next.update_ok": "true",
+        "wpcall_next.locked_after": "false",
+        "wpcall_next.b1pos": "400,509.53021240234375",
+        "final.pre": "37", "final.post": "37",
+        "done": "true", "rc": "0"}),
+    ("iw_bc_joint_new", "bc_joint_new", "refused", {
+        # joints surface: newDistanceJoint inside cb -> world-level assert
+        "fire.step": "73", "fire.locked": "true",
+        "cb_joint_new.ok": "false",
+        "cb_joint_new.err": "Box2D assertion failed: IsLocked() == false",
+        "cb_joint_new.jcount_before": "0",
+        "cb_joint_new.jcount_after": "0",
+        "after_update.b1pos": "400,511.13113403320312",
+        "done": "true", "rc": "0"}),
+    ("iw_bc_joint_destroy", "bc_joint_destroy", "deferred", {
+        # joint:destroy() inside cb drains in the update epilogue like
+        # body:destroy() (jcount 1->0, handle flips isDestroyed after)
+        "fire.step": "73", "fire.locked": "true",
+        "pre_joint.jtype": "distance", "pre_joint.jcount": "1",
+        "cb_joint_destroy.ok": "true", "cb_joint_destroy.err": "nil",
+        "cb_joint_destroy.isDestroyed_in_cb": "false",
+        "cb_joint_destroy.jcount_before": "1",
+        "cb_joint_destroy.jcount_after": "1",
+        "jdrain.step": "73", "jdrain.jcount": "0",
+        "jdrain.isDestroyed": "true",
+        "done": "true", "rc": "0"}),
+    ("iw_bc_setfilter", "bc_setfilter", "applied", {
+        # Fixture:setFilterData is NOT locked-asserted on this build;
+        # the refilter tunnels b1 through the ground after the write
+        "fire.step": "73", "fire.locked": "true",
+        "cb_setfilter.ok": "true", "cb_setfilter.err": "nil",
+        "cb_setfilter.filter_after": "2,2,0",
+        "after_update.b1vel": "0,-611.09796142578125",
+        "final.b1pos": "400,635.1639404296875",
+        "final.bc": "4", "final.ec": "3",
+        "done": "true", "rc": "0"}),
+    ("iw_pre_retfalse", "pre_retfalse", "ignored", {
+        # preSolve `return false` is not consumed: the full impulse lands
+        # (contrast pre_contactmask's suppressed 0,763.87)
+        "fire.cb": "pre", "fire.step": "73", "fire.locked": "true",
+        "cb_retfalse.returned": "false",
+        "after_update.b1vel": "0,-611.09796142578125",
+        "final.pre": "36", "final.post": "36",
+        "done": "true", "rc": "0"}),
+    # r75 critic-C1 uncontained twins: measured non-fatal (fatal is
+    # derived = assert-gated write x uncontained, not uncontained alone)
+    ("iw_bc_destroy_unp", "bc_destroy_unp", "deferred", {
+        "fire.step": "73", "fire.locked": "true",
+        "cb_destroy.ok": "true", "cb_destroy.err": "nil",
+        "cb_destroy.alive_in_cb": "400,520.1500244140625",
+        "cb_destroy.count_after": "4",
+        "after_update.count": "3",
+        "after_update.b1pos": "ERR:Attempt to use destroyed body.",
+        "evpin_ec_lck": "false", "evpin_ec_step": "73",
+        "done": "true", "rc": "0"}),
+    ("iw_bc_setvel_unp", "bc_setvel_unp", "applied", {
+        "fire.step": "73", "fire.locked": "true",
+        "cb_setvel.ok": "true", "cb_setvel.err": "nil",
+        "cb_setvel.vel_after": "55,-7",
+        "after_update.b1vel": "55,-7",
+        "done": "true", "rc": "0"}),
     # uncontained escapes -> fatal, spawned LAST
     ("iw_bc_setpos_unp", "bc_setpos_unp", "fatal", {
         "fire.step": "73", "fire.locked": "true",
         "rc": "1", "done": "false",
-        "err_on": "stdout", "assert_txt": "m_world_islocked"}),
+        "err_on": "stdout", "assert_txt": "m_world_islocked",
+        "esc_fn": "setPosition"}),
     ("iw_bc_newbody_unp", "bc_newbody_unp", "fatal", {
         "fire.step": "73",
         "rc": "1", "done": "false",
-        "err_on": "stdout", "assert_txt": "islocked"}),
+        "err_on": "stdout", "assert_txt": "islocked",
+        "esc_fn": "newBody"}),
 ]
 
 IW_LINE = re.compile(r"^IW \| cell=(\S+) \| (.*)$")
@@ -299,8 +400,37 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
     if done and rc == 0:
         if cell == "baseline":
             return "captured", "availability lattice"
+        if "wpcall.update_ok" in flat:
+            # r75 C3: update-level containment -- the write was refused
+            # AND the step aborted with a transient lock that recovers on
+            # the next update. All witnesses required; anything less is
+            # an anomaly, never a silent "refused".
+            if (flat.get("wpcall.update_ok") == "false"
+                    and flat.get("wpcall.locked_after") == "true"
+                    and flat.get("wp_setpos.ok") == "false"
+                    and "assertion" in flat.get("wp_setpos.err", "")
+                    and flat.get("wpext.ok") == "false"
+                    and flat.get("wpcall_next.update_ok") == "true"
+                    and flat.get("wpcall_next.locked_after") == "false"):
+                return ("refused_abort",
+                        "step abort + transient lock + recovery")
+            return "anomaly", "wp containment witness incomplete"
+        if "cb_retfalse.returned" in flat:
+            # r75: the binding does not consume the preSolve return --
+            # the class stands on the impulse landing (vel y < 0), not
+            # on the returned=false label alone.
+            vy = flat.get("after_update.b1vel", ",").split(",")[-1]
+            try:
+                impulse_landed = float(vy) < 0
+            except ValueError:
+                impulse_landed = False
+            if flat["cb_retfalse.returned"] == "false" and impulse_landed:
+                return "ignored", "preSolve return not consumed"
+            return "anomaly", "retfalse without ignored witness"
         mut = next((t for t in ("cb_setpos", "cb_newbody", "cb_destroy",
                               "cb_setactive", "cb_contactmask", "cb_setvel",
+                              "cb_joint_new", "cb_joint_destroy",
+                              "cb_setfilter",
                               "ext_setpos", "ext_newbody", "ext_destroy")
                     if f"{t}.ok" in flat), None)
         if mut is None:
@@ -321,6 +451,16 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
                 if drop and dead and ec_lck == "false":
                     return "deferred", "drain ec at locked=false"
                 return "anomaly", "destroy ok without deferred witness"
+            if mut == "cb_joint_destroy":
+                try:
+                    jdrop = int(flat.get("jdrain.jcount", "-1")) == \
+                        int(flat.get("cb_joint_destroy.jcount_before",
+                                     "0")) - 1
+                except ValueError:
+                    jdrop = False
+                if jdrop and flat.get("jdrain.isDestroyed") == "true":
+                    return "deferred", "joint drained inside update epilogue"
+                return "anomaly", "joint destroy ok without deferred witness"
             return "applied", mut
         return "anomaly", f"unhandled ok={flat[f'{mut}.ok']!r}"
     if has_fire and not done and rc not in (0, None):
@@ -348,6 +488,11 @@ def iw_flat_extras(flat, rc, stdout, stderr):
         flat["err_on"] = "stderr"
     else:
         flat["err_on"] = "none"
+    # r75 critic C4: independent which-call-threw witness -- first quoted
+    # `in function '<name>'` traceback frame (the boot.lua frames use the
+    # <...> form and never match).
+    m_fn = re.search(r"in function '([^']+)'", stdout)
+    flat["esc_fn"] = m_fn.group(1) if m_fn else "none"
 
 
 def run_process(command, timeout_seconds, env_extra=None):
