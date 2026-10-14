@@ -95,6 +95,7 @@ CASES = [
     ("save_process_missing", "__save_process_missing__", [], 2, "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND"),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
+    ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
 ]
 
 
@@ -545,6 +546,147 @@ def main():
                     "discriminations": crash_discriminations,
                     "bounded_claim": "spontaneous SIGABRT/SIGKILL exit-shape classification on Linux headless Godot 4.7.2 only; signal origin unprovable from returncode"})
     print(f"{results[-1]['verdict']} spontaneous crash classification meta", flush=True)
+    # r62 meta: tree-timeout pipe-EOF misattribution. communicate(timeout) is a
+    # completion + pipe-drain deadline, not a liveness bound: a clean-exiting
+    # Godot child whose spawned OS descendant keeps the captured stdout/stderr
+    # pipes open is still reported TIMEOUT, and the timeout kill targets the
+    # direct child only, so the descendant orphans. The CASES row
+    # descendant_pipe_detached_control (same fixture, --spawn-detach) is the
+    # discriminating control: fds detached at exec -> child-exit-bound PASS
+    # while its own descendant silently outlives the run. The hold arm cannot
+    # be a CASES tuple (its record carries error set -> always False), so this
+    # row drives it under one bounded Popen run; ~3s wall clock per battery.
+    pipe_marker = "DESCENDANT_PIPE_PROBE: expected signature"
+    pipe_post_exit = "DESCENDANT_PIPE_AFTER_EXIT_WRITE"
+    pipe_bound = 3.0
+    detached = next((r for r in results
+                     if r["case"] == "descendant_pipe_detached_control"), None)
+    pipe_hold = {"case": "descendant_pipe_hold_arm", "bound_seconds": pipe_bound,
+                 "timed_out": False, "child_exit_at_timeout": None,
+                 "actual_exit": None, "error": None, "marker_observed": False,
+                 "post_exit_write_captured": False, "godot_pid": None,
+                 "descendant_pid": None, "godot_alive_at_return": None,
+                 "descendant_alive_at_return": None, "inner_classification": False}
+    pipe_proc = None
+    pipe_started = time.monotonic()
+    pipe_text = ""
+    try:
+        pipe_proc = subprocess.Popen(
+            [args.godot, "--headless", "--path", str(scratch), "--script",
+             "res://descendant_pipe_probe.gd", "--", "--spawn-hold"],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, bufsize=1)
+        try:
+            pipe_out, pipe_err = pipe_proc.communicate(timeout=pipe_bound)
+            pipe_text = (pipe_out or "") + (pipe_err or "")
+            pipe_hold["actual_exit"] = pipe_proc.returncode
+        except subprocess.TimeoutExpired as exc:
+            pipe_hold["timed_out"] = True
+            # poll() reaps the direct child: a non-None exit code here proves
+            # the bound fired on pipe EOF with the child already dead.
+            pipe_hold["child_exit_at_timeout"] = pipe_proc.poll()
+            pipe_out = (exc.stdout.decode(errors="replace") if isinstance(exc.stdout, bytes)
+                        else (exc.stdout or ""))
+            pipe_err = (exc.stderr.decode(errors="replace") if isinstance(exc.stderr, bytes)
+                        else (exc.stderr or ""))
+            pipe_text = pipe_out + pipe_err
+            pipe_hold["error"] = f"TIMEOUT after {pipe_bound} seconds"
+            for stream in (pipe_proc.stdout, pipe_proc.stderr):
+                try:
+                    stream.close()
+                except OSError:
+                    pass
+            try:
+                pipe_proc.wait(timeout=3)
+            except subprocess.TimeoutExpired:
+                pipe_proc.kill()
+                try:
+                    pipe_proc.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    pipe_hold["error"] += "; post-kill wait timed out"
+    except (OSError, ValueError) as exc:
+        pipe_hold["error"] = f"launch/read error: {exc}"
+    finally:
+        if pipe_proc is not None and pipe_proc.poll() is None:
+            pipe_proc.kill()
+            try:
+                pipe_proc.wait(timeout=3)
+            except subprocess.TimeoutExpired:
+                pipe_hold["error"] = (pipe_hold["error"] or "") + "; forced cleanup timed out"
+    pipe_hold["elapsed_seconds"] = round(time.monotonic() - pipe_started, 3)
+    pipe_hold["marker_observed"] = pipe_marker in pipe_text
+    pipe_hold["post_exit_write_captured"] = pipe_post_exit in pipe_text
+    pid_match = re.search(r"DESCENDANT_PIPE godot_pid=(\d+)", pipe_text)
+    pipe_hold["godot_pid"] = int(pid_match.group(1)) if pid_match else None
+    pid_match = re.search(r"DESCENDANT_PIPE spawned_pid=(\d+)", pipe_text)
+    pipe_hold["descendant_pid"] = int(pid_match.group(1)) if pid_match else None
+
+    def pid_alive(pid):
+        if pid is None or pid <= 0:
+            return None
+        try:
+            os.kill(pid, 0)
+        except ProcessLookupError:
+            return False
+        except PermissionError:
+            return True
+        except OSError:
+            return False
+        return True
+
+    pipe_hold["godot_alive_at_return"] = pid_alive(pipe_hold["godot_pid"])
+    pipe_hold["descendant_alive_at_return"] = pid_alive(pipe_hold["descendant_pid"])
+    pipe_hold["inner_classification"] = classify_process(
+        pipe_hold["actual_exit"], pipe_hold["error"], pipe_text, 0, pipe_marker)
+    detached_output = "\n".join(detached["output"]) if detached else ""
+    detached_pid_match = re.search(r"DESCENDANT_PIPE spawned_pid=(\d+)", detached_output)
+    detached_descendant_pid = int(detached_pid_match.group(1)) if detached_pid_match else None
+    detached_descendant_alive = pid_alive(detached_descendant_pid)
+    pipe_discriminations = {
+        # The pinned misattribution: the bound fired while the direct child
+        # was already dead (clean exit 0) — a pipe-drain wait, not liveness.
+        "hold_timed_out_with_child_dead": (pipe_hold["timed_out"]
+                                         and pipe_hold["child_exit_at_timeout"] == 0),
+        # The descendant's line was written ~1s after spawn — after its parent
+        # exited — yet was still captured: the runner kept draining the
+        # descendant-held pipe past the child's death.
+        "hold_post_exit_write_captured": pipe_hold["post_exit_write_captured"],
+        # The observed classification under the bound: error set + exit None
+        # -> rejects — the verdict a CASES row would misattribute to liveness.
+        "hold_misattributed_rejects": pipe_hold["inner_classification"] is False,
+        # No process-group kill exists: the descendant is orphaned and still
+        # alive after the run returns.
+        "hold_descendant_orphaned_alive": pipe_hold["descendant_alive_at_return"] is True,
+        # Discriminating control: same fixture/marker, fds detached at exec ->
+        # child-exit-bound PASS with no post-exit write captured.
+        "detached_case_passes_clean": (detached is not None
+                                       and detached["verdict"] == "PASS"
+                                       and detached["actual_exit"] == 0
+                                       and detached["error"] is None),
+        "detached_lacks_post_exit_write": pipe_post_exit not in detached_output,
+        # The control's own descendant also outlives the run: the battery has
+        # no leak detection; only the pipe route differs between the arms.
+        "detached_descendant_orphaned_alive": detached_descendant_alive is True,
+    }
+    # Harness-side hygiene: reap the orphaned descendants (each is a bounded
+    # `sleep` that would self-exit within seconds anyway); never gated verdicts.
+    for orphan_pid in (pipe_hold["descendant_pid"], detached_descendant_pid):
+        if pid_alive(orphan_pid):
+            try:
+                os.kill(orphan_pid, signal.SIGKILL)
+            except OSError:
+                pass
+    pipe_meta_ok = all(pipe_discriminations.values())
+    results.append({"case": "probe_descendant_pipe_eof",
+                    "verdict": "PASS" if pipe_meta_ok else "FAIL",
+                    "mode": "bounded_popen_plus_cases_control",
+                    "bound_seconds": pipe_bound,
+                    "hold_arm": pipe_hold,
+                    "hold_output_lines": pipe_text.strip().splitlines(),
+                    "detached_control_case": "descendant_pipe_detached_control",
+                    "detached_control_descendant_pid": detached_descendant_pid,
+                    "discriminations": pipe_discriminations,
+                    "bounded_claim": "Linux headless Godot 4.7.2 POSIX pipe semantics: communicate(timeout) is a completion+pipe-drain bound, timeout kill is direct-child-only, descendants orphan; not a Windows/macOS or exported-build claim"})
+    print(f"{results[-1]['verdict']} descendant pipe-EOF meta", flush=True)
     if args.probe_failing:
         destination = scratch / "scene_b.tscn"
         original = destination.read_text()
