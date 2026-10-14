@@ -316,12 +316,14 @@ local function on_event(ev, fa, fb, contact)
     EM(string.format("postfire cb=%s step=%d count=%d b1pos=%s", ev, step, world:getBodyCount(), pos(b1)))
   end
   if jw_mode and fired and step <= fire_step + 1 then
-    -- r76 jwatch: per-callback joint-count observation bounding the
-    -- drain point between the last step-73 cb (jcount=1, locked) and
-    -- the first step-74 cb (jcount=0) -- the epilogue is the only code
-    -- that runs between them (World.cpp:283-287), so the bound is the
-    -- measured drain point, not an inference. jwlive is last-wins: it
-    -- lands on the LAST callback still seeing the queued joint.
+    -- r76 jwatch: per-callback joint-count observation. The measured
+    -- bracket is jwlive (last-wins: last step-73 cb still seeing the
+    -- queued joint, jcount=1, locked) -> jdrain (emitted after
+    -- world:update returns, step=73, jcount=0): the drain sits inside
+    -- the update-73 epilogue, source-anchored to the joint drain loop
+    -- (World.cpp:289-294; 283-287 is the fixture loop). The window is
+    -- measured; the exact drain line inside it remains inference.
+    -- jwdrop@74 adds nothing beyond the same-side bound.
     local jc = world:getJointCount()
     if jc > 0 then
       EM(string.format("jwlive cb=%s step=%d locked=%s jcount=%d",

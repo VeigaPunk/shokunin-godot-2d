@@ -168,8 +168,9 @@ def splice_verdict(stdout):
 # ---- r74 interior-write lattice ------------------------------------------
 #
 # (case, cell, expected_class, {flat_key: pinned})
-# expected_class in {captured, applied, refused, refused_abort, deferred,
-# ignored, fatal} -- the falsifiable partition the arm pins. flat keys are
+# expected_class = the class partition defined by iw_classify (the
+# surviving authority; enumerating it here drifted stale once already).
+# flat keys are
 # `<tag>.<key>` from the probe's `IW | cell=<cell> | <tag> k=v ...` lines,
 # plus synthesized keys:
 #   rc / done / err_on / assert_txt / esc_fn / evpin_<cb>_lck / evpin_<cb>_step
@@ -592,6 +593,14 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
             # presence -- a receipt that merely mentions wpcall.* (e.g.
             # scout L1 captures where last-wins left update_ok=true)
             # falls through to the decisive cb_* evidence below.
+            # r76 P1: the shared refused-write abort witness hoists to
+            # one authority used by both abort arms.
+            abort_w = (flat.get("wpcall.locked_after") == "true"
+                       and flat.get("wp_setpos.ok") == "false"
+                       and "assertion" in flat.get("wp_setpos.err", "")
+                       and flat.get("wpext.ok") == "false"
+                       and flat.get("wpcall_next.update_ok") == "true"
+                       and flat.get("wpcall_next.locked_after") == "false")
             if flat.get("cb_destroy.ok") == "true":
                 # r76 drain-deferral: an ACCEPTED queued destroy rode the
                 # aborted step. The step-73 epilogue drain was skipped
@@ -606,27 +615,23 @@ def iw_classify(cell, flat, rc, timed_out, stdout):
                         int(flat.get("wpcall.step", "-1")) + 1
                 except ValueError:
                     late = False
-                if (flat.get("wpcall.locked_after") == "true"
-                        and flat.get("wp_setpos.ok") == "false"
-                        and "assertion" in flat.get("wp_setpos.err", "")
-                        and flat.get("wpext.ok") == "false"
-                        and flat.get("wpcall_next.update_ok") == "true"
-                        and flat.get("wpcall_next.locked_after") == "false"
+                # r76 reviewer F1: abortq.b1pos gated positively -- an
+                # ABSENT key must not satisfy the conjunct.
+                b1pos_live = (bool(flat.get("abortq.b1pos"))
+                              and not flat.get("abortq.b1pos", "")
+                                      .startswith("ERR:"))
+                if (abort_w
                         and flat.get("abortq.count")
                             == flat.get("fire.count")
-                        and not flat.get("abortq.b1pos", "").startswith("ERR:")
+                        and b1pos_live
                         and late
                         and flat.get("ecunl.locked") == "false"
-                        and flat.get("drainlate.b1pos", "").startswith("ERR:")):
+                        and flat.get("drainlate.b1pos", "")
+                            .startswith("ERR:")):
                     return ("deferred_abort",
                             "queued destroy survived abort; drained one step late")
                 return "anomaly", "deferred-abort witness incomplete"
-            if (flat.get("wpcall.locked_after") == "true"
-                    and flat.get("wp_setpos.ok") == "false"
-                    and "assertion" in flat.get("wp_setpos.err", "")
-                    and flat.get("wpext.ok") == "false"
-                    and flat.get("wpcall_next.update_ok") == "true"
-                    and flat.get("wpcall_next.locked_after") == "false"):
+            if abort_w:
                 return ("refused_abort",
                         "step abort + transient lock + recovery")
             return "anomaly", "wp containment witness incomplete"
