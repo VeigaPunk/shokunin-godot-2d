@@ -29,11 +29,17 @@ the measured partition is {refused | deferred | fatal | applied}:
             (this build surfaces b2Assert via loveAssert as a Lua error,
             not a silent no-op and not a process abort).
   deferred: body:destroy() -> ok=true, body alive for the rest of the
-            callback+step; drained after world:update with a synthesized
-            EndContact at locked=false.
-  fatal   : the same structural write NOT pcall-contained -> error escapes
-            world:update -> LOVE error handler -> rc=1, "Error:" on stdout,
-            no CELL_DONE (partial capture, measured not silent).
+            callback+step; drained inside the world:update epilogue with a
+            synthesized EndContact at locked=false (r74 reviewer D1: the
+            drain happens inside the update call, not after it returns).
+  fatal   : fatal(lua) only -- an assert-gated structural write NOT
+            pcall-contained -> error escapes world:update -> LOVE error
+            handler -> rc=1, "Error:" on stdout, no CELL_DONE (partial
+            capture, measured not silent). Scope (r74 critic C1/C2): the
+            pinned *_unp cells cover assert-gated structural writes only --
+            destroy/setvel uncontained stay deferred/applied, and a
+            process-abort shape (SIGABRT, e.g. own-fixture sensor->solid
+            morph per r74-boundary) classifies `died`, never `fatal`.
   applied : non-structural writes (setLinearVelocity, contact:setEnabled
             in preSolve) are legal inside the lock.
 Exterior (ext_*) controls apply immediately. Interior cells are spawned
@@ -252,11 +258,10 @@ def parse_iw(stdout):
     """Parse `IW | cell=<c> | <tag> k=v ...` lines.
 
     Values may contain spaces (assert text, ERR: strings): a value runs
-    until the next `word=` boundary or end of line. Returns
-    (flat, evpins): flat is `<tag>.<key>` -> last-wins merge across lines;
-    evpins is the ordered list of evpin kv dicts (one per cb).
+    until the next `word=` boundary or end of line. Returns flat:
+    `<tag>.<key>` -> last-wins merge across lines.
     """
-    flat, evpins = {}, []
+    flat = {}
     for line in stdout.splitlines():
         m = IW_LINE.match(line.strip())
         if not m:
@@ -274,18 +279,16 @@ def parse_iw(stdout):
             end = parts[i + 1][0] if i + 1 < len(parts) else len(body)
             kv[k] = body[at + len(k) + 1:end].strip()
         if tag == "evpin":
-            evpins.append(kv)
+            cb = kv.get("cb", "?")
+            flat[f"evpin_{cb}_lck"] = kv.get("locked", "?")
+            flat[f"evpin_{cb}_step"] = kv.get("step", "?")
         for k, v in kv.items():
             flat[f"{tag}.{k}"] = v
-    for e in evpins:
-        cb = e.get("cb", "?")
-        flat[f"evpin_{cb}_lck"] = e.get("locked", "?")
-        flat[f"evpin_{cb}_step"] = e.get("step", "?")
     flat.setdefault("done", "false")
-    return flat, evpins
+    return flat
 
 
-def iw_classify(cell, flat, evpins, rc, timed_out, stdout):
+def iw_classify(cell, flat, rc, timed_out, stdout):
     """Map one cell's capture onto {captured|applied|refused|deferred|
     fatal|timeout|died|nolaunch|anomaly}. Partial-capture detection is
     built in: fire-present without CELL_DONE is never a pass shape."""
@@ -345,7 +348,6 @@ def iw_flat_extras(flat, rc, stdout, stderr):
         flat["err_on"] = "stderr"
     else:
         flat["err_on"] = "none"
-    return flat
 
 
 def run_process(command, timeout_seconds, env_extra=None):
@@ -454,10 +456,10 @@ def main():
             {"IW_CELL": cell})
         (run_dir / f"iw-{cell}.stdout.txt").write_text(c_stdout)
         (run_dir / f"iw-{cell}.stderr.txt").write_text(c_stderr)
-        flat, evpins = parse_iw(c_stdout)
+        flat = parse_iw(c_stdout)
         iw_flat_extras(flat, c_code, c_stdout, c_stderr)
         cls, detail = iw_classify(
-            cell, flat, evpins, c_code,
+            cell, flat, c_code,
             c_err is not None and c_err.startswith("TIMEOUT"), c_stdout)
         reasons = []
         if c_err is not None:

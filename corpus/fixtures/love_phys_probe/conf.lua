@@ -1,6 +1,6 @@
 -- r74 love_phys_probe headless conf: strict profile (physics/timer/event
--- kept; everything else off). Same regime the frontier phys_probe and the
--- r74 scout scratch measured under.
+-- kept; everything else off). Same strict module profile the r74 scout
+-- scratch measured under; the frontier phys_probe differs (r74 critic C5).
 function love.conf(t)
   t.identity = "shokunin-love-phys-probe"
   t.window = false
