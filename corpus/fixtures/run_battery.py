@@ -96,6 +96,12 @@ CASES = [
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
+    # r63 KNOWN-ACCEPTING FORGERY ROW: the child withholds the signature; a
+    # pipe-holding descendant writes it after the parent's exit
+    # (reparenting-gated) and releases the pipes before the bound. The row
+    # documents that signature presence is origin-blind — this PASS is a
+    # forged signature accepted; see meta probe_descendant_signature_spoof.
+    ("descendant_pipe_forged_signature_release", "descendant_pipe_probe.gd", ["--spawn-forge-release"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
 ]
 
 
@@ -687,6 +693,189 @@ def main():
                     "discriminations": pipe_discriminations,
                     "bounded_claim": "Linux headless Godot 4.7.2 POSIX pipe semantics: communicate(timeout) is a completion+pipe-drain bound, timeout kill is direct-child-only, descendants orphan; not a Windows/macOS or exported-build claim"})
     print(f"{results[-1]['verdict']} descendant pipe-EOF meta", flush=True)
+    # r63 meta: merged-stream signature-spoof boundary — documented
+    # forgery-accepting, pinned not fixed. classify_process's signature clause
+    # is presence-based over the merged captured output: origin-blind. A
+    # pipe-holding descendant that writes the expected signature AFTER the
+    # direct child's exit (kernel-reparenting gated; write_ppid != godot_pid
+    # is in-record post-orphan provenance) satisfies it. Two complementary
+    # records pin the boundary:
+    #   hold arm (--spawn-forge-hold, one bounded Popen at 3.0s): the forged
+    #     signature lands INSIDE the TIMEOUT record — classification rejects
+    #     only via the error/timeout fields (timed_out,
+    #     child_exit_at_timeout), never via signature presence.
+    #   CASES row descendant_pipe_forged_signature_release
+    #   (--spawn-forge-release): the descendant releases the pipes before the
+    #     8s bound, so the forged signature lands in a clean exit-0 record and
+    #     classifies PASS — a signature the direct child never emitted is
+    #     accepted indistinguishably from a genuine one.
+    spoof_marker = "DESCENDANT_PIPE_PROBE: expected signature"
+    spoof_bound = 3.0
+    forged = next((r for r in results
+                   if r["case"] == "descendant_pipe_forged_signature_release"), None)
+    spoof_hold = {"case": "descendant_pipe_forge_hold_arm", "bound_seconds": spoof_bound,
+                  "timed_out": False, "child_exit_at_timeout": None,
+                  "actual_exit": None, "error": None, "marker_observed": False,
+                  "write_ppid": None, "godot_pid": None, "descendant_pid": None,
+                  "godot_alive_at_return": None, "descendant_alive_at_return": None,
+                  "descendant_kernel_ppid_at_return": None,
+                  "inner_classification": False}
+    spoof_proc = None
+    spoof_started = time.monotonic()
+    spoof_text = ""
+    try:
+        spoof_proc = subprocess.Popen(
+            [args.godot, "--headless", "--path", str(scratch), "--script",
+             "res://descendant_pipe_probe.gd", "--", "--spawn-forge-hold"],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, bufsize=1)
+        try:
+            spoof_out, spoof_err = spoof_proc.communicate(timeout=spoof_bound)
+            spoof_text = (spoof_out or "") + (spoof_err or "")
+            spoof_hold["actual_exit"] = spoof_proc.returncode
+        except subprocess.TimeoutExpired as exc:
+            spoof_hold["timed_out"] = True
+            # poll() reaps the direct child: a non-None exit code here proves
+            # the bound fired on pipe EOF with the child already dead.
+            spoof_hold["child_exit_at_timeout"] = spoof_proc.poll()
+            spoof_out = (exc.stdout.decode(errors="replace") if isinstance(exc.stdout, bytes)
+                         else (exc.stdout or ""))
+            spoof_err = (exc.stderr.decode(errors="replace") if isinstance(exc.stderr, bytes)
+                         else (exc.stderr or ""))
+            spoof_text = spoof_out + spoof_err
+            spoof_hold["error"] = f"TIMEOUT after {spoof_bound} seconds"
+            for stream in (spoof_proc.stdout, spoof_proc.stderr):
+                try:
+                    stream.close()
+                except OSError:
+                    pass
+            try:
+                spoof_proc.wait(timeout=3)
+            except subprocess.TimeoutExpired:
+                spoof_proc.kill()
+                try:
+                    spoof_proc.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    spoof_hold["error"] += "; post-kill wait timed out"
+    except (OSError, ValueError) as exc:
+        spoof_hold["error"] = f"launch/read error: {exc}"
+    finally:
+        if spoof_proc is not None and spoof_proc.poll() is None:
+            spoof_proc.kill()
+            try:
+                spoof_proc.wait(timeout=3)
+            except subprocess.TimeoutExpired:
+                spoof_hold["error"] = (spoof_hold["error"] or "") + "; forced cleanup timed out"
+    spoof_hold["elapsed_seconds"] = round(time.monotonic() - spoof_started, 3)
+    spoof_hold["marker_observed"] = spoof_marker in spoof_text
+    spoof_pid = re.search(r"DESCENDANT_PIPE godot_pid=(\d+)", spoof_text)
+    spoof_hold["godot_pid"] = int(spoof_pid.group(1)) if spoof_pid else None
+    spoof_pid = re.search(r"DESCENDANT_PIPE spawned_pid=(\d+)", spoof_text)
+    spoof_hold["descendant_pid"] = int(spoof_pid.group(1)) if spoof_pid else None
+    spoof_pid = re.search(r"DESCENDANT_PIPE_FORGE write_ppid=(\d+)", spoof_text)
+    spoof_hold["write_ppid"] = int(spoof_pid.group(1)) if spoof_pid else None
+    spoof_hold["godot_alive_at_return"] = pid_alive(spoof_hold["godot_pid"])
+    spoof_hold["descendant_alive_at_return"] = pid_alive(spoof_hold["descendant_pid"])
+    spoof_hold["inner_classification"] = classify_process(
+        spoof_hold["actual_exit"], spoof_hold["error"], spoof_text, 0, spoof_marker)
+
+    def kernel_ppid(pid):
+        # /proc/<pid>/stat field 4 — kernel-side ppid, corroborates the
+        # descendant's self-reported write_ppid while it still lives (the
+        # release arm's descendant exits before return and cannot be checked;
+        # its write_ppid is fixture-asserted only — r63 critic disclosure).
+        if pid is None or pid <= 0:
+            return None
+        try:
+            with open(f"/proc/{pid}/stat") as stat_file:
+                return int(stat_file.read().rsplit(")", 1)[1].split()[1])
+        except (OSError, ValueError, IndexError):
+            return None
+
+    spoof_hold["descendant_kernel_ppid_at_return"] = kernel_ppid(
+        spoof_hold["descendant_pid"])
+    forged_output = "\n".join(forged["output"]) if forged else ""
+    forged_pid = re.search(r"DESCENDANT_PIPE godot_pid=(\d+)", forged_output)
+    forged_godot_pid = int(forged_pid.group(1)) if forged_pid else None
+    forged_pid = re.search(r"DESCENDANT_PIPE spawned_pid=(\d+)", forged_output)
+    forged_descendant_pid = int(forged_pid.group(1)) if forged_pid else None
+    forged_pid = re.search(r"DESCENDANT_PIPE_FORGE write_ppid=(\d+)", forged_output)
+    forged_write_ppid = int(forged_pid.group(1)) if forged_pid else None
+    spoof_discriminations = {
+        # Bound fired on the descendant-held pipes with the direct child
+        # already dead — the r62 pinned misattribution shape, now carrying a
+        # descendant-authored signature.
+        "hold_timed_out_with_child_dead": (spoof_hold["timed_out"]
+                                         and spoof_hold["child_exit_at_timeout"] == 0),
+        # The expected signature IS in the TIMEOUT record; the child withheld
+        # it by construction, so this occurrence is descendant-authored.
+        "hold_forged_signature_captured": spoof_hold["marker_observed"],
+        # In-record post-orphan provenance: the write's observed ppid is the
+        # reparented ppid, not the godot child pid.
+        "hold_write_post_orphan": (spoof_hold["write_ppid"] is not None
+                                   and spoof_hold["godot_pid"] is not None
+                                   and spoof_hold["write_ppid"] != spoof_hold["godot_pid"]),
+        # Signature presence alone would accept; this record rejects only
+        # through the timeout/error axis.
+        "hold_rejects_via_timeout_axis_only": spoof_hold["inner_classification"] is False,
+        # No process-group kill exists: the hold descendant orphans alive.
+        "hold_descendant_orphaned_alive": spoof_hold["descendant_alive_at_return"] is True,
+        # The pinned forgery-accepting boundary: the release CASES row is a
+        # PASS whose signature is provably the descendant's post-death write.
+        "release_row_passes_on_forged_signature": (forged is not None
+            and forged["verdict"] == "PASS" and forged["actual_exit"] == 0
+            and forged["error"] is None and spoof_marker in forged_output),
+        "release_write_post_orphan": (forged_write_ppid is not None
+                                      and forged_godot_pid is not None
+                                      and forged_write_ppid != forged_godot_pid),
+        # Kernel corroboration of the self-reported ppid: the hold descendant
+        # is still alive at return, so /proc/<pid>/stat ppid must equal the
+        # reparented ppid it claimed and differ from the dead godot pid —
+        # closes the fabricated-write_ppid slip class on this arm (r63
+        # critic). The release descendant is already dead at return; its
+        # write_ppid stays fixture-asserted.
+        "hold_write_ppid_kernel_corroborated": (
+            spoof_hold["write_ppid"] is not None
+            and spoof_hold["descendant_kernel_ppid_at_return"]
+                == spoof_hold["write_ppid"]
+            and spoof_hold["godot_pid"] is not None
+            and spoof_hold["write_ppid"] != spoof_hold["godot_pid"]),
+        # Provenance anchor: the release row's output must carry the child's
+        # own withheld banner — without it the signature's descendant
+        # authorship is unproven within the record.
+        "release_withheld_banner_present": (
+            "DESCENDANT_PIPE_FORGE child_signature=withheld" in forged_output),
+        # On the classification-visible fields the forged PASS is
+        # indistinguishable from the genuine detached control; only the
+        # child-death/timeout evidence could ever tell them apart, and the
+        # release record carries none.
+        "release_shape_matches_genuine": (
+            forged is not None and detached is not None
+            and forged["verdict"] == detached["verdict"] == "PASS"
+            and forged["actual_exit"] == detached["actual_exit"] == 0
+            and forged["error"] is None and detached["error"] is None
+            and (spoof_marker in forged_output)
+                == (spoof_marker in detached_output)),
+    }
+    # Harness-side hygiene: reap the orphaned forged-signature descendants
+    # (bounded sleeps that would self-exit in seconds anyway); never gated.
+    for orphan_pid in (spoof_hold["descendant_pid"], forged_descendant_pid):
+        if pid_alive(orphan_pid):
+            try:
+                os.kill(orphan_pid, signal.SIGKILL)
+            except OSError:
+                pass
+    spoof_meta_ok = all(spoof_discriminations.values())
+    results.append({"case": "probe_descendant_signature_spoof",
+                    "verdict": "PASS" if spoof_meta_ok else "FAIL",
+                    "mode": "bounded_popen_plus_cases_forgery_row",
+                    "bound_seconds": spoof_bound,
+                    "hold_arm": spoof_hold,
+                    "hold_output_lines": spoof_text.strip().splitlines(),
+                    "forged_release_case": "descendant_pipe_forged_signature_release",
+                    "forged_release_descendant_pid": forged_descendant_pid,
+                    "discriminations": spoof_discriminations,
+                    "bounded_claim": "signature presence over merged captured output is origin-blind: a descendant's post-child-exit write of the expected signature satisfies it; accepted (verdict PASS) whenever the pipes release before the bound, separable only via the timed_out/child_exit_at_timeout evidence when held past it — documented forgery-accepting boundary, not a fix; Linux headless Godot 4.7.2 POSIX pipe semantics only"})
+    print(f"{results[-1]['verdict']} descendant signature-spoof meta", flush=True)
     if args.probe_failing:
         destination = scratch / "scene_b.tscn"
         original = destination.read_text()

@@ -1,0 +1,110 @@
+{
+  "runner_sha256": "0c4c9bee70569c8ec29f98dea89c437d78587fd5c3c7b3220b76140ac59520dd",
+  "godot": "/usr/bin/godot",
+  "proj": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-author/scratch-probe/proj",
+  "marker": "DESCENDANT_PIPE_PROBE: expected signature",
+  "results": {
+    "clean": {
+      "actual_exit": 0,
+      "error": null,
+      "timed_out": false,
+      "marker_observed": true,
+      "write_ppid_observed": false,
+      "godot_pid": 1010050,
+      "descendant_pid": null,
+      "write_ppid": null,
+      "godot_alive_at_return": false,
+      "descendant_alive_at_return": null,
+      "write_post_orphan": false,
+      "inner_classification": true
+    },
+    "detach": {
+      "actual_exit": 0,
+      "error": null,
+      "timed_out": false,
+      "marker_observed": true,
+      "write_ppid_observed": false,
+      "godot_pid": 1010770,
+      "descendant_pid": 1011291,
+      "write_ppid": null,
+      "godot_alive_at_return": false,
+      "descendant_alive_at_return": true,
+      "write_post_orphan": false,
+      "inner_classification": true
+    },
+    "forge_hold_b3": {
+      "timed_out": true,
+      "child_exit_at_timeout": 0,
+      "actual_exit": null,
+      "error": "TIMEOUT after 3.0 seconds",
+      "elapsed_seconds": 3.003,
+      "command": [
+        "/usr/bin/godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-author/scratch-probe/proj",
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--",
+        "--spawn-forge-hold"
+      ],
+      "marker_observed": true,
+      "write_ppid_observed": true,
+      "godot_pid": 1011361,
+      "descendant_pid": 1011952,
+      "write_ppid": 1573,
+      "godot_alive_at_return": false,
+      "descendant_alive_at_return": true,
+      "write_post_orphan": true,
+      "inner_classification": false
+    },
+    "forge_release": {
+      "actual_exit": 0,
+      "error": null,
+      "timed_out": false,
+      "marker_observed": true,
+      "write_ppid_observed": true,
+      "godot_pid": 1013939,
+      "descendant_pid": 1014556,
+      "write_ppid": 1573,
+      "godot_alive_at_return": false,
+      "descendant_alive_at_return": true,
+      "write_post_orphan": true,
+      "inner_classification": true
+    },
+    "forge_hold_b8": {
+      "actual_exit": 0,
+      "error": null,
+      "timed_out": false,
+      "marker_observed": true,
+      "write_ppid_observed": true,
+      "godot_pid": 1014646,
+      "descendant_pid": 1015171,
+      "write_ppid": 1573,
+      "godot_alive_at_return": false,
+      "descendant_alive_at_return": true,
+      "write_post_orphan": true,
+      "inner_classification": true
+    },
+    "forge_release_wrongsig": {
+      "inner_classification": false,
+      "signature": "DESCENDANT_PIPE_PROBE: a different signature"
+    },
+    "shape_compare": {
+      "forged_release": {
+        "actual_exit": 0,
+        "error": null,
+        "marker_observed": true,
+        "inner_classification": true
+      },
+      "genuine_detach": {
+        "actual_exit": 0,
+        "error": null,
+        "marker_observed": true,
+        "inner_classification": true
+      },
+      "indistinguishable_on_signature_axis": true
+    }
+  },
+  "hygiene_killed": []
+}

@@ -1,0 +1,120 @@
+{
+  "godot": "4.7.2.stable.arch_linux.ed1daf0bf",
+  "runner_sha_source": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/fixtures/run_battery.py",
+  "bound": 3.0,
+  "results": [
+    {
+      "case": "genuine_child",
+      "command_tail": [
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "elapsed_seconds": 0.383,
+      "marker_observed": true,
+      "marker_occurrences": 1,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE godot_pid=1073668"
+      ],
+      "inner_classification": true,
+      "classify_if_error_none": true,
+      "descendant_pid": null
+    },
+    {
+      "case": "detached_ctrl",
+      "command_tail": [
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--",
+        "--spawn-detach"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "elapsed_seconds": 0.4,
+      "marker_observed": true,
+      "marker_occurrences": 1,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE godot_pid=1073706",
+        "DESCENDANT_PIPE spawned_pid=1073744"
+      ],
+      "inner_classification": true,
+      "classify_if_error_none": true,
+      "descendant_pid": 1073744
+    },
+    {
+      "case": "forge_release",
+      "command_tail": [
+        "--script",
+        "res://spoof_min_probe.gd",
+        "--",
+        "--forge-release"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "elapsed_seconds": 0.434,
+      "marker_observed": true,
+      "marker_occurrences": 1,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE godot_pid=1073745",
+        "DESCENDANT_PIPE spawned_pid=1073783",
+        "DESCENDANT_PIPE_PROBE: expected signature"
+      ],
+      "inner_classification": true,
+      "classify_if_error_none": true,
+      "descendant_pid": 1073783
+    },
+    {
+      "case": "forge_hold",
+      "command_tail": [
+        "--script",
+        "res://spoof_min_probe.gd",
+        "--",
+        "--forge-hold"
+      ],
+      "bound_seconds": 3.0,
+      "timed_out": true,
+      "child_exit_at_timeout": 0,
+      "actual_exit": null,
+      "error": "TIMEOUT after 3.0 seconds",
+      "marker_observed": true,
+      "descendant_pid": 1073828,
+      "descendant_alive_at_return": true,
+      "elapsed_seconds": 3.002,
+      "marker_occurrences": 1,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE godot_pid=1073786",
+        "DESCENDANT_PIPE spawned_pid=1073828",
+        "DESCENDANT_PIPE_PROBE: expected signature"
+      ],
+      "inner_classification": false,
+      "classify_if_error_none": true
+    }
+  ],
+  "verdict_field_diffs": {
+    "forge_release_vs_genuine_child": {},
+    "forge_release_vs_detached_ctrl": {}
+  },
+  "orphans_reaped": [
+    1073744,
+    1073828
+  ],
+  "orphan_alive_after_reap": {
+    "1073744": false,
+    "1073828": false
+  }
+}
