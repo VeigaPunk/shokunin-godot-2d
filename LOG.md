@@ -952,3 +952,26 @@
   (r78 scout mapped).
 - Seats: author/scout/boundary/critic/reviewer/simplifier/verifier/
   baseline/scribe all landed. ADMIT-corr.
+## Round 78 verdict — 2026-10-14
+- ARMED: nested world:update damage surface — 17 cells. Box2D e_locked
+  cleared by the INNER update's epilogue: post-inner code runs unlocked
+  mid-dispatch; inner update owns its own contact drain; contacting-
+  body destroy from dispatch -> Memoizer escape (love throw, rc=1);
+  nested update from body-drain EC -> SIGSEGV; zombie contact handles
+  are a silent UAF; drain-abort livelock/converge both armed.
+- VERIFIED: 92/92 folded; author 92/92 x4 + 37/37 ablations; reviewer
+  ACCEPT F1-F7; labrat verifier: all falsifications fail closed.
+  Baseline zero-drift; 45/56 prior byte-identical + 11 line-token-only.
+- FOLDS (1fde57d): simplifier P1-P4 (-1181 B, 146/146 receipts
+  byte-identical); C1 corrupt gate re-keyed on drain-origin (crash
+  reproduces at nested depth 1); C2 drainec own/own_n provenance;
+  C3 drain_converge real-drain conjuncts; misleading drain-EC wording.
+- FIX mid-fold: r78_dead() returns "true"/"false" strings — Lua
+  truthiness broke provenance; explicit == "false" comparisons.
+- RECORD: scribe showed r77's D2 conjunct was inert (unemitted key);
+  the r78 form is the discriminating one.
+- Bounded: C4 classifier-level fail-open routes remain (verdict-level
+  fail-closed); linearity pinned at one step-budget point;
+  love.errorhandler windowed surface queued for r79.
+- Seats: scout+author+boundary+baseline+critic+reviewer+scribe+
+  verifier(labrat swe-2)+simplifier landed. ADMIT-corr.

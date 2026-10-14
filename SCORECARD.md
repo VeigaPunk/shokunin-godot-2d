@@ -138,3 +138,14 @@ Sol `r75-adjudicator.md`: ADMIT-corr — deferred/uncontained partition confirme
 Sol `r76-adjudicator.md`: ADMIT-corr — deferred_abort admitted, destroy-edge lifecycle split, drain bound measured, retfalse refuted at every granularity. Verifier AGREE all claims on `6ca715d`; baseline zero-drift. Bounded: LOVE 11.5/LuaJIT, this host. Work `6ca715d` + folds `c8fa307`.
 
 | r77 | game-dev-2d | release/callback-swap/drain-EC lattice | ADMIT-corr | 62201e5 + d48e0fd |
+## Round 78 verdict — 2026-10-14
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | 17 new cells on the nested world:update surface: e_locked cleared by inner epilogue, inner-drain ownership, Memoizer dispatch escape, body-drain-EC nested SIGSEGV, zombie-contact silent UAF, livelock/drain_converge |
+| depth | **improved** | drain provenance now required (own/own_n); corrupt gate keyed on drain-origin not depth; drain_converge requires real drain identity (R78-DRAIN- error + aborts>=1 + drain_n>=1) |
+| calibration | **improved** | simplifier P1-P4 byte-identical (-1181 B); r78_dead string-truthiness defect corrected; r77 inert D2 conjunct recorded |
+
+`swe-2/sol` `r78-adjudicator.md`: ADMIT-corr — nested-update surface admitted with fold corrections; verifier AGREE (labrat), baseline zero-drift. Bounded: LOVE 11.5/LuaJIT, this host. Work `1a03b7a` + folds `1fde57d`.
+
+| r78 | game-dev-2d | nested world:update damage surface | ADMIT-corr | 1a03b7a + 1fde57d |
