@@ -933,3 +933,22 @@
 - Scout: world:release in-cb = SIGSEGV (corrupt class); setCallbacks
   mid-dispatch swap; endContact locked=false census.
 - Verdict: ADMIT-corr (Sol, wave-16). LOVE 11.5/LuaJIT, this host.
+
+## Round 77 — release/swap/fixture/drain-EC/coroutine/meter lattice
+
+- MOVE: 26 cells arming scout pre-measurements: corrupt x5
+  (release()-in-engine SIGSEGV, rc=-11), swapped x4 + muted
+  (per-dispatch callback-table read), deferred fixture x3
+  (fixture-scoped witness), drain-EC legality set (lock-state rule),
+  yield_abort x2 (resume contains, wrap does not), applied meter x2.
+- VERIFIED: 75/75 x6 executions; verifier AGREE 5/5; baseline
+  zero-drift (43/49 prior byte-identical, rest jitter); insertion-only.
+- FOLDS (d48e0fd): P3 67-pin dedup (byte-identical); critic D2
+  postfire-absence gate (was vacuous); D3 absent-key fail-closed;
+  F1/F2 wording/docstring.
+- FOUND (parked to r78): nested world:update clears Box2D e_locked
+  mid-callback -> writes apply, destroy immediate (r77 boundary);
+  drain-EC every-entry abort livelocks; zombie contact handle UAF
+  (r78 scout mapped).
+- Seats: author/scout/boundary/critic/reviewer/simplifier/verifier/
+  baseline/scribe all landed. ADMIT-corr.

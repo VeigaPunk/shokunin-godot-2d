@@ -136,3 +136,5 @@ Sol `r75-adjudicator.md`: ADMIT-corr — deferred/uncontained partition confirme
 | calibration | **improved** | abort_w single-sources the abort witness; latent fail-open closed (abortq.b1pos); stale enumeration replaced by authority pointer; drain-point overclaim scoped (window measured / line inferred) |
 
 Sol `r76-adjudicator.md`: ADMIT-corr — deferred_abort admitted, destroy-edge lifecycle split, drain bound measured, retfalse refuted at every granularity. Verifier AGREE all claims on `6ca715d`; baseline zero-drift. Bounded: LOVE 11.5/LuaJIT, this host. Work `6ca715d` + folds `c8fa307`.
+
+| r77 | game-dev-2d | release/callback-swap/drain-EC lattice | ADMIT-corr | 62201e5 + d48e0fd |
