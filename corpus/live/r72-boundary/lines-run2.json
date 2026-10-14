@@ -1,0 +1,64 @@
+{
+  "grid_pp_bufchild": {
+    "lines": [
+      [
+        56.93,
+        "INJHEAD  TAIL"
+      ]
+    ],
+    "trailing": "b''"
+  },
+  "grid_pw_wtchild": {
+    "lines": [
+      [
+        37.11,
+        "INJHEAD  TAIL"
+      ]
+    ],
+    "trailing": "b''"
+  },
+  "grid_pn_nlchild": {
+    "lines": [
+      [
+        34.42,
+        "INJ"
+      ],
+      [
+        35.73,
+        "HEAD  TAIL"
+      ]
+    ],
+    "trailing": "b''"
+  },
+  "grid_up_unbufparent": {
+    "lines": [
+      [
+        56.63,
+        "HEAD INJ TAIL"
+      ]
+    ],
+    "trailing": "b''"
+  },
+  "win_after_exit": {
+    "lines": [
+      [
+        10.44,
+        "HEAD  TAIL"
+      ]
+    ],
+    "trailing": "b'INJ'"
+  },
+  "receipt_after": {
+    "lines": [
+      [
+        36.43,
+        "INJHEAD PYGAME-ARM reorder | x=1"
+      ],
+      [
+        36.45,
+        "TAIL"
+      ]
+    ],
+    "trailing": "b''"
+  }
+}

@@ -820,3 +820,23 @@
   pinning), simplifier's metric-rule bug (pin re-tightened post-fix).
 - Verdict: ADMIT-with-correction. 36/36 ×3 + under load; Godot/LOVE
   byte-stable. Sol final.
+
+## Round 72 — reorder fabrication: fd1-inheritance × stdio-withholding (wave-12)
+
+- MOVE: `reorder_*` arm family on pygame_probe (5 spawned-child cells
+  sweeping the fd1-OWNER's stdio mode + reorder_self raw markers on the
+  probe's own wire) + RAW_CASES wire-order predicate in the battery.
+- Confirmed: buffered owner → prefix_reorder; -u/flush/env →
+  midline_splice; late → append; identical on bare CPython and inside
+  pygame — language-layer order, spawn-layer seam (libc-general, C repro).
+- Critic F1 corrected the referent pre-landing: variable = fd1-owner
+  mode, not descendant's (13-cell matrices both regimes).
+- Boundary edge lattice: window = byte/buffer-lifetime not wall-ms;
+  4-valued {prefix,infix,midline,append}; SIGKILL → distinct loss class;
+  byte topology alone is not a fabrication witness (write-order
+  construction required); 131072B single write splices through.
+- Env hygiene: PYTHONUNBUFFERED popped at probe spawn + env=CHILD_ENV
+  on reorder children AND popen_arm (r71 verifier defect folded).
+- Verifier AGREE 5/5 on fee5563 (55/55 ×3 + env sweep + own 7/7 repro).
+- Baseline zero-drift on freeze 44127af across all 5 battery families.
+- Verdict: ADMIT (Sol final, wave-12).

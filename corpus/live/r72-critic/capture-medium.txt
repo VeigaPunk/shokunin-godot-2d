@@ -1,0 +1,14 @@
+== pty capture, buffered parent ==
+0000000   H   E   A   D  \r  \n   C   H   I   L   D  \r  \n   T   A   I
+0000020   L  \r  \n
+0000023
+== pty capture, -u parent ==
+0000000   H   E   A   D  \r  \n   C   H   I   L   D  \r  \n   T   A   I
+0000020   L  \r  \n
+0000023
+== file capture, buffered parent ==
+0000000   C   H   I   L   D  \n   H   E   A   D  \n   T   A   I   L  \n
+0000020
+== file capture, -u parent ==
+0000000   H   E   A   D  \n   C   H   I   L   D  \n   T   A   I   L  \n
+0000020

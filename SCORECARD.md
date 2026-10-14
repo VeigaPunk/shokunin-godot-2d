@@ -90,3 +90,12 @@ Sol (provisional): ADMIT-with-falsification — claim refuted at the engine laye
 | coverage | **improved** | THIRD 2D runtime (pygame 2.6.1/SDL 2.32.72) headless — 36-case pinned battery; sibling runner convention extends cleanly to a non-engine runtime |
 | depth | **improved** | withholding-window bound corrected to io.DEFAULT_BUFFER_SIZE=131072 (3.14) with compound 2-layer semantics; critic's stale-8KB falsification + load-fragility audit folded |
 | calibration | **unchanged** | sibling runner only; Godot/LOVE batteries byte-stable by construction |
+## Round 72 verdict — 2026-11-01
+
+| axis | verdict | evidence |
+|---|---|---|
+| depth | **improved** | reorder fabrication CONFIRMED and correctly attributed: variable = fd1-OWNER's stdio mode (critic F1 referent correction — brief's "buffered child" was wrong); topology family {prefix,infix,midline,append}; window = buffer lifetime not wall-time; mechanism libc/CPython-general (byte-equal on bare python3 and in-pygame) |
+| coverage | **improved locally** | `reorder_*` arm family (5 owner-mode cells) + `reorder_self` + `RAW_CASES` raw-wire predicate (new case class — parser-hazard pinned: REORDER-CHILD precedes REORDER-HEAD in captured stream); 55/55 |
+| calibration | **unchanged** | insertion-only (+171/−0); prior 36 cases byte-stable; env hygiene hardened (PYTHONUNBUFFERED popped probe-side, env=CHILD_ENV on all children — folds r71 verifier defect) |
+
+Sol `r72-adjudicator.md`: ADMIT — composition CONFIRMED with corrected referent; verifier AGREE 5/5 on `fee5563` (55/55 ×3 + PYTHONUNBUFFERED sweep + 7/7 independent); baseline zero-drift on freeze `44127af` across all 5 battery families. Bounded: CPython 3.14.7 block-buffering (131072), pipe capture regime (fd1_isatty recorded), this host. Work commit `fee5563`; report-last commit follows.

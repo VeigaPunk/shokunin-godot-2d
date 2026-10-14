@@ -1,0 +1,55 @@
+== census: corpus/fixtures/pygame_battery.py (212 lines, sha256=0a579819658ee9be)
+
+-- top-level defs: name lines refs_outside_own_body
+   run_process                104-117   refs_total=2   outside_own_body=2
+   parse_arms                 120-129   refs_total=1   outside_own_body=1
+   check                      132-146   refs_total=1   outside_own_body=1
+   main                       149-208   refs_total=1   outside_own_body=1
+
+-- dynamic-name escape hatches
+   none
+
+-- duplication vs corpus/fixtures/love_battery.py
+   whole-file normalized-token ratio: 0.659
+   run_process              ratio_vs_sibling=1.000  <-- VERBATIM
+   parse_arms               ratio_vs_sibling=1.000  <-- VERBATIM
+   check                    ratio_vs_sibling=1.000  <-- VERBATIM
+   main                     ratio_vs_sibling=0.818
+
+-- table CASES: 36 rows (lines 49-99)
+   viab_init_ok                 line    50  key_literal_hits={'viability': 2, 'init_fail': 1, '0': 3}
+   viab_driver_dummy            line    51  key_literal_hits={'viability': 2, 'driver': 1, 'dummy': 3}
+   c60_n                        line    52  key_literal_hits={'cadence60': 5, 'n': 2, '240': 1}
+   c60_mean_undershoot          line    54  key_literal_hits={'cadence60': 5, 'dt_mean_ms': 2}
+   c60_min                      line    55  key_literal_hits={'cadence60': 5, 'dt_min_ms': 2}
+   c60_max                      line    56  key_literal_hits={'cadence60': 5, 'dt_max_ms': 2}
+   c60_fps_over60               line    57  key_literal_hits={'cadence60': 5, 'fps': 1}
+   c0_n                         line    58  key_literal_hits={'cadence0': 5, 'n': 2, '1200': 1}
+   c0_mean_subms                line    59  key_literal_hits={'cadence0': 5, 'dt_mean_ms': 2}
+   c0_min                       line    60  key_literal_hits={'cadence0': 5, 'dt_min_ms': 2}
+   c0_hz_uncapped               line    63  key_literal_hits={'cadence0': 5, 'hz': 1}
+   c0_max                       line    64  key_literal_hits={'cadence0': 5, 'dt_max_ms': 2}
+   popen_l1_exact               line    65  key_literal_hits={'popen': 7, 'l1': 1, 'CHILD-MARK-1': 1}
+   popen_l2_exact               line    66  key_literal_hits={'popen': 7, 'l2': 1, 'CHILD-MARK-2': 1}
+   popen_l1_wait_fast           line    67  key_literal_hits={'popen': 7, 'l1_wait_ms': 2}
+   popen_l2_wait_writer         line    70  key_literal_hits={'popen': 7, 'l2_wait_ms': 1}
+   popen_close_fast             line    71  key_literal_hits={'popen': 7, 'close_wait_ms': 1}
+   popen_total                  line    72  key_literal_hits={'popen': 7, 'total_ms': 1}
+   popen_rest_empty             line    73  key_literal_hits={'popen': 7, 'rest_len': 1, '0': 3}
+   popenbuf_l1_held             line    75  key_literal_hits={'popen_buf': 1, 'l1_wait_ms': 2}
+   whs_bufsize                  line    78  key_literal_hits={'withhold_small': 3, 'bufsize': 1, '131072': 1}
+   whs_held_to_exit             line    79  key_literal_hits={'withhold_small': 3, 'first_read_ms': 3}
+   whs_early_none               line    80  key_literal_hits={'withhold_small': 3, 'early_bytes': 3, '0': 3}
+   whb_first_early              line    84  key_literal_hits={'withhold_big': 5, 'first_read_ms': 3}
+   whb_mark1_rides              line    85  key_literal_hits={'withhold_big': 5, 'mark1_ms': 2}
+   whb_mark2_exit               line    86  key_literal_hits={'withhold_big': 5, 'mark2_ms': 2}
+   whb_early_bytes              line    87  key_literal_hits={'withhold_big': 5, 'early_bytes': 3}
+   whb_alive                    line    88  key_literal_hits={'withhold_big': 5, 'alive_at_first': 2, 'True': 2}
+   whf_first_early              line    91  key_literal_hits={'withhold_fill': 5, 'first_read_ms': 3}
+   whf_mark1_rides              line    92  key_literal_hits={'withhold_fill': 5, 'mark1_ms': 2}
+   whf_mark2_exit               line    93  key_literal_hits={'withhold_fill': 5, 'mark2_ms': 2}
+   whf_early_bytes              line    94  key_literal_hits={'withhold_fill': 5, 'early_bytes': 3}
+   whf_alive                    line    95  key_literal_hits={'withhold_fill': 5, 'alive_at_first': 2, 'True': 2}
+   pump_not_needed              line    96  key_literal_hits={'pump': 3, 'pump_needed': 1, 'false': 1}
+   pump_updates_counted         line    97  key_literal_hits={'pump': 3, 'frames_nopump': 1, '400': 1}
+   pump_posted_survived         line    98  key_literal_hits={'pump': 3, 'posted_survived': 1, '1': 2}

@@ -1,0 +1,10 @@
+== mini buffered (child=sh) ==
+HARNESS mode=buffered variants=(none)
+HARNESS topology=reorder head_idx=45 inj_idx=39 tail_idx=52 total_bytes=59 alive_at_first=True inj_first_read_ms=446.21 eof_ms=832.68 rc=0
+HARNESS timeline=[(445.45, 39), (446.21, 6), (746.32, 14)]
+HARNESS raw_b64=UEhBU0UwLUZMVVNIRUQgaXNhdHR5PTAgYnVmc2l6ZT0xMzEwNzIKUi1JTkoKUi1IRUFEClItVEFJTAo=
+== mini -u (child=sh) ==
+HARNESS mode=unbuffered variants=(none)
+HARNESS topology=splice head_idx=39 inj_idx=46 tail_idx=52 total_bytes=59 alive_at_first=True inj_first_read_ms=398.83 eof_ms=785.76 rc=0
+HARNESS timeline=[(398.09, 46), (398.83, 6), (698.96, 7)]
+HARNESS raw_b64=UEhBU0UwLUZMVVNIRUQgaXNhdHR5PTAgYnVmc2l6ZT0xMzEwNzIKUi1IRUFEClItSU5KClItVEFJTAo=

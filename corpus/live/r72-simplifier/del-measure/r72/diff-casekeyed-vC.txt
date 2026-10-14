@@ -1,0 +1,6 @@
+A=corpus/live/r72-simplifier/del-measure/r72/control/runs2/pygame-20261014T144834489048Z/verdicts.json  totals={'cases': 55, 'pass': 55, 'fail': 0} verdict=PASS
+B=corpus/live/r72-simplifier/del-measure/r72/vC/runs2/pygame-20261014T144901735193Z/verdicts.json  totals={'cases': 53, 'pass': 53, 'fail': 0} verdict=PASS
+cases only in A: ['pump_not_needed', 'pump_updates_counted']
+cases only in B: none
+changed non-observed fields: none
+cases whose `observed` differs (wall-clock keys): 18

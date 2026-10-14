@@ -1,0 +1,6 @@
+== buffered (default) ==
+INJECTEDHEAD  TAIL$
+== -u ==
+HEAD INJECTED TAIL$
+== flush=True ==
+HEAD INJECTED TAIL$

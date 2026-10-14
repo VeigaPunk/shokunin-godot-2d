@@ -1,0 +1,10 @@
+== C default (fully buffered pipe) ==
+0000000   C   H   I   L   D  \n   H   E   A   D  \n   T   A   I   L  \n
+0000020
+== C flush-head ==
+0000000   H   E   A   D  \n   C   H   I   L   D  \n   T   A   I   L  \n
+0000020
+== C default x3 ==
+CHILD HEAD TAIL 
+CHILD HEAD TAIL 
+CHILD HEAD TAIL 

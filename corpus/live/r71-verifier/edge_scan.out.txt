@@ -1,0 +1,10 @@
+io.DEFAULT_BUFFER_SIZE=131072
+k=   4096 first_vis_ms=  205.22 eof_ms= 206.55 total=   4110 -> EXIT-BATCHED
+k=   8192 first_vis_ms=  205.34 eof_ms= 207.35 total=   8206 -> EXIT-BATCHED
+k=   8193 first_vis_ms=  205.93 eof_ms= 207.80 total=   8207 -> EXIT-BATCHED
+k=   9000 first_vis_ms=  205.51 eof_ms= 206.99 total=   9014 -> EXIT-BATCHED
+k=  65536 first_vis_ms=  205.96 eof_ms= 207.50 total=  65550 -> EXIT-BATCHED
+k= 131071 first_vis_ms=  105.37 eof_ms= 207.19 total= 131085 -> EARLY
+k= 131072 first_vis_ms=  105.58 eof_ms= 207.13 total= 131086 -> EARLY
+k= 131073 first_vis_ms=  105.40 eof_ms= 207.05 total= 131087 -> EARLY
+k= 200000 first_vis_ms=  105.84 eof_ms= 207.58 total= 200014 -> EARLY

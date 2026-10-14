@@ -1,0 +1,10 @@
+== emit literal census: corpus/fixtures/pygame_probe.py
+literal-valued (arm,key) pairs: 2
+   pump|frames_nopump = 400  (emit at line 233)
+   pump|pump_needed = 'false'  (emit at line 233)
+skipped emit calls (non-constant arm / splat): [(82, 'emit_name'), (142, 'emit_name')]
+
+== row join: corpus/fixtures/pygame_battery.py (36 rows)
+   pump_not_needed            pump|pump_needed  MATCH  (emit line 233)
+   pump_updates_counted       pump|frames_nopump  MATCH  (emit line 233)
+assertion-carried rows (pinned == emitted literal): 2

@@ -1,0 +1,3 @@
+PROBE-LEVEL buffered  | out='R72-INJR72-HEAD R72-TAIL\n' head=7 inj=0 tail=16 topology=reorder ret=0
+PROBE-LEVEL u         | out='R72-HEAD R72-INJR72-TAIL\n' head=0 inj=9 tail=16 topology=splice ret=0
+PROBE-LEVEL flushed   | out='R72-HEAD R72-INJR72-TAIL\n' head=0 inj=9 tail=16 topology=splice ret=0

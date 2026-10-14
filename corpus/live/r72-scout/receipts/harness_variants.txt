@@ -1,0 +1,30 @@
+== V1 flush-head control ==
+HARNESS mode=buffered variants=--flush-head
+HARNESS topology=splice head_idx=39 inj_idx=46 tail_idx=52 total_bytes=59 alive_at_first=True inj_first_read_ms=536.29 eof_ms=922.37 rc=0
+HARNESS timeline=[(535.55, 46), (536.29, 6), (836.42, 7)]
+HARNESS raw_b64=UEhBU0UwLUZMVVNIRUQgaXNhdHR5PTAgYnVmc2l6ZT0xMzEwNzIKUi1IRUFEClItSU5KClItVEFJTAo=
+== V2 crossing write (140000B) before child ==
+HARNESS mode=buffered variants=--crossing
+HARNESS topology=splice head_idx=39 inj_idx=140046 tail_idx=140052 total_bytes=140059 alive_at_first=True inj_first_read_ms=481.16 eof_ms=868.11 rc=0
+HARNESS timeline=[(480.3, 46), (480.34, 65536), (480.37, 65536), (480.39, 8928), (481.16, 6), (781.29, 7)]
+HARNESS raw_b64=<omitted>
+== V3 byte-level markers ==
+HARNESS mode=buffered variants=--byte-level
+HARNESS topology=reorder head_idx=44 inj_idx=39 tail_idx=52 total_bytes=59 alive_at_first=True inj_first_read_ms=557.71 eof_ms=943.01 rc=0
+HARNESS timeline=[(557.07, 39), (557.71, 5), (857.85, 15)]
+HARNESS raw_b64=UEhBU0UwLUZMVVNIRUQgaXNhdHR5PTAgYnVmc2l6ZT0xMzEwNzIKUi1JTkpSLUhFQUQgIFItVEFJTAo=
+== V4 flushed python child (-u) ==
+HARNESS mode=buffered variants=--child=pyu
+HARNESS topology=reorder head_idx=45 inj_idx=39 tail_idx=52 total_bytes=59 alive_at_first=True inj_first_read_ms=508.28 eof_ms=900.85 rc=0
+HARNESS timeline=[(502.77, 39), (508.28, 6), (809.43, 14)]
+HARNESS raw_b64=UEhBU0UwLUZMVVNIRUQgaXNhdHR5PTAgYnVmc2l6ZT0xMzEwNzIKUi1JTkoKUi1IRUFEClItVEFJTAo=
+== V5 buffered python child ==
+HARNESS mode=buffered variants=--child=pyb
+HARNESS topology=reorder head_idx=45 inj_idx=39 tail_idx=52 total_bytes=59 alive_at_first=True inj_first_read_ms=524.56 eof_ms=917.52 rc=0
+HARNESS timeline=[(519.28, 39), (524.56, 6), (825.84, 14)]
+HARNESS raw_b64=UEhBU0UwLUZMVVNIRUQgaXNhdHR5PTAgYnVmc2l6ZT0xMzEwNzIKUi1JTkoKUi1IRUFEClItVEFJTAo=
+== V6 late child, no wait (window closed before child write) ==
+HARNESS mode=buffered variants=--no-wait
+HARNESS topology=suffix head_idx=39 inj_idx=53 tail_idx=46 total_bytes=59 alive_at_first=True inj_first_read_ms=860.12 eof_ms=950.1 rc=0
+HARNESS timeline=[(508.79, 39), (508.95, 14), (860.12, 6)]
+HARNESS raw_b64=UEhBU0UwLUZMVVNIRUQgaXNhdHR5PTAgYnVmc2l6ZT0xMzEwNzIKUi1IRUFEClItVEFJTApSLUlOSgo=

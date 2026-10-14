@@ -1,0 +1,16 @@
+== C1 exit-flush only (no explicit flush after TAIL) ==
+R-INJ$
+R-HEAD$
+R-TAIL$
+== C2 fd1 identity: parent vs descendant (readlink /proc/self/fd/1) ==
+P-FD1=pipe:[12977349]
+C-FD1=pipe:[12977349]
+
+== C3 buffered descendant + no wait (writer flush closes window first) ==
+R-HEAD$
+R-TAIL$
+R-INJ$
+== C4 immediate sh descendant + no wait, 3 reps (race cell) ==
+R-HEAD|R-TAIL|R-INJ|
+R-HEAD|R-TAIL|R-INJ|
+R-HEAD|R-TAIL|R-INJ|

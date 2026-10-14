@@ -1,0 +1,210 @@
+[
+  {
+    "parent_mode": "buffered",
+    "child": "printf",
+    "flush_after_tail": 1,
+    "sleep": 0.0,
+    "marker_style": "line",
+    "rc": 0,
+    "topology": "reorder",
+    "idx": [
+      6,
+      0,
+      11
+    ],
+    "raw": "CHILD\nHEAD\nTAIL\n",
+    "stderr": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.\n"
+  },
+  {
+    "parent_mode": "buffered",
+    "child": "pybuf",
+    "flush_after_tail": 1,
+    "sleep": 0.0,
+    "marker_style": "line",
+    "rc": 0,
+    "topology": "reorder",
+    "idx": [
+      6,
+      0,
+      11
+    ],
+    "raw": "CHILD\nHEAD\nTAIL\n",
+    "stderr": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.\n"
+  },
+  {
+    "parent_mode": "buffered",
+    "child": "pyu",
+    "flush_after_tail": 1,
+    "sleep": 0.0,
+    "marker_style": "line",
+    "rc": 0,
+    "topology": "reorder",
+    "idx": [
+      6,
+      0,
+      11
+    ],
+    "raw": "CHILD\nHEAD\nTAIL\n",
+    "stderr": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.\n"
+  },
+  {
+    "parent_mode": "buffered",
+    "child": "pyslow",
+    "flush_after_tail": 1,
+    "sleep": 0.0,
+    "marker_style": "line",
+    "rc": 0,
+    "topology": "reorder",
+    "idx": [
+      6,
+      0,
+      11
+    ],
+    "raw": "CHILD\nHEAD\nTAIL\n",
+    "stderr": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.\n"
+  },
+  {
+    "parent_mode": "buffered",
+    "child": "bg",
+    "flush_after_tail": 1,
+    "sleep": 0.6,
+    "marker_style": "line",
+    "rc": 0,
+    "topology": "append",
+    "idx": [
+      0,
+      10,
+      5
+    ],
+    "raw": "HEAD\nTAIL\nCHILD\n",
+    "stderr": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.\n"
+  },
+  {
+    "parent_mode": "buffered",
+    "child": "bg",
+    "flush_after_tail": 0,
+    "sleep": 0.6,
+    "marker_style": "line",
+    "rc": 0,
+    "topology": "reorder",
+    "idx": [
+      6,
+      0,
+      11
+    ],
+    "raw": "CHILD\nHEAD\nTAIL\n",
+    "stderr": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.\n"
+  },
+  {
+    "parent_mode": "u",
+    "child": "printf",
+    "flush_after_tail": 1,
+    "sleep": 0.0,
+    "marker_style": "line",
+    "rc": 0,
+    "topology": "midline",
+    "idx": [
+      0,
+      5,
+      11
+    ],
+    "raw": "HEAD\nCHILD\nTAIL\n",
+    "stderr": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.\n"
+  },
+  {
+    "parent_mode": "u",
+    "child": "pybuf",
+    "flush_after_tail": 1,
+    "sleep": 0.0,
+    "marker_style": "line",
+    "rc": 0,
+    "topology": "midline",
+    "idx": [
+      0,
+      5,
+      11
+    ],
+    "raw": "HEAD\nCHILD\nTAIL\n",
+    "stderr": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.\n"
+  },
+  {
+    "parent_mode": "u",
+    "child": "pyu",
+    "flush_after_tail": 1,
+    "sleep": 0.0,
+    "marker_style": "line",
+    "rc": 0,
+    "topology": "midline",
+    "idx": [
+      0,
+      5,
+      11
+    ],
+    "raw": "HEAD\nCHILD\nTAIL\n",
+    "stderr": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.\n"
+  },
+  {
+    "parent_mode": "u",
+    "child": "pyslow",
+    "flush_after_tail": 1,
+    "sleep": 0.0,
+    "marker_style": "line",
+    "rc": 0,
+    "topology": "midline",
+    "idx": [
+      0,
+      5,
+      11
+    ],
+    "raw": "HEAD\nCHILD\nTAIL\n",
+    "stderr": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.\n"
+  },
+  {
+    "parent_mode": "u",
+    "child": "bg",
+    "flush_after_tail": 1,
+    "sleep": 0.6,
+    "marker_style": "line",
+    "rc": 0,
+    "topology": "append",
+    "idx": [
+      0,
+      10,
+      5
+    ],
+    "raw": "HEAD\nTAIL\nCHILD\n",
+    "stderr": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.\n"
+  },
+  {
+    "parent_mode": "envunbuf",
+    "child": "printf",
+    "flush_after_tail": 1,
+    "sleep": 0.0,
+    "marker_style": "line",
+    "rc": 0,
+    "topology": "midline",
+    "idx": [
+      0,
+      5,
+      11
+    ],
+    "raw": "HEAD\nCHILD\nTAIL\n",
+    "stderr": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.\n"
+  },
+  {
+    "parent_mode": "buffered",
+    "child": "printf",
+    "flush_after_tail": 1,
+    "sleep": 0.0,
+    "marker_style": "inline",
+    "rc": 0,
+    "topology": "reorder",
+    "idx": [
+      5,
+      0,
+      11
+    ],
+    "raw": "CHILDHEAD  TAIL",
+    "stderr": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.\n"
+  }
+]
