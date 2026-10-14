@@ -109,3 +109,12 @@ Sol `r72-adjudicator.md`: ADMIT — composition CONFIRMED with corrected referen
 | calibration | **unchanged** | insertion-only (+165/-0 probe, +146/-17 battery removing only the r72 classifier block); 55 prior cases byte-stable; 80/80 x4 reps |
 
 Sol `r73-adjudicator.md`: ADMIT — topology depth pinned, non-Python census confirms splice/infix predictions. Verifier AGREE 10/10 on `43bef2d`. Bounded: CPython 3.14.7, Node v24.21.0, this host.
+## Round 74 verdict — 2026-10-14
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | interior-write lattice — love.physics callback mutation classes measured inside the tracked battery (18 IW cells + love_phys_probe fixture); Box2D callback surface now pinned {refused,deferred,fatal,applied} with endContact joined |
+| depth | **improved** | fatal partitioned into fatal(lua) vs SIGABRT-died (critic C2 fold); re-entrancy defeats IsLocked (nested world:update applies a refused write); destroy drain located inside the update epilogue (reviewer D1); carried fifo-SIGTERM-immune guard falsified for LOVE (EINTR) — second wave running a guard needed narrowing |
+| calibration | **unchanged** | insertion-only +292/-0; 19 prior rows byte-identical; concat iw receipts 58af4e7e across 6 independent runs; simplifier fold byte-proven |
+
+Sol `r74-adjudicator.md`: ADMIT-corr — partition confirmed, class names scoped, two additive cells deferred to r75 frontier. Recovery wave (gen-1 seats died 16:10Z). Verifier AGREE 13/13 on `ae6cb16`; baseline zero-drift on freeze `1275746`. Bounded: LOVE 11.5-3/LuaJIT, this host. Work commit `ae6cb16` + folds `35dcbf7`; report-last commit follows.

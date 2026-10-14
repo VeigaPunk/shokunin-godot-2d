@@ -861,3 +861,24 @@
   node-absent honest-FAIL gate (65/80, all 15 node rows blocked).
 - Verdict: ADMIT (Sol, wave-13). Bounded CPython 3.14.7 (131072B),
   Node v24.21.0/libuv, pygame 2.6.1 dummy-driver, this host.
+## Round 74 — LOVE physics interior-write lattice (wave-14, recovery)
+
+- MOVE: fold the love.physics frontier into the tracked battery — Box2D
+  callback writes (bc/pre/post/endContact) gated per class
+  {refused|deferred|fatal|applied}; interior cells last; *_unp last.
+- Landed `ae6cb16`: +292/-0 love_battery.py + love_phys_probe/ fixture,
+  18 IW cells, 37/37 x4 author reps; concat iw sha 58af4e7e.
+- Folds `35dcbf7`: simplifier D1-D3 (byte-identical evpins dead param),
+  critic C1/C2 + reviewer D1 + critic C5 wording scope (fatal=fatal(lua);
+  SIGABRT own-morph class = died; drain is inside the update epilogue).
+- Boundary 54 cells: endContact joins the set; nested world:update
+  DEFEATS IsLocked (subsequent write applied); 2 hard-fatal SIGABRT
+  cells; carried fifo-SIGTERM-immune guard falsified for LOVE (EINTR).
+- Verifier AGREE 13/13 on ae6cb16; reviewer ACCEPT (LOW only); baseline
+  zero-drift on freeze 1275746 (godot 88, love 19, pygame 80).
+- Recovery: first seat generation died ~16:10Z (session kill); the
+  16:20Z respawn generation landed everything; dead scratch
+  verify-reused. Deferred to r75: critic C1 additive twins
+  (bc_destroy_unp/bc_setvel_unp) + C3 containment-level cell.
+- Verdict: ADMIT-corr (Sol, wave-14). Bounded LOVE 11.5-3/LuaJIT
+  2.1.1788460057, pygame 2.6.1 control untouched, this host.
