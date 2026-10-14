@@ -2154,7 +2154,6 @@ def main():
         ladder_payload = {
             "mode": "real_godot_midlineforge_offset_ladder",
             "bound_seconds": surface_bound,
-            "signature_gap_ms": midline_gap_ms,
             "offsets_ms": list(midline_ladder_offsets),
             "reps_per_offset": midline_ladder_reps,
             "ladder": ladder_cells,
@@ -2477,8 +2476,6 @@ def main():
             """
             merged_text = so + se
             diffs = []
-            if (code == 0 and error is None) != (code == 0 and error is None):
-                diffs.append("exit")
             if (stdout_sig in merged_text) != (stdout_sig in so):
                 diffs.append("signature")
             merged_blob = ("SCRIPT ERROR:" in merged_text
