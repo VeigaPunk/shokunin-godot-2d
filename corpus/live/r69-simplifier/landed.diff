@@ -1,0 +1,344 @@
+diff --git i/corpus/fixtures/descendant_pipe_probe.gd w/corpus/fixtures/descendant_pipe_probe.gd
+index 666e969..c747a3e 100644
+--- i/corpus/fixtures/descendant_pipe_probe.gd
++++ w/corpus/fixtures/descendant_pipe_probe.gd
+@@ -93,6 +93,10 @@ extends SceneTree
+ #                      between the head and tail flushes — offsets below
+ #                      the ~200ms gap edge splice; at/over it they miss
+ #                      (signature survives; error lands on its own line).
++#                      r69: the gap itself is parameterized —
++#                      --midline-gap-ms=N (default 200, so the r66/r68
++#                      arm is byte-stable) feeds both the gap_ms banner
++#                      field and the delay_msec call.
+ const MARKER := "DESCENDANT_PIPE_PROBE: expected signature"
+ const MARKER_SPLICE_HEAD := "DESCENDANT_PIPE_PROBE: expected "
+ const MARKER_SPLICE_TAIL := "signature"
+@@ -121,6 +125,10 @@ func _initialize() -> void:
+ 	var splitforge := "--spawn-splitforge" in user_args
+ 	var seamforge := "--spawn-seamforge" in user_args
+ 	var midline_forge := "--spawn-midlineforge" in user_args
++	var midline_gap_ms := 200
++	for arg in user_args:
++		if arg.begins_with("--midline-gap-ms="):
++			midline_gap_ms = arg.get_slice("=", 1).to_int()
+ 	if forge_hold or forge_release:
+ 		print("DESCENDANT_PIPE_FORGE child_signature=withheld")
+ 	elif not midline_forge:
+@@ -133,7 +141,7 @@ func _initialize() -> void:
+ 	elif allowforge or splitforge or seamforge:
+ 		print("DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit")
+ 	elif midline_forge:
+-		print("DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200")
++		print("DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=" + str(midline_gap_ms))
+ 	print("DESCENDANT_PIPE godot_pid=", OS.get_process_id())
+ 	var reparent_gate := ("while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \""
+ 		+ str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; ")
+@@ -173,10 +181,10 @@ func _initialize() -> void:
+ 		print("DESCENDANT_PIPE spawned_pid=", spawned)
+ 	if midline_forge:
+ 		# The halves are emitted last so no child line can intervene; the
+-		# descendant's parameterized-offset write splices into the 200ms gap
+-		# iff it lands inside it — write_ppid==godot_pid proves the write was
+-		# pre-death.
++		# descendant's parameterized-offset write splices into the
++		# parameterized gap iff it lands inside it — write_ppid==godot_pid
++		# proves the write was pre-death.
+ 		printraw(MARKER_SPLICE_HEAD)
+-		OS.delay_msec(200)
++		OS.delay_msec(midline_gap_ms)
+ 		print(MARKER_SPLICE_TAIL)
+ 	quit(0)
+diff --git i/corpus/fixtures/run_battery.py w/corpus/fixtures/run_battery.py
+index fde5be1..3d7ffb0 100644
+--- i/corpus/fixtures/run_battery.py
++++ w/corpus/fixtures/run_battery.py
+@@ -116,6 +116,7 @@ def main():
+     parser.add_argument("--probe-crash-exit", action="store_true", help="run a paired real-Godot normal-exit versus signal-termination probe")
+     parser.add_argument("--probe-timeout", action="store_true", help="run a paired real-Godot normal-exit versus timeout probe")
+     parser.add_argument("--probe-midlineforge-ladder", action="store_true", help="run the midlineforge descendant-write offset ladder across the 200ms signature gap (fabrication-window bound measurement)")
++    parser.add_argument("--probe-midlineforge-gapladder", action="store_true", help="run the midlineforge crossed gap ladder — fixed 80ms write offset across signature gaps {50,100,200,400,800}ms (pins the fabrication bound's referent: gap-relative vs absolute)")
+     parser.add_argument("--probe-audio-warning", action="store_true", help="classify captured r12 leaked and clean audio outputs with the production audio verdict")
+     parser.add_argument("--godot", default="godot")
+     parser.add_argument("--runs", type=Path, default=HERE.parent / "live" / "runs")
+@@ -2179,6 +2180,205 @@ def main():
+                         "measured_window": measured_window,
+                         "discriminations": ladder_discriminations})
+         print(f"{ladder_payload['verdict']} midlineforge offset-ladder meta: {ladder_artifact}", flush=True)
++    if args.probe_midlineforge_gapladder:
++        # r69 meta: pin the fabrication-window bound's REFERENT — gap-
++        # relative vs absolute — via the crossed ladder the r68 offset
++        # ladder cannot express. --midline-offset-ms is held at 80 (the
++        # r66 point sample) while the signature gap itself is swept via
++        # --midline-gap-ms=N (default 200 — the r66/r68 arm is byte-
++        # stable). Declared falsifiable claim: the window follows
++        # offset<gap — fabrication lands iff the descendant write
++        # reaches the captured pipe before the tail flush AT ANY gap
++        # size. Falsified if fabrication persists at a gap below the
++        # write's position (gap=50: the write demonstrably lands
++        # post-tail — an intact signature is the byte-order ground
++        # truth, since write_ppid==godot_pid can lag the ppid flip by
++        # process teardown and is carried as data only) or fails at a
++        # gap far above it (gap=800); either outcome would make the
++        # bound an absolute write-latency constant instead of the gap.
++        # Predicted set under the claim (nominal offset<gap; effective
++        # position = offset + ~2.5ms spawn latency, nearest cell margin
++        # ~17.5ms >> ~1ms jitter): fabricated at {100,200,400,800},
++        # missed at {50}.
++        gapladder_gaps = (50, 100, 200, 400, 800)
++        gapladder_offset_ms = 80
++        gapladder_reps = 3
++        gap_cells = []
++        for gap_ms in gapladder_gaps:
++            cell_reps = []
++            for rep_i in range(gapladder_reps):
++                gap_rec, gap_text = surface_run(
++                    f"midline_gap_{gap_ms}ms_r{rep_i}",
++                    ["--spawn-midlineforge",
++                     f"--midline-offset-ms={gapladder_offset_ms}",
++                     f"--midline-gap-ms={gap_ms}"],
++                    "DESCENDANT_PIPE_MIDLINE write_ppid=")
++                gap_rec["gap_ms"] = gap_ms
++                gap_rec["offset_ms"] = gapladder_offset_ms
++                gap_rec["spliced_line"] = next(
++                    (line.strip() for line in gap_text.splitlines()
++                     if "DESCENDANT_PIPE_PROBE: expected " in line
++                     and midline_error in line), None)
++                gap_rec["fabrication_landed"] = (
++                    gap_rec["spliced_line"] is not None)
++                # Data only — NOT a post-tail gate: the ppid flip lags
++                # the tail flush by process teardown, so a post-tail
++                # write can still sample write_ppid==godot_pid. Byte
++                # order (spliced_line / signature_observed) is ground
++                # truth.
++                gap_rec["write_pre_death"] = (
++                    gap_rec["write_ppid"] is not None
++                    and gap_rec["godot_pid"] is not None
++                    and gap_rec["write_ppid"] == gap_rec["godot_pid"])
++                cell_reps.append(gap_rec)
++            reps_landed = sum(1 for r in cell_reps
++                              if r["fabrication_landed"])
++            gap_cells.append({
++                "gap_ms": gap_ms,
++                "write_inside_gap": gapladder_offset_ms < gap_ms,
++                "reps": cell_reps,
++                "reps_landed": reps_landed,
++                "outcome": ("fabricated"
++                            if reps_landed == gapladder_reps
++                            else "missed" if reps_landed == 0
++                            else "mixed")})
++        landed_gaps = [c["gap_ms"] for c in gap_cells
++                       if c["outcome"] == "fabricated"]
++        missed_gaps = [c["gap_ms"] for c in gap_cells
++                       if c["outcome"] == "missed"]
++        mixed_gaps = [c["gap_ms"] for c in gap_cells
++                      if c["outcome"] == "mixed"]
++        inside_gaps = [c["gap_ms"] for c in gap_cells
++                       if c["write_inside_gap"]]
++        outside_cells = [c for c in gap_cells if not c["write_inside_gap"]]
++        all_gap_reps = [r for c in gap_cells for r in c["reps"]]
++        # The referent verdict, computed from the measured pattern:
++        # gap-relative iff fabrication lands exactly on the cells whose
++        # gap exceeds the write offset; absolute-write-latency iff it
++        # lands on EVERY cell (the write stays under any ~198ms-style
++        # constant at every gap); anything else is unclassified data.
++        if not mixed_gaps and sorted(landed_gaps) == sorted(inside_gaps):
++            referent_verdict = "gap_relative"
++        elif (not mixed_gaps and not missed_gaps
++              and len(landed_gaps) == len(gap_cells)):
++            referent_verdict = "absolute_write_latency"
++        else:
++            referent_verdict = "unclassified"
++        measured_referent = {
++            "offset_ms": gapladder_offset_ms,
++            "landed_gaps_ms": landed_gaps,
++            "missed_gaps_ms": missed_gaps,
++            "mixed_gaps_ms": mixed_gaps,
++            "inside_gap_gaps_ms": inside_gaps,
++            "referent_verdict": referent_verdict,
++            "bound_semantics": (
++                "the fabrication lands iff the descendant write reaches "
++                "the captured stdout pipe before the signature tail "
++                "flush — write position inside the gap. Effective write "
++                "position = nominal offset + ~2.5ms fork/exec+sleep "
++                "latency (r68 measured), so at offset 80 the write sits "
++                "~82.5ms: inside every gap >= 100 cell (margin >= ~17ms "
++                "vs ~1ms jitter) and outside the 50ms cell. Post-tail "
++                "ground truth is byte order — the intact signature line "
++                "+ standalone ERROR line — never write_ppid, whose flip "
++                "lags process teardown (a post-tail write can still "
++                "sample write_ppid==godot_pid); pre-death is proven the "
++                "other direction: a splice at gap >= 100 means the "
++                "child was still inside delay_msec when the write "
++                "landed")}
++        gapladder_discriminations = {
++            # Every rep is a clean exit-0 record — the ladder measures
++            # byte placement, never a crash/timeout interaction.
++            "gapladder_all_reps_clean_exit0": all(
++                r["actual_exit"] == 0 and r["error"] is None
++                and not r["timed_out"] for r in all_gap_reps),
++            # Both outcomes still reject: fabrication via
++            # signature+error clauses, a post-tail write via the
++            # standalone ERROR: line.
++            "gapladder_all_reps_reject": all(
++                r["inner_classification"] is False
++                for r in all_gap_reps),
++            # Fabrication couples exactly to signature destruction per
++            # rep (r68 coupling carried across the gap axis).
++            "gapladder_fabrication_iff_signature_destroyed": all(
++                r["fabrication_landed"] == (not r["signature_observed"])
++                for r in all_gap_reps),
++            # The spliced line is byte-exact head+ERROR fusion.
++            "gapladder_spliced_line_is_head_error_fusion": all(
++                r["spliced_line"] is None
++                or (r["spliced_line"].startswith(
++                        "DESCENDANT_PIPE_PROBE: expected ")
++                    and midline_error in r["spliced_line"])
++                for r in all_gap_reps),
++            # The r66/r68 anchor cell reproduces at the default gap:
++            # gap=200 == the historic arm byte-for-byte, fabricated in
++            # every rep.
++            "gap200_anchor_still_fabricates": (
++                [c["outcome"] for c in gap_cells if c["gap_ms"] == 200]
++                == ["fabricated"]),
++            # Horn 1: fabrication does NOT persist at gap < write
++            # position — the 50ms cell misses in every rep and the
++            # intact signature (byte-order ground truth) proves the
++            # write landed post-tail.
++            "sub_offset_gap_never_fabricates": all(
++                c["outcome"] == "missed" for c in outside_cells),
++            "sub_offset_signature_intact_post_tail": all(
++                r["signature_observed"] for c in outside_cells
++                for r in c["reps"]),
++            # Horn 2: fabrication does NOT fail at gap > write
++            # position — every super-offset cell fabricates in every
++            # rep, and every such write is provably pre-death
++            # (write_ppid==godot_pid while the child is still inside
++            # delay_msec(gap>=100): reliable in this direction).
++            "super_offset_gaps_always_fabricate": all(
++                c["outcome"] == "fabricated" for c in gap_cells
++                if c["write_inside_gap"]),
++            "super_offset_writes_pre_death": all(
++                r["write_pre_death"] for c in gap_cells
++                if c["write_inside_gap"] for r in c["reps"]),
++            # THE referent discrimination: the measured pattern is
++            # exactly offset<gap — the declared claim.
++            "window_referent_is_gap_relative": (
++                referent_verdict == "gap_relative"),
++        }
++        # Harness-side hygiene: reap any lingering gapladder
++        # descendants (each exits right after its write; never gated).
++        for gap_orphan in {r["descendant_pid"] for r in all_gap_reps}:
++            if pid_alive(gap_orphan):
++                try:
++                    os.kill(gap_orphan, signal.SIGKILL)
++                except OSError:
++                    pass
++        gapladder_meta_ok = all(gapladder_discriminations.values())
++        gapladder_payload = {
++            "mode": "real_godot_midlineforge_gap_ladder",
++            "bound_seconds": surface_bound,
++            "offset_ms": gapladder_offset_ms,
++            "gaps_ms": list(gapladder_gaps),
++            "reps_per_gap": gapladder_reps,
++            "gapladder": gap_cells,
++            "measured_referent": measured_referent,
++            "discriminations": gapladder_discriminations,
++            "verdict": "PASS" if gapladder_meta_ok else "FAIL",
++            "bounded_claim": (
++                "the midlineforge fabrication-window bound is "
++                "gap-relative, not an absolute write-latency constant: "
++                "at a fixed 80ms write offset the splice lands exactly "
++                "on the cells whose signature gap exceeds the write "
++                "position (measured: fabricated at {100,200,400,800}, "
++                "missed at 50 with the intact signature proving the "
++                "post-tail write); the bound's referent is the gap — "
++                "write position < tail flush — on Linux headless Godot "
++                "4.7.2 POSIX pipe semantics only")}
++        gapladder_artifact = run_dir / "midlineforge-gapladder-verdicts.json"
++        gapladder_artifact.write_text(
++            json.dumps(gapladder_payload, indent=2) + "\n")
++        results.append({"case": "probe_midlineforge_gapladder",
++                        "verdict": gapladder_payload["verdict"],
++                        "artifact": str(gapladder_artifact),
++                        "measured_referent": measured_referent,
++                        "discriminations": gapladder_discriminations})
++        print(f"{gapladder_payload['verdict']} midlineforge gap-ladder meta: {gapladder_artifact}", flush=True)
+     if args.probe_failing:
+         destination = scratch / "scene_b.tscn"
+         original = destination.read_text()
+@@ -2428,6 +2628,11 @@ def main():
+         # they never decide). (b) raw_stdout_sha256/raw_stderr_sha256 pin the
+         # exact captured bytes both classifiers consumed — the same-input
+         # gate: a dual record proves both verdicts saw byte-identical input.
++        # r69 adds raw_merged_sha256 = sha256(so + se): the merged-concat
++        # digest binds the byte ORDER the merged classifier consumed —
++        # concat-order drift (stderr before stdout, or a seam-mutated
++        # concat) changes it while leaving both per-channel digests
++        # untouched (the r66 stderr+stdout caveat).
+         sd_clause_taxonomy = ("exit", "signature", "error_scan", "blob",
+                               "allowlist_shape")
+ 
+@@ -2529,7 +2734,9 @@ def main():
+                     "raw_stdout_sha256": hashlib.sha256(
+                         so.encode()).hexdigest(),
+                     "raw_stderr_sha256": hashlib.sha256(
+-                        se.encode()).hexdigest()}
++                        se.encode()).hexdigest(),
++                    "raw_merged_sha256": hashlib.sha256(
++                        (so + se).encode()).hexdigest()}
+ 
+         def streamdiv_arm(case, flags, merged_allowed=(), stream_allowed=()):
+             command = [args.godot, "--headless", "--path", str(scratch),
+@@ -2624,7 +2831,8 @@ def main():
+                 "divergent": a["divergent"],
+                 "divergent_clause": a["divergent_clause"],
+                 "raw_stdout_sha256": a["raw_stdout_sha256"],
+-                "raw_stderr_sha256": a["raw_stderr_sha256"]} for a in sd_arms])
++                "raw_stderr_sha256": a["raw_stderr_sha256"],
++                "raw_merged_sha256": a["raw_merged_sha256"]} for a in sd_arms])
+         sd_discriminations = {
+             # The headline absorption: a stdout-carried ERROR: line is
+             # PASS-shaped under classify_streams — stdout is never
+@@ -2772,24 +2980,42 @@ def main():
+             # digest their own raw_stdout/raw_stderr; pair rows digest the
+             # accept/reject captures; each reclassification digests its
+             # source arm's streams (reclassified inputs are the SAME bytes).
++            # r69: raw_merged_sha256 also equals sha256 of the CANONICAL
++            # stdout+stderr concat — a concat-order drift (stderr before
++            # stdout) would leave both per-channel digests untouched yet
++            # flip the merged digest (the r66 stderr+stdout caveat).
+             "dual_records_same_input_digests": (
+                 all(a["raw_stdout_sha256"]
+                     == hashlib.sha256(a["raw_stdout"].encode()).hexdigest()
+                     and a["raw_stderr_sha256"]
+                     == hashlib.sha256(a["raw_stderr"].encode()).hexdigest()
++                    and a["raw_merged_sha256"]
++                    == hashlib.sha256(
++                        (a["raw_stdout"] + a["raw_stderr"]).encode()
++                    ).hexdigest()
+                     for a in sd_arms)
+                 and sd_pair_dual["stream_accept"]["raw_stdout_sha256"]
+                 == hashlib.sha256(accept["raw_stdout"].encode()).hexdigest()
+                 and sd_pair_dual["stream_accept"]["raw_stderr_sha256"]
+                 == hashlib.sha256(accept["raw_stderr"].encode()).hexdigest()
++                and sd_pair_dual["stream_accept"]["raw_merged_sha256"]
++                == hashlib.sha256(
++                    (accept["raw_stdout"] + accept["raw_stderr"]).encode()
++                ).hexdigest()
+                 and sd_pair_dual["stream_reject"]["raw_stdout_sha256"]
+                 == hashlib.sha256(reject["raw_stdout"].encode()).hexdigest()
+                 and sd_pair_dual["stream_reject"]["raw_stderr_sha256"]
+                 == hashlib.sha256(reject["raw_stderr"].encode()).hexdigest()
++                and sd_pair_dual["stream_reject"]["raw_merged_sha256"]
++                == hashlib.sha256(
++                    (reject["raw_stdout"] + reject["raw_stderr"]).encode()
++                ).hexdigest()
+                 and all(sd_reclass[key]["raw_stdout_sha256"]
+                         == src["raw_stdout_sha256"]
+                         and sd_reclass[key]["raw_stderr_sha256"]
+                         == src["raw_stderr_sha256"]
++                        and sd_reclass[key]["raw_merged_sha256"]
++                        == src["raw_merged_sha256"]
+                         for key, src in
+                         (("stderr_error__exact_entry", sd2),
+                          ("stderr_error__foreign_entry", sd2),

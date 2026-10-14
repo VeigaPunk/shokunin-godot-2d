@@ -81,6 +81,25 @@ local function pump_arm()
   emit("pump", { updates_without_pump = ticks, pump_needed = false })
 end
 
+local function splice_arm()
+  -- the midlineforge-analogous seam (r70 critic F1): os.execute children
+  -- inherit LOVE's fd1, so a backgrounded descendant can splice into the
+  -- captured stdout between a head write and a delayed tail write.
+  -- The harness scans raw stdout for the forged ordering.
+  local off = tonumber(os.getenv("OFFSET_MS") or "80")
+  local gap = tonumber(os.getenv("GAP_MS") or "200")
+  local cmd = string.format(
+    "sh -c 'sleep %.3f; printf \"ERROR: LOVE_MIDLINE forged splice\\n\"' &",
+    off / 1000)
+  os.execute(cmd)
+  io.write("LOVE_SPLICE_PROBE: expected ")
+  io.stdout:flush()
+  love.timer.sleep(gap / 1000)
+  io.write("signature\n")
+  io.stdout:flush()
+  emit("splice", { offset_ms = tostring(off), gap_ms = tostring(gap) })
+end
+
 function love.load()
   -- love.timer.getTime works headless; arg check for cleanliness
 end
@@ -101,7 +120,9 @@ function love.update(dt)
   elseif phase == "osx" then
     phase = "pump"; osx_arm()
   elseif phase == "pump" then
-    phase = "done"; pump_arm()
+    phase = "splice"; pump_arm()
+  elseif phase == "splice" then
+    phase = "done"; splice_arm()
     print("LOVE_PROBE_DONE")
     love.event.quit(0)
   end

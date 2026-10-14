@@ -1,0 +1,2 @@
+sleep: invalid time interval ‘0.-50’
+Try 'sleep --help' for more information.

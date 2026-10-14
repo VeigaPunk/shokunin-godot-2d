@@ -23,6 +23,7 @@ bound tuple (lo, hi) -- jittered quantities carry measured bounds only.
 
 import argparse
 import json
+import os
 import re
 import subprocess
 import sys
@@ -57,10 +58,39 @@ CASES = [
 ARM_LINE = re.compile(r"^LOVE-ARM (\S+) \| (.*)$")
 
 
-def run_process(command, timeout_seconds):
+SPLICE_CELLS = [
+    # (name, offset_ms, gap_ms, expected) — cells measured 3/3 by the r70
+    # critic's distinguishing probe (corpus/live/r70-critic/splice_probe).
+    # In-window: descendant write lands inside the head->tail gap and the
+    # captured line splices; beyond/crossed cells bound the referent as
+    # gap-relative (offset < gap fabricates, offset > gap does not).
+    ("splice_inwindow", 80, 200, "spliced"),
+    ("splice_beyond", 240, 200, "clean"),
+    ("splice_crossed", 300, 400, "spliced"),
+    ("splice_tight", 80, 50, "clean"),
+]
+
+
+def splice_verdict(stdout):
+    lines = stdout.splitlines()
+    for i, line in enumerate(lines):
+        if line.startswith("LOVE_SPLICE_PROBE: expected "):
+            tail = line[len("LOVE_SPLICE_PROBE: expected "):]
+            if tail == "ERROR: LOVE_MIDLINE forged splice":
+                nxt = lines[i + 1].strip() if i + 1 < len(lines) else ""
+                return "spliced" if nxt == "signature" else "spliced-no-tail"
+            if tail == "signature":
+                return "clean"
+            return "ambiguous:" + tail[:40]
+    return "missing"
+
+
+def run_process(command, timeout_seconds, env_extra=None):
     try:
+        env = dict(os.environ)
+        env.update(env_extra or {})
         proc = subprocess.run(command, capture_output=True, text=True,
-                              timeout=timeout_seconds)
+                              timeout=timeout_seconds, env=env)
         return proc.stdout, proc.stderr, proc.returncode, None
     except subprocess.TimeoutExpired as exc:
         def text(v):
@@ -138,6 +168,19 @@ def main():
                         "observed": got,
                         "verdict": "PASS" if reason is None else "FAIL",
                         "reasons": ([] if reason is None else [reason])})
+
+    for name, off, gap, expected in SPLICE_CELLS:
+        c_stdout, c_stderr, c_code, c_err = run_process(
+            [args.love, str(PROBE_DIR)], TIMEOUT_S,
+            {"OFFSET_MS": str(off), "GAP_MS": str(gap)})
+        (run_dir / f"splice-{off}-{gap}.stdout.txt").write_text(c_stdout)
+        got = splice_verdict(c_stdout) if c_err is None else "launch:" + c_err
+        results.append({"case": name, "arm": "splice",
+                        "key": f"offset={off},gap={gap}",
+                        "pinned": expected, "observed": got,
+                        "verdict": "PASS" if got == expected else "FAIL",
+                        "reasons": ([] if got == expected else
+                                    [f"expected {expected}"])})
 
     passed = sum(1 for r in results if r["verdict"] == "PASS")
     failed = len(results) - passed
