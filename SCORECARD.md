@@ -118,3 +118,12 @@ Sol `r73-adjudicator.md`: ADMIT — topology depth pinned, non-Python census con
 | calibration | **unchanged** | insertion-only +292/-0; 19 prior rows byte-identical; concat iw receipts 58af4e7e across 6 independent runs; simplifier fold byte-proven |
 
 Sol `r74-adjudicator.md`: ADMIT-corr — partition confirmed, class names scoped, two additive cells deferred to r75 frontier. Recovery wave (gen-1 seats died 16:10Z). Verifier AGREE 13/13 on `ae6cb16`; baseline zero-drift on freeze `1275746`. Bounded: LOVE 11.5-3/LuaJIT, this host. Work commit `ae6cb16` + folds `35dcbf7`; report-last commit follows.
+## Round 75 verdict — 2026-10-14
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | 7 new cells: joints surface (newDistanceJoint refused / joint:destroy deferred), setfilter applied with refilter-tunneling witness, preSolve return (ignored class), update-level containment (refused_abort class), unp twins complete the C1 pair |
+| depth | **improved** | 2 new classes admitted (refused_abort — step abort + transient lock + collateral exterior refusal; ignored — return value unconsumed, impulse measured landing); esc_fn which-call-threw witness pinned; containment axis proven byte-inert for non-throwing writes |
+| calibration | **improved** | F2 gate defect corrected (presence -> value); arm identity pinned (fire.kind x21 + mode=unp); collateral witness pinned; per-cell rc persisted; insertion-only still (prior rows byte-identical modulo declared unpinned traceback lines + mode=unp) |
+
+Sol `r75-adjudicator.md`: ADMIT-corr — deferred/uncontained partition confirmed at byte level, two new classes with full witness sets, F2 gate defect folded. Verifier AGREE 18/18 on `2e3ae8e`; baseline zero-drift. Bounded: LOVE 11.5-3/LuaJIT, this host. Work `2e3ae8e` + folds `be79ad1`.

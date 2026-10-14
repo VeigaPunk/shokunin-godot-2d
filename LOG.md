@@ -882,3 +882,26 @@
   (bc_destroy_unp/bc_setvel_unp) + C3 containment-level cell.
 - Verdict: ADMIT-corr (Sol, wave-14). Bounded LOVE 11.5-3/LuaJIT
   2.1.1788460057, pygame 2.6.1 control untouched, this host.
+
+## Round 75 — 2026-10-14 (wave-15)
+
+- MOVE: deferred/uncontained callback-write axes + joints/return
+  surface (r74 critic-deferred C1 twins, C3 update-level containment,
+  C4 esc_fn, joints, setfilter, preSolve return).
+- Landed `2e3ae8e`: +422/-11, 7 new iw cells; 2 NEW classes discovered
+  (refused_abort: step abort + transient lock + collateral refusal +
+  next-step recovery; ignored: preSolve return unconsumed, impulse
+  lands). Twins confirmed byte-inert vs contained (deferred/applied).
+- Folds `be79ad1`: critic F2 gate defect fixed (key-presence ->
+  update_ok=="false" value gate; 18/130 scout receipts recovered);
+  fire.kind pinned on 21 rows + mode=unp twin identity (F1); wpext
+  collateral pins (R1); epilogue-inference wording (F3); fatal-cells-
+  last comments (F6a/R2); after_update.b1vel on contained twin closes
+  r74 rank-5 (F6d); per-cell rc persisted in verdicts.json (R4);
+  iw_classify docstring lists new classes (C3).
+- Verified post-fold: battery 44/44 + pygame 80/80; concat sha drift
+  only on the two mode=unp rows + unpinned traceback line numbers.
+- Verifier AGREE 18/18; reviewer ACCEPT (LOW); baseline zero-drift.
+- Boundary: drain-deferral hazard (queued destroy + throw skips
+  epilogue drain) -> r76 frontier cell; joint drain point inferred.
+- Verdict: ADMIT-corr (Sol, wave-15). LOVE 11.5-3/LuaJIT, this host.
