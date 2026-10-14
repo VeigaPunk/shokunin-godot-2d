@@ -93,6 +93,10 @@ extends SceneTree
 #                      between the head and tail flushes — offsets below
 #                      the ~200ms gap edge splice; at/over it they miss
 #                      (signature survives; error lands on its own line).
+#                      r69: the gap itself is parameterized —
+#                      --midline-gap-ms=N (default 200, so the r66/r68
+#                      arm is byte-stable) feeds both the gap_ms banner
+#                      field and the delay_msec call.
 const MARKER := "DESCENDANT_PIPE_PROBE: expected signature"
 const MARKER_SPLICE_HEAD := "DESCENDANT_PIPE_PROBE: expected "
 const MARKER_SPLICE_TAIL := "signature"
@@ -121,6 +125,10 @@ func _initialize() -> void:
 	var splitforge := "--spawn-splitforge" in user_args
 	var seamforge := "--spawn-seamforge" in user_args
 	var midline_forge := "--spawn-midlineforge" in user_args
+	var midline_gap_ms := 200
+	for arg in user_args:
+		if arg.begins_with("--midline-gap-ms="):
+			midline_gap_ms = arg.get_slice("=", 1).to_int()
 	if forge_hold or forge_release:
 		print("DESCENDANT_PIPE_FORGE child_signature=withheld")
 	elif not midline_forge:
@@ -133,7 +141,7 @@ func _initialize() -> void:
 	elif allowforge or splitforge or seamforge:
 		print("DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit")
 	elif midline_forge:
-		print("DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200")
+		print("DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=" + str(midline_gap_ms))
 	print("DESCENDANT_PIPE godot_pid=", OS.get_process_id())
 	var reparent_gate := ("while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \""
 		+ str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; ")
@@ -173,10 +181,10 @@ func _initialize() -> void:
 		print("DESCENDANT_PIPE spawned_pid=", spawned)
 	if midline_forge:
 		# The halves are emitted last so no child line can intervene; the
-		# descendant's parameterized-offset write splices into the 200ms gap
-		# iff it lands inside it — write_ppid==godot_pid proves the write was
-		# pre-death.
+		# descendant's parameterized-offset write splices into the
+		# parameterized gap iff it lands inside it — write_ppid==godot_pid
+		# proves the write was pre-death.
 		printraw(MARKER_SPLICE_HEAD)
-		OS.delay_msec(200)
+		OS.delay_msec(midline_gap_ms)
 		print(MARKER_SPLICE_TAIL)
 	quit(0)
