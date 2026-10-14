@@ -1,7 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-SCOUT after_B A=true B=true receipts=["B:true"] label=B
-BUTTON_GROUP after_B A=true B=true receipts=["B:true"] label=B
-SCOUT after_A A=true B=true receipts=["B:true", "A:true"] label=A
-BUTTON_GROUP after_A A=true B=true receipts=["B:true", "A:true"] label=A
-PASS button_group_selection exclusive=true toggled=[A:false,B:true,B:false,A:true] labels=[B,A]

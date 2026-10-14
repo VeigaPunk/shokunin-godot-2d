@@ -1,6 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-ERROR: AUDIO BUS CONTROL ASSERTION FAILED: requested invalid route silently fell back to Master, requested=NoSuchFixtureBus resolved_index=0 resolved_bus=Master playing=true position_advanced=true
-   at: push_error (core/variant/variant_utility.cpp:1023)
-   GDScript backtrace (most recent call first):
-       [0] _initialize (res://audio_bus_route.gd:55)

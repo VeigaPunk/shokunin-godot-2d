@@ -1,7 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-START focus=true owner=@HSlider@2:<HSlider#26407339466> value=5.0 receipts=[] label=Value 5
-EDGE ui_right press focus=true owner=@HSlider@2:<HSlider#26407339466> value=6.0 receipts=[6.0] label=Value 6
-EDGE ui_right release focus=true owner=@HSlider@2:<HSlider#26407339466> value=6.0 receipts=[6.0] label=Value 6
-EDGE ui_left press focus=true owner=@HSlider@2:<HSlider#26407339466> value=5.0 receipts=[6.0, 5.0] label=Value 5
-EDGE ui_left release focus=true owner=@HSlider@2:<HSlider#26407339466> value=5.0 receipts=[6.0, 5.0] label=Value 5

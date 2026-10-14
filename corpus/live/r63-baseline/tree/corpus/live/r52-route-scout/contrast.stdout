@@ -1,2 +1,0 @@
-R52_EDGE10 observer=4 pressed=true value=3.0 receipts=[6.0, 3.0] label=Value 3
-ERROR: SLIDER input-state post-release assertion failed: ui_left remains pressed

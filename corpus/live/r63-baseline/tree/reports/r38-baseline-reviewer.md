@@ -1,7 +1,0 @@
-# Round 38 immutable r37 baseline review
-
-I inspected the committed r37 baseline at `b7a8041a06ac90283acdf725b2061c807866e59e` (subject to uncommitted round LOG changes already present in the working tree; no tracked fixture or battery source modified by this review). The requested immutable raw result corpus is `corpus/lessons/r37-focus-verifier.json`, SHA-256 `aa14fc53eadb717b3f66475a22c424961cceb0257b60cd0e6332dd421da09b05`. Its verdict is PASS and it contains 62 result entries: 51 ordinary rows, 2 mutation rows, and 9 opt-in groups. The r37 report is `reports/r37-focus-verifier.md` (SHA-256 `715cfbf0a7ea29bfda914f34a8ff0b428b793da8b69ec49567a9a09d7a4674fb`).
-
-The r36 raw baseline `corpus/lessons/r36-slider-verifier.json` has 61 results (SHA-256 `ad79ea348031d2ce1048c3fbb105ff8a2b2b60cf966a5445394d30050b8ae2e1`). Comparing each available `(verdict, actual_exit, signature)` triple against r37 showed no differences across the 61 preceding rows; the r37-only row is `slider_adjust_no_focus` (expected/actual exit 2). Tracked source hashes recorded by r37 report: `slider_adjust.gd` `099bef37e61342d371d77bcd750106ceddb686b0f20ef36fed80e1b759a1449e`; `run_battery.py` `69d94dd63f0a32769731d7942b831a3d7e7ad84a5ce571153df2abe231a1914f`.
-
-This is a read-only baseline review, not a replay of Godot or the battery. No engine/editor invocation, seeded control modification, commit, push, or merge performed. I did not edit r38 LOG. Independent r38 edge measurement remains a separate prerequisite before asserting the press/release claim.

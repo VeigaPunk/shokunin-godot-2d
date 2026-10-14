@@ -1,7 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-EDGE setup focused=true owner_button=true receipts=0 text=Ready
-EDGE 1-press-only focused=true owner_button=true receipts=0 text=Ready
-EDGE 1-after-release focused=true owner_button=true receipts=1 text=Activated 1
-EDGE 2-press-only focused=true owner_button=true receipts=1 text=Activated 1
-EDGE 2-after-release focused=true owner_button=true receipts=2 text=Activated 2

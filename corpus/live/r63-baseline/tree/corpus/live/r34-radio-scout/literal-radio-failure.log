@@ -1,5 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf
-SCRIPT ERROR: Parse Error: Could not find type "RadioButton" in the current scope.
-SCRIPT ERROR: Identifier "RadioButton" not declared in the current scope.
-ERROR: Failed to load script with parse error.
-A subsequent ClassDB.instantiate("RadioButton") attempt logged ERROR: Cannot get class 'RadioButton', then Nil property errors; process did not exit and parent terminated PID 1593651 after >2m. This is failure telemetry, not behavioral evidence.

@@ -1,6 +1,0 @@
-[application]
-config/name="R43 scratch"
-
-[display]
-window/size/viewport_width=640
-window/size/viewport_height=360

@@ -1,9 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-SETUP A=true B=false receipts=[] label=Ready
-FOCUS target=B has=true owner=true
-PRESS target=B A=true B=false receipts=[] label=Ready
-RELEASE target=B A=false B=true receipts=["A:false", "B:true"] label=B
-FOCUS target=A has=true owner=true
-PRESS target=A A=false B=true receipts=["A:false", "B:true"] label=B
-RELEASE target=A A=true B=false receipts=["A:false", "B:true", "B:false", "A:true"] label=A

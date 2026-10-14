@@ -1,0 +1,4 @@
+
+# baseline/frozen snapshot trees are regenerable; never track
+live/*/tree/
+live/*/frozen/
