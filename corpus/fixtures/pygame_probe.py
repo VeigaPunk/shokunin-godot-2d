@@ -36,6 +36,23 @@ Arms:
                  subject must NOT import pygame.
   pump           400 frames, zero event calls: cadence unaffected and a
                  pre-posted USEREVENT survives -- pump-free headless.
+  reorder_*      r72 composition arm: fd1-inheritance x stdio-withholding.
+                 A spawned descendant writes into the child's inherited
+                 fd1 while the child's own earlier HEAD bytes sit in its
+                 userspace buffer. Per-child stdout-mode cells:
+                   buf   buffered        -> prefix_reorder (INJECTED first)
+                   unbuf python -u       -> midline_splice (Godot/LOVE shape)
+                   flush flush=True head -> midline_splice
+                   env   PYTHONUNBUFFERED=1 -> midline_splice
+                   late  descendant lands after window close -> append
+                 The reorder children are plain python3, deliberately --
+                 the fabricated byte ORDER is a language-layer property
+                 (buffering mode); the seam is spawn-layer (fd1
+                 inheritance). Same 19 bytes on every wire, order moves.
+  reorder_self   the same composition on the probe's OWN fd1: raw
+                 REORDER-HEAD/CHILD/TAIL markers ride this wire; under the
+                 battery's pipe capture the child marker precedes HEAD --
+                 the hazard a streaming parser of ARM lines would see.
 """
 
 import io
@@ -72,7 +89,8 @@ def readline_timed(stream):
 
 def popen_arm(emit_name, child_argv):
     proc = subprocess.Popen(child_argv, stdout=subprocess.PIPE,
-                            stderr=subprocess.DEVNULL, text=True)
+                            stderr=subprocess.DEVNULL, text=True,
+                            env=CHILD_ENV)
     t_start = time.perf_counter()
     w1, l1 = readline_timed(proc.stdout)
     w2, l2 = readline_timed(proc.stdout)
@@ -149,6 +167,63 @@ def withhold_arm(emit_name, mid_src, write_bytes):
          exit_bytes=len(data) - early_bytes,
          total_bytes=len(data),
          alive_at_first=alive_at_first)
+
+
+# reorder_* child programs (r72): HEAD -> descendant write into inherited
+# fd1 -> TAIL -> exit.  Plain python3, same rule as the withhold children.
+REORDER_SYNC = ("import os,sys;"
+                "sys.stdout.write('HEAD ');"
+                "os.system('printf INJECTED >&1');"
+                "sys.stdout.write(' TAIL\\n')")
+REORDER_FLUSH = ("import os,sys;"
+                 "sys.stdout.write('HEAD ');sys.stdout.flush();"
+                 "os.system('printf INJECTED >&1');"
+                 "sys.stdout.write(' TAIL\\n')")
+# descendant inside vs after the window: the HEAD+TAIL flush closes the
+# window at ~t=0 while a backgrounded descendant lands at ~t=300ms, the
+# parent held alive to t=600ms so the pipe stays open for the late write.
+REORDER_LATE = ("import os,sys,time;"
+                "sys.stdout.write('HEAD ');"
+                "os.system('(sleep 0.30;printf INJECTED >&1) &');"
+                "sys.stdout.write(' TAIL\\n');"
+                "sys.stdout.flush();"
+                "time.sleep(0.60)")
+
+
+def reorder_arm(emit_name, child_argv, env=None):
+    """Spawn a child on a piped stdout; inside it the child writes HEAD,
+    runs a descendant that writes INJECTED straight into the inherited
+    fd1, writes TAIL, exits.  The probe reads the delivered stream to EOF
+    and classifies byte ORDER: a block-buffered child withholds HEAD
+    until exit, so the descendant's bytes surface FIRST
+    (prefix_reorder); any collapse of the withholding window (-u /
+    flush=True / PYTHONUNBUFFERED=1) splices midline (the Godot/LOVE
+    topology); a descendant landing after window close appends.
+    """
+    proc = subprocess.Popen(child_argv, stdout=subprocess.PIPE,
+                            stderr=subprocess.DEVNULL,
+                            env=env if env is not None else CHILD_ENV)
+    try:
+        data, _ = proc.communicate(timeout=CHILD_TIMEOUT_S)
+    except subprocess.TimeoutExpired:
+        proc.kill()
+        data, _ = proc.communicate()
+    head = data.find(b"HEAD")
+    inj = data.find(b"INJECTED")
+    tail = data.find(b"TAIL")
+    if -1 in (head, inj, tail):
+        topo = "markers_missing"
+    elif inj < head:
+        topo = "prefix_reorder"
+    elif head < inj < tail:
+        topo = "midline_splice"
+    elif tail < inj:
+        topo = "append"
+    else:
+        topo = "degenerate"
+    emit(emit_name, bufsize=BUFSIZE, topology=topo,
+         head_at=head, injected_at=inj, tail_at=tail,
+         wire_bytes=len(data), ret=proc.returncode)
 
 
 def main():
@@ -233,6 +308,32 @@ def main():
     emit("pump", frames_nopump=400, nopump_total_ms=round(nopump_ms, 1),
          queued_after_nopump=len(queued), posted_survived=mine,
          pump_needed="false")
+
+    # --- reorder_*: descendant into inherited fd1 mid-window (r72) ------
+    # buffered child: HEAD withheld to exit, so INJECTED lands first
+    reorder_arm("reorder_buf", [sys.executable, "-c", REORDER_SYNC])
+    # -u child: no withholding window -> midline splice (Godot/LOVE)
+    reorder_arm("reorder_unbuf", [sys.executable, "-u", "-c", REORDER_SYNC])
+    # flush=True child: HEAD on the wire before the spawn -> midline
+    reorder_arm("reorder_flush", [sys.executable, "-c", REORDER_FLUSH])
+    # PYTHONUNBUFFERED=1 collapses the window from the env side
+    reorder_arm("reorder_env", [sys.executable, "-c", REORDER_SYNC],
+                env={**CHILD_ENV, "PYTHONUNBUFFERED": "1"})
+    # late descendant: writes after the parent's flush closed the window
+    reorder_arm("reorder_late", [sys.executable, "-c", REORDER_LATE])
+
+    # --- reorder_self: the composition on the probe's OWN fd1 (r72) -----
+    # Raw markers ride THIS wire: HEAD/TAIL are withheld whenever fd1 is a
+    # block-buffered pipe (the battery's capture), so the descendant's
+    # REORDER-CHILD surfaces first -- the fabricated order a streaming
+    # parser would see.  The battery pins the captured byte order; this
+    # ARM line carries metadata only.  fd1_isatty records which regime
+    # ran (pipe -> buffered -> reorder; tty -> line-buffered -> splice).
+    sys.stdout.write("REORDER-HEAD\n")
+    os.system("printf 'REORDER-CHILD\\n' >&1")
+    sys.stdout.write("REORDER-TAIL\n")
+    emit("reorder_self", bufsize=BUFSIZE, fd1_isatty=sys.stdout.isatty(),
+         descendant="printf")
 
     pygame.quit()
     print("PYGAME_PROBE_DONE", flush=True)

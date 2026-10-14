@@ -20,6 +20,20 @@ SDL_VIDEODRIVER=dummy):
     to exit while a 200KB mid-run write (single-shot AND cumulative-fill)
     surfaces at ~105ms carrying the withheld MARK-1 with it.
 
+r72 lattice addition (reorder fabrication, xconnector X1): a spawned
+descendant writes into the child's inherited fd1 while the child's own
+earlier bytes sit in its userspace buffer.  The seam is spawn-layer
+(fd1 inheritance, the same seam as Godot midlineforge / LOVE os.execute);
+the fabricated byte ORDER is language-layer: a block-buffered child
+releases HEAD only at exit so the descendant's bytes land FIRST
+(prefix_reorder), while -u / flush=True / PYTHONUNBUFFERED=1 collapse
+the window -> midline_splice (the Godot/LOVE topology), and a
+descendant landing after the flush closes the window -> append.
+reorder_self puts raw REORDER-HEAD/CHILD/TAIL markers on the probe's
+OWN fd1: under the battery's pipe capture the wire reads CHILD first --
+the pinned hazard for any streaming parser of these ARM lines (the
+post-exit parser cannot observe it, the RAW_CASES check does).
+
 Case model: each CASES row asserts keys on an emitted
 `PYGAME-ARM <arm> | k=v` line; values pin either an exact byte or a
 numeric bound tuple (lo, hi) -- jittered quantities carry measured
@@ -96,6 +110,35 @@ CASES = [
     ("pump_not_needed",        "pump",      "pump_needed", "false"),
     ("pump_updates_counted",   "pump",      "frames_nopump", "400"),
     ("pump_posted_survived",   "pump",      "posted_survived", "1"),
+    # --- r72 reorder_*: fd1-inheritance x block-buffering composition ---
+    # Seam = spawn-layer (inherited fd1); fabricated ORDER = language-
+    # layer (buffering mode).  Same 19 bytes on every wire -- only the
+    # order moves.  bufsize carried per receipt (131072 on py3.14).
+    ("rord_buf_topo",      "reorder_buf",   "topology",    "prefix_reorder"),
+    ("rord_buf_inj0",      "reorder_buf",   "injected_at", "0"),
+    ("rord_buf_head",      "reorder_buf",   "head_at",     "8"),
+    ("rord_buf_bytes",     "reorder_buf",   "wire_bytes",  "19"),
+    ("rord_buf_ret",       "reorder_buf",   "ret",         "0"),
+    ("rord_bufsize",       "reorder_buf",   "bufsize",     "131072"),
+    ("rord_u_topo",        "reorder_unbuf", "topology",    "midline_splice"),
+    ("rord_u_head0",       "reorder_unbuf", "head_at",     "0"),
+    ("rord_u_bytes",       "reorder_unbuf", "wire_bytes",  "19"),
+    ("rord_fl_topo",       "reorder_flush", "topology",    "midline_splice"),
+    ("rord_fl_head0",      "reorder_flush", "head_at",     "0"),
+    ("rord_env_topo",      "reorder_env",   "topology",    "midline_splice"),
+    ("rord_env_head0",     "reorder_env",   "head_at",     "0"),
+    ("rord_late_topo",     "reorder_late",  "topology",    "append"),
+    ("rord_late_head0",    "reorder_late",  "head_at",     "0"),
+    ("rord_late_tail",     "reorder_late",  "tail_at",     "6"),
+    ("self_fd1_piped",     "reorder_self",  "fd1_isatty",  "False"),
+    ("self_bufsize",       "reorder_self",  "bufsize",     "131072"),
+]
+
+# Raw-wire cases (r72): the reorder_self topology lives on the probe's
+# OWN captured stream -- only the post-capture byte order can judge it.
+# (name, pinned) over the marker relation in the raw stdout.
+RAW_CASES = [
+    ("self_wire_reorders", "prefix_reorder"),
 ]
 
 ARM_LINE = re.compile(r"^PYGAME-ARM (\S+) \| (.*)$")
@@ -105,6 +148,10 @@ def run_process(command, timeout_seconds, env_extra=None):
     try:
         env = dict(os.environ)
         env.update(env_extra or {})
+        # the reorder_self wire pin requires the probe itself be
+        # block-buffered on our pipe -- same hygiene the probe's own
+        # CHILD_ENV applies to spawned children.
+        env.pop("PYTHONUNBUFFERED", None)
         proc = subprocess.run(command, capture_output=True, text=True,
                               timeout=timeout_seconds, env=env)
         return proc.stdout, proc.stderr, proc.returncode, None
@@ -181,6 +228,30 @@ def main():
         results.append({"case": name, "arm": arm, "key": key,
                         "pinned": list(pinned) if isinstance(pinned, tuple) else pinned,
                         "observed": got,
+                        "verdict": "PASS" if reason is None else "FAIL",
+                        "reasons": ([] if reason is None else [reason])})
+
+    # --- raw-wire cases: marker order on the captured stdout itself ----
+    # reorder_self puts its markers on the probe's own fd1, so the
+    # fabricated order is visible only in the raw capture, not ARM lines.
+    h, c, t = (stdout.find(m) for m in
+               ("REORDER-HEAD", "REORDER-CHILD", "REORDER-TAIL"))
+    if -1 in (h, c, t):
+        self_topo = "markers_missing"
+    elif c < h:
+        self_topo = "prefix_reorder"
+    elif h < c < t:
+        self_topo = "midline_splice"
+    elif t < c:
+        self_topo = "append"
+    else:
+        self_topo = "degenerate"
+    for name, pinned in RAW_CASES:
+        reason = None if self_topo == pinned else \
+            f"{self_topo!r} != pinned {pinned!r} (idx h={h} c={c} t={t})"
+        results.append({"case": name, "arm": "reorder_self",
+                        "key": "wire_topology", "pinned": pinned,
+                        "observed": self_topo,
                         "verdict": "PASS" if reason is None else "FAIL",
                         "reasons": ([] if reason is None else [reason])})
 
