@@ -2470,7 +2470,8 @@ def main():
                 and sd7["stream_classification"] is False
                 and sd7["signature_in_merged"] is True
                 and sd7["signature_in_stdout"] is False
-                and sd7["signature_in_stderr"] is False),
+                and sd7["signature_in_stderr"] is False
+                and sd7["raw_stdout"].endswith(sd_sig_head)),
             # The pre-existing reject arm is itself divergent: a plain
             # non-"ERROR:" stderr line is invisible to merged yet rejects
             # streams — stderr strictness covers ANY unallowlisted line.
