@@ -922,8 +922,10 @@
   iw_classify pointer (P2/F2); jwatch comment bracket corrected
   jwlive->jdrain, cite 289-294 (D1/F3). Declined: D3 fall-through
   (anomaly is fail-loud), W1 branch merge (breaks insertion-only).
-- Verified post-fold: 49/49 + pygame 80/80; 46/49 iw byte-identical,
-  3 diffs = unpinned main.lua:NNN +2 lines only.
+- Verified post-fold: 49/49 + pygame 80/80; iw-row byte-identity
+  27/30 receipts identical, 3 differ by exactly the unpinned
+  main.lua:NNN +2-line tokens (r77-scribe re-derived: 42/49 row-level
+  identical incl. jitter `observed`, 49/49 excluding it).
 - Verifier AGREE all claims; reviewer ACCEPT (3 LOW folded); baseline
   zero-drift; critic 4 hunts (ablation matrix proves the class,
   strongest attack self-refuted); boundary ran read-only substrate

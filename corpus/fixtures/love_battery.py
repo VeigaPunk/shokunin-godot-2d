@@ -440,8 +440,10 @@ IW_CELLS = [
         # sees jcount=1 (last observer = post, locked=true), jdrain reads
         # 0 at update-73 return, and the first callback of step 74 sees 0.
         # The only code in that window is the update-73 epilogue
-        # (World.cpp:283-299) -- the drain point is bounded-measured, the
-        # r75-critic F3 residual closed without any SayGoodbye API.
+        # (World.cpp:289-294 joint loop; 283-287 is the fixture loop).
+        # Drain is bounded-measured; the F3 residual (exact drain line,
+        # SayGoodbye observer ordering) is NARROWED not closed --
+        # SayGoodbye observers land under the r77 surface cells.
         "fire.step": "73", "fire.locked": "true",
         "fire.kind": "jwatch",
         "pre_joint.jtype": "distance", "pre_joint.jcount": "1",
