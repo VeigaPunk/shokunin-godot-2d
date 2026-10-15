@@ -1,0 +1,23 @@
+91b3708dc36981f21a7edc3f6695407da1eeafd984d9a7fdbd735b256bb180e7  corpus/live/r88-baseline/runs1/20261015T180656420800Z/verdicts.json
+c400cf2fa2bfa3601db63b0c0acaac09958f2745c07c2e3974e16bac446e076b  corpus/live/r88-baseline/runs2/20261015T181020682010Z/verdicts.json
+1e139f0d1b09cec03b34939bf7bbecb3c00431c95e67e6f26516f07845b7e43b  corpus/live/r88-baseline/godot-battery-rep1.stdout
+830501324afbabd06dc94e28408196480d3b2fe002da68641d1b9a6e11757a1a  corpus/live/r88-baseline/godot-battery-rep2.stdout
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  corpus/live/r88-baseline/godot-battery-rep1.stderr
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  corpus/live/r88-baseline/godot-battery-rep2.stderr
+1dbf9deae1d8a7746767d0faa724fbc00a3284411eb69aad6d3bdb4dd1507777  corpus/live/r88-baseline/freeze/godot-tuples-rep1.txt
+c5f374d9a8dd1fe784e4cae25dec1204a6c0e00d0c0fbafc19791e9de9f450bf  corpus/live/r88-baseline/freeze/godot-tuples-rep2.txt
+69512316fc0104e09ec3caf6c71afdf8b9cf01fa37fc93d04b138c0ff751a1bf  corpus/live/r88-baseline/tree/corpus/fixtures/run_battery.py
+c50ac32df5af49b3de5756ad900ace4f0f3511c29dacdbcd691538a4dacaa1ab  corpus/live/r88-baseline/freeze/compare-rep1.txt
+cc5072ec760cda0af611e21982e03d4f65075734a8988fc6e938704856d91900  corpus/live/r88-baseline/freeze/compare-rep1-vs-r87.txt
+836ef706dc0dcf911ca8b5d28d7e2df53b502df64fff361f50f963b7e139befe  corpus/live/r88-baseline/freeze/compare-rep2-vs-r87.txt
+4734189b3a34726504032398c6f1fc2ed43a0e01f929376654f2265f36f4f80c  TUPLE-BODIES-rep1 (207 rows)
+0d159eeaaea3958840644f2867831392737fa10e6e1625fd8952c9d8709fc3cd  TUPLE-BODIES-rep2 (207 rows)
+3d1bfb400f84b2fb179cdc51852dba6ac9e78fed806225e2b6a1b32a696f03c9  corpus/live/r88-baseline/runs3/20261015T181502387628Z/verdicts.json
+e199c7d0c3de08004dc01ed24df44ea5a674958c6a5317c0dbecbbc63ebe9046  corpus/live/r88-baseline/godot-battery-rep3.stdout
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  corpus/live/r88-baseline/godot-battery-rep3.stderr
+f0e29f459efc824138e64b108ce9753feafa199bcaa9810f2c1a0c6a0456754a  corpus/live/r88-baseline/freeze/godot-tuples-rep3.txt
+a735fb232a9ea4dc66dfdcffd2a8cb7748073862212c9e98c8f55bb5a5a557c2  corpus/live/r88-baseline/freeze/compare-rep1-all.txt
+6fa77f03172bf793699e9187d955736e8eb9b589096f4b3a630d78037ec9796d  corpus/live/r88-baseline/freeze/row-table-rep1-vs-rep2.txt
+53b5512b40cfc78732bf93c814b202579b34e595e0f3f9ba88b52e3818702604  corpus/live/r88-baseline/freeze/row-table-rep1-vs-r87verifier2.txt
+c50ac32df5af49b3de5756ad900ace4f0f3511c29dacdbcd691538a4dacaa1ab  corpus/live/r88-baseline/freeze/compare-rep1.txt
+c289a253ad8a83bb4be9d2d039735afed0840ca54a9dfc9df9c4bdc0d2c95d9f  TUPLE-BODIES-rep3 (207 rows)

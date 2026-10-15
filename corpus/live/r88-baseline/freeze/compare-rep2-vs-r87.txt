@@ -1,0 +1,39 @@
+=== mine corpus/live/r88-baseline/runs2/20261015T181020682010Z/verdicts.json rows=207 verdict=FAIL sha256=c400cf2fa2bfa3601db63b0c0acaac09958f2745c07c2e3974e16bac446e076b ===
+
+r87verifier2: ref=corpus/live/r87-verifier2/runs1/20261015T174757647842Z/verdicts.json ref_rows=207 ref_verdict=PASS ref_sha256=be5b022207415bbc8a4b52b9b6f213fb9ea5b5f2b745b1a9f3b9c48e7d4234d7
+  common=207 new_only=0 old_only=0
+  tuple byte-identical=204/207 tuple_mismatches=3
+  output RAW byte-identical=192/207 differing=8 not-carried=7 [envelope=0 volatile=8 other=0]
+  output NORMALIZED identical=199/207 differing=1 not-carried=7
+  TUPLE-MISMATCH crash_spontaneous_sigabrt: {"actual_exit": ["None", "-6"], "error": ["TIMEOUT after 8 seconds", "None"], "output": ["['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org', '', 'SPONTANEOUS", "['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org', '', 'SPONTANEOUS"], "verdict": ["FAIL", "PASS"]}
+  TUPLE-MISMATCH probe_error_clause_surface: {"arms": ["[{'case': 'surface_allowforge', 'flags': ['--spawn-allowforge'], 'bound_seconds': 3.0, 'timed_out': False, 'child_exit_a", "[{'case': 'surface_allowforge', 'flags': ['--spawn-allowforge'], 'bound_seconds': 3.0, 'timed_out': False, 'child_exit_a"], "census": ["{'scope': 'every CASES row carrying expected_errors in this battery run; opt-in probe rows execute after this census (th", "{'scope': 'every CASES row carrying expected_errors in this battery run; opt-in probe rows execute after 
+  TUPLE-MISMATCH probe_spontaneous_crash_classification: {"sigabrt_exit": ["None", "-6"], "verdict": ["FAIL", "PASS"]}
+  ENVELOPE input_lattice_api_press: mode_mine=mode[0] mode_ref=mode[0] tuple_identical=True raw_identical=True
+  ENVELOPE input_lattice_pre_frame: mode_mine=mode[1] mode_ref=mode[1] tuple_identical=True raw_identical=True
+  ENVELOPE input_lattice_press_phys: mode_mine=mode[0] mode_ref=mode[0] tuple_identical=True raw_identical=True
+  ENVELOPE input_lattice_release_edge: mode_mine=mode[1] mode_ref=mode[1] tuple_identical=True raw_identical=True
+  ENVELOPE input_lattice_ui_ns: mode_mine=mode[0] mode_ref=mode[0] tuple_identical=True raw_identical=True
+  RAW-OUT-DIFF[VOLATILE] crash_spontaneous_sigabrt line 12:
+      mine='Load address: 560fe605b000'
+      ref ='Load address: 5571e0fac000'
+  RAW-OUT-DIFF[VOLATILE] descendant_pipe_detached_control line 3:
+      mine='DESCENDANT_PIPE godot_pid=1576633'
+      ref ='DESCENDANT_PIPE godot_pid=2792703'
+  RAW-OUT-DIFF[VOLATILE] descendant_pipe_forged_signature_release line 3:
+      mine='DESCENDANT_PIPE godot_pid=1576749'
+      ref ='DESCENDANT_PIPE godot_pid=2792757'
+  RAW-OUT-DIFF[VOLATILE] save_process_missing line 2:
+      mine='PASS save_process missing=true pid=1533802 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs2/20261015T18102068201'
+      ref ='PASS save_process missing=true pid=2782199 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r87-verifier2/runs1/20261015T1747576478'
+  RAW-OUT-DIFF[VOLATILE] save_process_reader line 2:
+      mine='PASS save_process reader=true pid=1533630 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs2/20261015T181020682010'
+      ref ='PASS save_process reader=true pid=2782161 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r87-verifier2/runs1/20261015T17475764784'
+  RAW-OUT-DIFF[VOLATILE] save_process_writer line 2:
+      mine='PASS save_process writer=true pid=1533461 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs2/20261015T181020682010'
+      ref ='PASS save_process writer=true pid=2782110 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r87-verifier2/runs1/20261015T17475764784'
+  RAW-OUT-DIFF[VOLATILE] save_roundtrip line 2:
+      mine='PASS save_roundtrip structured=true reopened=true values_match=true user_path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-basel'
+      ref ='PASS save_roundtrip structured=true reopened=true values_match=true user_path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r87-verif'
+  RAW-OUT-DIFF[VOLATILE] tween_flash line 2:
+      mine='PASS tween_flash transient_modulate=(0.7044, 0.7911, 0.8882, 1.0) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=62'
+      ref ='PASS tween_flash transient_modulate=(0.7046, 0.7908, 0.8877, 1.0) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=62'

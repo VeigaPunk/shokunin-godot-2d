@@ -1,0 +1,134 @@
+=== mine corpus/live/r88-baseline/runs1/20261015T180656420800Z/verdicts.json rows=207 verdict=PASS sha256=91b3708dc36981f21a7edc3f6695407da1eeafd984d9a7fdbd735b256bb180e7 ===
+
+rep2: ref=corpus/live/r88-baseline/runs2/20261015T181020682010Z/verdicts.json ref_rows=207 ref_verdict=FAIL ref_sha256=c400cf2fa2bfa3601db63b0c0acaac09958f2745c07c2e3974e16bac446e076b
+  common=207 new_only=0 old_only=0
+  tuple byte-identical=204/207 tuple_mismatches=3
+  output RAW byte-identical=190/207 differing=10 not-carried=7 [envelope=2 volatile=8 other=0]
+  output NORMALIZED identical=197/207 differing=3 not-carried=7
+  TUPLE-MISMATCH crash_spontaneous_sigabrt: {"actual_exit": ["-6", "None"], "error": ["None", "TIMEOUT after 8 seconds"], "output": ["['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org', '', 'SPONTANEOUS", "['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org', '', 'SPONTANEOUS"], "verdict": ["PASS", "FAIL"]}
+  TUPLE-MISMATCH probe_error_clause_surface: {"arms": ["[{'case': 'surface_allowforge', 'flags': ['--spawn-allowforge'], 'bound_seconds': 3.0, 'timed_out': False, 'child_exit_a", "[{'case': 'surface_allowforge', 'flags': ['--spawn-allowforge'], 'bound_seconds': 3.0, 'timed_out': False, 'child_exit_a"], "census": ["{'scope': 'every CASES row carrying expected_errors in this battery run; opt-in probe rows execute after this census (th", "{'scope': 'every CASES row carrying expected_errors in this battery run; opt-in probe rows execute after 
+  TUPLE-MISMATCH probe_spontaneous_crash_classification: {"sigabrt_exit": ["-6", "None"], "verdict": ["PASS", "FAIL"]}
+  ENVELOPE input_lattice_api_press: mode_mine=mode[0] mode_ref=mode[0] tuple_identical=True raw_identical=True
+  ENVELOPE input_lattice_pre_frame: mode_mine=mode[1] mode_ref=mode[1] tuple_identical=True raw_identical=True
+  ENVELOPE input_lattice_press_phys: mode_mine=mode[1] mode_ref=mode[0] tuple_identical=True raw_identical=False
+  ENVELOPE input_lattice_release_edge: mode_mine=mode[0] mode_ref=mode[1] tuple_identical=True raw_identical=False
+  ENVELOPE input_lattice_ui_ns: mode_mine=mode[0] mode_ref=mode[0] tuple_identical=True raw_identical=True
+  RAW-OUT-DIFF[VOLATILE] crash_spontaneous_sigabrt line 12:
+      mine='Load address: 56111de57000'
+      ref ='Load address: 560fe605b000'
+  RAW-OUT-DIFF[VOLATILE] descendant_pipe_detached_control line 3:
+      mine='DESCENDANT_PIPE godot_pid=1489118'
+      ref ='DESCENDANT_PIPE godot_pid=1576633'
+  RAW-OUT-DIFF[VOLATILE] descendant_pipe_forged_signature_release line 3:
+      mine='DESCENDANT_PIPE godot_pid=1489160'
+      ref ='DESCENDANT_PIPE godot_pid=1576749'
+  RAW-OUT-DIFF[ENVELOPE] input_lattice_press_phys line 3:
+      mine='PASS input_lattice press_phys imm[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pp,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pp:1/0|I1/1/0] echo0 2:uhs0@pr+1/ph~:A(pp,'
+      ref ='PASS input_lattice press_phys imm[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pp,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pp:1/0|I1/1/0] echo0 2:uhs0@pr+1/ph~:A(pp,'
+  RAW-OUT-DIFF[ENVELOPE] input_lattice_release_edge line 3:
+      mine='PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[re:1/0|I1/1/0] echo0 2:uhs0@pr+0/ph~:A(r'
+      ref ='PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[re:1/0|I1/1/0] echo0 2:uhs0@pr+0/ph~:A(r'
+  RAW-OUT-DIFF[VOLATILE] save_process_missing line 2:
+      mine='PASS save_process missing=true pid=1071530 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs1/20261015T18065642080'
+      ref ='PASS save_process missing=true pid=1533802 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs2/20261015T18102068201'
+  RAW-OUT-DIFF[VOLATILE] save_process_reader line 2:
+      mine='PASS save_process reader=true pid=1071488 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs1/20261015T180656420800'
+      ref ='PASS save_process reader=true pid=1533630 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs2/20261015T181020682010'
+  RAW-OUT-DIFF[VOLATILE] save_process_writer line 2:
+      mine='PASS save_process writer=true pid=1070805 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs1/20261015T180656420800'
+      ref ='PASS save_process writer=true pid=1533461 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs2/20261015T181020682010'
+  RAW-OUT-DIFF[VOLATILE] save_roundtrip line 2:
+      mine='PASS save_roundtrip structured=true reopened=true values_match=true user_path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-basel'
+      ref ='PASS save_roundtrip structured=true reopened=true values_match=true user_path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-basel'
+  RAW-OUT-DIFF[VOLATILE] tween_flash line 2:
+      mine='PASS tween_flash transient_modulate=(0.704, 0.7921, 0.8894, 1.0) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=62'
+      ref ='PASS tween_flash transient_modulate=(0.7044, 0.7911, 0.8882, 1.0) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=62'
+
+rep3: ref=corpus/live/r88-baseline/runs3/20261015T181502387628Z/verdicts.json ref_rows=207 ref_verdict=FAIL ref_sha256=3d1bfb400f84b2fb179cdc51852dba6ac9e78fed806225e2b6a1b32a696f03c9
+  common=207 new_only=0 old_only=0
+  tuple byte-identical=206/207 tuple_mismatches=1
+  output RAW byte-identical=188/207 differing=12 not-carried=7 [envelope=3 volatile=8 other=1]
+  output NORMALIZED identical=196/207 differing=4 not-carried=7
+  TUPLE-MISMATCH input_lattice_phys_peer: {"output": ["['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org', '', 'R83 arm=phy", "['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org', '', 'R83 arm=phy"], "verdict": ["PASS", "FAIL"]}
+  ENVELOPE input_lattice_api_press: mode_mine=mode[0] mode_ref=mode[0] tuple_identical=True raw_identical=True
+  ENVELOPE input_lattice_pre_frame: mode_mine=mode[1] mode_ref=mode[0] tuple_identical=True raw_identical=False
+  ENVELOPE input_lattice_press_phys: mode_mine=mode[1] mode_ref=mode[0] tuple_identical=True raw_identical=False
+  ENVELOPE input_lattice_release_edge: mode_mine=mode[0] mode_ref=mode[0] tuple_identical=True raw_identical=True
+  ENVELOPE input_lattice_ui_ns: mode_mine=mode[0] mode_ref=mode[1] tuple_identical=True raw_identical=False
+  RAW-OUT-DIFF[VOLATILE] crash_spontaneous_sigabrt line 12:
+      mine='Load address: 56111de57000'
+      ref ='Load address: 55e9f0311000'
+  RAW-OUT-DIFF[VOLATILE] descendant_pipe_detached_control line 3:
+      mine='DESCENDANT_PIPE godot_pid=1489118'
+      ref ='DESCENDANT_PIPE godot_pid=1728702'
+  RAW-OUT-DIFF[VOLATILE] descendant_pipe_forged_signature_release line 3:
+      mine='DESCENDANT_PIPE godot_pid=1489160'
+      ref ='DESCENDANT_PIPE godot_pid=1729452'
+  RAW-OUT-DIFF[OTHER] input_lattice_phys_peer line 3:
+      mine='PASS input_lattice phys_peer same_tick[0/0.00/0/0] ev_step_delta=0 cells=d-1{s1=px=0/0.00/0/0,s0=px=0/0.00/0/0} d+0{s1=px=0/0.00/0/0,s0=px=0/0.00/0/0}'
+      ref ='PASS input_lattice phys_peer same_tick[0/0.00/0/0] ev_step_delta=2 cells=d-1{s1=px=0/0.00/0/0,s0=px=0/0.00/0/0} d+0{s1=px=0/0.00/0/0,s0=px=0/0.00/0/0}'
+  RAW-OUT-DIFF[ENVELOPE] input_lattice_pre_frame line 3:
+      mine='PASS input_lattice pre_frame imm0[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pf0,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pf0:1/0|I1/1/0] echo0 2:uhs0@pr+1/ph~:A(p'
+      ref ='PASS input_lattice pre_frame imm0[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pf0,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pf0:1/0|I1/1/0] echo0 2:uhs0@pr+1/ph~:A(p'
+  RAW-OUT-DIFF[ENVELOPE] input_lattice_press_phys line 3:
+      mine='PASS input_lattice press_phys imm[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pp,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pp:1/0|I1/1/0] echo0 2:uhs0@pr+1/ph~:A(pp,'
+      ref ='PASS input_lattice press_phys imm[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pp,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pp:1/0|I1/1/0] echo0 2:uhs0@pr+1/ph~:A(pp,'
+  RAW-OUT-DIFF[ENVELOPE] input_lattice_ui_ns line 3:
+      mine='PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_accept", "ui_text_newline", "ui_text_submit"'
+      ref ='PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_accept", "ui_text_newline", "ui_text_submit"'
+  RAW-OUT-DIFF[VOLATILE] save_process_missing line 2:
+      mine='PASS save_process missing=true pid=1071530 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs1/20261015T18065642080'
+      ref ='PASS save_process missing=true pid=1626543 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs3/20261015T18150238762'
+  RAW-OUT-DIFF[VOLATILE] save_process_reader line 2:
+      mine='PASS save_process reader=true pid=1071488 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs1/20261015T180656420800'
+      ref ='PASS save_process reader=true pid=1626266 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs3/20261015T181502387628'
+  RAW-OUT-DIFF[VOLATILE] save_process_writer line 2:
+      mine='PASS save_process writer=true pid=1070805 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs1/20261015T180656420800'
+      ref ='PASS save_process writer=true pid=1626124 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs3/20261015T181502387628'
+  RAW-OUT-DIFF[VOLATILE] save_roundtrip line 2:
+      mine='PASS save_roundtrip structured=true reopened=true values_match=true user_path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-basel'
+      ref ='PASS save_roundtrip structured=true reopened=true values_match=true user_path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-basel'
+  RAW-OUT-DIFF[VOLATILE] tween_flash line 2:
+      mine='PASS tween_flash transient_modulate=(0.704, 0.7921, 0.8894, 1.0) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=62'
+      ref ='PASS tween_flash transient_modulate=(0.7045, 0.7911, 0.8881, 1.0) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=62'
+
+r87verifier2: ref=corpus/live/r87-verifier2/runs1/20261015T174757647842Z/verdicts.json ref_rows=207 ref_verdict=PASS ref_sha256=be5b022207415bbc8a4b52b9b6f213fb9ea5b5f2b745b1a9f3b9c48e7d4234d7
+  common=207 new_only=0 old_only=0
+  tuple byte-identical=207/207 tuple_mismatches=0
+  output RAW byte-identical=190/207 differing=10 not-carried=7 [envelope=2 volatile=8 other=0]
+  output NORMALIZED identical=198/207 differing=2 not-carried=7
+  ENVELOPE input_lattice_api_press: mode_mine=mode[0] mode_ref=mode[0] tuple_identical=True raw_identical=True
+  ENVELOPE input_lattice_pre_frame: mode_mine=mode[1] mode_ref=mode[1] tuple_identical=True raw_identical=True
+  ENVELOPE input_lattice_press_phys: mode_mine=mode[1] mode_ref=mode[0] tuple_identical=True raw_identical=False
+  ENVELOPE input_lattice_release_edge: mode_mine=mode[0] mode_ref=mode[1] tuple_identical=True raw_identical=False
+  ENVELOPE input_lattice_ui_ns: mode_mine=mode[0] mode_ref=mode[0] tuple_identical=True raw_identical=True
+  RAW-OUT-DIFF[VOLATILE] crash_spontaneous_sigabrt line 12:
+      mine='Load address: 56111de57000'
+      ref ='Load address: 5571e0fac000'
+  RAW-OUT-DIFF[VOLATILE] descendant_pipe_detached_control line 3:
+      mine='DESCENDANT_PIPE godot_pid=1489118'
+      ref ='DESCENDANT_PIPE godot_pid=2792703'
+  RAW-OUT-DIFF[VOLATILE] descendant_pipe_forged_signature_release line 3:
+      mine='DESCENDANT_PIPE godot_pid=1489160'
+      ref ='DESCENDANT_PIPE godot_pid=2792757'
+  RAW-OUT-DIFF[ENVELOPE] input_lattice_press_phys line 3:
+      mine='PASS input_lattice press_phys imm[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pp,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pp:1/0|I1/1/0] echo0 2:uhs0@pr+1/ph~:A(pp,'
+      ref ='PASS input_lattice press_phys imm[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pp,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pp:1/0|I1/1/0] echo0 2:uhs0@pr+1/ph~:A(pp,'
+  RAW-OUT-DIFF[ENVELOPE] input_lattice_release_edge line 3:
+      mine='PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[re:1/0|I1/1/0] echo0 2:uhs0@pr+0/ph~:A(r'
+      ref ='PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[re:1/0|I1/1/0] echo0 2:uhs0@pr+0/ph~:A(r'
+  RAW-OUT-DIFF[VOLATILE] save_process_missing line 2:
+      mine='PASS save_process missing=true pid=1071530 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs1/20261015T18065642080'
+      ref ='PASS save_process missing=true pid=2782199 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r87-verifier2/runs1/20261015T1747576478'
+  RAW-OUT-DIFF[VOLATILE] save_process_reader line 2:
+      mine='PASS save_process reader=true pid=1071488 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs1/20261015T180656420800'
+      ref ='PASS save_process reader=true pid=2782161 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r87-verifier2/runs1/20261015T17475764784'
+  RAW-OUT-DIFF[VOLATILE] save_process_writer line 2:
+      mine='PASS save_process writer=true pid=1070805 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-baseline/runs1/20261015T180656420800'
+      ref ='PASS save_process writer=true pid=2782110 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r87-verifier2/runs1/20261015T17475764784'
+  RAW-OUT-DIFF[VOLATILE] save_roundtrip line 2:
+      mine='PASS save_roundtrip structured=true reopened=true values_match=true user_path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r88-basel'
+      ref ='PASS save_roundtrip structured=true reopened=true values_match=true user_path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r87-verif'
+  RAW-OUT-DIFF[VOLATILE] tween_flash line 2:
+      mine='PASS tween_flash transient_modulate=(0.704, 0.7921, 0.8894, 1.0) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=62'
+      ref ='PASS tween_flash transient_modulate=(0.7046, 0.7908, 0.8877, 1.0) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=62'
