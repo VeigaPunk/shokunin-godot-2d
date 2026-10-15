@@ -1,0 +1,9 @@
+=== godot: mine corpus/live/r89-baseline/runs2/20261015T190216535161Z/verdicts.json rows=215 verdict=PASS file_sha256=1dc26e0b9abfb7586445a9a32274c3c42eb30bfce5f596c994342038bf9ea9a9 ===
+
+r88verifier2: ref=corpus/live/r88-verifier/runs2/20261015T183553023488Z/verdicts.json ref_rows=215 ref_verdict=PASS
+  common=215 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=204 differing=4 not-carried=7
+  OUT-DIFF input_lattice_pre_frame line 3: mine='PASS input_lattice pre_frame imm0[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pf0,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[p' ref='PASS input_lattice pre_frame imm0[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pf0,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[p'
+  OUT-DIFF input_lattice_press_phys line 3: mine='PASS input_lattice press_phys imm[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pp,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pp' ref='PASS input_lattice press_phys imm[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pp,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pp'
+  OUT-DIFF input_lattice_ui_ns line 3: mine='PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_acce' ref='PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_acce'
+  OUT-DIFF r88_surfaces_mp_loopback line 4: mine='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn1665996349", "c_srvdisc", "s_disc1665996349"] raw_uid=<add' ref='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn364173685", "c_srvdisc", "s_disc364173685"] raw_uid=<addr>'
