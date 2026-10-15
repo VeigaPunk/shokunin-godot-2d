@@ -535,6 +535,67 @@ CASES = [
      'PASS r90_lattice contacts eng=PhysicsServer2D tps=60 rest=y=-7.7000,vy=0.0000 cb=count=1 y=-7.7000 pos=0.0000,0.3000 cvel=0.0000,16.3333 entered=1 ncb=45 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59'),
     ('r90_lattice_lag', 'rb_lattice.gd', ['--arm=lag', '--frames=30'], 0,
      'PASS r90_lattice lag eng=PhysicsServer2D tps=60 a=y=126.5834,vy=490.0001 b=y=118.4167,vy=490.0001 c=y=124.5675,vy=478.3405 d=dy=8.1667,dvy=0.0000 step=0.016667 gdt=16.3333 gdt2=0.272222 exp=N=30 exp_dy=8.1667 exp_dvy_gdt=16.3333 acc=an=30,bn=30,apre=490.0001,bpre=473.6668,bpost=490.0001 cb0_rel=1 obs0_rel=1 pf_delta=30 tick_dh=1:29'),
+    # r91: the Navigation2D authorability lattice — NavigationServer2D
+    # map/region/link lifecycle + map-sync gating, exact path/query geometry,
+    # region steering, NavigationAgent2D, agent avoidance, headless baking,
+    # and the avoidance-callback teardown crash class. Probe nav_lattice.gd
+    # (folded variant of r91-scout's frozen probe sha256 efb496e5…).
+    # Boundary folds (r91-boundary 93ce7c4) applied — all measured:
+    #   * every scheduler/rate field (settle/iter/ladder/first_reach*/
+    #     walk_steps/reached_at/first_reachable/iter_b/link_iter/gate) is a
+    #     trailing diagnostic tail, NEVER inside the pin — the sync ladder is
+    #     not constant (4..10 at 60 tps under ambient load, 43 at ff30, never
+    #     at ff120); no universal frame counts are pinned anywhere below.
+    #   * _await_sync polls iteration_id>=2 AND reach (necessary + sufficient
+    #     gate, boundary attack 1) with a 48-frame bound; exhaustion emits a
+    #     `STALE nav_lattice <arm>` line + exit 2 — a sync stall fails loudly
+    #     instead of printing a PASS-shaped payload off an unsynced map.
+    #   * same-frame OLD-answer reads are race fields, unpinned (boundary §3:
+    #     invalidation can land in frame 0, 1/5 at 60 tps under load): dis_same
+    #     and fwd_disabled_same sit in the tails. chg_same=false stays pinned
+    #     (new answer never live same-frame, 100% of 60-tps runs).
+    #   * agent reads is_navigation_finished() BEFORE is_target_reached()
+    #     (boundary §6: scout's reached_at=-1 was a query-order artifact; the
+    #     pin carries the order-independent final state only).
+    #   * avoid pins the boundary-confirmed invariants probe-side
+    #     (sum_bound_ok = every measured frame |a|+|b| <= 20.001 — the ORCA
+    #     bound, never above 20.0000 in 100 samples; dirs_ok = a.x>0 & b.x<0),
+    #     never the process-dependent split digits.
+    #   * nav_lattice_teardown_crash arms the teardown-crash negative control:
+    #     exit with a live avoidance callback -> deterministic double-free
+    #     (rc=-6; 51/51 boundary + 9/9 scout-discovery repro), stderr fragment
+    #     bound via required_stderr. teardown_clean pins the discipline
+    #     control (clear + >=1 frame + free -> exit 0).
+    # Signatures verified substring-stable across fresh reps on this loaded
+    # host. Rows inserted ahead of the crash/descendant tail —
+    # descendant_pipe_detached_control's sleep-8 gap stays adjacent to the
+    # meta probes.
+    ('nav_lattice_census', 'nav_lattice.gd', ['--arm=census'], 0,
+     'PASS nav_lattice census srv_methods=199 poly_methods=134 srv_info=[0,1,2,3,9,4,5,7,6,8] pgt=[0,1,2,3] sgm=[0,1,2,3] sp=[0,1,2] pp=[2,0,1] md=[0,2,1,4,7] alg=0 poly_defaults=agent_r=10.0000,cell=1.0000,border=0.0000,pgt=2,sgm=0,sp=0,cmask=4294967295,brect=[P: (0.0, 0.0), S: (0.0, 0.0)],boff=(0.0, 0.0),polys=0 reg_defaults=cost=1.0000,enter=0.0000,en=true,edge=true agent_defaults=r=10.0000,path_d=20.0000,tgt_d=10.0000,maxspeed=100.0000,nd=500.0000,mn=10,tha=1.0000,tho=0.0000,avoid=false,prio=1.0000,layers=1,pp=0,simpl=false,eps=0.0000 qp_defaults=pp=0,md=7,layers=1,maxlen=0.0000,maxrad=0.0000,maxdist=0.0000,maxpolys=4096,simpl=false,eps=0.0000'),
+    ('nav_lattice_path', 'nav_lattice.gd', ['--arm=path'], 0,
+     'PASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000'),
+    ('nav_lattice_query', 'nav_lattice.gd', ['--arm=query'], 0,
+     'PASS nav_lattice query postproc=[pp2=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)],pp0=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)],pp1=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)]] metadata=[md0:[]|n0|n0,md2:[]|n3|n0,md1:[0,0,0]|n0|n0,md4:[]|n0|n3,md7:[0,0,0]|n3|n3] maxlen=[(20.0000,180.0000),(24.2426,150.3015)] maxrad=[(20.0000,180.0000),(20.0814,179.4301)] maxdist=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] maxpolys=[(20.0000,180.0000),(40.0000,20.0000)] simplify=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] layers0=[] length=282.8427'),
+    ('nav_lattice_sync', 'nav_lattice.gd', ['--arm=sync'], 0,
+     'PASS nav_lattice sync pre_iter=0 pre_regions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=true dis_settled=false'),
+    ('nav_lattice_region', 'nav_lattice.gd', ['--arm=region'], 0,
+     'PASS nav_lattice region base=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] top_cost1=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] bot_cost1=[(10.0000,50.0000),(20.0000,40.0000),(80.0000,40.0000),(90.0000,50.0000)] enter500=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] l1=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] l2=[(20.0000,40.0000),(80.0000,40.0000)] l3=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] dis_settled=[(10.0000,50.0000),(20.0000,40.0000),(80.0000,40.0000),(90.0000,50.0000)] reenabled=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] swapped=[(10.0000,50.0000),(20.0000,40.0000),(80.0000,40.0000),(90.0000,50.0000)] restored=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] counts=regs=4,cost_a=1.0,cost_b=1.0,en_a=true,en_b=true'),
+    ('nav_lattice_agent', 'nav_lattice.gd', ['--arm=agent'], 0,
+     'PASS nav_lattice agent settled=(180.0000,180.0000)/false/true/false/226.27/226.27/1 fin=true reached=true reachable=true dist=2.2741 final_pos=(178.3920,178.3920) final_target=(180.0000,180.0000) path=[(20.0000,20.0000),(180.0000,180.0000)] desired=4.0 target_desired=8.0'),
+    ('nav_lattice_avoid', 'nav_lattice.gd', ['--arm=avoid'], 0,
+     'PASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false'),
+    ('nav_lattice_bake', 'nav_lattice.gd', ['--arm=bake'], 0,
+     'PASS nav_lattice bake outline_polys=4 outline_verts=8 hole_across=[(100.0000,20.0000),(140.0000,60.0000),(140.0000,140.0000),(100.0000,180.0000)] hole_straight=[(20.0000,100.0000),(60.0000,60.0000),(140.0000,60.0000),(180.0000,100.0000)] parse_obs=1 parse_trav=0 parse_has=false baked_polys=4 baked_verts=8 collider_only_polys=0 through=[(-100.0000,0.0000),(-55.0000,55.0000),(55.0000,55.0000),(100.0000,-0.0000)] around=[(-100.0000,-100.0000),(-55.0000,55.0000),(100.0000,100.0000)] outside=[(-145.0000,-145.0000),(-55.0000,55.0000),(100.0000,100.0000)]'),
+    ('nav_lattice_link', 'nav_lattice.gd', ['--arm=link'], 0,
+     'PASS nav_lattice link bidir_default=true en_default=true fwd_default=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] rev_default=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] rev_bidir=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] fwd_disabled_settled=[(10.0000,50.0000),(100.0000,50.0000)] cost300=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] layer1=[(10.0000,50.0000),(100.0000,50.0000)] layer2=[] start=(100.0000,50.0000) end=(400.0000,50.0000) bidir=false en=true cost=1.0 enter=0.0 layers=2'),
+    # Teardown-crash negative control: exit with a live avoidance callback ->
+    # double-free at server teardown (SIGABRT). Signature on stdout, the
+    # `double free or corruption` glibc fragment pinned on stderr via
+    # required_stderr (same shape as geo2d_lattice_lineempty).
+    ('nav_lattice_teardown_crash', 'nav_lattice.gd', ['--arm=teardown_crash'], -6,
+     'NAV_LATTICE_TEARDOWN_CRASH armed=live_cb has_cb=true'),
+    ('nav_lattice_teardown_clean', 'nav_lattice.gd', ['--arm=teardown_clean'], 0,
+     'PASS nav_lattice teardown_clean survived=true has_cb=false'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
@@ -993,6 +1054,17 @@ def main():
                     'ERROR: Condition "p_inertia < 0" is true.',
                     'ERROR: Condition "p_mass <= 0" is true.',
                 ),
+                # r91: sync deliberately reads map_get_closest_point before the
+                # first map synchronization — the typed loud refusal
+                # (nav_map_2d.cpp:165) fires exactly once per run; bake pokes
+                # the orphan-node refusal once (the deprecation WARNING on the
+                # outline route carries no "ERROR:" substring, needs no entry).
+                'nav_lattice_sync': (
+                    'ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.',
+                ),
+                'nav_lattice_bake': (
+                    'ERROR: The root node needs to be inside the SceneTree.',
+                ),
             }.get(name, ())
             # r89-fold (critic F1): stderr-fragment pins. geo2d_lattice_lineempty
             # classified on the merged stdout+stderr blob, so a foreign SIGABRT
@@ -1010,6 +1082,14 @@ def main():
                 'geo2d_lattice_lineempty': (
                     'Clipper2Lib::Point<double>',
                     "Assertion '__n < this->size()' failed.",
+                ),
+                # r91 teardown negative control: binds the rc=-6 to the glibc
+                # heap-corruption abort (live avoidance callback at server
+                # teardown), not to the signal class alone. Toolchain-pinned
+                # fragment (glibc malloc printer), same class as the Clipper2
+                # tokens above; the `(!prev)` tail is deliberately NOT pinned.
+                'nav_lattice_teardown_crash': (
+                    'double free or corruption',
                 ),
             }.get(name, ())
             classifier = classify_audio_process if name == "audio_playback" else classify_process
@@ -2659,6 +2739,14 @@ def main():
             not e["dead_in_run"]
             for r in census_rows
             if r["case"].startswith("r90_")
+            for e in r["entries"]),
+        # r91 author: the two whitelist-bearing cases (nav_lattice_sync,
+        # nav_lattice_bake) and every sibling row carry the nav_lattice_
+        # prefix — same named-by-round / covers-round-prefixes shape.
+        "r91_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith("nav_lattice_")
             for e in r["entries"]),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
