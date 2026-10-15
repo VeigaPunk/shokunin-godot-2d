@@ -975,3 +975,23 @@
   love.errorhandler windowed surface queued for r79.
 - Seats: scout+author+boundary+baseline+critic+reviewer+scribe+
   verifier(labrat swe-2)+simplifier landed. ADMIT-corr.
+
+## round 79 — Godot-4 2D contact/event battery (phys2d_events)
+
+- MOVE (f777925): 23-row phys2d_events battery (contact-monitor
+  lattice, in-cb write/deferred/queue_free/free_rid/dss, Area2D
+  twins); battery 88 -> 111 rows.
+- VERIFIED: 111/111 x3; 0/88 prior-row drift x2 baseline reps;
+  forged-signature mutant killed; row-removal isolation clean; 8s
+  razor held under 20-spinner load.
+- FOLDS (f777925): simplifier vfold (-23, proven); critic C1
+  post_monitor/post_max on muted pins (mechanism-blind forge killed);
+  C2 phys2d_expected_errors_all_matched floor gate; boundary P5
+  love.errorhandler level-2 guard (window impossible under any conf).
+- RECORD: P1 colliders=1 is dispatch-order snapshot (scout reading
+  falsified); P2 set_deferred is a durable escape, not a revert; P3
+  free() in-cb is a refused member; verifier F2 hold-arm starvation
+  ordering noted.
+- Seats: scout->author(Sol, died)/finisher(swe-2)->baseline->
+  boundary+boundary-exec->critic(Sol)->verifier(zfl)->simplifier->
+  scribe. ADMIT-corr.
