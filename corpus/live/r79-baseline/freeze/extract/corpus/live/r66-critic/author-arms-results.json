@@ -1,0 +1,244 @@
+{
+  "--spawn-allowforge": [
+    {
+      "flag": "--spawn-allowforge",
+      "timed_out": false,
+      "exit": 0,
+      "elapsed": 0.677,
+      "signature_observed": true,
+      "error_lines": [
+        "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"
+      ],
+      "write_ppid": 1573,
+      "godot_pid": 2246792,
+      "cls_no_allow": false,
+      "cls_save_allow": true,
+      "cls_foreign_allow": false,
+      "stdout_tail": "DESCENDANT_PIPE_ALLOWFORGE write_ppid=1573",
+      "stderr_head": null,
+      "stdout_endswith_no_nl": false,
+      "stdout_blob_tail": "ESCENDANT_PIPE spawned_pid=2247275\nERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR\nDESCENDANT_PIPE_ALLOWFORGE write_ppid=1573\n",
+      "stderr_blob_head": ""
+    },
+    {
+      "flag": "--spawn-allowforge",
+      "timed_out": false,
+      "exit": 0,
+      "elapsed": 0.683,
+      "signature_observed": true,
+      "error_lines": [
+        "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"
+      ],
+      "write_ppid": 1573,
+      "godot_pid": 2247329,
+      "cls_no_allow": false,
+      "cls_save_allow": true,
+      "cls_foreign_allow": false,
+      "stdout_tail": "DESCENDANT_PIPE_ALLOWFORGE write_ppid=1573",
+      "stderr_head": null,
+      "stdout_endswith_no_nl": false,
+      "stdout_blob_tail": "ESCENDANT_PIPE spawned_pid=2247803\nERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR\nDESCENDANT_PIPE_ALLOWFORGE write_ppid=1573\n",
+      "stderr_blob_head": ""
+    },
+    {
+      "flag": "--spawn-allowforge",
+      "timed_out": false,
+      "exit": 0,
+      "elapsed": 0.617,
+      "signature_observed": true,
+      "error_lines": [
+        "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"
+      ],
+      "write_ppid": 1573,
+      "godot_pid": 2247848,
+      "cls_no_allow": false,
+      "cls_save_allow": true,
+      "cls_foreign_allow": false,
+      "stdout_tail": "DESCENDANT_PIPE_ALLOWFORGE write_ppid=1573",
+      "stderr_head": null,
+      "stdout_endswith_no_nl": false,
+      "stdout_blob_tail": "ESCENDANT_PIPE spawned_pid=2248036\nERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR\nDESCENDANT_PIPE_ALLOWFORGE write_ppid=1573\n",
+      "stderr_blob_head": ""
+    }
+  ],
+  "--spawn-splitforge": [
+    {
+      "flag": "--spawn-splitforge",
+      "timed_out": false,
+      "exit": 0,
+      "elapsed": 0.73,
+      "signature_observed": true,
+      "error_lines": [],
+      "write_ppid": 1573,
+      "godot_pid": 2248085,
+      "cls_no_allow": true,
+      "cls_save_allow": true,
+      "cls_foreign_allow": true,
+      "stdout_tail": "DESCENDANT_PIPE_SPLITFORGE write_ppid=1573",
+      "stderr_head": null,
+      "stdout_endswith_no_nl": false,
+      "stdout_blob_tail": "PE godot_pid=2248085\nDESCENDANT_PIPE spawned_pid=2248398\nERR\nOR: DESCENDANT_PIPE_SPLITFORGE newline-split diagnostic\nDESCENDANT_PIPE_SPLITFORGE write_ppid=1573\n",
+      "stderr_blob_head": ""
+    },
+    {
+      "flag": "--spawn-splitforge",
+      "timed_out": false,
+      "exit": 0,
+      "elapsed": 0.642,
+      "signature_observed": true,
+      "error_lines": [],
+      "write_ppid": 1573,
+      "godot_pid": 2248450,
+      "cls_no_allow": true,
+      "cls_save_allow": true,
+      "cls_foreign_allow": true,
+      "stdout_tail": "DESCENDANT_PIPE_SPLITFORGE write_ppid=1573",
+      "stderr_head": null,
+      "stdout_endswith_no_nl": false,
+      "stdout_blob_tail": "PE godot_pid=2248450\nDESCENDANT_PIPE spawned_pid=2248676\nERR\nOR: DESCENDANT_PIPE_SPLITFORGE newline-split diagnostic\nDESCENDANT_PIPE_SPLITFORGE write_ppid=1573\n",
+      "stderr_blob_head": ""
+    },
+    {
+      "flag": "--spawn-splitforge",
+      "timed_out": false,
+      "exit": 0,
+      "elapsed": 0.683,
+      "signature_observed": true,
+      "error_lines": [],
+      "write_ppid": 1573,
+      "godot_pid": 2248749,
+      "cls_no_allow": true,
+      "cls_save_allow": true,
+      "cls_foreign_allow": true,
+      "stdout_tail": "DESCENDANT_PIPE_SPLITFORGE write_ppid=1573",
+      "stderr_head": null,
+      "stdout_endswith_no_nl": false,
+      "stdout_blob_tail": "PE godot_pid=2248749\nDESCENDANT_PIPE spawned_pid=2248976\nERR\nOR: DESCENDANT_PIPE_SPLITFORGE newline-split diagnostic\nDESCENDANT_PIPE_SPLITFORGE write_ppid=1573\n",
+      "stderr_blob_head": ""
+    }
+  ],
+  "--spawn-seamforge": [
+    {
+      "flag": "--spawn-seamforge",
+      "timed_out": false,
+      "exit": 0,
+      "elapsed": 0.677,
+      "signature_observed": true,
+      "error_lines": [
+        "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR: SEAMFORGE phantom fabricated line"
+      ],
+      "write_ppid": 1573,
+      "godot_pid": 2249020,
+      "cls_no_allow": false,
+      "cls_save_allow": false,
+      "cls_foreign_allow": false,
+      "stdout_tail": "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR",
+      "stderr_head": ": SEAMFORGE phantom fabricated line",
+      "stdout_endswith_no_nl": true,
+      "stdout_blob_tail": "\nDESCENDANT_PIPE godot_pid=2249020\nDESCENDANT_PIPE spawned_pid=2249326\nDESCENDANT_PIPE_SEAMFORGE post_death_write=1\nDESCENDANT_PIPE_SEAMFORGE tail ends in ERROR",
+      "stderr_blob_head": ": SEAMFORGE phantom fabricated line\nDESCENDANT_PIPE_SEAMFORGE write_ppid=1573\n"
+    },
+    {
+      "flag": "--spawn-seamforge",
+      "timed_out": false,
+      "exit": 0,
+      "elapsed": 0.606,
+      "signature_observed": true,
+      "error_lines": [
+        "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR: SEAMFORGE phantom fabricated line"
+      ],
+      "write_ppid": 1573,
+      "godot_pid": 2249373,
+      "cls_no_allow": false,
+      "cls_save_allow": false,
+      "cls_foreign_allow": false,
+      "stdout_tail": "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR",
+      "stderr_head": ": SEAMFORGE phantom fabricated line",
+      "stdout_endswith_no_nl": true,
+      "stdout_blob_tail": "\nDESCENDANT_PIPE godot_pid=2249373\nDESCENDANT_PIPE spawned_pid=2249587\nDESCENDANT_PIPE_SEAMFORGE post_death_write=1\nDESCENDANT_PIPE_SEAMFORGE tail ends in ERROR",
+      "stderr_blob_head": ": SEAMFORGE phantom fabricated line\nDESCENDANT_PIPE_SEAMFORGE write_ppid=1573\n"
+    },
+    {
+      "flag": "--spawn-seamforge",
+      "timed_out": false,
+      "exit": 0,
+      "elapsed": 0.666,
+      "signature_observed": true,
+      "error_lines": [
+        "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR: SEAMFORGE phantom fabricated line"
+      ],
+      "write_ppid": 1573,
+      "godot_pid": 2249638,
+      "cls_no_allow": false,
+      "cls_save_allow": false,
+      "cls_foreign_allow": false,
+      "stdout_tail": "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR",
+      "stderr_head": ": SEAMFORGE phantom fabricated line",
+      "stdout_endswith_no_nl": true,
+      "stdout_blob_tail": "\nDESCENDANT_PIPE godot_pid=2249638\nDESCENDANT_PIPE spawned_pid=2249907\nDESCENDANT_PIPE_SEAMFORGE post_death_write=1\nDESCENDANT_PIPE_SEAMFORGE tail ends in ERROR",
+      "stderr_blob_head": ": SEAMFORGE phantom fabricated line\nDESCENDANT_PIPE_SEAMFORGE write_ppid=1573\n"
+    }
+  ],
+  "--spawn-midlineforge": [
+    {
+      "flag": "--spawn-midlineforge",
+      "timed_out": false,
+      "exit": 0,
+      "elapsed": 0.795,
+      "signature_observed": false,
+      "error_lines": [
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+      ],
+      "write_ppid": 2249958,
+      "godot_pid": 2249958,
+      "cls_no_allow": false,
+      "cls_save_allow": false,
+      "cls_foreign_allow": false,
+      "stdout_tail": "signature",
+      "stderr_head": null,
+      "stdout_endswith_no_nl": false,
+      "stdout_blob_tail": "DANT_PIPE spawned_pid=2250207\nDESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice\nDESCENDANT_PIPE_MIDLINE write_ppid=2249958\nsignature\n",
+      "stderr_blob_head": ""
+    },
+    {
+      "flag": "--spawn-midlineforge",
+      "timed_out": false,
+      "exit": 0,
+      "elapsed": 0.798,
+      "signature_observed": false,
+      "error_lines": [
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+      ],
+      "write_ppid": 2250322,
+      "godot_pid": 2250322,
+      "cls_no_allow": false,
+      "cls_save_allow": false,
+      "cls_foreign_allow": false,
+      "stdout_tail": "signature",
+      "stderr_head": null,
+      "stdout_endswith_no_nl": false,
+      "stdout_blob_tail": "DANT_PIPE spawned_pid=2250529\nDESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice\nDESCENDANT_PIPE_MIDLINE write_ppid=2250322\nsignature\n",
+      "stderr_blob_head": ""
+    },
+    {
+      "flag": "--spawn-midlineforge",
+      "timed_out": false,
+      "exit": 0,
+      "elapsed": 0.824,
+      "signature_observed": false,
+      "error_lines": [
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+      ],
+      "write_ppid": 2250667,
+      "godot_pid": 2250667,
+      "cls_no_allow": false,
+      "cls_save_allow": false,
+      "cls_foreign_allow": false,
+      "stdout_tail": "signature",
+      "stderr_head": null,
+      "stdout_endswith_no_nl": false,
+      "stdout_blob_tail": "DANT_PIPE spawned_pid=2250917\nDESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice\nDESCENDANT_PIPE_MIDLINE write_ppid=2250667\nsignature\n",
+      "stderr_blob_head": ""
+    }
+  ]
+}

@@ -1,0 +1,1455 @@
+{
+  "gap_ms": 200,
+  "head_stagger_ms": 0,
+  "offsets": [
+    0.0,
+    40.0,
+    80.0,
+    120.0,
+    160.0,
+    240.0
+  ],
+  "reps": 10,
+  "records": [
+    {
+      "offset_ms": 0.0,
+      "rep": 0,
+      "exit": 0,
+      "elapsed_seconds": 0.684,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 275,
+        "T": 395,
+        "E": 307,
+        "E2": 352
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3023537",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3023461",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 0.0,
+      "rep": 1,
+      "exit": 0,
+      "elapsed_seconds": 0.681,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 275,
+        "T": 395,
+        "E": 307,
+        "E2": 352
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3023660",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3023584",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 0.0,
+      "rep": 2,
+      "exit": 0,
+      "elapsed_seconds": 0.685,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 275,
+        "T": 395,
+        "E": 307,
+        "E2": 352
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3023743",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3023664",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 0.0,
+      "rep": 3,
+      "exit": 0,
+      "elapsed_seconds": 0.701,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 275,
+        "T": 395,
+        "E": 307,
+        "E2": 352
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3023831",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3023747",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 0.0,
+      "rep": 4,
+      "exit": 0,
+      "elapsed_seconds": 0.754,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 275,
+        "T": 395,
+        "E": 307,
+        "E2": 352
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3023931",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3023875",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 0.0,
+      "rep": 5,
+      "exit": 0,
+      "elapsed_seconds": 0.699,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 275,
+        "T": 395,
+        "E": 307,
+        "E2": 352
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3024050",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3023969",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 0.0,
+      "rep": 6,
+      "exit": 0,
+      "elapsed_seconds": 0.768,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 275,
+        "T": 395,
+        "E": 307,
+        "E2": 352
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3024133",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3024053",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 0.0,
+      "rep": 7,
+      "exit": 0,
+      "elapsed_seconds": 0.72,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 275,
+        "T": 395,
+        "E": 307,
+        "E2": 352
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3024251",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3024173",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 0.0,
+      "rep": 8,
+      "exit": 0,
+      "elapsed_seconds": 0.683,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 275,
+        "T": 395,
+        "E": 307,
+        "E2": 352
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3024313",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3024260",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 0.0,
+      "rep": 9,
+      "exit": 0,
+      "elapsed_seconds": 0.584,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 275,
+        "T": 395,
+        "E": 307,
+        "E2": 352
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3024358",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3024315",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 40.0,
+      "rep": 0,
+      "exit": 0,
+      "elapsed_seconds": 0.688,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3024444",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3024400",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 40.0,
+      "rep": 1,
+      "exit": 0,
+      "elapsed_seconds": 0.589,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3024489",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3024451",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 40.0,
+      "rep": 2,
+      "exit": 0,
+      "elapsed_seconds": 0.701,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3024575",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3024530",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 40.0,
+      "rep": 3,
+      "exit": 0,
+      "elapsed_seconds": 0.608,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3024615",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3024577",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 40.0,
+      "rep": 4,
+      "exit": 0,
+      "elapsed_seconds": 0.661,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3024696",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3024617",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 40.0,
+      "rep": 5,
+      "exit": 0,
+      "elapsed_seconds": 0.575,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3024738",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3024700",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 40.0,
+      "rep": 6,
+      "exit": 0,
+      "elapsed_seconds": 0.531,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3024789",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3024751",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 40.0,
+      "rep": 7,
+      "exit": 0,
+      "elapsed_seconds": 0.689,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3024948",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3024827",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 40.0,
+      "rep": 8,
+      "exit": 0,
+      "elapsed_seconds": 0.661,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3025034",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3024958",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 40.0,
+      "rep": 9,
+      "exit": 0,
+      "elapsed_seconds": 0.549,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3025081",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3025043",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 80.0,
+      "rep": 0,
+      "exit": 0,
+      "elapsed_seconds": 0.598,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3025121",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3025083",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 80.0,
+      "rep": 1,
+      "exit": 0,
+      "elapsed_seconds": 0.684,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3025204",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3025164",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 80.0,
+      "rep": 2,
+      "exit": 0,
+      "elapsed_seconds": 0.61,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3025249",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3025206",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 80.0,
+      "rep": 3,
+      "exit": 0,
+      "elapsed_seconds": 0.698,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3025325",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3025251",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 80.0,
+      "rep": 4,
+      "exit": 0,
+      "elapsed_seconds": 0.755,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3025421",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3025335",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 80.0,
+      "rep": 5,
+      "exit": 0,
+      "elapsed_seconds": 0.695,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3025508",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3025426",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 80.0,
+      "rep": 6,
+      "exit": 0,
+      "elapsed_seconds": 0.567,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3025557",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3025519",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 80.0,
+      "rep": 7,
+      "exit": 0,
+      "elapsed_seconds": 0.592,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3025602",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3025564",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 80.0,
+      "rep": 8,
+      "exit": 0,
+      "elapsed_seconds": 0.725,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3025721",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3025640",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 80.0,
+      "rep": 9,
+      "exit": 0,
+      "elapsed_seconds": 0.727,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 276,
+        "T": 396,
+        "E": 308,
+        "E2": 353
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3025859",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3025725",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 120.0,
+      "rep": 0,
+      "exit": 0,
+      "elapsed_seconds": 0.657,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3025979",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3025903",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 120.0,
+      "rep": 1,
+      "exit": 0,
+      "elapsed_seconds": 0.72,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3026064",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3025982",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 120.0,
+      "rep": 2,
+      "exit": 0,
+      "elapsed_seconds": 0.698,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3026226",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3026111",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 120.0,
+      "rep": 3,
+      "exit": 0,
+      "elapsed_seconds": 0.716,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3026306",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3026228",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 120.0,
+      "rep": 4,
+      "exit": 0,
+      "elapsed_seconds": 0.733,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3026437",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3026310",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 120.0,
+      "rep": 5,
+      "exit": 0,
+      "elapsed_seconds": 0.714,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3026585",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3026508",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 120.0,
+      "rep": 6,
+      "exit": 0,
+      "elapsed_seconds": 0.763,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3026707",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3026591",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 120.0,
+      "rep": 7,
+      "exit": 0,
+      "elapsed_seconds": 0.707,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3026862",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3026747",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 120.0,
+      "rep": 8,
+      "exit": 0,
+      "elapsed_seconds": 0.741,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3026942",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3026864",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 120.0,
+      "rep": 9,
+      "exit": 0,
+      "elapsed_seconds": 0.711,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3027062",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3026948",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 160.0,
+      "rep": 0,
+      "exit": 0,
+      "elapsed_seconds": 0.687,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3027183",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3027107",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 160.0,
+      "rep": 1,
+      "exit": 0,
+      "elapsed_seconds": 0.656,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3027266",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3027224",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 160.0,
+      "rep": 2,
+      "exit": 0,
+      "elapsed_seconds": 0.661,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3027384",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3027304",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 160.0,
+      "rep": 3,
+      "exit": 0,
+      "elapsed_seconds": 0.695,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3027463",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3027421",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 160.0,
+      "rep": 4,
+      "exit": 0,
+      "elapsed_seconds": 0.686,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3027551",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3027465",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 160.0,
+      "rep": 5,
+      "exit": 0,
+      "elapsed_seconds": 0.68,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3027631",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3027591",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 160.0,
+      "rep": 6,
+      "exit": 0,
+      "elapsed_seconds": 0.696,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3027720",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3027680",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 160.0,
+      "rep": 7,
+      "exit": 0,
+      "elapsed_seconds": 0.691,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3027839",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3027722",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 160.0,
+      "rep": 8,
+      "exit": 0,
+      "elapsed_seconds": 0.654,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3027975",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3027902",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 160.0,
+      "rep": 9,
+      "exit": 0,
+      "elapsed_seconds": 0.676,
+      "cls": false,
+      "order": "HEE2T",
+      "outcome": "midline_splice",
+      "spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "signature_present": false,
+      "byte_idx": {
+        "H": 277,
+        "T": 397,
+        "E": 309,
+        "E2": 354
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3028090",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3027977",
+        "signature"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 240.0,
+      "rep": 0,
+      "exit": 0,
+      "elapsed_seconds": 0.635,
+      "cls": false,
+      "order": "HTEE2",
+      "outcome": "post_tail",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 277,
+        "T": 309,
+        "E": 319,
+        "E2": 364
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3028143",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3028101"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 240.0,
+      "rep": 1,
+      "exit": 0,
+      "elapsed_seconds": 0.579,
+      "cls": false,
+      "order": "HTEE2",
+      "outcome": "post_tail",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 277,
+        "T": 309,
+        "E": 319,
+        "E2": 364
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3028183",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3028145"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 240.0,
+      "rep": 2,
+      "exit": 0,
+      "elapsed_seconds": 0.709,
+      "cls": false,
+      "order": "HTEE2",
+      "outcome": "post_tail",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 277,
+        "T": 309,
+        "E": 319,
+        "E2": 364
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3028367",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3028224"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 240.0,
+      "rep": 3,
+      "exit": 0,
+      "elapsed_seconds": 0.635,
+      "cls": false,
+      "order": "HTEE2",
+      "outcome": "post_tail",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 277,
+        "T": 309,
+        "E": 319,
+        "E2": 364
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3028447",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3028370"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 240.0,
+      "rep": 4,
+      "exit": 0,
+      "elapsed_seconds": 0.674,
+      "cls": false,
+      "order": "HTEE2",
+      "outcome": "post_tail",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 277,
+        "T": 309,
+        "E": 319,
+        "E2": 364
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3028537",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3028451"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 240.0,
+      "rep": 5,
+      "exit": 0,
+      "elapsed_seconds": 0.692,
+      "cls": false,
+      "order": "HTEE2",
+      "outcome": "post_tail",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 277,
+        "T": 309,
+        "E": 319,
+        "E2": 364
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3028623",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3028583"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 240.0,
+      "rep": 6,
+      "exit": 0,
+      "elapsed_seconds": 0.731,
+      "cls": false,
+      "order": "HTEE2",
+      "outcome": "post_tail",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 277,
+        "T": 309,
+        "E": 319,
+        "E2": 364
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3028813",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3028625"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 240.0,
+      "rep": 7,
+      "exit": 0,
+      "elapsed_seconds": 0.754,
+      "cls": false,
+      "order": "HTEE2",
+      "outcome": "post_tail",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 277,
+        "T": 309,
+        "E": 319,
+        "E2": 364
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3028898",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3028820"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 240.0,
+      "rep": 8,
+      "exit": 0,
+      "elapsed_seconds": 0.789,
+      "cls": false,
+      "order": "HTEE2",
+      "outcome": "post_tail",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 277,
+        "T": 309,
+        "E": 319,
+        "E2": 364
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3029086",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3028938"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "offset_ms": 240.0,
+      "rep": 9,
+      "exit": 0,
+      "elapsed_seconds": 0.706,
+      "cls": false,
+      "order": "HTEE2",
+      "outcome": "post_tail",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 277,
+        "T": 309,
+        "E": 319,
+        "E2": 364
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3029166",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3029090"
+      ],
+      "stderr_lines": []
+    }
+  ]
+}

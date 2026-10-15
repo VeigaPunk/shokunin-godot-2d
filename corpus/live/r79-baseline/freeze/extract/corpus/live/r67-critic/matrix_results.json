@@ -1,0 +1,186 @@
+[
+  {
+    "row": "A_stdout_error_absorbed",
+    "merged": false,
+    "streams": true,
+    "divergent": true,
+    "mechanism": "claim-1: stdout ERROR: invisible to streams",
+    "merged_dir": "streams_only_pass"
+  },
+  {
+    "row": "B_stderr_error_both_reject",
+    "merged": false,
+    "streams": false,
+    "divergent": false,
+    "mechanism": "stderr ERROR: scanned by both",
+    "merged_dir": "agree_fail"
+  },
+  {
+    "row": "C_stderr_error_allowlisted_both",
+    "merged": true,
+    "streams": true,
+    "divergent": false,
+    "mechanism": "same allowlist entry, same stderr line",
+    "merged_dir": "agree_pass"
+  },
+  {
+    "row": "D_stdout_error_allowlisted",
+    "merged": true,
+    "streams": true,
+    "divergent": false,
+    "mechanism": "merged absorbs via allowlist; streams ignores stdout",
+    "merged_dir": "agree_pass"
+  },
+  {
+    "row": "E_sig_on_stderr_only",
+    "merged": true,
+    "streams": false,
+    "divergent": true,
+    "mechanism": "claim-2: signature must be stdout for streams, anywhere for merged",
+    "merged_dir": "merged_only_pass"
+  },
+  {
+    "row": "F_sig_on_stdout_clean",
+    "merged": true,
+    "streams": true,
+    "divergent": false,
+    "mechanism": "control: both pass",
+    "merged_dir": "agree_pass"
+  },
+  {
+    "row": "G_sig_split_seam",
+    "merged": true,
+    "streams": false,
+    "divergent": true,
+    "mechanism": "seam-forged signature: exists in merged, in NEITHER stream",
+    "merged_dir": "merged_only_pass"
+  },
+  {
+    "row": "H_error_split_seam",
+    "merged": false,
+    "streams": true,
+    "divergent": true,
+    "mechanism": "seam-forged ERROR:: merged sees 'ERROR: allowlisted tail'; streams sees benign allowlisted stderr line",
+    "merged_dir": "streams_only_pass"
+  },
+  {
+    "row": "I_error_split_seam_merged_allows",
+    "merged": true,
+    "streams": true,
+    "divergent": false,
+    "mechanism": "same seam forgery, merged allowlist keyed on forged text",
+    "merged_dir": "agree_pass"
+  },
+  {
+    "row": "J_script_error_split_seam",
+    "merged": false,
+    "streams": true,
+    "divergent": true,
+    "mechanism": "seam-forged SCRIPT ERROR: blob conjunct",
+    "merged_dir": "streams_only_pass"
+  },
+  {
+    "row": "K_stderr_benign_chatter",
+    "merged": true,
+    "streams": false,
+    "divergent": true,
+    "mechanism": "streams requires EVERY stderr line allowlisted; merged ignores non-ERROR lines",
+    "merged_dir": "merged_only_pass"
+  },
+  {
+    "row": "L_stderr_plain_text",
+    "merged": true,
+    "streams": false,
+    "divergent": true,
+    "mechanism": "same strictness, zero error markers",
+    "merged_dir": "merged_only_pass"
+  },
+  {
+    "row": "M_stderr_blank_line",
+    "merged": true,
+    "streams": true,
+    "divergent": false,
+    "mechanism": "control: blank stderr line skipped by streams",
+    "merged_dir": "agree_pass"
+  },
+  {
+    "row": "N_struct_entry_on_stderr",
+    "merged": true,
+    "streams": false,
+    "divergent": true,
+    "mechanism": "'ERROR: chain incomplete' special-case matcher exists ONLY in merged allowed_error",
+    "merged_dir": "merged_only_pass"
+  },
+  {
+    "row": "O_comma_entry_on_stderr",
+    "merged": true,
+    "streams": true,
+    "divergent": false,
+    "mechanism": "comma-prefix matcher identical both sides",
+    "merged_dir": "agree_pass"
+  },
+  {
+    "row": "P_allowlist_scoped_merged_only",
+    "merged": true,
+    "streams": false,
+    "divergent": true,
+    "mechanism": "entry in allowed_errors only: merged absorbs, streams rejects",
+    "merged_dir": "merged_only_pass"
+  },
+  {
+    "row": "Q_allowlist_scoped_streams_only",
+    "merged": false,
+    "streams": true,
+    "divergent": true,
+    "mechanism": "entry in allowed_stderr only: streams absorbs, merged rejects",
+    "merged_dir": "streams_only_pass"
+  },
+  {
+    "row": "R_stdout_error_dual",
+    "merged": false,
+    "streams": true,
+    "divergent": true,
+    "mechanism": "stdout ERROR absorbed by streams while stderr allowlisted",
+    "merged_dir": "streams_only_pass"
+  },
+  {
+    "row": "S_stdout_script_error",
+    "merged": false,
+    "streams": false,
+    "divergent": false,
+    "mechanism": "SCRIPT ERROR: checked in stdout by streams too \u2014 both reject",
+    "merged_dir": "agree_fail"
+  },
+  {
+    "row": "T_stderr_script_error",
+    "merged": false,
+    "streams": false,
+    "divergent": false,
+    "mechanism": "SCRIPT ERROR: on stderr: streams clause rejects AND line unallowlisted",
+    "merged_dir": "agree_fail"
+  },
+  {
+    "row": "U_sig_contains_error_substring",
+    "merged": false,
+    "streams": true,
+    "divergent": true,
+    "mechanism": "signature itself contains 'ERROR:' \u2014 merged line-scans its own signature",
+    "merged_dir": "streams_only_pass"
+  },
+  {
+    "row": "V_wrong_exit",
+    "merged": false,
+    "streams": false,
+    "divergent": false,
+    "mechanism": "exit mismatch dominates both",
+    "merged_dir": "agree_fail"
+  },
+  {
+    "row": "W_error_channel",
+    "merged": false,
+    "streams": false,
+    "divergent": false,
+    "mechanism": "error channel dominates both",
+    "merged_dir": "agree_fail"
+  }
+]

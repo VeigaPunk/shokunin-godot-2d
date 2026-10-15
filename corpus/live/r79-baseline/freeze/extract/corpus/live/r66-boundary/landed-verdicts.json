@@ -1,0 +1,391 @@
+{
+  "runner_sha256": "76d37ace4b0bbc3c92b83baf431bf6046cdfe4fa88f4bf3cd833dee99269b1ed",
+  "landed_fixture_sha256": "9ff5a9ae575790173412b7a78a8e5af02b7f0e593d84bcd9d9c7166b703dbdc1",
+  "runs": [
+    {
+      "case": "allowforge_capture",
+      "flags": [
+        "--spawn-allowforge"
+      ],
+      "bound": 8.0,
+      "actual_exit": 0,
+      "error": null,
+      "elapsed_seconds": 0.58,
+      "signature_observed": true,
+      "error_lines": [
+        "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"
+      ],
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit",
+        "DESCENDANT_PIPE godot_pid=2036920",
+        "DESCENDANT_PIPE spawned_pid=2036998",
+        "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR",
+        "DESCENDANT_PIPE_ALLOWFORGE write_ppid=1573"
+      ],
+      "classification_under_given_allowlist": false,
+      "classification_bare": false,
+      "output": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_PROBE: expected signature\nDESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit\nDESCENDANT_PIPE godot_pid=2036920\nDESCENDANT_PIPE spawned_pid=2036998\nERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR\nDESCENDANT_PIPE_ALLOWFORGE write_ppid=1573\n",
+      "godot_pid": 2036920,
+      "descendant_pid": 2036998,
+      "write_ppid": 1573,
+      "descendant_reaped_by_driver": false
+    },
+    {
+      "case": "splitforge_capture",
+      "flags": [
+        "--spawn-splitforge"
+      ],
+      "bound": 8.0,
+      "actual_exit": 0,
+      "error": null,
+      "elapsed_seconds": 0.604,
+      "signature_observed": true,
+      "error_lines": [],
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit",
+        "DESCENDANT_PIPE godot_pid=2037007",
+        "DESCENDANT_PIPE spawned_pid=2037119",
+        "ERR",
+        "OR: DESCENDANT_PIPE_SPLITFORGE newline-split diagnostic",
+        "DESCENDANT_PIPE_SPLITFORGE write_ppid=1573"
+      ],
+      "classification_under_given_allowlist": true,
+      "classification_bare": true,
+      "output": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_PROBE: expected signature\nDESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit\nDESCENDANT_PIPE godot_pid=2037007\nDESCENDANT_PIPE spawned_pid=2037119\nERR\nOR: DESCENDANT_PIPE_SPLITFORGE newline-split diagnostic\nDESCENDANT_PIPE_SPLITFORGE write_ppid=1573\n",
+      "godot_pid": 2037007,
+      "descendant_pid": 2037119,
+      "write_ppid": 1573,
+      "descendant_reaped_by_driver": false
+    },
+    {
+      "case": "seamforge_capture",
+      "flags": [
+        "--spawn-seamforge"
+      ],
+      "bound": 8.0,
+      "actual_exit": 0,
+      "error": null,
+      "elapsed_seconds": 0.515,
+      "signature_observed": true,
+      "error_lines": [
+        "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR: SEAMFORGE phantom fabricated line"
+      ],
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit",
+        "DESCENDANT_PIPE godot_pid=2037205",
+        "DESCENDANT_PIPE spawned_pid=2037287",
+        "DESCENDANT_PIPE_SEAMFORGE post_death_write=1",
+        "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR: SEAMFORGE phantom fabricated line",
+        "DESCENDANT_PIPE_SEAMFORGE write_ppid=1573"
+      ],
+      "classification_under_given_allowlist": false,
+      "classification_bare": false,
+      "output": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_PROBE: expected signature\nDESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit\nDESCENDANT_PIPE godot_pid=2037205\nDESCENDANT_PIPE spawned_pid=2037287\nDESCENDANT_PIPE_SEAMFORGE post_death_write=1\nDESCENDANT_PIPE_SEAMFORGE tail ends in ERROR: SEAMFORGE phantom fabricated line\nDESCENDANT_PIPE_SEAMFORGE write_ppid=1573\n",
+      "godot_pid": 2037205,
+      "descendant_pid": 2037287,
+      "write_ppid": 1573,
+      "descendant_reaped_by_driver": false
+    },
+    {
+      "case": "seamforge_split_capture",
+      "flags": [
+        "--spawn-seamforge"
+      ],
+      "actual_exit": 0,
+      "error": null,
+      "stdout_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit",
+        "DESCENDANT_PIPE godot_pid=2037326",
+        "DESCENDANT_PIPE spawned_pid=2037476",
+        "DESCENDANT_PIPE_SEAMFORGE post_death_write=1",
+        "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR"
+      ],
+      "stderr_lines": [
+        ": SEAMFORGE phantom fabricated line",
+        "DESCENDANT_PIPE_SEAMFORGE write_ppid=1573"
+      ],
+      "stdout_tail_line": "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR",
+      "stderr_head_line": ": SEAMFORGE phantom fabricated line",
+      "seam_fabricated_in_stdout": false,
+      "seam_fabricated_in_stderr": false,
+      "streams_classification": false,
+      "merged_classification": false,
+      "descendant_pid": 2037476,
+      "descendant_reaped_by_driver": false
+    },
+    {
+      "case": "midlineforge_r0",
+      "flags": [
+        "--spawn-midlineforge"
+      ],
+      "bound": 8.0,
+      "actual_exit": 0,
+      "error": null,
+      "elapsed_seconds": 0.768,
+      "signature_observed": false,
+      "error_lines": [
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+      ],
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+        "DESCENDANT_PIPE godot_pid=2037479",
+        "DESCENDANT_PIPE spawned_pid=2037598",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=2037479",
+        "signature"
+      ],
+      "classification_under_given_allowlist": false,
+      "classification_bare": false,
+      "output": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200\nDESCENDANT_PIPE godot_pid=2037479\nDESCENDANT_PIPE spawned_pid=2037598\nDESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice\nDESCENDANT_PIPE_MIDLINE write_ppid=2037479\nsignature\n",
+      "godot_pid": 2037479,
+      "descendant_pid": 2037598,
+      "write_ppid": 2037479,
+      "descendant_reaped_by_driver": false
+    },
+    {
+      "case": "midlineforge_r1",
+      "flags": [
+        "--spawn-midlineforge"
+      ],
+      "bound": 8.0,
+      "actual_exit": 0,
+      "error": null,
+      "elapsed_seconds": 0.798,
+      "signature_observed": false,
+      "error_lines": [
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+      ],
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+        "DESCENDANT_PIPE godot_pid=2037638",
+        "DESCENDANT_PIPE spawned_pid=2037840",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=2037638",
+        "signature"
+      ],
+      "classification_under_given_allowlist": false,
+      "classification_bare": false,
+      "output": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200\nDESCENDANT_PIPE godot_pid=2037638\nDESCENDANT_PIPE spawned_pid=2037840\nDESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice\nDESCENDANT_PIPE_MIDLINE write_ppid=2037638\nsignature\n",
+      "godot_pid": 2037638,
+      "descendant_pid": 2037840,
+      "write_ppid": 2037638,
+      "descendant_reaped_by_driver": false
+    },
+    {
+      "case": "midlineforge_r2",
+      "flags": [
+        "--spawn-midlineforge"
+      ],
+      "bound": 8.0,
+      "actual_exit": 0,
+      "error": null,
+      "elapsed_seconds": 0.75,
+      "signature_observed": false,
+      "error_lines": [
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+      ],
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+        "DESCENDANT_PIPE godot_pid=2037846",
+        "DESCENDANT_PIPE spawned_pid=2038004",
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=2037846",
+        "signature"
+      ],
+      "classification_under_given_allowlist": false,
+      "classification_bare": false,
+      "output": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nDESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200\nDESCENDANT_PIPE godot_pid=2037846\nDESCENDANT_PIPE spawned_pid=2038004\nDESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice\nDESCENDANT_PIPE_MIDLINE write_ppid=2037846\nsignature\n",
+      "godot_pid": 2037846,
+      "descendant_pid": 2038004,
+      "write_ppid": 2037846,
+      "descendant_reaped_by_driver": false
+    },
+    {
+      "case": "splitforge_streams",
+      "flags": [
+        "--spawn-splitforge"
+      ],
+      "actual_exit": 0,
+      "error": null,
+      "stdout_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit",
+        "DESCENDANT_PIPE godot_pid=2038084",
+        "DESCENDANT_PIPE spawned_pid=2038206",
+        "ERR",
+        "OR: DESCENDANT_PIPE_SPLITFORGE newline-split diagnostic",
+        "DESCENDANT_PIPE_SPLITFORGE write_ppid=1573"
+      ],
+      "stderr_lines": [],
+      "stdout_tail_line": "DESCENDANT_PIPE_SPLITFORGE write_ppid=1573",
+      "stderr_head_line": null,
+      "seam_fabricated_in_stdout": false,
+      "seam_fabricated_in_stderr": false,
+      "streams_classification": true,
+      "merged_classification": true,
+      "descendant_pid": 2038206,
+      "descendant_reaped_by_driver": false
+    },
+    {
+      "case": "allowforge_streams",
+      "flags": [
+        "--spawn-allowforge"
+      ],
+      "actual_exit": 0,
+      "error": null,
+      "stdout_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit",
+        "DESCENDANT_PIPE godot_pid=2038246",
+        "DESCENDANT_PIPE spawned_pid=2038400",
+        "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR",
+        "DESCENDANT_PIPE_ALLOWFORGE write_ppid=1573"
+      ],
+      "stderr_lines": [],
+      "stdout_tail_line": "DESCENDANT_PIPE_ALLOWFORGE write_ppid=1573",
+      "stderr_head_line": null,
+      "seam_fabricated_in_stdout": false,
+      "seam_fabricated_in_stderr": false,
+      "streams_classification": true,
+      "merged_classification": false,
+      "descendant_pid": 2038400,
+      "descendant_reaped_by_driver": false
+    },
+    {
+      "case": "vg_seamforge",
+      "flags": [
+        "--spawn-seamforge"
+      ],
+      "bound_seconds": 3.0,
+      "timed_out": false,
+      "actual_exit": 0,
+      "error": null,
+      "marker_observed": true,
+      "marker_observed_at": 0.473993,
+      "child_alive_at_marker_observation": true,
+      "child_alive_after_marker_read": true,
+      "dead_observed_at": 0.545538,
+      "elapsed_seconds": 0.577,
+      "withheld_banner": false,
+      "write_ppid": null,
+      "godot_pid": 2038403,
+      "descendant_pid": 2038520,
+      "descendant_alive_at_return": false,
+      "descendant_kernel_ppid_at_return": null,
+      "gated_signature_accepted": true,
+      "inner_classification": false,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit",
+        "DESCENDANT_PIPE godot_pid=2038403",
+        "DESCENDANT_PIPE spawned_pid=2038520",
+        "DESCENDANT_PIPE_SEAMFORGE post_death_write=1",
+        "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR: SEAMFORGE phantom fabricated line",
+        "DESCENDANT_PIPE_SEAMFORGE write_ppid=1573"
+      ],
+      "clauses_sig_destroyed": false,
+      "descendant_reaped_by_driver": false
+    }
+  ],
+  "allowforge_verdict_map": {
+    "bare_rejects": true,
+    "matched_absorbs": true,
+    "foreign_rejects": true,
+    "stripped_counterfactual_passes": true,
+    "write_post_orphan": true,
+    "error_lines_exact": true
+  },
+  "splitforge_map": {
+    "clean_exit0": true,
+    "signature_present": true,
+    "forged_bytes_in_record": true,
+    "no_error_line": true,
+    "evades_merged_scan": true,
+    "contiguous_twin_rejects": true,
+    "write_post_orphan": true
+  },
+  "seamforge_map": {
+    "clean_exit0": true,
+    "fabricated_line_in_merged": true,
+    "merged_rejects": true,
+    "line_in_neither_stream": true,
+    "split_run_merged_also_rejects": true,
+    "split_run_streams_classification": false,
+    "stderr_lines": [
+      ": SEAMFORGE phantom fabricated line",
+      "DESCENDANT_PIPE_SEAMFORGE write_ppid=1573"
+    ],
+    "write_post_orphan": true
+  },
+  "midlineforge_reps": [
+    {
+      "rep": 0,
+      "spliced_line": [
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+      ],
+      "signature_destroyed": true,
+      "rejects": true,
+      "counterfactual_defeated": true,
+      "write_pre_death": true,
+      "write_ppid": 2037479,
+      "godot_pid": 2037479
+    },
+    {
+      "rep": 1,
+      "spliced_line": [
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+      ],
+      "signature_destroyed": true,
+      "rejects": true,
+      "counterfactual_defeated": true,
+      "write_pre_death": true,
+      "write_ppid": 2037638,
+      "godot_pid": 2037638
+    },
+    {
+      "rep": 2,
+      "spliced_line": [
+        "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+      ],
+      "signature_destroyed": true,
+      "rejects": true,
+      "counterfactual_defeated": true,
+      "write_pre_death": true,
+      "write_ppid": 2037846,
+      "godot_pid": 2037846
+    }
+  ],
+  "extras": {
+    "splitforge_streams_accept": true,
+    "splitforge_merged_accept": true,
+    "allowforge_streams_accept": true,
+    "allowforge_merged_rejects": false,
+    "seamforge_gate_sig_observed": true,
+    "seamforge_gate_accepted": true,
+    "seamforge_inner_classification": false
+  }
+}

@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+STATE pair1-press has_focus=true owner_button=true receipts=0 text=Ready
+STATE pair1-release has_focus=true owner_button=true receipts=1 text=Activated 1
+STATE pair2-press-focused has_focus=true owner_button=true receipts=1 text=Activated 1
+STATE pair2-release has_focus=true owner_button=true receipts=2 text=Activated 2

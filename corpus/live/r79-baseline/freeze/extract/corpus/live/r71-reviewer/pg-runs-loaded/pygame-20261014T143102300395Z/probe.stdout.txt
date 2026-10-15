@@ -1,0 +1,10 @@
+PYGAME-ARM viability | init_pass=5 init_fail=0 driver=dummy sdl=2.32.72 surf=320x240 flags=0x1000000
+PYGAME-ARM cadence60 | n=240 dt_mean_ms=16.051 dt_min_ms=15.054 dt_max_ms=16.777 fps=62.11 last_tick_ret=16
+PYGAME-ARM cadence0 | n=1200 dt_mean_ms=0.0 dt_min_ms=0.0 dt_max_ms=0.004 hz=6564910.6 last_tick_ret=0
+PYGAME-ARM popen | l1=CHILD-MARK-1 l2=CHILD-MARK-2 l1_wait_ms=11.27 l2_wait_ms=120.06 close_wait_ms=1.52 total_ms=135.7 rest_len=0 ret=0
+PYGAME-ARM popen_buf | l1=CHILD-MARK-1 l2=CHILD-MARK-2 l1_wait_ms=132.66 l2_wait_ms=0.0 close_wait_ms=1.36 total_ms=134.95 rest_len=0 ret=0
+PYGAME-ARM withhold_small | bufsize=131072 write_bytes=9000 first_read_ms=213.04 mark1_ms=213.04 mark2_ms=213.04 eof_ms=217.42 early_bytes=0 exit_bytes=9014 total_bytes=9014 alive_at_first=True
+PYGAME-ARM withhold_big | bufsize=131072 write_bytes=200000 first_read_ms=114.3 mark1_ms=114.3 mark2_ms=214.45 eof_ms=219.09 early_bytes=200007 exit_bytes=7 total_bytes=200014 alive_at_first=True
+PYGAME-ARM withhold_fill | bufsize=131072 write_bytes=200000 first_read_ms=114.45 mark1_ms=114.45 mark2_ms=214.58 eof_ms=216.53 early_bytes=126007 exit_bytes=74007 total_bytes=200014 alive_at_first=True
+PYGAME-ARM pump | frames_nopump=400 nopump_total_ms=3217.3 queued_after_nopump=9 posted_survived=1 pump_needed=false
+PYGAME_PROBE_DONE

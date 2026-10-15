@@ -1,0 +1,88 @@
+=== love: mine corpus/live/r79-baseline/freeze/love-runs/love-20261014T235210660378Z/verdicts.json rows=92 verdict=PASS file_sha256=e034d39ddda5b00581f16d5641af9e6daf3a7ed91933cd4c4166e90ee556940b ===
+
+r78-baseline-postland-rep1: ref=corpus/live/r78-baseline/postland/love-runs/love-20261014T211125990828Z/verdicts.json ref_rows=92 ref_verdict=PASS
+  common=92 new_only=0 old_only=0 tuple_mismatches=0 byte_identical=85/92 observed_only=7 real_drift=0
+  observed-only dtcadence|dt_max_ms: mine='1.084' ref='1.094'
+  observed-only dtcadence|dt_mean_ms: mine='1.044' ref='1.045'
+  observed-only dtcadence|dt_min_ms: mine='0.003' ref='0.004'
+  observed-only popen|close_wait_ms: mine='0.11' ref='0.06'
+  observed-only popen|l1_wait_ms: mine='1.59' ref='1.28'
+  observed-only popen|l2_wait_ms: mine='120.60' ref='120.55'
+  observed-only popen|total_ms: mine='122.48' ref='122.03'
+
+r78-baseline-postland-rep2: ref=corpus/live/r78-baseline/postland/love-runs2/love-20261014T211156070014Z/verdicts.json ref_rows=92 ref_verdict=PASS
+  common=92 new_only=0 old_only=0 tuple_mismatches=0 byte_identical=86/92 observed_only=6 real_drift=0
+  observed-only dtcadence|dt_max_ms: mine='1.084' ref='1.106'
+  observed-only dtcadence|dt_mean_ms: mine='1.044' ref='1.046'
+  observed-only dtcadence|dt_min_ms: mine='0.003' ref='0.004'
+  observed-only popen|l1_wait_ms: mine='1.59' ref='1.17'
+  observed-only popen|l2_wait_ms: mine='120.60' ref='120.55'
+  observed-only popen|total_ms: mine='122.48' ref='121.94'
+
+r78-baseline-freeze-75: ref=corpus/live/r78-baseline/freeze/love-runs/love-20261014T205330614648Z/verdicts.json ref_rows=75 ref_verdict=PASS
+  common=75 new_only=17 old_only=0 tuple_mismatches=0 byte_identical=68/75 observed_only=7 real_drift=0
+  new_only_keys: [('iw', 'cell=livelock_all'), ('iw', 'cell=livelock_stop2'), ('iw', 'cell=livelock_transient'), ('iw', 'cell=n_baseline'), ('iw', 'cell=n_depth2_drain'), ('iw', 'cell=n_depth2_drain_wp'), ('iw', 'cell=n_depth2_fxdrain'), ('iw', 'cell=n_depth2_seq'), ('iw', 'cell=n_destroy_contacting'), ('iw', 'cell=n_destroy_contacting_wp'), ('iw', 'cell=n_destroy_fx_wp'), ('iw', 'cell=n_destroy_ground_wp'), ('iw', 'cell=n_inner_cb'), ('iw', 'cell=n_queue_inner_drain'), ('iw', 'cell=z_abort_use_after'), ('iw', 'cell=z_drain_use_after'), ('iw', 'cell=z_touch_then_end')]
+  observed-only dtcadence|dt_max_ms: mine='1.084' ref='1.100'
+  observed-only dtcadence|dt_mean_ms: mine='1.044' ref='1.048'
+  observed-only dtcadence|dt_min_ms: mine='0.003' ref='0.004'
+  observed-only popen|close_wait_ms: mine='0.11' ref='0.07'
+  observed-only popen|l1_wait_ms: mine='1.59' ref='1.11'
+  observed-only popen|l2_wait_ms: mine='120.60' ref='120.47'
+  observed-only popen|total_ms: mine='122.48' ref='121.75'
+
+r78-author-final: ref=corpus/live/r78-author/runs/love-20261014T210943322605Z/verdicts.json ref_rows=92 ref_verdict=PASS
+  common=92 new_only=0 old_only=0 tuple_mismatches=0 byte_identical=85/92 observed_only=7 real_drift=0
+  observed-only dtcadence|dt_max_ms: mine='1.084' ref='1.127'
+  observed-only dtcadence|dt_mean_ms: mine='1.044' ref='1.057'
+  observed-only dtcadence|dt_min_ms: mine='0.003' ref='0.006'
+  observed-only popen|close_wait_ms: mine='0.11' ref='0.10'
+  observed-only popen|l1_wait_ms: mine='1.59' ref='1.39'
+  observed-only popen|l2_wait_ms: mine='120.60' ref='120.63'
+  observed-only popen|total_ms: mine='122.48' ref='122.30'
+
+r78-reviewer-last: ref=corpus/live/r78-reviewer/runs/love-20261014T211903490145Z/verdicts.json ref_rows=92 ref_verdict=PASS
+  common=92 new_only=0 old_only=0 tuple_mismatches=0 byte_identical=86/92 observed_only=6 real_drift=0
+  observed-only dtcadence|dt_max_ms: mine='1.084' ref='1.083'
+  observed-only dtcadence|dt_min_ms: mine='0.003' ref='0.004'
+  observed-only popen|close_wait_ms: mine='0.11' ref='0.09'
+  observed-only popen|l1_wait_ms: mine='1.59' ref='1.25'
+  observed-only popen|l2_wait_ms: mine='120.60' ref='120.65'
+  observed-only popen|total_ms: mine='122.48' ref='122.12'
+
+r78-verifier-r1: ref=corpus/live/r78-verifier/runs/love-20261014T214247513502Z/verdicts.json ref_rows=92 ref_verdict=PASS
+  common=92 new_only=0 old_only=0 tuple_mismatches=0 byte_identical=85/92 observed_only=7 real_drift=0
+  observed-only dtcadence|dt_max_ms: mine='1.084' ref='1.086'
+  observed-only dtcadence|dt_mean_ms: mine='1.044' ref='1.043'
+  observed-only dtcadence|dt_min_ms: mine='0.003' ref='0.005'
+  observed-only popen|close_wait_ms: mine='0.11' ref='0.09'
+  observed-only popen|l1_wait_ms: mine='1.59' ref='1.32'
+  observed-only popen|l2_wait_ms: mine='120.60' ref='120.57'
+  observed-only popen|total_ms: mine='122.48' ref='122.13'
+
+r78-simplifier-vfold: ref=corpus/live/r78-simplifier/runs-vfold/love-20261014T213654408782Z/verdicts.json ref_rows=92 ref_verdict=PASS
+  common=92 new_only=0 old_only=0 tuple_mismatches=0 byte_identical=85/92 observed_only=7 real_drift=0
+  observed-only dtcadence|dt_max_ms: mine='1.084' ref='1.093'
+  observed-only dtcadence|dt_mean_ms: mine='1.044' ref='1.045'
+  observed-only dtcadence|dt_min_ms: mine='0.003' ref='0.004'
+  observed-only popen|close_wait_ms: mine='0.11' ref='0.10'
+  observed-only popen|l1_wait_ms: mine='1.59' ref='1.36'
+  observed-only popen|l2_wait_ms: mine='120.60' ref='120.63'
+  observed-only popen|total_ms: mine='122.48' ref='122.17'
+
+runs-shared-215836: ref=corpus/live/runs/love-20261014T215836641142Z/verdicts.json ref_rows=92 ref_verdict=PASS
+  common=92 new_only=0 old_only=0 tuple_mismatches=0 byte_identical=88/92 observed_only=4 real_drift=0
+  observed-only dtcadence|dt_max_ms: mine='1.084' ref='1.091'
+  observed-only popen|close_wait_ms: mine='0.11' ref='0.09'
+  observed-only popen|l1_wait_ms: mine='1.59' ref='1.61'
+  observed-only popen|l2_wait_ms: mine='120.60' ref='120.62'
+
+r77-baseline-postland-75: ref=corpus/live/r77-baseline/postland/love-runs/love-20261014T195531531710Z/verdicts.json ref_rows=75 ref_verdict=PASS
+  common=75 new_only=17 old_only=0 tuple_mismatches=0 byte_identical=68/75 observed_only=7 real_drift=0
+  new_only_keys: [('iw', 'cell=livelock_all'), ('iw', 'cell=livelock_stop2'), ('iw', 'cell=livelock_transient'), ('iw', 'cell=n_baseline'), ('iw', 'cell=n_depth2_drain'), ('iw', 'cell=n_depth2_drain_wp'), ('iw', 'cell=n_depth2_fxdrain'), ('iw', 'cell=n_depth2_seq'), ('iw', 'cell=n_destroy_contacting'), ('iw', 'cell=n_destroy_contacting_wp'), ('iw', 'cell=n_destroy_fx_wp'), ('iw', 'cell=n_destroy_ground_wp'), ('iw', 'cell=n_inner_cb'), ('iw', 'cell=n_queue_inner_drain'), ('iw', 'cell=z_abort_use_after'), ('iw', 'cell=z_drain_use_after'), ('iw', 'cell=z_touch_then_end')]
+  observed-only dtcadence|dt_max_ms: mine='1.084' ref='1.092'
+  observed-only dtcadence|dt_mean_ms: mine='1.044' ref='1.045'
+  observed-only dtcadence|dt_min_ms: mine='0.003' ref='0.002'
+  observed-only popen|close_wait_ms: mine='0.11' ref='0.09'
+  observed-only popen|l1_wait_ms: mine='1.59' ref='1.34'
+  observed-only popen|l2_wait_ms: mine='120.60' ref='120.65'
+  observed-only popen|total_ms: mine='122.48' ref='122.20'

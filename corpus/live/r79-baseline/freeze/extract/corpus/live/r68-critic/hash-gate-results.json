@@ -1,0 +1,52 @@
+{
+  "G1_delivery_order_blindness": {
+    "capture_first_stderr_first": {
+      "stdout": "MARK_A\n",
+      "stderr": "MARK_B\n",
+      "sha256_stdout": "7b5565828c67a0af33152ec3d818801cd87f5d9875291518a3172ca1742ad0fc",
+      "sha256_stderr": "cff3817d9ae5bf1a758da7fb2376132b95bc14a7b712e3498ead8dd57e9e0dc3",
+      "emission_order": "stderr BEFORE stdout (50ms separation)"
+    },
+    "capture_last_stderr_last": {
+      "stdout": "MARK_A\n",
+      "stderr": "MARK_B\n",
+      "sha256_stdout": "7b5565828c67a0af33152ec3d818801cd87f5d9875291518a3172ca1742ad0fc",
+      "sha256_stderr": "cff3817d9ae5bf1a758da7fb2376132b95bc14a7b712e3498ead8dd57e9e0dc3",
+      "emission_order": "stderr AFTER stdout (50ms separation)"
+    },
+    "hashes_identical": true,
+    "note": "the gate cannot tell which capture has stderr-first vs stderr-last delivery \u2014 the exact fact that decides whether a merged-concat seam line is a real emission or an artifact."
+  },
+  "G2_same_object_construction": {
+    "merged": false,
+    "streams": false,
+    "sha256_stdout": "8a3ea22d339ff3561d8b935f64ab0e6bf5c81f80cc6eaed194b5e6ef057f87d8",
+    "sha256_stderr": "df0ed05be1b6e57d543811f3e5027abd095bb77def3b7bb10b9918c13e51656a",
+    "note": "dual_classify passes the same objects; a hash mismatch is impossible unless the record fields are mutated post-classify \u2014 the gate guards transcription drift, not input sameness."
+  },
+  "G3_allowlist_not_covered": {
+    "stdout": "Godot banner\nSTREAM_STDOUT: expected attribution marker\n",
+    "stderr": "ERROR: chain incomplete collections=streamdiv scene=SceneB:<Node#6700> old_alive=false\n",
+    "verdicts_by_allowlist": {
+      "bare": {
+        "merged": false,
+        "streams": false,
+        "sha256_stdout": "fa253e7384d7192204d848ae1385bb962765c7aecf755e91b2d2b86a3902e587",
+        "sha256_stderr": "e4db37fe46f3acbaf8e84260dceea0b18ddd9bd43ee32c22650cfad0d3825990"
+      },
+      "entry_both": {
+        "merged": true,
+        "streams": false,
+        "sha256_stdout": "fa253e7384d7192204d848ae1385bb962765c7aecf755e91b2d2b86a3902e587",
+        "sha256_stderr": "e4db37fe46f3acbaf8e84260dceea0b18ddd9bd43ee32c22650cfad0d3825990"
+      },
+      "entry_merged_only": {
+        "merged": true,
+        "streams": false,
+        "sha256_stdout": "fa253e7384d7192204d848ae1385bb962765c7aecf755e91b2d2b86a3902e587",
+        "sha256_stderr": "e4db37fe46f3acbaf8e84260dceea0b18ddd9bd43ee32c22650cfad0d3825990"
+      }
+    },
+    "note": "identical sha256 pairs across three records whose merged/streams verdict pairs differ (False/False, True/False, False/False) \u2014 'same input' certifies bytes only; the allowlist is an unhashed input that flips verdicts."
+  }
+}

@@ -1,0 +1,1 @@
+/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/fixtures/camera_limit.gd

@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R79 arm=area_monitoring_direct godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false
+PASS phys2d_events area_monitoring_direct entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0

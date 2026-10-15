@@ -1,0 +1,83 @@
+[e1] clean: verdict=True first_false=None verbatim=True
+[e1] unrelated_only: verdict=False first_false=no_unrelated_errors verbatim=False
+[e1] script_only: verdict=False first_false=no_unrelated_errors verbatim=False
+[e1] parse_only: verdict=False first_false=no_parse_error verbatim=False
+[e1] triple_all: verdict=False first_false=no_unrelated_errors verbatim=False
+[e1] triple_sig_absent: verdict=False first_false=signature_present verbatim=False
+[e1] triple_all_allowlisted: verdict=False first_false=no_script_error verbatim=False
+[e1] script_only_allowlisted: verdict=False first_false=no_script_error verbatim=False
+[e1] script_split_evades: verdict=True first_false=None verbatim=True
+[e1] parse_split_evades: verdict=True first_false=None verbatim=True
+[e1] parse_line_is_not_errorline: verdict=False first_false=no_parse_error verbatim=False
+[e1] allowed_entry_carrying_script: verdict=False first_false=no_script_error verbatim=False
+[e1] allowed_entry_carrying_parse: verdict=False first_false=no_parse_error verbatim=False
+[e1] script_splice_fabricated: verdict=False first_false=no_unrelated_errors verbatim=False
+[e1] sig_absent_error_masked: verdict=False first_false=signature_present verbatim=False
+[e3] exact_absorbs: verbatim=True absorbed=True
+[e3] exact_suffix_escapes: verbatim=False absorbed=False
+[e3] exact_prefix_escapes: verbatim=False absorbed=False
+[e3] exact_second_error_escapes: verbatim=False absorbed=False
+[e3] exact_double_space_escapes: verbatim=False absorbed=False
+[e3] comma_entry_alone_absorbs: verbatim=True absorbed=True
+[e3] comma_tail_absorbs: verbatim=True absorbed=True
+[e3] comma_tail_count2_escapes: verbatim=False absorbed=False
+[e3] comma_prefix_escapes: verbatim=False absorbed=False
+[e3] comma_no_comma_escapes: verbatim=False absorbed=False
+[e3] comma_arbitrary_tail_absorbs: verbatim=True absorbed=True
+[e3] comma_script_tail_escapes: verbatim=False absorbed=False
+[e3] chain_shape_absorbs: verbatim=True absorbed=True
+[e3] chain_scene_mut_escapes: verbatim=False absorbed=False
+[e3] chain_no_oldalive_escapes: verbatim=False absorbed=False
+[e3] chain_wrong_prefix_escapes: verbatim=False absorbed=False
+[e3] chain_count2_escapes: verbatim=False absorbed=False
+[e3] chain_prepended_escapes: verbatim=False absorbed=False
+[e3] chain_bare_entry_absorbs: verbatim=True absorbed=True
+[e3] chain_reordered_fields_absorbs: verbatim=True absorbed=True
+[e3] chain_free_suffix_absorbs: verbatim=True absorbed=True
+[e3] entry_cross_case_inert: verbatim=False absorbed=False
+[e3s] streams_chain_rejects: streams=False merged=True
+[e3s] streams_chain_bare_accepts: streams=True merged=True
+[e3s] streams_comma_accepts: streams=True merged=True
+[e3s] streams_exact_accepts: streams=True merged=True
+[comm] comm_err_script: verdict=False first_false=no_unrelated_errors exit=0 err=None bytes=319 elapsed=0.562
+[comm] comm_err_parse: verdict=False first_false=no_parse_error exit=0 err=None bytes=317 elapsed=0.537
+[comm] comm_err_triple: verdict=False first_false=no_unrelated_errors exit=0 err=None bytes=433 elapsed=0.577
+[comm] comm_err_triple_allowed: verdict=False first_false=no_script_error exit=0 err=None bytes=433 elapsed=0.556
+[comm] comm_err_allowed_script: verdict=False first_false=no_script_error exit=0 err=None bytes=401 elapsed=0.548
+[comm] comm_err_scriptsplit: verdict=True first_false=None exit=0 err=None bytes=317 elapsed=0.636
+[comm] comm_bulk_straddle: verdict=False first_false=no_unrelated_errors exit=0 err=None bytes=65840 elapsed=0.592
+[comm] comm_bulk_embed: verdict=False first_false=no_unrelated_errors exit=0 err=None bytes=150307 elapsed=0.591
+[comm] comm_bulk_nlsplit: verdict=True first_false=None exit=0 err=None bytes=65846 elapsed=0.603
+[comm] comm_comma_absorbed: verdict=True first_false=None exit=0 err=None bytes=354 elapsed=0.592
+[comm] comm_comma_unallowlisted: verdict=False first_false=no_unrelated_errors exit=0 err=None bytes=354 elapsed=0.622
+[comm] comm_comma_escape: verdict=False first_false=no_unrelated_errors exit=0 err=None bytes=374 elapsed=0.556
+[comm] comm_chain_absorbed: verdict=True first_false=None exit=0 err=None bytes=342 elapsed=0.576
+[comm] comm_chain_escape: verdict=False first_false=no_unrelated_errors exit=0 err=None bytes=342 elapsed=0.576
+[comm] comm_dualline: verdict=False first_false=no_unrelated_errors exit=0 err=None bytes=347 elapsed=0.618
+[comm] comm_dualline_wh: verdict=False first_false=no_unrelated_errors exit=0 err=None bytes=390 elapsed=0.589
+[comm] comm_negrow_fabricated: verdict=True first_false=None exit=2 err=None bytes=391 elapsed=0.567
+[comm] comm_negrow_noallow: verdict=False first_false=no_unrelated_errors exit=2 err=None bytes=391 elapsed=0.592
+[comm] comm_splice_self: verdict=False first_false=no_unrelated_errors exit=0 err=None bytes=354 elapsed=0.559
+[comm] comm_splice_xstream: verdict=False first_false=no_unrelated_errors exit=0 err=None bytes=357 elapsed=0.579
+[comm] comm_newlinesplit_rerun: verdict=True first_false=None exit=0 err=None bytes=311 elapsed=0.649
+[comm] comm_default_control: verdict=True first_false=None exit=0 err=None bytes=177 elapsed=0.517
+[comm] comm_err_release_control: verdict=False first_false=no_unrelated_errors exit=0 err=None bytes=398 elapsed=0.493
+[st] st_default: streams=True merged=True err_out=False err_err=False stderr_lines=0
+[st] st_err_stdout: streams=True merged=False err_out=True err_err=False stderr_lines=0
+[st] st_err_stderr: streams=False merged=False err_out=False err_err=True stderr_lines=1
+[st] st_stderr_noise: streams=False merged=True err_out=False err_err=False stderr_lines=1
+[st] st_script_stdout: streams=False merged=False err_out=True err_err=False stderr_lines=0
+[st] st_dualline_stdout: streams=True merged=False err_out=True err_err=False stderr_lines=0
+[st] st_forge_sig_stderr: streams=False merged=True err_out=False err_err=False stderr_lines=2
+[st] st_genuine_error: streams=False merged=False err_out=False err_err=True stderr_lines=1
+[st] st_comma_stderr_allowed: streams=True merged=False err_out=False err_err=True stderr_lines=1
+[vg] vg_default: sig_ok=True inner=True exit=0 dead_at=0.509988 marker_at=0.445462
+[vg] vg_bulk_straddle: sig_ok=True inner=False exit=0 dead_at=0.504057 marker_at=0.432616
+[vg] vg_dualline_wh: sig_ok=False inner=False exit=0 dead_at=0.520016 marker_at=0.55198
+[vg] vg_dualline: sig_ok=True inner=False exit=0 dead_at=0.504797 marker_at=0.433395
+[vg] vg_negrow_n/a_control: sig_ok=True inner=False exit=2 dead_at=0.473023 marker_at=0.406586
+[lf] xstream_phantom: verbatim=False phantom=['head ending in ERROR: PHANTOM_X']
+[lf] intra_pipe_phantom: verbatim=False phantom=[]
+[lf] newline_split: verbatim=True phantom=[]
+[lf] clean_control: verbatim=True phantom=[]
+wrote /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r66-boundary/surface-verdicts.json

@@ -1,0 +1,14 @@
+IW | cell=n_depth2_drain | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=n_depth2_drain | built bodies=4 locked=false
+IW | cell=n_depth2_drain | evpin cb=bc locked=true step=4
+IW | cell=n_depth2_drain | evpin cb=pre locked=true step=4
+IW | cell=n_depth2_drain | evpin cb=post locked=true step=4
+IW | cell=n_depth2_drain | fire cb=bc kind=nested_queue/nested_update step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=n_depth2_drain | r78queue what=b3 ok=true err=nil dead_in_cb=false count=4
+IW | cell=n_depth2_drain | r78inner cb=pre step=73 locked=true depth=1 dyn=b1
+IW | cell=n_depth2_drain | r78inner_write ok=false err=Box2D assertion failed: m_world->IsLocked() == false
+IW | cell=n_depth2_drain | evpin cb=ec locked=false step=73
+IW | cell=n_depth2_drain | r78drainec n=1 step=73 locked=false depth=1 in_cb=true count=4 dyn=b3 own=true own_n=1
+IW | cell=n_depth2_drain | r78drainact n=1 kind=nested_update depth_before=1 lock=false count=4
+IW | cell=n_depth2_drain | r78drainec n=2 step=73 locked=false depth=2 in_cb=true count=4 dyn=b3 own=true own_n=2
+IW | cell=n_depth2_drain | r78nest2 ok=true err=nil lock_after=false count=3 depth=2 in_cb=true

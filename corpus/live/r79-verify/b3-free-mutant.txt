@@ -1,0 +1,42 @@
+=== rep 1 ===
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R79 arm=rb_queue_free godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:787)
+   GDScript backtrace (most recent call first):
+       [0] _on_rb_entered (res://phys2d_events.gd:338)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+          at: _on_rb_entered (res://phys2d_events.gd:338)
+          GDScript backtrace (most recent call first):
+              [0] _on_rb_entered (res://phys2d_events.gd:338)
+PASS phys2d_events rb_queue_free entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true cb_queued=-
+rc=0
+=== rep 2 ===
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R79 arm=rb_queue_free godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:787)
+   GDScript backtrace (most recent call first):
+       [0] _on_rb_entered (res://phys2d_events.gd:338)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+          at: _on_rb_entered (res://phys2d_events.gd:338)
+          GDScript backtrace (most recent call first):
+              [0] _on_rb_entered (res://phys2d_events.gd:338)
+PASS phys2d_events rb_queue_free entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true cb_queued=-
+rc=0
+=== rep 3 ===
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R79 arm=rb_queue_free godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:787)
+   GDScript backtrace (most recent call first):
+       [0] _on_rb_entered (res://phys2d_events.gd:338)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+          at: _on_rb_entered (res://phys2d_events.gd:338)
+          GDScript backtrace (most recent call first):
+              [0] _on_rb_entered (res://phys2d_events.gd:338)
+PASS phys2d_events rb_queue_free entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true cb_queued=-
+rc=0

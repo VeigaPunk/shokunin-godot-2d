@@ -1,0 +1,29 @@
+# Round 51 provenance named non-author verification
+
+- Role: named non-author verifier, no delegation, no tracked fixture/runner edits. Godot `4.7.2.stable.arch_linux.ed1daf0bf`.
+- Read `/tmp/mission-game-dev-2d-standing.md`, LOG round-51 declaration and wave history, wave-one reports including scout correction and executor's initial non-additive overwrite/tainted run, and current tracked runner/fixture. Historical scout 3→3 interpretation was explicitly retracted; retained as adverse telemetry, not evidence. Executor's initial overwrite and its intervening ordinary run were rejected/tainted, not counted as passing evidence; corrected additive edit preserves r50 modes.
+
+## Independent edge10 scratch
+
+Used a fresh scratch copied from the full battery's isolated scratch project, changing only scratch `slider_adjust.gd` at edge10 and adding a print of observer/state evidence. In-tree observer counts only `InputEventAction` with `action == "ui_left"` and `pressed == false`. All owner and callback-connected prechecks, action-state precondition, one-frame wait, value/full-receipts/Label checks are retained. Direct exact runs used the case flags `--repeat-right --second-focus-restore --observe-parsed-release`.
+
+- Clean parsed 11-edge path: edge10 observer `3→4`; pressed `true→false`; value `3.0`; receipts `[6.0,3.0]`; Label `Value 3`; focus owner and callback both true. It reaches the unique terminal expected-negative marker only after eleven checks, exit2.
+- Direct-state-clear sabotage: replaced only edge10 `_action(edges[i][0], edges[i][1])` dispatch with `Input.action_release("ui_left")`. Edge10 observer `3→3`, pressed becomes false, value/receipts/Label remain `3.0` / `[6.0,3.0]` / `Value 3`; owner/callback remain true. Early `ERROR: SLIDER parsed ui_left release observer failed: expected exactly one delivered release`, exit2, **before** terminal marker. Production classifier policy rejects: expected terminal signature absent and this ERROR does not equal the exact allowlisted terminal ERROR.
+- No-dispatch sabotage: skipped only edge10 `_action` dispatch. Edge10 observer `3→3`, pressed remains true, numeric/receipt/Label unchanged, owner/callback true. Early same observer assertion ERROR exit2 before marker (observer guard precedes existing post-state assertion). Production classifier policy rejects for absent terminal signature and non-allowlisted ERROR.
+
+Raw standalone stdout/stderr, commands and classifier outcomes: `.shokunin/game-dev-2d/corpus/live/r51-named-verifier/sabotage/direct-sabotage-evidence.json`. The production classifier's rules are `classify_process` in `run_battery.py`; exact terminal classifier requires expected exit2 + terminal signature, rejects every `ERROR:` line other than exact allowlisted terminal diagnostic, and rejects script/parse errors. Both sabotage runs fail these conditions; clean run satisfies them. This directly tests the requested two specific mutations, not merely unrelated-error injection.
+
+## Full path and regression comparison
+
+Fresh full default path:
+`python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-stream-attribution --probe-crash-exit --probe-timeout --runs .shokunin/game-dev-2d/corpus/live/r51-provenance-verifier/runs`
+
+Result **76/76 PASS = 65 ordinary + 2 mutants + 9 opt-ins**; raw run `.shokunin/game-dev-2d/corpus/live/r51-provenance-verifier/runs/20261013T092534215147Z/verdicts.json`. Copied without transformation to `.shokunin/game-dev-2d/corpus/lessons/r51-provenance-non-author.json`; SHA-256 equality confirmed (`2886e73f7c904af7f063a00362fb25e1844be5657351ff1e381463b57ca7bd68`). Exactly 66 prior tuple-bearing `(case, verdict, actual_exit, signature)` rows from `r50-release-repaired-non-author.json` match by case; no missing rows and no tuple diffs. Exactly one additional tuple-bearing row is `slider_adjust_repeat_right_second_focus_restore_observe_parsed_release`, expected/actual exit2 and PASS. The paired r50 release negative and r49 press positive rows remain unchanged. Nine opt-in verdicts and inner classifications stable by case, excluding run-specific paths/commands: export readiness unrelated-error `[true,false,false,false]`, missing-preset `[true,false,false]`, both mutant unrelated-error classifiers `[true,false,false,false]`, export launch positive/negative `[true,false]`, Godot error `[true,false]`, stream attribution `[true,false]`, crash exit `[true,false]`, timeout `[false,true,false]`.
+
+Separate fault command:
+`python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --fault-injection --runs .shokunin/game-dev-2d/corpus/live/r51-provenance-verifier-fault/runs`
+Outer verdict PASS; inner `fault_hang=FAIL`, `fault_clean_expected_negative=PASS`, `fault_unrelated_error=FAIL`. Raw `.shokunin/game-dev-2d/corpus/live/r51-provenance-verifier-fault/runs/20261013T092628114543Z/fault-verdicts.json` copied byte-identically to `.shokunin/game-dev-2d/corpus/lessons/r51-fault-non-author.json` (SHA-256 `cd49178d1f70d6a05dc89abffb6d9f756f22cb258b9f1854133597e4592849de`).
+
+Tracked hashes unchanged before/after: `slider_adjust.gd` `e42fddc67c147a9d6cf66bc3f56ea874a5bfe10d34fd35b8d16b6fc0b596630c`; `run_battery.py` `086380b913bf4d9b76899919ff4bc68f148d6fcb01d838bb8d7d48428657c24c`. The earlier malformed quoted-shell invocation exited 127 (`No such file or directory`) and is setup telemetry only; rerun with normal bash invocation succeeded. No constants changed, no tracked edits, commit, push, or merge.
+
+Bounded claim: delivered synthetic parsed `InputEventAction` release observed by an in-tree Node in this Godot 4.7.2 scenario. Not HSlider internal consumption, OS/physical timing or input, rendered/pointer/accessibility, production, or generic input behavior.

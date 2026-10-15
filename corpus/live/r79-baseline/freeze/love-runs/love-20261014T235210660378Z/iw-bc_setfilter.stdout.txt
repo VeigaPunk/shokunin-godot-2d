@@ -1,0 +1,12 @@
+IW | cell=bc_setfilter | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=bc_setfilter | built bodies=4 locked=false
+IW | cell=bc_setfilter | evpin cb=bc locked=true step=4
+IW | cell=bc_setfilter | evpin cb=pre locked=true step=4
+IW | cell=bc_setfilter | evpin cb=post locked=true step=4
+IW | cell=bc_setfilter | fire cb=bc kind=setfilter step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=bc_setfilter | cb_setfilter ok=true err=nil filter_after=2,2,0
+IW | cell=bc_setfilter | postfire cb=bc step=73 count=4 b1pos=400,520.1500244140625
+IW | cell=bc_setfilter | after_update step=73 count=4 b1pos=400,511.13113403320312 b1vel=0,-611.09796142578125
+IW | cell=bc_setfilter | evpin cb=ec locked=true step=74
+IW | cell=bc_setfilter | final steps=200 count=4 b1pos=400,635.1639404296875 b2pos=240,520.7589111328125 bc=4 ec=3 pre=35 post=35 fired=true fire_step=73
+IW | cell=bc_setfilter | CELL_DONE

@@ -1,0 +1,23 @@
+PASS save_process_writer: exit=0 signature='PASS save_process writer=true pid='
+ROW_TS save_process_writer done_at=141284.168 dur=1.368
+PASS save_process_reader: exit=0 signature='PASS save_process reader=true pid='
+ROW_TS save_process_reader done_at=141285.449 dur=1.281
+PASS save_process_missing: exit=2 signature='ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND'
+ROW_TS save_process_missing done_at=141286.853 dur=1.404
+PASS crash_spontaneous_sigabrt: exit=-6 signature='SPONTANEOUS_CRASH_PROBE: expected signature'
+ROW_TS crash_spontaneous_sigabrt done_at=141289.193 dur=2.340
+PASS crash_self_sigkill: exit=-9 signature='SPONTANEOUS_CRASH_PROBE: expected signature'
+ROW_TS crash_self_sigkill done_at=141290.387 dur=1.194
+PASS descendant_pipe_detached_control: exit=0 signature='DESCENDANT_PIPE_PROBE: expected signature'
+ROW_TS descendant_pipe_detached_control done_at=141291.781 dur=1.394
+PASS descendant_pipe_forged_signature_release: exit=0 signature='DESCENDANT_PIPE_PROBE: expected signature'
+ROW_TS descendant_pipe_forged_signature_release done_at=141293.290 dur=1.509
+PASS independent save process probe: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r79-verify/runs-razor-load/20261015T051241658486Z/save-process-verdicts.json
+PASS spontaneous crash classification meta
+RAZOR_TS pidcheck_at=141296.295 detached_pid=2978171
+PASS descendant pipe-EOF meta
+PASS descendant signature-spoof meta
+PASS while-live signature-gate meta
+PASS descendant error-spoof meta
+PASS error-clause surface meta
+PASS battery: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r79-verify/runs-razor-load/20261015T051241658486Z/verdicts.json

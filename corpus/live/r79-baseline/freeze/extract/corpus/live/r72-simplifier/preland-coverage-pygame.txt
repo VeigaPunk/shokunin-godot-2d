@@ -1,0 +1,43 @@
+emitted arms=9 keys=69  cases=36
+
+-- emitted but UNPINNED (measured surface with no assertion):
+   cadence0|last_tick_ret = '0'
+   cadence60|last_tick_ret = '16'
+   popen|ret = '0'
+   popen_buf|close_wait_ms = '1.45'
+   popen_buf|l1 = 'CHILD-MARK-1'
+   popen_buf|l2 = 'CHILD-MARK-2'
+   popen_buf|l2_wait_ms = '0.0'
+   popen_buf|rest_len = '0'
+   popen_buf|ret = '0'
+   popen_buf|total_ms = '126.08'
+   pump|nopump_total_ms = '3218.3'
+   pump|queued_after_nopump = '9'
+   viability|flags = '0x1000000'
+   viability|init_pass = '5'
+   viability|sdl = '2.32.72'
+   viability|surf = '320x240'
+   withhold_big|bufsize = '131072'
+   withhold_big|eof_ms = '214.9'
+   withhold_big|exit_bytes = '7'
+   withhold_big|total_bytes = '200014'
+   withhold_big|write_bytes = '200000'
+   withhold_fill|bufsize = '131072'
+   withhold_fill|eof_ms = '213.88'
+   withhold_fill|exit_bytes = '74007'
+   withhold_fill|total_bytes = '200014'
+   withhold_fill|write_bytes = '200000'
+   withhold_small|alive_at_first = 'True'
+   withhold_small|eof_ms = '209.34'
+   withhold_small|exit_bytes = '9014'
+   withhold_small|mark1_ms = '207.34'
+   withhold_small|mark2_ms = '207.34'
+   withhold_small|total_bytes = '9014'
+   withhold_small|write_bytes = '9000'
+
+-- pinned but NEVER EMITTED (row cannot pass):
+
+-- pinned value is a probe LITERAL (assertion-carried):
+   viab_driver_dummy        viability|driver='dummy' (probe emits a literal)
+   pump_not_needed          pump|pump_needed='false' (probe emits a literal)
+   pump_updates_counted     pump|frames_nopump='400' (probe emits a literal)

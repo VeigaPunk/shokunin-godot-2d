@@ -1,0 +1,4 @@
+ERROR: Can't disable contact monitoring during in/out callback. Use call_deferred("set_contact_monitor", false) instead.
+   at: set_contact_monitor (scene/2d/physics/rigid_body_2d.cpp:605)
+   GDScript backtrace (most recent call first):
+       [0] _on_rb_entered (res://phys2d_events.gd:348)

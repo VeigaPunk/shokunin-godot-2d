@@ -1,0 +1,12 @@
+IW | cell=ext_fixture_destroy | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=ext_fixture_destroy | built bodies=4 locked=false
+IW | cell=ext_fixture_destroy | ext_fxdestroy ok=true err=nil isDestroyed_after=true fcount=0 count_after=4 b1pos=400,60
+IW | cell=ext_fixture_destroy | evpin cb=bc locked=true step=4
+IW | cell=ext_fixture_destroy | evpin cb=pre locked=true step=4
+IW | cell=ext_fixture_destroy | evpin cb=post locked=true step=4
+IW | cell=ext_fixture_destroy | evpin cb=ec locked=true step=82
+IW | cell=ext_fixture_destroy | r77ec n=1 step=82 locked=true dyn=b2
+IW | cell=ext_fixture_destroy | r77ec n=2 step=164 locked=true dyn=b2
+IW | cell=ext_fixture_destroy | final steps=200 count=4 b1pos=400,3565.44384765625 b2pos=240,520.7589111328125 bc=3 ec=2 pre=34 post=34 fired=false fire_step=-1
+IW | cell=ext_fixture_destroy | r77obs step=200 locked=false count=4 b1pos=400,3565.44384765625 b2pos=240,520.7589111328125 b1dead=false b2dead=false fx_a_dead=true fx_b_dead=n/a jcount=0 bc=3 ec=2 pre=34 post=34 bc2=0 ec2=0 pre2=0 post2=0 swap_step=-1 drain_n=0
+IW | cell=ext_fixture_destroy | CELL_DONE

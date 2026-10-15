@@ -1,0 +1,5 @@
+== C5 env trap: parent run with PYTHONUNBUFFERED=1, self-contained writer cells ==
+ORDER writer=buffered topology=splice head_idx=31 inj_idx=38 tail_idx=44 total_bytes=51 first_read_ms=10.41 inj_read_ms=11.1 eof_ms=314.38 alive_at_first=True rc=0
+ORDER writer=unbuffered_u topology=splice head_idx=31 inj_idx=38 tail_idx=44 total_bytes=51 first_read_ms=10.5 inj_read_ms=11.38 eof_ms=314.23 alive_at_first=True rc=0
+ORDER writer=env_unbuffered topology=splice head_idx=31 inj_idx=38 tail_idx=44 total_bytes=51 first_read_ms=10.99 inj_read_ms=11.71 eof_ms=314.26 alive_at_first=True rc=0
+SELFCONTAINED_DONE

@@ -1,0 +1,41 @@
+{
+  "method": "AST-extracted production classify_process/classify_audio_process, no fixture/runner edits",
+  "results": [
+    {
+      "source": "r12-initial-hold.json",
+      "verdict": false,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS audio_playback in_tree=true playing=true position_advanced=true position_before=0.00580498855561 position_after=0.09868481010199 generated_samples=44100",
+        "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).",
+        "   at: cleanup (core/object/object.cpp:2536)"
+      ]
+    },
+    {
+      "source": "r12-battery-verifier.json",
+      "verdict": true,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS audio_playback in_tree=true playing=true position_advanced=true position_before=0.00580498855561 position_after=0.09868481010199 generated_samples=44100"
+      ]
+    },
+    {
+      "warning_probe": "WARNING: 1 ObjectDB instances were leaked at exit",
+      "classifier_result": false
+    },
+    {
+      "warning_probe": "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).",
+      "classifier_result": false
+    },
+    {
+      "warning_probe": "WARNING: ObjectDB instances were leaked at exit",
+      "classifier_result": true
+    },
+    {
+      "warning_probe": "WARNING: 2 ObjectDB instances were leaked at exit extra",
+      "classifier_result": true
+    }
+  ]
+}

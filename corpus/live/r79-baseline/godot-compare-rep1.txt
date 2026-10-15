@@ -1,0 +1,71 @@
+=== godot: mine corpus/live/r79-baseline/freeze/godot-runs/20261014T235028993722Z/verdicts.json rows=88 verdict=PASS file_sha256=1b244c74e2183b5c3d66af0a194146e46f89d201983680100b62cd6055c67237 ===
+
+r79-scout-1a03b7a: ref=corpus/live/r79-scout/runs/20261014T213005111532Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=81 differing=0 not-carried=7
+
+r78-reviewer-sibling-r78worktree: ref=corpus/live/r78-reviewer/sibling-runs/20261014T211913141844Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=81 differing=0 not-carried=7
+
+r78bl-extract-r66-reviewer: ref=corpus/live/r78-baseline/freeze/extract/corpus/live/r66-reviewer/runs-postdiff/20261014T051216915162Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=80 differing=1 not-carried=7
+  OUT-DIFF crash_spontaneous_sigabrt line 15: mine='[2] <addr> (main+60c05c2) - godot(+0x<addr>) [0x<addr>]' ref='[2] <addr> (main+60c05c2) - /usr/bin/godot(+0x<addr>) [0x<addr>]'
+
+r78bl-extract-r66-simplifier: ref=corpus/live/r78-baseline/freeze/extract/corpus/live/r66-simplifier/runs-author/20261014T051322328700Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=81 differing=0 not-carried=7
+
+r78bl-extract-r67-simplifier: ref=corpus/live/r78-baseline/freeze/extract/corpus/live/r67-simplifier/runs-landed/20261014T100135501917Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=80 differing=1 not-carried=7
+  OUT-DIFF crash_spontaneous_sigabrt line 15: mine='[2] <addr> (main+60c05c2) - godot(+0x<addr>) [0x<addr>]' ref='[2] <addr> (main+60c05c2) - /usr/bin/godot(+0x<addr>) [0x<addr>]'
+
+r78bl-extract-r68-scribe: ref=corpus/live/r78-baseline/freeze/extract/corpus/live/r68-scribe/runs-flagless/20261014T112326985567Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=80 differing=1 not-carried=7
+  OUT-DIFF crash_spontaneous_sigabrt line 15: mine='[2] <addr> (main+60c05c2) - godot(+0x<addr>) [0x<addr>]' ref='[2] <addr> (main+60c05c2) - /usr/bin/godot(+0x<addr>) [0x<addr>]'
+
+r78bl-extract-r68-simplifier: ref=corpus/live/r78-baseline/freeze/extract/corpus/live/r68-simplifier/runs-landed/20261014T112132992259Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=80 differing=1 not-carried=7
+  OUT-DIFF crash_spontaneous_sigabrt line 15: mine='[2] <addr> (main+60c05c2) - godot(+0x<addr>) [0x<addr>]' ref='[2] <addr> (main+60c05c2) - /usr/bin/godot(+0x<addr>) [0x<addr>]'
+
+r78bl-extract-r69-baseline: ref=corpus/live/r78-baseline/freeze/extract/corpus/live/r69-baseline/runs-livectl/20261014T120830738281Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=80 differing=1 not-carried=7
+  OUT-DIFF crash_spontaneous_sigabrt line 15: mine='[2] <addr> (main+60c05c2) - godot(+0x<addr>) [0x<addr>]' ref='[2] <addr> (main+60c05c2) - /usr/bin/godot(+0x<addr>) [0x<addr>]'
+
+r78bl-extract-r69-scribe-flagless: ref=corpus/live/r78-baseline/freeze/extract/corpus/live/r69-scribe/runs-flagless/20261014T120222723303Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=80 differing=1 not-carried=7
+  OUT-DIFF crash_spontaneous_sigabrt line 15: mine='[2] <addr> (main+60c05c2) - godot(+0x<addr>) [0x<addr>]' ref='[2] <addr> (main+60c05c2) - /usr/bin/godot(+0x<addr>) [0x<addr>]'
+
+r78bl-extract-r69-scribe-landed: ref=corpus/live/r78-baseline/freeze/extract/corpus/live/r69-scribe/runs-landed-flagless/20261014T121013482915Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=80 differing=1 not-carried=7
+  OUT-DIFF crash_spontaneous_sigabrt line 15: mine='[2] <addr> (main+60c05c2) - godot(+0x<addr>) [0x<addr>]' ref='[2] <addr> (main+60c05c2) - /usr/bin/godot(+0x<addr>) [0x<addr>]'
+
+r78bl-extract-r69-simplifier-landed: ref=corpus/live/r78-baseline/freeze/extract/corpus/live/r69-simplifier/runs-landed/20261014T121307757444Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=80 differing=1 not-carried=7
+  OUT-DIFF crash_spontaneous_sigabrt line 15: mine='[2] <addr> (main+60c05c2) - godot(+0x<addr>) [0x<addr>]' ref='[2] <addr> (main+60c05c2) - /usr/bin/godot(+0x<addr>) [0x<addr>]'
+
+r78bl-extract-r69-simplifier-preland: ref=corpus/live/r78-baseline/freeze/extract/corpus/live/r69-simplifier/runs-preland/20261014T120218201421Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=80 differing=1 not-carried=7
+  OUT-DIFF crash_spontaneous_sigabrt line 15: mine='[2] <addr> (main+60c05c2) - godot(+0x<addr>) [0x<addr>]' ref='[2] <addr> (main+60c05c2) - /usr/bin/godot(+0x<addr>) [0x<addr>]'
+
+r78bl-extract-r71-baseline: ref=corpus/live/r78-baseline/freeze/extract/corpus/live/r71-baseline/godot-runs/20261014T142633675793Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=80 differing=1 not-carried=7
+  OUT-DIFF crash_spontaneous_sigabrt line 15: mine='[2] <addr> (main+60c05c2) - godot(+0x<addr>) [0x<addr>]' ref='[2] <addr> (main+60c05c2) - /usr/bin/godot(+0x<addr>) [0x<addr>]'
+
+runs-shared-140233: ref=corpus/live/runs/20261014T140233983332Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=81 differing=0 not-carried=7
+
+r77-gd-scout: ref=corpus/live/gd-scout/runs/20261014T194720280349Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=81 differing=0 not-carried=7

@@ -1,0 +1,29 @@
+=== godot: mine corpus/live/r79-simplifier/fold-runs/20261015T051725980038Z/verdicts.json rows=111 verdict=PASS file_sha256=71c2cfeedc0fff59b44aabef4e298fa338c8b010335363648ccd93c6e8a15c87 ===
+
+control: ref=corpus/live/r79-simplifier/control-runs/20261015T051454229720Z/verdicts.json ref_rows=111 ref_verdict=PASS
+  common=111 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=104 differing=0 not-carried=7
+
+authorA: ref=corpus/live/r79-author/runs/20261015T045301196389Z/verdicts.json ref_rows=111 ref_verdict=PASS
+  common=111 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=104 differing=0 not-carried=7
+
+authorB: ref=corpus/live/r79-author/runs/20261015T045607640159Z/verdicts.json ref_rows=111 ref_verdict=PASS
+  common=111 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=104 differing=0 not-carried=7
+
+base1: ref=corpus/live/r79-baseline/freeze/godot-runs/20261014T235028993722Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=23 old_only=0 tuple_mismatches=1 (seeded=0 meta=1)
+  output-normalized identical=79 differing=2 not-carried=7
+  new_only_cases: ['phys2d_events_area_dss_in_cb', 'phys2d_events_area_edge', 'phys2d_events_area_free_rid', 'phys2d_events_area_monitoring_deferred', 'phys2d_events_area_monitoring_direct', 'phys2d_events_area_node_position', 'phys2d_events_area_queue_free', 'phys2d_events_area_srv_set_state', 'phys2d_events_cm_deferred_cb', 'phys2d_events_cm_max0', 'phys2d_events_cm_max0_cb', 'phys2d_events_cm_off', 'phys2d_events_cm_on', 'phys2d_events_cm_toggle_cb', 'phys2d_events_edge_node', 'phys2d_events_edge_node_srv', 'phys2d_events_edge_revert', 'phys2d_events_edge_srv', 'phys2d_events_rb_dss_in_cb', 'phys2d_events_rb_free_rid', 'phys2d_events_rb_node_position', 'phys2d_events_rb_queue_free', 'phys2d_events_rb_srv_set_state']
+  TUPLE-MISMATCH probe_error_clause_surface: {"arms": ["[{'case': 'surface_allowforge', 'flags': ['--spawn-allowforge'], 'bound_seconds': 3.0, 'ti", "[{'case': 'surface_allowforge', 'flags': ['--spawn-allowforge'], 'bound_seconds': 3.0, 'ti"], "census": ["{'scope': 'every CASES row carrying expected_errors in this battery run; opt-in probe rows", "{'scope': 'every CASES row carrying expected_errors in this battery run; opt-in probe rows"], "
+  OUT-DIFF export_preset_missing line 11: mine='[   0% ] \x1b[90m\x1b[1mupdate_scripts_classes\x1b[22m | Started Registering global classes... (29 steps)\x1b[39m\x1b[0m' ref='[   0% ] \x1b[90m\x1b[1mupdate_scripts_classes\x1b[22m | Started Registering global classes... (28 steps)\x1b[39m\x1b[0m'
+  OUT-DIFF export_readiness line 11: mine='[   0% ] \x1b[90m\x1b[1mupdate_scripts_classes\x1b[22m | Started Registering global classes... (29 steps)\x1b[39m\x1b[0m' ref='[   0% ] \x1b[90m\x1b[1mupdate_scripts_classes\x1b[22m | Started Registering global classes... (28 steps)\x1b[39m\x1b[0m'
+
+base2: ref=corpus/live/r79-baseline/freeze/godot-runs2/20261014T235235106974Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=23 old_only=0 tuple_mismatches=1 (seeded=0 meta=1)
+  output-normalized identical=79 differing=2 not-carried=7
+  new_only_cases: ['phys2d_events_area_dss_in_cb', 'phys2d_events_area_edge', 'phys2d_events_area_free_rid', 'phys2d_events_area_monitoring_deferred', 'phys2d_events_area_monitoring_direct', 'phys2d_events_area_node_position', 'phys2d_events_area_queue_free', 'phys2d_events_area_srv_set_state', 'phys2d_events_cm_deferred_cb', 'phys2d_events_cm_max0', 'phys2d_events_cm_max0_cb', 'phys2d_events_cm_off', 'phys2d_events_cm_on', 'phys2d_events_cm_toggle_cb', 'phys2d_events_edge_node', 'phys2d_events_edge_node_srv', 'phys2d_events_edge_revert', 'phys2d_events_edge_srv', 'phys2d_events_rb_dss_in_cb', 'phys2d_events_rb_free_rid', 'phys2d_events_rb_node_position', 'phys2d_events_rb_queue_free', 'phys2d_events_rb_srv_set_state']
+  TUPLE-MISMATCH probe_error_clause_surface: {"arms": ["[{'case': 'surface_allowforge', 'flags': ['--spawn-allowforge'], 'bound_seconds': 3.0, 'ti", "[{'case': 'surface_allowforge', 'flags': ['--spawn-allowforge'], 'bound_seconds': 3.0, 'ti"], "census": ["{'scope': 'every CASES row carrying expected_errors in this battery run; opt-in probe rows", "{'scope': 'every CASES row carrying expected_errors in this battery run; opt-in probe rows"], "
+  OUT-DIFF export_preset_missing line 11: mine='[   0% ] \x1b[90m\x1b[1mupdate_scripts_classes\x1b[22m | Started Registering global classes... (29 steps)\x1b[39m\x1b[0m' ref='[   0% ] \x1b[90m\x1b[1mupdate_scripts_classes\x1b[22m | Started Registering global classes... (28 steps)\x1b[39m\x1b[0m'
+  OUT-DIFF export_readiness line 11: mine='[   0% ] \x1b[90m\x1b[1mupdate_scripts_classes\x1b[22m | Started Registering global classes... (29 steps)\x1b[39m\x1b[0m' ref='[   0% ] \x1b[90m\x1b[1mupdate_scripts_classes\x1b[22m | Started Registering global classes... (28 steps)\x1b[39m\x1b[0m'

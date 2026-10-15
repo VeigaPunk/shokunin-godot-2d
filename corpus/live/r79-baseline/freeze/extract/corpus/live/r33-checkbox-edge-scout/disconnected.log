@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+EDGE press1 checked=false receipts=[] label=Ready
+EDGE release1 checked=true receipts=[] label=Ready
+EDGE press2 checked=true receipts=[] label=Ready
+EDGE release2 checked=false receipts=[] label=Ready
+ERROR: expected missing toggled signal receipt [true,false], got []
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] run (res://checkbox_toggle.gd:52)

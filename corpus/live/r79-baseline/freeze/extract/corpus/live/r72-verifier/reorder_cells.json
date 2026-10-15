@@ -1,0 +1,195 @@
+{
+  "subject": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r72-verifier/reorder_subject.py",
+  "python": "3.14.7",
+  "results": [
+    {
+      "cell": "pygame_buffered",
+      "argv_extra": [],
+      "mode": "buffered",
+      "surface": "pygame",
+      "env_extra": {},
+      "delivered": "INJECTEDHEAD  TAIL\n",
+      "delivered_repr": "b'INJECTEDHEAD  TAIL\\n'",
+      "read_chunks": [
+        [
+          548.65,
+          8
+        ],
+        [
+          648.84,
+          11
+        ]
+      ],
+      "ret": 0,
+      "topology": "reorder_prefix",
+      "predicted": "reorder_prefix",
+      "verdict": "PASS"
+    },
+    {
+      "cell": "pygame_dash_u",
+      "argv_extra": [
+        "-u"
+      ],
+      "mode": "buffered",
+      "surface": "pygame",
+      "env_extra": {},
+      "delivered": "HEAD INJECTED TAIL\n",
+      "delivered_repr": "b'HEAD INJECTED TAIL\\n'",
+      "read_chunks": [
+        [
+          571.26,
+          5
+        ],
+        [
+          571.84,
+          8
+        ],
+        [
+          621.96,
+          6
+        ]
+      ],
+      "ret": 0,
+      "topology": "midline_splice",
+      "predicted": "midline_splice",
+      "verdict": "PASS"
+    },
+    {
+      "cell": "pygame_flushed",
+      "argv_extra": [],
+      "mode": "flushed",
+      "surface": "pygame",
+      "env_extra": {},
+      "delivered": "HEAD INJECTED TAIL\n",
+      "delivered_repr": "b'HEAD INJECTED TAIL\\n'",
+      "read_chunks": [
+        [
+          547.29,
+          5
+        ],
+        [
+          547.93,
+          8
+        ],
+        [
+          648.15,
+          6
+        ]
+      ],
+      "ret": 0,
+      "topology": "midline_splice",
+      "predicted": "midline_splice",
+      "verdict": "PASS"
+    },
+    {
+      "cell": "pygame_env_unbuf",
+      "argv_extra": [],
+      "mode": "buffered",
+      "surface": "pygame",
+      "env_extra": {
+        "PYTHONUNBUFFERED": "1"
+      },
+      "delivered": "HEAD INJECTED TAIL\n",
+      "delivered_repr": "b'HEAD INJECTED TAIL\\n'",
+      "read_chunks": [
+        [
+          624.85,
+          5
+        ],
+        [
+          625.52,
+          8
+        ],
+        [
+          675.64,
+          6
+        ]
+      ],
+      "ret": 0,
+      "topology": "midline_splice",
+      "predicted": "midline_splice",
+      "verdict": "PASS"
+    },
+    {
+      "cell": "bare_buffered",
+      "argv_extra": [],
+      "mode": "buffered",
+      "surface": "bare",
+      "env_extra": {},
+      "delivered": "INJECTEDHEAD  TAIL\n",
+      "delivered_repr": "b'INJECTEDHEAD  TAIL\\n'",
+      "read_chunks": [
+        [
+          5.83,
+          8
+        ],
+        [
+          106.03,
+          11
+        ]
+      ],
+      "ret": 0,
+      "topology": "reorder_prefix",
+      "predicted": "reorder_prefix",
+      "verdict": "PASS"
+    },
+    {
+      "cell": "bare_dash_u",
+      "argv_extra": [
+        "-u"
+      ],
+      "mode": "buffered",
+      "surface": "bare",
+      "env_extra": {},
+      "delivered": "HEAD INJECTED TAIL\n",
+      "delivered_repr": "b'HEAD INJECTED TAIL\\n'",
+      "read_chunks": [
+        [
+          4.96,
+          5
+        ],
+        [
+          5.64,
+          8
+        ],
+        [
+          55.77,
+          6
+        ]
+      ],
+      "ret": 0,
+      "topology": "midline_splice",
+      "predicted": "midline_splice",
+      "verdict": "PASS"
+    },
+    {
+      "cell": "bare_flushed",
+      "argv_extra": [],
+      "mode": "flushed",
+      "surface": "bare",
+      "env_extra": {},
+      "delivered": "HEAD INJECTED TAIL\n",
+      "delivered_repr": "b'HEAD INJECTED TAIL\\n'",
+      "read_chunks": [
+        [
+          5.15,
+          5
+        ],
+        [
+          5.78,
+          8
+        ],
+        [
+          105.99,
+          6
+        ]
+      ],
+      "ret": 0,
+      "topology": "midline_splice",
+      "predicted": "midline_splice",
+      "verdict": "PASS"
+    }
+  ],
+  "pass": 7,
+  "fail": 0
+}

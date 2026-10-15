@@ -1,0 +1,11 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+BEFORE focus_owner=<Object#null> has_focus=false value=5.0 receipts=[] label=Value 5
+AFTER ui_right focus_owner=<Object#null> has_focus=false value=5.0 receipts=[] label=Value 5
+AFTER ui_left focus_owner=<Object#null> has_focus=false value=5.0 receipts=[] label=Value 5
+OBS no_focus values_after_both=5.0 receipts=[] label=Value 5
+ERROR: EXPECTED NEGATIVE: no-focus preserved value=5 after both actions; missing numeric adjustment
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://slider.gd:41)
+EXIT:2

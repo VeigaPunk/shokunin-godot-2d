@@ -1,0 +1,280 @@
+[
+  {
+    "shape": "one",
+    "k": 4096,
+    "reps": 1,
+    "events": [
+      [
+        5.658,
+        3,
+        3
+      ],
+      [
+        305.743,
+        4110,
+        4113
+      ]
+    ],
+    "early_bytes": 3,
+    "early_t_ms": 5.658,
+    "total_bytes": 4113,
+    "last_t_ms": 305.743
+  },
+  {
+    "shape": "one",
+    "k": 8191,
+    "reps": 1,
+    "events": [
+      [
+        5.321,
+        3,
+        3
+      ],
+      [
+        305.413,
+        8205,
+        8208
+      ]
+    ],
+    "early_bytes": 3,
+    "early_t_ms": 5.321,
+    "total_bytes": 8208,
+    "last_t_ms": 305.413
+  },
+  {
+    "shape": "one",
+    "k": 8192,
+    "reps": 1,
+    "events": [
+      [
+        5.103,
+        3,
+        3
+      ],
+      [
+        305.216,
+        8206,
+        8209
+      ]
+    ],
+    "early_bytes": 3,
+    "early_t_ms": 5.103,
+    "total_bytes": 8209,
+    "last_t_ms": 305.216
+  },
+  {
+    "shape": "one",
+    "k": 8193,
+    "reps": 1,
+    "events": [
+      [
+        5.641,
+        3,
+        3
+      ],
+      [
+        305.743,
+        8207,
+        8210
+      ]
+    ],
+    "early_bytes": 3,
+    "early_t_ms": 5.641,
+    "total_bytes": 8210,
+    "last_t_ms": 305.743
+  },
+  {
+    "shape": "one",
+    "k": 9000,
+    "reps": 1,
+    "events": [
+      [
+        5.596,
+        3,
+        3
+      ],
+      [
+        305.718,
+        9014,
+        9017
+      ]
+    ],
+    "early_bytes": 3,
+    "early_t_ms": 5.596,
+    "total_bytes": 9017,
+    "last_t_ms": 305.718
+  },
+  {
+    "shape": "one",
+    "k": 10240,
+    "reps": 1,
+    "events": [
+      [
+        5.317,
+        3,
+        3
+      ],
+      [
+        305.397,
+        10254,
+        10257
+      ]
+    ],
+    "early_bytes": 3,
+    "early_t_ms": 5.317,
+    "total_bytes": 10257,
+    "last_t_ms": 305.397
+  },
+  {
+    "shape": "one",
+    "k": 16384,
+    "reps": 1,
+    "events": [
+      [
+        5.231,
+        3,
+        3
+      ],
+      [
+        305.343,
+        16398,
+        16401
+      ]
+    ],
+    "early_bytes": 3,
+    "early_t_ms": 5.231,
+    "total_bytes": 16401,
+    "last_t_ms": 305.343
+  },
+  {
+    "shape": "one",
+    "k": 32768,
+    "reps": 1,
+    "events": [
+      [
+        5.314,
+        3,
+        3
+      ],
+      [
+        305.389,
+        32782,
+        32785
+      ]
+    ],
+    "early_bytes": 3,
+    "early_t_ms": 5.314,
+    "total_bytes": 32785,
+    "last_t_ms": 305.389
+  },
+  {
+    "shape": "one",
+    "k": 65536,
+    "reps": 1,
+    "events": [
+      [
+        5.153,
+        3,
+        3
+      ],
+      [
+        305.337,
+        65536,
+        65539
+      ],
+      [
+        305.35,
+        14,
+        65553
+      ]
+    ],
+    "early_bytes": 3,
+    "early_t_ms": 5.153,
+    "total_bytes": 65553,
+    "last_t_ms": 305.35
+  },
+  {
+    "shape": "many",
+    "k": 8192,
+    "reps": 8,
+    "events": [
+      [
+        5.359,
+        3,
+        3
+      ],
+      [
+        305.442,
+        8206,
+        8209
+      ]
+    ],
+    "early_bytes": 3,
+    "early_t_ms": 5.359,
+    "total_bytes": 8209,
+    "last_t_ms": 305.442
+  },
+  {
+    "shape": "many",
+    "k": 8193,
+    "reps": 8,
+    "events": [
+      [
+        5.308,
+        3,
+        3
+      ],
+      [
+        305.4,
+        8207,
+        8210
+      ]
+    ],
+    "early_bytes": 3,
+    "early_t_ms": 5.308,
+    "total_bytes": 8210,
+    "last_t_ms": 305.4
+  },
+  {
+    "shape": "many",
+    "k": 10000,
+    "reps": 10,
+    "events": [
+      [
+        5.178,
+        3,
+        3
+      ],
+      [
+        305.261,
+        10014,
+        10017
+      ]
+    ],
+    "early_bytes": 3,
+    "early_t_ms": 5.178,
+    "total_bytes": 10017,
+    "last_t_ms": 305.261
+  },
+  {
+    "shape": "many",
+    "k": 16384,
+    "reps": 16,
+    "events": [
+      [
+        5.409,
+        3,
+        3
+      ],
+      [
+        305.512,
+        16398,
+        16401
+      ]
+    ],
+    "early_bytes": 3,
+    "early_t_ms": 5.409,
+    "total_bytes": 16401,
+    "last_t_ms": 305.512
+  }
+]

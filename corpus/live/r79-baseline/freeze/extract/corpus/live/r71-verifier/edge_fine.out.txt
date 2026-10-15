@@ -1,0 +1,6 @@
+k=131064 pending+k=131071 vs B=131072 first_vis=205.21 eof=206.73 -> EXIT-BATCHED
+k=131065 pending+k=131072 vs B=131072 first_vis=205.69 eof=207.14 -> EXIT-BATCHED
+k=131066 pending+k=131073 vs B=131072 first_vis=105.08 eof=207.01 -> EARLY
+k=131071 pending+k=131078 vs B=131072 first_vis=105.36 eof=206.93 -> EARLY
+k=131072 pending+k=131079 vs B=131072 first_vis=105.34 eof=206.93 -> EARLY
+k=131073 pending+k=131080 vs B=131072 first_vis=105.34 eof=206.88 -> EARLY

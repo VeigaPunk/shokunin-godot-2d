@@ -1,0 +1,4 @@
+ERROR: Function blocked during in/out signal. Use set_deferred("monitoring", true/false).
+   at: set_monitoring (scene/2d/physics/area_2d.cpp:429)
+   GDScript backtrace (most recent call first):
+       [0] _on_area_entered (res://phys2d_events.gd:452)

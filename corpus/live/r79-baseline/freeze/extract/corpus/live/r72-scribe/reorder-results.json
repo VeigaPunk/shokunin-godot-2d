@@ -1,0 +1,489 @@
+{
+  "harness": "r72-scribe reorder_driver.py",
+  "python": "3.14.7",
+  "started_utc": "20261014T143622Z",
+  "parent_sha256": "1856590e85590ddbd372aaf68a7c64d06597cd6dfb7a2cb35a45c2e436badb50",
+  "driver_sha256": "fdfbd72b6b5b5a0b58041ebfbc52a67047aecbc5bad2283e9f327ac247824988",
+  "cells": [
+    {
+      "cell": "buffered",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r72-scribe/reorder_parent.py",
+        "buffered"
+      ],
+      "env_extra": {},
+      "topology": "prefix_reorder",
+      "exit": 0,
+      "stderr_len": 0,
+      "stderr_head": "",
+      "timeout": false,
+      "exit_ms": 12.78,
+      "first_chunk_ms": 10.78,
+      "n_chunks": 2,
+      "chunks": [
+        {
+          "ms": 10.78,
+          "len": 8
+        },
+        {
+          "ms": 10.88,
+          "len": 11
+        }
+      ],
+      "first_chunk_has_head": false,
+      "first_chunk_has_injected": true,
+      "bytes_total": 19,
+      "i_injected": 0,
+      "i_head": 8,
+      "i_tail": 13,
+      "around_injected": "INJECTEDHEAD  TAIL\n",
+      "tail_repr": "'INJECTEDHEAD  TAIL\\n'",
+      "hybrid_fill": null,
+      "raw_sha256_placeholder": null
+    },
+    {
+      "cell": "unbuffered_u",
+      "argv": [
+        "/usr/bin/python3",
+        "-u",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r72-scribe/reorder_parent.py",
+        "buffered"
+      ],
+      "env_extra": {},
+      "topology": "midline_splice",
+      "exit": 0,
+      "stderr_len": 0,
+      "stderr_head": "",
+      "timeout": false,
+      "exit_ms": 11.95,
+      "first_chunk_ms": 9.55,
+      "n_chunks": 3,
+      "chunks": [
+        {
+          "ms": 9.55,
+          "len": 5
+        },
+        {
+          "ms": 10.15,
+          "len": 8
+        },
+        {
+          "ms": 10.2,
+          "len": 6
+        }
+      ],
+      "first_chunk_has_head": true,
+      "first_chunk_has_injected": false,
+      "bytes_total": 19,
+      "i_injected": 5,
+      "i_head": 0,
+      "i_tail": 13,
+      "around_injected": "HEAD INJECTED TAIL\n",
+      "tail_repr": "'HEAD INJECTED TAIL\\n'",
+      "hybrid_fill": null,
+      "raw_sha256_placeholder": null
+    },
+    {
+      "cell": "flush_inside",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r72-scribe/reorder_parent.py",
+        "flushed"
+      ],
+      "env_extra": {},
+      "topology": "midline_splice",
+      "exit": 0,
+      "stderr_len": 0,
+      "stderr_head": "",
+      "timeout": false,
+      "exit_ms": 12.7,
+      "first_chunk_ms": 9.98,
+      "n_chunks": 3,
+      "chunks": [
+        {
+          "ms": 9.98,
+          "len": 5
+        },
+        {
+          "ms": 10.75,
+          "len": 8
+        },
+        {
+          "ms": 10.8,
+          "len": 6
+        }
+      ],
+      "first_chunk_has_head": true,
+      "first_chunk_has_injected": false,
+      "bytes_total": 19,
+      "i_injected": 5,
+      "i_head": 0,
+      "i_tail": 13,
+      "around_injected": "HEAD INJECTED TAIL\n",
+      "tail_repr": "'HEAD INJECTED TAIL\\n'",
+      "hybrid_fill": null,
+      "raw_sha256_placeholder": null
+    },
+    {
+      "cell": "env_unbuffered",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r72-scribe/reorder_parent.py",
+        "buffered"
+      ],
+      "env_extra": {
+        "PYTHONUNBUFFERED": "1"
+      },
+      "topology": "midline_splice",
+      "exit": 0,
+      "stderr_len": 0,
+      "stderr_head": "",
+      "timeout": false,
+      "exit_ms": 13.01,
+      "first_chunk_ms": 10.17,
+      "n_chunks": 3,
+      "chunks": [
+        {
+          "ms": 10.17,
+          "len": 5
+        },
+        {
+          "ms": 10.78,
+          "len": 8
+        },
+        {
+          "ms": 10.81,
+          "len": 6
+        }
+      ],
+      "first_chunk_has_head": true,
+      "first_chunk_has_injected": false,
+      "bytes_total": 19,
+      "i_injected": 5,
+      "i_head": 0,
+      "i_tail": 13,
+      "around_injected": "HEAD INJECTED TAIL\n",
+      "tail_repr": "'HEAD INJECTED TAIL\\n'",
+      "hybrid_fill": null,
+      "raw_sha256_placeholder": null
+    },
+    {
+      "cell": "sleep_before",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r72-scribe/reorder_parent.py",
+        "sleep_before_spawn"
+      ],
+      "env_extra": {},
+      "topology": "prefix_reorder",
+      "exit": 0,
+      "stderr_len": 0,
+      "stderr_head": "",
+      "timeout": false,
+      "exit_ms": 314.09,
+      "first_chunk_ms": 311.56,
+      "n_chunks": 2,
+      "chunks": [
+        {
+          "ms": 311.56,
+          "len": 8
+        },
+        {
+          "ms": 311.65,
+          "len": 11
+        }
+      ],
+      "first_chunk_has_head": false,
+      "first_chunk_has_injected": true,
+      "bytes_total": 19,
+      "i_injected": 0,
+      "i_head": 8,
+      "i_tail": 13,
+      "around_injected": "INJECTEDHEAD  TAIL\n",
+      "tail_repr": "'INJECTEDHEAD  TAIL\\n'",
+      "hybrid_fill": null,
+      "raw_sha256_placeholder": null
+    },
+    {
+      "cell": "fill_before",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r72-scribe/reorder_parent.py",
+        "fill_before_spawn"
+      ],
+      "env_extra": {},
+      "topology": "midline_splice",
+      "exit": 0,
+      "stderr_len": 0,
+      "stderr_head": "",
+      "timeout": false,
+      "exit_ms": 13.17,
+      "first_chunk_ms": 10.51,
+      "n_chunks": 5,
+      "chunks": [
+        {
+          "ms": 10.51,
+          "len": 62181
+        },
+        {
+          "ms": 10.54,
+          "len": 65536
+        },
+        {
+          "ms": 10.56,
+          "len": 12288
+        },
+        {
+          "ms": 11.31,
+          "len": 8
+        },
+        {
+          "ms": 11.36,
+          "len": 6
+        }
+      ],
+      "first_chunk_has_head": true,
+      "first_chunk_has_injected": false,
+      "bytes_total": 140019,
+      "i_injected": 140005,
+      "i_head": 0,
+      "i_tail": 140013,
+      "around_injected": "HHHHHHHHHHHHHHHHHHHHHHHHINJECTED TAIL\n",
+      "tail_repr": "'HHHHHHHHHHINJECTED TAIL\\n'",
+      "hybrid_fill": true,
+      "raw_sha256_placeholder": null
+    },
+    {
+      "cell": "popen_inherit",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r72-scribe/reorder_parent.py",
+        "popen_child"
+      ],
+      "env_extra": {},
+      "topology": "post_tail",
+      "exit": 0,
+      "stderr_len": 0,
+      "stderr_head": "",
+      "timeout": false,
+      "exit_ms": 13.23,
+      "first_chunk_ms": 11.36,
+      "n_chunks": 2,
+      "chunks": [
+        {
+          "ms": 11.36,
+          "len": 11
+        },
+        {
+          "ms": 11.47,
+          "len": 8
+        }
+      ],
+      "first_chunk_has_head": true,
+      "first_chunk_has_injected": false,
+      "bytes_total": 19,
+      "i_injected": 11,
+      "i_head": 0,
+      "i_tail": 5,
+      "around_injected": "HEAD  TAIL\nINJECTED",
+      "tail_repr": "'HEAD  TAIL\\nINJECTED'",
+      "hybrid_fill": null,
+      "raw_sha256_placeholder": null
+    },
+    {
+      "cell": "ownpipe_control",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r72-scribe/reorder_parent.py",
+        "ownpipe_control"
+      ],
+      "env_extra": {},
+      "topology": "no-injection",
+      "exit": 0,
+      "stderr_len": 0,
+      "stderr_head": "",
+      "timeout": false,
+      "exit_ms": 12.44,
+      "first_chunk_ms": 10.25,
+      "n_chunks": 1,
+      "chunks": [
+        {
+          "ms": 10.25,
+          "len": 11
+        }
+      ],
+      "first_chunk_has_head": true,
+      "first_chunk_has_injected": false,
+      "bytes_total": 11,
+      "i_injected": -1,
+      "i_head": 0,
+      "i_tail": 5,
+      "around_injected": "HEAD  TAIL\n",
+      "tail_repr": "'HEAD  TAIL\\n'",
+      "hybrid_fill": null,
+      "raw_sha256_placeholder": null
+    },
+    {
+      "cell": "pg_buffered",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r72-scribe/reorder_parent.py",
+        "buffered",
+        "--pygame"
+      ],
+      "env_extra": {},
+      "topology": "prefix_reorder",
+      "exit": 0,
+      "stderr_len": 334,
+      "stderr_head": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider",
+      "timeout": false,
+      "exit_ms": 445.07,
+      "first_chunk_ms": 412.64,
+      "n_chunks": 2,
+      "chunks": [
+        {
+          "ms": 412.64,
+          "len": 8
+        },
+        {
+          "ms": 435.97,
+          "len": 11
+        }
+      ],
+      "first_chunk_has_head": false,
+      "first_chunk_has_injected": true,
+      "bytes_total": 19,
+      "i_injected": 0,
+      "i_head": 8,
+      "i_tail": 13,
+      "around_injected": "INJECTEDHEAD  TAIL\n",
+      "tail_repr": "'INJECTEDHEAD  TAIL\\n'",
+      "hybrid_fill": null,
+      "raw_sha256_placeholder": null
+    },
+    {
+      "cell": "pg_unbuffered",
+      "argv": [
+        "/usr/bin/python3",
+        "-u",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r72-scribe/reorder_parent.py",
+        "buffered",
+        "--pygame"
+      ],
+      "env_extra": {},
+      "topology": "midline_splice",
+      "exit": 0,
+      "stderr_len": 334,
+      "stderr_head": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider",
+      "timeout": false,
+      "exit_ms": 498.45,
+      "first_chunk_ms": 465.27,
+      "n_chunks": 3,
+      "chunks": [
+        {
+          "ms": 465.27,
+          "len": 5
+        },
+        {
+          "ms": 466.0,
+          "len": 8
+        },
+        {
+          "ms": 466.03,
+          "len": 6
+        }
+      ],
+      "first_chunk_has_head": true,
+      "first_chunk_has_injected": false,
+      "bytes_total": 19,
+      "i_injected": 5,
+      "i_head": 0,
+      "i_tail": 13,
+      "around_injected": "HEAD INJECTED TAIL\n",
+      "tail_repr": "'HEAD INJECTED TAIL\\n'",
+      "hybrid_fill": null,
+      "raw_sha256_placeholder": null
+    },
+    {
+      "cell": "pg_flush",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r72-scribe/reorder_parent.py",
+        "flushed",
+        "--pygame"
+      ],
+      "env_extra": {},
+      "topology": "midline_splice",
+      "exit": 0,
+      "stderr_len": 334,
+      "stderr_head": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider",
+      "timeout": false,
+      "exit_ms": 504.66,
+      "first_chunk_ms": 472.72,
+      "n_chunks": 3,
+      "chunks": [
+        {
+          "ms": 472.72,
+          "len": 5
+        },
+        {
+          "ms": 473.4,
+          "len": 8
+        },
+        {
+          "ms": 496.64,
+          "len": 6
+        }
+      ],
+      "first_chunk_has_head": true,
+      "first_chunk_has_injected": false,
+      "bytes_total": 19,
+      "i_injected": 5,
+      "i_head": 0,
+      "i_tail": 13,
+      "around_injected": "HEAD INJECTED TAIL\n",
+      "tail_repr": "'HEAD INJECTED TAIL\\n'",
+      "hybrid_fill": null,
+      "raw_sha256_placeholder": null
+    },
+    {
+      "cell": "pg_sleep_before",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r72-scribe/reorder_parent.py",
+        "sleep_before_spawn",
+        "--pygame"
+      ],
+      "env_extra": {},
+      "topology": "prefix_reorder",
+      "exit": 0,
+      "stderr_len": 334,
+      "stderr_head": "<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider",
+      "timeout": false,
+      "exit_ms": 750.05,
+      "first_chunk_ms": 705.67,
+      "n_chunks": 2,
+      "chunks": [
+        {
+          "ms": 705.67,
+          "len": 8
+        },
+        {
+          "ms": 738.39,
+          "len": 11
+        }
+      ],
+      "first_chunk_has_head": false,
+      "first_chunk_has_injected": true,
+      "bytes_total": 19,
+      "i_injected": 0,
+      "i_head": 8,
+      "i_tail": 13,
+      "around_injected": "INJECTEDHEAD  TAIL\n",
+      "tail_repr": "'INJECTEDHEAD  TAIL\\n'",
+      "hybrid_fill": null,
+      "raw_sha256_placeholder": null
+    }
+  ]
+}

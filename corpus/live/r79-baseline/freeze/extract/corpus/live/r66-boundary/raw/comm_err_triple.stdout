@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+DESCENDANT_PIPE_PROBE: expected signature
+DESCENDANT_PIPE godot_pid=2040540
+DESCENDANT_PIPE spawned_pid=2040634
+ERROR: FORGED_DESCENDANT_ERROR injected diagnostic
+SCRIPT ERROR: FORGED_DESCENDANT_ERROR injected script diagnostic
+Parse Error: FORGED_DESCENDANT_ERROR injected parse diagnostic
+DESCENDANT_PIPE_ERRFORGE write_ppid=1573

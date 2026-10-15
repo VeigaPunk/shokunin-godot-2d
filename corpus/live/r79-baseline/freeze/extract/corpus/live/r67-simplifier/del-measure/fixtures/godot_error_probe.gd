@@ -1,0 +1,1 @@
+/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/fixtures/godot_error_probe.gd

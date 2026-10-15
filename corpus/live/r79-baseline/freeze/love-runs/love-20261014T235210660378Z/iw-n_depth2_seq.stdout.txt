@@ -1,0 +1,19 @@
+IW | cell=n_depth2_seq | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=n_depth2_seq | built bodies=4 locked=false
+IW | cell=n_depth2_seq | evpin cb=bc locked=true step=4
+IW | cell=n_depth2_seq | evpin cb=pre locked=true step=4
+IW | cell=n_depth2_seq | evpin cb=post locked=true step=4
+IW | cell=n_depth2_seq | fire cb=bc kind=nested_twice/- step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=n_depth2_seq | r78inner cb=pre step=73 locked=true depth=1 dyn=b1
+IW | cell=n_depth2_seq | r78inner_write ok=false err=Box2D assertion failed: m_world->IsLocked() == false
+IW | cell=n_depth2_seq | r78nest1 ok=true err=nil lock_after=false count=4 depth=1 in_cb=true
+IW | cell=n_depth2_seq | evpin cb=ec locked=true step=73
+IW | cell=n_depth2_seq | r78nest2 ok=true err=nil lock_after=false count=4 depth=1 in_cb=true
+IW | cell=n_depth2_seq | r78setpos ok=true err=nil pos_after=1234.5,678.9000244140625
+IW | cell=n_depth2_seq | postfire cb=bc step=73 count=4 drain_n=0 aborts=0
+IW | cell=n_depth2_seq | after_update step=73 count=4 b1pos=400,531.054443359375 b1vel=0,-609.00518798828125
+IW | cell=n_depth2_seq | r78obs step=73 locked=false count=4 b1pos=400,531.054443359375 b3pos=650,519.85009765625 b1dead=false b3dead=false nest_n=2 nest_ok=2 depth=0 drain_n=0 aborts=0 in_cb=false
+IW | cell=n_depth2_seq | r78nextstep step=74 count=4 b1pos=400,509.87939453125 b3pos=650,519.85009765625 drain_n=0 aborts=0
+IW | cell=n_depth2_seq | final steps=200 count=4 b1pos=400,438.03939819335938 b2pos=240,525.19305419921875 bc=7 ec=5 pre=40 post=39 fired=true fire_step=73
+IW | cell=n_depth2_seq | r78obs step=200 locked=false count=4 b1pos=400,438.03939819335938 b3pos=650,519.85009765625 b1dead=false b3dead=false nest_n=2 nest_ok=2 depth=0 drain_n=0 aborts=0 in_cb=false
+IW | cell=n_depth2_seq | CELL_DONE

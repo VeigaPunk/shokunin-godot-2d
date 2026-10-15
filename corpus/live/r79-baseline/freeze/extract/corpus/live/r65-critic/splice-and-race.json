@@ -1,0 +1,55 @@
+{
+  "real_splice": {
+    "stdout_tail": "ending in ERROR",
+    "stderr_head": ": PHANTOM real-pipe splice",
+    "stdout_ERROR_lines": [],
+    "stderr_ERROR_lines": [],
+    "merged_ERROR_lines": [
+      "ending in ERROR: PHANTOM real-pipe splice"
+    ],
+    "classification": false,
+    "classification_with_newline_guard": true
+  },
+  "hold_race_margin": [
+    {
+      "rep": 0,
+      "sig_at": 0.32952645199839026,
+      "dead_at": 0.40091517499968177,
+      "err_at": 0.43264550699677784,
+      "write_lag_after_death": 0.03173033199709607,
+      "margin_to_3s_bound": 2.567354493003222
+    },
+    {
+      "rep": 1,
+      "sig_at": 0.30880703699949663,
+      "dead_at": 0.3801422599935904,
+      "err_at": 0.41193227199983085,
+      "write_lag_after_death": 0.03179001200624043,
+      "margin_to_3s_bound": 2.588067728000169
+    },
+    {
+      "rep": 2,
+      "sig_at": 0.3120131650066469,
+      "dead_at": 0.38346558800549246,
+      "err_at": 0.41528546000336064,
+      "write_lag_after_death": 0.03181987199786818,
+      "margin_to_3s_bound": 2.5847145399966394
+    },
+    {
+      "rep": 3,
+      "sig_at": 0.35074489600083325,
+      "dead_at": 0.42225218800012954,
+      "err_at": 0.454279461002443,
+      "write_lag_after_death": 0.03202727300231345,
+      "margin_to_3s_bound": 2.545720538997557
+    },
+    {
+      "rep": 4,
+      "sig_at": 0.318383473000722,
+      "dead_at": 0.3898511760053225,
+      "err_at": 0.4218732080043992,
+      "write_lag_after_death": 0.03202203199907672,
+      "margin_to_3s_bound": 2.578126791995601
+    }
+  ]
+}

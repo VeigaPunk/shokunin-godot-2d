@@ -93,6 +93,59 @@ CASES = [
     ("save_process_writer", "__save_process_writer__", [], 0, "PASS save_process writer=true pid="),
     ("save_process_reader", "__save_process_reader__", [], 0, "PASS save_process reader=true pid="),
     ("save_process_missing", "__save_process_missing__", [], 2, "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND"),
+    # r79: PhysicsServer2D interior-window lattice — the contact_monitor
+    # RigidBody2D window vs the monitoring Area2D window on the same scene.
+    # Pinned from r79-scout §1.4 (23 arms, measured x3 byte-stable).
+    # Inserted ahead of the crash/descendant tail, not appended at the end:
+    # probe_descendant_pipe_eof requires detached_descendant_orphaned_alive
+    # within the descendant's `sleep 8` lifetime, so no CASES rows may sit
+    # between descendant_pipe_detached_control and the meta probes.
+    ("phys2d_events_edge_srv", "phys2d_events.gd", ["--arm=edge_srv"], 0,
+     'PASS phys2d_events edge_srv q_before=1 srv_before=(100.0, 0.0) srv_after=(200.0, 0.0) q_new=1 q_old=0 q_new_n1=1 q_old_n1=0'),
+    ("phys2d_events_edge_node_srv", "phys2d_events.gd", ["--arm=edge_node_srv"], 0,
+     'PASS phys2d_events edge_node_srv q_before=1 srv_after=(200.0, 0.0) q_new=1 q_old=0 node_prop_in_cb=(300.0, 0.0) srv_n1=(200.0, 0.0) node_prop_n1=(300.0, 0.0) q_new_n1=1 q_old_n1=0'),
+    ("phys2d_events_edge_node", "phys2d_events.gd", ["--arm=edge_node"], 0,
+     'PASS phys2d_events edge_node node_prop_in_cb=(400.0, 0.0) srv_in_cb=(300.0, 0.0) q_new=0 q_old=1 srv_n1=(400.0, 0.0) q_new_n1=1 q_old_n1=0'),
+    ("phys2d_events_edge_revert", "phys2d_events.gd", ["--arm=edge_revert"], 0,
+     'PASS phys2d_events edge_revert q_srv_w0=1 srv_after_node_w0=(200.0, 0.0) q_srv_after_node_w0=1 q_node_after_node_w0=0 srv_n1=(400.0, 0.0) q_srv_n1=0 q_node_n1=1 node_prop_n1=(400.0, 0.0)'),
+    ("phys2d_events_area_edge", "phys2d_events.gd", ["--arm=area_edge"], 0,
+     'PASS phys2d_events area_edge q_before=1 node_prop_in_cb=(100.0, 0.0) srv_in_cb=(0.0, 0.0) q_new=0 q_old=1 srv_n1=(100.0, 0.0) q_new_n1=1 q_old_n1=0 node_prop_n1=(100.0, 0.0) srv_direct_in_cb=(200.0, 0.0) q_direct=1 node_prop_direct_in_cb=(100.0, 0.0) srv_direct_n2=(200.0, 0.0) node_prop_direct_n2=(100.0, 0.0)'),
+    ("phys2d_events_cm_on", "phys2d_events.gd", ["--arm=cm_on"], 0,
+     'PASS phys2d_events cm_on entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 valid=true exit1_frame=7'),
+    ("phys2d_events_cm_off", "phys2d_events.gd", ["--arm=cm_off"], 0,
+     'PASS phys2d_events cm_off entered=0 exited=0 entry1_frame=-1 entry2_frame=-1 cb_fired=false cb_count=- cb_colliders=- cb_monitor=- cb_max=- post_monitor=false post_max=4 valid=true exit1_frame=-1'),
+    ("phys2d_events_cm_max0", "phys2d_events.gd", ["--arm=cm_max0"], 0,
+     'PASS phys2d_events cm_max0 entered=0 exited=0 entry1_frame=-1 entry2_frame=-1 cb_fired=false cb_count=- cb_colliders=- cb_monitor=- cb_max=- post_monitor=true post_max=0 valid=true exit1_frame=-1'),
+    ("phys2d_events_cm_toggle_cb", "phys2d_events.gd", ["--arm=cm_toggle_cb"], 0,
+     'PASS phys2d_events cm_toggle_cb entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=true post_monitor=true post_count=2 valid=true exit1_frame=7'),
+    ("phys2d_events_cm_deferred_cb", "phys2d_events.gd", ["--arm=cm_deferred_cb"], 0,
+     'PASS phys2d_events cm_deferred_cb entered=1 exited=0 entry1_frame=1 entry2_frame=-1 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=true post_monitor=false valid=true exit1_frame=-1'),
+    ("phys2d_events_cm_max0_cb", "phys2d_events.gd", ["--arm=cm_max0_cb"], 0,
+     'PASS phys2d_events cm_max0_cb entered=1 exited=1 entry1_frame=1 entry2_frame=-1 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=0 post_max=0 valid=true exit1_frame=1'),
+    ("phys2d_events_rb_srv_set_state", "phys2d_events.gd", ["--arm=rb_srv_set_state"], 0,
+     'PASS phys2d_events rb_srv_set_state entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=(500.0, 500.0) cb_node_unchanged=true cb_node_read=- cb_srv_before=- next_node=(500.0001, 501.0889) next_srv=(500.0001, 501.0889) late_node=(500.0006, 516.297) node_write_stuck=false node_follows_srv=true valid_after=true'),
+    ("phys2d_events_rb_node_position", "phys2d_events.gd", ["--arm=rb_node_position"], 0,
+     'PASS phys2d_events rb_node_position entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=(600.0, 600.0) cb_srv_before=(0.000128, -4.56002) next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true'),
+    ("phys2d_events_rb_queue_free", "phys2d_events.gd", ["--arm=rb_queue_free"], 0,
+     'PASS phys2d_events rb_queue_free entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=<dead> next_srv=<dead> late_node=<dead> node_write_stuck=false node_follows_srv=false valid_after=false cb_queued=true'),
+    ("phys2d_events_rb_free_rid", "phys2d_events.gd", ["--arm=rb_free_rid"], 0,
+     'PASS phys2d_events rb_free_rid entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.56002) next_srv=<null> late_node=(0.000128, -4.56002) node_write_stuck=false node_follows_srv=false valid_after=true cb_freed=true'),
+    ("phys2d_events_rb_dss_in_cb", "phys2d_events.gd", ["--arm=rb_dss_in_cb"], 0,
+     'PASS phys2d_events rb_dss_in_cb entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true cb_dss_null=false cb_q_hits=1'),
+    ("phys2d_events_area_monitoring_direct", "phys2d_events.gd", ["--arm=area_monitoring_direct"], 0,
+     'PASS phys2d_events area_monitoring_direct entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0'),
+    ("phys2d_events_area_monitoring_deferred", "phys2d_events.gd", ["--arm=area_monitoring_deferred"], 0,
+     'PASS phys2d_events area_monitoring_deferred entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=false entries=1 exits=1'),
+    ("phys2d_events_area_free_rid", "phys2d_events.gd", ["--arm=area_free_rid"], 0,
+     'PASS phys2d_events area_free_rid entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=true cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -2.911111) next_srv=<null> late_node=(0.0, -2.911111) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=1'),
+    ("phys2d_events_area_queue_free", "phys2d_events.gd", ["--arm=area_queue_free"], 0,
+     'PASS phys2d_events area_queue_free entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=true cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=<dead> next_srv=<dead> late_node=<dead> node_write_stuck=false node_follows_srv=false valid_after=false post_monitoring=true entries=1 exits=1'),
+    ("phys2d_events_area_srv_set_state", "phys2d_events.gd", ["--arm=area_srv_set_state"], 0,
+     'PASS phys2d_events area_srv_set_state entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=(0.0, -2.911111) cb_srv_read=(500.0, 500.0) cb_node_read=- next_node=(500.0, 502.176) next_srv=(500.0, 502.176) late_node=(500.0, 521.7144) node_write_stuck=false node_follows_srv=true valid_after=true post_monitoring=true entries=1 exits=1'),
+    ("phys2d_events_area_node_position", "phys2d_events.gd", ["--arm=area_node_position"], 0,
+     'PASS phys2d_events area_node_position entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=(600.0, 600.0) next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0'),
+    ("phys2d_events_area_dss_in_cb", "phys2d_events.gd", ["--arm=area_dss_in_cb"], 0,
+     'PASS phys2d_events area_dss_in_cb entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0 cb_dss_null=false cb_q_hits=1'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
@@ -445,6 +498,20 @@ def main():
                 "audio_no_play": ("ERROR: AUDIO ASSERTION FAILED: expected in-tree player playback to advance,",),
                 "audio_bus_route_invalid_control": ("ERROR: AUDIO BUS CONTROL ASSERTION FAILED: requested invalid route silently fell back to Master,",),
                 "crash_spontaneous_sigabrt": ("ERROR: r60 spontaneous crash probe",),
+                "phys2d_events_cm_toggle_cb": (
+                    "ERROR: Can't disable contact monitoring during in/out callback. Use call_deferred(\"set_contact_monitor\", false) instead.",
+                ),
+                "phys2d_events_rb_free_rid": (
+                    "ERROR: Parameter \"body\" is null.",
+                    "ERROR: Invalid ID.",
+                ),
+                "phys2d_events_area_monitoring_direct": (
+                    "ERROR: Function blocked during in/out signal. Use set_deferred(\"monitoring\", true/false).",
+                ),
+                "phys2d_events_area_free_rid": (
+                    "ERROR: Parameter \"body\" is null.",
+                    "ERROR: Invalid ID.",
+                ),
             }.get(name, ())
             classifier = classify_audio_process if name == "audio_playback" else classify_process
             passed = detected if mutate else classifier(code, error, output, expected_exit, evidence, expected_errors)
@@ -2018,6 +2085,14 @@ def main():
             detached is not None and detached["verdict"] == "PASS"
             and detached["actual_exit"] == 0 and detached["error"] is None),
         "prior_meta_rows_stable_29_discriminations": prior_meta_stable,
+        # r79 critic C2: expected_errors was ceiling-not-floor — a dead
+        # allowlist entry (never matched a real emitted line) passed
+        # silently. The four phys2d_events_* entries must each match.
+        "phys2d_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith("phys2d_events_")
+            for e in r["entries"]),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
     # self-exit in well under a second; never gated).

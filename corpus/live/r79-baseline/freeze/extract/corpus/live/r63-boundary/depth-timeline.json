@@ -1,0 +1,4508 @@
+{
+  "mode": "multi_depth_descendant_timelines",
+  "mechanism": "Popen+communicate replica of subprocess.run POSIX timeout shape; monitor thread: poll()/transitive children/pipe-inode holders at 20ms",
+  "environment": {
+    "godot_version": "4.7.2.stable.arch_linux.ed1daf0bf",
+    "python": "3.14.7",
+    "platform": "Linux 7.2.3-arch1-3 #1 SMP PREEMPT_DYNAMIC Sun, 06 Sep 2026 13:01:04 +0000 x86_64",
+    "runner": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/fixtures/run_battery.py",
+    "runner_sha256": "74383a136e45d31f522ffbdaead228e5251bf297ae895e5ea1ba1fd15ca34778",
+    "started_utc": "2026-10-14T00:40:47.214722+00:00",
+    "subreaper_hint": "pid 1573 = systemd --user on this host (r61/r62)"
+  },
+  "results": [
+    {
+      "arm": "d2_hold",
+      "bound_seconds": 3.0,
+      "godot_pid": 1067675,
+      "pipe_inodes": {
+        "pipe:[4581325]": "stdout",
+        "pipe:[4581326]": "stderr"
+      },
+      "child_reaped_at_s": 0.511,
+      "child_returncode": 0,
+      "communicate_ended_at_s": 3.003,
+      "timed_out": true,
+      "kill_sent_at_s": 3.093,
+      "pids": {
+        "1067752": {
+          "first_seen_s": 0.443,
+          "transitions": [
+            {
+              "t_s": 0.443,
+              "ppid": 1067675,
+              "state": "S"
+            },
+            {
+              "t_s": 0.511,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.953,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold.sh",
+          "alive_at_return": null
+        },
+        "1067754": {
+          "first_seen_s": 0.475,
+          "transitions": [
+            {
+              "t_s": 0.475,
+              "ppid": 1067752,
+              "state": "S"
+            },
+            {
+              "t_s": 1.024,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 2.998,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh",
+          "alive_at_return": true,
+          "ppid_at_return": 1573,
+          "state_at_return": "S"
+        },
+        "1067755": {
+          "first_seen_s": 0.475,
+          "transitions": [
+            {
+              "t_s": 0.475,
+              "ppid": 1067752,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.953,
+          "cmdline": "sleep 0.6",
+          "alive_at_return": null
+        },
+        "1067762": {
+          "first_seen_s": 0.511,
+          "transitions": [
+            {
+              "t_s": 0.511,
+              "ppid": 1067754,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.511,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1067763": {
+          "first_seen_s": 0.553,
+          "transitions": [
+            {
+              "t_s": 0.553,
+              "ppid": 1067754,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.553,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1067764": {
+          "first_seen_s": 0.599,
+          "transitions": [
+            {
+              "t_s": 0.599,
+              "ppid": 1067754,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.599,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1067765": {
+          "first_seen_s": 0.648,
+          "transitions": [
+            {
+              "t_s": 0.648,
+              "ppid": 1067754,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.648,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1067767": {
+          "first_seen_s": 0.701,
+          "transitions": [
+            {
+              "t_s": 0.701,
+              "ppid": 1067754,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.701,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1067769": {
+          "first_seen_s": 0.758,
+          "transitions": [
+            {
+              "t_s": 0.758,
+              "ppid": 1067754,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.758,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1067770": {
+          "first_seen_s": 0.818,
+          "transitions": [
+            {
+              "t_s": 0.818,
+              "ppid": 1067754,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.818,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1067821": {
+          "first_seen_s": 0.883,
+          "transitions": [
+            {
+              "t_s": 0.883,
+              "ppid": 1067754,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.883,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1067822": {
+          "first_seen_s": 0.953,
+          "transitions": [
+            {
+              "t_s": 0.953,
+              "ppid": 1067754,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.953,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1067823": {
+          "first_seen_s": 1.024,
+          "transitions": [
+            {
+              "t_s": 1.024,
+              "ppid": 1067754,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 1.024,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1067824": {
+          "first_seen_s": 1.098,
+          "transitions": [
+            {
+              "t_s": 1.098,
+              "ppid": 1067754,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 2.998,
+          "cmdline": "sleep 4.0",
+          "alive_at_return": true,
+          "ppid_at_return": 1067754,
+          "state_at_return": "S"
+        }
+      },
+      "holder_samples": [
+        {
+          "t_s": 0.0,
+          "holders": []
+        },
+        {
+          "t_s": 0.443,
+          "holders": [
+            {
+              "pid": 1067752,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067675,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold.sh"
+            },
+            {
+              "pid": 1067754,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh"
+            },
+            {
+              "pid": 1067755,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1067756,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067754,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.475,
+          "holders": [
+            {
+              "pid": 1067752,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067675,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold.sh"
+            },
+            {
+              "pid": 1067754,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh"
+            },
+            {
+              "pid": 1067755,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            }
+          ]
+        },
+        {
+          "t_s": 0.511,
+          "holders": [
+            {
+              "pid": 1067752,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold.sh"
+            },
+            {
+              "pid": 1067754,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh"
+            },
+            {
+              "pid": 1067755,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1067762,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067754,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.553,
+          "holders": [
+            {
+              "pid": 1067752,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold.sh"
+            },
+            {
+              "pid": 1067754,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh"
+            },
+            {
+              "pid": 1067755,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1067763,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067754,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.599,
+          "holders": [
+            {
+              "pid": 1067752,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold.sh"
+            },
+            {
+              "pid": 1067754,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh"
+            },
+            {
+              "pid": 1067755,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1067764,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067754,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.648,
+          "holders": [
+            {
+              "pid": 1067752,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold.sh"
+            },
+            {
+              "pid": 1067754,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh"
+            },
+            {
+              "pid": 1067755,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1067765,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067754,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.701,
+          "holders": [
+            {
+              "pid": 1067752,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold.sh"
+            },
+            {
+              "pid": 1067754,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh"
+            },
+            {
+              "pid": 1067755,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1067767,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067754,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.758,
+          "holders": [
+            {
+              "pid": 1067752,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold.sh"
+            },
+            {
+              "pid": 1067754,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh"
+            },
+            {
+              "pid": 1067755,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1067770,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067754,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.818,
+          "holders": [
+            {
+              "pid": 1067752,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold.sh"
+            },
+            {
+              "pid": 1067754,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh"
+            },
+            {
+              "pid": 1067755,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1067784,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067754,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.883,
+          "holders": [
+            {
+              "pid": 1067752,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold.sh"
+            },
+            {
+              "pid": 1067754,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh"
+            },
+            {
+              "pid": 1067755,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1067821,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067754,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.953,
+          "holders": [
+            {
+              "pid": 1067752,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold.sh"
+            },
+            {
+              "pid": 1067754,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh"
+            },
+            {
+              "pid": 1067755,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067752,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1067823,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067754,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 1.024,
+          "holders": [
+            {
+              "pid": 1067754,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh"
+            },
+            {
+              "pid": 1067824,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067754,
+              "state": "S",
+              "cmdline": "sleep 4.0"
+            }
+          ]
+        }
+      ],
+      "signature_in_output": true,
+      "holders_at_return": [
+        {
+          "pid": 1067754,
+          "streams": [
+            "stderr",
+            "stdout"
+          ],
+          "ppid": 1573,
+          "state": "S",
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hold_gc.sh"
+        },
+        {
+          "pid": 1067824,
+          "streams": [
+            "stderr",
+            "stdout"
+          ],
+          "ppid": 1067754,
+          "state": "S",
+          "cmdline": "sleep 4.0"
+        }
+      ],
+      "partial_output_lines": 8,
+      "seen_pids": [
+        1067752,
+        1067754,
+        1067755,
+        1067762,
+        1067763,
+        1067764,
+        1067765,
+        1067767,
+        1067769,
+        1067770,
+        1067821,
+        1067822,
+        1067823,
+        1067824
+      ]
+    },
+    {
+      "arm": "d2_release",
+      "bound_seconds": 3.0,
+      "godot_pid": 1067942,
+      "pipe_inodes": {
+        "pipe:[4668894]": "stdout",
+        "pipe:[4668895]": "stderr"
+      },
+      "child_reaped_at_s": 0.456,
+      "child_returncode": 0,
+      "communicate_ended_at_s": 1.97,
+      "timed_out": false,
+      "kill_sent_at_s": null,
+      "pids": {
+        "1067981": {
+          "first_seen_s": 0.386,
+          "transitions": [
+            {
+              "t_s": 0.386,
+              "ppid": 1067942,
+              "state": "S"
+            },
+            {
+              "t_s": 0.456,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.885,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release.sh",
+          "alive_at_return": null
+        },
+        "1067982": {
+          "first_seen_s": 0.418,
+          "transitions": [
+            {
+              "t_s": 0.418,
+              "ppid": 1067981,
+              "state": "S"
+            },
+            {
+              "t_s": 0.951,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 1.852,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release_gc.sh",
+          "alive_at_return": null
+        },
+        "1067983": {
+          "first_seen_s": 0.418,
+          "transitions": [
+            {
+              "t_s": 0.418,
+              "ppid": 1067981,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.885,
+          "cmdline": "sleep 0.6",
+          "alive_at_return": null
+        },
+        "1067999": {
+          "first_seen_s": 0.456,
+          "transitions": [
+            {
+              "t_s": 0.456,
+              "ppid": 1067982,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.456,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068013": {
+          "first_seen_s": 0.547,
+          "transitions": [
+            {
+              "t_s": 0.547,
+              "ppid": 1067982,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.547,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068050": {
+          "first_seen_s": 0.596,
+          "transitions": [
+            {
+              "t_s": 0.596,
+              "ppid": 1067982,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.596,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068053": {
+          "first_seen_s": 0.646,
+          "transitions": [
+            {
+              "t_s": 0.646,
+              "ppid": 1067982,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.646,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068145": {
+          "first_seen_s": 0.765,
+          "transitions": [
+            {
+              "t_s": 0.765,
+              "ppid": 1067982,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.765,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068146": {
+          "first_seen_s": 0.823,
+          "transitions": [
+            {
+              "t_s": 0.823,
+              "ppid": 1067982,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.823,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068147": {
+          "first_seen_s": 0.885,
+          "transitions": [
+            {
+              "t_s": 0.885,
+              "ppid": 1067982,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.885,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068148": {
+          "first_seen_s": 0.951,
+          "transitions": [
+            {
+              "t_s": 0.951,
+              "ppid": 1067982,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.951,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068149": {
+          "first_seen_s": 1.023,
+          "transitions": [
+            {
+              "t_s": 1.023,
+              "ppid": 1067982,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 1.852,
+          "cmdline": "sleep 1.0",
+          "alive_at_return": null
+        }
+      },
+      "holder_samples": [
+        {
+          "t_s": 0.0,
+          "holders": []
+        },
+        {
+          "t_s": 0.386,
+          "holders": [
+            {
+              "pid": 1067981,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067942,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release.sh"
+            },
+            {
+              "pid": 1067982,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release_gc.sh"
+            },
+            {
+              "pid": 1067983,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1067984,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067982,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.418,
+          "holders": [
+            {
+              "pid": 1067981,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release.sh"
+            },
+            {
+              "pid": 1067982,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release_gc.sh"
+            },
+            {
+              "pid": 1067983,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1067985,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067982,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.456,
+          "holders": [
+            {
+              "pid": 1067981,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release.sh"
+            },
+            {
+              "pid": 1067982,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release_gc.sh"
+            },
+            {
+              "pid": 1067983,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1067999,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067982,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.5,
+          "holders": [
+            {
+              "pid": 1067981,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release.sh"
+            },
+            {
+              "pid": 1067982,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release_gc.sh"
+            },
+            {
+              "pid": 1067983,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068013,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067982,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.547,
+          "holders": [
+            {
+              "pid": 1067981,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release.sh"
+            },
+            {
+              "pid": 1067982,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release_gc.sh"
+            },
+            {
+              "pid": 1067983,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068050,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067982,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.596,
+          "holders": [
+            {
+              "pid": 1067981,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release.sh"
+            },
+            {
+              "pid": 1067982,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release_gc.sh"
+            },
+            {
+              "pid": 1067983,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068053,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067982,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.646,
+          "holders": [
+            {
+              "pid": 1067981,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release.sh"
+            },
+            {
+              "pid": 1067982,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release_gc.sh"
+            },
+            {
+              "pid": 1067983,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068143,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067982,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.704,
+          "holders": [
+            {
+              "pid": 1067981,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release.sh"
+            },
+            {
+              "pid": 1067982,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release_gc.sh"
+            },
+            {
+              "pid": 1067983,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068144,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067982,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.765,
+          "holders": [
+            {
+              "pid": 1067981,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release.sh"
+            },
+            {
+              "pid": 1067982,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release_gc.sh"
+            },
+            {
+              "pid": 1067983,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068145,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067982,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.823,
+          "holders": [
+            {
+              "pid": 1067981,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release.sh"
+            },
+            {
+              "pid": 1067982,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release_gc.sh"
+            },
+            {
+              "pid": 1067983,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068146,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067982,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.885,
+          "holders": [
+            {
+              "pid": 1067981,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release.sh"
+            },
+            {
+              "pid": 1067982,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release_gc.sh"
+            },
+            {
+              "pid": 1067983,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067981,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068148,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067982,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.951,
+          "holders": [
+            {
+              "pid": 1067982,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_release_gc.sh"
+            },
+            {
+              "pid": 1068149,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1067982,
+              "state": "S",
+              "cmdline": "sleep 1.0"
+            }
+          ]
+        },
+        {
+          "t_s": 1.929,
+          "holders": []
+        }
+      ],
+      "signature_in_output": true,
+      "holders_at_return": [],
+      "final_returncode": 0,
+      "seen_pids": [
+        1067981,
+        1067982,
+        1067983,
+        1067999,
+        1068013,
+        1068050,
+        1068053,
+        1068145,
+        1068146,
+        1068147,
+        1068148,
+        1068149
+      ]
+    },
+    {
+      "arm": "d2_spoof",
+      "bound_seconds": 3.0,
+      "godot_pid": 1068158,
+      "pipe_inodes": {
+        "pipe:[4661909]": "stdout",
+        "pipe:[4661910]": "stderr"
+      },
+      "child_reaped_at_s": 0.592,
+      "child_returncode": 0,
+      "communicate_ended_at_s": 1.609,
+      "timed_out": false,
+      "kill_sent_at_s": null,
+      "pids": {
+        "1068234": {
+          "first_seen_s": 0.522,
+          "transitions": [
+            {
+              "t_s": 0.522,
+              "ppid": 1068158,
+              "state": "S"
+            },
+            {
+              "t_s": 0.592,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.907,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof.sh",
+          "alive_at_return": null
+        },
+        "1068235": {
+          "first_seen_s": 0.555,
+          "transitions": [
+            {
+              "t_s": 0.555,
+              "ppid": 1068234,
+              "state": "S"
+            },
+            {
+              "t_s": 0.969,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 1.534,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_gc.sh",
+          "alive_at_return": null
+        },
+        "1068236": {
+          "first_seen_s": 0.555,
+          "transitions": [
+            {
+              "t_s": 0.555,
+              "ppid": 1068234,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.907,
+          "cmdline": "sleep 0.5",
+          "alive_at_return": null
+        },
+        "1068238": {
+          "first_seen_s": 0.592,
+          "transitions": [
+            {
+              "t_s": 0.592,
+              "ppid": 1068235,
+              "state": "R"
+            }
+          ],
+          "last_alive_s": 0.592,
+          "cmdline": "",
+          "alive_at_return": null
+        },
+        "1068239": {
+          "first_seen_s": 0.635,
+          "transitions": [
+            {
+              "t_s": 0.635,
+              "ppid": 1068235,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.635,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068240": {
+          "first_seen_s": 0.683,
+          "transitions": [
+            {
+              "t_s": 0.683,
+              "ppid": 1068235,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.683,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068241": {
+          "first_seen_s": 0.733,
+          "transitions": [
+            {
+              "t_s": 0.733,
+              "ppid": 1068235,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.733,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068242": {
+          "first_seen_s": 0.788,
+          "transitions": [
+            {
+              "t_s": 0.788,
+              "ppid": 1068235,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.788,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068245": {
+          "first_seen_s": 0.907,
+          "transitions": [
+            {
+              "t_s": 0.907,
+              "ppid": 1068235,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.907,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068246": {
+          "first_seen_s": 0.969,
+          "transitions": [
+            {
+              "t_s": 0.969,
+              "ppid": 1068235,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.969,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068247": {
+          "first_seen_s": 1.033,
+          "transitions": [
+            {
+              "t_s": 1.033,
+              "ppid": 1068235,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 1.534,
+          "cmdline": "sleep 0.6",
+          "alive_at_return": null
+        }
+      },
+      "holder_samples": [
+        {
+          "t_s": 0.0,
+          "holders": []
+        },
+        {
+          "t_s": 0.522,
+          "holders": [
+            {
+              "pid": 1068234,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068158,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof.sh"
+            },
+            {
+              "pid": 1068235,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_gc.sh"
+            },
+            {
+              "pid": 1068236,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068237,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068235,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.555,
+          "holders": [
+            {
+              "pid": 1068234,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof.sh"
+            },
+            {
+              "pid": 1068235,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_gc.sh"
+            },
+            {
+              "pid": 1068236,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068238,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068235,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.592,
+          "holders": [
+            {
+              "pid": 1068234,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof.sh"
+            },
+            {
+              "pid": 1068235,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_gc.sh"
+            },
+            {
+              "pid": 1068236,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068239,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068235,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.635,
+          "holders": [
+            {
+              "pid": 1068234,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof.sh"
+            },
+            {
+              "pid": 1068235,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_gc.sh"
+            },
+            {
+              "pid": 1068236,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068240,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068235,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.683,
+          "holders": [
+            {
+              "pid": 1068234,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof.sh"
+            },
+            {
+              "pid": 1068235,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_gc.sh"
+            },
+            {
+              "pid": 1068236,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068241,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068235,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.733,
+          "holders": [
+            {
+              "pid": 1068234,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof.sh"
+            },
+            {
+              "pid": 1068235,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_gc.sh"
+            },
+            {
+              "pid": 1068236,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068242,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068235,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.788,
+          "holders": [
+            {
+              "pid": 1068234,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof.sh"
+            },
+            {
+              "pid": 1068235,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_gc.sh"
+            },
+            {
+              "pid": 1068236,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068243,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068235,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.846,
+          "holders": [
+            {
+              "pid": 1068234,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof.sh"
+            },
+            {
+              "pid": 1068235,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_gc.sh"
+            },
+            {
+              "pid": 1068236,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068244,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068235,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.907,
+          "holders": [
+            {
+              "pid": 1068234,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof.sh"
+            },
+            {
+              "pid": 1068235,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_gc.sh"
+            },
+            {
+              "pid": 1068236,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068234,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068245,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068235,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.969,
+          "holders": [
+            {
+              "pid": 1068235,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_gc.sh"
+            }
+          ]
+        },
+        {
+          "t_s": 1.033,
+          "holders": [
+            {
+              "pid": 1068235,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_gc.sh"
+            },
+            {
+              "pid": 1068247,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068235,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            }
+          ]
+        },
+        {
+          "t_s": 1.607,
+          "holders": []
+        }
+      ],
+      "signature_in_output": true,
+      "holders_at_return": [],
+      "final_returncode": 0,
+      "seen_pids": [
+        1068234,
+        1068235,
+        1068236,
+        1068238,
+        1068239,
+        1068240,
+        1068241,
+        1068242,
+        1068245,
+        1068246,
+        1068247
+      ]
+    },
+    {
+      "arm": "d2_spoof_hold",
+      "bound_seconds": 3.0,
+      "godot_pid": 1068330,
+      "pipe_inodes": {
+        "pipe:[4669010]": "stdout",
+        "pipe:[4669011]": "stderr"
+      },
+      "child_reaped_at_s": 0.528,
+      "child_returncode": 0,
+      "communicate_ended_at_s": 3.003,
+      "timed_out": true,
+      "kill_sent_at_s": 3.037,
+      "pids": {
+        "1068374": {
+          "first_seen_s": 0.459,
+          "transitions": [
+            {
+              "t_s": 0.459,
+              "ppid": 1068330,
+              "state": "S"
+            },
+            {
+              "t_s": 0.528,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.849,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold.sh",
+          "alive_at_return": null
+        },
+        "1068375": {
+          "first_seen_s": 0.492,
+          "transitions": [
+            {
+              "t_s": 0.492,
+              "ppid": 1068374,
+              "state": "S"
+            },
+            {
+              "t_s": 0.917,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 2.95,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold_gc.sh",
+          "alive_at_return": true,
+          "ppid_at_return": 1573,
+          "state_at_return": "S"
+        },
+        "1068376": {
+          "first_seen_s": 0.492,
+          "transitions": [
+            {
+              "t_s": 0.492,
+              "ppid": 1068374,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.849,
+          "cmdline": "sleep 0.5",
+          "alive_at_return": null
+        },
+        "1068378": {
+          "first_seen_s": 0.528,
+          "transitions": [
+            {
+              "t_s": 0.528,
+              "ppid": 1068375,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.528,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068379": {
+          "first_seen_s": 0.572,
+          "transitions": [
+            {
+              "t_s": 0.572,
+              "ppid": 1068375,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.572,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068380": {
+          "first_seen_s": 0.619,
+          "transitions": [
+            {
+              "t_s": 0.619,
+              "ppid": 1068375,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.619,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068381": {
+          "first_seen_s": 0.671,
+          "transitions": [
+            {
+              "t_s": 0.671,
+              "ppid": 1068375,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.671,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068421": {
+          "first_seen_s": 0.727,
+          "transitions": [
+            {
+              "t_s": 0.727,
+              "ppid": 1068375,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.727,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068422": {
+          "first_seen_s": 0.785,
+          "transitions": [
+            {
+              "t_s": 0.785,
+              "ppid": 1068375,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.785,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068424": {
+          "first_seen_s": 0.849,
+          "transitions": [
+            {
+              "t_s": 0.849,
+              "ppid": 1068375,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.849,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068425": {
+          "first_seen_s": 0.917,
+          "transitions": [
+            {
+              "t_s": 0.917,
+              "ppid": 1068375,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.917,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068466": {
+          "first_seen_s": 0.99,
+          "transitions": [
+            {
+              "t_s": 0.99,
+              "ppid": 1068375,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 2.95,
+          "cmdline": "sleep 4.0",
+          "alive_at_return": true,
+          "ppid_at_return": 1068375,
+          "state_at_return": "S"
+        }
+      },
+      "holder_samples": [
+        {
+          "t_s": 0.0,
+          "holders": []
+        },
+        {
+          "t_s": 0.459,
+          "holders": [
+            {
+              "pid": 1068374,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068330,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold.sh"
+            },
+            {
+              "pid": 1068375,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold_gc.sh"
+            },
+            {
+              "pid": 1068376,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068377,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068375,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.492,
+          "holders": [
+            {
+              "pid": 1068374,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068330,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold.sh"
+            },
+            {
+              "pid": 1068375,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold_gc.sh"
+            },
+            {
+              "pid": 1068376,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            }
+          ]
+        },
+        {
+          "t_s": 0.572,
+          "holders": [
+            {
+              "pid": 1068374,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold.sh"
+            },
+            {
+              "pid": 1068375,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold_gc.sh"
+            },
+            {
+              "pid": 1068376,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068379,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068375,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.619,
+          "holders": [
+            {
+              "pid": 1068374,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold.sh"
+            },
+            {
+              "pid": 1068375,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold_gc.sh"
+            },
+            {
+              "pid": 1068376,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068380,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068375,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.671,
+          "holders": [
+            {
+              "pid": 1068374,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold.sh"
+            },
+            {
+              "pid": 1068375,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold_gc.sh"
+            },
+            {
+              "pid": 1068376,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            }
+          ]
+        },
+        {
+          "t_s": 0.727,
+          "holders": [
+            {
+              "pid": 1068374,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold.sh"
+            },
+            {
+              "pid": 1068375,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold_gc.sh"
+            },
+            {
+              "pid": 1068376,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068422,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068375,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.785,
+          "holders": [
+            {
+              "pid": 1068374,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold.sh"
+            },
+            {
+              "pid": 1068375,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold_gc.sh"
+            },
+            {
+              "pid": 1068376,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068423,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068375,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.849,
+          "holders": [
+            {
+              "pid": 1068374,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold.sh"
+            },
+            {
+              "pid": 1068375,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold_gc.sh"
+            },
+            {
+              "pid": 1068376,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068374,
+              "state": "S",
+              "cmdline": "sleep 0.5"
+            },
+            {
+              "pid": 1068424,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068375,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.917,
+          "holders": [
+            {
+              "pid": 1068375,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold_gc.sh"
+            },
+            {
+              "pid": 1068466,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068375,
+              "state": "S",
+              "cmdline": "sleep 4.0"
+            }
+          ]
+        }
+      ],
+      "signature_in_output": true,
+      "holders_at_return": [
+        {
+          "pid": 1068375,
+          "streams": [
+            "stderr",
+            "stdout"
+          ],
+          "ppid": 1573,
+          "state": "S",
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_spoof_hold_gc.sh"
+        },
+        {
+          "pid": 1068466,
+          "streams": [
+            "stderr",
+            "stdout"
+          ],
+          "ppid": 1068375,
+          "state": "S",
+          "cmdline": "sleep 4.0"
+        }
+      ],
+      "partial_output_lines": 8,
+      "seen_pids": [
+        1068374,
+        1068375,
+        1068376,
+        1068378,
+        1068379,
+        1068380,
+        1068381,
+        1068421,
+        1068422,
+        1068424,
+        1068425,
+        1068466
+      ]
+    },
+    {
+      "arm": "d2_hang",
+      "bound_seconds": 3.0,
+      "godot_pid": 1068711,
+      "pipe_inodes": {
+        "pipe:[4660189]": "stdout",
+        "pipe:[4660190]": "stderr"
+      },
+      "child_reaped_at_s": null,
+      "child_returncode": null,
+      "communicate_ended_at_s": 3.002,
+      "timed_out": true,
+      "kill_sent_at_s": 3.036,
+      "pids": {
+        "1068756": {
+          "first_seen_s": 0.503,
+          "transitions": [
+            {
+              "t_s": 0.503,
+              "ppid": 1068711,
+              "state": "S"
+            },
+            {
+              "t_s": 1.048,
+              "ppid": 1068711,
+              "state": "Z"
+            }
+          ],
+          "last_alive_s": 2.947,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang.sh",
+          "alive_at_return": null
+        },
+        "1068757": {
+          "first_seen_s": 0.537,
+          "transitions": [
+            {
+              "t_s": 0.537,
+              "ppid": 1068756,
+              "state": "S"
+            },
+            {
+              "t_s": 0.72,
+              "ppid": 1068756,
+              "state": "R"
+            },
+            {
+              "t_s": 0.776,
+              "ppid": 1068756,
+              "state": "S"
+            },
+            {
+              "t_s": 1.048,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 2.947,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang_gc.sh",
+          "alive_at_return": true,
+          "ppid_at_return": 1573,
+          "state_at_return": "S"
+        },
+        "1068758": {
+          "first_seen_s": 0.537,
+          "transitions": [
+            {
+              "t_s": 0.537,
+              "ppid": 1068756,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.971,
+          "cmdline": "sleep 0.6",
+          "alive_at_return": null
+        },
+        "1068760": {
+          "first_seen_s": 0.574,
+          "transitions": [
+            {
+              "t_s": 0.574,
+              "ppid": 1068757,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.574,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068761": {
+          "first_seen_s": 0.619,
+          "transitions": [
+            {
+              "t_s": 0.619,
+              "ppid": 1068757,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.619,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068762": {
+          "first_seen_s": 0.667,
+          "transitions": [
+            {
+              "t_s": 0.667,
+              "ppid": 1068757,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.667,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068763": {
+          "first_seen_s": 0.72,
+          "transitions": [
+            {
+              "t_s": 0.72,
+              "ppid": 1068757,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.72,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068765": {
+          "first_seen_s": 0.776,
+          "transitions": [
+            {
+              "t_s": 0.776,
+              "ppid": 1068757,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.776,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068766": {
+          "first_seen_s": 0.835,
+          "transitions": [
+            {
+              "t_s": 0.835,
+              "ppid": 1068757,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.835,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068808": {
+          "first_seen_s": 0.899,
+          "transitions": [
+            {
+              "t_s": 0.899,
+              "ppid": 1068757,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.899,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068809": {
+          "first_seen_s": 0.971,
+          "transitions": [
+            {
+              "t_s": 0.971,
+              "ppid": 1068757,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.971,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068850": {
+          "first_seen_s": 1.048,
+          "transitions": [
+            {
+              "t_s": 1.048,
+              "ppid": 1068757,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 1.048,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1068851": {
+          "first_seen_s": 1.125,
+          "transitions": [
+            {
+              "t_s": 1.125,
+              "ppid": 1068757,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 2.947,
+          "cmdline": "sleep 3.5",
+          "alive_at_return": true,
+          "ppid_at_return": 1068757,
+          "state_at_return": "S"
+        }
+      },
+      "holder_samples": [
+        {
+          "t_s": 0.0,
+          "holders": []
+        },
+        {
+          "t_s": 0.503,
+          "holders": [
+            {
+              "pid": 1068756,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068711,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang.sh"
+            },
+            {
+              "pid": 1068757,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang_gc.sh"
+            },
+            {
+              "pid": 1068758,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068759,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068757,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.537,
+          "holders": [
+            {
+              "pid": 1068756,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068711,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang.sh"
+            },
+            {
+              "pid": 1068757,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang_gc.sh"
+            },
+            {
+              "pid": 1068758,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068760,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068757,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.574,
+          "holders": [
+            {
+              "pid": 1068756,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068711,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang.sh"
+            },
+            {
+              "pid": 1068757,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang_gc.sh"
+            },
+            {
+              "pid": 1068758,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            }
+          ]
+        },
+        {
+          "t_s": 0.72,
+          "holders": [
+            {
+              "pid": 1068756,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068711,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang.sh"
+            },
+            {
+              "pid": 1068757,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang_gc.sh"
+            },
+            {
+              "pid": 1068758,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068765,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068757,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.776,
+          "holders": [
+            {
+              "pid": 1068756,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068711,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang.sh"
+            },
+            {
+              "pid": 1068757,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang_gc.sh"
+            },
+            {
+              "pid": 1068758,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068766,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068757,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.835,
+          "holders": [
+            {
+              "pid": 1068756,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068711,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang.sh"
+            },
+            {
+              "pid": 1068757,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang_gc.sh"
+            },
+            {
+              "pid": 1068758,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068767,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068757,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.899,
+          "holders": [
+            {
+              "pid": 1068756,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068711,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang.sh"
+            },
+            {
+              "pid": 1068757,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang_gc.sh"
+            },
+            {
+              "pid": 1068758,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            }
+          ]
+        },
+        {
+          "t_s": 0.971,
+          "holders": [
+            {
+              "pid": 1068756,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068711,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang.sh"
+            },
+            {
+              "pid": 1068757,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang_gc.sh"
+            },
+            {
+              "pid": 1068758,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068756,
+              "state": "S",
+              "cmdline": "sleep 0.6"
+            },
+            {
+              "pid": 1068810,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068757,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 1.048,
+          "holders": [
+            {
+              "pid": 1068757,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang_gc.sh"
+            }
+          ]
+        },
+        {
+          "t_s": 1.125,
+          "holders": [
+            {
+              "pid": 1068757,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang_gc.sh"
+            },
+            {
+              "pid": 1068851,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1068757,
+              "state": "S",
+              "cmdline": "sleep 3.5"
+            }
+          ]
+        }
+      ],
+      "signature_in_output": true,
+      "holders_at_return": [
+        {
+          "pid": 1068757,
+          "streams": [
+            "stderr",
+            "stdout"
+          ],
+          "ppid": 1573,
+          "state": "S",
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_hang_gc.sh"
+        },
+        {
+          "pid": 1068851,
+          "streams": [
+            "stderr",
+            "stdout"
+          ],
+          "ppid": 1068757,
+          "state": "S",
+          "cmdline": "sleep 3.5"
+        }
+      ],
+      "partial_output_lines": 8,
+      "seen_pids": [
+        1068756,
+        1068757,
+        1068758,
+        1068760,
+        1068761,
+        1068762,
+        1068763,
+        1068765,
+        1068766,
+        1068808,
+        1068809,
+        1068850,
+        1068851
+      ]
+    },
+    {
+      "arm": "d2_detach",
+      "bound_seconds": 3.0,
+      "godot_pid": 1069060,
+      "pipe_inodes": {
+        "pipe:[4669106]": "stdout",
+        "pipe:[4669107]": "stderr"
+      },
+      "child_reaped_at_s": 0.596,
+      "child_returncode": 0,
+      "communicate_ended_at_s": 0.809,
+      "timed_out": false,
+      "kill_sent_at_s": null,
+      "pids": {
+        "1069141": {
+          "first_seen_s": 0.526,
+          "transitions": [
+            {
+              "t_s": 0.526,
+              "ppid": 1069060,
+              "state": "S"
+            },
+            {
+              "t_s": 0.596,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.781,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_detach.sh",
+          "alive_at_return": null
+        },
+        "1069142": {
+          "first_seen_s": 0.559,
+          "transitions": [
+            {
+              "t_s": 0.559,
+              "ppid": 1069141,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.781,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_detach_gc.sh",
+          "alive_at_return": true,
+          "ppid_at_return": 1573,
+          "state_at_return": "S"
+        },
+        "1069143": {
+          "first_seen_s": 0.559,
+          "transitions": [
+            {
+              "t_s": 0.559,
+              "ppid": 1069141,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.781,
+          "cmdline": "sleep 0.3",
+          "alive_at_return": null
+        },
+        "1069144": {
+          "first_seen_s": 0.596,
+          "transitions": [
+            {
+              "t_s": 0.596,
+              "ppid": 1069142,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.781,
+          "cmdline": "sleep 6",
+          "alive_at_return": true,
+          "ppid_at_return": 1069142,
+          "state_at_return": "S"
+        }
+      },
+      "holder_samples": [
+        {
+          "t_s": 0.0,
+          "holders": []
+        },
+        {
+          "t_s": 0.526,
+          "holders": [
+            {
+              "pid": 1069141,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069060,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_detach.sh"
+            },
+            {
+              "pid": 1069143,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069141,
+              "state": "S",
+              "cmdline": "sleep 0.3"
+            }
+          ]
+        },
+        {
+          "t_s": 0.781,
+          "holders": [
+            {
+              "pid": 1069141,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "R",
+              "cmdline": ""
+            }
+          ]
+        }
+      ],
+      "signature_in_output": true,
+      "holders_at_return": [],
+      "final_returncode": 0,
+      "seen_pids": [
+        1069141,
+        1069142,
+        1069143,
+        1069144
+      ]
+    },
+    {
+      "arm": "d2_mixed",
+      "bound_seconds": 3.0,
+      "godot_pid": 1069147,
+      "pipe_inodes": {
+        "pipe:[4669157]": "stdout",
+        "pipe:[4669158]": "stderr"
+      },
+      "child_reaped_at_s": 0.589,
+      "child_returncode": 0,
+      "communicate_ended_at_s": 2.004,
+      "timed_out": false,
+      "kill_sent_at_s": null,
+      "pids": {
+        "1069223": {
+          "first_seen_s": 0.519,
+          "transitions": [
+            {
+              "t_s": 0.519,
+              "ppid": 1069147,
+              "state": "S"
+            },
+            {
+              "t_s": 0.589,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 1.967,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_mixed.sh",
+          "alive_at_return": null
+        },
+        "1069224": {
+          "first_seen_s": 0.552,
+          "transitions": [
+            {
+              "t_s": 0.552,
+              "ppid": 1069223,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 1.967,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_mixed_gc.sh",
+          "alive_at_return": true,
+          "ppid_at_return": 1573,
+          "state_at_return": "S"
+        },
+        "1069225": {
+          "first_seen_s": 0.552,
+          "transitions": [
+            {
+              "t_s": 0.552,
+              "ppid": 1069223,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 1.967,
+          "cmdline": "sleep 1.5",
+          "alive_at_return": null
+        },
+        "1069226": {
+          "first_seen_s": 0.589,
+          "transitions": [
+            {
+              "t_s": 0.589,
+              "ppid": 1069224,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 1.967,
+          "cmdline": "sleep 6",
+          "alive_at_return": true,
+          "ppid_at_return": 1069224,
+          "state_at_return": "S"
+        }
+      },
+      "holder_samples": [
+        {
+          "t_s": 0.0,
+          "holders": []
+        },
+        {
+          "t_s": 0.519,
+          "holders": [
+            {
+              "pid": 1069223,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069147,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_mixed.sh"
+            },
+            {
+              "pid": 1069225,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069223,
+              "state": "S",
+              "cmdline": "sleep 1.5"
+            }
+          ]
+        }
+      ],
+      "signature_in_output": true,
+      "holders_at_return": [],
+      "final_returncode": 0,
+      "seen_pids": [
+        1069223,
+        1069224,
+        1069225,
+        1069226
+      ]
+    },
+    {
+      "arm": "d2_reparent",
+      "bound_seconds": 3.0,
+      "godot_pid": 1069388,
+      "pipe_inodes": {
+        "pipe:[4662127]": "stdout",
+        "pipe:[4662128]": "stderr"
+      },
+      "child_reaped_at_s": 1.768,
+      "child_returncode": 0,
+      "communicate_ended_at_s": 3.003,
+      "timed_out": true,
+      "kill_sent_at_s": 3.012,
+      "pids": {
+        "1069473": {
+          "first_seen_s": 0.479,
+          "transitions": [
+            {
+              "t_s": 0.479,
+              "ppid": 1069388,
+              "state": "S"
+            },
+            {
+              "t_s": 0.636,
+              "ppid": 1069388,
+              "state": "Z"
+            }
+          ],
+          "last_alive_s": 1.668,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_reparent.sh",
+          "alive_at_return": null
+        },
+        "1069474": {
+          "first_seen_s": 0.511,
+          "transitions": [
+            {
+              "t_s": 0.511,
+              "ppid": 1069473,
+              "state": "S"
+            },
+            {
+              "t_s": 0.636,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 2.957,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_reparent_gc.sh",
+          "alive_at_return": true,
+          "ppid_at_return": 1573,
+          "state_at_return": "S"
+        },
+        "1069475": {
+          "first_seen_s": 0.511,
+          "transitions": [
+            {
+              "t_s": 0.511,
+              "ppid": 1069473,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.59,
+          "cmdline": "sleep 0.15",
+          "alive_at_return": null
+        },
+        "1069476": {
+          "first_seen_s": 0.547,
+          "transitions": [
+            {
+              "t_s": 0.547,
+              "ppid": 1069474,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 2.957,
+          "cmdline": "sleep 3.8",
+          "alive_at_return": true,
+          "ppid_at_return": 1069474,
+          "state_at_return": "S"
+        }
+      },
+      "holder_samples": [
+        {
+          "t_s": 0.0,
+          "holders": []
+        },
+        {
+          "t_s": 0.479,
+          "holders": [
+            {
+              "pid": 1069473,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069388,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_reparent.sh"
+            },
+            {
+              "pid": 1069474,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069473,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_reparent_gc.sh"
+            },
+            {
+              "pid": 1069475,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069473,
+              "state": "S",
+              "cmdline": "sleep 0.15"
+            },
+            {
+              "pid": 1069476,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069474,
+              "state": "S",
+              "cmdline": "sleep 3.8"
+            }
+          ]
+        },
+        {
+          "t_s": 0.59,
+          "holders": [
+            {
+              "pid": 1069474,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_reparent_gc.sh"
+            },
+            {
+              "pid": 1069476,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069474,
+              "state": "S",
+              "cmdline": "sleep 3.8"
+            }
+          ]
+        }
+      ],
+      "signature_in_output": true,
+      "holders_at_return": [
+        {
+          "pid": 1069474,
+          "streams": [
+            "stderr",
+            "stdout"
+          ],
+          "ppid": 1573,
+          "state": "S",
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d2_reparent_gc.sh"
+        },
+        {
+          "pid": 1069476,
+          "streams": [
+            "stderr",
+            "stdout"
+          ],
+          "ppid": 1069474,
+          "state": "S",
+          "cmdline": "sleep 3.8"
+        }
+      ],
+      "partial_output_lines": 7,
+      "seen_pids": [
+        1069473,
+        1069474,
+        1069475,
+        1069476
+      ]
+    },
+    {
+      "arm": "d3_hold",
+      "bound_seconds": 3.0,
+      "godot_pid": 1069745,
+      "pipe_inodes": {
+        "pipe:[4662172]": "stdout",
+        "pipe:[4662173]": "stderr"
+      },
+      "child_reaped_at_s": 0.521,
+      "child_returncode": 0,
+      "communicate_ended_at_s": 3.003,
+      "timed_out": true,
+      "kill_sent_at_s": 3.015,
+      "pids": {
+        "1069786": {
+          "first_seen_s": 0.45,
+          "transitions": [
+            {
+              "t_s": 0.45,
+              "ppid": 1069745,
+              "state": "S"
+            },
+            {
+              "t_s": 0.521,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.794,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold.sh",
+          "alive_at_return": null
+        },
+        "1069787": {
+          "first_seen_s": 0.484,
+          "transitions": [
+            {
+              "t_s": 0.484,
+              "ppid": 1069786,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.794,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_gc.sh",
+          "alive_at_return": null
+        },
+        "1069788": {
+          "first_seen_s": 0.484,
+          "transitions": [
+            {
+              "t_s": 0.484,
+              "ppid": 1069786,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.794,
+          "cmdline": "sleep 0.4",
+          "alive_at_return": null
+        },
+        "1069789": {
+          "first_seen_s": 0.521,
+          "transitions": [
+            {
+              "t_s": 0.521,
+              "ppid": 1069787,
+              "state": "S"
+            },
+            {
+              "t_s": 0.858,
+              "ppid": 1573,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 2.932,
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_ggc.sh",
+          "alive_at_return": true,
+          "ppid_at_return": 1573,
+          "state_at_return": "S"
+        },
+        "1069790": {
+          "first_seen_s": 0.521,
+          "transitions": [
+            {
+              "t_s": 0.521,
+              "ppid": 1069787,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.794,
+          "cmdline": "sleep 0.4",
+          "alive_at_return": null
+        },
+        "1069829": {
+          "first_seen_s": 0.568,
+          "transitions": [
+            {
+              "t_s": 0.568,
+              "ppid": 1069789,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.568,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1069830": {
+          "first_seen_s": 0.62,
+          "transitions": [
+            {
+              "t_s": 0.62,
+              "ppid": 1069789,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.62,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1069832": {
+          "first_seen_s": 0.674,
+          "transitions": [
+            {
+              "t_s": 0.674,
+              "ppid": 1069789,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.674,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1069833": {
+          "first_seen_s": 0.732,
+          "transitions": [
+            {
+              "t_s": 0.732,
+              "ppid": 1069789,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.732,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1069835": {
+          "first_seen_s": 0.794,
+          "transitions": [
+            {
+              "t_s": 0.794,
+              "ppid": 1069789,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 0.794,
+          "cmdline": "sleep 0.05",
+          "alive_at_return": null
+        },
+        "1069836": {
+          "first_seen_s": 0.858,
+          "transitions": [
+            {
+              "t_s": 0.858,
+              "ppid": 1069789,
+              "state": "S"
+            }
+          ],
+          "last_alive_s": 2.932,
+          "cmdline": "sleep 4.0",
+          "alive_at_return": true,
+          "ppid_at_return": 1069789,
+          "state_at_return": "S"
+        }
+      },
+      "holder_samples": [
+        {
+          "t_s": 0.0,
+          "holders": []
+        },
+        {
+          "t_s": 0.45,
+          "holders": [
+            {
+              "pid": 1069786,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069745,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold.sh"
+            },
+            {
+              "pid": 1069787,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_gc.sh"
+            },
+            {
+              "pid": 1069788,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            },
+            {
+              "pid": 1069789,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_ggc.sh"
+            },
+            {
+              "pid": 1069790,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            },
+            {
+              "pid": 1069791,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069789,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.521,
+          "holders": [
+            {
+              "pid": 1069786,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold.sh"
+            },
+            {
+              "pid": 1069787,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_gc.sh"
+            },
+            {
+              "pid": 1069788,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            },
+            {
+              "pid": 1069789,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_ggc.sh"
+            },
+            {
+              "pid": 1069790,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            },
+            {
+              "pid": 1069794,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069789,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.568,
+          "holders": [
+            {
+              "pid": 1069786,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold.sh"
+            },
+            {
+              "pid": 1069787,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_gc.sh"
+            },
+            {
+              "pid": 1069788,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            },
+            {
+              "pid": 1069789,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_ggc.sh"
+            },
+            {
+              "pid": 1069790,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            },
+            {
+              "pid": 1069829,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069789,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.62,
+          "holders": [
+            {
+              "pid": 1069786,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold.sh"
+            },
+            {
+              "pid": 1069787,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_gc.sh"
+            },
+            {
+              "pid": 1069788,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            },
+            {
+              "pid": 1069789,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_ggc.sh"
+            },
+            {
+              "pid": 1069790,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            },
+            {
+              "pid": 1069830,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069789,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.674,
+          "holders": [
+            {
+              "pid": 1069786,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold.sh"
+            },
+            {
+              "pid": 1069787,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_gc.sh"
+            },
+            {
+              "pid": 1069788,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            },
+            {
+              "pid": 1069789,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_ggc.sh"
+            },
+            {
+              "pid": 1069790,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            }
+          ]
+        },
+        {
+          "t_s": 0.732,
+          "holders": [
+            {
+              "pid": 1069786,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold.sh"
+            },
+            {
+              "pid": 1069787,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_gc.sh"
+            },
+            {
+              "pid": 1069788,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            },
+            {
+              "pid": 1069789,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_ggc.sh"
+            },
+            {
+              "pid": 1069790,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            },
+            {
+              "pid": 1069834,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069789,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.794,
+          "holders": [
+            {
+              "pid": 1069786,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold.sh"
+            },
+            {
+              "pid": 1069787,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_gc.sh"
+            },
+            {
+              "pid": 1069788,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069786,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            },
+            {
+              "pid": 1069789,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_ggc.sh"
+            },
+            {
+              "pid": 1069790,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069787,
+              "state": "S",
+              "cmdline": "sleep 0.4"
+            },
+            {
+              "pid": 1069835,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069789,
+              "state": "S",
+              "cmdline": "sleep 0.05"
+            }
+          ]
+        },
+        {
+          "t_s": 0.858,
+          "holders": [
+            {
+              "pid": 1069789,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1573,
+              "state": "S",
+              "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_ggc.sh"
+            },
+            {
+              "pid": 1069836,
+              "streams": [
+                "stderr",
+                "stdout"
+              ],
+              "ppid": 1069789,
+              "state": "S",
+              "cmdline": "sleep 4.0"
+            }
+          ]
+        }
+      ],
+      "signature_in_output": true,
+      "holders_at_return": [
+        {
+          "pid": 1069789,
+          "streams": [
+            "stderr",
+            "stdout"
+          ],
+          "ppid": 1573,
+          "state": "S",
+          "cmdline": "sh /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r63-boundary/arms/d3_hold_ggc.sh"
+        },
+        {
+          "pid": 1069836,
+          "streams": [
+            "stderr",
+            "stdout"
+          ],
+          "ppid": 1069789,
+          "state": "S",
+          "cmdline": "sleep 4.0"
+        }
+      ],
+      "partial_output_lines": 10,
+      "seen_pids": [
+        1069786,
+        1069787,
+        1069788,
+        1069789,
+        1069790,
+        1069829,
+        1069830,
+        1069832,
+        1069833,
+        1069835,
+        1069836
+      ]
+    }
+  ],
+  "hygiene_killed": [
+    1069789,
+    1069836
+  ]
+}

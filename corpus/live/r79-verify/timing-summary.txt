@@ -1,0 +1,40 @@
+ROW_TS save_process_writer done_at=141222.502 dur=0.857
+ROW_TS save_process_reader done_at=141223.390 dur=0.889
+ROW_TS save_process_missing done_at=141224.179 dur=0.788
+ROW_TS crash_spontaneous_sigabrt done_at=141225.729 dur=1.551
+ROW_TS crash_self_sigkill done_at=141226.612 dur=0.883
+ROW_TS descendant_pipe_detached_control done_at=141227.519 dur=0.907
+ROW_TS descendant_pipe_forged_signature_release done_at=141228.428 dur=0.909
+RAZOR_TS pidcheck_at=141231.431 detached_pid=2968248
+ROW_TS save_process_writer done_at=141284.168 dur=1.368
+ROW_TS save_process_reader done_at=141285.449 dur=1.281
+ROW_TS save_process_missing done_at=141286.853 dur=1.404
+ROW_TS crash_spontaneous_sigabrt done_at=141289.193 dur=2.340
+ROW_TS crash_self_sigkill done_at=141290.387 dur=1.194
+ROW_TS descendant_pipe_detached_control done_at=141291.781 dur=1.394
+ROW_TS descendant_pipe_forged_signature_release done_at=141293.290 dur=1.509
+RAZOR_TS pidcheck_at=141296.295 detached_pid=2978171
+ROW_TS save_process_writer done_at=141357.128 dur=2.147
+ROW_TS save_process_reader done_at=141359.332 dur=2.204
+ROW_TS save_process_missing done_at=141361.554 dur=2.222
+ROW_TS crash_spontaneous_sigabrt done_at=141365.316 dur=3.762
+ROW_TS crash_self_sigkill done_at=141367.367 dur=2.051
+ROW_TS descendant_pipe_detached_control done_at=141369.750 dur=2.383
+ROW_TS descendant_pipe_forged_signature_release done_at=141372.088 dur=2.338
+RAZOR_TS pidcheck_at=141375.097 detached_pid=2987818
+ROW_TS save_process_writer done_at=141548.616 dur=3.245
+ROW_TS save_process_reader done_at=141551.967 dur=3.351
+ROW_TS save_process_missing done_at=141555.112 dur=3.145
+ROW_TS crash_spontaneous_sigabrt done_at=141560.152 dur=5.040
+ROW_TS crash_self_sigkill done_at=141563.019 dur=2.867
+ROW_TS descendant_pipe_detached_control done_at=141566.318 dur=3.299
+ROW_TS descendant_pipe_forged_signature_release done_at=141569.675 dur=3.358
+RAZOR_TS pidcheck_at=141573.103 detached_pid=3023857
+ROW_TS save_process_writer done_at=141441.982 dur=0.850
+ROW_TS save_process_reader done_at=141442.845 dur=0.863
+ROW_TS save_process_missing done_at=141443.713 dur=0.868
+ROW_TS crash_spontaneous_sigabrt done_at=141445.282 dur=1.569
+ROW_TS crash_self_sigkill done_at=141446.071 dur=0.789
+ROW_TS descendant_pipe_detached_control done_at=141446.917 dur=0.846
+ROW_TS descendant_pipe_forged_signature_release done_at=141447.771 dur=0.854
+RAZOR_TS pidcheck_at=141455.275 detached_pid=3003671

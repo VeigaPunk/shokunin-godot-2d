@@ -1,0 +1,38 @@
+grid_pp_bufchild         INVERTED (fabricated reorder)    order={'HEAD': 3, 'INJ': 0, 'TAIL': 9} vis={'HEAD': 57.72, 'INJ': 56.42, 'TAIL': 57.72} stream=b'INJHEAD  TAIL\n'
+grid_pw_wtchild          INVERTED (fabricated reorder)    order={'HEAD': 3, 'INJ': 0, 'TAIL': 9} vis={'HEAD': 36.39, 'INJ': 35.24, 'TAIL': 36.39} stream=b'INJHEAD  TAIL\n'
+grid_pn_nlchild          INVERTED (fabricated reorder)    order={'HEAD': 4, 'INJ': 0, 'TAIL': 10} vis={'HEAD': 36.59, 'INJ': 35.3, 'TAIL': 36.59} stream=b'INJ\nHEAD  TAIL\n'
+grid_pu_uchild           INVERTED (fabricated reorder)    order={'HEAD': 3, 'INJ': 0, 'TAIL': 9} vis={'HEAD': 36.15, 'INJ': 34.97, 'TAIL': 36.15} stream=b'INJHEAD  TAIL\n'
+grid_up_unbufparent      splice (honest order)            order={'HEAD': 0, 'INJ': 5, 'TAIL': 9} vis={'HEAD': 10.52, 'INJ': 56.02, 'TAIL': 57.38} stream=b'HEAD INJ TAIL\n'
+grid_uw_unbufparent      splice (honest order)            order={'HEAD': 0, 'INJ': 5, 'TAIL': 9} vis={'HEAD': 10.25, 'INJ': 35.78, 'TAIL': 37.09} stream=b'HEAD INJ TAIL\n'
+grid_fp_flushparent      splice (honest order)            order={'HEAD': 0, 'INJ': 5, 'TAIL': 9} vis={'HEAD': 9.53, 'INJ': 54.85, 'TAIL': 56.42} stream=b'HEAD INJ TAIL\n'
+grid_fw_flushparent      splice (honest order)            order={'HEAD': 0, 'INJ': 5, 'TAIL': 9} vis={'HEAD': 10.92, 'INJ': 36.29, 'TAIL': 37.48} stream=b'HEAD INJ TAIL\n'
+grid_ew_envparent        splice (honest order)            order={'HEAD': 0, 'INJ': 5, 'TAIL': 9} vis={'HEAD': 9.72, 'INJ': 34.99, 'TAIL': 36.62} stream=b'HEAD INJ TAIL\n'
+win_before               child-first (honest order)       order={'HEAD': 3, 'INJ': 0, 'TAIL': 9} vis={'HEAD': 90.19, 'INJ': 34.87, 'TAIL': 90.19} stream=b'INJHEAD  TAIL\n'
+win_flush_after_child    INVERTED (fabricated reorder)    order={'HEAD': 3, 'INJ': 0, 'TAIL': 9} vis={'HEAD': 90.82, 'INJ': 65.68, 'TAIL': 90.85} stream=b'INJHEAD  TAIL\n'
+win_after_exit           splice (honest order)            order={'HEAD': 0, 'INJ': 11, 'TAIL': 6} vis={'HEAD': 9.97, 'INJ': 314.92, 'TAIL': 9.97} stream=b'HEAD  TAIL\nINJ'
+win_after_exit_u         splice (honest order)            order={'HEAD': 0, 'INJ': 11, 'TAIL': 6} vis={'HEAD': 9.71, 'INJ': 314.92, 'TAIL': 9.91} stream=b'HEAD  TAIL\nINJ'
+cross_hi                 splice (honest order)            order={'HEAD': 0, 'INJ': 131072, 'TAIL': 131076} vis={'HEAD': 10.39, 'INJ': 35.75, 'TAIL': 37.18} stream=b'HEAD HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+cross_after_child        INVERTED (fabricated reorder)    order={'HEAD': 3, 'INJ': 0, 'TAIL': 131077} vis={'HEAD': 67.05, 'INJ': 65.5, 'TAIL': 67.07} stream=b'INJHEAD AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+edge_head131071          INVERTED (fabricated reorder)    order={'HEAD': 3, 'INJ': 0, 'TAIL': 130076} vis={'HEAD': 67.17, 'INJ': 65.62, 'TAIL': 67.18} stream=b'INJHEAD AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+paced2                   splice (honest order)            order={'HEAD': 0, 'INJ': 126005, 'TAIL': 300009} vis={'HEAD': 150.7, 'INJ': 164.68, 'TAIL': 325.59} stream=b'HEAD CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+fd2mrg                   no-descendant cell               order={'HEAD': 4, 'INJ': None, 'TAIL': 10} vis={'HEAD': 9.53, 'INJ': None, 'TAIL': 9.53} stream=b'ERR\nHEAD  TAIL\n'
+multi                    INVERTED (fabricated reorder)    order={'HEAD': 6, 'INJ': 0, 'TAIL': 12} vis={'HEAD': 63.83, 'INJ': 36.05, 'TAIL': 63.83} stream=b'INJINJHEAD  TAIL\n'
+kill                     loss (HEAD absent, no flush)     order={'HEAD': None, 'INJ': 0, 'TAIL': None} vis={'HEAD': None, 'INJ': 36.25, 'TAIL': None} stream=b'INJ'
+os_exit                  loss (HEAD absent, no flush)     order={'HEAD': None, 'INJ': 0, 'TAIL': None} vis={'HEAD': None, 'INJ': 35.68, 'TAIL': None} stream=b'INJ'
+receipt_before           splice (honest order)            order={'HEAD': 0, 'INJ': 30, 'TAIL': 33} vis={'HEAD': 10.2, 'INJ': 35.76, 'TAIL': 37.03} stream=b'HEAD PYGAME-ARM reorder | x=1\nINJTAIL\n'
+receipt_after            INVERTED (fabricated reorder)    order={'HEAD': 3, 'INJ': 0, 'TAIL': 33} vis={'HEAD': 36.6, 'INJ': 35.15, 'TAIL': 36.6} stream=b'INJHEAD PYGAME-ARM reorder | x=1\nTAIL\n'
+receipt_head_nl          INVERTED (fabricated reorder)    order={'HEAD': 3, 'INJ': 0, 'TAIL': 33} vis={'HEAD': 36.86, 'INJ': 35.63, 'TAIL': 36.88} stream=b'INJHEAD\nPYGAME-ARM reorder | x=1\nTAIL\n'
+pygame_pw                INVERTED (fabricated reorder)    order={'HEAD': 3, 'INJ': 0, 'TAIL': 9} vis={'HEAD': 639.59, 'INJ': 607.71, 'TAIL': 639.59} stream=b'INJHEAD  TAIL\n'
+sh_os_system             INVERTED (fabricated reorder)    order={'HEAD': 3, 'INJ': 0, 'TAIL': 9} vis={'HEAD': 10.99, 'INJ': 10.91, 'TAIL': 10.99} stream=b'INJHEAD  TAIL\n'
+parent_oswrite_head      splice (honest order)            order={'HEAD': 0, 'INJ': 5, 'TAIL': 9} vis={'HEAD': 9.82, 'INJ': 35.41, 'TAIL': 36.73} stream=b'HEAD INJ TAIL\n'
+LINES grid_pp_bufchild: [(56.57, 'INJHEAD  TAIL')]
+LINES grid_pw_wtchild: [(36.59, 'INJHEAD  TAIL')]
+LINES grid_pn_nlchild: [(35.68, 'INJ'), (37.04, 'HEAD  TAIL')]
+LINES grid_up_unbufparent: [(56.48, 'HEAD INJ TAIL')]
+LINES win_after_exit: [(10.48, 'HEAD  TAIL')]
+LINES receipt_after: [(37.34, 'INJHEAD PYGAME-ARM reorder | x=1'), (37.36, 'TAIL')]
+CAPTURE capture_buffered: arm_parseable=False parsed=[]
+CAPTURE capture_unbuf: arm_parseable=False parsed=[]
+CAPTURE capture_head_nl: arm_parseable=True parsed=['PYGAME-ARM reorder | x=1']
+CAPTURE capture_unbuf_nlchild: arm_parseable=True parsed=['PYGAME-ARM reorder | x=1']
+wrote cells.json lines.json capture.json

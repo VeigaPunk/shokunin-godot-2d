@@ -1,0 +1,1 @@
+Causal scratch captured the prior tracked save fixture and runner hash before author edits. Baseline fixture observed same-process write/read and malformed-copy negative only. It had no separate process boundaries; the runner applied run-local absolute XDG_DATA_HOME only for save_roundtrip. This scratch is executor-owned and predates fixture edits.

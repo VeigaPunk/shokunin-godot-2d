@@ -1,0 +1,6 @@
+IW | cell=bc_setpos_unp | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=bc_setpos_unp | built bodies=4 locked=false
+IW | cell=bc_setpos_unp | evpin cb=bc locked=true step=4
+IW | cell=bc_setpos_unp | evpin cb=pre locked=true step=4
+IW | cell=bc_setpos_unp | evpin cb=post locked=true step=4
+IW | cell=bc_setpos_unp | fire cb=bc kind=setpos_unp step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375

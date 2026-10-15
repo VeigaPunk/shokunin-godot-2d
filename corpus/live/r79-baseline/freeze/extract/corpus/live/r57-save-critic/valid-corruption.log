@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+CRITIC_POSITIVE_FAIL error=0 data={ "enabled": true, "items": ["key", "map"], "profile": { "level": 7.0, "name": "Ada" } }
+CRITIC_POSITIVE_PASS reopened=true structured_match=true
+CRITIC_NEGATIVE_FAIL validly_corrupted_data_parsed data={ "enabled": true, "items": ["key", "map"], "profile": { "level": 7.0, "name": "Eve" } }
+CRITIC_NEGATIVE_PASS corrupted_copy_rejected=true error=0

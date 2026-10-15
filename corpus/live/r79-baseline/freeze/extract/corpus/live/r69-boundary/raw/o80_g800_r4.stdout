@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=800
+DESCENDANT_PIPE godot_pid=3794289
+DESCENDANT_PIPE spawned_pid=3794872
+DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice
+DESCENDANT_PIPE_MIDLINE write_ppid=3794289
+signature

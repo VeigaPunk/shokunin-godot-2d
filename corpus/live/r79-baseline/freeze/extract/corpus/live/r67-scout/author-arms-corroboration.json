@@ -1,0 +1,158 @@
+{
+  "streamdiv_stdout_error": {
+    "flags": [
+      "--stdout-error"
+    ],
+    "exit": 0,
+    "error": null,
+    "stdout_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "STREAM_STDOUT: expected attribution marker",
+      "ERROR: STREAMDIV stdout-carried diagnostic"
+    ],
+    "stderr_lines": [],
+    "dual": {
+      "merged": false,
+      "streams": true
+    },
+    "reclass_stderr_exact": null,
+    "stdout_tail": "ERROR: STREAMDIV stdout-carried diagnostic",
+    "stderr_head": null
+  },
+  "streamdiv_stderr_error": {
+    "flags": [
+      "--stderr-error"
+    ],
+    "exit": 0,
+    "error": null,
+    "stdout_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "STREAM_STDOUT: expected attribution marker"
+    ],
+    "stderr_lines": [
+      "ERROR: STREAMDIV stderr-carried diagnostic"
+    ],
+    "dual": {
+      "merged": false,
+      "streams": false
+    },
+    "reclass_stderr_exact": {
+      "merged": true,
+      "streams": true
+    },
+    "stdout_tail": "STREAM_STDOUT: expected attribution marker",
+    "stderr_head": "ERROR: STREAMDIV stderr-carried diagnostic"
+  },
+  "streamdiv_stderr_structured": {
+    "flags": [
+      "--stderr-structured"
+    ],
+    "exit": 0,
+    "error": null,
+    "stdout_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "STREAM_STDOUT: expected attribution marker"
+    ],
+    "stderr_lines": [
+      "ERROR: chain incomplete collections=streamdiv scene=SceneB:<Node#6700> old_alive=false"
+    ],
+    "dual": {
+      "merged": true,
+      "streams": false
+    },
+    "reclass_stderr_exact": null,
+    "stdout_tail": "STREAM_STDOUT: expected attribution marker",
+    "stderr_head": "ERROR: chain incomplete collections=streamdiv scene=SceneB:<Node#6700> old_alive=false"
+  },
+  "streamdiv_sig_on_stderr": {
+    "flags": [
+      "--sig-on-stderr"
+    ],
+    "exit": 0,
+    "error": null,
+    "stdout_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org"
+    ],
+    "stderr_lines": [
+      "STREAM_STDOUT: expected attribution marker"
+    ],
+    "dual": {
+      "merged": true,
+      "streams": false
+    },
+    "reclass_stderr_exact": null,
+    "stdout_tail": "",
+    "stderr_head": "STREAM_STDOUT: expected attribution marker"
+  },
+  "streamdiv_seam_error": {
+    "flags": [
+      "--seam-error"
+    ],
+    "exit": 0,
+    "error": null,
+    "stdout_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "STREAM_STDOUT: expected attribution marker",
+      "STREAMDIV seam tail ends in ERROR"
+    ],
+    "stderr_lines": [
+      ": STREAMDIV seam phantom merged-only line"
+    ],
+    "dual": {
+      "merged": false,
+      "streams": true
+    },
+    "reclass_stderr_exact": null,
+    "stdout_tail": "STREAMDIV seam tail ends in ERROR",
+    "stderr_head": ": STREAMDIV seam phantom merged-only line"
+  },
+  "streamdiv_seam_script": {
+    "flags": [
+      "--seam-script"
+    ],
+    "exit": 0,
+    "error": null,
+    "stdout_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "STREAM_STDOUT: expected attribution marker",
+      "STREAMDIV seam tail ends in SCRIPT ERR"
+    ],
+    "stderr_lines": [
+      "OR: STREAMDIV seamed blob clause"
+    ],
+    "dual": {
+      "merged": false,
+      "streams": true
+    },
+    "reclass_stderr_exact": null,
+    "stdout_tail": "STREAMDIV seam tail ends in SCRIPT ERR",
+    "stderr_head": "OR: STREAMDIV seamed blob clause"
+  },
+  "streamdiv_seam_sig": {
+    "flags": [
+      "--seam-sig"
+    ],
+    "exit": 0,
+    "error": null,
+    "stdout_lines": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+      "",
+      "STREAM_STDOUT: expected attribution"
+    ],
+    "stderr_lines": [
+      "marker"
+    ],
+    "dual": {
+      "merged": true,
+      "streams": false
+    },
+    "reclass_stderr_exact": null,
+    "stdout_tail": "STREAM_STDOUT: expected attribution",
+    "stderr_head": "marker"
+  }
+}

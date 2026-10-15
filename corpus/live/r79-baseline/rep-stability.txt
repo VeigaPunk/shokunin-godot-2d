@@ -1,0 +1,18 @@
+### godot rep1 vs rep2
+=== godot: mine corpus/live/r79-baseline/freeze/godot-runs/20261014T235028993722Z/verdicts.json rows=88 verdict=PASS file_sha256=1b244c74e2183b5c3d66af0a194146e46f89d201983680100b62cd6055c67237 ===
+
+rep2: ref=corpus/live/r79-baseline/freeze/godot-runs2/20261014T235235106974Z/verdicts.json ref_rows=88 ref_verdict=PASS
+  common=88 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=81 differing=0 not-carried=7
+
+### love rep1 vs rep2
+=== love: mine corpus/live/r79-baseline/freeze/love-runs/love-20261014T235210660378Z/verdicts.json rows=92 verdict=PASS file_sha256=e034d39ddda5b00581f16d5641af9e6daf3a7ed91933cd4c4166e90ee556940b ===
+
+rep2: ref=corpus/live/r79-baseline/freeze/love-runs2/love-20261014T235416742513Z/verdicts.json ref_rows=92 ref_verdict=PASS
+  common=92 new_only=0 old_only=0 tuple_mismatches=0 byte_identical=86/92 observed_only=6 real_drift=0
+  observed-only dtcadence|dt_max_ms: mine='1.084' ref='1.147'
+  observed-only dtcadence|dt_min_ms: mine='0.003' ref='0.004'
+  observed-only popen|close_wait_ms: mine='0.11' ref='0.07'
+  observed-only popen|l1_wait_ms: mine='1.59' ref='1.18'
+  observed-only popen|l2_wait_ms: mine='120.60' ref='120.63'
+  observed-only popen|total_ms: mine='122.48' ref='122.00'

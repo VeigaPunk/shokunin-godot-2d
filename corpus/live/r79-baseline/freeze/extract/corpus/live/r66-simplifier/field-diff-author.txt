@@ -1,0 +1,3 @@
+baseline rows: 87 landed rows: 88
+shared: 87 new_in_landed: ['probe_error_clause_surface']
+mismatched rows: [('crash_spontaneous_sigabrt', ['output']), ('probe_descendant_error_spoof', ['genuine_control', 'gated_genuine_reps', 'split_genuine', 'provenance_only_line_diff'])]

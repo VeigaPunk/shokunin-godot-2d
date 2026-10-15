@@ -1,0 +1,4 @@
+[application]
+config/name="MechanicOneShotTest-20261013T131526768618Z"
+config/features=PackedStringArray("4.7")
+run/main_scene="res://export_launch.tscn"

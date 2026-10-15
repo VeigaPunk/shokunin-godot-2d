@@ -1,0 +1,11 @@
+cm_toggle_cb: entry="ERROR: Can't disable contact monitoring during in/out callba"... exact_stderr_line=True occurrences=1
+cm_toggle_cb: signature_line='PASS phys2d_events cm_toggle_cb entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_c'
+rb_free_rid: entry='ERROR: Parameter "body" is null.'... exact_stderr_line=True occurrences=4
+rb_free_rid: entry='ERROR: Invalid ID.'... exact_stderr_line=True occurrences=1
+rb_free_rid: signature_line='PASS phys2d_events rb_free_rid entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchan'
+area_monitoring_direct: entry='ERROR: Function blocked during in/out signal. Use set_deferr'... exact_stderr_line=True occurrences=1
+area_monitoring_direct: signature_line='PASS phys2d_events area_monitoring_direct entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_re'
+area_free_rid: entry='ERROR: Parameter "body" is null.'... exact_stderr_line=True occurrences=4
+area_free_rid: entry='ERROR: Invalid ID.'... exact_stderr_line=True occurrences=1
+area_free_rid: signature_line='PASS phys2d_events area_free_rid entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- '
+ALL_ENTRIES_FOUND_ON_STDERR: True

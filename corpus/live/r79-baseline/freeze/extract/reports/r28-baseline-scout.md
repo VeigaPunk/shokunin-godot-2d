@@ -1,0 +1,7 @@
+# Round 28 immutable HEAD baseline
+
+Read-only snapshot of `HEAD` at `f99d7abfb3597d05e4c69d60218482122d0c98ec`. Parsed the committed `CASES` assignment in `corpus/fixtures/run_battery.py` with Python AST: **41 ordinary cases**. The last two entries are `button_activation` and `button_activation_disconnected`; the positive expects one receipt and `final=Activated`, while the paired negative uses `--disconnect-signal` and expects the `UI BUTTON ASSERTION FAILED: expected in-tree Label text=Activated after pressed signal` diagnostic.
+
+Committed file SHA-256: `corpus/fixtures/run_battery.py` = `f29898f0cb603546705e9aadcb4aaae8a9df1dfcfc9bb91afe3eebe511a40e4d`; `corpus/fixtures/button_activation.gd` = `1a9109bd08efc196c24761a7a64dee7d84160efe417611d0fefc3265bfa2b0f8`. In the immutable fixture, `_on_button_pressed` increments one receipt and sets `Activated`; `run()` creates in-tree CanvasLayer/Button/Label, checks initial `Ready`, focuses the Button, pushes one pressed then released `ui_accept` action, awaits one process frame, and checks one receipt/final label. There is no second action or intermediate step receipt assertion. The paired disconnected path executes the same single action but lacks the signal connection.
+
+Scope: baseline inspection only. No files other than this assigned report were edited in response to this message. I did not use the working tree as baseline evidence.

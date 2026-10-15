@@ -1,0 +1,24 @@
+IW | cell=livelock_stop2 | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=livelock_stop2 | built bodies=4 locked=false
+IW | cell=livelock_stop2 | evpin cb=bc locked=true step=4
+IW | cell=livelock_stop2 | fire cb=bc kind=queue_body/throw_stop step=4 locked=true count=4 pos=650,519.94647216796875 vel=0,31.392002105712891
+IW | cell=livelock_stop2 | r78queue what=b3 ok=true err=nil dead_in_cb=false count=4
+IW | cell=livelock_stop2 | postfire cb=bc step=4 count=4 drain_n=0 aborts=0
+IW | cell=livelock_stop2 | evpin cb=pre locked=true step=4
+IW | cell=livelock_stop2 | evpin cb=post locked=true step=4
+IW | cell=livelock_stop2 | evpin cb=ec locked=false step=4
+IW | cell=livelock_stop2 | r78drainec n=1 step=4 locked=false depth=0 in_cb=false count=4 dyn=b3 own=true own_n=1
+IW | cell=livelock_stop2 | r78drainact n=1 kind=throw
+IW | cell=livelock_stop2 | r78wpcall n=1 step=4 update_ok=false err=R78-DRAIN-THROW-1 srcline=1132 locked_after=false
+IW | cell=livelock_stop2 | r78wpext n=1 ok=true err=nil pos_after=999,999
+IW | cell=livelock_stop2 | r78drainec n=2 step=5 locked=false depth=0 in_cb=false count=4 dyn=b3 own=true own_n=2
+IW | cell=livelock_stop2 | r78drainact n=2 kind=throw
+IW | cell=livelock_stop2 | r78wpcall n=2 step=5 update_ok=false err=R78-DRAIN-THROW-2 srcline=1132 locked_after=false
+IW | cell=livelock_stop2 | r78wpext n=2 ok=true err=nil pos_after=999,999
+IW | cell=livelock_stop2 | r78nextstep step=5 count=4 b1pos=999,999 b3pos=650,519.8670654296875 drain_n=2 aborts=2
+IW | cell=livelock_stop2 | r78drainec n=3 step=6 locked=false depth=0 in_cb=false count=4 dyn=b3 own=true own_n=3
+IW | cell=livelock_stop2 | r78drainact n=3 kind=noop
+IW | cell=livelock_stop2 | r78recover step=6 locked_after=false count=3 b1pos=999,1000.0464477539062 b1dead=false b3dead=true
+IW | cell=livelock_stop2 | final steps=200 count=3 b1pos=999,4501.82861328125 b2pos=240,520.7589111328125 bc=3 ec=5 pre=6 post=6 fired=true fire_step=4
+IW | cell=livelock_stop2 | r78obs step=200 locked=false count=3 b1pos=999,4501.82861328125 b3pos=ERR:Attempt to use destroyed body. b1dead=false b3dead=true nest_n=0 nest_ok=0 depth=0 drain_n=3 aborts=2 in_cb=false
+IW | cell=livelock_stop2 | CELL_DONE

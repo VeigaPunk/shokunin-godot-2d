@@ -1,0 +1,273 @@
+{
+  "extracted_from": "corpus/fixtures/run_battery.py",
+  "extraction": "ast.get_source_segment -> exec (verbatim)",
+  "rows": [
+    {
+      "arm": "a_exact_forge_nolist",
+      "expected_verdict": false,
+      "observed": false,
+      "discriminates": true,
+      "note": "un-allowlisted twin rejects",
+      "error_lines": [
+        "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"
+      ]
+    },
+    {
+      "arm": "a_exact_forge_allowlisted",
+      "expected_verdict": true,
+      "observed": true,
+      "discriminates": true,
+      "note": "same forged line, matching allowlist -> absorbed",
+      "error_lines": [
+        "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"
+      ]
+    },
+    {
+      "arm": "a_exact_forge_wronglist",
+      "expected_verdict": false,
+      "observed": false,
+      "discriminates": true,
+      "note": "non-matching allowlist is inert -> still rejects",
+      "error_lines": [
+        "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"
+      ]
+    },
+    {
+      "arm": "b_prefix_exactline",
+      "expected_verdict": true,
+      "observed": true,
+      "discriminates": true,
+      "note": "emitted line == prefix literal: first-branch exact match also hits",
+      "error_lines": [
+        "ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1,"
+      ]
+    },
+    {
+      "arm": "b_prefix_forged_tail",
+      "expected_verdict": true,
+      "observed": true,
+      "discriminates": true,
+      "note": "startswith + count==1: ARBITRARY suffix absorbed",
+      "error_lines": [
+        "ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1,FORGED arbitrary tail"
+      ]
+    },
+    {
+      "arm": "b_prefix_tail_second_ERROR",
+      "expected_verdict": false,
+      "observed": false,
+      "discriminates": true,
+      "note": "count==2: tail-forge defeats the allowlist -> rejects",
+      "error_lines": [
+        "ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1, ERROR: tailforge"
+      ]
+    },
+    {
+      "arm": "b_exact_tail_second_ERROR",
+      "expected_verdict": false,
+      "observed": false,
+      "discriminates": true,
+      "note": "exact entry + appended ERROR: -> line no longer == entry -> unrelated -> rejects",
+      "error_lines": [
+        "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR ERROR: tailforge"
+      ]
+    },
+    {
+      "arm": "b_exact_whitespace_pad",
+      "expected_verdict": true,
+      "observed": true,
+      "discriminates": true,
+      "note": "strip() makes exact matching whitespace-insensitive",
+      "error_lines": [
+        "  ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR  "
+      ]
+    },
+    {
+      "arm": "b_chain_full",
+      "expected_verdict": true,
+      "observed": true,
+      "discriminates": true,
+      "note": "structured form: all three substrings + count==1",
+      "error_lines": [
+        "ERROR: chain incomplete collections=[1] scene=SceneB:<Node#123> old_alive=false"
+      ]
+    },
+    {
+      "arm": "b_chain_missing_scene",
+      "expected_verdict": false,
+      "observed": false,
+      "discriminates": true,
+      "note": "missing 'scene=SceneB:<Node#' -> not allowed -> rejects",
+      "error_lines": [
+        "ERROR: chain incomplete collections=[1] old_alive=false"
+      ]
+    },
+    {
+      "arm": "b_chain_two_errors",
+      "expected_verdict": false,
+      "observed": false,
+      "discriminates": true,
+      "note": "structured + second ERROR: -> count==2 -> rejects",
+      "error_lines": [
+        "ERROR: chain incomplete collections=[1] scene=SceneB:<Node#123> old_alive=false ERROR: x"
+      ]
+    },
+    {
+      "arm": "b_prefix_entry_as_exact",
+      "expected_verdict": true,
+      "observed": true,
+      "discriminates": true,
+      "note": "save_process_missing-shape: emitted line ends AT the comma -> exact branch",
+      "error_lines": [
+        "ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1,"
+      ]
+    },
+    {
+      "arm": "b_case_mismatch",
+      "expected_verdict": true,
+      "observed": true,
+      "discriminates": true,
+      "note": "lowercase 'error:' is not the token -> invisible to the scan",
+      "error_lines": []
+    },
+    {
+      "arm": "c_newline_split_evasion",
+      "expected_verdict": true,
+      "observed": true,
+      "discriminates": true,
+      "note": "token split ACROSS newline: no captured line contains 'ERROR:' -> EVADES",
+      "error_lines": []
+    },
+    {
+      "arm": "c_same_line_split_detected",
+      "expected_verdict": false,
+      "observed": false,
+      "discriminates": true,
+      "note": "token contiguous on one line -> detected",
+      "error_lines": [
+        "ERROR: FORGED contiguous diagnostic"
+      ]
+    },
+    {
+      "arm": "c_midline_unanchored",
+      "expected_verdict": false,
+      "observed": false,
+      "discriminates": true,
+      "note": "'ERROR:' is a substring check, not line-anchored",
+      "error_lines": [
+        "prefix text ERROR: midline diagnostic"
+      ]
+    },
+    {
+      "arm": "c_seam_splice_fabricated",
+      "expected_verdict": false,
+      "observed": false,
+      "discriminates": true,
+      "note": "stdout lacks any ERROR: line; stderr lacks any ERROR: line; merged fabricates one -> rejects",
+      "error_lines": [
+        "ending in ERROR: PHANTOM fabricated reject line"
+      ],
+      "stdout_error_lines": [],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "c_seam_signature_splice",
+      "expected_verdict": true,
+      "observed": true,
+      "discriminates": true,
+      "note": "signature clause is blob-substring: a seam-spliced signature ACCEPTS",
+      "error_lines": []
+    },
+    {
+      "arm": "c_script_error_forged",
+      "expected_verdict": false,
+      "observed": false,
+      "discriminates": true,
+      "note": "blob clause fires on forged SCRIPT ERROR:",
+      "error_lines": [
+        "SCRIPT ERROR: forged post-death"
+      ]
+    },
+    {
+      "arm": "c_script_error_newline_split",
+      "expected_verdict": true,
+      "observed": true,
+      "discriminates": true,
+      "note": "newline-split evades the blob clause too (non-contiguous bytes)",
+      "error_lines": []
+    },
+    {
+      "arm": "c_parse_error_forged",
+      "expected_verdict": false,
+      "observed": false,
+      "discriminates": true,
+      "note": "blob clause fires on forged Parse Error:",
+      "error_lines": []
+    },
+    {
+      "arm": "c_script_error_seam_splice",
+      "expected_verdict": false,
+      "observed": false,
+      "discriminates": true,
+      "note": "contiguous seam bytes satisfy the blob substring -> fabricated reject",
+      "error_lines": [
+        "SCRIPT ERROR: seam-forged"
+      ]
+    }
+  ],
+  "splitlines_boundary_census": {
+    "'\\n'": {
+      "evades_scan": true,
+      "splitlines_count": 2
+    },
+    "'\\r'": {
+      "evades_scan": true,
+      "splitlines_count": 2
+    },
+    "'\\r\\n'": {
+      "evades_scan": true,
+      "splitlines_count": 2
+    },
+    "'\\x0b'": {
+      "evades_scan": true,
+      "splitlines_count": 2
+    },
+    "'\\x0c'": {
+      "evades_scan": true,
+      "splitlines_count": 2
+    },
+    "'\\x1c'": {
+      "evades_scan": true,
+      "splitlines_count": 2
+    },
+    "'\\x1d'": {
+      "evades_scan": true,
+      "splitlines_count": 2
+    },
+    "'\\x1e'": {
+      "evades_scan": true,
+      "splitlines_count": 2
+    },
+    "'\\x85'": {
+      "evades_scan": true,
+      "splitlines_count": 2
+    },
+    "'\\u2028'": {
+      "evades_scan": true,
+      "splitlines_count": 2
+    },
+    "'\\u2029'": {
+      "evades_scan": true,
+      "splitlines_count": 2
+    },
+    "'\\x1f'": {
+      "evades_scan": true,
+      "splitlines_count": 1
+    },
+    "'\\t'": {
+      "evades_scan": true,
+      "splitlines_count": 1
+    }
+  },
+  "all_discriminate": true
+}

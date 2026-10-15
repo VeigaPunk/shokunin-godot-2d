@@ -1,0 +1,716 @@
+{
+  "mode": "real_godot_stream_attribution",
+  "same_script": true,
+  "script_paths": [
+    "res://stream_attribution_probe.gd",
+    "res://stream_attribution_probe.gd"
+  ],
+  "stdout_signature": "STREAM_STDOUT: expected attribution marker",
+  "stderr_diagnostic": "STREAM_STDERR: unrelated attribution diagnostic",
+  "results": [
+    {
+      "case": "stream_accept",
+      "command": [
+        "/usr/bin/godot",
+        "--headless",
+        "--path",
+        "corpus/live/r68-boundary/runs2/20261014T112024144893Z/scratch",
+        "--script",
+        "res://stream_attribution_probe.gd",
+        "--"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "inner_classification": true,
+      "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "",
+      "raw_stdout_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "raw_stderr_lines": []
+    },
+    {
+      "case": "stream_reject",
+      "command": [
+        "/usr/bin/godot",
+        "--headless",
+        "--path",
+        "corpus/live/r68-boundary/runs2/20261014T112024144893Z/scratch",
+        "--script",
+        "res://stream_attribution_probe.gd",
+        "--",
+        "--stderr-unrelated"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "inner_classification": false,
+      "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "STREAM_STDERR: unrelated attribution diagnostic\n",
+      "raw_stdout_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "raw_stderr_lines": [
+        "STREAM_STDERR: unrelated attribution diagnostic"
+      ]
+    }
+  ],
+  "accept_emitted_stdout_marker": true,
+  "reject_emitted_stdout_marker": true,
+  "accept_lacks_stderr_diagnostic": true,
+  "reject_emitted_stderr_diagnostic": true,
+  "same_exit_zero": true,
+  "divergence": {
+    "mode": "dual_classifier_same_captured_streams",
+    "pair_reclassifications": {
+      "stream_accept": {
+        "merged_allowlist": [],
+        "stream_allowlist": [],
+        "merged_classification": true,
+        "stream_classification": true,
+        "divergent": false,
+        "divergent_clause": [],
+        "raw_stdout_sha256": "cb00e42894fe71c6b4c32cf933b87207bf308e58c0abff60090492c0f8bad301",
+        "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stream_reject": {
+        "merged_allowlist": [],
+        "stream_allowlist": [],
+        "merged_classification": true,
+        "stream_classification": false,
+        "divergent": true,
+        "divergent_clause": [
+          "error_scan"
+        ],
+        "raw_stdout_sha256": "cb00e42894fe71c6b4c32cf933b87207bf308e58c0abff60090492c0f8bad301",
+        "raw_stderr_sha256": "6b8f8c02b86cb1f9ef36e77c074613d48e32bf706dd1873a39ddc72decc7ee2f"
+      }
+    },
+    "arms": [
+      {
+        "case": "streamdiv_stdout_error",
+        "command": [
+          "/usr/bin/godot",
+          "--headless",
+          "--path",
+          "corpus/live/r68-boundary/runs2/20261014T112024144893Z/scratch",
+          "--script",
+          "res://stream_attribution_probe.gd",
+          "--",
+          "--stdout-error"
+        ],
+        "flags": [
+          "--stdout-error"
+        ],
+        "expected_exit": 0,
+        "actual_exit": 0,
+        "error": null,
+        "signature": "STREAM_STDOUT: expected attribution marker",
+        "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution marker\nERROR: STREAMDIV stdout-carried diagnostic\n",
+        "raw_stderr": "",
+        "raw_stdout_lines": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "STREAM_STDOUT: expected attribution marker",
+          "ERROR: STREAMDIV stdout-carried diagnostic"
+        ],
+        "raw_stderr_lines": [],
+        "stdout_tail_line": "ERROR: STREAMDIV stdout-carried diagnostic",
+        "stderr_head_line": null,
+        "stdout_error_lines": [
+          "ERROR: STREAMDIV stdout-carried diagnostic"
+        ],
+        "stderr_error_lines": [],
+        "merged_error_lines": [
+          "ERROR: STREAMDIV stdout-carried diagnostic"
+        ],
+        "signature_in_stdout": true,
+        "signature_in_stderr": false,
+        "signature_in_merged": true,
+        "script_error_in_stdout": false,
+        "script_error_in_stderr": false,
+        "script_error_in_merged": false,
+        "merged_allowlist": [],
+        "stream_allowlist": [],
+        "merged_classification": false,
+        "stream_classification": true,
+        "divergent": true,
+        "divergent_clause": [
+          "error_scan"
+        ],
+        "raw_stdout_sha256": "38f481f6a03c3fd8bfaf714857b6d7ce90cd8f2da4ec1d123e6809443f3dfb27",
+        "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "case": "streamdiv_stderr_error",
+        "command": [
+          "/usr/bin/godot",
+          "--headless",
+          "--path",
+          "corpus/live/r68-boundary/runs2/20261014T112024144893Z/scratch",
+          "--script",
+          "res://stream_attribution_probe.gd",
+          "--",
+          "--stderr-error"
+        ],
+        "flags": [
+          "--stderr-error"
+        ],
+        "expected_exit": 0,
+        "actual_exit": 0,
+        "error": null,
+        "signature": "STREAM_STDOUT: expected attribution marker",
+        "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution marker\n",
+        "raw_stderr": "ERROR: STREAMDIV stderr-carried diagnostic\n",
+        "raw_stdout_lines": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "STREAM_STDOUT: expected attribution marker"
+        ],
+        "raw_stderr_lines": [
+          "ERROR: STREAMDIV stderr-carried diagnostic"
+        ],
+        "stdout_tail_line": "STREAM_STDOUT: expected attribution marker",
+        "stderr_head_line": "ERROR: STREAMDIV stderr-carried diagnostic",
+        "stdout_error_lines": [],
+        "stderr_error_lines": [
+          "ERROR: STREAMDIV stderr-carried diagnostic"
+        ],
+        "merged_error_lines": [
+          "ERROR: STREAMDIV stderr-carried diagnostic"
+        ],
+        "signature_in_stdout": true,
+        "signature_in_stderr": false,
+        "signature_in_merged": true,
+        "script_error_in_stdout": false,
+        "script_error_in_stderr": false,
+        "script_error_in_merged": false,
+        "merged_allowlist": [],
+        "stream_allowlist": [],
+        "merged_classification": false,
+        "stream_classification": false,
+        "divergent": false,
+        "divergent_clause": [],
+        "raw_stdout_sha256": "cb00e42894fe71c6b4c32cf933b87207bf308e58c0abff60090492c0f8bad301",
+        "raw_stderr_sha256": "8b6d218cff8d54b0b064c8700b46c5cb75e587ce90509aa18dcb31681fc61fea"
+      },
+      {
+        "case": "streamdiv_stderr_structured",
+        "command": [
+          "/usr/bin/godot",
+          "--headless",
+          "--path",
+          "corpus/live/r68-boundary/runs2/20261014T112024144893Z/scratch",
+          "--script",
+          "res://stream_attribution_probe.gd",
+          "--",
+          "--stderr-structured"
+        ],
+        "flags": [
+          "--stderr-structured"
+        ],
+        "expected_exit": 0,
+        "actual_exit": 0,
+        "error": null,
+        "signature": "STREAM_STDOUT: expected attribution marker",
+        "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution marker\n",
+        "raw_stderr": "ERROR: chain incomplete collections=streamdiv scene=SceneB:<Node#6700> old_alive=false\n",
+        "raw_stdout_lines": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "STREAM_STDOUT: expected attribution marker"
+        ],
+        "raw_stderr_lines": [
+          "ERROR: chain incomplete collections=streamdiv scene=SceneB:<Node#6700> old_alive=false"
+        ],
+        "stdout_tail_line": "STREAM_STDOUT: expected attribution marker",
+        "stderr_head_line": "ERROR: chain incomplete collections=streamdiv scene=SceneB:<Node#6700> old_alive=false",
+        "stdout_error_lines": [],
+        "stderr_error_lines": [
+          "ERROR: chain incomplete collections=streamdiv scene=SceneB:<Node#6700> old_alive=false"
+        ],
+        "merged_error_lines": [
+          "ERROR: chain incomplete collections=streamdiv scene=SceneB:<Node#6700> old_alive=false"
+        ],
+        "signature_in_stdout": true,
+        "signature_in_stderr": false,
+        "signature_in_merged": true,
+        "script_error_in_stdout": false,
+        "script_error_in_stderr": false,
+        "script_error_in_merged": false,
+        "merged_allowlist": [
+          "ERROR: chain incomplete"
+        ],
+        "stream_allowlist": [
+          "ERROR: chain incomplete"
+        ],
+        "merged_classification": true,
+        "stream_classification": false,
+        "divergent": true,
+        "divergent_clause": [
+          "allowlist_shape"
+        ],
+        "raw_stdout_sha256": "cb00e42894fe71c6b4c32cf933b87207bf308e58c0abff60090492c0f8bad301",
+        "raw_stderr_sha256": "e4db37fe46f3acbaf8e84260dceea0b18ddd9bd43ee32c22650cfad0d3825990"
+      },
+      {
+        "case": "streamdiv_sig_on_stderr",
+        "command": [
+          "/usr/bin/godot",
+          "--headless",
+          "--path",
+          "corpus/live/r68-boundary/runs2/20261014T112024144893Z/scratch",
+          "--script",
+          "res://stream_attribution_probe.gd",
+          "--",
+          "--sig-on-stderr"
+        ],
+        "flags": [
+          "--sig-on-stderr"
+        ],
+        "expected_exit": 0,
+        "actual_exit": 0,
+        "error": null,
+        "signature": "STREAM_STDOUT: expected attribution marker",
+        "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\n",
+        "raw_stderr": "STREAM_STDOUT: expected attribution marker\n",
+        "raw_stdout_lines": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org"
+        ],
+        "raw_stderr_lines": [
+          "STREAM_STDOUT: expected attribution marker"
+        ],
+        "stdout_tail_line": "",
+        "stderr_head_line": "STREAM_STDOUT: expected attribution marker",
+        "stdout_error_lines": [],
+        "stderr_error_lines": [],
+        "merged_error_lines": [],
+        "signature_in_stdout": false,
+        "signature_in_stderr": true,
+        "signature_in_merged": true,
+        "script_error_in_stdout": false,
+        "script_error_in_stderr": false,
+        "script_error_in_merged": false,
+        "merged_allowlist": [],
+        "stream_allowlist": [
+          "STREAM_STDOUT: expected attribution marker"
+        ],
+        "merged_classification": true,
+        "stream_classification": false,
+        "divergent": true,
+        "divergent_clause": [
+          "signature"
+        ],
+        "raw_stdout_sha256": "1fb0f12cefe41f881cb436e6731d981084b95f8db9b1d6f3e25ac930f360a32e",
+        "raw_stderr_sha256": "4163d2b770523bccdf85122511c2b8b03a1b3553603d04b773ca5779d9ef908b"
+      },
+      {
+        "case": "streamdiv_seam_error",
+        "command": [
+          "/usr/bin/godot",
+          "--headless",
+          "--path",
+          "corpus/live/r68-boundary/runs2/20261014T112024144893Z/scratch",
+          "--script",
+          "res://stream_attribution_probe.gd",
+          "--",
+          "--seam-error"
+        ],
+        "flags": [
+          "--seam-error"
+        ],
+        "expected_exit": 0,
+        "actual_exit": 0,
+        "error": null,
+        "signature": "STREAM_STDOUT: expected attribution marker",
+        "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution marker\nSTREAMDIV seam tail ends in ERROR",
+        "raw_stderr": ": STREAMDIV seam phantom merged-only line\n",
+        "raw_stdout_lines": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "STREAM_STDOUT: expected attribution marker",
+          "STREAMDIV seam tail ends in ERROR"
+        ],
+        "raw_stderr_lines": [
+          ": STREAMDIV seam phantom merged-only line"
+        ],
+        "stdout_tail_line": "STREAMDIV seam tail ends in ERROR",
+        "stderr_head_line": ": STREAMDIV seam phantom merged-only line",
+        "stdout_error_lines": [],
+        "stderr_error_lines": [],
+        "merged_error_lines": [
+          "STREAMDIV seam tail ends in ERROR: STREAMDIV seam phantom merged-only line"
+        ],
+        "signature_in_stdout": true,
+        "signature_in_stderr": false,
+        "signature_in_merged": true,
+        "script_error_in_stdout": false,
+        "script_error_in_stderr": false,
+        "script_error_in_merged": false,
+        "merged_allowlist": [],
+        "stream_allowlist": [
+          ": STREAMDIV seam phantom merged-only line"
+        ],
+        "merged_classification": false,
+        "stream_classification": true,
+        "divergent": true,
+        "divergent_clause": [
+          "error_scan"
+        ],
+        "raw_stdout_sha256": "07570922097314fdfc922ca7d86c259eb947f86c247a1891a18823dd3b694d3a",
+        "raw_stderr_sha256": "eb0ea519f0c5b22dea9773fba5d838bf0fd5d03854d50e3bf517b443c04170ea"
+      },
+      {
+        "case": "streamdiv_seam_script",
+        "command": [
+          "/usr/bin/godot",
+          "--headless",
+          "--path",
+          "corpus/live/r68-boundary/runs2/20261014T112024144893Z/scratch",
+          "--script",
+          "res://stream_attribution_probe.gd",
+          "--",
+          "--seam-script"
+        ],
+        "flags": [
+          "--seam-script"
+        ],
+        "expected_exit": 0,
+        "actual_exit": 0,
+        "error": null,
+        "signature": "STREAM_STDOUT: expected attribution marker",
+        "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution marker\nSTREAMDIV seam tail ends in SCRIPT ERR",
+        "raw_stderr": "OR: STREAMDIV seamed blob clause\n",
+        "raw_stdout_lines": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "STREAM_STDOUT: expected attribution marker",
+          "STREAMDIV seam tail ends in SCRIPT ERR"
+        ],
+        "raw_stderr_lines": [
+          "OR: STREAMDIV seamed blob clause"
+        ],
+        "stdout_tail_line": "STREAMDIV seam tail ends in SCRIPT ERR",
+        "stderr_head_line": "OR: STREAMDIV seamed blob clause",
+        "stdout_error_lines": [],
+        "stderr_error_lines": [],
+        "merged_error_lines": [
+          "STREAMDIV seam tail ends in SCRIPT ERROR: STREAMDIV seamed blob clause"
+        ],
+        "signature_in_stdout": true,
+        "signature_in_stderr": false,
+        "signature_in_merged": true,
+        "script_error_in_stdout": false,
+        "script_error_in_stderr": false,
+        "script_error_in_merged": true,
+        "merged_allowlist": [],
+        "stream_allowlist": [
+          "OR: STREAMDIV seamed blob clause"
+        ],
+        "merged_classification": false,
+        "stream_classification": true,
+        "divergent": true,
+        "divergent_clause": [
+          "blob",
+          "error_scan"
+        ],
+        "raw_stdout_sha256": "71110b68039f184c11f8d8b76250a91b4adbeaaea98b296828119f48958874e8",
+        "raw_stderr_sha256": "070f456ebdb9bd6031bb1c1fda756890acc60c4b56f696c28fca0c7fe2b74355"
+      },
+      {
+        "case": "streamdiv_seam_sig",
+        "command": [
+          "/usr/bin/godot",
+          "--headless",
+          "--path",
+          "corpus/live/r68-boundary/runs2/20261014T112024144893Z/scratch",
+          "--script",
+          "res://stream_attribution_probe.gd",
+          "--",
+          "--seam-sig"
+        ],
+        "flags": [
+          "--seam-sig"
+        ],
+        "expected_exit": 0,
+        "actual_exit": 0,
+        "error": null,
+        "signature": "STREAM_STDOUT: expected attribution marker",
+        "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution ",
+        "raw_stderr": "marker\n",
+        "raw_stdout_lines": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "STREAM_STDOUT: expected attribution"
+        ],
+        "raw_stderr_lines": [
+          "marker"
+        ],
+        "stdout_tail_line": "STREAM_STDOUT: expected attribution",
+        "stderr_head_line": "marker",
+        "stdout_error_lines": [],
+        "stderr_error_lines": [],
+        "merged_error_lines": [],
+        "signature_in_stdout": false,
+        "signature_in_stderr": false,
+        "signature_in_merged": true,
+        "script_error_in_stdout": false,
+        "script_error_in_stderr": false,
+        "script_error_in_merged": false,
+        "merged_allowlist": [],
+        "stream_allowlist": [
+          "marker"
+        ],
+        "merged_classification": true,
+        "stream_classification": false,
+        "divergent": true,
+        "divergent_clause": [
+          "signature"
+        ],
+        "raw_stdout_sha256": "0da2f1f3250046c7f4c97fa2885ae1939a9aab7d468291a598e6c5bb95c5e09a",
+        "raw_stderr_sha256": "d4169ac586761c1e922c624e2655466dea2b3266c3c9af4c88b08908f8a12ce8"
+      }
+    ],
+    "allowlist_reclassifications": {
+      "stderr_error__exact_entry": {
+        "merged_allowlist": [
+          "ERROR: STREAMDIV stderr-carried diagnostic"
+        ],
+        "stream_allowlist": [
+          "ERROR: STREAMDIV stderr-carried diagnostic"
+        ],
+        "merged_classification": true,
+        "stream_classification": true,
+        "divergent": false,
+        "divergent_clause": [],
+        "raw_stdout_sha256": "cb00e42894fe71c6b4c32cf933b87207bf308e58c0abff60090492c0f8bad301",
+        "raw_stderr_sha256": "8b6d218cff8d54b0b064c8700b46c5cb75e587ce90509aa18dcb31681fc61fea"
+      },
+      "stderr_error__foreign_entry": {
+        "merged_allowlist": [
+          "ERROR: unrelated different diagnostic"
+        ],
+        "stream_allowlist": [
+          "ERROR: unrelated different diagnostic"
+        ],
+        "merged_classification": false,
+        "stream_classification": false,
+        "divergent": false,
+        "divergent_clause": [],
+        "raw_stdout_sha256": "cb00e42894fe71c6b4c32cf933b87207bf308e58c0abff60090492c0f8bad301",
+        "raw_stderr_sha256": "8b6d218cff8d54b0b064c8700b46c5cb75e587ce90509aa18dcb31681fc61fea"
+      },
+      "stderr_structured__exact_line_entry": {
+        "merged_allowlist": [
+          "ERROR: chain incomplete collections=streamdiv scene=SceneB:<Node#6700> old_alive=false"
+        ],
+        "stream_allowlist": [
+          "ERROR: chain incomplete collections=streamdiv scene=SceneB:<Node#6700> old_alive=false"
+        ],
+        "merged_classification": true,
+        "stream_classification": true,
+        "divergent": false,
+        "divergent_clause": [],
+        "raw_stdout_sha256": "cb00e42894fe71c6b4c32cf933b87207bf308e58c0abff60090492c0f8bad301",
+        "raw_stderr_sha256": "e4db37fe46f3acbaf8e84260dceea0b18ddd9bd43ee32c22650cfad0d3825990"
+      },
+      "stderr_structured__bare": {
+        "merged_allowlist": [],
+        "stream_allowlist": [],
+        "merged_classification": false,
+        "stream_classification": false,
+        "divergent": false,
+        "divergent_clause": [],
+        "raw_stdout_sha256": "cb00e42894fe71c6b4c32cf933b87207bf308e58c0abff60090492c0f8bad301",
+        "raw_stderr_sha256": "e4db37fe46f3acbaf8e84260dceea0b18ddd9bd43ee32c22650cfad0d3825990"
+      },
+      "sig_on_stderr__bare": {
+        "merged_allowlist": [],
+        "stream_allowlist": [],
+        "merged_classification": true,
+        "stream_classification": false,
+        "divergent": true,
+        "divergent_clause": [
+          "signature",
+          "error_scan"
+        ],
+        "raw_stdout_sha256": "1fb0f12cefe41f881cb436e6731d981084b95f8db9b1d6f3e25ac930f360a32e",
+        "raw_stderr_sha256": "4163d2b770523bccdf85122511c2b8b03a1b3553603d04b773ca5779d9ef908b"
+      },
+      "seam_error__bare": {
+        "merged_allowlist": [],
+        "stream_allowlist": [],
+        "merged_classification": false,
+        "stream_classification": false,
+        "divergent": false,
+        "divergent_clause": [],
+        "raw_stdout_sha256": "07570922097314fdfc922ca7d86c259eb947f86c247a1891a18823dd3b694d3a",
+        "raw_stderr_sha256": "eb0ea519f0c5b22dea9773fba5d838bf0fd5d03854d50e3bf517b443c04170ea"
+      }
+    },
+    "divergence_table": [
+      {
+        "case": "stream_accept",
+        "merged_allowlist": [],
+        "stream_allowlist": [],
+        "merged_classification": true,
+        "stream_classification": true,
+        "divergent": false,
+        "divergent_clause": [],
+        "raw_stdout_sha256": "cb00e42894fe71c6b4c32cf933b87207bf308e58c0abff60090492c0f8bad301",
+        "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "case": "stream_reject",
+        "merged_allowlist": [],
+        "stream_allowlist": [],
+        "merged_classification": true,
+        "stream_classification": false,
+        "divergent": true,
+        "divergent_clause": [
+          "error_scan"
+        ],
+        "raw_stdout_sha256": "cb00e42894fe71c6b4c32cf933b87207bf308e58c0abff60090492c0f8bad301",
+        "raw_stderr_sha256": "6b8f8c02b86cb1f9ef36e77c074613d48e32bf706dd1873a39ddc72decc7ee2f"
+      },
+      {
+        "case": "streamdiv_stdout_error",
+        "merged_allowlist": [],
+        "stream_allowlist": [],
+        "merged_classification": false,
+        "stream_classification": true,
+        "divergent": true,
+        "divergent_clause": [
+          "error_scan"
+        ],
+        "raw_stdout_sha256": "38f481f6a03c3fd8bfaf714857b6d7ce90cd8f2da4ec1d123e6809443f3dfb27",
+        "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "case": "streamdiv_stderr_error",
+        "merged_allowlist": [],
+        "stream_allowlist": [],
+        "merged_classification": false,
+        "stream_classification": false,
+        "divergent": false,
+        "divergent_clause": [],
+        "raw_stdout_sha256": "cb00e42894fe71c6b4c32cf933b87207bf308e58c0abff60090492c0f8bad301",
+        "raw_stderr_sha256": "8b6d218cff8d54b0b064c8700b46c5cb75e587ce90509aa18dcb31681fc61fea"
+      },
+      {
+        "case": "streamdiv_stderr_structured",
+        "merged_allowlist": [
+          "ERROR: chain incomplete"
+        ],
+        "stream_allowlist": [
+          "ERROR: chain incomplete"
+        ],
+        "merged_classification": true,
+        "stream_classification": false,
+        "divergent": true,
+        "divergent_clause": [
+          "allowlist_shape"
+        ],
+        "raw_stdout_sha256": "cb00e42894fe71c6b4c32cf933b87207bf308e58c0abff60090492c0f8bad301",
+        "raw_stderr_sha256": "e4db37fe46f3acbaf8e84260dceea0b18ddd9bd43ee32c22650cfad0d3825990"
+      },
+      {
+        "case": "streamdiv_sig_on_stderr",
+        "merged_allowlist": [],
+        "stream_allowlist": [
+          "STREAM_STDOUT: expected attribution marker"
+        ],
+        "merged_classification": true,
+        "stream_classification": false,
+        "divergent": true,
+        "divergent_clause": [
+          "signature"
+        ],
+        "raw_stdout_sha256": "1fb0f12cefe41f881cb436e6731d981084b95f8db9b1d6f3e25ac930f360a32e",
+        "raw_stderr_sha256": "4163d2b770523bccdf85122511c2b8b03a1b3553603d04b773ca5779d9ef908b"
+      },
+      {
+        "case": "streamdiv_seam_error",
+        "merged_allowlist": [],
+        "stream_allowlist": [
+          ": STREAMDIV seam phantom merged-only line"
+        ],
+        "merged_classification": false,
+        "stream_classification": true,
+        "divergent": true,
+        "divergent_clause": [
+          "error_scan"
+        ],
+        "raw_stdout_sha256": "07570922097314fdfc922ca7d86c259eb947f86c247a1891a18823dd3b694d3a",
+        "raw_stderr_sha256": "eb0ea519f0c5b22dea9773fba5d838bf0fd5d03854d50e3bf517b443c04170ea"
+      },
+      {
+        "case": "streamdiv_seam_script",
+        "merged_allowlist": [],
+        "stream_allowlist": [
+          "OR: STREAMDIV seamed blob clause"
+        ],
+        "merged_classification": false,
+        "stream_classification": true,
+        "divergent": true,
+        "divergent_clause": [
+          "blob",
+          "error_scan"
+        ],
+        "raw_stdout_sha256": "71110b68039f184c11f8d8b76250a91b4adbeaaea98b296828119f48958874e8",
+        "raw_stderr_sha256": "070f456ebdb9bd6031bb1c1fda756890acc60c4b56f696c28fca0c7fe2b74355"
+      },
+      {
+        "case": "streamdiv_seam_sig",
+        "merged_allowlist": [],
+        "stream_allowlist": [
+          "marker"
+        ],
+        "merged_classification": true,
+        "stream_classification": false,
+        "divergent": true,
+        "divergent_clause": [
+          "signature"
+        ],
+        "raw_stdout_sha256": "0da2f1f3250046c7f4c97fa2885ae1939a9aab7d468291a598e6c5bb95c5e09a",
+        "raw_stderr_sha256": "d4169ac586761c1e922c624e2655466dea2b3266c3c9af4c88b08908f8a12ce8"
+      }
+    ],
+    "discriminations": {
+      "stdout_error_diverges_streams_absorbs": true,
+      "stdout_error_line_only_on_stdout": true,
+      "stderr_error_concordant_both_reject": true,
+      "stderr_error_exact_entry_absorbs_both": true,
+      "stderr_error_foreign_entry_rejects_both": true,
+      "structured_entry_diverges_allowlist_shape": true,
+      "structured_exact_line_absorbs_both": true,
+      "structured_bare_rejects_both": true,
+      "sig_on_stderr_diverges": true,
+      "sig_on_stderr_streams_rejects_solely_on_signature": true,
+      "seam_error_diverges_streams_absorbs": true,
+      "seam_error_line_in_neither_stream": true,
+      "seam_error_streams_bare_rejects_stderr_strictness": true,
+      "seam_script_diverges_blob_clause": true,
+      "seam_sig_diverges_signature_seam": true,
+      "reject_arm_diverges_non_error_stderr": true,
+      "accept_arm_concordant": true,
+      "divergence_rows_match_expectation": true,
+      "all_divergence_arms_exit0_clean": true,
+      "all_divergence_arms_same_script": true,
+      "divergent_clause_map_exact": true,
+      "divergent_clause_nonempty_iff_divergent": true,
+      "divergent_clause_taxonomy_bounded": true,
+      "dual_records_same_input_digests": true
+    },
+    "bounded_claim": "same captured stdout/stderr pairs classified by BOTH classifiers: stdout-carried ERROR: is PASS-shaped under classify_streams (stdout never error-scanned) while merged rejects; a non-ERROR: stderr line rejects streams only; the structured chain-incomplete allowlist entry is merged-only; signature must be stdout-carried for streams but anywhere for merged; stdout-tail + stderr-head seam bytes fabricate merged-only ERROR:/SCRIPT ERROR:/signature text that per-stream checks are immune to; one Linux headless Godot 4.7.2 fixture, deterministic byte placement"
+  },
+  "verdict": "PASS",
+  "bounded_claim": "one Godot 4.7.2 headless stream-attribution pair; not crash classification, not process-tree timeout, not export reliability, not rendered output"
+}

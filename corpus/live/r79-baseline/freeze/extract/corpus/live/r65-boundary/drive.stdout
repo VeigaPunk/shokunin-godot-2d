@@ -1,0 +1,15 @@
+[gate] vg_err_release_r0: sig_ok=True inner=False exit=0 err=None dead_at=0.455632 marker_at=0.384115
+[gate] vg_err_release_r1: sig_ok=True inner=False exit=0 err=None dead_at=0.48508 marker_at=0.413581
+[gate] vg_err_release_r2: sig_ok=True inner=False exit=0 err=None dead_at=0.421695 marker_at=0.350106
+[gate] vg_err_hold: sig_ok=True inner=False exit=0 err='TIMEOUT after 3.0 seconds' dead_at=0.725525 marker_at=0.654048
+[gate] vg_err_stderr_r0: sig_ok=True inner=False exit=0 err=None dead_at=0.654435 marker_at=0.582871
+[gate] vg_err_stderr_r1: sig_ok=True inner=False exit=0 err=None dead_at=0.71469 marker_at=0.643152
+[gate] vg_err_predeath: sig_ok=True inner=False exit=0 err=None dead_at=0.68012 marker_at=0.611907
+[gate] vg_err_split: sig_ok=True inner=False exit=0 err=None dead_at=0.703012 marker_at=0.631519
+[gate] vg_err_glue: sig_ok=True inner=False exit=0 err=None dead_at=0.658359 marker_at=0.586898
+[gate] vg_err_midline: sig_ok=False inner=False exit=0 err=None dead_at=0.864271 marker_at=None
+[gate] vg_err_genuine: sig_ok=True inner=False exit=0 err=None dead_at=0.69173 marker_at=0.625489
+[gate] vg_combo_hold: sig_ok=False inner=False exit=0 err='TIMEOUT after 3.0 seconds' dead_at=0.473131 marker_at=0.505049
+[gate] vg_default_control: sig_ok=True inner=True exit=0 err=None dead_at=0.507076 marker_at=0.440115
+[gate] vg_sigforge_release_control: sig_ok=False inner=True exit=0 err=None dead_at=0.383873 marker_at=0.420697
+[gate] vg_flood_2000: sig_ok=True inner=False exit=0 err=None dead_at=0.646493 marker_at=0.575043

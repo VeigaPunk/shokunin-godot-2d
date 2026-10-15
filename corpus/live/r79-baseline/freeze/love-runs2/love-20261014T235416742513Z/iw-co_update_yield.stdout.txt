@@ -1,0 +1,20 @@
+IW | cell=co_update_yield | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=co_update_yield | built bodies=4 locked=false
+IW | cell=co_update_yield | evpin cb=bc locked=true step=4
+IW | cell=co_update_yield | evpin cb=pre locked=true step=4
+IW | cell=co_update_yield | evpin cb=post locked=true step=4
+IW | cell=co_update_yield | fire cb=bc kind=coyield/- step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=co_update_yield | cb_coyield before
+IW | cell=co_update_yield | coused step=73 ok=false err=attempt to yield across C-call boundary costatus=dead
+IW | cell=co_update_yield | r77abort step=73 update_ok=false err=attempt to yield across C-call boundary locked_after=true
+IW | cell=co_update_yield | r77abortq step=73 count=4 b1pos=400,520.1500244140625 b1dead=false
+IW | cell=co_update_yield | r77abortext ok=false err=Box2D assertion failed: m_world->IsLocked() == false pos_after=400,520.1500244140625
+IW | cell=co_update_yield | r77recover step=74 locked_after=false count=4 b1pos=400,509.53021240234375
+IW | cell=co_update_yield | evpin cb=ec locked=true step=75
+IW | cell=co_update_yield | r77ec n=1 step=75 locked=true dyn=b1
+IW | cell=co_update_yield | r77ec n=2 step=82 locked=true dyn=b2
+IW | cell=co_update_yield | r77ec n=3 step=164 locked=true dyn=b2
+IW | cell=co_update_yield | r77ec n=4 step=194 locked=true dyn=b1
+IW | cell=co_update_yield | final steps=200 count=4 b1pos=400,461.54888916015625 b2pos=240,520.7589111328125 bc=5 ec=4 pre=37 post=37 fired=true fire_step=73
+IW | cell=co_update_yield | r77obs step=200 locked=false count=4 b1pos=400,461.54888916015625 b2pos=240,520.7589111328125 b1dead=false b2dead=false fx_a_dead=n/a fx_b_dead=n/a jcount=0 bc=5 ec=4 pre=37 post=37 bc2=0 ec2=0 pre2=0 post2=0 swap_step=-1 drain_n=0
+IW | cell=co_update_yield | CELL_DONE

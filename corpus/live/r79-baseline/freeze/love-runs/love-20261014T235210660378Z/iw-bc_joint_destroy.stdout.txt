@@ -1,0 +1,14 @@
+IW | cell=bc_joint_destroy | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=bc_joint_destroy | built bodies=4 locked=false
+IW | cell=bc_joint_destroy | pre_joint jtype=distance jcount=1
+IW | cell=bc_joint_destroy | evpin cb=bc locked=true step=4
+IW | cell=bc_joint_destroy | evpin cb=pre locked=true step=4
+IW | cell=bc_joint_destroy | evpin cb=post locked=true step=4
+IW | cell=bc_joint_destroy | evpin cb=ec locked=true step=57
+IW | cell=bc_joint_destroy | fire cb=bc kind=joint_destroy step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=bc_joint_destroy | cb_joint_destroy ok=true err=nil isDestroyed_in_cb=false jcount_before=1 jcount_after=1
+IW | cell=bc_joint_destroy | postfire cb=bc step=73 count=4 b1pos=400,520.1500244140625
+IW | cell=bc_joint_destroy | after_update step=73 count=4 b1pos=400,511.13113403320312 b1vel=0,-611.09796142578125
+IW | cell=bc_joint_destroy | jdrain step=73 jcount=0 isDestroyed=true
+IW | cell=bc_joint_destroy | final steps=200 count=4 b1pos=400,445.10910034179688 b2pos=-766.15350341796875,2284.897705078125 bc=8 ec=8 pre=172 post=172 fired=true fire_step=73
+IW | cell=bc_joint_destroy | CELL_DONE

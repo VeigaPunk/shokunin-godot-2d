@@ -1,0 +1,10 @@
+IW | cell=pre_worldrelease | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=pre_worldrelease | built bodies=4 locked=false
+IW | cell=pre_worldrelease | evpin cb=bc locked=true step=4
+IW | cell=pre_worldrelease | evpin cb=pre locked=true step=4
+IW | cell=pre_worldrelease | evpin cb=post locked=true step=4
+IW | cell=pre_worldrelease | fire cb=pre kind=worldrelease step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=pre_worldrelease | rel_pre kind=worldrelease
+IW | cell=pre_worldrelease | rel_call ok=true err=true
+IW | cell=pre_worldrelease | rel_alive marker=1
+IW | cell=pre_worldrelease | rel_post marker=1

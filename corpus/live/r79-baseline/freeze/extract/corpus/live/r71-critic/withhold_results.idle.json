@@ -1,0 +1,589 @@
+{
+  "tag": "idle",
+  "modes": [
+    {
+      "mode": "exit",
+      "exit_ms": 406.81,
+      "total_bytes": 7,
+      "first_ms": 405.36,
+      "first_bytes": 7,
+      "first_cum": 7,
+      "first_head": "LINE-1\n",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 405.36,
+          "bytes": 7,
+          "cum": 7,
+          "head": "LINE-1\n"
+        }
+      ],
+      "child_stdio": {
+        "mode": "exit",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=exit isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "exit",
+      "exit_ms": 407.53,
+      "total_bytes": 7,
+      "first_ms": 406.13,
+      "first_bytes": 7,
+      "first_cum": 7,
+      "first_head": "LINE-1\n",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 406.13,
+          "bytes": 7,
+          "cum": 7,
+          "head": "LINE-1\n"
+        }
+      ],
+      "child_stdio": {
+        "mode": "exit",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=exit isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "exit_pygame",
+      "exit_ms": 455.54,
+      "total_bytes": 7,
+      "first_ms": 446.21,
+      "first_bytes": 7,
+      "first_cum": 7,
+      "first_head": "LINE-1\n",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 446.21,
+          "bytes": 7,
+          "cum": 7,
+          "head": "LINE-1\n"
+        }
+      ],
+      "child_stdio": {
+        "mode": "exit_pygame",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False",
+        "PYGAME_DETECT_AVX2": "1"
+      },
+      "stderr": "CHILD-STDIO mode=exit_pygame isatty=False line_buffering=False write_through=False unbuffered=False\n<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation."
+    },
+    {
+      "mode": "exit_pygame",
+      "exit_ms": 454.44,
+      "total_bytes": 7,
+      "first_ms": 445.88,
+      "first_bytes": 7,
+      "first_cum": 7,
+      "first_head": "LINE-1\n",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 445.88,
+          "bytes": 7,
+          "cum": 7,
+          "head": "LINE-1\n"
+        }
+      ],
+      "child_stdio": {
+        "mode": "exit_pygame",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False",
+        "PYGAME_DETECT_AVX2": "1"
+      },
+      "stderr": "CHILD-STDIO mode=exit_pygame isatty=False line_buffering=False write_through=False unbuffered=False\n<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation."
+    },
+    {
+      "mode": "flushsmall",
+      "exit_ms": 406.88,
+      "total_bytes": 7,
+      "first_ms": 5.25,
+      "first_bytes": 7,
+      "first_cum": 7,
+      "first_head": "LINE-1\n",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 5.25,
+          "bytes": 7,
+          "cum": 7,
+          "head": "LINE-1\n"
+        }
+      ],
+      "child_stdio": {
+        "mode": "flushsmall",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=flushsmall isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "flushsmall",
+      "exit_ms": 406.69,
+      "total_bytes": 7,
+      "first_ms": 5.25,
+      "first_bytes": 7,
+      "first_cum": 7,
+      "first_head": "LINE-1\n",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 5.25,
+          "bytes": 7,
+          "cum": 7,
+          "head": "LINE-1\n"
+        }
+      ],
+      "child_stdio": {
+        "mode": "flushsmall",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=flushsmall isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "single4000",
+      "exit_ms": 507.2,
+      "total_bytes": 4001,
+      "first_ms": 505.71,
+      "first_bytes": 4001,
+      "first_cum": 4001,
+      "first_head": "AAAAAAAAAAAAAAAAAAAAAAAA",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 505.71,
+          "bytes": 4001,
+          "cum": 4001,
+          "head": "AAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ],
+      "child_stdio": {
+        "mode": "single4000",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=single4000 isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "single4000",
+      "exit_ms": 506.88,
+      "total_bytes": 4001,
+      "first_ms": 505.31,
+      "first_bytes": 4001,
+      "first_cum": 4001,
+      "first_head": "AAAAAAAAAAAAAAAAAAAAAAAA",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 505.31,
+          "bytes": 4001,
+          "cum": 4001,
+          "head": "AAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ],
+      "child_stdio": {
+        "mode": "single4000",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=single4000 isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "single8192",
+      "exit_ms": 507.05,
+      "total_bytes": 8192,
+      "first_ms": 505.51,
+      "first_bytes": 8192,
+      "first_cum": 8192,
+      "first_head": "AAAAAAAAAAAAAAAAAAAAAAAA",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 505.51,
+          "bytes": 8192,
+          "cum": 8192,
+          "head": "AAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ],
+      "child_stdio": {
+        "mode": "single8192",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=single8192 isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "single8192",
+      "exit_ms": 507.12,
+      "total_bytes": 8192,
+      "first_ms": 505.65,
+      "first_bytes": 8192,
+      "first_cum": 8192,
+      "first_head": "AAAAAAAAAAAAAAAAAAAAAAAA",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 505.65,
+          "bytes": 8192,
+          "cum": 8192,
+          "head": "AAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ],
+      "child_stdio": {
+        "mode": "single8192",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=single8192 isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "single8193",
+      "exit_ms": 506.9,
+      "total_bytes": 8193,
+      "first_ms": 505.55,
+      "first_bytes": 8193,
+      "first_cum": 8193,
+      "first_head": "AAAAAAAAAAAAAAAAAAAAAAAA",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 505.55,
+          "bytes": 8193,
+          "cum": 8193,
+          "head": "AAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ],
+      "child_stdio": {
+        "mode": "single8193",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=single8193 isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "single8193",
+      "exit_ms": 507.66,
+      "total_bytes": 8193,
+      "first_ms": 506.09,
+      "first_bytes": 8193,
+      "first_cum": 8193,
+      "first_head": "AAAAAAAAAAAAAAAAAAAAAAAA",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 506.09,
+          "bytes": 8193,
+          "cum": 8193,
+          "head": "AAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ],
+      "child_stdio": {
+        "mode": "single8193",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=single8193 isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "single16000",
+      "exit_ms": 507.41,
+      "total_bytes": 16001,
+      "first_ms": 505.48,
+      "first_bytes": 16001,
+      "first_cum": 16001,
+      "first_head": "AAAAAAAAAAAAAAAAAAAAAAAA",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 505.48,
+          "bytes": 16001,
+          "cum": 16001,
+          "head": "AAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ],
+      "child_stdio": {
+        "mode": "single16000",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=single16000 isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "single16000",
+      "exit_ms": 507.57,
+      "total_bytes": 16001,
+      "first_ms": 506.23,
+      "first_bytes": 16001,
+      "first_cum": 16001,
+      "first_head": "AAAAAAAAAAAAAAAAAAAAAAAA",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 506.23,
+          "bytes": 16001,
+          "cum": 16001,
+          "head": "AAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ],
+      "child_stdio": {
+        "mode": "single16000",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=single16000 isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "bigwrite",
+      "exit_ms": 756.97,
+      "total_bytes": 16015,
+      "first_ms": 755.48,
+      "first_bytes": 16015,
+      "first_cum": 16015,
+      "first_head": "LINE-1\nBBBBBBBBBBBBBBBBB",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 755.48,
+          "bytes": 16015,
+          "cum": 16015,
+          "head": "LINE-1\nBBBBBBBBBBBBBBBBB"
+        }
+      ],
+      "child_stdio": {
+        "mode": "bigwrite",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=bigwrite isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "bigwrite",
+      "exit_ms": 756.86,
+      "total_bytes": 16015,
+      "first_ms": 755.56,
+      "first_bytes": 16015,
+      "first_cum": 16015,
+      "first_head": "LINE-1\nBBBBBBBBBBBBBBBBB",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 755.56,
+          "bytes": 16015,
+          "cum": 16015,
+          "head": "LINE-1\nBBBBBBBBBBBBBBBBB"
+        }
+      ],
+      "child_stdio": {
+        "mode": "bigwrite",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=bigwrite isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "incr64",
+      "exit_ms": 407.26,
+      "total_bytes": 26000,
+      "first_ms": 405.47,
+      "first_bytes": 26000,
+      "first_cum": 26000,
+      "first_head": "0000xxxxxxxxxxxxxxxxxxxx",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 405.47,
+          "bytes": 26000,
+          "cum": 26000,
+          "head": "0000xxxxxxxxxxxxxxxxxxxx"
+        }
+      ],
+      "child_stdio": {
+        "mode": "incr64",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=incr64 isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "incr64",
+      "exit_ms": 406.88,
+      "total_bytes": 26000,
+      "first_ms": 405.44,
+      "first_bytes": 26000,
+      "first_cum": 26000,
+      "first_head": "0000xxxxxxxxxxxxxxxxxxxx",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 405.44,
+          "bytes": 26000,
+          "cum": 26000,
+          "head": "0000xxxxxxxxxxxxxxxxxxxx"
+        }
+      ],
+      "child_stdio": {
+        "mode": "incr64",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=incr64 isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "incr8000",
+      "exit_ms": 407.14,
+      "total_bytes": 24000,
+      "first_ms": 405.61,
+      "first_bytes": 24000,
+      "first_cum": 24000,
+      "first_head": "YYYYYYYYYYYYYYYYYYYYYYYY",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 405.61,
+          "bytes": 24000,
+          "cum": 24000,
+          "head": "YYYYYYYYYYYYYYYYYYYYYYYY"
+        }
+      ],
+      "child_stdio": {
+        "mode": "incr8000",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=incr8000 isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "incr8000",
+      "exit_ms": 406.47,
+      "total_bytes": 24000,
+      "first_ms": 405.17,
+      "first_bytes": 24000,
+      "first_cum": 24000,
+      "first_head": "YYYYYYYYYYYYYYYYYYYYYYYY",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 405.17,
+          "bytes": 24000,
+          "cum": 24000,
+          "head": "YYYYYYYYYYYYYYYYYYYYYYYY"
+        }
+      ],
+      "child_stdio": {
+        "mode": "incr8000",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "False",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=incr8000 isatty=False line_buffering=False write_through=False unbuffered=False"
+    },
+    {
+      "mode": "exit_unbuffered",
+      "exit_ms": 406.89,
+      "total_bytes": 7,
+      "first_ms": 5.46,
+      "first_bytes": 7,
+      "first_cum": 7,
+      "first_head": "LINE-1\n",
+      "n_events": 1,
+      "events": [
+        {
+          "ms": 5.46,
+          "bytes": 7,
+          "cum": 7,
+          "head": "LINE-1\n"
+        }
+      ],
+      "child_stdio": {
+        "mode": "exit",
+        "isatty": "False",
+        "line_buffering": "False",
+        "write_through": "True",
+        "unbuffered": "False"
+      },
+      "stderr": "CHILD-STDIO mode=exit isatty=False line_buffering=False write_through=True unbuffered=False"
+    }
+  ],
+  "popen": [
+    {
+      "l1": "CHILD-MARK-1",
+      "l2": "CHILD-MARK-2",
+      "l1_wait_ms": 0.14,
+      "l2_wait_ms": 4.85,
+      "close_wait_ms": 124.91,
+      "rest_len": 0,
+      "ret": 0,
+      "total_ms": 126.22
+    },
+    {
+      "l1": "CHILD-MARK-1",
+      "l2": "CHILD-MARK-2",
+      "l1_wait_ms": 0.19,
+      "l2_wait_ms": 4.96,
+      "close_wait_ms": 125.03,
+      "rest_len": 0,
+      "ret": 0,
+      "total_ms": 126.51
+    },
+    {
+      "l1": "CHILD-MARK-1",
+      "l2": "CHILD-MARK-2",
+      "l1_wait_ms": 0.22,
+      "l2_wait_ms": 5.28,
+      "close_wait_ms": 125.36,
+      "rest_len": 0,
+      "ret": 0,
+      "total_ms": 126.76
+    }
+  ],
+  "host_env": {
+    "PYTHONUNBUFFERED": null,
+    "PYTHONIOENCODING": null
+  }
+}

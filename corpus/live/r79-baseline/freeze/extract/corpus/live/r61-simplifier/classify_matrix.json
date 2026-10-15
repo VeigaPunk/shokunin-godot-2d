@@ -1,0 +1,84 @@
+{
+  "mode": "r61_simplifier_signature_cannot_carry",
+  "runner_sha256": "42104d95af5fcb98d742c495ee4562ea0c579c49d9ca22d11755302f685c31fb",
+  "extracted_classify_process_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+  "inputs": {
+    "crash_stdout": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r60-verifier/scratch-probe/verifier_os_crash_a.stdout",
+    "sigkill_stdout": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r60-verifier/scratch-probe/verifier_self_sigkill.stdout"
+  },
+  "results": [
+    {
+      "label": "crash exp=-6 sig=marker allowlist=none",
+      "expected_exit": -6,
+      "signature": "SPONTANEOUS_CRASH_PROBE: expected signature",
+      "allowed_errors": [],
+      "classification": false
+    },
+    {
+      "label": "crash exp=-6 sig=marker allowlist=exact",
+      "expected_exit": -6,
+      "signature": "SPONTANEOUS_CRASH_PROBE: expected signature",
+      "allowed_errors": [
+        "ERROR: r60 spontaneous crash probe"
+      ],
+      "classification": true
+    },
+    {
+      "label": "crash exp=-6 sig=ERROR-line allowlist=none",
+      "expected_exit": -6,
+      "signature": "ERROR: r60 spontaneous crash probe",
+      "allowed_errors": [],
+      "classification": false
+    },
+    {
+      "label": "crash exp=-6 sig=marker allowlist=prefix-comma",
+      "expected_exit": -6,
+      "signature": "SPONTANEOUS_CRASH_PROBE: expected signature",
+      "allowed_errors": [
+        "ERROR: r60 spontaneous crash probe,"
+      ],
+      "classification": false
+    },
+    {
+      "label": "crash exp=-9 sig=marker allowlist=exact",
+      "expected_exit": -9,
+      "signature": "SPONTANEOUS_CRASH_PROBE: expected signature",
+      "allowed_errors": [
+        "ERROR: r60 spontaneous crash probe"
+      ],
+      "classification": false
+    },
+    {
+      "label": "crash exp=1 sig=marker allowlist=exact",
+      "expected_exit": 1,
+      "signature": "SPONTANEOUS_CRASH_PROBE: expected signature",
+      "allowed_errors": [
+        "ERROR: r60 spontaneous crash probe"
+      ],
+      "classification": false
+    },
+    {
+      "label": "sigkill exp=-9 sig=marker allowlist=none",
+      "expected_exit": -9,
+      "signature": "SPONTANEOUS_CRASH_PROBE: expected signature",
+      "allowed_errors": [],
+      "classification": true
+    },
+    {
+      "label": "sigkill exp=-6 sig=marker allowlist=none",
+      "expected_exit": -6,
+      "signature": "SPONTANEOUS_CRASH_PROBE: expected signature",
+      "allowed_errors": [],
+      "classification": false
+    },
+    {
+      "label": "crash exp=-6 sig=absent-marker allowlist=exact",
+      "expected_exit": -6,
+      "signature": "NOSUCH_MARKER",
+      "allowed_errors": [
+        "ERROR: r60 spontaneous crash probe"
+      ],
+      "classification": false
+    }
+  ]
+}

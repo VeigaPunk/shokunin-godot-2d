@@ -1,0 +1,1178 @@
+{
+  "stamp": "20261015T053044810610Z",
+  "mode": "verify",
+  "reps": 3,
+  "project": "proj",
+  "godot": "4.7.2.stable.arch_linux.ed1daf0bf",
+  "classifier_source": {
+    "file": "corpus/fixtures/run_battery.py",
+    "lines": [
+      215,
+      233
+    ],
+    "sha256": "615d332ed428db66a03b6837d7a6ed86c4a3150609dc9c2838a11a51b50bbea3"
+  },
+  "probe": "corpus/live/r81-scout/proj/phys2d_jl.gd",
+  "probe_sha256": "50da7ae5fede934597bbc20b6ab9e01c0f2d0f66c6d2ef14c1e9b55a2f79c6c9",
+  "pins_source": "pins.json",
+  "rows": [
+    {
+      "arm": "joint_census",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl joint_census cls=[\"Joint2D[\\\"bias\\\", \\\"disable_collision\\\", \\\"node_a\\\", \\\"node_b\\\"]\", \"PinJoint2D[\\\"Angular Limit\\\", \\\"Motor\\\", \\\"angular_limit_enabled\\\", \\\"angular_limit_lower\\\", \\\"angular_limit_upper\\\", \\\"motor_enabled\\\", \\\"motor_target_velocity\\\", \\\"softness\\\"]\", \"GrooveJoint2D[\\\"initial_offset\\\", \\\"length\\\"]\", \"DampedSpringJoint2D[\\\"damping\\\", \\\"length\\\", \\\"rest_length\\\", \\\"stiffness\\\"]\"] srv=[\"damped_spring_joint_get_param(joint,param)\", \"damped_spring_joint_set_param(joint,param,value)\", \"joint_clear(joint)\", \"joint_create()\", \"joint_disable_collisions_between_bodies(joint,disable)\", \"joint_get_param(joint,param)\", \"joint_get_type(joint)\", \"joint_is_disabled_collisions_between_bodies(joint)\", \"joint_make_damped_spring(joint,anchor_a,anchor_b,body_a,body_b)\", \"joint_make_groove(joint,groove1_a,groove2_a,anchor_b,body_a,body_b)\", \"joint_make_pin(joint,anchor,body_a,body_b)\", \"joint_set_param(joint,param,value)\", \"pin_joint_get_flag(joint,flag)\", \"pin_joint_get_param(joint,param)\", \"pin_joint_set_flag(joint,flag,enabled)\", \"pin_joint_set_param(joint,param,value)\"] consts=[\"DAMPED_SPRING_DAMPING=2\", \"DAMPED_SPRING_REST_LENGTH=0\", \"DAMPED_SPRING_STIFFNESS=1\", \"JOINT_PARAM_BIAS=0\", \"JOINT_PARAM_MAX_BIAS=1\", \"JOINT_PARAM_MAX_FORCE=2\", \"JOINT_TYPE_DAMPED_SPRING=2\", \"JOINT_TYPE_GROOVE=1\", \"JOINT_TYPE_MAX=3\", \"JOINT_TYPE_PIN=0\", \"PIN_JOINT_FLAG_ANGULAR_LIMIT_ENABLED=0\", \"PIN_JOINT_FLAG_MOTOR_ENABLED=1\", \"PIN_JOINT_LIMIT_LOWER=2\", \"PIN_JOINT_LIMIT_UPPER=1\", \"PIN_JOINT_MOTOR_TARGET_VELOCITY=3\", \"PIN_JOINT_SOFTNESS=0\"] live=[\"unset_type=3\", \"unset_dis=true\", \"unset_bias=0.0000\", \"max_bias=340282001837565597733306976381245063168.0\", \"max_force=340282001837565597733306976381245063168.0\", \"pin_type=0\", \"pin_soft=0.0000\", \"pin_lu=0.0000\", \"pin_ll=0.0000\", \"pin_mtv=0.0000\", \"pin_flag_ang=false\", \"pin_flag_motor=false\", \"pin_bias=0.0000\", \"pin_dis=true\", \"groove_type=1\", \"groove_bias=0.0000\", \"spring_type=2\", \"spring_rest=200.0000\", \"spring_stiff=20.0000\", \"spring_damp=1.5000\", \"spring_dis=true\"]",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl joint_census cls=[\"Joint2D[\\\"bias\\\", \\\"disable_collision\\\", \\\"node_a\\\", \\\"node_b\\\"]\", \"PinJoint2D[\\\"Angular Limit\\\", \\\"Motor\\\", \\\"angular_limit_enabled\\\", \\\"angular_limit_lower\\\", \\\"angular_limit_upper\\\", \\\"motor_enabled\\\", \\\"motor_target_velocity\\\", \\\"softness\\\"]\", \"GrooveJoint2D[\\\"initial_offset\\\", \\\"length\\\"]\", \"DampedSpringJoint2D[\\\"damping\\\", \\\"length\\\", \\\"rest_length\\\", \\\"stiffness\\\"]\"] srv=[\"damped_spring_joint_get_param(joint,param)\", \"damped_spring_joint_set_param(joint,param,value)\", \"joint_clear(joint)\", \"joint_create()\", \"joint_disable_collisions_between_bodies(joint,disable)\", \"joint_get_param(joint,param)\", \"joint_get_type(joint)\", \"joint_is_disabled_collisions_between_bodies(joint)\", \"joint_make_damped_spring(joint,anchor_a,anchor_b,body_a,body_b)\", \"joint_make_groove(joint,groove1_a,groove2_a,anchor_b,body_a,body_b)\", \"joint_make_pin(joint,anchor,body_a,body_b)\", \"joint_set_param(joint,param,value)\", \"pin_joint_get_flag(joint,flag)\", \"pin_joint_get_param(joint,param)\", \"pin_joint_set_flag(joint,flag,enabled)\", \"pin_joint_set_param(joint,param,value)\"] consts=[\"DAMPED_SPRING_DAMPING=2\", \"DAMPED_SPRING_REST_LENGTH=0\", \"DAMPED_SPRING_STIFFNESS=1\", \"JOINT_PARAM_BIAS=0\", \"JOINT_PARAM_MAX_BIAS=1\", \"JOINT_PARAM_MAX_FORCE=2\", \"JOINT_TYPE_DAMPED_SPRING=2\", \"JOINT_TYPE_GROOVE=1\", \"JOINT_TYPE_MAX=3\", \"JOINT_TYPE_PIN=0\", \"PIN_JOINT_FLAG_ANGULAR_LIMIT_ENABLED=0\", \"PIN_JOINT_FLAG_MOTOR_ENABLED=1\", \"PIN_JOINT_LIMIT_LOWER=2\", \"PIN_JOINT_LIMIT_UPPER=1\", \"PIN_JOINT_MOTOR_TARGET_VELOCITY=3\", \"PIN_JOINT_SOFTNESS=0\"] live=[\"unset_type=3\", \"unset_dis=true\", \"unset_bias=0.0000\", \"max_bias=340282001837565597733306976381245063168.0\", \"max_force=340282001837565597733306976381245063168.0\", \"pin_type=0\", \"pin_soft=0.0000\", \"pin_lu=0.0000\", \"pin_ll=0.0000\", \"pin_mtv=0.0000\", \"pin_flag_ang=false\", \"pin_flag_motor=false\", \"pin_bias=0.0000\", \"pin_dis=true\", \"groove_type=1\", \"groove_bias=0.0000\", \"spring_type=2\", \"spring_rest=200.0000\", \"spring_stiff=20.0000\", \"spring_damp=1.5000\", \"spring_dis=true\"]",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_census godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_census cls=[\"Joint2D[\\\"bias\\\", \\\"disable_collision\\\", \\\"node_a\\\", \\\"node_b\\\"]\", \"PinJoint2D[\\\"Angular Limit\\\", \\\"Motor\\\", \\\"angular_limit_enabled\\\", \\\"angular_limit_lower\\\", \\\"angular_limit_upper\\\", \\\"motor_enabled\\\", \\\"motor_target_velocity\\\", \\\"softness\\\"]\", \"GrooveJoint2D[\\\"initial_offset\\\", \\\"length\\\"]\", \"DampedSpringJoint2D[\\\"damping\\\", \\\"length\\\", \\\"rest_length\\\", \\\"stiffness\\\"]\"] srv=[\"damped_spring_joint_get_param(joint,param)\", \"damped_spring_joint_set_param(joint,param,value)\", \"joint_clear(joint)\", \"joint_create()\", \"joint_disable_collisions_between_bodies(joint,disable)\", \"joint_get_param(joint,param)\", \"joint_get_type(joint)\", \"joint_is_disabled_collisions_between_bodies(joint)\", \"joint_make_damped_spring(joint,anchor_a,anchor_b,body_a,body_b)\", \"joint_make_groove(joint,groove1_a,groove2_a,anchor_b,body_a,body_b)\", \"joint_make_pin(joint,anchor,body_a,body_b)\", \"joint_set_param(joint,param,value)\", \"pin_joint_get_flag(joint,flag)\", \"pin_joint_get_param(joint,param)\", \"pin_joint_set_flag(joint,flag,enabled)\", \"pin_joint_set_param(joint,param,value)\"] consts=[\"DAMPED_SPRING_DAMPING=2\", \"DAMPED_SPRING_REST_LENGTH=0\", \"DAMPED_SPRING_STIFFNESS=1\", \"JOINT_PARAM_BIAS=0\", \"JOINT_PARAM_MAX_BIAS=1\", \"JOINT_PARAM_MAX_FORCE=2\", \"JOINT_TYPE_DAMPED_SPRING=2\", \"JOINT_TYPE_GROOVE=1\", \"JOINT_TYPE_MAX=3\", \"JOINT_TYPE_PIN=0\", \"PIN_JOINT_FLAG_ANGULAR_LIMIT_ENABLED=0\", \"PIN_JOINT_FLAG_MOTOR_ENABLED=1\", \"PIN_JOINT_LIMIT_LOWER=2\", \"PIN_JOINT_LIMIT_UPPER=1\", \"PIN_JOINT_MOTOR_TARGET_VELOCITY=3\", \"PIN_JOINT_SOFTNESS=0\"] live=[\"unset_type=3\", \"unset_dis=true\", \"unset_bias=0.0000\", \"max_bias=340282001837565597733306976381245063168.0\", \"max_force=340282001837565597733306976381245063168.0\", \"pin_type=0\", \"pin_soft=0.0000\", \"pin_lu=0.0000\", \"pin_ll=0.0000\", \"pin_mtv=0.0000\", \"pin_flag_ang=false\", \"pin_flag_motor=false\", \"pin_bias=0.0000\", \"pin_dis=true\", \"groove_type=1\", \"groove_bias=0.0000\", \"spring_type=2\", \"spring_rest=200.0000\", \"spring_stiff=20.0000\", \"spring_damp=1.5000\", \"spring_dis=true\"]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "1fc42dfb810bfefa7f1d6f73a2872fd642f8b2b838b011ebde31a2904e7afa06"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_census godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_census cls=[\"Joint2D[\\\"bias\\\", \\\"disable_collision\\\", \\\"node_a\\\", \\\"node_b\\\"]\", \"PinJoint2D[\\\"Angular Limit\\\", \\\"Motor\\\", \\\"angular_limit_enabled\\\", \\\"angular_limit_lower\\\", \\\"angular_limit_upper\\\", \\\"motor_enabled\\\", \\\"motor_target_velocity\\\", \\\"softness\\\"]\", \"GrooveJoint2D[\\\"initial_offset\\\", \\\"length\\\"]\", \"DampedSpringJoint2D[\\\"damping\\\", \\\"length\\\", \\\"rest_length\\\", \\\"stiffness\\\"]\"] srv=[\"damped_spring_joint_get_param(joint,param)\", \"damped_spring_joint_set_param(joint,param,value)\", \"joint_clear(joint)\", \"joint_create()\", \"joint_disable_collisions_between_bodies(joint,disable)\", \"joint_get_param(joint,param)\", \"joint_get_type(joint)\", \"joint_is_disabled_collisions_between_bodies(joint)\", \"joint_make_damped_spring(joint,anchor_a,anchor_b,body_a,body_b)\", \"joint_make_groove(joint,groove1_a,groove2_a,anchor_b,body_a,body_b)\", \"joint_make_pin(joint,anchor,body_a,body_b)\", \"joint_set_param(joint,param,value)\", \"pin_joint_get_flag(joint,flag)\", \"pin_joint_get_param(joint,param)\", \"pin_joint_set_flag(joint,flag,enabled)\", \"pin_joint_set_param(joint,param,value)\"] consts=[\"DAMPED_SPRING_DAMPING=2\", \"DAMPED_SPRING_REST_LENGTH=0\", \"DAMPED_SPRING_STIFFNESS=1\", \"JOINT_PARAM_BIAS=0\", \"JOINT_PARAM_MAX_BIAS=1\", \"JOINT_PARAM_MAX_FORCE=2\", \"JOINT_TYPE_DAMPED_SPRING=2\", \"JOINT_TYPE_GROOVE=1\", \"JOINT_TYPE_MAX=3\", \"JOINT_TYPE_PIN=0\", \"PIN_JOINT_FLAG_ANGULAR_LIMIT_ENABLED=0\", \"PIN_JOINT_FLAG_MOTOR_ENABLED=1\", \"PIN_JOINT_LIMIT_LOWER=2\", \"PIN_JOINT_LIMIT_UPPER=1\", \"PIN_JOINT_MOTOR_TARGET_VELOCITY=3\", \"PIN_JOINT_SOFTNESS=0\"] live=[\"unset_type=3\", \"unset_dis=true\", \"unset_bias=0.0000\", \"max_bias=340282001837565597733306976381245063168.0\", \"max_force=340282001837565597733306976381245063168.0\", \"pin_type=0\", \"pin_soft=0.0000\", \"pin_lu=0.0000\", \"pin_ll=0.0000\", \"pin_mtv=0.0000\", \"pin_flag_ang=false\", \"pin_flag_motor=false\", \"pin_bias=0.0000\", \"pin_dis=true\", \"groove_type=1\", \"groove_bias=0.0000\", \"spring_type=2\", \"spring_rest=200.0000\", \"spring_stiff=20.0000\", \"spring_damp=1.5000\", \"spring_dis=true\"]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "1fc42dfb810bfefa7f1d6f73a2872fd642f8b2b838b011ebde31a2904e7afa06"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_census godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_census cls=[\"Joint2D[\\\"bias\\\", \\\"disable_collision\\\", \\\"node_a\\\", \\\"node_b\\\"]\", \"PinJoint2D[\\\"Angular Limit\\\", \\\"Motor\\\", \\\"angular_limit_enabled\\\", \\\"angular_limit_lower\\\", \\\"angular_limit_upper\\\", \\\"motor_enabled\\\", \\\"motor_target_velocity\\\", \\\"softness\\\"]\", \"GrooveJoint2D[\\\"initial_offset\\\", \\\"length\\\"]\", \"DampedSpringJoint2D[\\\"damping\\\", \\\"length\\\", \\\"rest_length\\\", \\\"stiffness\\\"]\"] srv=[\"damped_spring_joint_get_param(joint,param)\", \"damped_spring_joint_set_param(joint,param,value)\", \"joint_clear(joint)\", \"joint_create()\", \"joint_disable_collisions_between_bodies(joint,disable)\", \"joint_get_param(joint,param)\", \"joint_get_type(joint)\", \"joint_is_disabled_collisions_between_bodies(joint)\", \"joint_make_damped_spring(joint,anchor_a,anchor_b,body_a,body_b)\", \"joint_make_groove(joint,groove1_a,groove2_a,anchor_b,body_a,body_b)\", \"joint_make_pin(joint,anchor,body_a,body_b)\", \"joint_set_param(joint,param,value)\", \"pin_joint_get_flag(joint,flag)\", \"pin_joint_get_param(joint,param)\", \"pin_joint_set_flag(joint,flag,enabled)\", \"pin_joint_set_param(joint,param,value)\"] consts=[\"DAMPED_SPRING_DAMPING=2\", \"DAMPED_SPRING_REST_LENGTH=0\", \"DAMPED_SPRING_STIFFNESS=1\", \"JOINT_PARAM_BIAS=0\", \"JOINT_PARAM_MAX_BIAS=1\", \"JOINT_PARAM_MAX_FORCE=2\", \"JOINT_TYPE_DAMPED_SPRING=2\", \"JOINT_TYPE_GROOVE=1\", \"JOINT_TYPE_MAX=3\", \"JOINT_TYPE_PIN=0\", \"PIN_JOINT_FLAG_ANGULAR_LIMIT_ENABLED=0\", \"PIN_JOINT_FLAG_MOTOR_ENABLED=1\", \"PIN_JOINT_LIMIT_LOWER=2\", \"PIN_JOINT_LIMIT_UPPER=1\", \"PIN_JOINT_MOTOR_TARGET_VELOCITY=3\", \"PIN_JOINT_SOFTNESS=0\"] live=[\"unset_type=3\", \"unset_dis=true\", \"unset_bias=0.0000\", \"max_bias=340282001837565597733306976381245063168.0\", \"max_force=340282001837565597733306976381245063168.0\", \"pin_type=0\", \"pin_soft=0.0000\", \"pin_lu=0.0000\", \"pin_ll=0.0000\", \"pin_mtv=0.0000\", \"pin_flag_ang=false\", \"pin_flag_motor=false\", \"pin_bias=0.0000\", \"pin_dis=true\", \"groove_type=1\", \"groove_bias=0.0000\", \"spring_type=2\", \"spring_rest=200.0000\", \"spring_stiff=20.0000\", \"spring_damp=1.5000\", \"spring_dis=true\"]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "1fc42dfb810bfefa7f1d6f73a2872fd642f8b2b838b011ebde31a2904e7afa06"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "joint_unset_refusal",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl joint_unset_refusal before=[0.0, 0.0, 0.0, 0.0, false, false, 0.0, 0.0, 0.0] type_pin=0 after=[0.0, 0.0, 0.0, 0.0, false, false, 0.0, 0.0, 0.0] cleared_type=3 spring_after=[200.0, 20.0, 1.5]",
+      "expected_errors": [
+        "ERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0",
+        "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0",
+        "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: false"
+      ],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl joint_unset_refusal before=[0.0, 0.0, 0.0, 0.0, false, false, 0.0, 0.0, 0.0] type_pin=0 after=[0.0, 0.0, 0.0, 0.0, false, false, 0.0, 0.0, 0.0] cleared_type=3 spring_after=[200.0, 20.0, 1.5]",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": false,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_unset_refusal godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_unset_refusal before=[0.0, 0.0, 0.0, 0.0, false, false, 0.0, 0.0, 0.0] type_pin=0 after=[0.0, 0.0, 0.0, 0.0, false, false, 0.0, 0.0, 0.0] cleared_type=3 spring_after=[200.0, 20.0, 1.5]\n",
+          "stderr": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: false\n   at: pin_joint_get_flag (modules/godot_physics_2d/godot_physics_server_2d.cpp:1172)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: false\n   at: pin_joint_get_flag (modules/godot_physics_2d/godot_physics_server_2d.cpp:1172)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:250)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:250)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:250)\n       [1] _run (res://phys2d_jl.gd:56)\n",
+          "engine_anchors": [
+            "at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)",
+            "at: pin_joint_get_flag (modules/godot_physics_2d/godot_physics_server_2d.cpp:1172)",
+            "at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)"
+          ],
+          "merged_sha256": "7364bc2647428f7ece9efd67d57b12c07e691b27718f2b6e0ce398dd1e233c0f"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_unset_refusal godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_unset_refusal before=[0.0, 0.0, 0.0, 0.0, false, false, 0.0, 0.0, 0.0] type_pin=0 after=[0.0, 0.0, 0.0, 0.0, false, false, 0.0, 0.0, 0.0] cleared_type=3 spring_after=[200.0, 20.0, 1.5]\n",
+          "stderr": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: false\n   at: pin_joint_get_flag (modules/godot_physics_2d/godot_physics_server_2d.cpp:1172)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: false\n   at: pin_joint_get_flag (modules/godot_physics_2d/godot_physics_server_2d.cpp:1172)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:250)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:250)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:250)\n       [1] _run (res://phys2d_jl.gd:56)\n",
+          "engine_anchors": [
+            "at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)",
+            "at: pin_joint_get_flag (modules/godot_physics_2d/godot_physics_server_2d.cpp:1172)",
+            "at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)"
+          ],
+          "merged_sha256": "7364bc2647428f7ece9efd67d57b12c07e691b27718f2b6e0ce398dd1e233c0f"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_unset_refusal godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_unset_refusal before=[0.0, 0.0, 0.0, 0.0, false, false, 0.0, 0.0, 0.0] type_pin=0 after=[0.0, 0.0, 0.0, 0.0, false, false, 0.0, 0.0, 0.0] cleared_type=3 spring_after=[200.0, 20.0, 1.5]\n",
+          "stderr": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: false\n   at: pin_joint_get_flag (modules/godot_physics_2d/godot_physics_server_2d.cpp:1172)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: false\n   at: pin_joint_get_flag (modules/godot_physics_2d/godot_physics_server_2d.cpp:1172)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:236)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:250)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:250)\n       [1] _run (res://phys2d_jl.gd:56)\nERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0\n   at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_unset_refusal (res://phys2d_jl.gd:250)\n       [1] _run (res://phys2d_jl.gd:56)\n",
+          "engine_anchors": [
+            "at: damped_spring_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1208)",
+            "at: pin_joint_get_flag (modules/godot_physics_2d/godot_physics_server_2d.cpp:1172)",
+            "at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)"
+          ],
+          "merged_sha256": "7364bc2647428f7ece9efd67d57b12c07e691b27718f2b6e0ce398dd1e233c0f"
+        }
+      ],
+      "stderr_error_lines": [
+        "ERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0",
+        "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0",
+        "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: false"
+      ]
+    },
+    {
+      "arm": "joint_pin_tiers",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl joint_pin_tiers n_rel=(114.5184,164.2985) s_rel=(114.5184,164.2983) n_dist=200.2710 s_dist=200.2708 n_type=0 s_type=0 n_np=/root/PA n_bias_prop=0.0000 n_bias_srv=0.0000 s_bias_srv=0.0000 n_soft_prop=0.0000 n_soft_srv=0.0000 s_soft_srv=0.0000 n_dis=true s_dis=true n_flag_ang=false n_flag_motor=false",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl joint_pin_tiers n_rel=(114.5184,164.2985) s_rel=(114.5184,164.2983) n_dist=200.2710 s_dist=200.2708 n_type=0 s_type=0 n_np=/root/PA n_bias_prop=0.0000 n_bias_srv=0.0000 s_bias_srv=0.0000 n_soft_prop=0.0000 n_soft_srv=0.0000 s_soft_srv=0.0000 n_dis=true s_dis=true n_flag_ang=false n_flag_motor=false",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_pin_tiers godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_pin_tiers n_rel=(114.5184,164.2985) s_rel=(114.5184,164.2983) n_dist=200.2710 s_dist=200.2708 n_type=0 s_type=0 n_np=/root/PA n_bias_prop=0.0000 n_bias_srv=0.0000 s_bias_srv=0.0000 n_soft_prop=0.0000 n_soft_srv=0.0000 s_soft_srv=0.0000 n_dis=true s_dis=true n_flag_ang=false n_flag_motor=false\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "4b2a04442b530027ddb67872665614eb4d05ab32b9aeacd1b68ee51a854b92dc"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_pin_tiers godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_pin_tiers n_rel=(114.5184,164.2985) s_rel=(114.5184,164.2983) n_dist=200.2710 s_dist=200.2708 n_type=0 s_type=0 n_np=/root/PA n_bias_prop=0.0000 n_bias_srv=0.0000 s_bias_srv=0.0000 n_soft_prop=0.0000 n_soft_srv=0.0000 s_soft_srv=0.0000 n_dis=true s_dis=true n_flag_ang=false n_flag_motor=false\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "4b2a04442b530027ddb67872665614eb4d05ab32b9aeacd1b68ee51a854b92dc"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_pin_tiers godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_pin_tiers n_rel=(114.5184,164.2985) s_rel=(114.5184,164.2983) n_dist=200.2710 s_dist=200.2708 n_type=0 s_type=0 n_np=/root/PA n_bias_prop=0.0000 n_bias_srv=0.0000 s_bias_srv=0.0000 n_soft_prop=0.0000 n_soft_srv=0.0000 s_soft_srv=0.0000 n_dis=true s_dis=true n_flag_ang=false n_flag_motor=false\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "4b2a04442b530027ddb67872665614eb4d05ab32b9aeacd1b68ee51a854b92dc"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "joint_pin_clear",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl joint_pin_clear pre=(176.7844,94.1389) pre_dist=200.2869 pre_vel=(-132.8277,256.8133) type_pre=0 type_post=3 bias_post=0.0000 soft_post=0.0000 post=(112.0589,219.2813) post_dist=246.2549 post_vel=(-126.3444,244.2782) type_rearm=0 end=(7.4813,246.2695) end_dist=246.3831",
+      "expected_errors": [
+        "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0"
+      ],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl joint_pin_clear pre=(176.7844,94.1389) pre_dist=200.2869 pre_vel=(-132.8277,256.8133) type_pre=0 type_post=3 bias_post=0.0000 soft_post=0.0000 post=(112.0589,219.2813) post_dist=246.2549 post_vel=(-126.3444,244.2782) type_rearm=0 end=(7.4813,246.2695) end_dist=246.3831",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": false,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_pin_clear godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_pin_clear pre=(176.7844,94.1389) pre_dist=200.2869 pre_vel=(-132.8277,256.8133) type_pre=0 type_post=3 bias_post=0.0000 soft_post=0.0000 post=(112.0589,219.2813) post_dist=246.2549 post_vel=(-126.3444,244.2782) type_rearm=0 end=(7.4813,246.2695) end_dist=246.3831\n",
+          "stderr": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_pin_clear (res://phys2d_jl.gd:318)\n       [1] _frames (res://phys2d_jl.gd:105)\n",
+          "engine_anchors": [
+            "at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)"
+          ],
+          "merged_sha256": "c075106f19c8910ac44137241a3252f9cbf28f28f388075fc717aff4c7ec962a"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_pin_clear godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_pin_clear pre=(176.7844,94.1389) pre_dist=200.2869 pre_vel=(-132.8277,256.8133) type_pre=0 type_post=3 bias_post=0.0000 soft_post=0.0000 post=(112.0589,219.2813) post_dist=246.2549 post_vel=(-126.3444,244.2782) type_rearm=0 end=(7.4813,246.2695) end_dist=246.3831\n",
+          "stderr": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_pin_clear (res://phys2d_jl.gd:318)\n       [1] _frames (res://phys2d_jl.gd:105)\n",
+          "engine_anchors": [
+            "at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)"
+          ],
+          "merged_sha256": "c075106f19c8910ac44137241a3252f9cbf28f28f388075fc717aff4c7ec962a"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_pin_clear godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_pin_clear pre=(176.7844,94.1389) pre_dist=200.2869 pre_vel=(-132.8277,256.8133) type_pre=0 type_post=3 bias_post=0.0000 soft_post=0.0000 post=(112.0589,219.2813) post_dist=246.2549 post_vel=(-126.3444,244.2782) type_rearm=0 end=(7.4813,246.2695) end_dist=246.3831\n",
+          "stderr": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_pin_clear (res://phys2d_jl.gd:318)\n       [1] _frames (res://phys2d_jl.gd:105)\n",
+          "engine_anchors": [
+            "at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1190)"
+          ],
+          "merged_sha256": "c075106f19c8910ac44137241a3252f9cbf28f28f388075fc717aff4c7ec962a"
+        }
+      ],
+      "stderr_error_lines": [
+        "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0"
+      ]
+    },
+    {
+      "arm": "joint_node_clear",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl joint_node_clear pre=(176.7844,94.1389) type_pre=0 nudge_type=0 after_nudge=(110.6721,166.9125) dn_old=200.2710 dn_new=131.3346 dn_old2=200.2701 dn_new2=129.3275 type_post=3 post=(35.0778,218.2878) nudge2_type=3 end=(-38.0363,267.9774) end_d_old=270.6633 end_d_new=172.2300 valid=true na=true nb=true",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl joint_node_clear pre=(176.7844,94.1389) type_pre=0 nudge_type=0 after_nudge=(110.6721,166.9125) dn_old=200.2710 dn_new=131.3346 dn_old2=200.2701 dn_new2=129.3275 type_post=3 post=(35.0778,218.2878) nudge2_type=3 end=(-38.0363,267.9774) end_d_old=270.6633 end_d_new=172.2300 valid=true na=true nb=true",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_node_clear godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_node_clear pre=(176.7844,94.1389) type_pre=0 nudge_type=0 after_nudge=(110.6721,166.9125) dn_old=200.2710 dn_new=131.3346 dn_old2=200.2701 dn_new2=129.3275 type_post=3 post=(35.0778,218.2878) nudge2_type=3 end=(-38.0363,267.9774) end_d_old=270.6633 end_d_new=172.2300 valid=true na=true nb=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "03cc3b64acc4b56af6cc45ee1173684674e32f308932d109ee46d6d10f1edd44"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_node_clear godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_node_clear pre=(176.7844,94.1389) type_pre=0 nudge_type=0 after_nudge=(110.6721,166.9125) dn_old=200.2710 dn_new=131.3346 dn_old2=200.2701 dn_new2=129.3275 type_post=3 post=(35.0778,218.2878) nudge2_type=3 end=(-38.0363,267.9774) end_d_old=270.6633 end_d_new=172.2300 valid=true na=true nb=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "03cc3b64acc4b56af6cc45ee1173684674e32f308932d109ee46d6d10f1edd44"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_node_clear godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_node_clear pre=(176.7844,94.1389) type_pre=0 nudge_type=0 after_nudge=(110.6721,166.9125) dn_old=200.2710 dn_new=131.3346 dn_old2=200.2701 dn_new2=129.3275 type_post=3 post=(35.0778,218.2878) nudge2_type=3 end=(-38.0363,267.9774) end_d_old=270.6633 end_d_new=172.2300 valid=true na=true nb=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "03cc3b64acc4b56af6cc45ee1173684674e32f308932d109ee46d6d10f1edd44"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "joint_freed_rid",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl joint_freed_rid pre=(176.7844,94.1389) type_freed=0 bias_freed=-1.0000 soft_freed=0.0000 type_remade=0 post=(112.0589,219.2813) late=(91.1935,259.6230) b_frozen=false b_valid=true",
+      "expected_errors": [
+        "ERROR: Parameter \"joint\" is null.",
+        "ERROR: Parameter \"prev_joint\" is null."
+      ],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl joint_freed_rid pre=(176.7844,94.1389) type_freed=0 bias_freed=-1.0000 soft_freed=0.0000 type_remade=0 post=(112.0589,219.2813) late=(91.1935,259.6230) b_frozen=false b_valid=true",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": false,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_freed_rid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_freed_rid pre=(176.7844,94.1389) type_freed=0 bias_freed=-1.0000 soft_freed=0.0000 type_remade=0 post=(112.0589,219.2813) late=(91.1935,259.6230) b_frozen=false b_valid=true\n",
+          "stderr": "ERROR: Parameter \"joint\" is null.\n   at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:380)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1063)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:381)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:382)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1189)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:383)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"prev_joint\" is null.\n   at: joint_make_pin (modules/godot_physics_2d/godot_physics_server_2d.cpp:1117)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:384)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:385)\n       [1] _frames (res://phys2d_jl.gd:105)\n",
+          "engine_anchors": [
+            "at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)",
+            "at: joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1063)",
+            "at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)",
+            "at: joint_make_pin (modules/godot_physics_2d/godot_physics_server_2d.cpp:1117)",
+            "at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1189)"
+          ],
+          "merged_sha256": "16b5953c7197225de3ed49c20545bffb013137a6440c3bd5d4823e0e95dee973"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_freed_rid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_freed_rid pre=(176.7844,94.1389) type_freed=0 bias_freed=-1.0000 soft_freed=0.0000 type_remade=0 post=(112.0589,219.2813) late=(91.1935,259.6230) b_frozen=false b_valid=true\n",
+          "stderr": "ERROR: Parameter \"joint\" is null.\n   at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:380)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1063)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:381)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:382)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1189)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:383)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"prev_joint\" is null.\n   at: joint_make_pin (modules/godot_physics_2d/godot_physics_server_2d.cpp:1117)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:384)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:385)\n       [1] _frames (res://phys2d_jl.gd:105)\n",
+          "engine_anchors": [
+            "at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)",
+            "at: joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1063)",
+            "at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)",
+            "at: joint_make_pin (modules/godot_physics_2d/godot_physics_server_2d.cpp:1117)",
+            "at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1189)"
+          ],
+          "merged_sha256": "16b5953c7197225de3ed49c20545bffb013137a6440c3bd5d4823e0e95dee973"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_freed_rid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_freed_rid pre=(176.7844,94.1389) type_freed=0 bias_freed=-1.0000 soft_freed=0.0000 type_remade=0 post=(112.0589,219.2813) late=(91.1935,259.6230) b_frozen=false b_valid=true\n",
+          "stderr": "ERROR: Parameter \"joint\" is null.\n   at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:380)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1063)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:381)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:382)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1189)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:383)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"prev_joint\" is null.\n   at: joint_make_pin (modules/godot_physics_2d/godot_physics_server_2d.cpp:1117)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:384)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_freed_rid (res://phys2d_jl.gd:385)\n       [1] _frames (res://phys2d_jl.gd:105)\n",
+          "engine_anchors": [
+            "at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)",
+            "at: joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1063)",
+            "at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)",
+            "at: joint_make_pin (modules/godot_physics_2d/godot_physics_server_2d.cpp:1117)",
+            "at: pin_joint_get_param (modules/godot_physics_2d/godot_physics_server_2d.cpp:1189)"
+          ],
+          "merged_sha256": "16b5953c7197225de3ed49c20545bffb013137a6440c3bd5d4823e0e95dee973"
+        }
+      ],
+      "stderr_error_lines": [
+        "ERROR: Parameter \"joint\" is null.",
+        "ERROR: Parameter \"prev_joint\" is null."
+      ]
+    },
+    {
+      "arm": "joint_node_freed_rid",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl joint_node_freed_rid pre=(176.7844,94.1389) type_freed=0 rid_same=true valid=true post=(112.0589,219.2813) type_nudge=0 end=(50.4926,338.3154) end_dist=342.0626 b_frozen=false",
+      "expected_errors": [
+        "ERROR: Invalid ID.",
+        "ERROR: Parameter \"joint\" is null."
+      ],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl joint_node_freed_rid pre=(176.7844,94.1389) type_freed=0 rid_same=true valid=true post=(112.0589,219.2813) type_nudge=0 end=(50.4926,338.3154) end_dist=342.0626 b_frozen=false",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": false,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_node_freed_rid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_node_freed_rid pre=(176.7844,94.1389) type_freed=0 rid_same=true valid=true post=(112.0589,219.2813) type_nudge=0 end=(50.4926,338.3154) end_dist=342.0626 b_frozen=false\n",
+          "stderr": "ERROR: Parameter \"joint\" is null.\n   at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_node_freed_rid (res://phys2d_jl.gd:408)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_node_freed_rid (res://phys2d_jl.gd:414)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_disable_collisions_between_bodies (modules/godot_physics_2d/godot_physics_server_2d.cpp:1082)\nERROR: Parameter \"joint\" is null.\n   at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)\nERROR: Parameter \"joint\" is null.\n   at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)\nERROR: Invalid ID.\n   at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)\n",
+          "engine_anchors": [
+            "at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)",
+            "at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)",
+            "at: joint_disable_collisions_between_bodies (modules/godot_physics_2d/godot_physics_server_2d.cpp:1082)",
+            "at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)"
+          ],
+          "merged_sha256": "dec1d0bd52b44a19674e5aaf2454dc4a9acf06b6d77508e83f3d4fe8103b85bf"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_node_freed_rid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_node_freed_rid pre=(176.7844,94.1389) type_freed=0 rid_same=true valid=true post=(112.0589,219.2813) type_nudge=0 end=(50.4926,338.3154) end_dist=342.0626 b_frozen=false\n",
+          "stderr": "ERROR: Parameter \"joint\" is null.\n   at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_node_freed_rid (res://phys2d_jl.gd:408)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_node_freed_rid (res://phys2d_jl.gd:414)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_disable_collisions_between_bodies (modules/godot_physics_2d/godot_physics_server_2d.cpp:1082)\nERROR: Parameter \"joint\" is null.\n   at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)\nERROR: Parameter \"joint\" is null.\n   at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)\nERROR: Invalid ID.\n   at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)\n",
+          "engine_anchors": [
+            "at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)",
+            "at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)",
+            "at: joint_disable_collisions_between_bodies (modules/godot_physics_2d/godot_physics_server_2d.cpp:1082)",
+            "at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)"
+          ],
+          "merged_sha256": "dec1d0bd52b44a19674e5aaf2454dc4a9acf06b6d77508e83f3d4fe8103b85bf"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_node_freed_rid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_node_freed_rid pre=(176.7844,94.1389) type_freed=0 rid_same=true valid=true post=(112.0589,219.2813) type_nudge=0 end=(50.4926,338.3154) end_dist=342.0626 b_frozen=false\n",
+          "stderr": "ERROR: Parameter \"joint\" is null.\n   at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_node_freed_rid (res://phys2d_jl.gd:408)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)\n   GDScript backtrace (most recent call first):\n       [0] _arm_joint_node_freed_rid (res://phys2d_jl.gd:414)\n       [1] _frames (res://phys2d_jl.gd:105)\nERROR: Parameter \"joint\" is null.\n   at: joint_disable_collisions_between_bodies (modules/godot_physics_2d/godot_physics_server_2d.cpp:1082)\nERROR: Parameter \"joint\" is null.\n   at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)\nERROR: Parameter \"joint\" is null.\n   at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)\nERROR: Invalid ID.\n   at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)\n",
+          "engine_anchors": [
+            "at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)",
+            "at: joint_clear (modules/godot_physics_2d/godot_physics_server_2d.cpp:1034)",
+            "at: joint_disable_collisions_between_bodies (modules/godot_physics_2d/godot_physics_server_2d.cpp:1082)",
+            "at: joint_get_type (modules/godot_physics_2d/godot_physics_server_2d.cpp:1216)"
+          ],
+          "merged_sha256": "dec1d0bd52b44a19674e5aaf2454dc4a9acf06b6d77508e83f3d4fe8103b85bf"
+        }
+      ],
+      "stderr_error_lines": [
+        "ERROR: Invalid ID.",
+        "ERROR: Parameter \"joint\" is null."
+      ]
+    },
+    {
+      "arm": "joint_spring_env",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl joint_spring_env s0d0=(100.00,-58.47) s0d1=(90.11,-56.02) s0d4=(85.67,-55.37) s4d0=(75.96,-53.84) s4d1=(80.94,-54.93) s4d4=(83.18,-55.18) s16d0=(24.36,-45.70) s16d1=(58.15,-52.89) s16d4=(76.15,-54.72) s64d0=(-59.85,-63.83) s64d1=(8.37,-55.40) s64d4=(53.55,-53.88) nojoint=(100.00,-58.47) rb_s0d0=[50.0000,0.0000,0.0000] rb_s64d4=[50.0000,64.0000,4.0000] node_props=[l=100.0,r=50.0,s=64.0,d=1.0] node_srv=[50.0000,64.0000,1.0000] node_type=2 node_pos=(0.00,42.92)",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl joint_spring_env s0d0=(100.00,-58.47) s0d1=(90.11,-56.02) s0d4=(85.67,-55.37) s4d0=(75.96,-53.84) s4d1=(80.94,-54.93) s4d4=(83.18,-55.18) s16d0=(24.36,-45.70) s16d1=(58.15,-52.89) s16d4=(76.15,-54.72) s64d0=(-59.85,-63.83) s64d1=(8.37,-55.40) s64d4=(53.55,-53.88) nojoint=(100.00,-58.47) rb_s0d0=[50.0000,0.0000,0.0000] rb_s64d4=[50.0000,64.0000,4.0000] node_props=[l=100.0,r=50.0,s=64.0,d=1.0] node_srv=[50.0000,64.0000,1.0000] node_type=2 node_pos=(0.00,42.92)",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_spring_env godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_spring_env s0d0=(100.00,-58.47) s0d1=(90.11,-56.02) s0d4=(85.67,-55.37) s4d0=(75.96,-53.84) s4d1=(80.94,-54.93) s4d4=(83.18,-55.18) s16d0=(24.36,-45.70) s16d1=(58.15,-52.89) s16d4=(76.15,-54.72) s64d0=(-59.85,-63.83) s64d1=(8.37,-55.40) s64d4=(53.55,-53.88) nojoint=(100.00,-58.47) rb_s0d0=[50.0000,0.0000,0.0000] rb_s64d4=[50.0000,64.0000,4.0000] node_props=[l=100.0,r=50.0,s=64.0,d=1.0] node_srv=[50.0000,64.0000,1.0000] node_type=2 node_pos=(0.00,42.92)\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "6e105a7ee62b4ded262756d874a6d521f24217abcbc2dfcf17b2c8128b30f160"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_spring_env godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_spring_env s0d0=(100.00,-58.47) s0d1=(90.11,-56.02) s0d4=(85.67,-55.37) s4d0=(75.96,-53.84) s4d1=(80.94,-54.93) s4d4=(83.18,-55.18) s16d0=(24.36,-45.70) s16d1=(58.15,-52.89) s16d4=(76.15,-54.72) s64d0=(-59.85,-63.83) s64d1=(8.37,-55.40) s64d4=(53.55,-53.88) nojoint=(100.00,-58.47) rb_s0d0=[50.0000,0.0000,0.0000] rb_s64d4=[50.0000,64.0000,4.0000] node_props=[l=100.0,r=50.0,s=64.0,d=1.0] node_srv=[50.0000,64.0000,1.0000] node_type=2 node_pos=(0.00,42.92)\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "6e105a7ee62b4ded262756d874a6d521f24217abcbc2dfcf17b2c8128b30f160"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_spring_env godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_spring_env s0d0=(100.00,-58.47) s0d1=(90.11,-56.02) s0d4=(85.67,-55.37) s4d0=(75.96,-53.84) s4d1=(80.94,-54.93) s4d4=(83.18,-55.18) s16d0=(24.36,-45.70) s16d1=(58.15,-52.89) s16d4=(76.15,-54.72) s64d0=(-59.85,-63.83) s64d1=(8.37,-55.40) s64d4=(53.55,-53.88) nojoint=(100.00,-58.47) rb_s0d0=[50.0000,0.0000,0.0000] rb_s64d4=[50.0000,64.0000,4.0000] node_props=[l=100.0,r=50.0,s=64.0,d=1.0] node_srv=[50.0000,64.0000,1.0000] node_type=2 node_pos=(0.00,42.92)\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "6e105a7ee62b4ded262756d874a6d521f24217abcbc2dfcf17b2c8128b30f160"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "joint_pin_params",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl joint_pin_params soft0[pos=(114.52,164.30) dist=200.2710 rot=0.9622 rb=[0.0000,0.0000,false,0.0000,0.0000,false,0.0000]] soft1[pos=(115.62,164.18) dist=200.8065 rot=0.9577 rb=[1.0000,0.0000,false,0.0000,0.0000,false,0.0000]] soft4[pos=(118.79,163.79) dist=202.3308 rot=0.9446 rb=[4.0000,0.0000,false,0.0000,0.0000,false,0.0000]] motor[pos=(113.18,165.18) dist=200.2333 rot=0.9722 rb=[0.0000,3.0000,true,0.0000,0.0000,false,0.0000]] limit[pos=(119.57,161.60) dist=201.0246 rot=0.8871 rb=[0.0000,0.0000,false,-0.5000,0.5000,true,0.0000]] bias1[pos=(114.08,164.34) dist=200.0545 rot=0.9640 rb=[0.0000,0.0000,false,0.0000,0.0000,false,1.0000]] motor_spin[pos=(200.00,0.00) dist=200.0000 rot=1.7255 rb=[0.0000,3.0000,true,0.0000,0.0000,false,0.0000]] limit_spin[pos=(200.00,0.00) dist=200.0000 rot=0.1694 rb=[0.0000,0.0000,false,-0.5000,0.5000,true,0.0000]]",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl joint_pin_params soft0[pos=(114.52,164.30) dist=200.2710 rot=0.9622 rb=[0.0000,0.0000,false,0.0000,0.0000,false,0.0000]] soft1[pos=(115.62,164.18) dist=200.8065 rot=0.9577 rb=[1.0000,0.0000,false,0.0000,0.0000,false,0.0000]] soft4[pos=(118.79,163.79) dist=202.3308 rot=0.9446 rb=[4.0000,0.0000,false,0.0000,0.0000,false,0.0000]] motor[pos=(113.18,165.18) dist=200.2333 rot=0.9722 rb=[0.0000,3.0000,true,0.0000,0.0000,false,0.0000]] limit[pos=(119.57,161.60) dist=201.0246 rot=0.8871 rb=[0.0000,0.0000,false,-0.5000,0.5000,true,0.0000]] bias1[pos=(114.08,164.34) dist=200.0545 rot=0.9640 rb=[0.0000,0.0000,false,0.0000,0.0000,false,1.0000]] motor_spin[pos=(200.00,0.00) dist=200.0000 rot=1.7255 rb=[0.0000,3.0000,true,0.0000,0.0000,false,0.0000]] limit_spin[pos=(200.00,0.00) dist=200.0000 rot=0.1694 rb=[0.0000,0.0000,false,-0.5000,0.5000,true,0.0000]]",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_pin_params godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_pin_params soft0[pos=(114.52,164.30) dist=200.2710 rot=0.9622 rb=[0.0000,0.0000,false,0.0000,0.0000,false,0.0000]] soft1[pos=(115.62,164.18) dist=200.8065 rot=0.9577 rb=[1.0000,0.0000,false,0.0000,0.0000,false,0.0000]] soft4[pos=(118.79,163.79) dist=202.3308 rot=0.9446 rb=[4.0000,0.0000,false,0.0000,0.0000,false,0.0000]] motor[pos=(113.18,165.18) dist=200.2333 rot=0.9722 rb=[0.0000,3.0000,true,0.0000,0.0000,false,0.0000]] limit[pos=(119.57,161.60) dist=201.0246 rot=0.8871 rb=[0.0000,0.0000,false,-0.5000,0.5000,true,0.0000]] bias1[pos=(114.08,164.34) dist=200.0545 rot=0.9640 rb=[0.0000,0.0000,false,0.0000,0.0000,false,1.0000]] motor_spin[pos=(200.00,0.00) dist=200.0000 rot=1.7255 rb=[0.0000,3.0000,true,0.0000,0.0000,false,0.0000]] limit_spin[pos=(200.00,0.00) dist=200.0000 rot=0.1694 rb=[0.0000,0.0000,false,-0.5000,0.5000,true,0.0000]]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "01ef563c29c3272c777b60f37569d770305c077d6c5d1592a33f8e27d2fa1765"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_pin_params godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_pin_params soft0[pos=(114.52,164.30) dist=200.2710 rot=0.9622 rb=[0.0000,0.0000,false,0.0000,0.0000,false,0.0000]] soft1[pos=(115.62,164.18) dist=200.8065 rot=0.9577 rb=[1.0000,0.0000,false,0.0000,0.0000,false,0.0000]] soft4[pos=(118.79,163.79) dist=202.3308 rot=0.9446 rb=[4.0000,0.0000,false,0.0000,0.0000,false,0.0000]] motor[pos=(113.18,165.18) dist=200.2333 rot=0.9722 rb=[0.0000,3.0000,true,0.0000,0.0000,false,0.0000]] limit[pos=(119.57,161.60) dist=201.0246 rot=0.8871 rb=[0.0000,0.0000,false,-0.5000,0.5000,true,0.0000]] bias1[pos=(114.08,164.34) dist=200.0545 rot=0.9640 rb=[0.0000,0.0000,false,0.0000,0.0000,false,1.0000]] motor_spin[pos=(200.00,0.00) dist=200.0000 rot=1.7255 rb=[0.0000,3.0000,true,0.0000,0.0000,false,0.0000]] limit_spin[pos=(200.00,0.00) dist=200.0000 rot=0.1694 rb=[0.0000,0.0000,false,-0.5000,0.5000,true,0.0000]]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "01ef563c29c3272c777b60f37569d770305c077d6c5d1592a33f8e27d2fa1765"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_pin_params godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_pin_params soft0[pos=(114.52,164.30) dist=200.2710 rot=0.9622 rb=[0.0000,0.0000,false,0.0000,0.0000,false,0.0000]] soft1[pos=(115.62,164.18) dist=200.8065 rot=0.9577 rb=[1.0000,0.0000,false,0.0000,0.0000,false,0.0000]] soft4[pos=(118.79,163.79) dist=202.3308 rot=0.9446 rb=[4.0000,0.0000,false,0.0000,0.0000,false,0.0000]] motor[pos=(113.18,165.18) dist=200.2333 rot=0.9722 rb=[0.0000,3.0000,true,0.0000,0.0000,false,0.0000]] limit[pos=(119.57,161.60) dist=201.0246 rot=0.8871 rb=[0.0000,0.0000,false,-0.5000,0.5000,true,0.0000]] bias1[pos=(114.08,164.34) dist=200.0545 rot=0.9640 rb=[0.0000,0.0000,false,0.0000,0.0000,false,1.0000]] motor_spin[pos=(200.00,0.00) dist=200.0000 rot=1.7255 rb=[0.0000,3.0000,true,0.0000,0.0000,false,0.0000]] limit_spin[pos=(200.00,0.00) dist=200.0000 rot=0.1694 rb=[0.0000,0.0000,false,-0.5000,0.5000,true,0.0000]]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "01ef563c29c3272c777b60f37569d770305c077d6c5d1592a33f8e27d2fa1765"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "joint_node_anchor",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl joint_node_anchor created_at_100[d0=271.3221 d0b=272.7762 d100=223.8021 d100b=223.8015] moved_before_step[d0=200.2708 d0b=200.2699 d100=131.3344 d100b=129.3274]",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl joint_node_anchor created_at_100[d0=271.3221 d0b=272.7762 d100=223.8021 d100b=223.8015] moved_before_step[d0=200.2708 d0b=200.2699 d100=131.3344 d100b=129.3274]",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_node_anchor godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_node_anchor created_at_100[d0=271.3221 d0b=272.7762 d100=223.8021 d100b=223.8015] moved_before_step[d0=200.2708 d0b=200.2699 d100=131.3344 d100b=129.3274]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "42edb434d0b0c69f4055028c6ee370ac09a0c2d25d067bc44d479dc2972b53af"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_node_anchor godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_node_anchor created_at_100[d0=271.3221 d0b=272.7762 d100=223.8021 d100b=223.8015] moved_before_step[d0=200.2708 d0b=200.2699 d100=131.3344 d100b=129.3274]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "42edb434d0b0c69f4055028c6ee370ac09a0c2d25d067bc44d479dc2972b53af"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_node_anchor godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_node_anchor created_at_100[d0=271.3221 d0b=272.7762 d100=223.8021 d100b=223.8015] moved_before_step[d0=200.2708 d0b=200.2699 d100=131.3344 d100b=129.3274]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "42edb434d0b0c69f4055028c6ee370ac09a0c2d25d067bc44d479dc2972b53af"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "joint_groove",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl joint_groove gst_node=(50.00,50.00) gst_srv_center=(0.01,50.00) gst_srv_jpos=(50.00,50.00) gnode=(-48.41,21.88) gsmallA=(-63.01,92.61) gsmallB=(-57.68,-40.85) gend_far=(0.00,5.99) gend_far_vel=(0.00,16.06) gend_near=(0.00,19.70) gend_near_vel=(-0.00,0.00) gnode_props=[l=100.0,off=0.0] gnode_type=1 gnode_a_dis=true gsrv_a_dis=true",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl joint_groove gst_node=(50.00,50.00) gst_srv_center=(0.01,50.00) gst_srv_jpos=(50.00,50.00) gnode=(-48.41,21.88) gsmallA=(-63.01,92.61) gsmallB=(-57.68,-40.85) gend_far=(0.00,5.99) gend_far_vel=(0.00,16.06) gend_near=(0.00,19.70) gend_near_vel=(-0.00,0.00) gnode_props=[l=100.0,off=0.0] gnode_type=1 gnode_a_dis=true gsrv_a_dis=true",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_groove godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_groove gst_node=(50.00,50.00) gst_srv_center=(0.01,50.00) gst_srv_jpos=(50.00,50.00) gnode=(-48.41,21.88) gsmallA=(-63.01,92.61) gsmallB=(-57.68,-40.85) gend_far=(0.00,5.99) gend_far_vel=(0.00,16.06) gend_near=(0.00,19.70) gend_near_vel=(-0.00,0.00) gnode_props=[l=100.0,off=0.0] gnode_type=1 gnode_a_dis=true gsrv_a_dis=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "0fa001b60d1c8dc5d9df5dbd5f44d750e6904595134cf09c2813cdbc7e0797df"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_groove godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_groove gst_node=(50.00,50.00) gst_srv_center=(0.01,50.00) gst_srv_jpos=(50.00,50.00) gnode=(-48.41,21.88) gsmallA=(-63.01,92.61) gsmallB=(-57.68,-40.85) gend_far=(0.00,5.99) gend_far_vel=(0.00,16.06) gend_near=(0.00,19.70) gend_near_vel=(-0.00,0.00) gnode_props=[l=100.0,off=0.0] gnode_type=1 gnode_a_dis=true gsrv_a_dis=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "0fa001b60d1c8dc5d9df5dbd5f44d750e6904595134cf09c2813cdbc7e0797df"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_groove godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_groove gst_node=(50.00,50.00) gst_srv_center=(0.01,50.00) gst_srv_jpos=(50.00,50.00) gnode=(-48.41,21.88) gsmallA=(-63.01,92.61) gsmallB=(-57.68,-40.85) gend_far=(0.00,5.99) gend_far_vel=(0.00,16.06) gend_near=(0.00,19.70) gend_near_vel=(-0.00,0.00) gnode_props=[l=100.0,off=0.0] gnode_type=1 gnode_a_dis=true gsrv_a_dis=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "0fa001b60d1c8dc5d9df5dbd5f44d750e6904595134cf09c2813cdbc7e0797df"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "joint_disable_coll",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl joint_disable_coll dis_true[acnt=0 bcnt=0 d=10.0000 a_pos=(0.00,0.00) b_pos=(10.00,0.00) rb=true] dis_false[acnt=1 bcnt=1 d=17.0493 a_pos=(-3.40,-1.45) b_pos=(13.40,1.45) rb=false] groove_default[rb=[true, true, true] acnt=0 bcnt=0 d=10.0000 a_pos=(0.00,0.00) b_pos=(10.00,0.00)] node_prop_default=[true, true, true] node_prop_false=[false, false, false] node_pos=[(-3.40,-1.45),(13.40,1.45)] static_default[rb=true dcnt=1 d_pos=(17.43,0.24)] static_enabled[rb=false dcnt=1 d_pos=(17.43,0.24)]",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl joint_disable_coll dis_true[acnt=0 bcnt=0 d=10.0000 a_pos=(0.00,0.00) b_pos=(10.00,0.00) rb=true] dis_false[acnt=1 bcnt=1 d=17.0493 a_pos=(-3.40,-1.45) b_pos=(13.40,1.45) rb=false] groove_default[rb=[true, true, true] acnt=0 bcnt=0 d=10.0000 a_pos=(0.00,0.00) b_pos=(10.00,0.00)] node_prop_default=[true, true, true] node_prop_false=[false, false, false] node_pos=[(-3.40,-1.45),(13.40,1.45)] static_default[rb=true dcnt=1 d_pos=(17.43,0.24)] static_enabled[rb=false dcnt=1 d_pos=(17.43,0.24)]",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_disable_coll godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_disable_coll dis_true[acnt=0 bcnt=0 d=10.0000 a_pos=(0.00,0.00) b_pos=(10.00,0.00) rb=true] dis_false[acnt=1 bcnt=1 d=17.0493 a_pos=(-3.40,-1.45) b_pos=(13.40,1.45) rb=false] groove_default[rb=[true, true, true] acnt=0 bcnt=0 d=10.0000 a_pos=(0.00,0.00) b_pos=(10.00,0.00)] node_prop_default=[true, true, true] node_prop_false=[false, false, false] node_pos=[(-3.40,-1.45),(13.40,1.45)] static_default[rb=true dcnt=1 d_pos=(17.43,0.24)] static_enabled[rb=false dcnt=1 d_pos=(17.43,0.24)]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "3b345ae3b17443fbef1a41acf20440b86249942916e09f3506ece174ebc2abc6"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_disable_coll godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_disable_coll dis_true[acnt=0 bcnt=0 d=10.0000 a_pos=(0.00,0.00) b_pos=(10.00,0.00) rb=true] dis_false[acnt=1 bcnt=1 d=17.0493 a_pos=(-3.40,-1.45) b_pos=(13.40,1.45) rb=false] groove_default[rb=[true, true, true] acnt=0 bcnt=0 d=10.0000 a_pos=(0.00,0.00) b_pos=(10.00,0.00)] node_prop_default=[true, true, true] node_prop_false=[false, false, false] node_pos=[(-3.40,-1.45),(13.40,1.45)] static_default[rb=true dcnt=1 d_pos=(17.43,0.24)] static_enabled[rb=false dcnt=1 d_pos=(17.43,0.24)]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "3b345ae3b17443fbef1a41acf20440b86249942916e09f3506ece174ebc2abc6"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=joint_disable_coll godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl joint_disable_coll dis_true[acnt=0 bcnt=0 d=10.0000 a_pos=(0.00,0.00) b_pos=(10.00,0.00) rb=true] dis_false[acnt=1 bcnt=1 d=17.0493 a_pos=(-3.40,-1.45) b_pos=(13.40,1.45) rb=false] groove_default[rb=[true, true, true] acnt=0 bcnt=0 d=10.0000 a_pos=(0.00,0.00) b_pos=(10.00,0.00)] node_prop_default=[true, true, true] node_prop_false=[false, false, false] node_pos=[(-3.40,-1.45),(13.40,1.45)] static_default[rb=true dcnt=1 d_pos=(17.43,0.24)] static_enabled[rb=false dcnt=1 d_pos=(17.43,0.24)]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "3b345ae3b17443fbef1a41acf20440b86249942916e09f3506ece174ebc2abc6"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "layer_or_table",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl layer_or_table ctl_both[wl=1 wm=2 bl=2 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 body_only[wl=1 wm=0 bl=2 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 wall_only[wl=1 wm=2 bl=2 bm=0]ent=46 ext=59 x=114.0952 cross=1 cnt=0 neither[wl=1 wm=0 bl=2 bm=0]ent=-1 ext=-1 x=114.0952 cross=1 cnt=0",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl layer_or_table ctl_both[wl=1 wm=2 bl=2 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 body_only[wl=1 wm=0 bl=2 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 wall_only[wl=1 wm=2 bl=2 bm=0]ent=46 ext=59 x=114.0952 cross=1 cnt=0 neither[wl=1 wm=0 bl=2 bm=0]ent=-1 ext=-1 x=114.0952 cross=1 cnt=0",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_or_table godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_or_table ctl_both[wl=1 wm=2 bl=2 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 body_only[wl=1 wm=0 bl=2 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 wall_only[wl=1 wm=2 bl=2 bm=0]ent=46 ext=59 x=114.0952 cross=1 cnt=0 neither[wl=1 wm=0 bl=2 bm=0]ent=-1 ext=-1 x=114.0952 cross=1 cnt=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "2f514267f0d5b4a2cf7a648693f69329853bb6fb32032abbc65686126244f4d7"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_or_table godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_or_table ctl_both[wl=1 wm=2 bl=2 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 body_only[wl=1 wm=0 bl=2 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 wall_only[wl=1 wm=2 bl=2 bm=0]ent=46 ext=59 x=114.0952 cross=1 cnt=0 neither[wl=1 wm=0 bl=2 bm=0]ent=-1 ext=-1 x=114.0952 cross=1 cnt=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "2f514267f0d5b4a2cf7a648693f69329853bb6fb32032abbc65686126244f4d7"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_or_table godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_or_table ctl_both[wl=1 wm=2 bl=2 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 body_only[wl=1 wm=0 bl=2 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 wall_only[wl=1 wm=2 bl=2 bm=0]ent=46 ext=59 x=114.0952 cross=1 cnt=0 neither[wl=1 wm=0 bl=2 bm=0]ent=-1 ext=-1 x=114.0952 cross=1 cnt=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "2f514267f0d5b4a2cf7a648693f69329853bb6fb32032abbc65686126244f4d7"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "layer_zero_table",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl layer_zero_table z_body_l0[wl=1 wm=1 bl=0 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 z_body_m0[wl=1 wm=1 bl=1 bm=0]ent=46 ext=59 x=114.0952 cross=1 cnt=0 z_wall_l0m0[wl=0 wm=0 bl=1 bm=1]ent=-1 ext=-1 x=114.0952 cross=1 cnt=0 z_wall_l0m1[wl=0 wm=1 bl=1 bm=1]ent=46 ext=59 x=114.0952 cross=1 cnt=0",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl layer_zero_table z_body_l0[wl=1 wm=1 bl=0 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 z_body_m0[wl=1 wm=1 bl=1 bm=0]ent=46 ext=59 x=114.0952 cross=1 cnt=0 z_wall_l0m0[wl=0 wm=0 bl=1 bm=1]ent=-1 ext=-1 x=114.0952 cross=1 cnt=0 z_wall_l0m1[wl=0 wm=1 bl=1 bm=1]ent=46 ext=59 x=114.0952 cross=1 cnt=0",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_zero_table godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_zero_table z_body_l0[wl=1 wm=1 bl=0 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 z_body_m0[wl=1 wm=1 bl=1 bm=0]ent=46 ext=59 x=114.0952 cross=1 cnt=0 z_wall_l0m0[wl=0 wm=0 bl=1 bm=1]ent=-1 ext=-1 x=114.0952 cross=1 cnt=0 z_wall_l0m1[wl=0 wm=1 bl=1 bm=1]ent=46 ext=59 x=114.0952 cross=1 cnt=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "ee86728fe1130f0a7f14f5d7bc1f6f20f3017cebcc4fd3ae464d7740bd764d42"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_zero_table godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_zero_table z_body_l0[wl=1 wm=1 bl=0 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 z_body_m0[wl=1 wm=1 bl=1 bm=0]ent=46 ext=59 x=114.0952 cross=1 cnt=0 z_wall_l0m0[wl=0 wm=0 bl=1 bm=1]ent=-1 ext=-1 x=114.0952 cross=1 cnt=0 z_wall_l0m1[wl=0 wm=1 bl=1 bm=1]ent=46 ext=59 x=114.0952 cross=1 cnt=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "ee86728fe1130f0a7f14f5d7bc1f6f20f3017cebcc4fd3ae464d7740bd764d42"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_zero_table godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_zero_table z_body_l0[wl=1 wm=1 bl=0 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 z_body_m0[wl=1 wm=1 bl=1 bm=0]ent=46 ext=59 x=114.0952 cross=1 cnt=0 z_wall_l0m0[wl=0 wm=0 bl=1 bm=1]ent=-1 ext=-1 x=114.0952 cross=1 cnt=0 z_wall_l0m1[wl=0 wm=1 bl=1 bm=1]ent=46 ext=59 x=114.0952 cross=1 cnt=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "ee86728fe1130f0a7f14f5d7bc1f6f20f3017cebcc4fd3ae464d7740bd764d42"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "layer_dyn_pair",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl layer_dyn_pair a_scans_only[va=(-112.2546,0.0000) vb=(-112.2546,0.0000) xa=-37.02 xb=-17.32 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] b_scans_only[va=(112.2546,0.0000) vb=(112.2546,0.0000) xa=77.32 xb=97.02 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] both_scan[va=(0.0000,0.0000) vb=(0.0000,0.0000) xa=20.15 xb=39.85 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] neither[va=(112.2546,0.0000) vb=(-112.2546,0.0000) xa=77.32 xb=-17.32 crossed=1 acnt=0 bcnt=0 ent_a=-1 ent_b=-1]",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl layer_dyn_pair a_scans_only[va=(-112.2546,0.0000) vb=(-112.2546,0.0000) xa=-37.02 xb=-17.32 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] b_scans_only[va=(112.2546,0.0000) vb=(112.2546,0.0000) xa=77.32 xb=97.02 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] both_scan[va=(0.0000,0.0000) vb=(0.0000,0.0000) xa=20.15 xb=39.85 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] neither[va=(112.2546,0.0000) vb=(-112.2546,0.0000) xa=77.32 xb=-17.32 crossed=1 acnt=0 bcnt=0 ent_a=-1 ent_b=-1]",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_dyn_pair godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_dyn_pair a_scans_only[va=(-112.2546,0.0000) vb=(-112.2546,0.0000) xa=-37.02 xb=-17.32 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] b_scans_only[va=(112.2546,0.0000) vb=(112.2546,0.0000) xa=77.32 xb=97.02 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] both_scan[va=(0.0000,0.0000) vb=(0.0000,0.0000) xa=20.15 xb=39.85 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] neither[va=(112.2546,0.0000) vb=(-112.2546,0.0000) xa=77.32 xb=-17.32 crossed=1 acnt=0 bcnt=0 ent_a=-1 ent_b=-1]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "670bf69062cefb2929e65c351b30564616a5d32ea67de2c395b12ec4aad9b23c"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_dyn_pair godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_dyn_pair a_scans_only[va=(-112.2546,0.0000) vb=(-112.2546,0.0000) xa=-37.02 xb=-17.32 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] b_scans_only[va=(112.2546,0.0000) vb=(112.2546,0.0000) xa=77.32 xb=97.02 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] both_scan[va=(0.0000,0.0000) vb=(0.0000,0.0000) xa=20.15 xb=39.85 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] neither[va=(112.2546,0.0000) vb=(-112.2546,0.0000) xa=77.32 xb=-17.32 crossed=1 acnt=0 bcnt=0 ent_a=-1 ent_b=-1]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "670bf69062cefb2929e65c351b30564616a5d32ea67de2c395b12ec4aad9b23c"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_dyn_pair godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_dyn_pair a_scans_only[va=(-112.2546,0.0000) vb=(-112.2546,0.0000) xa=-37.02 xb=-17.32 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] b_scans_only[va=(112.2546,0.0000) vb=(112.2546,0.0000) xa=77.32 xb=97.02 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] both_scan[va=(0.0000,0.0000) vb=(0.0000,0.0000) xa=20.15 xb=39.85 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] neither[va=(112.2546,0.0000) vb=(-112.2546,0.0000) xa=77.32 xb=-17.32 crossed=1 acnt=0 bcnt=0 ent_a=-1 ent_b=-1]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "670bf69062cefb2929e65c351b30564616a5d32ea67de2c395b12ec4aad9b23c"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "layer_flip_mid",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl layer_flip_mid body_mask_off flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=0 wl=1 | wall_layer_off flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=0 | mask_off_move flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=46 x_end=242.9471 vx_end=224.51 mask=0 wl=1 | body_mask_on flip_f=10 x_at=39.6352 cnt=[0,0,0] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=1 | wall_layer_on flip_f=10 x_at=39.6352 cnt=[0,0,0] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=1",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl layer_flip_mid body_mask_off flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=0 wl=1 | wall_layer_off flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=0 | mask_off_move flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=46 x_end=242.9471 vx_end=224.51 mask=0 wl=1 | body_mask_on flip_f=10 x_at=39.6352 cnt=[0,0,0] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=1 | wall_layer_on flip_f=10 x_at=39.6352 cnt=[0,0,0] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=1",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_flip_mid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_flip_mid body_mask_off flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=0 wl=1 | wall_layer_off flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=0 | mask_off_move flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=46 x_end=242.9471 vx_end=224.51 mask=0 wl=1 | body_mask_on flip_f=10 x_at=39.6352 cnt=[0,0,0] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=1 | wall_layer_on flip_f=10 x_at=39.6352 cnt=[0,0,0] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "83d7c5c59083658b85022c9e982636d1d2f3c96e0501806d091784e3808e996d"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_flip_mid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_flip_mid body_mask_off flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=0 wl=1 | wall_layer_off flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=0 | mask_off_move flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=46 x_end=242.9471 vx_end=224.51 mask=0 wl=1 | body_mask_on flip_f=10 x_at=39.6352 cnt=[0,0,0] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=1 | wall_layer_on flip_f=10 x_at=39.6352 cnt=[0,0,0] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "83d7c5c59083658b85022c9e982636d1d2f3c96e0501806d091784e3808e996d"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_flip_mid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_flip_mid body_mask_off flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=0 wl=1 | wall_layer_off flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=0 | mask_off_move flip_f=40 x_at=88.2972 cnt=[2,2,2] ent=23 ext=46 x_end=242.9471 vx_end=224.51 mask=0 wl=1 | body_mask_on flip_f=10 x_at=39.6352 cnt=[0,0,0] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=1 | wall_layer_on flip_f=10 x_at=39.6352 cnt=[0,0,0] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "83d7c5c59083658b85022c9e982636d1d2f3c96e0501806d091784e3808e996d"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "layer_flip_cb",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl layer_flip_cb direct ent=23 ext=-1 cb_cnt=2 after_write=0 x_end=88.6725 mask=0 | deferred ent=23 ext=-1 cb_cnt=2 after_write=1 x_end=88.6725 mask=0",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl layer_flip_cb direct ent=23 ext=-1 cb_cnt=2 after_write=0 x_end=88.6725 mask=0 | deferred ent=23 ext=-1 cb_cnt=2 after_write=1 x_end=88.6725 mask=0",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_flip_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_flip_cb direct ent=23 ext=-1 cb_cnt=2 after_write=0 x_end=88.6725 mask=0 | deferred ent=23 ext=-1 cb_cnt=2 after_write=1 x_end=88.6725 mask=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "529ee3d85666ce3826ccc482ed8d7bd369533892a000ef56289cfe5bb8c6232e"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_flip_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_flip_cb direct ent=23 ext=-1 cb_cnt=2 after_write=0 x_end=88.6725 mask=0 | deferred ent=23 ext=-1 cb_cnt=2 after_write=1 x_end=88.6725 mask=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "529ee3d85666ce3826ccc482ed8d7bd369533892a000ef56289cfe5bb8c6232e"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=layer_flip_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl layer_flip_cb direct ent=23 ext=-1 cb_cnt=2 after_write=0 x_end=88.6725 mask=0 | deferred ent=23 ext=-1 cb_cnt=2 after_write=1 x_end=88.6725 mask=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "529ee3d85666ce3826ccc482ed8d7bd369533892a000ef56289cfe5bb8c6232e"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "area_lattice",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl area_lattice mon_a_only[a_ent=1 b_ent=0] mon_b_only[a_ent=0 b_ent=1] neither_mon[a_ent=0 b_ent=0] neither_mable[a_ent=0 b_ent=0] both_mutual[a_ent=1 b_ent=1] layer_off[a_ent=0 b_ent=0] a_scans_b[a_ent=1 b_ent=0] b_scans_a[a_ent=0 b_ent=1]",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl area_lattice mon_a_only[a_ent=1 b_ent=0] mon_b_only[a_ent=0 b_ent=1] neither_mon[a_ent=0 b_ent=0] neither_mable[a_ent=0 b_ent=0] both_mutual[a_ent=1 b_ent=1] layer_off[a_ent=0 b_ent=0] a_scans_b[a_ent=1 b_ent=0] b_scans_a[a_ent=0 b_ent=1]",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=area_lattice godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl area_lattice mon_a_only[a_ent=1 b_ent=0] mon_b_only[a_ent=0 b_ent=1] neither_mon[a_ent=0 b_ent=0] neither_mable[a_ent=0 b_ent=0] both_mutual[a_ent=1 b_ent=1] layer_off[a_ent=0 b_ent=0] a_scans_b[a_ent=1 b_ent=0] b_scans_a[a_ent=0 b_ent=1]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "0fe307bdc0c240d4e1fdbf3c6e8cd2df36b3d251c7760ddfbb38fa589f222e6b"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=area_lattice godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl area_lattice mon_a_only[a_ent=1 b_ent=0] mon_b_only[a_ent=0 b_ent=1] neither_mon[a_ent=0 b_ent=0] neither_mable[a_ent=0 b_ent=0] both_mutual[a_ent=1 b_ent=1] layer_off[a_ent=0 b_ent=0] a_scans_b[a_ent=1 b_ent=0] b_scans_a[a_ent=0 b_ent=1]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "0fe307bdc0c240d4e1fdbf3c6e8cd2df36b3d251c7760ddfbb38fa589f222e6b"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=area_lattice godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl area_lattice mon_a_only[a_ent=1 b_ent=0] mon_b_only[a_ent=0 b_ent=1] neither_mon[a_ent=0 b_ent=0] neither_mable[a_ent=0 b_ent=0] both_mutual[a_ent=1 b_ent=1] layer_off[a_ent=0 b_ent=0] a_scans_b[a_ent=1 b_ent=0] b_scans_a[a_ent=0 b_ent=1]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "0fe307bdc0c240d4e1fdbf3c6e8cd2df36b3d251c7760ddfbb38fa589f222e6b"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "area_body_gate",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl area_body_gate area_scans[ent=0] area_blind[ent=-1] area_scans_bmask[ent=0] area_blind_bmask[ent=-1]",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl area_body_gate area_scans[ent=0] area_blind[ent=-1] area_scans_bmask[ent=0] area_blind_bmask[ent=-1]",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=area_body_gate godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl area_body_gate area_scans[ent=0] area_blind[ent=-1] area_scans_bmask[ent=0] area_blind_bmask[ent=-1]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "4db36d2a6ce3f710fc265af4ed808a9c40cea08993b223914fde3410ed44f4d7"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=area_body_gate godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl area_body_gate area_scans[ent=0] area_blind[ent=-1] area_scans_bmask[ent=0] area_blind_bmask[ent=-1]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "4db36d2a6ce3f710fc265af4ed808a9c40cea08993b223914fde3410ed44f4d7"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=area_body_gate godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl area_body_gate area_scans[ent=0] area_blind[ent=-1] area_scans_bmask[ent=0] area_blind_bmask[ent=-1]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "4db36d2a6ce3f710fc265af4ed808a9c40cea08993b223914fde3410ed44f4d7"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "area_entry_order",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_jl area_entry_order areas_first=[\"ob@0\", \"oa@0\", \"ib@0\", \"ia@0\"] body_first=[\"ob@0\", \"oa@0\", \"ib@0\", \"ia@0\"]",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_jl area_entry_order areas_first=[\"ob@0\", \"oa@0\", \"ib@0\", \"ia@0\"] body_first=[\"ob@0\", \"oa@0\", \"ib@0\", \"ia@0\"]",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=area_entry_order godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl area_entry_order areas_first=[\"ob@0\", \"oa@0\", \"ib@0\", \"ia@0\"] body_first=[\"ob@0\", \"oa@0\", \"ib@0\", \"ia@0\"]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "01a741ab2cd86a04cb17caffd7bcc9b2fc1e4736296578e75675d59da87cb143"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=area_entry_order godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl area_entry_order areas_first=[\"ob@0\", \"oa@0\", \"ib@0\", \"ia@0\"] body_first=[\"ob@0\", \"oa@0\", \"ib@0\", \"ia@0\"]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "01a741ab2cd86a04cb17caffd7bcc9b2fc1e4736296578e75675d59da87cb143"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR81 arm=area_entry_order godot=4.7.2-stable (arch_linux) engine2d=DEFAULT sep_thread=false tps=60\nPASS phys2d_jl area_entry_order areas_first=[\"ob@0\", \"oa@0\", \"ib@0\", \"ia@0\"] body_first=[\"ob@0\", \"oa@0\", \"ib@0\", \"ia@0\"]\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "01a741ab2cd86a04cb17caffd7bcc9b2fc1e4736296578e75675d59da87cb143"
+        }
+      ],
+      "stderr_error_lines": []
+    }
+  ],
+  "discover": {},
+  "verdict": "PASS",
+  "bad": []
+}

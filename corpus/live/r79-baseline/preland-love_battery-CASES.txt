@@ -1,0 +1,19 @@
+CASES = [
+    ("dtcadence_n",            "dtcadence", "n",          "120"),
+    ("dtcadence_mean_uncapped","dtcadence", "dt_mean_ms", (0.5, 4.0)),
+    ("dtcadence_min_subms",    "dtcadence", "dt_min_ms",  (0.0, 0.1)),
+    ("dtcadence_max_cheap",    "dtcadence", "dt_max_ms",  (0.5, 8.0)),
+    ("popen_l1_exact",         "popen",     "l1",         "CHILD-MARK-1"),
+    ("popen_l2_exact",         "popen",     "l2",         "CHILD-MARK-2"),
+    ("popen_l1_wait_fast",     "popen",     "l1_wait_ms", (0.2, 30.0)),
+    # l2_wait tracks the child's own 120ms sleep -> pipe visibility is
+    # writer-bound, no engine-layer fabrication/absorption window
+    ("popen_l2_wait_writer",   "popen",     "l2_wait_ms", (110.0, 140.0)),
+    ("popen_close_fast",       "popen",     "close_wait_ms", (0.0, 5.0)),
+    ("popen_total",            "popen",     "total_ms",   (115.0, 170.0)),
+    ("popen_rest_empty",       "popen",     "rest_len",   "0"),
+    ("osx_raw_status_shape",   "osx",       "ret_a",      "768"),
+    ("osx_single_return",      "osx",       "ret_b",      "nil"),
+    ("pump_not_needed",        "pump",      "pump_needed","false"),
+    ("pump_updates_counted",   "pump",      "updates_without_pump", "123"),
+]

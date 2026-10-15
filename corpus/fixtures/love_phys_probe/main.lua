@@ -109,6 +109,22 @@
 -- Insertion-only: every r78 branch is gated on R78[CELL] ~= nil, so a pre-r78
 -- cell (and every r77 cell) takes exactly its earlier path.
 
+-- r79 P5 (boundary-exec verified): pin the error handler ourselves. The
+-- default love.errhand opens the blue error window whenever a scratch copy
+-- runs without the strict conf (t.modules.window/graphics enabled) — a
+-- stray invocation then hangs the desktop. This override prints the same
+-- error + traceback and exits rc=1 regardless of conf, so the fatal-cell
+-- class (rc=1, err_on=stdout, esc_fn) survives byte-for-byte. Level 2 is
+-- load-bearing: level 1 names the first quoted frame 'handler' and the
+-- production esc_fn regex then reads the wrong site (+2 output lines vs
+-- the pre-handler fatal cell are expected: duplicate traceback header +
+-- one boot frame).
+love.errorhandler = function(msg)
+  print("Error: " .. tostring(msg))
+  print(debug.traceback("stack traceback:", 2))
+  return function() return 1 end
+end
+
 local CELL = os.getenv("IW_CELL") or "baseline"
 
 local FIXED = 1 / 60

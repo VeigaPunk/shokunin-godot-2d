@@ -1,0 +1,183 @@
+{
+  "probe": "r68-scribe midlineforge offset ladder",
+  "proj_probe_sha256": "3f7806b6eabad5c4d1a091aaa353d6359bd2f606ec3afd963534971c2ac343d8",
+  "classifier_segment_shas": {
+    "run_process": "88728b2303f64fc4",
+    "classify_process": "749fa0607e7707e6",
+    "classify_streams": "a886968fd3acf4de",
+    "classify_audio_process": "3a6bc0e831a76176"
+  },
+  "gap_ms": 200,
+  "head_stagger_ms": 2,
+  "offsets": [
+    0.0
+  ],
+  "reps": 5,
+  "records": [
+    {
+      "offset_ms": 0.0,
+      "rep": 0,
+      "exit": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.797,
+      "cls": false,
+      "t_head_ms": 544.875,
+      "t_err_ms": 544.227,
+      "t_tail_ms": 744.968,
+      "write_pos_in_gap_ms": -0.648,
+      "gap_ms_measured": 200.093,
+      "raw_stdout_sha256": "9b00cb5d2d71c6ba6c66b8d169b4f016975fd21971b3e017983e22a0b8badd7b",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "order": "EE2HT",
+      "outcome": "pre_head_standalone",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 331,
+        "T": 363,
+        "E": 243,
+        "E2": 288
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3152880",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3152650",
+        "DESCENDANT_PIPE_PROBE: expected signature"
+      ],
+      "stderr_lines": [],
+      "n_chunks_stdout": 8
+    },
+    {
+      "offset_ms": 0.0,
+      "rep": 1,
+      "exit": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.87,
+      "cls": false,
+      "t_head_ms": 619.06,
+      "t_err_ms": 618.698,
+      "t_tail_ms": 819.126,
+      "write_pos_in_gap_ms": -0.362,
+      "gap_ms_measured": 200.066,
+      "raw_stdout_sha256": "e42a052ae8bf4a21146e243b57626c82f11b795e37c5d2da5ed020e05dc23804",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "order": "EE2HT",
+      "outcome": "pre_head_standalone",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 331,
+        "T": 363,
+        "E": 243,
+        "E2": 288
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3153278",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3153007",
+        "DESCENDANT_PIPE_PROBE: expected signature"
+      ],
+      "stderr_lines": [],
+      "n_chunks_stdout": 7
+    },
+    {
+      "offset_ms": 0.0,
+      "rep": 2,
+      "exit": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.842,
+      "cls": false,
+      "t_head_ms": 590.558,
+      "t_err_ms": 590.294,
+      "t_tail_ms": 790.64,
+      "write_pos_in_gap_ms": -0.264,
+      "gap_ms_measured": 200.082,
+      "raw_stdout_sha256": "6d7c39fe4a3fb94168cd6baaed0def5fa20d8338ad95173ab824ee7c6386dd32",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "order": "EE2HT",
+      "outcome": "pre_head_standalone",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 331,
+        "T": 363,
+        "E": 243,
+        "E2": 288
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3153673",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3153379",
+        "DESCENDANT_PIPE_PROBE: expected signature"
+      ],
+      "stderr_lines": [],
+      "n_chunks_stdout": 7
+    },
+    {
+      "offset_ms": 0.0,
+      "rep": 3,
+      "exit": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.887,
+      "cls": false,
+      "t_head_ms": 635.953,
+      "t_err_ms": 635.593,
+      "t_tail_ms": 836.064,
+      "write_pos_in_gap_ms": -0.36,
+      "gap_ms_measured": 200.111,
+      "raw_stdout_sha256": "3d3c6d9e289129c4ce33761fc0211ecaeb39ff9ab183f853a4b9a6fef2ea44af",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "order": "EE2HT",
+      "outcome": "pre_head_standalone",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 331,
+        "T": 363,
+        "E": 243,
+        "E2": 288
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3154062",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3153749",
+        "DESCENDANT_PIPE_PROBE: expected signature"
+      ],
+      "stderr_lines": [],
+      "n_chunks_stdout": 7
+    },
+    {
+      "offset_ms": 0.0,
+      "rep": 4,
+      "exit": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.834,
+      "cls": false,
+      "t_head_ms": 582.78,
+      "t_err_ms": 582.115,
+      "t_tail_ms": 782.869,
+      "write_pos_in_gap_ms": -0.665,
+      "gap_ms_measured": 200.089,
+      "raw_stdout_sha256": "05d11d62672357f86251f56d4d2b993b1082bfb3ac65e673046b90bab6fc70e2",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "order": "EE2HT",
+      "outcome": "pre_head_standalone",
+      "spliced_line": null,
+      "signature_present": true,
+      "byte_idx": {
+        "H": 331,
+        "T": 363,
+        "E": 243,
+        "E2": 288
+      },
+      "stdout_tail_lines": [
+        "DESCENDANT_PIPE spawned_pid=3154414",
+        "ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+        "DESCENDANT_PIPE_MIDLINE write_ppid=3154158",
+        "DESCENDANT_PIPE_PROBE: expected signature"
+      ],
+      "stderr_lines": [],
+      "n_chunks_stdout": 8
+    }
+  ]
+}

@@ -1,0 +1,1067 @@
+{
+  "python": "3.14.7 (main, Aug 10 2026, 07:46:56) [GCC 16.1.1 20260728]",
+  "mid_ms": 300.0,
+  "reps": 3,
+  "cases": {
+    "small": {
+      "ops": [
+        [
+          "w",
+          100,
+          "x"
+        ],
+        [
+          "s",
+          600
+        ]
+      ],
+      "before": [],
+      "after": [],
+      "reps": [
+        {
+          "first_vis_ms": 608.7,
+          "vis_mid_bytes": 0,
+          "exit_ms": 611.1,
+          "total_bytes": 100,
+          "integrity": 1,
+          "timeline": [
+            [
+              608.7,
+              100
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 609.0,
+          "vis_mid_bytes": 0,
+          "exit_ms": 611.3,
+          "total_bytes": 100,
+          "integrity": 1,
+          "timeline": [
+            [
+              609.0,
+              100
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 609.9,
+          "vis_mid_bytes": 0,
+          "exit_ms": 612.0,
+          "total_bytes": 100,
+          "integrity": 1,
+          "timeline": [
+            [
+              609.9,
+              100
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    },
+    "small_pg": {
+      "ops": [
+        [
+          "w",
+          100,
+          "x"
+        ],
+        [
+          "s",
+          600
+        ]
+      ],
+      "before": [],
+      "after": [
+        "--import-pygame"
+      ],
+      "reps": [
+        {
+          "first_vis_ms": 645.2,
+          "vis_mid_bytes": 0,
+          "exit_ms": 654.7,
+          "total_bytes": 100,
+          "integrity": 1,
+          "timeline": [
+            [
+              645.2,
+              100
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 645.8,
+          "vis_mid_bytes": 0,
+          "exit_ms": 656.3,
+          "total_bytes": 100,
+          "integrity": 1,
+          "timeline": [
+            [
+              645.8,
+              100
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 647.4,
+          "vis_mid_bytes": 0,
+          "exit_ms": 655.7,
+          "total_bytes": 100,
+          "integrity": 1,
+          "timeline": [
+            [
+              647.4,
+              100
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    },
+    "edge_8192": {
+      "ops": [
+        [
+          "w",
+          8192,
+          "x"
+        ],
+        [
+          "s",
+          600
+        ]
+      ],
+      "before": [],
+      "after": [],
+      "reps": [
+        {
+          "first_vis_ms": 608.9,
+          "vis_mid_bytes": 0,
+          "exit_ms": 611.0,
+          "total_bytes": 8192,
+          "integrity": 1,
+          "timeline": [
+            [
+              608.9,
+              8192
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 609.1,
+          "vis_mid_bytes": 0,
+          "exit_ms": 611.3,
+          "total_bytes": 8192,
+          "integrity": 1,
+          "timeline": [
+            [
+              609.1,
+              8192
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 609.3,
+          "vis_mid_bytes": 0,
+          "exit_ms": 611.6,
+          "total_bytes": 8192,
+          "integrity": 1,
+          "timeline": [
+            [
+              609.3,
+              8192
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    },
+    "edge_65536": {
+      "ops": [
+        [
+          "w",
+          65536,
+          "x"
+        ],
+        [
+          "s",
+          600
+        ]
+      ],
+      "before": [],
+      "after": [],
+      "reps": [
+        {
+          "first_vis_ms": 608.9,
+          "vis_mid_bytes": 0,
+          "exit_ms": 610.8,
+          "total_bytes": 65536,
+          "integrity": 1,
+          "timeline": [
+            [
+              608.9,
+              65536
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 609.0,
+          "vis_mid_bytes": 0,
+          "exit_ms": 611.1,
+          "total_bytes": 65536,
+          "integrity": 1,
+          "timeline": [
+            [
+              609.0,
+              65536
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 608.6,
+          "vis_mid_bytes": 0,
+          "exit_ms": 610.7,
+          "total_bytes": 65536,
+          "integrity": 1,
+          "timeline": [
+            [
+              608.6,
+              65536
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    },
+    "edge_128k_lo": {
+      "ops": [
+        [
+          "w",
+          131071,
+          "x"
+        ],
+        [
+          "s",
+          600
+        ]
+      ],
+      "before": [],
+      "after": [],
+      "reps": [
+        {
+          "first_vis_ms": 608.9,
+          "vis_mid_bytes": 0,
+          "exit_ms": 611.1,
+          "total_bytes": 131071,
+          "integrity": 1,
+          "timeline": [
+            [
+              608.9,
+              65536
+            ],
+            [
+              608.9,
+              65535
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 609.0,
+          "vis_mid_bytes": 0,
+          "exit_ms": 611.5,
+          "total_bytes": 131071,
+          "integrity": 1,
+          "timeline": [
+            [
+              609.0,
+              65536
+            ],
+            [
+              609.0,
+              65535
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 609.2,
+          "vis_mid_bytes": 0,
+          "exit_ms": 611.3,
+          "total_bytes": 131071,
+          "integrity": 1,
+          "timeline": [
+            [
+              609.2,
+              65536
+            ],
+            [
+              609.2,
+              65535
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    },
+    "edge_128k_eq": {
+      "ops": [
+        [
+          "w",
+          131072,
+          "x"
+        ],
+        [
+          "s",
+          600
+        ]
+      ],
+      "before": [],
+      "after": [],
+      "reps": [
+        {
+          "first_vis_ms": 9.4,
+          "vis_mid_bytes": 131072,
+          "exit_ms": 611.4,
+          "total_bytes": 131072,
+          "integrity": 1,
+          "timeline": [
+            [
+              9.4,
+              65536
+            ],
+            [
+              9.4,
+              65536
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 9.1,
+          "vis_mid_bytes": 131072,
+          "exit_ms": 611.3,
+          "total_bytes": 131072,
+          "integrity": 1,
+          "timeline": [
+            [
+              9.1,
+              65536
+            ],
+            [
+              9.1,
+              65536
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 9.1,
+          "vis_mid_bytes": 131072,
+          "exit_ms": 611.3,
+          "total_bytes": 131072,
+          "integrity": 1,
+          "timeline": [
+            [
+              9.1,
+              65536
+            ],
+            [
+              9.1,
+              65536
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    },
+    "edge_128k_hi": {
+      "ops": [
+        [
+          "w",
+          131073,
+          "x"
+        ],
+        [
+          "s",
+          600
+        ]
+      ],
+      "before": [],
+      "after": [],
+      "reps": [
+        {
+          "first_vis_ms": 9.0,
+          "vis_mid_bytes": 131073,
+          "exit_ms": 611.2,
+          "total_bytes": 131073,
+          "integrity": 1,
+          "timeline": [
+            [
+              9.0,
+              65536
+            ],
+            [
+              9.0,
+              65536
+            ],
+            [
+              9.0,
+              1
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 9.0,
+          "vis_mid_bytes": 131073,
+          "exit_ms": 611.2,
+          "total_bytes": 131073,
+          "integrity": 1,
+          "timeline": [
+            [
+              9.0,
+              65536
+            ],
+            [
+              9.0,
+              65536
+            ],
+            [
+              9.0,
+              1
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 9.5,
+          "vis_mid_bytes": 131073,
+          "exit_ms": 611.7,
+          "total_bytes": 131073,
+          "integrity": 1,
+          "timeline": [
+            [
+              9.5,
+              65536
+            ],
+            [
+              9.6,
+              65536
+            ],
+            [
+              9.6,
+              1
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    },
+    "big_200k": {
+      "ops": [
+        [
+          "w",
+          200000,
+          "x"
+        ],
+        [
+          "s",
+          600
+        ]
+      ],
+      "before": [],
+      "after": [],
+      "reps": [
+        {
+          "first_vis_ms": 9.6,
+          "vis_mid_bytes": 200000,
+          "exit_ms": 611.8,
+          "total_bytes": 200000,
+          "integrity": 1,
+          "timeline": [
+            [
+              9.6,
+              65536
+            ],
+            [
+              9.6,
+              65536
+            ],
+            [
+              9.6,
+              65536
+            ],
+            [
+              9.6,
+              3392
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 9.3,
+          "vis_mid_bytes": 200000,
+          "exit_ms": 611.6,
+          "total_bytes": 200000,
+          "integrity": 1,
+          "timeline": [
+            [
+              9.3,
+              65536
+            ],
+            [
+              9.3,
+              65536
+            ],
+            [
+              9.3,
+              65536
+            ],
+            [
+              9.3,
+              3392
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 9.0,
+          "vis_mid_bytes": 200000,
+          "exit_ms": 611.5,
+          "total_bytes": 200000,
+          "integrity": 1,
+          "timeline": [
+            [
+              9.0,
+              65536
+            ],
+            [
+              9.0,
+              65536
+            ],
+            [
+              9.0,
+              65536
+            ],
+            [
+              9.0,
+              3392
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    },
+    "big_200k_pg": {
+      "ops": [
+        [
+          "w",
+          200000,
+          "x"
+        ],
+        [
+          "s",
+          600
+        ]
+      ],
+      "before": [],
+      "after": [
+        "--import-pygame"
+      ],
+      "reps": [
+        {
+          "first_vis_ms": 44.2,
+          "vis_mid_bytes": 200000,
+          "exit_ms": 653.1,
+          "total_bytes": 200000,
+          "integrity": 1,
+          "timeline": [
+            [
+              44.2,
+              65536
+            ],
+            [
+              44.2,
+              65536
+            ],
+            [
+              44.2,
+              65536
+            ],
+            [
+              44.2,
+              3392
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 43.1,
+          "vis_mid_bytes": 200000,
+          "exit_ms": 652.2,
+          "total_bytes": 200000,
+          "integrity": 1,
+          "timeline": [
+            [
+              43.1,
+              65536
+            ],
+            [
+              43.2,
+              65536
+            ],
+            [
+              43.2,
+              65536
+            ],
+            [
+              43.2,
+              3392
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 45.3,
+          "vis_mid_bytes": 200000,
+          "exit_ms": 655.8,
+          "total_bytes": 200000,
+          "integrity": 1,
+          "timeline": [
+            [
+              45.3,
+              65536
+            ],
+            [
+              45.3,
+              65536
+            ],
+            [
+              45.3,
+              65536
+            ],
+            [
+              45.3,
+              3392
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    },
+    "seg_64k_64k": {
+      "ops": [
+        [
+          "w",
+          65536,
+          "x"
+        ],
+        [
+          "s",
+          250
+        ],
+        [
+          "w",
+          65536,
+          "y"
+        ],
+        [
+          "s",
+          350
+        ]
+      ],
+      "before": [],
+      "after": [],
+      "reps": [
+        {
+          "first_vis_ms": 609.8,
+          "vis_mid_bytes": 0,
+          "exit_ms": 611.9,
+          "total_bytes": 131072,
+          "integrity": 1,
+          "timeline": [
+            [
+              609.8,
+              65536
+            ],
+            [
+              609.8,
+              65536
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 609.8,
+          "vis_mid_bytes": 0,
+          "exit_ms": 612.0,
+          "total_bytes": 131072,
+          "integrity": 1,
+          "timeline": [
+            [
+              609.8,
+              65536
+            ],
+            [
+              609.8,
+              65536
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 609.3,
+          "vis_mid_bytes": 0,
+          "exit_ms": 611.5,
+          "total_bytes": 131072,
+          "integrity": 1,
+          "timeline": [
+            [
+              609.3,
+              65536
+            ],
+            [
+              609.4,
+              65536
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    },
+    "seg_70k_70k": {
+      "ops": [
+        [
+          "w",
+          70000,
+          "x"
+        ],
+        [
+          "s",
+          250
+        ],
+        [
+          "w",
+          70000,
+          "y"
+        ],
+        [
+          "s",
+          350
+        ]
+      ],
+      "before": [],
+      "after": [],
+      "reps": [
+        {
+          "first_vis_ms": 258.8,
+          "vis_mid_bytes": 70000,
+          "exit_ms": 611.0,
+          "total_bytes": 140000,
+          "integrity": 1,
+          "timeline": [
+            [
+              258.8,
+              65536
+            ],
+            [
+              258.8,
+              4464
+            ],
+            [
+              608.9,
+              65536
+            ],
+            [
+              608.9,
+              4464
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 258.7,
+          "vis_mid_bytes": 70000,
+          "exit_ms": 610.8,
+          "total_bytes": 140000,
+          "integrity": 1,
+          "timeline": [
+            [
+              258.7,
+              65536
+            ],
+            [
+              258.8,
+              4464
+            ],
+            [
+              608.9,
+              65536
+            ],
+            [
+              608.9,
+              4464
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 260.1,
+          "vis_mid_bytes": 70000,
+          "exit_ms": 612.4,
+          "total_bytes": 140000,
+          "integrity": 1,
+          "timeline": [
+            [
+              260.1,
+              65536
+            ],
+            [
+              260.1,
+              4464
+            ],
+            [
+              610.2,
+              65536
+            ],
+            [
+              610.2,
+              4464
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    },
+    "seg_131072_100": {
+      "ops": [
+        [
+          "w",
+          131072,
+          "x"
+        ],
+        [
+          "s",
+          250
+        ],
+        [
+          "w",
+          100,
+          "y"
+        ],
+        [
+          "s",
+          350
+        ]
+      ],
+      "before": [],
+      "after": [],
+      "reps": [
+        {
+          "first_vis_ms": 9.2,
+          "vis_mid_bytes": 131072,
+          "exit_ms": 611.6,
+          "total_bytes": 131172,
+          "integrity": 1,
+          "timeline": [
+            [
+              9.2,
+              65536
+            ],
+            [
+              9.2,
+              65536
+            ],
+            [
+              609.3,
+              100
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 9.3,
+          "vis_mid_bytes": 131072,
+          "exit_ms": 611.5,
+          "total_bytes": 131172,
+          "integrity": 1,
+          "timeline": [
+            [
+              9.3,
+              65536
+            ],
+            [
+              9.3,
+              65536
+            ],
+            [
+              609.5,
+              100
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 9.8,
+          "vis_mid_bytes": 131072,
+          "exit_ms": 612.1,
+          "total_bytes": 131172,
+          "integrity": 1,
+          "timeline": [
+            [
+              9.8,
+              65536
+            ],
+            [
+              9.8,
+              65536
+            ],
+            [
+              609.9,
+              100
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    },
+    "flush_control": {
+      "ops": [
+        [
+          "w",
+          100,
+          "x"
+        ],
+        [
+          "s",
+          200
+        ],
+        [
+          "f",
+          100,
+          "z"
+        ],
+        [
+          "s",
+          300
+        ]
+      ],
+      "before": [],
+      "after": [],
+      "reps": [
+        {
+          "first_vis_ms": 209.8,
+          "vis_mid_bytes": 200,
+          "exit_ms": 512.1,
+          "total_bytes": 200,
+          "integrity": 1,
+          "timeline": [
+            [
+              209.8,
+              200
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 209.2,
+          "vis_mid_bytes": 200,
+          "exit_ms": 511.3,
+          "total_bytes": 200,
+          "integrity": 1,
+          "timeline": [
+            [
+              209.2,
+              200
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 209.8,
+          "vis_mid_bytes": 200,
+          "exit_ms": 512.2,
+          "total_bytes": 200,
+          "integrity": 1,
+          "timeline": [
+            [
+              209.8,
+              200
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    },
+    "unbuf_control": {
+      "ops": [
+        [
+          "w",
+          100,
+          "x"
+        ],
+        [
+          "s",
+          600
+        ]
+      ],
+      "before": [
+        "-u"
+      ],
+      "after": [],
+      "reps": [
+        {
+          "first_vis_ms": 8.9,
+          "vis_mid_bytes": 100,
+          "exit_ms": 611.3,
+          "total_bytes": 100,
+          "integrity": 1,
+          "timeline": [
+            [
+              8.9,
+              100
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 8.8,
+          "vis_mid_bytes": 100,
+          "exit_ms": 610.8,
+          "total_bytes": 100,
+          "integrity": 1,
+          "timeline": [
+            [
+              8.8,
+              100
+            ]
+          ],
+          "rc": 0
+        },
+        {
+          "first_vis_ms": 8.7,
+          "vis_mid_bytes": 100,
+          "exit_ms": 611.1,
+          "total_bytes": 100,
+          "integrity": 1,
+          "timeline": [
+            [
+              8.7,
+              100
+            ]
+          ],
+          "rc": 0
+        }
+      ]
+    }
+  }
+}

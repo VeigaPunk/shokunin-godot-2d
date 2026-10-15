@@ -1,0 +1,19 @@
+IW | cell=bc_setcallbacks_back | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=bc_setcallbacks_back | built bodies=4 locked=false
+IW | cell=bc_setcallbacks_back | evpin cb=bc locked=true step=4
+IW | cell=bc_setcallbacks_back | evpin cb=pre locked=true step=4
+IW | cell=bc_setcallbacks_back | evpin cb=post locked=true step=4
+IW | cell=bc_setcallbacks_back | fire cb=bc kind=setcallbacks_back step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=bc_setcallbacks_back | cb_setcallbacks ok=true err=nil swapped_step=73 swapped_n=2 swapped_cb=bc getcb=cb2_bc,cb2_ec,cb2_pre,cb2_post
+IW | cell=bc_setcallbacks_back | cb_setcallbacks2 ok=true err=nil getcb=c_bc,c_ec,c_pre,c_post
+IW | cell=bc_setcallbacks_back | postfire cb=bc step=73 count=4 b1pos=400,520.1500244140625
+IW | cell=bc_setcallbacks_back | after_update step=73 count=4 b1pos=400,511.13113403320312 b1vel=0,-611.09796142578125
+IW | cell=bc_setcallbacks_back | r77obs step=73 locked=false count=4 b1pos=400,511.13113403320312 b2pos=240,431.05447387695312 b1dead=false b2dead=false fx_a_dead=n/a fx_b_dead=n/a jcount=0 bc=2 ec=0 pre=32 post=32 bc2=0 ec2=0 pre2=0 post2=0 swap_step=73 drain_n=0
+IW | cell=bc_setcallbacks_back | evpin cb=ec locked=true step=74
+IW | cell=bc_setcallbacks_back | r77ec n=1 step=74 locked=true dyn=b1
+IW | cell=bc_setcallbacks_back | r77ec n=2 step=82 locked=true dyn=b2
+IW | cell=bc_setcallbacks_back | r77ec n=3 step=164 locked=true dyn=b2
+IW | cell=bc_setcallbacks_back | r77ec n=4 step=191 locked=true dyn=b1
+IW | cell=bc_setcallbacks_back | final steps=200 count=4 b1pos=400,445.10910034179688 b2pos=240,520.7589111328125 bc=5 ec=4 pre=36 post=36 fired=true fire_step=73
+IW | cell=bc_setcallbacks_back | r77obs step=200 locked=false count=4 b1pos=400,445.10910034179688 b2pos=240,520.7589111328125 b1dead=false b2dead=false fx_a_dead=n/a fx_b_dead=n/a jcount=0 bc=5 ec=4 pre=36 post=36 bc2=0 ec2=0 pre2=0 post2=0 swap_step=73 drain_n=0
+IW | cell=bc_setcallbacks_back | CELL_DONE

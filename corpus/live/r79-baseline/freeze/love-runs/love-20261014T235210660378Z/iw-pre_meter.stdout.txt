@@ -1,0 +1,19 @@
+IW | cell=pre_meter | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=pre_meter | built bodies=4 locked=false
+IW | cell=pre_meter | evpin cb=bc locked=true step=4
+IW | cell=pre_meter | evpin cb=pre locked=true step=4
+IW | cell=pre_meter | evpin cb=post locked=true step=4
+IW | cell=pre_meter | fire cb=pre kind=meter step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=pre_meter | cb_meter ok=true err=nil meter_before=30 meter_after=60 pos_now=800,1040.300048828125 grav_after=0,1255.6800537109375
+IW | cell=pre_meter | cb_meter2 ok=true err=nil meter=1 pos_now=13.333333015441895,17.338333129882812
+IW | cell=pre_meter | postfire cb=pre step=73 count=4 b1pos=13.333333015441895,17.338333129882812
+IW | cell=pre_meter | after_update step=73 count=4 b1pos=13.333333015441895,17.037704467773438 b1vel=0,-20.369932174682617
+IW | cell=pre_meter | r77obs step=73 locked=false count=4 b1pos=13.333333015441895,17.037704467773438 b2pos=8,14.36848258972168 b1dead=false b2dead=false fx_a_dead=n/a fx_b_dead=n/a jcount=0 bc=2 ec=0 pre=32 post=32 bc2=0 ec2=0 pre2=0 post2=0 swap_step=-1 drain_n=0
+IW | cell=pre_meter | evpin cb=ec locked=true step=74
+IW | cell=pre_meter | r77ec n=1 step=74 locked=true dyn=b1
+IW | cell=pre_meter | r77ec n=2 step=82 locked=true dyn=b2
+IW | cell=pre_meter | r77ec n=3 step=164 locked=true dyn=b2
+IW | cell=pre_meter | r77ec n=4 step=191 locked=true dyn=b1
+IW | cell=pre_meter | final steps=200 count=4 b1pos=13.333333015441895,14.836970329284668 b2pos=8,17.358631134033203 bc=5 ec=4 pre=36 post=36 fired=true fire_step=73
+IW | cell=pre_meter | r77obs step=200 locked=false count=4 b1pos=13.333333015441895,14.836970329284668 b2pos=8,17.358631134033203 b1dead=false b2dead=false fx_a_dead=n/a fx_b_dead=n/a jcount=0 bc=5 ec=4 pre=36 post=36 bc2=0 ec2=0 pre2=0 post2=0 swap_step=-1 drain_n=0
+IW | cell=pre_meter | CELL_DONE

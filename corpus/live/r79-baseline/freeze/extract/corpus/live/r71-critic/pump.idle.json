@@ -1,0 +1,13 @@
+{
+  "tag": "idle",
+  "init": [
+    5,
+    0
+  ],
+  "nopump_total_ms": 3222.6,
+  "queued_after_nopump": 1,
+  "posted_survived": 1,
+  "events_0p5s": [],
+  "quit_seen": false,
+  "flip_mean_ms": 0.0
+}

@@ -1,0 +1,17 @@
+#!/bin/bash
+# r72-simplifier landing watcher: log transitions of the round-72 landing surface.
+# Write scope: corpus/live/r72-simplifier/ only. Read-only elsewhere.
+cd "$(git rev-parse --show-toplevel)" || exit 1
+prev=""
+for i in $(seq 1 240); do
+  fx=$(sha256sum corpus/fixtures/pygame_probe.py corpus/fixtures/pygame_battery.py 2>/dev/null | sha256sum | cut -d' ' -f1)
+  dirs=$(ls -d corpus/live/r72-author corpus/live/r72-scout corpus/live/r72-critic corpus/live/r72-boundary reports/round-72 2>/dev/null | tr '\n' ',')
+  st=$(git status --porcelain -- corpus/fixtures reports/round-72 corpus/live 2>/dev/null | sha256sum | cut -d' ' -f1)
+  head=$(git log -1 --format=%h 2>/dev/null)
+  cur="$fx $dirs $st $head"
+  if [ "$cur" != "$prev" ]; then
+    echo "$(date -u +%H:%M:%S) $cur" >> corpus/live/r72-simplifier/watch.log
+    prev="$cur"
+  fi
+  sleep 10
+done

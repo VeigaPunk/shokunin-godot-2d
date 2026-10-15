@@ -1,0 +1,8 @@
+godot-rep1 seed = /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r79-baseline/freeze/extract/corpus/fixtures
+   verdict PASS rows 88 n/a None probe_exit None probe_error None elapsed None
+godot-rep2 seed = /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r79-baseline/freeze/extract/corpus/fixtures
+   verdict PASS rows 88 n/a None probe_exit None probe_error None elapsed None
+love-rep1 probe_dir = /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r79-baseline/freeze/extract/corpus/fixtures/love_probe
+   verdict PASS rows 92 done_marker True probe_exit 0 probe_error None elapsed 1.175303
+love-rep2 probe_dir = /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r79-baseline/freeze/extract/corpus/fixtures/love_probe
+   verdict PASS rows 92 done_marker True probe_exit 0 probe_error None elapsed 0.883687

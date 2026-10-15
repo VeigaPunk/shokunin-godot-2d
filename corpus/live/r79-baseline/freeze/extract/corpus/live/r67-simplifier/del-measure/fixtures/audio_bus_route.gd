@@ -1,0 +1,1 @@
+/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/fixtures/audio_bus_route.gd

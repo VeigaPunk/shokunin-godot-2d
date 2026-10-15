@@ -1,0 +1,14 @@
+run_battery.py:CASES rows=81 lines=88 sha256=e1a55eb763bab77793b697d0184990c4ecbfc86ce4d1be5e10a4b5484b745433
+    first: ('mechanic', 'controls/mechanic_test.gd', [], 0, 'PASS first=true')
+    first: ('scene_signal', 'controls/test_scene_signal.gd', [], 0, 'PASS scene_loaded=true')
+love_battery.py:CASES rows=15 lines=19 sha256=a03a4559b46e3f021d79003268e4a132b540b5c7735a5f0af5b77675509ba7ad
+    first: ('dtcadence_n', 'dtcadence', 'n', '120')
+    first: ('dtcadence_mean_uncapped', 'dtcadence', 'dt_mean_ms', (0.5, 4.0))
+love_battery.py:SPLICE_CELLS rows=4 lines=11 sha256=d37906235135aaea6432a3ee643f346114053c3e6f8c283620cdb67a86fe062d
+    first: ('splice_inwindow', 80, 200, 'spliced')
+    first: ('splice_beyond', 240, 200, 'clean')
+love_battery.py:IW_CELLS rows=73 lines=1043 sha256=50d64eff72eb3a5465b7c8c09d24dde1935738086e8297337ff4b2d5ffc886b9
+    first: ('iw_avail_lattice', 'baseline', 'captured', {'built.bodies': '4', 'built.locked': 'false', 'viability.love': '11.5.0', 'evpin_bc_lck': 'true', 'evpin
+    first: ('iw_ext_setpos', 'ext_setpos', 'applied', {'ext_setpos.ok': 'true', 'ext_setpos.err': 'nil', 'ext_before.pos': '400,60', 'ext_setpos.pos_after': '123
+run_battery.CASES = 81
+love_battery.CASES = 15 SPLICE_CELLS = 4 IW_CELLS = 73 => total 92

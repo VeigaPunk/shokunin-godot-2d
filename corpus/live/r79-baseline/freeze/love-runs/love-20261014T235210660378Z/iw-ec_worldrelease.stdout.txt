@@ -1,0 +1,12 @@
+IW | cell=ec_worldrelease | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=ec_worldrelease | built bodies=4 locked=false
+IW | cell=ec_worldrelease | evpin cb=bc locked=true step=4
+IW | cell=ec_worldrelease | evpin cb=pre locked=true step=4
+IW | cell=ec_worldrelease | evpin cb=post locked=true step=4
+IW | cell=ec_worldrelease | evpin cb=ec locked=true step=74
+IW | cell=ec_worldrelease | r77ec n=1 step=74 locked=true dyn=b1
+IW | cell=ec_worldrelease | fire cb=ec kind=worldrelease/- step=74 locked=true count=4 pos=400,511.13113403320312 vel=0,-611.09796142578125
+IW | cell=ec_worldrelease | rel_pre kind=worldrelease
+IW | cell=ec_worldrelease | rel_call ok=true err=true
+IW | cell=ec_worldrelease | rel_alive marker=1
+IW | cell=ec_worldrelease | rel_post marker=1

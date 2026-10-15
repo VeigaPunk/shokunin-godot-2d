@@ -1,0 +1,13 @@
+IW | cell=bc_setpos_wp | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=bc_setpos_wp | built bodies=4 locked=false
+IW | cell=bc_setpos_wp | evpin cb=bc locked=true step=4
+IW | cell=bc_setpos_wp | evpin cb=pre locked=true step=4
+IW | cell=bc_setpos_wp | evpin cb=post locked=true step=4
+IW | cell=bc_setpos_wp | fire cb=bc kind=setpos_wp step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=bc_setpos_wp | wpcall step=73 update_ok=false err=Box2D assertion failed: m_world->IsLocked() == false srcline=377 locked_after=true
+IW | cell=bc_setpos_wp | wp_setpos ok=false err=Box2D assertion failed: m_world->IsLocked() == false pos_after=400,520.1500244140625
+IW | cell=bc_setpos_wp | wpext ok=false err=Box2D assertion failed: m_world->IsLocked() == false pos_after=400,520.1500244140625
+IW | cell=bc_setpos_wp | wpcall_next step=74 update_ok=true locked_after=false b1pos=400,509.53021240234375
+IW | cell=bc_setpos_wp | evpin cb=ec locked=true step=75
+IW | cell=bc_setpos_wp | final steps=200 count=4 b1pos=400,461.54888916015625 b2pos=240,520.7589111328125 bc=5 ec=4 pre=37 post=37 fired=true fire_step=73
+IW | cell=bc_setpos_wp | CELL_DONE

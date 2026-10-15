@@ -1,0 +1,14 @@
+IW | cell=drain_worldrelease | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=drain_worldrelease | built bodies=4 locked=false
+IW | cell=drain_worldrelease | evpin cb=bc locked=true step=4
+IW | cell=drain_worldrelease | evpin cb=pre locked=true step=4
+IW | cell=drain_worldrelease | evpin cb=post locked=true step=4
+IW | cell=drain_worldrelease | fire cb=bc kind=queue_target/worldrelease step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=drain_worldrelease | cb_destroy ok=true err=nil mode=queued alive_in_cb=400,520.1500244140625 count_after=4
+IW | cell=drain_worldrelease | postfire cb=bc step=73 count=4 b1pos=400,520.1500244140625
+IW | cell=drain_worldrelease | evpin cb=ec locked=false step=73
+IW | cell=drain_worldrelease | r77ec n=1 step=73 locked=false dyn=b1
+IW | cell=drain_worldrelease | drainec n=1 step=73 locked=false count=4 jcount=0 dyn=b1
+IW | cell=drain_worldrelease | drainrel kind=worldrelease n=1
+IW | cell=drain_worldrelease | drainrel call_ok=true call_ret=true
+IW | cell=drain_worldrelease | drainrel alive=1

@@ -1,0 +1,10 @@
+2026-10-14T23:55:37Z
+ M corpus/fixtures/run_battery.py
+ M corpus/live/r72-simplifier/snapshots/log.txt
+ M corpus/live/r72-simplifier/watch.log
+-rw-r--r-- 1 vgpnk vgpnk 114909 2026-10-14 18:58:25.047134272 -0300 corpus/fixtures/love_battery.py
+-rw-r--r-- 1 vgpnk vgpnk  69137 2026-10-14 18:56:14.379373537 -0300 corpus/fixtures/love_phys_probe/main.lua
+-rw-r--r-- 1 vgpnk vgpnk 224883 2026-10-14 20:55:35.864242297 -0300 corpus/fixtures/run_battery.py
+ M corpus/fixtures/run_battery.py
+?? corpus/fixtures/__pycache__/love_battery.cpython-314.pyc
+?? corpus/fixtures/phys2d_events.gd

@@ -1,0 +1,73 @@
+{
+  "stamp": "20261014T213459309976Z",
+  "mode": "discover",
+  "reps": 3,
+  "project": "proj_thr",
+  "godot": "4.7.2.stable.arch_linux.ed1daf0bf",
+  "classifier_source": {
+    "file": "corpus/fixtures/run_battery.py",
+    "lines": [
+      162,
+      180
+    ],
+    "sha256": "615d332ed428db66a03b6837d7a6ed86c4a3150609dc9c2838a11a51b50bbea3"
+  },
+  "probe": "corpus/live/r79-scout/proj/phys2d_events.gd",
+  "probe_sha256": "7329acb22a144b3c7a373ebd3ff7f88377750d5abb622a32ab84d4e56cc5df2c",
+  "rows": [],
+  "discover": {
+    "cm_on": {
+      "line": "PASS phys2d_events cm_on entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 valid=true exit1_frame=7",
+      "rc": 0,
+      "stderr_lines": []
+    },
+    "cm_off": {
+      "line": "PASS phys2d_events cm_off entered=0 exited=0 entry1_frame=-1 entry2_frame=-1 cb_fired=false cb_count=- cb_colliders=- cb_monitor=- cb_max=- valid=true exit1_frame=-1",
+      "rc": 0,
+      "stderr_lines": []
+    },
+    "cm_max0_cb": {
+      "line": "PASS phys2d_events cm_max0_cb entered=1 exited=1 entry1_frame=1 entry2_frame=-1 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=0 post_max=0 valid=true exit1_frame=1",
+      "rc": 0,
+      "stderr_lines": []
+    },
+    "rb_dss_in_cb": {
+      "line": "PASS phys2d_events rb_dss_in_cb entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true cb_dss_null=false cb_q_hits=1",
+      "rc": 0,
+      "stderr_lines": []
+    },
+    "area_dss_in_cb": {
+      "line": "PASS phys2d_events area_dss_in_cb entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0 cb_dss_null=false cb_q_hits=1",
+      "rc": 0,
+      "stderr_lines": []
+    },
+    "area_monitoring_direct": {
+      "line": "PASS phys2d_events area_monitoring_direct entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0",
+      "rc": 0,
+      "stderr_lines": [
+        "ERROR: Function blocked during in/out signal. Use set_deferred(\"monitoring\", true/false)."
+      ]
+    },
+    "area_monitoring_deferred": {
+      "line": "PASS phys2d_events area_monitoring_deferred entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=false entries=1 exits=1",
+      "rc": 0,
+      "stderr_lines": []
+    },
+    "rb_srv_set_state": {
+      "line": "PASS phys2d_events rb_srv_set_state entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=(500.0, 500.0) cb_node_unchanged=true cb_node_read=- cb_srv_before=- next_node=(500.0001, 501.0889) next_srv=(500.0001, 501.0889) late_node=(500.0006, 516.297) node_write_stuck=false node_follows_srv=true valid_after=true",
+      "rc": 0,
+      "stderr_lines": []
+    },
+    "rb_free_rid": {
+      "line": "PASS phys2d_events rb_free_rid entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.56002) next_srv=<null> late_node=(0.000128, -4.56002) node_write_stuck=false node_follows_srv=false valid_after=true cb_freed=true",
+      "rc": 0,
+      "stderr_lines": [
+        "ERROR: Parameter \"body\" is null.",
+        "ERROR: Parameter \"body\" is null.",
+        "ERROR: Parameter \"body\" is null.",
+        "ERROR: Parameter \"body\" is null.",
+        "ERROR: Invalid ID."
+      ]
+    }
+  }
+}

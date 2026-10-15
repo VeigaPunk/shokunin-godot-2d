@@ -1,0 +1,5 @@
+[application]
+config/name="r48 late reconnect scratch"
+run/main_scene="res://main.tscn"
+[rendering]
+renderer/rendering_method="gl_compatibility"

@@ -1,0 +1,41 @@
+--- corpus/fixtures/descendant_pipe_probe.gd	2026-10-14 02:08:27.010530253 -0300
++++ corpus/live/r66-simplifier/tree/fixtures/descendant_pipe_probe.gd	2026-10-14 02:10:19.739664589 -0300
+@@ -128,30 +128,32 @@
+ 	elif midline_forge:
+ 		print("DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200")
+ 	print("DESCENDANT_PIPE godot_pid=", OS.get_process_id())
++	var reparent_gate := ("while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \""
++		+ str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; ")
+ 	var spawned := -1
+ 	if "--spawn-hold" in user_args:
+ 		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
+-			"while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \"" + str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; echo " + POST_EXIT_WRITE + "; sleep 6"]))
++			reparent_gate + "echo " + POST_EXIT_WRITE + "; sleep 6"]))
+ 	elif "--spawn-detach" in user_args:
+ 		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
+ 			"exec sh -c 'sleep 8' </dev/null >/dev/null 2>&1"]))
+ 	elif forge_hold or forge_release:
+ 		var tail := "; sleep 6" if forge_hold else ""
+ 		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
+-			"while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \"" + str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; echo " + MARKER + "; echo " + FORGE_PPID_WRITE + "$pp" + tail]))
++			reparent_gate + "echo " + MARKER + "; echo " + FORGE_PPID_WRITE + "$pp" + tail]))
+ 	elif errforge_hold or errforge_release:
+ 		var err_tail := "; sleep 6" if errforge_hold else ""
+ 		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
+-			"while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \"" + str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; echo " + ERRFORGE_ERROR + "; echo " + ERRFORGE_PPID_WRITE + "$pp" + err_tail]))
++			reparent_gate + "echo " + ERRFORGE_ERROR + "; echo " + ERRFORGE_PPID_WRITE + "$pp" + err_tail]))
+ 	elif allowforge:
+ 		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
+-			"while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \"" + str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; echo '" + ALLOWFORGE_ERROR + "'; echo " + ALLOWFORGE_PPID_WRITE + "$pp"]))
++			reparent_gate + "echo '" + ALLOWFORGE_ERROR + "'; echo " + ALLOWFORGE_PPID_WRITE + "$pp"]))
+ 	elif splitforge:
+ 		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
+-			"while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \"" + str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; printf 'ERR\\n'; sleep 0.05; printf 'OR: DESCENDANT_PIPE_SPLITFORGE newline-split diagnostic\\n'; echo " + SPLITFORGE_PPID_WRITE + "$pp"]))
++			reparent_gate + "printf 'ERR\\n'; sleep 0.05; printf 'OR: DESCENDANT_PIPE_SPLITFORGE newline-split diagnostic\\n'; echo " + SPLITFORGE_PPID_WRITE + "$pp"]))
+ 	elif seamforge:
+ 		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
+-			"while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \"" + str(OS.get_process_id()) + "\" ]; do sleep 0.05; done; echo DESCENDANT_PIPE_SEAMFORGE post_death_write=1; printf '" + SEAMFORGE_STDOUT_TAIL + "'; echo '" + SEAMFORGE_STDERR_HEAD + "' >&2; echo " + SEAMFORGE_PPID_WRITE + "$pp >&2"]))
++			reparent_gate + "echo DESCENDANT_PIPE_SEAMFORGE post_death_write=1; printf '" + SEAMFORGE_STDOUT_TAIL + "'; echo '" + SEAMFORGE_STDERR_HEAD + "' >&2; echo " + SEAMFORGE_PPID_WRITE + "$pp >&2"]))
+ 	elif midline_forge:
+ 		spawned = OS.create_process("/usr/bin/sh", PackedStringArray(["-c",
+ 			"sleep 0.08; read -r _ _ _ pp _ < /proc/self/stat; printf '" + MIDLINE_ERROR + "\\n'; echo " + MIDLINE_PPID_WRITE + "$pp"]))

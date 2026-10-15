@@ -1,0 +1,5 @@
+[application]
+config/name="r37-focus-reviewer"
+[display]
+window/size/viewport_width=320
+window/size/viewport_height=180

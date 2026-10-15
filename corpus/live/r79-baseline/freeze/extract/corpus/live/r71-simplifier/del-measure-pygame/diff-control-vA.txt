@@ -1,0 +1,32 @@
+A=del-measure-pygame/runs-control/pygame-20261014T143017826941Z/verdicts.json
+B=del-measure-pygame/runs-vA/pygame-20261014T143026296183Z/verdicts.json
+verdict A=FAIL B=FAIL  totals A={'cases': 36, 'pass': 35, 'fail': 1} B={'cases': 35, 'pass': 34, 'fail': 1}
+STRUCTURAL DIFF: 28 row(s)
+   .results: len 36 != 35
+   .results[3].observed: '16.067' != '16.058'
+   .results[4].observed: '16.048' != '15.061'
+   .results[5].observed: '16.685' != '16.214'
+   .results[10].observed: '6372471.3' != '7016723.1'
+   .results[11].observed: '0.019' != '0.007'
+   .results[14].observed: '5.43' != '4.91'
+   .results[15].observed: '120.1' != '120.09'
+   .results[16].observed: '1.48' != '1.55'
+   .results[17].observed: '127.06' != '126.58'
+   .results[19].observed: '125.21' != '125.42'
+   .results[21].observed: '205.59' != '205.33'
+   .results[23].observed: '105.23' != '105.13'
+   .results[24].observed: '105.23' != '105.13'
+   .results[25].observed: '205.37' != '205.33'
+   .results[28].observed: '105.12' != '105.57'
+   .results[29].observed: '105.12' != '105.57'
+   .results[30].observed: '205.29' != '205.77'
+   .results[33].case: 'pump_not_needed' != 'pump_updates_counted'
+   .results[33].key: 'pump_needed' != 'frames_nopump'
+   .results[33].observed: 'false' != '400'
+   .results[33].pinned: 'false' != '400'
+   .results[34].case: 'pump_updates_counted' != 'pump_posted_survived'
+   .results[34].key: 'frames_nopump' != 'posted_survived'
+   .results[34].observed: '400' != '1'
+   .results[34].pinned: '400' != '1'
+   .totals.cases: 36 != 35
+   .totals.pass: 35 != 34

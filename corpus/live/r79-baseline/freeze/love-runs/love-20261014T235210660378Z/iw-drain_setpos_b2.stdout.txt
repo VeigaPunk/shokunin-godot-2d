@@ -1,0 +1,17 @@
+IW | cell=drain_setpos_b2 | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=drain_setpos_b2 | built bodies=4 locked=false
+IW | cell=drain_setpos_b2 | evpin cb=bc locked=true step=4
+IW | cell=drain_setpos_b2 | evpin cb=pre locked=true step=4
+IW | cell=drain_setpos_b2 | evpin cb=post locked=true step=4
+IW | cell=drain_setpos_b2 | fire cb=bc kind=queue_target/setpos_b2 step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=drain_setpos_b2 | cb_destroy ok=true err=nil mode=queued alive_in_cb=400,520.1500244140625 count_after=4
+IW | cell=drain_setpos_b2 | postfire cb=bc step=73 count=4 b1pos=400,520.1500244140625
+IW | cell=drain_setpos_b2 | evpin cb=ec locked=false step=73
+IW | cell=drain_setpos_b2 | r77ec n=1 step=73 locked=false dyn=b1
+IW | cell=drain_setpos_b2 | drainec n=1 step=73 locked=false count=4 jcount=0 dyn=b1
+IW | cell=drain_setpos_b2 | drainact n=1 kind=setpos_b2 ok=true err=nil b2pos=1234.5,678.9000244140625
+IW | cell=drain_setpos_b2 | after_update step=73 count=3 b1pos=ERR:Attempt to use destroyed body. b1vel=ERR:Attempt to use destroyed body.
+IW | cell=drain_setpos_b2 | r77obs step=73 locked=false count=3 b1pos=ERR:Attempt to use destroyed body. b2pos=1234.5,678.9000244140625 b1dead=true b2dead=false fx_a_dead=n/a fx_b_dead=n/a jcount=0 bc=2 ec=1 pre=32 post=32 bc2=0 ec2=0 pre2=0 post2=0 swap_step=-1 drain_n=1
+IW | cell=drain_setpos_b2 | final steps=200 count=3 b1pos=ERR:Attempt to use destroyed body. b2pos=1234.5,3713.2890625 bc=2 ec=1 pre=32 post=32 fired=true fire_step=73
+IW | cell=drain_setpos_b2 | r77obs step=200 locked=false count=3 b1pos=ERR:Attempt to use destroyed body. b2pos=1234.5,3713.2890625 b1dead=true b2dead=false fx_a_dead=n/a fx_b_dead=n/a jcount=0 bc=2 ec=1 pre=32 post=32 bc2=0 ec2=0 pre2=0 post2=0 swap_step=-1 drain_n=1
+IW | cell=drain_setpos_b2 | CELL_DONE

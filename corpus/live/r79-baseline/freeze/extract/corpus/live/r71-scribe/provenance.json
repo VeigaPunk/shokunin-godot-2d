@@ -1,0 +1,89 @@
+{
+  "seat": "g2d-scribe",
+  "round": 71,
+  "wave": "shokunin-train-20261101-w11",
+  "generated_utc": "2026-10-14T14:41Z",
+  "host": {
+    "python": "3.14.7",
+    "pygame": "2.6.1",
+    "sdl": "2.32.72",
+    "io_DEFAULT_BUFFER_SIZE": 131072,
+    "cpus": 32,
+    "note": "compositor host (Hyprland/Wayland); SDL_VIDEODRIVER=dummy required for headless"
+  },
+  "head_at_report": "44127af",
+  "work_commit": "a993cbe",
+  "report_last_commit": "44127af",
+  "landed_fixtures": {
+    "corpus/fixtures/pygame_probe.py": "4d426a3ba6098186c8ef4d6c6cdf6e4e8ecd17dc7af3828ceb91ccb510bb4738",
+    "corpus/fixtures/pygame_battery.py": "0a579819658ee9be9dbd3e6fb81414a036f712a5d03358c7b57a8481a2cec47f"
+  },
+  "author_receipts": {
+    "corpus/live/runs/pygame-20261014T143028666014Z/verdicts.json": "8ff37f2c3ad4bacf1eec88a8006f4a7848a0f4d17f46ed89c45a91e81dc7ac89",
+    "corpus/live/runs/pygame-20261014T143041126847Z/verdicts.json": "b8915b7e76fd10d78d91dcf9fdd6f53c719ca21dfb164ec1d05282992aa58907",
+    "corpus/live/runs/pygame-20261014T143049554160Z/verdicts.json": "ec40f8661db6a8f3feb3b047544a4cf18377abf7b32b7289cc8cfc3dd8e7d335"
+  },
+  "verifier_receipts": {
+    "corpus/live/r71-verifier/runs/pygame-20261014T143451109406Z/verdicts.json": "7267a63f506b95bcbd7e026bc1c57fa0515e7bf6f3699efe02a182a94ddc4e92",
+    "corpus/live/r71-verifier/runs/pygame-20261014T143824501908Z/verdicts.json": "239a75745d4077048d203058130a1258c0f02f25a36b1eb39cf8621f42d43ec0",
+    "corpus/live/r71-verifier/runs/pygame-20261014T143756251353Z/verdicts.json": "d87b26ed9c887619e49896ffa35202836c33fa9b33402d6f80b28b36f373c799",
+    "corpus/live/r71-verifier/runs/love-20261014T143539777913Z/verdicts.json": "ad550fd91f5728598f9198a8ff5787aa6b2850c33aa4f434187f3c567f2921cf",
+    "corpus/live/r71-verifier/runs/20261014T143549785922Z/verdicts.json": "c3257efd4d4859e17bdffa9b52f322262afd7d0b1ce3a6a6eefb649054105177"
+  },
+  "prior_battery_receipts": {
+    "corpus/live/runs/love-20261014T143116881482Z/verdicts.json": "9b61da0c51fc23faaf949b0eb35ed3cbebc8dfe9f5911445d0ee382393197044"
+  },
+  "seat_reports_sha256": {
+    "reports/round-71/r71-adjudicator.md": "08fe88b3a925ef1e7a5242b82a94b8710b305c76aeefe69f4b3832e792d51741",
+    "reports/round-71/r71-author.md": "88487816cb4d44171459298d88bc3f0e30f590678b64f51281d4990f4636bfb1",
+    "reports/round-71/r71-baseline.md": "54031024be5777a19b1d4d9ed972749cb80650ac5d34df0e9c0d9e15026daec0",
+    "reports/round-71/r71-boundary.md": "1af1afdb04db53ff012478e1804caf6e741f21ea5953d4864f0e2003324592e4",
+    "reports/round-71/r71-critic.md": "7a14b3dc889b36607e0a02ccae4f8e67690b3e5bf78efb61c9deb6d9f4518c57",
+    "reports/round-71/r71-reviewer.md": "14ee223341396a184e9b434b46b40cf0156d095c106b9c976d1bdd8075a69bc7",
+    "reports/round-71/r71-scout.md": "8ef1cd47ab13c95528c17afa85ab98610867e93825e919991ab788d4a98e2aff",
+    "reports/round-71/r71-simplifier.md": "d0370bd337078fa302746b2e951d09cbf424d1347091a8be21c4d33adafbd64f",
+    "reports/round-71/r71-verifier.md": "5eddc4b724bfee27328b9f3a99b4f1860aa86ed8f071eb295178882ec444664f"
+  },
+  "frontier_provenance": {
+    "reports/frontier/fa-pygame.md": "c3ee826bf9337c61cff9ee36a657e0d3484aa8e77dd23381a9cd17f41ee936ad",
+    "corpus/live/frontier-pygame/pygame_probe.py": "b8f95df2d5c4037a021647ed48be37f37054d0f5c257cd7fb883ce535be78b32",
+    "corpus/live/frontier-pygame/capture_probe.py": "f3da63d3ca6d44a2ad3a901e0ab7d010bb1939dc39b7de4b50d5ebcc51d4273b",
+    "corpus/live/frontier-pygame/run.stdout.txt": "c283bbfbceb8ec883aed5a87b20bd6b3072709a932f202bff51fd82bfd575a80",
+    "corpus/live/frontier-pygame/run.stderr.txt": "5ebca6a80f104c1c647d18d439f73cd2fb27f04551dc7b85a35ca4a10623292b",
+    "corpus/live/frontier-pygame/env-matrix.txt": "381eeeba22573b54a4ffc61b4f06ac7a39a7ef5afe6ee5d60454be879863fecd",
+    "corpus/live/frontier-pygame/capture.stdout.txt": "058646500a2f97e124b6b86054b6fb3a93690b7d6652fc1a0250c963c8ef9715",
+    "falsified_8kb_lines": "reports/frontier/fa-pygame.md:78-79; open question at :119"
+  },
+  "scribe_observations": {
+    "watcher": "corpus/live/r71-scribe/watch.sh (own, 15s cadence, 240 iters; killed at 14:41Z)",
+    "watch_log": "corpus/live/r71-scribe/watch.log",
+    "watch_log_sha256_frozen": "f759285ebb5a6fb8a3b7d4674a4b4ea67d76ea69fe473c8646af2e6cdfcdd5bc",
+    "watch_log_lines": 26,
+    "transitions_utc": {
+      "scout_scratch": "14:19:40",
+      "author_scratch": "14:22:26",
+      "reports_round_71_first": "14:24:11",
+      "fixtures_present": "14:28:27",
+      "head_44127af_and_verifier_scratch": "14:35:58"
+    }
+  },
+  "scribe_commands": [
+    "sha256sum corpus/fixtures/pygame_battery.py corpus/fixtures/pygame_probe.py",
+    "sha256sum corpus/live/runs/pygame-*/verdicts.json",
+    "sha256sum corpus/live/r71-verifier/runs/*/verdicts.json",
+    "sha256sum reports/round-71/*.md",
+    "sha256sum reports/frontier/fa-pygame.md corpus/live/frontier-pygame/*",
+    "git show --stat a993cbe; git show --name-only a993cbe | grep -cE 'run_battery|\\.gd$|\\.tscn$|love_'",
+    "git diff --stat d9ae207..HEAD -- corpus/fixtures/",
+    "git status --porcelain=v1",
+    "python3 -c json load of author + verifier + LOVE/Godot verdicts.json",
+    "read: pygame_probe.py:40-145, pygame_battery.py CASES, r71-*.md reports",
+    "no battery/probe re-execution by this seat (no decoration reruns)"
+  ],
+  "notes": [
+    "No git mutations by this seat; commit/push operator-owned.",
+    "corpus/live/r71-scribe/watch.log is tracked (committed by operator's report-last 44127af) and frozen at the hash above.",
+    "reports/round-71/r71-reviewer.md, r71-verifier.md and corpus/live/r71-verifier/ were untracked at report time.",
+    "r72 seat scratch dirs (r72-baseline/boundary/critic/reviewer/scout/scribe/simplifier) were already present at report time; outside r71 scope."
+  ]
+}

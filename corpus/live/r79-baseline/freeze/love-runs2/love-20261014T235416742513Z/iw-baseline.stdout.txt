@@ -1,0 +1,8 @@
+IW | cell=baseline | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=baseline | built bodies=4 locked=false
+IW | cell=baseline | evpin cb=bc locked=true step=4
+IW | cell=baseline | evpin cb=pre locked=true step=4
+IW | cell=baseline | evpin cb=post locked=true step=4
+IW | cell=baseline | evpin cb=ec locked=true step=74
+IW | cell=baseline | final steps=200 count=4 b1pos=400,445.10910034179688 b2pos=240,520.7589111328125 bc=5 ec=4 pre=36 post=36 fired=false fire_step=-1
+IW | cell=baseline | CELL_DONE

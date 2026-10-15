@@ -1,0 +1,125 @@
+syn_genuine                          rep=0 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=None
+syn_genuine                          rep=1 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=None
+syn_genuine                          rep=2 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=None
+syn_self_error                       rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=None
+syn_self_error                       rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=None
+syn_self_error                       rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=None
+syn_allowforge_exact                 rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_exact                 rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_exact                 rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_exact_padded          rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_exact_padded          rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_exact_padded          rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_twin                  rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': False, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_twin                  rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': False, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_twin                  rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': False, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_comma_tail            rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE PROC': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_comma_tail            rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE PROC': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_comma_tail            rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE PROC': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_comma_dbl             rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE PROC': False, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_comma_dbl             rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE PROC': False, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_comma_dbl             rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE PROC': False, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_comma_atcomma         rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE PROC': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_comma_atcomma         rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE PROC': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_comma_atcomma         rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE PROC': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_comma2_tail           rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: UI BUTTON': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_comma2_tail           rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: UI BUTTON': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_comma2_tail           rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: UI BUTTON': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_structured            rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: chain inc': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_structured            rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: chain inc': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_structured            rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: chain inc': True, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_structured_missing    rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: chain inc': False, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_structured_missing    rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: chain inc': False, '["ERROR: unrelated': False} wppid=1573
+syn_allowforge_structured_missing    rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: chain inc': False, '["ERROR: unrelated': False} wppid=1573
+syn_script_forge                     rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_script_forge                     rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_script_forge                     rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_parse_forge                      rep=0 exit=0 exc=None                         sig=True  errln=0 v={'bare()': False} wppid=1573
+syn_parse_forge                      rep=1 exit=0 exc=None                         sig=True  errln=0 v={'bare()': False} wppid=1573
+syn_parse_forge                      rep=2 exit=0 exc=None                         sig=True  errln=0 v={'bare()': False} wppid=1573
+syn_nlsplit_lf                       rep=0 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_nlsplit_lf                       rep=1 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_nlsplit_lf                       rep=2 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_nlsplit_cr                       rep=0 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_nlsplit_cr                       rep=1 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_nlsplit_cr                       rep=2 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_nlsplit_vt                       rep=0 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_nlsplit_vt                       rep=1 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_nlsplit_vt                       rep=2 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_nlsplit_script                   rep=0 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_nlsplit_script                   rep=1 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_nlsplit_script                   rep=2 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_nosplit_ctrl                     rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_nosplit_ctrl                     rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_nosplit_ctrl                     rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_seam_inlife                      rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=None
+syn_seam_inlife                      rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=None
+syn_seam_inlife                      rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=None
+syn_seam_postdeath_xfd               rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_seam_postdeath_xfd               rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_seam_postdeath_xfd               rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_seam_postdeath_samefd            rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_seam_postdeath_samefd            rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_seam_postdeath_samefd            rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_seam_sig_inlife                  rep=0 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=None
+syn_seam_sig_inlife                  rep=1 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=None
+syn_seam_sig_inlife                  rep=2 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=None
+syn_seam_sig_postdeath               rep=0 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_seam_sig_postdeath               rep=1 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_seam_sig_postdeath               rep=2 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_seam_script                      rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=None
+syn_seam_script                      rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=None
+syn_seam_script                      rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=None
+syn_midline                          rep=0 exit=0 exc=None                         sig=False errln=1 v={'bare()': False} wppid=2331449
+syn_midline                          rep=1 exit=0 exc=None                         sig=False errln=1 v={'bare()': False} wppid=2331738
+syn_midline                          rep=2 exit=0 exc=None                         sig=False errln=1 v={'bare()': False} wppid=2332057
+syn_decode_inlife                    rep=0 exit=None exc=UnicodeDecodeError: 'utf-8'  sig=False errln=0 v={'bare()': False} wppid=None
+syn_decode_inlife                    rep=1 exit=None exc=UnicodeDecodeError: 'utf-8'  sig=False errln=0 v={'bare()': False} wppid=None
+syn_decode_inlife                    rep=2 exit=None exc=UnicodeDecodeError: 'utf-8'  sig=False errln=0 v={'bare()': False} wppid=None
+syn_decode_postdeath                 rep=0 exit=None exc=UnicodeDecodeError: 'utf-8'  sig=False errln=0 v={'bare()': False} wppid=None
+syn_decode_postdeath                 rep=1 exit=None exc=UnicodeDecodeError: 'utf-8'  sig=False errln=0 v={'bare()': False} wppid=None
+syn_decode_postdeath                 rep=2 exit=None exc=UnicodeDecodeError: 'utf-8'  sig=False errln=0 v={'bare()': False} wppid=None
+syn_ce1a_parse_tail                  rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE PROC': False, '["ERROR: unrelated': False} wppid=1573
+syn_ce1a_parse_tail                  rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE PROC': False, '["ERROR: unrelated': False} wppid=1573
+syn_ce1a_parse_tail                  rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE PROC': False, '["ERROR: unrelated': False} wppid=1573
+syn_ce1b_parse_seam                  rep=0 exit=0 exc=None                         sig=True  errln=0 v={'bare()': False} wppid=None
+syn_ce1b_parse_seam                  rep=1 exit=0 exc=None                         sig=True  errln=0 v={'bare()': False} wppid=None
+syn_ce1b_parse_seam                  rep=2 exit=0 exc=None                         sig=True  errln=0 v={'bare()': False} wppid=None
+syn_ce2_scr_ipt                      rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_ce2_scr_ipt                      rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_ce2_scr_ipt                      rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_ce2_script_sp                    rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_ce2_script_sp                    rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_ce2_script_sp                    rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_ce2_parse_split                  rep=0 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_ce2_parse_split                  rep=1 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_ce2_parse_split                  rep=2 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+syn_ce2_error_headsplit              rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_ce2_error_headsplit              rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_ce2_error_headsplit              rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+syn_double_forge                     rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': True, '["ERROR: unrelated': False} wppid=1573
+syn_double_forge                     rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': True, '["ERROR: unrelated': False} wppid=1573
+syn_double_forge                     rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': True, '["ERROR: unrelated': False} wppid=1573
+g_genuine                            rep=0 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=None
+g_genuine                            rep=1 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=None
+g_genuine                            rep=2 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=None
+g_errforge_release                   rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+g_errforge_release                   rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+g_errforge_release                   rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+g_emit_errforge                      rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=None
+g_emit_errforge                      rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=None
+g_emit_errforge                      rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=None
+g_allowforge                         rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': True, '["ERROR: unrelated': False} wppid=1573
+g_allowforge                         rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': True, '["ERROR: unrelated': False} wppid=1573
+g_allowforge                         rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False, '["ERROR: SAVE EXPE': True, '["ERROR: unrelated': False} wppid=1573
+g_splitforge                         rep=0 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+g_splitforge                         rep=1 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+g_splitforge                         rep=2 exit=0 exc=None                         sig=True  errln=0 v={'bare()': True} wppid=1573
+g_seamforge                          rep=0 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+g_seamforge                          rep=1 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+g_seamforge                          rep=2 exit=0 exc=None                         sig=True  errln=1 v={'bare()': False} wppid=1573
+g_midlineforge                       rep=0 exit=0 exc=None                         sig=False errln=1 v={'bare()': False} wppid=2336733
+g_midlineforge                       rep=1 exit=0 exc=None                         sig=False errln=1 v={'bare()': False} wppid=2336782
+g_midlineforge                       rep=2 exit=0 exc=None                         sig=False errln=1 v={'bare()': False} wppid=2336822
+
+wrote /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r66-scribe/surface-verdicts.json (123 runs)

@@ -1,0 +1,589 @@
+{
+  "runner": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/fixtures/run_battery.py",
+  "extraction": "ast verbatim exec",
+  "signature": "DESCENDANT_PIPE_PROBE: expected signature",
+  "error_marker": "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+  "bound": 3.0,
+  "substring_probes": [
+    {
+      "probe": "clean",
+      "allowed": [],
+      "classify": true
+    },
+    {
+      "probe": "error_line",
+      "allowed": [],
+      "classify": false
+    },
+    {
+      "probe": "midline_error",
+      "allowed": [],
+      "classify": false
+    },
+    {
+      "probe": "glued_XERROR",
+      "allowed": [],
+      "classify": false
+    },
+    {
+      "probe": "bare_ERROR_colon",
+      "allowed": [],
+      "classify": false
+    },
+    {
+      "probe": "script_error",
+      "allowed": [],
+      "classify": false
+    },
+    {
+      "probe": "parse_error",
+      "allowed": [],
+      "classify": false
+    },
+    {
+      "probe": "lowercase_error",
+      "allowed": [],
+      "classify": true
+    },
+    {
+      "probe": "warning_line",
+      "allowed": [],
+      "classify": true
+    },
+    {
+      "probe": "error_as_last_colon_suffix",
+      "allowed": [],
+      "classify": false
+    },
+    {
+      "probe": "two_errors_one_line",
+      "allowed": [],
+      "classify": false
+    },
+    {
+      "probe": "exact_allowed",
+      "allowed": [
+        "ERROR: injected diagnostic"
+      ],
+      "classify": true
+    },
+    {
+      "probe": "allowed_prefix_comma_hit",
+      "allowed": [
+        "ERROR: injected diagnostic,"
+      ],
+      "classify": true
+    },
+    {
+      "probe": "allowed_prefix_comma_second_error",
+      "allowed": [
+        "ERROR: injected diagnostic,"
+      ],
+      "classify": false
+    },
+    {
+      "probe": "allowed_prefix_nocomma",
+      "allowed": [
+        "ERROR: injected diagnostic,"
+      ],
+      "classify": false
+    },
+    {
+      "probe": "allowlist_wrong_string",
+      "allowed": [
+        "ERROR: different diagnostic"
+      ],
+      "classify": false
+    },
+    {
+      "probe": "strip_whitespace_match",
+      "allowed": [
+        "ERROR: injected diagnostic"
+      ],
+      "classify": true
+    },
+    {
+      "probe": "signature_same_line_as_error",
+      "allowed": [],
+      "classify": false
+    }
+  ],
+  "arms": [
+    {
+      "tag": "sh_forge_error_release",
+      "command": [
+        "/usr/bin/sh",
+        "-c",
+        "echo \"DESCENDANT_PIPE_PROBE: expected signature\"; echo SH godot_pid=$$; sh -c 'while read -r _ _ _ pp _ < /proc/self/stat && [ \"$pp\" = \"$0\" ]; do sleep 0.05; done; echo \"ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic\"; echo \"DESCENDANT_PIPE_ERRFORGE write_ppid=$pp\"' $$ & echo SH spawned_pid=$!; exit 0"
+      ],
+      "actual_exit": 0,
+      "error": null,
+      "signature_observed": true,
+      "error_marker_captured": true,
+      "error_lines": [
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic"
+      ],
+      "inner_classification": false,
+      "stripped_classification": true,
+      "error_axis_only_classification": false,
+      "output_lines": [
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "SH godot_pid=1688726",
+        "SH spawned_pid=1688727",
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+        "DESCENDANT_PIPE_ERRFORGE write_ppid=1573"
+      ],
+      "godot_pid": null,
+      "descendant_pid": null,
+      "write_ppid": 1573
+    },
+    {
+      "tag": "godot_default",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r65-scout/proj",
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--"
+      ],
+      "actual_exit": 0,
+      "error": null,
+      "signature_observed": true,
+      "error_marker_captured": false,
+      "error_lines": [],
+      "inner_classification": true,
+      "stripped_classification": true,
+      "error_axis_only_classification": true,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE godot_pid=1688728"
+      ],
+      "godot_pid": 1688728,
+      "descendant_pid": null,
+      "write_ppid": null
+    },
+    {
+      "tag": "godot_errforge_release",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r65-scout/proj",
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--",
+        "--spawn-errforge-release"
+      ],
+      "actual_exit": 0,
+      "error": null,
+      "signature_observed": true,
+      "error_marker_captured": true,
+      "error_lines": [
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic"
+      ],
+      "inner_classification": false,
+      "stripped_classification": true,
+      "error_axis_only_classification": false,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+        "DESCENDANT_PIPE godot_pid=1688802",
+        "DESCENDANT_PIPE spawned_pid=1688848",
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+        "DESCENDANT_PIPE_ERRFORGE write_ppid=1573"
+      ],
+      "godot_pid": 1688802,
+      "descendant_pid": 1688848,
+      "write_ppid": 1573
+    },
+    {
+      "tag": "godot_emit_errforge",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r65-scout/proj",
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--",
+        "--emit-errforge"
+      ],
+      "actual_exit": 0,
+      "error": null,
+      "signature_observed": true,
+      "error_marker_captured": true,
+      "error_lines": [
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic"
+      ],
+      "inner_classification": false,
+      "stripped_classification": true,
+      "error_axis_only_classification": false,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit",
+        "DESCENDANT_PIPE godot_pid=1688851",
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] _initialize (res://descendant_pipe_probe.gd:84)"
+      ],
+      "godot_pid": 1688851,
+      "descendant_pid": null,
+      "write_ppid": null
+    },
+    {
+      "tag": "godot_errforge_hold",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r65-scout/proj",
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--",
+        "--spawn-errforge-hold"
+      ],
+      "timed_out": true,
+      "child_exit_at_timeout": 0,
+      "actual_exit": null,
+      "error": "TIMEOUT after 3.0 seconds",
+      "elapsed_seconds": 3.003,
+      "signature_observed": true,
+      "error_marker_captured": true,
+      "inner_classification": false,
+      "error_axis_only_classification": false,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+        "DESCENDANT_PIPE godot_pid=1688889",
+        "DESCENDANT_PIPE spawned_pid=1688964",
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+        "DESCENDANT_PIPE_ERRFORGE write_ppid=1573"
+      ],
+      "godot_pid": 1688889,
+      "descendant_pid": 1688964,
+      "write_ppid": 1573,
+      "descendant_kernel_ppid_at_return": 1573,
+      "descendant_alive_at_return": true
+    },
+    {
+      "tag": "gate_errforge_release_r0",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r65-scout/proj",
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--",
+        "--spawn-errforge-release"
+      ],
+      "bound": 3.0,
+      "timed_out": false,
+      "actual_exit": 0,
+      "error": null,
+      "signature_observed": true,
+      "signature_observed_at": 0.367565,
+      "child_alive_at_signature_observation": true,
+      "error_observed": true,
+      "error_observed_at": 0.471012,
+      "child_alive_at_error_observation": false,
+      "dead_observed_at": 0.439086,
+      "error_stream": "stdout",
+      "gated_signature_accepted": true,
+      "inner_classification": false,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+        "DESCENDANT_PIPE godot_pid=1688972",
+        "DESCENDANT_PIPE spawned_pid=1689010",
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+        "DESCENDANT_PIPE_ERRFORGE write_ppid=1573"
+      ],
+      "godot_pid": 1688972,
+      "descendant_pid": 1689010
+    },
+    {
+      "tag": "gate_errforge_release_r1",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r65-scout/proj",
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--",
+        "--spawn-errforge-release"
+      ],
+      "bound": 3.0,
+      "timed_out": false,
+      "actual_exit": 0,
+      "error": null,
+      "signature_observed": true,
+      "signature_observed_at": 0.344175,
+      "child_alive_at_signature_observation": true,
+      "error_observed": true,
+      "error_observed_at": 0.447451,
+      "child_alive_at_error_observation": false,
+      "dead_observed_at": 0.415889,
+      "error_stream": "stdout",
+      "gated_signature_accepted": true,
+      "inner_classification": false,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+        "DESCENDANT_PIPE godot_pid=1689013",
+        "DESCENDANT_PIPE spawned_pid=1689051",
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+        "DESCENDANT_PIPE_ERRFORGE write_ppid=1573"
+      ],
+      "godot_pid": 1689013,
+      "descendant_pid": 1689051
+    },
+    {
+      "tag": "gate_errforge_release_r2",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r65-scout/proj",
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--",
+        "--spawn-errforge-release"
+      ],
+      "bound": 3.0,
+      "timed_out": false,
+      "actual_exit": 0,
+      "error": null,
+      "signature_observed": true,
+      "signature_observed_at": 0.336773,
+      "child_alive_at_signature_observation": true,
+      "error_observed": true,
+      "error_observed_at": 0.44048,
+      "child_alive_at_error_observation": false,
+      "dead_observed_at": 0.408325,
+      "error_stream": "stdout",
+      "gated_signature_accepted": true,
+      "inner_classification": false,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+        "DESCENDANT_PIPE godot_pid=1689054",
+        "DESCENDANT_PIPE spawned_pid=1689100",
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+        "DESCENDANT_PIPE_ERRFORGE write_ppid=1573"
+      ],
+      "godot_pid": 1689054,
+      "descendant_pid": 1689100
+    },
+    {
+      "tag": "gate_emit_errforge_r0",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r65-scout/proj",
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--",
+        "--emit-errforge"
+      ],
+      "bound": 3.0,
+      "timed_out": false,
+      "actual_exit": 0,
+      "error": null,
+      "signature_observed": true,
+      "signature_observed_at": 0.336666,
+      "child_alive_at_signature_observation": true,
+      "error_observed": true,
+      "error_observed_at": 0.336683,
+      "child_alive_at_error_observation": true,
+      "dead_observed_at": 0.404323,
+      "error_stream": "stderr",
+      "gated_signature_accepted": true,
+      "inner_classification": false,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit",
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] _initialize (res://descendant_pipe_probe.gd:84)",
+        "DESCENDANT_PIPE godot_pid=1689103"
+      ],
+      "godot_pid": 1689103,
+      "descendant_pid": null
+    },
+    {
+      "tag": "gate_emit_errforge_r1",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r65-scout/proj",
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--",
+        "--emit-errforge"
+      ],
+      "bound": 3.0,
+      "timed_out": false,
+      "actual_exit": 0,
+      "error": null,
+      "signature_observed": true,
+      "signature_observed_at": 0.324302,
+      "child_alive_at_signature_observation": true,
+      "error_observed": true,
+      "error_observed_at": 0.32432,
+      "child_alive_at_error_observation": true,
+      "dead_observed_at": 0.392486,
+      "error_stream": "stderr",
+      "gated_signature_accepted": true,
+      "inner_classification": false,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit",
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] _initialize (res://descendant_pipe_probe.gd:84)",
+        "DESCENDANT_PIPE godot_pid=1689142"
+      ],
+      "godot_pid": 1689142,
+      "descendant_pid": null
+    },
+    {
+      "tag": "gate_default_control_r0",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r65-scout/proj",
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--"
+      ],
+      "bound": 3.0,
+      "timed_out": false,
+      "actual_exit": 0,
+      "error": null,
+      "signature_observed": true,
+      "signature_observed_at": 0.354382,
+      "child_alive_at_signature_observation": true,
+      "error_observed": false,
+      "error_observed_at": null,
+      "child_alive_at_error_observation": null,
+      "dead_observed_at": 0.42077,
+      "error_stream": null,
+      "gated_signature_accepted": true,
+      "inner_classification": true,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE godot_pid=1689180"
+      ],
+      "godot_pid": 1689180,
+      "descendant_pid": null
+    },
+    {
+      "tag": "gate_default_control_r1",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r65-scout/proj",
+        "--script",
+        "res://descendant_pipe_probe.gd",
+        "--"
+      ],
+      "bound": 3.0,
+      "timed_out": false,
+      "actual_exit": 0,
+      "error": null,
+      "signature_observed": true,
+      "signature_observed_at": 0.320163,
+      "child_alive_at_signature_observation": true,
+      "error_observed": false,
+      "error_observed_at": null,
+      "child_alive_at_error_observation": null,
+      "dead_observed_at": 0.387385,
+      "error_stream": null,
+      "gated_signature_accepted": true,
+      "inner_classification": true,
+      "output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE godot_pid=1689218"
+      ],
+      "godot_pid": 1689218,
+      "descendant_pid": null
+    },
+    {
+      "tag": "split_errforge_release",
+      "actual_exit": 0,
+      "error_on_stdout": true,
+      "error_on_stderr": false,
+      "signature_on_stdout": true,
+      "merged_classification": false,
+      "stdout_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+        "DESCENDANT_PIPE godot_pid=1689256",
+        "DESCENDANT_PIPE spawned_pid=1689294",
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+        "DESCENDANT_PIPE_ERRFORGE write_ppid=1573"
+      ],
+      "stderr_lines": []
+    },
+    {
+      "tag": "split_emit_errforge",
+      "actual_exit": 0,
+      "error_on_stdout": false,
+      "error_on_stderr": true,
+      "signature_on_stdout": true,
+      "merged_classification": false,
+      "stdout_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit",
+        "DESCENDANT_PIPE godot_pid=1689297"
+      ],
+      "stderr_lines": [
+        "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] _initialize (res://descendant_pipe_probe.gd:84)"
+      ]
+    }
+  ],
+  "allowlist_absorption": {
+    "classify_with_forged_line_allowlisted": true,
+    "classify_with_empty_allowlist": false
+  }
+}

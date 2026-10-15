@@ -1,0 +1,10 @@
+IW | cell=ext_setpos | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=ext_setpos | built bodies=4 locked=false
+IW | cell=ext_setpos | ext_before pos=400,60
+IW | cell=ext_setpos | ext_setpos ok=true err=nil pos_after=1234.5,678.9000244140625
+IW | cell=ext_setpos | evpin cb=bc locked=true step=4
+IW | cell=ext_setpos | evpin cb=pre locked=true step=4
+IW | cell=ext_setpos | evpin cb=post locked=true step=4
+IW | cell=ext_setpos | evpin cb=ec locked=true step=82
+IW | cell=ext_setpos | final steps=200 count=4 b1pos=1234.5,4184.345703125 b2pos=240,520.7589111328125 bc=3 ec=2 pre=34 post=34 fired=false fire_step=-1
+IW | cell=ext_setpos | CELL_DONE

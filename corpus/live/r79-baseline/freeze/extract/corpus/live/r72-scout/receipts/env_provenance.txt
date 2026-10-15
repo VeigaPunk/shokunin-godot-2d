@@ -1,0 +1,18 @@
+== V7 PYTHONUNBUFFERED=1 (buffered invocation) ==
+<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.
+PHASE0-FLUSHED isatty=0 bufsize=131072$
+R-HEAD$
+R-INJ$
+R-TAIL$
+== V8 file redirect ==
+<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.
+PHASE0-FLUSHED isatty=0 bufsize=131072$
+R-INJ$
+R-HEAD$
+R-TAIL$
+== V9 tty via script(1) ==
+<frozen importlib._bootstrap>:491: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.^M$
+PHASE0-FLUSHED isatty=1 bufsize=131072^M$
+R-HEAD^M$
+R-INJ^M$
+R-TAIL^M$

@@ -1,0 +1,7 @@
+probe-time state r72-boundary (scratch receipts)
+2026-10-14T14:39:05Z
+HEAD=44127afed9b68a28bf671a195f85a4b4f37a2c57
+4d426a3ba6098186c8ef4d6c6cdf6e4e8ecd17dc7af3828ceb91ccb510bb4738  corpus/fixtures/pygame_probe.py
+0a579819658ee9be9dbd3e6fb81414a036f712a5d03358c7b57a8481a2cec47f  corpus/fixtures/pygame_battery.py
+python 3.14.7 DEFAULT_BUFFER_SIZE 131072
+pygame 2.6.1 SDL (2, 32, 72)

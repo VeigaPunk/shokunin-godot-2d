@@ -1,0 +1,61 @@
+{
+  "mode": "real_godot_crash_exit",
+  "platform": "linux",
+  "signal": "SIGTERM",
+  "signal_return_code": -15,
+  "same_script": true,
+  "same_expected_exit": true,
+  "signature": "CRASH_EXIT_PROBE: expected signature",
+  "results": [
+    {
+      "case": "crash_exit_accept",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        ".shokunin/game-dev-2d/corpus/live/r43-second-loss-verifier/retry-runs/20261013T072102595281Z/scratch",
+        "--script",
+        "res://crash_exit_probe.gd",
+        "--"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "error": null,
+      "marker_observed": true,
+      "inner_classification": true,
+      "raw_output": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nCRASH_EXIT_PROBE: expected signature\n",
+      "raw_output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "CRASH_EXIT_PROBE: expected signature"
+      ]
+    },
+    {
+      "case": "crash_exit_signal_reject",
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        ".shokunin/game-dev-2d/corpus/live/r43-second-loss-verifier/retry-runs/20261013T072102595281Z/scratch",
+        "--script",
+        "res://crash_exit_probe.gd",
+        "--",
+        "--hold-open"
+      ],
+      "expected_exit": 1,
+      "signal_name": "SIGTERM",
+      "timeout_seconds": 8,
+      "cleanup_seconds": 3,
+      "actual_exit": -15,
+      "error": null,
+      "marker_observed": true,
+      "process_was_running": true,
+      "signal_sent": true,
+      "inner_classification": false,
+      "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nCRASH_EXIT_PROBE: expected signature\n",
+      "raw_stderr": ""
+    }
+  ],
+  "bounded_claim": "one real Godot normal exit versus POSIX SIGTERM; no general crash or process-tree guarantee",
+  "verdict": "PASS"
+}

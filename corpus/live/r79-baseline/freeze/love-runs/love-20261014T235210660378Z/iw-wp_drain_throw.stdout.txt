@@ -1,0 +1,25 @@
+IW | cell=wp_drain_throw | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=wp_drain_throw | built bodies=4 locked=false
+IW | cell=wp_drain_throw | evpin cb=bc locked=true step=4
+IW | cell=wp_drain_throw | evpin cb=pre locked=true step=4
+IW | cell=wp_drain_throw | evpin cb=post locked=true step=4
+IW | cell=wp_drain_throw | fire cb=bc kind=queue_target/throw step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=wp_drain_throw | cb_destroy ok=true err=nil mode=queued alive_in_cb=400,520.1500244140625 count_after=4
+IW | cell=wp_drain_throw | postfire cb=bc step=73 count=4 b1pos=400,520.1500244140625
+IW | cell=wp_drain_throw | evpin cb=ec locked=false step=73
+IW | cell=wp_drain_throw | r77ec n=1 step=73 locked=false dyn=b1
+IW | cell=wp_drain_throw | drainec n=1 step=73 locked=false count=4 jcount=0 dyn=b1
+IW | cell=wp_drain_throw | drainact n=1 kind=throw
+IW | cell=wp_drain_throw | wpcall step=73 update_ok=false err=R77-DRAIN-THROW srcline=948 locked_after=false
+IW | cell=wp_drain_throw | wp_setpos ok=false err=R77-DRAIN-THROW pos_after=400,511.13113403320312
+IW | cell=wp_drain_throw | wpext ok=true err=nil pos_after=999,999
+IW | cell=wp_drain_throw | r77abortq step=73 count=4 b1pos=999,999 b1dead=false
+IW | cell=wp_drain_throw | r77ec n=2 step=74 locked=true dyn=b1
+IW | cell=wp_drain_throw | r77ecpost step=74 locked=true dyn=b1
+IW | cell=wp_drain_throw | wpcall_next step=74 update_ok=true locked_after=false b1pos=ERR:Attempt to use destroyed body.
+IW | cell=wp_drain_throw | r77recover step=74 locked_after=false count=3 b1pos=ERR:Attempt to use destroyed body. b1dead=true
+IW | cell=wp_drain_throw | r77ec n=3 step=82 locked=true dyn=b2
+IW | cell=wp_drain_throw | r77ec n=4 step=164 locked=true dyn=b2
+IW | cell=wp_drain_throw | final steps=200 count=3 b1pos=ERR:Attempt to use destroyed body. b2pos=240,520.7589111328125 bc=4 ec=4 pre=35 post=35 fired=true fire_step=73
+IW | cell=wp_drain_throw | r77obs step=200 locked=false count=3 b1pos=ERR:Attempt to use destroyed body. b2pos=240,520.7589111328125 b1dead=true b2dead=false fx_a_dead=n/a fx_b_dead=n/a jcount=0 bc=4 ec=4 pre=35 post=35 bc2=0 ec2=0 pre2=0 post2=0 swap_step=-1 drain_n=1
+IW | cell=wp_drain_throw | CELL_DONE

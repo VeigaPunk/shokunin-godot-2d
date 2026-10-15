@@ -1,0 +1,48 @@
+--- corpus/fixtures/phys2d_events.gd	2026-10-14 20:50:42.523938134 -0300
++++ corpus/live/r79-simplifier/vfold/phys2d_events.gd	2026-10-15 02:16:27.544358331 -0300
+@@ -4,28 +4,7 @@
+ #   godot --headless --path <scratch> --script res://phys2d_events.gd -- --arm=<name>
+ # Prints R79 diagnostic lines and one final `PASS phys2d_events <arm> ...` line.
+ # No object ids / addresses / RIDs are printed (byte-stability).
+-#
+-# Arms
+-#   edge_srv           raw server body: server write -> query tier edge-0
+-#   edge_node_srv      node StaticBody2D: server write -> query edge-0, node prop untouched
+-#   edge_node          node StaticBody2D: node write -> query edge-1, server read lags
+-#   edge_revert        node write after a server write silently reverts it (query follows node)
+-#   area_edge          Area2D: node write edge-1 + direct server write edge-0 read-back twist
+-#   cm_on              RigidBody2D contact_monitor=true max=4: enter/exit pair
+-#   cm_off             contact_monitor=false: no signal (absence control)
+-#   cm_max0            contact_monitor=true max_contacts_reported=0: no signal (second key)
+-#   cm_toggle_cb       contact_monitor=false written inside its own body_entered
+-#   cm_deferred_cb     set_deferred("contact_monitor", false) inside body_entered
+-#   rb_srv_set_state   server transform write on self inside body_entered
+-#   rb_node_position   node write on self inside body_entered
+-#   rb_queue_free      queue_free on self inside body_entered
+-#   rb_free_rid        free_rid(self) inside body_entered
+-#   rb_dss_in_cb       direct space state fetch + point query inside body_entered
+-#   area_monitoring_direct    Area2D.monitoring=false inside Area2D.body_entered
+-#   area_monitoring_deferred  set_deferred("monitoring", false) inside Area2D.body_entered
+-#   area_free_rid      free_rid(other) inside Area2D.body_entered
+-#   area_queue_free    other.queue_free() inside Area2D.body_entered
+-#   area_srv_set_state server transform write on other inside Area2D.body_entered
++# The `match arm:` dispatch in _run is the sole arm index (23 arms).
+ 
+ const FLOOR_A_Y := 20.0
+ const FLOOR_B_Y := 220.0
+@@ -317,7 +296,6 @@
+     if _rb_cb_done:
+         return
+     _rb_cb_done = true
+-    _in_cb["cls"] = other.get_class()
+     _in_cb["count"] = _faller.get_contact_count()
+     _in_cb["colliders"] = _faller.get_colliding_bodies().size()
+     _in_cb["monitor"] = _faller.contact_monitor
+@@ -487,7 +465,6 @@
+     _area.add_child(cs)
+     _area.position = Vector2(0, 0)
+     root.add_child(_area)
+-    _area.monitoring = true
+     _area.body_entered.connect(_on_area_entered)
+     _area.body_exited.connect(_on_area_exited)
+     _faller = _mk_faller(Vector2(0, FALLER_Y), false, 0)

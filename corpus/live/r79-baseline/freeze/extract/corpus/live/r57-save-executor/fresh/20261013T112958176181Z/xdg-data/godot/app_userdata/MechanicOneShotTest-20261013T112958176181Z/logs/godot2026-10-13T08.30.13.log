@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS tween_flash transient_modulate=(0.7046, 0.7907, 0.8877, 1.0) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=62

@@ -1,0 +1,12 @@
+IW | cell=bc_destroy_unp | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=bc_destroy_unp | built bodies=4 locked=false
+IW | cell=bc_destroy_unp | evpin cb=bc locked=true step=4
+IW | cell=bc_destroy_unp | evpin cb=pre locked=true step=4
+IW | cell=bc_destroy_unp | evpin cb=post locked=true step=4
+IW | cell=bc_destroy_unp | fire cb=bc kind=destroy_unp step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=bc_destroy_unp | cb_destroy ok=true err=nil mode=unp alive_in_cb=400,520.1500244140625 count_after=4
+IW | cell=bc_destroy_unp | postfire cb=bc step=73 count=4 b1pos=400,520.1500244140625
+IW | cell=bc_destroy_unp | evpin cb=ec locked=false step=73
+IW | cell=bc_destroy_unp | after_update step=73 count=3 b1pos=ERR:Attempt to use destroyed body. b1vel=ERR:Attempt to use destroyed body.
+IW | cell=bc_destroy_unp | final steps=200 count=3 b1pos=ERR:Attempt to use destroyed body. b2pos=240,520.7589111328125 bc=4 ec=3 pre=35 post=35 fired=true fire_step=73
+IW | cell=bc_destroy_unp | CELL_DONE

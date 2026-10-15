@@ -1,0 +1,18 @@
+IW | cell=bc_cowrap_unp | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=bc_cowrap_unp | built bodies=4 locked=false
+IW | cell=bc_cowrap_unp | evpin cb=bc locked=true step=4
+IW | cell=bc_cowrap_unp | evpin cb=pre locked=true step=4
+IW | cell=bc_cowrap_unp | evpin cb=post locked=true step=4
+IW | cell=bc_cowrap_unp | fire cb=bc kind=cowrap_unp step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=bc_cowrap_unp | cb_cowrap_unp outer_before
+Error: main.lua:540: main.lua:536: Box2D assertion failed: m_world->IsLocked() == false
+stack traceback:
+	[love "boot.lua"]:352: in function <[love "boot.lua"]:348>
+	[C]: in function 'co'
+	main.lua:540: in function 'do_mutation'
+	main.lua:752: in function 'on_event'
+	main.lua:823: in function <main.lua:823>
+	[C]: in function 'update'
+	main.lua:1237: in function 'update'
+	[love "callbacks.lua"]:162: in function <[love "callbacks.lua"]:144>
+	[C]: in function 'xpcall'

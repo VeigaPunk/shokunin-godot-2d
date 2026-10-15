@@ -1,0 +1,9 @@
+config_version=5
+[application]
+config/name="BottomLimitScout"
+[display]
+[display/window]
+size/viewport_width=320
+size/viewport_height=600
+size/window_width_override=320
+size/window_height_override=600

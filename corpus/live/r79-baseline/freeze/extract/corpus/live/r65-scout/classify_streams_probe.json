@@ -1,0 +1,30 @@
+{
+ "extraction": "ast verbatim exec of classify_streams from run_battery.py (worktree sha1acbc73)",
+ "note": "classify_streams is used ONLY by probe_stream_attribution (:1715), never by execute()/CASES rows \u2014 latent surface, not a verdict path",
+ "probes": [
+  {
+   "probe": "forged shape: ERROR on stdout, sig on stdout, clean stderr",
+   "classify_streams": true
+  },
+  {
+   "probe": "genuine shape: sig on stdout, push_error line on stderr",
+   "classify_streams": false
+  },
+  {
+   "probe": "clean baseline",
+   "classify_streams": true
+  },
+  {
+   "probe": "stderr error, allowlisted",
+   "classify_streams": true
+  },
+  {
+   "probe": "SCRIPT ERROR on stdout",
+   "classify_streams": false
+  },
+  {
+   "probe": "nonempty stderr noise line (non-ERROR)",
+   "classify_streams": false
+  }
+ ]
+}

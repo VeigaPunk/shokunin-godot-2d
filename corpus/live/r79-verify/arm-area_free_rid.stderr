@@ -1,0 +1,14 @@
+ERROR: Parameter "body" is null.
+   at: body_get_state (modules/godot_physics_2d/godot_physics_server_2d.cpp:778)
+   GDScript backtrace (most recent call first):
+       [0] _srv_origin (res://phys2d_events.gd:170)
+       [1] _arm_area (res://phys2d_events.gd:504)
+       [2] _frames (res://phys2d_events.gd:117)
+ERROR: Parameter "body" is null.
+   at: body_set_space (modules/godot_physics_2d/godot_physics_server_2d.cpp:540)
+ERROR: Parameter "body" is null.
+   at: body_attach_canvas_instance_id (modules/godot_physics_2d/godot_physics_server_2d.cpp:696)
+ERROR: Parameter "body" is null.
+   at: body_remove_shape (modules/godot_physics_2d/godot_physics_server_2d.cpp:635)
+ERROR: Invalid ID.
+   at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)

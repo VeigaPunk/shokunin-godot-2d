@@ -1,0 +1,3 @@
+[application]
+config/name="R57SaveScoutProbe"
+config/features=PackedStringArray("4.7")

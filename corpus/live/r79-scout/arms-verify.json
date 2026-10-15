@@ -1,0 +1,1332 @@
+{
+  "stamp": "20261014T213729176759Z",
+  "mode": "verify",
+  "reps": 3,
+  "project": "proj",
+  "godot": "4.7.2.stable.arch_linux.ed1daf0bf",
+  "classifier_source": {
+    "file": "corpus/fixtures/run_battery.py",
+    "lines": [
+      162,
+      180
+    ],
+    "sha256": "615d332ed428db66a03b6837d7a6ed86c4a3150609dc9c2838a11a51b50bbea3"
+  },
+  "probe": "corpus/live/r79-scout/proj/phys2d_events.gd",
+  "probe_sha256": "7329acb22a144b3c7a373ebd3ff7f88377750d5abb622a32ab84d4e56cc5df2c",
+  "rows": [
+    {
+      "arm": "edge_srv",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events edge_srv q_before=1 srv_before=(100.0, 0.0) srv_after=(200.0, 0.0) q_new=1 q_old=0 q_new_n1=1 q_old_n1=0",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events edge_srv q_before=1 srv_before=(100.0, 0.0) srv_after=(200.0, 0.0) q_new=1 q_old=0 q_new_n1=1 q_old_n1=0",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=edge_srv godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events edge_srv q_before=1 srv_before=(100.0, 0.0) srv_after=(200.0, 0.0) q_new=1 q_old=0 q_new_n1=1 q_old_n1=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "9757e2141bcf4d76efa6debadf322d5a1a4bbfbe833575af10e55ce540ec0cae"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=edge_srv godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events edge_srv q_before=1 srv_before=(100.0, 0.0) srv_after=(200.0, 0.0) q_new=1 q_old=0 q_new_n1=1 q_old_n1=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "9757e2141bcf4d76efa6debadf322d5a1a4bbfbe833575af10e55ce540ec0cae"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=edge_srv godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events edge_srv q_before=1 srv_before=(100.0, 0.0) srv_after=(200.0, 0.0) q_new=1 q_old=0 q_new_n1=1 q_old_n1=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "9757e2141bcf4d76efa6debadf322d5a1a4bbfbe833575af10e55ce540ec0cae"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "edge_node_srv",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events edge_node_srv q_before=1 srv_after=(200.0, 0.0) q_new=1 q_old=0 node_prop_in_cb=(300.0, 0.0) srv_n1=(200.0, 0.0) node_prop_n1=(300.0, 0.0) q_new_n1=1 q_old_n1=0",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events edge_node_srv q_before=1 srv_after=(200.0, 0.0) q_new=1 q_old=0 node_prop_in_cb=(300.0, 0.0) srv_n1=(200.0, 0.0) node_prop_n1=(300.0, 0.0) q_new_n1=1 q_old_n1=0",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=edge_node_srv godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events edge_node_srv q_before=1 srv_after=(200.0, 0.0) q_new=1 q_old=0 node_prop_in_cb=(300.0, 0.0) srv_n1=(200.0, 0.0) node_prop_n1=(300.0, 0.0) q_new_n1=1 q_old_n1=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "b9d9475c8fa8ef2021a80f57d1f619907261c6877a6b7b43ff76794977ef9070"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=edge_node_srv godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events edge_node_srv q_before=1 srv_after=(200.0, 0.0) q_new=1 q_old=0 node_prop_in_cb=(300.0, 0.0) srv_n1=(200.0, 0.0) node_prop_n1=(300.0, 0.0) q_new_n1=1 q_old_n1=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "b9d9475c8fa8ef2021a80f57d1f619907261c6877a6b7b43ff76794977ef9070"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=edge_node_srv godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events edge_node_srv q_before=1 srv_after=(200.0, 0.0) q_new=1 q_old=0 node_prop_in_cb=(300.0, 0.0) srv_n1=(200.0, 0.0) node_prop_n1=(300.0, 0.0) q_new_n1=1 q_old_n1=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "b9d9475c8fa8ef2021a80f57d1f619907261c6877a6b7b43ff76794977ef9070"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "edge_node",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events edge_node node_prop_in_cb=(400.0, 0.0) srv_in_cb=(300.0, 0.0) q_new=0 q_old=1 srv_n1=(400.0, 0.0) q_new_n1=1 q_old_n1=0",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events edge_node node_prop_in_cb=(400.0, 0.0) srv_in_cb=(300.0, 0.0) q_new=0 q_old=1 srv_n1=(400.0, 0.0) q_new_n1=1 q_old_n1=0",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=edge_node godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events edge_node node_prop_in_cb=(400.0, 0.0) srv_in_cb=(300.0, 0.0) q_new=0 q_old=1 srv_n1=(400.0, 0.0) q_new_n1=1 q_old_n1=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "f08faeffb405fb7495cda2fcda77464e43a07fcae536039640f70a25c5352ac4"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=edge_node godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events edge_node node_prop_in_cb=(400.0, 0.0) srv_in_cb=(300.0, 0.0) q_new=0 q_old=1 srv_n1=(400.0, 0.0) q_new_n1=1 q_old_n1=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "f08faeffb405fb7495cda2fcda77464e43a07fcae536039640f70a25c5352ac4"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=edge_node godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events edge_node node_prop_in_cb=(400.0, 0.0) srv_in_cb=(300.0, 0.0) q_new=0 q_old=1 srv_n1=(400.0, 0.0) q_new_n1=1 q_old_n1=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "f08faeffb405fb7495cda2fcda77464e43a07fcae536039640f70a25c5352ac4"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "edge_revert",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events edge_revert q_srv_w0=1 srv_after_node_w0=(200.0, 0.0) q_srv_after_node_w0=1 q_node_after_node_w0=0 srv_n1=(400.0, 0.0) q_srv_n1=0 q_node_n1=1 node_prop_n1=(400.0, 0.0)",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events edge_revert q_srv_w0=1 srv_after_node_w0=(200.0, 0.0) q_srv_after_node_w0=1 q_node_after_node_w0=0 srv_n1=(400.0, 0.0) q_srv_n1=0 q_node_n1=1 node_prop_n1=(400.0, 0.0)",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=edge_revert godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events edge_revert q_srv_w0=1 srv_after_node_w0=(200.0, 0.0) q_srv_after_node_w0=1 q_node_after_node_w0=0 srv_n1=(400.0, 0.0) q_srv_n1=0 q_node_n1=1 node_prop_n1=(400.0, 0.0)\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "785c5c1ccac0bcabd5c287a1670eb6fb7126ddd61377384d668bd68d79bc3660"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=edge_revert godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events edge_revert q_srv_w0=1 srv_after_node_w0=(200.0, 0.0) q_srv_after_node_w0=1 q_node_after_node_w0=0 srv_n1=(400.0, 0.0) q_srv_n1=0 q_node_n1=1 node_prop_n1=(400.0, 0.0)\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "785c5c1ccac0bcabd5c287a1670eb6fb7126ddd61377384d668bd68d79bc3660"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=edge_revert godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events edge_revert q_srv_w0=1 srv_after_node_w0=(200.0, 0.0) q_srv_after_node_w0=1 q_node_after_node_w0=0 srv_n1=(400.0, 0.0) q_srv_n1=0 q_node_n1=1 node_prop_n1=(400.0, 0.0)\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "785c5c1ccac0bcabd5c287a1670eb6fb7126ddd61377384d668bd68d79bc3660"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "area_edge",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events area_edge q_before=1 node_prop_in_cb=(100.0, 0.0) srv_in_cb=(0.0, 0.0) q_new=0 q_old=1 srv_n1=(100.0, 0.0) q_new_n1=1 q_old_n1=0 node_prop_n1=(100.0, 0.0) srv_direct_in_cb=(200.0, 0.0) q_direct=1 node_prop_direct_in_cb=(100.0, 0.0) srv_direct_n2=(200.0, 0.0) node_prop_direct_n2=(100.0, 0.0)",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events area_edge q_before=1 node_prop_in_cb=(100.0, 0.0) srv_in_cb=(0.0, 0.0) q_new=0 q_old=1 srv_n1=(100.0, 0.0) q_new_n1=1 q_old_n1=0 node_prop_n1=(100.0, 0.0) srv_direct_in_cb=(200.0, 0.0) q_direct=1 node_prop_direct_in_cb=(100.0, 0.0) srv_direct_n2=(200.0, 0.0) node_prop_direct_n2=(100.0, 0.0)",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_edge godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_edge q_before=1 node_prop_in_cb=(100.0, 0.0) srv_in_cb=(0.0, 0.0) q_new=0 q_old=1 srv_n1=(100.0, 0.0) q_new_n1=1 q_old_n1=0 node_prop_n1=(100.0, 0.0) srv_direct_in_cb=(200.0, 0.0) q_direct=1 node_prop_direct_in_cb=(100.0, 0.0) srv_direct_n2=(200.0, 0.0) node_prop_direct_n2=(100.0, 0.0)\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "32a5bfa3b99827fce69d9e13fbc26a4510ea232cf6666e0c7ea4afb81ced9c57"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_edge godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_edge q_before=1 node_prop_in_cb=(100.0, 0.0) srv_in_cb=(0.0, 0.0) q_new=0 q_old=1 srv_n1=(100.0, 0.0) q_new_n1=1 q_old_n1=0 node_prop_n1=(100.0, 0.0) srv_direct_in_cb=(200.0, 0.0) q_direct=1 node_prop_direct_in_cb=(100.0, 0.0) srv_direct_n2=(200.0, 0.0) node_prop_direct_n2=(100.0, 0.0)\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "32a5bfa3b99827fce69d9e13fbc26a4510ea232cf6666e0c7ea4afb81ced9c57"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_edge godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_edge q_before=1 node_prop_in_cb=(100.0, 0.0) srv_in_cb=(0.0, 0.0) q_new=0 q_old=1 srv_n1=(100.0, 0.0) q_new_n1=1 q_old_n1=0 node_prop_n1=(100.0, 0.0) srv_direct_in_cb=(200.0, 0.0) q_direct=1 node_prop_direct_in_cb=(100.0, 0.0) srv_direct_n2=(200.0, 0.0) node_prop_direct_n2=(100.0, 0.0)\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "32a5bfa3b99827fce69d9e13fbc26a4510ea232cf6666e0c7ea4afb81ced9c57"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "cm_on",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events cm_on entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 valid=true exit1_frame=7",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events cm_on entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 valid=true exit1_frame=7",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_on godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_on entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 valid=true exit1_frame=7\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "327a02560e5489b6e52734fbf158696fe4d15ce2f8410b81bb012c32547650d9"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_on godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_on entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 valid=true exit1_frame=7\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "327a02560e5489b6e52734fbf158696fe4d15ce2f8410b81bb012c32547650d9"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_on godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_on entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 valid=true exit1_frame=7\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "327a02560e5489b6e52734fbf158696fe4d15ce2f8410b81bb012c32547650d9"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "cm_off",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events cm_off entered=0 exited=0 entry1_frame=-1 entry2_frame=-1 cb_fired=false cb_count=- cb_colliders=- cb_monitor=- cb_max=- valid=true exit1_frame=-1",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events cm_off entered=0 exited=0 entry1_frame=-1 entry2_frame=-1 cb_fired=false cb_count=- cb_colliders=- cb_monitor=- cb_max=- valid=true exit1_frame=-1",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_off godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_off entered=0 exited=0 entry1_frame=-1 entry2_frame=-1 cb_fired=false cb_count=- cb_colliders=- cb_monitor=- cb_max=- valid=true exit1_frame=-1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "56e9ccd4977f965e661238c7dede45924790e74826207fca6a71e5d4de3ba4ac"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_off godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_off entered=0 exited=0 entry1_frame=-1 entry2_frame=-1 cb_fired=false cb_count=- cb_colliders=- cb_monitor=- cb_max=- valid=true exit1_frame=-1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "56e9ccd4977f965e661238c7dede45924790e74826207fca6a71e5d4de3ba4ac"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_off godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_off entered=0 exited=0 entry1_frame=-1 entry2_frame=-1 cb_fired=false cb_count=- cb_colliders=- cb_monitor=- cb_max=- valid=true exit1_frame=-1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "56e9ccd4977f965e661238c7dede45924790e74826207fca6a71e5d4de3ba4ac"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "cm_max0",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events cm_max0 entered=0 exited=0 entry1_frame=-1 entry2_frame=-1 cb_fired=false cb_count=- cb_colliders=- cb_monitor=- cb_max=- valid=true exit1_frame=-1",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events cm_max0 entered=0 exited=0 entry1_frame=-1 entry2_frame=-1 cb_fired=false cb_count=- cb_colliders=- cb_monitor=- cb_max=- valid=true exit1_frame=-1",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_max0 godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_max0 entered=0 exited=0 entry1_frame=-1 entry2_frame=-1 cb_fired=false cb_count=- cb_colliders=- cb_monitor=- cb_max=- valid=true exit1_frame=-1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "bd2d40e56b56f16525dd004d20b968107f97b2801e2ad1ef78e47a3b210fa0cd"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_max0 godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_max0 entered=0 exited=0 entry1_frame=-1 entry2_frame=-1 cb_fired=false cb_count=- cb_colliders=- cb_monitor=- cb_max=- valid=true exit1_frame=-1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "bd2d40e56b56f16525dd004d20b968107f97b2801e2ad1ef78e47a3b210fa0cd"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_max0 godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_max0 entered=0 exited=0 entry1_frame=-1 entry2_frame=-1 cb_fired=false cb_count=- cb_colliders=- cb_monitor=- cb_max=- valid=true exit1_frame=-1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "bd2d40e56b56f16525dd004d20b968107f97b2801e2ad1ef78e47a3b210fa0cd"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "cm_toggle_cb",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events cm_toggle_cb entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=true post_monitor=true post_count=2 valid=true exit1_frame=7",
+      "expected_errors": [
+        "ERROR: Can't disable contact monitoring during in/out callback. Use call_deferred(\"set_contact_monitor\", false) instead."
+      ],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events cm_toggle_cb entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=true post_monitor=true post_count=2 valid=true exit1_frame=7",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": false,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_toggle_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_toggle_cb entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=true post_monitor=true post_count=2 valid=true exit1_frame=7\n",
+          "stderr": "ERROR: Can't disable contact monitoring during in/out callback. Use call_deferred(\"set_contact_monitor\", false) instead.\n   at: set_contact_monitor (scene/2d/physics/rigid_body_2d.cpp:605)\n   GDScript backtrace (most recent call first):\n       [0] _on_rb_entered (res://phys2d_events.gd:348)\n",
+          "engine_anchors": [
+            "at: set_contact_monitor (scene/2d/physics/rigid_body_2d.cpp:605)"
+          ],
+          "merged_sha256": "808efb6b4a580024079513a54a5fb6f11f097dd060ed5f859551679a2159c8d8"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_toggle_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_toggle_cb entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=true post_monitor=true post_count=2 valid=true exit1_frame=7\n",
+          "stderr": "ERROR: Can't disable contact monitoring during in/out callback. Use call_deferred(\"set_contact_monitor\", false) instead.\n   at: set_contact_monitor (scene/2d/physics/rigid_body_2d.cpp:605)\n   GDScript backtrace (most recent call first):\n       [0] _on_rb_entered (res://phys2d_events.gd:348)\n",
+          "engine_anchors": [
+            "at: set_contact_monitor (scene/2d/physics/rigid_body_2d.cpp:605)"
+          ],
+          "merged_sha256": "808efb6b4a580024079513a54a5fb6f11f097dd060ed5f859551679a2159c8d8"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_toggle_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_toggle_cb entered=2 exited=1 entry1_frame=1 entry2_frame=20 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=true post_monitor=true post_count=2 valid=true exit1_frame=7\n",
+          "stderr": "ERROR: Can't disable contact monitoring during in/out callback. Use call_deferred(\"set_contact_monitor\", false) instead.\n   at: set_contact_monitor (scene/2d/physics/rigid_body_2d.cpp:605)\n   GDScript backtrace (most recent call first):\n       [0] _on_rb_entered (res://phys2d_events.gd:348)\n",
+          "engine_anchors": [
+            "at: set_contact_monitor (scene/2d/physics/rigid_body_2d.cpp:605)"
+          ],
+          "merged_sha256": "808efb6b4a580024079513a54a5fb6f11f097dd060ed5f859551679a2159c8d8"
+        }
+      ],
+      "stderr_error_lines": [
+        "ERROR: Can't disable contact monitoring during in/out callback. Use call_deferred(\"set_contact_monitor\", false) instead."
+      ]
+    },
+    {
+      "arm": "cm_deferred_cb",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events cm_deferred_cb entered=1 exited=0 entry1_frame=1 entry2_frame=-1 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=true post_monitor=false valid=true exit1_frame=-1",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events cm_deferred_cb entered=1 exited=0 entry1_frame=1 entry2_frame=-1 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=true post_monitor=false valid=true exit1_frame=-1",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_deferred_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_deferred_cb entered=1 exited=0 entry1_frame=1 entry2_frame=-1 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=true post_monitor=false valid=true exit1_frame=-1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "757591c56a91ee33a448ca66c0e1d6c79a4bd2d884799a2abe894ce3068442d2"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_deferred_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_deferred_cb entered=1 exited=0 entry1_frame=1 entry2_frame=-1 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=true post_monitor=false valid=true exit1_frame=-1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "757591c56a91ee33a448ca66c0e1d6c79a4bd2d884799a2abe894ce3068442d2"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_deferred_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_deferred_cb entered=1 exited=0 entry1_frame=1 entry2_frame=-1 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=true post_monitor=false valid=true exit1_frame=-1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "757591c56a91ee33a448ca66c0e1d6c79a4bd2d884799a2abe894ce3068442d2"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "cm_max0_cb",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events cm_max0_cb entered=1 exited=1 entry1_frame=1 entry2_frame=-1 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=0 post_max=0 valid=true exit1_frame=1",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events cm_max0_cb entered=1 exited=1 entry1_frame=1 entry2_frame=-1 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=0 post_max=0 valid=true exit1_frame=1",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_max0_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_max0_cb entered=1 exited=1 entry1_frame=1 entry2_frame=-1 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=0 post_max=0 valid=true exit1_frame=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "10a229d9fae6053056360c157633a610175906a0ffc495e9cf04f97ffb7081c7"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_max0_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_max0_cb entered=1 exited=1 entry1_frame=1 entry2_frame=-1 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=0 post_max=0 valid=true exit1_frame=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "10a229d9fae6053056360c157633a610175906a0ffc495e9cf04f97ffb7081c7"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=cm_max0_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events cm_max0_cb entered=1 exited=1 entry1_frame=1 entry2_frame=-1 cb_fired=true cb_count=2 cb_colliders=1 cb_monitor=true cb_max=4 cb_readback=0 post_max=0 valid=true exit1_frame=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "10a229d9fae6053056360c157633a610175906a0ffc495e9cf04f97ffb7081c7"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "rb_srv_set_state",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events rb_srv_set_state entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=(500.0, 500.0) cb_node_unchanged=true cb_node_read=- cb_srv_before=- next_node=(500.0001, 501.0889) next_srv=(500.0001, 501.0889) late_node=(500.0006, 516.297) node_write_stuck=false node_follows_srv=true valid_after=true",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events rb_srv_set_state entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=(500.0, 500.0) cb_node_unchanged=true cb_node_read=- cb_srv_before=- next_node=(500.0001, 501.0889) next_srv=(500.0001, 501.0889) late_node=(500.0006, 516.297) node_write_stuck=false node_follows_srv=true valid_after=true",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_srv_set_state godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_srv_set_state entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=(500.0, 500.0) cb_node_unchanged=true cb_node_read=- cb_srv_before=- next_node=(500.0001, 501.0889) next_srv=(500.0001, 501.0889) late_node=(500.0006, 516.297) node_write_stuck=false node_follows_srv=true valid_after=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "622a38002f560c29276c4b72cb75e136624b741f8971de74519f69f4489db07e"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_srv_set_state godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_srv_set_state entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=(500.0, 500.0) cb_node_unchanged=true cb_node_read=- cb_srv_before=- next_node=(500.0001, 501.0889) next_srv=(500.0001, 501.0889) late_node=(500.0006, 516.297) node_write_stuck=false node_follows_srv=true valid_after=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "622a38002f560c29276c4b72cb75e136624b741f8971de74519f69f4489db07e"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_srv_set_state godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_srv_set_state entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=(500.0, 500.0) cb_node_unchanged=true cb_node_read=- cb_srv_before=- next_node=(500.0001, 501.0889) next_srv=(500.0001, 501.0889) late_node=(500.0006, 516.297) node_write_stuck=false node_follows_srv=true valid_after=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "622a38002f560c29276c4b72cb75e136624b741f8971de74519f69f4489db07e"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "rb_node_position",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events rb_node_position entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=(600.0, 600.0) cb_srv_before=(0.000128, -4.56002) next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events rb_node_position entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=(600.0, 600.0) cb_srv_before=(0.000128, -4.56002) next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_node_position godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_node_position entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=(600.0, 600.0) cb_srv_before=(0.000128, -4.56002) next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "2a79ffdc3f1f5f25c80b13fd9d9be8a84a2c23046e611265d3fb3d1d1abe31c5"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_node_position godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_node_position entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=(600.0, 600.0) cb_srv_before=(0.000128, -4.56002) next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "2a79ffdc3f1f5f25c80b13fd9d9be8a84a2c23046e611265d3fb3d1d1abe31c5"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_node_position godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_node_position entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=(600.0, 600.0) cb_srv_before=(0.000128, -4.56002) next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "2a79ffdc3f1f5f25c80b13fd9d9be8a84a2c23046e611265d3fb3d1d1abe31c5"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "rb_queue_free",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events rb_queue_free entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=<dead> next_srv=<dead> late_node=<dead> node_write_stuck=false node_follows_srv=false valid_after=false cb_queued=true",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events rb_queue_free entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=<dead> next_srv=<dead> late_node=<dead> node_write_stuck=false node_follows_srv=false valid_after=false cb_queued=true",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_queue_free godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_queue_free entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=<dead> next_srv=<dead> late_node=<dead> node_write_stuck=false node_follows_srv=false valid_after=false cb_queued=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "6a510fdbaa43d1f3da64da8e5b74166745916bd1cee8ddffe6751b9f85e2f9fd"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_queue_free godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_queue_free entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=<dead> next_srv=<dead> late_node=<dead> node_write_stuck=false node_follows_srv=false valid_after=false cb_queued=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "6a510fdbaa43d1f3da64da8e5b74166745916bd1cee8ddffe6751b9f85e2f9fd"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_queue_free godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_queue_free entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=<dead> next_srv=<dead> late_node=<dead> node_write_stuck=false node_follows_srv=false valid_after=false cb_queued=true\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "6a510fdbaa43d1f3da64da8e5b74166745916bd1cee8ddffe6751b9f85e2f9fd"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "rb_free_rid",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events rb_free_rid entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.56002) next_srv=<null> late_node=(0.000128, -4.56002) node_write_stuck=false node_follows_srv=false valid_after=true cb_freed=true",
+      "expected_errors": [
+        "ERROR: Parameter \"body\" is null.",
+        "ERROR: Invalid ID."
+      ],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events rb_free_rid entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.56002) next_srv=<null> late_node=(0.000128, -4.56002) node_write_stuck=false node_follows_srv=false valid_after=true cb_freed=true",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": false,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_free_rid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_free_rid entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.56002) next_srv=<null> late_node=(0.000128, -4.56002) node_write_stuck=false node_follows_srv=false valid_after=true cb_freed=true\n",
+          "stderr": "ERROR: Parameter \"body\" is null.\n   at: body_get_state (modules/godot_physics_2d/godot_physics_server_2d.cpp:778)\n   GDScript backtrace (most recent call first):\n       [0] _srv_origin (res://phys2d_events.gd:170)\n       [1] _arm_rb (res://phys2d_events.gd:415)\n       [2] _frames (res://phys2d_events.gd:117)\nERROR: Parameter \"body\" is null.\n   at: body_set_space (modules/godot_physics_2d/godot_physics_server_2d.cpp:540)\nERROR: Parameter \"body\" is null.\n   at: body_attach_canvas_instance_id (modules/godot_physics_2d/godot_physics_server_2d.cpp:696)\nERROR: Parameter \"body\" is null.\n   at: body_remove_shape (modules/godot_physics_2d/godot_physics_server_2d.cpp:635)\nERROR: Invalid ID.\n   at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)\n",
+          "engine_anchors": [
+            "at: body_attach_canvas_instance_id (modules/godot_physics_2d/godot_physics_server_2d.cpp:696)",
+            "at: body_get_state (modules/godot_physics_2d/godot_physics_server_2d.cpp:778)",
+            "at: body_remove_shape (modules/godot_physics_2d/godot_physics_server_2d.cpp:635)",
+            "at: body_set_space (modules/godot_physics_2d/godot_physics_server_2d.cpp:540)",
+            "at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)"
+          ],
+          "merged_sha256": "4d807f4abee7ecbb17d3aef007b6b30865c859658988cf9a24741a226a4bba74"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_free_rid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_free_rid entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.56002) next_srv=<null> late_node=(0.000128, -4.56002) node_write_stuck=false node_follows_srv=false valid_after=true cb_freed=true\n",
+          "stderr": "ERROR: Parameter \"body\" is null.\n   at: body_get_state (modules/godot_physics_2d/godot_physics_server_2d.cpp:778)\n   GDScript backtrace (most recent call first):\n       [0] _srv_origin (res://phys2d_events.gd:170)\n       [1] _arm_rb (res://phys2d_events.gd:415)\n       [2] _frames (res://phys2d_events.gd:117)\nERROR: Parameter \"body\" is null.\n   at: body_set_space (modules/godot_physics_2d/godot_physics_server_2d.cpp:540)\nERROR: Parameter \"body\" is null.\n   at: body_attach_canvas_instance_id (modules/godot_physics_2d/godot_physics_server_2d.cpp:696)\nERROR: Parameter \"body\" is null.\n   at: body_remove_shape (modules/godot_physics_2d/godot_physics_server_2d.cpp:635)\nERROR: Invalid ID.\n   at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)\n",
+          "engine_anchors": [
+            "at: body_attach_canvas_instance_id (modules/godot_physics_2d/godot_physics_server_2d.cpp:696)",
+            "at: body_get_state (modules/godot_physics_2d/godot_physics_server_2d.cpp:778)",
+            "at: body_remove_shape (modules/godot_physics_2d/godot_physics_server_2d.cpp:635)",
+            "at: body_set_space (modules/godot_physics_2d/godot_physics_server_2d.cpp:540)",
+            "at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)"
+          ],
+          "merged_sha256": "4d807f4abee7ecbb17d3aef007b6b30865c859658988cf9a24741a226a4bba74"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_free_rid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_free_rid entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.56002) next_srv=<null> late_node=(0.000128, -4.56002) node_write_stuck=false node_follows_srv=false valid_after=true cb_freed=true\n",
+          "stderr": "ERROR: Parameter \"body\" is null.\n   at: body_get_state (modules/godot_physics_2d/godot_physics_server_2d.cpp:778)\n   GDScript backtrace (most recent call first):\n       [0] _srv_origin (res://phys2d_events.gd:170)\n       [1] _arm_rb (res://phys2d_events.gd:415)\n       [2] _frames (res://phys2d_events.gd:117)\nERROR: Parameter \"body\" is null.\n   at: body_set_space (modules/godot_physics_2d/godot_physics_server_2d.cpp:540)\nERROR: Parameter \"body\" is null.\n   at: body_attach_canvas_instance_id (modules/godot_physics_2d/godot_physics_server_2d.cpp:696)\nERROR: Parameter \"body\" is null.\n   at: body_remove_shape (modules/godot_physics_2d/godot_physics_server_2d.cpp:635)\nERROR: Invalid ID.\n   at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)\n",
+          "engine_anchors": [
+            "at: body_attach_canvas_instance_id (modules/godot_physics_2d/godot_physics_server_2d.cpp:696)",
+            "at: body_get_state (modules/godot_physics_2d/godot_physics_server_2d.cpp:778)",
+            "at: body_remove_shape (modules/godot_physics_2d/godot_physics_server_2d.cpp:635)",
+            "at: body_set_space (modules/godot_physics_2d/godot_physics_server_2d.cpp:540)",
+            "at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)"
+          ],
+          "merged_sha256": "4d807f4abee7ecbb17d3aef007b6b30865c859658988cf9a24741a226a4bba74"
+        }
+      ],
+      "stderr_error_lines": [
+        "ERROR: Invalid ID.",
+        "ERROR: Parameter \"body\" is null."
+      ]
+    },
+    {
+      "arm": "rb_dss_in_cb",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events rb_dss_in_cb entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true cb_dss_null=false cb_q_hits=1",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events rb_dss_in_cb entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true cb_dss_null=false cb_q_hits=1",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_dss_in_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_dss_in_cb entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true cb_dss_null=false cb_q_hits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "d35faafbeeb8b06f4c4d06ab27c61878ee26ab9a55104add39d8717ac7f9ffa8"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_dss_in_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_dss_in_cb entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true cb_dss_null=false cb_q_hits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "d35faafbeeb8b06f4c4d06ab27c61878ee26ab9a55104add39d8717ac7f9ffa8"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=rb_dss_in_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events rb_dss_in_cb entry1_frame=1 cb_count=2 cb_colliders=1 cb_srv_read=- cb_node_unchanged=- cb_node_read=- cb_srv_before=- next_node=(0.000128, -4.672004) next_srv=(0.000128, -4.672004) late_node=(0.000128, -4.699955) node_write_stuck=false node_follows_srv=false valid_after=true cb_dss_null=false cb_q_hits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "d35faafbeeb8b06f4c4d06ab27c61878ee26ab9a55104add39d8717ac7f9ffa8"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "area_monitoring_direct",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events area_monitoring_direct entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0",
+      "expected_errors": [
+        "ERROR: Function blocked during in/out signal. Use set_deferred(\"monitoring\", true/false)."
+      ],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events area_monitoring_direct entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": false,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_monitoring_direct godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_monitoring_direct entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0\n",
+          "stderr": "ERROR: Function blocked during in/out signal. Use set_deferred(\"monitoring\", true/false).\n   at: set_monitoring (scene/2d/physics/area_2d.cpp:429)\n   GDScript backtrace (most recent call first):\n       [0] _on_area_entered (res://phys2d_events.gd:452)\n",
+          "engine_anchors": [
+            "at: set_monitoring (scene/2d/physics/area_2d.cpp:429)"
+          ],
+          "merged_sha256": "b7def1bfc7df937b01694b302116cbbdf659e175623bd03d9ecb59d003b984be"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_monitoring_direct godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_monitoring_direct entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0\n",
+          "stderr": "ERROR: Function blocked during in/out signal. Use set_deferred(\"monitoring\", true/false).\n   at: set_monitoring (scene/2d/physics/area_2d.cpp:429)\n   GDScript backtrace (most recent call first):\n       [0] _on_area_entered (res://phys2d_events.gd:452)\n",
+          "engine_anchors": [
+            "at: set_monitoring (scene/2d/physics/area_2d.cpp:429)"
+          ],
+          "merged_sha256": "b7def1bfc7df937b01694b302116cbbdf659e175623bd03d9ecb59d003b984be"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_monitoring_direct godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_monitoring_direct entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0\n",
+          "stderr": "ERROR: Function blocked during in/out signal. Use set_deferred(\"monitoring\", true/false).\n   at: set_monitoring (scene/2d/physics/area_2d.cpp:429)\n   GDScript backtrace (most recent call first):\n       [0] _on_area_entered (res://phys2d_events.gd:452)\n",
+          "engine_anchors": [
+            "at: set_monitoring (scene/2d/physics/area_2d.cpp:429)"
+          ],
+          "merged_sha256": "b7def1bfc7df937b01694b302116cbbdf659e175623bd03d9ecb59d003b984be"
+        }
+      ],
+      "stderr_error_lines": [
+        "ERROR: Function blocked during in/out signal. Use set_deferred(\"monitoring\", true/false)."
+      ]
+    },
+    {
+      "arm": "area_monitoring_deferred",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events area_monitoring_deferred entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=false entries=1 exits=1",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events area_monitoring_deferred entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=false entries=1 exits=1",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_monitoring_deferred godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_monitoring_deferred entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=false entries=1 exits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "fe686a0600095c11ba7edeb1076e8d9b4eae4e14fbafe81ba6e206919001da01"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_monitoring_deferred godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_monitoring_deferred entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=false entries=1 exits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "fe686a0600095c11ba7edeb1076e8d9b4eae4e14fbafe81ba6e206919001da01"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_monitoring_deferred godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_monitoring_deferred entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=true cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=false entries=1 exits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "fe686a0600095c11ba7edeb1076e8d9b4eae4e14fbafe81ba6e206919001da01"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "area_free_rid",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events area_free_rid entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=true cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -2.911111) next_srv=<null> late_node=(0.0, -2.911111) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=1",
+      "expected_errors": [
+        "ERROR: Parameter \"body\" is null.",
+        "ERROR: Invalid ID."
+      ],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events area_free_rid entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=true cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -2.911111) next_srv=<null> late_node=(0.0, -2.911111) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=1",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": false,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_free_rid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_free_rid entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=true cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -2.911111) next_srv=<null> late_node=(0.0, -2.911111) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=1\n",
+          "stderr": "ERROR: Parameter \"body\" is null.\n   at: body_get_state (modules/godot_physics_2d/godot_physics_server_2d.cpp:778)\n   GDScript backtrace (most recent call first):\n       [0] _srv_origin (res://phys2d_events.gd:170)\n       [1] _arm_area (res://phys2d_events.gd:504)\n       [2] _frames (res://phys2d_events.gd:117)\nERROR: Parameter \"body\" is null.\n   at: body_set_space (modules/godot_physics_2d/godot_physics_server_2d.cpp:540)\nERROR: Parameter \"body\" is null.\n   at: body_attach_canvas_instance_id (modules/godot_physics_2d/godot_physics_server_2d.cpp:696)\nERROR: Parameter \"body\" is null.\n   at: body_remove_shape (modules/godot_physics_2d/godot_physics_server_2d.cpp:635)\nERROR: Invalid ID.\n   at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)\n",
+          "engine_anchors": [
+            "at: body_attach_canvas_instance_id (modules/godot_physics_2d/godot_physics_server_2d.cpp:696)",
+            "at: body_get_state (modules/godot_physics_2d/godot_physics_server_2d.cpp:778)",
+            "at: body_remove_shape (modules/godot_physics_2d/godot_physics_server_2d.cpp:635)",
+            "at: body_set_space (modules/godot_physics_2d/godot_physics_server_2d.cpp:540)",
+            "at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)"
+          ],
+          "merged_sha256": "a663aa8ebcaf6380c45207a834ce596b8f705ee274544c647ac3cb574e44dac8"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_free_rid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_free_rid entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=true cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -2.911111) next_srv=<null> late_node=(0.0, -2.911111) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=1\n",
+          "stderr": "ERROR: Parameter \"body\" is null.\n   at: body_get_state (modules/godot_physics_2d/godot_physics_server_2d.cpp:778)\n   GDScript backtrace (most recent call first):\n       [0] _srv_origin (res://phys2d_events.gd:170)\n       [1] _arm_area (res://phys2d_events.gd:504)\n       [2] _frames (res://phys2d_events.gd:117)\nERROR: Parameter \"body\" is null.\n   at: body_set_space (modules/godot_physics_2d/godot_physics_server_2d.cpp:540)\nERROR: Parameter \"body\" is null.\n   at: body_attach_canvas_instance_id (modules/godot_physics_2d/godot_physics_server_2d.cpp:696)\nERROR: Parameter \"body\" is null.\n   at: body_remove_shape (modules/godot_physics_2d/godot_physics_server_2d.cpp:635)\nERROR: Invalid ID.\n   at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)\n",
+          "engine_anchors": [
+            "at: body_attach_canvas_instance_id (modules/godot_physics_2d/godot_physics_server_2d.cpp:696)",
+            "at: body_get_state (modules/godot_physics_2d/godot_physics_server_2d.cpp:778)",
+            "at: body_remove_shape (modules/godot_physics_2d/godot_physics_server_2d.cpp:635)",
+            "at: body_set_space (modules/godot_physics_2d/godot_physics_server_2d.cpp:540)",
+            "at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)"
+          ],
+          "merged_sha256": "a663aa8ebcaf6380c45207a834ce596b8f705ee274544c647ac3cb574e44dac8"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_free_rid godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_free_rid entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=true cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -2.911111) next_srv=<null> late_node=(0.0, -2.911111) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=1\n",
+          "stderr": "ERROR: Parameter \"body\" is null.\n   at: body_get_state (modules/godot_physics_2d/godot_physics_server_2d.cpp:778)\n   GDScript backtrace (most recent call first):\n       [0] _srv_origin (res://phys2d_events.gd:170)\n       [1] _arm_area (res://phys2d_events.gd:504)\n       [2] _frames (res://phys2d_events.gd:117)\nERROR: Parameter \"body\" is null.\n   at: body_set_space (modules/godot_physics_2d/godot_physics_server_2d.cpp:540)\nERROR: Parameter \"body\" is null.\n   at: body_attach_canvas_instance_id (modules/godot_physics_2d/godot_physics_server_2d.cpp:696)\nERROR: Parameter \"body\" is null.\n   at: body_remove_shape (modules/godot_physics_2d/godot_physics_server_2d.cpp:635)\nERROR: Invalid ID.\n   at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)\n",
+          "engine_anchors": [
+            "at: body_attach_canvas_instance_id (modules/godot_physics_2d/godot_physics_server_2d.cpp:696)",
+            "at: body_get_state (modules/godot_physics_2d/godot_physics_server_2d.cpp:778)",
+            "at: body_remove_shape (modules/godot_physics_2d/godot_physics_server_2d.cpp:635)",
+            "at: body_set_space (modules/godot_physics_2d/godot_physics_server_2d.cpp:540)",
+            "at: free_rid (modules/godot_physics_2d/godot_physics_server_2d.cpp:1276)"
+          ],
+          "merged_sha256": "a663aa8ebcaf6380c45207a834ce596b8f705ee274544c647ac3cb574e44dac8"
+        }
+      ],
+      "stderr_error_lines": [
+        "ERROR: Invalid ID.",
+        "ERROR: Parameter \"body\" is null."
+      ]
+    },
+    {
+      "arm": "area_queue_free",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events area_queue_free entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=true cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=<dead> next_srv=<dead> late_node=<dead> node_write_stuck=false node_follows_srv=false valid_after=false post_monitoring=true entries=1 exits=1",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events area_queue_free entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=true cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=<dead> next_srv=<dead> late_node=<dead> node_write_stuck=false node_follows_srv=false valid_after=false post_monitoring=true entries=1 exits=1",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_queue_free godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_queue_free entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=true cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=<dead> next_srv=<dead> late_node=<dead> node_write_stuck=false node_follows_srv=false valid_after=false post_monitoring=true entries=1 exits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "4a4a8b76153dbc22b46874c07e4cdd6d5bca0c5cec3c0597319e13bd25f83653"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_queue_free godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_queue_free entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=true cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=<dead> next_srv=<dead> late_node=<dead> node_write_stuck=false node_follows_srv=false valid_after=false post_monitoring=true entries=1 exits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "4a4a8b76153dbc22b46874c07e4cdd6d5bca0c5cec3c0597319e13bd25f83653"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_queue_free godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_queue_free entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=true cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=<dead> next_srv=<dead> late_node=<dead> node_write_stuck=false node_follows_srv=false valid_after=false post_monitoring=true entries=1 exits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "4a4a8b76153dbc22b46874c07e4cdd6d5bca0c5cec3c0597319e13bd25f83653"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "area_srv_set_state",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events area_srv_set_state entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=(0.0, -2.911111) cb_srv_read=(500.0, 500.0) cb_node_read=- next_node=(500.0, 502.176) next_srv=(500.0, 502.176) late_node=(500.0, 521.7144) node_write_stuck=false node_follows_srv=true valid_after=true post_monitoring=true entries=1 exits=1",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events area_srv_set_state entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=(0.0, -2.911111) cb_srv_read=(500.0, 500.0) cb_node_read=- next_node=(500.0, 502.176) next_srv=(500.0, 502.176) late_node=(500.0, 521.7144) node_write_stuck=false node_follows_srv=true valid_after=true post_monitoring=true entries=1 exits=1",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_srv_set_state godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_srv_set_state entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=(0.0, -2.911111) cb_srv_read=(500.0, 500.0) cb_node_read=- next_node=(500.0, 502.176) next_srv=(500.0, 502.176) late_node=(500.0, 521.7144) node_write_stuck=false node_follows_srv=true valid_after=true post_monitoring=true entries=1 exits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "76ea2b9bc1ff62e01effb996372e4cfde9d4cd243ccb414b6825bad45af3b6da"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_srv_set_state godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_srv_set_state entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=(0.0, -2.911111) cb_srv_read=(500.0, 500.0) cb_node_read=- next_node=(500.0, 502.176) next_srv=(500.0, 502.176) late_node=(500.0, 521.7144) node_write_stuck=false node_follows_srv=true valid_after=true post_monitoring=true entries=1 exits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "76ea2b9bc1ff62e01effb996372e4cfde9d4cd243ccb414b6825bad45af3b6da"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_srv_set_state godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_srv_set_state entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=(0.0, -2.911111) cb_srv_read=(500.0, 500.0) cb_node_read=- next_node=(500.0, 502.176) next_srv=(500.0, 502.176) late_node=(500.0, 521.7144) node_write_stuck=false node_follows_srv=true valid_after=true post_monitoring=true entries=1 exits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "76ea2b9bc1ff62e01effb996372e4cfde9d4cd243ccb414b6825bad45af3b6da"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "area_node_position",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events area_node_position entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=(600.0, 600.0) next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events area_node_position entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=(600.0, 600.0) next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_node_position godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_node_position entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=(600.0, 600.0) next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "8052e14057e8a168b5ad7e9e22bf9d6593cbddeb9c45581d5feb2b75931e4a85"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_node_position godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_node_position entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=(600.0, 600.0) next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "8052e14057e8a168b5ad7e9e22bf9d6593cbddeb9c45581d5feb2b75931e4a85"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_node_position godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_node_position entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=(600.0, 600.0) next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "8052e14057e8a168b5ad7e9e22bf9d6593cbddeb9c45581d5feb2b75931e4a85"
+        }
+      ],
+      "stderr_error_lines": []
+    },
+    {
+      "arm": "area_dss_in_cb",
+      "expected_exit": 0,
+      "signature": "PASS phys2d_events area_dss_in_cb entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0 cb_dss_null=false cb_q_hits=1",
+      "expected_errors": [],
+      "rc": [
+        0,
+        0,
+        0
+      ],
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "stable_bytes": true,
+      "measured_line": "PASS phys2d_events area_dss_in_cb entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0 cb_dss_null=false cb_q_hits=1",
+      "ablations": {
+        "signature_dropped": false,
+        "exit_flipped": false,
+        "errors_dropped": true,
+        "clean": true
+      },
+      "reps": [
+        {
+          "rep": 0,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_dss_in_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_dss_in_cb entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0 cb_dss_null=false cb_q_hits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "0705deb0454569149d10c86defe5c18b8d6aaae35a8ae6f5c4bb68096fb13eb4"
+        },
+        {
+          "rep": 1,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_dss_in_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_dss_in_cb entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0 cb_dss_null=false cb_q_hits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "0705deb0454569149d10c86defe5c18b8d6aaae35a8ae6f5c4bb68096fb13eb4"
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "verdict": "PASS",
+          "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nR79 arm=area_dss_in_cb godot=4.7.2-stable (arch_linux) engine2d=DEFAULT separate_thread=false\nPASS phys2d_events area_dss_in_cb entry1_frame=1 cb_cls=RigidBody2D cb_monitoring=true cb_readback=- cb_queued=- cb_freed=- cb_srv_before=- cb_srv_read=- cb_node_read=- next_node=(0.0, -0.735148) next_srv=(0.0, -0.735148) late_node=(0.0, 18.80326) node_write_stuck=false node_follows_srv=false valid_after=true post_monitoring=true entries=1 exits=0 cb_dss_null=false cb_q_hits=1\n",
+          "stderr": "",
+          "engine_anchors": [],
+          "merged_sha256": "0705deb0454569149d10c86defe5c18b8d6aaae35a8ae6f5c4bb68096fb13eb4"
+        }
+      ],
+      "stderr_error_lines": []
+    }
+  ],
+  "discover": {},
+  "verdict": "PASS",
+  "bad": []
+}

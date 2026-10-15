@@ -1,0 +1,11 @@
+l_plain_nl     rep0 rc=0 exit_ms=371.629 lines=[(368.365, 'xxxxxxxxxxxxxxxxxxxxxxxx')]
+l_plain_nl     rep1 rc=0 exit_ms=371.292 lines=[(367.863, 'xxxxxxxxxxxxxxxxxxxxxxxx')]
+l_plain_nn     rep0 rc=0 exit_ms=372.457 lines=[(372.418, 'xxxxxxxxxxxxxxxxxxxxxxxx')]
+l_128k_hi_nl   rep0 rc=0 exit_ms=373.458 lines=[(19.965, 'xxxxxxxxxxxxxxxxxxxxxxxx')]
+l_128k_hi_nl   rep1 rc=0 exit_ms=372.081 lines=[(18.483, 'xxxxxxxxxxxxxxxxxxxxxxxx')]
+l_flush_nl     rep0 rc=0 exit_ms=371.496 lines=[]
+l_16x8k_nl     rep0 rc=0 exit_ms=1334.019 lines=[(1330.327, 'xxxxxxxxxxxxxxxxxxxxxxxx')]
+l_16x8k_nl     rep1 rc=0 exit_ms=1332.898 lines=[(1329.398, 'xxxxxxxxxxxxxxxxxxxxxxxx')]
+l_17x8k_pl_nl  rep0 rc=0 exit_ms=1393.25 lines=[(1389.831, 'xxxxxxxxxxxxxxxxxxxxxxxx')]
+l_2x4k_nl      rep0 rc=0 exit_ms=430.962 lines=[(427.708, 'xxxxxxxxxxxxxxxxxxxxxxxx')]
+json: withhold-lines.json

@@ -1,0 +1,942 @@
+{
+  "love": "/usr/bin/love",
+  "love_version": "LOVE 11.5 (Mysterious Mysteries)",
+  "love_version_exit": 0,
+  "love_version_error": null,
+  "probe_dir": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r79-baseline/freeze/extract/corpus/fixtures/love_probe",
+  "probe_exit": 0,
+  "probe_error": null,
+  "probe_elapsed_s": 1.175303,
+  "started_utc": "20261014T235210660378Z",
+  "done_marker": true,
+  "results": [
+    {
+      "case": "dtcadence_n",
+      "arm": "dtcadence",
+      "key": "n",
+      "pinned": "120",
+      "observed": "120",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "dtcadence_mean_uncapped",
+      "arm": "dtcadence",
+      "key": "dt_mean_ms",
+      "pinned": [
+        0.5,
+        4.0
+      ],
+      "observed": "1.044",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "dtcadence_min_subms",
+      "arm": "dtcadence",
+      "key": "dt_min_ms",
+      "pinned": [
+        0.0,
+        0.1
+      ],
+      "observed": "0.003",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "dtcadence_max_cheap",
+      "arm": "dtcadence",
+      "key": "dt_max_ms",
+      "pinned": [
+        0.5,
+        8.0
+      ],
+      "observed": "1.084",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_l1_exact",
+      "arm": "popen",
+      "key": "l1",
+      "pinned": "CHILD-MARK-1",
+      "observed": "CHILD-MARK-1",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_l2_exact",
+      "arm": "popen",
+      "key": "l2",
+      "pinned": "CHILD-MARK-2",
+      "observed": "CHILD-MARK-2",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_l1_wait_fast",
+      "arm": "popen",
+      "key": "l1_wait_ms",
+      "pinned": [
+        0.2,
+        30.0
+      ],
+      "observed": "1.59",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_l2_wait_writer",
+      "arm": "popen",
+      "key": "l2_wait_ms",
+      "pinned": [
+        110.0,
+        140.0
+      ],
+      "observed": "120.60",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_close_fast",
+      "arm": "popen",
+      "key": "close_wait_ms",
+      "pinned": [
+        0.0,
+        5.0
+      ],
+      "observed": "0.11",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_total",
+      "arm": "popen",
+      "key": "total_ms",
+      "pinned": [
+        115.0,
+        170.0
+      ],
+      "observed": "122.48",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_rest_empty",
+      "arm": "popen",
+      "key": "rest_len",
+      "pinned": "0",
+      "observed": "0",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "osx_raw_status_shape",
+      "arm": "osx",
+      "key": "ret_a",
+      "pinned": "768",
+      "observed": "768",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "osx_single_return",
+      "arm": "osx",
+      "key": "ret_b",
+      "pinned": "nil",
+      "observed": "nil",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "pump_not_needed",
+      "arm": "pump",
+      "key": "pump_needed",
+      "pinned": "false",
+      "observed": "false",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "pump_updates_counted",
+      "arm": "pump",
+      "key": "updates_without_pump",
+      "pinned": "123",
+      "observed": "123",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "splice_inwindow",
+      "arm": "splice",
+      "key": "offset=80,gap=200",
+      "pinned": "spliced",
+      "observed": "spliced",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "splice_beyond",
+      "arm": "splice",
+      "key": "offset=240,gap=200",
+      "pinned": "clean",
+      "observed": "clean",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "splice_crossed",
+      "arm": "splice",
+      "key": "offset=300,gap=400",
+      "pinned": "spliced",
+      "observed": "spliced",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "splice_tight",
+      "arm": "splice",
+      "key": "offset=80,gap=50",
+      "pinned": "clean",
+      "observed": "clean",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_avail_lattice",
+      "arm": "iw",
+      "key": "cell=baseline",
+      "rc": 0,
+      "pinned": "captured",
+      "observed": "captured",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_ext_setpos",
+      "arm": "iw",
+      "key": "cell=ext_setpos",
+      "rc": 0,
+      "pinned": "applied",
+      "observed": "applied",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_ext_newbody",
+      "arm": "iw",
+      "key": "cell=ext_newbody",
+      "rc": 0,
+      "pinned": "applied",
+      "observed": "applied",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_ext_destroy",
+      "arm": "iw",
+      "key": "cell=ext_destroy",
+      "rc": 0,
+      "pinned": "applied",
+      "observed": "applied",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_setpos",
+      "arm": "iw",
+      "key": "cell=bc_setpos",
+      "rc": 0,
+      "pinned": "refused",
+      "observed": "refused",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_pre_setpos",
+      "arm": "iw",
+      "key": "cell=pre_setpos",
+      "rc": 0,
+      "pinned": "refused",
+      "observed": "refused",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_post_setpos",
+      "arm": "iw",
+      "key": "cell=post_setpos",
+      "rc": 0,
+      "pinned": "refused",
+      "observed": "refused",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_newbody",
+      "arm": "iw",
+      "key": "cell=bc_newbody",
+      "rc": 0,
+      "pinned": "refused",
+      "observed": "refused",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_pre_newbody",
+      "arm": "iw",
+      "key": "cell=pre_newbody",
+      "rc": 0,
+      "pinned": "refused",
+      "observed": "refused",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_post_newbody",
+      "arm": "iw",
+      "key": "cell=post_newbody",
+      "rc": 0,
+      "pinned": "refused",
+      "observed": "refused",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_destroy",
+      "arm": "iw",
+      "key": "cell=bc_destroy",
+      "rc": 0,
+      "pinned": "deferred",
+      "observed": "deferred",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_pre_destroy",
+      "arm": "iw",
+      "key": "cell=pre_destroy",
+      "rc": 0,
+      "pinned": "deferred",
+      "observed": "deferred",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_post_destroy",
+      "arm": "iw",
+      "key": "cell=post_destroy",
+      "rc": 0,
+      "pinned": "deferred",
+      "observed": "deferred",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_setactive",
+      "arm": "iw",
+      "key": "cell=bc_setactive",
+      "rc": 0,
+      "pinned": "refused",
+      "observed": "refused",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_pre_contactmask",
+      "arm": "iw",
+      "key": "cell=pre_contactmask",
+      "rc": 0,
+      "pinned": "applied",
+      "observed": "applied",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_setvel",
+      "arm": "iw",
+      "key": "cell=bc_setvel",
+      "rc": 0,
+      "pinned": "applied",
+      "observed": "applied",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_setpos_wp",
+      "arm": "iw",
+      "key": "cell=bc_setpos_wp",
+      "rc": 0,
+      "pinned": "refused_abort",
+      "observed": "refused_abort",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_joint_new",
+      "arm": "iw",
+      "key": "cell=bc_joint_new",
+      "rc": 0,
+      "pinned": "refused",
+      "observed": "refused",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_joint_destroy",
+      "arm": "iw",
+      "key": "cell=bc_joint_destroy",
+      "rc": 0,
+      "pinned": "deferred",
+      "observed": "deferred",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_setfilter",
+      "arm": "iw",
+      "key": "cell=bc_setfilter",
+      "rc": 0,
+      "pinned": "applied",
+      "observed": "applied",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_pre_retfalse",
+      "arm": "iw",
+      "key": "cell=pre_retfalse",
+      "rc": 0,
+      "pinned": "ignored",
+      "observed": "ignored",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_draindefer",
+      "arm": "iw",
+      "key": "cell=bc_draindefer",
+      "rc": 0,
+      "pinned": "deferred_abort",
+      "observed": "deferred_abort",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_destroy2",
+      "arm": "iw",
+      "key": "cell=bc_destroy2",
+      "rc": 0,
+      "pinned": "deferred",
+      "observed": "deferred",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_jwatch",
+      "arm": "iw",
+      "key": "cell=bc_jwatch",
+      "rc": 0,
+      "pinned": "deferred",
+      "observed": "deferred",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_pre_retfalse1",
+      "arm": "iw",
+      "key": "cell=pre_retfalse1",
+      "rc": 0,
+      "pinned": "ignored",
+      "observed": "ignored",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_setcallbacks",
+      "arm": "iw",
+      "key": "cell=bc_setcallbacks",
+      "rc": 0,
+      "pinned": "swapped",
+      "observed": "swapped",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_pre_setcallbacks",
+      "arm": "iw",
+      "key": "cell=pre_setcallbacks",
+      "rc": 0,
+      "pinned": "swapped",
+      "observed": "swapped",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_multi_setcallbacks",
+      "arm": "iw",
+      "key": "cell=multi_setcallbacks",
+      "rc": 0,
+      "pinned": "swapped",
+      "observed": "swapped",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_setcallbacks_nil",
+      "arm": "iw",
+      "key": "cell=bc_setcallbacks_nil",
+      "rc": 0,
+      "pinned": "muted",
+      "observed": "muted",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_setcallbacks_back",
+      "arm": "iw",
+      "key": "cell=bc_setcallbacks_back",
+      "rc": 0,
+      "pinned": "swapped",
+      "observed": "swapped",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_fixture_destroy",
+      "arm": "iw",
+      "key": "cell=bc_fixture_destroy",
+      "rc": 0,
+      "pinned": "deferred",
+      "observed": "deferred",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_fixture_destroy2",
+      "arm": "iw",
+      "key": "cell=bc_fixture_destroy2",
+      "rc": 0,
+      "pinned": "deferred",
+      "observed": "deferred",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_ext_fixture_destroy",
+      "arm": "iw",
+      "key": "cell=ext_fixture_destroy",
+      "rc": 0,
+      "pinned": "applied",
+      "observed": "applied",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_drain_setpos_b2",
+      "arm": "iw",
+      "key": "cell=drain_setpos_b2",
+      "rc": 0,
+      "pinned": "applied",
+      "observed": "applied",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_drain_queue_b2",
+      "arm": "iw",
+      "key": "cell=drain_queue_b2",
+      "rc": 0,
+      "pinned": "immediate",
+      "observed": "immediate",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_wp_drain_throw",
+      "arm": "iw",
+      "key": "cell=wp_drain_throw",
+      "rc": 0,
+      "pinned": "drain_abort",
+      "observed": "drain_abort",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_drain_order_joint",
+      "arm": "iw",
+      "key": "cell=drain_order_joint",
+      "rc": 0,
+      "pinned": "deferred",
+      "observed": "deferred",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_cowrap_setpos",
+      "arm": "iw",
+      "key": "cell=bc_cowrap_setpos",
+      "rc": 0,
+      "pinned": "refused",
+      "observed": "refused",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_co_update_yield",
+      "arm": "iw",
+      "key": "cell=co_update_yield",
+      "rc": 0,
+      "pinned": "yield_abort",
+      "observed": "yield_abort",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_wp_coyield",
+      "arm": "iw",
+      "key": "cell=wp_coyield",
+      "rc": 0,
+      "pinned": "yield_abort",
+      "observed": "yield_abort",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_meter",
+      "arm": "iw",
+      "key": "cell=bc_meter",
+      "rc": 0,
+      "pinned": "applied",
+      "observed": "applied",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_pre_meter",
+      "arm": "iw",
+      "key": "cell=pre_meter",
+      "rc": 0,
+      "pinned": "applied",
+      "observed": "applied",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_n_baseline",
+      "arm": "iw",
+      "key": "cell=n_baseline",
+      "rc": 0,
+      "pinned": "nested_lockclear",
+      "observed": "nested_lockclear",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_n_inner_cb",
+      "arm": "iw",
+      "key": "cell=n_inner_cb",
+      "rc": 0,
+      "pinned": "nested_lockclear",
+      "observed": "nested_lockclear",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_n_depth2_seq",
+      "arm": "iw",
+      "key": "cell=n_depth2_seq",
+      "rc": 0,
+      "pinned": "nested_lockclear",
+      "observed": "nested_lockclear",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_n_queue_inner_drain",
+      "arm": "iw",
+      "key": "cell=n_queue_inner_drain",
+      "rc": 0,
+      "pinned": "inner_drain",
+      "observed": "inner_drain",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_n_destroy_contacting_wp",
+      "arm": "iw",
+      "key": "cell=n_destroy_contacting_wp",
+      "rc": 0,
+      "pinned": "dispatch_escape",
+      "observed": "dispatch_escape",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_n_destroy_ground_wp",
+      "arm": "iw",
+      "key": "cell=n_destroy_ground_wp",
+      "rc": 0,
+      "pinned": "dispatch_escape",
+      "observed": "dispatch_escape",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_n_destroy_fx_wp",
+      "arm": "iw",
+      "key": "cell=n_destroy_fx_wp",
+      "rc": 0,
+      "pinned": "dispatch_escape",
+      "observed": "dispatch_escape",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_n_depth2_fxdrain",
+      "arm": "iw",
+      "key": "cell=n_depth2_fxdrain",
+      "rc": 0,
+      "pinned": "refused",
+      "observed": "refused",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_z_drain_use_after",
+      "arm": "iw",
+      "key": "cell=z_drain_use_after",
+      "rc": 0,
+      "pinned": "contact_invalidated",
+      "observed": "contact_invalidated",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_z_abort_use_after",
+      "arm": "iw",
+      "key": "cell=z_abort_use_after",
+      "rc": 0,
+      "pinned": "contact_live_after_abort",
+      "observed": "contact_live_after_abort",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_z_touch_then_end",
+      "arm": "iw",
+      "key": "cell=z_touch_then_end",
+      "rc": 0,
+      "pinned": "contact_invalidated",
+      "observed": "contact_invalidated",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_livelock_all",
+      "arm": "iw",
+      "key": "cell=livelock_all",
+      "rc": 0,
+      "pinned": "livelock",
+      "observed": "livelock",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_livelock_stop2",
+      "arm": "iw",
+      "key": "cell=livelock_stop2",
+      "rc": 0,
+      "pinned": "drain_converge",
+      "observed": "drain_converge",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_livelock_transient",
+      "arm": "iw",
+      "key": "cell=livelock_transient",
+      "rc": 0,
+      "pinned": "drain_converge",
+      "observed": "drain_converge",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_destroy_unp",
+      "arm": "iw",
+      "key": "cell=bc_destroy_unp",
+      "rc": 0,
+      "pinned": "deferred",
+      "observed": "deferred",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_setvel_unp",
+      "arm": "iw",
+      "key": "cell=bc_setvel_unp",
+      "rc": 0,
+      "pinned": "applied",
+      "observed": "applied",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_worlddestroy",
+      "arm": "iw",
+      "key": "cell=bc_worlddestroy",
+      "rc": 1,
+      "pinned": "died",
+      "observed": "died",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_setpos_unp",
+      "arm": "iw",
+      "key": "cell=bc_setpos_unp",
+      "rc": 1,
+      "pinned": "fatal",
+      "observed": "fatal",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_newbody_unp",
+      "arm": "iw",
+      "key": "cell=bc_newbody_unp",
+      "rc": 1,
+      "pinned": "fatal",
+      "observed": "fatal",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_coyield",
+      "arm": "iw",
+      "key": "cell=bc_coyield",
+      "rc": 1,
+      "pinned": "died",
+      "observed": "died",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_cowrap_update_yield",
+      "arm": "iw",
+      "key": "cell=cowrap_update_yield",
+      "rc": 1,
+      "pinned": "died",
+      "observed": "died",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_ext_worldrelease",
+      "arm": "iw",
+      "key": "cell=ext_worldrelease",
+      "rc": 1,
+      "pinned": "died",
+      "observed": "died",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_cowrap_unp",
+      "arm": "iw",
+      "key": "cell=bc_cowrap_unp",
+      "rc": 1,
+      "pinned": "fatal",
+      "observed": "fatal",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_n_destroy_contacting",
+      "arm": "iw",
+      "key": "cell=n_destroy_contacting",
+      "rc": 1,
+      "pinned": "dispatch_escape",
+      "observed": "dispatch_escape",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_bc_worldrelease",
+      "arm": "iw",
+      "key": "cell=bc_worldrelease",
+      "rc": -11,
+      "pinned": "corrupt",
+      "observed": "corrupt",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_pre_worldrelease",
+      "arm": "iw",
+      "key": "cell=pre_worldrelease",
+      "rc": -11,
+      "pinned": "corrupt",
+      "observed": "corrupt",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_post_worldrelease",
+      "arm": "iw",
+      "key": "cell=post_worldrelease",
+      "rc": -11,
+      "pinned": "corrupt",
+      "observed": "corrupt",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_ec_worldrelease",
+      "arm": "iw",
+      "key": "cell=ec_worldrelease",
+      "rc": -11,
+      "pinned": "corrupt",
+      "observed": "corrupt",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_drain_worldrelease",
+      "arm": "iw",
+      "key": "cell=drain_worldrelease",
+      "rc": -11,
+      "pinned": "corrupt",
+      "observed": "corrupt",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_n_depth2_drain",
+      "arm": "iw",
+      "key": "cell=n_depth2_drain",
+      "rc": -11,
+      "pinned": "corrupt",
+      "observed": "corrupt",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "iw_n_depth2_drain_wp",
+      "arm": "iw",
+      "key": "cell=n_depth2_drain_wp",
+      "rc": -11,
+      "pinned": "corrupt",
+      "observed": "corrupt",
+      "verdict": "PASS",
+      "reasons": []
+    }
+  ],
+  "totals": {
+    "cases": 92,
+    "pass": 92,
+    "fail": 0
+  },
+  "verdict": "PASS"
+}

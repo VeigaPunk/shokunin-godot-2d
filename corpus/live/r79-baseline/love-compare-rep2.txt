@@ -1,0 +1,55 @@
+=== love: mine corpus/live/r79-baseline/freeze/love-runs2/love-20261014T235416742513Z/verdicts.json rows=92 verdict=PASS file_sha256=150c1ed4ca686421bab605b668e539d7f0239264a53417e42673d7019f459fec ===
+
+r78-baseline-postland-rep1: ref=corpus/live/r78-baseline/postland/love-runs/love-20261014T211125990828Z/verdicts.json ref_rows=92 ref_verdict=PASS
+  common=92 new_only=0 old_only=0 tuple_mismatches=0 byte_identical=86/92 observed_only=6 real_drift=0
+  observed-only dtcadence|dt_max_ms: mine='1.147' ref='1.094'
+  observed-only dtcadence|dt_mean_ms: mine='1.044' ref='1.045'
+  observed-only popen|close_wait_ms: mine='0.07' ref='0.06'
+  observed-only popen|l1_wait_ms: mine='1.18' ref='1.28'
+  observed-only popen|l2_wait_ms: mine='120.63' ref='120.55'
+  observed-only popen|total_ms: mine='122.00' ref='122.03'
+
+r78-baseline-postland-rep2: ref=corpus/live/r78-baseline/postland/love-runs2/love-20261014T211156070014Z/verdicts.json ref_rows=92 ref_verdict=PASS
+  common=92 new_only=0 old_only=0 tuple_mismatches=0 byte_identical=86/92 observed_only=6 real_drift=0
+  observed-only dtcadence|dt_max_ms: mine='1.147' ref='1.106'
+  observed-only dtcadence|dt_mean_ms: mine='1.044' ref='1.046'
+  observed-only popen|close_wait_ms: mine='0.07' ref='0.11'
+  observed-only popen|l1_wait_ms: mine='1.18' ref='1.17'
+  observed-only popen|l2_wait_ms: mine='120.63' ref='120.55'
+  observed-only popen|total_ms: mine='122.00' ref='121.94'
+
+r78-baseline-freeze-75: ref=corpus/live/r78-baseline/freeze/love-runs/love-20261014T205330614648Z/verdicts.json ref_rows=75 ref_verdict=PASS
+  common=75 new_only=17 old_only=0 tuple_mismatches=0 byte_identical=70/75 observed_only=5 real_drift=0
+  new_only_keys: [('iw', 'cell=livelock_all'), ('iw', 'cell=livelock_stop2'), ('iw', 'cell=livelock_transient'), ('iw', 'cell=n_baseline'), ('iw', 'cell=n_depth2_drain'), ('iw', 'cell=n_depth2_drain_wp'), ('iw', 'cell=n_depth2_fxdrain'), ('iw', 'cell=n_depth2_seq'), ('iw', 'cell=n_destroy_contacting'), ('iw', 'cell=n_destroy_contacting_wp'), ('iw', 'cell=n_destroy_fx_wp'), ('iw', 'cell=n_destroy_ground_wp'), ('iw', 'cell=n_inner_cb'), ('iw', 'cell=n_queue_inner_drain'), ('iw', 'cell=z_abort_use_after'), ('iw', 'cell=z_drain_use_after'), ('iw', 'cell=z_touch_then_end')]
+  observed-only dtcadence|dt_max_ms: mine='1.147' ref='1.100'
+  observed-only dtcadence|dt_mean_ms: mine='1.044' ref='1.048'
+  observed-only popen|l1_wait_ms: mine='1.18' ref='1.11'
+  observed-only popen|l2_wait_ms: mine='120.63' ref='120.47'
+  observed-only popen|total_ms: mine='122.00' ref='121.75'
+
+r78-verifier-r1: ref=corpus/live/r78-verifier/runs/love-20261014T214247513502Z/verdicts.json ref_rows=92 ref_verdict=PASS
+  common=92 new_only=0 old_only=0 tuple_mismatches=0 byte_identical=85/92 observed_only=7 real_drift=0
+  observed-only dtcadence|dt_max_ms: mine='1.147' ref='1.086'
+  observed-only dtcadence|dt_mean_ms: mine='1.044' ref='1.043'
+  observed-only dtcadence|dt_min_ms: mine='0.004' ref='0.005'
+  observed-only popen|close_wait_ms: mine='0.07' ref='0.09'
+  observed-only popen|l1_wait_ms: mine='1.18' ref='1.32'
+  observed-only popen|l2_wait_ms: mine='120.63' ref='120.57'
+  observed-only popen|total_ms: mine='122.00' ref='122.13'
+
+r78-simplifier-vfold: ref=corpus/live/r78-simplifier/runs-vfold/love-20261014T213654408782Z/verdicts.json ref_rows=92 ref_verdict=PASS
+  common=92 new_only=0 old_only=0 tuple_mismatches=0 byte_identical=87/92 observed_only=5 real_drift=0
+  observed-only dtcadence|dt_max_ms: mine='1.147' ref='1.093'
+  observed-only dtcadence|dt_mean_ms: mine='1.044' ref='1.045'
+  observed-only popen|close_wait_ms: mine='0.07' ref='0.10'
+  observed-only popen|l1_wait_ms: mine='1.18' ref='1.36'
+  observed-only popen|total_ms: mine='122.00' ref='122.17'
+
+runs-shared-215836: ref=corpus/live/runs/love-20261014T215836641142Z/verdicts.json ref_rows=92 ref_verdict=PASS
+  common=92 new_only=0 old_only=0 tuple_mismatches=0 byte_identical=86/92 observed_only=6 real_drift=0
+  observed-only dtcadence|dt_max_ms: mine='1.147' ref='1.091'
+  observed-only dtcadence|dt_min_ms: mine='0.004' ref='0.003'
+  observed-only popen|close_wait_ms: mine='0.07' ref='0.09'
+  observed-only popen|l1_wait_ms: mine='1.18' ref='1.61'
+  observed-only popen|l2_wait_ms: mine='120.63' ref='120.62'
+  observed-only popen|total_ms: mine='122.00' ref='122.48'

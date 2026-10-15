@@ -1,0 +1,1933 @@
+{
+  "mode": "r67_scribe_stream_divergence",
+  "runner_sha256": "3d5b0721d582a0b9f00b601b1ede5f6c313b700a0a5e9a15d8e09104c7370e7c",
+  "head_runner_sha256": "76d37ace4b0bbc3c92b83baf431bf6046cdfe4fa88f4bf3cd833dee99269b1ed",
+  "runner_worktree_eq_head": false,
+  "classifier_segments": {
+    "run_process": {
+      "worktree_sha256": "88728b2303f64fc48b094d358f0a217ae7b07aaf85b446b014e35c31d76207c5",
+      "head_sha256": "88728b2303f64fc48b094d358f0a217ae7b07aaf85b446b014e35c31d76207c5",
+      "identical": true
+    },
+    "classify_process": {
+      "worktree_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+      "head_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+      "identical": true
+    },
+    "classify_streams": {
+      "worktree_sha256": "a886968fd3acf4dec4192e8141de44f0da7dddec9aacfceb5f5d3cafab68c6d7",
+      "head_sha256": "a886968fd3acf4dec4192e8141de44f0da7dddec9aacfceb5f5d3cafab68c6d7",
+      "identical": true
+    },
+    "classify_audio_process": {
+      "worktree_sha256": "3a6bc0e831a76176424e675244df8b8f3163e70d0b23d0af7a8bc6de28d3cfaa",
+      "head_sha256": "3a6bc0e831a76176424e675244df8b8f3163e70d0b23d0af7a8bc6de28d3cfaa",
+      "identical": true
+    }
+  },
+  "fixture_probe_sha256": "dc0b0d5c5f44a1b4404cbe62cada0e6e53e2b33be010ea32dc72cb3892aeb286",
+  "godot": "/usr/bin/godot",
+  "python": "3.14.7",
+  "reps": 2,
+  "arm_count": 28,
+  "rep_stable": true,
+  "divergent_arms": [
+    "g_stream_reject",
+    "s_seam_error_head_allowlisted",
+    "s_seam_script_head_allowlisted",
+    "s_sig_on_stderr",
+    "s_sig_on_stderr_allowlisted",
+    "s_sig_seam_out_tail_err_head",
+    "s_stderr_allowed_plus_noise",
+    "s_stderr_nonerror_noise",
+    "s_stderr_split_error_evasion",
+    "s_stderr_structured_entry",
+    "s_stdout_error",
+    "s_stdout_error_foreign_allowed"
+  ],
+  "divergent_count": 12,
+  "records": [
+    {
+      "arm": "s_clean_sig_stdout",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [],
+      "merged_len": 43,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "s_stdout_error",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nERROR: planted on stdout\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nERROR: planted on stdout\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "ERROR: planted on stdout"
+      ],
+      "stderr_lines": [],
+      "merged_len": 68,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": true,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": true,
+      "divergent": true
+    },
+    {
+      "arm": "s_stderr_error",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('ERROR: planted on stderr\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "ERROR: planted on stderr\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "ERROR: planted on stderr"
+      ],
+      "merged_len": 68,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": true,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_stderr_error_allowed",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('ERROR: planted on stderr\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: planted on stderr"
+      ],
+      "allowed_stderr": [
+        "ERROR: planted on stderr"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "ERROR: planted on stderr\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "ERROR: planted on stderr"
+      ],
+      "merged_len": 68,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": true,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "s_stdout_error_allowed",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nERROR: planted on stdout\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: planted on stdout"
+      ],
+      "allowed_stderr": [
+        "ERROR: planted on stdout"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nERROR: planted on stdout\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "ERROR: planted on stdout"
+      ],
+      "stderr_lines": [],
+      "merged_len": 68,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": true,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "s_stdout_error_foreign_allowed",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nERROR: planted on stdout\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: foreign"
+      ],
+      "allowed_stderr": [
+        "ERROR: foreign"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nERROR: planted on stdout\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "ERROR: planted on stdout"
+      ],
+      "stderr_lines": [],
+      "merged_len": 68,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": true,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": true,
+      "divergent": true
+    },
+    {
+      "arm": "s_stderr_nonerror_noise",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('WARNING: nondiagnostic noise\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "WARNING: nondiagnostic noise\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "WARNING: nondiagnostic noise"
+      ],
+      "merged_len": 72,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "s_stderr_blank",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        ""
+      ],
+      "merged_len": 44,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "s_sig_on_stderr",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('noise on stdout\\n'); sys.stderr.write('STREAM_STDOUT: expected attribution marker'+'\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "noise on stdout\n",
+      "raw_stderr": "STREAM_STDOUT: expected attribution marker\n",
+      "stdout_lines": [
+        "noise on stdout"
+      ],
+      "stderr_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "merged_len": 59,
+      "signature_in_stdout": false,
+      "signature_in_stderr": true,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "s_sig_seam_out_tail_err_head",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expect'); sys.stdout.flush(); sys.stderr.write('ed attribution marker'+'\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expect",
+      "raw_stderr": "ed attribution marker\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expect"
+      ],
+      "stderr_lines": [
+        "ed attribution marker"
+      ],
+      "merged_len": 43,
+      "signature_in_stdout": false,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "s_sig_seam_err_tail_out_head",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expect'+'\\ntrailer\\n'); sys.stdout.flush(); sys.stderr.write('lead\\n'+'ed attribution marker')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expect\ntrailer\n",
+      "raw_stderr": "lead\ned attribution marker",
+      "stdout_lines": [
+        "STREAM_STDOUT: expect",
+        "trailer"
+      ],
+      "stderr_lines": [
+        "lead",
+        "ed attribution marker"
+      ],
+      "merged_len": 56,
+      "signature_in_stdout": false,
+      "signature_in_stderr": false,
+      "signature_in_merged": false,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_script_error_stdout",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nSCRIPT ERROR: boom\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nSCRIPT ERROR: boom\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "SCRIPT ERROR: boom"
+      ],
+      "stderr_lines": [],
+      "merged_len": 62,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": true,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_script_error_stderr",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('SCRIPT ERROR: boom\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "SCRIPT ERROR: boom\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "SCRIPT ERROR: boom"
+      ],
+      "merged_len": 62,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": true,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_parse_error_stderr",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('Parse Error: boom\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "Parse Error: boom\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "Parse Error: boom"
+      ],
+      "merged_len": 61,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_error_seam_out_err",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nERR'); sys.stdout.flush(); sys.stderr.write('OR: seamed at merge\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nERR",
+      "raw_stderr": "OR: seamed at merge\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "ERR"
+      ],
+      "stderr_lines": [
+        "OR: seamed at merge"
+      ],
+      "merged_len": 66,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_stderr_split_error_evasion",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('ERR\\nOR: split inside stderr\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "ERR\nOR: split inside stderr\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "ERR",
+        "OR: split inside stderr"
+      ],
+      "merged_len": 71,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "s_stderr_prefix_allowed",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('ERROR: PREFIX, tail=anything\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: PREFIX,"
+      ],
+      "allowed_stderr": [
+        "ERROR: PREFIX,"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "ERROR: PREFIX, tail=anything\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "ERROR: PREFIX, tail=anything"
+      ],
+      "merged_len": 72,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": true,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "s_stdout_prefix_allowed",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nERROR: PREFIX, tail=anything\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: PREFIX,"
+      ],
+      "allowed_stderr": [
+        "ERROR: PREFIX,"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nERROR: PREFIX, tail=anything\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "ERROR: PREFIX, tail=anything"
+      ],
+      "stderr_lines": [],
+      "merged_len": 72,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": true,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "s_wrong_exit",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); raise SystemExit(1)"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 1,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [],
+      "merged_len": 43,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_both_streams_error",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nERROR: out\\n'); sys.stderr.write('ERROR: err\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nERROR: out\n",
+      "raw_stderr": "ERROR: err\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "ERROR: out"
+      ],
+      "stderr_lines": [
+        "ERROR: err"
+      ],
+      "merged_len": 65,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": true,
+      "error_token_in_stderr": true,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_script_error_seam",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nSCRIPT ERR'); sys.stdout.flush(); sys.stderr.write('OR: blob forged at seam\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nSCRIPT ERR",
+      "raw_stderr": "OR: blob forged at seam\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "SCRIPT ERR"
+      ],
+      "stderr_lines": [
+        "OR: blob forged at seam"
+      ],
+      "merged_len": 77,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_stderr_allowed_plus_noise",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('ERROR: planted on stderr\\nWARNING: extra noise\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: planted on stderr"
+      ],
+      "allowed_stderr": [
+        "ERROR: planted on stderr"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "ERROR: planted on stderr\nWARNING: extra noise\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "ERROR: planted on stderr",
+        "WARNING: extra noise"
+      ],
+      "merged_len": 89,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": true,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "s_stderr_structured_entry",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('ERROR: chain incomplete collections=z scene=SceneB:<Node#9> old_alive=false\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: chain incomplete"
+      ],
+      "allowed_stderr": [
+        "ERROR: chain incomplete"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "ERROR: chain incomplete collections=z scene=SceneB:<Node#9> old_alive=false\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "ERROR: chain incomplete collections=z scene=SceneB:<Node#9> old_alive=false"
+      ],
+      "merged_len": 119,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": true,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "s_seam_error_head_allowlisted",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\ntail ends in ERROR'); sys.stdout.flush(); sys.stderr.write(': phantom seam line\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [
+        ": phantom seam line"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\ntail ends in ERROR",
+      "raw_stderr": ": phantom seam line\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "tail ends in ERROR"
+      ],
+      "stderr_lines": [
+        ": phantom seam line"
+      ],
+      "merged_len": 81,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": true,
+      "divergent": true
+    },
+    {
+      "arm": "s_seam_script_head_allowlisted",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\ntail ends in SCRIPT ERR'); sys.stdout.flush(); sys.stderr.write('OR: blob\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [
+        "OR: blob"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\ntail ends in SCRIPT ERR",
+      "raw_stderr": "OR: blob\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "tail ends in SCRIPT ERR"
+      ],
+      "stderr_lines": [
+        "OR: blob"
+      ],
+      "merged_len": 75,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": true,
+      "divergent": true
+    },
+    {
+      "arm": "s_sig_on_stderr_allowlisted",
+      "rep": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('noise on stdout\\n'); sys.stderr.write('STREAM_STDOUT: expected attribution marker'+'\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "raw_stdout": "noise on stdout\n",
+      "raw_stderr": "STREAM_STDOUT: expected attribution marker\n",
+      "stdout_lines": [
+        "noise on stdout"
+      ],
+      "stderr_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "merged_len": 59,
+      "signature_in_stdout": false,
+      "signature_in_stderr": true,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "g_stream_accept",
+      "rep": 0,
+      "command": [
+        "/usr/bin/godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r67-scribe/proj",
+        "--script",
+        "res://stream_attribution_probe.gd",
+        "--"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [],
+      "merged_len": 144,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "g_stream_reject",
+      "rep": 0,
+      "command": [
+        "/usr/bin/godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r67-scribe/proj",
+        "--script",
+        "res://stream_attribution_probe.gd",
+        "--",
+        "--stderr-unrelated"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "STREAM_STDERR: unrelated attribution diagnostic\n",
+      "stdout_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "STREAM_STDERR: unrelated attribution diagnostic"
+      ],
+      "merged_len": 192,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "s_clean_sig_stdout",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [],
+      "merged_len": 43,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "s_stdout_error",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nERROR: planted on stdout\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nERROR: planted on stdout\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "ERROR: planted on stdout"
+      ],
+      "stderr_lines": [],
+      "merged_len": 68,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": true,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": true,
+      "divergent": true
+    },
+    {
+      "arm": "s_stderr_error",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('ERROR: planted on stderr\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "ERROR: planted on stderr\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "ERROR: planted on stderr"
+      ],
+      "merged_len": 68,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": true,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_stderr_error_allowed",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('ERROR: planted on stderr\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: planted on stderr"
+      ],
+      "allowed_stderr": [
+        "ERROR: planted on stderr"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "ERROR: planted on stderr\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "ERROR: planted on stderr"
+      ],
+      "merged_len": 68,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": true,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "s_stdout_error_allowed",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nERROR: planted on stdout\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: planted on stdout"
+      ],
+      "allowed_stderr": [
+        "ERROR: planted on stdout"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nERROR: planted on stdout\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "ERROR: planted on stdout"
+      ],
+      "stderr_lines": [],
+      "merged_len": 68,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": true,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "s_stdout_error_foreign_allowed",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nERROR: planted on stdout\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: foreign"
+      ],
+      "allowed_stderr": [
+        "ERROR: foreign"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nERROR: planted on stdout\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "ERROR: planted on stdout"
+      ],
+      "stderr_lines": [],
+      "merged_len": 68,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": true,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": true,
+      "divergent": true
+    },
+    {
+      "arm": "s_stderr_nonerror_noise",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('WARNING: nondiagnostic noise\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "WARNING: nondiagnostic noise\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "WARNING: nondiagnostic noise"
+      ],
+      "merged_len": 72,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "s_stderr_blank",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        ""
+      ],
+      "merged_len": 44,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "s_sig_on_stderr",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('noise on stdout\\n'); sys.stderr.write('STREAM_STDOUT: expected attribution marker'+'\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "noise on stdout\n",
+      "raw_stderr": "STREAM_STDOUT: expected attribution marker\n",
+      "stdout_lines": [
+        "noise on stdout"
+      ],
+      "stderr_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "merged_len": 59,
+      "signature_in_stdout": false,
+      "signature_in_stderr": true,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "s_sig_seam_out_tail_err_head",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expect'); sys.stdout.flush(); sys.stderr.write('ed attribution marker'+'\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expect",
+      "raw_stderr": "ed attribution marker\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expect"
+      ],
+      "stderr_lines": [
+        "ed attribution marker"
+      ],
+      "merged_len": 43,
+      "signature_in_stdout": false,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "s_sig_seam_err_tail_out_head",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expect'+'\\ntrailer\\n'); sys.stdout.flush(); sys.stderr.write('lead\\n'+'ed attribution marker')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expect\ntrailer\n",
+      "raw_stderr": "lead\ned attribution marker",
+      "stdout_lines": [
+        "STREAM_STDOUT: expect",
+        "trailer"
+      ],
+      "stderr_lines": [
+        "lead",
+        "ed attribution marker"
+      ],
+      "merged_len": 56,
+      "signature_in_stdout": false,
+      "signature_in_stderr": false,
+      "signature_in_merged": false,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_script_error_stdout",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nSCRIPT ERROR: boom\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nSCRIPT ERROR: boom\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "SCRIPT ERROR: boom"
+      ],
+      "stderr_lines": [],
+      "merged_len": 62,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": true,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_script_error_stderr",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('SCRIPT ERROR: boom\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "SCRIPT ERROR: boom\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "SCRIPT ERROR: boom"
+      ],
+      "merged_len": 62,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": true,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_parse_error_stderr",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('Parse Error: boom\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "Parse Error: boom\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "Parse Error: boom"
+      ],
+      "merged_len": 61,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_error_seam_out_err",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nERR'); sys.stdout.flush(); sys.stderr.write('OR: seamed at merge\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nERR",
+      "raw_stderr": "OR: seamed at merge\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "ERR"
+      ],
+      "stderr_lines": [
+        "OR: seamed at merge"
+      ],
+      "merged_len": 66,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_stderr_split_error_evasion",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('ERR\\nOR: split inside stderr\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "ERR\nOR: split inside stderr\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "ERR",
+        "OR: split inside stderr"
+      ],
+      "merged_len": 71,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "s_stderr_prefix_allowed",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('ERROR: PREFIX, tail=anything\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: PREFIX,"
+      ],
+      "allowed_stderr": [
+        "ERROR: PREFIX,"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "ERROR: PREFIX, tail=anything\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "ERROR: PREFIX, tail=anything"
+      ],
+      "merged_len": 72,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": true,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "s_stdout_prefix_allowed",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nERROR: PREFIX, tail=anything\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: PREFIX,"
+      ],
+      "allowed_stderr": [
+        "ERROR: PREFIX,"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nERROR: PREFIX, tail=anything\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "ERROR: PREFIX, tail=anything"
+      ],
+      "stderr_lines": [],
+      "merged_len": 72,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": true,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "s_wrong_exit",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); raise SystemExit(1)"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 1,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [],
+      "merged_len": 43,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_both_streams_error",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nERROR: out\\n'); sys.stderr.write('ERROR: err\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nERROR: out\n",
+      "raw_stderr": "ERROR: err\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "ERROR: out"
+      ],
+      "stderr_lines": [
+        "ERROR: err"
+      ],
+      "merged_len": 65,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": true,
+      "error_token_in_stderr": true,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_script_error_seam",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\nSCRIPT ERR'); sys.stdout.flush(); sys.stderr.write('OR: blob forged at seam\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\nSCRIPT ERR",
+      "raw_stderr": "OR: blob forged at seam\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "SCRIPT ERR"
+      ],
+      "stderr_lines": [
+        "OR: blob forged at seam"
+      ],
+      "merged_len": 77,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": false,
+      "divergent": false
+    },
+    {
+      "arm": "s_stderr_allowed_plus_noise",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('ERROR: planted on stderr\\nWARNING: extra noise\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: planted on stderr"
+      ],
+      "allowed_stderr": [
+        "ERROR: planted on stderr"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "ERROR: planted on stderr\nWARNING: extra noise\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "ERROR: planted on stderr",
+        "WARNING: extra noise"
+      ],
+      "merged_len": 89,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": true,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "s_stderr_structured_entry",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\n'); sys.stderr.write('ERROR: chain incomplete collections=z scene=SceneB:<Node#9> old_alive=false\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [
+        "ERROR: chain incomplete"
+      ],
+      "allowed_stderr": [
+        "ERROR: chain incomplete"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "ERROR: chain incomplete collections=z scene=SceneB:<Node#9> old_alive=false\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "ERROR: chain incomplete collections=z scene=SceneB:<Node#9> old_alive=false"
+      ],
+      "merged_len": 119,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": true,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "s_seam_error_head_allowlisted",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\ntail ends in ERROR'); sys.stdout.flush(); sys.stderr.write(': phantom seam line\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [
+        ": phantom seam line"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\ntail ends in ERROR",
+      "raw_stderr": ": phantom seam line\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "tail ends in ERROR"
+      ],
+      "stderr_lines": [
+        ": phantom seam line"
+      ],
+      "merged_len": 81,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": true,
+      "divergent": true
+    },
+    {
+      "arm": "s_seam_script_head_allowlisted",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('STREAM_STDOUT: expected attribution marker'+'\\ntail ends in SCRIPT ERR'); sys.stdout.flush(); sys.stderr.write('OR: blob\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [
+        "OR: blob"
+      ],
+      "raw_stdout": "STREAM_STDOUT: expected attribution marker\ntail ends in SCRIPT ERR",
+      "raw_stderr": "OR: blob\n",
+      "stdout_lines": [
+        "STREAM_STDOUT: expected attribution marker",
+        "tail ends in SCRIPT ERR"
+      ],
+      "stderr_lines": [
+        "OR: blob"
+      ],
+      "merged_len": 75,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": false,
+      "verdict_streams": true,
+      "divergent": true
+    },
+    {
+      "arm": "s_sig_on_stderr_allowlisted",
+      "rep": 1,
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import sys; sys.stdout.write('noise on stdout\\n'); sys.stderr.write('STREAM_STDOUT: expected attribution marker'+'\\n')"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "raw_stdout": "noise on stdout\n",
+      "raw_stderr": "STREAM_STDOUT: expected attribution marker\n",
+      "stdout_lines": [
+        "noise on stdout"
+      ],
+      "stderr_lines": [
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "merged_len": 59,
+      "signature_in_stdout": false,
+      "signature_in_stderr": true,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    },
+    {
+      "arm": "g_stream_accept",
+      "rep": 1,
+      "command": [
+        "/usr/bin/godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r67-scribe/proj",
+        "--script",
+        "res://stream_attribution_probe.gd",
+        "--"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "",
+      "stdout_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [],
+      "merged_len": 144,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": true,
+      "divergent": false
+    },
+    {
+      "arm": "g_stream_reject",
+      "rep": 1,
+      "command": [
+        "/usr/bin/godot",
+        "--headless",
+        "--path",
+        "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r67-scribe/proj",
+        "--script",
+        "res://stream_attribution_probe.gd",
+        "--",
+        "--stderr-unrelated"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "error": null,
+      "signature": "STREAM_STDOUT: expected attribution marker",
+      "allowed_errors": [],
+      "allowed_stderr": [],
+      "raw_stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nSTREAM_STDOUT: expected attribution marker\n",
+      "raw_stderr": "STREAM_STDERR: unrelated attribution diagnostic\n",
+      "stdout_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "STREAM_STDOUT: expected attribution marker"
+      ],
+      "stderr_lines": [
+        "STREAM_STDERR: unrelated attribution diagnostic"
+      ],
+      "merged_len": 192,
+      "signature_in_stdout": true,
+      "signature_in_stderr": false,
+      "signature_in_merged": true,
+      "error_token_in_stdout": false,
+      "error_token_in_stderr": false,
+      "verdict_merged": true,
+      "verdict_streams": false,
+      "divergent": true
+    }
+  ]
+}

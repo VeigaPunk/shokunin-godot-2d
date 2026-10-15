@@ -1,0 +1,6 @@
+== demo A: buffered parent, os.system descendant ==
+INJECTEDHEAD  TAIL$
+== demo B: -u parent ==
+HEAD INJECTED TAIL$
+== demo C: flush=True head ==
+HEAD INJECTED TAIL$

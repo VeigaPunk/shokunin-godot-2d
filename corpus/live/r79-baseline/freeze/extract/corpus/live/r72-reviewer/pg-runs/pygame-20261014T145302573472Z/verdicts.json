@@ -1,0 +1,581 @@
+{
+  "python": "/usr/bin/python3",
+  "pygame_version": "2.6.1 SDL=2.32.72 python=3.14.7",
+  "pygame_version_exit": 0,
+  "pygame_version_error": null,
+  "probe": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/fixtures/pygame_probe.py",
+  "probe_exit": 0,
+  "probe_error": null,
+  "probe_elapsed_s": 8.965602,
+  "started_utc": "20261014T145302573472Z",
+  "done_marker": true,
+  "results": [
+    {
+      "case": "viab_init_ok",
+      "arm": "viability",
+      "key": "init_fail",
+      "pinned": "0",
+      "observed": "0",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "viab_driver_dummy",
+      "arm": "viability",
+      "key": "driver",
+      "pinned": "dummy",
+      "observed": "dummy",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "c60_n",
+      "arm": "cadence60",
+      "key": "n",
+      "pinned": "240",
+      "observed": "240",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "c60_mean_undershoot",
+      "arm": "cadence60",
+      "key": "dt_mean_ms",
+      "pinned": [
+        15.5,
+        16.66
+      ],
+      "observed": "16.065",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "c60_min",
+      "arm": "cadence60",
+      "key": "dt_min_ms",
+      "pinned": [
+        14.0,
+        16.5
+      ],
+      "observed": "16.015",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "c60_max",
+      "arm": "cadence60",
+      "key": "dt_max_ms",
+      "pinned": [
+        15.5,
+        30.0
+      ],
+      "observed": "16.854",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "c60_fps_over60",
+      "arm": "cadence60",
+      "key": "fps",
+      "pinned": [
+        60.5,
+        64.0
+      ],
+      "observed": "62.11",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "c0_n",
+      "arm": "cadence0",
+      "key": "n",
+      "pinned": "1200",
+      "observed": "1200",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "c0_mean_subms",
+      "arm": "cadence0",
+      "key": "dt_mean_ms",
+      "pinned": [
+        0.0,
+        0.1
+      ],
+      "observed": "0.0",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "c0_min",
+      "arm": "cadence0",
+      "key": "dt_min_ms",
+      "pinned": [
+        0.0,
+        0.01
+      ],
+      "observed": "0.0",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "c0_hz_uncapped",
+      "arm": "cadence0",
+      "key": "hz",
+      "pinned": [
+        20000.0,
+        1000000000.0
+      ],
+      "observed": "6529190.7",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "c0_max",
+      "arm": "cadence0",
+      "key": "dt_max_ms",
+      "pinned": [
+        0.0,
+        50.0
+      ],
+      "observed": "0.006",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_l1_exact",
+      "arm": "popen",
+      "key": "l1",
+      "pinned": "CHILD-MARK-1",
+      "observed": "CHILD-MARK-1",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_l2_exact",
+      "arm": "popen",
+      "key": "l2",
+      "pinned": "CHILD-MARK-2",
+      "observed": "CHILD-MARK-2",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_l1_wait_fast",
+      "arm": "popen",
+      "key": "l1_wait_ms",
+      "pinned": [
+        0.2,
+        30.0
+      ],
+      "observed": "5.33",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_l2_wait_writer",
+      "arm": "popen",
+      "key": "l2_wait_ms",
+      "pinned": [
+        110.0,
+        140.0
+      ],
+      "observed": "120.1",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_close_fast",
+      "arm": "popen",
+      "key": "close_wait_ms",
+      "pinned": [
+        0.0,
+        5.0
+      ],
+      "observed": "1.82",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_total",
+      "arm": "popen",
+      "key": "total_ms",
+      "pinned": [
+        115.0,
+        170.0
+      ],
+      "observed": "127.29",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popen_rest_empty",
+      "arm": "popen",
+      "key": "rest_len",
+      "pinned": "0",
+      "observed": "0",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "popenbuf_l1_held",
+      "arm": "popen_buf",
+      "key": "l1_wait_ms",
+      "pinned": [
+        110.0,
+        180.0
+      ],
+      "observed": "125.64",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "whs_bufsize",
+      "arm": "withhold_small",
+      "key": "bufsize",
+      "pinned": "131072",
+      "observed": "131072",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "whs_held_to_exit",
+      "arm": "withhold_small",
+      "key": "first_read_ms",
+      "pinned": [
+        180.0,
+        3000.0
+      ],
+      "observed": "205.36",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "whs_early_none",
+      "arm": "withhold_small",
+      "key": "early_bytes",
+      "pinned": "0",
+      "observed": "0",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "whb_first_early",
+      "arm": "withhold_big",
+      "key": "first_read_ms",
+      "pinned": [
+        60.0,
+        190.0
+      ],
+      "observed": "105.18",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "whb_mark1_rides",
+      "arm": "withhold_big",
+      "key": "mark1_ms",
+      "pinned": [
+        60.0,
+        190.0
+      ],
+      "observed": "105.18",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "whb_mark2_exit",
+      "arm": "withhold_big",
+      "key": "mark2_ms",
+      "pinned": [
+        180.0,
+        3000.0
+      ],
+      "observed": "205.33",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "whb_early_bytes",
+      "arm": "withhold_big",
+      "key": "early_bytes",
+      "pinned": [
+        100000.0,
+        210000.0
+      ],
+      "observed": "200007",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "whb_alive",
+      "arm": "withhold_big",
+      "key": "alive_at_first",
+      "pinned": "True",
+      "observed": "True",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "whf_first_early",
+      "arm": "withhold_fill",
+      "key": "first_read_ms",
+      "pinned": [
+        60.0,
+        190.0
+      ],
+      "observed": "105.77",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "whf_mark1_rides",
+      "arm": "withhold_fill",
+      "key": "mark1_ms",
+      "pinned": [
+        60.0,
+        190.0
+      ],
+      "observed": "105.77",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "whf_mark2_exit",
+      "arm": "withhold_fill",
+      "key": "mark2_ms",
+      "pinned": [
+        180.0,
+        3000.0
+      ],
+      "observed": "205.94",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "whf_early_bytes",
+      "arm": "withhold_fill",
+      "key": "early_bytes",
+      "pinned": [
+        60000.0,
+        135000.0
+      ],
+      "observed": "126007",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "whf_alive",
+      "arm": "withhold_fill",
+      "key": "alive_at_first",
+      "pinned": "True",
+      "observed": "True",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "pump_not_needed",
+      "arm": "pump",
+      "key": "pump_needed",
+      "pinned": "false",
+      "observed": "false",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "pump_updates_counted",
+      "arm": "pump",
+      "key": "frames_nopump",
+      "pinned": "400",
+      "observed": "400",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "pump_posted_survived",
+      "arm": "pump",
+      "key": "posted_survived",
+      "pinned": "1",
+      "observed": "1",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_buf_topo",
+      "arm": "reorder_buf",
+      "key": "topology",
+      "pinned": "prefix_reorder",
+      "observed": "prefix_reorder",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_buf_inj0",
+      "arm": "reorder_buf",
+      "key": "injected_at",
+      "pinned": "0",
+      "observed": "0",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_buf_head",
+      "arm": "reorder_buf",
+      "key": "head_at",
+      "pinned": "8",
+      "observed": "8",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_buf_bytes",
+      "arm": "reorder_buf",
+      "key": "wire_bytes",
+      "pinned": "19",
+      "observed": "19",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_buf_ret",
+      "arm": "reorder_buf",
+      "key": "ret",
+      "pinned": "0",
+      "observed": "0",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_bufsize",
+      "arm": "reorder_buf",
+      "key": "bufsize",
+      "pinned": "131072",
+      "observed": "131072",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_u_topo",
+      "arm": "reorder_unbuf",
+      "key": "topology",
+      "pinned": "midline_splice",
+      "observed": "midline_splice",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_u_head0",
+      "arm": "reorder_unbuf",
+      "key": "head_at",
+      "pinned": "0",
+      "observed": "0",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_u_bytes",
+      "arm": "reorder_unbuf",
+      "key": "wire_bytes",
+      "pinned": "19",
+      "observed": "19",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_fl_topo",
+      "arm": "reorder_flush",
+      "key": "topology",
+      "pinned": "midline_splice",
+      "observed": "midline_splice",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_fl_head0",
+      "arm": "reorder_flush",
+      "key": "head_at",
+      "pinned": "0",
+      "observed": "0",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_env_topo",
+      "arm": "reorder_env",
+      "key": "topology",
+      "pinned": "midline_splice",
+      "observed": "midline_splice",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_env_head0",
+      "arm": "reorder_env",
+      "key": "head_at",
+      "pinned": "0",
+      "observed": "0",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_late_topo",
+      "arm": "reorder_late",
+      "key": "topology",
+      "pinned": "append",
+      "observed": "append",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_late_head0",
+      "arm": "reorder_late",
+      "key": "head_at",
+      "pinned": "0",
+      "observed": "0",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "rord_late_tail",
+      "arm": "reorder_late",
+      "key": "tail_at",
+      "pinned": "6",
+      "observed": "6",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "self_fd1_piped",
+      "arm": "reorder_self",
+      "key": "fd1_isatty",
+      "pinned": "False",
+      "observed": "False",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "self_bufsize",
+      "arm": "reorder_self",
+      "key": "bufsize",
+      "pinned": "131072",
+      "observed": "131072",
+      "verdict": "PASS",
+      "reasons": []
+    },
+    {
+      "case": "self_wire_reorders",
+      "arm": "reorder_self",
+      "key": "wire_topology",
+      "pinned": "prefix_reorder",
+      "observed": "prefix_reorder",
+      "verdict": "PASS",
+      "reasons": []
+    }
+  ],
+  "totals": {
+    "cases": 55,
+    "pass": 55,
+    "fail": 0
+  },
+  "verdict": "PASS"
+}

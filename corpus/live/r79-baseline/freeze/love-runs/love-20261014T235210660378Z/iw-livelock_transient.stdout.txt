@@ -1,0 +1,18 @@
+IW | cell=livelock_transient | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=livelock_transient | built bodies=4 locked=false
+IW | cell=livelock_transient | evpin cb=bc locked=true step=4
+IW | cell=livelock_transient | evpin cb=pre locked=true step=4
+IW | cell=livelock_transient | evpin cb=post locked=true step=4
+IW | cell=livelock_transient | fire cb=bc kind=queue_body/throwall step=73 locked=true count=4 pos=400,520.1500244140625 vel=0,763.8724365234375
+IW | cell=livelock_transient | r78queue what=b1 ok=true err=nil dead_in_cb=false count=4
+IW | cell=livelock_transient | postfire cb=bc step=73 count=4 drain_n=0 aborts=0
+IW | cell=livelock_transient | evpin cb=ec locked=false step=73
+IW | cell=livelock_transient | r78drainec n=1 step=73 locked=false depth=0 in_cb=false count=4 dyn=b1 own=true own_n=1
+IW | cell=livelock_transient | r78drainact n=1 kind=throwall
+IW | cell=livelock_transient | r78wpcall n=1 step=73 update_ok=false err=R78-DRAIN-THROWALL srcline=1128 locked_after=false
+IW | cell=livelock_transient | r78wpext n=1 ok=true err=nil pos_after=999,999
+IW | cell=livelock_transient | r78recover step=74 locked_after=false count=3 b1pos=ERR:Attempt to use destroyed body. b1dead=true b3dead=false
+IW | cell=livelock_transient | r78nextstep step=74 count=3 b1pos=ERR:Attempt to use destroyed body. b3pos=650,519.85009765625 drain_n=1 aborts=1
+IW | cell=livelock_transient | final steps=200 count=3 b1pos=ERR:Attempt to use destroyed body. b2pos=240,520.7589111328125 bc=4 ec=4 pre=35 post=35 fired=true fire_step=73
+IW | cell=livelock_transient | r78obs step=200 locked=false count=3 b1pos=ERR:Attempt to use destroyed body. b3pos=650,519.85009765625 b1dead=true b3dead=false nest_n=0 nest_ok=0 depth=0 drain_n=1 aborts=1 in_cb=false
+IW | cell=livelock_transient | CELL_DONE

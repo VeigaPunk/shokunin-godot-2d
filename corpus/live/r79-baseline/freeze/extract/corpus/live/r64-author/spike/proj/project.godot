@@ -1,0 +1,3 @@
+[application]
+config/name="MechanicOneShotTest-r64spike"
+config/features=PackedStringArray("4.7")

@@ -1,0 +1,8 @@
+LOVE-ARM dtcadence | dt_max_ms=1.090 dt_mean_ms=1.044 dt_min_ms=0.004 n=120
+LOVE-ARM popen | close_wait_ms=0.12 l1=CHILD-MARK-1 l1_wait_ms=1.60 l2=CHILD-MARK-2 l2_wait_ms=120.54 open_ms=0.11 rest_len=0 ticks_before=121 total_ms=122.39
+LOVE-ARM osx | ms=1.26 ret_a=768 ret_b=nil ret_c=nil
+LOVE-ARM pump | pump_needed=false updates_without_pump=123
+LOVE_SPLICE_PROBE: expected ERROR: LOVE_MIDLINE forged splice
+signature
+LOVE-ARM splice | gap_ms=200 offset_ms=80
+LOVE_PROBE_DONE

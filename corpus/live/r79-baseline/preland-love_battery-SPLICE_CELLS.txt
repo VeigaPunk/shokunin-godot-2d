@@ -1,0 +1,11 @@
+SPLICE_CELLS = [
+    # (name, offset_ms, gap_ms, expected) — cells measured 3/3 by the r70
+    # critic's distinguishing probe (corpus/live/r70-critic/splice_probe).
+    # In-window: descendant write lands inside the head->tail gap and the
+    # captured line splices; beyond/crossed cells bound the referent as
+    # gap-relative (offset < gap fabricates, offset > gap does not).
+    ("splice_inwindow", 80, 200, "spliced"),
+    ("splice_beyond", 240, 200, "clean"),
+    ("splice_crossed", 300, 400, "spliced"),
+    ("splice_tight", 80, 50, "clean"),
+]

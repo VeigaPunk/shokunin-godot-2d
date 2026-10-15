@@ -1,0 +1,9 @@
+IW | cell=ext_destroy | viability love=11.5.0 codename=Mysterious Mysteries physics=true jit=LuaJIT 2.1.1788460057
+IW | cell=ext_destroy | built bodies=4 locked=false
+IW | cell=ext_destroy | ext_destroy ok=true err=nil count_before=4 count_after=3 b1pos_after=ERR:Attempt to use destroyed body.
+IW | cell=ext_destroy | evpin cb=bc locked=true step=4
+IW | cell=ext_destroy | evpin cb=pre locked=true step=4
+IW | cell=ext_destroy | evpin cb=post locked=true step=4
+IW | cell=ext_destroy | evpin cb=ec locked=true step=82
+IW | cell=ext_destroy | final steps=200 count=3 b1pos=ERR:Attempt to use destroyed body. b2pos=240,520.7589111328125 bc=3 ec=2 pre=34 post=34 fired=false fire_step=-1
+IW | cell=ext_destroy | CELL_DONE

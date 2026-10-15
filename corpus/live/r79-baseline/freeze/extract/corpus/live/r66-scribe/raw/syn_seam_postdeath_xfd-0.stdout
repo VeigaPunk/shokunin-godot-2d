@@ -1,0 +1,5 @@
+R66 child_pid=2331404
+DESCENDANT_PIPE spawned_pid=2331405
+R66_SURFACE_PROBE: expected signature
+SEAM_ERROR: R66 post-death xfd seam fabricated
+R66 write_ppid=1573

@@ -1,0 +1,4 @@
+drop rows: 110 verdict: PASS
+missing vs clean: ['phys2d_events_cm_on'] | added: []
+tuple diffs on common rows: []
+FAIL rows in drop run: []
