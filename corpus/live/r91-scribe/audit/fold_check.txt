@@ -1,0 +1,218 @@
+[
+ {
+  "case": "nav_lattice_census",
+  "arm": "census",
+  "expected_rc": 0,
+  "shell_rc": 0,
+  "expected_shell_rc": 0,
+  "pin_is_prefix_of_emitted": true,
+  "emitted_line_len": 649,
+  "pin_len": 649,
+  "tail_len": 0,
+  "tail_tokens_inside_pin": [],
+  "tail_tokens_after_pin": [],
+  "pass_lines": 1,
+  "stale_lines": 0,
+  "stderr_bytes": 0
+ },
+ {
+  "case": "nav_lattice_path",
+  "arm": "path",
+  "expected_rc": 0,
+  "shell_rc": 0,
+  "expected_shell_rc": 0,
+  "pin_is_prefix_of_emitted": true,
+  "emitted_line_len": 620,
+  "pin_len": 604,
+  "tail_len": 16,
+  "tail_tokens_inside_pin": [],
+  "tail_tokens_after_pin": [
+   "iter",
+   "settle"
+  ],
+  "pass_lines": 1,
+  "stale_lines": 0,
+  "stderr_bytes": 0
+ },
+ {
+  "case": "nav_lattice_query",
+  "arm": "query",
+  "expected_rc": 0,
+  "shell_rc": 0,
+  "expected_shell_rc": 0,
+  "pin_is_prefix_of_emitted": true,
+  "emitted_line_len": 623,
+  "pin_len": 607,
+  "tail_len": 16,
+  "tail_tokens_inside_pin": [],
+  "tail_tokens_after_pin": [
+   "iter",
+   "settle"
+  ],
+  "pass_lines": 1,
+  "stale_lines": 0,
+  "stderr_bytes": 0
+ },
+ {
+  "case": "nav_lattice_sync",
+  "arm": "sync",
+  "expected_rc": 0,
+  "shell_rc": 0,
+  "expected_shell_rc": 0,
+  "pin_is_prefix_of_emitted": true,
+  "emitted_line_len": 437,
+  "pin_len": 249,
+  "tail_len": 188,
+  "tail_tokens_inside_pin": [],
+  "tail_tokens_after_pin": [
+   "chg_iter_same",
+   "chg_iter_settled",
+   "dis_same",
+   "first_reach",
+   "first_reach_sync",
+   "gate",
+   "ladder"
+  ],
+  "pass_lines": 1,
+  "stale_lines": 0,
+  "stderr_bytes": 512
+ },
+ {
+  "case": "nav_lattice_region",
+  "arm": "region",
+  "expected_rc": 0,
+  "shell_rc": 0,
+  "expected_shell_rc": 0,
+  "pin_is_prefix_of_emitted": true,
+  "emitted_line_len": 1039,
+  "pin_len": 939,
+  "tail_len": 100,
+  "tail_tokens_inside_pin": [],
+  "tail_tokens_after_pin": [
+   "dis_same",
+   "iter",
+   "settle"
+  ],
+  "pass_lines": 1,
+  "stale_lines": 0,
+  "stderr_bytes": 0
+ },
+ {
+  "case": "nav_lattice_agent",
+  "arm": "agent",
+  "expected_rc": 0,
+  "shell_rc": 0,
+  "expected_shell_rc": 0,
+  "pin_is_prefix_of_emitted": true,
+  "emitted_line_len": 317,
+  "pin_len": 271,
+  "tail_len": 46,
+  "tail_tokens_inside_pin": [],
+  "tail_tokens_after_pin": [
+   "first_reachable",
+   "reached_at",
+   "walk_steps"
+  ],
+  "pass_lines": 1,
+  "stale_lines": 0,
+  "stderr_bytes": 0
+ },
+ {
+  "case": "nav_lattice_avoid",
+  "arm": "avoid",
+  "expected_rc": 0,
+  "shell_rc": 0,
+  "expected_shell_rc": 0,
+  "pin_is_prefix_of_emitted": true,
+  "emitted_line_len": 427,
+  "pin_len": 210,
+  "tail_len": 217,
+  "tail_tokens_inside_pin": [],
+  "tail_tokens_after_pin": [
+   "seq_a",
+   "seq_b",
+   "settle",
+   "sum_max",
+   "vel_a",
+   "vel_b"
+  ],
+  "pass_lines": 1,
+  "stale_lines": 0,
+  "stderr_bytes": 0
+ },
+ {
+  "case": "nav_lattice_bake",
+  "arm": "bake",
+  "expected_rc": 0,
+  "shell_rc": 0,
+  "expected_shell_rc": 0,
+  "pin_is_prefix_of_emitted": true,
+  "emitted_line_len": 585,
+  "pin_len": 554,
+  "tail_len": 31,
+  "tail_tokens_inside_pin": [],
+  "tail_tokens_after_pin": [
+   "iter_b",
+   "settle_a",
+   "settle_b"
+  ],
+  "pass_lines": 1,
+  "stale_lines": 0,
+  "stderr_bytes": 714
+ },
+ {
+  "case": "nav_lattice_link",
+  "arm": "link",
+  "expected_rc": 0,
+  "shell_rc": 0,
+  "expected_shell_rc": 0,
+  "pin_is_prefix_of_emitted": true,
+  "emitted_line_len": 741,
+  "pin_len": 618,
+  "tail_len": 123,
+  "tail_tokens_inside_pin": [],
+  "tail_tokens_after_pin": [
+   "fwd_disabled_same",
+   "iter",
+   "link_iter",
+   "settle"
+  ],
+  "pass_lines": 1,
+  "stale_lines": 0,
+  "stderr_bytes": 0
+ },
+ {
+  "case": "nav_lattice_teardown_crash",
+  "arm": "teardown_crash",
+  "expected_rc": -6,
+  "shell_rc": 134,
+  "expected_shell_rc": 134,
+  "pin_is_prefix_of_emitted": true,
+  "emitted_line_len": 52,
+  "pin_len": 52,
+  "tail_len": 0,
+  "tail_tokens_inside_pin": [],
+  "tail_tokens_after_pin": [],
+  "pass_lines": 0,
+  "stale_lines": 0,
+  "stderr_bytes": 77
+ },
+ {
+  "case": "nav_lattice_teardown_clean",
+  "arm": "teardown_clean",
+  "expected_rc": 0,
+  "shell_rc": 0,
+  "expected_shell_rc": 0,
+  "pin_is_prefix_of_emitted": true,
+  "emitted_line_len": 58,
+  "pin_len": 58,
+  "tail_len": 0,
+  "tail_tokens_inside_pin": [],
+  "tail_tokens_after_pin": [],
+  "pass_lines": 1,
+  "stale_lines": 0,
+  "stderr_bytes": 0
+ }
+]
+
+VIOLATIONS: 0
