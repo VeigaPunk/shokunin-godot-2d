@@ -60,7 +60,11 @@ class DrawTag extends Node2D:
 	var tag := ""
 	var sink: Array = []
 	var draws := 0
+	var queued := 0
 	func _ready() -> void:
+		queue_redraw()
+	func queue_tag() -> void:
+		queued += 1
 		queue_redraw()
 	func _draw() -> void:
 		draws += 1
@@ -245,6 +249,12 @@ func _arm_cam_comp() -> void:
 	var s4 := root.canvas_transform
 	var t4 := cam.get_target_position()
 	var c4 := cam.get_screen_center_position()
+	# C6 (r85 critic): a second-config composition witness — comp under
+	# s3 alone is an engine identity a constant could fake; s4 forces the
+	# same law to hold under a different live transform.
+	var n4 := n.get_global_transform_with_canvas()
+	var comp4 := s4 * n.global_transform
+	var comp4_ok := comp4 == n4
 	cam.anchor_mode = Camera2D.ANCHOR_MODE_DRAG_CENTER
 	cam.offset = Vector2.ZERO
 	cam.zoom = Vector2.ONE
@@ -258,10 +268,10 @@ func _arm_cam_comp() -> void:
 	var inv := s3.affine_inverse() * (s3 * Vector2(300, 200))
 	var inv_ok := _near(inv, Vector2(300, 200))
 	var s3_cf := _v(s3.origin + Vector2(32, 32) - s3.origin)
-	_finish("vp2=%s nocam=%s s0=%s s1=%s s2=%s s3=%s s4=%s s5=%s n3=%s comp=%s t0=%s c0=%s t3=%s c3=%s t4=%s c4=%s eq[cam_vp=%d screen=%d comp=%d inv=%d] probe=%s" % [
+	_finish("vp2=%s nocam=%s s0=%s s1=%s s2=%s s3=%s s4=%s s5=%s n3=%s comp=%s n4=%s comp4=%s t0=%s c0=%s t3=%s c3=%s t4=%s c4=%s eq[cam_vp=%d screen=%d comp=%d comp4=%d inv=%d] probe=%s" % [
 		str(root.get_visible_rect().size), _t(nocam), _t(s0), _t(s1), _t(s2), _t(s3), _t(s4), _t(s5),
-		_t(n3), _t(comp), _v(t0), _v(c0), _v(t3), _v(c3), _v(t4), _v(c4),
-		int(eq_cam_vp), int(eq_screen), int(comp_ok), int(inv_ok), s3_cf])
+		_t(n3), _t(comp), _t(n4), _t(comp4), _v(t0), _v(c0), _v(t3), _v(c3), _v(t4), _v(c4),
+		int(eq_cam_vp), int(eq_screen), int(comp_ok), int(comp4_ok), int(inv_ok), s3_cf])
 
 # ------------------------------------------------------- cam_zoom_center
 
@@ -284,10 +294,13 @@ func _arm_cam_zoom_center() -> void:
 	await _settle()
 	var ct2 := root.canvas_transform
 	var dsub := (ct2 * Vector2(10.5, -3.25)) - base
-	var sub_ok := absf(dsub.x + 1.5 / 60.0) < 0.0001
-	_finish("zoom=1.5 pos=10.5,-3.25 ct=%s screens=[%s] center_world=%s anchor_ok=%d dx=%s dy=%s sub60=%s sub_ok=%d ct2=%s" % [
+	var sub_dev := absf(dsub.x + 1.5 / 60.0)
+	var sub_ok := sub_dev < 0.0001
+	# C7 (r85 critic): the deviation is emitted at 9 decimals — "exactly
+	# -0.025" at 4dp laundered a 0.1% step error.
+	_finish("zoom=1.5 pos=10.5,-3.25 ct=%s screens=[%s] center_world=%s anchor_ok=%d dx=%s dy=%s sub60=%s sub_dev=%.9f sub_ok=%d ct2=%s" % [
 		_t(ct), "|".join(screens), _v(center_world), int(anchor_ok), _v(dx), _v(dy),
-		_v(dsub), int(sub_ok), _t(ct2)])
+		_v(dsub), sub_dev, int(sub_ok), _t(ct2)])
 
 # ------------------------------------------------------- cam_phase
 
@@ -489,7 +502,8 @@ func _arm_cl_stack() -> void:
 	for i in range(layers.size()):
 		var cl: CanvasLayer = layers[i][0]
 		var ch: Node2D = layers[i][1]
-		rows.append("L%d[wc=%s vx=%s fin=%s]" % [cl.layer,
+		rows.append("L%d[in=%d wc=%s vx=%s fin=%s]" % [cl.layer,
+			int(cl.is_inside_tree()),
 			_v(ch.get_global_transform_with_canvas().origin),
 			_v(ch.get_viewport_transform().origin),
 			_v(cl.get_final_transform().origin) if cl.has_method("get_final_transform") else "n/a"])
@@ -543,7 +557,10 @@ func _arm_cl_follow() -> void:
 		await _settle()
 		var wc := ch.get_global_transform_with_canvas()
 		var fin := cl.get_final_transform() if cl.has_method("get_final_transform") else Transform2D.IDENTITY
-		rows.append("F%d[en=%d sc=%.1f wc=%s fin=%s]" % [i, int(cl.follow_viewport_enabled),
+		# C3 (r85 critic): `in` pins tree membership — an orphaned layer can
+		# otherwise emit an identical row.
+		rows.append("F%d[en=%d in=%d sc=%.1f wc=%s fin=%s]" % [i,
+			int(cl.follow_viewport_enabled), int(cl.is_inside_tree()),
 			cl.follow_viewport_scale, _v(wc.origin), _t(fin)])
 	# composition with a non-identity layer transform on a following layer
 	var cl2 := CanvasLayer.new()
@@ -646,7 +663,7 @@ func _arm_cl_draworder() -> void:
 			for dt in tags_list:
 				var d := dt as DrawTag
 				if d != null:
-					d.queue_redraw()
+					d.queue_tag()
 	while lane.phys <= 4:
 		await process_frame
 	var per := {}
@@ -674,9 +691,10 @@ func _arm_cl_draworder() -> void:
 			creation_order = false
 		if first_frame[i] != sorted_names[i]:
 			layer_sorted = false
-	_finish("seq=%s n=%d counts=%s first=[%s] later=[%s] hidden_draws=%d creation_order=%d layer_sorted=%d" % [
+	_finish("seq=%s n=%d counts=%s first=[%s] later=[%s] hidden_draws=%d hidden[in=%d vis=%d queued=%d] creation_order=%d layer_sorted=%d" % [
 		"|".join(frames), sink.size(), str(per), ",".join(first_frame), ",".join(later),
-		htag.draws, int(creation_order), int(layer_sorted)])
+		htag.draws, int(hidden.is_inside_tree()), int(hidden.visible),
+		htag.queued, int(creation_order), int(layer_sorted)])
 
 # ------------------------------------------------------- vp_worlds
 
@@ -737,6 +755,7 @@ func _arm_vp_render_indep() -> void:
 	# L1: own world, static camera (100,50) zoom 2
 	# L2: own world, camera moving + zooming every physics frame
 	# L3: root world, camera moving + a CanvasLayer offset written every frame
+	var v2cam: Camera2D = null
 	for i in range(3):
 		var sv := SubViewport.new()
 		sv.name = "V%d" % i
@@ -754,6 +773,7 @@ func _arm_vp_render_indep() -> void:
 		if i == 2:
 			var c2 := _mk_cam(sv, Vector2.ZERO)
 			c2.make_current()
+			v2cam = c2
 			var lane := _mk_lane("mv")
 			lane.phys_hook = func(l: Lane, _d: float):
 				c2.position = Vector2(float(l.phys) / 60.0, float(l.phys) / 120.0)
@@ -787,8 +807,11 @@ func _arm_vp_render_indep() -> void:
 		if _v(bodies[i].position) != _v(bodies[0].position):
 			eq4 = false
 	var names := "|".join(tags)
-	_finish("names=%s pos=[%s] eq_exact=%d eq_4dp=%d root_ct=%s" % [
-		names, "|".join(vals), int(eq_exact), int(eq4), _v(root.canvas_transform.origin)])
+	# C2 (r85 critic): read back the V2 camera and the ROOT CanvasLayer
+	# writes — unwitnessed, both could be dropped and the row still passes.
+	_finish("names=%s pos=[%s] eq_exact=%d eq_4dp=%d root_ct=%s v2cam[pos=%s zoom=%s] cloff=%s" % [
+		names, "|".join(vals), int(eq_exact), int(eq4), _v(root.canvas_transform.origin),
+		_v(v2cam.position), _v(v2cam.zoom), _v(cl.offset)])
 
 # ------------------------------------------------------- vp_subcam
 
@@ -846,13 +869,15 @@ func _arm_par_layer() -> void:
 	rows.append("cam128[wc=%s lp=%s]" % [_v(ch.get_global_transform_with_canvas().origin), _v(pl.position)])
 	pl.motion_mirroring = Vector2(100, 0)
 	await _settle()
-	rows.append("mirror100[cam128 wc=%s lp=%s]" % [_v(ch.get_global_transform_with_canvas().origin), _v(pl.position)])
+	rows.append("mirror100[mm=%s cam128 wc=%s lp=%s]" % [_v(pl.motion_mirroring),
+		_v(ch.get_global_transform_with_canvas().origin), _v(pl.position)])
 	cam.position = Vector2(150, 0)
 	await _settle()
 	rows.append("cam150mirror[wc=%s lp=%s]" % [_v(ch.get_global_transform_with_canvas().origin), _v(pl.position)])
 	pl.motion_offset = Vector2(10, 0)
 	await _settle()
-	rows.append("moff10[wc=%s lp=%s]" % [_v(ch.get_global_transform_with_canvas().origin), _v(pl.position)])
+	rows.append("moff10[mo=%s wc=%s lp=%s]" % [_v(pl.motion_offset),
+		_v(ch.get_global_transform_with_canvas().origin), _v(pl.position)])
 	pl.motion_mirroring = Vector2.ZERO
 	pl.motion_offset = Vector2.ZERO
 	await _settle()
@@ -883,11 +908,13 @@ func _arm_par_layer() -> void:
 			_v(pl2.position)])
 		pl2.motion_mirroring = Vector2(100, 0)
 		await _settle()
-		rows.append("pbgmirror[wc=%s lp=%s]" % [_v(ch2.get_global_transform_with_canvas().origin),
+		rows.append("pbgmirror[mm=%s wc=%s lp=%s]" % [_v(pl2.motion_mirroring),
+			_v(ch2.get_global_transform_with_canvas().origin),
 			_v(pl2.position)])
 		pl2.motion_offset = Vector2(10, 0)
 		await _settle()
-		rows.append("pbgmoff[wc=%s lp=%s]" % [_v(ch2.get_global_transform_with_canvas().origin),
+		rows.append("pbgmoff[mo=%s wc=%s lp=%s]" % [_v(pl2.motion_offset),
+			_v(ch2.get_global_transform_with_canvas().origin),
 			_v(pl2.position)])
 		pl2.motion_offset = Vector2.ZERO
 		pl2.motion_mirroring = Vector2.ZERO
@@ -971,7 +998,11 @@ func _arm_par_2d() -> void:
 	p2.screen_offset = Vector2(7, 3)
 	await _settle()
 	rows.append("screen_off[off=%s wc=%s]" % [_v(p2.scroll_offset), _v(p2.get_global_transform_with_canvas().origin)])
-	_finish("cam=%s rows=[%s]" % [_v(cam.position), "|".join(rows)])
+	# C4 (r85 critic): pin the writes themselves — rep/fv/so could be
+	# dropped without changing any emitted wc.
+	_finish("cam=%s rep=%sx%d fv=%d so=%s ign=%d rows=[%s]" % [_v(cam.position),
+		_v(p2.repeat_size), p2.repeat_times, int(p2.follow_viewport),
+		_v(p2.screen_offset), int(p2.ignore_camera_scroll), "|".join(rows)])
 
 # ------------------------------------------------------- par_phase
 

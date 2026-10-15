@@ -55,7 +55,7 @@ it (§3.1).
 |---|---|---|---|---|---|
 | 1 | `camera_proc_cam_comp` | `cam_comp` | canvas-transform composition law pinned as transforms | 0 | — |
 | 2 | `camera_proc_cam_zoom_center` | `cam_zoom_center` | world point at screen centre under fractional zoom | 0 | — |
-| 3 | `camera_proc_cam_phase` | `cam_phase` | camera writes are cached, not live: the visibility ladder | 0 | — |
+| 3 | `camera_proc_cam_phase` | `cam_phase` | transform writes (position/rotation) are deferred to the visibility ladder — **fold-bound**: per boundary F5, `zoom`/`offset`/`anchor_mode`/`limit*` writes are LIVE (`_update_scroll()` synchronously); the "cached" claim holds for transform writes only | 0 | — |
 | 4 | `camera_proc_cam_subpixel` | `cam_subpixel` | 1/60 fixed-tps moves are sub-pixel exact | 0 | — |
 | 5 | `camera_proc_cam_space` | `cam_space` | the four transform spaces; stretch transform's seat | 0 | — |
 | 6 | `camera_proc_cl_stack` | `cl_stack` | CanvasLayer value is render metadata only | 0 | — |
