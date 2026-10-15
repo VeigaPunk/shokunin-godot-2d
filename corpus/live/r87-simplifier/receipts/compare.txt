@@ -1,0 +1,39 @@
+before=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r87-simplifier/before/20261015T173035054065Z/verdicts.json verdict=FAIL rows=207
+after =/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r87-simplifier/after/20261015T173808425241Z/verdicts.json verdict=PASS rows=207
+common=207 new_only=[] old_only=[]
+tuple_mismatches=1 ['input_lattice_api_press']
+output-normalized identical=196 differing=['input_lattice_api_press', 'input_lattice_pre_frame', 'input_lattice_release_edge', 'input_lattice_ui_ns'] not-carried=7
+--- TUPLE-MISMATCH input_lattice_api_press
+    output: BEFORE=['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org', '', 'R83 arm=api_press godot=4.7.2-stable (arch_linux) acc=true tps=60', 'PASS input_lattice api_press imm[1/0.70/1/0] raw=0.70 pl=["ap"] recv=[] pr=["pr0{ap=1/0.70/1/0}", "pr1{ap=1/0.70/0/0}", "p
+    output: AFTER =['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org', '', 'R83 arm=api_press godot=4.7.2-stable (arch_linux) acc=true tps=60', 'PASS input_lattice api_press imm[1/0.70/1/0] raw=0.70 pl=["ap"] recv=[] pr=["pr0{ap=1/0.70/1/0}", "pr1{ap=1/0.70/0/0}", "p
+    verdict: BEFORE=FAIL
+    verdict: AFTER =PASS
+
+new cells: 25
+SAME ei_bound_refusal: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_acc_flush: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_acc_off: before_verdict=PASS after_verdict=PASS payload_equal=True
+BIMODAL-OK input_lattice_api_press: before_verdict=FAIL after_verdict=PASS payload_equal=False
+SAME input_lattice_burst: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_census: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_conflict: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_dev_joy: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_dispatch_order: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_dz_ladder: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_echo_edge: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_imap_erase: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_imap_mid_cb: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_joy_axis: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_key_map: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_mouse_hdls: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_null_edge: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_phys_peer: before_verdict=PASS after_verdict=PASS payload_equal=True
+BIMODAL-OK input_lattice_pre_frame: before_verdict=PASS after_verdict=PASS payload_equal=False
+SAME input_lattice_press_idle: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_press_phys: before_verdict=PASS after_verdict=PASS payload_equal=True
+SAME input_lattice_reentrant: before_verdict=PASS after_verdict=PASS payload_equal=True
+BIMODAL-OK input_lattice_release_edge: before_verdict=PASS after_verdict=PASS payload_equal=False
+BIMODAL-OK input_lattice_ui_ns: before_verdict=PASS after_verdict=PASS payload_equal=False
+SAME r87_edge_jpbe: before_verdict=PASS after_verdict=PASS payload_equal=True
+tuples-before.txt sha256=800e26fbcd87cb177b60e693fe882d0e15282f06bdafa0c9b7f7c6ca186d96d7
+tuples-after.txt sha256=50db2dd1bb09a9cffadcc88ebe1085ff968076fb3858e5e86696d1341979acc3

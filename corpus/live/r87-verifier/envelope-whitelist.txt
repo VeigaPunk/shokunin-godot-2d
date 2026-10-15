@@ -1,0 +1,14 @@
+envelope rows: ['input_lattice_pre_frame', 'input_lattice_press_phys', 'input_lattice_release_edge', 'input_lattice_ui_ns']
+## input_lattice_pre_frame whitelist_n=2
+  [0] PASS input_lattice pre_frame imm0[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pf0,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pf0:1/0|I1/1/0] echo0 2:uhs0@pr+1/ph~:A(pf0,p=1,s=1
+  [1] PASS input_lattice pre_frame imm0[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pf0,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pf0:1/0|I1/1/0] echo0 2:uhs0@pr+1/ph~:A(pf0,p=1,s=1
+## input_lattice_press_phys whitelist_n=2
+  [0] PASS input_lattice press_phys imm[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pp,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pp:1/0|I1/1/0] echo0 2:uhs0@pr+1/ph~:A(pp,p=1,s=1.00
+  [1] PASS input_lattice press_phys imm[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pp,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pp:1/0|I1/1/0] echo0 2:uhs0@pr+1/ph~:A(pp,p=1,s=1.00
+## input_lattice_release_edge whitelist_n=2
+  [0] PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[re:1/0|I1/1/0] echo0 2:uhs0@pr+0/ph~:A(re,p=1,s=1.
+  [1] PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[re:1/0|I1/1/0] echo0 2:uhs0@pr+0/ph~:A(re,p=1,s=1.
+## input_lattice_ui_ns whitelist_n=2
+  [0] PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_accept", "ui_text_newline", "ui_text_submit"] ua_has_a
+  [1] PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_accept", "ui_text_newline", "ui_text_submit"] ua_has_a
+total CASES: 200

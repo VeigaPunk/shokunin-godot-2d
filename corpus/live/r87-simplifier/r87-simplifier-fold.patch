@@ -1,0 +1,72 @@
+--- a/corpus/fixtures/input_lattice.gd
++++ b/corpus/fixtures/input_lattice.gd
+@@ -190,16 +190,6 @@
+ 			break
+ 	return "pre=%s post_ph=[%s] post_pr=[%s]" % [pre, " ".join(post_ph), " ".join(post_pr)]
+ 
+-func _fmt_ticks_d(mask_ph: bool = false) -> String:
+-	var out: Array = []
+-	for t in ticks:
+-		if t.k == "EV":
+-			out.append("EV%d@pr+%d/ph%s" % [t.seq, t.prd,
+-				"~" if mask_ph else "+%d" % t.d])
+-		else:
+-			out.append("%s%d{%s}" % [t.k, t.d, t.st])
+-	return "[" + " ".join(out) + "]"
+-
+ func _act(name: StringName, pressed: bool, strength: float = 1.0, device: int = -1) -> InputEventAction:
+ 	var e := InputEventAction.new()
+ 	e.action = name
+@@ -405,8 +395,6 @@
+ 	InputMap.add_action(&"pf0")
+ 	_mark()
+ 	Input.parse_input_event(_act(&"pf0", true))
+-	flags["ph0"] = phys_no
+-	flags["pr0"] = proc_no
+ 	var imm0 := _st(&"pf0")
+ 	_mk_sink("s0")
+ 	watch = [&"pf0"]
+@@ -594,8 +582,6 @@
+ func _arm_imap_erase() -> void:
+ 	var s := _mk_sink("s0")
+ 	_bind(&"er", _key(KEY_Z))
+-	watch = [&"er"]
+-	ev_watch = true
+ 	await _pr_frames(2)
+ 	Input.parse_input_event(_key(KEY_Z, true))
+ 	await _pr_frames(2)
+@@ -622,8 +608,6 @@
+ 	_bind(&"cb_a", _key(KEY_F5))
+ 	_bind(&"cb_b", _key(KEY_F6))
+ 	_mk_sink("s0")
+-	watch = [&"cb_b"]
+-	ev_watch = true
+ 	# During delivery of the F5 event, erase cb_b — a real mid-dispatch
+ 	# InputMap mutation; the already-buffered F6 event is flushed after it.
+ 	flags["on_event"] = func(e: InputEvent, _via: String, _tag: String) -> void:
+@@ -653,7 +637,6 @@
+ 	ev_watch = true
+ 	_bind(&"cx", _key(KEY_ENTER))
+ 	var ua_n := InputMap.action_get_events(&"ui_accept").size()
+-	_mark()
+ 	await _pr_frames(2)
+ 	_mark()
+ 	Input.parse_input_event(_key(KEY_ENTER, true))
+@@ -770,8 +753,6 @@
+ func _arm_dispatch_order() -> void:
+ 	_mk_sink("s0")
+ 	_mk_sink("s1")
+-	_bind(&"do", _key(KEY_F8))
+-	watch = [&"do"]
+ 	await _pr_frames(2)
+ 	Input.parse_input_event(_key(KEY_F8, true))
+ 	await _pr_frames(2)
+@@ -790,8 +771,6 @@
+ 	_mk_sink("s0")
+ 	InputMap.add_action(&"ra")
+ 	InputMap.add_action(&"rb")
+-	watch = [&"ra", &"rb"]
+-	ev_watch = true
+ 	flags["on_event"] = func(e: InputEvent, via: String, _tag: String) -> void:
+ 		if via != "in":
+ 			return

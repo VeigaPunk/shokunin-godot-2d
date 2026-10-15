@@ -1,0 +1,28 @@
+runs audited: 8
+OK       input_lattice_census             distinct=1 whitelist=1 runs=8
+OK       input_lattice_press_idle         distinct=1 whitelist=1 runs=8
+OK       input_lattice_acc_off            distinct=1 whitelist=1 runs=8
+OK       input_lattice_acc_flush          distinct=1 whitelist=1 runs=8
+OK       input_lattice_pre_frame          distinct=2 whitelist=2 runs=8
+OFF-PIN  input_lattice_api_press          distinct=2 whitelist=1 runs=8
+   OFF-PIN: PASS input_lattice api_press imm[1/0.70/1/0] raw=0.70 pl=["ap"] recv=[] pr=["pr0{ap=1/0.70/1/0}", "pr1{ap=1/0.70/0/0}", "pr2{ap=0/0.00/0/1}"] ph=["ph1{ap=1/0.70/1/0}", "ph2{ap=0/0.00/0/0}", "ph3{ap=0/
+OK       input_lattice_burst              distinct=1 whitelist=1 runs=8
+OK       input_lattice_dz_ladder          distinct=1 whitelist=1 runs=8
+OK       input_lattice_joy_axis           distinct=1 whitelist=1 runs=8
+OK       input_lattice_echo_edge          distinct=1 whitelist=1 runs=8
+OK       input_lattice_key_map            distinct=1 whitelist=1 runs=8
+OK       input_lattice_imap_erase         distinct=1 whitelist=1 runs=8
+OK       input_lattice_imap_mid_cb        distinct=1 whitelist=1 runs=8
+OK       input_lattice_conflict           distinct=1 whitelist=1 runs=8
+OK       input_lattice_dev_joy            distinct=1 whitelist=1 runs=8
+OK       input_lattice_mouse_hdls         distinct=1 whitelist=1 runs=8
+OK       input_lattice_null_edge          distinct=1 whitelist=1 runs=8
+OK       input_lattice_dispatch_order     distinct=1 whitelist=1 runs=8
+OK       input_lattice_reentrant          distinct=1 whitelist=1 runs=8
+OK       input_lattice_phys_peer          distinct=1 whitelist=1 runs=8
+OK       input_lattice_press_phys         distinct=2 whitelist=2 runs=8
+OK       input_lattice_release_edge       distinct=2 whitelist=2 runs=8
+OK       input_lattice_ui_ns              distinct=2 whitelist=2 runs=8
+OK       r87_edge_jpbe                    distinct=1 whitelist=1 runs=8
+OK       ei_bound_refusal                 distinct=1 whitelist=1 runs=8
+ALPHABET-AUDIT FAIL ['input_lattice_api_press']

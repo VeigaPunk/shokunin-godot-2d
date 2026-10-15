@@ -1,0 +1,23 @@
+=== pre_frame: before_modes=2 after_modes=2 reps=20
+  before x16 sha=f4da75c46f2a tail=...ticks=pre=pr{pf0=0/0.00/0/0} post_ph=[ph+0{pf0=1/1.00/1/0}] post_pr=[pr+0{pf0=1/1.00/1/0}]
+  before x4 sha=a2d0eb87c556 tail=...:1/0|I1/1/0] echo0] ticks=pre=pr{pf0=0/0.00/0/0} post_ph=[] post_pr=[pr+0{pf0=1/1.00/1/0}]
+  after x13 sha=f4da75c46f2a tail=...ticks=pre=pr{pf0=0/0.00/0/0} post_ph=[ph+0{pf0=1/1.00/1/0}] post_pr=[pr+0{pf0=1/1.00/1/0}]
+  after x7 sha=a2d0eb87c556 tail=...:1/0|I1/1/0] echo0] ticks=pre=pr{pf0=0/0.00/0/0} post_ph=[] post_pr=[pr+0{pf0=1/1.00/1/0}]
+=== api_press: before_modes=1 after_modes=1 reps=20
+  before x20 sha=91fbc03f0698 tail=...pr2{ap=0/0.00/0/1}"] ph=["ph1{ap=1/0.70/1/1}", "ph2{ap=0/0.00/0/0}", "ph3{ap=0/0.00/0/1}"]
+  after x20 sha=91fbc03f0698 tail=...pr2{ap=0/0.00/0/1}"] ph=["ph1{ap=1/0.70/1/1}", "ph2{ap=0/0.00/0/0}", "ph3{ap=0/0.00/0/1}"]
+=== ui_ns: before_modes=2 after_modes=2 reps=12
+  before x8 sha=60dfd4eaf6e8 tail=...(kc=4194309,ph=0,pr=0,echo=0,dev=16,u=0,sh=0) m[ui_accept:gone|Igone,cx:0/1|I0/0/1] echo0]
+  before x4 sha=536006f86237 tail=...(kc=4194309,ph=0,pr=0,echo=0,dev=16,u=0,sh=0) m[ui_accept:gone|Igone,cx:0/1|I0/0/1] echo0]
+  after x7 sha=60dfd4eaf6e8 tail=...(kc=4194309,ph=0,pr=0,echo=0,dev=16,u=0,sh=0) m[ui_accept:gone|Igone,cx:0/1|I0/0/1] echo0]
+  after x5 sha=536006f86237 tail=...(kc=4194309,ph=0,pr=0,echo=0,dev=16,u=0,sh=0) m[ui_accept:gone|Igone,cx:0/1|I0/0/1] echo0]
+=== release_edge: before_modes=2 after_modes=2 reps=12
+  before x9 sha=92eb65ffea2a tail=...ph+1{re=0/0.00/0/0} ph+2{re=0/0.00/0/0}] post_pr=[pr+0{re=0/0.00/0/1} pr+1{re=0/0.00/0/0}]
+  before x3 sha=293c74981f02 tail=...ph+1{re=0/0.00/0/0} ph+2{re=0/0.00/0/0}] post_pr=[pr+0{re=0/0.00/0/1} pr+1{re=0/0.00/0/0}]
+  after x7 sha=293c74981f02 tail=...ph+1{re=0/0.00/0/0} ph+2{re=0/0.00/0/0}] post_pr=[pr+0{re=0/0.00/0/1} pr+1{re=0/0.00/0/0}]
+  after x5 sha=92eb65ffea2a tail=...ph+1{re=0/0.00/0/0} ph+2{re=0/0.00/0/0}] post_pr=[pr+0{re=0/0.00/0/1} pr+1{re=0/0.00/0/0}]
+=== press_phys: before_modes=2 after_modes=2 reps=12
+  before x9 sha=da192e0560da tail=...ph+1{pp=1/1.00/0/0} ph+2{pp=1/1.00/0/0}] post_pr=[pr+0{pp=1/1.00/1/0} pr+1{pp=1/1.00/0/0}]
+  before x3 sha=745a7b54776d tail=...ph+0{pp=1/1.00/1/0} ph+1{pp=1/1.00/0/0}] post_pr=[pr+0{pp=1/1.00/1/0} pr+1{pp=1/1.00/0/0}]
+  after x11 sha=da192e0560da tail=...ph+1{pp=1/1.00/0/0} ph+2{pp=1/1.00/0/0}] post_pr=[pr+0{pp=1/1.00/1/0} pr+1{pp=1/1.00/0/0}]
+  after x1 sha=745a7b54776d tail=...ph+0{pp=1/1.00/1/0} ph+1{pp=1/1.00/0/0}] post_pr=[pr+0{pp=1/1.00/1/0} pr+1{pp=1/1.00/0/0}]

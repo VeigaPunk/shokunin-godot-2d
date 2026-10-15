@@ -1,0 +1,13 @@
+IDENTICAL census: before_payloads=1 after_payloads=1 reps=3
+IDENTICAL press_idle: before_payloads=1 after_payloads=1 reps=3
+IDENTICAL api_press: before_payloads=1 after_payloads=1 reps=8
+IDENTICAL ui_ns: before_payloads=2 after_payloads=2 reps=6
+DIFF pre_frame: before_payloads=1 after_payloads=2 reps=6
+  only-after : PASS input_lattice pre_frame imm0[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pf0,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pf0:1/0|I1/1/0] echo0 2:uhs0@pr+1/ph~:A(pf0,p=1,s=1
+IDENTICAL imap_erase: before_payloads=1 after_payloads=1 reps=6
+IDENTICAL imap_mid_cb: before_payloads=1 after_payloads=1 reps=6
+IDENTICAL reentrant: before_payloads=1 after_payloads=1 reps=6
+IDENTICAL dispatch_order: before_payloads=1 after_payloads=1 reps=6
+IDENTICAL press_phys: before_payloads=2 after_payloads=2 reps=6
+IDENTICAL jpbe: before_payloads=1 after_payloads=1 reps=3
+REPS-FAILURES=1
