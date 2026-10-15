@@ -1,0 +1,3 @@
+8de8b3af9cc737edc3e5969b76bf049720266537ec366e03aa42702aa15406e9  corpus/fixtures/project.godot
+9784716b5d6932fa8e954a40bed2f17109d143a127ecaaabcea428c47d762a95  corpus/fixtures/geo2d_lattice.gd
+601c223ed7a32d91a877938c7b466c4e06caa2920ec6f35d7778d39b93dd5b5e  corpus/fixtures/input89_edges.gd
