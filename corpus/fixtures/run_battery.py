@@ -212,6 +212,58 @@ CASES = [
      "PASS phys2d_motion bds_windows oop=obj cnt=0 in_cb={ \"obj\": true, \"count\": 2 } in_phase=obj cnt=2 proc=obj cnt=2 integ_first={ \"count\": 0, \"lv\": (0.0, 65.33334) } integ_last={ \"count\": 2, \"lv\": (0.0383, -0.006104) }"),
     ("phys2d_motion_cont_persist", "phys2d_motion.gd", ["--arm=cont_persist"], 0,
      "PASS phys2d_motion cont_persist entry_f=4 exit_f=5 seq[frame,size]=[[5, 1], [6, 0], [7, 0], [8, 0], [9, 0], [10, 0], [11, 0]]"),
+    # r81: Godot-4 2D joint lattice + collision layer/mask lattice — the
+    # Joint2D/Joint server family, the layer/mask detection-vs-response split,
+    # and the Area2D gates. Pinned from r81-scout §1.1-1.3 (20 arms, measured x3
+    # byte-stable); fixture `phys2d_joints.gd` is the scout probe
+    # (`corpus/live/r81-scout/proj/phys2d_jl.gd`, sha256 50da7ae5…) with the
+    # comment header conformed and the family token renamed to the assigned
+    # fixture name; every measured value is verbatim (see r81-author report).
+    # Same ordering constraint as the r79/r80 blocks above: inserted ahead of the
+    # crash/descendant tail — probe_descendant_pipe_eof requires
+    # detached_descendant_orphaned_alive within the descendant's `sleep 8`
+    # lifetime, so no CASES rows may sit between
+    # descendant_pipe_detached_control and the meta probes.
+    ("phys2d_joints_joint_census", "phys2d_joints.gd", ["--arm=joint_census"], 0,
+     'PASS phys2d_joints joint_census cls=["Joint2D[\\"bias\\", \\"disable_collision\\", \\"node_a\\", \\"node_b\\"]", "PinJoint2D[\\"Angular Limit\\", \\"Motor\\", \\"angular_limit_enabled\\", \\"angular_limit_lower\\", \\"angular_limit_upper\\", \\"motor_enabled\\", \\"motor_target_velocity\\", \\"softness\\"]", "GrooveJoint2D[\\"initial_offset\\", \\"length\\"]", "DampedSpringJoint2D[\\"damping\\", \\"length\\", \\"rest_length\\", \\"stiffness\\"]"] srv=["damped_spring_joint_get_param(joint,param)", "damped_spring_joint_set_param(joint,param,value)", "joint_clear(joint)", "joint_create()", "joint_disable_collisions_between_bodies(joint,disable)", "joint_get_param(joint,param)", "joint_get_type(joint)", "joint_is_disabled_collisions_between_bodies(joint)", "joint_make_damped_spring(joint,anchor_a,anchor_b,body_a,body_b)", "joint_make_groove(joint,groove1_a,groove2_a,anchor_b,body_a,body_b)", "joint_make_pin(joint,anchor,body_a,body_b)", "joint_set_param(joint,param,value)", "pin_joint_get_flag(joint,flag)", "pin_joint_get_param(joint,param)", "pin_joint_set_flag(joint,flag,enabled)", "pin_joint_set_param(joint,param,value)"] consts=["DAMPED_SPRING_DAMPING=2", "DAMPED_SPRING_REST_LENGTH=0", "DAMPED_SPRING_STIFFNESS=1", "JOINT_PARAM_BIAS=0", "JOINT_PARAM_MAX_BIAS=1", "JOINT_PARAM_MAX_FORCE=2", "JOINT_TYPE_DAMPED_SPRING=2", "JOINT_TYPE_GROOVE=1", "JOINT_TYPE_MAX=3", "JOINT_TYPE_PIN=0", "PIN_JOINT_FLAG_ANGULAR_LIMIT_ENABLED=0", "PIN_JOINT_FLAG_MOTOR_ENABLED=1", "PIN_JOINT_LIMIT_LOWER=2", "PIN_JOINT_LIMIT_UPPER=1", "PIN_JOINT_MOTOR_TARGET_VELOCITY=3", "PIN_JOINT_SOFTNESS=0"] live=["unset_type=3", "unset_dis=true", "unset_bias=0.0000", "max_bias=340282001837565597733306976381245063168.0", "max_force=340282001837565597733306976381245063168.0", "pin_type=0", "pin_soft=0.0000", "pin_lu=0.0000", "pin_ll=0.0000", "pin_mtv=0.0000", "pin_flag_ang=false", "pin_flag_motor=false", "pin_bias=0.0000", "pin_dis=true", "groove_type=1", "groove_bias=0.0000", "spring_type=2", "spring_rest=200.0000", "spring_stiff=20.0000", "spring_damp=1.5000", "spring_dis=true"]'),
+    ("phys2d_joints_joint_unset_refusal", "phys2d_joints.gd", ["--arm=joint_unset_refusal"], 0,
+     "PASS phys2d_joints joint_unset_refusal before=[0.0, 0.0, 0.0, 0.0, false, false, 0.0, 0.0, 0.0] type_pin=0 after=[0.0, 0.0, 0.0, 0.0, false, false, 0.0, 0.0, 0.0] cleared_type=3 spring_after=[200.0, 20.0, 1.5]"),
+    ("phys2d_joints_joint_pin_tiers", "phys2d_joints.gd", ["--arm=joint_pin_tiers"], 0,
+     "PASS phys2d_joints joint_pin_tiers n_rel=(114.5184,164.2985) s_rel=(114.5184,164.2983) n_dist=200.2710 s_dist=200.2708 n2_dist=200.2708 n_type=0 s_type=0 n_np=/root/PA n_bias_prop=0.0000 n_bias_srv=0.0000 s_bias_srv=0.0000 n_soft_prop=0.0000 n_soft_srv=0.0000 s_soft_srv=0.0000 n_dis=true s_dis=true n_flag_ang=false n_flag_motor=false"),
+    ("phys2d_joints_joint_pin_clear", "phys2d_joints.gd", ["--arm=joint_pin_clear"], 0,
+     "PASS phys2d_joints joint_pin_clear pre=(176.7844,94.1389) pre_dist=200.2869 pre_vel=(-132.8277,256.8133) type_pre=0 type_post=3 bias_post=0.0000 soft_post=0.0000 post=(112.0589,219.2813) post_dist=246.2549 post_vel=(-126.3444,244.2782) type_rearm=0 end=(7.4813,246.2695) end_dist=246.3831"),
+    ("phys2d_joints_joint_node_clear", "phys2d_joints.gd", ["--arm=joint_node_clear"], 0,
+     "PASS phys2d_joints joint_node_clear pre=(176.7844,94.1389) type_pre=0 nudge_type=0 nudge_pos=(0.0000,100.0000) after_nudge=(110.6721,166.9125) dn_old=200.2710 dn_new=131.3346 dn_old2=200.2701 dn_new2=129.3275 type_post=3 post=(35.0778,218.2878) nudge2_type=3 end=(-38.0363,267.9774) end_d_old=270.6633 end_d_new=172.2300 valid=true na=true nb=true"),
+    ("phys2d_joints_joint_freed_rid", "phys2d_joints.gd", ["--arm=joint_freed_rid"], 0,
+     "PASS phys2d_joints joint_freed_rid pre=(176.7844,94.1389) type_freed=0 bias_freed=-1.0000 soft_freed=0.0000 type_remade=0 bias_remade=-1.0000 post=(112.0589,219.2813) late=(91.1935,259.6230) b_frozen=false b_valid=true"),
+    ("phys2d_joints_joint_node_freed_rid", "phys2d_joints.gd", ["--arm=joint_node_freed_rid"], 0,
+     "PASS phys2d_joints joint_node_freed_rid pre=(176.7844,94.1389) type_freed=0 rid_same=true type_again=0 valid=true post=(112.0589,219.2813) type_nudge=0 end=(50.4926,338.3154) end_dist=342.0626 b_frozen=false"),
+    ("phys2d_joints_joint_spring_env", "phys2d_joints.gd", ["--arm=joint_spring_env"], 0,
+     "PASS phys2d_joints joint_spring_env s0d0=(100.00,-58.47) s0d1=(90.11,-56.02) s0d4=(85.67,-55.37) s4d0=(75.96,-53.84) s4d1=(80.94,-54.93) s4d4=(83.18,-55.18) s16d0=(24.36,-45.70) s16d1=(58.15,-52.89) s16d4=(76.15,-54.72) s64d0=(-59.85,-63.83) s64d1=(8.37,-55.40) s64d4=(53.55,-53.88) nojoint=(100.00,-58.47) rb_s0d0=[50.0000,0.0000,0.0000] rb_s64d4=[50.0000,64.0000,4.0000] node_props=[l=100.0,r=50.0,s=64.0,d=1.0] node_srv=[50.0000,64.0000,1.0000] node_type=2 node_pos=(0.00,42.92)"),
+    ("phys2d_joints_joint_pin_params", "phys2d_joints.gd", ["--arm=joint_pin_params"], 0,
+     "PASS phys2d_joints joint_pin_params soft0[pos=(114.52,164.30) dist=200.2710 rot=0.9622 rb=[0.0000,0.0000,false,0.0000,0.0000,false,0.0000]] soft1[pos=(115.62,164.18) dist=200.8065 rot=0.9577 rb=[1.0000,0.0000,false,0.0000,0.0000,false,0.0000]] soft4[pos=(118.79,163.79) dist=202.3308 rot=0.9446 rb=[4.0000,0.0000,false,0.0000,0.0000,false,0.0000]] motor[pos=(113.18,165.18) dist=200.2333 rot=0.9722 rb=[0.0000,3.0000,true,0.0000,0.0000,false,0.0000]] limit[pos=(119.57,161.60) dist=201.0246 rot=0.8871 rb=[0.0000,0.0000,false,-0.5000,0.5000,true,0.0000]] bias1[pos=(114.08,164.34) dist=200.0545 rot=0.9640 rb=[0.0000,0.0000,false,0.0000,0.0000,false,1.0000]] motor_spin[pos=(200.00,0.00) dist=200.0000 rot=1.7255 rb=[0.0000,3.0000,true,0.0000,0.0000,false,0.0000]] limit_spin[pos=(200.00,0.00) dist=200.0000 rot=0.1694 rb=[0.0000,0.0000,false,-0.5000,0.5000,true,0.0000]]"),
+    ("phys2d_joints_joint_node_anchor", "phys2d_joints.gd", ["--arm=joint_node_anchor"], 0,
+     "PASS phys2d_joints joint_node_anchor created_at_100[d0=271.3221 d0b=272.7762 d100=223.8021 d100b=223.8015] moved_before_step[d0=200.2708 d0b=200.2699 d100=131.3344 d100b=129.3274] p2_pos=(0.0000,2100.0000)"),
+    ("phys2d_joints_joint_groove", "phys2d_joints.gd", ["--arm=joint_groove"], 0,
+     "PASS phys2d_joints joint_groove gst_node=(50.00,50.00) gst_srv_center=(0.01,50.00) gst_srv_jpos=(50.00,50.00) gnode=(-48.41,21.88) gsmallA=(-63.01,92.61) gsmallB=(-57.68,-40.85) gend_far=(0.00,5.99) gend_far_vel=(0.00,16.06) gend_near=(0.00,19.70) gend_near_vel=(-0.00,0.00) gnode_props=[l=100.0,off=0.0] gnode_type=1 j3_type=1 gnode_a_dis=true gsrv_a_dis=true"),
+    ("phys2d_joints_joint_disable_coll", "phys2d_joints.gd", ["--arm=joint_disable_coll"], 0,
+     "PASS phys2d_joints joint_disable_coll dis_true[acnt=0 bcnt=0 d=10.0000 a_pos=(0.00,0.00) b_pos=(10.00,0.00) rb=true] dis_false[acnt=1 bcnt=1 d=17.0493 a_pos=(-3.40,-1.45) b_pos=(13.40,1.45) rb=false] groove_default[rb=[true, true, true] acnt=0 bcnt=0 d=10.0000 a_pos=(0.00,0.00) b_pos=(10.00,0.00)] node_prop_default=[true, true, true] node_prop_false=[false, false, false] node_pos=[(-3.40,-1.45),(13.40,1.45)] static_default[rb=true dcnt=1 d_pos=(17.43,0.24)] static_enabled[rb=false dcnt=1 d_pos=(17.43,0.24)]"),
+    ("phys2d_joints_layer_or_table", "phys2d_joints.gd", ["--arm=layer_or_table"], 0,
+     "PASS phys2d_joints layer_or_table ctl_both[wl=1 wm=2 bl=2 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 body_only[wl=1 wm=0 bl=2 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 wall_only[wl=1 wm=2 bl=2 bm=0]ent=46 ext=59 x=114.0952 cross=1 cnt=0 neither[wl=1 wm=0 bl=2 bm=0]ent=-1 ext=-1 x=114.0952 cross=1 cnt=0"),
+    ("phys2d_joints_layer_zero_table", "phys2d_joints.gd", ["--arm=layer_zero_table"], 0,
+     "PASS phys2d_joints layer_zero_table z_body_l0[wl=1 wm=1 bl=0 bm=1]ent=46 ext=-1 x=88.2989 cross=0 cnt=2 z_body_m0[wl=1 wm=1 bl=1 bm=0]ent=46 ext=59 x=114.0952 cross=1 cnt=0 z_wall_l0m0[wl=0 wm=0 bl=1 bm=1]ent=-1 ext=-1 x=114.0952 cross=1 cnt=0 z_wall_l0m1[wl=0 wm=1 bl=1 bm=1]ent=46 ext=59 x=114.0952 cross=1 cnt=0"),
+    ("phys2d_joints_layer_dyn_pair", "phys2d_joints.gd", ["--arm=layer_dyn_pair"], 0,
+     "PASS phys2d_joints layer_dyn_pair a_scans_only[va=(-112.2546,0.0000) vb=(-112.2546,0.0000) xa=-37.02 xb=-17.32 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] b_scans_only[va=(112.2546,0.0000) vb=(112.2546,0.0000) xa=77.32 xb=97.02 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] both_scan[va=(0.0000,0.0000) vb=(0.0000,0.0000) xa=20.15 xb=39.85 crossed=0 acnt=2 bcnt=2 ent_a=11 ent_b=11] neither[va=(112.2546,0.0000) vb=(-112.2546,0.0000) xa=77.32 xb=-17.32 crossed=1 acnt=0 bcnt=0 ent_a=-1 ent_b=-1]"),
+    ("phys2d_joints_layer_flip_mid", "phys2d_joints.gd", ["--arm=layer_flip_mid"], 0,
+     "PASS phys2d_joints layer_flip_mid body_mask_off flip_f=40 x_at=88.2972 m_pre=1 wl_pre=1 cnt=[2,2,2] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=0 wl=1 | wall_layer_off flip_f=40 x_at=88.2972 m_pre=1 wl_pre=1 cnt=[2,2,2] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=0 | mask_off_move flip_f=40 x_at=88.2972 m_pre=1 wl_pre=1 cnt=[2,2,2] ent=23 ext=46 x_end=242.9471 vx_end=224.51 mask=0 wl=1 | body_mask_on flip_f=10 x_at=39.6352 m_pre=0 wl_pre=1 cnt=[0,0,0] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=1 | wall_layer_on flip_f=10 x_at=39.6352 m_pre=1 wl_pre=0 cnt=[0,0,0] ent=23 ext=-1 x_end=88.2882 vx_end=-0.01 mask=1 wl=1"),
+    ("phys2d_joints_layer_flip_cb", "phys2d_joints.gd", ["--arm=layer_flip_cb"], 0,
+     "PASS phys2d_joints layer_flip_cb direct ent=23 ext=-1 cb_cnt=2 after_write=0 x_end=88.6725 mask=0 | deferred ent=23 ext=-1 cb_cnt=2 after_write=1 x_end=88.6725 mask=0"),
+    ("phys2d_joints_area_lattice", "phys2d_joints.gd", ["--arm=area_lattice"], 0,
+     "PASS phys2d_joints area_lattice mon_a_only[am=true amab=false bm=false bmab=true a_ent=1 b_ent=0] mon_b_only[am=true amab=true bm=true bmab=false a_ent=0 b_ent=1] neither_mon[am=false amab=true bm=false bmab=true a_ent=0 b_ent=0] neither_mable[am=true amab=false bm=true bmab=false a_ent=0 b_ent=0] both_mutual[am=true amab=true bm=true bmab=true a_ent=1 b_ent=1] layer_off[am=true amab=true bm=true bmab=true a_ent=0 b_ent=0] a_scans_b[am=true amab=true bm=true bmab=true a_ent=1 b_ent=0] b_scans_a[am=true amab=true bm=true bmab=true a_ent=0 b_ent=1]"),
+    ("phys2d_joints_area_body_gate", "phys2d_joints.gd", ["--arm=area_body_gate"], 0,
+     "PASS phys2d_joints area_body_gate area_scans[am=true al=1 amask=2 bl=2 bm=0 ent=0] area_blind[am=true al=1 amask=1 bl=2 bm=0 ent=-1] area_scans_bmask[am=true al=1 amask=2 bl=2 bm=1 ent=0] area_blind_bmask[am=true al=1 amask=1 bl=2 bm=1 ent=-1]"),
+    ("phys2d_joints_area_entry_order", "phys2d_joints.gd", ["--arm=area_entry_order"], 0,
+     'PASS phys2d_joints area_entry_order created1=["o", "i", "b"] areas_first=["ob@0", "oa@0", "ib@0", "ia@0"] created2=["b", "o", "i"] body_first=["ob@0", "oa@0", "ib@0", "ia@0"]'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
@@ -582,6 +634,22 @@ def main():
                 "phys2d_motion_dss_wrongarg": ("ERROR: Required object \"rp_shape_query\" is null.",
                                          "ERROR: Required object \"rp_ray_query\" is null.",
                                          "ERROR: Required object \"rp_point_query\" is null.",),
+                "phys2d_joints_joint_unset_refusal": (
+                    'ERROR: Condition "joint->get_type() != JOINT_TYPE_DAMPED_SPRING" is true. Returning: 0',
+                    'ERROR: Condition "joint->get_type() != JOINT_TYPE_PIN" is true. Returning: 0',
+                    'ERROR: Condition "joint->get_type() != JOINT_TYPE_PIN" is true. Returning: false',
+                ),
+                "phys2d_joints_joint_pin_clear": (
+                    'ERROR: Condition "joint->get_type() != JOINT_TYPE_PIN" is true. Returning: 0',
+                ),
+                "phys2d_joints_joint_freed_rid": (
+                    'ERROR: Parameter "joint" is null.',
+                    'ERROR: Parameter "prev_joint" is null.',
+                ),
+                "phys2d_joints_joint_node_freed_rid": (
+                    'ERROR: Invalid ID.',
+                    'ERROR: Parameter "joint" is null.',
+                ),
             }.get(name, ())
             classifier = classify_audio_process if name == "audio_playback" else classify_process
             passed = detected if mutate else classifier(code, error, output, expected_exit, evidence, expected_errors)
