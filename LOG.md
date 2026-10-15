@@ -995,3 +995,21 @@
 - Seats: scout->author(Sol, died)/finisher(swe-2)->baseline->
   boundary+boundary-exec->critic(Sol)->verifier(zfl)->simplifier->
   scribe. ADMIT-corr.
+
+## round 80 — Godot-4 2D motion/query battery (phys2d_motion)
+
+- MOVE (f27f952): 28-row phys2d_motion battery — CCD ladder/edge/gap/
+  spin, body_test_motion/move_and_collide family, dss/bds read arms,
+  contact windows/persist/cap; battery 111 -> 139 rows.
+- VERIFIED: author 139/139 x2; verifier 139/139 x2 tuple-identical;
+  baseline 111/111 x4 pre-landing; forges (token flip, row deletion,
+  arm neuter) all killed; floor gate now covers phys2d_* prefix.
+- FOLDS: simplifier vfold 879->774 (proven); critic C1 expected_errors
+  prefix scope; C2 ccd_edge w[...] positive wall witness (collision_
+  layer=0 forge now fails); scribe F1-F7 record corrections.
+- RECORD: ccd_spin stays weak-labeled (bx_spin_clean spec'd);
+  cast_shape==disabled + recovery_as_collision inertness are
+  this-geometry; threaded twin bds_windows divergence named.
+- Seats: scout, author(swe-2), baseline(ds), boundary-audit(zfl),
+  critic(Sol), verifier(swe-2), simplifier(ds), scribe(zfl);
+  fold+adjudicator swe-2. ADMIT-corr.
