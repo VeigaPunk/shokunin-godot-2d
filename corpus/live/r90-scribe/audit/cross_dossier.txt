@@ -1,0 +1,14 @@
+OK rb_lattice_comread       added=['eng=PhysicsServer2D', 'tps=60'] removed=[]
+OK rb_lattice_comrefuse     added=['eng=PhysicsServer2D', 'tps=60'] removed=[]
+OK rb_lattice_contacts      added=['cb0_rel=1', 'eng=PhysicsServer2D', 'ncb=45', 'obs0_rel=1'] removed=[]
+OK rb_lattice_damp          added=['cb0_rel=1', 'eng=PhysicsServer2D', 'ncb=default=60|rep0=60|rep05=60|comb05=60', 'obs0_rel=1'] removed=[]
+OK rb_lattice_freezelock    added=['cb0_rel=1', 'eng=PhysicsServer2D', 'ncb=120', 'obs0_rel=1'] removed=[]
+OK rb_lattice_gravity       added=['cb0_rel=1', 'eng=PhysicsServer2D', 'ncb=60', 'obs0_rel=1'] removed=[]
+OK rb_lattice_impulse       added=['cb0_rel=1', 'eng=PhysicsServer2D', 'ncb=c_central=4|c_off=4|c_tq=4|r_tq=4|r_off=4', 'obs0_rel=1'] removed=[]
+OK rb_lattice_order         added=['cb0_rel=1', 'cbpf_dh=1:59', 'eng=PhysicsServer2D', 'obs0_rel=1'] removed=[]
+OK rb_lattice_props         added=['eng=PhysicsServer2D', 'tps=60'] removed=[]
+OK rb_lattice_write         added=['cb0_rel=1', 'eng=PhysicsServer2D', 'ncb=60', 'obs0_rel=1'] removed=[]
+payload-identical shared rows: 10/10
+author-only rows (new in r90): ['r90_lattice_impedge', 'r90_lattice_lag']
+scout row file sha256: 50bc72428e711807ed63a9a243aba027e99c416f351f6d428311afa85a0a0aaa
+author row file sha256: 00e87e0161736aa4dd5cfbe5efbb503195d3149de523fe5e7ab8764491ce35f8

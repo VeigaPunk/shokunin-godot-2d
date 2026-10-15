@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R90 freezelock eng=PhysicsServer2D
+R90 freezelock tps=30
+R90 freezelock f30=f_normal[y=-7.7000,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-156.0000,vy=-60.0000,w=0.0000,fz=false]
+R90 freezelock sleep=s_off[sl=false,y=-7.7000,vy=0.0000] s_on[sl=true,y=-7.7000,vy=0.0000]
+R90 freezelock ncb=120
+R90 freezelock cb0_rel=1
+R90 freezelock obs0_rel=1
+R90 freezelock pf_delta=120
+R90 freezelock tick_dh=1:119
+PASS r90_lattice freezelock eng=PhysicsServer2D tps=30 f30=f_normal[y=-7.7000,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-156.0000,vy=-60.0000,w=0.0000,fz=false] sleep=s_off[sl=false,y=-7.7000,vy=0.0000] s_on[sl=true,y=-7.7000,vy=0.0000] ncb=120 cb0_rel=1 obs0_rel=1 pf_delta=120 tick_dh=1:119

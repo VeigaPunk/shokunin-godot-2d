@@ -1,0 +1,15 @@
+cell                          reps out_uniq err_uniq rc        PASS_lines
+rb_comread                       3        1        1 0         1
+rb_comrefuse                     3        1        1 0         1
+rb_contacts                      6        1        1 0         1
+rb_damp                          6        1        1 0         1
+rb_freezelock                    6        1        1 0         1
+rb_gravity                       6        1        1 0         1
+rb_impulse                       6        1        1 0         1
+rb_order                         6        1        1 0         1
+rb_props                         3        1        1 0         1
+rb_tps120_f120                   3        1        1 0         1
+rb_tps120_f60                    3        1        1 0         1
+rb_write                         6        1        1 0         1
+cells= 12 cells_with_any_instability= 0
+json keys: ['cells', 'unstable', 'crash', 'error_carrying']

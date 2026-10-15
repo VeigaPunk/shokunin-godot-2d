@@ -1,0 +1,12 @@
+== /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r90-scout
+   manifest entries=208  files_on_disk=209  self_listed=False
+   on_disk_not_in_manifest=1 ['manifest.sha256']
+   in_manifest_not_on_disk=0 []
+== /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r90-boundary
+   manifest entries=1143  files_on_disk=1144  self_listed=False
+   on_disk_not_in_manifest=1 ['manifest.sha256']
+   in_manifest_not_on_disk=0 []
+== /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r90-author
+   manifest entries=4015  files_on_disk=4016  self_listed=False
+   on_disk_not_in_manifest=1 ['manifest.sha256']
+   in_manifest_not_on_disk=0 []

@@ -1,0 +1,25 @@
+r90-scribe probe tests — f_pair_30tps provenance + real 30-tps control
+=====================================================================
+Committed probe: corpus/fixtures/rb_lattice.gd sha256 10da2291… (== author proj copy)
+Godot 4.7.2.stable.arch_linux.ed1daf0bf, --headless, timeout -s KILL 25.
+
+a_proj60_f60        proj 60 tps (defaults), --frames=60
+                    -> ncb=60 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59
+                       f30=f_normal[y=-7.6969 …]|f_lock[y=-128.0000,vy=-60.0000 …] tps=60
+b_proj60_flag_f60   same + "--physics-ticks-per-second 30" AFTER the script "--" separator
+                    -> flag lands in OS.get_cmdline_user_args(), probe ignores it; byte-identical to a
+b2_engineflag_f60   same + "--physics-ticks-per-second 30" as an ENGINE option (before --path)
+                    -> rc=0, 0 B stderr, byte-identical to a  => flag does not exist / silently ignored
+                       (godot --help | grep -i 'physics|ticks' finds no such option)
+c_proj30_f60        real 30-tps project ([physics] common/physics_ticks_per_second=30), --frames=60
+                    -> tps=30 ncb=60 f30=f_normal[y=-7.7000]|f_lock[y=-156.0000,vy=-60.0000]
+d_proj30_f120       real 30-tps project, --frames=120
+                    -> tps=30 ncb=120 pf_delta=120 tick_dh=1:119 f30=-7.7000/-156.0000
+                       (pairing fields IDENTICAL to the 60-tps pin; the rate is carried by tps= and
+                        the f30 payload values, NOT by ncb/pf_delta/tick_dh)
+
+Author receipt corpus/live/r90-author/f_pair_30tps.rep{1,2}.out is byte-identical to a_proj60_f60
+(60 tps, --frames=60) — it is NOT a 30-tps run. The report's sentence "under
+--physics-ticks-per-second 30 … ncb=60 … the effective rate is carried by the pairing fields"
+is wrong on the flag and on the mechanism; the fold's conclusion (a 60-tps pin cannot be satisfied
+by a 30-tps run) is nonetheless TRUE and receipt-backed by c/d + the boundary proj_tps30 cells.

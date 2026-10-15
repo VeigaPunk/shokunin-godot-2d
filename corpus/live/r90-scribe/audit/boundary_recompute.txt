@@ -1,0 +1,29 @@
+1. receipts out=281 err=281 rc=281 wall=255
+   rc values: Counter({'0': 281})
+   max wall: 2.96s
+2. cells=82 pass_or_rc_unstable=[]
+3. sv_comrefuse               reps= 3 unique_pass_md5=1
+3. sv_contacts                reps=18 unique_pass_md5=1
+3. sv_contacts_dummy          reps= 3 unique_pass_md5=1
+3. sv_damp                    reps= 3 unique_pass_md5=1
+3. sv_freezelock              reps=18 unique_pass_md5=1
+3. sv_freezelock_dummy        reps= 3 unique_pass_md5=1
+3. sv_gravity                 reps= 3 unique_pass_md5=1
+3. sv_gravity_t120            reps= 3 unique_pass_md5=1
+3. sv_impulse                 reps= 3 unique_pass_md5=1
+3. sv_order                   reps=15 unique_pass_md5=1
+3. sv_write                   reps= 3 unique_pass_md5=1
+   sv cells with >1 hash: 0
+4. quoted hash 764c523cd0c9… -> sv_order: 3/3 receipts match (md5 PASS-line+LF)
+4. quoted hash 3b6250190357… -> sv_freezelock: 3/3 receipts match (md5 PASS-line+LF)
+4. quoted hash 0c9cecc3d1ee… -> sv_contacts: 3/3 receipts match (md5 PASS-line+LF)
+5. sv_order             == scout rb_order      : True
+5. sv_damp              == scout rb_damp       : True
+5. sv_write             == scout rb_write      : True
+5. sv_impulse           == scout rb_impulse    : True
+5. sv_comrefuse         == scout rb_comrefuse  : True
+5. sv_freezelock        == scout rb_freezelock : True
+5. sv_contacts          == scout rb_contacts   : True
+5. sv_gravity           == scout rb_gravity    : True
+5. sv_gravity_t120      == scout rb_tps120_f120: True
+6. cb0_rel/obs0_rel census over all receipts: {'cb0_rel=1 obs0_rel=1': 44, 'cb0_rel=-1 obs0_rel=1': 3, 'cb0_rel=2 obs0_rel=1': 12}

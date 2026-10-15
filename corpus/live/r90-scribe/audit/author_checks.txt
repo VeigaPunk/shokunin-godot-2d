@@ -1,0 +1,46 @@
+1. CASES=240 r90_rows=12
+   r90_lattice_props          eng=True tps=True pairing=False motion=False
+   r90_lattice_comread        eng=True tps=True pairing=False motion=False
+   r90_lattice_comrefuse      eng=True tps=True pairing=False motion=False
+   r90_lattice_gravity        eng=True tps=True pairing=True motion=True
+   r90_lattice_damp           eng=True tps=True pairing=True motion=True
+   r90_lattice_order          eng=True tps=True pairing=True motion=True
+   r90_lattice_write          eng=True tps=True pairing=True motion=True
+   r90_lattice_impulse        eng=True tps=True pairing=True motion=True
+   r90_lattice_impedge        eng=True tps=True pairing=True motion=True
+   r90_lattice_freezelock     eng=True tps=True pairing=True motion=True
+   r90_lattice_contacts       eng=True tps=True pairing=True motion=True
+   r90_lattice_lag            eng=True tps=True pairing=True motion=True
+2. emitted_rows=12 mismatches_vs_landed=[]
+3. battery reps:
+   runs1/20261015T201456662267Z: rows=247 verdict=FAIL r90=11/12 fails=['overlap', 'transition', 'negative_transition', 'audio_playback', 'r90_lattice_props', 'probe_error_clause_surface']
+   runs10/20261015T213008919877Z: rows=247 verdict=FAIL r90=12/12 fails=['transition']
+   runs11/20261015T213454477854Z: rows=247 verdict=FAIL r90=12/12 fails=['overlap', 'transition', 'negative_transition', 'probe_error_clause_surface']
+   runs12/20261015T213949007019Z: rows=247 verdict=FAIL r90=12/12 fails=['transition', 'audio_playback']
+   runs12/20261015T220233737605Z: rows=247 verdict=PASS r90=12/12 fails=[]
+   runs13/20261015T214442174680Z: rows=247 verdict=FAIL r90=12/12 fails=['transition', 'negative_transition', 'probe_error_clause_surface']
+   runs2/20261015T202254183902Z: rows=247 verdict=FAIL r90=12/12 fails=['overlap', 'transition', 'negative_transition', 'audio_bus_route', 'input_lattice_press_phys', 'probe_error_clause_surface']
+   runs3/20261015T202828100775Z: rows=247 verdict=FAIL r90=12/12 fails=['overlap', 'transition', 'negative_transition', 'probe_error_clause_surface']
+   runs4/20261015T203404756405Z: rows=247 verdict=FAIL r90=12/12 fails=['overlap', 'transition', 'negative_transition', 'audio_bus_route', 'probe_error_clause_surface']
+   runs5/20261015T203924432825Z: rows=247 verdict=FAIL r90=12/12 fails=['overlap', 'transition', 'negative_transition', 'probe_error_clause_surface']
+   runs6/20261015T204437130023Z: rows=247 verdict=FAIL r90=12/12 fails=['overlap', 'transition', 'negative_transition', 'probe_error_clause_surface']
+   runs7/20261015T204954579556Z: rows=247 verdict=FAIL r90=12/12 fails=['overlap', 'transition', 'negative_transition', 'audio_bus_route', 'audio_bus_route_invalid_control', 'probe_error_clause_surface']
+   runs8/20261015T205435633378Z: rows=247 verdict=FAIL r90=12/12 fails=['overlap', 'transition', 'negative_transition', 'audio_playback', 'audio_bus_route', 'probe_error_clause_surface']
+   runs9/20261015T212551992799Z: rows=247 verdict=PASS r90=12/12 fails=[]
+   total r90 PASS instances across stamps: 167
+4. rep9 census rows_with_expected_errors=57 dead=0
+   r90_lattice_comrefuse: bare_rejects=True allowlisted=True ERROR: Condition "center_of_mass_mode !=..x1dead=False
+   r90_lattice_impedge: bare_rejects=True allowlisted=True ERROR: Condition "p_inertia < 0" is true..x1dead=False ERROR: Condition "p_mass <= 0" is true...x2dead=False
+5. fresh-arm reps:
+   comread      reps=6 out_uniq=1 err_uniq=1 rc=['0'] sig_hit=6/6
+   comrefuse    reps=6 out_uniq=1 err_uniq=1 rc=['0'] sig_hit=6/6
+   contacts     reps=6 out_uniq=1 err_uniq=1 rc=['0'] sig_hit=6/6
+   damp         reps=6 out_uniq=1 err_uniq=1 rc=['0'] sig_hit=6/6
+   freezelock   reps=6 out_uniq=1 err_uniq=1 rc=['0'] sig_hit=6/6
+   gravity      reps=6 out_uniq=1 err_uniq=1 rc=['0'] sig_hit=6/6
+   impedge      reps=6 out_uniq=1 err_uniq=1 rc=['0'] sig_hit=6/6
+   impulse      reps=6 out_uniq=1 err_uniq=1 rc=['0'] sig_hit=6/6
+   lag          reps=6 out_uniq=1 err_uniq=1 rc=['0'] sig_hit=6/6
+   order        reps=6 out_uniq=1 err_uniq=1 rc=['0'] sig_hit=6/6
+   props        reps=6 out_uniq=1 err_uniq=1 rc=['0'] sig_hit=6/6
+   write        reps=6 out_uniq=1 err_uniq=1 rc=['0'] sig_hit=6/6
