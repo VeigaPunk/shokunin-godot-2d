@@ -38,7 +38,7 @@ func _finish(line: String) -> void:
 func _v2(p: Vector2) -> String:
 	return "%.4f,%.4f" % [p.x, p.y]
 
-func _body(x: float, y: float, gs := 1.0) -> RigidBody2D:
+func _body(x: float, y: float) -> RigidBody2D:
 	var b := RigidBody2D.new()
 	var cs := CollisionShape2D.new()
 	var circle := CircleShape2D.new()
@@ -46,7 +46,6 @@ func _body(x: float, y: float, gs := 1.0) -> RigidBody2D:
 	cs.shape = circle
 	b.add_child(cs)
 	b.position = Vector2(x, y)
-	b.gravity_scale = gs
 	return b
 
 func _run() -> void:
@@ -100,9 +99,6 @@ class MpLimb extends Node:
 	@rpc("any_peer", "call_local", "reliable")
 	func ping(n: int, tag: String) -> void:
 		rpc_log.append("ping%d:%s" % [n, tag])
-	@rpc("any_peer", "call_local", "unreliable")
-	func uping(n: int) -> void:
-		rpc_log.append("u%d" % n)
 
 func _arm_mp_loopback() -> void:
 	var srv_branch := Node.new(); srv_branch.name = "srv"
@@ -110,13 +106,25 @@ func _arm_mp_loopback() -> void:
 	root.add_child(srv_branch); root.add_child(cli_branch)
 	var limb_s := MpLimb.new(); limb_s.name = "limb"; srv_branch.add_child(limb_s)
 	var limb_c := MpLimb.new(); limb_c.name = "limb"; cli_branch.add_child(limb_c)
+	# r88-fold F1 (critic F1 / boundary directive 7): the hardcoded port let
+	# concurrent batteries cross-connect — a bind-race loser still printed
+	# PASS on contaminated peers. The port is now pid-derived, and rc_s is
+	# checked BEFORE the client exists so a loser dies loudly instead of
+	# connecting into another process's server. The port is in no pin.
+	var port := 40000 + OS.get_process_id() % 20000
 	var server := ENetMultiplayerPeer.new()
-	var rc_s := server.create_server(41777, 4)
+	var rc_s := server.create_server(port, 4)
+	if rc_s != 0:
+		_fail("mp_lb server_rc=%d" % rc_s)
+		return
 	var api_s := SceneMultiplayer.new()
 	api_s.multiplayer_peer = server
 	set_multiplayer(api_s, "/root/srv")
 	var client := ENetMultiplayerPeer.new()
-	var rc_c := client.create_client("127.0.0.1", 41777)
+	var rc_c := client.create_client("127.0.0.1", port)
+	if rc_c != 0:
+		_fail("mp_lb client_rc=%d" % rc_c)
+		return
 	var api_c := SceneMultiplayer.new()
 	api_c.multiplayer_peer = client
 	set_multiplayer(api_c, "/root/cli")
@@ -173,10 +181,23 @@ func _arm_mp_spawner() -> void:
 	# same spawnable scene before spawn() is invoked.
 	sp_s.add_spawnable_scene("res://r88_spawnable.tscn")
 	sp_c.add_spawnable_scene("res://r88_spawnable.tscn")
-	var server := ENetMultiplayerPeer.new(); server.create_server(41778, 4)
+	# r88-fold F1 (critic F1 / boundary directive 7): same pid-derived port +
+	# early rc guard as mp_loopback — a port-race loser fails the row instead
+	# of silently cross-connecting (the winner's SpawnableOne otherwise lands
+	# inside this arm's negative window). The port is in no pin.
+	var port := 40000 + OS.get_process_id() % 20000
+	var server := ENetMultiplayerPeer.new()
+	var rc_s := server.create_server(port, 4)
+	if rc_s != 0:
+		_fail("mp_spawner server_rc=%d" % rc_s)
+		return
 	var api_s := SceneMultiplayer.new(); api_s.multiplayer_peer = server
 	set_multiplayer(api_s, "/root/srv")
-	var client := ENetMultiplayerPeer.new(); client.create_client("127.0.0.1", 41778)
+	var client := ENetMultiplayerPeer.new()
+	var rc_c := client.create_client("127.0.0.1", port)
+	if rc_c != 0:
+		_fail("mp_spawner client_rc=%d" % rc_c)
+		return
 	var api_c := SceneMultiplayer.new(); api_c.multiplayer_peer = client
 	set_multiplayer(api_c, "/root/cli")
 	var frames := 0
@@ -270,10 +291,24 @@ func _arm_light_props() -> void:
 	var b := _body(0, -100)
 	occ.position = Vector2(0, -40)
 	root.add_child(b)
-	for i in 40:
+	# r88-fold F2 (boundary §2 sync recipe, reviewer F1): whether the first
+	# main-loop iteration contains a physics step is a startup race (Case
+	# A/B), so a bare 40-await count landed on 39 or 40 integrations
+	# (body_y 107.9190 vs 118.4614). Sync on the first integration
+	# (v != 0), then count N-1 — 40 integrations in BOTH modes.
+	await physics_frame
+	while b.linear_velocity == Vector2.ZERO:
+		await physics_frame
+	for i in 39:
 		await physics_frame
 	var dss := root.world_2d.direct_space_state
-	var q := PhysicsRayQueryParameters2D.create(Vector2(-50, -80), Vector2(-50, 60))
+	# r88-fold F3 (boundary §4.3 / reviewer F2): the old vertical ray at
+	# x=-50 never crossed the occluder polygon (global x in [0,10],
+	# y in [-40,-30]) — the boolean was vacuous. This y=-35 ray crosses
+	# the polygon's x in [5,10] band, so ray_through_occluder now means
+	# something; it is still `true` because a LightOccluder2D is not a
+	# CollisionObject2D (boundary's StaticBody2D control DOES hit it).
+	var q := PhysicsRayQueryParameters2D.create(Vector2(-50, -35), Vector2(50, -35))
 	var hit := dss.intersect_ray(q)
 	_finish("light_props %s %s %s %s body_y=%.4f ray_through_occluder=%s occ_cls=%s occ_is_co=%s" % [
 		pl_str, dl_str, occ_str, cm_str,
@@ -316,6 +351,7 @@ func _arm_sprite_phys() -> void:
 	# the engine refuses loudly (expected_errors whitelists the one ERROR;
 	# scout §3.13 / directive 7).
 	var results: PackedStringArray = []
+	var bodies: Array[RigidBody2D] = []
 	for variant in ["plain", "flipped", "regioned", "scaled_neg"]:
 		var b := _body(variant.length() * 50, -50)
 		var spr := Sprite2D.new()
@@ -327,7 +363,16 @@ func _arm_sprite_phys() -> void:
 			"regioned": spr.region_enabled = true; spr.region_rect = Rect2(2, 2, 4, 4); spr.hframes = 2; spr.frame = 3
 			"scaled_neg": spr.scale = Vector2(-1, -1)
 		root.add_child(b)
-	for i in 30:
+		bodies.append(b)
+	# r88-fold F2 (boundary §2 sync recipe, reviewer F1): the bare 30-await
+	# count landed on 29 or 30 integrations depending on whether the first
+	# main-loop iteration held a physics step (pos y 66.5952 vs 74.5675).
+	# All four bodies enter the tree in the same flush and first-integrate
+	# on the same step, so one v != 0 sync covers them all; then count N-1.
+	await physics_frame
+	while bodies[0].linear_velocity == Vector2.ZERO:
+		await physics_frame
+	for i in 29:
 		await physics_frame
 	for b in root.get_children():
 		if b is RigidBody2D:
@@ -364,6 +409,13 @@ func _arm_audio_pos() -> void:
 	p.attenuation = 1.0
 	root.add_child(p)
 	p.play()
+	# r88-fold F4 (critic F4): liveness guard. Under the Dummy driver play()
+	# sets playing=true synchronously (boundary 14/14, critic ack=true 6/6
+	# under --load 24) before it clears by ~f6-f13; without this check a
+	# no-op play() still produced the exact pinned negative payload.
+	if not p.playing:
+		_fail("play_not_accepted")
+		return
 	var peaks: Array = []
 	for i in 20:
 		await process_frame

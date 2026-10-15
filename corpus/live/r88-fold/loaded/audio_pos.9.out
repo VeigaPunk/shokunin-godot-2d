@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=audio_pos
+PASS r88_surfaces audio_pos playing=false pos=0.000 peaks_near=[-200.00,-200.00,-200.00,-200.00] peaks_far=[-200.00,-200.00,-200.00,-200.00] listen_pos=0.0000,0.0000 listener_current=true

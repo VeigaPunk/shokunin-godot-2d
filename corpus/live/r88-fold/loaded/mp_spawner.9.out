@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=mp_spawner
+R88S mp_spawner frames=0 neg_wait=300 pos_wait=1 sync_wait=2 srv_children=4 spawned_srv=SpawnableOne
+PASS r88_surfaces mp_spawner neg[c_children=0 srv_children=4 bound_hit=300] pos[added=SpawnableOne c_got=SpawnableOne c_pos=33.0000,44.0000] sync[pos=111.0000,222.0000]

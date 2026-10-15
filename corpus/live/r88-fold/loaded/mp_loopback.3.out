@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=mp_loopback
+R88S mp_lb rc=[0,0] uid_s=1 uid_c=330991646
+R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn330991646", "c_srvdisc", "s_disc330991646"] raw_uid=330991646 frames=4 wait=2
+PASS r88_surfaces mp_loopback rc=[0,0] uid_s=1 uid_after_dyn=true order=["c_on_srv", "c_conn1", "s_conn<C>", "c_srvdisc", "s_disc<C>"] limb_s=["ping7:c2s", "ping5:call_local_c"] limb_c=["ping5:call_local_c", "ping9:s2c"]
