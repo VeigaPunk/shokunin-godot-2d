@@ -474,6 +474,58 @@ CASES = [
      'PASS input89_edges axisdev census=joys=0 eia_avail=true dz_ax0=0.2000 dz_ui_accept=0.5000 eia_dev0=ax0[ex=1 inex=1] axany[ex=1 inex=1] eia_dev5=ax0[ex=0 inex=0] axany[ex=1 inex=1] eia_dev-1=ax0[ex=0 inex=0] axany[ex=1 inex=1] poll_dev5=ax0=false axany=true axis5=1.0000 axis0=0.0000 strength0=0.0000 poll_dev0=ax0=true axany=true axis0=1.0000 strength0=1.0000 raw0=1.0000 poll_dev0_06=ax0=true axis0=0.6000 strength0=0.5000 raw0=0.6000 poll_dev0_neg=ax0=false axany=true axis0=-1.0000 poll_release=ax0=false axany=true axis0=0.0000'),
     ('geo2d_lattice_lineempty', 'geo2d_lattice.gd', ['--arm=lineempty'], -6,
      'R89 lineempty call=offset_polyline(empty,2.0,JOIN_ROUND,END_JOINED)'),
+    # r90: the RigidBody2D authorability lattice (r88-census top-ranked
+    # REMAINING PINNABLE family) — gravity_scale/COM/integrator ordering +
+    # impulse/freeze/contact extras. Probe rb_lattice.gd sha256 10da2291…
+    # (folded variant of scout sha256 4f201e85…) + rb_watch.gd sha256
+    # e349faa0… (verbatim — the _integrate_forces forwarder; BOTH files are
+    # required). Boundary folds landed, all mandatory:
+    #   * engine precondition — every arm emits eng=<live PhysicsServer2D
+    #     class> FIRST on the PASS line: under a Dummy boot the family is
+    #     silently vacuous (ncb=0, tld=-1, no motion, 0B stderr — boundary
+    #     §3), so eng=PhysicsServer2DDummy mismatches loudly instead of
+    #     passing vacuously;
+    #   * tps qualification — every motion row pins tps=60 plus step
+    #     accounting pf_delta/tick_dh (await↔step 1:1); the damped fall is
+    #     NOT tps-invariant at equal duration (scout §3.11) and the 30 tps
+    #     late_body pairing (ncb=frames-1) is never pinned;
+    #   * pairing key — cb0≡f1 is pinned only with cb0_rel=1/obs0_rel=1
+    #     (boundary §8.1); lag's exp=N= derives n from the callback count,
+    #     never from --frames;
+    #   * impulse oracle bound — pinned lanes stay in the resolvable band
+    #     (iI>=0.024; at inertia>=~1e9 the 6-dp iI oracle collapses and the
+    #     row would stop discriminating — boundary §8.5, no extreme lanes
+    #     authored); impedge pins only the typed refusals
+    #     (set_inertia:334 / set_mass:324 — a DIFFERENT error path than
+    #     comrefuse's :376) and the AUTO-sentinel lane (inertia=0.0).
+    # Signatures byte-pinned from 6 fresh reps each
+    # (corpus/live/r90-author/runs/, out_uniq=err_uniq=1). Rows inserted
+    # ahead of the crash/descendant tail — descendant_pipe_detached_control's
+    # sleep-8 gap stays adjacent to the meta probes.
+    ('r90_lattice_props', 'rb_lattice.gd', ['--arm=props'], 0,
+     'PASS r90_lattice props eng=PhysicsServer2D tps=60 nprops=88 props=[mass|physics_material_override|gravity_scale|Mass Distribution|center_of_mass_mode|center_of_mass|inertia|Deactivation|sleeping|can_sleep|lock_rotation|freeze|freeze_mode|Solver|custom_integrator|continuous_cd|contact_monitor|max_contacts_reported|Linear|linear_velocity|linear_damp_mode|linear_damp|Angular|angular_velocity|angular_damp_mode|angular_damp|Constant Forces|constant_force|constant_torque|disable_mode|Collision|collision_layer|collision_mask|collision_priority|Input|input_pickable|Transform|position|rotation|rotation_degrees|scale|skew|transform|global_position|global_rotation|global_rotation_degrees|global_scale|global_skew|global_transform|Visibility|visible|modulate|self_modulate|show_behind_parent|top_level|clip_children|oversampling_with_scale|light_mask|visibility_layer|Ordering|z_index|z_as_relative|y_sort_enabled|Texture|texture_filter|texture_repeat|Material|material|use_parent_material|name|unique_name_in_owner|scene_file_path|owner|multiplayer|Process|process_mode|process_priority|process_physics_priority|Thread Group|process_thread_group|process_thread_group_order|process_thread_messages|Physics Interpolation|physics_interpolation_mode|Auto Translate|auto_translate_mode|Editor Description|editor_description] u_center_of_mass=6 u_center_of_mass_local=-1 u_inertia=6 u_linear_damp=6 u_angular_damp=6 u_constant_force=6 u_constant_torque=6 u_freeze_mode=6 u_sleeping=6 methods=[_edit_get_state|_edit_set_state|_integrate_forces|add_constant_central_force|add_constant_force|add_constant_torque|apply_central_force|apply_central_impulse|apply_force|apply_impulse|apply_torque|apply_torque_impulse|force_update_transform|get_angular_damp|get_angular_damp_mode|get_constant_force|get_constant_torque|get_gravity|get_gravity_scale|get_linear_damp|get_linear_damp_mode|set_angular_damp|set_angular_damp_mode|set_constant_force|set_constant_torque|set_gravity_scale|set_linear_damp|set_linear_damp_mode] enum=COM_AUTO=0,COM_CUSTOM=1,FM_STATIC=0,FM_KINEMATIC=1,CCD_OFF=0,CCD_RAY=1,CCD_SHAPE=2,DAMP_COMBINE=0,DAMP_REPLACE=1 ps_gravity=980.0000 ps_ldamp=0.1000 ps_adamp=1.0000 ps_tps=60 d_mass=1.0000 d_inertia=0.0000 d_center_of_mass=0.0000,0.0000 d_center_of_mass_local=<null> d_center_of_mass_mode=0 d_gravity_scale=1.0000 d_custom_integrator=false d_freeze=false d_freeze_mode=0 d_lock_rotation=false d_can_sleep=true d_sleeping=false d_continuous_cd=0 d_max_contacts_reported=0 d_contact_monitor=false d_linear_damp=0.0000 d_linear_damp_mode=0 d_angular_damp=0.0000 d_angular_damp_mode=0 d_constant_force=0.0000,0.0000 d_constant_torque=0.0000'),
+    ('r90_lattice_comread', 'rb_lattice.gd', ['--arm=comread'], 0,
+     'PASS r90_lattice comread eng=PhysicsServer2D tps=60 auto_com=0.0000,0.0000 auto_mode=0 coml_prop=<null> custom_mode=1 custom_com=4.0000,0.0000 rot_com=4.0000,0.0000 inertia5=5.0000 inertia0=0.0000 inertia33_mass4=33.0000 inertia33_mass1=33.0000 gscale_neg=-1.5000 gscale0=0.0000'),
+    ('r90_lattice_comrefuse', 'rb_lattice.gd', ['--arm=comrefuse'], 0,
+     'PASS r90_lattice comrefuse eng=PhysicsServer2D tps=60 auto_set4=com=0.0000,0.0000 mode=0 auto_set0=com=0.0000,0.0000 mode=0 custom_set4=com=4.0000,0.0000 mode=1 custom_set0=com=0.0000,0.0000 mode=1 back_auto=com=0.0000,0.0000 mode=0'),
+    ('r90_lattice_gravity', 'rb_lattice.gd', ['--arm=gravity'], 0,
+     'PASS r90_lattice gravity eng=PhysicsServer2D tps=60 f30=g0[y=0.0000,vy=0.0000]|g05[y=62.2838,vy=239.1703]|g1[y=124.5675,vy=478.3405]|g2[y=249.1351,vy=956.6811]|gm1[y=-124.5675,vy=-478.3405]|zv[y=-14.6187,vy=-28.5357]|zv0[y=-15.0000,vy=-30.0000]|cf[y=124.5675,vy=478.3405] f60=g0[y=0.0000,vy=0.0000]|g05[y=241.1125,vy=466.6662]|g1[y=482.2250,vy=933.3325]|g2[y=964.4500,vy=1866.6649]|gm1[y=-482.2250,vy=-933.3325]|zv[y=-28.5238,vy=-27.1429]|zv0[y=-30.0000,vy=-30.0000]|cf[y=482.2250,vy=933.3325] ncb=60 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59'),
+    ('r90_lattice_damp', 'rb_lattice.gd', ['--arm=damp'], 0,
+     'PASS r90_lattice damp eng=PhysicsServer2D tps=60 f30=default[y=124.5675,vy=478.3405]|rep0[y=126.5834,vy=490.0001]|rep05[y=116.9554,vy=435.1487]|comb05[y=115.1592,vy=425.1562] f60=default[y=482.2250,vy=933.3325]|rep0[y=498.1666,vy=979.9996]|rep05[y=425.5192,vy=773.6876]|comb05[y=412.9205,vy=739.6441] tld=default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000 ncb=default=60|rep0=60|rep05=60|comb05=60 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59'),
+    ('r90_lattice_order', 'rb_lattice.gd', ['--arm=order'], 0,
+     'PASS r90_lattice order eng=PhysicsServer2D tps=60 ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59'),
+    ('r90_lattice_write', 'rb_lattice.gd', ['--arm=write'], 0,
+     'PASS r90_lattice write eng=PhysicsServer2D tps=60 step=0.016667 f30=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=118.4167,vy=490.0001] f60=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=481.8333,vy=979.9996] ncb=60 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59'),
+    ('r90_lattice_impulse', 'rb_lattice.gd', ['--arm=impulse'], 0,
+     'PASS r90_lattice impulse eng=PhysicsServer2D tps=60 post=c_central[v=0.0000,-60.0000,w=0.0000,iI=0.031250,im=1.0000]|c_off[v=0.0000,-60.0000,w=-15.0000,iI=0.031250,im=1.0000]|c_tq[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|r_tq[v=0.0000,0.0000,w=11.5200,iI=0.024000,im=1.0000]|r_off[v=0.0000,-60.0000,w=-11.5200,iI=0.024000,im=1.0000] ncb=c_central=4|c_off=4|c_tq=4|r_tq=4|r_off=4 cb0_rel=1 obs0_rel=1 pf_delta=4 tick_dh=1:3'),
+    ('r90_lattice_impedge', 'rb_lattice.gd', ['--arm=impedge'], 0,
+     'PASS r90_lattice impedge eng=PhysicsServer2D tps=60 set=neg_i[i=0.0000,m=1.0000]|zero_i[i=0.0000,m=1.0000]|mass0[i=0.0000,m=1.0000]|massneg[i=0.0000,m=1.0000] post=neg_i[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|zero_i[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|mass0[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|massneg[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000] ncb=neg_i=4|zero_i=4|mass0=4|massneg=4 cb0_rel=1 obs0_rel=1 pf_delta=4 tick_dh=1:3'),
+    ('r90_lattice_freezelock', 'rb_lattice.gd', ['--arm=freezelock', '--frames=120'], 0,
+     'PASS r90_lattice freezelock eng=PhysicsServer2D tps=60 f30=f_normal[y=-7.6969,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-128.0000,vy=-60.0000,w=0.0000,fz=false] sleep=s_off[sl=false,y=-7.7000,vy=0.0000] s_on[sl=true,y=-7.7000,vy=0.0000] ncb=120 cb0_rel=1 obs0_rel=1 pf_delta=120 tick_dh=1:119'),
+    ('r90_lattice_contacts', 'rb_lattice.gd', ['--arm=contacts'], 0,
+     'PASS r90_lattice contacts eng=PhysicsServer2D tps=60 rest=y=-7.7000,vy=0.0000 cb=count=1 y=-7.7000 pos=0.0000,0.3000 cvel=0.0000,16.3333 entered=1 ncb=45 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59'),
+    ('r90_lattice_lag', 'rb_lattice.gd', ['--arm=lag', '--frames=30'], 0,
+     'PASS r90_lattice lag eng=PhysicsServer2D tps=60 a=y=126.5834,vy=490.0001 b=y=118.4167,vy=490.0001 c=y=124.5675,vy=478.3405 d=dy=8.1667,dvy=0.0000 step=0.016667 gdt=16.3333 gdt2=0.272222 exp=N=30 exp_dy=8.1667 exp_dvy_gdt=16.3333 acc=an=30,bn=30,apre=490.0001,bpre=473.6668,bpost=490.0001 cb0_rel=1 obs0_rel=1 pf_delta=30 tick_dh=1:29'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
@@ -899,6 +951,20 @@ def main():
                 ),
                 'geo2d_lattice_polyendpoly': (
                     'ERROR: Attempt to offset a polyline like a polygon (use offset_polygon instead).',
+                ),
+                # r90: comrefuse pokes the value-gated AUTO refusal once
+                # (rigid_body_2d.cpp:376 — the ONLY COM error path per
+                # boundary §6); the same-value set under AUTO is the silent
+                # no-op branch in the same row. impedge drives the two
+                # adjacent typed refusals: inertia<0 at :334 once and
+                # mass<=0 at :324 twice (mass0 + massneg lanes) — one exact
+                # entry covers both mass lines.
+                'r90_lattice_comrefuse': (
+                    'ERROR: Condition "center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM" is true.',
+                ),
+                'r90_lattice_impedge': (
+                    'ERROR: Condition "p_inertia < 0" is true.',
+                    'ERROR: Condition "p_mass <= 0" is true.',
                 ),
             }.get(name, ())
             classifier = classify_audio_process if name == "audio_playback" else classify_process
@@ -2516,6 +2582,14 @@ def main():
             not e["dead_in_run"]
             for r in census_rows
             if r["case"].startswith(("geo2d_lattice_", "input89_edges_"))
+            for e in r["entries"]),
+        # r90 author: the r90 block's whitelist-bearing cases (comrefuse,
+        # impedge) and every sibling row carry the r90_ prefix — same
+        # named-by-round / covers-round-prefixes shape as the r87/r89 gates.
+        "r90_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith("r90_")
             for e in r["entries"]),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
