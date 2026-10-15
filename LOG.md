@@ -1120,3 +1120,12 @@
 - Seats: author/baseline/boundary/critic/reviewer/simplifier/
   verifier/scribe/fold+verifier2+adj orchestrator. ADMIT-corr.
   Commits 3c47eee + fd59c11 + this.
+- ROUND 90 (2026-10-15): RigidBody2D dynamics lattice. ADMIT at ee20575
+  (247 rows, +12). All wave-B gates landed: critic PASS-WR (30tps receipt
+  mislabel flagged), reviewer PASS, simplifier PASS (0 removable),
+  verifier VERIFIED-WR (rep2 247/247 byte-identical, 55/55 rederiv),
+  scribe CUSTODY HOLDS. Lane note: --physics-ticks-per-second does not
+  exist on 4.7.2 (silently ignored) - never cite it.
+- LAWS: damp float32 recurrence closed form; dy=n*g*dt^2 oracle; impulse
+  iI/omega/dv closed forms; typed refusal ladder; eng=Dummy precondition
+  gate on all rows; write-lag + freeze/lock/sleep lattice.

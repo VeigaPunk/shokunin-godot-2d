@@ -210,3 +210,13 @@ Sol `r76-adjudicator.md`: ADMIT-corr — deferred_abort admitted, destroy-edge l
 
 `r87-adjudicator.md` (orchestrator): ADMIT-corr — twelve seat reports on record; critic F1 folded (api_press 2-payload envelope), floor gate widened, simplifier deletions proven. Non-author verification: `r87-verifier.md` AGREE 4/4 on frozen `ebcf2bb` (207/207 x2); `r87-verifier2.md` VERIFIED on folded `7ef247c` (207/207, alt-mode 22/24 under load); `r87-critic2.md` independent replay 207/207 byte-identical. Deferred: reviewer F1 tuple-signature TypeError (latent, unreachable), F2 engine-encoded eng=/joys= pins. Bounded: envelope any() admits mode-flip between whitelisted payloads; no off-host/gamepad/non-headless rep; pre_frame >=2-tick mode unobserved; host Godot 4.7.2.stable.arch_linux headless, Python 3.14.7. Work `ebcf2bb` + fold `7ef247c`; record `337407e` + this commit.
 | r88 | improved | improved | improved | mp offline/loopback/spawner rows + light/occluder/sprite/headless-null-audio/vis surfaces (8 rows, 207->215); BLOCKER folded: pid ports + rc guards, race-sync pins, crossing ray, play() assert, phys_peer 6-envelope incl. new delta=5 mode; VERIFIED-WITH-RESERVATIONS on folded bytes (verifier-r2, 215/215 under load) |
+
+## Round 90 verdict — 2026-10-15
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | +12 `r90_lattice_*` rows → 247 total: props/methods/enums census, COM read/refuse ladder, gravity, damp, order stream, write-lag, impulse cells, freeze/lock/sleep, contact monitor. Verifier rep2 247/247 fully green, byte-identical to author green. |
+| depth | **improved** | damp float32 recurrence closed-form verified independently; `dy=n*g*dt^2` oracle callback-counted; late-body pairing observed live at 60 tps (load-bearing fields confirmed); Dummy/30-tps preconditions fail loudly 12/12. |
+| calibration | **improved** | All 3 boundary folds applied (tps-qualified pins, eng= gate, oracle wall); 3-seat consensus on the 30-tps receipt mislabel (report-accuracy, conclusion true); reviewer F2 custody gap fixed by orchestrator commit; simplifier zero-removable. |
+
+| r90 | game-dev-2d | RigidBody2D dynamics lattice | ADMIT | ee20575 + 53a0be7 |
