@@ -1099,3 +1099,24 @@
 - Seats: scout/boundary/boundary-readonly/author/critic/critic2/
   reviewer/simplifier/verifier/verifier2/scribe; fold+adj
   orchestrator. ADMIT-corr. Commits ebcf2bb + 7ef247c + this.
+
+## round 88 — multiplayer + headless-boundary surfaces (ADMIT-corr)
+
+- 8 new CASES rows (207->215): ENet multiplayer offline/loopback/
+  spawner-loopback, 2D lighting + occluder, sprite metadata/physics,
+  headless-null audio position, visibility notifier.
+- FALSIFIED + FOLDED (6 items): critic F1 BLOCKER — hardcoded ENet
+  ports let concurrent batteries cross-connect while printing PASS;
+  fixed to pid-derived ports + fail-closed rc guards (0 collisions in
+  54 concurrent reps; bind-loser negative control FAILs loudly).
+  F2 v!=0 startup sync re-measured same pins, now mode-invariant
+  (52+52 reps both shapes). F3 occluder ray rerouted to actually
+  cross the polygon. F4 audio_pos play() liveness assert (removal
+  twin fails rc=1). F5 phys_peer -> 6-payload envelope {0..5};
+  fold DISCOVERED a new delta=5 mode (15/150 hogs). SP1/2 deletions.
+- LAWS: playing=true 14/14 immediately post-play (scout's false pin
+  falsified; false only >=f19); bind-race losers can never
+  cross-connect or pass silently.
+- Seats: author/baseline/boundary/critic/reviewer/simplifier/
+  verifier/scribe/fold+verifier2+adj orchestrator. ADMIT-corr.
+  Commits 3c47eee + fd59c11 + this.
