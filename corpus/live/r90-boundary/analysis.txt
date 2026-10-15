@@ -1,0 +1,169 @@
+cell                               arm        reps rc             pass/err u     pair      at/err
+b_backend_dummy                    backend      3 000            1/1            ?         
+b_backend_garbage                  backend      3 000            1/1            ?         
+b_backend_gp2d                     backend      3 000            1/1            ?         
+b_backend_jolt2d                   backend      3 000            1/1            ?         
+b_com_auto_nan                     comcase      3 000            1/1            ?         set_center_of_mass e=1
+b_com_custom_back_auto_diff        comcase      3 000            1/1            ?         set_center_of_mass e=1
+b_com_custom_dupe                  comcase      3 000            1/1            ?         
+b_com_custom_freeze_sequence       comcase      3 000            1/1            ?         
+b_com_custom_nan                   comcase      3 000            1/1            ?         
+b_com_frozen_kin_auto_diff         comcase      3 000            1/1            ?         set_center_of_mass e=1
+b_com_frozen_kin_custom_diff       comcase      3 000            1/1            ?         
+b_com_frozen_static_auto_diff      comcase      3 000            1/1            ?         set_center_of_mass e=1
+b_com_frozen_static_auto_then_mode comcase      3 000            1/1            ?         set_center_of_mass e=1
+b_com_frozen_static_custom_diff    comcase      3 000            1/1            ?         
+b_com_intree_auto_diff             comcase      3 000            1/1            ?         set_center_of_mass e=1
+b_com_intree_auto_same             comcase      3 000            1/1            ?         
+b_com_intree_custom_diff           comcase      3 000            1/1            ?         
+b_com_mode_invalid                 comcase      3 000            1/1            ?         set_center_of_mass e=1
+b_com_mode_neg                     comcase      3 000            1/1            ?         set_center_of_mass e=1
+b_com_nottree_auto_diff            comcase      3 000            1/1            ?         set_center_of_mass e=1
+b_com_nottree_custom_diff          comcase      3 000            1/1            ?         
+b_com_set_via_set                  comcase      3 000            1/1            ?         set_center_of_mass e=1
+b_damp                             damp         3 000            1/1            ?         
+b_damp_dummy                       damp         3 000            1/1            ?         
+b_damp_t120                        damp         3 000            1/1            ?         
+b_impulse                          impulse      3 000            1/1            ?         set_inertia;set_mass e=2
+b_impulse_dummy                    impulse      3 000            1/1            ?         set_inertia;set_mass e=2
+b_lag_t120_n120                    lag          3 000            1/1            ?         
+b_lag_t120_n30                     lag          3 000            1/1            ?         
+b_lag_t120_n60                     lag          3 000            1/1            ?         
+b_lag_t240_n30                     lag          3 000            1/1            ?         
+b_lag_t30_n30                      lag          3 000            1/1            ?         
+b_lag_t30_n60                      lag          3 000            1/1            ?         
+b_lag_t60_n30                      lag          3 000            1/1            ?         
+b_lag_t60_n60                      lag          3 000            1/1            ?         
+b_order                            order        3 000            1/1            sync0     
+b_order_dummy                      order        3 000            1/1            ?         
+b_order_t120                       order        3 000            1/1            sync0     
+b_order_t30                        order        3 000            1/1            late_body 
+b_settle                           settle       3 000            1/1            ?         
+b_stall_idle                       stall        3 000            1/1            ?         
+b_stall_none                       stall        3 000            1/1            ?         
+b_stall_phys                       stall        3 000            1/1            ?         
+b_write                            write        3 000            1/1            ?         
+d_order_d0                         order        3 000            1/1            sync0     
+d_order_d100                       order        3 000            1/1            sync0     
+d_order_d20                        order        3 000            1/1            sync0     
+d_order_d200                       order        3 000            1/1            sync0     
+d_order_d300                       order        3 000            1/1            sync0     
+d_order_d50                        order        3 000            1/1            sync0     
+l2_order                           order        3 000            1/1            sync0     
+l2_settle                          settle       3 000            1/1            ?         
+l2_sv_contacts                     contacts     3 000            1/1            ?         
+l2_sv_freezelock                   freezelock   3 000            1/1            ?         
+l2_sv_order                        order        3 000            1/1            ?         
+l_damp                             damp         3 000            1/1            ?         
+l_impulse                          impulse      3 000            1/1            ?         set_inertia;set_mass e=2
+l_order                            order        6 000000         1/1            sync0     
+l_order_t120                       order        3 000            1/1            sync0     
+l_settle                           settle       3 000            1/1            ?         
+l_stall_idle                       stall        3 000            1/1            ?         
+l_sv_contacts                      contacts     6 000000         1/1            ?         
+l_sv_freezelock                    freezelock   6 000000         1/1            ?         
+l_sv_order                         order        3 000            1/1            ?         
+l_write                            write        3 000            1/1            ?         
+p_order                            order        8 00000000       1/1            sync0     
+p_sv_contacts                      contacts     6 000000         1/1            ?         
+p_sv_freezelock                    freezelock   6 000000         1/1            ?         
+p_sv_order                         order        6 000000         1/1            ?         
+sv_comrefuse                       comrefuse    3 000            1/1            ?         set_center_of_mass e=1
+sv_contacts                        contacts     3 000            1/1            ?         
+sv_contacts_dummy                  contacts     3 000            1/1            ?         
+sv_damp                            damp         3 000            1/1            ?         
+sv_freezelock                      freezelock   3 000            1/1            ?         
+sv_freezelock_dummy                freezelock   3 000            1/1            ?         
+sv_gravity                         gravity      3 000            1/1            ?         
+sv_gravity_t120                    gravity      3 000            1/1            ?         
+sv_impulse                         impulse      3 000            1/1            ?         
+sv_order                           order        3 000            1/1            ?         
+sv_write                           write        3 000            1/1            ?         
+t30_lag                            lag          9 000000000      1/1            ?         
+t30_order                          order        9 000000000      1/1            late_body 
+
+== pins ==
+b_damp                         all_ok=True per_rep=[True, True, True]
+b_impulse                      all_ok=True per_rep=[True, True, True]
+b_order                        all_ok=True per_rep=[True, True, True]
+b_order_t120                   all_ok=True per_rep=[True, True, True]
+b_write                        all_ok=True per_rep=[True, True, True]
+sv_comrefuse                   all_ok=True per_rep=[True, True, True]
+sv_contacts                    all_ok=True per_rep=[True, True, True]
+sv_damp                        all_ok=True per_rep=[True, True, True]
+sv_freezelock                  all_ok=True per_rep=[True, True, True]
+sv_gravity                     all_ok=True per_rep=[True, True, True]
+sv_gravity_t120                all_ok=True per_rep=[True, True, True]
+sv_impulse                     all_ok=True per_rep=[True, True, True]
+sv_order                       all_ok=True per_rep=[True, True, True]
+sv_write                       all_ok=True per_rep=[True, True, True]
+
+== claims ==
+order b_order                      ncb=60/60 pfd=60/60 1to1=True pair=sync0 cb0=0.2722,16.3333 f1=f1=y=0.2722,vy=16.3333 cb0eq1=True cb0eq2=None
+order b_order_dummy                ncb=None/None pfd=None/None 1to1=None pair=None cb0=None,None f1=None cb0eq1=None cb0eq2=None
+order b_order_t120                 ncb=60/60 pfd=60/60 1to1=True pair=sync0 cb0=0.0681,8.1667 f1=f1=y=0.0681,vy=8.1667 cb0eq1=True cb0eq2=None
+order b_order_t30                  ncb=29/30 pfd=30/30 1to1=True pair=late_body cb0=1.0889,32.6667 f1=f1=y=0.0000,vy=0.0000 cb0eq1=None cb0eq2=True
+order d_order_d0                   ncb=60/60 pfd=60/60 1to1=True pair=sync0 cb0=0.2722,16.3333 f1=f1=y=0.2722,vy=16.3333 cb0eq1=True cb0eq2=None
+order d_order_d100                 ncb=60/60 pfd=60/60 1to1=True pair=sync0 cb0=0.2722,16.3333 f1=f1=y=0.2722,vy=16.3333 cb0eq1=True cb0eq2=None
+order d_order_d20                  ncb=60/60 pfd=60/60 1to1=True pair=sync0 cb0=0.2722,16.3333 f1=f1=y=0.2722,vy=16.3333 cb0eq1=True cb0eq2=None
+order d_order_d200                 ncb=60/60 pfd=60/60 1to1=True pair=sync0 cb0=0.2722,16.3333 f1=f1=y=0.2722,vy=16.3333 cb0eq1=True cb0eq2=None
+order d_order_d300                 ncb=60/60 pfd=60/60 1to1=True pair=sync0 cb0=0.2722,16.3333 f1=f1=y=0.2722,vy=16.3333 cb0eq1=True cb0eq2=None
+order d_order_d50                  ncb=60/60 pfd=60/60 1to1=True pair=sync0 cb0=0.2722,16.3333 f1=f1=y=0.2722,vy=16.3333 cb0eq1=True cb0eq2=None
+order l2_order                     ncb=60/60 pfd=60/60 1to1=True pair=sync0 cb0=0.2722,16.3333 f1=f1=y=0.2722,vy=16.3333 cb0eq1=True cb0eq2=None
+order l2_sv_order                  ncb=None/None pfd=None/None 1to1=None pair=None cb0=None,None f1=None cb0eq1=None cb0eq2=None
+order l_order                      ncb=60/60 pfd=60/60 1to1=True pair=sync0 cb0=0.2722,16.3333 f1=f1=y=0.2722,vy=16.3333 cb0eq1=True cb0eq2=None
+order l_order_t120                 ncb=60/60 pfd=60/60 1to1=True pair=sync0 cb0=0.0681,8.1667 f1=f1=y=0.0681,vy=8.1667 cb0eq1=True cb0eq2=None
+order l_sv_order                   ncb=None/None pfd=None/None 1to1=None pair=None cb0=None,None f1=None cb0eq1=None cb0eq2=None
+order p_order                      ncb=60/60 pfd=60/60 1to1=True pair=sync0 cb0=0.2722,16.3333 f1=f1=y=0.2722,vy=16.3333 cb0eq1=True cb0eq2=None
+order p_sv_order                   ncb=None/None pfd=None/None 1to1=None pair=None cb0=None,None f1=None cb0eq1=None cb0eq2=None
+order sv_order                     ncb=None/None pfd=None/None 1to1=None pair=None cb0=None,None f1=None cb0eq1=None cb0eq2=None
+order t30_order                    ncb=29/30 pfd=30/30 1to1=True pair=late_body cb0=1.0889,32.6667 f1=f1=y=0.0000,vy=0.0000 cb0eq1=None cb0eq2=True
+lag b_lag_t120_n120              tps=120 n=120/120 dy=8.1667 cf=8.1667 ok=True dvy=0.0 a_y=494.0834 cf=494.0833 ok=True b_y=485.9167 cf=485.9167 ok=True pre=971.8342/971.8333 post=980.0009/980.0
+lag b_lag_t120_n30               tps=120 n=30/30 dy=2.0417 cf=2.0417 ok=True dvy=0.0 a_y=31.6458 cf=31.6458 ok=True b_y=29.6042 cf=29.6042 ok=True pre=236.8334/236.8333 post=245.0001/245.0
+lag b_lag_t120_n60               tps=120 n=60/60 dy=4.0833 cf=4.0833 ok=True dvy=0.0 a_y=124.5417 cf=124.5417 ok=True b_y=120.4583 cf=120.4583 ok=True pre=481.8331/481.8333 post=489.9998/490.0
+lag b_lag_t240_n30               tps=240 n=30/30 dy=0.5104 cf=0.5104 ok=True dvy=0.0 a_y=7.9115 cf=7.9115 ok=True b_y=7.401 cf=7.401 ok=True pre=118.4167/118.4167 post=122.5/122.5
+lag b_lag_t30_n30                tps=30 n=30/30 dy=32.6667 cf=32.6667 ok=True dvy=0.0 a_y=506.3334 cf=506.3333 ok=True b_y=473.6667 cf=473.6667 ok=True pre=947.3336/947.3333 post=980.0002/980.0
+lag b_lag_t30_n60                tps=30 n=60/60 dy=65.3333 cf=65.3333 ok=True dvy=0.0 a_y=1992.6665 cf=1992.6667 ok=True b_y=1927.3333 cf=1927.3333 ok=True pre=1927.3325/1927.3333 post=1959.9991/1960.0
+lag b_lag_t60_n30                tps=60 n=30/30 dy=8.1667 cf=8.1667 ok=True dvy=0.0 a_y=126.5834 cf=126.5833 ok=True b_y=118.4167 cf=118.4167 ok=True pre=473.6668/473.6667 post=490.0001/490.0
+lag b_lag_t60_n60                tps=60 n=60/60 dy=16.3333 cf=16.3333 ok=True dvy=0.0 a_y=498.1666 cf=498.1667 ok=True b_y=481.8333 cf=481.8333 ok=True pre=963.6663/963.6667 post=979.9996/980.0
+lag t30_lag                      tps=30 n=29/30 dy=31.5778 cf=31.5778 ok=True dvy=0.0 a_y=473.6667 cf=473.6667 ok=True b_y=442.089 cf=442.0889 ok=True pre=914.6669/914.6667 post=947.3336/947.3333
+damp b_damp                       tps=60 ncb=60 tld_ok=True | default:482.225/482.2251 rep0:498.1666/498.1667 rep05:425.5192/425.5192 comb05:412.9205/412.9205
+damp b_damp_dummy                 tps=60 ncb=0 tld_ok=False | default:0.0/0.0 rep0:0.0/0.0 rep05:0.0/0.0 comb05:0.0/0.0
+damp b_damp_t120                  tps=120 ncb=120 tld_ok=True | default:478.1452/478.1449 rep0:494.0834/494.0833 rep05:421.5551/421.5549 comb05:409.004/409.004
+damp l_damp                       tps=60 ncb=60 tld_ok=True | default:482.225/482.2251 rep0:498.1666/498.1667 rep05:425.5192/425.5192 comb05:412.9205/412.9205
+damp sv_damp                      tps=60 ncb=60 tld_ok=True | default:482.225/482.2251 rep0:498.1666/498.1667 rep05:425.5192/425.5192 comb05:412.9205/412.9205
+impulse b_impulse                    lanes=15 failing={}
+impulse b_impulse_dummy              lanes=15 failing={"auto": {"exp_v": 59940.0, "exp_w": -479520.0, "iI": -999.0, "im": -999.0, "inertia": "0.0000", "mass": "1.0000", "v_ok": false, "vy": 0.0, "w": 0.0, "w_ok": false}, "huge": {"exp_v": 59940.0, "exp_w": -479520.0, "iI": -999.0, "im": -999.0, "inertia": "1000000000.0000", "mass": "1.0000", "v_ok": false, "vy": 0.0, "w": 0.0, "w_ok": false}, "inf_i": {"exp_v": 59940.0, "exp_w": -479520.0, "iI": -999.0, "im": -999.0, "inertia": "inf", "mass": "1.0000", "v_ok": false, "vy": 0.0, "w": 0.0, "w_ok": false}, "m_large": {"exp_v": 59940.0, "exp_w": -479520.0, "iI": -999.0, "im": -999.0, "inertia": "0.0000", "mass": "1000000.0000", "v_ok": false, "vy": 0.0, "w": 0.0, "w_ok": false}, "m_small": {"exp_v": 59940.0, "exp_w": -479520.0, "iI": -999.0, "im": -999.0, "inertia": "0.0000", "mass": "0.0010", "v_ok": false, "vy": 0.0, "w": 0.0, "w_ok": false}, "mass0": {"exp_v": 59940.0, "exp_w": -479520.0, "iI": -999.0, "im": -999.0, "inertia": "0.0000", "mass": "1.0000", "v_ok": false, "vy": 0.0, "w": 0.0, "w_ok": false}, "massneg": {"exp_v": 59940.0, "exp_w": -479520.0, "iI": -999.0, "im": -999.0, "inertia": "0.0000", "mass": "1.0000", "v_ok": false, "vy": 0.0, "w": 0.0, "w_ok": false}, "nan_i": {"exp_v": 59940.0, "exp_w": -479520.0, "iI": -999.0, "im": -999.0, "inertia": "nan", "mass": "1.0000", "v_ok": false, "vy": 0.0, "w": 0.0, "w_ok": false}, "nano": {"exp_v": 59940.0, "exp_w": -479520.0, "iI": -999.0, "im": -999.0, "inertia": "0.0000", "mass": "1.0000", "v_ok": false, "vy": 0.0, "w": 0.0, "w_ok": false}, "neg": {"exp_v": 59940.0, "exp_w": -479520.0, "iI": -999.0, "im": -999.0, "inertia": "0.0000", "mass": "1.0000", "v_ok": false, "vy": 0.0, "w": 0.0, "w_ok": false}, "s_offneg": {"exp_w": 15.0, "w": 0.0, "w_ok": false}, "s_tqneg": {"exp_v": 59940.0, "exp_w": 479520.0, "iI": -999.0, "im": -999.0, "inertia": "0.0000", "mass": "1.0000", "v_ok": false, "vy": 0.0, "w": 0.0, "w_ok": false}, "s_up": {"exp_v": 60.0, "v_ok": false, "vy": 0.0}, "tiny": {"exp_v": 59940.0, "exp_w": -479520.0, "iI": -999.0, "im": -999.0, "inertia": "0.0000", "mass": "1.0000", "v_ok": false, "vy": 0.0, "w": 0.0, "w_ok": false}, "zero": {"exp_v": 59940.0, "exp_w": -479520.0, "iI": -999.0, "im": -999.0, "inertia": "0.0000", "mass": "1.0000", "v_ok": false, "vy": 0.0, "w": 0.0, "w_ok": false}}
+impulse l_impulse                    lanes=15 failing={}
+impulse sv_impulse                   lanes=5 failing={}
+backend b_backend_dummy              cfg2d=Dummy      id2d=PhysicsServer2DDummy   dss2d=PhysicsDirectSpaceState2DDummy   drop=y=-100.0000,vy=0.0000 ncb=0 tld=-1.0000
+backend b_backend_garbage            cfg2d=garbage_xyz id2d=PhysicsServer2D        dss2d=GodotPhysicsDirectSpaceState2D   drop=y=24.5675,vy=478.3405 ncb=30 tld=0.1000
+backend b_backend_gp2d               cfg2d=DEFAULT    id2d=PhysicsServer2D        dss2d=GodotPhysicsDirectSpaceState2D   drop=y=24.5675,vy=478.3405 ncb=30 tld=0.1000
+backend b_backend_jolt2d             cfg2d=Jolt       id2d=PhysicsServer2D        dss2d=GodotPhysicsDirectSpaceState2D   drop=y=24.5675,vy=478.3405 ncb=30 tld=0.1000
+stall b_stall_idle                 idle ncb=90/90 1to1=True dh=1:89 wall=[2.3, 2.19, 2.28]
+stall b_stall_none                 none ncb=90/90 1to1=True dh=1:89 wall=[2.0, 2.13, 2.05]
+stall b_stall_phys                 phys ncb=90/90 1to1=True dh=1:89 wall=[2.24, 2.36, 2.28]
+stall l_stall_idle                 idle ncb=90/90 1to1=True dh=1:89 wall=[2.27, 2.16, 2.23]
+settle b_settle                     ncb=45 pf=120 samples={"30": {"c_y": -7.7, "cnt": 1, "ent": 1, "n_y": -7.6969, "sf_sl": "false", "sf_y": -7.7, "so_sl": "false", "so_y": -7.7}, "60": {"c_y": -7.7, "cnt": 1, "ent": 1, "n_y": -7.7, "sf_sl": "false", "sf_y": -7.7, "so_sl": "true", "so_y": -7.7}, "90": {"c_y": -7.7, "cnt": 1, "ent": 1, "n_y": -7.7, "sf_sl": "false", "sf_y": -7.7, "so_sl": "true", "so_y": -7.7}, "120": {"c_y": -7.7, "cnt": 1, "ent": 1, "n_y": -7.7, "sf_sl": "false", "sf_y": -7.7, "so_sl": "true", "so_y": -7.7}} margin=True wall=[2.7, 2.61, 2.56]
+settle l2_settle                    ncb=45 pf=120 samples={"30": {"c_y": -7.7, "cnt": 1, "ent": 1, "n_y": -7.6969, "sf_sl": "false", "sf_y": -7.7, "so_sl": "false", "so_y": -7.7}, "60": {"c_y": -7.7, "cnt": 1, "ent": 1, "n_y": -7.7, "sf_sl": "false", "sf_y": -7.7, "so_sl": "true", "so_y": -7.7}, "90": {"c_y": -7.7, "cnt": 1, "ent": 1, "n_y": -7.7, "sf_sl": "false", "sf_y": -7.7, "so_sl": "true", "so_y": -7.7}, "120": {"c_y": -7.7, "cnt": 1, "ent": 1, "n_y": -7.7, "sf_sl": "false", "sf_y": -7.7, "so_sl": "true", "so_y": -7.7}} margin=True wall=[2.79, 2.87, 2.89]
+settle l_settle                     ncb=45 pf=120 samples={"30": {"c_y": -7.7, "cnt": 1, "ent": 1, "n_y": -7.6969, "sf_sl": "false", "sf_y": -7.7, "so_sl": "false", "so_y": -7.7}, "60": {"c_y": -7.7, "cnt": 1, "ent": 1, "n_y": -7.7, "sf_sl": "false", "sf_y": -7.7, "so_sl": "true", "so_y": -7.7}, "90": {"c_y": -7.7, "cnt": 1, "ent": 1, "n_y": -7.7, "sf_sl": "false", "sf_y": -7.7, "so_sl": "true", "so_y": -7.7}, "120": {"c_y": -7.7, "cnt": 1, "ent": 1, "n_y": -7.7, "sf_sl": "false", "sf_y": -7.7, "so_sl": "true", "so_y": -7.7}} margin=True wall=[2.62, 2.53, 2.64]
+
+== comcase ==
+auto_nan                           err=[1, 1, 1] rc=[0, 0, 0] at=['set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)'] uniq=1
+custom_back_auto_diff              err=[1, 1, 1] rc=[0, 0, 0] at=['set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)'] uniq=1
+custom_dupe                        err=[0, 0, 0] rc=[0, 0, 0] at=[] uniq=1
+custom_freeze_sequence             err=[0, 0, 0] rc=[0, 0, 0] at=[] uniq=1
+custom_nan                         err=[0, 0, 0] rc=[0, 0, 0] at=[] uniq=1
+frozen_kin_auto_diff               err=[1, 1, 1] rc=[0, 0, 0] at=['set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)'] uniq=1
+frozen_kin_custom_diff             err=[0, 0, 0] rc=[0, 0, 0] at=[] uniq=1
+frozen_static_auto_diff            err=[1, 1, 1] rc=[0, 0, 0] at=['set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)'] uniq=1
+frozen_static_auto_then_mode       err=[1, 1, 1] rc=[0, 0, 0] at=['set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)'] uniq=1
+frozen_static_custom_diff          err=[0, 0, 0] rc=[0, 0, 0] at=[] uniq=1
+intree_auto_diff                   err=[1, 1, 1] rc=[0, 0, 0] at=['set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)'] uniq=1
+intree_auto_same                   err=[0, 0, 0] rc=[0, 0, 0] at=[] uniq=1
+intree_custom_diff                 err=[0, 0, 0] rc=[0, 0, 0] at=[] uniq=1
+mode_invalid                       err=[1, 1, 1] rc=[0, 0, 0] at=['set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)'] uniq=1
+mode_neg                           err=[1, 1, 1] rc=[0, 0, 0] at=['set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)'] uniq=1
+nottree_auto_diff                  err=[1, 1, 1] rc=[0, 0, 0] at=['set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)'] uniq=1
+nottree_custom_diff                err=[0, 0, 0] rc=[0, 0, 0] at=[] uniq=1
+set_via_set                        err=[1, 1, 1] rc=[0, 0, 0] at=['set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)'] uniq=1

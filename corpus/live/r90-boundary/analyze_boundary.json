@@ -1,0 +1,5432 @@
+{
+ "cells": {
+  "b_backend_dummy": {
+   "arm": "backend",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cfg2d": "Dummy",
+    "cls_exists": "GodotPhysicsServer2D=false,Dummy=true",
+    "drop": "y=-100.0000,vy=0.0000",
+    "dss2d": "PhysicsDirectSpaceState2DDummy",
+    "hint2d": "DEFAULT,GodotPhysics2D,Dummy",
+    "id2d": "PhysicsServer2DDummy",
+    "ncb": "0",
+    "pf_delta": "30",
+    "tick_dh": "1:29",
+    "tld": "-1.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary backend cfg2d=Dummy hint2d=DEFAULT,GodotPhysics2D,Dummy id2d=PhysicsServer2DDummy cls_exists=GodotPhysicsServer2D=false,Dummy=true dss2d=PhysicsDirectSpaceState2DDummy drop=y=-100.0000,vy=0.0000 ncb=0 tld=-1.0000 pf_delta=30 tick_dh=1:29",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.21,
+    1.22,
+    1.21
+   ]
+  },
+  "b_backend_garbage": {
+   "arm": "backend",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cfg2d": "garbage_xyz",
+    "cls_exists": "GodotPhysicsServer2D=true,Dummy=false",
+    "drop": "y=24.5675,vy=478.3405",
+    "dss2d": "GodotPhysicsDirectSpaceState2D",
+    "hint2d": "DEFAULT,GodotPhysics2D,Dummy",
+    "id2d": "PhysicsServer2D",
+    "ncb": "30",
+    "pf_delta": "30",
+    "tick_dh": "1:29",
+    "tld": "0.1000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary backend cfg2d=garbage_xyz hint2d=DEFAULT,GodotPhysics2D,Dummy id2d=PhysicsServer2D cls_exists=GodotPhysicsServer2D=true,Dummy=false dss2d=GodotPhysicsDirectSpaceState2D drop=y=24.5675,vy=478.3405 ncb=30 tld=0.1000 pf_delta=30 tick_dh=1:29",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.15,
+    1.18,
+    1.18
+   ]
+  },
+  "b_backend_gp2d": {
+   "arm": "backend",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cfg2d": "DEFAULT",
+    "cls_exists": "GodotPhysicsServer2D=true,Dummy=false",
+    "drop": "y=24.5675,vy=478.3405",
+    "dss2d": "GodotPhysicsDirectSpaceState2D",
+    "hint2d": "DEFAULT,GodotPhysics2D,Dummy",
+    "id2d": "PhysicsServer2D",
+    "ncb": "30",
+    "pf_delta": "30",
+    "tick_dh": "1:29",
+    "tld": "0.1000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary backend cfg2d=DEFAULT hint2d=DEFAULT,GodotPhysics2D,Dummy id2d=PhysicsServer2D cls_exists=GodotPhysicsServer2D=true,Dummy=false dss2d=GodotPhysicsDirectSpaceState2D drop=y=24.5675,vy=478.3405 ncb=30 tld=0.1000 pf_delta=30 tick_dh=1:29",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.13,
+    1.13,
+    1.1
+   ]
+  },
+  "b_backend_jolt2d": {
+   "arm": "backend",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cfg2d": "Jolt",
+    "cls_exists": "GodotPhysicsServer2D=true,Dummy=false",
+    "drop": "y=24.5675,vy=478.3405",
+    "dss2d": "GodotPhysicsDirectSpaceState2D",
+    "hint2d": "DEFAULT,GodotPhysics2D,Dummy",
+    "id2d": "PhysicsServer2D",
+    "ncb": "30",
+    "pf_delta": "30",
+    "tick_dh": "1:29",
+    "tld": "0.1000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary backend cfg2d=Jolt Physics hint2d=DEFAULT,GodotPhysics2D,Dummy id2d=PhysicsServer2D cls_exists=GodotPhysicsServer2D=true,Dummy=false dss2d=GodotPhysicsDirectSpaceState2D drop=y=24.5675,vy=478.3405 ncb=30 tld=0.1000 pf_delta=30 tick_dh=1:29",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.14,
+    1.21,
+    1.16
+   ]
+  },
+  "b_com_auto_nan": {
+   "arm": "comcase",
+   "at": [
+    "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+   ],
+   "err_bytes": [
+    271,
+    271,
+    271
+   ],
+   "err_class": [
+    "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "case": "auto_nan",
+    "mode": "0",
+    "post": "com=0.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=auto_nan post=com=0.0000,0.0000 mode=0",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.48,
+    0.41,
+    0.52
+   ]
+  },
+  "b_com_custom_back_auto_diff": {
+   "arm": "comcase",
+   "at": [
+    "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+   ],
+   "err_bytes": [
+    271,
+    271,
+    271
+   ],
+   "err_class": [
+    "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "case": "custom_back_auto_diff",
+    "mode": "0",
+    "post_auto": "com=0.0000,0.0000",
+    "post_set": "com=0.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=custom_back_auto_diff post_auto=com=0.0000,0.0000 mode=0 post_set=com=0.0000,0.0000 mode=0",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.46,
+    0.44,
+    0.55
+   ]
+  },
+  "b_com_custom_dupe": {
+   "arm": "comcase",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "case": "custom_dupe",
+    "mode": "1",
+    "post_dupe": "com=4.0000,0.0000",
+    "post_new": "com=8.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=custom_dupe post_dupe=com=4.0000,0.0000 mode=1 post_new=com=8.0000,0.0000 mode=1",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.47,
+    0.42,
+    0.43
+   ]
+  },
+  "b_com_custom_freeze_sequence": {
+   "arm": "comcase",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "case": "custom_freeze_sequence",
+    "mode": "1",
+    "post": "com=8.0000,0.0000",
+    "post_unfreeze": "com=8.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=custom_freeze_sequence post=com=8.0000,0.0000 mode=1 post_unfreeze=com=8.0000,0.0000 mode=1",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.61,
+    0.66,
+    0.65
+   ]
+  },
+  "b_com_custom_nan": {
+   "arm": "comcase",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "case": "custom_nan",
+    "mode": "1",
+    "post": "com=nan,nan"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=custom_nan post=com=nan,nan mode=1",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.39,
+    0.45,
+    0.58
+   ]
+  },
+  "b_com_frozen_kin_auto_diff": {
+   "arm": "comcase",
+   "at": [
+    "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+   ],
+   "err_bytes": [
+    271,
+    271,
+    271
+   ],
+   "err_class": [
+    "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "case": "frozen_kin_auto_diff",
+    "mode": "0",
+    "post": "com=0.0000,0.0000",
+    "post_unfreeze": "com=0.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=frozen_kin_auto_diff post=com=0.0000,0.0000 mode=0 post_unfreeze=com=0.0000,0.0000 mode=0",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.67,
+    0.47,
+    0.52
+   ]
+  },
+  "b_com_frozen_kin_custom_diff": {
+   "arm": "comcase",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "case": "frozen_kin_custom_diff",
+    "mode": "1",
+    "post": "com=4.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=frozen_kin_custom_diff post=com=4.0000,0.0000 mode=1",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.47,
+    0.39,
+    0.57
+   ]
+  },
+  "b_com_frozen_static_auto_diff": {
+   "arm": "comcase",
+   "at": [
+    "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+   ],
+   "err_bytes": [
+    271,
+    271,
+    271
+   ],
+   "err_class": [
+    "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "case": "frozen_static_auto_diff",
+    "mode": "0",
+    "post": "com=0.0000,0.0000",
+    "post_unfreeze": "com=0.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=frozen_static_auto_diff post=com=0.0000,0.0000 mode=0 post_unfreeze=com=0.0000,0.0000 mode=0",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.5,
+    0.6,
+    0.49
+   ]
+  },
+  "b_com_frozen_static_auto_then_mode": {
+   "arm": "comcase",
+   "at": [
+    "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+   ],
+   "err_bytes": [
+    271,
+    271,
+    271
+   ],
+   "err_class": [
+    "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "case": "frozen_static_auto_then_mode",
+    "mode": "1",
+    "post": "com=0.0000,0.0000",
+    "post_custom": "com=4.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=frozen_static_auto_then_mode post=com=0.0000,0.0000 mode=0 post_custom=com=4.0000,0.0000 mode=1",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.45,
+    0.4,
+    0.48
+   ]
+  },
+  "b_com_frozen_static_custom_diff": {
+   "arm": "comcase",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "case": "frozen_static_custom_diff",
+    "mode": "1",
+    "post": "com=4.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=frozen_static_custom_diff post=com=4.0000,0.0000 mode=1",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.55,
+    0.64,
+    0.63
+   ]
+  },
+  "b_com_intree_auto_diff": {
+   "arm": "comcase",
+   "at": [
+    "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+   ],
+   "err_bytes": [
+    271,
+    271,
+    271
+   ],
+   "err_class": [
+    "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "case": "intree_auto_diff",
+    "mode": "0",
+    "post": "com=0.0000,0.0000",
+    "pre": "com=0.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=intree_auto_diff pre=com=0.0000,0.0000 mode=0 post=com=0.0000,0.0000 mode=0",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.57,
+    0.58,
+    0.56
+   ]
+  },
+  "b_com_intree_auto_same": {
+   "arm": "comcase",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "case": "intree_auto_same",
+    "mode": "0",
+    "post": "com=0.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=intree_auto_same post=com=0.0000,0.0000 mode=0",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.54,
+    0.4,
+    0.49
+   ]
+  },
+  "b_com_intree_custom_diff": {
+   "arm": "comcase",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "case": "intree_custom_diff",
+    "mode": "1",
+    "post": "com=4.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=intree_custom_diff post=com=4.0000,0.0000 mode=1",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.54,
+    0.49,
+    0.51
+   ]
+  },
+  "b_com_mode_invalid": {
+   "arm": "comcase",
+   "at": [
+    "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+   ],
+   "err_bytes": [
+    271,
+    271,
+    271
+   ],
+   "err_class": [
+    "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "case": "mode_invalid",
+    "mode": "99",
+    "post": "com=0.0000,0.0000",
+    "post_mode": "com=0.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=mode_invalid post_mode=com=0.0000,0.0000 mode=99 post=com=0.0000,0.0000 mode=99",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.52,
+    0.48,
+    0.56
+   ]
+  },
+  "b_com_mode_neg": {
+   "arm": "comcase",
+   "at": [
+    "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+   ],
+   "err_bytes": [
+    271,
+    271,
+    271
+   ],
+   "err_class": [
+    "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "case": "mode_neg",
+    "mode": "4294967295",
+    "post": "com=0.0000,0.0000",
+    "post_mode": "com=0.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=mode_neg post_mode=com=0.0000,0.0000 mode=4294967295 post=com=0.0000,0.0000 mode=4294967295",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.46,
+    0.41,
+    0.62
+   ]
+  },
+  "b_com_nottree_auto_diff": {
+   "arm": "comcase",
+   "at": [
+    "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+   ],
+   "err_bytes": [
+    271,
+    271,
+    271
+   ],
+   "err_class": [
+    "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "case": "nottree_auto_diff",
+    "mode": "0",
+    "post": "com=0.0000,0.0000",
+    "post_add": "com=0.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=nottree_auto_diff post=com=0.0000,0.0000 mode=0 post_add=com=0.0000,0.0000 mode=0",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.38,
+    0.4,
+    0.51
+   ]
+  },
+  "b_com_nottree_custom_diff": {
+   "arm": "comcase",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "case": "nottree_custom_diff",
+    "mode": "1",
+    "post": "com=4.0000,0.0000",
+    "post_add": "com=4.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=nottree_custom_diff post=com=4.0000,0.0000 mode=1 post_add=com=4.0000,0.0000 mode=1",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.49,
+    0.39,
+    0.39
+   ]
+  },
+  "b_com_set_via_set": {
+   "arm": "comcase",
+   "at": [
+    "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+   ],
+   "err_bytes": [
+    271,
+    271,
+    271
+   ],
+   "err_class": [
+    "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "case": "set_via_set",
+    "mode": "0",
+    "post": "com=0.0000,0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary comcase case=set_via_set post=com=0.0000,0.0000 mode=0",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.48,
+    0.44,
+    0.42
+   ]
+  },
+  "b_damp": {
+   "arm": "damp",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f30": "default[y=124.5675,vy=478.3405]|rep0[y=126.5834,vy=490.0001]|rep05[y=116.9554,vy=435.1487]|comb05[y=115.1592,vy=425.1562]",
+    "f60": "default[y=482.2250,vy=933.3325]|rep0[y=498.1666,vy=979.9996]|rep05[y=425.5192,vy=773.6876]|comb05[y=412.9205,vy=739.6441]",
+    "ncb": "60",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary damp f30=default[y=124.5675,vy=478.3405]|rep0[y=126.5834,vy=490.0001]|rep05[y=116.9554,vy=435.1487]|comb05[y=115.1592,vy=425.1562] f60=default[y=482.2250,vy=933.3325]|rep0[y=498.1666,vy=979.9996]|rep05[y=425.5192,vy=773.6876]|comb05[y=412.9205,vy=739.6441] tld=default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000 ncb=60 pf_delta=60 tick_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.54,
+    1.58,
+    1.73
+   ]
+  },
+  "b_damp_dummy": {
+   "arm": "damp",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f30": "default[y=0.0000,vy=0.0000]|rep0[y=0.0000,vy=0.0000]|rep05[y=0.0000,vy=0.0000]|comb05[y=0.0000,vy=0.0000]",
+    "f60": "default[y=0.0000,vy=0.0000]|rep0[y=0.0000,vy=0.0000]|rep05[y=0.0000,vy=0.0000]|comb05[y=0.0000,vy=0.0000]",
+    "ncb": "0",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "default=-1.0000|rep0=-1.0000|rep05=-1.0000|comb05=-1.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary damp f30=default[y=0.0000,vy=0.0000]|rep0[y=0.0000,vy=0.0000]|rep05[y=0.0000,vy=0.0000]|comb05[y=0.0000,vy=0.0000] f60=default[y=0.0000,vy=0.0000]|rep0[y=0.0000,vy=0.0000]|rep05[y=0.0000,vy=0.0000]|comb05[y=0.0000,vy=0.0000] tld=default=-1.0000|rep0=-1.0000|rep05=-1.0000|comb05=-1.0000 ncb=0 pf_delta=60 tick_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.64,
+    1.62,
+    1.58
+   ]
+  },
+  "b_damp_t120": {
+   "arm": "damp",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f120": "default[y=478.1452,vy=932.9641]|rep0[y=494.0834,vy=980.0009]|rep05[y=421.5551,vy=772.4420]|comb05[y=409.0040,vy=738.2897]",
+    "f60": "default[y=122.5250,vy=478.1458]|rep0[y=124.5417,vy=489.9998]|rep05[y=114.9246,vy=434.3474]|comb05[y=113.1346,vy=424.2403]",
+    "ncb": "120",
+    "pf_delta": "120",
+    "tick_dh": "1:119",
+    "tld": "default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary damp f60=default[y=122.5250,vy=478.1458]|rep0[y=124.5417,vy=489.9998]|rep05[y=114.9246,vy=434.3474]|comb05[y=113.1346,vy=424.2403] f120=default[y=478.1452,vy=932.9641]|rep0[y=494.0834,vy=980.0009]|rep05[y=421.5551,vy=772.4420]|comb05[y=409.0040,vy=738.2897] tld=default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000 ncb=120 pf_delta=120 tick_dh=1:119",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.76,
+    1.73,
+    1.69
+   ]
+  },
+  "b_impulse": {
+   "arm": "impulse",
+   "at": [
+    "set_inertia (scene/2d/physics/rigid_body_2d.cpp:334)",
+    "set_mass (scene/2d/physics/rigid_body_2d.cpp:324)"
+   ],
+   "err_bytes": [
+    674,
+    674,
+    674
+   ],
+   "err_class": [
+    "Condition \"p_inertia < 0\" is true.",
+    "Condition \"p_mass <= 0\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "post": "auto[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|zero[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|tiny[v=0.0000,-60.0000,w=480000000.0000,iI=1000000.000000,im=1.000000,inertia=0.0000,mass=1.0000]|nano[v=0.0000,-60.0000,w=480000016384.0000,iI=1000000000.000000,im=1.000000,inertia=0.0000,mass=1.0000]|huge[v=0.0000,-60.0000,w=0.0000,iI=0.000000,im=1.000000,inertia=1000000000.0000,mass=1.0000]|neg[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|m_small[v=0.0000,-59999.9961,w=14999.9990,iI=31.249998,im=999.999939,inertia=0.0000,mass=0.0010]|m_large[v=0.0000,-0.0001,w=0.0000,iI=0.000000,im=0.000001,inertia=0.0000,mass=1000000.0000]|mass0[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|massneg[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|nan_i[v=0.0000,-60.0000,w=0.0000,iI=0.000000,im=1.000000,inertia=nan,mass=1.0000]|inf_i[v=0.0000,-60.0000,w=0.0000,iI=0.000000,im=1.000000,inertia=inf,mass=1.0000]|s_tqneg[v=0.0000,-60.0000,w=-15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|s_offneg[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|s_up[v=0.0000,60.0000,w=0.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary impulse post=auto[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|zero[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|tiny[v=0.0000,-60.0000,w=480000000.0000,iI=1000000.000000,im=1.000000,inertia=0.0000,mass=1.0000]|nano[v=0.0000,-60.0000,w=480000016384.0000,iI=1000000000.000000,im=1.000000,inertia=0.0000,mass=1.0000]|huge[v=0.0000,-60.0000,w=0.0000,iI=0.000000,im=1.000000,inertia=1000000000.0000,mass=1.0000]|neg[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|m_small[v=0.0000,-59999.9961,w=14999.9990,iI=31.249998,im=999.999939,inertia=0.0000,mass=0.0010]|m_large[v=0.0000,-0.0001,w=0.0000,iI=0.000000,im=0.000001,inertia=0.0000,mass=1000000.0000]|mass0[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|massneg[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|nan_i[v=0.0000,-60.0000,w=0.0000,iI=0.000000,im=1.000000,inertia=nan,mass=1.0000]|inf_i[v=0.0000,-60.0000,w=0.0000,iI=0.000000,im=1.000000,inertia=inf,mass=1.0000]|s_tqneg[v=0.0000,-60.0000,w=-15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|s_offneg[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|s_up[v=0.0000,60.0000,w=0.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.63,
+    0.76,
+    0.74
+   ]
+  },
+  "b_impulse_dummy": {
+   "arm": "impulse",
+   "at": [
+    "set_inertia (scene/2d/physics/rigid_body_2d.cpp:334)",
+    "set_mass (scene/2d/physics/rigid_body_2d.cpp:324)"
+   ],
+   "err_bytes": [
+    674,
+    674,
+    674
+   ],
+   "err_class": [
+    "Condition \"p_inertia < 0\" is true.",
+    "Condition \"p_mass <= 0\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "post": "auto[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|zero[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|tiny[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|nano[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|huge[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=1000000000.0000,mass=1.0000]|neg[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|m_small[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=0.0010]|m_large[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1000000.0000]|mass0[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|massneg[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|nan_i[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=nan,mass=1.0000]|inf_i[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=inf,mass=1.0000]|s_tqneg[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|s_offneg[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|s_up[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary impulse post=auto[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|zero[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|tiny[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|nano[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|huge[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=1000000000.0000,mass=1.0000]|neg[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|m_small[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=0.0010]|m_large[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1000000.0000]|mass0[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|massneg[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|nan_i[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=nan,mass=1.0000]|inf_i[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=inf,mass=1.0000]|s_tqneg[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|s_offneg[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]|s_up[v=0.0000,0.0000,w=0.0000,iI=-999.000000,im=-999.000000,inertia=0.0000,mass=1.0000]",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.69,
+    0.75,
+    0.56
+   ]
+  },
+  "b_lag_t120_n120": {
+   "arm": "lag",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "a": "y=494.0834,vy=980.0009",
+    "acc": "an=120,bn=120,apre=980.0009,bpre=971.8342,bpost=980.0009",
+    "b": "y=485.9167,vy=980.0009",
+    "c": "y=478.1452,vy=932.9641",
+    "d": "dy=8.1667,dvy=0.0000",
+    "exp": "N=120",
+    "exp_dvy_gdt": "8.1667",
+    "exp_dy": "8.1667",
+    "gdt": "8.1667",
+    "gdt2": "0.068056",
+    "pf_delta": "120",
+    "step": "0.008333",
+    "tick_dh": "1:119"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary lag a=y=494.0834,vy=980.0009 b=y=485.9167,vy=980.0009 c=y=478.1452,vy=932.9641 d=dy=8.1667,dvy=0.0000 step=0.008333 gdt=8.1667 gdt2=0.068056 exp=N=120 exp_dy=8.1667 exp_dvy_gdt=8.1667 acc=an=120,bn=120,apre=980.0009,bpre=971.8342,bpost=980.0009 pf_delta=120 tick_dh=1:119",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.77,
+    1.58,
+    1.56
+   ]
+  },
+  "b_lag_t120_n30": {
+   "arm": "lag",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "a": "y=31.6458,vy=245.0001",
+    "acc": "an=30,bn=30,apre=245.0001,bpre=236.8334,bpost=245.0001",
+    "b": "y=29.6042,vy=245.0001",
+    "c": "y=31.3924,vy=242.0625",
+    "d": "dy=2.0417,dvy=0.0000",
+    "exp": "N=30",
+    "exp_dvy_gdt": "8.1667",
+    "exp_dy": "2.0417",
+    "gdt": "8.1667",
+    "gdt2": "0.068056",
+    "pf_delta": "30",
+    "step": "0.008333",
+    "tick_dh": "1:29"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary lag a=y=31.6458,vy=245.0001 b=y=29.6042,vy=245.0001 c=y=31.3924,vy=242.0625 d=dy=2.0417,dvy=0.0000 step=0.008333 gdt=8.1667 gdt2=0.068056 exp=N=30 exp_dy=2.0417 exp_dvy_gdt=8.1667 acc=an=30,bn=30,apre=245.0001,bpre=236.8334,bpost=245.0001 pf_delta=30 tick_dh=1:29",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.98,
+    0.98,
+    0.96
+   ]
+  },
+  "b_lag_t120_n60": {
+   "arm": "lag",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "a": "y=124.5417,vy=489.9998",
+    "acc": "an=60,bn=60,apre=489.9998,bpre=481.8331,bpost=489.9998",
+    "b": "y=120.4583,vy=489.9998",
+    "c": "y=122.5250,vy=478.1458",
+    "d": "dy=4.0833,dvy=0.0000",
+    "exp": "N=60",
+    "exp_dvy_gdt": "8.1667",
+    "exp_dy": "4.0833",
+    "gdt": "8.1667",
+    "gdt2": "0.068056",
+    "pf_delta": "60",
+    "step": "0.008333",
+    "tick_dh": "1:59"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary lag a=y=124.5417,vy=489.9998 b=y=120.4583,vy=489.9998 c=y=122.5250,vy=478.1458 d=dy=4.0833,dvy=0.0000 step=0.008333 gdt=8.1667 gdt2=0.068056 exp=N=60 exp_dy=4.0833 exp_dvy_gdt=8.1667 acc=an=60,bn=60,apre=489.9998,bpre=481.8331,bpost=489.9998 pf_delta=60 tick_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 3,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.12,
+    1.17,
+    1.17
+   ]
+  },
+  "b_lag_t240_n30": {
+   "arm": "lag",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "a": "y=7.9115,vy=122.5000",
+    "acc": "an=30,bn=30,apre=122.5000,bpre=118.4167,bpost=122.5000",
+    "b": "y=7.4010,vy=122.5000",
+    "c": "y=7.8797,vy=121.7627",
+    "d": "dy=0.5104,dvy=0.0000",
+    "exp": "N=30",
+    "exp_dvy_gdt": "4.0833",
+    "exp_dy": "0.5104",
+    "gdt": "4.0833",
+    "gdt2": "0.017014",
+    "pf_delta": "30",
+    "step": "0.004167",
+    "tick_dh": "1:29"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary lag a=y=7.9115,vy=122.5000 b=y=7.4010,vy=122.5000 c=y=7.8797,vy=121.7627 d=dy=0.5104,dvy=0.0000 step=0.004167 gdt=4.0833 gdt2=0.017014 exp=N=30 exp_dy=0.5104 exp_dvy_gdt=4.0833 acc=an=30,bn=30,apre=122.5000,bpre=118.4167,bpost=122.5000 pf_delta=30 tick_dh=1:29",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.75,
+    0.73,
+    0.71
+   ]
+  },
+  "b_lag_t30_n30": {
+   "arm": "lag",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "a": "y=506.3334,vy=980.0002",
+    "acc": "an=30,bn=30,apre=980.0002,bpre=947.3336,bpost=980.0002",
+    "b": "y=473.6667,vy=980.0002",
+    "c": "y=490.3922,vy=934.0746",
+    "d": "dy=32.6667,dvy=0.0000",
+    "exp": "N=30",
+    "exp_dvy_gdt": "32.6667",
+    "exp_dy": "32.6667",
+    "gdt": "32.6667",
+    "gdt2": "1.088889",
+    "pf_delta": "30",
+    "step": "0.033333",
+    "tick_dh": "1:29"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary lag a=y=506.3334,vy=980.0002 b=y=473.6667,vy=980.0002 c=y=490.3922,vy=934.0746 d=dy=32.6667,dvy=0.0000 step=0.033333 gdt=32.6667 gdt2=1.088889 exp=N=30 exp_dy=32.6667 exp_dvy_gdt=32.6667 acc=an=30,bn=30,apre=980.0002,bpre=947.3336,bpost=980.0002 pf_delta=30 tick_dh=1:29",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.64,
+    1.67,
+    1.7
+   ]
+  },
+  "b_lag_t30_n60": {
+   "arm": "lag",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "a": "y=1992.6665,vy=1959.9991",
+    "acc": "an=60,bn=60,apre=1959.9991,bpre=1927.3325,bpost=1959.9991",
+    "b": "y=1927.3333,vy=1959.9991",
+    "c": "y=1868.1178,vy=1779.1179",
+    "d": "dy=65.3333,dvy=0.0000",
+    "exp": "N=60",
+    "exp_dvy_gdt": "32.6667",
+    "exp_dy": "65.3333",
+    "gdt": "32.6667",
+    "gdt2": "1.088889",
+    "pf_delta": "60",
+    "step": "0.033333",
+    "tick_dh": "1:59"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary lag a=y=1992.6665,vy=1959.9991 b=y=1927.3333,vy=1959.9991 c=y=1868.1178,vy=1779.1179 d=dy=65.3333,dvy=0.0000 step=0.033333 gdt=32.6667 gdt2=1.088889 exp=N=60 exp_dy=65.3333 exp_dvy_gdt=32.6667 acc=an=60,bn=60,apre=1959.9991,bpre=1927.3325,bpost=1959.9991 pf_delta=60 tick_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 3,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    2.63,
+    2.73,
+    2.77
+   ]
+  },
+  "b_lag_t60_n30": {
+   "arm": "lag",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "a": "y=126.5834,vy=490.0001",
+    "acc": "an=30,bn=30,apre=490.0001,bpre=473.6668,bpost=490.0001",
+    "b": "y=118.4167,vy=490.0001",
+    "c": "y=124.5675,vy=478.3405",
+    "d": "dy=8.1667,dvy=0.0000",
+    "exp": "N=30",
+    "exp_dvy_gdt": "16.3333",
+    "exp_dy": "8.1667",
+    "gdt": "16.3333",
+    "gdt2": "0.272222",
+    "pf_delta": "30",
+    "step": "0.016667",
+    "tick_dh": "1:29"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary lag a=y=126.5834,vy=490.0001 b=y=118.4167,vy=490.0001 c=y=124.5675,vy=478.3405 d=dy=8.1667,dvy=0.0000 step=0.016667 gdt=16.3333 gdt2=0.272222 exp=N=30 exp_dy=8.1667 exp_dvy_gdt=16.3333 acc=an=30,bn=30,apre=490.0001,bpre=473.6668,bpost=490.0001 pf_delta=30 tick_dh=1:29",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.19,
+    1.21,
+    1.26
+   ]
+  },
+  "b_lag_t60_n60": {
+   "arm": "lag",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "a": "y=498.1666,vy=979.9996",
+    "acc": "an=60,bn=60,apre=979.9996,bpre=963.6663,bpost=979.9996",
+    "b": "y=481.8333,vy=979.9996",
+    "c": "y=482.2250,vy=933.3325",
+    "d": "dy=16.3333,dvy=0.0000",
+    "exp": "N=60",
+    "exp_dvy_gdt": "16.3333",
+    "exp_dy": "16.3333",
+    "gdt": "16.3333",
+    "gdt2": "0.272222",
+    "pf_delta": "60",
+    "step": "0.016667",
+    "tick_dh": "1:59"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary lag a=y=498.1666,vy=979.9996 b=y=481.8333,vy=979.9996 c=y=482.2250,vy=933.3325 d=dy=16.3333,dvy=0.0000 step=0.016667 gdt=16.3333 gdt2=0.272222 exp=N=60 exp_dy=16.3333 exp_dvy_gdt=16.3333 acc=an=60,bn=60,apre=979.9996,bpre=963.6663,bpost=979.9996 pf_delta=60 tick_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.56,
+    1.52,
+    1.49
+   ]
+  },
+  "b_order": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb0_rel": "1",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "cbpf_dh": "1:59",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "obs0_rel": "1",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "sync0"
+   ],
+   "pass": "PASS rb90_boundary order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.73,
+    1.79,
+    1.64
+   ]
+  },
+  "b_order_dummy": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0_rel": "-1",
+    "cbpf_dh": "short",
+    "f1": "y=0.0000,vy=0.0000",
+    "f2": "y=0.0000,vy=0.0000",
+    "f3": "y=0.0000,vy=0.0000",
+    "f60": "y=0.0000,vy=0.0000",
+    "ncb": "0",
+    "obs0_rel": "1",
+    "pf_delta": "60",
+    "tick_dh": "1:59"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary order ncb=0 f1=y=0.0000,vy=0.0000 f2=y=0.0000,vy=0.0000 f3=y=0.0000,vy=0.0000 f60=y=0.0000,vy=0.0000 cb0_rel=-1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=short",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.47,
+    1.61,
+    1.56
+   ]
+  },
+  "b_order_t120": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.008333",
+    "cb0_rel": "1",
+    "cb1": "st=0.008333",
+    "cb2": "st=0.008333",
+    "cb3": "st=0.008333",
+    "cb4": "st=0.008333",
+    "cblast": "st=0.008333",
+    "cbpf_dh": "1:59",
+    "f1": "y=0.0681,vy=8.1667",
+    "f2": "y=0.2041,vy=16.3265",
+    "f3": "y=0.4081,vy=24.4796",
+    "f60": "y=122.5250,vy=478.1458",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "obs0_rel": "1",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "0.1000",
+    "ty": "122.5250",
+    "vy": "478.1458"
+   },
+   "pair": [
+    "sync0"
+   ],
+   "pass": "PASS rb90_boundary order ncb=60 cb0=st=0.008333 ty=0.0681 vy=8.1667 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.008333 ty=0.2041 vy=16.3265 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.008333 ty=0.4081 vy=24.4796 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.008333 ty=0.6800 vy=32.6259 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.008333 ty=1.0197 vy=40.7653 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.008333 ty=122.5250 vy=478.1458 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.0681,vy=8.1667 f2=y=0.2041,vy=16.3265 f3=y=0.4081,vy=24.4796 f60=y=122.5250,vy=478.1458 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 3,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.12,
+    1.15,
+    1.11
+   ]
+  },
+  "b_order_t30": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.033333",
+    "cb0_rel": "2",
+    "cb1": "st=0.033333",
+    "cb2": "st=0.033333",
+    "cb3": "st=0.033333",
+    "cb4": "st=0.033333",
+    "cblast": "st=0.033333",
+    "cbpf_dh": "1:28",
+    "f1": "y=0.0000,vy=0.0000",
+    "f2": "y=1.0889,vy=32.6667",
+    "f3": "y=3.2630,vy=65.2244",
+    "f30": "y=459.2563,vy=904.4226",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "29",
+    "obs0_rel": "1",
+    "pf_delta": "30",
+    "tick_dh": "1:29",
+    "tld": "0.1000",
+    "ty": "459.2563",
+    "vy": "904.4226"
+   },
+   "pair": [
+    "late_body"
+   ],
+   "pass": "PASS rb90_boundary order ncb=29 cb0=st=0.033333 ty=1.0889 vy=32.6667 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.033333 ty=3.2630 vy=65.2244 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.033333 ty=6.5188 vy=97.6737 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.033333 ty=10.8527 vy=130.0148 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.033333 ty=16.2609 vy=162.2481 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.033333 ty=459.2563 vy=904.4226 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.0000,vy=0.0000 f2=y=1.0889,vy=32.6667 f3=y=3.2630,vy=65.2244 f30=y=459.2563,vy=904.4226 cb0_rel=2 obs0_rel=1 pf_delta=30 tick_dh=1:29 cbpf_dh=1:28",
+   "pass_uniq": 1,
+   "raw_uniq": 3,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.58,
+    1.6,
+    1.62
+   ]
+  },
+  "b_settle": {
+   "arm": "settle",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "c[y": "-7.7000,cnt=1,ent=1]",
+    "f120": "n[y=-7.7000,vy=0.0000]",
+    "f30": "n[y=-7.6969,vy=0.0000]",
+    "f60": "n[y=-7.7000,vy=0.0000]",
+    "f90": "n[y=-7.7000,vy=0.0000]",
+    "ncb": "45",
+    "pf_delta": "120",
+    "sf[y": "-7.7000,sl=false]",
+    "so[y": "-7.7000,sl=true]",
+    "tick_dh": "1:119"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary settle f30=n[y=-7.6969,vy=0.0000] c[y=-7.7000,cnt=1,ent=1] so[y=-7.7000,sl=false] sf[y=-7.7000,sl=false] f60=n[y=-7.7000,vy=0.0000] c[y=-7.7000,cnt=1,ent=1] so[y=-7.7000,sl=true] sf[y=-7.7000,sl=false] f90=n[y=-7.7000,vy=0.0000] c[y=-7.7000,cnt=1,ent=1] so[y=-7.7000,sl=true] sf[y=-7.7000,sl=false] f120=n[y=-7.7000,vy=0.0000] c[y=-7.7000,cnt=1,ent=1] so[y=-7.7000,sl=true] sf[y=-7.7000,sl=false] ncb=45 pf_delta=120 tick_dh=1:119",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    2.7,
+    2.61,
+    2.56
+   ]
+  },
+  "b_stall_idle": {
+   "arm": "stall",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cbpf_dh": "1:89",
+    "fN": "y=1061.5953,vy=1366.1176",
+    "ncb": "90",
+    "near": "f29[y=124.5675,vy=478.3405]|f30[y=132.7988,vy=493.8766]|f31[y=141.2886,vy=509.3869]|f32[y=150.0364,vy=524.8712]",
+    "pf_delta": "90",
+    "stall": "idle",
+    "stall_at": "30",
+    "tick_dh": "1:89"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary stall stall=idle stall_at=30 ncb=90 near=f29[y=124.5675,vy=478.3405]|f30[y=132.7988,vy=493.8766]|f31[y=141.2886,vy=509.3869]|f32[y=150.0364,vy=524.8712] fN=y=1061.5953,vy=1366.1176 pf_delta=90 tick_dh=1:89 cbpf_dh=1:89",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    2.3,
+    2.19,
+    2.28
+   ]
+  },
+  "b_stall_none": {
+   "arm": "stall",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cbpf_dh": "1:89",
+    "fN": "y=1061.5953,vy=1366.1176",
+    "ncb": "90",
+    "near": "f29[y=124.5675,vy=478.3405]|f30[y=132.7988,vy=493.8766]|f31[y=141.2886,vy=509.3869]|f32[y=150.0364,vy=524.8712]",
+    "pf_delta": "90",
+    "stall": "none",
+    "stall_at": "30",
+    "tick_dh": "1:89"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary stall stall=none stall_at=30 ncb=90 near=f29[y=124.5675,vy=478.3405]|f30[y=132.7988,vy=493.8766]|f31[y=141.2886,vy=509.3869]|f32[y=150.0364,vy=524.8712] fN=y=1061.5953,vy=1366.1176 pf_delta=90 tick_dh=1:89 cbpf_dh=1:89",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    2.0,
+    2.13,
+    2.05
+   ]
+  },
+  "b_stall_phys": {
+   "arm": "stall",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cbpf_dh": "1:89",
+    "fN": "y=1061.5953,vy=1366.1176",
+    "ncb": "90",
+    "near": "f29[y=124.5675,vy=478.3405]|f30[y=132.7988,vy=493.8766]|f31[y=141.2886,vy=509.3869]|f32[y=150.0364,vy=524.8712]",
+    "pf_delta": "90",
+    "stall": "phys",
+    "stall_at": "30",
+    "tick_dh": "1:89"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary stall stall=phys stall_at=30 ncb=90 near=f29[y=124.5675,vy=478.3405]|f30[y=132.7988,vy=493.8766]|f31[y=141.2886,vy=509.3869]|f32[y=150.0364,vy=524.8712] fN=y=1061.5953,vy=1366.1176 pf_delta=90 tick_dh=1:89 cbpf_dh=1:89",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    2.24,
+    2.36,
+    2.28
+   ]
+  },
+  "b_write": {
+   "arm": "write",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f30": "wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=118.4167,vy=490.0001]",
+    "f60": "wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=481.8333,vy=979.9996]",
+    "ncb": "60",
+    "pf_delta": "60",
+    "step": "0.016667",
+    "tick_dh": "1:59"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary write step=0.016667 f30=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=118.4167,vy=490.0001] f60=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=481.8333,vy=979.9996] ncb=60 pf_delta=60 tick_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.57,
+    1.58,
+    1.53
+   ]
+  },
+  "d_order_d0": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb0_rel": "1",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "cbpf_dh": "1:59",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "obs0_rel": "1",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "sync0"
+   ],
+   "pass": "PASS rb90_boundary order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.49,
+    1.5,
+    1.54
+   ]
+  },
+  "d_order_d100": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb0_rel": "1",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "cbpf_dh": "1:59",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "obs0_rel": "1",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "sync0"
+   ],
+   "pass": "PASS rb90_boundary order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.42,
+    1.51,
+    1.57
+   ]
+  },
+  "d_order_d20": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb0_rel": "1",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "cbpf_dh": "1:59",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "obs0_rel": "1",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "sync0"
+   ],
+   "pass": "PASS rb90_boundary order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.41,
+    1.54,
+    1.4
+   ]
+  },
+  "d_order_d200": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb0_rel": "1",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "cbpf_dh": "1:59",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "obs0_rel": "1",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "sync0"
+   ],
+   "pass": "PASS rb90_boundary order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.44,
+    1.53,
+    1.4
+   ]
+  },
+  "d_order_d300": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb0_rel": "1",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "cbpf_dh": "1:59",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "obs0_rel": "1",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "sync0"
+   ],
+   "pass": "PASS rb90_boundary order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.77,
+    1.59,
+    1.59
+   ]
+  },
+  "d_order_d50": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb0_rel": "1",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "cbpf_dh": "1:59",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "obs0_rel": "1",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "sync0"
+   ],
+   "pass": "PASS rb90_boundary order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.4,
+    1.42,
+    1.42
+   ]
+  },
+  "l2_order": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb0_rel": "1",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "cbpf_dh": "1:59",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "obs0_rel": "1",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "sync0"
+   ],
+   "pass": "PASS rb90_boundary order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 3,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.95,
+    1.98,
+    1.82
+   ]
+  },
+  "l2_settle": {
+   "arm": "settle",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "c[y": "-7.7000,cnt=1,ent=1]",
+    "f120": "n[y=-7.7000,vy=0.0000]",
+    "f30": "n[y=-7.6969,vy=0.0000]",
+    "f60": "n[y=-7.7000,vy=0.0000]",
+    "f90": "n[y=-7.7000,vy=0.0000]",
+    "ncb": "45",
+    "pf_delta": "120",
+    "sf[y": "-7.7000,sl=false]",
+    "so[y": "-7.7000,sl=true]",
+    "tick_dh": "1:119"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary settle f30=n[y=-7.6969,vy=0.0000] c[y=-7.7000,cnt=1,ent=1] so[y=-7.7000,sl=false] sf[y=-7.7000,sl=false] f60=n[y=-7.7000,vy=0.0000] c[y=-7.7000,cnt=1,ent=1] so[y=-7.7000,sl=true] sf[y=-7.7000,sl=false] f90=n[y=-7.7000,vy=0.0000] c[y=-7.7000,cnt=1,ent=1] so[y=-7.7000,sl=true] sf[y=-7.7000,sl=false] f120=n[y=-7.7000,vy=0.0000] c[y=-7.7000,cnt=1,ent=1] so[y=-7.7000,sl=true] sf[y=-7.7000,sl=false] ncb=45 pf_delta=120 tick_dh=1:119",
+   "pass_uniq": 1,
+   "raw_uniq": 3,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    2.79,
+    2.87,
+    2.89
+   ]
+  },
+  "l2_sv_contacts": {
+   "arm": "contacts",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb": "count=1",
+    "cvel": "0.0000,16.3333",
+    "entered": "1",
+    "pos": "0.0000,0.3000",
+    "rest": "y=-7.7000,vy=0.0000",
+    "y": "-7.7000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice contacts rest=y=-7.7000,vy=0.0000 cb=count=1 y=-7.7000 pos=0.0000,0.3000 cvel=0.0000,16.3333 entered=1",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.76,
+    1.82,
+    1.78
+   ]
+  },
+  "l2_sv_freezelock": {
+   "arm": "freezelock",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f30": "f_normal[y=-7.6969,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-128.0000,vy=-60.0000,w=0.0000,fz=false]",
+    "s_on[sl": "true,y=-7.7000,vy=0.0000]",
+    "sleep": "s_off[sl=false,y=-7.7000,vy=0.0000]"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice freezelock f30=f_normal[y=-7.6969,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-128.0000,vy=-60.0000,w=0.0000,fz=false] sleep=s_off[sl=false,y=-7.7000,vy=0.0000] s_on[sl=true,y=-7.7000,vy=0.0000]",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    2.95,
+    2.96,
+    2.89
+   ]
+  },
+  "l2_sv_order": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.85,
+    1.8,
+    1.94
+   ]
+  },
+  "l_damp": {
+   "arm": "damp",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f30": "default[y=124.5675,vy=478.3405]|rep0[y=126.5834,vy=490.0001]|rep05[y=116.9554,vy=435.1487]|comb05[y=115.1592,vy=425.1562]",
+    "f60": "default[y=482.2250,vy=933.3325]|rep0[y=498.1666,vy=979.9996]|rep05[y=425.5192,vy=773.6876]|comb05[y=412.9205,vy=739.6441]",
+    "ncb": "60",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary damp f30=default[y=124.5675,vy=478.3405]|rep0[y=126.5834,vy=490.0001]|rep05[y=116.9554,vy=435.1487]|comb05[y=115.1592,vy=425.1562] f60=default[y=482.2250,vy=933.3325]|rep0[y=498.1666,vy=979.9996]|rep05[y=425.5192,vy=773.6876]|comb05[y=412.9205,vy=739.6441] tld=default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000 ncb=60 pf_delta=60 tick_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 3,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.62,
+    1.72,
+    1.63
+   ]
+  },
+  "l_impulse": {
+   "arm": "impulse",
+   "at": [
+    "set_inertia (scene/2d/physics/rigid_body_2d.cpp:334)",
+    "set_mass (scene/2d/physics/rigid_body_2d.cpp:324)"
+   ],
+   "err_bytes": [
+    674,
+    674,
+    674
+   ],
+   "err_class": [
+    "Condition \"p_inertia < 0\" is true.",
+    "Condition \"p_mass <= 0\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "post": "auto[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|zero[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|tiny[v=0.0000,-60.0000,w=480000000.0000,iI=1000000.000000,im=1.000000,inertia=0.0000,mass=1.0000]|nano[v=0.0000,-60.0000,w=480000016384.0000,iI=1000000000.000000,im=1.000000,inertia=0.0000,mass=1.0000]|huge[v=0.0000,-60.0000,w=0.0000,iI=0.000000,im=1.000000,inertia=1000000000.0000,mass=1.0000]|neg[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|m_small[v=0.0000,-59999.9961,w=14999.9990,iI=31.249998,im=999.999939,inertia=0.0000,mass=0.0010]|m_large[v=0.0000,-0.0001,w=0.0000,iI=0.000000,im=0.000001,inertia=0.0000,mass=1000000.0000]|mass0[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|massneg[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|nan_i[v=0.0000,-60.0000,w=0.0000,iI=0.000000,im=1.000000,inertia=nan,mass=1.0000]|inf_i[v=0.0000,-60.0000,w=0.0000,iI=0.000000,im=1.000000,inertia=inf,mass=1.0000]|s_tqneg[v=0.0000,-60.0000,w=-15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|s_offneg[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|s_up[v=0.0000,60.0000,w=0.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary impulse post=auto[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|zero[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|tiny[v=0.0000,-60.0000,w=480000000.0000,iI=1000000.000000,im=1.000000,inertia=0.0000,mass=1.0000]|nano[v=0.0000,-60.0000,w=480000016384.0000,iI=1000000000.000000,im=1.000000,inertia=0.0000,mass=1.0000]|huge[v=0.0000,-60.0000,w=0.0000,iI=0.000000,im=1.000000,inertia=1000000000.0000,mass=1.0000]|neg[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|m_small[v=0.0000,-59999.9961,w=14999.9990,iI=31.249998,im=999.999939,inertia=0.0000,mass=0.0010]|m_large[v=0.0000,-0.0001,w=0.0000,iI=0.000000,im=0.000001,inertia=0.0000,mass=1000000.0000]|mass0[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|massneg[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|nan_i[v=0.0000,-60.0000,w=0.0000,iI=0.000000,im=1.000000,inertia=nan,mass=1.0000]|inf_i[v=0.0000,-60.0000,w=0.0000,iI=0.000000,im=1.000000,inertia=inf,mass=1.0000]|s_tqneg[v=0.0000,-60.0000,w=-15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|s_offneg[v=0.0000,-60.0000,w=15.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]|s_up[v=0.0000,60.0000,w=0.0000,iI=0.031250,im=1.000000,inertia=0.0000,mass=1.0000]",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.58,
+    0.63,
+    0.57
+   ]
+  },
+  "l_order": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb0_rel": "1",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "cbpf_dh": "1:59",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "obs0_rel": "1",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "sync0"
+   ],
+   "pass": "PASS rb90_boundary order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 5,
+   "rc": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reps": 6,
+   "wall": [
+    1.58,
+    1.69,
+    1.57,
+    1.6,
+    1.72,
+    1.55
+   ]
+  },
+  "l_order_t120": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.008333",
+    "cb0_rel": "1",
+    "cb1": "st=0.008333",
+    "cb2": "st=0.008333",
+    "cb3": "st=0.008333",
+    "cb4": "st=0.008333",
+    "cblast": "st=0.008333",
+    "cbpf_dh": "1:59",
+    "f1": "y=0.0681,vy=8.1667",
+    "f2": "y=0.2041,vy=16.3265",
+    "f3": "y=0.4081,vy=24.4796",
+    "f60": "y=122.5250,vy=478.1458",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "obs0_rel": "1",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "0.1000",
+    "ty": "122.5250",
+    "vy": "478.1458"
+   },
+   "pair": [
+    "sync0"
+   ],
+   "pass": "PASS rb90_boundary order ncb=60 cb0=st=0.008333 ty=0.0681 vy=8.1667 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.008333 ty=0.2041 vy=16.3265 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.008333 ty=0.4081 vy=24.4796 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.008333 ty=0.6800 vy=32.6259 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.008333 ty=1.0197 vy=40.7653 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.008333 ty=122.5250 vy=478.1458 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.0681,vy=8.1667 f2=y=0.2041,vy=16.3265 f3=y=0.4081,vy=24.4796 f60=y=122.5250,vy=478.1458 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 3,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.02,
+    1.11,
+    1.14
+   ]
+  },
+  "l_settle": {
+   "arm": "settle",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "c[y": "-7.7000,cnt=1,ent=1]",
+    "f120": "n[y=-7.7000,vy=0.0000]",
+    "f30": "n[y=-7.6969,vy=0.0000]",
+    "f60": "n[y=-7.7000,vy=0.0000]",
+    "f90": "n[y=-7.7000,vy=0.0000]",
+    "ncb": "45",
+    "pf_delta": "120",
+    "sf[y": "-7.7000,sl=false]",
+    "so[y": "-7.7000,sl=true]",
+    "tick_dh": "1:119"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary settle f30=n[y=-7.6969,vy=0.0000] c[y=-7.7000,cnt=1,ent=1] so[y=-7.7000,sl=false] sf[y=-7.7000,sl=false] f60=n[y=-7.7000,vy=0.0000] c[y=-7.7000,cnt=1,ent=1] so[y=-7.7000,sl=true] sf[y=-7.7000,sl=false] f90=n[y=-7.7000,vy=0.0000] c[y=-7.7000,cnt=1,ent=1] so[y=-7.7000,sl=true] sf[y=-7.7000,sl=false] f120=n[y=-7.7000,vy=0.0000] c[y=-7.7000,cnt=1,ent=1] so[y=-7.7000,sl=true] sf[y=-7.7000,sl=false] ncb=45 pf_delta=120 tick_dh=1:119",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    2.62,
+    2.53,
+    2.64
+   ]
+  },
+  "l_stall_idle": {
+   "arm": "stall",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cbpf_dh": "1:89",
+    "fN": "y=1061.5953,vy=1366.1176",
+    "ncb": "90",
+    "near": "f29[y=124.5675,vy=478.3405]|f30[y=132.7988,vy=493.8766]|f31[y=141.2886,vy=509.3869]|f32[y=150.0364,vy=524.8712]",
+    "pf_delta": "90",
+    "stall": "idle",
+    "stall_at": "30",
+    "tick_dh": "1:89"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary stall stall=idle stall_at=30 ncb=90 near=f29[y=124.5675,vy=478.3405]|f30[y=132.7988,vy=493.8766]|f31[y=141.2886,vy=509.3869]|f32[y=150.0364,vy=524.8712] fN=y=1061.5953,vy=1366.1176 pf_delta=90 tick_dh=1:89 cbpf_dh=1:89",
+   "pass_uniq": 1,
+   "raw_uniq": 3,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    2.27,
+    2.16,
+    2.23
+   ]
+  },
+  "l_sv_contacts": {
+   "arm": "contacts",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb": "count=1",
+    "cvel": "0.0000,16.3333",
+    "entered": "1",
+    "pos": "0.0000,0.3000",
+    "rest": "y=-7.7000,vy=0.0000",
+    "y": "-7.7000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice contacts rest=y=-7.7000,vy=0.0000 cb=count=1 y=-7.7000 pos=0.0000,0.3000 cvel=0.0000,16.3333 entered=1",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reps": 6,
+   "wall": [
+    1.7,
+    1.66,
+    1.61,
+    1.62,
+    1.72,
+    1.59
+   ]
+  },
+  "l_sv_freezelock": {
+   "arm": "freezelock",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f30": "f_normal[y=-7.6969,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-128.0000,vy=-60.0000,w=0.0000,fz=false]",
+    "s_on[sl": "true,y=-7.7000,vy=0.0000]",
+    "sleep": "s_off[sl=false,y=-7.7000,vy=0.0000]"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice freezelock f30=f_normal[y=-7.6969,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-128.0000,vy=-60.0000,w=0.0000,fz=false] sleep=s_off[sl=false,y=-7.7000,vy=0.0000] s_on[sl=true,y=-7.7000,vy=0.0000]",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reps": 6,
+   "wall": [
+    2.62,
+    2.55,
+    2.53,
+    2.63,
+    2.61,
+    2.65
+   ]
+  },
+  "l_sv_order": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.49,
+    1.66,
+    1.63
+   ]
+  },
+  "l_write": {
+   "arm": "write",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f30": "wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=118.4167,vy=490.0001]",
+    "f60": "wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=481.8333,vy=979.9996]",
+    "ncb": "60",
+    "pf_delta": "60",
+    "step": "0.016667",
+    "tick_dh": "1:59"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary write step=0.016667 f30=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=118.4167,vy=490.0001] f60=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=481.8333,vy=979.9996] ncb=60 pf_delta=60 tick_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 3,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.6,
+    1.58,
+    1.65
+   ]
+  },
+  "p_order": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb0_rel": "1",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "cbpf_dh": "1:59",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "obs0_rel": "1",
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "sync0"
+   ],
+   "pass": "PASS rb90_boundary order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reps": 8,
+   "wall": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "p_sv_contacts": {
+   "arm": "contacts",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb": "count=1",
+    "cvel": "0.0000,16.3333",
+    "entered": "1",
+    "pos": "0.0000,0.3000",
+    "rest": "y=-7.7000,vy=0.0000",
+    "y": "-7.7000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice contacts rest=y=-7.7000,vy=0.0000 cb=count=1 y=-7.7000 pos=0.0000,0.3000 cvel=0.0000,16.3333 entered=1",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reps": 6,
+   "wall": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "p_sv_freezelock": {
+   "arm": "freezelock",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f30": "f_normal[y=-7.6969,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-128.0000,vy=-60.0000,w=0.0000,fz=false]",
+    "s_on[sl": "true,y=-7.7000,vy=0.0000]",
+    "sleep": "s_off[sl=false,y=-7.7000,vy=0.0000]"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice freezelock f30=f_normal[y=-7.6969,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-128.0000,vy=-60.0000,w=0.0000,fz=false] sleep=s_off[sl=false,y=-7.7000,vy=0.0000] s_on[sl=true,y=-7.7000,vy=0.0000]",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reps": 6,
+   "wall": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "p_sv_order": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reps": 6,
+   "wall": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "sv_comrefuse": {
+   "arm": "comrefuse",
+   "at": [
+    "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+   ],
+   "err_bytes": [
+    298,
+    298,
+    298
+   ],
+   "err_class": [
+    "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+   ],
+   "err_uniq": 1,
+   "keys": {
+    "auto_set0": "com=0.0000,0.0000",
+    "auto_set4": "com=0.0000,0.0000",
+    "back_auto": "com=0.0000,0.0000",
+    "custom_set0": "com=0.0000,0.0000",
+    "custom_set4": "com=4.0000,0.0000",
+    "mode": "0"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice comrefuse auto_set4=com=0.0000,0.0000 mode=0 auto_set0=com=0.0000,0.0000 mode=0 custom_set4=com=4.0000,0.0000 mode=1 custom_set0=com=0.0000,0.0000 mode=1 back_auto=com=0.0000,0.0000 mode=0",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.62,
+    0.61,
+    0.66
+   ]
+  },
+  "sv_contacts": {
+   "arm": "contacts",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb": "count=1",
+    "cvel": "0.0000,16.3333",
+    "entered": "1",
+    "pos": "0.0000,0.3000",
+    "rest": "y=-7.7000,vy=0.0000",
+    "y": "-7.7000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice contacts rest=y=-7.7000,vy=0.0000 cb=count=1 y=-7.7000 pos=0.0000,0.3000 cvel=0.0000,16.3333 entered=1",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.54,
+    1.49,
+    1.43
+   ]
+  },
+  "sv_contacts_dummy": {
+   "arm": "contacts",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb": "count=-1",
+    "cvel": "0.0000,0.0000",
+    "entered": "0",
+    "pos": "0.0000,0.0000",
+    "rest": "y=-40.0000,vy=0.0000",
+    "y": "0.0000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice contacts rest=y=-40.0000,vy=0.0000 cb=count=-1 y=0.0000 pos=0.0000,0.0000 cvel=0.0000,0.0000 entered=0",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.63,
+    1.6,
+    1.61
+   ]
+  },
+  "sv_damp": {
+   "arm": "damp",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f30": "default[y=124.5675,vy=478.3405]|rep0[y=126.5834,vy=490.0001]|rep05[y=116.9554,vy=435.1487]|comb05[y=115.1592,vy=425.1562]",
+    "f60": "default[y=482.2250,vy=933.3325]|rep0[y=498.1666,vy=979.9996]|rep05[y=425.5192,vy=773.6876]|comb05[y=412.9205,vy=739.6441]",
+    "tld": "default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice damp f30=default[y=124.5675,vy=478.3405]|rep0[y=126.5834,vy=490.0001]|rep05[y=116.9554,vy=435.1487]|comb05[y=115.1592,vy=425.1562] f60=default[y=482.2250,vy=933.3325]|rep0[y=498.1666,vy=979.9996]|rep05[y=425.5192,vy=773.6876]|comb05[y=412.9205,vy=739.6441] tld=default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.61,
+    1.55,
+    1.46
+   ]
+  },
+  "sv_freezelock": {
+   "arm": "freezelock",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f30": "f_normal[y=-7.6969,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-128.0000,vy=-60.0000,w=0.0000,fz=false]",
+    "s_on[sl": "true,y=-7.7000,vy=0.0000]",
+    "sleep": "s_off[sl=false,y=-7.7000,vy=0.0000]"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice freezelock f30=f_normal[y=-7.6969,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-128.0000,vy=-60.0000,w=0.0000,fz=false] sleep=s_off[sl=false,y=-7.7000,vy=0.0000] s_on[sl=true,y=-7.7000,vy=0.0000]",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    2.69,
+    2.64,
+    2.46
+   ]
+  },
+  "sv_freezelock_dummy": {
+   "arm": "freezelock",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f30": "f_normal[y=-100.0000,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-100.0000,vy=0.0000,w=0.0000,fz=false]",
+    "s_on[sl": "false,y=-40.0000,vy=0.0000]",
+    "sleep": "s_off[sl=false,y=-40.0000,vy=0.0000]"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice freezelock f30=f_normal[y=-100.0000,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-100.0000,vy=0.0000,w=0.0000,fz=false] sleep=s_off[sl=false,y=-40.0000,vy=0.0000] s_on[sl=false,y=-40.0000,vy=0.0000]",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    2.53,
+    2.66,
+    2.67
+   ]
+  },
+  "sv_gravity": {
+   "arm": "gravity",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f30": "g0[y=0.0000,vy=0.0000]|g05[y=62.2838,vy=239.1703]|g1[y=124.5675,vy=478.3405]|g2[y=249.1351,vy=956.6811]|gm1[y=-124.5675,vy=-478.3405]|zv[y=-14.6187,vy=-28.5357]|zv0[y=-15.0000,vy=-30.0000]|cf[y=124.5675,vy=478.3405]",
+    "f60": "g0[y=0.0000,vy=0.0000]|g05[y=241.1125,vy=466.6662]|g1[y=482.2250,vy=933.3325]|g2[y=964.4500,vy=1866.6649]|gm1[y=-482.2250,vy=-933.3325]|zv[y=-28.5238,vy=-27.1429]|zv0[y=-30.0000,vy=-30.0000]|cf[y=482.2250,vy=933.3325]"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice gravity f30=g0[y=0.0000,vy=0.0000]|g05[y=62.2838,vy=239.1703]|g1[y=124.5675,vy=478.3405]|g2[y=249.1351,vy=956.6811]|gm1[y=-124.5675,vy=-478.3405]|zv[y=-14.6187,vy=-28.5357]|zv0[y=-15.0000,vy=-30.0000]|cf[y=124.5675,vy=478.3405] f60=g0[y=0.0000,vy=0.0000]|g05[y=241.1125,vy=466.6662]|g1[y=482.2250,vy=933.3325]|g2[y=964.4500,vy=1866.6649]|gm1[y=-482.2250,vy=-933.3325]|zv[y=-28.5238,vy=-27.1429]|zv0[y=-30.0000,vy=-30.0000]|cf[y=482.2250,vy=933.3325]",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.53,
+    1.6,
+    1.59
+   ]
+  },
+  "sv_gravity_t120": {
+   "arm": "gravity",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f120": "g0[y=0.0000,vy=0.0000]|g05[y=239.0726,vy=466.4820]|g1[y=478.1452,vy=932.9641]|g2[y=956.2904,vy=1865.9281]|gm1[y=-478.1452,vy=-932.9641]|zv[y=-28.5363,vy=-27.1440]|zv0[y=-30.0000,vy=-30.0000]|cf[y=478.1452,vy=932.9641]",
+    "f60": "g0[y=0.0000,vy=0.0000]|g05[y=61.2625,vy=239.0729]|g1[y=122.5250,vy=478.1458]|g2[y=245.0500,vy=956.2916]|gm1[y=-122.5250,vy=-478.1458]|zv[y=-14.6249,vy=-28.5363]|zv0[y=-15.0000,vy=-30.0000]|cf[y=122.5250,vy=478.1458]"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice gravity f60=g0[y=0.0000,vy=0.0000]|g05[y=61.2625,vy=239.0729]|g1[y=122.5250,vy=478.1458]|g2[y=245.0500,vy=956.2916]|gm1[y=-122.5250,vy=-478.1458]|zv[y=-14.6249,vy=-28.5363]|zv0[y=-15.0000,vy=-30.0000]|cf[y=122.5250,vy=478.1458] f120=g0[y=0.0000,vy=0.0000]|g05[y=239.0726,vy=466.4820]|g1[y=478.1452,vy=932.9641]|g2[y=956.2904,vy=1865.9281]|gm1[y=-478.1452,vy=-932.9641]|zv[y=-28.5363,vy=-27.1440]|zv0[y=-30.0000,vy=-30.0000]|cf[y=478.1452,vy=932.9641]",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.56,
+    1.54,
+    1.52
+   ]
+  },
+  "sv_impulse": {
+   "arm": "impulse",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "post": "c_central[v=0.0000,-60.0000,w=0.0000,iI=0.031250,im=1.0000]|c_off[v=0.0000,-60.0000,w=-15.0000,iI=0.031250,im=1.0000]|c_tq[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|r_tq[v=0.0000,0.0000,w=11.5200,iI=0.024000,im=1.0000]|r_off[v=0.0000,-60.0000,w=-11.5200,iI=0.024000,im=1.0000]"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice impulse post=c_central[v=0.0000,-60.0000,w=0.0000,iI=0.031250,im=1.0000]|c_off[v=0.0000,-60.0000,w=-15.0000,iI=0.031250,im=1.0000]|c_tq[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|r_tq[v=0.0000,0.0000,w=11.5200,iI=0.024000,im=1.0000]|r_off[v=0.0000,-60.0000,w=-11.5200,iI=0.024000,im=1.0000]",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    0.68,
+    0.72,
+    0.71
+   ]
+  },
+  "sv_order": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.016667",
+    "cb1": "st=0.016667",
+    "cb2": "st=0.016667",
+    "cb3": "st=0.016667",
+    "cb4": "st=0.016667",
+    "cblast": "st=0.016667",
+    "f1": "y=0.2722,vy=16.3333",
+    "f2": "y=0.8162,vy=32.6394",
+    "f3": "y=1.6315,vy=48.9184",
+    "f60": "y=482.2250,vy=933.3325",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "60",
+    "tld": "0.1000",
+    "ty": "482.2250",
+    "vy": "933.3325"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice order ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.58,
+    1.54,
+    1.56
+   ]
+  },
+  "sv_write": {
+   "arm": "write",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "f30": "wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=118.4167,vy=490.0001]",
+    "f60": "wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=481.8333,vy=979.9996]",
+    "step": "0.016667"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb_lattice write step=0.016667 f30=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=118.4167,vy=490.0001] f60=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=481.8333,vy=979.9996]",
+   "pass_uniq": 1,
+   "raw_uniq": 1,
+   "rc": [
+    0,
+    0,
+    0
+   ],
+   "reps": 3,
+   "wall": [
+    1.49,
+    1.64,
+    1.62
+   ]
+  },
+  "t30_lag": {
+   "arm": "lag",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "a": "y=473.6667,vy=947.3336",
+    "acc": "an=29,bn=29,apre=947.3336,bpre=914.6669,bpost=947.3336",
+    "b": "y=442.0890,vy=947.3336",
+    "c": "y=459.2563,vy=904.4226",
+    "d": "dy=31.5778,dvy=0.0000",
+    "exp": "N=29",
+    "exp_dvy_gdt": "32.6667",
+    "exp_dy": "31.5778",
+    "gdt": "32.6667",
+    "gdt2": "1.088889",
+    "pf_delta": "30",
+    "step": "0.033333",
+    "tick_dh": "1:29"
+   },
+   "pair": [
+    "?"
+   ],
+   "pass": "PASS rb90_boundary lag a=y=473.6667,vy=947.3336 b=y=442.0890,vy=947.3336 c=y=459.2563,vy=904.4226 d=dy=31.5778,dvy=0.0000 step=0.033333 gdt=32.6667 gdt2=1.088889 exp=N=29 exp_dy=31.5778 exp_dvy_gdt=32.6667 acc=an=29,bn=29,apre=947.3336,bpre=914.6669,bpost=947.3336 pf_delta=30 tick_dh=1:29",
+   "pass_uniq": 1,
+   "raw_uniq": 2,
+   "rc": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reps": 9,
+   "wall": [
+    1.54,
+    1.59,
+    1.53,
+    1.63,
+    1.63,
+    1.56,
+    1.55,
+    1.52,
+    1.55
+   ]
+  },
+  "t30_order": {
+   "arm": "order",
+   "at": [],
+   "err_bytes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "err_class": [],
+   "err_uniq": 1,
+   "keys": {
+    "cb0": "st=0.033333",
+    "cb0_rel": "2",
+    "cb1": "st=0.033333",
+    "cb2": "st=0.033333",
+    "cb3": "st=0.033333",
+    "cb4": "st=0.033333",
+    "cblast": "st=0.033333",
+    "cbpf_dh": "1:28",
+    "f1": "y=0.0000,vy=0.0000",
+    "f2": "y=1.0889,vy=32.6667",
+    "f3": "y=3.2630,vy=65.2244",
+    "f30": "y=459.2563,vy=904.4226",
+    "g": "980.0000",
+    "iI": "0.031250",
+    "im": "1.0000",
+    "ncb": "29",
+    "obs0_rel": "1",
+    "pf_delta": "30",
+    "tick_dh": "1:29",
+    "tld": "0.1000",
+    "ty": "459.2563",
+    "vy": "904.4226"
+   },
+   "pair": [
+    "late_body"
+   ],
+   "pass": "PASS rb90_boundary order ncb=29 cb0=st=0.033333 ty=1.0889 vy=32.6667 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.033333 ty=3.2630 vy=65.2244 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.033333 ty=6.5188 vy=97.6737 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.033333 ty=10.8527 vy=130.0148 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.033333 ty=16.2609 vy=162.2481 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.033333 ty=459.2563 vy=904.4226 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.0000,vy=0.0000 f2=y=1.0889,vy=32.6667 f3=y=3.2630,vy=65.2244 f30=y=459.2563,vy=904.4226 cb0_rel=2 obs0_rel=1 pf_delta=30 tick_dh=1:29 cbpf_dh=1:28",
+   "pass_uniq": 1,
+   "raw_uniq": 4,
+   "rc": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "reps": 9,
+   "wall": [
+    1.67,
+    1.63,
+    1.54,
+    1.44,
+    1.53,
+    1.61,
+    1.47,
+    1.58,
+    1.5
+   ]
+  }
+ },
+ "claims": {
+  "backend": {
+   "b_backend_dummy": {
+    "cfg2d": "Dummy",
+    "cls_exists": "GodotPhysicsServer2D=false,Dummy=true",
+    "drop": "y=-100.0000,vy=0.0000",
+    "dss2d": "PhysicsDirectSpaceState2DDummy",
+    "hint2d": "DEFAULT,GodotPhysics2D,Dummy",
+    "id2d": "PhysicsServer2DDummy",
+    "ncb": "0",
+    "pf_delta": "30",
+    "tld": "-1.0000"
+   },
+   "b_backend_garbage": {
+    "cfg2d": "garbage_xyz",
+    "cls_exists": "GodotPhysicsServer2D=true,Dummy=false",
+    "drop": "y=24.5675,vy=478.3405",
+    "dss2d": "GodotPhysicsDirectSpaceState2D",
+    "hint2d": "DEFAULT,GodotPhysics2D,Dummy",
+    "id2d": "PhysicsServer2D",
+    "ncb": "30",
+    "pf_delta": "30",
+    "tld": "0.1000"
+   },
+   "b_backend_gp2d": {
+    "cfg2d": "DEFAULT",
+    "cls_exists": "GodotPhysicsServer2D=true,Dummy=false",
+    "drop": "y=24.5675,vy=478.3405",
+    "dss2d": "GodotPhysicsDirectSpaceState2D",
+    "hint2d": "DEFAULT,GodotPhysics2D,Dummy",
+    "id2d": "PhysicsServer2D",
+    "ncb": "30",
+    "pf_delta": "30",
+    "tld": "0.1000"
+   },
+   "b_backend_jolt2d": {
+    "cfg2d": "Jolt",
+    "cls_exists": "GodotPhysicsServer2D=true,Dummy=false",
+    "drop": "y=24.5675,vy=478.3405",
+    "dss2d": "GodotPhysicsDirectSpaceState2D",
+    "hint2d": "DEFAULT,GodotPhysics2D,Dummy",
+    "id2d": "PhysicsServer2D",
+    "ncb": "30",
+    "pf_delta": "30",
+    "tld": "0.1000"
+   }
+  },
+  "comcase": {
+   "auto_nan": {
+    "at": [
+     "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+    ],
+    "err_class": [
+     "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+    ],
+    "err_counts": [
+     1,
+     1,
+     1
+    ],
+    "pass": "PASS rb90_boundary comcase case=auto_nan post=com=0.0000,0.0000 mode=0",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "custom_back_auto_diff": {
+    "at": [
+     "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+    ],
+    "err_class": [
+     "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+    ],
+    "err_counts": [
+     1,
+     1,
+     1
+    ],
+    "pass": "PASS rb90_boundary comcase case=custom_back_auto_diff post_auto=com=0.0000,0.0000 mode=0 post_set=com=0.0000,0.0000 mode=0",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "custom_dupe": {
+    "at": [],
+    "err_class": [],
+    "err_counts": [
+     0,
+     0,
+     0
+    ],
+    "pass": "PASS rb90_boundary comcase case=custom_dupe post_dupe=com=4.0000,0.0000 mode=1 post_new=com=8.0000,0.0000 mode=1",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "custom_freeze_sequence": {
+    "at": [],
+    "err_class": [],
+    "err_counts": [
+     0,
+     0,
+     0
+    ],
+    "pass": "PASS rb90_boundary comcase case=custom_freeze_sequence post=com=8.0000,0.0000 mode=1 post_unfreeze=com=8.0000,0.0000 mode=1",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "custom_nan": {
+    "at": [],
+    "err_class": [],
+    "err_counts": [
+     0,
+     0,
+     0
+    ],
+    "pass": "PASS rb90_boundary comcase case=custom_nan post=com=nan,nan mode=1",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "frozen_kin_auto_diff": {
+    "at": [
+     "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+    ],
+    "err_class": [
+     "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+    ],
+    "err_counts": [
+     1,
+     1,
+     1
+    ],
+    "pass": "PASS rb90_boundary comcase case=frozen_kin_auto_diff post=com=0.0000,0.0000 mode=0 post_unfreeze=com=0.0000,0.0000 mode=0",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "frozen_kin_custom_diff": {
+    "at": [],
+    "err_class": [],
+    "err_counts": [
+     0,
+     0,
+     0
+    ],
+    "pass": "PASS rb90_boundary comcase case=frozen_kin_custom_diff post=com=4.0000,0.0000 mode=1",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "frozen_static_auto_diff": {
+    "at": [
+     "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+    ],
+    "err_class": [
+     "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+    ],
+    "err_counts": [
+     1,
+     1,
+     1
+    ],
+    "pass": "PASS rb90_boundary comcase case=frozen_static_auto_diff post=com=0.0000,0.0000 mode=0 post_unfreeze=com=0.0000,0.0000 mode=0",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "frozen_static_auto_then_mode": {
+    "at": [
+     "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+    ],
+    "err_class": [
+     "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+    ],
+    "err_counts": [
+     1,
+     1,
+     1
+    ],
+    "pass": "PASS rb90_boundary comcase case=frozen_static_auto_then_mode post=com=0.0000,0.0000 mode=0 post_custom=com=4.0000,0.0000 mode=1",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "frozen_static_custom_diff": {
+    "at": [],
+    "err_class": [],
+    "err_counts": [
+     0,
+     0,
+     0
+    ],
+    "pass": "PASS rb90_boundary comcase case=frozen_static_custom_diff post=com=4.0000,0.0000 mode=1",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "intree_auto_diff": {
+    "at": [
+     "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+    ],
+    "err_class": [
+     "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+    ],
+    "err_counts": [
+     1,
+     1,
+     1
+    ],
+    "pass": "PASS rb90_boundary comcase case=intree_auto_diff pre=com=0.0000,0.0000 mode=0 post=com=0.0000,0.0000 mode=0",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "intree_auto_same": {
+    "at": [],
+    "err_class": [],
+    "err_counts": [
+     0,
+     0,
+     0
+    ],
+    "pass": "PASS rb90_boundary comcase case=intree_auto_same post=com=0.0000,0.0000 mode=0",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "intree_custom_diff": {
+    "at": [],
+    "err_class": [],
+    "err_counts": [
+     0,
+     0,
+     0
+    ],
+    "pass": "PASS rb90_boundary comcase case=intree_custom_diff post=com=4.0000,0.0000 mode=1",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "mode_invalid": {
+    "at": [
+     "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+    ],
+    "err_class": [
+     "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+    ],
+    "err_counts": [
+     1,
+     1,
+     1
+    ],
+    "pass": "PASS rb90_boundary comcase case=mode_invalid post_mode=com=0.0000,0.0000 mode=99 post=com=0.0000,0.0000 mode=99",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "mode_neg": {
+    "at": [
+     "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+    ],
+    "err_class": [
+     "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+    ],
+    "err_counts": [
+     1,
+     1,
+     1
+    ],
+    "pass": "PASS rb90_boundary comcase case=mode_neg post_mode=com=0.0000,0.0000 mode=4294967295 post=com=0.0000,0.0000 mode=4294967295",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "nottree_auto_diff": {
+    "at": [
+     "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+    ],
+    "err_class": [
+     "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+    ],
+    "err_counts": [
+     1,
+     1,
+     1
+    ],
+    "pass": "PASS rb90_boundary comcase case=nottree_auto_diff post=com=0.0000,0.0000 mode=0 post_add=com=0.0000,0.0000 mode=0",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "nottree_custom_diff": {
+    "at": [],
+    "err_class": [],
+    "err_counts": [
+     0,
+     0,
+     0
+    ],
+    "pass": "PASS rb90_boundary comcase case=nottree_custom_diff post=com=4.0000,0.0000 mode=1 post_add=com=4.0000,0.0000 mode=1",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   },
+   "set_via_set": {
+    "at": [
+     "set_center_of_mass (scene/2d/physics/rigid_body_2d.cpp:376)"
+    ],
+    "err_class": [
+     "Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true."
+    ],
+    "err_counts": [
+     1,
+     1,
+     1
+    ],
+    "pass": "PASS rb90_boundary comcase case=set_via_set post=com=0.0000,0.0000 mode=0",
+    "pass_uniq": 1,
+    "rc": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "damp": {
+   "b_damp": {
+    "frames": 60,
+    "lanes": {
+     "comb05": {
+      "half_ok": true,
+      "ok": true,
+      "y": 412.9205,
+      "y_cf": 412.9205,
+      "y_half": 115.1592,
+      "y_half_cf": 115.1592
+     },
+     "default": {
+      "half_ok": true,
+      "ok": true,
+      "y": 482.225,
+      "y_cf": 482.2251,
+      "y_half": 124.5675,
+      "y_half_cf": 124.5675
+     },
+     "rep0": {
+      "half_ok": true,
+      "ok": true,
+      "y": 498.1666,
+      "y_cf": 498.1667,
+      "y_half": 126.5834,
+      "y_half_cf": 126.5833
+     },
+     "rep05": {
+      "half_ok": true,
+      "ok": true,
+      "y": 425.5192,
+      "y_cf": 425.5192,
+      "y_half": 116.9554,
+      "y_half_cf": 116.9553
+     }
+    },
+    "ncb": 60,
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000",
+    "tld_ok": true,
+    "tps": 60
+   },
+   "b_damp_dummy": {
+    "frames": 60,
+    "lanes": {
+     "comb05": {
+      "half_ok": true,
+      "ok": true,
+      "y": 0.0,
+      "y_cf": 0.0,
+      "y_half": 0.0,
+      "y_half_cf": 0.0
+     },
+     "default": {
+      "half_ok": true,
+      "ok": true,
+      "y": 0.0,
+      "y_cf": 0.0,
+      "y_half": 0.0,
+      "y_half_cf": 0.0
+     },
+     "rep0": {
+      "half_ok": true,
+      "ok": true,
+      "y": 0.0,
+      "y_cf": 0.0,
+      "y_half": 0.0,
+      "y_half_cf": 0.0
+     },
+     "rep05": {
+      "half_ok": true,
+      "ok": true,
+      "y": 0.0,
+      "y_cf": 0.0,
+      "y_half": 0.0,
+      "y_half_cf": 0.0
+     }
+    },
+    "ncb": 0,
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "default=-1.0000|rep0=-1.0000|rep05=-1.0000|comb05=-1.0000",
+    "tld_ok": false,
+    "tps": 60
+   },
+   "b_damp_t120": {
+    "frames": 120,
+    "lanes": {
+     "comb05": {
+      "half_ok": true,
+      "ok": true,
+      "y": 409.004,
+      "y_cf": 409.004,
+      "y_half": 113.1346,
+      "y_half_cf": 113.1346
+     },
+     "default": {
+      "half_ok": true,
+      "ok": true,
+      "y": 478.1452,
+      "y_cf": 478.1449,
+      "y_half": 122.525,
+      "y_half_cf": 122.525
+     },
+     "rep0": {
+      "half_ok": true,
+      "ok": true,
+      "y": 494.0834,
+      "y_cf": 494.0833,
+      "y_half": 124.5417,
+      "y_half_cf": 124.5417
+     },
+     "rep05": {
+      "half_ok": true,
+      "ok": true,
+      "y": 421.5551,
+      "y_cf": 421.5549,
+      "y_half": 114.9246,
+      "y_half_cf": 114.9246
+     }
+    },
+    "ncb": 120,
+    "pf_delta": "120",
+    "tick_dh": "1:119",
+    "tld": "default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000",
+    "tld_ok": true,
+    "tps": 120
+   },
+   "l_damp": {
+    "frames": 60,
+    "lanes": {
+     "comb05": {
+      "half_ok": true,
+      "ok": true,
+      "y": 412.9205,
+      "y_cf": 412.9205,
+      "y_half": 115.1592,
+      "y_half_cf": 115.1592
+     },
+     "default": {
+      "half_ok": true,
+      "ok": true,
+      "y": 482.225,
+      "y_cf": 482.2251,
+      "y_half": 124.5675,
+      "y_half_cf": 124.5675
+     },
+     "rep0": {
+      "half_ok": true,
+      "ok": true,
+      "y": 498.1666,
+      "y_cf": 498.1667,
+      "y_half": 126.5834,
+      "y_half_cf": 126.5833
+     },
+     "rep05": {
+      "half_ok": true,
+      "ok": true,
+      "y": 425.5192,
+      "y_cf": 425.5192,
+      "y_half": 116.9554,
+      "y_half_cf": 116.9553
+     }
+    },
+    "ncb": 60,
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tld": "default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000",
+    "tld_ok": true,
+    "tps": 60
+   },
+   "sv_damp": {
+    "frames": 60,
+    "lanes": {
+     "comb05": {
+      "half_ok": true,
+      "ok": true,
+      "y": 412.9205,
+      "y_cf": 412.9205,
+      "y_half": 115.1592,
+      "y_half_cf": 115.1592
+     },
+     "default": {
+      "half_ok": true,
+      "ok": true,
+      "y": 482.225,
+      "y_cf": 482.2251,
+      "y_half": 124.5675,
+      "y_half_cf": 124.5675
+     },
+     "rep0": {
+      "half_ok": true,
+      "ok": true,
+      "y": 498.1666,
+      "y_cf": 498.1667,
+      "y_half": 126.5834,
+      "y_half_cf": 126.5833
+     },
+     "rep05": {
+      "half_ok": true,
+      "ok": true,
+      "y": 425.5192,
+      "y_cf": 425.5192,
+      "y_half": 116.9554,
+      "y_half_cf": 116.9553
+     }
+    },
+    "ncb": 60,
+    "pf_delta": null,
+    "tick_dh": null,
+    "tld": "default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000",
+    "tld_ok": true,
+    "tps": 60
+   }
+  },
+  "impulse": {
+   "b_impulse": {
+    "auto": {
+     "exp_v": -60.0,
+     "exp_w": 15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 15.0,
+     "w_ok": true
+    },
+    "huge": {
+     "exp_v": -60.0,
+     "exp_w": 0.0,
+     "iI": 0.0,
+     "im": 1.0,
+     "inertia": "1000000000.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 0.0,
+     "w_ok": true
+    },
+    "inf_i": {
+     "exp_v": -60.0,
+     "exp_w": 0.0,
+     "iI": 0.0,
+     "im": 1.0,
+     "inertia": "inf",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 0.0,
+     "w_ok": true
+    },
+    "m_large": {
+     "exp_v": -5.9999999999999995e-05,
+     "exp_w": 0.0,
+     "iI": 0.0,
+     "im": 1e-06,
+     "inertia": "0.0000",
+     "mass": "1000000.0000",
+     "v_ok": true,
+     "vy": -0.0001,
+     "w": 0.0,
+     "w_ok": true
+    },
+    "m_small": {
+     "exp_v": -59999.996340000005,
+     "exp_w": 14999.99904,
+     "iI": 31.249998,
+     "im": 999.999939,
+     "inertia": "0.0000",
+     "mass": "0.0010",
+     "v_ok": true,
+     "vy": -59999.9961,
+     "w": 14999.999,
+     "w_ok": true
+    },
+    "mass0": {
+     "exp_v": -60.0,
+     "exp_w": 15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 15.0,
+     "w_ok": true
+    },
+    "massneg": {
+     "exp_v": -60.0,
+     "exp_w": 15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 15.0,
+     "w_ok": true
+    },
+    "nan_i": {
+     "exp_v": -60.0,
+     "exp_w": 0.0,
+     "iI": 0.0,
+     "im": 1.0,
+     "inertia": "nan",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 0.0,
+     "w_ok": true
+    },
+    "nano": {
+     "exp_v": -60.0,
+     "exp_w": 480000000000.0,
+     "iI": 1000000000.0,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 480000016384.0,
+     "w_ok": true
+    },
+    "neg": {
+     "exp_v": -60.0,
+     "exp_w": 15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 15.0,
+     "w_ok": true
+    },
+    "s_offneg": {
+     "exp_w": 15.0,
+     "w": 15.0,
+     "w_ok": true
+    },
+    "s_tqneg": {
+     "exp_v": -60.0,
+     "exp_w": -15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": -15.0,
+     "w_ok": true
+    },
+    "s_up": {
+     "exp_v": 60.0,
+     "v_ok": true,
+     "vy": 60.0
+    },
+    "tiny": {
+     "exp_v": -60.0,
+     "exp_w": 480000000.0,
+     "iI": 1000000.0,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 480000000.0,
+     "w_ok": true
+    },
+    "zero": {
+     "exp_v": -60.0,
+     "exp_w": 15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 15.0,
+     "w_ok": true
+    }
+   },
+   "b_impulse_dummy": {
+    "auto": {
+     "exp_v": 59940.0,
+     "exp_w": -479520.0,
+     "iI": -999.0,
+     "im": -999.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": false,
+     "vy": 0.0,
+     "w": 0.0,
+     "w_ok": false
+    },
+    "huge": {
+     "exp_v": 59940.0,
+     "exp_w": -479520.0,
+     "iI": -999.0,
+     "im": -999.0,
+     "inertia": "1000000000.0000",
+     "mass": "1.0000",
+     "v_ok": false,
+     "vy": 0.0,
+     "w": 0.0,
+     "w_ok": false
+    },
+    "inf_i": {
+     "exp_v": 59940.0,
+     "exp_w": -479520.0,
+     "iI": -999.0,
+     "im": -999.0,
+     "inertia": "inf",
+     "mass": "1.0000",
+     "v_ok": false,
+     "vy": 0.0,
+     "w": 0.0,
+     "w_ok": false
+    },
+    "m_large": {
+     "exp_v": 59940.0,
+     "exp_w": -479520.0,
+     "iI": -999.0,
+     "im": -999.0,
+     "inertia": "0.0000",
+     "mass": "1000000.0000",
+     "v_ok": false,
+     "vy": 0.0,
+     "w": 0.0,
+     "w_ok": false
+    },
+    "m_small": {
+     "exp_v": 59940.0,
+     "exp_w": -479520.0,
+     "iI": -999.0,
+     "im": -999.0,
+     "inertia": "0.0000",
+     "mass": "0.0010",
+     "v_ok": false,
+     "vy": 0.0,
+     "w": 0.0,
+     "w_ok": false
+    },
+    "mass0": {
+     "exp_v": 59940.0,
+     "exp_w": -479520.0,
+     "iI": -999.0,
+     "im": -999.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": false,
+     "vy": 0.0,
+     "w": 0.0,
+     "w_ok": false
+    },
+    "massneg": {
+     "exp_v": 59940.0,
+     "exp_w": -479520.0,
+     "iI": -999.0,
+     "im": -999.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": false,
+     "vy": 0.0,
+     "w": 0.0,
+     "w_ok": false
+    },
+    "nan_i": {
+     "exp_v": 59940.0,
+     "exp_w": -479520.0,
+     "iI": -999.0,
+     "im": -999.0,
+     "inertia": "nan",
+     "mass": "1.0000",
+     "v_ok": false,
+     "vy": 0.0,
+     "w": 0.0,
+     "w_ok": false
+    },
+    "nano": {
+     "exp_v": 59940.0,
+     "exp_w": -479520.0,
+     "iI": -999.0,
+     "im": -999.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": false,
+     "vy": 0.0,
+     "w": 0.0,
+     "w_ok": false
+    },
+    "neg": {
+     "exp_v": 59940.0,
+     "exp_w": -479520.0,
+     "iI": -999.0,
+     "im": -999.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": false,
+     "vy": 0.0,
+     "w": 0.0,
+     "w_ok": false
+    },
+    "s_offneg": {
+     "exp_w": 15.0,
+     "w": 0.0,
+     "w_ok": false
+    },
+    "s_tqneg": {
+     "exp_v": 59940.0,
+     "exp_w": 479520.0,
+     "iI": -999.0,
+     "im": -999.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": false,
+     "vy": 0.0,
+     "w": 0.0,
+     "w_ok": false
+    },
+    "s_up": {
+     "exp_v": 60.0,
+     "v_ok": false,
+     "vy": 0.0
+    },
+    "tiny": {
+     "exp_v": 59940.0,
+     "exp_w": -479520.0,
+     "iI": -999.0,
+     "im": -999.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": false,
+     "vy": 0.0,
+     "w": 0.0,
+     "w_ok": false
+    },
+    "zero": {
+     "exp_v": 59940.0,
+     "exp_w": -479520.0,
+     "iI": -999.0,
+     "im": -999.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": false,
+     "vy": 0.0,
+     "w": 0.0,
+     "w_ok": false
+    }
+   },
+   "l_impulse": {
+    "auto": {
+     "exp_v": -60.0,
+     "exp_w": 15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 15.0,
+     "w_ok": true
+    },
+    "huge": {
+     "exp_v": -60.0,
+     "exp_w": 0.0,
+     "iI": 0.0,
+     "im": 1.0,
+     "inertia": "1000000000.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 0.0,
+     "w_ok": true
+    },
+    "inf_i": {
+     "exp_v": -60.0,
+     "exp_w": 0.0,
+     "iI": 0.0,
+     "im": 1.0,
+     "inertia": "inf",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 0.0,
+     "w_ok": true
+    },
+    "m_large": {
+     "exp_v": -5.9999999999999995e-05,
+     "exp_w": 0.0,
+     "iI": 0.0,
+     "im": 1e-06,
+     "inertia": "0.0000",
+     "mass": "1000000.0000",
+     "v_ok": true,
+     "vy": -0.0001,
+     "w": 0.0,
+     "w_ok": true
+    },
+    "m_small": {
+     "exp_v": -59999.996340000005,
+     "exp_w": 14999.99904,
+     "iI": 31.249998,
+     "im": 999.999939,
+     "inertia": "0.0000",
+     "mass": "0.0010",
+     "v_ok": true,
+     "vy": -59999.9961,
+     "w": 14999.999,
+     "w_ok": true
+    },
+    "mass0": {
+     "exp_v": -60.0,
+     "exp_w": 15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 15.0,
+     "w_ok": true
+    },
+    "massneg": {
+     "exp_v": -60.0,
+     "exp_w": 15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 15.0,
+     "w_ok": true
+    },
+    "nan_i": {
+     "exp_v": -60.0,
+     "exp_w": 0.0,
+     "iI": 0.0,
+     "im": 1.0,
+     "inertia": "nan",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 0.0,
+     "w_ok": true
+    },
+    "nano": {
+     "exp_v": -60.0,
+     "exp_w": 480000000000.0,
+     "iI": 1000000000.0,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 480000016384.0,
+     "w_ok": true
+    },
+    "neg": {
+     "exp_v": -60.0,
+     "exp_w": 15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 15.0,
+     "w_ok": true
+    },
+    "s_offneg": {
+     "exp_w": 15.0,
+     "w": 15.0,
+     "w_ok": true
+    },
+    "s_tqneg": {
+     "exp_v": -60.0,
+     "exp_w": -15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": -15.0,
+     "w_ok": true
+    },
+    "s_up": {
+     "exp_v": 60.0,
+     "v_ok": true,
+     "vy": 60.0
+    },
+    "tiny": {
+     "exp_v": -60.0,
+     "exp_w": 480000000.0,
+     "iI": 1000000.0,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 480000000.0,
+     "w_ok": true
+    },
+    "zero": {
+     "exp_v": -60.0,
+     "exp_w": 15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": "0.0000",
+     "mass": "1.0000",
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 15.0,
+     "w_ok": true
+    }
+   },
+   "sv_impulse": {
+    "c_central": {
+     "exp_v": -60.0,
+     "exp_w": 0.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": null,
+     "mass": null,
+     "v_ok": true,
+     "vy": -60.0,
+     "w": 0.0,
+     "w_ok": true
+    },
+    "c_off": {
+     "exp_v": -60.0,
+     "exp_w": -15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": null,
+     "mass": null,
+     "v_ok": true,
+     "vy": -60.0,
+     "w": -15.0,
+     "w_ok": true
+    },
+    "c_tq": {
+     "exp_v": 0.0,
+     "exp_w": 15.0,
+     "iI": 0.03125,
+     "im": 1.0,
+     "inertia": null,
+     "mass": null,
+     "v_ok": true,
+     "vy": 0.0,
+     "w": 15.0,
+     "w_ok": true
+    },
+    "r_off": {
+     "exp_v": -60.0,
+     "exp_w": -11.52,
+     "iI": 0.024,
+     "im": 1.0,
+     "inertia": null,
+     "mass": null,
+     "v_ok": true,
+     "vy": -60.0,
+     "w": -11.52,
+     "w_ok": true
+    },
+    "r_tq": {
+     "exp_v": 0.0,
+     "exp_w": 11.52,
+     "iI": 0.024,
+     "im": 1.0,
+     "inertia": null,
+     "mass": null,
+     "v_ok": true,
+     "vy": 0.0,
+     "w": 11.52,
+     "w_ok": true
+    }
+   }
+  },
+  "lag": {
+   "b_lag_t120_n120": {
+    "a_ok": true,
+    "a_vy": 980.0009,
+    "a_vy_cf": 980.0,
+    "a_vy_ok": false,
+    "a_y": 494.0834,
+    "a_y_cf": 494.0833,
+    "b_ok": true,
+    "b_y": 485.9167,
+    "b_y_cf": 485.9167,
+    "bpost": 980.0009,
+    "bpost_cf": 980.0,
+    "bpre": 971.8342,
+    "bpre_cf": 971.8333,
+    "dt": 0.00833333,
+    "dvy": 0.0,
+    "dy": 8.1667,
+    "dy_ok": true,
+    "exp_dy": 8.1667,
+    "frames": 120,
+    "n": 120,
+    "pf_delta": "120",
+    "tick_dh": "1:119",
+    "tps": 120
+   },
+   "b_lag_t120_n30": {
+    "a_ok": true,
+    "a_vy": 245.0001,
+    "a_vy_cf": 245.0,
+    "a_vy_ok": true,
+    "a_y": 31.6458,
+    "a_y_cf": 31.6458,
+    "b_ok": true,
+    "b_y": 29.6042,
+    "b_y_cf": 29.6042,
+    "bpost": 245.0001,
+    "bpost_cf": 245.0,
+    "bpre": 236.8334,
+    "bpre_cf": 236.8333,
+    "dt": 0.00833333,
+    "dvy": 0.0,
+    "dy": 2.0417,
+    "dy_ok": true,
+    "exp_dy": 2.0417,
+    "frames": 30,
+    "n": 30,
+    "pf_delta": "30",
+    "tick_dh": "1:29",
+    "tps": 120
+   },
+   "b_lag_t120_n60": {
+    "a_ok": true,
+    "a_vy": 489.9998,
+    "a_vy_cf": 490.0,
+    "a_vy_ok": true,
+    "a_y": 124.5417,
+    "a_y_cf": 124.5417,
+    "b_ok": true,
+    "b_y": 120.4583,
+    "b_y_cf": 120.4583,
+    "bpost": 489.9998,
+    "bpost_cf": 490.0,
+    "bpre": 481.8331,
+    "bpre_cf": 481.8333,
+    "dt": 0.00833333,
+    "dvy": 0.0,
+    "dy": 4.0833,
+    "dy_ok": true,
+    "exp_dy": 4.0833,
+    "frames": 60,
+    "n": 60,
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tps": 120
+   },
+   "b_lag_t240_n30": {
+    "a_ok": true,
+    "a_vy": 122.5,
+    "a_vy_cf": 122.5,
+    "a_vy_ok": true,
+    "a_y": 7.9115,
+    "a_y_cf": 7.9115,
+    "b_ok": true,
+    "b_y": 7.401,
+    "b_y_cf": 7.401,
+    "bpost": 122.5,
+    "bpost_cf": 122.5,
+    "bpre": 118.4167,
+    "bpre_cf": 118.4167,
+    "dt": 0.00416667,
+    "dvy": 0.0,
+    "dy": 0.5104,
+    "dy_ok": true,
+    "exp_dy": 0.5104,
+    "frames": 30,
+    "n": 30,
+    "pf_delta": "30",
+    "tick_dh": "1:29",
+    "tps": 240
+   },
+   "b_lag_t30_n30": {
+    "a_ok": true,
+    "a_vy": 980.0002,
+    "a_vy_cf": 980.0,
+    "a_vy_ok": true,
+    "a_y": 506.3334,
+    "a_y_cf": 506.3333,
+    "b_ok": true,
+    "b_y": 473.6667,
+    "b_y_cf": 473.6667,
+    "bpost": 980.0002,
+    "bpost_cf": 980.0,
+    "bpre": 947.3336,
+    "bpre_cf": 947.3333,
+    "dt": 0.03333333,
+    "dvy": 0.0,
+    "dy": 32.6667,
+    "dy_ok": true,
+    "exp_dy": 32.6667,
+    "frames": 30,
+    "n": 30,
+    "pf_delta": "30",
+    "tick_dh": "1:29",
+    "tps": 30
+   },
+   "b_lag_t30_n60": {
+    "a_ok": true,
+    "a_vy": 1959.9991,
+    "a_vy_cf": 1960.0,
+    "a_vy_ok": false,
+    "a_y": 1992.6665,
+    "a_y_cf": 1992.6667,
+    "b_ok": true,
+    "b_y": 1927.3333,
+    "b_y_cf": 1927.3333,
+    "bpost": 1959.9991,
+    "bpost_cf": 1960.0,
+    "bpre": 1927.3325,
+    "bpre_cf": 1927.3333,
+    "dt": 0.03333333,
+    "dvy": 0.0,
+    "dy": 65.3333,
+    "dy_ok": true,
+    "exp_dy": 65.3333,
+    "frames": 60,
+    "n": 60,
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tps": 30
+   },
+   "b_lag_t60_n30": {
+    "a_ok": true,
+    "a_vy": 490.0001,
+    "a_vy_cf": 490.0,
+    "a_vy_ok": true,
+    "a_y": 126.5834,
+    "a_y_cf": 126.5833,
+    "b_ok": true,
+    "b_y": 118.4167,
+    "b_y_cf": 118.4167,
+    "bpost": 490.0001,
+    "bpost_cf": 490.0,
+    "bpre": 473.6668,
+    "bpre_cf": 473.6667,
+    "dt": 0.01666667,
+    "dvy": 0.0,
+    "dy": 8.1667,
+    "dy_ok": true,
+    "exp_dy": 8.1667,
+    "frames": 30,
+    "n": 30,
+    "pf_delta": "30",
+    "tick_dh": "1:29",
+    "tps": 60
+   },
+   "b_lag_t60_n60": {
+    "a_ok": true,
+    "a_vy": 979.9996,
+    "a_vy_cf": 980.0,
+    "a_vy_ok": false,
+    "a_y": 498.1666,
+    "a_y_cf": 498.1667,
+    "b_ok": true,
+    "b_y": 481.8333,
+    "b_y_cf": 481.8333,
+    "bpost": 979.9996,
+    "bpost_cf": 980.0,
+    "bpre": 963.6663,
+    "bpre_cf": 963.6667,
+    "dt": 0.01666667,
+    "dvy": 0.0,
+    "dy": 16.3333,
+    "dy_ok": true,
+    "exp_dy": 16.3333,
+    "frames": 60,
+    "n": 60,
+    "pf_delta": "60",
+    "tick_dh": "1:59",
+    "tps": 60
+   },
+   "t30_lag": {
+    "a_ok": true,
+    "a_vy": 947.3336,
+    "a_vy_cf": 947.3333,
+    "a_vy_ok": true,
+    "a_y": 473.6667,
+    "a_y_cf": 473.6667,
+    "b_ok": true,
+    "b_y": 442.089,
+    "b_y_cf": 442.0889,
+    "bpost": 947.3336,
+    "bpost_cf": 947.3333,
+    "bpre": 914.6669,
+    "bpre_cf": 914.6667,
+    "dt": 0.03333333,
+    "dvy": 0.0,
+    "dy": 31.5778,
+    "dy_ok": true,
+    "exp_dy": 31.5778,
+    "frames": 30,
+    "n": 29,
+    "pf_delta": "30",
+    "tick_dh": "1:29",
+    "tps": 30
+   }
+  },
+  "order": {
+   "b_order": {
+    "cb0_eq_f1": true,
+    "cb0_eq_f2": null,
+    "cb0_step": "0.016667",
+    "cb0_ty": "0.2722",
+    "cb0_vy": "16.3333",
+    "f1": "f1=y=0.2722,vy=16.3333",
+    "frames": 60,
+    "ncb": 60,
+    "ncb_eq_frames": true,
+    "pair": "sync0",
+    "pf_delta": 60,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   },
+   "b_order_dummy": {
+    "parse_error": "'NoneType' object has no attribute 'group'"
+   },
+   "b_order_t120": {
+    "cb0_eq_f1": true,
+    "cb0_eq_f2": null,
+    "cb0_step": "0.008333",
+    "cb0_ty": "0.0681",
+    "cb0_vy": "8.1667",
+    "f1": "f1=y=0.0681,vy=8.1667",
+    "frames": 60,
+    "ncb": 60,
+    "ncb_eq_frames": true,
+    "pair": "sync0",
+    "pf_delta": 60,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   },
+   "b_order_t30": {
+    "cb0_eq_f1": null,
+    "cb0_eq_f2": true,
+    "cb0_step": "0.033333",
+    "cb0_ty": "1.0889",
+    "cb0_vy": "32.6667",
+    "f1": "f1=y=0.0000,vy=0.0000",
+    "frames": 30,
+    "ncb": 29,
+    "ncb_eq_frames": false,
+    "pair": "late_body",
+    "pf_delta": 30,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   },
+   "d_order_d0": {
+    "cb0_eq_f1": true,
+    "cb0_eq_f2": null,
+    "cb0_step": "0.016667",
+    "cb0_ty": "0.2722",
+    "cb0_vy": "16.3333",
+    "f1": "f1=y=0.2722,vy=16.3333",
+    "frames": 60,
+    "ncb": 60,
+    "ncb_eq_frames": true,
+    "pair": "sync0",
+    "pf_delta": 60,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   },
+   "d_order_d100": {
+    "cb0_eq_f1": true,
+    "cb0_eq_f2": null,
+    "cb0_step": "0.016667",
+    "cb0_ty": "0.2722",
+    "cb0_vy": "16.3333",
+    "f1": "f1=y=0.2722,vy=16.3333",
+    "frames": 60,
+    "ncb": 60,
+    "ncb_eq_frames": true,
+    "pair": "sync0",
+    "pf_delta": 60,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   },
+   "d_order_d20": {
+    "cb0_eq_f1": true,
+    "cb0_eq_f2": null,
+    "cb0_step": "0.016667",
+    "cb0_ty": "0.2722",
+    "cb0_vy": "16.3333",
+    "f1": "f1=y=0.2722,vy=16.3333",
+    "frames": 60,
+    "ncb": 60,
+    "ncb_eq_frames": true,
+    "pair": "sync0",
+    "pf_delta": 60,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   },
+   "d_order_d200": {
+    "cb0_eq_f1": true,
+    "cb0_eq_f2": null,
+    "cb0_step": "0.016667",
+    "cb0_ty": "0.2722",
+    "cb0_vy": "16.3333",
+    "f1": "f1=y=0.2722,vy=16.3333",
+    "frames": 60,
+    "ncb": 60,
+    "ncb_eq_frames": true,
+    "pair": "sync0",
+    "pf_delta": 60,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   },
+   "d_order_d300": {
+    "cb0_eq_f1": true,
+    "cb0_eq_f2": null,
+    "cb0_step": "0.016667",
+    "cb0_ty": "0.2722",
+    "cb0_vy": "16.3333",
+    "f1": "f1=y=0.2722,vy=16.3333",
+    "frames": 60,
+    "ncb": 60,
+    "ncb_eq_frames": true,
+    "pair": "sync0",
+    "pf_delta": 60,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   },
+   "d_order_d50": {
+    "cb0_eq_f1": true,
+    "cb0_eq_f2": null,
+    "cb0_step": "0.016667",
+    "cb0_ty": "0.2722",
+    "cb0_vy": "16.3333",
+    "f1": "f1=y=0.2722,vy=16.3333",
+    "frames": 60,
+    "ncb": 60,
+    "ncb_eq_frames": true,
+    "pair": "sync0",
+    "pf_delta": 60,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   },
+   "l2_order": {
+    "cb0_eq_f1": true,
+    "cb0_eq_f2": null,
+    "cb0_step": "0.016667",
+    "cb0_ty": "0.2722",
+    "cb0_vy": "16.3333",
+    "f1": "f1=y=0.2722,vy=16.3333",
+    "frames": 60,
+    "ncb": 60,
+    "ncb_eq_frames": true,
+    "pair": "sync0",
+    "pf_delta": 60,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   },
+   "l2_sv_order": {
+    "parse_error": "'NoneType' object has no attribute 'group'"
+   },
+   "l_order": {
+    "cb0_eq_f1": true,
+    "cb0_eq_f2": null,
+    "cb0_step": "0.016667",
+    "cb0_ty": "0.2722",
+    "cb0_vy": "16.3333",
+    "f1": "f1=y=0.2722,vy=16.3333",
+    "frames": 60,
+    "ncb": 60,
+    "ncb_eq_frames": true,
+    "pair": "sync0",
+    "pf_delta": 60,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   },
+   "l_order_t120": {
+    "cb0_eq_f1": true,
+    "cb0_eq_f2": null,
+    "cb0_step": "0.008333",
+    "cb0_ty": "0.0681",
+    "cb0_vy": "8.1667",
+    "f1": "f1=y=0.0681,vy=8.1667",
+    "frames": 60,
+    "ncb": 60,
+    "ncb_eq_frames": true,
+    "pair": "sync0",
+    "pf_delta": 60,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   },
+   "l_sv_order": {
+    "parse_error": "'NoneType' object has no attribute 'group'"
+   },
+   "p_order": {
+    "cb0_eq_f1": true,
+    "cb0_eq_f2": null,
+    "cb0_step": "0.016667",
+    "cb0_ty": "0.2722",
+    "cb0_vy": "16.3333",
+    "f1": "f1=y=0.2722,vy=16.3333",
+    "frames": 60,
+    "ncb": 60,
+    "ncb_eq_frames": true,
+    "pair": "sync0",
+    "pf_delta": 60,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   },
+   "p_sv_order": {
+    "parse_error": "'NoneType' object has no attribute 'group'"
+   },
+   "sv_order": {
+    "parse_error": "'NoneType' object has no attribute 'group'"
+   },
+   "t30_order": {
+    "cb0_eq_f1": null,
+    "cb0_eq_f2": true,
+    "cb0_step": "0.033333",
+    "cb0_ty": "1.0889",
+    "cb0_vy": "32.6667",
+    "f1": "f1=y=0.0000,vy=0.0000",
+    "frames": 30,
+    "ncb": 29,
+    "ncb_eq_frames": false,
+    "pair": "late_body",
+    "pf_delta": 30,
+    "pf_delta_eq_frames": true,
+    "tick_1to1": true
+   }
+  },
+  "pins": {
+   "b_damp": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "tld=default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000"
+    ]
+   },
+   "b_impulse": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "auto[v=0.0000,-60.0000,w=15.0000,iI=0.031250"
+    ]
+   },
+   "b_order": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "ncb=60",
+     "cb0=st=0.016667 ty=0.2722 vy=16.3333",
+     "f1=y=0.2722,vy=16.3333",
+     "f60=y=482.2250,vy=933.3325",
+     "pf_delta=60",
+     "tick_dh=1:59"
+    ]
+   },
+   "b_order_t120": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "ncb=60",
+     "cb0=st=0.008333 ty=0.0681 vy=8.1667",
+     "f60=y=122.5250,vy=478.1458",
+     "pf_delta=60",
+     "tick_dh=1:59"
+    ]
+   },
+   "b_write": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "step=0.016667",
+     "f30=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=118.4167,vy=490.0001]"
+    ]
+   },
+   "sv_comrefuse": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "auto_set4=com=0.0000,0.0000 mode=0",
+     "custom_set4=com=4.0000,0.0000 mode=1",
+     "back_auto=com=0.0000,0.0000 mode=0"
+    ]
+   },
+   "sv_contacts": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "rest=y=-7.7000,vy=0.0000",
+     "cb=count=1 y=-7.7000 pos=0.0000,0.3000 cvel=0.0000,16.3333",
+     "entered=1"
+    ]
+   },
+   "sv_damp": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "tld=default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000",
+     "f30=default[y=124.5675,vy=478.3405]|rep0[y=126.5834,vy=490.0001]",
+     "f60=default[y=482.2250,vy=933.3325]|rep0[y=498.1666,vy=979.9996]"
+    ]
+   },
+   "sv_freezelock": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "f30=f_normal[y=-7.6969,vy=0.0000,w=0.0000,fz=false]",
+     "f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]",
+     "f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]",
+     "f_lock[y=-128.0000,vy=-60.0000,w=0.0000,fz=false]",
+     "sleep=s_off[sl=false,y=-7.7000,vy=0.0000] s_on[sl=true,y=-7.7000,vy=0.0000]"
+    ]
+   },
+   "sv_gravity": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "g05[y=62.2838,vy=239.1703]",
+     "g1[y=124.5675,vy=478.3405]",
+     "g2[y=249.1351,vy=956.6811]",
+     "g1[y=482.2250,vy=933.3325]",
+     "zv0[y=-30.0000,vy=-30.0000]"
+    ]
+   },
+   "sv_gravity_t120": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "g1[y=478.1452,vy=932.9641]",
+     "g1[y=122.5250,vy=478.1458]",
+     "zv0[y=-30.0000,vy=-30.0000]"
+    ]
+   },
+   "sv_impulse": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "c_central[v=0.0000,-60.0000,w=0.0000,iI=0.031250,im=1.0000]",
+     "c_off[v=0.0000,-60.0000,w=-15.0000,iI=0.031250,im=1.0000]",
+     "c_tq[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]",
+     "r_tq[v=0.0000,0.0000,w=11.5200,iI=0.024000,im=1.0000]",
+     "r_off[v=0.0000,-60.0000,w=-11.5200,iI=0.024000,im=1.0000]"
+    ]
+   },
+   "sv_order": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "ncb=60",
+     "cb0=st=0.016667 ty=0.2722 vy=16.3333",
+     "f1=y=0.2722,vy=16.3333",
+     "f60=y=482.2250,vy=933.3325"
+    ]
+   },
+   "sv_write": {
+    "all_ok": true,
+    "per_rep": [
+     true,
+     true,
+     true
+    ],
+    "pins": [
+     "f30=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=118.4167,vy=490.0001]",
+     "f60=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=481.8333,vy=979.9996]"
+    ]
+   }
+  },
+  "settle": {
+   "b_settle": {
+    "n_rest_margin": true,
+    "ncb": "45",
+    "pf_delta": "120",
+    "samples": {
+     "30": {
+      "c_y": -7.7,
+      "cnt": 1,
+      "ent": 1,
+      "n_y": -7.6969,
+      "sf_sl": "false",
+      "sf_y": -7.7,
+      "so_sl": "false",
+      "so_y": -7.7
+     },
+     "60": {
+      "c_y": -7.7,
+      "cnt": 1,
+      "ent": 1,
+      "n_y": -7.7,
+      "sf_sl": "false",
+      "sf_y": -7.7,
+      "so_sl": "true",
+      "so_y": -7.7
+     },
+     "90": {
+      "c_y": -7.7,
+      "cnt": 1,
+      "ent": 1,
+      "n_y": -7.7,
+      "sf_sl": "false",
+      "sf_y": -7.7,
+      "so_sl": "true",
+      "so_y": -7.7
+     },
+     "120": {
+      "c_y": -7.7,
+      "cnt": 1,
+      "ent": 1,
+      "n_y": -7.7,
+      "sf_sl": "false",
+      "sf_y": -7.7,
+      "so_sl": "true",
+      "so_y": -7.7
+     }
+    },
+    "tick_dh": "1:119",
+    "wall": [
+     2.7,
+     2.61,
+     2.56
+    ]
+   },
+   "l2_settle": {
+    "n_rest_margin": true,
+    "ncb": "45",
+    "pf_delta": "120",
+    "samples": {
+     "30": {
+      "c_y": -7.7,
+      "cnt": 1,
+      "ent": 1,
+      "n_y": -7.6969,
+      "sf_sl": "false",
+      "sf_y": -7.7,
+      "so_sl": "false",
+      "so_y": -7.7
+     },
+     "60": {
+      "c_y": -7.7,
+      "cnt": 1,
+      "ent": 1,
+      "n_y": -7.7,
+      "sf_sl": "false",
+      "sf_y": -7.7,
+      "so_sl": "true",
+      "so_y": -7.7
+     },
+     "90": {
+      "c_y": -7.7,
+      "cnt": 1,
+      "ent": 1,
+      "n_y": -7.7,
+      "sf_sl": "false",
+      "sf_y": -7.7,
+      "so_sl": "true",
+      "so_y": -7.7
+     },
+     "120": {
+      "c_y": -7.7,
+      "cnt": 1,
+      "ent": 1,
+      "n_y": -7.7,
+      "sf_sl": "false",
+      "sf_y": -7.7,
+      "so_sl": "true",
+      "so_y": -7.7
+     }
+    },
+    "tick_dh": "1:119",
+    "wall": [
+     2.79,
+     2.87,
+     2.89
+    ]
+   },
+   "l_settle": {
+    "n_rest_margin": true,
+    "ncb": "45",
+    "pf_delta": "120",
+    "samples": {
+     "30": {
+      "c_y": -7.7,
+      "cnt": 1,
+      "ent": 1,
+      "n_y": -7.6969,
+      "sf_sl": "false",
+      "sf_y": -7.7,
+      "so_sl": "false",
+      "so_y": -7.7
+     },
+     "60": {
+      "c_y": -7.7,
+      "cnt": 1,
+      "ent": 1,
+      "n_y": -7.7,
+      "sf_sl": "false",
+      "sf_y": -7.7,
+      "so_sl": "true",
+      "so_y": -7.7
+     },
+     "90": {
+      "c_y": -7.7,
+      "cnt": 1,
+      "ent": 1,
+      "n_y": -7.7,
+      "sf_sl": "false",
+      "sf_y": -7.7,
+      "so_sl": "true",
+      "so_y": -7.7
+     },
+     "120": {
+      "c_y": -7.7,
+      "cnt": 1,
+      "ent": 1,
+      "n_y": -7.7,
+      "sf_sl": "false",
+      "sf_y": -7.7,
+      "so_sl": "true",
+      "so_y": -7.7
+     }
+    },
+    "tick_dh": "1:119",
+    "wall": [
+     2.62,
+     2.53,
+     2.64
+    ]
+   }
+  },
+  "stall": {
+   "b_stall_idle": {
+    "fN": "y=1061.5953,vy=1366.1176",
+    "frames": 90,
+    "ncb": "90",
+    "ncb_eq_frames": true,
+    "near": "f29[y=124.5675,vy=478.3405]|f30[y=132.7988,vy=493.8766]|f31[y=141.2886,vy=509.3869]|f32[y=150.0364,vy=524.8712]",
+    "stall": "idle",
+    "tick_1to1": true,
+    "tick_dh": "1:89",
+    "wall": [
+     2.3,
+     2.19,
+     2.28
+    ]
+   },
+   "b_stall_none": {
+    "fN": "y=1061.5953,vy=1366.1176",
+    "frames": 90,
+    "ncb": "90",
+    "ncb_eq_frames": true,
+    "near": "f29[y=124.5675,vy=478.3405]|f30[y=132.7988,vy=493.8766]|f31[y=141.2886,vy=509.3869]|f32[y=150.0364,vy=524.8712]",
+    "stall": "none",
+    "tick_1to1": true,
+    "tick_dh": "1:89",
+    "wall": [
+     2.0,
+     2.13,
+     2.05
+    ]
+   },
+   "b_stall_phys": {
+    "fN": "y=1061.5953,vy=1366.1176",
+    "frames": 90,
+    "ncb": "90",
+    "ncb_eq_frames": true,
+    "near": "f29[y=124.5675,vy=478.3405]|f30[y=132.7988,vy=493.8766]|f31[y=141.2886,vy=509.3869]|f32[y=150.0364,vy=524.8712]",
+    "stall": "phys",
+    "tick_1to1": true,
+    "tick_dh": "1:89",
+    "wall": [
+     2.24,
+     2.36,
+     2.28
+    ]
+   },
+   "l_stall_idle": {
+    "fN": "y=1061.5953,vy=1366.1176",
+    "frames": 90,
+    "ncb": "90",
+    "ncb_eq_frames": true,
+    "near": "f29[y=124.5675,vy=478.3405]|f30[y=132.7988,vy=493.8766]|f31[y=141.2886,vy=509.3869]|f32[y=150.0364,vy=524.8712]",
+    "stall": "idle",
+    "tick_1to1": true,
+    "tick_dh": "1:89",
+    "wall": [
+     2.27,
+     2.16,
+     2.23
+    ]
+   }
+  }
+ }
+}
