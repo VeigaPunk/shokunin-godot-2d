@@ -1057,3 +1057,25 @@
   Scribe F2 record-level.
 - Seats: scout+author-finisher(ds), verifier(zfl), critic+boundary+
   scribe(ds); fold+adj swe-2. ADMIT-corr. Commits 45232c7 + 76fa8d8.
+
+## round 86 — 2D physics backend-select lattice (ADMIT-corr)
+
+- 8 arms in `phys2d_backends.gd` (nested-boot per engine variant):
+  census, stored→resolved lattice (bad values store verbatim + silent
+  GodotPhysics2D fallback), Jolt-is-3D-only control, manager refusal
+  xcheck, threaded space-state gate (7 positions + nofetch baseline),
+  prop-vs-api duality (r77 law corrected), Dummy degenerate payloads,
+  Dummy collider-hang timeout. +8 battery rows → 182.
+- FOLDS: simplifier vfold (−4L, 16/16 byte-identical pairs); critic
+  16/18 PASS-forges → dur_ge timing pin, backtrace-frame provenance,
+  cm fractions, child offered-lists + errs_total, errB symmetry, thr
+  stimulus, stale-capture purge + spawn-failure class, enum%d,
+  stored_has. NEW bimodality found in-session (deferred fetch races
+  threaded physics window; moved frame-coupling) → dual_ok/thr_ok
+  mode envelopes + mv class. 8 rows repinned, ×3 stable, 182/182.
+- RECORD: boundary B4 — space-state gate is a GodotPhysics-server
+  guard, silently absent under Dummy (vacuous-pin hazard). Armed-unrun
+  B8–B14 harness filed. Scribe F1–F6 non-blocking.
+- Seats: author+baseline(dead swe, orchestrator completed), verifier
+  (swe), critic(luna), simplifier(ds), boundary+scribe(glm);
+  fold+adj swe-2. ADMIT-corr. Commits this fold + 7ae7083.

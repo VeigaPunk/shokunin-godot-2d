@@ -71,13 +71,18 @@ func _work_root() -> String:
 	return OS.get_user_data_dir() + "/r86bt"
 
 # Boot a fresh Godot process in a generated minimal project. Returns
-# {rc, out, err, out_bytes, err_bytes, fields, at} — fields is the child's
+# {rc, err, err_bytes, fields, at} — fields is the child's
 # `R86C key=value` report parsed key->value (values may contain spaces),
 # at is the list of stripped `at:` payload lines from the child's stderr.
 func _boot(tag: String, phys_lines: PackedStringArray, child_arg: String, bound_s: int) -> Dictionary:
 	var cdir := _work_root() + "/" + arm + "/" + tag
 	_boot_dirs.append(_work_root() + "/" + arm)
 	DirAccess.make_dir_recursive_absolute(cdir)
+	# Purge any stale capture before spawn (r86-critic F7): a leftover
+	# out/err/rc set must never be re-read as fresh evidence.
+	for stale in ["out.txt", "err.txt", "rc.txt"]:
+		if FileAccess.file_exists(cdir + "/" + stale):
+			DirAccess.remove_absolute(cdir + "/" + stale)
 	var pg := FileAccess.open(cdir + "/project.godot", FileAccess.WRITE)
 	pg.store_string("[application]\nconfig/name=\"R86BT\"\nconfig/features=PackedStringArray(\"4.7\")\n")
 	if phys_lines.size() > 0:
@@ -96,8 +101,9 @@ func _boot(tag: String, phys_lines: PackedStringArray, child_arg: String, bound_
 	# `\$?` survives to the inner sh and records the child's real exit code.
 	var cmd := "timeout %d \"%s\" --headless --path \"%s\" --script res://child.gd -- %s >\"%s\" 2>\"%s\"; echo \\$? >\"%s\"" % [
 		bound_s, OS.get_executable_path(), cdir, child_arg, out_f, err_f, rc_f]
-	var drop: Array = []
-	OS.execute("/bin/sh", ["-c", cmd], drop, false, false)
+	var t0 := Time.get_ticks_msec()
+	var xrc := OS.execute("/bin/sh", ["-c", cmd], [], false, false)
+	var dur_ms := int(Time.get_ticks_msec() - t0)
 	var out_t := FileAccess.get_file_as_string(out_f)
 	var err_t := FileAccess.get_file_as_string(err_f)
 	var rc_s := FileAccess.get_file_as_string(rc_f).strip_edges()
@@ -113,11 +119,11 @@ func _boot(tag: String, phys_lines: PackedStringArray, child_arg: String, bound_
 		var s := line.strip_edges()
 		if s.begins_with("at: "):
 			ats.append(s.substr(4))
-	return {"rc": int(rc_s) if rc_s.is_valid_int() else -999,
-		"out": out_t, "err": err_t,
-		"out_bytes": FileAccess.get_file_as_bytes(out_f).size(),
+	return {"rc": (-998 if xrc != 0 else
+			(int(rc_s) if rc_s.is_valid_int() else -999)),
+		"err": err_t,
 		"err_bytes": FileAccess.get_file_as_bytes(err_f).size(),
-		"fields": fields, "at": ats}
+		"fields": fields, "at": ats, "dur_ms": dur_ms}
 
 func _err_count(err: String) -> int:
 	var n := 0
@@ -126,8 +132,37 @@ func _err_count(err: String) -> int:
 			n += 1
 	return n
 
+# 12-frame drop distances are frame-count coupled (17.867 vs 21.104
+# both realized) — emit the motion class, not the jittered magnitude.
+func _mvclass(m) -> String:
+	var s := str(m)
+	if not s.is_valid_float():
+		return s
+	var v := s.to_float()
+	return "zero" if v == 0.0 else ("pos" if v > 1.0 else "tiny")
+
 func _slot(r: Dictionary, inner: String) -> String:
 	return "{%s,rc=%d,errB=%d}" % [inner, r["rc"], r["err_bytes"]]
+
+# Unique GDScript user-frame names from a child's stderr backtraces, in
+# order — `[N] fn (res://child.gd:L)` lines. Provenance evidence the bare
+# ERROR count cannot carry (r86-critic F2).
+func _frames(err: String) -> String:
+	var seen: Array = []
+	for line in err.split("\n"):
+		var s := line.strip_edges()
+		if s.begins_with("[") and "child.gd" in s:
+			var fn: String = s.split(" ", true, 1)[1].split(" ")[0]
+			if fn not in seen:
+				seen.append(fn)
+	return ",".join(seen)
+
+# First `at:` entry containing a needle (engine frame or user frame).
+func _at_pick(ats: Array, needle: String) -> String:
+	for a in ats:
+		if needle in a:
+			return a
+	return "<none>"
 
 # -- arms ---------------------------------------------------------------------
 
@@ -153,6 +188,8 @@ func _arm_census() -> void:
 			"JoltPhysicsDirectSpaceState2D"]:
 		ces.append("%s=%s" % [c, str(ClassDB.class_exists(c))])
 	var enums: Array = []
+	var probes := ["get_servers_count", "get_server_count",
+			"get_server_name", "find_server_id", "has_server"]
 	for mgr in ["PhysicsServer2DManager", "PhysicsServer3DManager"]:
 		var sing = Engine.get_singleton(mgr)
 		var have := 0
@@ -160,11 +197,10 @@ func _arm_census() -> void:
 		for m in ClassDB.class_get_method_list(mgr, true):
 			own.append(str(m.get("name")))
 		own.sort()
-		for probe in ["get_servers_count", "get_server_count",
-				"get_server_name", "find_server_id", "has_server"]:
+		for probe in probes:
 			if sing != null and sing.has_method(probe):
 				have += 1
-		enums.append("%s={own=[%s],enum5=%d}" % [mgr, ",".join(own), have])
+		enums.append("%s={own=[%s],enum%d=%d}" % [mgr, ",".join(own), probes.size(), have])
 	_finish("census self_cfg=[%s] hint2d=[%s] hint3d=[%s] jolt2d_ns=%d jolt3d_ns=%d %s ce=[%s]" % [
 		str(ProjectSettings.get_setting("physics/2d/physics_engine")),
 		h2, h3, j2, j3, " ".join(enums), ",".join(ces)])
@@ -176,9 +212,9 @@ func _arm_lattice() -> void:
 	for row in LAT:
 		var r := _boot("lat_" + row[0], PackedStringArray(row[1]), "--mode=probe", 15)
 		var f: Dictionary = r["fields"]
-		parts.append("%s%s" % [row[0], _slot(r, "stored=%s,dss=%s,valid=%s,moved=%s" % [
-			f.get("stored", "<?>"), f.get("dss", "<?>"), f.get("valid", "<?>"),
-			f.get("moved", "<?>")])])
+		parts.append("%s%s" % [row[0], _slot(r, "stored=%s,has=%s,dss=%s,valid=%s,mv=%s" % [
+			f.get("stored", "<?>"), f.get("stored_has", "<?>"), f.get("dss", "<?>"),
+			f.get("valid", "<?>"), _mvclass(f.get("moved", "<?>"))])])
 	_finish("lattice " + " ".join(parts))
 
 func _arm_jolt3d_live() -> void:
@@ -196,6 +232,7 @@ func _arm_xcheck() -> void:
 	# per-name acceptance is attributed by printerr markers bracketing each call
 	# in the child's stderr capture.
 	var r := _boot("xc", PackedStringArray(), "--mode=manager", 15)
+	var f: Dictionary = r["fields"]
 	var errs2 := _window_counts(r["err"], "2d", NAMES2D.size())
 	var errs3 := _window_counts(r["err"], "3d", NAMES3D.size())
 	var ats: Array = r["at"]
@@ -206,9 +243,12 @@ func _arm_xcheck() -> void:
 			at2 = a
 		elif "physics_server_3d" in a:
 			at3 = a
-	_finish("xcheck names2d=[%s] errs2d=[%s] names3d=[%s] errs3d=[%s] at2d=%s at3d=%s rc=%d" % [
-		",".join(_name_labels(NAMES2D)), ",".join(errs2),
-		",".join(_name_labels(NAMES3D)), ",".join(errs3), at2, at3, r["rc"]])
+	# offered2d/offered3d are the CHILD's own offered lists (r86-critic F4):
+	# pin what was actually offered, not the parent's NAMES constants.
+	_finish("xcheck offered2d=%s errs2d=[%s] offered3d=%s errs3d=[%s] at2d=%s at3d=%s rc=%d errs_total=%d" % [
+		f.get("offered2d", "<?>"), ",".join(errs2),
+		f.get("offered3d", "<?>"), ",".join(errs3), at2, at3, r["rc"],
+		_err_count(r["err"])])
 
 func _name_labels(names: Array) -> PackedStringArray:
 	var out := PackedStringArray()
@@ -248,17 +288,41 @@ func _arm_gate_matrix() -> void:
 	var rn := _boot("nf", PackedStringArray(THREAD_ON), "--mode=nofetch", 15)
 	var ft: Dictionary = rt["fields"]
 	var fd: Dictionary = rd["fields"]
+	var fn: Dictionary = rn["fields"]
+	# The deferred fetch positions race the threaded server's physics window
+	# (observed on the duality prop leg): a position that lands inside the
+	# window legitimately reports ok instead of null. Named-mode envelope:
+	# refused positions must each carry an engine error, fetched positions
+	# report ok, backtrace frames stay inside the refused-fetch paths, and
+	# at least 4 refusals remain so the gate keeps evidence.
+	var refused := 0
+	var nok := 0
+	for k in ["A", "B", "C", "D", "E", "F", "G"]:
+		if ft.get(k) == "null":
+			refused += 1
+		elif ft.get(k) == "ok":
+			nok += 1
+	var tf := _frames(rt["err"])
+	var tf_ok: bool = tf != ""
+	for fr in tf.split(","):
+		if fr not in ["_dss_state", "_loud_state", "_initialize", "_run",
+				"_m_gate", "_process", "_physics_process"]:
+			tf_ok = false
+	var thr_ok: bool = refused + nok == 7 and refused >= 4 and \
+		refused == _err_count(rt["err"]) and ft.get("loud") == "ok" and tf_ok
 	var at := ""
 	if rt["at"].size() > 0:
 		at = rt["at"][0]
-	_finish("gate_matrix thr[A=%s,B=%s,C=%s,D=%s,E=%s,F=%s,G=%s,loud=%s,errs=%d] def[A=%s,B=%s,C=%s,D=%s,E=%s,F=%s,G=%s,loud=%s,errs=%d] nofetch[errs=%d] rc=[%d,%d,%d] at=%s" % [
-		ft.get("A", "?"), ft.get("B", "?"), ft.get("C", "?"), ft.get("D", "?"),
-		ft.get("E", "?"), ft.get("F", "?"), ft.get("G", "?"), ft.get("loud", "?"),
-		_err_count(rt["err"]),
+	# tf/df pin the refused fetch's user frames; nofetch pins its own `thr`
+	# readback so an unthreaded baseline cannot pass silently (critic F2/F6).
+	_finish("gate_matrix thr_ok=%d def[A=%s,B=%s,C=%s,D=%s,E=%s,F=%s,G=%s,loud=%s,errs=%d,df=%s] nofetch[thr=%s,errs=%d] rc=[%d,%d,%d] errB=[%d,%d] at=%s" % [
+		int(thr_ok),
 		fd.get("A", "?"), fd.get("B", "?"), fd.get("C", "?"), fd.get("D", "?"),
 		fd.get("E", "?"), fd.get("F", "?"), fd.get("G", "?"), fd.get("loud", "?"),
-		_err_count(rd["err"]), _err_count(rn["err"]),
-		rt["rc"], rd["rc"], rn["rc"], at])
+		_err_count(rd["err"]), _frames(rd["err"]),
+		fn.get("thr", "<?>"), _err_count(rn["err"]),
+		rt["rc"], rd["rc"], rn["rc"],
+		rd["err_bytes"], rn["err_bytes"], at])
 
 func _arm_gate_duality() -> void:
 	# r77's pinned law said the World2D property path is silent where the
@@ -268,12 +332,32 @@ func _arm_gate_duality() -> void:
 	var ra := _boot("api", PackedStringArray(THREAD_ON), "--mode=api", 15)
 	var fp: Dictionary = rp["fields"]
 	var fa: Dictionary = ra["fields"]
-	var atp: String = rp["at"][0] if rp["at"].size() > 0 else "<none>"
-	var ata: String = ra["at"][0] if ra["at"].size() > 0 else "<none>"
-	_finish("gate_duality prop[B=%s,errs=%d,rc=%d] api[B=%s,errs=%d,rc=%d] at_eq=%s at=%s" % [
-		fp.get("B", "?"), _err_count(rp["err"]), rp["rc"],
-		fa.get("B", "?"), _err_count(ra["err"]), ra["rc"],
-		str(atp == ata and atp != "<none>"), atp])
+	var atp := _at_pick(rp["at"], "space_get_direct_state")
+	var ata := _at_pick(ra["at"], "space_get_direct_state")
+	var pf := _frames(rp["err"])
+	var af := _frames(ra["err"])
+	# The deferred _run fetch races the threaded server's physics window:
+	# mode a = refused (B=null + engine error + _state frame), mode b =
+	# fetched cleanly (B=ok, no error). Both realized on this host; each
+	# side gets its own named mode and the emit fail-closes on anything
+	# else (critic F2 + observed rep flake).
+	var pmode := ""
+	if fp.get("B") == "null" and _err_count(rp["err"]) == 1 and pf == "_dss_state,_run":
+		pmode = "a"
+	elif fp.get("B") == "ok" and _err_count(rp["err"]) == 0 and pf == "":
+		pmode = "b"
+	var amode := ""
+	if fa.get("B") == "null" and _err_count(ra["err"]) == 1 and af == "_loud_state,_run":
+		amode = "a"
+	elif fa.get("B") == "ok" and _err_count(ra["err"]) == 0 and af == "":
+		amode = "b"
+	# Independent children race independently: all four mode combos are
+	# legitimate. The duality claim (identical engine error) is only
+	# checkable when both refused — gate at_eq on that combo only.
+	var dual_ok: bool = pmode != "" and amode != "" and \
+		rp["rc"] == 0 and ra["rc"] == 0 and \
+		(pmode != "a" or amode != "a" or (atp == ata and atp != "<none>"))
+	_finish("gate_duality dual_ok=%d" % int(dual_ok))
 
 func _arm_dummy_degenerate() -> void:
 	# The Dummy server answers queries with degenerate payloads: no contacts,
@@ -282,27 +366,33 @@ func _arm_dummy_degenerate() -> void:
 	var rc := _boot("ctl", PackedStringArray(), "--mode=dummy", 15)
 	var fd: Dictionary = rd["fields"]
 	var fc: Dictionary = rc["fields"]
+	# cm0/cm1 pin the cast_motion fractions themselves — the bare array size
+	# cannot distinguish a hit from a complete miss (critic F3).
 	_finish("dummy_degenerate dummy%s control%s" % [
-		_slot(rd, "valid=%s,dss=%s,moved=%s,ray_keys=%s,ray_pos=%s,is_n=%s,cm_n=%s" % [
-			fd.get("valid", "?"), fd.get("dss", "?"), fd.get("moved", "?"),
+		_slot(rd, "valid=%s,dss=%s,mv=%s,ray_keys=%s,ray_pos=%s,is_n=%s,cm0=%s,cm1=%s" % [
+			fd.get("valid", "?"), fd.get("dss", "?"), _mvclass(fd.get("moved", "?")),
 			fd.get("ray_keys", "?"), fd.get("ray_pos", "?"),
-			fd.get("is_n", "?"), fd.get("cm_n", "?")]),
-		_slot(rc, "valid=%s,dss=%s,moved=%s,ray_keys=%s,ray_pos=%s,is_n=%s,cm_n=%s" % [
-			fc.get("valid", "?"), fc.get("dss", "?"), fc.get("moved", "?"),
+			fd.get("is_n", "?"), fd.get("cm0", "?"), fd.get("cm1", "?")]),
+		_slot(rc, "valid=%s,dss=%s,mv=%s,ray_keys=%s,ray_pos=%s,is_n=%s,cm0=%s,cm1=%s" % [
+			fc.get("valid", "?"), fc.get("dss", "?"), _mvclass(fc.get("moved", "?")),
 			fc.get("ray_keys", "?"), fc.get("ray_pos", "?"),
-			fc.get("is_n", "?"), fc.get("cm_n", "?")])])
+			fc.get("is_n", "?"), fc.get("cm0", "?"), fc.get("cm1", "?")])])
 
 func _arm_dummy_timeout() -> void:
 	# The hazard class: under Dummy a ray hit dict lacks `collider`; the access
 	# kills the coroutine before quit(), the SceneTree idles forever, and only an
 	# external bound ends the process (timeout -> rc=124).
-	var r := _boot("hang", PackedStringArray(['2d/physics_engine="Dummy"']), "--mode=dummyhang", 3)
+	var bound := 3
+	var r := _boot("hang", PackedStringArray(['2d/physics_engine="Dummy"']), "--mode=dummyhang", bound)
 	var sig := 0
 	for line in r["err"].split("\n"):
 		if "Invalid access to property or key 'collider' on a base object of type 'Dictionary'" in line:
 			sig += 1
-	_finish("dummy_timeout rc=%d bound_s=3 hang_begin=%s collider_sig=%d errs=%d" % [
-		r["rc"], r["fields"].get("hang_begin", "0"), sig, _err_count(r["err"])])
+	# dur_ms pins the wall duration: rc=124 alone cannot distinguish an
+	# external timeout-kill from a fast self-exit (critic F1).
+	_finish("dummy_timeout rc=%d bound_s=%d dur_ge=%d hang_begin=%s collider_sig=%d errs=%d" % [
+		r["rc"], bound, int(r["dur_ms"] >= bound * 1000 - 200),
+		r["fields"].get("hang_begin", "0"), sig, _err_count(r["err"])])
 
 # -- embedded child project ----------------------------------------------------
 
@@ -380,6 +470,7 @@ func _child_src() -> String:
 		'		await physics_frame',
 		'	var y1 := b.global_position.y',
 		'	print("R86C stored=[%s]" % _setting("physics/2d/physics_engine"))',
+		'	print("R86C stored_has=%s" % str(ProjectSettings.has_setting("physics/2d/physics_engine")))',
 		'	print("R86C dss=%s" % (dss.get_class() if dss != null else "null"))',
 		'	print("R86C valid=%s" % str(w != null and w.space.is_valid()))',
 		'	print("R86C moved=%.3f" % (y1 - y0))',
@@ -392,11 +483,15 @@ func _child_src() -> String:
 		'func _m_manager() -> void:',
 		'	var m2 = Engine.get_singleton("PhysicsServer2DManager")',
 		'	var m3 = Engine.get_singleton("PhysicsServer3DManager")',
-		'	for nm in ["GodotPhysics2D", "Dummy", "Jolt Physics", "garbage_xyz", ""]:',
+		'	var l2 := ["GodotPhysics2D", "Dummy", "Jolt Physics", "garbage_xyz", ""]',
+		'	var l3 := ["Jolt Physics", "GodotPhysics3D", "Dummy", "garbage_xyz"]',
+		'	print("R86C offered2d=[%s]" % ",".join(l2))',
+		'	print("R86C offered3d=[%s]" % ",".join(l3))',
+		'	for nm in l2:',
 		'		printerr("R86CM begin2d [%s]" % nm)',
 		'		m2.call("set_default_server", nm, 100)',
 		'		printerr("R86CM end2d [%s]" % nm)',
-		'	for nm in ["Jolt Physics", "GodotPhysics3D", "Dummy", "garbage_xyz"]:',
+		'	for nm in l3:',
 		'		printerr("R86CM begin3d [%s]" % nm)',
 		'		m3.call("set_default_server", nm, 100)',
 		'		printerr("R86CM end3d [%s]" % nm)',
@@ -415,13 +510,11 @@ func _child_src() -> String:
 		'		await physics_frame',
 		'	await process_frame',
 		'	await process_frame',
-		'	_deferred_g()',
+		'	_gate["G"] = _dss_state()',
 		'	await process_frame',
 		'	for k in ["A", "B", "C", "D", "E", "F", "G"]:',
 		'		print("R86C %s=%s" % [k, _gate.get(k, "<unset>")])',
 		'	print("R86C loud=%s" % _gate.get("loud", "<unset>"))',
-		'func _deferred_g() -> void:',
-		'	_gate["G"] = _dss_state()',
 		'func _mk_world(n: Node2D) -> RigidBody2D:',
 		'	var wall := StaticBody2D.new()',
 		'	var wcs := CollisionShape2D.new()',
@@ -470,7 +563,10 @@ func _child_src() -> String:
 		'		mq.shape = circle',
 		'		mq.transform = Transform2D(0.0, Vector2(0, 0))',
 		'		mq.motion = Vector2(200, 0)',
-		'		cm_n = dss.cast_motion(mq).size()',
+		'		var cm: Array = dss.cast_motion(mq)',
+		'		cm_n = cm.size()',
+		'		print("R86C cm0=%.4f" % (cm[0] if cm_n > 0 else -1.0))',
+		'		print("R86C cm1=%.4f" % (cm[1] if cm_n > 1 else -1.0))',
 		'	print("R86C valid=%s" % str(w != null and w.space.is_valid()))',
 		'	print("R86C dss=%s" % (dss.get_class() if dss != null else "null"))',
 		'	print("R86C moved=%.3f" % moved)',
