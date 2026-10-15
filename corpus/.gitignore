@@ -12,3 +12,7 @@ live/*/base/
 live/*/*extract*/
 # xsentinel w9: *tree* dirs at ANY depth (same class as audio fix)
 live/**/*tree*/
+# r89 reviewer F2: regenerable machine artifacts corpus-wide — Python
+# bytecode caches (fixtures + live drivers) and Godot .godot/ project caches.
+**/__pycache__/
+**/.godot/

@@ -1,0 +1,33 @@
+=== godot: mine corpus/live/r89-fold/runs2/20261015T222323179429Z/verdicts.json rows=247 verdict=PASS file_sha256=3898a56224abcae03dcd5eef681e3e8b156f548bbe471a217900e90748c4ff89 ===
+
+run1: ref=corpus/live/r89-fold/runs1/20261015T221843471142Z/verdicts.json ref_rows=247 ref_verdict=FAIL
+  common=247 new_only=0 old_only=0 tuple_mismatches=4 (seeded=3 meta=1)
+  output-normalized identical=232 differing=8 not-carried=7
+  TUPLE-MISMATCH audio_bus_route_invalid_control: {"output": ["['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godo", "['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godo"], "verdict": ["PASS", "FAIL"]}
+  TUPLE-MISMATCH negative_transition: {"output": ["['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godo", "['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godo"], "verdict": ["PASS", "FAIL"]}
+  TUPLE-MISMATCH overlap: {"actual_exit": ["0", "1"], "output": ["['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godo", "['Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godo"], "verdict": ["PASS", "FAIL"]}
+  TUPLE-MISMATCH probe_error_clause_surface: {"arms": ["[{'case': 'surface_allowforge', 'flags': ['--spawn-allowforge'], 'bound_seconds': 3.0, 'ti", "[{'case': 'surface_allowforge', 'flags': ['--spawn-allowforge'], 'bound_seconds': 3.0, 'ti"], "census": ["{'scope': 'every CASES row carrying expected_errors in this battery run; opt-in probe rows", "{'scope': 'every CASES row carrying expected_errors in this battery run; opt-in probe rows"], "
+  OUT-DIFF audio_bus_route_invalid_control line 2: mine='ERROR: AUDIO BUS CONTROL ASSERTION FAILED: requested invalid route silently fell back to Master, requested=NoS' ref='ERROR: AUDIO BUS CONTROL ASSERTION FAILED: invalid-route playback observation unavailable, in_tree=true playin'
+  OUT-DIFF input_lattice_api_press line 3: mine='PASS input_lattice api_press imm[1/0.70/1/0] raw=0.70 pl=["ap"] recv=[] pr=["pr0{ap=1/0.70/1/0}", "pr1{ap=1/0.' ref='PASS input_lattice api_press imm[1/0.70/1/0] raw=0.70 pl=["ap"] recv=[] pr=["pr0{ap=1/0.70/1/0}", "pr1{ap=1/0.'
+  OUT-DIFF input_route line 2: mine='PASS route=parse_input_event-to-Node._input key=R receipt_count=1 frames=3' ref='PASS route=parse_input_event-to-Node._input key=R receipt_count=1 frames=2'
+  OUT-DIFF negative_route line 2: mine='PASS negative_route=disabled_node receipt_count=0 frames=10 expected_exit=1 (intentional negative-control stat' ref='PASS negative_route=disabled_node receipt_count=0 frames=9 expected_exit=1 (intentional negative-control statu'
+  OUT-DIFF negative_transition line 2: mine='PASS invalid_destination_rejected=true current_scene_preserved=true old_scene_alive=true frames=3' ref="SCRIPT ERROR: Cannot call method 'get_instance_id' on a null value."
+  OUT-DIFF overlap line 2: mine='PASS packed_scene=true area_shape=true layers=1/2 masks=2/0 pre_overlap_signals=0 overlap_signal_count=1 consu' ref='ERROR: overlap probe: signal occurred before physics overlap observation'
+  OUT-DIFF r88_surfaces_mp_loopback line 4: mine='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn655152703", "c_srvdisc", "s_disc655152703"] raw_uid=<addr>' ref='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn900757027", "c_srvdisc", "s_disc900757027"] raw_uid=<addr>'
+  OUT-DIFF route_toggle line 2: mine='PASS toggle=disabled-to-inherit first_receipts=0 second_receipts=1 late_receipts=0 frames=15' ref='PASS toggle=disabled-to-inherit first_receipts=0 second_receipts=1 late_receipts=0 frames=14'
+
+green9: ref=corpus/live/r90-author/runs9/20261015T212551992799Z/verdicts.json ref_rows=247 ref_verdict=PASS
+  common=247 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=236 differing=4 not-carried=7
+  OUT-DIFF input_lattice_api_press line 3: mine='PASS input_lattice api_press imm[1/0.70/1/0] raw=0.70 pl=["ap"] recv=[] pr=["pr0{ap=1/0.70/1/0}", "pr1{ap=1/0.' ref='PASS input_lattice api_press imm[1/0.70/1/0] raw=0.70 pl=["ap"] recv=[] pr=["pr0{ap=1/0.70/1/0}", "pr1{ap=1/0.'
+  OUT-DIFF r88_surfaces_mp_loopback line 4: mine='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn655152703", "c_srvdisc", "s_disc655152703"] raw_uid=<addr>' ref='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn215468548", "c_srvdisc", "s_disc215468548"] raw_uid=<addr>'
+  OUT-DIFF route_toggle line 2: mine='PASS toggle=disabled-to-inherit first_receipts=0 second_receipts=1 late_receipts=0 frames=15' ref='PASS toggle=disabled-to-inherit first_receipts=0 second_receipts=1 late_receipts=0 frames=14'
+  OUT-DIFF tween_flash line 2: mine='PASS tween_flash transient_modulate=(<floats>) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=60' ref='PASS tween_flash transient_modulate=(<floats>) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=62'
+
+green12: ref=corpus/live/r90-author/runs12/20261015T220233737605Z/verdicts.json ref_rows=247 ref_verdict=PASS
+  common=247 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=236 differing=4 not-carried=7
+  OUT-DIFF input_lattice_release_edge line 3: mine='PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[' ref='PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m['
+  OUT-DIFF input_lattice_ui_ns line 3: mine='PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_acce' ref='PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_acce'
+  OUT-DIFF r88_surfaces_mp_loopback line 4: mine='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn655152703", "c_srvdisc", "s_disc655152703"] raw_uid=<addr>' ref='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn235970783", "c_srvdisc", "s_disc235970783"] raw_uid=<addr>'
+  OUT-DIFF tween_flash line 2: mine='PASS tween_flash transient_modulate=(<floats>) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=60' ref='PASS tween_flash transient_modulate=(<floats>) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=61'

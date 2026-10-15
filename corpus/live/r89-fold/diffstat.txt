@@ -1,0 +1,6 @@
+ corpus/.gitignore                      |  4 ++
+ corpus/fixtures/geo2d_lattice.gd       | 51 -------------------
+ corpus/fixtures/run_battery.py         | 91 ++++++++++++++++++++++++++++++----
+ corpus/live/.gitignore                 |  6 +++
+ corpus/live/r89-author/manifest.sha256 |  1 -
+ 5 files changed, 90 insertions(+), 63 deletions(-)

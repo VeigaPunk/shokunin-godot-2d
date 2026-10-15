@@ -100,8 +100,6 @@ func _run() -> void:
 		"lineempty": _arm_lineempty()
 		"atlasempty": _arm_atlasempty()
 		"bridge": _arm_bridge()
-		"bridge_hole": _arm_bridge_hole()
-		"bridge_hole2": _arm_bridge_hole2()
 		"ring": _arm_ring()
 		"ring2": _arm_ring2()
 		"ring4": _arm_ring4()
@@ -380,53 +378,6 @@ func _arm_bridge() -> void:
 		b.linear_velocity.x, b.linear_velocity.y, hits.size()])
 	_pass()
 
-func _arm_bridge_hole() -> void:
-	# merge() of a contained square yields TWO contours: outer + hole (negative winding).
-	# CollisionPolygon2D carries ONE contour — measure what the collider does with contour[0].
-	var big := _sq(0, 0, 40)
-	var small := _sq(0, 0, 10)
-	var merged := Geometry2D.merge_polygons(big, small)
-	var outer := 0
-	var best := -1.0
-	for i in merged.size():
-		if absf(_area(merged[i])) > best:
-			best = absf(_area(merged[i]))
-			outer = i
-	var st := StaticBody2D.new()
-	var pol := CollisionPolygon2D.new()
-	pol.polygon = merged[outer]
-	st.add_child(pol)
-	root.add_child(st)
-	var b := _body(0, -60)
-	root.add_child(b)
-	for i in 90:
-		await physics_frame
-	_it("merged", _poly2str_area(merged))
-	_it("outer_idx", "%d outer_area=%.4f" % [outer, _area(merged[outer])])
-	_it("drop", "y=%.4f vel=%.4f,%.4f" % [b.global_position.y, b.linear_velocity.x, b.linear_velocity.y])
-	_pass()
-
-func _arm_bridge_hole2() -> void:
-	# Same geometry, but BOTH contours are attached as separate CollisionPolygon2Ds:
-	# if holes were subtractive the centre body would fall through; measure.
-	var big := _sq(0, 0, 40)
-	var small := _sq(0, 0, 10)
-	var merged := Geometry2D.merge_polygons(big, small)
-	var st := StaticBody2D.new()
-	for i in merged.size():
-		var pol := CollisionPolygon2D.new()
-		pol.polygon = merged[i]
-		st.add_child(pol)
-	root.add_child(st)
-	var b := _body(0, -60)
-	root.add_child(b)
-	for i in 90:
-		await physics_frame
-	_it("merged", _poly2str_area(merged))
-	_it("polys", "%d" % merged.size())
-	_it("drop", "y=%.4f vel=%.4f,%.4f" % [b.global_position.y, b.linear_velocity.x, b.linear_velocity.y])
-	_pass()
-
 # ---------- round-2: the hole cell (clip-based ring), boundary ladders ----------
 
 func _rect(x0: float, y0: float, x1: float, y1: float) -> PackedVector2Array:
@@ -547,12 +498,10 @@ func _arm_ringhits() -> void:
 	builds.append(["C_slabs", c3, 200.0])
 	var samples := [["centre", Vector2(0, 0)], ["top", Vector2(0, -25)], ["right", Vector2(25, 0)],
 		["bottom", Vector2(0, 25)], ["left", Vector2(-25, 0)]]
-	var names: PackedStringArray = []
 	for i in builds.size():
 		var bd: Array = builds[i]
 		bd[1].position = Vector2(bd[2], 0)
 		root.add_child(bd[1])
-		names.append(String(bd[0]))
 	for i in 2:
 		await physics_frame
 	var dss := root.world_2d.direct_space_state

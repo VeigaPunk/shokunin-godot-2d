@@ -1,2 +1,8 @@
 runs/
+# r89 reviewer F2: run trees copied into live dirs are regenerable scratch —
+# runs*/ covers runs/, runs1..runsN and runs-* at any depth; pyc/.godot are
+# bytecode/engine caches that must never be committed.
+runs*/
+**/__pycache__/
+**/.godot/
 r6-export-verifier-20261012/

@@ -416,11 +416,16 @@ CASES = [
      'PASS r88_surfaces vis_not on_screen0=false en_onscreen=false events=[] on_screen_end=false enabler_proc=false'),
     # r89: the Geometry2D authorability lattice (r88-census top-ranked
     # surface) + two r87 input leftovers closed as a bounded secondary
-    # split (r89-scout; probes = geo2d_lattice.gd sha256 9784716b…,
-    # input89_edges.gd sha256 601c223e…, landed verbatim — arm parse is
+    # split (r89-scout; probes = geo2d_lattice.gd sha256 dcce4c74… —
+    # r89-fold variant of scout sha256 9784716b…: dead `names`
+    # accumulator removed (simplifier SP1) + dead receipt-only arms
+    # bridge_hole/bridge_hole2 deleted with their falsified merge-hole
+    # comment (critic F5; merge collapses containment to k=1 — clip is
+    # the hole-producer). input89_edges.gd sha256 601c223e…, landed
+    # verbatim — arm parse is
     # already the battery convention and every arm prints its own name).
     # Signatures are measured PASS lines byte-pinned x6 fresh by the r89
-    # author (corpus/live/r89-author/runs/) on top of the scout's 23-cell
+    # author (corpus/live/r89-author/runs/) on top of the scout's 24-cell
     # x3/x6 lattice and the boundary's 6x-under-load replay (19/20 stable).
     # input89_edges_exact is the boundary's ONE unstable row: its
     # just_after_flush token is LOAD-BIMODAL (w_jp[ex=false inex=true]
@@ -430,7 +435,11 @@ CASES = [
     # geo2d_lattice_lineempty is a dedicated single-call crash row:
     # offset_polyline(empty,...) hits an uncatchable Clipper2 vector
     # assert -> SIGABRT -6 (signature is the pre-call R89 diagnostic
-    # line; the PASS line is never reached). Inserted ahead of the
+    # line; the PASS line is never reached). r89-fold (critic F1): the
+    # row also carries a required_stderr pin — the Clipper2 assert
+    # fragments must appear on stderr and the signature on stdout, so a
+    # foreign SIGABRT on the merged blob can no longer classify PASS.
+    # Inserted ahead of the
     # crash/descendant tail — see the r88 note above: no CASES rows may
     # sit between descendant_pipe_detached_control and the meta probes.
     ('geo2d_lattice_census', 'geo2d_lattice.gd', ['--arm=census'], 0,
@@ -592,6 +601,22 @@ def main():
         except OSError as exc:
             return str(exc), None, f"launch error: {exc}"
 
+    def run_process_streams(command, timeout_seconds, env=None):
+        # Same launch/timeout/OS-error shape as run_process, but the streams
+        # stay separate so a case can pin stderr-only content and anchor its
+        # signature to stdout (r89-fold, critic F1). Concatenating the
+        # returns reproduces run_process's merged output byte-for-byte in all
+        # three paths (success / timeout / OSError).
+        try:
+            proc = subprocess.run(command, capture_output=True, text=True, timeout=timeout_seconds, env=env)
+            return proc.stdout, proc.stderr, proc.returncode, None
+        except subprocess.TimeoutExpired as exc:
+            stdout = (exc.stdout or b"").decode(errors="replace") if isinstance(exc.stdout, bytes) else (exc.stdout or "")
+            stderr = (exc.stderr or b"").decode(errors="replace") if isinstance(exc.stderr, bytes) else (exc.stderr or "")
+            return stdout, stderr, None, f"TIMEOUT after {timeout_seconds} seconds"
+        except OSError as exc:
+            return "", str(exc), None, f"launch error: {exc}"
+
     def classify_process(code, error, output, expected_exit, signature, allowed_errors=()):
         lines = output.splitlines()
         def allowed_error(line, allowed):
@@ -737,7 +762,8 @@ def main():
             user_data.mkdir(exist_ok=True)
             env = os.environ.copy()
             env["XDG_DATA_HOME"] = str(user_data)
-        output, code, error = run_process(command, timeout_seconds, env=env)
+        proc_stdout, proc_stderr, code, error = run_process_streams(command, timeout_seconds, env=env)
+        output = proc_stdout + proc_stderr
         export_record = None
         if script == "__godot_export__":
             size = export_path.stat().st_size if export_path.is_file() else 0
@@ -835,6 +861,7 @@ def main():
                             "same_line_prefix_output": prefix_spoof.strip().splitlines(),
                             "injected_line": "ERROR: unrelated injected diagnostic"})
         expected_errors = ()
+        required_stderr = ()
         if passed is None:
             expected_errors = {
                 "negative_overlap": ("ERROR: negative control: expected collected signal was absent with disabled mask",),
@@ -967,6 +994,24 @@ def main():
                     'ERROR: Condition "p_mass <= 0" is true.',
                 ),
             }.get(name, ())
+            # r89-fold (critic F1): stderr-fragment pins. geo2d_lattice_lineempty
+            # classified on the merged stdout+stderr blob, so a foreign SIGABRT
+            # after the signature byte — or the signature emitted on stderr
+            # alone — still classified PASS (demonstrated false-positive
+            # shapes). The fragments below must each appear ON STDERR, binding
+            # the crash to the Clipper2 empty-polyline assert class
+            # (operator[] on Clipper2Lib::Point<double> firing the libstdc++
+            # __n < this->size() bounds assert), not merely to the -6 signal
+            # class, and the row's signature is additionally anchored to
+            # stdout. The assert text is toolchain-pinned (libstdc++), a
+            # disclosed host-conditional token like joys=0/nmethods=86; the
+            # c++/<ver> header path is deliberately NOT pinned.
+            required_stderr = {
+                'geo2d_lattice_lineempty': (
+                    'Clipper2Lib::Point<double>',
+                    "Assertion '__n < this->size()' failed.",
+                ),
+            }.get(name, ())
             classifier = classify_audio_process if name == "audio_playback" else classify_process
             if isinstance(evidence, (tuple, list)):
                 # Mode-envelope row: PASS iff ANY whitelisted payload appears in
@@ -977,6 +1022,15 @@ def main():
                     for sig in evidence)
             else:
                 passed = detected if mutate else classifier(code, error, output, expected_exit, evidence, expected_errors)
+            if required_stderr:
+                # Stream-anchored: every pinned fragment must appear on the
+                # stderr stream alone, and at least one payload of the row's
+                # signature must appear on stdout alone — the two directions
+                # of the merged-blob blindness closed together.
+                sigs = evidence if isinstance(evidence, (tuple, list)) else (evidence,)
+                passed = (passed
+                          and all(fragment in proc_stderr for fragment in required_stderr)
+                          and any(sig in proc_stdout for sig in sigs))
         # A script/parse error never counts as intended mutant detection.
         if "SCRIPT ERROR:" in output or "Parse Error:" in output:
             passed = False
@@ -986,6 +1040,7 @@ def main():
                   "verdict": "PASS" if passed else "FAIL",
                   "error": error, "output": output.strip().splitlines()}
         record["expected_errors"] = list(expected_errors)
+        record["required_stderr"] = list(required_stderr)
         if export_record is not None:
             record["export_artifact"] = export_record
         results.append(record)
@@ -2365,12 +2420,26 @@ def main():
                                   "matched_lines": len(matched),
                                   "first_match": matched[0] if matched else None,
                                   "dead_in_run": not matched})
-        bare_rejects = not classify_process(
-            row["actual_exit"], row["error"], row_text,
-            row["expected_exit"], row["signature"], ())
-        allowlisted_passes = classify_process(
-            row["actual_exit"], row["error"], row_text,
-            row["expected_exit"], row["signature"], tuple(entries))
+        # r89 reviewer F6 guard: a tuple signature passed straight into
+        # classify_process would raise TypeError (`signature in output`) and
+        # crash the census instead of failing a discrimination. Unreachable
+        # today — no envelope row carries expected_errors entries — but an
+        # envelope row that gains one must still classify. Dispatch on the
+        # signature tuple exactly as execute() does: PASS iff ANY whitelisted
+        # payload satisfies the clause.
+        census_signatures = (row["signature"]
+                             if isinstance(row["signature"], (tuple, list))
+                             else (row["signature"],))
+        bare_rejects = not any(
+            classify_process(
+                row["actual_exit"], row["error"], row_text,
+                row["expected_exit"], sig, ())
+            for sig in census_signatures)
+        allowlisted_passes = any(
+            classify_process(
+                row["actual_exit"], row["error"], row_text,
+                row["expected_exit"], sig, tuple(entries))
+            for sig in census_signatures)
         census_rows.append({
             "case": row["case"], "verdict": row["verdict"],
             "entries": entry_records,
