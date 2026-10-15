@@ -1,0 +1,15 @@
+{
+  "round": 1,
+  "axis": "calibration",
+  "measured_input_commit": "884a4c4245f7a0838b8e00c8b7595f1056544032",
+  "baseline_kind": "fresh current-round retained replay evidence; not a historical capability census",
+  "legacy_command": "python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing",
+  "legacy_command_exit": 2,
+  "legacy_command_output": "python: can't open file '/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/.shokunin/game-dev-2d/corpus/fixtures/run_battery.py': [Errno 2] No such file or directory",
+  "counting_command": "python -c 'import json; from pathlib import Path; p=Path(\"reports/fleet-round-1-calibration/committed-replay.json\"); rows=json.loads(p.read_text())[\"results\"] if p.is_file() else []; print(\"retained committed-revision Godot classifications:\",sum(r[\"verdict\"]==\"PASS\" for r in rows),\"/\",len(rows))'",
+  "counting_output": "retained committed-revision Godot classifications: 0 / 0",
+  "current_round_readiness_before": {"depth": 0, "coverage": 0, "calibration": 0},
+  "selection_reason": "Inherited scores were unassigned. Explicit current-evidence rubric gives no credit to unmeasured conditions; calibration wins the tie by directly falsifiable command executability and committed-input replay.",
+  "excluded_inherited_changes": ["corpus/fixtures/run_battery.py working-tree changes", "corpus/fixtures/phys2d_events.gd untracked fixture", "corpus/live changes and scratch", "unrelated old reports"],
+  "limitations": ["Zero is no current-round rubric credit, not zero expertise.", "Historical r1-r78 records remain available and are not invalidated.", "This record describes the initial source revision, not the later evidence-bearing commit."]
+}

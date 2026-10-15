@@ -1,0 +1,288 @@
+# game-dev-2d round 82 — scout (g2d): 2D navigation + raycast/shapecast query lattice, measured and pinned
+
+Seat `SCOUT` (LEAF) | lane `g2d` | round 82 | host **devin**.
+Runtime **Godot `4.7.2.stable.arch_linux.ed1daf0bf`** (`/usr/bin/godot`), Python 3.14.7.
+Repo `~/Projects/shokunin/game-dev-2d-shokunin`, HEAD **`d9320dd`**.
+Tracked Godot battery re-run by this seat: **139/139 cases PASS, exit 0**
+(`corpus/live/r82-scout/runs/20261015T062222888983Z/verdicts.json`; 140 PASS lines including
+the battery's own meta rows). `corpus/fixtures/run_battery.py` and `SCORECARD.md` were already
+modified before this task (the `classify_process` block now sits at lines 281–299; extracted
+sha256 identical to r79–r81's `615d332e…`); neither was touched by this seat.
+
+**No git mutation, no tracked file read-modified, no subagent.** Writes are this report and
+`corpus/live/r82-scout/**` only. `corpus/fixtures/` was only *executed* with `--runs` pointed
+at this seat's scratch dir. r79/r80/r81 lanes are **not** re-measured: r79 owns the
+contact-monitor/callback lattice, r80 owns `body_test_motion`/`move_and_collide`/CCD and the
+`dss_purity`/`dss_wrongarg` cells already armed there, r81 owns joints + layer/mask response.
+This arm is disjoint: it covers the **`PhysicsDirectSpaceState2D` read-query family in query
+object form, `NavigationServer2D`, node-tier navigation, and TileMapLayer-vs-StaticBody2D
+contact signatures** — none of which appear in the r79–r81 pins.
+
+**Backend scope (re-confirmed in every arm header):** `physics/2d/physics_engine = DEFAULT`
+(→ **GodotPhysics2D**), `physics/2d/run_on_separate_thread = false`,
+`physics_ticks_per_second = 60` (`runs/engine-census.txt`). There is no Jolt-2D backend in
+this build. Every number below is this host + this build + headless + 60 TPS.
+
+**`lsp` disclosure (unchanged host state).** No `lsp` device is exposed in this session and no
+GDScript/Python language server is installed; grep/read-only tracing was the fallback for the
+probe source only — every semantic claim below is carried by a fresh-process receipt, never by
+grep. No cold-start empty result is recorded as absence; every cited arm ran to `rc=0` inside
+the battery's 8 s bound. Semantic carriers: (a) fresh-process receipts, (b) the **production**
+`classify_process` extracted verbatim from `corpus/fixtures/run_battery.py:281–299` (sha256
+`615d332ed428db66a03b6837d7a6ed86c4a3150609dc9c2838a11a51b50bbea3`), (c) line-exact engine
+`at:` anchors, (d) a `ClassDB` census arm (`nav_census`).
+
+**Legend:** **[M]** measured (fresh process, ×3 byte-stable); **[I]** inference; **[A]** ablation.
+
+---
+
+## 0. What I ran
+
+| # | command (cwd = repo root) | exit | receipt |
+|---|---|---|---|
+| 1 | `PYTHONDONTWRITEBYTECODE=1 python3 -B corpus/fixtures/run_battery.py --runs corpus/live/r82-scout/runs` | 0 | **139 cases PASS / 0 fail** — host sanity on the tracked lattice |
+| 2 | `godot --headless --path corpus/live/r82-scout/proj --script res://census_nav.gd` | 0 | API census: `PhysicsDirectSpaceState2D` methods + query-param property lists, `NavigationServer2D` map/region/agent/link/obstacle verbs, `NavigationAgent2D`/`NavigationRegion2D`/`NavigationPolygon` properties, `TileMapLayer` capabilities (confirms `TileMapLayer` is a `Node2D`, no `get_rid`) |
+| 3 | `python3 corpus/live/r82-scout/run_arms.py --mode discover` | 0 | 23 arms, one fresh Godot process per arm → `arms-discover.json` |
+| 4 | `python3 corpus/live/r82-scout/gen_pins.py` | 0 | froze `pins.json` — `{exit, signature, errors}` per arm |
+| 5 | `python3 corpus/live/r82-scout/run_arms.py --mode verify --reps 3` | 0 | **23 arms × 3 reps = 69 processes; 23/23 PASS and `stable_bytes=true` on every row**, ablation matrix clean → `arms-verify.json` (`verdict: PASS`, `bad: []`) |
+| 6 | `python3` timing sweep over 6 arms | 0 | `nav_agent_rvo` 1.38 s, `nav_agent_gate` 0.66 s, `tile_gates` 0.70 s, `nav_query_obj` 0.69 s, `nav_iter` 0.81 s, `qry_wrongarg` 0.40 s — all far under the battery's **8 s** bound |
+
+**≈93 cited fresh Godot processes** (23 discover + 69 verify + 1 census + sanity probes during
+probe construction), plus the 139-case battery. Every arm runs in the battery's exact launch
+shape: `godot --headless --path <scratch> --script res://phys2d_navq.gd -- --arm=<name>`;
+`proj/` is a copy of `corpus/fixtures/` (plus the probe) so the author's fixture lands in the
+identical tree.
+
+---
+
+## 1. The r82 arm — 23 cells, verbatim-armable
+
+One new fixture candidate `phys2d_navq.gd` (scratch source:
+`corpus/live/r82-scout/proj/phys2d_navq.gd`, 1252 lines, sha256
+`33a4aa5704e1e1d040e61ae658c0b5e6a7c2682542e5af8955f672d5cb43150f`), one `--arm=` per cell,
+all `expected_exit = 0`, no cell is a crash. **Ready-to-paste `CASES` rows and the
+`expected_errors` map fragment are in `corpus/live/r82-scout/author-rows.py.txt`** (84 lines,
+sha256 `7b3ef7feb2d2a0e19b93c33aba383e55a4530032c3b16f4e02c9a4a539812abe`), generated by
+`repr()` from the verified signatures — six arms carry whitelisted `ERROR:` lines.
+
+### 1.1 Direct-space query cells (8 arms)
+
+| # | arm | class | decisive witness keys (measured, ×3 stable) | `expected_errors` |
+|---|---|---|---|---|
+| 1 | `nav_census` | **API surface pinned** | dss `[cast_motion, collide_shape, get_rest_info, intersect_point, intersect_ray, intersect_shape]`; full NavigationServer2D `map_*`/`region_*`/`agent_*`/`link_*`/`obstacle_*` verb lists; `NavigationAgent2D` props incl. `avoidance_*`, `path_metadata_flags`, `velocity`; defaults `map_active=false map_async=true edge_margin=1.0 link_rad=4.0 agent[radius=10 maxs=100 avl=1 avm=1 avp=1.0]` | — |
+| 2 | `qry_point` | **`intersect_point` semantics** | hits carry keys `[collider, collider_id, rid, shape]`; two stacked walls → 2 hits; `max_results=1` caps; boundary point returns both adjacent cells' bodies; `outside=[]`; **areas absent by default, present with `collide_with_areas`**; `cap0=[]`; negative cap → `[]` + `p_size < 0 → ERR_INVALID_PARAMETER` at `cowdata.h:404` | 1 |
+| 3 | `qry_exclude` | **`exclude` lattice on a two-wall ray** | `base` hits W1 at x=98; `ex_w1` → hits W2 at x=298 (exclusion selects the farther wall); `ex_both` → `{}`; `ex_rid0` (empty RID) harmless; **`ex_freed` (freed body RID) → hit unchanged + `Invalid ID.`/`Parameter "body" is null.` at `free_rid:1276` + node-teardown anchors**; `ex_shaperid` (a *shape* RID in `exclude`) does not exclude the body; `ex_dup` duplicate entry fine | 2 |
+| 4 | `qry_ray_inside` | **`hit_from_inside` + embedded starts** | outside ray hits `pos=(98,6000) n=(-1,0)`; `in_f={}` embedded-start miss vs **`in_t={pos=(100,6000) n=(0,0)}` — inside hit with zero normal at the ray origin**; fully-inside `full_f={}` vs `full_t={pos=(99,6000) n=(0,0)}`; back-facing `back_f=back_t={pos=(102,6000) n=(1,0)}` — rays are NOT backface-culled either way; thin wall `thin_f` hits | — |
+| 5 | `qry_mask_areas` | **mask + body/area gates on ray & point** | `ray_m1`/`ray_m3` hit the layer-1 wall; `ray_areas_only` reaches the layer-4 Area2D at x=190; `ray_bodies_only` stops at the body; `ray_neither={}` and `ray_m0={}` (mask 0 ⇒ nothing); L2 lane masked to layer 2 hits the second wall at x=98,6400; point queries: `pt_def=0` (areas excluded by default), `pt_areas=1`, `pt_area_mask5=1`, `pt_mask4_area_off=0` | — |
+| 6 | `qry_shape_var` | **`shape` vs `shape_rid`, margin, `cast_motion`/`get_rest_info`** | `cm_res=[0.44921875,0.453125]` ≡ `cm_rid=[0.44921875,0.453125]` — **shape object and `shape_rid` produce identical cast fractions**; `margin=4` → `[0.4296875,0.43359375]` (margin shrinks the approach); `cm_flat=[1.0,1.0]` / `cm_rot90=[1.0,1.0]` — free directions return 1.0 (no motion applied); `intersect_shape` n=1, `collide_shape` n=2 contact points; `get_rest_info` returns keys `[collider_id, linear_velocity, normal, point, rid, shape]` — **`point` not `position`, no `collider` object, `cls=null`** | — |
+| 7 | `qry_rest_motion` | **motion honoring + gates on `get_rest_info`** | `toward` hits `point=(98,6000) n=(-1,0)`; `away={}` and `zero={}` — motion direction/length honored (not a pure overlap); `embedded` (start inside the wall) still returns the entry face `{pos=(98,6000) n=(-1,0)}`; `excluded={}`; `area_def={}` vs `area_on` hits the Area2D at `(90,6800)` | — |
+| 8 | `qry_wrongarg` | **wrong-class params, null shape, bad caps, junk exclude, `callv` arity** | via `call()`: `intersect_shape(rayp)→[]` + `rp_shape_query is null @ _intersect_shape:388`; `intersect_ray(shapep|pointp)→{}` + `rp_ray_query is null @ _intersect_ray:342`; `get_rest_info(rayp)→{}` + `rp_shape_query is null @ _get_rest_info:441`; `cast_motion(pointp)→[]` + `rp_shape_query is null @ _cast_motion:408`; `intersect_point(shapep)→[]` + `rp_point_query is null @ _intersect_point:363`; empty shape params: `cast_motion→[]`, `collide_shape→0`, `get_rest_info→{}` each + `Parameter "shape" is null` (`godot_space_2d.cpp:259/346/443`); `max_results=-3` → `p_size < 0` refusal; **`exclude=[42,"junk"]` → typed-array assign refusal (`Unable to convert array index 0 from "int" to "RID" @ array.cpp:261`) and the ray still hits normally**; `callv` arity 0 and 2 → `callv` error + `<null>` | 8 |
+| 9 | `qry_purity2` | **query-parameter objects are pure across calls AND refusals** | `requal/sequal/pequal=true` — ray/shape/point param objects `==`-equal before/after use; `sident=CircleShape2D,true` — shape identity preserved; property snapshot `before_s == after_s` verbatim (`["4294967295","[RID(0)]","2.0","(200.0, 0.0)","[X: …]","true","false"]`); refused call (`rp_ray_query is null`) leaves params untouched; `cs_after=2` reuse works | 1 |
+
+### 1.2 NavigationServer2D cells (11 arms)
+
+| # | arm | class | decisive witness keys | `expected_errors` |
+|---|---|---|---|---|
+| 10 | `nav_iter` | **map synchronization lattice** | `pre=[iter=0 owns=false]` + pre-sync `map_get_path`/`get_closest_point_owner` → `NavigationServer navigation map query failed because it was made before first map synchronization @ nav_map_2d.cpp:176`; `postfu=[iter=1 owns=false]` — `map_force_update` ticks the iteration counter but does **not** register region ownership; `sync_f8=[iter=2 owns=true path=[(-150,0),(150,0)]]` converged by frame 8; **async map** `async_iters=[0,1,1,2,2,2,2,2]` — iteration progresses lazily across frames (vs sync's eager bump); `inactive=[iter=0 iter2=0 owns=false path=[]]` — a `map_create`d map that never gets `map_set_active(true)` never iterates | 1 |
+| 11 | `nav_basic` | **baked-polygon path lattice** | straight `[(-150,0),(150,0)]` ≡ `noopt` (optimize flag identical here); target outside region → clamped path ends at `(200,0)` (closest point); both endpoints outside → degenerate `[(200,0),(200,100)]`; L-polygon lane `[(5930,-150),(5960,-60)]` honors interior bends; edge-exact `(-200,0)→(200,0)` works; `closest=(200,200)`; `owner_is_region=true` (`get_closest_point_owner` returns the region RID); `bounds=[P:(-200,-200),S:(400,400)]`; `region_get_closest_point=(200,200)` | — |
+| 12 | `nav_edge_conn` | **edge connections + margin + overlap** | shared-edge regions → `shared=[(-150,0),(0,0),(150,0)]` (edge midpoint waypoint); `region_get_connections_count=[0,0]` — edge joins are not "connections" (that counter is link-facing); `pathway=-`; **`region_set_use_edge_connections(r2,false)` does NOT cut the path** (`rflag_off` unchanged) and neither does `map_set_use_edge_connections(false)` (`mflag_off` unchanged) — the flags govern *merging at bake*, not live queries after sync; 10 px gap → partial `[(-150,0),(0,0)]`; `edge_connection_margin=15` bridges it → `[(-150,0),(5,0),(150,0)]` via gap midpoint `(5,0)`; **overlapping regions do NOT merge** — `overlap=[(-150,0),(0,0)]` partial (polygons connect via edge keys, not interior overlap) | — |
+| 13 | `nav_enable_mid` | **region disable latency mid-query** | `pre`/`imm`/`fu` all `[(-150,0),(0,0),(150,0)]` — `region_set_enabled(r2,false)` does **not** alter the path immediately, and **`map_force_update` does not apply it either**; **`readback=true` — `region_get_enabled` immediately after the disable still reports enabled (the setter is deferred to a later sync, getter included)**; by `f4` the path is `[(-150,0),(0,0)]` — disables land on a later sync boundary (the exact first-divergent frame is scheduler-dependent — observed f1≡old vs f1≡new across reps; f4 is the pinned stable witness); `re=` full path restored; `born_off=[(200,0),(200,0)]` — a region created disabled yields only a clamped degenerate path, yet **`born_owns=true` — disabled regions still claim point ownership** | — |
+| 14 | `nav_layers` | **navigation layer gating + re-anchoring** | `m1` path on the layer-1 row; `m2` path on the layer-2 row at y=400; **`m2_on_low=[(-150,300),(150,300)]` — a mask-2 query at layer-1 coordinates re-anchors to the nearest layer-2 geometry (r2's bottom edge) instead of failing**; `m0=[]` — mask 0 returns empty; `m3` (mask 3 ⊇ 1) uses the layer-1 row; `mdef` default (=1); `low_m3` reaches the far lane through the translated layer-2 twin at `(5850,0)→(6150,0)` | — |
+| 15 | `nav_link` | **links bridge gaps; direction + layers gated** | `nolink=[(-150,0),(0,0)]` partial (300 px gap); bidirectional link → `fwd=[(-150,0),(-10,0),(310,0),(400,0)]` and mirror `rev`; **`one_fwd` identical — unidirectional means start→end; `one_rev=[(400,0),(300,0)]` fails to a partial path at r2's edge**; `link_set_enabled(false)` → `off=[(-150,0),(0,0)]` ≡ nolink; link `navigation_layers=2` filtered by query mask: `l2_q1` partial, `l2_q3` full | — |
+| 16 | `nav_query_obj` | **`NavigationPathQueryParameters2D`/`Result` metadata** | `full=[path=4pts types=[0,1,0,0] rids=4 owners=[0,0,0,0] len=550.0]` — `path_types` distinguishes region (0) vs link (1) segments; `path_rids.size=4`; `path_owner_ids` all 0 for server-tier RIDs; `path_length=550.0`; `flags0` (`path_metadata_flags=0`) → `types=[] rids=0 owners=[]`; `excl_r1` region-exclusion forces the detour lane `[(-150,300),(400,300)]`; `incl_r3` inclusion equals the same detour; `simplify` (`path_postprocessing=1`) → `simplify=[(-150,0),(400,0)]` — interior link waypoints dropped | — |
+| 17 | `nav_agent_rvo` | **RVO2 callback determinism (bounded)** | `cb_total=104 post_sync=88` — two enabled agents × callbacks, deterministic *counts*; `head4=[(60,0),(-60,0),(60,0),(-60,0)]` — pre-solve callbacks echo `agent_set_velocity`; `pos_in_lane=true`, `pos0_bucket=-400 pos1_bucket=400` — agents brake apart and stay in-lane. **Measured negative inside the pin boundary: the solved velocity stream is NOT byte-stable across processes** — the first divergence appears ~callback index 5 (`-59.68`/`-59.50`/`-59.63` across reps) and final positions drift ≈0.17 px (−39.4945/−39.5374/−39.3700). Determinism holds for schedule *counts*, not for solver *values* | — |
+| 18 | `nav_agent_gate` | **avoidance gates: paused / dead map / enabled flag vs bound callback** | `per_idx={3:12,4:12}` — only the two live-map enabled-for-callback agents fire; the **paused** agent (idx 2) and the **dead-map** agent (idx 1, `map_create` never activated: `iter_dead=0 dead_active=false`) get **zero** callbacks; **`ctl_enabled=false` yet `ctl_vels` = 12× `(0,0)` — a bound `agent_set_avoidance_callback` still fires with avoidance disabled** (the callback echoes the agent's stored `velocity`, which is unset ⇒ zero); `solo_forced_*=(0,-60)` — `agent_set_velocity_forced(30,0)` does **not** displace the callback value or `agent_get_velocity` for an isolated (neighborless) agent — forced velocity is only consulted when avoidance actually solves; `map_changed=true` on first `agent_is_map_changed` read | — |
+| 19 | `nav_node_tier` | **node tier vs server tier on the world map** | `wactive0=false witer0=0` — the `World2D.navigation_map` starts inactive; a raw server region bound to it syncs anyway: `srv=[iter=2 owns=true path=[(550,0),(850,0)] active=true]` — **the world map self-activates within a few physics frames** (no explicit `map_set_active` needed once it has content + steps); `node=[iter=4 path=[(-150,0),(150,0)] active=true]` — `NavigationRegion2D` joins the same map; `reg_owns=true`; `NavigationAgent2D` `reach=true final=(150,0) plen=150.0 next=(150,0)` while `get_current_navigation_path` returned `[]` in-frame (path materializes on the agent's own update cadence); `npath=[]` is the pinned honest value | — |
+| 20 | `nav_wrongarg` | **invalid/freed RID lattice** | `badrid_path=[]` + `Parameter "map" is null` (`map_get_path` at :415/`query_path`:1373); `badrid_owns=false` + `Parameter "region" is null` (`region_owns_point`:562); `agent_bad=(0,0)` + `Parameter "agent" is null` (`agent_get_position`:963); `cross_agentpos=(0,0)` — wrong-slot RID (`region` where `agent` expected) refuses identically; dead RIDs (freed then queried) same refusals + sentinels; `qp_nomap=[]` — a query object with no map set yields `[]`; `post_free=[]` — **freeing a region RID mid-life silently removes it at next sync (no error on the query)**; `ctl=[(-150,0),(150,0)]` live control intact | 3 |
+
+### 1.3 TileMapLayer cells (3 arms)
+
+| # | arm | class | decisive witness keys | `expected_errors` |
+|---|---|---|---|---|
+| 21 | `tile_sig` | **tile vs manual static contact signature — byte-identical modulo class** | identical ball drop onto a 9-cell tile floor vs a `StaticBody2D` rectangle: `tile=[t=(0,51.875) pos=(6000,0) n=(0,-1) depth=0.2675 cls=TileMapLayer sh=0]` ≡ `static=[… cls=StaticBody2D …]`; identical rest `y=-8.125` both lanes; `rayhit=[cls=TileMapLayer coords=(0,0) pos=(6000,0)]` — the hit's `collider` **is the `TileMapLayer` node** and `get_coords_for_body_rid` maps its internal body to the cell | — |
+| 22 | `tile_query_sig` | **per-quadrant collider body; seam double-hits; exclusion is quadrant-wide** | `tile_ray`/`stat_ray` and `tile_pt`/`stat_pt` are field-identical except `cls`; `tile_sh=1`=`stat_sh` off-seam; **`seam_pt` returns 2 hits and `seam_sh=2` — a query exactly on a cell boundary reports both neighboring cell bodies**; `coords0=coords2=(0,0)` — `get_coords_for_body_rid` returns the same coordinate for hits in different cells ⇒ the `rid`/`collider_id` identify the layer's **internal per-quadrant body**, not a cell; **`ex_same_cell={}` and `ex_other_cell={}` — excluding that RID blanks every cell in the physics quadrant, not one cell** | — |
+| 23 | `tile_gates` | **tile physics-layer mask gate; `one_way` null here; `erase_cell` release** | `m1=null` (ball mask 1 vs tile layer 2 → pass-through) vs `m2=[contact @ (6040,0) n=(0,-1)]`; **one_way polygons admit transit in BOTH directions** — full square `up_sq=null(60→-20) dn_sq=null(-60→20)`, thin top strip `up_st=null dn_st=null`, reversed winding `dn_ccw=null up_ccw=null` — the flag did not produce a floor under `CharacterBody2D.move_and_collide` at |Δ|=80 px; `pre_erase=[contact]` `rest=(7016,-8.125)`; `set_cell(-1)` leaves `fpos` unchanged this frame; after sync `post=null postpos=(7016,31.875)` — **erasing the cells under a resting body releases it to a free 40 px fall** | — |
+
+---
+
+## 2. Fail-closed evidence (the pins are load-bearing) **[A]**
+
+Every row's `signature` is the *full* measured `PASS` line (substring criterion against merged
+stdout+stderr). Per-rep ablations in `arms-verify.json`:
+
+| ablation | expected | observed |
+|---|---|---|
+| signature dropped (`"PASS phys2d_navq __absent__"`) | reject | **23/23 → false** |
+| `expected_exit` flipped 0→1 | reject | **23/23 → false** |
+| `expected_errors` allowlist dropped | reject iff the arm emits engine errors | **6/6 error-bearing arms → false** (`qry_point`, `qry_exclude`, `qry_wrongarg`, `qry_purity2`, `nav_iter`, `nav_wrongarg`); 17 clean arms → true (degenerate, as designed) |
+| clean classify | accept | **23/23 → true** |
+
+Engine `at:` anchors pinned in receipts include `_intersect_shape:388`,
+`_intersect_ray:342`, `_intersect_point:363`, `_cast_motion:408`, `_get_rest_info:441`,
+`cast_motion/collide_shape/rest_info` (`godot_space_2d.cpp:259/346/443`), `resize`
+(`cowdata.h:404`), `assign` (`array.cpp:261`), `callv` (`object.cpp:763`),
+`get_closest_point_owner` (`nav_map_2d.cpp:176`), `map_get_path`/`query_path`
+(`godot_navigation_server_2d.cpp:415/1373`), `region_owns_point`/`region_set_enabled`/
+`region_set_map`/`_cmd_agent_set_map`/`agent_get_position` (`:562/490/573/838/963`), and the
+freed-body teardown trio `body_set_space:540`, `body_remove_shape:635`,
+`body_attach_canvas_instance_id:696` + `free_rid:1276`.
+
+Merged-stream sha256 per arm is byte-stable across all three reps (`stable_bytes=true` ×23;
+see `arms-verify.json`).
+
+---
+
+## 3. Headline measured findings
+
+**Direct-space queries.** **[M]** The read family is uniform and refusal-safe: hits return
+dictionaries with stable key sets (`intersect_point`/shape: `collider, collider_id, rid,
+shape`; ray adds `normal, position`; `get_rest_info` uses **`point`, no `collider` object, and
+`collider_id` only**). Wrong-class parameter objects are refused through `call()` with a
+`Required object "rp_*" is null.` error and an *empty* result — never a crash; `get_rest_info`
+and `cast_motion` classify their parameter as `rp_shape_query`. Junk `exclude` entries refuse
+the typed-array assignment but leave the query functional. `hit_from_inside` flips
+embedded-start behavior with a zero normal. `margin` measurably shortens `cast_motion`
+fractions. `shape` vs `shape_rid` are interchangeable. Parameter objects are provably pure
+(`==` before/after, identity preserved) across valid calls *and* refusals.
+
+**NavigationServer2D.** **[M]** Map synchronization is the hard gate: pre-sync queries error
+(`map query failed because it was made before first map synchronization`), `map_force_update`
+bumps `iteration_id` but does not register region ownership, and paths/ownership become real
+only on later frames — sync maps converged by f8 here; async maps iterate lazily
+(`[0,1,1,2,…]`). Region `set_enabled(false)` is deferred the same way (immediate and
+force-update reads return the stale path; the change lands within ≤4 physics frames, exact
+first-divergent frame scheduler-dependent). Disabled regions still `owns_point`. Layer masks
+*re-anchor* to the nearest matching region rather than failing (except mask 0 → `[]`).
+Overlapping polygons do not merge; edge adjacency and `edge_connection_margin` do. Links add
+`(-10,0)→(310,0)` waypoints, honor directionality (`one_rev` partial) and query layers, and a
+disabled link vanishes like a disabled region — after a sync. `NavigationPathQueryResult`
+metadata is real: `path_types` flags the link segment (1), `path_rids`/`owner_ids` are
+populated, `path_length=550.0`, and `path_metadata_flags=0` empties all three lists.
+
+**Avoidance/RVO.** **[M]** Callback cadence is deterministic (104 total / 88 post-sync for two
+agents over 48 frames; 12/12 for a live agent), but **solver output is not byte-stable across
+processes** — velocities diverge from ≈callback index 5 and final positions drift ~0.17 px.
+Gates: a `paused` agent and an agent on a never-activated map produce **zero** callbacks; a
+bound callback still fires on an `avoidance_enabled=false` agent (returning the stored
+`velocity`, here `(0,0)`); `velocity_forced` does not displace callback output for a
+neighborless agent. **[I]** A *mid-iteration* `agent_set_avoidance_callback` bind on a running
+map **deadlocked 5/5** local runs (>20 s hang, no error) — moved to pre-sync creation; kept as
+a falsification datum, not a claim.
+
+**TileMapLayer.** **[M]** Tile collision is contact-signature-identical to a manual
+`StaticBody2D` (`t/pos/n/depth/sh` byte-equal; only `cls` differs). The query-visible
+`collider` is the `TileMapLayer` node itself; the `rid`/`collider_id` are an internal
+**per-quadrant** body — `get_coords_for_body_rid` returns the same cell coordinate for hits in
+different cells, and excluding the RID blanks the whole quadrant. Cell seams double-report
+(point → 2 hits, shape → 2). Tile physics layers honor `collision_mask` normally.
+`set_collision_polygon_one_way` did not block transit in either direction for
+`move_and_collide` (full square, top strip, and reversed winding all passed through).
+`erase_cell` releases a resting body — deterministic 40 px free fall after sync.
+
+---
+
+## 4. Falsification list (measured negatives / what would break a claim)
+
+1. **Sync cadence.** `postfu=[iter=1 owns=false]`, `sync_f8` convergence, and the
+   `async_iters` lattice pin `map_create`+`map_set_active(true)` on THIS build; a host where
+   the first sync lands on a different frame boundary shifts iteration indices (already
+   observed ±1 on un-pinned per-frame samples — only converged tails are pinned). Falsifier:
+   rerun `nav_iter` and see `pre/postfu` differ, or `f8` not converged.
+2. **Enable latency.** The disable→visible-path boundary is bounded ≤4 frames but the first
+   divergent frame raced between reps (f1 old vs f1 new). Any claim "disable lands at frame N"
+   with N<4 is falsifiable by scheduling.
+3. **RVO byte-determinism is false here.** Do not pin solver velocity sequences or exact
+   final positions: rep-level drift begins ~cb index 5, positions ±0.2 px. The stable pins are
+   counts, the ±60 pre-solve echo, and lane buckets. Falsifier: a build where the head4 echo
+   or counts differ, or where the whole 88-velocity stream IS byte-stable (would itself be a
+   marked behavioral difference).
+4. **Callback bind deadlock.** `agent_set_avoidance_callback` bound *after* the map is already
+   iterating hung 5/5 (>20 s) — if a future host completes that bind, the deadlock observation
+   is host-specific. Not pinned as a PASS cell (hangs can't carry a signature).
+5. **`velocity_forced` on a lone agent.** Pinned: callback echoes `velocity`, not
+   `velocity_forced`, and `agent_get_velocity` reads the regular velocity. If a neighbor is
+   added and the forced value still never appears, the claim "forced velocity only matters
+   under an actual solve" fails — flag for the next round.
+6. **one_way tiles.** All three one_way polygon shapes passed both directions under
+   `move_and_collide` (|Δ|=80 px, v=120). A run that sees `dn_*` STOP (contact at ~y=-8)
+   falsifies "one_way is inert here" — possible confounds not isolated: `one_way_margin`
+   (default), kinematic-vs-RigidBody motion path, `test_motion` sweep granularity at high speed.
+7. **Quadrant exclusion.** `ex_other_cell={}` pins "exclude-RID blanks the quadrant" for
+   cells x∈[−4,4] of ONE 16-cell quadrant; hits spanning a quadrant boundary (cell ≥16 away,
+   or `physics_quadrant_size`≠16) could see a partial exclusion instead.
+8. **Seam double-hits.** `seam_pt=2/seam_sh=2` requires the query exactly on a cell boundary
+   (x = LANE); float wobble would yield 1 hit. Pinned positions are exact powers/offsets.
+9. **Typed-refusal channel.** All wrong-class calls go through `.call()` — statically-bound
+   mis-calls are GDScript *parse* errors, not runtime refusals; a claim about "typed call"
+   behavior must say "via call()".
+10. **Deferred setters read back stale values.** `region_get_enabled(r2)` returned `true`
+    immediately after `region_set_enabled(r2,false)` — the getter does not force-apply the
+    queued write. Any report reading "get_enabled reflects set_enabled synchronously" is
+    falsified by `readback=true` in this pin.
+11. **Backend.** Everything is `GodotPhysics2D`, headless, 4.7.2, 60 TPS. Jolt-2D does not
+    exist in this build; a build where `physics_engine` resolves differently invalidates all
+    numeric pins.
+12. **`exclude` freed-RID errors** ride on node-teardown order (the `Parameter "body" is
+    null.` + `Invalid ID.` pair arrives with the freed node's destructor at exit); a tree
+    shape where the node outlives the query would drop those two whitelisted lines and FAIL
+    the pinned row — the allowlist is part of the contract, not decoration.
+
+---
+
+## 5. Remaining unknowns / not measured
+
+- `NavigationObstacle2D` / `obstacle_*` verbs: census-pinned only, no behavior cells.
+- `enter_cost`/`travel_cost` weighted pathing and `region_set_enter_cost` economics.
+- `bake_navigation_polygon`/`parsed_*` source-geometry pipeline (probe uses hand-built polygons).
+- `map_get_random_point`, `agent_set_neighbor_distance`/`time_horizon_*`/`max_neighbors`
+  sweeps — property surface is pinned via `agent_props`/`dflt`, values untested.
+- Whether `velocity_forced` is honored under a real multi-agent solve (falsification #5).
+- Whether `one_way` tiles gate `move_and_slide`/RigidBody or `body_test_motion` paths
+  (only `move_and_collide` was exercised).
+- Multi-quadrant tile exclusion (falsification #7) and `physics_quadrant_size` ≠ default.
+- Per-cell body identity: `collider_id`/`rid` for two DIFFERENT cells print the same quadrant
+  body — whether `get_coords_for_body_rid` can ever disambiguate a specific cell is unknown.
+- The `nav_node_tier` `npath=[]` nuance: `get_current_navigation_path` empty in-frame while
+  `get_next_path_position`/`get_path_length`/`is_target_reachable` already answer — the
+  agent's own path-push cadence was not isolated.
+- Windows/macOS/other-host reproducibility; threaded physics (`run_on_separate_thread=true`)
+  was not flipped on.
+
+---
+
+## 6. Author directives (exact)
+
+1. Copy `corpus/live/r82-scout/proj/phys2d_navq.gd` → `corpus/fixtures/phys2d_navq.gd`
+   (verbatim; the probe is 1252 lines, depends only on `SceneTree` + the engine).
+2. Paste the 23 `CASES` tuples from `corpus/live/r82-scout/author-rows.py.txt` ahead of the
+   crash/descendant tail in `run_battery.py` (same insertion discipline as r79–r81).
+3. Merge the `expected_errors` fragment (6 arms) into the `.get(name, ())` map inside
+   `execute()`.
+4. Re-run: `PYTHONDONTWRITEBYTECODE=1 python3 -B corpus/fixtures/run_battery.py --runs <dir>`
+   — expected 139+23 = 162 PASS.
+5. Do **not** re-pin `nav_iter`/`nav_enable_mid` per-frame indices or `nav_agent_rvo` solver
+   values — the pinned cells are deliberately the stable subset (falsification §4.1–4.3).
+
+---
+
+## 7. Evidence index
+
+| artifact | path | sha256 (MANIFEST) |
+|---|---|---|
+| probe | `corpus/live/r82-scout/proj/phys2d_navq.gd` | `33a4aa57…` |
+| census script | `corpus/live/r82-scout/proj/census_nav.gd` | `30053504…` |
+| sanity probes | `corpus/live/r82-scout/proj/sanity{1..6}.gd` | in MANIFEST |
+| runner | `corpus/live/r82-scout/run_arms.py` | `ace03332…` |
+| pin freezer | `corpus/live/r82-scout/gen_pins.py` | `808e7335…` |
+| discover receipts | `corpus/live/r82-scout/arms-discover.json` | `1b445a09…` |
+| verify receipts (×3 + ablations + anchors + merged sha) | `corpus/live/r82-scout/arms-verify.json` | `207a1e9b…` |
+| frozen pins | `corpus/live/r82-scout/pins.json` | `ec6c94d6…` |
+| author rows | `corpus/live/r82-scout/author-rows.py.txt` | `7b3ef7fe…` |
+| tracked battery receipt | `corpus/live/r82-scout/runs/20261015T062222888983Z/verdicts.json` | (139/139 PASS) |
+| engine census | `corpus/live/r82-scout/runs/engine-census.txt` | — |
+| manifest | `corpus/live/r82-scout/MANIFEST.sha256` | — |
+
+Bound: **Godot 4.7.2-stable (arch_linux) / GodotPhysics2D / headless / TPS 60 /
+`run_on_separate_thread=false`** — nothing above claims otherwise.
+
+| godspeed

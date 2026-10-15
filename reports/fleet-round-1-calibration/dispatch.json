@@ -1,0 +1,22 @@
+{
+  "round": 1,
+  "dispatch_tool": "functions.task",
+  "dispatch_calls": 1,
+  "host_binding": "skill://shokunin: in-session OMP round uses native task",
+  "route_authority": "/home/vgpnk/.omp/agent/config.yml task.agentModelOverrides",
+  "per_lane_model_overrides": false,
+  "dispatch_result": "Spawned 9 background agents using planner, connector, executor, scribe, scout, reviewer, critic.",
+  "members": [
+    {"name": "CalibrationPlanner", "role": "planner", "evidence": "planner.md"},
+    {"name": "CalibrationConnector", "role": "connector", "evidence": "connector.md"},
+    {"name": "CommittedReplay", "role": "executor", "evidence": "committed-replay.md"},
+    {"name": "CountingExecutor", "role": "executor", "evidence": "counting.md"},
+    {"name": "HandoffExecutor", "role": "executor", "evidence": "handoff.md"},
+    {"name": "CalibrationScribe", "role": "scribe", "evidence": "scribe.md"},
+    {"name": "CalibrationScout", "role": "scout", "evidence": "scout.md"},
+    {"name": "CalibrationReviewer", "role": "reviewer", "evidence": "reviewer.md"},
+    {"name": "CalibrationCritic", "role": "critic", "evidence": "critic.md"}
+  ],
+  "scope": "one calibration move, disjoint evidence files, one Godot runtime owner",
+  "limitations": ["Role routing follows host configuration; model selection is not pinned or copied into this repository.", "This is the canonical shokunin native batch, not a validated standalone UFO wave.", "All seats are within-lane review and cannot independently authorize SHONEN promotion."]
+}

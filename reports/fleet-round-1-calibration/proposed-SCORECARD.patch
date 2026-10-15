@@ -1,0 +1,38 @@
+diff --git i/SCORECARD.md w/SCORECARD.md
+index 0cd04bf..1c0c67e 100644
+--- i/SCORECARD.md
++++ w/SCORECARD.md
+@@ -1,4 +1,32 @@
+-# game-dev-2d scorecard — mint
++# game-dev-2d scorecard
++
++## Round 1 — current evidence-readiness baseline
++
++Owned axes: depth, coverage, calibration. The inherited rows below have no
++numeric rubric and use an old `.shokunin/game-dev-2d/` checkout layout.
++For round selection, score **current evidence readiness**, not expertise:
++2 points each for a lane-root executable command, retained fresh runtime
++receipts, exact committed-input identity, a discriminating negative control,
++and explicit scope/unknowns. A point requires current-round evidence; an
++unmeasured condition receives no credit, not a claim that prior work is false.
++The same five-condition scale applies to each owned axis.
++
++| axis | score / 10 | evidence / counting command | last change |
++|---|---:|---|---|
++| depth | 0 | No current-round evidence record; historical results retained below. Baseline command and revision will be retained in the round evidence. | round-1 baseline |
++| coverage | 0 | No current-round evidence record; historical results retained below. Baseline command and revision will be retained in the round evidence. | round-1 baseline |
++| calibration | 0 | No current-round committed-input Godot replay record. Same baseline accounting; this is the selected axis. | round-1 baseline |
++
++planned: ONE calibration move — retain a serial, bounded replay of committed
++Godot fixtures, with exact input identity, a discriminating negative control,
++reproducible counts, and headless-only limits. All axes tie at zero current
++credit; calibration wins because path executability and exact replay outputs
++are directly falsifiable. Depth/coverage work is not claimed by this move.
++
++retired: none. The unscored historical table is retained as history rather
++than silently converted into a claim of domain competence.
++
++## Inherited scorecard (historical; not used for current round selection)
+ 
+ Owned axes: depth, coverage, calibration. Scores remain unassigned without a
+ quality rubric; a row count is a measurement, not a score or verdict.
