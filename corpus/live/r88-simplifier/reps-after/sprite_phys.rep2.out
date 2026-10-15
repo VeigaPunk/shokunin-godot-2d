@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=sprite_phys
+PASS r88_surfaces sprite_phys [pos=250.0000,74.5675 spr_gt=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (250.0, 74.56753)] spr_rel=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)]|pos=350.0000,74.5675 spr_gt=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (350.0, 74.56753)] spr_rel=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)]|pos=400.0000,74.5675 spr_gt=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (400.0, 74.56753)] spr_rel=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)]|pos=500.0000,74.5675 spr_gt=[X: (-1.0, 0.0), Y: (0.0, -1.0), O: (500.0, 74.56753)] spr_rel=[X: (-1.0, 0.0), Y: (0.0, -1.0), O: (0.0, 0.0)]]
+ERROR: Index p_frame = 3 is out of bounds (vframes * hframes = 2).
+   at: set_frame (scene/2d/sprite_2d.cpp:299)
+   GDScript backtrace (most recent call first):
+       [0] _arm_sprite_phys (res://r88_surfaces.gd:323)
+       [1] _run (res://r88_surfaces.gd:70)

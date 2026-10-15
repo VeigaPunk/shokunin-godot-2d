@@ -1,0 +1,29 @@
+--- a/corpus/fixtures/r88_surfaces.gd
++++ b/corpus/fixtures/r88_surfaces.gd
+@@ -38,7 +38,7 @@
+ func _v2(p: Vector2) -> String:
+ 	return "%.4f,%.4f" % [p.x, p.y]
+ 
+-func _body(x: float, y: float, gs := 1.0) -> RigidBody2D:
++func _body(x: float, y: float) -> RigidBody2D:
+ 	var b := RigidBody2D.new()
+ 	var cs := CollisionShape2D.new()
+ 	var circle := CircleShape2D.new()
+@@ -46,7 +46,6 @@
+ 	cs.shape = circle
+ 	b.add_child(cs)
+ 	b.position = Vector2(x, y)
+-	b.gravity_scale = gs
+ 	return b
+ 
+ func _run() -> void:
+@@ -100,9 +99,6 @@
+ 	@rpc("any_peer", "call_local", "reliable")
+ 	func ping(n: int, tag: String) -> void:
+ 		rpc_log.append("ping%d:%s" % [n, tag])
+-	@rpc("any_peer", "call_local", "unreliable")
+-	func uping(n: int) -> void:
+-		rpc_log.append("u%d" % n)
+ 
+ func _arm_mp_loopback() -> void:
+ 	var srv_branch := Node.new(); srv_branch.name = "srv"

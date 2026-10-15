@@ -1,0 +1,15 @@
+r88-author receipts audit (4 reps/arm): PASS payload uniq, stderr bytes
+mp_offline   reps=4 pass_uniq=1 err_bytes=[0, 0, 0, 0]
+mp_loopback  reps=4 pass_uniq=1 err_bytes=[0, 0, 0, 0]
+mp_spawner   reps=4 pass_uniq=1 err_bytes=[0, 0, 0, 0]
+light_props  reps=4 pass_uniq=1 err_bytes=[0, 0, 0, 0]
+sprite_meta  reps=4 pass_uniq=1 err_bytes=[0, 0, 0, 0]
+sprite_phys  reps=4 pass_uniq=1 err_bytes=[260, 260, 260, 260]
+audio_pos    reps=4 pass_uniq=1 err_bytes=[0, 0, 0, 0]
+vis_not      reps=4 pass_uniq=1 err_bytes=[0, 0, 0, 0]
+
+battery runs (canonical + control + folded): rows / r88 rows / verdict
+author runs1         rows=215 r88=8 r88_pass=8 verdict=PASS dead_entry_count=0 r88_gate=True
+author runs2         rows=215 r88=8 r88_pass=8 verdict=PASS dead_entry_count=0 r88_gate=True
+control (pre-fold)   rows=215 r88=8 r88_pass=8 verdict=PASS dead_entry_count=0 r88_gate=True
+folded               rows=215 r88=8 r88_pass=8 verdict=PASS dead_entry_count=0 r88_gate=True

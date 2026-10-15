@@ -1,0 +1,39 @@
+side | arm | reps | norm_uniq | norm_sha | pass_uniq
+reps-before | mp_loopback | 4 | 1 | 31c4e54f0149870a | 1
+reps-before | light_props | 4 | 1 | 462aa74c0fb73f6f | 1
+reps-before | sprite_phys | 4 | 1 | 82634054803b0c6b | 1
+reps-before | vis_not | 4 | 1 | 2c5d9e6ae141244e | 1
+reps-after | mp_loopback | 4 | 1 | 31c4e54f0149870a | 1
+reps-after | light_props | 4 | 1 | 462aa74c0fb73f6f | 1
+reps-after | sprite_phys | 4 | 1 | 82634054803b0c6b | 1
+reps-after | vis_not | 4 | 1 | 2c5d9e6ae141244e | 1
+
+cross-side per-rep comparison (normalized merged output):
+  mp_loopback rep0: before=31c4e54f0149870a after=31c4e54f0149870a same=True
+  mp_loopback rep1: before=31c4e54f0149870a after=31c4e54f0149870a same=True
+  mp_loopback rep2: before=31c4e54f0149870a after=31c4e54f0149870a same=True
+  mp_loopback rep3: before=31c4e54f0149870a after=31c4e54f0149870a same=True
+  light_props rep0: before=462aa74c0fb73f6f after=462aa74c0fb73f6f same=True
+  light_props rep1: before=462aa74c0fb73f6f after=462aa74c0fb73f6f same=True
+  light_props rep2: before=462aa74c0fb73f6f after=462aa74c0fb73f6f same=True
+  light_props rep3: before=462aa74c0fb73f6f after=462aa74c0fb73f6f same=True
+  sprite_phys rep0: before=82634054803b0c6b after=82634054803b0c6b same=True
+  sprite_phys rep1: before=82634054803b0c6b after=82634054803b0c6b same=True
+  sprite_phys rep2: before=82634054803b0c6b after=82634054803b0c6b same=True
+  sprite_phys rep3: before=82634054803b0c6b after=82634054803b0c6b same=True
+  vis_not rep0: before=2c5d9e6ae141244e after=2c5d9e6ae141244e same=True
+  vis_not rep1: before=2c5d9e6ae141244e after=2c5d9e6ae141244e same=True
+  vis_not rep2: before=2c5d9e6ae141244e after=2c5d9e6ae141244e same=True
+  vis_not rep3: before=2c5d9e6ae141244e after=2c5d9e6ae141244e same=True
+
+PASS-line cross-side equality:
+  mp_loopback: before_uniq=1 after_uniq=1 identical=True
+  light_props: before_uniq=1 after_uniq=1 identical=True
+  sprite_phys: before_uniq=1 after_uniq=1 identical=True
+  vis_not: before_uniq=1 after_uniq=1 identical=True
+
+sprite_phys stderr backtrace lines (raw):
+  reps-before: ['[0] _arm_sprite_phys (res://r88_surfaces.gd:327)', '[1] _run (res://r88_surfaces.gd:71)']
+  reps-after: ['[0] _arm_sprite_phys (res://r88_surfaces.gd:323)', '[1] _run (res://r88_surfaces.gd:70)']
+
+OVERALL: IDENTICAL

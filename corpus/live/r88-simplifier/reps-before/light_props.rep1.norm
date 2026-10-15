@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=light_props
+R88S light_props pl=[en=true sh=true en2=2.500 ts=1.500 h=42.000 col=(0.5, 0.25, 0.125, 1.0) mask=4 mo=1] dl=[en=0.750 mask=1] occ=[closed=true cull=0 mask=2 sdf=true n=3] cm=[col=(0.2, 0.2, 0.4, 1.0)]
+PASS r88_surfaces light_props pl=[en=true sh=true en2=2.500 ts=1.500 h=42.000 col=(0.5, 0.25, 0.125, 1.0) mask=4 mo=1] dl=[en=0.750 mask=1] occ=[closed=true cull=0 mask=2 sdf=true n=3] cm=[col=(0.2, 0.2, 0.4, 1.0)] body_y=118.4614 ray_through_occluder=true occ_cls=LightOccluder2D occ_is_co=false

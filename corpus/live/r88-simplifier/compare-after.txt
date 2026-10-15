@@ -1,0 +1,25 @@
+=== godot: mine corpus/live/r88-simplifier/runs-after/20261015T183321965855Z/verdicts.json rows=215 verdict=PASS file_sha256=8525b706f00d29dcb79271225f6a3c4ea81552ef67f7e7a05d92f8e63722a2d8 ===
+
+control: ref=corpus/live/r88-simplifier/runs-before/20261015T182943587885Z/verdicts.json ref_rows=215 ref_verdict=PASS
+  common=215 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=205 differing=3 not-carried=7
+  OUT-DIFF input_lattice_pre_frame line 3: mine='PASS input_lattice pre_frame imm0[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pf0,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[p' ref='PASS input_lattice pre_frame imm0[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pf0,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[p'
+  OUT-DIFF input_lattice_release_edge line 3: mine='PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[' ref='PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m['
+  OUT-DIFF r88_surfaces_mp_loopback line 4: mine='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn1226922162", "c_srvdisc", "s_disc1226922162"] raw_uid=<add' ref='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn113264623", "c_srvdisc", "s_disc113264623"] raw_uid=<addr>'
+
+author1: ref=corpus/live/r88-author/runs1/20261015T181519396144Z/verdicts.json ref_rows=215 ref_verdict=PASS
+  common=215 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=203 differing=5 not-carried=7
+  OUT-DIFF input_lattice_pre_frame line 3: mine='PASS input_lattice pre_frame imm0[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pf0,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[p' ref='PASS input_lattice pre_frame imm0[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pf0,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[p'
+  OUT-DIFF input_lattice_press_phys line 3: mine='PASS input_lattice press_phys imm[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pp,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pp' ref='PASS input_lattice press_phys imm[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pp,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[pp'
+  OUT-DIFF input_lattice_release_edge line 3: mine='PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[' ref='PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m['
+  OUT-DIFF input_lattice_ui_ns line 3: mine='PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_acce' ref='PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_acce'
+  OUT-DIFF r88_surfaces_mp_loopback line 4: mine='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn1226922162", "c_srvdisc", "s_disc1226922162"] raw_uid=<add' ref='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn880315409", "c_srvdisc", "s_disc880315409"] raw_uid=<addr>'
+
+author2: ref=corpus/live/r88-author/runs2/20261015T181910437115Z/verdicts.json ref_rows=215 ref_verdict=PASS
+  common=215 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=204 differing=4 not-carried=7
+  OUT-DIFF input_lattice_pre_frame line 3: mine='PASS input_lattice pre_frame imm0[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pf0,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[p' ref='PASS input_lattice pre_frame imm0[0/0.00/0/0] recv=[1:ins0@pr+1/ph~:A(pf0,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[p'
+  OUT-DIFF input_lattice_release_edge line 3: mine='PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m[' ref='PASS input_lattice release_edge imm[1/1.00/0/0] recv=[1:ins0@pr+0/ph~:A(re,p=1,s=1.00,d=-1,ai=<null>,ei=-1) m['
+  OUT-DIFF input_lattice_ui_ns line 3: mine='PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_acce' ref='PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_acce'
+  OUT-DIFF r88_surfaces_mp_loopback line 4: mine='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn1226922162", "c_srvdisc", "s_disc1226922162"] raw_uid=<add' ref='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn1590452932", "c_srvdisc", "s_disc1590452932"] raw_uid=<add'
