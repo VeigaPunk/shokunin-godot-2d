@@ -414,6 +414,66 @@ CASES = [
      'PASS r88_surfaces audio_pos playing=false pos=0.000 peaks_near=[-200.00,-200.00,-200.00,-200.00] peaks_far=[-200.00,-200.00,-200.00,-200.00] listen_pos=0.0000,0.0000 listener_current=true'),
     ('r88_surfaces_vis_not', 'r88_surfaces.gd', ['--arm=vis_not'], 0,
      'PASS r88_surfaces vis_not on_screen0=false en_onscreen=false events=[] on_screen_end=false enabler_proc=false'),
+    # r89: the Geometry2D authorability lattice (r88-census top-ranked
+    # surface) + two r87 input leftovers closed as a bounded secondary
+    # split (r89-scout; probes = geo2d_lattice.gd sha256 9784716b…,
+    # input89_edges.gd sha256 601c223e…, landed verbatim — arm parse is
+    # already the battery convention and every arm prints its own name).
+    # Signatures are measured PASS lines byte-pinned x6 fresh by the r89
+    # author (corpus/live/r89-author/runs/) on top of the scout's 23-cell
+    # x3/x6 lattice and the boundary's 6x-under-load replay (19/20 stable).
+    # input89_edges_exact is the boundary's ONE unstable row: its
+    # just_after_flush token is LOAD-BIMODAL (w_jp[ex=false inex=true]
+    # quiet / inex=false loaded — observed live: 6/6 Q quiet, 12/12 L
+    # under 16 hogs), so it carries the 2-payload tuple envelope per the
+    # r87 mode-envelope precedent (payload[0] = quiet/pinned mode).
+    # geo2d_lattice_lineempty is a dedicated single-call crash row:
+    # offset_polyline(empty,...) hits an uncatchable Clipper2 vector
+    # assert -> SIGABRT -6 (signature is the pre-call R89 diagnostic
+    # line; the PASS line is never reached). Inserted ahead of the
+    # crash/descendant tail — see the r88 note above: no CASES rows may
+    # sit between descendant_pipe_detached_control and the meta probes.
+    ('geo2d_lattice_census', 'geo2d_lattice.gd', ['--arm=census'], 0,
+     'PASS geo2d_lattice census sig=[clip_polygons(polygon_a,polygon_b)|convex_hull(points)|decompose_polygon_in_convex(polygon)|make_atlas(sizes)|merge_polygons(polygon_a,polygon_b)|offset_polygon(polygon,delta,join_type)|offset_polyline(polyline,delta,join_type,end_type)|triangulate_polygon(polygon)] join=SQ=0,RD=1,MT=2 end=POLY=0,JOINED=1,BUTT=2,SQUARE=3,ROUND=4 op=UNION=0,DIFF=1,INTER=2,XOR=3 nmethods=86 default_join_polygon=k=1{n8[12.0000,-10.8284;12.0000,10.8284;10.8284,12.0000;-10.8284,12.0000;-12.0000,10.8284;-12.0000,-10.8284;-10.8284,-12.0000;10.8284,-12.0000]} match=[sq,] default_polyline=k=1{n7[22.0000,-0.8284;22.0000,22.0000;18.0000,22.0000;18.0000,2.0000;-2.0000,2.0000;-2.0000,-2.0000;20.8284,-2.0000]} match=[sq/square,]'),
+    ('geo2d_lattice_ops', 'geo2d_lattice.gd', ['--arm=ops'], 0,
+     'PASS geo2d_lattice ops clip=k=1{n4[-2.0000,-10.0000;-2.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000]} merge=k=1{n4[18.0000,-10.0000;18.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000]} inter=k=1{n4[10.0000,10.0000;-2.0000,10.0000;-2.0000,-10.0000;10.0000,-10.0000]} excl=k=2{n4[-2.0000,-10.0000;-2.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000] a=160.0000|n4[18.0000,10.0000;10.0000,10.0000;10.0000,-10.0000;18.0000,-10.0000] a=160.0000} tri_idx=[3, 0, 1, 1, 2, 3] tri_area=400.0000 poly_area=400.0000 off_p2_sq=k=1{n8[12.0000,-10.8284;12.0000,10.8284;10.8284,12.0000;-10.8284,12.0000;-12.0000,10.8284;-12.0000,-10.8284;-10.8284,-12.0000;10.8284,-12.0000] a=573.2548} off_p2_rd=k=1{n12[11.6944,-11.0625;12.0000,-10.0000;12.0000,10.0000;11.0625,11.6944;10.0000,12.0000;-10.0000,12.0000;-11.6944,11.0625;-12.0000,10.0000;-12.0000,-10.0000;-11.0625,-11.6944;-10.0000,-12.0000;10.0000,-12.0000] a=571.0277} off_p2_mt=k=1{n4[12.0000,12.0000;-12.0000,12.0000;-12.0000,-12.0000;12.0000,-12.0000] a=576.0000} off_m2_sq=k=1{n4[8.0000,-8.0000;8.0000,8.0000;-8.0000,8.0000;-8.0000,-8.0000] a=256.0000} off_m2_rd=k=1{n4[8.0000,-8.0000;8.0000,8.0000;-8.0000,8.0000;-8.0000,-8.0000] a=256.0000} off_m2_mt=k=1{n4[8.0000,-8.0000;8.0000,8.0000;-8.0000,8.0000;-8.0000,-8.0000] a=256.0000}'),
+    ('geo2d_lattice_contain', 'geo2d_lattice.gd', ['--arm=contain'], 0,
+     'PASS geo2d_lattice contain merge_bs=k=1{n4[20.0000,20.0000;-20.0000,20.0000;-20.0000,-20.0000;20.0000,-20.0000] a=1600.0000} merge_sb=k=1{n4[20.0000,20.0000;-20.0000,20.0000;-20.0000,-20.0000;20.0000,-20.0000] a=1600.0000} clip_bs=k=2{n4[20.0000,20.0000;-20.0000,20.0000;-20.0000,-20.0000;20.0000,-20.0000] a=1600.0000|n4[-5.0000,-5.0000;-5.0000,5.0000;5.0000,5.0000;5.0000,-5.0000] a=-100.0000} clip_sb=k=0{} inter_bs=k=1{n4[5.0000,5.0000;-5.0000,5.0000;-5.0000,-5.0000;5.0000,-5.0000] a=100.0000} inter_sb=k=1{n4[5.0000,5.0000;-5.0000,5.0000;-5.0000,-5.0000;5.0000,-5.0000] a=100.0000} excl_bs=k=2{n4[20.0000,20.0000;-20.0000,20.0000;-20.0000,-20.0000;20.0000,-20.0000] a=1600.0000|n4[-5.0000,-5.0000;-5.0000,5.0000;5.0000,5.0000;5.0000,-5.0000] a=-100.0000} excl_sb=k=2{n4[20.0000,20.0000;-20.0000,20.0000;-20.0000,-20.0000;20.0000,-20.0000] a=1600.0000|n4[-5.0000,-5.0000;-5.0000,5.0000;5.0000,5.0000;5.0000,-5.0000] a=-100.0000} adj_merge=k=1{n4[30.0000,-10.0000;30.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000] a=800.0000} adj_clip=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000] a=400.0000} adj_inter=k=0{} ovl_excl=k=2{n6[16.0000,16.0000;-4.0000,16.0000;-4.0000,10.0000;10.0000,10.0000;10.0000,-4.0000;16.0000,-4.0000] a=204.0000|n6[10.0000,-4.0000;-4.0000,-4.0000;-4.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000] a=204.0000} ovl_clip=k=1{n6[10.0000,-4.0000;-4.0000,-4.0000;-4.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000] a=204.0000} ovl_inter=k=1{n4[10.0000,10.0000;-4.0000,10.0000;-4.0000,-4.0000;10.0000,-4.0000] a=196.0000}'),
+    ('geo2d_lattice_joins', 'geo2d_lattice.gd', ['--arm=joins'], 0,
+     'PASS geo2d_lattice joins poly_p2_sq=k=1{n8[12.0000,-10.8284;12.0000,10.8284;10.8284,12.0000;-10.8284,12.0000;-12.0000,10.8284;-12.0000,-10.8284;-10.8284,-12.0000;10.8284,-12.0000] a=573.2548} poly_p2_rd=k=1{n12[11.6944,-11.0625;12.0000,-10.0000;12.0000,10.0000;11.0625,11.6944;10.0000,12.0000;-10.0000,12.0000;-11.6944,11.0625;-12.0000,10.0000;-12.0000,-10.0000;-11.0625,-11.6944;-10.0000,-12.0000;10.0000,-12.0000] a=571.0277} poly_p2_mt=k=1{n4[12.0000,12.0000;-12.0000,12.0000;-12.0000,-12.0000;12.0000,-12.0000] a=576.0000} poly_m2_sq=k=1{n4[8.0000,-8.0000;8.0000,8.0000;-8.0000,8.0000;-8.0000,-8.0000] a=256.0000} poly_m2_rd=k=1{n4[8.0000,-8.0000;8.0000,8.0000;-8.0000,8.0000;-8.0000,-8.0000] a=256.0000} poly_m2_mt=k=1{n4[8.0000,-8.0000;8.0000,8.0000;-8.0000,8.0000;-8.0000,-8.0000] a=256.0000} poly_zero=k=1{n4[-10.0000,-10.0000;10.0000,-10.0000;10.0000,10.0000;-10.0000,10.0000] a=400.0000} poly_collapse=k=0{} line_rd_joined=k=2{n11[21.6944,-1.0625;22.0000,0.0000;22.0000,20.0000;21.0625,21.6944;19.1289,21.8003;18.5858,21.4142;-1.4142,1.4142;-1.9494,-0.4468;-0.6571,-1.8890;0.0000,-2.0000;20.0000,-2.0000] a=347.4172|n3[4.8284,2.0000;18.0000,15.1716;18.0000,2.0000] a=-86.7453} line_sq_joined=k=2{n6[22.0000,-0.8284;22.0000,21.3364;19.5307,22.3592;-2.3592,0.4693;-1.3364,-2.0000;20.8284,-2.0000] a=350.5732|n3[4.8284,2.0000;18.0000,15.1716;18.0000,2.0000] a=-86.7453} line_mt_joined=k=2{n5[22.0000,21.3364;19.5307,22.3592;-2.3592,0.4693;-1.3364,-2.0000;22.0000,-2.0000] a=351.2595|n3[4.8284,2.0000;18.0000,15.1716;18.0000,2.0000] a=-86.7453} line_rd_butt=k=1{n8[21.6944,-1.0625;22.0000,0.0000;22.0000,20.0000;18.0000,20.0000;18.0000,2.0000;0.0000,2.0000;0.0000,-2.0000;20.0000,-2.0000] a=158.7569} line_rd_square=k=1{n8[21.6944,-1.0625;22.0000,0.0000;22.0000,22.0000;18.0000,22.0000;18.0000,2.0000;-2.0000,2.0000;-2.0000,-2.0000;20.0000,-2.0000] a=174.7569} line_rd_round=k=1{n14[21.6944,-1.0625;22.0000,0.0000;22.0000,20.0000;21.0625,21.6944;19.1289,21.8003;18.0120,20.2184;18.0000,20.0000;18.0000,2.0000;0.0000,2.0000;-1.6944,1.0625;-1.8003,-0.8711;-0.2184,-1.9880;0.0000,-2.0000;20.0000,-2.0000] a=169.3603} line_m2_joined=k=2{n11[21.6944,-1.0625;22.0000,0.0000;22.0000,20.0000;21.0625,21.6944;19.1289,21.8003;18.5858,21.4142;-1.4142,1.4142;-1.9494,-0.4468;-0.6571,-1.8890;0.0000,-2.0000;20.0000,-2.0000] a=347.4172|n3[4.8284,2.0000;18.0000,15.1716;18.0000,2.0000] a=-86.7453} line_default=k=1{n7[22.0000,-0.8284;22.0000,22.0000;18.0000,22.0000;18.0000,2.0000;-2.0000,2.0000;-2.0000,-2.0000;20.8284,-2.0000] a=175.3137}'),
+    ('geo2d_lattice_trig', 'geo2d_lattice.gd', ['--arm=trig'], 0,
+     'PASS geo2d_lattice trig hull=k=1{n5[0.0000,0.0000;20.0000,0.0000;20.0000,20.0000;0.0000,20.0000;0.0000,0.0000]} tri_idx=[1, 2, 3, 3, 4, 0, 0, 1, 3] tri_area=280.0000 poly_area=280.0000 decomp=k=3{n3[20.0000,0.0000;20.0000,20.0000;10.0000,8.0000]|n3[0.0000,0.0000;20.0000,0.0000;10.0000,8.0000]|n3[0.0000,20.0000;0.0000,0.0000;10.0000,8.0000]} dec_area=280.0000 delaunay=[0, 1, 3, 0, 2, 3, 1, 2, 4, 2, 3, 4, 1, 3, 4] atlas3=points=[(0.0000,0.0000),(20.0000,0.0000),(20.0000,5.0000)] size=(25.0000,10.0000) atlas1=points=[(0.0000,0.0000)] size=(4.0000,4.0000) atlas_sq=points=[(0.0000,0.0000),(0.0000,3.0000)] size=(7.0000,6.0000)'),
+    ('geo2d_lattice_pred', 'geo2d_lattice.gd', ['--arm=pred'], 0,
+     'PASS geo2d_lattice pred pip=in=true out=false edge=true corner=true outside_corner=true pic=on=true out=false center=true isect=line=(2.0, 0.0) seg=(2.0, 0.0) miss=<null> closest=cap=(3.0, 0.0) uncap=(13.0, 0.0) segseg=[(5.0, 0.0), (5.0, 0.0)] degenerate=(2.0, 2.0) tri=in=true out=false edge=false vertex=false bresenham=fwd=[(0, 0), (1, 1), (2, 1), (3, 2), (4, 2), (5, 3)] rev=[(5, 3), (4, 2), (3, 2), (2, 1), (1, 1), (0, 0)] diag=[(0, 0), (1, 1), (2, 2), (3, 3)] sic=fwd=0.2500 rev=0.2500 miss=-1.0000 inside=-1.0000 startinside=0.5000 tangent=0.5000'),
+    ('geo2d_lattice_pipedges', 'geo2d_lattice.gd', ['--arm=pipedges'], 0,
+     'PASS geo2d_lattice pipedges pip_right=[0:true,1e-6:true,1e-4:true,1e-3:false,1e-2:false,0.1:false,1.0:false] pip_right_cw=[0:true,1e-4:true,1e-2:false,0.1:false] pip_corner=on=true e4=true e2=false d1=false tri_ladder=[0:false,1e-6:true,1e-4:true,1e-2:true,0.1:true] circle_ladder=on=true in=true out=false'),
+    ('geo2d_lattice_edge', 'geo2d_lattice.gd', ['--arm=edge'], 0,
+     'PASS geo2d_lattice edge clip_emptyR=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000]} merge_emptyR=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000]} inter_emptyR=k=0{} excl_emptyR=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000]} clip_emptyL=k=0{} merge_emptyL=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000]} inter_emptyL=k=0{} clip_self=k=0{} merge_self=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000]} inter_self=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000]} excl_self=k=0{} clip_one=k=0{} clip_two=k=0{} tri=one=[] two=[] dup=[0, 3, 2, 2, 1, 0] col=[0, 2, 1] bow=[] sq=[3, 0, 1, 1, 2, 3] cw=sq=false rev=true one=false two=false col=false bow=false pip_degen=bow=true col=false one=false clip_bow=k=0{} clip_rev=k=1{n4[-2.0000,-10.0000;-2.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000]} hull_degen=one=k=1{n1[1.0000,1.0000]} col=k=1{n3[0.0000,0.0000;2.0000,0.0000;0.0000,0.0000]} sq=k=1{n5[-10.0000,-10.0000;10.0000,-10.0000;10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000]}'),
+    ('geo2d_lattice_offempty', 'geo2d_lattice.gd', ['--arm=offempty'], 0,
+     'PASS geo2d_lattice offempty call=offset_polygon(empty,2.0,JOIN_ROUND) result=k=0{}'),
+    ('geo2d_lattice_offdeg', 'geo2d_lattice.gd', ['--arm=offdeg'], 0,
+     'PASS geo2d_lattice offdeg col3=k=1{n10[3.6944,-1.0625;3.8003,0.8711;2.2184,1.9880;2.0000,2.0000;0.0000,2.0000;-1.6944,1.0625;-1.8003,-0.8711;-0.2184,-1.9880;0.0000,-2.0000;2.0000,-2.0000]} two=k=1{n10[5.6944,-1.0625;5.8003,0.8711;4.2184,1.9880;4.0000,2.0000;0.0000,2.0000;-1.6944,1.0625;-1.8003,-0.8711;-0.2184,-1.9880;0.0000,-2.0000;4.0000,-2.0000]} one=k=1{n7[2.2470,-0.5637;3.0000,1.0000;2.2470,2.5637;0.5550,2.9499;-0.8019,1.8678;-0.8019,0.1322;0.5550,-0.9499]}'),
+    ('geo2d_lattice_atlasempty', 'geo2d_lattice.gd', ['--arm=atlasempty'], 0,
+     'PASS geo2d_lattice atlasempty call=make_atlas(empty) result=points=[] size=(0.0000,0.0000)'),
+    ('geo2d_lattice_polyendpoly', 'geo2d_lattice.gd', ['--arm=polyendpoly'], 0,
+     'PASS geo2d_lattice polyendpoly open_endpolygon=k=0{} closed_endpolygon=k=0{} closed_endjoined=k=2{n12[21.6944,-1.0625;22.0000,0.0000;22.0000,20.0000;21.0625,21.6944;20.0000,22.0000;0.0000,22.0000;-1.6944,21.0625;-2.0000,20.0000;-2.0000,0.0000;-1.0625,-1.6944;0.0000,-2.0000;20.0000,-2.0000] a=571.0277|n4[2.0000,2.0000;2.0000,18.0000;18.0000,18.0000;18.0000,2.0000] a=-256.0000} closed_endbutt=k=1{n12[21.6944,-1.0625;22.0000,0.0000;22.0000,20.0000;21.0625,21.6944;20.0000,22.0000;0.0000,22.0000;0.0000,18.0000;18.0000,18.0000;18.0000,2.0000;0.0000,2.0000;0.0000,-2.0000;20.0000,-2.0000] a=237.5139}'),
+    ('geo2d_lattice_bridge', 'geo2d_lattice.gd', ['--arm=bridge'], 0,
+     'PASS geo2d_lattice bridge wall=k=1{n4[60.0000,60.0000;-60.0000,60.0000;-60.0000,30.0000;60.0000,30.0000]} tps=60 frames=60 rest=y=82.3000 vel=0.0000,0.0000 self_hit=1'),
+    ('geo2d_lattice_ring', 'geo2d_lattice.gd', ['--arm=ring'], 0,
+     'PASS geo2d_lattice ring ring=k=2{n4[40.0000,40.0000;-40.0000,40.0000;-40.0000,-40.0000;40.0000,-40.0000] a=6400.0000|n4[-10.0000,-10.0000;-10.0000,10.0000;10.0000,10.0000;10.0000,-10.0000] a=-400.0000} colliders=n=1 contour0_only drop_center=y=-47.8043 vel=0.0000,0.0000 hits=1 tps=60 frames=60'),
+    ('geo2d_lattice_ring2', 'geo2d_lattice.gd', ['--arm=ring2'], 0,
+     'PASS geo2d_lattice ring2 ring=k=2{n4[40.0000,40.0000;-40.0000,40.0000;-40.0000,-40.0000;40.0000,-40.0000] a=6400.0000|n4[-10.0000,-10.0000;-10.0000,10.0000;10.0000,10.0000;10.0000,-10.0000] a=-400.0000} colliders=n=2 all_contours drop_center=y=-47.8043 vel=0.0000,0.0000 hits=1 tps=60 frames=60'),
+    ('geo2d_lattice_ring4', 'geo2d_lattice.gd', ['--arm=ring4'], 0,
+     'PASS geo2d_lattice ring4 slabs=4 drop_center=y=-47.8043 vel=0.0000,0.0000 hits=1 tps=60 frames=60'),
+    ('geo2d_lattice_ringhits', 'geo2d_lattice.gd', ['--arm=ringhits'], 0,
+     'PASS geo2d_lattice ringhits hits=[A_contour0[centre:1,top:1,right:1,bottom:1,left:1]|B_both[centre:2,top:1,right:1,bottom:1,left:1]|C_slabs[centre:0,top:1,right:1,bottom:1,left:1]] ring=k=2{n4[40.0000,40.0000;-40.0000,40.0000;-40.0000,-40.0000;40.0000,-40.0000] a=6400.0000|n4[-10.0000,-10.0000;-10.0000,10.0000;10.0000,10.0000;10.0000,-10.0000] a=-400.0000} tps=60'),
+    ('input89_edges_exact', 'input89_edges.gd', ['--arm=exact'], 0,
+     ('PASS input89_edges exact control=wW_eia_ex=1_actual=1 sW_eia_ex=1_actual=1 eia_wW=ex=1 inex=1 eia_sW_vs_wW=ex=0 inex=1 eia_wW_vs_sW=ex=0 inex=0 eia_sW=ex=1 inex=1 eia_both=plainW[ex=1 inex=1] shiftW[ex=1 inex=1] poll_shiftW_on_plainW_binding=w[ex=false inex=true] sw[ex=true inex=true] poll_after_shiftW_release=w[ex=false inex=false] sw[ex=false inex=false] poll_plainW=w[ex=true inex=true] sw[ex=false inex=false] both[ex=true inex=true] poll_plainW_released=w[ex=false inex=false] both[ex=false inex=false] just_after_flush=w_jp[ex=false inex=true]',
+      'PASS input89_edges exact control=wW_eia_ex=1_actual=1 sW_eia_ex=1_actual=1 eia_wW=ex=1 inex=1 eia_sW_vs_wW=ex=0 inex=1 eia_wW_vs_sW=ex=0 inex=0 eia_sW=ex=1 inex=1 eia_both=plainW[ex=1 inex=1] shiftW[ex=1 inex=1] poll_shiftW_on_plainW_binding=w[ex=false inex=true] sw[ex=true inex=true] poll_after_shiftW_release=w[ex=false inex=false] sw[ex=false inex=false] poll_plainW=w[ex=true inex=true] sw[ex=false inex=false] both[ex=true inex=true] poll_plainW_released=w[ex=false inex=false] both[ex=false inex=false] just_after_flush=w_jp[ex=false inex=false]')),
+    ('input89_edges_axisdev', 'input89_edges.gd', ['--arm=axisdev'], 0,
+     'PASS input89_edges axisdev census=joys=0 eia_avail=true dz_ax0=0.2000 dz_ui_accept=0.5000 eia_dev0=ax0[ex=1 inex=1] axany[ex=1 inex=1] eia_dev5=ax0[ex=0 inex=0] axany[ex=1 inex=1] eia_dev-1=ax0[ex=0 inex=0] axany[ex=1 inex=1] poll_dev5=ax0=false axany=true axis5=1.0000 axis0=0.0000 strength0=0.0000 poll_dev0=ax0=true axany=true axis0=1.0000 strength0=1.0000 raw0=1.0000 poll_dev0_06=ax0=true axis0=0.6000 strength0=0.5000 raw0=0.6000 poll_dev0_neg=ax0=false axany=true axis0=-1.0000 poll_release=ax0=false axany=true axis0=0.0000'),
+    ('geo2d_lattice_lineempty', 'geo2d_lattice.gd', ['--arm=lineempty'], -6,
+     'R89 lineempty call=offset_polyline(empty,2.0,JOIN_ROUND,END_JOINED)'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
@@ -826,6 +886,19 @@ def main():
                 # deterministically (scout §3.13 / directive 7).
                 'r88_surfaces_sprite_phys': (
                     'ERROR: Index p_frame = 3 is out of bounds (vframes * hframes = 2).',
+                ),
+                # r89: atlasempty pokes the empty-input refusal
+                # (scout §5.2 — "p_rects.is_empty()", a DIFFERENT message
+                # from the boundary's per-rect "p_rects[i].width <= 0",
+                # which no authored row feeds). polyendpoly drives
+                # END_POLYGON on an open AND a closed polyline — the same
+                # refusal ERROR fires twice; one exact entry covers both
+                # lines (scout §5.3).
+                'geo2d_lattice_atlasempty': (
+                    'ERROR: Condition "p_rects.is_empty()" is true.',
+                ),
+                'geo2d_lattice_polyendpoly': (
+                    'ERROR: Attempt to offset a polyline like a polygon (use offset_polygon instead).',
                 ),
             }.get(name, ())
             classifier = classify_audio_process if name == "audio_playback" else classify_process
@@ -2434,6 +2507,15 @@ def main():
             not e["dead_in_run"]
             for r in census_rows
             if r["case"].startswith("r88_")
+            for e in r["entries"]),
+        # r89 author: the new whitelist cases use the geo2d_lattice_ prefix
+        # (atlasempty, polyendpoly); input89_edges_ carries no entries but is
+        # covered so a future r89 entry under it cannot die silently either —
+        # same named-by-round / covers-round-prefixes shape as the r87 gate.
+        "r89_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith(("geo2d_lattice_", "input89_edges_"))
             for e in r["entries"]),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
