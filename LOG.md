@@ -1079,3 +1079,23 @@
 - Seats: author+baseline(dead swe, orchestrator completed), verifier
   (swe), critic(luna), simplifier(ds), boundary+scribe(glm);
   fold+adj swe-2. ADMIT-corr. Commits this fold + 7ae7083.
+
+## round 87 — input event/action lattice (ADMIT-corr)
+
+- 25 new CASES rows (182->207): `input_lattice.gd` + `r87_edge.gd` +
+  `ei_bound.gd` — InputMap registration/binding, key/joy/mouse
+  surfaces, action_press/release/strength/raw_strength,
+  just_pressed/just_released pulses, exact_match modifier/direction
+  split, deadzone ladder, device banks, event_index>=32 typed
+  refusal, null/never-registered refusal surface.
+- LAW (boundary): just_* pulses arm exactly one physics step — the
+  first step beginning after the state change; flake selector
+  `inter==0 <=> jp==1` reproducible 300/300. pre_frame/press_phys/
+  release_edge/ui_ns are true bimodal cells -> mode envelopes.
+- FALSIFIED + FOLDED: scout's api_press stable call — alt mode
+  (ph1 jr=0) hits 27/30 under CPU load; 2-payload envelope folded.
+  Floor gate extended to r87 whitelist cases (triple-seat F3).
+  Simplifier SP1-7: -21 dead probe lines, byte-identical.
+- Seats: scout/boundary/boundary-readonly/author/critic/critic2/
+  reviewer/simplifier/verifier/verifier2/scribe; fold+adj
+  orchestrator. ADMIT-corr. Commits ebcf2bb + 7ef247c + this.
