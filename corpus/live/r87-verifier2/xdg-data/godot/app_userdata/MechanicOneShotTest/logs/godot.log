@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R83 arm=api_press godot=4.7.2-stable (arch_linux) acc=true tps=60
+PASS input_lattice api_press imm[1/0.70/1/0] raw=0.70 pl=["ap"] recv=[] pr=["pr0{ap=1/0.70/1/0}", "pr1{ap=1/0.70/0/0}", "pr2{ap=0/0.00/0/1}"] ph=["ph1{ap=1/0.70/1/0}", "ph2{ap=0/0.00/0/0}", "ph3{ap=0/0.00/0/1}"]
