@@ -1013,3 +1013,23 @@
 - Seats: scout, author(swe-2), baseline(ds), boundary-audit(zfl),
   critic(Sol), verifier(swe-2), simplifier(ds), scribe(zfl);
   fold+adjudicator swe-2. ADMIT-corr.
+## round 81 — 2D joint lattice + layer/mask lattice (ADMIT-corr)
+
+- 20 cells in `phys2d_joints.gd`: joint census/refusals, pin
+  tiers/clear/freed-RID, spring envelope, groove conventions,
+  disable_collisions, layer/mask OR-table + zero edges + dyn pair +
+  mid-step flips, Area2D gates, entry order. +68 battery rows,
+  expected_errors 45→49 all matched. 159/159 ×2 author + ×2 verifier.
+- Fold: simplifier vfold 973→919+41 (proven byte-exact) + critic
+  C1-C11 — C1 claim-refuting: node-vs-server pin divergence is the
+  2000 px lane offset (n2 control pins it); C8: freed-RID re-make is
+  silently refused (bias_remade=-1.0 vs the misleading type=0); C2
+  spec-echo tuples now read back; 10 rows repinned.
+- RECORD: boundary B1 (joint_make_pin body_b=RID() → SIGSEGV at first
+  step, no cell affected), B2 (Area2D.monitoring IS refused
+  in-callback — layer_flip_cb wording bounded), B9 (freed joint RID
+  never recycled in 64 allocs). Scribe F7: export counter 30→31 =
+  "one more script".
+- Seats: author+baseline(ds), verifier(zfl), critic+simplifier+
+  boundary+scribe(ds-retries after rate-limit sweep); fold+
+  adjudicator swe-2. ADMIT-corr. Commit 5ab058b.
