@@ -220,3 +220,13 @@ Sol `r76-adjudicator.md`: ADMIT-corr — deferred_abort admitted, destroy-edge l
 | calibration | **improved** | All 3 boundary folds applied (tps-qualified pins, eng= gate, oracle wall); 3-seat consensus on the 30-tps receipt mislabel (report-accuracy, conclusion true); reviewer F2 custody gap fixed by orchestrator commit; simplifier zero-removable. |
 
 | r90 | game-dev-2d | RigidBody2D dynamics lattice | ADMIT | ee20575 + 53a0be7 |
+
+## Round 89 verdict — 2026-10-15
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | +20 `geo2d_lattice`/`input89_edges` rows → 235: atlas/ring/contour/poly-joins/ops, edge transitions, typed crash rows with `required_stderr` fragments. Verifier-r2 247/247 ×2 on folded bytes, all 32 signature lines byte-exact. |
+| depth | **improved** | Load-bimodal envelope proven load-bearing (payload[0] fails under load, payload[1] fails quiet); 1750 standalone envelope reps → 0 outside 2-tuple; forge discrimination live (wrong-cause abort and stderr-only signature both FAIL post-fold). |
+| calibration | **improved** | Critic F1 crash-cause-blindness folded into `required_stderr`; SP1+F5 −51 dead/deceptive lines; gitignore custody hygiene; zero-rect atlas poisoning + NaN-hang classes pinned to named error classes. |
+
+| r89 | game-dev-2d | geometry/edges lattice | ADMIT-corr | 8cea888 + 53a0be7 + 1a23de5 |

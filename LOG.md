@@ -1129,3 +1129,10 @@
 - LAWS: damp float32 recurrence closed form; dy=n*g*dt^2 oracle; impulse
   iI/omega/dv closed forms; typed refusal ladder; eng=Dummy precondition
   gate on all rows; write-lag + freeze/lock/sleep lattice.
+- ROUND 89 (2026-10-15): geometry/edges lattice. ADMIT-corr — authored
+  8cea888 (20 rows), folded 53a0be7 (SP1+F5 -51, required_stderr pin
+  closes crash-cause-blind hole), verified folded 1a23de5 (247/247 x2,
+  forge discrimination PASS). Envelope load-bearing both directions.
+- LAWS: 7 SIGABRT + 1 NaN-hang vectors pinned to Clipper2 assert text;
+  input89_edges_exact bimodal envelope (Q/L payloads); bridge/ring/
+  contour/joins lattice byte-stable under load153.
