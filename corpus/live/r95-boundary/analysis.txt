@@ -1,0 +1,333 @@
+== batch quiet ==
+   batch=quiet proj=proj ff='none' hogs=16 bound=25 godot=4.7.2.stable.arch_linux.ed1daf0bf
+   started=2026-10-15T20:11:13Z load=72.21 57.20 45.84
+   canon            reps=6 rc=[0, 0, 0, 0, 0, 0] key_uniq=1 line_uniq=1
+   cap40_p0         reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   cap40_p1         reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   cap40_p2         reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   celloff_x0       reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   celloff_x0.25    reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   celloff_x0.5     reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   celloff_x1       reps=1 rc=[0] key_uniq=1 line_uniq=1
+   celloff_x1000    reps=1 rc=[0] key_uniq=1 line_uniq=1
+   celloff_x16      reps=1 rc=[0] key_uniq=1 line_uniq=1
+   celloff_x2       reps=1 rc=[0] key_uniq=1 line_uniq=1
+   celloff_x32      reps=1 rc=[0] key_uniq=1 line_uniq=1
+   celloff_x4       reps=1 rc=[0] key_uniq=1 line_uniq=1
+   celloff_x64      reps=1 rc=[0] key_uniq=1 line_uniq=1
+   celloff_x8       reps=1 rc=[0] key_uniq=1 line_uniq=1
+   celloff_xm0.25   reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   celloff_xm1000   reps=1 rc=[0] key_uniq=1 line_uniq=1
+   celloff_y1000    reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   env              reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   free_a           reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   free_ab          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   free_ac          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   free_b           reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   free_ba          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   free_c           reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   free_ca          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   free_d           reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   free_e           reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   layers_k0        reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   layers_k1        reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   period_k2        reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   period_k3        reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   period_k4        reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   period_k6        reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   period_k8        reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   perm0            reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   perm1            reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   perm2            reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   perm3            reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   perm4            reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   perm5            reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   perm6            reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   perm7            reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   procwait         reps=4 rc=[0, 0, 0, 0] key_uniq=2 line_uniq=2  <<< UNSTABLE
+       {"ladder_procawait": "[t1:4,0,1,2,3;t2:3,0,1,2,4;t3:3,0,1,2,4;t4:3,0,1,2,4]", "pf_per_procawait": "[3,4,4,4]", "t2_vec": "[d#0,a#0,b#0,c#0,e#0]"}
+       {"ladder_procawait": "[t1:3,0,1,2,4;t2:3,4,1,2,0;t3:3,4,1,2,0;t4:3,4,0,2,1]", "pf_per_procawait": "[4,5,5,6]", "t2_vec": "[d#0,e#0,a#0,c#0,b#0]"}
+   readd_a          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   readd_c          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   rigid            reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   twopiles         reps=4 rc=[0, 0, 0, 0] key_uniq=1 line_uniq=1
+   warm_k0          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   warm_k1          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   warm_k13         reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   warm_k2          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   warm_k3          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   warm_k32         reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   warm_k5          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   warm_k8          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   warm_keep64      reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   warm_keep8       reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+
+== batch load ==
+   batch=load proj=proj ff='none' hogs=16 bound=25 godot=4.7.2.stable.arch_linux.ed1daf0bf
+   started=2026-10-15T20:14:35Z load=121.31 78.02 55.66
+   canon            reps=4 rc=[0, 0, 0, 0] key_uniq=1 line_uniq=1
+   cap40_p0         reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   cap40_p1         reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   celloff_x0       reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   celloff_x0.25    reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   celloff_x1000    reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   celloff_y1000    reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   env              reps=1 rc=[0] key_uniq=1 line_uniq=1
+   free_ab          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   free_ba          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   free_c           reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   layers_k1        reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   period_k5        reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   perm0            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   perm1            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   perm2            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   perm4            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   procwait         reps=3 rc=[0, 0, 0] key_uniq=3 line_uniq=3  <<< UNSTABLE
+       {"ladder_procawait": "[t1:3,4,0,2,1;t2:3,4,0,1,2;t3:3,4,0,1,2;t4:3,4,0,1,2]", "pf_per_procawait": "[6,7,7,7]", "t2_vec": "[d#0,e#0,a#0,b#0,c#0]"}
+       {"ladder_procawait": "[t1:4,0,1,3,2;t2:4,0,1,2,3;t3:4,0,1,2,3;t4:3,0,1,2,4]", "pf_per_procawait": "[2,3,3,4]", "t2_vec": "[d#0,a#0,b#0,c#0,e#0]"}
+       {"ladder_procawait": "[t1:3,4,0,1,2;t2:2,4,0,1,3;t3:2,4,0,1,3;t4:2,4,0,1,3]", "pf_per_procawait": "[7,8,8,8]", "t2_vec": "[c#0,e#0,a#0,b#0,d#0]"}
+   readd_a          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   rigid            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   twopiles         reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   warm_k1          reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   warm_k32         reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   warm_keep64      reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   warm_keep8       reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+
+== batch ff1 ==
+   batch=ff1 proj=proj ff='--fixed-fps 1' hogs=16 bound=25 godot=4.7.2.stable.arch_linux.ed1daf0bf
+   started=2026-10-15T20:16:45Z load=147.05 105.37 68.85
+   canon            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   celloff_x0       reps=1 rc=[0] key_uniq=1 line_uniq=1
+   period_k5        reps=1 rc=[0] key_uniq=1 line_uniq=1
+   perm0            reps=1 rc=[0] key_uniq=1 line_uniq=1
+   procwait         reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+
+== batch ff30 ==
+   batch=ff30 proj=proj ff='--fixed-fps 30' hogs=16 bound=25 godot=4.7.2.stable.arch_linux.ed1daf0bf
+   started=2026-10-15T20:16:11Z load=153.41 101.22 66.16
+   canon            reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   cap40_p0         reps=1 rc=[0] key_uniq=1 line_uniq=1
+   celloff_x0       reps=1 rc=[0] key_uniq=1 line_uniq=1
+   celloff_x1000    reps=1 rc=[0] key_uniq=1 line_uniq=1
+   layers_k1        reps=1 rc=[0] key_uniq=1 line_uniq=1
+   period_k5        reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   perm0            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   perm1            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   procwait         reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+
+== batch ff120 ==
+   batch=ff120 proj=proj ff='--fixed-fps 120' hogs=16 bound=25 godot=4.7.2.stable.arch_linux.ed1daf0bf
+   started=2026-10-15T20:16:27Z load=147.91 103.38 67.62
+   canon            reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+   cap40_p0         reps=1 rc=[0] key_uniq=1 line_uniq=1
+   celloff_x0       reps=1 rc=[0] key_uniq=1 line_uniq=1
+   celloff_x1000    reps=1 rc=[0] key_uniq=1 line_uniq=1
+   layers_k1        reps=1 rc=[0] key_uniq=1 line_uniq=1
+   period_k5        reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   perm0            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   perm1            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   procwait         reps=3 rc=[0, 0, 0] key_uniq=1 line_uniq=1
+
+== batch thr ==
+   batch=thr proj=proj_thr ff='none' hogs=16 bound=25 godot=4.7.2.stable.arch_linux.ed1daf0bf
+   started=2026-10-15T20:16:55Z load=146.99 106.71 69.68
+   canon            reps=4 rc=[0, 0, 0, 0] key_uniq=1 line_uniq=1
+   env              reps=1 rc=[0] key_uniq=1 line_uniq=1
+   period_k5        reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   perm0            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   perm1            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   twopiles         reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+
+== batch label ==
+   batch=label proj=proj ff='none' hogs=16 bound=25 godot=4.7.2.stable.arch_linux.ed1daf0bf
+   started=2026-10-15T20:17:16Z load=149.94 110.63 71.95
+   perm0            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   perm1            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   scoutrev         reps=4 rc=[0, 0, 0, 0] key_uniq=1 line_uniq=1
+
+== batch extra ==
+   batch=extra proj=proj ff='none' hogs=16 bound=25 godot=4.7.2.stable.arch_linux.ed1daf0bf
+   started=2026-10-15T20:17:38Z load=150.01 113.18 73.62
+   canon            reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   periodx_k10      reps=1 rc=[0] key_uniq=1 line_uniq=1
+   periodx_k2       reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   periodx_k3       reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   periodx_k4       reps=1 rc=[0] key_uniq=1 line_uniq=1
+   periodx_k5       reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   periodx_k5s8     reps=2 rc=[0, 0] key_uniq=1 line_uniq=1
+   periodx_k6       reps=1 rc=[0] key_uniq=1 line_uniq=1
+   periodx_k7       reps=1 rc=[0] key_uniq=1 line_uniq=1
+   periodx_k8       reps=1 rc=[0] key_uniq=1 line_uniq=1
+
+== cross-batch (same cell id in >1 batch) ==
+   canon            batches=7 uniq_sig=1
+   cap40_p0         batches=4 uniq_sig=1
+   cap40_p1         batches=2 uniq_sig=1
+   celloff_x0       batches=5 uniq_sig=1
+   celloff_x0.25    batches=2 uniq_sig=1
+   celloff_x1000    batches=4 uniq_sig=1
+   celloff_y1000    batches=2 uniq_sig=1
+   env              batches=3 uniq_sig=2   <<< MODE-SENSITIVE
+   free_ab          batches=2 uniq_sig=1
+   free_ba          batches=2 uniq_sig=1
+   free_c           batches=2 uniq_sig=1
+   layers_k1        batches=4 uniq_sig=1
+   period_k5        batches=5 uniq_sig=1
+   perm0            batches=7 uniq_sig=1
+   perm1            batches=6 uniq_sig=1
+   perm2            batches=2 uniq_sig=1
+   perm4            batches=2 uniq_sig=1
+   procwait         batches=5 uniq_sig=5   <<< MODE-SENSITIVE
+   readd_a          batches=2 uniq_sig=1
+   rigid            batches=2 uniq_sig=1
+   twopiles         batches=3 uniq_sig=1
+   warm_k1          batches=2 uniq_sig=1
+   warm_k32         batches=2 uniq_sig=1
+   warm_keep64      batches=2 uniq_sig=1
+   warm_keep8       batches=2 uniq_sig=1
+
+== targeted checks ==
+canon: ladder uniq across batches = 1
+   [quiet] t2=[e#0,a#0,c#0,d#0,b#0] distinct_ticks=20 cycle_len_dense=20 t64=[e#0,a#0,b#0,c#0,d#0]
+        ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t6:3,4,1,2,0;t7:3,4,0,2,1;t8:3,4,0,1,2;t9:2,4,0,1,3;t10:2,3,0,1,4;t11:2,3,4,1,0;t12:2,3,4,0,1;t13:1,3,4,0,2;t14:1,2,4,0,3;t15:1,2,3,0,4;t16:1,2,3,4,0;t17:0,2,3,4,1;t18:0,1,3,4,2;t19:0,1,2,4,3;t20:0,1,2,3,4;t21:4,1,2,3,0;t22:4,0,2,3,1;t23:4,0,1,3,2;t24:4,0,1,2,3;t25:3,0,1,2,4;t26:3,4,1,2,0;t27:3,4,0,2,1;t28:3,4,0,1,2;t29...
+   [load] t2=[e#0,a#0,c#0,d#0,b#0] distinct_ticks=20 cycle_len_dense=20 t64=[e#0,a#0,b#0,c#0,d#0]
+        ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t6:3,4,1,2,0;t7:3,4,0,2,1;t8:3,4,0,1,2;t9:2,4,0,1,3;t10:2,3,0,1,4;t11:2,3,4,1,0;t12:2,3,4,0,1;t13:1,3,4,0,2;t14:1,2,4,0,3;t15:1,2,3,0,4;t16:1,2,3,4,0;t17:0,2,3,4,1;t18:0,1,3,4,2;t19:0,1,2,4,3;t20:0,1,2,3,4;t21:4,1,2,3,0;t22:4,0,2,3,1;t23:4,0,1,3,2;t24:4,0,1,2,3;t25:3,0,1,2,4;t26:3,4,1,2,0;t27:3,4,0,2,1;t28:3,4,0,1,2;t29...
+   [ff1] t2=[e#0,a#0,c#0,d#0,b#0] distinct_ticks=20 cycle_len_dense=20 t64=[e#0,a#0,b#0,c#0,d#0]
+        ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t6:3,4,1,2,0;t7:3,4,0,2,1;t8:3,4,0,1,2;t9:2,4,0,1,3;t10:2,3,0,1,4;t11:2,3,4,1,0;t12:2,3,4,0,1;t13:1,3,4,0,2;t14:1,2,4,0,3;t15:1,2,3,0,4;t16:1,2,3,4,0;t17:0,2,3,4,1;t18:0,1,3,4,2;t19:0,1,2,4,3;t20:0,1,2,3,4;t21:4,1,2,3,0;t22:4,0,2,3,1;t23:4,0,1,3,2;t24:4,0,1,2,3;t25:3,0,1,2,4;t26:3,4,1,2,0;t27:3,4,0,2,1;t28:3,4,0,1,2;t29...
+   [ff30] t2=[e#0,a#0,c#0,d#0,b#0] distinct_ticks=20 cycle_len_dense=20 t64=[e#0,a#0,b#0,c#0,d#0]
+        ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t6:3,4,1,2,0;t7:3,4,0,2,1;t8:3,4,0,1,2;t9:2,4,0,1,3;t10:2,3,0,1,4;t11:2,3,4,1,0;t12:2,3,4,0,1;t13:1,3,4,0,2;t14:1,2,4,0,3;t15:1,2,3,0,4;t16:1,2,3,4,0;t17:0,2,3,4,1;t18:0,1,3,4,2;t19:0,1,2,4,3;t20:0,1,2,3,4;t21:4,1,2,3,0;t22:4,0,2,3,1;t23:4,0,1,3,2;t24:4,0,1,2,3;t25:3,0,1,2,4;t26:3,4,1,2,0;t27:3,4,0,2,1;t28:3,4,0,1,2;t29...
+   [ff120] t2=[e#0,a#0,c#0,d#0,b#0] distinct_ticks=20 cycle_len_dense=20 t64=[e#0,a#0,b#0,c#0,d#0]
+        ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t6:3,4,1,2,0;t7:3,4,0,2,1;t8:3,4,0,1,2;t9:2,4,0,1,3;t10:2,3,0,1,4;t11:2,3,4,1,0;t12:2,3,4,0,1;t13:1,3,4,0,2;t14:1,2,4,0,3;t15:1,2,3,0,4;t16:1,2,3,4,0;t17:0,2,3,4,1;t18:0,1,3,4,2;t19:0,1,2,4,3;t20:0,1,2,3,4;t21:4,1,2,3,0;t22:4,0,2,3,1;t23:4,0,1,3,2;t24:4,0,1,2,3;t25:3,0,1,2,4;t26:3,4,1,2,0;t27:3,4,0,2,1;t28:3,4,0,1,2;t29...
+   [thr] t2=[e#0,a#0,c#0,d#0,b#0] distinct_ticks=20 cycle_len_dense=20 t64=[e#0,a#0,b#0,c#0,d#0]
+        ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t6:3,4,1,2,0;t7:3,4,0,2,1;t8:3,4,0,1,2;t9:2,4,0,1,3;t10:2,3,0,1,4;t11:2,3,4,1,0;t12:2,3,4,0,1;t13:1,3,4,0,2;t14:1,2,4,0,3;t15:1,2,3,0,4;t16:1,2,3,4,0;t17:0,2,3,4,1;t18:0,1,3,4,2;t19:0,1,2,4,3;t20:0,1,2,3,4;t21:4,1,2,3,0;t22:4,0,2,3,1;t23:4,0,1,3,2;t24:4,0,1,2,3;t25:3,0,1,2,4;t26:3,4,1,2,0;t27:3,4,0,2,1;t28:3,4,0,1,2;t29...
+   [extra] t2=[e#0,a#0,c#0,d#0,b#0] distinct_ticks=20 cycle_len_dense=20 t64=[e#0,a#0,b#0,c#0,d#0]
+        ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t6:3,4,1,2,0;t7:3,4,0,2,1;t8:3,4,0,1,2;t9:2,4,0,1,3;t10:2,3,0,1,4;t11:2,3,4,1,0;t12:2,3,4,0,1;t13:1,3,4,0,2;t14:1,2,4,0,3;t15:1,2,3,0,4;t16:1,2,3,4,0;t17:0,2,3,4,1;t18:0,1,3,4,2;t19:0,1,2,4,3;t20:0,1,2,3,4;t21:4,1,2,3,0;t22:4,0,2,3,1;t23:4,0,1,3,2;t24:4,0,1,2,3;t25:3,0,1,2,4;t26:3,4,1,2,0;t27:3,4,0,2,1;t28:3,4,0,1,2;t29...
+perm: distinct ladders=8 distinct t2_relpos=8
+   perm0 add_order=[a,b,c,d,e] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1]
+   perm1 add_order=[e,d,c,b,a] t2_relpos=[0.0000,0.0000|32.0000,0.0000|16.0000,0.0000|8.0000,0.0000|24.0000,0.0000] ladder=[t0:4,3,2,1,0;t1:0,3,2,1,4;t2:0,4,2,1,3;t3:0,4,3,1,2;t4:0,4,3,2,1;t5:1,4,3,2,0;t8:1,0,4,3,2;t16:3,2,1,0,4;t32:2,1,0,4,3]
+   perm2 add_order=[b,c,a,e,d] t2_relpos=[0.0000,0.0000|8.0000,0.0000|32.0000,0.0000|24.0000,0.0000|16.0000,0.0000] ladder=[t0:1,2,0,4,3;t1:0,2,4,3,1;t2:0,1,4,3,2;t3:2,1,4,3,0;t4:2,1,0,3,4;t5:2,1,0,4,3;t8:1,3,2,4,0;t16:4,0,3,2,1;t32:3,4,1,0,2]
+   perm3 add_order=[c,a,e,d,b] t2_relpos=[16.0000,0.0000|32.0000,0.0000|8.0000,0.0000|24.0000,0.0000|0.0000,0.0000] ladder=[t0:2,0,4,3,1;t1:0,4,1,3,2;t2:2,4,1,3,0;t3:2,0,1,3,4;t4:2,0,1,4,3;t5:2,0,3,4,1;t8:1,2,3,0,4;t16:4,3,0,1,2;t32:3,1,4,2,0]
+   perm4 add_order=[a,c,b,e,d] t2_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|24.0000,0.0000|16.0000,0.0000] ladder=[t0:0,2,1,4,3;t1:4,2,1,3,0;t2:4,0,1,3,2;t3:4,0,2,3,1;t4:1,0,2,3,4;t5:1,0,2,4,3;t8:2,3,0,4,1;t16:3,1,4,2,0;t32:0,4,3,1,2]
+   perm5 add_order=[d,a,b,e,c] t2_relpos=[24.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|0.0000,0.0000] ladder=[t0:3,0,1,4,2;t1:0,4,1,2,3;t2:3,4,1,2,0;t3:3,4,0,2,1;t4:3,1,0,2,4;t5:3,1,0,4,2;t8:2,0,3,4,1;t16:1,2,4,0,3;t32:4,3,2,1,0]
+   perm6 add_order=[e,a,c,d,b] t2_relpos=[32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000|0.0000,0.0000] ladder=[t0:4,0,2,3,1;t1:0,1,2,3,4;t2:4,1,2,3,0;t3:4,1,0,3,2;t4:4,1,0,2,3;t5:4,3,0,2,1;t8:1,3,4,0,2;t16:2,0,3,1,4;t32:3,2,1,4,0]
+   perm7 add_order=[b,a,d,c,e] t2_relpos=[8.0000,0.0000|32.0000,0.0000|24.0000,0.0000|16.0000,0.0000|0.0000,0.0000] ladder=[t0:1,0,3,2,4;t1:0,4,3,2,1;t2:1,4,3,2,0;t3:1,4,0,2,3;t4:1,4,0,3,2;t5:1,2,0,3,4;t8:4,2,1,0,3;t16:3,0,2,4,1;t32:2,3,4,1,0]
+celloff: ladder==x0 true for 14 cells; false for []
+   celloff_x0       off=0.0000 offy=None eq_x0=True
+   celloff_x0.25    off=0.2500 offy=None eq_x0=True
+   celloff_x0.5     off=0.5000 offy=None eq_x0=True
+   celloff_x1       off=1.0000 offy=None eq_x0=True
+   celloff_x1000    off=1000.0000 offy=None eq_x0=True
+   celloff_x16      off=16.0000 offy=None eq_x0=True
+   celloff_x2       off=2.0000 offy=None eq_x0=True
+   celloff_x32      off=32.0000 offy=None eq_x0=True
+   celloff_x4       off=4.0000 offy=None eq_x0=True
+   celloff_x64      off=64.0000 offy=None eq_x0=True
+   celloff_x8       off=8.0000 offy=None eq_x0=True
+   celloff_xm0.25   off=-0.2500 offy=None eq_x0=True
+   celloff_xm1000   off=-1000.0000 offy=None eq_x0=True
+   celloff_y1000    off=0.0000 offy=None eq_x0=True
+period: {"period_k2": {"cycle_len": "2", "distinct_ticks": "2", "k": "2"}, "period_k3": {"cycle_len": "6", "distinct_ticks": "6", "k": "3"}, "period_k4": {"cycle_len": "12", "distinct_ticks": "12", "k": "4"}, "period_k5": {"cycle_len": "20", "distinct_ticks": "20", "k": "5"}, "period_k6": {"cycle_len": "-1", "distinct_ticks": "30", "k": "6"}, "period_k8": {"cycle_len": "-1", "distinct_ticks": "40", "k": "8"}, "periodx_k10": {"cycle_len": "90", "distinct_ticks": "90", "k": "10"}, "periodx_k2": {"cycle_len": "2", "distinct_ticks": "2", "k": "2"}, "periodx_k3": {"cycle_len": "6", "distinct_ticks": "6", "k": "3"}, "periodx_k4": {"cycle_len": "12", "distinct_ticks": "12", "k": "4"}, "periodx_k5": {"cycle_len": "20", "distinct_ticks": "20", "k": "5"}, "periodx_k5s8": {"cycle_len": "20", "distinct_ticks": "20", "k": "5"}, "periodx_k6": {"cycle_len": "30", "distinct_ticks": "30", "k": "6"}, "periodx_k7": {"cycle_len": "42", "distinct_ticks": "42", "k": "7"}, "periodx_k8": {"cycle_len": "56", "distinct_ticks": "56", "k": "8"}}
+free: ab==ba ladder -> False; ac==ca -> False
+   free_a       freed=[a] which=None t1_relpos=[24.0000,0.0000|8.0000,0.0000|16.0000,0.0000|32.0000,0.0000] set=[b#0,c#0,d#0,e#0] ladder=[t1:3,1,2,4;t2:3,4,2,1;t3:3,4,1,2;t4:2,4,1,3;t6:2,3,4,1;t8:1,2,4,3;t16:2,4,1,3]
+   free_ab      freed=[a,b] which=None t1_relpos=[32.0000,0.0000|24.0000,0.0000|16.0000,0.0000] set=[c#0,d#0,e#0] ladder=[t1:4,3,2;t2:2,3,4;t3:2,4,3;t4:3,4,2;t6:4,2,3;t8:2,3,4;t16:3,4,2]
+   free_ac      freed=[a,c] which=None t1_relpos=[8.0000,0.0000|32.0000,0.0000|24.0000,0.0000] set=[b#0,d#0,e#0] ladder=[t1:1,4,3;t2:1,3,4;t3:4,3,1;t4:4,1,3;t6:3,4,1;t8:1,3,4;t16:4,1,3]
+   free_b       freed=[b] which=None t1_relpos=[32.0000,0.0000|24.0000,0.0000|16.0000,0.0000|0.0000,0.0000] set=[a#0,c#0,d#0,e#0] ladder=[t1:4,3,2,0;t2:0,3,2,4;t3:0,3,4,2;t4:0,2,4,3;t6:3,2,0,4;t8:2,4,0,3;t16:0,2,4,3]
+   free_ba      freed=[b,a] which=None t1_relpos=[24.0000,0.0000|32.0000,0.0000|16.0000,0.0000] set=[c#0,d#0,e#0] ladder=[t1:3,4,2;t2:2,4,3;t3:2,3,4;t4:4,3,2;t6:3,2,4;t8:2,4,3;t16:4,3,2]
+   free_c       freed=[c] which=None t1_relpos=[32.0000,0.0000|24.0000,0.0000|8.0000,0.0000|0.0000,0.0000] set=[a#0,b#0,d#0,e#0] ladder=[t1:4,3,1,0;t2:4,3,0,1;t3:1,3,0,4;t4:1,4,0,3;t6:0,4,3,1;t8:0,1,4,3;t16:1,4,0,3]
+   free_ca      freed=[c,a] which=None t1_relpos=[24.0000,0.0000|8.0000,0.0000|32.0000,0.0000] set=[b#0,d#0,e#0] ladder=[t1:3,1,4;t2:4,1,3;t3:4,3,1;t4:1,3,4;t6:3,4,1;t8:4,1,3;t16:1,3,4]
+   free_d       freed=[d] which=None t1_relpos=[16.0000,0.0000|32.0000,0.0000|8.0000,0.0000|0.0000,0.0000] set=[a#0,b#0,c#0,e#0] ladder=[t1:2,4,1,0;t2:2,4,0,1;t3:1,4,0,2;t4:1,2,0,4;t6:0,2,4,1;t8:0,1,2,4;t16:1,2,0,4]
+   free_e       freed=[e] which=None t1_relpos=[8.0000,0.0000|24.0000,0.0000|16.0000,0.0000|0.0000,0.0000] set=[a#0,b#0,c#0,d#0] ladder=[t1:1,3,2,0;t2:0,3,2,1;t3:0,3,1,2;t4:0,2,1,3;t6:3,2,0,1;t8:2,1,0,3;t16:0,2,1,3]
+   readd_a      freed=None which=a t1_relpos=[32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000|0.0000,0.0000] set=[b#0,c#0,d#0,e#0,f#0] ladder=[t1:4,1,2,3,f;t2:f,1,2,3,4;t3:f,4,2,3,1;t4:f,4,1,3,2;t6:3,4,1,2,f;t8:3,f,4,2,1;t16:1,2,3,4,f]
+   readd_c      freed=None which=c t1_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|24.0000,0.0000|16.0000,0.0000] set=[a#0,b#0,d#0,e#0,f#0] ladder=[t1:4,0,1,3,f;t2:4,f,1,3,0;t3:4,f,0,3,1;t4:1,f,0,3,4;t6:1,3,0,4,f;t8:0,3,f,4,1;t16:3,1,4,0,f]
+free/layers period cross-check (ladder[t] == ladder[t+k(k-1)]):
+   free_a       k_colliders=4 k(k-1)=12 pairs=[(4, 16)] consistent=True
+   free_ab      k_colliders=3 k(k-1)=6 pairs=[(2, 8)] consistent=True
+   free_ac      k_colliders=3 k(k-1)=6 pairs=[(2, 8)] consistent=True
+   free_b       k_colliders=4 k(k-1)=12 pairs=[(4, 16)] consistent=True
+   free_ba      k_colliders=3 k(k-1)=6 pairs=[(2, 8)] consistent=True
+   free_c       k_colliders=4 k(k-1)=12 pairs=[(4, 16)] consistent=True
+   free_ca      k_colliders=3 k(k-1)=6 pairs=[(2, 8)] consistent=True
+   free_d       k_colliders=4 k(k-1)=12 pairs=[(4, 16)] consistent=True
+   free_e       k_colliders=4 k(k-1)=12 pairs=[(4, 16)] consistent=True
+   layers_k0    k_colliders=5 k(k-1)=20 pairs=[] consistent=None
+   layers_k1    k_colliders=6 k(k-1)=30 pairs=[(2, 32)] consistent=True
+cap40: set32_t2 uniq=3 distinct-values=['5']
+   cap40_p0 n32=32 n64=40 n0=0 set32_t2=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0]
+   cap40_p1 n32=32 n64=40 n0=0 set32_t2=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t39#0,t8#0,t9#0]
+   cap40_p2 n32=32 n64=40 n0=0 set32_t2=[t0#0,t1#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0]
+warm: ladder==canon true=['warm_k0', 'warm_k1', 'warm_k13', 'warm_k2', 'warm_k3', 'warm_k32', 'warm_k5', 'warm_k8'] false=['warm_keep64', 'warm_keep8']
+   warm_k0          k=0 keep=0 eq_canon=True t2=[e#0,a#0,c#0,d#0,b#0]
+   warm_k1          k=1 keep=0 eq_canon=True t2=[e#0,a#0,c#0,d#0,b#0]
+   warm_k13         k=13 keep=0 eq_canon=True t2=[e#0,a#0,c#0,d#0,b#0]
+   warm_k2          k=2 keep=0 eq_canon=True t2=[e#0,a#0,c#0,d#0,b#0]
+   warm_k3          k=3 keep=0 eq_canon=True t2=[e#0,a#0,c#0,d#0,b#0]
+   warm_k32         k=32 keep=0 eq_canon=True t2=[e#0,a#0,c#0,d#0,b#0]
+   warm_k5          k=5 keep=0 eq_canon=True t2=[e#0,a#0,c#0,d#0,b#0]
+   warm_k8          k=8 keep=0 eq_canon=True t2=[e#0,a#0,c#0,d#0,b#0]
+   warm_keep64      k=64 keep=1 eq_canon=False t2=[a#0,e#0,b#0,c#0,d#0]
+   warm_keep8       k=8 keep=1 eq_canon=False t2=[a#0,e#0,b#0,c#0,d#0]
+layers layers_k0: k=0 pt0_ladder_eq_canon=True pt0_t2_eq_sh=true pt_eq_sh=true sh_len=5 sh_vec=[c#0,d#0,e#0,a#0,b#0]
+layers layers_k1: k=1 pt0_ladder_eq_canon=False pt0_t2_eq_sh=false pt_eq_sh=false sh_len=6 sh_vec=[e#0,a#0,c#0,d#0,clb#0,b#0]
+twopiles [quiet] a_t2=[e#0,a#0,c#0,d#0,b#0] a_t4_with_b=[e#0,a#0,c#0,b#0,d#0] b_t2=[e2#0,a2#0,b2#0,c2#0,d2#0] b_t2_relpos=[32.0000,1000.0000|0.0000,1000.0000|8.0000,1000.0000|16.0000,1000.0000|24.0000,1000.0000] b_t4=[e2#0,b2#0,c2#0,d2#0,a2#0]
+twopiles [load] a_t2=[e#0,a#0,c#0,d#0,b#0] a_t4_with_b=[e#0,a#0,c#0,b#0,d#0] b_t2=[e2#0,a2#0,b2#0,c2#0,d2#0] b_t2_relpos=[32.0000,1000.0000|0.0000,1000.0000|8.0000,1000.0000|16.0000,1000.0000|24.0000,1000.0000] b_t4=[e2#0,b2#0,c2#0,d2#0,a2#0]
+twopiles [thr] a_t2=[e#0,a#0,c#0,d#0,b#0] a_t4_with_b=[e#0,a#0,c#0,b#0,d#0] b_t2=[e2#0,a2#0,b2#0,c2#0,d2#0] b_t2_relpos=[32.0000,1000.0000|0.0000,1000.0000|8.0000,1000.0000|16.0000,1000.0000|24.0000,1000.0000] b_t4=[e2#0,b2#0,c2#0,d2#0,a2#0]
+procwait [quiet] pf_per_procawait=[3,4,4,4] distinct=2
+procwait [load] pf_per_procawait=[6,7,7,7] distinct=2
+procwait [ff1] pf_per_procawait=[59,119,179,238] distinct=2
+procwait [ff30] pf_per_procawait=[0,2,4,6] distinct=4
+procwait [ff120] pf_per_procawait=[0,0,1,1] distinct=2
+scoutrev [label] add_order=[e,d,c,b,a] t2_vec=[a#0,e#0,c#0,b#0,d#0] matches_scout_row=true relpos_equals_canon=true
+        ladder=[t0:4,3,2,1,0;t1:0,3,2,1,4;t2:0,4,2,1,3;t3:0,4,3,1,2;t4:0,4,3,2,1;t5:1,4,3,2,0;t8:1,0,4,3,2;t16:3,2,1,0,4;t32:2,1,0,4,3]
+scoutrev ladder mirrors perm0 (i->4-i): True over ticks [0, 1, 2, 3, 4, 5, 8, 16, 32]
+diag cross-batch (values are NOT in the PASS line): {"ids_canon_across_batches_uniq": 1, "ids_canon_sample": "[26424116681,26491225550,26541557201,26591888852,26642220503]", "ids_keep8_vs_canon_uniq": 2, "ids_perm0_across_batches_uniq": 1, "ids_warm_k0_vs_k1_vs_k32_uniq": 3, "ids_warm_k1_sample": "[26575111627,26625443283,26675774934,26726106585,26776438236]", "t10_bodypos_rigid_across_batches_uniq": 1}
+diag stability (instance ids / rigid body positions, NOT in the PASS line):
+   extra/canon        ids          uniq=1/1
+   ff1/canon          ids          uniq=1/1
+   ff1/perm0          ids          uniq=1/1
+   ff120/canon        ids          uniq=1/1
+   ff120/perm0        ids          uniq=1/1
+   ff120/perm1        ids          uniq=1/1
+   ff30/canon         ids          uniq=1/1
+   ff30/perm0         ids          uniq=1/1
+   ff30/perm1         ids          uniq=1/1
+   label/perm0        ids          uniq=1/1
+   label/perm1        ids          uniq=1/1
+   load/canon         ids          uniq=1/1
+   load/perm0         ids          uniq=1/1
+   load/perm1         ids          uniq=1/1
+   load/perm2         ids          uniq=1/1
+   load/perm4         ids          uniq=1/1
+   load/readd_a       fresh_id     uniq=1/1
+   load/rigid         t10_bodypos  uniq=1/1
+   load/warm_k1       ids          uniq=1/1
+   load/warm_k32      ids          uniq=1/1
+   load/warm_keep64   ids          uniq=1/1
+   load/warm_keep8    ids          uniq=1/1
+   quiet/canon        ids          uniq=1/1
+   quiet/perm0        ids          uniq=1/1
+   quiet/perm1        ids          uniq=1/1
+   quiet/perm2        ids          uniq=1/1
+   quiet/perm3        ids          uniq=1/1
+   quiet/perm4        ids          uniq=1/1
+   quiet/perm5        ids          uniq=1/1
+   quiet/perm6        ids          uniq=1/1
+   quiet/perm7        ids          uniq=1/1
+   quiet/readd_a      fresh_id     uniq=1/1
+   quiet/readd_c      fresh_id     uniq=1/1
+   quiet/rigid        t10_bodypos  uniq=1/1
+   quiet/warm_k0      ids          uniq=1/1
+   quiet/warm_k1      ids          uniq=1/1
+   quiet/warm_k13     ids          uniq=1/1
+   quiet/warm_k2      ids          uniq=1/1
+   quiet/warm_k3      ids          uniq=1/1
+   quiet/warm_k32     ids          uniq=1/1
+   quiet/warm_k5      ids          uniq=1/1
+   quiet/warm_k8      ids          uniq=1/1
+   quiet/warm_keep64  ids          uniq=1/1
+   quiet/warm_keep8   ids          uniq=1/1
+   thr/canon          ids          uniq=1/1
+   thr/perm0          ids          uniq=1/1
+   thr/perm1          ids          uniq=1/1
+rigid [quiet] distinct_ticks=1 t10_relpos=[15.9999,14.8732]
+rigid [load] distinct_ticks=1 t10_relpos=[15.9999,14.8732]
