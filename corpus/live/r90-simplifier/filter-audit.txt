@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+TERM impulse n=3 uniq=["apply_central_impulse", "apply_impulse"]
+TERM force n=8 uniq=["_integrate_forces", "apply_central_force", "apply_force", "force_update_transform"]
+TERM torque n=5 uniq=["apply_torque"]
+TERM state n=2 uniq=["_edit_set_state", "_edit_get_state"]
+TERM gravity n=3 uniq=["set_gravity_scale", "get_gravity_scale", "get_gravity"]
+TERM damp n=8 uniq=["set_linear_damp_mode", "get_linear_damp_mode", "set_angular_damp_mode", "get_angular_damp_mode", "set_linear_damp", "get_linear_damp", "set_angular_damp", "get_angular_damp"]
+TERM constant n=7 uniq=[]
+SHIPPED=[_edit_get_state|_edit_set_state|_integrate_forces|add_constant_central_force|add_constant_force|add_constant_torque|apply_central_force|apply_central_impulse|apply_force|apply_impulse|apply_torque|apply_torque_impulse|force_update_transform|get_angular_damp|get_angular_damp_mode|get_constant_force|get_constant_torque|get_gravity|get_gravity_scale|get_linear_damp|get_linear_damp_mode|set_angular_damp|set_angular_damp_mode|set_constant_force|set_constant_torque|set_gravity_scale|set_linear_damp|set_linear_damp_mode]
+NO_CONSTANT=[_edit_get_state|_edit_set_state|_integrate_forces|add_constant_central_force|add_constant_force|add_constant_torque|apply_central_force|apply_central_impulse|apply_force|apply_impulse|apply_torque|apply_torque_impulse|force_update_transform|get_angular_damp|get_angular_damp_mode|get_constant_force|get_constant_torque|get_gravity|get_gravity_scale|get_linear_damp|get_linear_damp_mode|set_angular_damp|set_angular_damp_mode|set_constant_force|set_constant_torque|set_gravity_scale|set_linear_damp|set_linear_damp_mode]
+IDENTICAL=true

@@ -1,0 +1,55 @@
+classifier_sha=749fa0607e7707e6 rows=12 allow=['r90_lattice_comrefuse', 'r90_lattice_impedge']
+==============================================================================
+MODE tps30  (receipts runs-tps30/)
+  r90_lattice_props        rep1 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_props        rep2 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_comread      rep1 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_comread      rep2 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_comrefuse    rep1 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_comrefuse    rep2 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_gravity      rep1 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_gravity      rep2 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_damp         rep1 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_damp         rep2 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_order        rep1 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_order        rep2 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_write        rep1 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_write        rep2 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_impulse      rep1 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_impulse      rep2 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_impedge      rep1 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_impedge      rep2 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_freezelock   rep1 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_freezelock   rep2 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_contacts     rep1 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_contacts     rep2 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_lag          rep1 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+  r90_lattice_lag          rep2 rc=0 verdict=FAIL first_diff=tps: pin=60 got=30
+
+==============================================================================
+MODE dummy  (receipts runs-dummy/)
+  r90_lattice_props        rep1 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_props        rep2 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_comread      rep1 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_comread      rep2 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_comrefuse    rep1 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_comrefuse    rep2 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_gravity      rep1 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_gravity      rep2 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_damp         rep1 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_damp         rep2 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_order        rep1 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_order        rep2 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_write        rep1 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_write        rep2 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_impulse      rep1 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_impulse      rep2 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_impedge      rep1 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_impedge      rep2 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_freezelock   rep1 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_freezelock   rep2 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_contacts     rep1 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_contacts     rep2 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_lag          rep1 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+  r90_lattice_lag          rep2 rc=0 verdict=FAIL first_diff=eng: pin=PhysicsServer2D got=PhysicsServer2DDummy
+

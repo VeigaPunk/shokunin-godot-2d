@@ -1,0 +1,57 @@
+== (a) r90 row -> probe/arm bijection ==
+  rows=12 probes=['rb_lattice.gd'] arms=12
+  duplicate arms=[]
+  dispatched arms=12 rowless=[] row_without_arm=[]
+  fallback arm present=True
+
+== (b) helper call-site census (definition counts as 0 calls) ==
+  rb_lattice.gd    _initialize      call_sites=0  <== NO CALL SITES
+  rb_lattice.gd    _it              call_sites=91
+  rb_lattice.gd    _pass            call_sites=13
+  rb_lattice.gd    _v2              call_sites=5
+  rb_lattice.gd    _b               call_sites=4
+  rb_lattice.gd    _pget            call_sites=25
+  rb_lattice.gd    _eng             call_sites=1
+  rb_lattice.gd    _guard           call_sites=12
+  rb_lattice.gd    _dh              call_sites=7
+  rb_lattice.gd    _pair            call_sites=4
+  rb_lattice.gd    _body            call_sites=16
+  rb_lattice.gd    _watch           call_sites=12
+  rb_lattice.gd    _circle          call_sites=16
+  rb_lattice.gd    _rect            call_sites=2
+  rb_lattice.gd    _floor           call_sites=2
+  rb_lattice.gd    _samples         call_sites=6
+  rb_lattice.gd    _free_all        call_sites=3
+  rb_lattice.gd    _run             call_sites=1
+  rb_lattice.gd    _arm_fallback    call_sites=1
+  rb_lattice.gd    _arm_props       call_sites=1
+  rb_lattice.gd    _arm_comread     call_sites=1
+  rb_lattice.gd    _arm_comrefuse   call_sites=1
+  rb_lattice.gd    _arm_gravity     call_sites=1
+  rb_lattice.gd    _arm_damp        call_sites=1
+  rb_lattice.gd    _arm_order       call_sites=1
+  rb_lattice.gd    _arm_write       call_sites=1
+  rb_lattice.gd    _arm_impulse     call_sites=1
+  rb_lattice.gd    _arm_impedge     call_sites=1
+  rb_lattice.gd    _arm_lag         call_sites=1
+  rb_lattice.gd    _arm_freezelock  call_sites=1
+  rb_lattice.gd    _arm_contacts    call_sites=1
+  rb_watch.gd      _integrate_forces call_sites=1
+
+== (c) CLI knob usage ==
+  --arm=     rows_using=12 
+  --frames=  rows_using=2 ['r90_lattice_freezelock', 'r90_lattice_lag']
+
+== (d) allowlist + gate inventory (r90 block) ==
+  r90_lattice_comrefuse: entries=1
+      ERROR: Condition "center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM" is true.
+  r90_lattice_impedge: entries=2
+      ERROR: Condition "p_inertia < 0" is true.
+      ERROR: Condition "p_mass <= 0" is true.
+  gate r87_expected_errors_all_matched: present=True
+  gate r88_expected_errors_all_matched: present=True
+  gate r89_expected_errors_all_matched: present=True
+  gate r90_expected_errors_all_matched: present=True
+
+== (e) r90 pin 'PASS ...' prefix shape (signature includes prefix) ==
+  signatures with prefix=12/12

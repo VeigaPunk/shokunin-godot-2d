@@ -1,0 +1,50 @@
+==============================================================================
+DICT-KEY SCAN
+
+FILE corpus/fixtures/rb_lattice.gd
+  an                     reads=3 writes=2
+  apf0                   reads=2 writes=1
+  apre                   reads=1 writes=1
+  bn                     reads=1 writes=1
+  bpost                  reads=1 writes=1
+  bpre                   reads=1 writes=1
+  c_central              reads=2 writes=0
+  count                  reads=1 writes=2
+  default                reads=2 writes=0
+  entered                reads=1 writes=2
+  g                      reads=2 writes=0
+  iI                     reads=4 writes=4
+  im                     reads=4 writes=2
+  n                      reads=10 writes=9
+  name                   reads=2 writes=0
+  neg_i                  reads=2 writes=0
+  pf                     reads=1 writes=0
+  pf0                    reads=14 writes=7
+  pos                    reads=1 writes=1
+  st                     reads=2 writes=0
+  step                   reads=2 writes=3
+  tld                    reads=3 writes=2
+  ty                     reads=2 writes=0
+  usage                  reads=1 writes=0
+  vel                    reads=1 writes=1
+  vy                     reads=2 writes=0
+  y                      reads=1 writes=1
+  dead_keys=[]
+
+FILE corpus/fixtures/rb_watch.gd
+  dead_keys=[]
+
+==============================================================================
+PIN/EMISSION CENSUS (r90 rows)
+  r90_lattice_props          emitted=40 pinned=40 unpinned=[] pinned_but_unemitted=[] value_mismatch=[]
+  r90_lattice_comread        emitted=14 pinned=14 unpinned=[] pinned_but_unemitted=[] value_mismatch=[]
+  r90_lattice_comrefuse      emitted= 8 pinned= 8 unpinned=[] pinned_but_unemitted=[] value_mismatch=[]
+  r90_lattice_gravity        emitted= 9 pinned= 9 unpinned=[] pinned_but_unemitted=[] value_mismatch=[]
+  r90_lattice_damp           emitted=10 pinned=10 unpinned=[] pinned_but_unemitted=[] value_mismatch=[]
+  r90_lattice_order          emitted=24 pinned=24 unpinned=[] pinned_but_unemitted=[] value_mismatch=[]
+  r90_lattice_write          emitted=10 pinned=10 unpinned=[] pinned_but_unemitted=[] value_mismatch=[]
+  r90_lattice_impulse        emitted= 8 pinned= 8 unpinned=[] pinned_but_unemitted=[] value_mismatch=[]
+  r90_lattice_impedge        emitted= 9 pinned= 9 unpinned=[] pinned_but_unemitted=[] value_mismatch=[]
+  r90_lattice_freezelock     emitted= 9 pinned= 9 unpinned=[] pinned_but_unemitted=[] value_mismatch=[]
+  r90_lattice_contacts       emitted=13 pinned=13 unpinned=[] pinned_but_unemitted=[] value_mismatch=[]
+  r90_lattice_lag            emitted=17 pinned=17 unpinned=[] pinned_but_unemitted=[] value_mismatch=[]

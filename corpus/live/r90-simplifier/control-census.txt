@@ -1,0 +1,20 @@
+run: corpus/live/r90-simplifier/runs-control/20261015T221225674936Z/verdicts.json
+rows: 247 verdict: FAIL
+r90 rows: 12 all PASS: True
+
+GATE KEYS (r9x/phys2d):
+  census_covers_all_allowlisted_rows = True
+  census_bare_classifier_consistent = False
+  census_allowlisted_reproduces_verdicts = True
+  phys2d_expected_errors_all_matched = True
+  r87_expected_errors_all_matched = True
+  r88_expected_errors_all_matched = True
+  r89_expected_errors_all_matched = True
+  r90_expected_errors_all_matched = True
+
+CENSUS dead_entry_count: 2
+census rows_with_expected_errors: 57
+
+R90 CENSUS ROWS:
+  {"case": "r90_lattice_comrefuse", "verdict": "PASS", "entries": [{"entry": "ERROR: Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true.", "shape": "exact", "matched_lines": 1, "first_match": "ERROR: Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true.", "dead_in_run": false}], "any_entry_matched": true, "bare_classification_rejects": true, "allowlisted_classification_passes": true}
+  {"case": "r90_lattice_impedge", "verdict": "PASS", "entries": [{"entry": "ERROR: Condition \"p_inertia < 0\" is true.", "shape": "exact", "matched_lines": 1, "first_match": "ERROR: Condition \"p_inertia < 0\" is true.", "dead_in_run": false}, {"entry": "ERROR: Condition \"p_mass <= 0\" is true.", "shape": "exact", "matched_lines": 2, "first_match": "ERROR: Condition \"p_mass <= 0\" is true.", "dead_in_run": false}], "any_entry_matched": true, "bare_classification_rejects": true, "allowlisted_classification_passes": true}

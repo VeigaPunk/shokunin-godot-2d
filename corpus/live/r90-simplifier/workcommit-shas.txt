@@ -1,0 +1,6 @@
+76c0b1f56b3d03acf011f5a3d71095c741903d47938ae2155e5d8a31a198bfe6  corpus/fixtures/run_battery.py
+10da2291295c55dd7074cb226f6c7caf74530d3925885c9d6f7064285f5a951c  corpus/fixtures/rb_lattice.gd
+e349faa0715421d727165717a8fe9333f4536faee8e6c28da84e694cb94272de  corpus/fixtures/rb_watch.gd
+8de8b3af9cc737edc3e5969b76bf049720266537ec366e03aa42702aa15406e9  corpus/fixtures/project.godot
+ee205757c7302992013bfd13085c449ef2504355
+?? corpus/fixtures/__pycache__/love_battery.cpython-314.pyc

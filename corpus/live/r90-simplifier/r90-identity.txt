@@ -1,0 +1,3 @@
+mine=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r90-simplifier/runs-control/20261015T221225674936Z/verdicts.json
+  green9: r90_rows=12 tuple_mismatches=[] output_diffs=[] identical=True
+  green12b: r90_rows=12 tuple_mismatches=[] output_diffs=[] identical=True

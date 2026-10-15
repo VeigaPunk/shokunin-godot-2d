@@ -1,0 +1,106 @@
+====================================================================================================
+MODE tps30
+  r90_lattice_props        differing_fields=2 pairing_fields_differing=[] first_char_at=0
+        value tps: pin=60  got=30
+        value ps_tps: pin=60  got=30
+  r90_lattice_comread      differing_fields=1 pairing_fields_differing=[] first_char_at=0
+        value tps: pin=60  got=30
+  r90_lattice_comrefuse    differing_fields=1 pairing_fields_differing=[] first_char_at=0
+        value tps: pin=60  got=30
+  r90_lattice_gravity      differing_fields=3 pairing_fields_differing=[] first_char_at=0
+        value tps: pin=60  got=30
+        value f30: pin=g0[y=0.0000,vy=0.0000]|g05[y=62.2838,vy=239.1703]|g1[y=124.5675,vy=478.3405]|g2[y=249.1351,vy=956.6811]|gm1[y=-124.5675,vy=-478.3405]|zv[y=-14.6187,vy=-28.5357]|zv0[y=-15.0000,vy=-30.0000]|cf[y=124.5675,vy=478.3405]  got=g0[y=0.0000,vy=0.0000]|g05[y=245.1961,vy=467.0373]|g1[y=490.3922,vy=934.0746]|g2[y=980.7843,vy=1868.1492]|gm1[y=-490.3922,vy=-934.0746]|zv[y=-28.4988,vy=-27.1406]|zv0[y=-30.0000,vy=-30.0000]|cf[y=490.3922,vy=934.0746]
+        value f60: pin=g0[y=0.0000,vy=0.0000]|g05[y=241.1125,vy=466.6662]|g1[y=482.2250,vy=933.3325]|g2[y=964.4500,vy=1866.6649]|gm1[y=-482.2250,vy=-933.3325]|zv[y=-28.5238,vy=-27.1429]|zv0[y=-30.0000,vy=-30.0000]|cf[y=482.2250,vy=933.3325]  got=g0[y=0.0000,vy=0.0000]|g05[y=934.0589,vy=889.5590]|g1[y=1868.1178,vy=1779.1179]|g2[y=3736.2356,vy=3558.2358]|gm1[y=-1868.1178,vy=-1779.1179]|zv[y=-54.2813,vy=-24.5537]|zv0[y=-60.0000,vy=-30.0000]|cf[y=1868.1178,vy=1779.1179]
+  r90_lattice_damp         differing_fields=3 pairing_fields_differing=[] first_char_at=0
+        value tps: pin=60  got=30
+        value f30: pin=default[y=124.5675,vy=478.3405]|rep0[y=126.5834,vy=490.0001]|rep05[y=116.9554,vy=435.1487]|comb05[y=115.1592,vy=425.1562]  got=default[y=490.3922,vy=934.0746]|rep0[y=506.3334,vy=980.0002]|rep05[y=433.4765,vy=776.1987]|comb05[y=420.7866,vy=742.3759]
+        value f60: pin=default[y=482.2250,vy=933.3325]|rep0[y=498.1666,vy=979.9996]|rep05[y=425.5192,vy=773.6876]|comb05[y=412.9205,vy=739.6441]  got=default[y=1868.1178,vy=1779.1179]|rep0[y=1992.6665,vy=1959.9991]|rep05[y=1471.4867,vy=1245.0073]|comb05[y=1392.6953,vy=1147.3302]
+  r90_lattice_order        differing_fields=23 pairing_fields_differing=[] first_char_at=0
+        value tps: pin=60  got=30
+        value cb0: pin=st=0.016667  got=st=0.033333
+        value ty: pin=0.2722  got=1.0889
+        value vy: pin=16.3333  got=32.6667
+        value cb1: pin=st=0.016667  got=st=0.033333
+        value ty: pin=0.8162  got=3.2630
+        ... 17 more value diffs
+  r90_lattice_write        differing_fields=4 pairing_fields_differing=[] first_char_at=0
+        value tps: pin=60  got=30
+        value step: pin=0.016667  got=0.033333
+        value f30: pin=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=118.4167,vy=490.0001]  got=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=473.6667,vy=980.0002]
+        value f60: pin=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=481.8333,vy=979.9996]  got=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=1927.3333,vy=1959.9991]
+  r90_lattice_impulse      differing_fields=1 pairing_fields_differing=[] first_char_at=0
+        value tps: pin=60  got=30
+  r90_lattice_impedge      differing_fields=1 pairing_fields_differing=[] first_char_at=0
+        value tps: pin=60  got=30
+  r90_lattice_freezelock   differing_fields=2 pairing_fields_differing=[] first_char_at=0
+        value tps: pin=60  got=30
+        value f30: pin=f_normal[y=-7.6969,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-128.0000,vy=-60.0000,w=0.0000,fz=false]  got=f_normal[y=-7.7000,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-156.0000,vy=-60.0000,w=0.0000,fz=false]
+  r90_lattice_contacts     differing_fields=3 pairing_fields_differing=['ncb'] first_char_at=0
+        value tps: pin=60  got=30
+        value cvel: pin=0.0000,16.3333  got=0.0000,32.6667
+  r90_lattice_lag          differing_fields=11 pairing_fields_differing=[] first_char_at=0
+        value tps: pin=60  got=30
+        value a: pin=y=126.5834,vy=490.0001  got=y=506.3334,vy=980.0002
+        value b: pin=y=118.4167,vy=490.0001  got=y=473.6667,vy=980.0002
+        value c: pin=y=124.5675,vy=478.3405  got=y=490.3922,vy=934.0746
+        value d: pin=dy=8.1667,dvy=0.0000  got=dy=32.6667,dvy=0.0000
+        value step: pin=0.016667  got=0.033333
+        ... 5 more value diffs
+
+====================================================================================================
+MODE dummy
+  r90_lattice_props        differing_fields=1 pairing_fields_differing=[] first_char_at=0
+        value eng: pin=PhysicsServer2D  got=PhysicsServer2DDummy
+  r90_lattice_comread      differing_fields=1 pairing_fields_differing=[] first_char_at=0
+        value eng: pin=PhysicsServer2D  got=PhysicsServer2DDummy
+  r90_lattice_comrefuse    differing_fields=1 pairing_fields_differing=[] first_char_at=0
+        value eng: pin=PhysicsServer2D  got=PhysicsServer2DDummy
+  r90_lattice_gravity      differing_fields=5 pairing_fields_differing=['ncb', 'cb0_rel'] first_char_at=0
+        value eng: pin=PhysicsServer2D  got=PhysicsServer2DDummy
+        value f30: pin=g0[y=0.0000,vy=0.0000]|g05[y=62.2838,vy=239.1703]|g1[y=124.5675,vy=478.3405]|g2[y=249.1351,vy=956.6811]|gm1[y=-124.5675,vy=-478.3405]|zv[y=-14.6187,vy=-28.5357]|zv0[y=-15.0000,vy=-30.0000]|cf[y=124.5675,vy=478.3405]  got=g0[y=0.0000,vy=0.0000]|g05[y=0.0000,vy=0.0000]|g1[y=0.0000,vy=0.0000]|g2[y=0.0000,vy=0.0000]|gm1[y=0.0000,vy=0.0000]|zv[y=0.0000,vy=-30.0000]|zv0[y=0.0000,vy=-30.0000]|cf[y=0.0000,vy=0.0000]
+        value f60: pin=g0[y=0.0000,vy=0.0000]|g05[y=241.1125,vy=466.6662]|g1[y=482.2250,vy=933.3325]|g2[y=964.4500,vy=1866.6649]|gm1[y=-482.2250,vy=-933.3325]|zv[y=-28.5238,vy=-27.1429]|zv0[y=-30.0000,vy=-30.0000]|cf[y=482.2250,vy=933.3325]  got=g0[y=0.0000,vy=0.0000]|g05[y=0.0000,vy=0.0000]|g1[y=0.0000,vy=0.0000]|g2[y=0.0000,vy=0.0000]|gm1[y=0.0000,vy=0.0000]|zv[y=0.0000,vy=-30.0000]|zv0[y=0.0000,vy=-30.0000]|cf[y=0.0000,vy=0.0000]
+  r90_lattice_damp         differing_fields=6 pairing_fields_differing=['ncb', 'cb0_rel'] first_char_at=0
+        value eng: pin=PhysicsServer2D  got=PhysicsServer2DDummy
+        value f30: pin=default[y=124.5675,vy=478.3405]|rep0[y=126.5834,vy=490.0001]|rep05[y=116.9554,vy=435.1487]|comb05[y=115.1592,vy=425.1562]  got=default[y=0.0000,vy=0.0000]|rep0[y=0.0000,vy=0.0000]|rep05[y=0.0000,vy=0.0000]|comb05[y=0.0000,vy=0.0000]
+        value f60: pin=default[y=482.2250,vy=933.3325]|rep0[y=498.1666,vy=979.9996]|rep05[y=425.5192,vy=773.6876]|comb05[y=412.9205,vy=739.6441]  got=default[y=0.0000,vy=0.0000]|rep0[y=0.0000,vy=0.0000]|rep05[y=0.0000,vy=0.0000]|comb05[y=0.0000,vy=0.0000]
+        value tld: pin=default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000  got=default=-1.0000|rep0=-1.0000|rep05=-1.0000|comb05=-1.0000
+  r90_lattice_order        differing_fields=11 pairing_fields_differing=['ncb'] first_char_at=0
+        value eng: pin=PhysicsServer2D  got=PhysicsServer2DDummy
+        value cb0: pin=st=0.016667  got=y=0.0000,vy=0.0000
+        value ty: pin=0.2722  got=y=0.0000,vy=0.0000
+        value vy: pin=16.3333  got=y=0.0000,vy=0.0000
+        value g: pin=980.0000  got=y=0.0000,vy=0.0000
+        value tld: pin=0.1000  got=-1
+        ... 4 more value diffs
+  r90_lattice_write        differing_fields=6 pairing_fields_differing=['ncb', 'cb0_rel'] first_char_at=0
+        value eng: pin=PhysicsServer2D  got=PhysicsServer2DDummy
+        value step: pin=0.016667  got=-1.000000
+        value f30: pin=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=118.4167,vy=490.0001]  got=wzero[y=0.0000,vy=0.0000]|whold[y=0.0000,vy=0.0000]|wman[y=0.0000,vy=0.0000]
+        value f60: pin=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=481.8333,vy=979.9996]  got=wzero[y=0.0000,vy=0.0000]|whold[y=0.0000,vy=0.0000]|wman[y=0.0000,vy=0.0000]
+  r90_lattice_impulse      differing_fields=4 pairing_fields_differing=['ncb', 'cb0_rel'] first_char_at=0
+        value eng: pin=PhysicsServer2D  got=PhysicsServer2DDummy
+        value post: pin=c_central[v=0.0000,-60.0000,w=0.0000,iI=0.031250,im=1.0000]|c_off[v=0.0000,-60.0000,w=-15.0000,iI=0.031250,im=1.0000]|c_tq[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|r_tq[v=0.0000,0.0000,w=11.5200,iI=0.024000,im=1.0000]|r_off[v=0.0000,-60.0000,w=-11.5200,iI=0.024000,im=1.0000]  got=c_central[v=0.0000,0.0000,w=0.0000,iI=-1.000000,im=-1.0000]|c_off[v=0.0000,0.0000,w=0.0000,iI=-1.000000,im=-1.0000]|c_tq[v=0.0000,0.0000,w=0.0000,iI=-1.000000,im=-1.0000]|r_tq[v=0.0000,0.0000,w=0.0000,iI=-1.000000,im=-1.0000]|r_off[v=0.0000,0.0000,w=0.0000,iI=-1.000000,im=-1.0000]
+  r90_lattice_impedge      differing_fields=4 pairing_fields_differing=['ncb', 'cb0_rel'] first_char_at=0
+        value eng: pin=PhysicsServer2D  got=PhysicsServer2DDummy
+        value post: pin=neg_i[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|zero_i[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|mass0[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|massneg[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]  got=neg_i[v=0.0000,0.0000,w=0.0000,iI=-1.000000,im=-1.0000]|zero_i[v=0.0000,0.0000,w=0.0000,iI=-1.000000,im=-1.0000]|mass0[v=0.0000,0.0000,w=0.0000,iI=-1.000000,im=-1.0000]|massneg[v=0.0000,0.0000,w=0.0000,iI=-1.000000,im=-1.0000]
+  r90_lattice_freezelock   differing_fields=5 pairing_fields_differing=['ncb', 'cb0_rel'] first_char_at=0
+        value eng: pin=PhysicsServer2D  got=PhysicsServer2DDummy
+        value f30: pin=f_normal[y=-7.6969,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-128.0000,vy=-60.0000,w=0.0000,fz=false]  got=f_normal[y=-100.0000,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-100.0000,vy=0.0000,w=0.0000,fz=false]
+        value sleep: pin=s_off[sl=false,y=-7.7000,vy=0.0000]  got=s_off[sl=false,y=-40.0000,vy=0.0000]
+  r90_lattice_contacts     differing_fields=9 pairing_fields_differing=['ncb', 'cb0_rel'] first_char_at=0
+        value eng: pin=PhysicsServer2D  got=PhysicsServer2DDummy
+        value rest: pin=y=-7.7000,vy=0.0000  got=y=-40.0000,vy=0.0000
+        value cb: pin=count=1  got=count=-1
+        value y: pin=-7.7000  got=0.0000
+        value pos: pin=0.0000,0.3000  got=0.0000,0.0000
+        value cvel: pin=0.0000,16.3333  got=0.0000,0.0000
+        ... 1 more value diffs
+  r90_lattice_lag          differing_fields=13 pairing_fields_differing=['cb0_rel'] first_char_at=0
+        value eng: pin=PhysicsServer2D  got=PhysicsServer2DDummy
+        value a: pin=y=126.5834,vy=490.0001  got=y=0.0000,vy=0.0000
+        value b: pin=y=118.4167,vy=490.0001  got=y=0.0000,vy=0.0000
+        value c: pin=y=124.5675,vy=478.3405  got=y=0.0000,vy=0.0000
+        value d: pin=dy=8.1667,dvy=0.0000  got=dy=0.0000,dvy=0.0000
+        value step: pin=0.016667  got=-1.000000
+        ... 6 more value diffs
+

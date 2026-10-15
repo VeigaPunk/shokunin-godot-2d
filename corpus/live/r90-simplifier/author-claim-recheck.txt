@@ -1,0 +1,14 @@
+rows=12 classifier_sha=749fa0607e7707e6
+r90_lattice_props            out_uniq=1 err_uniq=1 rc=[0] sig_hit=True cls=6/6 bare_rejects=0/6 -> OK
+r90_lattice_comread          out_uniq=1 err_uniq=1 rc=[0] sig_hit=True cls=6/6 bare_rejects=0/6 -> OK
+r90_lattice_comrefuse        out_uniq=1 err_uniq=1 rc=[0] sig_hit=True cls=6/6 bare_rejects=6/6 -> OK
+r90_lattice_gravity          out_uniq=1 err_uniq=1 rc=[0] sig_hit=True cls=6/6 bare_rejects=0/6 -> OK
+r90_lattice_damp             out_uniq=1 err_uniq=1 rc=[0] sig_hit=True cls=6/6 bare_rejects=0/6 -> OK
+r90_lattice_order            out_uniq=1 err_uniq=1 rc=[0] sig_hit=True cls=6/6 bare_rejects=0/6 -> OK
+r90_lattice_write            out_uniq=1 err_uniq=1 rc=[0] sig_hit=True cls=6/6 bare_rejects=0/6 -> OK
+r90_lattice_impulse          out_uniq=1 err_uniq=1 rc=[0] sig_hit=True cls=6/6 bare_rejects=0/6 -> OK
+r90_lattice_impedge          out_uniq=1 err_uniq=1 rc=[0] sig_hit=True cls=6/6 bare_rejects=6/6 -> OK
+r90_lattice_freezelock       out_uniq=1 err_uniq=1 rc=[0] sig_hit=True cls=6/6 bare_rejects=0/6 -> OK
+r90_lattice_contacts         out_uniq=1 err_uniq=1 rc=[0] sig_hit=True cls=6/6 bare_rejects=0/6 -> OK
+r90_lattice_lag              out_uniq=1 err_uniq=1 rc=[0] sig_hit=True cls=6/6 bare_rejects=0/6 -> OK
+rows=12 rejected=[]

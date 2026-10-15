@@ -1,0 +1,6 @@
+20261015T221225674936Z verdict=FAIL rows=247 r90_rows=12 r90_all_PASS=True
+FAILS: ['overlap', 'transition', 'negative_transition', 'probe_error_clause_surface']
+  overlap: exit=1 |ERROR: overlap probe: signal occurred before physics overlap observation
+  transition: exit=1 |ERROR: scene transition probe: initial current_scene identity/marker mismatch
+  negative_transition: exit=1 |ERROR: negative transition probe exceeded 120 frames
+  probe_error_clause_surface: exit=None 

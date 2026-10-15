@@ -1,0 +1,53 @@
+==============================================================================
+FILE corpus/fixtures/rb_lattice.gd
+  _frames                  decl@[29] reads=17 writes=1
+  _items                   decl@[30] reads=2 writes=1
+  _watch_script            decl@[31] reads=1 writes=0
+  a                        decl@[253, 576] reads=28 writes=0
+  acc                      decl@[290, 321, 419, 469, 526, 585, 635, 688] reads=34 writes=31
+  arm                      decl@[28] reads=7 writes=4
+  b                        decl@[104, 137, 199, 214, 280, 318, 364, 421, 461, 491, 518, 580, 628, 665, 681] reads=82 writes=1
+  b0                       decl@[540] reads=3 writes=0
+  b2                       decl@[554] reads=3 writes=0
+  bodies                   decl@[278, 315, 418, 458, 515, 626] reads=68 writes=6
+  c                        decl@[259, 583] reads=16 writes=0
+  cbpfs                    decl@[402] reads=4 writes=1
+  cs                       decl@[106, 127] reads=4 writes=0
+  d                        decl@[84, 224] reads=71 writes=0
+  dt                       decl@[601] reads=9 writes=0
+  e                        decl@[241] reads=5 writes=0
+  f1                       decl@[374] reads=4 writes=1
+  f2                       decl@[375] reads=3 writes=1
+  f3                       decl@[376] reads=2 writes=1
+  fb                       decl@[126] reads=4 writes=0
+  fin                      decl@[377] reads=1 writes=1
+  full                     decl@[296, 335, 438] reads=3 writes=3
+  h                        decl@[82] reads=5 writes=1
+  half                     decl@[295, 334, 437] reads=3 writes=3
+  hits                     decl@[685] reads=1 writes=1
+  inv                      decl@[459, 516] reads=10 writes=2
+  ks                       decl@[86] reads=2 writes=1
+  labels                   decl@[276, 314, 417, 457, 514, 625] reads=33 writes=0
+  ms                       decl@[181] reads=2 writes=2
+  n                        decl@[173, 602] reads=40 writes=0
+  n2                       decl@[183] reads=8 writes=0
+  ncb                      decl@[349, 495, 558] reads=15 writes=5
+  o                        decl@[70, 345] reads=6 writes=1
+  oracle                   decl@[316] reads=9 writes=1
+  parts                    decl@[88, 135, 489, 552, 655] reads=10 writes=5
+  pf0                      decl@[275, 313, 363, 416, 456, 513, 575, 623, 679] reads=52 writes=0
+  props                    decl@[170] reads=5 writes=1
+  s                        decl@[116, 121] reads=80 writes=6
+  scales                   decl@[277] reads=1 writes=0
+  set_parts                decl@[538] reads=2 writes=1
+  t                        decl@[390, 428] reads=13 writes=0
+  t2                       decl@[394] reads=8 writes=0
+  trace                    decl@[366] reads=8 writes=1
+  tvals                    decl@[297, 336, 373, 439, 477, 543, 597, 656, 698] reads=32 writes=11
+  usage                    decl@[171] reads=2 writes=1
+  v                        decl@[56] reads=13 writes=2
+
+==============================================================================
+FILE corpus/fixtures/rb_watch.gd
+  sink                     decl@[5] reads=4 writes=0
+

@@ -1,0 +1,15 @@
+control run: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r90-simplifier/runs-control/20261015T221225674936Z/verdicts.json
+rows=247 verdict=FAIL
+  r90_lattice_props        verdict=PASS pass_line==pin=True emitted_toks=40 pinned_toks=40 unpinned=[] OK=True
+  r90_lattice_comread      verdict=PASS pass_line==pin=True emitted_toks=14 pinned_toks=14 unpinned=[] OK=True
+  r90_lattice_comrefuse    verdict=PASS pass_line==pin=True emitted_toks=12 pinned_toks=12 unpinned=[] OK=True
+  r90_lattice_gravity      verdict=PASS pass_line==pin=True emitted_toks=9 pinned_toks=9 unpinned=[] OK=True
+  r90_lattice_damp         verdict=PASS pass_line==pin=True emitted_toks=10 pinned_toks=10 unpinned=[] OK=True
+  r90_lattice_order        verdict=PASS pass_line==pin=True emitted_toks=54 pinned_toks=54 unpinned=[] OK=True
+  r90_lattice_write        verdict=PASS pass_line==pin=True emitted_toks=10 pinned_toks=10 unpinned=[] OK=True
+  r90_lattice_impulse      verdict=PASS pass_line==pin=True emitted_toks=8 pinned_toks=8 unpinned=[] OK=True
+  r90_lattice_impedge      verdict=PASS pass_line==pin=True emitted_toks=9 pinned_toks=9 unpinned=[] OK=True
+  r90_lattice_freezelock   verdict=PASS pass_line==pin=True emitted_toks=9 pinned_toks=9 unpinned=[] OK=True
+  r90_lattice_contacts     verdict=PASS pass_line==pin=True emitted_toks=13 pinned_toks=13 unpinned=[] OK=True
+  r90_lattice_lag          verdict=PASS pass_line==pin=True emitted_toks=17 pinned_toks=17 unpinned=[] OK=True
+ALL_ROWS_INTEGRITY_OK=True
