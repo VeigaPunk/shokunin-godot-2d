@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=sprite_meta
+PASS r88_surfaces sprite_meta readback=[re=true rr=[P: (4.0, 4.0), S: (8.0, 8.0)] hf=4 vf=2 f=5 fc=(1, 1) fh=true fv=true off=(3.0, -2.0) cen=false] xf=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)] signals=["fc"] sneg_xf=[X: (-1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)] get_rect=[P: (3.0, -2.0), S: (2.0, 4.0)] s2_rect=[P: (-16.0, -8.0), S: (32.0, 16.0)]

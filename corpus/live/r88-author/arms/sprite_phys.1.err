@@ -1,0 +1,5 @@
+ERROR: Index p_frame = 3 is out of bounds (vframes * hframes = 2).
+   at: set_frame (scene/2d/sprite_2d.cpp:299)
+   GDScript backtrace (most recent call first):
+       [0] _arm_sprite_phys (res://r88_surfaces.gd:327)
+       [1] _run (res://r88_surfaces.gd:71)

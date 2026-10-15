@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=mp_offline
+R88S mp_offline status=2 uid=1 mode=2 chan=0
+PASS r88_surfaces mp_offline status=2 uid=1 mode=2 chan=0 tree_uid=1 is_server=true tree_status=2
