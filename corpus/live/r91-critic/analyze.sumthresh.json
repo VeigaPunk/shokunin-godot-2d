@@ -1,0 +1,121 @@
+{
+  "tag": "sumthresh",
+  "classifier_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+  "rows": {
+    "nav_lattice_census": {
+      "arm": "census",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_path": {
+      "arm": "path",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_query": {
+      "arm": "query",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_sync": {
+      "arm": "sync",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_region": {
+      "arm": "region",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_agent": {
+      "arm": "agent",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_avoid": {
+      "arm": "avoid",
+      "expected_exit": 0,
+      "reps": [
+        {
+          "rep": "1",
+          "rc": 0,
+          "code": 0,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        },
+        {
+          "rep": "2",
+          "rc": 0,
+          "code": 0,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        }
+      ],
+      "verdicts": [
+        true,
+        true
+      ],
+      "out_uniq": 2,
+      "err_uniq": 1,
+      "prefix_ok": true,
+      "tail_in_pin": [],
+      "line_uniq": 2,
+      "rep_lines": [
+        "PASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false seq_a=[10.766,0.000,10.826,0.000,10.886,0.000,10.946,0.000,11.007,0.000] seq_b=[-9.115,0.000,-9.054,0.000,-8.994,0.000,-8.933,0.000,-8.871,0.000] vel_a=(11.0067,0.0000) vel_b=(-8.8712,0.0000) sum_max=19.8806 settle=5",
+        "PASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false seq_a=[14.272,0.000,14.351,0.000,14.430,0.000,14.510,0.000,14.591,0.000] seq_b=[-5.570,0.000,-5.490,0.000,-5.410,0.000,-5.329,0.000,-5.247,0.000] vel_a=(14.5909,0.0000) vel_b=(-5.2473,0.0000) sum_max=19.8417 settle=5"
+      ],
+      "tail_tokens": [
+        "seq_a",
+        "seq_b",
+        "settle",
+        "sum_max",
+        "vel_a",
+        "vel_b"
+      ],
+      "rep_diff_indices": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "diff_confined_to_tail": true,
+      "all_pass": true
+    },
+    "nav_lattice_bake": {
+      "arm": "bake",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_link": {
+      "arm": "link",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_teardown_crash": {
+      "arm": "teardown_crash",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_teardown_clean": {
+      "arm": "teardown_clean",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    }
+  },
+  "findings": []
+}

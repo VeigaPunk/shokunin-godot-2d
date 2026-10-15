@@ -1,0 +1,36 @@
+{
+  "classifier_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+  "captured_rc": 134,
+  "code": -6,
+  "fragment": [
+    "double free or corruption"
+  ],
+  "signature": "NAV_LATTICE_TEARDOWN_CRASH armed=live_cb has_cb=true",
+  "results": {
+    "committed_capture": {
+      "verdict": "PASS",
+      "stdout_has_sig": true,
+      "stderr_has_frag": true
+    },
+    "no_required_stderr_clause": {
+      "verdict": "PASS",
+      "stdout_has_sig": true,
+      "stderr_has_frag": true
+    },
+    "fragment_moved_to_stdout": {
+      "verdict": "FAIL",
+      "stdout_has_sig": true,
+      "stderr_has_frag": false
+    },
+    "marker_moved_to_stderr": {
+      "verdict": "FAIL",
+      "stdout_has_sig": false,
+      "stderr_has_frag": true
+    },
+    "wrong_exit_only": {
+      "verdict": "FAIL",
+      "stdout_has_sig": true,
+      "stderr_has_frag": true
+    }
+  }
+}

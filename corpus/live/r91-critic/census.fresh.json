@@ -1,0 +1,101 @@
+{
+  "tag": "fresh",
+  "segment_sha256": {
+    "surface_allowed_error": "a278ae09d88dbac927dabe0b99248af81a311cbccba877bd4a5b4c9ecf81a24f",
+    "entry_shape": "1a6def83f1be41eed107364dee214059f0039ee40871f01644ec65f1aa8b5428",
+    "classify_process": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3"
+  },
+  "rows": [
+    {
+      "case": "nav_lattice_sync",
+      "reps": [
+        {
+          "rep": "1",
+          "code": 0,
+          "entries": [
+            {
+              "entry": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.",
+              "shape": "exact",
+              "matched_lines": 1,
+              "dead_in_run": false,
+              "first_match": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization."
+            }
+          ]
+        },
+        {
+          "rep": "2",
+          "code": 0,
+          "entries": [
+            {
+              "entry": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.",
+              "shape": "exact",
+              "matched_lines": 1,
+              "dead_in_run": false,
+              "first_match": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization."
+            }
+          ]
+        },
+        {
+          "rep": "3",
+          "code": 0,
+          "entries": [
+            {
+              "entry": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.",
+              "shape": "exact",
+              "matched_lines": 1,
+              "dead_in_run": false,
+              "first_match": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "nav_lattice_bake",
+      "reps": [
+        {
+          "rep": "1",
+          "code": 0,
+          "entries": [
+            {
+              "entry": "ERROR: The root node needs to be inside the SceneTree.",
+              "shape": "exact",
+              "matched_lines": 1,
+              "dead_in_run": false,
+              "first_match": "ERROR: The root node needs to be inside the SceneTree."
+            }
+          ]
+        },
+        {
+          "rep": "2",
+          "code": 0,
+          "entries": [
+            {
+              "entry": "ERROR: The root node needs to be inside the SceneTree.",
+              "shape": "exact",
+              "matched_lines": 1,
+              "dead_in_run": false,
+              "first_match": "ERROR: The root node needs to be inside the SceneTree."
+            }
+          ]
+        },
+        {
+          "rep": "3",
+          "code": 0,
+          "entries": [
+            {
+              "entry": "ERROR: The root node needs to be inside the SceneTree.",
+              "shape": "exact",
+              "matched_lines": 1,
+              "dead_in_run": false,
+              "first_match": "ERROR: The root node needs to be inside the SceneTree."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "dead_entry_count": 0,
+  "dead_entries": [],
+  "r91_expected_errors_all_matched": true
+}

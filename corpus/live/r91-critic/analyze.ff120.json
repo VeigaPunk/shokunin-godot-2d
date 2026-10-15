@@ -1,0 +1,547 @@
+{
+  "tag": "ff120",
+  "classifier_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+  "rows": {
+    "nav_lattice_census": {
+      "arm": "census",
+      "expected_exit": 0,
+      "reps": [
+        {
+          "rep": "1",
+          "rc": 0,
+          "code": 0,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        },
+        {
+          "rep": "2",
+          "rc": 0,
+          "code": 0,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        }
+      ],
+      "verdicts": [
+        true,
+        true
+      ],
+      "out_uniq": 1,
+      "err_uniq": 1,
+      "prefix_ok": true,
+      "tail_in_pin": [],
+      "line_uniq": 1,
+      "rep_lines": [
+        "PASS nav_lattice census srv_methods=199 poly_methods=134 srv_info=[0,1,2,3,9,4,5,7,6,8] pgt=[0,1,2,3] sgm=[0,1,2,3] sp=[0,1,2] pp=[2,0,1] md=[0,2,1,4,7] alg=0 poly_defaults=agent_r=10.0000,cell=1.0000,border=0.0000,pgt=2,sgm=0,sp=0,cmask=4294967295,brect=[P: (0.0, 0.0), S: (0.0, 0.0)],boff=(0.0, 0.0),polys=0 reg_defaults=cost=1.0000,enter=0.0000,en=true,edge=true agent_defaults=r=10.0000,path_d=20.0000,tgt_d=10.0000,maxspeed=100.0000,nd=500.0000,mn=10,tha=1.0000,tho=0.0000,avoid=false,prio=1.0000,layers=1,pp=0,simpl=false,eps=0.0000 qp_defaults=pp=0,md=7,layers=1,maxlen=0.0000,maxrad=0.0000,maxdist=0.0000,maxpolys=4096,simpl=false,eps=0.0000",
+        "PASS nav_lattice census srv_methods=199 poly_methods=134 srv_info=[0,1,2,3,9,4,5,7,6,8] pgt=[0,1,2,3] sgm=[0,1,2,3] sp=[0,1,2] pp=[2,0,1] md=[0,2,1,4,7] alg=0 poly_defaults=agent_r=10.0000,cell=1.0000,border=0.0000,pgt=2,sgm=0,sp=0,cmask=4294967295,brect=[P: (0.0, 0.0), S: (0.0, 0.0)],boff=(0.0, 0.0),polys=0 reg_defaults=cost=1.0000,enter=0.0000,en=true,edge=true agent_defaults=r=10.0000,path_d=20.0000,tgt_d=10.0000,maxspeed=100.0000,nd=500.0000,mn=10,tha=1.0000,tho=0.0000,avoid=false,prio=1.0000,layers=1,pp=0,simpl=false,eps=0.0000 qp_defaults=pp=0,md=7,layers=1,maxlen=0.0000,maxrad=0.0000,maxdist=0.0000,maxpolys=4096,simpl=false,eps=0.0000"
+      ],
+      "tail_tokens": [],
+      "rep_diff_indices": [],
+      "diff_confined_to_tail": true,
+      "all_pass": true
+    },
+    "nav_lattice_path": {
+      "arm": "path",
+      "expected_exit": 0,
+      "reps": [
+        {
+          "rep": "1",
+          "rc": 0,
+          "code": 0,
+          "verdict": "FAIL",
+          "bare": "FAIL",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        },
+        {
+          "rep": "2",
+          "rc": 0,
+          "code": 0,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        }
+      ],
+      "verdicts": [
+        false,
+        true
+      ],
+      "out_uniq": 2,
+      "err_uniq": 1,
+      "prefix_ok": false,
+      "tail_in_pin": [],
+      "line_uniq": 2,
+      "rep_lines": [
+        "PASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] gap20_reach=false gap20_margin=20.0000 settle=8 iter=2",
+        "PASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000 settle=7 iter=3"
+      ],
+      "first_mismatch": {
+        "tok": 13,
+        "pin": "gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)]",
+        "got": "gap20=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)]"
+      },
+      "tail_tokens": [
+        "iter",
+        "settle"
+      ],
+      "rep_diff_indices": [
+        13,
+        14,
+        16,
+        17
+      ],
+      "diff_confined_to_tail": false,
+      "all_pass": false
+    },
+    "nav_lattice_query": {
+      "arm": "query",
+      "expected_exit": 0,
+      "reps": [
+        {
+          "rep": "1",
+          "rc": 0,
+          "code": 0,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        },
+        {
+          "rep": "2",
+          "rc": 2,
+          "code": 2,
+          "verdict": "FAIL",
+          "bare": "FAIL",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        }
+      ],
+      "verdicts": [
+        true,
+        false
+      ],
+      "out_uniq": 2,
+      "err_uniq": 1,
+      "prefix_ok": true,
+      "tail_in_pin": [],
+      "line_uniq": 2,
+      "rep_lines": [
+        "PASS nav_lattice query postproc=[pp2=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)],pp0=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)],pp1=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)]] metadata=[md0:[]|n0|n0,md2:[]|n3|n0,md1:[0,0,0]|n0|n0,md4:[]|n0|n3,md7:[0,0,0]|n3|n3] maxlen=[(20.0000,180.0000),(24.2426,150.3015)] maxrad=[(20.0000,180.0000),(20.0814,179.4301)] maxdist=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] maxpolys=[(20.0000,180.0000),(40.0000,20.0000)] simplify=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] layers0=[] length=282.8427 settle=8 iter=2",
+        ""
+      ],
+      "tail_tokens": [
+        "iter",
+        "settle"
+      ],
+      "rep_diff_indices": [],
+      "diff_confined_to_tail": true,
+      "all_pass": false
+    },
+    "nav_lattice_sync": {
+      "arm": "sync",
+      "expected_exit": 0,
+      "reps": [
+        {
+          "rep": "1",
+          "rc": 0,
+          "code": 0,
+          "verdict": "FAIL",
+          "bare": "FAIL",
+          "err_bytes": 512,
+          "stdout_lines": 3
+        },
+        {
+          "rep": "2",
+          "rc": 0,
+          "code": 0,
+          "verdict": "FAIL",
+          "bare": "FAIL",
+          "err_bytes": 512,
+          "stdout_lines": 3
+        }
+      ],
+      "verdicts": [
+        false,
+        false
+      ],
+      "out_uniq": 2,
+      "err_uniq": 1,
+      "prefix_ok": false,
+      "tail_in_pin": [],
+      "line_uniq": 2,
+      "rep_lines": [
+        "PASS nav_lattice sync pre_iter=0 pre_regions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=false dis_settled=false dis_same=false chg_iter_same=2 chg_iter_settled=2 gate=0 ladder=[f0:0/0/0,f1:0/0/0,f2:0/0/0,f3:1/1/0,f4:1/1/0,f5:1/1/0,f6:1/1/0,f7:2/1/1,f8:2/1/1,f9:2/1/1] first_reach=7 first_reach_sync=2",
+        "PASS nav_lattice sync pre_iter=0 pre_regions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=false dis_settled=false dis_same=false chg_iter_same=2 chg_iter_settled=2 gate=0 ladder=[f0:0/0/0,f1:1/0/0,f2:1/1/0,f3:1/1/0,f4:2/1/1,f5:2/1/1,f6:2/1/1,f7:2/1/1,f8:2/1/1,f9:2/1/1] first_reach=4 first_reach_sync=1"
+      ],
+      "first_mismatch": {
+        "tok": 15,
+        "pin": "chg_settled=true",
+        "got": "chg_settled=false"
+      },
+      "tail_tokens": [
+        "chg_iter_same",
+        "chg_iter_settled",
+        "dis_same",
+        "first_reach",
+        "first_reach_sync",
+        "gate",
+        "ladder"
+      ],
+      "rep_diff_indices": [
+        21,
+        22,
+        23
+      ],
+      "diff_confined_to_tail": true,
+      "all_pass": false
+    },
+    "nav_lattice_region": {
+      "arm": "region",
+      "expected_exit": 0,
+      "reps": [
+        {
+          "rep": "1",
+          "rc": 0,
+          "code": 0,
+          "verdict": "FAIL",
+          "bare": "FAIL",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        },
+        {
+          "rep": "2",
+          "rc": 2,
+          "code": 2,
+          "verdict": "FAIL",
+          "bare": "FAIL",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        }
+      ],
+      "verdicts": [
+        false,
+        false
+      ],
+      "out_uniq": 2,
+      "err_uniq": 1,
+      "prefix_ok": false,
+      "tail_in_pin": [],
+      "line_uniq": 2,
+      "rep_lines": [
+        "PASS nav_lattice region base=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] top_cost1=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] bot_cost1=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] enter500=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] l1=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] l2=[] l3=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] dis_settled=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] reenabled=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] swapped=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] restored=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] counts=regs=4,cost_a=1.0,cost_b=1.0,en_a=true,en_b=true dis_same=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] settle=9 iter=2",
+        ""
+      ],
+      "first_mismatch": {
+        "tok": 5,
+        "pin": "bot_cost1=[(10.0000,50.0000),(20.0000,40.0000),(80.0000,40.0000),(90.0000,50.0000)]",
+        "got": "bot_cost1=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)]"
+      },
+      "tail_tokens": [
+        "dis_same",
+        "iter",
+        "settle"
+      ],
+      "rep_diff_indices": [],
+      "diff_confined_to_tail": true,
+      "all_pass": false
+    },
+    "nav_lattice_agent": {
+      "arm": "agent",
+      "expected_exit": 0,
+      "reps": [
+        {
+          "rep": "1",
+          "rc": 0,
+          "code": 0,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        },
+        {
+          "rep": "2",
+          "rc": 0,
+          "code": 0,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        }
+      ],
+      "verdicts": [
+        true,
+        true
+      ],
+      "out_uniq": 2,
+      "err_uniq": 1,
+      "prefix_ok": true,
+      "tail_in_pin": [],
+      "line_uniq": 2,
+      "rep_lines": [
+        "PASS nav_lattice agent settled=(180.0000,180.0000)/false/true/false/226.27/226.27/1 fin=true reached=true reachable=true dist=2.2741 final_pos=(178.3920,178.3920) final_target=(180.0000,180.0000) path=[(20.0000,20.0000),(180.0000,180.0000)] desired=4.0 target_desired=8.0 walk_steps=28 reached_at=28 first_reachable=6",
+        "PASS nav_lattice agent settled=(180.0000,180.0000)/false/true/false/226.27/226.27/1 fin=true reached=true reachable=true dist=2.2741 final_pos=(178.3920,178.3920) final_target=(180.0000,180.0000) path=[(20.0000,20.0000),(180.0000,180.0000)] desired=4.0 target_desired=8.0 walk_steps=28 reached_at=28 first_reachable=7"
+      ],
+      "tail_tokens": [
+        "first_reachable",
+        "reached_at",
+        "walk_steps"
+      ],
+      "rep_diff_indices": [
+        15
+      ],
+      "diff_confined_to_tail": true,
+      "all_pass": true
+    },
+    "nav_lattice_avoid": {
+      "arm": "avoid",
+      "expected_exit": 0,
+      "reps": [
+        {
+          "rep": "1",
+          "rc": 0,
+          "code": 0,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        },
+        {
+          "rep": "2",
+          "rc": 0,
+          "code": 0,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        }
+      ],
+      "verdicts": [
+        true,
+        true
+      ],
+      "out_uniq": 2,
+      "err_uniq": 1,
+      "prefix_ok": true,
+      "tail_in_pin": [],
+      "line_uniq": 2,
+      "rep_lines": [
+        "PASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false seq_a=[14.407,0.000,14.487,0.000,14.567,0.000,14.648,0.000,14.729,0.000] seq_b=[-5.433,0.000,-5.352,0.000,-5.271,0.000,-5.189,0.000,-5.107,0.000] vel_a=(14.7293,0.0000) vel_b=(-5.1073,0.0000) sum_max=19.8402 settle=8",
+        "PASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false seq_a=[14.514,0.000,14.594,0.000,14.675,0.000,14.756,0.000,14.756,0.000] seq_b=[-5.325,0.000,-5.244,0.000,-5.162,0.000,-5.244,0.000,-5.121,0.000] vel_a=(14.7564,0.0000) vel_b=(-5.1206,0.0000) sum_max=20.0000 settle=7"
+      ],
+      "tail_tokens": [
+        "seq_a",
+        "seq_b",
+        "settle",
+        "sum_max",
+        "vel_a",
+        "vel_b"
+      ],
+      "rep_diff_indices": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "diff_confined_to_tail": true,
+      "all_pass": true
+    },
+    "nav_lattice_bake": {
+      "arm": "bake",
+      "expected_exit": 0,
+      "reps": [
+        {
+          "rep": "1",
+          "rc": 2,
+          "code": 2,
+          "verdict": "FAIL",
+          "bare": "FAIL",
+          "err_bytes": 714,
+          "stdout_lines": 3
+        },
+        {
+          "rep": "2",
+          "rc": 0,
+          "code": 0,
+          "verdict": "PASS",
+          "bare": "FAIL",
+          "err_bytes": 714,
+          "stdout_lines": 3
+        }
+      ],
+      "verdicts": [
+        false,
+        true
+      ],
+      "out_uniq": 2,
+      "err_uniq": 1,
+      "prefix_ok": true,
+      "tail_in_pin": [],
+      "line_uniq": 2,
+      "rep_lines": [
+        "",
+        "PASS nav_lattice bake outline_polys=4 outline_verts=8 hole_across=[(100.0000,20.0000),(140.0000,60.0000),(140.0000,140.0000),(100.0000,180.0000)] hole_straight=[(20.0000,100.0000),(60.0000,60.0000),(140.0000,60.0000),(180.0000,100.0000)] parse_obs=1 parse_trav=0 parse_has=false baked_polys=4 baked_verts=8 collider_only_polys=0 through=[(-100.0000,0.0000),(-55.0000,55.0000),(55.0000,55.0000),(100.0000,-0.0000)] around=[(-100.0000,-100.0000),(-55.0000,55.0000),(100.0000,100.0000)] outside=[(-145.0000,-145.0000),(-55.0000,55.0000),(100.0000,100.0000)] iter_b=2 settle_a=4 settle_b=0"
+      ],
+      "tail_tokens": [],
+      "rep_diff_indices": [],
+      "diff_confined_to_tail": true,
+      "all_pass": false
+    },
+    "nav_lattice_link": {
+      "arm": "link",
+      "expected_exit": 0,
+      "reps": [
+        {
+          "rep": "1",
+          "rc": 0,
+          "code": 0,
+          "verdict": "FAIL",
+          "bare": "FAIL",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        },
+        {
+          "rep": "2",
+          "rc": 0,
+          "code": 0,
+          "verdict": "FAIL",
+          "bare": "FAIL",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        }
+      ],
+      "verdicts": [
+        false,
+        false
+      ],
+      "out_uniq": 2,
+      "err_uniq": 1,
+      "prefix_ok": false,
+      "tail_in_pin": [],
+      "line_uniq": 2,
+      "rep_lines": [
+        "PASS nav_lattice link bidir_default=true en_default=true fwd_default=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] rev_default=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] rev_bidir=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] fwd_disabled_settled=[(10.0000,50.0000),(100.0000,50.0000)] cost300=[(10.0000,50.0000),(100.0000,50.0000)] layer1=[(10.0000,50.0000),(100.0000,50.0000)] layer2=[] start=(100.0000,50.0000) end=(400.0000,50.0000) bidir=false en=true cost=1.0 enter=0.0 layers=2 fwd_disabled_same=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] settle=8 iter=3 link_iter=4",
+        "PASS nav_lattice link bidir_default=true en_default=true fwd_default=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] rev_default=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] rev_bidir=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] fwd_disabled_settled=[(10.0000,50.0000),(100.0000,50.0000)] cost300=[(10.0000,50.0000),(100.0000,50.0000)] layer1=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] layer2=[] start=(100.0000,50.0000) end=(400.0000,50.0000) bidir=false en=true cost=1.0 enter=0.0 layers=2 fwd_disabled_same=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] settle=5 iter=4 link_iter=4"
+      ],
+      "first_mismatch": {
+        "tok": 9,
+        "pin": "cost300=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)]",
+        "got": "cost300=[(10.0000,50.0000),(100.0000,50.0000)]"
+      },
+      "tail_tokens": [
+        "fwd_disabled_same",
+        "iter",
+        "link_iter",
+        "settle"
+      ],
+      "rep_diff_indices": [
+        10,
+        20,
+        21
+      ],
+      "diff_confined_to_tail": false,
+      "all_pass": false
+    },
+    "nav_lattice_teardown_crash": {
+      "arm": "teardown_crash",
+      "expected_exit": -6,
+      "reps": [
+        {
+          "rep": "1",
+          "rc": 134,
+          "code": -6,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 77,
+          "stdout_lines": 3
+        },
+        {
+          "rep": "2",
+          "rc": 134,
+          "code": -6,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 77,
+          "stdout_lines": 3
+        }
+      ],
+      "verdicts": [
+        true,
+        true
+      ],
+      "out_uniq": 1,
+      "err_uniq": 1,
+      "prefix_ok": true,
+      "tail_in_pin": [],
+      "line_uniq": 1,
+      "rep_lines": [
+        "",
+        ""
+      ],
+      "tail_tokens": [],
+      "rep_diff_indices": [],
+      "diff_confined_to_tail": true,
+      "all_pass": true
+    },
+    "nav_lattice_teardown_clean": {
+      "arm": "teardown_clean",
+      "expected_exit": 0,
+      "reps": [
+        {
+          "rep": "1",
+          "rc": 0,
+          "code": 0,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        },
+        {
+          "rep": "2",
+          "rc": 0,
+          "code": 0,
+          "verdict": "PASS",
+          "bare": "PASS",
+          "err_bytes": 0,
+          "stdout_lines": 3
+        }
+      ],
+      "verdicts": [
+        true,
+        true
+      ],
+      "out_uniq": 1,
+      "err_uniq": 1,
+      "prefix_ok": true,
+      "tail_in_pin": [],
+      "line_uniq": 1,
+      "rep_lines": [
+        "PASS nav_lattice teardown_clean survived=true has_cb=false",
+        "PASS nav_lattice teardown_clean survived=true has_cb=false"
+      ],
+      "tail_tokens": [],
+      "rep_diff_indices": [],
+      "diff_confined_to_tail": true,
+      "all_pass": true
+    }
+  },
+  "findings": [
+    "nav_lattice_path: not all reps PASS",
+    "nav_lattice_path: signature is not a line prefix",
+    "nav_lattice_path: rep variance not confined to tail",
+    "nav_lattice_query: not all reps PASS",
+    "nav_lattice_sync: not all reps PASS",
+    "nav_lattice_sync: signature is not a line prefix",
+    "nav_lattice_region: not all reps PASS",
+    "nav_lattice_region: signature is not a line prefix",
+    "nav_lattice_bake: not all reps PASS",
+    "nav_lattice_link: not all reps PASS",
+    "nav_lattice_link: signature is not a line prefix",
+    "nav_lattice_link: rep variance not confined to tail"
+  ]
+}

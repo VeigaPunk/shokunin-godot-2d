@@ -1,0 +1,58 @@
+{
+  "classifier_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+  "battery_runs": {
+    "runs1": {
+      "rows": 258,
+      "verdict": "PASS",
+      "nav_rows": 11,
+      "nav_all_pass": true,
+      "r91_gate": true,
+      "teardown_crash_exit": -6
+    },
+    "runs2": {
+      "rows": 258,
+      "verdict": "PASS",
+      "nav_rows": 11,
+      "nav_all_pass": true,
+      "r91_gate": true,
+      "teardown_crash_exit": -6
+    }
+  },
+  "fresh_reps": {
+    "agent.rep2.out": "PASS",
+    "agent.rep3.out": "PASS",
+    "agent.rep4.out": "PASS",
+    "avoid.rep2.out": "PASS",
+    "avoid.rep3.out": "PASS",
+    "avoid.rep4.out": "PASS",
+    "bake.rep2.out": "PASS",
+    "bake.rep3.out": "PASS",
+    "bake.rep4.out": "PASS",
+    "census.rep2.out": "PASS",
+    "census.rep3.out": "PASS",
+    "census.rep4.out": "PASS",
+    "link.rep2.out": "PASS",
+    "link.rep3.out": "PASS",
+    "link.rep4.out": "PASS",
+    "path.rep2.out": "PASS",
+    "path.rep3.out": "PASS",
+    "path.rep4.out": "PASS",
+    "query.rep2.out": "PASS",
+    "query.rep3.out": "PASS",
+    "query.rep4.out": "PASS",
+    "region.rep2.out": "PASS",
+    "region.rep3.out": "PASS",
+    "region.rep4.out": "PASS",
+    "sync.rep2.out": "PASS",
+    "sync.rep3.out": "PASS",
+    "sync.rep4.out": "PASS",
+    "teardown_clean.rep2.out": "PASS",
+    "teardown_clean.rep3.out": "PASS",
+    "teardown_clean.rep4.out": "PASS",
+    "teardown_crash.rep2.out": "PASS",
+    "teardown_crash.rep3.out": "PASS",
+    "teardown_crash.rep4.out": "PASS"
+  },
+  "fresh_reps_pass": 33,
+  "fresh_reps_fail": 0
+}

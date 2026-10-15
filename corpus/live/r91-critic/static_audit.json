@@ -1,0 +1,234 @@
+{
+  "cases": 251,
+  "nav_rows": 11,
+  "nav_names": [
+    "nav_lattice_census",
+    "nav_lattice_path",
+    "nav_lattice_query",
+    "nav_lattice_sync",
+    "nav_lattice_region",
+    "nav_lattice_agent",
+    "nav_lattice_avoid",
+    "nav_lattice_bake",
+    "nav_lattice_link",
+    "nav_lattice_teardown_crash",
+    "nav_lattice_teardown_clean"
+  ],
+  "findings": [],
+  "nav_indices": [
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246
+  ],
+  "contiguous": true,
+  "prev_row": "r90_lattice_lag",
+  "next_row": "crash_spontaneous_sigabrt",
+  "inserted_after_r90_lag": true,
+  "tail_rows_after": [
+    "crash_spontaneous_sigabrt",
+    "crash_self_sigkill",
+    "descendant_pipe_detached_control",
+    "descendant_pipe_forged_signature_release"
+  ],
+  "pin_tail_violations": [],
+  "print_call_arms": [
+    "agent",
+    "avoid",
+    "bake",
+    "census",
+    "link",
+    "path",
+    "query",
+    "region",
+    "sync"
+  ],
+  "pin_tail_order": {
+    "nav_lattice_census": {
+      "first_tail_literal_index": null,
+      "n_literal_fields": 32,
+      "tail_contiguous_to_end": false,
+      "sig_fields": 15,
+      "sig_is_print_prefix": false,
+      "lit_fields_after_pin": [
+        ",boff",
+        ",polys",
+        "reg_defaults",
+        ",en"
+      ]
+    },
+    "nav_lattice_path": {
+      "first_tail_literal_index": 12,
+      "n_literal_fields": 14,
+      "tail_contiguous_to_end": true,
+      "sig_fields": 13,
+      "sig_is_print_prefix": false,
+      "lit_fields_after_pin": [
+        "iter"
+      ]
+    },
+    "nav_lattice_query": {
+      "first_tail_literal_index": 9,
+      "n_literal_fields": 11,
+      "tail_contiguous_to_end": true,
+      "sig_fields": 9,
+      "sig_is_print_prefix": true,
+      "lit_fields_after_pin": [
+        "settle",
+        "iter"
+      ]
+    },
+    "nav_lattice_sync": {
+      "first_tail_literal_index": 10,
+      "n_literal_fields": 17,
+      "tail_contiguous_to_end": true,
+      "sig_fields": 14,
+      "sig_is_print_prefix": false,
+      "lit_fields_after_pin": [
+        "ladder",
+        "first_reach",
+        "first_reach_sync"
+      ]
+    },
+    "nav_lattice_region": {
+      "first_tail_literal_index": 15,
+      "n_literal_fields": 18,
+      "tail_contiguous_to_end": true,
+      "sig_fields": 12,
+      "sig_is_print_prefix": true,
+      "lit_fields_after_pin": [
+        "regs",
+        ",en_a",
+        ",en_b",
+        "dis_same"
+      ]
+    },
+    "nav_lattice_agent": {
+      "first_tail_literal_index": 7,
+      "n_literal_fields": 10,
+      "tail_contiguous_to_end": true,
+      "sig_fields": 10,
+      "sig_is_print_prefix": false,
+      "lit_fields_after_pin": []
+    },
+    "nav_lattice_avoid": {
+      "first_tail_literal_index": 14,
+      "n_literal_fields": 15,
+      "tail_contiguous_to_end": true,
+      "sig_fields": 12,
+      "sig_is_print_prefix": false,
+      "lit_fields_after_pin": [
+        "vel_a",
+        "vel_b",
+        "settle"
+      ]
+    },
+    "nav_lattice_bake": {
+      "first_tail_literal_index": 13,
+      "n_literal_fields": 16,
+      "tail_contiguous_to_end": true,
+      "sig_fields": 13,
+      "sig_is_print_prefix": true,
+      "lit_fields_after_pin": [
+        "iter_b",
+        "settle_a",
+        "settle_b"
+      ]
+    },
+    "nav_lattice_link": {
+      "first_tail_literal_index": 14,
+      "n_literal_fields": 18,
+      "tail_contiguous_to_end": true,
+      "sig_fields": 16,
+      "sig_is_print_prefix": false,
+      "lit_fields_after_pin": [
+        "iter",
+        "link_iter"
+      ]
+    },
+    "nav_lattice_teardown_crash": "NO_PRINT_CALL",
+    "nav_lattice_teardown_clean": "NO_PRINT_CALL"
+  },
+  "print_sites": [
+    {
+      "line": 136,
+      "text": "print(\"STALE nav_lattice \", arm, \" sync_bound_exhausted bound=\", SYNC_BOUND)"
+    },
+    {
+      "line": 153,
+      "text": "print(\"PASS nav_lattice unknown arm=\", arm)"
+    },
+    {
+      "line": 162,
+      "text": "print(\"PASS nav_lattice census \","
+    },
+    {
+      "line": 286,
+      "text": "print(\"PASS nav_lattice sync \","
+    },
+    {
+      "line": 343,
+      "text": "print(\"PASS nav_lattice path \","
+    },
+    {
+      "line": 391,
+      "text": "print(\"PASS nav_lattice query \","
+    },
+    {
+      "line": 502,
+      "text": "print(\"PASS nav_lattice region \","
+    },
+    {
+      "line": 572,
+      "text": "print(\"PASS nav_lattice agent \","
+    },
+    {
+      "line": 671,
+      "text": "print(\"PASS nav_lattice avoid \","
+    },
+    {
+      "line": 758,
+      "text": "print(\"PASS nav_lattice bake \","
+    },
+    {
+      "line": 817,
+      "text": "print(\"PASS nav_lattice link \","
+    },
+    {
+      "line": 857,
+      "text": "print(\"NAV_LATTICE_TEARDOWN_CRASH armed=live_cb has_cb=\","
+    },
+    {
+      "line": 881,
+      "text": "print(\"PASS nav_lattice teardown_clean survived=true has_cb=\","
+    }
+  ],
+  "print_site_count": 13,
+  "pass_lattice_print_sites": 11,
+  "stale_print_sites": 1,
+  "quit_call": [
+    "_exit_code"
+  ],
+  "allow_entries": {
+    "nav_lattice_sync": true,
+    "nav_lattice_bake": true,
+    "teardown_crash": true
+  },
+  "floor_gate_present": true,
+  "floor_gate_covers_prefix": true,
+  "floor_gate_in_sf": true,
+  "sf_meta_all": true,
+  "final_verdict_all": true,
+  "classifier_merged_substring": true,
+  "required_stderr_anchor": true,
+  "run_battery_numstat": "commit 77d2f7ec2db788fffa5279c213079715a403996b\nAuthor: game-dev-2d-shokunin <game-dev-2d@shokunin.local>\nDate:   Thu Oct 15 19:47:01 2026 -0300\n\n    r91 author: 11 nav_lattice rows (258 total) \u2014 iteration_id gate, scheduler fields to tails, query-order fix, teardown crash armed rc=-6; 258/258 x2\n\n88\t0\tcorpus/fixtures/run_battery.py",
+  "insertion_only": true,
+  "expected_result_rows": 258
+}

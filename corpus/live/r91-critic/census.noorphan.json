@@ -1,0 +1,59 @@
+{
+  "tag": "noorphan",
+  "segment_sha256": {
+    "surface_allowed_error": "a278ae09d88dbac927dabe0b99248af81a311cbccba877bd4a5b4c9ecf81a24f",
+    "entry_shape": "1a6def83f1be41eed107364dee214059f0039ee40871f01644ec65f1aa8b5428",
+    "classify_process": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3"
+  },
+  "rows": [
+    {
+      "case": "nav_lattice_sync",
+      "reps": []
+    },
+    {
+      "case": "nav_lattice_bake",
+      "reps": [
+        {
+          "rep": "1",
+          "code": 0,
+          "entries": [
+            {
+              "entry": "ERROR: The root node needs to be inside the SceneTree.",
+              "shape": "exact",
+              "matched_lines": 0,
+              "dead_in_run": true,
+              "first_match": null
+            }
+          ]
+        },
+        {
+          "rep": "2",
+          "code": 0,
+          "entries": [
+            {
+              "entry": "ERROR: The root node needs to be inside the SceneTree.",
+              "shape": "exact",
+              "matched_lines": 0,
+              "dead_in_run": true,
+              "first_match": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "dead_entry_count": 2,
+  "dead_entries": [
+    {
+      "case": "nav_lattice_bake",
+      "rep": "1",
+      "entry": "ERROR: The root node needs to be inside the SceneTree."
+    },
+    {
+      "case": "nav_lattice_bake",
+      "rep": "2",
+      "entry": "ERROR: The root node needs to be inside the SceneTree."
+    }
+  ],
+  "r91_expected_errors_all_matched": false
+}

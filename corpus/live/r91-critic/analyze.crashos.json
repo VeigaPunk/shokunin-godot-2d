@@ -1,0 +1,110 @@
+{
+  "tag": "crashos",
+  "classifier_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+  "rows": {
+    "nav_lattice_census": {
+      "arm": "census",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_path": {
+      "arm": "path",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_query": {
+      "arm": "query",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_sync": {
+      "arm": "sync",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_region": {
+      "arm": "region",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_agent": {
+      "arm": "agent",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_avoid": {
+      "arm": "avoid",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_bake": {
+      "arm": "bake",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_link": {
+      "arm": "link",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    },
+    "nav_lattice_teardown_crash": {
+      "arm": "teardown_crash",
+      "expected_exit": -6,
+      "reps": [
+        {
+          "rep": "1",
+          "rc": 134,
+          "code": -6,
+          "verdict": "FAIL",
+          "bare": "FAIL",
+          "err_bytes": 2685,
+          "stdout_lines": 3
+        },
+        {
+          "rep": "2",
+          "rc": 134,
+          "code": -6,
+          "verdict": "FAIL",
+          "bare": "FAIL",
+          "err_bytes": 2685,
+          "stdout_lines": 3
+        }
+      ],
+      "verdicts": [
+        false,
+        false
+      ],
+      "out_uniq": 1,
+      "err_uniq": 2,
+      "prefix_ok": true,
+      "tail_in_pin": [],
+      "line_uniq": 1,
+      "rep_lines": [
+        "",
+        ""
+      ],
+      "tail_tokens": [],
+      "rep_diff_indices": [],
+      "diff_confined_to_tail": true,
+      "all_pass": false
+    },
+    "nav_lattice_teardown_clean": {
+      "arm": "teardown_clean",
+      "reps": [],
+      "verdicts": [],
+      "skipped": true
+    }
+  },
+  "findings": [
+    "nav_lattice_teardown_crash: not all reps PASS"
+  ]
+}

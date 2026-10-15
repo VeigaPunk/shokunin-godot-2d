@@ -1,0 +1,26 @@
+loadavg_start=76.76 61.66 55.80
+PASS nav_lattice_sync: exit=0 signature='PASS nav_lattice sync pre_iter=0 pre_regions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=true dis_settled=false'
+PASS nav_lattice_region: exit=0 signature='PASS nav_lattice region base=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] top_cost1=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] bot_cost1=[(10.0000,50.0000),(20.0000,40.0000),(80.0000,40.0000),(90.0000,50.0000)] enter500=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] l1=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] l2=[(20.0000,40.0000),(80.0000,40.0000)] l3=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] dis_settled=[(10.0000,50.0000),(20.0000,40.0000),(80.0000,40.0000),(90.0000,50.0000)] reenabled=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] swapped=[(10.0000,50.0000),(20.0000,40.0000),(80.0000,40.0000),(90.0000,50.0000)] restored=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] counts=regs=4,cost_a=1.0,cost_b=1.0,en_a=true,en_b=true'
+PASS nav_lattice_agent: exit=0 signature='PASS nav_lattice agent settled=(180.0000,180.0000)/false/true/false/226.27/226.27/1 fin=true reached=true reachable=true dist=2.2741 final_pos=(178.3920,178.3920) final_target=(180.0000,180.0000) path=[(20.0000,20.0000),(180.0000,180.0000)] desired=4.0 target_desired=8.0'
+PASS nav_lattice_avoid: exit=0 signature='PASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false'
+PASS nav_lattice_bake: exit=0 signature='PASS nav_lattice bake outline_polys=4 outline_verts=8 hole_across=[(100.0000,20.0000),(140.0000,60.0000),(140.0000,140.0000),(100.0000,180.0000)] hole_straight=[(20.0000,100.0000),(60.0000,60.0000),(140.0000,60.0000),(180.0000,100.0000)] parse_obs=1 parse_trav=0 parse_has=false baked_polys=4 baked_verts=8 collider_only_polys=0 through=[(-100.0000,0.0000),(-55.0000,55.0000),(55.0000,55.0000),(100.0000,-0.0000)] around=[(-100.0000,-100.0000),(-55.0000,55.0000),(100.0000,100.0000)] outside=[(-145.0000,-145.0000),(-55.0000,55.0000),(100.0000,100.0000)]'
+PASS nav_lattice_link: exit=0 signature='PASS nav_lattice link bidir_default=true en_default=true fwd_default=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] rev_default=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] rev_bidir=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] fwd_disabled_settled=[(10.0000,50.0000),(100.0000,50.0000)] cost300=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] layer1=[(10.0000,50.0000),(100.0000,50.0000)] layer2=[] start=(100.0000,50.0000) end=(400.0000,50.0000) bidir=false en=true cost=1.0 enter=0.0 layers=2'
+PASS nav_lattice_teardown_crash: exit=-6 signature='NAV_LATTICE_TEARDOWN_CRASH armed=live_cb has_cb=true'
+PASS nav_lattice_teardown_clean: exit=0 signature='PASS nav_lattice teardown_clean survived=true has_cb=false'
+PASS crash_spontaneous_sigabrt: exit=-6 signature='SPONTANEOUS_CRASH_PROBE: expected signature'
+PASS crash_self_sigkill: exit=-9 signature='SPONTANEOUS_CRASH_PROBE: expected signature'
+PASS descendant_pipe_detached_control: exit=0 signature='DESCENDANT_PIPE_PROBE: expected signature'
+PASS descendant_pipe_forged_signature_release: exit=0 signature='DESCENDANT_PIPE_PROBE: expected signature'
+PASS independent save process probe: corpus/live/r91-critic/battery-runs/20261015T232521428327Z/save-process-verdicts.json
+PASS spontaneous crash classification meta
+PASS descendant pipe-EOF meta
+PASS descendant signature-spoof meta
+PASS while-live signature-gate meta
+PASS descendant error-spoof meta
+PASS error-clause surface meta
+PASS battery: corpus/live/r91-critic/battery-runs/20261015T232521428327Z/verdicts.json
+
+real	4m20.140s
+user	0m44.870s
+sys	0m15.036s
+loadavg_end=80.40 71.50 61.35
