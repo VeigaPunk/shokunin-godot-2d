@@ -1,0 +1,17 @@
+{
+  "r89_rows_post": 20,
+  "r89_rows_pre": 20,
+  "r90_rows_post": 12,
+  "r90_rows_pre": 12,
+  "r89_missing_in_pre": [],
+  "r89_dropped_in_post": [],
+  "r90_missing_in_pre": [],
+  "r90_dropped_in_post": [],
+  "r89_mismatches": [],
+  "r90_mismatches": [],
+  "total_cases_pre": 228,
+  "total_cases_r90base": 240,
+  "total_cases_post": 240,
+  "all_diff_rows_vs_ee20575": [],
+  "ok": true
+}

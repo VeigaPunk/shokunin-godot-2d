@@ -1,0 +1,254 @@
+{
+  "file": "runs2/20261015T223404791057Z/verdicts.json",
+  "total_rows": 247,
+  "verdict_field": "PASS",
+  "r89": {
+    "geo2d_lattice_atlasempty": "PASS",
+    "geo2d_lattice_bridge": "PASS",
+    "geo2d_lattice_census": "PASS",
+    "geo2d_lattice_contain": "PASS",
+    "geo2d_lattice_edge": "PASS",
+    "geo2d_lattice_joins": "PASS",
+    "geo2d_lattice_lineempty": "PASS",
+    "geo2d_lattice_offdeg": "PASS",
+    "geo2d_lattice_offempty": "PASS",
+    "geo2d_lattice_ops": "PASS",
+    "geo2d_lattice_pipedges": "PASS",
+    "geo2d_lattice_polyendpoly": "PASS",
+    "geo2d_lattice_pred": "PASS",
+    "geo2d_lattice_ring": "PASS",
+    "geo2d_lattice_ring2": "PASS",
+    "geo2d_lattice_ring4": "PASS",
+    "geo2d_lattice_ringhits": "PASS",
+    "geo2d_lattice_trig": "PASS",
+    "input89_edges_axisdev": "PASS",
+    "input89_edges_exact": "PASS"
+  },
+  "r90": {
+    "r90_lattice_comread": "PASS",
+    "r90_lattice_comrefuse": "PASS",
+    "r90_lattice_contacts": "PASS",
+    "r90_lattice_damp": "PASS",
+    "r90_lattice_freezelock": "PASS",
+    "r90_lattice_gravity": "PASS",
+    "r90_lattice_impedge": "PASS",
+    "r90_lattice_impulse": "PASS",
+    "r90_lattice_lag": "PASS",
+    "r90_lattice_order": "PASS",
+    "r90_lattice_props": "PASS",
+    "r90_lattice_write": "PASS"
+  },
+  "pin": {
+    "case": "geo2d_lattice_lineempty",
+    "record_required_stderr": [
+      "Clipper2Lib::Point<double>",
+      "Assertion '__n < this->size()' failed."
+    ],
+    "expected_fragments": [
+      "Clipper2Lib::Point<double>",
+      "Assertion '__n < this->size()' failed."
+    ],
+    "populated_match": true,
+    "actual_exit": -6,
+    "verdict": "PASS",
+    "stray_required_stderr_rows": []
+  },
+  "sig_byte_check": [
+    {
+      "case": "geo2d_lattice_atlasempty",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice atlasempty call=make_atlas(empty) result=points=[] size=(0.0000,0.0000)"
+    },
+    {
+      "case": "geo2d_lattice_bridge",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice bridge wall=k=1{n4[60.0000,60.0000;-60.0000,60.0000;-60.0000,30.0000;60.0000,30.0000]} tps=60 frames=60 rest=y=82.3000 vel=0.0000,0.0000 self_hit=1"
+    },
+    {
+      "case": "geo2d_lattice_census",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice census sig=[clip_polygons(polygon_a,polygon_b)|convex_hull(points)|decompose_polygon_in_convex(polygon)|make_atlas(sizes)|merge_polygons(polygon_a,polygon_b)|offset_polygon(polygon,delta,join_type)|offset_polyline(polyline,delta,join_type,end_type)|triangulate_polygon(polygon)] join=SQ=0,RD=1,MT=2 end=POLY=0,JOINED=1,BUTT=2,SQUARE=3,ROUND=4 op=UNION=0,DIFF=1,INTER=2,XOR=3 nmethods=86 default_join_polygon=k=1{n8[12.0000,-10.8284;12.0000,10.8284;10.8284,12.0000;-10.8284,12.0000;-12.0000,10.8284;-12.0000,-10.8284;-10.8284,-12.0000;10.8284,-12.0000]} match=[sq,] default_polyline=k=1{n7[22.0000,-0.8284;22.0000,22.0000;18.0000,22.0000;18.0000,2.0000;-2.0000,2.0000;-2.0000,-2.0000;20.8284,-2.0000]} match=[sq/square,]"
+    },
+    {
+      "case": "geo2d_lattice_contain",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice contain merge_bs=k=1{n4[20.0000,20.0000;-20.0000,20.0000;-20.0000,-20.0000;20.0000,-20.0000] a=1600.0000} merge_sb=k=1{n4[20.0000,20.0000;-20.0000,20.0000;-20.0000,-20.0000;20.0000,-20.0000] a=1600.0000} clip_bs=k=2{n4[20.0000,20.0000;-20.0000,20.0000;-20.0000,-20.0000;20.0000,-20.0000] a=1600.0000|n4[-5.0000,-5.0000;-5.0000,5.0000;5.0000,5.0000;5.0000,-5.0000] a=-100.0000} clip_sb=k=0{} inter_bs=k=1{n4[5.0000,5.0000;-5.0000,5.0000;-5.0000,-5.0000;5.0000,-5.0000] a=100.0000} inter_sb=k=1{n4[5.0000,5.0000;-5.0000,5.0000;-5.0000,-5.0000;5.0000,-5.0000] a=100.0000} excl_bs=k=2{n4[20.0000,20.0000;-20.0000,20.0000;-20.0000,-20.0000;20.0000,-20.0000] a=1600.0000|n4[-5.0000,-5.0000;-5.0000,5.0000;5.0000,5.0000;5.0000,-5.0000] a=-100.0000} excl_sb=k=2{n4[20.0000,20.0000;-20.0000,20.0000;-20.0000,-20.0000;20.0000,-20.0000] a=1600.0000|n4[-5.0000,-5.0000;-5.0000,5.0000;5.0000,5.0000;5.0000,-5.0000] a=-100.0000} adj_merge=k=1{n4[30.0000,-10.0000;30.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000] a=800.0000} adj_clip=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000] a=400.0000} adj_inter=k=0{} ovl_excl=k=2{n6[16.0000,16.0000;-4.0000,16.0000;-4.0000,10.0000;10.0000,10.0000;10.0000,-4.0000;16.0000,-4.0000] a=204.0000|n6[10.0000,-4.0000;-4.0000,-4.0000;-4.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000] a=204.0000} ovl_clip=k=1{n6[10.0000,-4.0000;-4.0000,-4.0000;-4.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000] a=204.0000} ovl_inter=k=1{n4[10.0000,10.0000;-4.0000,10.0000;-4.0000,-4.0000;10.0000,-4.0000] a=196.0000}"
+    },
+    {
+      "case": "geo2d_lattice_edge",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice edge clip_emptyR=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000]} merge_emptyR=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000]} inter_emptyR=k=0{} excl_emptyR=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000]} clip_emptyL=k=0{} merge_emptyL=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000]} inter_emptyL=k=0{} clip_self=k=0{} merge_self=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000]} inter_self=k=1{n4[10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000;10.0000,-10.0000]} excl_self=k=0{} clip_one=k=0{} clip_two=k=0{} tri=one=[] two=[] dup=[0, 3, 2, 2, 1, 0] col=[0, 2, 1] bow=[] sq=[3, 0, 1, 1, 2, 3] cw=sq=false rev=true one=false two=false col=false bow=false pip_degen=bow=true col=false one=false clip_bow=k=0{} clip_rev=k=1{n4[-2.0000,-10.0000;-2.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000]} hull_degen=one=k=1{n1[1.0000,1.0000]} col=k=1{n3[0.0000,0.0000;2.0000,0.0000;0.0000,0.0000]} sq=k=1{n5[-10.0000,-10.0000;10.0000,-10.0000;10.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000]}"
+    },
+    {
+      "case": "geo2d_lattice_joins",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice joins poly_p2_sq=k=1{n8[12.0000,-10.8284;12.0000,10.8284;10.8284,12.0000;-10.8284,12.0000;-12.0000,10.8284;-12.0000,-10.8284;-10.8284,-12.0000;10.8284,-12.0000] a=573.2548} poly_p2_rd=k=1{n12[11.6944,-11.0625;12.0000,-10.0000;12.0000,10.0000;11.0625,11.6944;10.0000,12.0000;-10.0000,12.0000;-11.6944,11.0625;-12.0000,10.0000;-12.0000,-10.0000;-11.0625,-11.6944;-10.0000,-12.0000;10.0000,-12.0000] a=571.0277} poly_p2_mt=k=1{n4[12.0000,12.0000;-12.0000,12.0000;-12.0000,-12.0000;12.0000,-12.0000] a=576.0000} poly_m2_sq=k=1{n4[8.0000,-8.0000;8.0000,8.0000;-8.0000,8.0000;-8.0000,-8.0000] a=256.0000} poly_m2_rd=k=1{n4[8.0000,-8.0000;8.0000,8.0000;-8.0000,8.0000;-8.0000,-8.0000] a=256.0000} poly_m2_mt=k=1{n4[8.0000,-8.0000;8.0000,8.0000;-8.0000,8.0000;-8.0000,-8.0000] a=256.0000} poly_zero=k=1{n4[-10.0000,-10.0000;10.0000,-10.0000;10.0000,10.0000;-10.0000,10.0000] a=400.0000} poly_collapse=k=0{} line_rd_joined=k=2{n11[21.6944,-1.0625;22.0000,0.0000;22.0000,20.0000;21.0625,21.6944;19.1289,21.8003;18.5858,21.4142;-1.4142,1.4142;-1.9494,-0.4468;-0.6571,-1.8890;0.0000,-2.0000;20.0000,-2.0000] a=347.4172|n3[4.8284,2.0000;18.0000,15.1716;18.0000,2.0000] a=-86.7453} line_sq_joined=k=2{n6[22.0000,-0.8284;22.0000,21.3364;19.5307,22.3592;-2.3592,0.4693;-1.3364,-2.0000;20.8284,-2.0000] a=350.5732|n3[4.8284,2.0000;18.0000,15.1716;18.0000,2.0000] a=-86.7453} line_mt_joined=k=2{n5[22.0000,21.3364;19.5307,22.3592;-2.3592,0.4693;-1.3364,-2.0000;22.0000,-2.0000] a=351.2595|n3[4.8284,2.0000;18.0000,15.1716;18.0000,2.0000] a=-86.7453} line_rd_butt=k=1{n8[21.6944,-1.0625;22.0000,0.0000;22.0000,20.0000;18.0000,20.0000;18.0000,2.0000;0.0000,2.0000;0.0000,-2.0000;20.0000,-2.0000] a=158.7569} line_rd_square=k=1{n8[21.6944,-1.0625;22.0000,0.0000;22.0000,22.0000;18.0000,22.0000;18.0000,2.0000;-2.0000,2.0000;-2.0000,-2.0000;20.0000,-2.0000] a=174.7569} line_rd_round=k=1{n14[21.6944,-1.0625;22.0000,0.0000;22.0000,20.0000;21.0625,21.6944;19.1289,21.8003;18.0120,20.2184;18.0000,20.0000;18.0000,2.0000;0.0000,2.0000;-1.6944,1.0625;-1.8003,-0.8711;-0.2184,-1.9880;0.0000,-2.0000;20.0000,-2.0000] a=169.3603} line_m2_joined=k=2{n11[21.6944,-1.0625;22.0000,0.0000;22.0000,20.0000;21.0625,21.6944;19.1289,21.8003;18.5858,21.4142;-1.4142,1.4142;-1.9494,-0.4468;-0.6571,-1.8890;0.0000,-2.0000;20.0000,-2.0000] a=347.4172|n3[4.8284,2.0000;18.0000,15.1716;18.0000,2.0000] a=-86.7453} line_default=k=1{n7[22.0000,-0.8284;22.0000,22.0000;18.0000,22.0000;18.0000,2.0000;-2.0000,2.0000;-2.0000,-2.0000;20.8284,-2.0000] a=175.3137}"
+    },
+    {
+      "case": "geo2d_lattice_lineempty",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "R89 lineempty call=offset_polyline(empty,2.0,JOIN_ROUND,END_JOINED)"
+    },
+    {
+      "case": "geo2d_lattice_offdeg",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice offdeg col3=k=1{n10[3.6944,-1.0625;3.8003,0.8711;2.2184,1.9880;2.0000,2.0000;0.0000,2.0000;-1.6944,1.0625;-1.8003,-0.8711;-0.2184,-1.9880;0.0000,-2.0000;2.0000,-2.0000]} two=k=1{n10[5.6944,-1.0625;5.8003,0.8711;4.2184,1.9880;4.0000,2.0000;0.0000,2.0000;-1.6944,1.0625;-1.8003,-0.8711;-0.2184,-1.9880;0.0000,-2.0000;4.0000,-2.0000]} one=k=1{n7[2.2470,-0.5637;3.0000,1.0000;2.2470,2.5637;0.5550,2.9499;-0.8019,1.8678;-0.8019,0.1322;0.5550,-0.9499]}"
+    },
+    {
+      "case": "geo2d_lattice_offempty",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice offempty call=offset_polygon(empty,2.0,JOIN_ROUND) result=k=0{}"
+    },
+    {
+      "case": "geo2d_lattice_ops",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice ops clip=k=1{n4[-2.0000,-10.0000;-2.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000]} merge=k=1{n4[18.0000,-10.0000;18.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000]} inter=k=1{n4[10.0000,10.0000;-2.0000,10.0000;-2.0000,-10.0000;10.0000,-10.0000]} excl=k=2{n4[-2.0000,-10.0000;-2.0000,10.0000;-10.0000,10.0000;-10.0000,-10.0000] a=160.0000|n4[18.0000,10.0000;10.0000,10.0000;10.0000,-10.0000;18.0000,-10.0000] a=160.0000} tri_idx=[3, 0, 1, 1, 2, 3] tri_area=400.0000 poly_area=400.0000 off_p2_sq=k=1{n8[12.0000,-10.8284;12.0000,10.8284;10.8284,12.0000;-10.8284,12.0000;-12.0000,10.8284;-12.0000,-10.8284;-10.8284,-12.0000;10.8284,-12.0000] a=573.2548} off_p2_rd=k=1{n12[11.6944,-11.0625;12.0000,-10.0000;12.0000,10.0000;11.0625,11.6944;10.0000,12.0000;-10.0000,12.0000;-11.6944,11.0625;-12.0000,10.0000;-12.0000,-10.0000;-11.0625,-11.6944;-10.0000,-12.0000;10.0000,-12.0000] a=571.0277} off_p2_mt=k=1{n4[12.0000,12.0000;-12.0000,12.0000;-12.0000,-12.0000;12.0000,-12.0000] a=576.0000} off_m2_sq=k=1{n4[8.0000,-8.0000;8.0000,8.0000;-8.0000,8.0000;-8.0000,-8.0000] a=256.0000} off_m2_rd=k=1{n4[8.0000,-8.0000;8.0000,8.0000;-8.0000,8.0000;-8.0000,-8.0000] a=256.0000} off_m2_mt=k=1{n4[8.0000,-8.0000;8.0000,8.0000;-8.0000,8.0000;-8.0000,-8.0000] a=256.0000}"
+    },
+    {
+      "case": "geo2d_lattice_pipedges",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice pipedges pip_right=[0:true,1e-6:true,1e-4:true,1e-3:false,1e-2:false,0.1:false,1.0:false] pip_right_cw=[0:true,1e-4:true,1e-2:false,0.1:false] pip_corner=on=true e4=true e2=false d1=false tri_ladder=[0:false,1e-6:true,1e-4:true,1e-2:true,0.1:true] circle_ladder=on=true in=true out=false"
+    },
+    {
+      "case": "geo2d_lattice_polyendpoly",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice polyendpoly open_endpolygon=k=0{} closed_endpolygon=k=0{} closed_endjoined=k=2{n12[21.6944,-1.0625;22.0000,0.0000;22.0000,20.0000;21.0625,21.6944;20.0000,22.0000;0.0000,22.0000;-1.6944,21.0625;-2.0000,20.0000;-2.0000,0.0000;-1.0625,-1.6944;0.0000,-2.0000;20.0000,-2.0000] a=571.0277|n4[2.0000,2.0000;2.0000,18.0000;18.0000,18.0000;18.0000,2.0000] a=-256.0000} closed_endbutt=k=1{n12[21.6944,-1.0625;22.0000,0.0000;22.0000,20.0000;21.0625,21.6944;20.0000,22.0000;0.0000,22.0000;0.0000,18.0000;18.0000,18.0000;18.0000,2.0000;0.0000,2.0000;0.0000,-2.0000;20.0000,-2.0000] a=237.5139}"
+    },
+    {
+      "case": "geo2d_lattice_pred",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice pred pip=in=true out=false edge=true corner=true outside_corner=true pic=on=true out=false center=true isect=line=(2.0, 0.0) seg=(2.0, 0.0) miss=<null> closest=cap=(3.0, 0.0) uncap=(13.0, 0.0) segseg=[(5.0, 0.0), (5.0, 0.0)] degenerate=(2.0, 2.0) tri=in=true out=false edge=false vertex=false bresenham=fwd=[(0, 0), (1, 1), (2, 1), (3, 2), (4, 2), (5, 3)] rev=[(5, 3), (4, 2), (3, 2), (2, 1), (1, 1), (0, 0)] diag=[(0, 0), (1, 1), (2, 2), (3, 3)] sic=fwd=0.2500 rev=0.2500 miss=-1.0000 inside=-1.0000 startinside=0.5000 tangent=0.5000"
+    },
+    {
+      "case": "geo2d_lattice_ring",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice ring ring=k=2{n4[40.0000,40.0000;-40.0000,40.0000;-40.0000,-40.0000;40.0000,-40.0000] a=6400.0000|n4[-10.0000,-10.0000;-10.0000,10.0000;10.0000,10.0000;10.0000,-10.0000] a=-400.0000} colliders=n=1 contour0_only drop_center=y=-47.8043 vel=0.0000,0.0000 hits=1 tps=60 frames=60"
+    },
+    {
+      "case": "geo2d_lattice_ring2",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice ring2 ring=k=2{n4[40.0000,40.0000;-40.0000,40.0000;-40.0000,-40.0000;40.0000,-40.0000] a=6400.0000|n4[-10.0000,-10.0000;-10.0000,10.0000;10.0000,10.0000;10.0000,-10.0000] a=-400.0000} colliders=n=2 all_contours drop_center=y=-47.8043 vel=0.0000,0.0000 hits=1 tps=60 frames=60"
+    },
+    {
+      "case": "geo2d_lattice_ring4",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice ring4 slabs=4 drop_center=y=-47.8043 vel=0.0000,0.0000 hits=1 tps=60 frames=60"
+    },
+    {
+      "case": "geo2d_lattice_ringhits",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice ringhits hits=[A_contour0[centre:1,top:1,right:1,bottom:1,left:1]|B_both[centre:2,top:1,right:1,bottom:1,left:1]|C_slabs[centre:0,top:1,right:1,bottom:1,left:1]] ring=k=2{n4[40.0000,40.0000;-40.0000,40.0000;-40.0000,-40.0000;40.0000,-40.0000] a=6400.0000|n4[-10.0000,-10.0000;-10.0000,10.0000;10.0000,10.0000;10.0000,-10.0000] a=-400.0000} tps=60"
+    },
+    {
+      "case": "geo2d_lattice_trig",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS geo2d_lattice trig hull=k=1{n5[0.0000,0.0000;20.0000,0.0000;20.0000,20.0000;0.0000,20.0000;0.0000,0.0000]} tri_idx=[1, 2, 3, 3, 4, 0, 0, 1, 3] tri_area=280.0000 poly_area=280.0000 decomp=k=3{n3[20.0000,0.0000;20.0000,20.0000;10.0000,8.0000]|n3[0.0000,0.0000;20.0000,0.0000;10.0000,8.0000]|n3[0.0000,20.0000;0.0000,0.0000;10.0000,8.0000]} dec_area=280.0000 delaunay=[0, 1, 3, 0, 2, 3, 1, 2, 4, 2, 3, 4, 1, 3, 4] atlas3=points=[(0.0000,0.0000),(20.0000,0.0000),(20.0000,5.0000)] size=(25.0000,10.0000) atlas1=points=[(0.0000,0.0000)] size=(4.0000,4.0000) atlas_sq=points=[(0.0000,0.0000),(0.0000,3.0000)] size=(7.0000,6.0000)"
+    },
+    {
+      "case": "input89_edges_axisdev",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS input89_edges axisdev census=joys=0 eia_avail=true dz_ax0=0.2000 dz_ui_accept=0.5000 eia_dev0=ax0[ex=1 inex=1] axany[ex=1 inex=1] eia_dev5=ax0[ex=0 inex=0] axany[ex=1 inex=1] eia_dev-1=ax0[ex=0 inex=0] axany[ex=1 inex=1] poll_dev5=ax0=false axany=true axis5=1.0000 axis0=0.0000 strength0=0.0000 poll_dev0=ax0=true axany=true axis0=1.0000 strength0=1.0000 raw0=1.0000 poll_dev0_06=ax0=true axis0=0.6000 strength0=0.5000 raw0=0.6000 poll_dev0_neg=ax0=false axany=true axis0=-1.0000 poll_release=ax0=false axany=true axis0=0.0000"
+    },
+    {
+      "case": "input89_edges_exact",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS input89_edges exact control=wW_eia_ex=1_actual=1 sW_eia_ex=1_actual=1 eia_wW=ex=1 inex=1 eia_sW_vs_wW=ex=0 inex=1 eia_wW_vs_sW=ex=0 inex=0 eia_sW=ex=1 inex=1 eia_both=plainW[ex=1 inex=1] shiftW[ex=1 inex=1] poll_shiftW_on_plainW_binding=w[ex=false inex=true] sw[ex=true inex=true] poll_after_shiftW_release=w[ex=false inex=false] sw[ex=false inex=false] poll_plainW=w[ex=true inex=true] sw[ex=false inex=false] both[ex=true inex=true] poll_plainW_released=w[ex=false inex=false] both[ex=false inex=false] just_after_flush=w_jp[ex=false inex=false]"
+    },
+    {
+      "case": "r90_lattice_comread",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS r90_lattice comread eng=PhysicsServer2D tps=60 auto_com=0.0000,0.0000 auto_mode=0 coml_prop=<null> custom_mode=1 custom_com=4.0000,0.0000 rot_com=4.0000,0.0000 inertia5=5.0000 inertia0=0.0000 inertia33_mass4=33.0000 inertia33_mass1=33.0000 gscale_neg=-1.5000 gscale0=0.0000"
+    },
+    {
+      "case": "r90_lattice_comrefuse",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS r90_lattice comrefuse eng=PhysicsServer2D tps=60 auto_set4=com=0.0000,0.0000 mode=0 auto_set0=com=0.0000,0.0000 mode=0 custom_set4=com=4.0000,0.0000 mode=1 custom_set0=com=0.0000,0.0000 mode=1 back_auto=com=0.0000,0.0000 mode=0"
+    },
+    {
+      "case": "r90_lattice_contacts",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS r90_lattice contacts eng=PhysicsServer2D tps=60 rest=y=-7.7000,vy=0.0000 cb=count=1 y=-7.7000 pos=0.0000,0.3000 cvel=0.0000,16.3333 entered=1 ncb=45 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59"
+    },
+    {
+      "case": "r90_lattice_damp",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS r90_lattice damp eng=PhysicsServer2D tps=60 f30=default[y=124.5675,vy=478.3405]|rep0[y=126.5834,vy=490.0001]|rep05[y=116.9554,vy=435.1487]|comb05[y=115.1592,vy=425.1562] f60=default[y=482.2250,vy=933.3325]|rep0[y=498.1666,vy=979.9996]|rep05[y=425.5192,vy=773.6876]|comb05[y=412.9205,vy=739.6441] tld=default=0.1000|rep0=0.0000|rep05=0.5000|comb05=0.6000 ncb=default=60|rep0=60|rep05=60|comb05=60 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59"
+    },
+    {
+      "case": "r90_lattice_freezelock",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS r90_lattice freezelock eng=PhysicsServer2D tps=60 f30=f_normal[y=-7.6969,vy=0.0000,w=0.0000,fz=false]|f_static[y=-100.0000,vy=0.0000,w=0.0000,fz=true]|f_kin[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_kin2[y=-100.0000,vy=-30.0000,w=0.0000,fz=true]|f_lock[y=-128.0000,vy=-60.0000,w=0.0000,fz=false] sleep=s_off[sl=false,y=-7.7000,vy=0.0000] s_on[sl=true,y=-7.7000,vy=0.0000] ncb=120 cb0_rel=1 obs0_rel=1 pf_delta=120 tick_dh=1:119"
+    },
+    {
+      "case": "r90_lattice_gravity",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS r90_lattice gravity eng=PhysicsServer2D tps=60 f30=g0[y=0.0000,vy=0.0000]|g05[y=62.2838,vy=239.1703]|g1[y=124.5675,vy=478.3405]|g2[y=249.1351,vy=956.6811]|gm1[y=-124.5675,vy=-478.3405]|zv[y=-14.6187,vy=-28.5357]|zv0[y=-15.0000,vy=-30.0000]|cf[y=124.5675,vy=478.3405] f60=g0[y=0.0000,vy=0.0000]|g05[y=241.1125,vy=466.6662]|g1[y=482.2250,vy=933.3325]|g2[y=964.4500,vy=1866.6649]|gm1[y=-482.2250,vy=-933.3325]|zv[y=-28.5238,vy=-27.1429]|zv0[y=-30.0000,vy=-30.0000]|cf[y=482.2250,vy=933.3325] ncb=60 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59"
+    },
+    {
+      "case": "r90_lattice_impedge",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS r90_lattice impedge eng=PhysicsServer2D tps=60 set=neg_i[i=0.0000,m=1.0000]|zero_i[i=0.0000,m=1.0000]|mass0[i=0.0000,m=1.0000]|massneg[i=0.0000,m=1.0000] post=neg_i[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|zero_i[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|mass0[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|massneg[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000] ncb=neg_i=4|zero_i=4|mass0=4|massneg=4 cb0_rel=1 obs0_rel=1 pf_delta=4 tick_dh=1:3"
+    },
+    {
+      "case": "r90_lattice_impulse",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS r90_lattice impulse eng=PhysicsServer2D tps=60 post=c_central[v=0.0000,-60.0000,w=0.0000,iI=0.031250,im=1.0000]|c_off[v=0.0000,-60.0000,w=-15.0000,iI=0.031250,im=1.0000]|c_tq[v=0.0000,0.0000,w=15.0000,iI=0.031250,im=1.0000]|r_tq[v=0.0000,0.0000,w=11.5200,iI=0.024000,im=1.0000]|r_off[v=0.0000,-60.0000,w=-11.5200,iI=0.024000,im=1.0000] ncb=c_central=4|c_off=4|c_tq=4|r_tq=4|r_off=4 cb0_rel=1 obs0_rel=1 pf_delta=4 tick_dh=1:3"
+    },
+    {
+      "case": "r90_lattice_lag",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS r90_lattice lag eng=PhysicsServer2D tps=60 a=y=126.5834,vy=490.0001 b=y=118.4167,vy=490.0001 c=y=124.5675,vy=478.3405 d=dy=8.1667,dvy=0.0000 step=0.016667 gdt=16.3333 gdt2=0.272222 exp=N=30 exp_dy=8.1667 exp_dvy_gdt=16.3333 acc=an=30,bn=30,apre=490.0001,bpre=473.6668,bpost=490.0001 cb0_rel=1 obs0_rel=1 pf_delta=30 tick_dh=1:29"
+    },
+    {
+      "case": "r90_lattice_order",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS r90_lattice order eng=PhysicsServer2D tps=60 ncb=60 cb0=st=0.016667 ty=0.2722 vy=16.3333 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb1=st=0.016667 ty=0.8162 vy=32.6394 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb2=st=0.016667 ty=1.6315 vy=48.9184 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb3=st=0.016667 ty=2.7177 vy=65.1702 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cb4=st=0.016667 ty=4.0743 vy=81.3949 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 cblast=st=0.016667 ty=482.2250 vy=933.3325 g=980.0000 tld=0.1000 im=1.0000 iI=0.031250 f1=y=0.2722,vy=16.3333 f2=y=0.8162,vy=32.6394 f3=y=1.6315,vy=48.9184 f60=y=482.2250,vy=933.3325 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59 cbpf_dh=1:59"
+    },
+    {
+      "case": "r90_lattice_props",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS r90_lattice props eng=PhysicsServer2D tps=60 nprops=88 props=[mass|physics_material_override|gravity_scale|Mass Distribution|center_of_mass_mode|center_of_mass|inertia|Deactivation|sleeping|can_sleep|lock_rotation|freeze|freeze_mode|Solver|custom_integrator|continuous_cd|contact_monitor|max_contacts_reported|Linear|linear_velocity|linear_damp_mode|linear_damp|Angular|angular_velocity|angular_damp_mode|angular_damp|Constant Forces|constant_force|constant_torque|disable_mode|Collision|collision_layer|collision_mask|collision_priority|Input|input_pickable|Transform|position|rotation|rotation_degrees|scale|skew|transform|global_position|global_rotation|global_rotation_degrees|global_scale|global_skew|global_transform|Visibility|visible|modulate|self_modulate|show_behind_parent|top_level|clip_children|oversampling_with_scale|light_mask|visibility_layer|Ordering|z_index|z_as_relative|y_sort_enabled|Texture|texture_filter|texture_repeat|Material|material|use_parent_material|name|unique_name_in_owner|scene_file_path|owner|multiplayer|Process|process_mode|process_priority|process_physics_priority|Thread Group|process_thread_group|process_thread_group_order|process_thread_messages|Physics Interpolation|physics_interpolation_mode|Auto Translate|auto_translate_mode|Editor Description|editor_description] u_center_of_mass=6 u_center_of_mass_local=-1 u_inertia=6 u_linear_damp=6 u_angular_damp=6 u_constant_force=6 u_constant_torque=6 u_freeze_mode=6 u_sleeping=6 methods=[_edit_get_state|_edit_set_state|_integrate_forces|add_constant_central_force|add_constant_force|add_constant_torque|apply_central_force|apply_central_impulse|apply_force|apply_impulse|apply_torque|apply_torque_impulse|force_update_transform|get_angular_damp|get_angular_damp_mode|get_constant_force|get_constant_torque|get_gravity|get_gravity_scale|get_linear_damp|get_linear_damp_mode|set_angular_damp|set_angular_damp_mode|set_constant_force|set_constant_torque|set_gravity_scale|set_linear_damp|set_linear_damp_mode] enum=COM_AUTO=0,COM_CUSTOM=1,FM_STATIC=0,FM_KINEMATIC=1,CCD_OFF=0,CCD_RAY=1,CCD_SHAPE=2,DAMP_COMBINE=0,DAMP_REPLACE=1 ps_gravity=980.0000 ps_ldamp=0.1000 ps_adamp=1.0000 ps_tps=60 d_mass=1.0000 d_inertia=0.0000 d_center_of_mass=0.0000,0.0000 d_center_of_mass_local=<null> d_center_of_mass_mode=0 d_gravity_scale=1.0000 d_custom_integrator=false d_freeze=false d_freeze_mode=0 d_lock_rotation=false d_can_sleep=true d_sleeping=false d_continuous_cd=0 d_max_contacts_reported=0 d_contact_monitor=false d_linear_damp=0.0000 d_linear_damp_mode=0 d_angular_damp=0.0000 d_angular_damp_mode=0 d_constant_force=0.0000,0.0000 d_constant_torque=0.0000"
+    },
+    {
+      "case": "r90_lattice_write",
+      "exact_line": true,
+      "contains_only": false,
+      "emitted": "PASS r90_lattice write eng=PhysicsServer2D tps=60 step=0.016667 f30=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=118.4167,vy=490.0001] f60=wzero[y=0.0000,vy=0.0000]|whold[y=-50.0000,vy=0.0000]|wman[y=481.8333,vy=979.9996] ncb=60 cb0_rel=1 obs0_rel=1 pf_delta=60 tick_dh=1:59"
+    }
+  ],
+  "non_r89r90_fails": [],
+  "r89_pass": 20,
+  "r90_pass": 12,
+  "ok": true
+}

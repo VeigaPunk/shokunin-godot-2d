@@ -1,0 +1,8 @@
+=== godot: mine runs2/20261015T223404791057Z/verdicts.json rows=247 verdict=PASS file_sha256=eb53e3f9fb5aef4e625b618877a81f29d3a26d8b0b249c63174fd96114d4b940 ===
+
+run1: ref=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r89-verify2/runs1/20261015T223032116353Z/verdicts.json ref_rows=247 ref_verdict=PASS
+  common=247 new_only=0 old_only=0 tuple_mismatches=0 (seeded=0 meta=0)
+  output-normalized identical=237 differing=3 not-carried=7
+  OUT-DIFF input_lattice_ui_ns line 3: mine='PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_acce' ref='PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_acce'
+  OUT-DIFF r88_surfaces_mp_loopback line 4: mine='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn1137379958", "c_srvdisc", "s_disc1137379958"] raw_uid=<add' ref='R88S mp_lb raw_order=["c_on_srv", "c_conn1", "s_conn1671701153", "c_srvdisc", "s_disc1671701153"] raw_uid=<add'
+  OUT-DIFF release line 2: mine='PASS release press_receipts=1 release_receipts=1 held_moves=3 post_release_moves=0 scene=A' ref='PASS release press_receipts=1 release_receipts=1 held_moves=4 post_release_moves=0 scene=A'
