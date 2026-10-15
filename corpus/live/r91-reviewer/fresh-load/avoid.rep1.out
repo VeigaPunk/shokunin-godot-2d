@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false seq_a=[14.098,0.000,14.168,0.000,14.168,0.000,14.227,0.000,14.301,0.000] seq_b=[-5.763,0.000,-5.832,0.000,-5.714,0.000,-5.625,0.000,-5.699,0.000] vel_a=(14.3008,0.0000) vel_b=(-5.6992,0.0000) sum_max=20.0000 settle=4

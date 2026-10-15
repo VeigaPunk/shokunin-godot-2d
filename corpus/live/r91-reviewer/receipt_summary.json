@@ -1,0 +1,101 @@
+{
+ "nav_lattice_agent": {
+  "n": 2,
+  "fail": 1,
+  "prefix": false,
+  "onepass": false,
+  "stale": true,
+  "out_uniq": 2,
+  "err_uniq": 1
+ },
+ "nav_lattice_avoid": {
+  "n": 2,
+  "fail": 2,
+  "prefix": false,
+  "onepass": false,
+  "stale": true,
+  "out_uniq": 1,
+  "err_uniq": 1
+ },
+ "nav_lattice_bake": {
+  "n": 2,
+  "fail": 1,
+  "prefix": false,
+  "onepass": false,
+  "stale": true,
+  "out_uniq": 2,
+  "err_uniq": 1
+ },
+ "nav_lattice_census": {
+  "n": 2,
+  "fail": 0,
+  "prefix": true,
+  "onepass": true,
+  "stale": false,
+  "out_uniq": 1,
+  "err_uniq": 1
+ },
+ "nav_lattice_link": {
+  "n": 2,
+  "fail": 2,
+  "prefix": false,
+  "onepass": false,
+  "stale": true,
+  "out_uniq": 2,
+  "err_uniq": 1
+ },
+ "nav_lattice_path": {
+  "n": 2,
+  "fail": 1,
+  "prefix": false,
+  "onepass": true,
+  "stale": false,
+  "out_uniq": 2,
+  "err_uniq": 1
+ },
+ "nav_lattice_query": {
+  "n": 2,
+  "fail": 2,
+  "prefix": false,
+  "onepass": false,
+  "stale": true,
+  "out_uniq": 1,
+  "err_uniq": 1
+ },
+ "nav_lattice_region": {
+  "n": 2,
+  "fail": 2,
+  "prefix": false,
+  "onepass": false,
+  "stale": true,
+  "out_uniq": 1,
+  "err_uniq": 1
+ },
+ "nav_lattice_sync": {
+  "n": 2,
+  "fail": 2,
+  "prefix": false,
+  "onepass": false,
+  "stale": true,
+  "out_uniq": 1,
+  "err_uniq": 1
+ },
+ "nav_lattice_teardown_clean": {
+  "n": 2,
+  "fail": 0,
+  "prefix": true,
+  "onepass": true,
+  "stale": false,
+  "out_uniq": 1,
+  "err_uniq": 1
+ },
+ "nav_lattice_teardown_crash": {
+  "n": 2,
+  "fail": 0,
+  "prefix": false,
+  "onepass": false,
+  "stale": false,
+  "out_uniq": 1,
+  "err_uniq": 1
+ }
+}

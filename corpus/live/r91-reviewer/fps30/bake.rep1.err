@@ -1,0 +1,11 @@
+WARNING: Function make_polygons_from_outlines() is deprecated.
+Use NavigationServer2D.parse_source_geometry_data() and NavigationServer2D.bake_from_source_geometry_data() instead.
+     at: make_polygons_from_outlines (scene/resources/2d/navigation_polygon.cpp:316)
+     GDScript backtrace (most recent call first):
+         [0] _arm_bake (res://nav_lattice.gd:702)
+         [1] _initialize (res://nav_lattice.gd:148)
+ERROR: The root node needs to be inside the SceneTree.
+   at: parse_source_geometry_data (modules/navigation_2d/2d/godot_navigation_server_2d.cpp:115)
+   GDScript backtrace (most recent call first):
+       [0] _arm_bake (res://nav_lattice.gd:724)
+       [1] _initialize (res://nav_lattice.gd:148)

@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS nav_lattice sync pre_iter=0 pre_regions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=true dis_settled=false dis_same=true chg_iter_same=2 chg_iter_settled=3 gate=0 ladder=[f0:0/0/0,f1:0/0/0,f2:1/0/0,f3:1/1/0,f4:2/1/1,f5:2/1/1,f6:2/1/1,f7:2/1/1,f8:2/1/1,f9:2/1/1] first_reach=4 first_reach_sync=1
