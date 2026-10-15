@@ -1,0 +1,1054 @@
+r91b boundary analysis
+======================
+  quiet      cells=q_b_agent,q_b_avoid,q_b_bake,q_b_change,q_b_gate,q_c_clear0,q_c_clear1,q_c_clear2,q_c_leak_cb,q_c_leak_clean,q_c_noclear,q_d_bent,q_d_v1,q_d_v5,q_d_v7,q_d_v8,q_d_v9,q_sv_agent,q_sv_avoid,q_sv_bake,q_sv_region,q_sv_sync
+  load       cells=l_b_agent,l_b_avoid,l_b_bake,l_b_change,l_b_gate,l_c_clear0,l_c_clear1,l_c_clear2,l_c_leak_cb,l_c_leak_clean,l_c_noclear,l_d_bent,l_d_v1,l_d_v5,l_d_v7,l_d_v8,l_d_v9,l_sv_agent,l_sv_avoid,l_sv_bake,l_sv_region,l_sv_sync
+  ff30       cells=f30_b_agent,f30_b_avoid,f30_b_bake,f30_b_change,f30_b_gate,f30_c_clear0,f30_c_clear1,f30_c_clear2,f30_c_leak_cb,f30_c_leak_clean,f30_c_noclear,f30_d_v1,f30_d_v5,f30_d_v7,f30_d_v8,f30_sv_agent,f30_sv_avoid,f30_sv_bake,f30_sv_region,f30_sv_sync
+  ff120      cells=f120_b_agent,f120_b_avoid,f120_b_bake,f120_b_change,f120_b_gate,f120_c_clear0,f120_c_clear1,f120_c_clear2,f120_c_leak_cb,f120_c_leak_clean,f120_c_noclear,f120_d_v1,f120_d_v5,f120_d_v7,f120_d_v8,f120_sv_agent,f120_sv_avoid,f120_sv_bake,f120_sv_region,f120_sv_sync
+  ff120load  cells=f120l_b_agent,f120l_b_avoid,f120l_b_bake,f120l_b_change,f120l_b_gate,f120l_c_clear0,f120l_c_clear1,f120l_c_clear2,f120l_c_leak_cb,f120l_c_leak_clean,f120l_c_noclear,f120l_d_v1,f120l_d_v5,f120l_d_v7,f120l_d_v8,f120l_sv_agent,f120l_sv_avoid,f120l_sv_bake,f120l_sv_region,f120l_sv_sync
+  quiet2     cells=q2_b_agent,q2_b_avoid,q2_b_change,q2_b_gate,q2_d_v1,q2_d_v5
+
+cell           cond       reps out_uniq  err  wall  rc
+ab1_def        other      1    1         1      0.8  0
+ab1_f120       other      1    1         1      0.7  0
+ab1_f30        other      1    1         1      0.8  0
+ab1_f60        other      1    1         1      0.7  0
+ab2_def        other      1    1         1      1.0  0
+ab2_f120       other      1    1         1      0.6  0
+ab2_f30        other      1    1         1      0.7  0
+ab2_f60        other      1    1         1      0.6  0
+ab3_def        other      1    1         1      0.9  0
+ab3_f120       other      1    1         1      0.7  0
+ab3_f30        other      1    1         1      0.8  0
+ab3_f60        other      1    1         1      0.8  0
+ab4_def        other      1    1         1      0.9  0
+ab4_f120       other      1    1         1      0.7  0
+ab4_f30        other      1    1         1      0.7  0
+ab4_f60        other      1    1         1      0.6  0
+ab5_def        other      1    1         1      0.9  0
+ab5_f120       other      1    1         1      0.7  0
+ab5_f30        other      1    1         1      0.6  0
+ab5_f60        other      1    1         1      0.7  0
+ab6_def        other      1    1         1      1.0  0
+ab6_f120       other      1    1         1      0.7  0
+ab6_f30        other      1    1         1      0.5  0
+ab6_f60        other      1    1         1      0.7  0
+dc_navfree2    other      3    1         1      1.2  134 134 134
+dc_navfree5    other      3    1         1      1.2  134 134 134
+dc_navfree6    other      3    1         1      0.7  0 0 0
+f120_b_agent   ff120      3    2         1      1.5  0 0 0
+f120_b_avoid   ff120      3    3         1      0.7  0 0 0
+f120_b_bake    ff120      3    3         1      0.5  0 0 0
+f120_b_change  ff120      3    2         1      1.6  0 0 0
+f120_b_gate    ff120      3    2         1      1.4  0 0 0
+f120_c_clear0  ff120      3    1         1      1.2  134 134 134
+f120_c_clear1  ff120      3    1         1      0.6  0 0 0
+f120_c_clear2  ff120      3    1         1      0.6  0 0 0
+f120_c_leak_cb ff120      3    1         1      1.1  134 134 134
+f120_c_leak_clean ff120      3    1         1      0.6  0 0 0
+f120_c_noclear ff120      3    1         1      1.1  134 134 134
+f120_d_v1      ff120      3    3         1      0.5  0 0 0
+f120_d_v5      ff120      3    3         1      0.7  0 0 0
+f120_d_v7      ff120      3    3         1      0.6  0 0 0
+f120_d_v8      ff120      3    3         1      0.5  0 0 0
+f120_sv_agent  ff120      3    3         1      1.0  0 0 0
+f120_sv_avoid  ff120      3    3         1      1.0  0 0 0
+f120_sv_bake   ff120      3    3         1      1.3  0 0 0
+f120_sv_region ff120      3    3         1      0.8  0 0 0
+f120_sv_sync   ff120      3    3         1      0.6  0 0 0
+f120l_b_agent  ff120load  3    3         1      0.6  0 0 0
+f120l_b_avoid  ff120load  3    3         1      0.6  0 0 0
+f120l_b_bake   ff120load  3    3         1      0.6  0 0 0
+f120l_b_change ff120load  3    3         1      0.8  0 0 0
+f120l_b_gate   ff120load  3    3         1      0.6  0 0 0
+f120l_c_clear0 ff120load  3    1         1      1.8  134 134 134
+f120l_c_clear1 ff120load  3    1         1      1.7  0 0 0
+f120l_c_clear2 ff120load  3    1         1      1.2  0 0 0
+f120l_c_leak_cb ff120load  3    1         1      2.3  134 134 134
+f120l_c_leak_clean ff120load  3    1         1      1.2  0 0 0
+f120l_c_noclear ff120load  3    1         1      1.0  134 134 134
+f120l_d_v1     ff120load  3    1         1      0.7  0 0 0
+f120l_d_v5     ff120load  3    3         1      0.6  0 0 0
+f120l_d_v7     ff120load  3    3         1      0.6  0 0 0
+f120l_d_v8     ff120load  3    3         1      0.6  0 0 0
+f120l_sv_agent ff120load  3    2         1      0.7  0 0 0
+f120l_sv_avoid ff120load  3    3         1      0.6  0 0 0
+f120l_sv_bake  ff120load  3    3         1      0.6  0 0 0
+f120l_sv_region ff120load  3    3         1      0.6  0 0 0
+f120l_sv_sync  ff120load  3    3         1      0.6  0 0 0
+f30_b_agent    ff30       3    3         1      0.9  0 0 0
+f30_b_avoid    ff30       3    3         1      1.0  0 0 0
+f30_b_bake     ff30       3    3         1      1.6  0 0 0
+f30_b_change   ff30       3    3         1      0.9  0 0 0
+f30_b_gate     ff30       3    3         1      0.9  0 0 0
+f30_c_clear0   ff30       3    1         1      2.0  134 134 134
+f30_c_clear1   ff30       3    1         1      0.5  0 0 0
+f30_c_clear2   ff30       3    1         1      0.5  0 0 0
+f30_c_leak_cb  ff30       3    1         1      0.9  134 134 134
+f30_c_leak_clean ff30       3    1         1      0.6  0 0 0
+f30_c_noclear  ff30       3    1         1      2.4  134 134 134
+f30_d_v1       ff30       3    3         1      1.3  0 0 0
+f30_d_v5       ff30       3    1         1      1.7  0 0 0
+f30_d_v7       ff30       3    2         1      1.9  0 0 0
+f30_d_v8       ff30       3    1         1      1.4  0 0 0
+f30_sv_agent   ff30       3    2         1      0.9  0 0 0
+f30_sv_avoid   ff30       3    3         1      1.1  0 0 0
+f30_sv_bake    ff30       3    3         1      1.1  0 0 0
+f30_sv_region  ff30       3    3         1      0.7  0 0 0
+f30_sv_sync    ff30       3    3         1      0.7  0 0 0
+l_b_agent      load       5    4         1      2.6  0 0 0 0 0
+l_b_avoid      load       5    5         1      1.5  0 0 0 0 0
+l_b_bake       load       5    4         1      1.0  0 0 0 0 0
+l_b_change     load       5    5         1      2.3  0 0 0 0 0
+l_b_gate       load       5    5         1      1.6  0 0 0 0 0
+l_c_clear0     load       5    1         1      1.5  134 134 134 134 134
+l_c_clear1     load       5    1         1      1.4  0 0 0 0 0
+l_c_clear2     load       5    1         1      1.3  0 0 0 0 0
+l_c_leak_cb    load       5    1         1      1.5  134 134 134 134 134
+l_c_leak_clean load       5    1         1      1.0  0 0 0 0 0
+l_c_noclear    load       5    1         1      1.6  134 134 134 134 134
+l_d_bent       load       3    3         1      1.1  0 0 0
+l_d_v1         load       5    2         1      1.4  0 0 0 0 0
+l_d_v5         load       5    2         1      1.5  0 0 0 0 0
+l_d_v7         load       5    2         1      1.6  0 0 0 0 0
+l_d_v8         load       5    3         1      1.6  0 0 0 0 0
+l_d_v9         load       3    1         1      1.5  0 0 0
+l_sv_agent     load       5    4         1      1.5  0 0 0 0 0
+l_sv_avoid     load       5    5         1      1.4  0 0 0 0 0
+l_sv_bake      load       5    3         1      1.2  0 0 0 0 0
+l_sv_region    load       5    5         1      1.6  0 0 0 0 0
+l_sv_sync      load       5    5         1      1.5  0 0 0 0 0
+q2_b_agent     quiet2     3    3         1      2.6  0 0 0
+q2_b_avoid     quiet2     3    3         1      1.7  0 0 0
+q2_b_change    quiet2     3    2         1      2.2  0 0 0
+q2_b_gate      quiet2     3    3         1      1.4  0 0 0
+q2_d_v1        quiet2     3    1         1      1.6  0 0 0
+q2_d_v5        quiet2     3    1         1      1.7  0 0 0
+q_b_agent      quiet      3    2         1      2.2  0 0 0
+q_b_avoid      quiet      3    3         1      1.5  0 0 0
+q_b_bake       quiet      3    3         1      1.0  0 0 0
+q_b_change     quiet      3    3         1      2.1  0 0 0
+q_b_gate       quiet      3    3         1      2.1  0 0 0
+q_c_clear0     quiet      3    1         1      1.5  134 134 134
+q_c_clear1     quiet      3    1         1      1.0  0 0 0
+q_c_clear2     quiet      3    1         1      0.9  0 0 0
+q_c_leak_cb    quiet      3    1         1      1.6  134 134 134
+q_c_leak_clean quiet      3    1         1      1.0  0 0 0
+q_c_noclear    quiet      3    1         1      1.5  134 134 134
+q_d_bent       quiet      3    1         1      0.9  0 0 0
+q_d_v1         quiet      3    2         1      1.6  0 0 0
+q_d_v5         quiet      3    1         1      1.5  0 0 0
+q_d_v7         quiet      3    2         1      1.4  0 0 0
+q_d_v8         quiet      3    2         1      1.4  0 0 0
+q_d_v9         quiet      3    2         1      1.2  0 0 0
+q_sv_agent     quiet      3    3         1      1.5  0 0 0
+q_sv_avoid     quiet      3    3         1      1.5  0 0 0
+q_sv_bake      quiet      3    3         1      1.2  0 0 0
+q_sv_region    quiet      3    1         1      1.4  0 0 0
+q_sv_sync      quiet      3    2         1      1.4  0 0 0
+
+json -> /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r91-boundary/analyze_r91b.json
+
+== claim summary ==
+{
+ "ab_fixedfps": {
+  "1": {
+   "def": {
+    "async_first_reach": "2",
+    "first_iter1": "2",
+    "first_iter2": "4",
+    "first_reach": "4",
+    "proc_per_await": "2.500",
+    "wall": 0.84
+   },
+   "f120": {
+    "async_first_reach": "2",
+    "first_iter1": "4",
+    "first_iter2": "7",
+    "first_reach": "7",
+    "proc_per_await": "2.000",
+    "wall": 0.67
+   },
+   "f30": {
+    "async_first_reach": "2",
+    "first_iter1": "2",
+    "first_iter2": "3",
+    "first_reach": "3",
+    "proc_per_await": "0.667",
+    "wall": 0.84
+   },
+   "f60": {
+    "async_first_reach": "4",
+    "first_iter1": "3",
+    "first_iter2": "31",
+    "first_reach": "31",
+    "proc_per_await": "1.000",
+    "wall": 0.66
+   }
+  },
+  "2": {
+   "def": {
+    "async_first_reach": "2",
+    "first_iter1": "3",
+    "first_iter2": "5",
+    "first_reach": "5",
+    "proc_per_await": "2.600",
+    "wall": 0.97
+   },
+   "f120": {
+    "async_first_reach": "2",
+    "first_iter1": "2",
+    "first_iter2": "3",
+    "first_reach": "3",
+    "proc_per_await": "2.000",
+    "wall": 0.55
+   },
+   "f30": {
+    "async_first_reach": "2",
+    "first_iter1": "3",
+    "first_iter2": "6",
+    "first_reach": "6",
+    "proc_per_await": "0.500",
+    "wall": 0.68
+   },
+   "f60": {
+    "async_first_reach": "2",
+    "first_iter1": "3",
+    "first_iter2": "20",
+    "first_reach": "20",
+    "proc_per_await": "1.000",
+    "wall": 0.55
+   }
+  },
+  "3": {
+   "def": {
+    "async_first_reach": "2",
+    "first_iter1": "3",
+    "first_iter2": "5",
+    "first_reach": "5",
+    "proc_per_await": "2.200",
+    "wall": 0.9
+   },
+   "f120": {
+    "async_first_reach": "2",
+    "first_iter1": "3",
+    "first_iter2": "6",
+    "first_reach": "6",
+    "proc_per_await": "2.000",
+    "wall": 0.7
+   },
+   "f30": {
+    "async_first_reach": "4",
+    "first_iter1": "3",
+    "first_iter2": "-1",
+    "first_reach": "-1",
+    "proc_per_await": "0.000",
+    "wall": 0.76
+   },
+   "f60": {
+    "async_first_reach": "2",
+    "first_iter1": "3",
+    "first_iter2": "6",
+    "first_reach": "6",
+    "proc_per_await": "1.000",
+    "wall": 0.78
+   }
+  },
+  "4": {
+   "def": {
+    "async_first_reach": "2",
+    "first_iter1": "2",
+    "first_iter2": "4",
+    "first_reach": "4",
+    "proc_per_await": "2.000",
+    "wall": 0.86
+   },
+   "f120": {
+    "async_first_reach": "-1",
+    "first_iter1": "3",
+    "first_iter2": "6",
+    "first_reach": "6",
+    "proc_per_await": "2.000",
+    "wall": 0.74
+   },
+   "f30": {
+    "async_first_reach": "2",
+    "first_iter1": "3",
+    "first_iter2": "6",
+    "first_reach": "6",
+    "proc_per_await": "0.500",
+    "wall": 0.65
+   },
+   "f60": {
+    "async_first_reach": "4",
+    "first_iter1": "3",
+    "first_iter2": "4",
+    "first_reach": "4",
+    "proc_per_await": "1.000",
+    "wall": 0.59
+   }
+  },
+  "5": {
+   "def": {
+    "async_first_reach": "2",
+    "first_iter1": "3",
+    "first_iter2": "5",
+    "first_reach": "5",
+    "proc_per_await": "2.000",
+    "wall": 0.86
+   },
+   "f120": {
+    "async_first_reach": "3",
+    "first_iter1": "2",
+    "first_iter2": "5",
+    "first_reach": "5",
+    "proc_per_await": "2.000",
+    "wall": 0.73
+   },
+   "f30": {
+    "async_first_reach": "2",
+    "first_iter1": "3",
+    "first_iter2": "-1",
+    "first_reach": "-1",
+    "proc_per_await": "0.000",
+    "wall": 0.55
+   },
+   "f60": {
+    "async_first_reach": "3",
+    "first_iter1": "3",
+    "first_iter2": "7",
+    "first_reach": "7",
+    "proc_per_await": "1.000",
+    "wall": 0.66
+   }
+  },
+  "6": {
+   "def": {
+    "async_first_reach": "2",
+    "first_iter1": "3",
+    "first_iter2": "5",
+    "first_reach": "5",
+    "proc_per_await": "2.800",
+    "wall": 1.0
+   },
+   "f120": {
+    "async_first_reach": "2",
+    "first_iter1": "3",
+    "first_iter2": "7",
+    "first_reach": "7",
+    "proc_per_await": "2.000",
+    "wall": 0.73
+   },
+   "f30": {
+    "async_first_reach": "40",
+    "first_iter1": "-1",
+    "first_iter2": "-1",
+    "first_reach": "-1",
+    "proc_per_await": "0.000",
+    "wall": 0.5
+   },
+   "f60": {
+    "async_first_reach": "4",
+    "first_iter1": "44",
+    "first_iter2": "49",
+    "first_reach": "49",
+    "proc_per_await": "1.000",
+    "wall": 0.66
+   }
+  }
+ },
+ "agent_split": {
+  "b_b_split_by_cond": {
+   "ff120": [
+    "0",
+    "-1",
+    "0"
+   ],
+   "ff120load": [
+    "0",
+    "0",
+    "0"
+   ],
+   "ff30": [
+    "0",
+    "0",
+    "-1"
+   ],
+   "load": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "quiet": [
+    "0",
+    "0",
+    "0"
+   ],
+   "quiet2": [
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  "b_b_walk_steps": [
+   26,
+   27,
+   80
+  ],
+  "b_fin_at_by_cond": {
+   "ff120": [
+    "28",
+    "-1",
+    "28"
+   ],
+   "ff120load": [
+    "28",
+    "-1",
+    "28"
+   ],
+   "ff30": [
+    "28",
+    "-1",
+    "-1"
+   ],
+   "load": [
+    "28",
+    "28",
+    "28",
+    "28",
+    "28"
+   ],
+   "quiet": [
+    "28",
+    "28",
+    "28"
+   ],
+   "quiet2": [
+    "28",
+    "28",
+    "28"
+   ]
+  },
+  "b_fin_same_frame": [
+   "false",
+   "true"
+  ],
+  "b_first_reachable": [
+   -1,
+   3,
+   4,
+   6,
+   7,
+   8,
+   9,
+   11,
+   25,
+   51
+  ],
+  "b_reached_at_by_cond": {
+   "ff120": [
+    "28",
+    "-1",
+    "28"
+   ],
+   "ff120load": [
+    "28",
+    "-1",
+    "28"
+   ],
+   "ff30": [
+    "28",
+    "-1",
+    "-1"
+   ],
+   "load": [
+    "28",
+    "28",
+    "28",
+    "28",
+    "28"
+   ],
+   "quiet": [
+    "28",
+    "28",
+    "28"
+   ],
+   "quiet2": [
+    "28",
+    "28",
+    "28"
+   ]
+  },
+  "b_runs": 20,
+  "b_split_by_cond": {
+   "ff120": [
+    "0",
+    "-1",
+    "0"
+   ],
+   "ff120load": [
+    "0",
+    "-1",
+    "0"
+   ],
+   "ff30": [
+    "0",
+    "-1",
+    "-1"
+   ],
+   "load": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "quiet": [
+    "0",
+    "0",
+    "0"
+   ],
+   "quiet2": [
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  "b_walk_steps": [
+   28,
+   80
+  ],
+  "d_v1": {
+   "fin_same_frame_by_cond": {
+    "ff120": [
+     "false",
+     "false",
+     "false"
+    ],
+    "ff120load": [
+     "false",
+     "false",
+     "false"
+    ],
+    "ff30": [
+     "false",
+     "false",
+     "false"
+    ],
+    "load": [
+     "false",
+     "false",
+     "false",
+     "false",
+     "false"
+    ],
+    "quiet": [
+     "false",
+     "false",
+     "false"
+    ],
+    "quiet2": [
+     "false",
+     "false",
+     "false"
+    ]
+   },
+   "note": [
+    ""
+   ],
+   "reached_at_by_cond": {
+    "ff120": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "ff120load": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "ff30": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "load": [
+     "-1",
+     "-1",
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "quiet": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "quiet2": [
+     "-1",
+     "-1",
+     "-1"
+    ]
+   },
+   "runs": 20
+  },
+  "d_v5": {
+   "fin_same_frame_by_cond": {
+    "ff120": [
+     "true",
+     "true",
+     "true"
+    ],
+    "ff120load": [
+     "true",
+     "false",
+     "true"
+    ],
+    "ff30": [
+     "false",
+     "false",
+     "false"
+    ],
+    "load": [
+     "true",
+     "true",
+     "true",
+     "true",
+     "true"
+    ],
+    "quiet": [
+     "true",
+     "true",
+     "true"
+    ],
+    "quiet2": [
+     "true",
+     "true",
+     "true"
+    ]
+   },
+   "note": [
+    ""
+   ],
+   "reached_at_by_cond": {
+    "ff120": [
+     "28",
+     "28",
+     "28"
+    ],
+    "ff120load": [
+     "28",
+     "-1",
+     "28"
+    ],
+    "ff30": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "load": [
+     "28",
+     "28",
+     "28",
+     "28",
+     "28"
+    ],
+    "quiet": [
+     "28",
+     "28",
+     "28"
+    ],
+    "quiet2": [
+     "28",
+     "28",
+     "28"
+    ]
+   },
+   "runs": 20
+  },
+  "d_v7": {
+   "fin_same_frame_by_cond": {
+    "ff120": [
+     "false",
+     "false",
+     "false"
+    ],
+    "ff120load": [
+     "false",
+     "false",
+     "false"
+    ],
+    "ff30": [
+     "false",
+     "false",
+     "false"
+    ],
+    "load": [
+     "false",
+     "false",
+     "false",
+     "false",
+     "false"
+    ],
+    "quiet": [
+     "false",
+     "false",
+     "false"
+    ]
+   },
+   "note": [
+    ""
+   ],
+   "reached_at_by_cond": {
+    "ff120": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "ff120load": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "ff30": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "load": [
+     "-1",
+     "-1",
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "quiet": [
+     "-1",
+     "-1",
+     "-1"
+    ]
+   },
+   "runs": 17
+  },
+  "d_v8": {
+   "fin_same_frame_by_cond": {
+    "ff120": [
+     "true",
+     "false",
+     "true"
+    ],
+    "ff120load": [
+     "true",
+     "true",
+     "true"
+    ],
+    "ff30": [
+     "false",
+     "false",
+     "false"
+    ],
+    "load": [
+     "true",
+     "true",
+     "true",
+     "true",
+     "true"
+    ],
+    "quiet": [
+     "true",
+     "true",
+     "true"
+    ]
+   },
+   "note": [
+    ""
+   ],
+   "reached_at_by_cond": {
+    "ff120": [
+     "28",
+     "-1",
+     "28"
+    ],
+    "ff120load": [
+     "42",
+     "28",
+     "28"
+    ],
+    "ff30": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "load": [
+     "28",
+     "28",
+     "28",
+     "28",
+     "28"
+    ],
+    "quiet": [
+     "28",
+     "28",
+     "28"
+    ]
+   },
+   "runs": 17
+  },
+  "d_v9": {
+   "fin_same_frame_by_cond": {
+    "load": [
+     "false",
+     "false",
+     "false"
+    ],
+    "quiet": [
+     "false",
+     "false",
+     "false"
+    ]
+   },
+   "note": [
+    "step=28"
+   ],
+   "reached_at_by_cond": {
+    "load": [
+     "-1",
+     "-1",
+     "-1"
+    ],
+    "quiet": [
+     "-1",
+     "-1",
+     "-1"
+    ]
+   },
+   "runs": 6
+  },
+  "sv_first_reachable": [
+   -1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   10
+  ],
+  "sv_reached_at": [
+   "-1"
+  ],
+  "sv_runs": 17,
+  "sv_walk_steps": [
+   28,
+   60
+  ]
+ },
+ "avoidance": {
+  "n_a_values": [
+   21
+  ],
+  "perframe_values": [
+   1
+  ],
+  "runs": 37,
+  "sum_by_cond": {
+   "ff120": [
+    19.84,
+    19.839,
+    19.838,
+    19.837,
+    19.915,
+    19.845,
+    19.841,
+    19.84,
+    19.839,
+    19.838,
+    19.841,
+    19.839,
+    19.839,
+    19.838,
+    19.837
+   ],
+   "ff120load": [
+    19.913,
+    19.858,
+    19.918,
+    19.86,
+    19.844,
+    19.891,
+    19.864,
+    19.856,
+    19.853,
+    19.852,
+    19.839,
+    19.838,
+    19.837,
+    19.836,
+    19.835
+   ],
+   "ff30": [
+    19.843,
+    19.842,
+    19.841,
+    19.84,
+    19.839,
+    19.845,
+    19.841,
+    19.915,
+    20.0,
+    19.88,
+    19.894,
+    19.884,
+    19.88,
+    19.879,
+    19.878
+   ],
+   "load": [
+    19.9,
+    19.9,
+    19.899,
+    19.898,
+    19.898,
+    20.0,
+    19.883,
+    19.853,
+    19.846,
+    19.843,
+    20.0,
+    19.936,
+    20.0,
+    19.935,
+    19.918,
+    19.85,
+    19.85,
+    19.848,
+    19.848,
+    19.847,
+    19.892,
+    19.865,
+    19.858,
+    19.855,
+    20.0
+   ],
+   "quiet": [
+    19.881,
+    20.0,
+    19.91,
+    20.0,
+    19.91,
+    19.851,
+    19.843,
+    19.841,
+    19.839,
+    19.838,
+    19.853,
+    19.851,
+    19.852,
+    19.85,
+    19.849
+   ],
+   "quiet2": [
+    19.85,
+    19.85,
+    19.848,
+    19.848,
+    19.847,
+    19.853,
+    19.852,
+    19.851,
+    19.85,
+    19.849,
+    19.854,
+    19.854,
+    19.852,
+    19.852,
+    19.851
+   ]
+  },
+  "sum_gt20": [],
+  "sum_lt198": [],
+  "sum_max": 20.0,
+  "sum_min": 19.835,
+  "sum_uniq": 45,
+  "warm_n_a_values": [
+   16
+  ]
+ },
+ "bake": {
+  "baked_polys": [
+   4
+  ],
+  "baked_verts": [
+   8
+  ],
+  "collider_only_polys": [
+   0
+  ],
+  "deprecation_any": true,
+  "hole_across_uniq": 2,
+  "iter_b": [
+   0,
+   1,
+   2
+  ],
+  "orphan_err_any": true,
+  "outline_polys": [
+   4
+  ],
+  "outline_verts": [
+   8
+  ],
+  "parse_obs": [
+   1
+  ],
+  "parse_trav": [
+   0
+  ],
+  "runs": 34,
+  "settle_a": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   9,
+   10,
+   24
+  ],
+  "settle_b": [
+   1,
+   2,
+   4,
+   10,
+   21,
+   23,
+   24
+  ],
+  "through_uniq": 2
+ },
+ "bent_distance": {
+  "delta": [
+   "56.5685"
+  ],
+  "dist": [
+   "226.2742"
+  ],
+  "dist_eq_straight": [
+   "true"
+  ],
+  "plen": [
+   "282.8427"
+  ],
+  "plen_eq_L": [
+   "true"
+  ],
+  "runs": 6
+ },
+ "change_application": {
+  "by_cond": {
+   "ff120": [
+    "tr=-1 dis=1 cost=-1 lay=-1 poly=-1 link=1 gap=-1",
+    "tr=-1 dis=1 cost=-1 lay=-1 poly=-1 link=1 gap=-1",
+    "tr=-1 dis=1 cost=-1 l
+
