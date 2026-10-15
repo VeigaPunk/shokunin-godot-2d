@@ -1033,3 +1033,27 @@
 - Seats: author+baseline(ds), verifier(zfl), critic+simplifier+
   boundary+scribe(ds-retries after rate-limit sweep); fold+
   adjudicator swe-2. ADMIT-corr. Commit 5ab058b.
+
+## round 85 — camera/canvas transform lattice (ADMIT-corr)
+
+- 15 cells in `camera_proc.gd` (+5 non-pinned diag arms): canvas
+  composition law, zoom-center anchoring, write-timing visibility
+  ladder, 1/60 subpixel steps, four transform spaces, CanvasLayer
+  stack/follow/draw-order, SubViewport world isolation +
+  render-independence, ParallaxLayer/Parallax2D/PBG splits, parallax
+  phase. +15 battery rows → 174. Author 20/20 standalone + 174/174
+  rehearsal; verifier 174/174 ×2, prior-159 zero drift, forge-kill.
+- FOLDS (76fa8d8): critic C1-C7 all additive — draworder hidden-tag
+  queued/in/vis witnesses, vp_indep camera+cl readbacks, cl in-tree
+  pins, par_2d rep/fv/so/ign readbacks, par_layer in-row mm/mo,
+  cam_comp second-config comp4 witness, sub_dev %.9f (deviation
+  6.104e-6, kills the "exact -0.025" 4dp launder). 8 rows repinned
+  UNDER BATTERY CONTEXT (scratch viewport 64x64 ≠ 720x450 direct).
+- RECORD: boundary F5 — transform writes (pos/rot) defer to the
+  visibility ladder; zoom/offset/anchor/limit writes are LIVE via
+  _update_scroll(). 13 more edge classes bounded (smoothing
+  speed*delta divergence, inverted-limit midpoint clamp, zoom
+  is_zero_approx floor, stateful drag, parallax parentage splits).
+  Scribe F2 record-level.
+- Seats: scout+author-finisher(ds), verifier(zfl), critic+boundary+
+  scribe(ds); fold+adj swe-2. ADMIT-corr. Commits 45232c7 + 76fa8d8.
