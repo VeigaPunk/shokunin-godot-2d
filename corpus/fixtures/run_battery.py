@@ -370,6 +370,34 @@ CASES = [
       'PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=["cx", "ui_accept", "ui_text_completion_accept", "ui_text_newline", "ui_text_submit"] ua_has_after=false cx_after[0/0.00/0/0] recv=[1:ins0@pr+0/ph+0:K(kc=4194309,ph=0,pr=1,echo=0,dev=16,u=0,sh=0) m[ui_accept:1/0|I1/1/0,cx:1/0|I1/1/0] echo0 2:scs0@pr+0/ph+0:K(kc=4194309,ph=0,pr=1,echo=0,dev=16,u=0,sh=0) m[ui_accept:1/0|I1/1/0,cx:1/0|I1/1/0] echo0 3:uks0@pr+0/ph+0:K(kc=4194309,ph=0,pr=1,echo=0,dev=16,u=0,sh=0) m[ui_accept:1/0|I1/1/0,cx:1/0|I1/1/0] echo0 4:uhs0@pr+0/ph+0:K(kc=4194309,ph=0,pr=1,echo=0,dev=16,u=0,sh=0) m[ui_accept:1/0|I1/1/0,cx:1/0|I1/1/0] echo0 5:ins0@pr+2/ph+1:K(kc=4194309,ph=0,pr=0,echo=0,dev=16,u=0,sh=0) m[ui_accept:gone|Igone,cx:0/1|I0/0/1] echo0 6:scs0@pr+2/ph+1:K(kc=4194309,ph=0,pr=0,echo=0,dev=16,u=0,sh=0) m[ui_accept:gone|Igone,cx:0/1|I0/0/1] echo0 7:uks0@pr+2/ph+1:K(kc=4194309,ph=0,pr=0,echo=0,dev=16,u=0,sh=0) m[ui_accept:gone|Igone,cx:0/1|I0/0/1] echo0 8:uhs0@pr+2/ph+1:K(kc=4194309,ph=0,pr=0,echo=0,dev=16,u=0,sh=0) m[ui_accept:gone|Igone,cx:0/1|I0/0/1] echo0]')),
     ('r87_edge_jpbe', 'r87_edge.gd', ['--arm=jpbe'], 0, 'PASS r87_edge jpbe imm[0/0.00/0/0] post[1/1.00/1/0] jpbe[j=1 wrong=0 other=0 rel_on_press=0 ex=1] eia[hit=1 miss=0 ex=1] shift[s_ex=1 s_plain=1 p_ex=0 p_plain=0] act[pre=0/0.00/0/0 imm=1/1.00/1/0 jpbe=1 eia=1 ei=-1 ai=<null> bad_st=0/0.00/0/0] rel[st=0/0.00/0/1 jrbe=1 jpbe=0] recv_n=3'),
     ('ei_bound_refusal', 'ei_bound.gd', [], 0, 'ei=-2 -> pressed=1\nei=-1 -> pressed=1\nei=0 -> pressed=1\nei=1 -> pressed=0\nei=31 -> pressed=0\nei=32 -> pressed=0\nei=33 -> pressed=0\nei=42 -> pressed=0\nei=100 -> pressed=0'),
+    # r88: the r88 census's remaining measured surfaces — Offline/ENet
+    # loopback multiplayer incl. spawner/synchronizer controls, 2D
+    # light/occluder props (with the scout-documented height fix), sprite
+    # metadata vs physics, and the headless-null audio/visibility surfaces
+    # (negative pins only — positive rows are structurally impossible on
+    # this host). Probe r88_surfaces.gd is an r88-author fixture adapting
+    # the dead seat's measured arms (r88-scout §3, directives 4-7); every
+    # payload measured x4 byte-stable. Inserted ahead of the
+    # crash/descendant tail — probe_descendant_pipe_eof requires
+    # detached_descendant_orphaned_alive within the descendant's `sleep 8`
+    # lifetime, so no CASES rows may sit between
+    # descendant_pipe_detached_control and the meta probes.
+    ('r88_surfaces_mp_offline', 'r88_surfaces.gd', ['--arm=mp_offline'], 0,
+     'PASS r88_surfaces mp_offline status=2 uid=1 mode=2 chan=0 tree_uid=1 is_server=true tree_status=2'),
+    ('r88_surfaces_mp_loopback', 'r88_surfaces.gd', ['--arm=mp_loopback'], 0,
+     'PASS r88_surfaces mp_loopback rc=[0,0] uid_s=1 uid_after_dyn=true order=["c_on_srv", "c_conn1", "s_conn<C>", "c_srvdisc", "s_disc<C>"] limb_s=["ping7:c2s", "ping5:call_local_c"] limb_c=["ping5:call_local_c", "ping9:s2c"]'),
+    ('r88_surfaces_mp_spawner', 'r88_surfaces.gd', ['--arm=mp_spawner'], 0,
+     'PASS r88_surfaces mp_spawner neg[c_children=0 srv_children=4 bound_hit=300] pos[added=SpawnableOne c_got=SpawnableOne c_pos=33.0000,44.0000] sync[pos=111.0000,222.0000]'),
+    ('r88_surfaces_light_props', 'r88_surfaces.gd', ['--arm=light_props'], 0,
+     'PASS r88_surfaces light_props pl=[en=true sh=true en2=2.500 ts=1.500 h=42.000 col=(0.5, 0.25, 0.125, 1.0) mask=4 mo=1] dl=[en=0.750 mask=1] occ=[closed=true cull=0 mask=2 sdf=true n=3] cm=[col=(0.2, 0.2, 0.4, 1.0)] body_y=118.4614 ray_through_occluder=true occ_cls=LightOccluder2D occ_is_co=false'),
+    ('r88_surfaces_sprite_meta', 'r88_surfaces.gd', ['--arm=sprite_meta'], 0,
+     'PASS r88_surfaces sprite_meta readback=[re=true rr=[P: (4.0, 4.0), S: (8.0, 8.0)] hf=4 vf=2 f=5 fc=(1, 1) fh=true fv=true off=(3.0, -2.0) cen=false] xf=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)] signals=["fc"] sneg_xf=[X: (-1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)] get_rect=[P: (3.0, -2.0), S: (2.0, 4.0)] s2_rect=[P: (-16.0, -8.0), S: (32.0, 16.0)]'),
+    ('r88_surfaces_sprite_phys', 'r88_surfaces.gd', ['--arm=sprite_phys'], 0,
+     'PASS r88_surfaces sprite_phys [pos=250.0000,74.5675 spr_gt=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (250.0, 74.56753)] spr_rel=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)]|pos=350.0000,74.5675 spr_gt=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (350.0, 74.56753)] spr_rel=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)]|pos=400.0000,74.5675 spr_gt=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (400.0, 74.56753)] spr_rel=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)]|pos=500.0000,74.5675 spr_gt=[X: (-1.0, 0.0), Y: (0.0, -1.0), O: (500.0, 74.56753)] spr_rel=[X: (-1.0, 0.0), Y: (0.0, -1.0), O: (0.0, 0.0)]]'),
+    ('r88_surfaces_audio_pos', 'r88_surfaces.gd', ['--arm=audio_pos'], 0,
+     'PASS r88_surfaces audio_pos playing=false pos=0.000 peaks_near=[-200.00,-200.00,-200.00,-200.00] peaks_far=[-200.00,-200.00,-200.00,-200.00] listen_pos=0.0000,0.0000 listener_current=true'),
+    ('r88_surfaces_vis_not', 'r88_surfaces.gd', ['--arm=vis_not'], 0,
+     'PASS r88_surfaces vis_not on_screen0=false en_onscreen=false events=[] on_screen_end=false enabler_proc=false'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
@@ -776,6 +804,12 @@ def main():
                 # receipts carry it x3) — whitelist it.
                 'r87_edge_jpbe': (
                     'ERROR: Input singleton does not support more than 32 events assigned to an action.',
+                ),
+                # r88: sprite_phys deliberately assigns frame=3 on a sprite
+                # with vframes*hframes=2 — the engine refuses loudly and
+                # deterministically (scout §3.13 / directive 7).
+                'r88_surfaces_sprite_phys': (
+                    'ERROR: Index p_frame = 3 is out of bounds (vframes * hframes = 2).',
                 ),
             }.get(name, ())
             classifier = classify_audio_process if name == "audio_playback" else classify_process
@@ -2376,6 +2410,14 @@ def main():
             for r in census_rows
             if r["case"].startswith(("input_lattice_", "r87_edge_",
                                     "ei_bound"))
+            for e in r["entries"]),
+        # r88 author: the new whitelist cases use the r88_ prefix, outside
+        # the r87 gate's coverage — extend the all-matched floor
+        # deliberately so a dead r88 entry cannot pass silently either.
+        "r88_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith("r88_")
             for e in r["entries"]),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
