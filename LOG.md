@@ -1199,3 +1199,12 @@
 - LAWS: AudioStreamGeneratorPlayback clear_buffer refused live+stopped;
   gen/gen_peak/gen2d arms; stream free/finish ordering; mix_rate real-
   mutation discriminates; advance pos_after_gt_before is anti-frozen key.
+- ROUND 100 (2026-10-16): GUI/Viewport input capstone. ADMIT-with-
+  findings at 2dcbb6f6 (+134/-2 landed -> 509 CASES/516 rows final).
+  Critic F1 = harness ceiling (drop/dup CASES invisible) -> FIXED at
+  b970a6d1 cases_integrity gate. Critic F2 seq-row pin breadth queued.
+  Verifier 576+441+22 mutations reject; scribe BROKEN-at-link class
+  recorded; landed bytes green x2 independent.
+- LAWS: drag law = |sum relative|>10; flush-gated cursor write;
+  flush-before-process_frame; _input before _gui_input; coalescing;
+  dummy-texture readback ERROR x3 exact allowlist; seq replay 10/14.
