@@ -1,0 +1,3403 @@
+{
+ "stamp": "20261016T073502779480Z",
+ "reps": 3,
+ "committed_sha256": {
+  "dss_lattice.gd": "77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627",
+  "r95b_order.gd": "4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490"
+ },
+ "folded_sha256": {
+  "dss_lattice.gd": "c128e9ccf3b3f512c6bda0a11d52348b3a5936a5ea4a32ada78c85967b951b5f",
+  "r95b_order.gd": "b367559e831e5e9f9ab9e386591dd0035e24fb4e5ea2efc2c533e11aec2bdcf7"
+ },
+ "lines_removed": {
+  "dss_lattice.gd": 3,
+  "r95b_order.gd": 2
+ },
+ "sites": 18,
+ "per_row": {
+  "dss_lattice_cast_rest": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "04df6f2b87b829ad0114cd5019cd05ac0fae2d50ee922e3ce52d02518d721d01",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "04df6f2b87b829ad0114cd5019cd05ac0fae2d50ee922e3ce52d02518d721d01",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "04df6f2b87b829ad0114cd5019cd05ac0fae2d50ee922e3ce52d02518d721d01",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "04df6f2b87b829ad0114cd5019cd05ac0fae2d50ee922e3ce52d02518d721d01",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "04df6f2b87b829ad0114cd5019cd05ac0fae2d50ee922e3ce52d02518d721d01",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "04df6f2b87b829ad0114cd5019cd05ac0fae2d50ee922e3ce52d02518d721d01",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_census": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "4aefc9129624f5e268a7144a69a9b8861e32d3a4b8e45768f5215624de262d3c",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "4aefc9129624f5e268a7144a69a9b8861e32d3a4b8e45768f5215624de262d3c",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "4aefc9129624f5e268a7144a69a9b8861e32d3a4b8e45768f5215624de262d3c",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "4aefc9129624f5e268a7144a69a9b8861e32d3a4b8e45768f5215624de262d3c",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "4aefc9129624f5e268a7144a69a9b8861e32d3a4b8e45768f5215624de262d3c",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "4aefc9129624f5e268a7144a69a9b8861e32d3a4b8e45768f5215624de262d3c",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_excl_space": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a91d43e3cb2b0328e088966f8449fe1fb8290c13e4525c8b814e238137b792df",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a91d43e3cb2b0328e088966f8449fe1fb8290c13e4525c8b814e238137b792df",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a91d43e3cb2b0328e088966f8449fe1fb8290c13e4525c8b814e238137b792df",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a91d43e3cb2b0328e088966f8449fe1fb8290c13e4525c8b814e238137b792df",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a91d43e3cb2b0328e088966f8449fe1fb8290c13e4525c8b814e238137b792df",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a91d43e3cb2b0328e088966f8449fe1fb8290c13e4525c8b814e238137b792df",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_fresh": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "122d676e6642e6158d1b290dfe51fdb7173af3f1521ec86516d1dfdf2f75e463",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "122d676e6642e6158d1b290dfe51fdb7173af3f1521ec86516d1dfdf2f75e463",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "122d676e6642e6158d1b290dfe51fdb7173af3f1521ec86516d1dfdf2f75e463",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "122d676e6642e6158d1b290dfe51fdb7173af3f1521ec86516d1dfdf2f75e463",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "122d676e6642e6158d1b290dfe51fdb7173af3f1521ec86516d1dfdf2f75e463",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "122d676e6642e6158d1b290dfe51fdb7173af3f1521ec86516d1dfdf2f75e463",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_layer_forms": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "8a0a1dee5c5be3af1fdd5aac54540be8636b100af82b30b9680cacd856369c53",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "8a0a1dee5c5be3af1fdd5aac54540be8636b100af82b30b9680cacd856369c53",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "8a0a1dee5c5be3af1fdd5aac54540be8636b100af82b30b9680cacd856369c53",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "8a0a1dee5c5be3af1fdd5aac54540be8636b100af82b30b9680cacd856369c53",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "8a0a1dee5c5be3af1fdd5aac54540be8636b100af82b30b9680cacd856369c53",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "8a0a1dee5c5be3af1fdd5aac54540be8636b100af82b30b9680cacd856369c53",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_order_core": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "d692c8a24cc071bfa8e70e07c99c3702ec5835e44e5ae5074d88ae4dcca24155",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "d692c8a24cc071bfa8e70e07c99c3702ec5835e44e5ae5074d88ae4dcca24155",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "d692c8a24cc071bfa8e70e07c99c3702ec5835e44e5ae5074d88ae4dcca24155",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "d692c8a24cc071bfa8e70e07c99c3702ec5835e44e5ae5074d88ae4dcca24155",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "d692c8a24cc071bfa8e70e07c99c3702ec5835e44e5ae5074d88ae4dcca24155",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "d692c8a24cc071bfa8e70e07c99c3702ec5835e44e5ae5074d88ae4dcca24155",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_order_core_rev": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "b9e7350e52ee937a402968b7586965b5432f740f94ba318107309fb6b8d53278",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "b9e7350e52ee937a402968b7586965b5432f740f94ba318107309fb6b8d53278",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "b9e7350e52ee937a402968b7586965b5432f740f94ba318107309fb6b8d53278",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "b9e7350e52ee937a402968b7586965b5432f740f94ba318107309fb6b8d53278",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "b9e7350e52ee937a402968b7586965b5432f740f94ba318107309fb6b8d53278",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "b9e7350e52ee937a402968b7586965b5432f740f94ba318107309fb6b8d53278",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_point_canvas": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "999e000c6b67fb42ed294c13f6cce9d00984d236496e940208664b6c97cf3cec",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "999e000c6b67fb42ed294c13f6cce9d00984d236496e940208664b6c97cf3cec",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "999e000c6b67fb42ed294c13f6cce9d00984d236496e940208664b6c97cf3cec",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "999e000c6b67fb42ed294c13f6cce9d00984d236496e940208664b6c97cf3cec",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "999e000c6b67fb42ed294c13f6cce9d00984d236496e940208664b6c97cf3cec",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "999e000c6b67fb42ed294c13f6cce9d00984d236496e940208664b6c97cf3cec",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_point_cap": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "f768e7bd313c8bf0591c216399d955a5b8358495290a31ee4dfb78d2e57088bb",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "f768e7bd313c8bf0591c216399d955a5b8358495290a31ee4dfb78d2e57088bb",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "f768e7bd313c8bf0591c216399d955a5b8358495290a31ee4dfb78d2e57088bb",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "f768e7bd313c8bf0591c216399d955a5b8358495290a31ee4dfb78d2e57088bb",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "f768e7bd313c8bf0591c216399d955a5b8358495290a31ee4dfb78d2e57088bb",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "f768e7bd313c8bf0591c216399d955a5b8358495290a31ee4dfb78d2e57088bb",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_point_cap_rev": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "67769217019bace2e069b2d565db7593bd6e2b420c8b4942db3e7ab077dbc7d4",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "67769217019bace2e069b2d565db7593bd6e2b420c8b4942db3e7ab077dbc7d4",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "67769217019bace2e069b2d565db7593bd6e2b420c8b4942db3e7ab077dbc7d4",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "67769217019bace2e069b2d565db7593bd6e2b420c8b4942db3e7ab077dbc7d4",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "67769217019bace2e069b2d565db7593bd6e2b420c8b4942db3e7ab077dbc7d4",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": false,
+     "prefix": true,
+     "masked_sha": "67769217019bace2e069b2d565db7593bd6e2b420c8b4942db3e7ab077dbc7d4",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_point_edge": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "28845e1340557872fa41897508d94e29eac0889ebde47ef1246eb41f94487153",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "28845e1340557872fa41897508d94e29eac0889ebde47ef1246eb41f94487153",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "28845e1340557872fa41897508d94e29eac0889ebde47ef1246eb41f94487153",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "28845e1340557872fa41897508d94e29eac0889ebde47ef1246eb41f94487153",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "28845e1340557872fa41897508d94e29eac0889ebde47ef1246eb41f94487153",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "28845e1340557872fa41897508d94e29eac0889ebde47ef1246eb41f94487153",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_ray_flags": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a3159f6310eb343eded1628bcc7a35f28d21322d001829a049dc57889b505900",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a3159f6310eb343eded1628bcc7a35f28d21322d001829a049dc57889b505900",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a3159f6310eb343eded1628bcc7a35f28d21322d001829a049dc57889b505900",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a3159f6310eb343eded1628bcc7a35f28d21322d001829a049dc57889b505900",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a3159f6310eb343eded1628bcc7a35f28d21322d001829a049dc57889b505900",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a3159f6310eb343eded1628bcc7a35f28d21322d001829a049dc57889b505900",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_ray_geom": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "e7dbb697591cb8f7dcfdf703f4a7a15107fcff86bba6e409682077e5f7cfe8b6",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "e7dbb697591cb8f7dcfdf703f4a7a15107fcff86bba6e409682077e5f7cfe8b6",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "e7dbb697591cb8f7dcfdf703f4a7a15107fcff86bba6e409682077e5f7cfe8b6",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "e7dbb697591cb8f7dcfdf703f4a7a15107fcff86bba6e409682077e5f7cfe8b6",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "e7dbb697591cb8f7dcfdf703f4a7a15107fcff86bba6e409682077e5f7cfe8b6",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "e7dbb697591cb8f7dcfdf703f4a7a15107fcff86bba6e409682077e5f7cfe8b6",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_ray_order": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "07bc4805b36630c682529e51c97486db92a520af80706147db36fd7fa59f492a",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "07bc4805b36630c682529e51c97486db92a520af80706147db36fd7fa59f492a",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "07bc4805b36630c682529e51c97486db92a520af80706147db36fd7fa59f492a",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "07bc4805b36630c682529e51c97486db92a520af80706147db36fd7fa59f492a",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "07bc4805b36630c682529e51c97486db92a520af80706147db36fd7fa59f492a",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "07bc4805b36630c682529e51c97486db92a520af80706147db36fd7fa59f492a",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_ray_order_rev": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "9ffcc5fbb820b2baa6716acdd3c19066657e89007568095afae16d80bb81d82d",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "9ffcc5fbb820b2baa6716acdd3c19066657e89007568095afae16d80bb81d82d",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "9ffcc5fbb820b2baa6716acdd3c19066657e89007568095afae16d80bb81d82d",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "9ffcc5fbb820b2baa6716acdd3c19066657e89007568095afae16d80bb81d82d",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "9ffcc5fbb820b2baa6716acdd3c19066657e89007568095afae16d80bb81d82d",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "9ffcc5fbb820b2baa6716acdd3c19066657e89007568095afae16d80bb81d82d",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_shape": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "cea11c07ae479c46683b84d63da8e8269aafbbee540a8b8f3f4695a5f247f1f1",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "cea11c07ae479c46683b84d63da8e8269aafbbee540a8b8f3f4695a5f247f1f1",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "cea11c07ae479c46683b84d63da8e8269aafbbee540a8b8f3f4695a5f247f1f1",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "cea11c07ae479c46683b84d63da8e8269aafbbee540a8b8f3f4695a5f247f1f1",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "cea11c07ae479c46683b84d63da8e8269aafbbee540a8b8f3f4695a5f247f1f1",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "cea11c07ae479c46683b84d63da8e8269aafbbee540a8b8f3f4695a5f247f1f1",
+     "stderr": ""
+    }
+   }
+  ],
+  "dss_lattice_shape_rev": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "1812024b20dfc56886783ff39ef0e3503cdd9ac291627fe3c0952a39241ad0c5",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "1812024b20dfc56886783ff39ef0e3503cdd9ac291627fe3c0952a39241ad0c5",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "1812024b20dfc56886783ff39ef0e3503cdd9ac291627fe3c0952a39241ad0c5",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "1812024b20dfc56886783ff39ef0e3503cdd9ac291627fe3c0952a39241ad0c5",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "1812024b20dfc56886783ff39ef0e3503cdd9ac291627fe3c0952a39241ad0c5",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "1812024b20dfc56886783ff39ef0e3503cdd9ac291627fe3c0952a39241ad0c5",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_canon": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "552cd5ab9d9bbc2c43f6e152e2234bc9a7ee4785c6caa32d65e33b5e473055fa",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "552cd5ab9d9bbc2c43f6e152e2234bc9a7ee4785c6caa32d65e33b5e473055fa",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "552cd5ab9d9bbc2c43f6e152e2234bc9a7ee4785c6caa32d65e33b5e473055fa",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "552cd5ab9d9bbc2c43f6e152e2234bc9a7ee4785c6caa32d65e33b5e473055fa",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "552cd5ab9d9bbc2c43f6e152e2234bc9a7ee4785c6caa32d65e33b5e473055fa",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "552cd5ab9d9bbc2c43f6e152e2234bc9a7ee4785c6caa32d65e33b5e473055fa",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_cap40_p0": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "213dcf63cc344724e98761b99df3e8f206c5812abfd56c732dd78766c02d1723",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "213dcf63cc344724e98761b99df3e8f206c5812abfd56c732dd78766c02d1723",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "213dcf63cc344724e98761b99df3e8f206c5812abfd56c732dd78766c02d1723",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "213dcf63cc344724e98761b99df3e8f206c5812abfd56c732dd78766c02d1723",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "213dcf63cc344724e98761b99df3e8f206c5812abfd56c732dd78766c02d1723",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "213dcf63cc344724e98761b99df3e8f206c5812abfd56c732dd78766c02d1723",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_cap40_p1": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "08fdb08c1b44dbaea9d012cc3dc9fb2b5ec46380ce6114271e7c5793a51b56ec",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "08fdb08c1b44dbaea9d012cc3dc9fb2b5ec46380ce6114271e7c5793a51b56ec",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "08fdb08c1b44dbaea9d012cc3dc9fb2b5ec46380ce6114271e7c5793a51b56ec",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "08fdb08c1b44dbaea9d012cc3dc9fb2b5ec46380ce6114271e7c5793a51b56ec",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "08fdb08c1b44dbaea9d012cc3dc9fb2b5ec46380ce6114271e7c5793a51b56ec",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "08fdb08c1b44dbaea9d012cc3dc9fb2b5ec46380ce6114271e7c5793a51b56ec",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_cap40_p2": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "4bca6ec2b966236887933e8802413a52ae793fd2692bf719dbbf6aab496d04c6",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "4bca6ec2b966236887933e8802413a52ae793fd2692bf719dbbf6aab496d04c6",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "4bca6ec2b966236887933e8802413a52ae793fd2692bf719dbbf6aab496d04c6",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "4bca6ec2b966236887933e8802413a52ae793fd2692bf719dbbf6aab496d04c6",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "4bca6ec2b966236887933e8802413a52ae793fd2692bf719dbbf6aab496d04c6",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "4bca6ec2b966236887933e8802413a52ae793fd2692bf719dbbf6aab496d04c6",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_celloff_x0": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_celloff_x1000": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "f4da12a4efab7fd6a758cfa61b4390f268fa6cfe460b1e9468854bbeead377a5",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "f4da12a4efab7fd6a758cfa61b4390f268fa6cfe460b1e9468854bbeead377a5",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "f4da12a4efab7fd6a758cfa61b4390f268fa6cfe460b1e9468854bbeead377a5",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "f4da12a4efab7fd6a758cfa61b4390f268fa6cfe460b1e9468854bbeead377a5",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "f4da12a4efab7fd6a758cfa61b4390f268fa6cfe460b1e9468854bbeead377a5",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "f4da12a4efab7fd6a758cfa61b4390f268fa6cfe460b1e9468854bbeead377a5",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_celloff_y1000": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_free_ab": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "da1c25e0041334efb44f0a28734d49a65f0e356feb50501843ff37529fdc7763",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "da1c25e0041334efb44f0a28734d49a65f0e356feb50501843ff37529fdc7763",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "da1c25e0041334efb44f0a28734d49a65f0e356feb50501843ff37529fdc7763",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "da1c25e0041334efb44f0a28734d49a65f0e356feb50501843ff37529fdc7763",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "da1c25e0041334efb44f0a28734d49a65f0e356feb50501843ff37529fdc7763",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "da1c25e0041334efb44f0a28734d49a65f0e356feb50501843ff37529fdc7763",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_free_ba": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "55e6a96bc78f749c439744aeaee288a07b7f9c3fe34936a273a4ffc07007d4f8",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "55e6a96bc78f749c439744aeaee288a07b7f9c3fe34936a273a4ffc07007d4f8",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "55e6a96bc78f749c439744aeaee288a07b7f9c3fe34936a273a4ffc07007d4f8",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "55e6a96bc78f749c439744aeaee288a07b7f9c3fe34936a273a4ffc07007d4f8",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "55e6a96bc78f749c439744aeaee288a07b7f9c3fe34936a273a4ffc07007d4f8",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "55e6a96bc78f749c439744aeaee288a07b7f9c3fe34936a273a4ffc07007d4f8",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_layers_k0": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "31ea6b22e3123fed92cb6b69a1402509afaad6b73807707827b60d9574d9cdf0",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "31ea6b22e3123fed92cb6b69a1402509afaad6b73807707827b60d9574d9cdf0",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "31ea6b22e3123fed92cb6b69a1402509afaad6b73807707827b60d9574d9cdf0",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "31ea6b22e3123fed92cb6b69a1402509afaad6b73807707827b60d9574d9cdf0",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "31ea6b22e3123fed92cb6b69a1402509afaad6b73807707827b60d9574d9cdf0",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "31ea6b22e3123fed92cb6b69a1402509afaad6b73807707827b60d9574d9cdf0",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_layers_k1": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "77b9c6cbc058b3cc4c6647a699d44bd9528d719b8ed4f935fcd2d317ec728e91",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "77b9c6cbc058b3cc4c6647a699d44bd9528d719b8ed4f935fcd2d317ec728e91",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "77b9c6cbc058b3cc4c6647a699d44bd9528d719b8ed4f935fcd2d317ec728e91",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "77b9c6cbc058b3cc4c6647a699d44bd9528d719b8ed4f935fcd2d317ec728e91",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "77b9c6cbc058b3cc4c6647a699d44bd9528d719b8ed4f935fcd2d317ec728e91",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "77b9c6cbc058b3cc4c6647a699d44bd9528d719b8ed4f935fcd2d317ec728e91",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_period_k5": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "bea7cce91acd412c14795ecdb7493818a245c94dfa2dc3c4054e076c5e7b1295",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "bea7cce91acd412c14795ecdb7493818a245c94dfa2dc3c4054e076c5e7b1295",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "bea7cce91acd412c14795ecdb7493818a245c94dfa2dc3c4054e076c5e7b1295",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "bea7cce91acd412c14795ecdb7493818a245c94dfa2dc3c4054e076c5e7b1295",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "bea7cce91acd412c14795ecdb7493818a245c94dfa2dc3c4054e076c5e7b1295",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "bea7cce91acd412c14795ecdb7493818a245c94dfa2dc3c4054e076c5e7b1295",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_periodx_k10": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "2f7fc8d66023095a8386762cc7dd340841d51efdaa05484c0ded9d2bb843ec3a",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "2f7fc8d66023095a8386762cc7dd340841d51efdaa05484c0ded9d2bb843ec3a",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "2f7fc8d66023095a8386762cc7dd340841d51efdaa05484c0ded9d2bb843ec3a",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "2f7fc8d66023095a8386762cc7dd340841d51efdaa05484c0ded9d2bb843ec3a",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "2f7fc8d66023095a8386762cc7dd340841d51efdaa05484c0ded9d2bb843ec3a",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "2f7fc8d66023095a8386762cc7dd340841d51efdaa05484c0ded9d2bb843ec3a",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_periodx_k2": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d5f17976170fff5475fa4f482ad8857d14076d8f50fb02116fc50d9459d35afc",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d5f17976170fff5475fa4f482ad8857d14076d8f50fb02116fc50d9459d35afc",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d5f17976170fff5475fa4f482ad8857d14076d8f50fb02116fc50d9459d35afc",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d5f17976170fff5475fa4f482ad8857d14076d8f50fb02116fc50d9459d35afc",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d5f17976170fff5475fa4f482ad8857d14076d8f50fb02116fc50d9459d35afc",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d5f17976170fff5475fa4f482ad8857d14076d8f50fb02116fc50d9459d35afc",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_periodx_k3": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d9572c26f180149462f8daa3effde3f4116118d7d743a923af8fd7c908e187bd",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d9572c26f180149462f8daa3effde3f4116118d7d743a923af8fd7c908e187bd",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d9572c26f180149462f8daa3effde3f4116118d7d743a923af8fd7c908e187bd",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d9572c26f180149462f8daa3effde3f4116118d7d743a923af8fd7c908e187bd",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d9572c26f180149462f8daa3effde3f4116118d7d743a923af8fd7c908e187bd",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d9572c26f180149462f8daa3effde3f4116118d7d743a923af8fd7c908e187bd",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_periodx_k4": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "527ec1fac34a6923013ae13bde283436c817cc039f4c146a69464d4da44ef911",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "527ec1fac34a6923013ae13bde283436c817cc039f4c146a69464d4da44ef911",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "527ec1fac34a6923013ae13bde283436c817cc039f4c146a69464d4da44ef911",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "527ec1fac34a6923013ae13bde283436c817cc039f4c146a69464d4da44ef911",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "527ec1fac34a6923013ae13bde283436c817cc039f4c146a69464d4da44ef911",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "527ec1fac34a6923013ae13bde283436c817cc039f4c146a69464d4da44ef911",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_periodx_k5": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "265d0fb12a7787aba6a22af1df0e346b1f85491ebebd19dc3abb8a3e0d256482",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "265d0fb12a7787aba6a22af1df0e346b1f85491ebebd19dc3abb8a3e0d256482",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "265d0fb12a7787aba6a22af1df0e346b1f85491ebebd19dc3abb8a3e0d256482",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "265d0fb12a7787aba6a22af1df0e346b1f85491ebebd19dc3abb8a3e0d256482",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "265d0fb12a7787aba6a22af1df0e346b1f85491ebebd19dc3abb8a3e0d256482",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "265d0fb12a7787aba6a22af1df0e346b1f85491ebebd19dc3abb8a3e0d256482",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_periodx_k5s8": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "305b54f2ae9cf97035bafd29b71b9d03fa7a9a844122e1aaa43e3bce148bd736",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "305b54f2ae9cf97035bafd29b71b9d03fa7a9a844122e1aaa43e3bce148bd736",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "305b54f2ae9cf97035bafd29b71b9d03fa7a9a844122e1aaa43e3bce148bd736",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "305b54f2ae9cf97035bafd29b71b9d03fa7a9a844122e1aaa43e3bce148bd736",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "305b54f2ae9cf97035bafd29b71b9d03fa7a9a844122e1aaa43e3bce148bd736",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "305b54f2ae9cf97035bafd29b71b9d03fa7a9a844122e1aaa43e3bce148bd736",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_periodx_k6": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "7f1bd814cd1756ec58e564acce43df6134561ad9d46a633935a21c302cb6817f",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "7f1bd814cd1756ec58e564acce43df6134561ad9d46a633935a21c302cb6817f",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "7f1bd814cd1756ec58e564acce43df6134561ad9d46a633935a21c302cb6817f",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "7f1bd814cd1756ec58e564acce43df6134561ad9d46a633935a21c302cb6817f",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "7f1bd814cd1756ec58e564acce43df6134561ad9d46a633935a21c302cb6817f",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "7f1bd814cd1756ec58e564acce43df6134561ad9d46a633935a21c302cb6817f",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_periodx_k7": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d9349559ae78497131e760eb9372a434a0c7b29bd1d8abad2a4f6588ed609bb6",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d9349559ae78497131e760eb9372a434a0c7b29bd1d8abad2a4f6588ed609bb6",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d9349559ae78497131e760eb9372a434a0c7b29bd1d8abad2a4f6588ed609bb6",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d9349559ae78497131e760eb9372a434a0c7b29bd1d8abad2a4f6588ed609bb6",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d9349559ae78497131e760eb9372a434a0c7b29bd1d8abad2a4f6588ed609bb6",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "d9349559ae78497131e760eb9372a434a0c7b29bd1d8abad2a4f6588ed609bb6",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_periodx_k8": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "606c0985d42dc99d066c26a0b2765f05a5da08ad6c9aa03faede2c5505851315",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "606c0985d42dc99d066c26a0b2765f05a5da08ad6c9aa03faede2c5505851315",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "606c0985d42dc99d066c26a0b2765f05a5da08ad6c9aa03faede2c5505851315",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "606c0985d42dc99d066c26a0b2765f05a5da08ad6c9aa03faede2c5505851315",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "606c0985d42dc99d066c26a0b2765f05a5da08ad6c9aa03faede2c5505851315",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "606c0985d42dc99d066c26a0b2765f05a5da08ad6c9aa03faede2c5505851315",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_perm0": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "0fb765a8e1bd1f857833002783c552152ec61347d157948f7d87e5b2cd1cb26c",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "0fb765a8e1bd1f857833002783c552152ec61347d157948f7d87e5b2cd1cb26c",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "0fb765a8e1bd1f857833002783c552152ec61347d157948f7d87e5b2cd1cb26c",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "0fb765a8e1bd1f857833002783c552152ec61347d157948f7d87e5b2cd1cb26c",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "0fb765a8e1bd1f857833002783c552152ec61347d157948f7d87e5b2cd1cb26c",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "0fb765a8e1bd1f857833002783c552152ec61347d157948f7d87e5b2cd1cb26c",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_perm1": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "ad344183e5cd01e1d9d797313bef20e408efe1eaab606de532d58cff229fb3c5",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "ad344183e5cd01e1d9d797313bef20e408efe1eaab606de532d58cff229fb3c5",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "ad344183e5cd01e1d9d797313bef20e408efe1eaab606de532d58cff229fb3c5",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "ad344183e5cd01e1d9d797313bef20e408efe1eaab606de532d58cff229fb3c5",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "ad344183e5cd01e1d9d797313bef20e408efe1eaab606de532d58cff229fb3c5",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "ad344183e5cd01e1d9d797313bef20e408efe1eaab606de532d58cff229fb3c5",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_perm2": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a762ab581d24451344edb7a5ec6c5803a77620bf87432c8b1281d58c0efcd001",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a762ab581d24451344edb7a5ec6c5803a77620bf87432c8b1281d58c0efcd001",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a762ab581d24451344edb7a5ec6c5803a77620bf87432c8b1281d58c0efcd001",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a762ab581d24451344edb7a5ec6c5803a77620bf87432c8b1281d58c0efcd001",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a762ab581d24451344edb7a5ec6c5803a77620bf87432c8b1281d58c0efcd001",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a762ab581d24451344edb7a5ec6c5803a77620bf87432c8b1281d58c0efcd001",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_perm3": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "b8c7cb9d21378b8420f34eeb7a1f1f365ddcf004b7e20d0b70ea9d682196d675",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "b8c7cb9d21378b8420f34eeb7a1f1f365ddcf004b7e20d0b70ea9d682196d675",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "b8c7cb9d21378b8420f34eeb7a1f1f365ddcf004b7e20d0b70ea9d682196d675",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "b8c7cb9d21378b8420f34eeb7a1f1f365ddcf004b7e20d0b70ea9d682196d675",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "b8c7cb9d21378b8420f34eeb7a1f1f365ddcf004b7e20d0b70ea9d682196d675",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "b8c7cb9d21378b8420f34eeb7a1f1f365ddcf004b7e20d0b70ea9d682196d675",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_perm4": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "ec3df6513cad252c8e4e2eb0e61de1ac7a6a9c8485b492774349f17ba48da385",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "ec3df6513cad252c8e4e2eb0e61de1ac7a6a9c8485b492774349f17ba48da385",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "ec3df6513cad252c8e4e2eb0e61de1ac7a6a9c8485b492774349f17ba48da385",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "ec3df6513cad252c8e4e2eb0e61de1ac7a6a9c8485b492774349f17ba48da385",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "ec3df6513cad252c8e4e2eb0e61de1ac7a6a9c8485b492774349f17ba48da385",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "ec3df6513cad252c8e4e2eb0e61de1ac7a6a9c8485b492774349f17ba48da385",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_perm5": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "58f3487642effd0fb3cd9f59c08a61964495bb14705cfb7b004e23b78cd11633",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "58f3487642effd0fb3cd9f59c08a61964495bb14705cfb7b004e23b78cd11633",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "58f3487642effd0fb3cd9f59c08a61964495bb14705cfb7b004e23b78cd11633",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "58f3487642effd0fb3cd9f59c08a61964495bb14705cfb7b004e23b78cd11633",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "58f3487642effd0fb3cd9f59c08a61964495bb14705cfb7b004e23b78cd11633",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "58f3487642effd0fb3cd9f59c08a61964495bb14705cfb7b004e23b78cd11633",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_perm6": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "966a4d5032f4704153abcd242f38aaca22bc75b8f1ade012cc49d453ebcccc2c",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "966a4d5032f4704153abcd242f38aaca22bc75b8f1ade012cc49d453ebcccc2c",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "966a4d5032f4704153abcd242f38aaca22bc75b8f1ade012cc49d453ebcccc2c",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "966a4d5032f4704153abcd242f38aaca22bc75b8f1ade012cc49d453ebcccc2c",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "966a4d5032f4704153abcd242f38aaca22bc75b8f1ade012cc49d453ebcccc2c",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "966a4d5032f4704153abcd242f38aaca22bc75b8f1ade012cc49d453ebcccc2c",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_perm7": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "bd6617f50cb27861af355ba7f4b51f3b4b15fb2e318852d090d39ed830d55215",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "bd6617f50cb27861af355ba7f4b51f3b4b15fb2e318852d090d39ed830d55215",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "bd6617f50cb27861af355ba7f4b51f3b4b15fb2e318852d090d39ed830d55215",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "bd6617f50cb27861af355ba7f4b51f3b4b15fb2e318852d090d39ed830d55215",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "bd6617f50cb27861af355ba7f4b51f3b4b15fb2e318852d090d39ed830d55215",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "bd6617f50cb27861af355ba7f4b51f3b4b15fb2e318852d090d39ed830d55215",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_readd_a": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "7d0c37ad31e1d3ad3e219464e7f860c709ec2ca4fd84f01e8673f5855b13363e",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "7d0c37ad31e1d3ad3e219464e7f860c709ec2ca4fd84f01e8673f5855b13363e",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "7d0c37ad31e1d3ad3e219464e7f860c709ec2ca4fd84f01e8673f5855b13363e",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "7d0c37ad31e1d3ad3e219464e7f860c709ec2ca4fd84f01e8673f5855b13363e",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "7d0c37ad31e1d3ad3e219464e7f860c709ec2ca4fd84f01e8673f5855b13363e",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "7d0c37ad31e1d3ad3e219464e7f860c709ec2ca4fd84f01e8673f5855b13363e",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_rigid": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "9ed13130f2fd3a5927386f5aeea68e058c00f8d364b287b32212949529335d69",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "9ed13130f2fd3a5927386f5aeea68e058c00f8d364b287b32212949529335d69",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "9ed13130f2fd3a5927386f5aeea68e058c00f8d364b287b32212949529335d69",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "9ed13130f2fd3a5927386f5aeea68e058c00f8d364b287b32212949529335d69",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "9ed13130f2fd3a5927386f5aeea68e058c00f8d364b287b32212949529335d69",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "9ed13130f2fd3a5927386f5aeea68e058c00f8d364b287b32212949529335d69",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_scoutrev": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "e546d11a34efc8062a24d869111dcd80b02de6fd96abfe4974b91b0073845c65",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "e546d11a34efc8062a24d869111dcd80b02de6fd96abfe4974b91b0073845c65",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "e546d11a34efc8062a24d869111dcd80b02de6fd96abfe4974b91b0073845c65",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "e546d11a34efc8062a24d869111dcd80b02de6fd96abfe4974b91b0073845c65",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "e546d11a34efc8062a24d869111dcd80b02de6fd96abfe4974b91b0073845c65",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "e546d11a34efc8062a24d869111dcd80b02de6fd96abfe4974b91b0073845c65",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_twopiles": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "422640082d26b44e4735ab13fd0e312287c08fb386cc99f1f5fff293788be0a2",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "422640082d26b44e4735ab13fd0e312287c08fb386cc99f1f5fff293788be0a2",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "422640082d26b44e4735ab13fd0e312287c08fb386cc99f1f5fff293788be0a2",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "422640082d26b44e4735ab13fd0e312287c08fb386cc99f1f5fff293788be0a2",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "422640082d26b44e4735ab13fd0e312287c08fb386cc99f1f5fff293788be0a2",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "422640082d26b44e4735ab13fd0e312287c08fb386cc99f1f5fff293788be0a2",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_warm_k32": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "f0f8c3808d33d8efdf14f68d933377d3f43794ae7f69e3b52189b2ba457d7d98",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "f0f8c3808d33d8efdf14f68d933377d3f43794ae7f69e3b52189b2ba457d7d98",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "f0f8c3808d33d8efdf14f68d933377d3f43794ae7f69e3b52189b2ba457d7d98",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "f0f8c3808d33d8efdf14f68d933377d3f43794ae7f69e3b52189b2ba457d7d98",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "f0f8c3808d33d8efdf14f68d933377d3f43794ae7f69e3b52189b2ba457d7d98",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "f0f8c3808d33d8efdf14f68d933377d3f43794ae7f69e3b52189b2ba457d7d98",
+     "stderr": ""
+    }
+   }
+  ],
+  "r95b_order_warm_keep8": [
+   {
+    "rep": 1,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a54dfb520c16a31b7f8afc330c0657f05256115e23b0596d036d8e0ea9017e48",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a54dfb520c16a31b7f8afc330c0657f05256115e23b0596d036d8e0ea9017e48",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 2,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a54dfb520c16a31b7f8afc330c0657f05256115e23b0596d036d8e0ea9017e48",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a54dfb520c16a31b7f8afc330c0657f05256115e23b0596d036d8e0ea9017e48",
+     "stderr": ""
+    }
+   },
+   {
+    "rep": 3,
+    "committed": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a54dfb520c16a31b7f8afc330c0657f05256115e23b0596d036d8e0ea9017e48",
+     "stderr": ""
+    },
+    "folded": {
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line_eq_sig": true,
+     "prefix": true,
+     "masked_sha": "a54dfb520c16a31b7f8afc330c0657f05256115e23b0596d036d8e0ea9017e48",
+     "stderr": ""
+    }
+   }
+  ]
+ },
+ "cross_masked_diffs": 0,
+ "cross_passline_diffs": 0,
+ "all_pass_committed": true,
+ "all_pass_folded": true
+}

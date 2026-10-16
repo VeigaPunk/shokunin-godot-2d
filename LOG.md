@@ -1161,3 +1161,9 @@
   (fold 3-way verified); 2-seat tautology finding on cpu_contam queued.
 - LAWS: cpu_pause ff30 envelope [1,7]; round->floor request ladder;
   emission census; gpu_headless arms; ff30 cpu_pause 75% of 8s bound.
+- ROUND 95 (2026-10-15): DirectSpaceState2D query + order lattice.
+  ADMIT-with-findings at 9cd47507 (366 rows, +52). Verifier VERIFIED-WR;
+  k(k-1) law window-verified; celloff_y1000 dead-flag (2-seat) +
+  order_core echo pins queued.
+- LAWS: cycle_len=k(k-1) k=2..10; perm0-7 distinct; co-presence
+  attribution; cap40 set32_distinct=5; rigid 60tps-only (1 of 52).

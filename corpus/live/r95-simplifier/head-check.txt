@@ -1,0 +1,21 @@
+HEAD: 9cd475078dfb8c7df1d394c68d81a1dce14d585b
+landing commit under audit: 9cd475078dfb8c7df1d394c68d81a1dce14d585b
+HEAD == landing: True
+subject: r95 author: 52 dss/order rows (366 total) — k(k-1) cycle ladder, perm0-7 creation perms, co-presence attribution folded; 366/366 x2
+worktree dirty (tracked): ''
+
+== landed files: committed tree vs worktree ==
+  corpus/fixtures/dss_lattice.gd             committed=77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627 worktree=77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627 identical=True
+  corpus/fixtures/r95b_order.gd              committed=4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490 worktree=4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490 identical=True
+  corpus/fixtures/run_battery.py             committed=b93cbdaa3d5c6ae35d69970a545442d86898a959f0e2e2995f1adf58a3444ed7 worktree=b93cbdaa3d5c6ae35d69970a545442d86898a959f0e2e2995f1adf58a3444ed7 identical=True
+  reports/round-95/r95-author.md             committed=ddc20ab10e0fcb1e47f774d5ac5056612e2b8e3efcc36608c822ddffc3323a0a worktree=ddc20ab10e0fcb1e47f774d5ac5056612e2b8e3efcc36608c822ddffc3323a0a identical=True
+
+== fixture <-> frozen probe byte identity ==
+  corpus/live/r95-scout/probes/dss_lattice.gd  77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627
+  corpus/fixtures/dss_lattice.gd               77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627  identical=True
+  corpus/live/r95-boundary/probes/r95b_order.gd 4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490
+  corpus/fixtures/r95b_order.gd                4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490  identical=True
+
+== harness citation of the fixture shas ==
+  line=881   #   dss_lattice.gd sha256
+  line=884   #   r95b_order.gd sha256

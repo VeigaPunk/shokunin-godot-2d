@@ -1,0 +1,2730 @@
+{
+ "stamp": "20261016T070937203618Z",
+ "reps": 3,
+ "rows": 52,
+ "production_classify_process_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+ "scratch": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r95-simplifier/fold-runs/20261016T070937203618Z/scratch-committed",
+ "per_row": {
+  "dss_lattice_cast_rest": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=cast_rest"
+   ],
+   "signature_len": 1130,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice cast_rest cm_base=[0.220703125, 0.2265625] cm_to_wall1=[0.59765625, 0.6015625] cm_mask2=[1.0, 1.0] cm_excl_w1=[0.72265625, 0.7265625] cm_excl_both=[1.0, 1.0] cm_areas_on=[0.220703125, 0.2265625] cm_zero=[1.0, 1.0] cm_negative=[1.0, 1.0] cm_from_inside=[0.47265625, 0.4765625] cm_inside_skips_overlap=true cm_inside_matches_later_wall=true ri_m50={} ri_m200={w1 pt=(98.0000,0.0000) n=(-1.0000,0.0000) shape=0} ri_m290={w1 pt=(102.0000,0.0000) n=(1.0000,0.0000) shape=0} ri_m300={w1 pt=(102.0000,0.0000) n=(1.0000,0.0000) shape=0} ri_m400={w1 pt=(102.0000,0.0000) n=(1.0000,0.0000) shape=0} ri_m600={w2 pt=(298.0000,200.0000) n=(0.0000,1.0000) shape=0} ri_m200_excl_w1={} ri_m400_excl_w1={w2 pt=(298.0000,0.0000) n=(-1.0000,0.0000) shape=0} ri_mask2={} ri_empty={} ri_offaxis={} ri_keys=[\"collider_id\", \"linear_velocity\", \"normal\", \"point\", \"rid\", \"shape\"] ri_zero_motion={w1 pt=(98.0000,0.0000) n=(-1.0000,0.0000) shape=0} cs_n=6 cs_pts=[(98.0000,0.0000),(102.0000,0.0000),(114.0000,0.0000),(110.0000,0.0000),(98.0000,0.0000),(102.0000,0.0000)] cs_cap1=n2 cs_cap2=n4 cs_excl_b1=n4 cs_mask2=n0 cs_rep=n6 cs_empty=n0",
+     "masked_sha": "04df6f2b87b829ad0114cd5019cd05ac0fae2d50ee922e3ce52d02518d721d01"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice cast_rest cm_base=[0.220703125, 0.2265625] cm_to_wall1=[0.59765625, 0.6015625] cm_mask2=[1.0, 1.0] cm_excl_w1=[0.72265625, 0.7265625] cm_excl_both=[1.0, 1.0] cm_areas_on=[0.220703125, 0.2265625] cm_zero=[1.0, 1.0] cm_negative=[1.0, 1.0] cm_from_inside=[0.47265625, 0.4765625] cm_inside_skips_overlap=true cm_inside_matches_later_wall=true ri_m50={} ri_m200={w1 pt=(98.0000,0.0000) n=(-1.0000,0.0000) shape=0} ri_m290={w1 pt=(102.0000,0.0000) n=(1.0000,0.0000) shape=0} ri_m300={w1 pt=(102.0000,0.0000) n=(1.0000,0.0000) shape=0} ri_m400={w1 pt=(102.0000,0.0000) n=(1.0000,0.0000) shape=0} ri_m600={w2 pt=(298.0000,200.0000) n=(0.0000,1.0000) shape=0} ri_m200_excl_w1={} ri_m400_excl_w1={w2 pt=(298.0000,0.0000) n=(-1.0000,0.0000) shape=0} ri_mask2={} ri_empty={} ri_offaxis={} ri_keys=[\"collider_id\", \"linear_velocity\", \"normal\", \"point\", \"rid\", \"shape\"] ri_zero_motion={w1 pt=(98.0000,0.0000) n=(-1.0000,0.0000) shape=0} cs_n=6 cs_pts=[(98.0000,0.0000),(102.0000,0.0000),(114.0000,0.0000),(110.0000,0.0000),(98.0000,0.0000),(102.0000,0.0000)] cs_cap1=n2 cs_cap2=n4 cs_excl_b1=n4 cs_mask2=n0 cs_rep=n6 cs_empty=n0",
+     "masked_sha": "04df6f2b87b829ad0114cd5019cd05ac0fae2d50ee922e3ce52d02518d721d01"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice cast_rest cm_base=[0.220703125, 0.2265625] cm_to_wall1=[0.59765625, 0.6015625] cm_mask2=[1.0, 1.0] cm_excl_w1=[0.72265625, 0.7265625] cm_excl_both=[1.0, 1.0] cm_areas_on=[0.220703125, 0.2265625] cm_zero=[1.0, 1.0] cm_negative=[1.0, 1.0] cm_from_inside=[0.47265625, 0.4765625] cm_inside_skips_overlap=true cm_inside_matches_later_wall=true ri_m50={} ri_m200={w1 pt=(98.0000,0.0000) n=(-1.0000,0.0000) shape=0} ri_m290={w1 pt=(102.0000,0.0000) n=(1.0000,0.0000) shape=0} ri_m300={w1 pt=(102.0000,0.0000) n=(1.0000,0.0000) shape=0} ri_m400={w1 pt=(102.0000,0.0000) n=(1.0000,0.0000) shape=0} ri_m600={w2 pt=(298.0000,200.0000) n=(0.0000,1.0000) shape=0} ri_m200_excl_w1={} ri_m400_excl_w1={w2 pt=(298.0000,0.0000) n=(-1.0000,0.0000) shape=0} ri_mask2={} ri_empty={} ri_offaxis={} ri_keys=[\"collider_id\", \"linear_velocity\", \"normal\", \"point\", \"rid\", \"shape\"] ri_zero_motion={w1 pt=(98.0000,0.0000) n=(-1.0000,0.0000) shape=0} cs_n=6 cs_pts=[(98.0000,0.0000),(102.0000,0.0000),(114.0000,0.0000),(110.0000,0.0000),(98.0000,0.0000),(102.0000,0.0000)] cs_cap1=n2 cs_cap2=n4 cs_excl_b1=n4 cs_mask2=n0 cs_rep=n6 cs_empty=n0",
+     "masked_sha": "04df6f2b87b829ad0114cd5019cd05ac0fae2d50ee922e3ce52d02518d721d01"
+    }
+   ]
+  },
+  "dss_lattice_census": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=census"
+   ],
+   "signature_len": 1430,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice census dss_methods=n6[cast_motion,collide_shape,get_rest_info,intersect_point,intersect_ray,intersect_shape] dss_sigs=[cast_motion(parameters:24)|collide_shape(parameters:24,max_results:2)|get_rest_info(parameters:24)|intersect_point(parameters:24,max_results:2)|intersect_ray(parameters:24)|intersect_shape(parameters:24,max_results:2)] ray=props=[collide_with_areas,collide_with_bodies,collision_mask,exclude,from,hit_from_inside,to] defaults=[collide_with_areas=false,collide_with_bodies=true,collision_mask=4294967295,exclude=n0,from=(0.0000,0.0000),hit_from_inside=false,to=(0.0000,0.0000)] pt=props=[canvas_instance_id,collide_with_areas,collide_with_bodies,collision_mask,exclude,position] defaults=[canvas_instance_id=0,collide_with_areas=false,collide_with_bodies=true,collision_mask=4294967295,exclude=n0,position=(0.0000,0.0000)] sh=props=[collide_with_areas,collide_with_bodies,collision_mask,exclude,margin,motion,shape,shape_rid,transform] defaults=[collide_with_areas=false,collide_with_bodies=true,collision_mask=4294967295,exclude=n0,margin=0.0000,motion=(0.0000,0.0000),shape=<Object#null>,shape_rid=RID(0),transform=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)]] ray_backface=has=false pt_canvas=has=true ray_create=from=(1.0000,2.0000) to=(3.0000,4.0000) mask=4294967295 excl=0 bodies=true areas=false inside=false dss_cls=cls=GodotPhysicsDirectSpaceState2D dss_identity=same_across_calls=true",
+     "masked_sha": "4aefc9129624f5e268a7144a69a9b8861e32d3a4b8e45768f5215624de262d3c"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice census dss_methods=n6[cast_motion,collide_shape,get_rest_info,intersect_point,intersect_ray,intersect_shape] dss_sigs=[cast_motion(parameters:24)|collide_shape(parameters:24,max_results:2)|get_rest_info(parameters:24)|intersect_point(parameters:24,max_results:2)|intersect_ray(parameters:24)|intersect_shape(parameters:24,max_results:2)] ray=props=[collide_with_areas,collide_with_bodies,collision_mask,exclude,from,hit_from_inside,to] defaults=[collide_with_areas=false,collide_with_bodies=true,collision_mask=4294967295,exclude=n0,from=(0.0000,0.0000),hit_from_inside=false,to=(0.0000,0.0000)] pt=props=[canvas_instance_id,collide_with_areas,collide_with_bodies,collision_mask,exclude,position] defaults=[canvas_instance_id=0,collide_with_areas=false,collide_with_bodies=true,collision_mask=4294967295,exclude=n0,position=(0.0000,0.0000)] sh=props=[collide_with_areas,collide_with_bodies,collision_mask,exclude,margin,motion,shape,shape_rid,transform] defaults=[collide_with_areas=false,collide_with_bodies=true,collision_mask=4294967295,exclude=n0,margin=0.0000,motion=(0.0000,0.0000),shape=<Object#null>,shape_rid=RID(0),transform=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)]] ray_backface=has=false pt_canvas=has=true ray_create=from=(1.0000,2.0000) to=(3.0000,4.0000) mask=4294967295 excl=0 bodies=true areas=false inside=false dss_cls=cls=GodotPhysicsDirectSpaceState2D dss_identity=same_across_calls=true",
+     "masked_sha": "4aefc9129624f5e268a7144a69a9b8861e32d3a4b8e45768f5215624de262d3c"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice census dss_methods=n6[cast_motion,collide_shape,get_rest_info,intersect_point,intersect_ray,intersect_shape] dss_sigs=[cast_motion(parameters:24)|collide_shape(parameters:24,max_results:2)|get_rest_info(parameters:24)|intersect_point(parameters:24,max_results:2)|intersect_ray(parameters:24)|intersect_shape(parameters:24,max_results:2)] ray=props=[collide_with_areas,collide_with_bodies,collision_mask,exclude,from,hit_from_inside,to] defaults=[collide_with_areas=false,collide_with_bodies=true,collision_mask=4294967295,exclude=n0,from=(0.0000,0.0000),hit_from_inside=false,to=(0.0000,0.0000)] pt=props=[canvas_instance_id,collide_with_areas,collide_with_bodies,collision_mask,exclude,position] defaults=[canvas_instance_id=0,collide_with_areas=false,collide_with_bodies=true,collision_mask=4294967295,exclude=n0,position=(0.0000,0.0000)] sh=props=[collide_with_areas,collide_with_bodies,collision_mask,exclude,margin,motion,shape,shape_rid,transform] defaults=[collide_with_areas=false,collide_with_bodies=true,collision_mask=4294967295,exclude=n0,margin=0.0000,motion=(0.0000,0.0000),shape=<Object#null>,shape_rid=RID(0),transform=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)]] ray_backface=has=false pt_canvas=has=true ray_create=from=(1.0000,2.0000) to=(3.0000,4.0000) mask=4294967295 excl=0 bodies=true areas=false inside=false dss_cls=cls=GodotPhysicsDirectSpaceState2D dss_identity=same_across_calls=true",
+     "masked_sha": "4aefc9129624f5e268a7144a69a9b8861e32d3a4b8e45768f5215624de262d3c"
+    }
+   ]
+  },
+  "dss_lattice_excl_space": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=excl_space"
+   ],
+   "signature_len": 334,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice excl_space baseline=[a#0] body_rid=[] shape_rid_inert=true null_rid_inert=true dup_rid=[] ray_shape_rid_inert=r={a pos=(80.0000,0.0000) n=(-1.0000,0.0000)} shape_rid_is_body_rid=false same_space=false root_view=[root_body#0] sv_view=[sv_body#0] space_scoped=true dss_identity=same_across_calls=true node_world_ok=true",
+     "masked_sha": "a91d43e3cb2b0328e088966f8449fe1fb8290c13e4525c8b814e238137b792df"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice excl_space baseline=[a#0] body_rid=[] shape_rid_inert=true null_rid_inert=true dup_rid=[] ray_shape_rid_inert=r={a pos=(80.0000,0.0000) n=(-1.0000,0.0000)} shape_rid_is_body_rid=false same_space=false root_view=[root_body#0] sv_view=[sv_body#0] space_scoped=true dss_identity=same_across_calls=true node_world_ok=true",
+     "masked_sha": "a91d43e3cb2b0328e088966f8449fe1fb8290c13e4525c8b814e238137b792df"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice excl_space baseline=[a#0] body_rid=[] shape_rid_inert=true null_rid_inert=true dup_rid=[] ray_shape_rid_inert=r={a pos=(80.0000,0.0000) n=(-1.0000,0.0000)} shape_rid_is_body_rid=false same_space=false root_view=[root_body#0] sv_view=[sv_body#0] space_scoped=true dss_identity=same_across_calls=true node_world_ok=true",
+     "masked_sha": "a91d43e3cb2b0328e088966f8449fe1fb8290c13e4525c8b814e238137b792df"
+    }
+   ]
+  },
+  "dss_lattice_fresh": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=fresh"
+   ],
+   "signature_len": 458,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice fresh add_t0_point=[f#0] add_t0_ray=r={f pos=(80.0000,0.0000) n=(-1.0000,0.0000)} add_t0_shape=[f#0] add_same_frame=true node_move_t0_old=[f#0] node_move_t0_new=[] node_move_deferred=true node_move_t1_old=[] node_move_t1_new=[f#0] server_tele_t0_old=[] server_tele_t0_new=[f#0] server_write_live=true pre_free=[c#0] free_t0=[c#0] free_deferred=true free_t1=[] vis_off=[d#0] visible_irrelevant=true layer_change_t0=[e#0] layer_change_t1=[e#0]",
+     "masked_sha": "122d676e6642e6158d1b290dfe51fdb7173af3f1521ec86516d1dfdf2f75e463"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice fresh add_t0_point=[f#0] add_t0_ray=r={f pos=(80.0000,0.0000) n=(-1.0000,0.0000)} add_t0_shape=[f#0] add_same_frame=true node_move_t0_old=[f#0] node_move_t0_new=[] node_move_deferred=true node_move_t1_old=[] node_move_t1_new=[f#0] server_tele_t0_old=[] server_tele_t0_new=[f#0] server_write_live=true pre_free=[c#0] free_t0=[c#0] free_deferred=true free_t1=[] vis_off=[d#0] visible_irrelevant=true layer_change_t0=[e#0] layer_change_t1=[e#0]",
+     "masked_sha": "122d676e6642e6158d1b290dfe51fdb7173af3f1521ec86516d1dfdf2f75e463"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice fresh add_t0_point=[f#0] add_t0_ray=r={f pos=(80.0000,0.0000) n=(-1.0000,0.0000)} add_t0_shape=[f#0] add_same_frame=true node_move_t0_old=[f#0] node_move_t0_new=[] node_move_deferred=true node_move_t1_old=[] node_move_t1_new=[f#0] server_tele_t0_old=[] server_tele_t0_new=[f#0] server_write_live=true pre_free=[c#0] free_t0=[c#0] free_deferred=true free_t1=[] vis_off=[d#0] visible_irrelevant=true layer_change_t0=[e#0] layer_change_t1=[e#0]",
+     "masked_sha": "122d676e6642e6158d1b290dfe51fdb7173af3f1521ec86516d1dfdf2f75e463"
+    }
+   ]
+  },
+  "dss_lattice_layer_forms": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=layer_forms"
+   ],
+   "signature_len": 491,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice layer_forms point_vis=[sb:body1/areas1/only0,ar:body0/areas1/only1,rb:body1/areas1/only0,cb:body1/areas1/only0,srv:body1/areas1/only0,canvas:body0/areas0/only0] ray_sb=r={sb pos=(80.0000,0.0000) n=(-1.0000,0.0000)} ray_srv=r={? pos=(860.0000,0.0000) n=(-1.0000,0.0000)} ray_area_off=r={} ray_area_on=r={ar pos=(280.0000,0.0000) n=(-1.0000,0.0000)} shape_srv=[?#0] shape_area_off=[] shape_area_on=[ar#0] cast_srv_ignored=[1.0, 1.0] server_tier_visible=true canvas_absent=true",
+     "masked_sha": "8a0a1dee5c5be3af1fdd5aac54540be8636b100af82b30b9680cacd856369c53"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice layer_forms point_vis=[sb:body1/areas1/only0,ar:body0/areas1/only1,rb:body1/areas1/only0,cb:body1/areas1/only0,srv:body1/areas1/only0,canvas:body0/areas0/only0] ray_sb=r={sb pos=(80.0000,0.0000) n=(-1.0000,0.0000)} ray_srv=r={? pos=(860.0000,0.0000) n=(-1.0000,0.0000)} ray_area_off=r={} ray_area_on=r={ar pos=(280.0000,0.0000) n=(-1.0000,0.0000)} shape_srv=[?#0] shape_area_off=[] shape_area_on=[ar#0] cast_srv_ignored=[1.0, 1.0] server_tier_visible=true canvas_absent=true",
+     "masked_sha": "8a0a1dee5c5be3af1fdd5aac54540be8636b100af82b30b9680cacd856369c53"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice layer_forms point_vis=[sb:body1/areas1/only0,ar:body0/areas1/only1,rb:body1/areas1/only0,cb:body1/areas1/only0,srv:body1/areas1/only0,canvas:body0/areas0/only0] ray_sb=r={sb pos=(80.0000,0.0000) n=(-1.0000,0.0000)} ray_srv=r={? pos=(860.0000,0.0000) n=(-1.0000,0.0000)} ray_area_off=r={} ray_area_on=r={ar pos=(280.0000,0.0000) n=(-1.0000,0.0000)} shape_srv=[?#0] shape_area_off=[] shape_area_on=[ar#0] cast_srv_ignored=[1.0, 1.0] server_tier_visible=true canvas_absent=true",
+     "masked_sha": "8a0a1dee5c5be3af1fdd5aac54540be8636b100af82b30b9680cacd856369c53"
+    }
+   ]
+  },
+  "dss_lattice_order_core": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=order_core"
+   ],
+   "signature_len": 49,
+   "passes": 3,
+   "exact_line": false,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice order_core add_order=[a,b,c,d,e] rep1=[e#0,a#0,c#0,d#0,b#0] rep2=[e#0,a#0,c#0,d#0,b#0] rep3=[e#0,a#0,c#0,d#0,b#0] repeat_stable=true set=[a#0,b#0,c#0,d#0,e#0] shape_same_order=true pile_b=[e2#0,a2#0,b2#0,c2#0,d2#0] layout_changes_order=true pile_a_after_insert=[e#0,a#0,c#0,b#0,d#0] insert_perturbs=true pile_rev=[a3#0,e3#0,d3#0,c3#0,b3#0] after_free=[a#0,b#0,e#0,d#0] free_perturbs=true after_readd=[a#0,b#0,e#0,f#0,d#0] readd_set=[a#0,b#0,d#0,e#0,f#0] rev=false",
+     "masked_sha": "d692c8a24cc071bfa8e70e07c99c3702ec5835e44e5ae5074d88ae4dcca24155"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice order_core add_order=[a,b,c,d,e] rep1=[e#0,a#0,c#0,d#0,b#0] rep2=[e#0,a#0,c#0,d#0,b#0] rep3=[e#0,a#0,c#0,d#0,b#0] repeat_stable=true set=[a#0,b#0,c#0,d#0,e#0] shape_same_order=true pile_b=[e2#0,a2#0,b2#0,c2#0,d2#0] layout_changes_order=true pile_a_after_insert=[e#0,a#0,c#0,b#0,d#0] insert_perturbs=true pile_rev=[a3#0,e3#0,d3#0,c3#0,b3#0] after_free=[a#0,b#0,e#0,d#0] free_perturbs=true after_readd=[a#0,b#0,e#0,f#0,d#0] readd_set=[a#0,b#0,d#0,e#0,f#0] rev=false",
+     "masked_sha": "d692c8a24cc071bfa8e70e07c99c3702ec5835e44e5ae5074d88ae4dcca24155"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice order_core add_order=[a,b,c,d,e] rep1=[e#0,a#0,c#0,d#0,b#0] rep2=[e#0,a#0,c#0,d#0,b#0] rep3=[e#0,a#0,c#0,d#0,b#0] repeat_stable=true set=[a#0,b#0,c#0,d#0,e#0] shape_same_order=true pile_b=[e2#0,a2#0,b2#0,c2#0,d2#0] layout_changes_order=true pile_a_after_insert=[e#0,a#0,c#0,b#0,d#0] insert_perturbs=true pile_rev=[a3#0,e3#0,d3#0,c3#0,b3#0] after_free=[a#0,b#0,e#0,d#0] free_perturbs=true after_readd=[a#0,b#0,e#0,f#0,d#0] readd_set=[a#0,b#0,d#0,e#0,f#0] rev=false",
+     "masked_sha": "d692c8a24cc071bfa8e70e07c99c3702ec5835e44e5ae5074d88ae4dcca24155"
+    }
+   ]
+  },
+  "dss_lattice_order_core_rev": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=order_core",
+    "--rev"
+   ],
+   "signature_len": 49,
+   "passes": 3,
+   "exact_line": false,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice order_core add_order=[e,d,c,b,a] rep1=[a#0,e#0,c#0,b#0,d#0] rep2=[a#0,e#0,c#0,b#0,d#0] rep3=[a#0,e#0,c#0,b#0,d#0] repeat_stable=true set=[a#0,b#0,c#0,d#0,e#0] shape_same_order=true pile_b=[e2#0,a2#0,b2#0,c2#0,d2#0] layout_changes_order=true pile_a_after_insert=[a#0,e#0,c#0,d#0,b#0] insert_perturbs=true pile_rev=[a3#0,e3#0,d3#0,c3#0,b3#0] after_free=[e#0,d#0,a#0,b#0] free_perturbs=true after_readd=[e#0,d#0,a#0,f#0,b#0] readd_set=[a#0,b#0,d#0,e#0,f#0] rev=true",
+     "masked_sha": "b9e7350e52ee937a402968b7586965b5432f740f94ba318107309fb6b8d53278"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice order_core add_order=[e,d,c,b,a] rep1=[a#0,e#0,c#0,b#0,d#0] rep2=[a#0,e#0,c#0,b#0,d#0] rep3=[a#0,e#0,c#0,b#0,d#0] repeat_stable=true set=[a#0,b#0,c#0,d#0,e#0] shape_same_order=true pile_b=[e2#0,a2#0,b2#0,c2#0,d2#0] layout_changes_order=true pile_a_after_insert=[a#0,e#0,c#0,d#0,b#0] insert_perturbs=true pile_rev=[a3#0,e3#0,d3#0,c3#0,b3#0] after_free=[e#0,d#0,a#0,b#0] free_perturbs=true after_readd=[e#0,d#0,a#0,f#0,b#0] readd_set=[a#0,b#0,d#0,e#0,f#0] rev=true",
+     "masked_sha": "b9e7350e52ee937a402968b7586965b5432f740f94ba318107309fb6b8d53278"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice order_core add_order=[e,d,c,b,a] rep1=[a#0,e#0,c#0,b#0,d#0] rep2=[a#0,e#0,c#0,b#0,d#0] rep3=[a#0,e#0,c#0,b#0,d#0] repeat_stable=true set=[a#0,b#0,c#0,d#0,e#0] shape_same_order=true pile_b=[e2#0,a2#0,b2#0,c2#0,d2#0] layout_changes_order=true pile_a_after_insert=[a#0,e#0,c#0,d#0,b#0] insert_perturbs=true pile_rev=[a3#0,e3#0,d3#0,c3#0,b3#0] after_free=[e#0,d#0,a#0,b#0] free_perturbs=true after_readd=[e#0,d#0,a#0,f#0,b#0] readd_set=[a#0,b#0,d#0,e#0,f#0] rev=true",
+     "masked_sha": "b9e7350e52ee937a402968b7586965b5432f740f94ba318107309fb6b8d53278"
+    }
+   ]
+  },
+  "dss_lattice_point_canvas": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=point_canvas"
+   ],
+   "signature_len": 320,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice point_canvas default_q=[def#0] layer_q=[clb#0] layer_q_at_default_spot=[clb#0] layer_scoped=true shifted_default_q=[def#0] shifted_layer_q=[clb#0] layer_offset_ignored=true ray_sees_default=r={def pos=(80.0000,0.0000) n=(-1.0000,0.0000)} shape_sees_both=[def#0,clb#0] shape_layer_agnostic=true rev=false",
+     "masked_sha": "999e000c6b67fb42ed294c13f6cce9d00984d236496e940208664b6c97cf3cec"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice point_canvas default_q=[def#0] layer_q=[clb#0] layer_q_at_default_spot=[clb#0] layer_scoped=true shifted_default_q=[def#0] shifted_layer_q=[clb#0] layer_offset_ignored=true ray_sees_default=r={def pos=(80.0000,0.0000) n=(-1.0000,0.0000)} shape_sees_both=[def#0,clb#0] shape_layer_agnostic=true rev=false",
+     "masked_sha": "999e000c6b67fb42ed294c13f6cce9d00984d236496e940208664b6c97cf3cec"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice point_canvas default_q=[def#0] layer_q=[clb#0] layer_q_at_default_spot=[clb#0] layer_scoped=true shifted_default_q=[def#0] shifted_layer_q=[clb#0] layer_offset_ignored=true ray_sees_default=r={def pos=(80.0000,0.0000) n=(-1.0000,0.0000)} shape_sees_both=[def#0,clb#0] shape_layer_agnostic=true rev=false",
+     "masked_sha": "999e000c6b67fb42ed294c13f6cce9d00984d236496e940208664b6c97cf3cec"
+    }
+   ]
+  },
+  "dss_lattice_point_cap": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=point_cap"
+   ],
+   "signature_len": 56,
+   "passes": 3,
+   "exact_line": false,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice point_cap add_order=[a,b,c,d,e] cap0=[] cap1=[e#0] cap2=[e#0,a#0] cap3=[e#0,a#0,c#0] cap5=[e#0,a#0,c#0,d#0,b#0] cap_default=[e#0,a#0,c#0,d#0,b#0] mask2=[] nobodies=[] excl_first=[e#0,c#0,d#0,b#0] far_out=[] pile40_default=n32 pile40_cap0=n0 pile40_cap64=n40 cap32_truncates=true",
+     "masked_sha": "f768e7bd313c8bf0591c216399d955a5b8358495290a31ee4dfb78d2e57088bb"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice point_cap add_order=[a,b,c,d,e] cap0=[] cap1=[e#0] cap2=[e#0,a#0] cap3=[e#0,a#0,c#0] cap5=[e#0,a#0,c#0,d#0,b#0] cap_default=[e#0,a#0,c#0,d#0,b#0] mask2=[] nobodies=[] excl_first=[e#0,c#0,d#0,b#0] far_out=[] pile40_default=n32 pile40_cap0=n0 pile40_cap64=n40 cap32_truncates=true",
+     "masked_sha": "f768e7bd313c8bf0591c216399d955a5b8358495290a31ee4dfb78d2e57088bb"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice point_cap add_order=[a,b,c,d,e] cap0=[] cap1=[e#0] cap2=[e#0,a#0] cap3=[e#0,a#0,c#0] cap5=[e#0,a#0,c#0,d#0,b#0] cap_default=[e#0,a#0,c#0,d#0,b#0] mask2=[] nobodies=[] excl_first=[e#0,c#0,d#0,b#0] far_out=[] pile40_default=n32 pile40_cap0=n0 pile40_cap64=n40 cap32_truncates=true",
+     "masked_sha": "f768e7bd313c8bf0591c216399d955a5b8358495290a31ee4dfb78d2e57088bb"
+    }
+   ]
+  },
+  "dss_lattice_point_cap_rev": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=point_cap",
+    "--rev"
+   ],
+   "signature_len": 56,
+   "passes": 3,
+   "exact_line": false,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice point_cap add_order=[e,d,c,b,a] cap0=[] cap1=[a#0] cap2=[a#0,e#0] cap3=[a#0,e#0,c#0] cap5=[a#0,e#0,c#0,b#0,d#0] cap_default=[a#0,e#0,c#0,b#0,d#0] mask2=[] nobodies=[] excl_first=[a#0,c#0,b#0,d#0] far_out=[] pile40_default=n32 pile40_cap0=n0 pile40_cap64=n40 cap32_truncates=true",
+     "masked_sha": "67769217019bace2e069b2d565db7593bd6e2b420c8b4942db3e7ab077dbc7d4"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice point_cap add_order=[e,d,c,b,a] cap0=[] cap1=[a#0] cap2=[a#0,e#0] cap3=[a#0,e#0,c#0] cap5=[a#0,e#0,c#0,b#0,d#0] cap_default=[a#0,e#0,c#0,b#0,d#0] mask2=[] nobodies=[] excl_first=[a#0,c#0,b#0,d#0] far_out=[] pile40_default=n32 pile40_cap0=n0 pile40_cap64=n40 cap32_truncates=true",
+     "masked_sha": "67769217019bace2e069b2d565db7593bd6e2b420c8b4942db3e7ab077dbc7d4"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice point_cap add_order=[e,d,c,b,a] cap0=[] cap1=[a#0] cap2=[a#0,e#0] cap3=[a#0,e#0,c#0] cap5=[a#0,e#0,c#0,b#0,d#0] cap_default=[a#0,e#0,c#0,b#0,d#0] mask2=[] nobodies=[] excl_first=[a#0,c#0,b#0,d#0] far_out=[] pile40_default=n32 pile40_cap0=n0 pile40_cap64=n40 cap32_truncates=true",
+     "masked_sha": "67769217019bace2e069b2d565db7593bd6e2b420c8b4942db3e7ab077dbc7d4"
+    }
+   ]
+  },
+  "dss_lattice_point_edge": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=point_edge"
+   ],
+   "signature_len": 378,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice point_edge box_left=[box#0] box_right=[] box_top=[box#0] box_bottom=[] box_left_in=[box#0] box_right_in=[box#0] circ_left=[] circ_left_in=[circ#0] circ_top=[] circ_center=[circ#0] rot_left=[] rot_right=[] rot_top=[rot#0] s_box_right=[box#0] s_box_bottom=[box#0] s_circ_top=[circ#0] s_rot_right=[rot#0] point_half_open=left=true right=false top=true bottom=false",
+     "masked_sha": "28845e1340557872fa41897508d94e29eac0889ebde47ef1246eb41f94487153"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice point_edge box_left=[box#0] box_right=[] box_top=[box#0] box_bottom=[] box_left_in=[box#0] box_right_in=[box#0] circ_left=[] circ_left_in=[circ#0] circ_top=[] circ_center=[circ#0] rot_left=[] rot_right=[] rot_top=[rot#0] s_box_right=[box#0] s_box_bottom=[box#0] s_circ_top=[circ#0] s_rot_right=[rot#0] point_half_open=left=true right=false top=true bottom=false",
+     "masked_sha": "28845e1340557872fa41897508d94e29eac0889ebde47ef1246eb41f94487153"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice point_edge box_left=[box#0] box_right=[] box_top=[box#0] box_bottom=[] box_left_in=[box#0] box_right_in=[box#0] circ_left=[] circ_left_in=[circ#0] circ_top=[] circ_center=[circ#0] rot_left=[] rot_right=[] rot_top=[rot#0] s_box_right=[box#0] s_box_bottom=[box#0] s_circ_top=[circ#0] s_rot_right=[rot#0] point_half_open=left=true right=false top=true bottom=false",
+     "masked_sha": "28845e1340557872fa41897508d94e29eac0889ebde47ef1246eb41f94487153"
+    }
+   ]
+  },
+  "dss_lattice_ray_flags": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=ray_flags"
+   ],
+   "signature_len": 560,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice ray_flags base=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} mask2=r={} mask0=r={} nobodies=r={} areas_on=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} areas_only=r={w2 pos=(298.0000,0.0000) n=(-1.0000,0.0000)} excl_wall=r={} excl_area=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} inside_off=r={} inside_on=r={w pos=(100.0000,0.0000) n=(0.0000,0.0000)} inside_area_on=r={w2 pos=(300.0000,0.0000) n=(0.0000,0.0000)} outside_on=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} keys=[\"collider\", \"collider_id\", \"normal\", \"position\", \"rid\", \"shape\"]",
+     "masked_sha": "a3159f6310eb343eded1628bcc7a35f28d21322d001829a049dc57889b505900"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice ray_flags base=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} mask2=r={} mask0=r={} nobodies=r={} areas_on=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} areas_only=r={w2 pos=(298.0000,0.0000) n=(-1.0000,0.0000)} excl_wall=r={} excl_area=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} inside_off=r={} inside_on=r={w pos=(100.0000,0.0000) n=(0.0000,0.0000)} inside_area_on=r={w2 pos=(300.0000,0.0000) n=(0.0000,0.0000)} outside_on=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} keys=[\"collider\", \"collider_id\", \"normal\", \"position\", \"rid\", \"shape\"]",
+     "masked_sha": "a3159f6310eb343eded1628bcc7a35f28d21322d001829a049dc57889b505900"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice ray_flags base=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} mask2=r={} mask0=r={} nobodies=r={} areas_on=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} areas_only=r={w2 pos=(298.0000,0.0000) n=(-1.0000,0.0000)} excl_wall=r={} excl_area=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} inside_off=r={} inside_on=r={w pos=(100.0000,0.0000) n=(0.0000,0.0000)} inside_area_on=r={w2 pos=(300.0000,0.0000) n=(0.0000,0.0000)} outside_on=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} keys=[\"collider\", \"collider_id\", \"normal\", \"position\", \"rid\", \"shape\"]",
+     "masked_sha": "a3159f6310eb343eded1628bcc7a35f28d21322d001829a049dc57889b505900"
+    }
+   ]
+  },
+  "dss_lattice_ray_geom": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=ray_geom"
+   ],
+   "signature_len": 611,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice ray_geom end_at_face=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} end_eps_before=r={} graze_top=r={w pos=(98.0000,-200.0000) n=(-1.0000,0.0000)} graze_inside=r={w pos=(98.0000,-199.9990) n=(-1.0000,0.0000)} corner_diag=r={c pos=(180.0000,-20.0000) n=(-1.0000,0.0000)} zero_len_face=r={} zero_len_out=r={} reverse=r={c pos=(220.0000,0.0000) n=(1.0000,0.0000)} from_left_away=r={} from_left_through=r={c pos=(180.0000,0.0000) n=(-1.0000,0.0000)} from_right_away=r={w pos=(102.0000,0.0000) n=(0.0000,0.0000)} from_right_through=r={w pos=(102.0000,0.0000) n=(0.0000,0.0000)} corner_start_away=r={}",
+     "masked_sha": "e7dbb697591cb8f7dcfdf703f4a7a15107fcff86bba6e409682077e5f7cfe8b6"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice ray_geom end_at_face=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} end_eps_before=r={} graze_top=r={w pos=(98.0000,-200.0000) n=(-1.0000,0.0000)} graze_inside=r={w pos=(98.0000,-199.9990) n=(-1.0000,0.0000)} corner_diag=r={c pos=(180.0000,-20.0000) n=(-1.0000,0.0000)} zero_len_face=r={} zero_len_out=r={} reverse=r={c pos=(220.0000,0.0000) n=(1.0000,0.0000)} from_left_away=r={} from_left_through=r={c pos=(180.0000,0.0000) n=(-1.0000,0.0000)} from_right_away=r={w pos=(102.0000,0.0000) n=(0.0000,0.0000)} from_right_through=r={w pos=(102.0000,0.0000) n=(0.0000,0.0000)} corner_start_away=r={}",
+     "masked_sha": "e7dbb697591cb8f7dcfdf703f4a7a15107fcff86bba6e409682077e5f7cfe8b6"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice ray_geom end_at_face=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} end_eps_before=r={} graze_top=r={w pos=(98.0000,-200.0000) n=(-1.0000,0.0000)} graze_inside=r={w pos=(98.0000,-199.9990) n=(-1.0000,0.0000)} corner_diag=r={c pos=(180.0000,-20.0000) n=(-1.0000,0.0000)} zero_len_face=r={} zero_len_out=r={} reverse=r={c pos=(220.0000,0.0000) n=(1.0000,0.0000)} from_left_away=r={} from_left_through=r={c pos=(180.0000,0.0000) n=(-1.0000,0.0000)} from_right_away=r={w pos=(102.0000,0.0000) n=(0.0000,0.0000)} from_right_through=r={w pos=(102.0000,0.0000) n=(0.0000,0.0000)} corner_start_away=r={}",
+     "masked_sha": "e7dbb697591cb8f7dcfdf703f4a7a15107fcff86bba6e409682077e5f7cfe8b6"
+    }
+   ]
+  },
+  "dss_lattice_ray_order": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=ray_order"
+   ],
+   "signature_len": 332,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice ray_order nearest=r={near pos=(98.0000,0.0000) n=(-1.0000,0.0000)} tie=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_first=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_second=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_add_order=[tie_a,tie_b] last_added_wins=true rev=false",
+     "masked_sha": "07bc4805b36630c682529e51c97486db92a520af80706147db36fd7fa59f492a"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice ray_order nearest=r={near pos=(98.0000,0.0000) n=(-1.0000,0.0000)} tie=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_first=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_second=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_add_order=[tie_a,tie_b] last_added_wins=true rev=false",
+     "masked_sha": "07bc4805b36630c682529e51c97486db92a520af80706147db36fd7fa59f492a"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice ray_order nearest=r={near pos=(98.0000,0.0000) n=(-1.0000,0.0000)} tie=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_first=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_second=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_add_order=[tie_a,tie_b] last_added_wins=true rev=false",
+     "masked_sha": "07bc4805b36630c682529e51c97486db92a520af80706147db36fd7fa59f492a"
+    }
+   ]
+  },
+  "dss_lattice_ray_order_rev": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=ray_order",
+    "--rev"
+   ],
+   "signature_len": 331,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice ray_order nearest=r={near pos=(98.0000,0.0000) n=(-1.0000,0.0000)} tie=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_first=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_second=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_add_order=[tie_b,tie_a] last_added_wins=true rev=true",
+     "masked_sha": "9ffcc5fbb820b2baa6716acdd3c19066657e89007568095afae16d80bb81d82d"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice ray_order nearest=r={near pos=(98.0000,0.0000) n=(-1.0000,0.0000)} tie=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_first=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_second=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_add_order=[tie_b,tie_a] last_added_wins=true rev=true",
+     "masked_sha": "9ffcc5fbb820b2baa6716acdd3c19066657e89007568095afae16d80bb81d82d"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice ray_order nearest=r={near pos=(98.0000,0.0000) n=(-1.0000,0.0000)} tie=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_first=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_second=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_add_order=[tie_b,tie_a] last_added_wins=true rev=true",
+     "masked_sha": "9ffcc5fbb820b2baa6716acdd3c19066657e89007568095afae16d80bb81d82d"
+    }
+   ]
+  },
+  "dss_lattice_shape": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=shape_lattice"
+   ],
+   "signature_len": 296,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice shape_lattice cap0=n0 cap1=n1 cap3=n3 cap5=n5 cap_default=n5 keys=[\"collider\", \"collider_id\", \"rid\", \"shape\"] set=[a#0,b#0,c#0,d#0,e#0] touch=[e#0] touch_in=[e#0] touch_out=[] multi_c0=[m#0] multi_c1=[m#1] multi_c2=[m#2] multi_set=[m#0,m#1,m#2] shape_rid=[m#1] empty=n0 rev=false",
+     "masked_sha": "cea11c07ae479c46683b84d63da8e8269aafbbee540a8b8f3f4695a5f247f1f1"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice shape_lattice cap0=n0 cap1=n1 cap3=n3 cap5=n5 cap_default=n5 keys=[\"collider\", \"collider_id\", \"rid\", \"shape\"] set=[a#0,b#0,c#0,d#0,e#0] touch=[e#0] touch_in=[e#0] touch_out=[] multi_c0=[m#0] multi_c1=[m#1] multi_c2=[m#2] multi_set=[m#0,m#1,m#2] shape_rid=[m#1] empty=n0 rev=false",
+     "masked_sha": "cea11c07ae479c46683b84d63da8e8269aafbbee540a8b8f3f4695a5f247f1f1"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice shape_lattice cap0=n0 cap1=n1 cap3=n3 cap5=n5 cap_default=n5 keys=[\"collider\", \"collider_id\", \"rid\", \"shape\"] set=[a#0,b#0,c#0,d#0,e#0] touch=[e#0] touch_in=[e#0] touch_out=[] multi_c0=[m#0] multi_c1=[m#1] multi_c2=[m#2] multi_set=[m#0,m#1,m#2] shape_rid=[m#1] empty=n0 rev=false",
+     "masked_sha": "cea11c07ae479c46683b84d63da8e8269aafbbee540a8b8f3f4695a5f247f1f1"
+    }
+   ]
+  },
+  "dss_lattice_shape_rev": {
+   "script": "dss_lattice.gd",
+   "flags": [
+    "--arm=shape_lattice",
+    "--rev"
+   ],
+   "signature_len": 295,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice shape_lattice cap0=n0 cap1=n1 cap3=n3 cap5=n5 cap_default=n5 keys=[\"collider\", \"collider_id\", \"rid\", \"shape\"] set=[a#0,b#0,c#0,d#0,e#0] touch=[a#0] touch_in=[a#0] touch_out=[] multi_c0=[m#0] multi_c1=[m#1] multi_c2=[m#2] multi_set=[m#0,m#1,m#2] shape_rid=[m#1] empty=n0 rev=true",
+     "masked_sha": "1812024b20dfc56886783ff39ef0e3503cdd9ac291627fe3c0952a39241ad0c5"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice shape_lattice cap0=n0 cap1=n1 cap3=n3 cap5=n5 cap_default=n5 keys=[\"collider\", \"collider_id\", \"rid\", \"shape\"] set=[a#0,b#0,c#0,d#0,e#0] touch=[a#0] touch_in=[a#0] touch_out=[] multi_c0=[m#0] multi_c1=[m#1] multi_c2=[m#2] multi_set=[m#0,m#1,m#2] shape_rid=[m#1] empty=n0 rev=true",
+     "masked_sha": "1812024b20dfc56886783ff39ef0e3503cdd9ac291627fe3c0952a39241ad0c5"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS dss_lattice shape_lattice cap0=n0 cap1=n1 cap3=n3 cap5=n5 cap_default=n5 keys=[\"collider\", \"collider_id\", \"rid\", \"shape\"] set=[a#0,b#0,c#0,d#0,e#0] touch=[a#0] touch_in=[a#0] touch_out=[] multi_c0=[m#0] multi_c1=[m#1] multi_c2=[m#2] multi_set=[m#0,m#1,m#2] shape_rid=[m#1] empty=n0 rev=true",
+     "masked_sha": "1812024b20dfc56886783ff39ef0e3503cdd9ac291627fe3c0952a39241ad0c5"
+    }
+   ]
+  },
+  "r95b_order_canon": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=canon"
+   ],
+   "signature_len": 935,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order canon add_order=[a,b,c,d,e] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t6:3,4,1,2,0;t7:3,4,0,2,1;t8:3,4,0,1,2;t9:2,4,0,1,3;t10:2,3,0,1,4;t11:2,3,4,1,0;t12:2,3,4,0,1;t13:1,3,4,0,2;t14:1,2,4,0,3;t15:1,2,3,0,4;t16:1,2,3,4,0;t17:0,2,3,4,1;t18:0,1,3,4,2;t19:0,1,2,4,3;t20:0,1,2,3,4;t21:4,1,2,3,0;t22:4,0,2,3,1;t23:4,0,1,3,2;t24:4,0,1,2,3;t25:3,0,1,2,4;t26:3,4,1,2,0;t27:3,4,0,2,1;t28:3,4,0,1,2;t29:2,4,0,1,3;t30:2,3,0,1,4;t32:2,3,4,0,1;t36:1,2,3,4,0;t40:0,1,2,3,4;t48:3,4,0,1,2;t56:1,2,3,4,0;t64:4,0,1,2,3] distinct_ticks=20 last_change_tick=64 cycle_len_dense=20 t0_pidx=0,1,2,3,4 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t2_sh_vec=[e#0,a#0,c#0,d#0,b#0] t2_pt_eq_sh=true t64_vec=[e#0,a#0,b#0,c#0,d#0] end_sh_vec=[e#0,a#0,b#0,c#0,d#0] end_pt_eq_sh=true pt_stable_interleaved=true",
+     "masked_sha": "552cd5ab9d9bbc2c43f6e152e2234bc9a7ee4785c6caa32d65e33b5e473055fa"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order canon add_order=[a,b,c,d,e] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t6:3,4,1,2,0;t7:3,4,0,2,1;t8:3,4,0,1,2;t9:2,4,0,1,3;t10:2,3,0,1,4;t11:2,3,4,1,0;t12:2,3,4,0,1;t13:1,3,4,0,2;t14:1,2,4,0,3;t15:1,2,3,0,4;t16:1,2,3,4,0;t17:0,2,3,4,1;t18:0,1,3,4,2;t19:0,1,2,4,3;t20:0,1,2,3,4;t21:4,1,2,3,0;t22:4,0,2,3,1;t23:4,0,1,3,2;t24:4,0,1,2,3;t25:3,0,1,2,4;t26:3,4,1,2,0;t27:3,4,0,2,1;t28:3,4,0,1,2;t29:2,4,0,1,3;t30:2,3,0,1,4;t32:2,3,4,0,1;t36:1,2,3,4,0;t40:0,1,2,3,4;t48:3,4,0,1,2;t56:1,2,3,4,0;t64:4,0,1,2,3] distinct_ticks=20 last_change_tick=64 cycle_len_dense=20 t0_pidx=0,1,2,3,4 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t2_sh_vec=[e#0,a#0,c#0,d#0,b#0] t2_pt_eq_sh=true t64_vec=[e#0,a#0,b#0,c#0,d#0] end_sh_vec=[e#0,a#0,b#0,c#0,d#0] end_pt_eq_sh=true pt_stable_interleaved=true",
+     "masked_sha": "552cd5ab9d9bbc2c43f6e152e2234bc9a7ee4785c6caa32d65e33b5e473055fa"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order canon add_order=[a,b,c,d,e] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t6:3,4,1,2,0;t7:3,4,0,2,1;t8:3,4,0,1,2;t9:2,4,0,1,3;t10:2,3,0,1,4;t11:2,3,4,1,0;t12:2,3,4,0,1;t13:1,3,4,0,2;t14:1,2,4,0,3;t15:1,2,3,0,4;t16:1,2,3,4,0;t17:0,2,3,4,1;t18:0,1,3,4,2;t19:0,1,2,4,3;t20:0,1,2,3,4;t21:4,1,2,3,0;t22:4,0,2,3,1;t23:4,0,1,3,2;t24:4,0,1,2,3;t25:3,0,1,2,4;t26:3,4,1,2,0;t27:3,4,0,2,1;t28:3,4,0,1,2;t29:2,4,0,1,3;t30:2,3,0,1,4;t32:2,3,4,0,1;t36:1,2,3,4,0;t40:0,1,2,3,4;t48:3,4,0,1,2;t56:1,2,3,4,0;t64:4,0,1,2,3] distinct_ticks=20 last_change_tick=64 cycle_len_dense=20 t0_pidx=0,1,2,3,4 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t2_sh_vec=[e#0,a#0,c#0,d#0,b#0] t2_pt_eq_sh=true t64_vec=[e#0,a#0,b#0,c#0,d#0] end_sh_vec=[e#0,a#0,b#0,c#0,d#0] end_pt_eq_sh=true pt_stable_interleaved=true",
+     "masked_sha": "552cd5ab9d9bbc2c43f6e152e2234bc9a7ee4785c6caa32d65e33b5e473055fa"
+    }
+   ]
+  },
+  "r95b_order_cap40_p0": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=cap40",
+    "--perm=0"
+   ],
+   "signature_len": 2307,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order cap40 perm=0 add_order_head=[t0,t1,t2,t3,t4,t5,t6,t7] set32_ladder=[t2:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0];t4:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0];t8:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t8#0,t9#0];t16:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0];t32:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0]] set32_distinct=5 set32_t2=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] n32=32 n64=40 n0=0 set32_t32=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos32_t32=[0.0000,0.0000|2.0000,0.0000|78.0000,0.0000|4.0000,0.0000|6.0000,0.0000|8.0000,0.0000|10.0000,0.0000|12.0000,0.0000|14.0000,0.0000|16.0000,0.0000|18.0000,0.0000|20.0000,0.0000|22.0000,0.0000|24.0000,0.0000|26.0000,0.0000|28.0000,0.0000|30.0000,0.0000|32.0000,0.0000|34.0000,0.0000|36.0000,0.0000|38.0000,0.0000|40.0000,0.0000|42.0000,0.0000|44.0000,0.0000|46.0000,0.0000|48.0000,0.0000|50.0000,0.0000|52.0000,0.0000|54.0000,0.0000|56.0000,0.0000|58.0000,0.0000|60.0000,0.0000] set64=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos64_head=[0.0000,0.0000|2.0000,0.0000|78.0000,0.0000|4.0000,0.0000|6.0000,0.0000|8.0000,0.0000|10.0000,0.0000|12.0000,0.0000]",
+     "masked_sha": "213dcf63cc344724e98761b99df3e8f206c5812abfd56c732dd78766c02d1723"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order cap40 perm=0 add_order_head=[t0,t1,t2,t3,t4,t5,t6,t7] set32_ladder=[t2:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0];t4:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0];t8:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t8#0,t9#0];t16:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0];t32:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0]] set32_distinct=5 set32_t2=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] n32=32 n64=40 n0=0 set32_t32=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos32_t32=[0.0000,0.0000|2.0000,0.0000|78.0000,0.0000|4.0000,0.0000|6.0000,0.0000|8.0000,0.0000|10.0000,0.0000|12.0000,0.0000|14.0000,0.0000|16.0000,0.0000|18.0000,0.0000|20.0000,0.0000|22.0000,0.0000|24.0000,0.0000|26.0000,0.0000|28.0000,0.0000|30.0000,0.0000|32.0000,0.0000|34.0000,0.0000|36.0000,0.0000|38.0000,0.0000|40.0000,0.0000|42.0000,0.0000|44.0000,0.0000|46.0000,0.0000|48.0000,0.0000|50.0000,0.0000|52.0000,0.0000|54.0000,0.0000|56.0000,0.0000|58.0000,0.0000|60.0000,0.0000] set64=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos64_head=[0.0000,0.0000|2.0000,0.0000|78.0000,0.0000|4.0000,0.0000|6.0000,0.0000|8.0000,0.0000|10.0000,0.0000|12.0000,0.0000]",
+     "masked_sha": "213dcf63cc344724e98761b99df3e8f206c5812abfd56c732dd78766c02d1723"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order cap40 perm=0 add_order_head=[t0,t1,t2,t3,t4,t5,t6,t7] set32_ladder=[t2:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0];t4:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0];t8:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t8#0,t9#0];t16:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0];t32:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0]] set32_distinct=5 set32_t2=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] n32=32 n64=40 n0=0 set32_t32=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos32_t32=[0.0000,0.0000|2.0000,0.0000|78.0000,0.0000|4.0000,0.0000|6.0000,0.0000|8.0000,0.0000|10.0000,0.0000|12.0000,0.0000|14.0000,0.0000|16.0000,0.0000|18.0000,0.0000|20.0000,0.0000|22.0000,0.0000|24.0000,0.0000|26.0000,0.0000|28.0000,0.0000|30.0000,0.0000|32.0000,0.0000|34.0000,0.0000|36.0000,0.0000|38.0000,0.0000|40.0000,0.0000|42.0000,0.0000|44.0000,0.0000|46.0000,0.0000|48.0000,0.0000|50.0000,0.0000|52.0000,0.0000|54.0000,0.0000|56.0000,0.0000|58.0000,0.0000|60.0000,0.0000] set64=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos64_head=[0.0000,0.0000|2.0000,0.0000|78.0000,0.0000|4.0000,0.0000|6.0000,0.0000|8.0000,0.0000|10.0000,0.0000|12.0000,0.0000]",
+     "masked_sha": "213dcf63cc344724e98761b99df3e8f206c5812abfd56c732dd78766c02d1723"
+    }
+   ]
+  },
+  "r95b_order_cap40_p1": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=cap40",
+    "--perm=1"
+   ],
+   "signature_len": 2370,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order cap40 perm=1 add_order_head=[t39,t38,t37,t36,t35,t34,t33,t32] set32_ladder=[t2:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t39#0,t8#0,t9#0];t4:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t37#0,t38#0,t39#0,t8#0,t9#0];t8:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t8#0,t9#0];t16:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t8#0,t9#0];t32:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t9#0]] set32_distinct=5 set32_t2=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t39#0,t8#0,t9#0] n32=32 n64=40 n0=0 set32_t32=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t9#0] relpos32_t32=[78.0000,0.0000|76.0000,0.0000|0.0000,0.0000|74.0000,0.0000|72.0000,0.0000|70.0000,0.0000|68.0000,0.0000|66.0000,0.0000|64.0000,0.0000|62.0000,0.0000|60.0000,0.0000|58.0000,0.0000|56.0000,0.0000|54.0000,0.0000|52.0000,0.0000|50.0000,0.0000|48.0000,0.0000|46.0000,0.0000|44.0000,0.0000|42.0000,0.0000|40.0000,0.0000|38.0000,0.0000|36.0000,0.0000|34.0000,0.0000|32.0000,0.0000|30.0000,0.0000|28.0000,0.0000|26.0000,0.0000|24.0000,0.0000|22.0000,0.0000|20.0000,0.0000|18.0000,0.0000] set64=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos64_head=[78.0000,0.0000|76.0000,0.0000|0.0000,0.0000|74.0000,0.0000|72.0000,0.0000|70.0000,0.0000|68.0000,0.0000|66.0000,0.0000]",
+     "masked_sha": "08fdb08c1b44dbaea9d012cc3dc9fb2b5ec46380ce6114271e7c5793a51b56ec"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order cap40 perm=1 add_order_head=[t39,t38,t37,t36,t35,t34,t33,t32] set32_ladder=[t2:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t39#0,t8#0,t9#0];t4:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t37#0,t38#0,t39#0,t8#0,t9#0];t8:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t8#0,t9#0];t16:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t8#0,t9#0];t32:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t9#0]] set32_distinct=5 set32_t2=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t39#0,t8#0,t9#0] n32=32 n64=40 n0=0 set32_t32=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t9#0] relpos32_t32=[78.0000,0.0000|76.0000,0.0000|0.0000,0.0000|74.0000,0.0000|72.0000,0.0000|70.0000,0.0000|68.0000,0.0000|66.0000,0.0000|64.0000,0.0000|62.0000,0.0000|60.0000,0.0000|58.0000,0.0000|56.0000,0.0000|54.0000,0.0000|52.0000,0.0000|50.0000,0.0000|48.0000,0.0000|46.0000,0.0000|44.0000,0.0000|42.0000,0.0000|40.0000,0.0000|38.0000,0.0000|36.0000,0.0000|34.0000,0.0000|32.0000,0.0000|30.0000,0.0000|28.0000,0.0000|26.0000,0.0000|24.0000,0.0000|22.0000,0.0000|20.0000,0.0000|18.0000,0.0000] set64=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos64_head=[78.0000,0.0000|76.0000,0.0000|0.0000,0.0000|74.0000,0.0000|72.0000,0.0000|70.0000,0.0000|68.0000,0.0000|66.0000,0.0000]",
+     "masked_sha": "08fdb08c1b44dbaea9d012cc3dc9fb2b5ec46380ce6114271e7c5793a51b56ec"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order cap40 perm=1 add_order_head=[t39,t38,t37,t36,t35,t34,t33,t32] set32_ladder=[t2:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t39#0,t8#0,t9#0];t4:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t37#0,t38#0,t39#0,t8#0,t9#0];t8:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t8#0,t9#0];t16:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t8#0,t9#0];t32:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t9#0]] set32_distinct=5 set32_t2=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t39#0,t8#0,t9#0] n32=32 n64=40 n0=0 set32_t32=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t9#0] relpos32_t32=[78.0000,0.0000|76.0000,0.0000|0.0000,0.0000|74.0000,0.0000|72.0000,0.0000|70.0000,0.0000|68.0000,0.0000|66.0000,0.0000|64.0000,0.0000|62.0000,0.0000|60.0000,0.0000|58.0000,0.0000|56.0000,0.0000|54.0000,0.0000|52.0000,0.0000|50.0000,0.0000|48.0000,0.0000|46.0000,0.0000|44.0000,0.0000|42.0000,0.0000|40.0000,0.0000|38.0000,0.0000|36.0000,0.0000|34.0000,0.0000|32.0000,0.0000|30.0000,0.0000|28.0000,0.0000|26.0000,0.0000|24.0000,0.0000|22.0000,0.0000|20.0000,0.0000|18.0000,0.0000] set64=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos64_head=[78.0000,0.0000|76.0000,0.0000|0.0000,0.0000|74.0000,0.0000|72.0000,0.0000|70.0000,0.0000|68.0000,0.0000|66.0000,0.0000]",
+     "masked_sha": "08fdb08c1b44dbaea9d012cc3dc9fb2b5ec46380ce6114271e7c5793a51b56ec"
+    }
+   ]
+  },
+  "r95b_order_cap40_p2": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=cap40",
+    "--perm=2"
+   ],
+   "signature_len": 2320,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order cap40 perm=2 add_order_head=[t3,t10,t17,t24,t31,t38,t5,t12] set32_ladder=[t2:[t0#0,t1#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t4:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t8:[t0#0,t1#0,t10#0,t11#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t16:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t32:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t33#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t9#0]] set32_distinct=5 set32_t2=[t0#0,t1#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0] n32=32 n64=40 n0=0 set32_t32=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t33#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t9#0] relpos32_t32=[66.0000,0.0000|6.0000,0.0000|20.0000,0.0000|34.0000,0.0000|48.0000,0.0000|62.0000,0.0000|76.0000,0.0000|10.0000,0.0000|24.0000,0.0000|38.0000,0.0000|52.0000,0.0000|72.0000,0.0000|0.0000,0.0000|14.0000,0.0000|28.0000,0.0000|42.0000,0.0000|56.0000,0.0000|70.0000,0.0000|4.0000,0.0000|18.0000,0.0000|32.0000,0.0000|46.0000,0.0000|60.0000,0.0000|74.0000,0.0000|8.0000,0.0000|22.0000,0.0000|36.0000,0.0000|50.0000,0.0000|2.0000,0.0000|78.0000,0.0000|12.0000,0.0000|26.0000,0.0000] set64=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos64_head=[66.0000,0.0000|6.0000,0.0000|20.0000,0.0000|34.0000,0.0000|48.0000,0.0000|62.0000,0.0000|76.0000,0.0000|10.0000,0.0000]",
+     "masked_sha": "4bca6ec2b966236887933e8802413a52ae793fd2692bf719dbbf6aab496d04c6"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order cap40 perm=2 add_order_head=[t3,t10,t17,t24,t31,t38,t5,t12] set32_ladder=[t2:[t0#0,t1#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t4:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t8:[t0#0,t1#0,t10#0,t11#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t16:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t32:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t33#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t9#0]] set32_distinct=5 set32_t2=[t0#0,t1#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0] n32=32 n64=40 n0=0 set32_t32=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t33#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t9#0] relpos32_t32=[66.0000,0.0000|6.0000,0.0000|20.0000,0.0000|34.0000,0.0000|48.0000,0.0000|62.0000,0.0000|76.0000,0.0000|10.0000,0.0000|24.0000,0.0000|38.0000,0.0000|52.0000,0.0000|72.0000,0.0000|0.0000,0.0000|14.0000,0.0000|28.0000,0.0000|42.0000,0.0000|56.0000,0.0000|70.0000,0.0000|4.0000,0.0000|18.0000,0.0000|32.0000,0.0000|46.0000,0.0000|60.0000,0.0000|74.0000,0.0000|8.0000,0.0000|22.0000,0.0000|36.0000,0.0000|50.0000,0.0000|2.0000,0.0000|78.0000,0.0000|12.0000,0.0000|26.0000,0.0000] set64=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos64_head=[66.0000,0.0000|6.0000,0.0000|20.0000,0.0000|34.0000,0.0000|48.0000,0.0000|62.0000,0.0000|76.0000,0.0000|10.0000,0.0000]",
+     "masked_sha": "4bca6ec2b966236887933e8802413a52ae793fd2692bf719dbbf6aab496d04c6"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order cap40 perm=2 add_order_head=[t3,t10,t17,t24,t31,t38,t5,t12] set32_ladder=[t2:[t0#0,t1#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t4:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t8:[t0#0,t1#0,t10#0,t11#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t16:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t32:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t33#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t9#0]] set32_distinct=5 set32_t2=[t0#0,t1#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0] n32=32 n64=40 n0=0 set32_t32=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t33#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t9#0] relpos32_t32=[66.0000,0.0000|6.0000,0.0000|20.0000,0.0000|34.0000,0.0000|48.0000,0.0000|62.0000,0.0000|76.0000,0.0000|10.0000,0.0000|24.0000,0.0000|38.0000,0.0000|52.0000,0.0000|72.0000,0.0000|0.0000,0.0000|14.0000,0.0000|28.0000,0.0000|42.0000,0.0000|56.0000,0.0000|70.0000,0.0000|4.0000,0.0000|18.0000,0.0000|32.0000,0.0000|46.0000,0.0000|60.0000,0.0000|74.0000,0.0000|8.0000,0.0000|22.0000,0.0000|36.0000,0.0000|50.0000,0.0000|2.0000,0.0000|78.0000,0.0000|12.0000,0.0000|26.0000,0.0000] set64=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos64_head=[66.0000,0.0000|6.0000,0.0000|20.0000,0.0000|34.0000,0.0000|48.0000,0.0000|62.0000,0.0000|76.0000,0.0000|10.0000,0.0000]",
+     "masked_sha": "4bca6ec2b966236887933e8802413a52ae793fd2692bf719dbbf6aab496d04c6"
+    }
+   ]
+  },
+  "r95b_order_celloff_x0": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=celloff",
+    "--off=0"
+   ],
+   "signature_len": 409,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order celloff off=0.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] distinct_ticks=7 last_change_tick=64 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]",
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order celloff off=0.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] distinct_ticks=7 last_change_tick=64 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]",
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order celloff off=0.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] distinct_ticks=7 last_change_tick=64 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]",
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8"
+    }
+   ]
+  },
+  "r95b_order_celloff_x1000": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=celloff",
+    "--off=1000"
+   ],
+   "signature_len": 412,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order celloff off=1000.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] distinct_ticks=7 last_change_tick=64 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]",
+     "masked_sha": "f4da12a4efab7fd6a758cfa61b4390f268fa6cfe460b1e9468854bbeead377a5"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order celloff off=1000.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] distinct_ticks=7 last_change_tick=64 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]",
+     "masked_sha": "f4da12a4efab7fd6a758cfa61b4390f268fa6cfe460b1e9468854bbeead377a5"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order celloff off=1000.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] distinct_ticks=7 last_change_tick=64 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]",
+     "masked_sha": "f4da12a4efab7fd6a758cfa61b4390f268fa6cfe460b1e9468854bbeead377a5"
+    }
+   ]
+  },
+  "r95b_order_celloff_y1000": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=celloff",
+    "--off=0",
+    "--offy=1000"
+   ],
+   "signature_len": 409,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order celloff off=0.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] distinct_ticks=7 last_change_tick=64 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]",
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order celloff off=0.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] distinct_ticks=7 last_change_tick=64 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]",
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order celloff off=0.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] distinct_ticks=7 last_change_tick=64 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]",
+     "masked_sha": "6dd15f9a7376c3889203ddab99f5f1a6f97f4ae937e07ee3fc1e894b7428e4b8"
+    }
+   ]
+  },
+  "r95b_order_free_ab": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=free",
+    "--order=ab"
+   ],
+   "signature_len": 282,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order free freed=[a,b] add_order=[a,b,c,d,e] ladder=[t1:4,3,2;t2:2,3,4;t3:2,4,3;t4:3,4,2;t6:4,2,3;t8:2,3,4;t16:3,4,2] distinct_ticks=5 last_change_tick=16 t1_vec=[e#0,d#0,c#0] t1_relpos=[32.0000,0.0000|24.0000,0.0000|16.0000,0.0000] t16_vec=[d#0,e#0,c#0] set=[c#0,d#0,e#0]",
+     "masked_sha": "da1c25e0041334efb44f0a28734d49a65f0e356feb50501843ff37529fdc7763"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order free freed=[a,b] add_order=[a,b,c,d,e] ladder=[t1:4,3,2;t2:2,3,4;t3:2,4,3;t4:3,4,2;t6:4,2,3;t8:2,3,4;t16:3,4,2] distinct_ticks=5 last_change_tick=16 t1_vec=[e#0,d#0,c#0] t1_relpos=[32.0000,0.0000|24.0000,0.0000|16.0000,0.0000] t16_vec=[d#0,e#0,c#0] set=[c#0,d#0,e#0]",
+     "masked_sha": "da1c25e0041334efb44f0a28734d49a65f0e356feb50501843ff37529fdc7763"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order free freed=[a,b] add_order=[a,b,c,d,e] ladder=[t1:4,3,2;t2:2,3,4;t3:2,4,3;t4:3,4,2;t6:4,2,3;t8:2,3,4;t16:3,4,2] distinct_ticks=5 last_change_tick=16 t1_vec=[e#0,d#0,c#0] t1_relpos=[32.0000,0.0000|24.0000,0.0000|16.0000,0.0000] t16_vec=[d#0,e#0,c#0] set=[c#0,d#0,e#0]",
+     "masked_sha": "da1c25e0041334efb44f0a28734d49a65f0e356feb50501843ff37529fdc7763"
+    }
+   ]
+  },
+  "r95b_order_free_ba": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=free",
+    "--order=ba"
+   ],
+   "signature_len": 282,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order free freed=[b,a] add_order=[a,b,c,d,e] ladder=[t1:3,4,2;t2:2,4,3;t3:2,3,4;t4:4,3,2;t6:3,2,4;t8:2,4,3;t16:4,3,2] distinct_ticks=5 last_change_tick=16 t1_vec=[d#0,e#0,c#0] t1_relpos=[24.0000,0.0000|32.0000,0.0000|16.0000,0.0000] t16_vec=[e#0,d#0,c#0] set=[c#0,d#0,e#0]",
+     "masked_sha": "55e6a96bc78f749c439744aeaee288a07b7f9c3fe34936a273a4ffc07007d4f8"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order free freed=[b,a] add_order=[a,b,c,d,e] ladder=[t1:3,4,2;t2:2,4,3;t3:2,3,4;t4:4,3,2;t6:3,2,4;t8:2,4,3;t16:4,3,2] distinct_ticks=5 last_change_tick=16 t1_vec=[d#0,e#0,c#0] t1_relpos=[24.0000,0.0000|32.0000,0.0000|16.0000,0.0000] t16_vec=[e#0,d#0,c#0] set=[c#0,d#0,e#0]",
+     "masked_sha": "55e6a96bc78f749c439744aeaee288a07b7f9c3fe34936a273a4ffc07007d4f8"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order free freed=[b,a] add_order=[a,b,c,d,e] ladder=[t1:3,4,2;t2:2,4,3;t3:2,3,4;t4:4,3,2;t6:3,2,4;t8:2,4,3;t16:4,3,2] distinct_ticks=5 last_change_tick=16 t1_vec=[d#0,e#0,c#0] t1_relpos=[24.0000,0.0000|32.0000,0.0000|16.0000,0.0000] t16_vec=[e#0,d#0,c#0] set=[c#0,d#0,e#0]",
+     "masked_sha": "55e6a96bc78f749c439744aeaee288a07b7f9c3fe34936a273a4ffc07007d4f8"
+    }
+   ]
+  },
+  "r95b_order_layers_k0": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=layers",
+    "--k=0"
+   ],
+   "signature_len": 592,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order layers k=0 add_order=[a,b,c,d,e] pt0_ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1] pt0_distinct=7 pt0_vec=[c#0,d#0,e#0,a#0,b#0] pt0_relpos=[16.0000,0.0000|24.0000,0.0000|32.0000,0.0000|0.0000,0.0000|8.0000,0.0000] pt0_t2_vec=[e#0,a#0,c#0,d#0,b#0] pt0_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_eq_sh=true ptL_vec=[c#0,d#0,e#0,a#0,b#0] sh_vec=[c#0,d#0,e#0,a#0,b#0] sh_relpos=[16.0000,0.0000|24.0000,0.0000|32.0000,0.0000|0.0000,0.0000|8.0000,0.0000] pt_eq_sh=true sh_len=5",
+     "masked_sha": "31ea6b22e3123fed92cb6b69a1402509afaad6b73807707827b60d9574d9cdf0"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order layers k=0 add_order=[a,b,c,d,e] pt0_ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1] pt0_distinct=7 pt0_vec=[c#0,d#0,e#0,a#0,b#0] pt0_relpos=[16.0000,0.0000|24.0000,0.0000|32.0000,0.0000|0.0000,0.0000|8.0000,0.0000] pt0_t2_vec=[e#0,a#0,c#0,d#0,b#0] pt0_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_eq_sh=true ptL_vec=[c#0,d#0,e#0,a#0,b#0] sh_vec=[c#0,d#0,e#0,a#0,b#0] sh_relpos=[16.0000,0.0000|24.0000,0.0000|32.0000,0.0000|0.0000,0.0000|8.0000,0.0000] pt_eq_sh=true sh_len=5",
+     "masked_sha": "31ea6b22e3123fed92cb6b69a1402509afaad6b73807707827b60d9574d9cdf0"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order layers k=0 add_order=[a,b,c,d,e] pt0_ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1] pt0_distinct=7 pt0_vec=[c#0,d#0,e#0,a#0,b#0] pt0_relpos=[16.0000,0.0000|24.0000,0.0000|32.0000,0.0000|0.0000,0.0000|8.0000,0.0000] pt0_t2_vec=[e#0,a#0,c#0,d#0,b#0] pt0_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_eq_sh=true ptL_vec=[c#0,d#0,e#0,a#0,b#0] sh_vec=[c#0,d#0,e#0,a#0,b#0] sh_relpos=[16.0000,0.0000|24.0000,0.0000|32.0000,0.0000|0.0000,0.0000|8.0000,0.0000] pt_eq_sh=true sh_len=5",
+     "masked_sha": "31ea6b22e3123fed92cb6b69a1402509afaad6b73807707827b60d9574d9cdf0"
+    }
+   ]
+  },
+  "r95b_order_layers_k1": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=layers",
+    "--k=1"
+   ],
+   "signature_len": 601,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order layers k=1 add_order=[a,b,c,d,e] pt0_ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,0,1,2,4;t8:3,0,2,4,1;t16:1,4,0,2,3;t32:4,0,2,3,1] pt0_distinct=6 pt0_vec=[e#0,a#0,c#0,d#0,b#0] pt0_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_vec=[e#0,a#0,c#0,d#0,b#0] pt0_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_eq_sh=false ptL_vec=[clb#0] sh_vec=[e#0,a#0,c#0,d#0,clb#0,b#0] sh_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|16.0000,0.0000|8.0000,0.0000] pt_eq_sh=false sh_len=6",
+     "masked_sha": "77b9c6cbc058b3cc4c6647a699d44bd9528d719b8ed4f935fcd2d317ec728e91"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order layers k=1 add_order=[a,b,c,d,e] pt0_ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,0,1,2,4;t8:3,0,2,4,1;t16:1,4,0,2,3;t32:4,0,2,3,1] pt0_distinct=6 pt0_vec=[e#0,a#0,c#0,d#0,b#0] pt0_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_vec=[e#0,a#0,c#0,d#0,b#0] pt0_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_eq_sh=false ptL_vec=[clb#0] sh_vec=[e#0,a#0,c#0,d#0,clb#0,b#0] sh_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|16.0000,0.0000|8.0000,0.0000] pt_eq_sh=false sh_len=6",
+     "masked_sha": "77b9c6cbc058b3cc4c6647a699d44bd9528d719b8ed4f935fcd2d317ec728e91"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order layers k=1 add_order=[a,b,c,d,e] pt0_ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,0,1,2,4;t8:3,0,2,4,1;t16:1,4,0,2,3;t32:4,0,2,3,1] pt0_distinct=6 pt0_vec=[e#0,a#0,c#0,d#0,b#0] pt0_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_vec=[e#0,a#0,c#0,d#0,b#0] pt0_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_eq_sh=false ptL_vec=[clb#0] sh_vec=[e#0,a#0,c#0,d#0,clb#0,b#0] sh_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|16.0000,0.0000|8.0000,0.0000] pt_eq_sh=false sh_len=6",
+     "masked_sha": "77b9c6cbc058b3cc4c6647a699d44bd9528d719b8ed4f935fcd2d317ec728e91"
+    }
+   ]
+  },
+  "r95b_order_period_k5": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=period",
+    "--k=5"
+   ],
+   "signature_len": 163,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order period k=5 cycle_len=20 distinct_ticks=20 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0] t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0] t_last_vec=[p3#0,p4#0,p0#0,p2#0,p1#0]",
+     "masked_sha": "bea7cce91acd412c14795ecdb7493818a245c94dfa2dc3c4054e076c5e7b1295"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order period k=5 cycle_len=20 distinct_ticks=20 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0] t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0] t_last_vec=[p3#0,p4#0,p0#0,p2#0,p1#0]",
+     "masked_sha": "bea7cce91acd412c14795ecdb7493818a245c94dfa2dc3c4054e076c5e7b1295"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order period k=5 cycle_len=20 distinct_ticks=20 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0] t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0] t_last_vec=[p3#0,p4#0,p0#0,p2#0,p1#0]",
+     "masked_sha": "bea7cce91acd412c14795ecdb7493818a245c94dfa2dc3c4054e076c5e7b1295"
+    }
+   ]
+  },
+  "r95b_order_periodx_k10": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=periodx",
+    "--k=10"
+   ],
+   "signature_len": 275,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=10 spacing=4.0 cycle_len=90 expected_kk1=90 distinct_ticks=90 n_ticks=93 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p9#0] t2_vec=[p9#0,p0#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p1#0] t3_vec=[p9#0,p0#0,p1#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p2#0]",
+     "masked_sha": "2f7fc8d66023095a8386762cc7dd340841d51efdaa05484c0ded9d2bb843ec3a"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=10 spacing=4.0 cycle_len=90 expected_kk1=90 distinct_ticks=90 n_ticks=93 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p9#0] t2_vec=[p9#0,p0#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p1#0] t3_vec=[p9#0,p0#0,p1#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p2#0]",
+     "masked_sha": "2f7fc8d66023095a8386762cc7dd340841d51efdaa05484c0ded9d2bb843ec3a"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=10 spacing=4.0 cycle_len=90 expected_kk1=90 distinct_ticks=90 n_ticks=93 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p9#0] t2_vec=[p9#0,p0#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p1#0] t3_vec=[p9#0,p0#0,p1#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p2#0]",
+     "masked_sha": "2f7fc8d66023095a8386762cc7dd340841d51efdaa05484c0ded9d2bb843ec3a"
+    }
+   ]
+  },
+  "r95b_order_periodx_k2": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=periodx",
+    "--k=2"
+   ],
+   "signature_len": 150,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=2 spacing=4.0 cycle_len=2 expected_kk1=2 distinct_ticks=2 n_ticks=5 t0_vec=[p0#0,p1#0] t2_vec=[p0#0,p1#0] t3_vec=[p1#0,p0#0]",
+     "masked_sha": "d5f17976170fff5475fa4f482ad8857d14076d8f50fb02116fc50d9459d35afc"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=2 spacing=4.0 cycle_len=2 expected_kk1=2 distinct_ticks=2 n_ticks=5 t0_vec=[p0#0,p1#0] t2_vec=[p0#0,p1#0] t3_vec=[p1#0,p0#0]",
+     "masked_sha": "d5f17976170fff5475fa4f482ad8857d14076d8f50fb02116fc50d9459d35afc"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=2 spacing=4.0 cycle_len=2 expected_kk1=2 distinct_ticks=2 n_ticks=5 t0_vec=[p0#0,p1#0] t2_vec=[p0#0,p1#0] t3_vec=[p1#0,p0#0]",
+     "masked_sha": "d5f17976170fff5475fa4f482ad8857d14076d8f50fb02116fc50d9459d35afc"
+    }
+   ]
+  },
+  "r95b_order_periodx_k3": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=periodx",
+    "--k=3"
+   ],
+   "signature_len": 165,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=3 spacing=4.0 cycle_len=6 expected_kk1=6 distinct_ticks=6 n_ticks=9 t0_vec=[p0#0,p1#0,p2#0] t2_vec=[p2#0,p0#0,p1#0] t3_vec=[p1#0,p0#0,p2#0]",
+     "masked_sha": "d9572c26f180149462f8daa3effde3f4116118d7d743a923af8fd7c908e187bd"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=3 spacing=4.0 cycle_len=6 expected_kk1=6 distinct_ticks=6 n_ticks=9 t0_vec=[p0#0,p1#0,p2#0] t2_vec=[p2#0,p0#0,p1#0] t3_vec=[p1#0,p0#0,p2#0]",
+     "masked_sha": "d9572c26f180149462f8daa3effde3f4116118d7d743a923af8fd7c908e187bd"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=3 spacing=4.0 cycle_len=6 expected_kk1=6 distinct_ticks=6 n_ticks=9 t0_vec=[p0#0,p1#0,p2#0] t2_vec=[p2#0,p0#0,p1#0] t3_vec=[p1#0,p0#0,p2#0]",
+     "masked_sha": "d9572c26f180149462f8daa3effde3f4116118d7d743a923af8fd7c908e187bd"
+    }
+   ]
+  },
+  "r95b_order_periodx_k4": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=periodx",
+    "--k=4"
+   ],
+   "signature_len": 184,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=4 spacing=4.0 cycle_len=12 expected_kk1=12 distinct_ticks=12 n_ticks=15 t0_vec=[p0#0,p1#0,p2#0,p3#0] t2_vec=[p3#0,p0#0,p2#0,p1#0] t3_vec=[p3#0,p0#0,p1#0,p2#0]",
+     "masked_sha": "527ec1fac34a6923013ae13bde283436c817cc039f4c146a69464d4da44ef911"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=4 spacing=4.0 cycle_len=12 expected_kk1=12 distinct_ticks=12 n_ticks=15 t0_vec=[p0#0,p1#0,p2#0,p3#0] t2_vec=[p3#0,p0#0,p2#0,p1#0] t3_vec=[p3#0,p0#0,p1#0,p2#0]",
+     "masked_sha": "527ec1fac34a6923013ae13bde283436c817cc039f4c146a69464d4da44ef911"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=4 spacing=4.0 cycle_len=12 expected_kk1=12 distinct_ticks=12 n_ticks=15 t0_vec=[p0#0,p1#0,p2#0,p3#0] t2_vec=[p3#0,p0#0,p2#0,p1#0] t3_vec=[p3#0,p0#0,p1#0,p2#0]",
+     "masked_sha": "527ec1fac34a6923013ae13bde283436c817cc039f4c146a69464d4da44ef911"
+    }
+   ]
+  },
+  "r95b_order_periodx_k5": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=periodx",
+    "--k=5"
+   ],
+   "signature_len": 199,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=5 spacing=4.0 cycle_len=20 expected_kk1=20 distinct_ticks=20 n_ticks=23 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0] t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0] t3_vec=[p4#0,p0#0,p1#0,p3#0,p2#0]",
+     "masked_sha": "265d0fb12a7787aba6a22af1df0e346b1f85491ebebd19dc3abb8a3e0d256482"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=5 spacing=4.0 cycle_len=20 expected_kk1=20 distinct_ticks=20 n_ticks=23 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0] t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0] t3_vec=[p4#0,p0#0,p1#0,p3#0,p2#0]",
+     "masked_sha": "265d0fb12a7787aba6a22af1df0e346b1f85491ebebd19dc3abb8a3e0d256482"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=5 spacing=4.0 cycle_len=20 expected_kk1=20 distinct_ticks=20 n_ticks=23 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0] t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0] t3_vec=[p4#0,p0#0,p1#0,p3#0,p2#0]",
+     "masked_sha": "265d0fb12a7787aba6a22af1df0e346b1f85491ebebd19dc3abb8a3e0d256482"
+    }
+   ]
+  },
+  "r95b_order_periodx_k5s8": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=periodx",
+    "--k=5",
+    "--spacing=8"
+   ],
+   "signature_len": 199,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=5 spacing=8.0 cycle_len=20 expected_kk1=20 distinct_ticks=20 n_ticks=23 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0] t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0] t3_vec=[p4#0,p0#0,p1#0,p3#0,p2#0]",
+     "masked_sha": "305b54f2ae9cf97035bafd29b71b9d03fa7a9a844122e1aaa43e3bce148bd736"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=5 spacing=8.0 cycle_len=20 expected_kk1=20 distinct_ticks=20 n_ticks=23 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0] t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0] t3_vec=[p4#0,p0#0,p1#0,p3#0,p2#0]",
+     "masked_sha": "305b54f2ae9cf97035bafd29b71b9d03fa7a9a844122e1aaa43e3bce148bd736"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=5 spacing=8.0 cycle_len=20 expected_kk1=20 distinct_ticks=20 n_ticks=23 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0] t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0] t3_vec=[p4#0,p0#0,p1#0,p3#0,p2#0]",
+     "masked_sha": "305b54f2ae9cf97035bafd29b71b9d03fa7a9a844122e1aaa43e3bce148bd736"
+    }
+   ]
+  },
+  "r95b_order_periodx_k6": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=periodx",
+    "--k=6"
+   ],
+   "signature_len": 214,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=6 spacing=4.0 cycle_len=30 expected_kk1=30 distinct_ticks=30 n_ticks=33 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0] t2_vec=[p5#0,p0#0,p2#0,p3#0,p4#0,p1#0] t3_vec=[p5#0,p0#0,p1#0,p3#0,p4#0,p2#0]",
+     "masked_sha": "7f1bd814cd1756ec58e564acce43df6134561ad9d46a633935a21c302cb6817f"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=6 spacing=4.0 cycle_len=30 expected_kk1=30 distinct_ticks=30 n_ticks=33 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0] t2_vec=[p5#0,p0#0,p2#0,p3#0,p4#0,p1#0] t3_vec=[p5#0,p0#0,p1#0,p3#0,p4#0,p2#0]",
+     "masked_sha": "7f1bd814cd1756ec58e564acce43df6134561ad9d46a633935a21c302cb6817f"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=6 spacing=4.0 cycle_len=30 expected_kk1=30 distinct_ticks=30 n_ticks=33 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0] t2_vec=[p5#0,p0#0,p2#0,p3#0,p4#0,p1#0] t3_vec=[p5#0,p0#0,p1#0,p3#0,p4#0,p2#0]",
+     "masked_sha": "7f1bd814cd1756ec58e564acce43df6134561ad9d46a633935a21c302cb6817f"
+    }
+   ]
+  },
+  "r95b_order_periodx_k7": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=periodx",
+    "--k=7"
+   ],
+   "signature_len": 229,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=7 spacing=4.0 cycle_len=42 expected_kk1=42 distinct_ticks=42 n_ticks=45 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0] t2_vec=[p6#0,p0#0,p2#0,p3#0,p4#0,p5#0,p1#0] t3_vec=[p6#0,p0#0,p1#0,p3#0,p4#0,p5#0,p2#0]",
+     "masked_sha": "d9349559ae78497131e760eb9372a434a0c7b29bd1d8abad2a4f6588ed609bb6"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=7 spacing=4.0 cycle_len=42 expected_kk1=42 distinct_ticks=42 n_ticks=45 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0] t2_vec=[p6#0,p0#0,p2#0,p3#0,p4#0,p5#0,p1#0] t3_vec=[p6#0,p0#0,p1#0,p3#0,p4#0,p5#0,p2#0]",
+     "masked_sha": "d9349559ae78497131e760eb9372a434a0c7b29bd1d8abad2a4f6588ed609bb6"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=7 spacing=4.0 cycle_len=42 expected_kk1=42 distinct_ticks=42 n_ticks=45 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0] t2_vec=[p6#0,p0#0,p2#0,p3#0,p4#0,p5#0,p1#0] t3_vec=[p6#0,p0#0,p1#0,p3#0,p4#0,p5#0,p2#0]",
+     "masked_sha": "d9349559ae78497131e760eb9372a434a0c7b29bd1d8abad2a4f6588ed609bb6"
+    }
+   ]
+  },
+  "r95b_order_periodx_k8": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=periodx",
+    "--k=8"
+   ],
+   "signature_len": 244,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=8 spacing=4.0 cycle_len=56 expected_kk1=56 distinct_ticks=56 n_ticks=59 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0] t2_vec=[p7#0,p0#0,p2#0,p3#0,p4#0,p5#0,p6#0,p1#0] t3_vec=[p7#0,p0#0,p1#0,p3#0,p4#0,p5#0,p6#0,p2#0]",
+     "masked_sha": "606c0985d42dc99d066c26a0b2765f05a5da08ad6c9aa03faede2c5505851315"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=8 spacing=4.0 cycle_len=56 expected_kk1=56 distinct_ticks=56 n_ticks=59 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0] t2_vec=[p7#0,p0#0,p2#0,p3#0,p4#0,p5#0,p6#0,p1#0] t3_vec=[p7#0,p0#0,p1#0,p3#0,p4#0,p5#0,p6#0,p2#0]",
+     "masked_sha": "606c0985d42dc99d066c26a0b2765f05a5da08ad6c9aa03faede2c5505851315"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order periodx k=8 spacing=4.0 cycle_len=56 expected_kk1=56 distinct_ticks=56 n_ticks=59 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0] t2_vec=[p7#0,p0#0,p2#0,p3#0,p4#0,p5#0,p6#0,p1#0] t3_vec=[p7#0,p0#0,p1#0,p3#0,p4#0,p5#0,p6#0,p2#0]",
+     "masked_sha": "606c0985d42dc99d066c26a0b2765f05a5da08ad6c9aa03faede2c5505851315"
+    }
+   ]
+  },
+  "r95b_order_perm0": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=perm",
+    "--perm=0"
+   ],
+   "signature_len": 357,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=0 add_order=[a,b,c,d,e] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1] distinct_ticks=9 last_change_tick=32 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]",
+     "masked_sha": "0fb765a8e1bd1f857833002783c552152ec61347d157948f7d87e5b2cd1cb26c"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=0 add_order=[a,b,c,d,e] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1] distinct_ticks=9 last_change_tick=32 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]",
+     "masked_sha": "0fb765a8e1bd1f857833002783c552152ec61347d157948f7d87e5b2cd1cb26c"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=0 add_order=[a,b,c,d,e] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1] distinct_ticks=9 last_change_tick=32 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]",
+     "masked_sha": "0fb765a8e1bd1f857833002783c552152ec61347d157948f7d87e5b2cd1cb26c"
+    }
+   ]
+  },
+  "r95b_order_perm1": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=perm",
+    "--perm=1"
+   ],
+   "signature_len": 357,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=1 add_order=[e,d,c,b,a] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:4,3,2,1,0;t1:0,3,2,1,4;t2:0,4,2,1,3;t3:0,4,3,1,2;t4:0,4,3,2,1;t5:1,4,3,2,0;t8:1,0,4,3,2;t16:3,2,1,0,4;t32:2,1,0,4,3] distinct_ticks=9 last_change_tick=32 t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_relpos=[0.0000,0.0000|32.0000,0.0000|16.0000,0.0000|8.0000,0.0000|24.0000,0.0000]",
+     "masked_sha": "ad344183e5cd01e1d9d797313bef20e408efe1eaab606de532d58cff229fb3c5"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=1 add_order=[e,d,c,b,a] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:4,3,2,1,0;t1:0,3,2,1,4;t2:0,4,2,1,3;t3:0,4,3,1,2;t4:0,4,3,2,1;t5:1,4,3,2,0;t8:1,0,4,3,2;t16:3,2,1,0,4;t32:2,1,0,4,3] distinct_ticks=9 last_change_tick=32 t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_relpos=[0.0000,0.0000|32.0000,0.0000|16.0000,0.0000|8.0000,0.0000|24.0000,0.0000]",
+     "masked_sha": "ad344183e5cd01e1d9d797313bef20e408efe1eaab606de532d58cff229fb3c5"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=1 add_order=[e,d,c,b,a] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:4,3,2,1,0;t1:0,3,2,1,4;t2:0,4,2,1,3;t3:0,4,3,1,2;t4:0,4,3,2,1;t5:1,4,3,2,0;t8:1,0,4,3,2;t16:3,2,1,0,4;t32:2,1,0,4,3] distinct_ticks=9 last_change_tick=32 t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_relpos=[0.0000,0.0000|32.0000,0.0000|16.0000,0.0000|8.0000,0.0000|24.0000,0.0000]",
+     "masked_sha": "ad344183e5cd01e1d9d797313bef20e408efe1eaab606de532d58cff229fb3c5"
+    }
+   ]
+  },
+  "r95b_order_perm2": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=perm",
+    "--perm=2"
+   ],
+   "signature_len": 357,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=2 add_order=[b,c,a,e,d] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:1,2,0,4,3;t1:0,2,4,3,1;t2:0,1,4,3,2;t3:2,1,4,3,0;t4:2,1,0,3,4;t5:2,1,0,4,3;t8:1,3,2,4,0;t16:4,0,3,2,1;t32:3,4,1,0,2] distinct_ticks=9 last_change_tick=32 t2_vec=[a#0,b#0,e#0,d#0,c#0] t2_relpos=[0.0000,0.0000|8.0000,0.0000|32.0000,0.0000|24.0000,0.0000|16.0000,0.0000]",
+     "masked_sha": "a762ab581d24451344edb7a5ec6c5803a77620bf87432c8b1281d58c0efcd001"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=2 add_order=[b,c,a,e,d] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:1,2,0,4,3;t1:0,2,4,3,1;t2:0,1,4,3,2;t3:2,1,4,3,0;t4:2,1,0,3,4;t5:2,1,0,4,3;t8:1,3,2,4,0;t16:4,0,3,2,1;t32:3,4,1,0,2] distinct_ticks=9 last_change_tick=32 t2_vec=[a#0,b#0,e#0,d#0,c#0] t2_relpos=[0.0000,0.0000|8.0000,0.0000|32.0000,0.0000|24.0000,0.0000|16.0000,0.0000]",
+     "masked_sha": "a762ab581d24451344edb7a5ec6c5803a77620bf87432c8b1281d58c0efcd001"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=2 add_order=[b,c,a,e,d] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:1,2,0,4,3;t1:0,2,4,3,1;t2:0,1,4,3,2;t3:2,1,4,3,0;t4:2,1,0,3,4;t5:2,1,0,4,3;t8:1,3,2,4,0;t16:4,0,3,2,1;t32:3,4,1,0,2] distinct_ticks=9 last_change_tick=32 t2_vec=[a#0,b#0,e#0,d#0,c#0] t2_relpos=[0.0000,0.0000|8.0000,0.0000|32.0000,0.0000|24.0000,0.0000|16.0000,0.0000]",
+     "masked_sha": "a762ab581d24451344edb7a5ec6c5803a77620bf87432c8b1281d58c0efcd001"
+    }
+   ]
+  },
+  "r95b_order_perm3": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=perm",
+    "--perm=3"
+   ],
+   "signature_len": 357,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=3 add_order=[c,a,e,d,b] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:2,0,4,3,1;t1:0,4,1,3,2;t2:2,4,1,3,0;t3:2,0,1,3,4;t4:2,0,1,4,3;t5:2,0,3,4,1;t8:1,2,3,0,4;t16:4,3,0,1,2;t32:3,1,4,2,0] distinct_ticks=9 last_change_tick=32 t2_vec=[c#0,e#0,b#0,d#0,a#0] t2_relpos=[16.0000,0.0000|32.0000,0.0000|8.0000,0.0000|24.0000,0.0000|0.0000,0.0000]",
+     "masked_sha": "b8c7cb9d21378b8420f34eeb7a1f1f365ddcf004b7e20d0b70ea9d682196d675"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=3 add_order=[c,a,e,d,b] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:2,0,4,3,1;t1:0,4,1,3,2;t2:2,4,1,3,0;t3:2,0,1,3,4;t4:2,0,1,4,3;t5:2,0,3,4,1;t8:1,2,3,0,4;t16:4,3,0,1,2;t32:3,1,4,2,0] distinct_ticks=9 last_change_tick=32 t2_vec=[c#0,e#0,b#0,d#0,a#0] t2_relpos=[16.0000,0.0000|32.0000,0.0000|8.0000,0.0000|24.0000,0.0000|0.0000,0.0000]",
+     "masked_sha": "b8c7cb9d21378b8420f34eeb7a1f1f365ddcf004b7e20d0b70ea9d682196d675"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=3 add_order=[c,a,e,d,b] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:2,0,4,3,1;t1:0,4,1,3,2;t2:2,4,1,3,0;t3:2,0,1,3,4;t4:2,0,1,4,3;t5:2,0,3,4,1;t8:1,2,3,0,4;t16:4,3,0,1,2;t32:3,1,4,2,0] distinct_ticks=9 last_change_tick=32 t2_vec=[c#0,e#0,b#0,d#0,a#0] t2_relpos=[16.0000,0.0000|32.0000,0.0000|8.0000,0.0000|24.0000,0.0000|0.0000,0.0000]",
+     "masked_sha": "b8c7cb9d21378b8420f34eeb7a1f1f365ddcf004b7e20d0b70ea9d682196d675"
+    }
+   ]
+  },
+  "r95b_order_perm4": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=perm",
+    "--perm=4"
+   ],
+   "signature_len": 357,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=4 add_order=[a,c,b,e,d] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:0,2,1,4,3;t1:4,2,1,3,0;t2:4,0,1,3,2;t3:4,0,2,3,1;t4:1,0,2,3,4;t5:1,0,2,4,3;t8:2,3,0,4,1;t16:3,1,4,2,0;t32:0,4,3,1,2] distinct_ticks=9 last_change_tick=32 t2_vec=[e#0,a#0,b#0,d#0,c#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|24.0000,0.0000|16.0000,0.0000]",
+     "masked_sha": "ec3df6513cad252c8e4e2eb0e61de1ac7a6a9c8485b492774349f17ba48da385"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=4 add_order=[a,c,b,e,d] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:0,2,1,4,3;t1:4,2,1,3,0;t2:4,0,1,3,2;t3:4,0,2,3,1;t4:1,0,2,3,4;t5:1,0,2,4,3;t8:2,3,0,4,1;t16:3,1,4,2,0;t32:0,4,3,1,2] distinct_ticks=9 last_change_tick=32 t2_vec=[e#0,a#0,b#0,d#0,c#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|24.0000,0.0000|16.0000,0.0000]",
+     "masked_sha": "ec3df6513cad252c8e4e2eb0e61de1ac7a6a9c8485b492774349f17ba48da385"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=4 add_order=[a,c,b,e,d] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:0,2,1,4,3;t1:4,2,1,3,0;t2:4,0,1,3,2;t3:4,0,2,3,1;t4:1,0,2,3,4;t5:1,0,2,4,3;t8:2,3,0,4,1;t16:3,1,4,2,0;t32:0,4,3,1,2] distinct_ticks=9 last_change_tick=32 t2_vec=[e#0,a#0,b#0,d#0,c#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|24.0000,0.0000|16.0000,0.0000]",
+     "masked_sha": "ec3df6513cad252c8e4e2eb0e61de1ac7a6a9c8485b492774349f17ba48da385"
+    }
+   ]
+  },
+  "r95b_order_perm5": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=perm",
+    "--perm=5"
+   ],
+   "signature_len": 357,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=5 add_order=[d,a,b,e,c] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:3,0,1,4,2;t1:0,4,1,2,3;t2:3,4,1,2,0;t3:3,4,0,2,1;t4:3,1,0,2,4;t5:3,1,0,4,2;t8:2,0,3,4,1;t16:1,2,4,0,3;t32:4,3,2,1,0] distinct_ticks=9 last_change_tick=32 t2_vec=[d#0,e#0,b#0,c#0,a#0] t2_relpos=[24.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|0.0000,0.0000]",
+     "masked_sha": "58f3487642effd0fb3cd9f59c08a61964495bb14705cfb7b004e23b78cd11633"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=5 add_order=[d,a,b,e,c] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:3,0,1,4,2;t1:0,4,1,2,3;t2:3,4,1,2,0;t3:3,4,0,2,1;t4:3,1,0,2,4;t5:3,1,0,4,2;t8:2,0,3,4,1;t16:1,2,4,0,3;t32:4,3,2,1,0] distinct_ticks=9 last_change_tick=32 t2_vec=[d#0,e#0,b#0,c#0,a#0] t2_relpos=[24.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|0.0000,0.0000]",
+     "masked_sha": "58f3487642effd0fb3cd9f59c08a61964495bb14705cfb7b004e23b78cd11633"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=5 add_order=[d,a,b,e,c] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:3,0,1,4,2;t1:0,4,1,2,3;t2:3,4,1,2,0;t3:3,4,0,2,1;t4:3,1,0,2,4;t5:3,1,0,4,2;t8:2,0,3,4,1;t16:1,2,4,0,3;t32:4,3,2,1,0] distinct_ticks=9 last_change_tick=32 t2_vec=[d#0,e#0,b#0,c#0,a#0] t2_relpos=[24.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|0.0000,0.0000]",
+     "masked_sha": "58f3487642effd0fb3cd9f59c08a61964495bb14705cfb7b004e23b78cd11633"
+    }
+   ]
+  },
+  "r95b_order_perm6": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=perm",
+    "--perm=6"
+   ],
+   "signature_len": 357,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=6 add_order=[e,a,c,d,b] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:4,0,2,3,1;t1:0,1,2,3,4;t2:4,1,2,3,0;t3:4,1,0,3,2;t4:4,1,0,2,3;t5:4,3,0,2,1;t8:1,3,4,0,2;t16:2,0,3,1,4;t32:3,2,1,4,0] distinct_ticks=9 last_change_tick=32 t2_vec=[e#0,b#0,c#0,d#0,a#0] t2_relpos=[32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000|0.0000,0.0000]",
+     "masked_sha": "966a4d5032f4704153abcd242f38aaca22bc75b8f1ade012cc49d453ebcccc2c"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=6 add_order=[e,a,c,d,b] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:4,0,2,3,1;t1:0,1,2,3,4;t2:4,1,2,3,0;t3:4,1,0,3,2;t4:4,1,0,2,3;t5:4,3,0,2,1;t8:1,3,4,0,2;t16:2,0,3,1,4;t32:3,2,1,4,0] distinct_ticks=9 last_change_tick=32 t2_vec=[e#0,b#0,c#0,d#0,a#0] t2_relpos=[32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000|0.0000,0.0000]",
+     "masked_sha": "966a4d5032f4704153abcd242f38aaca22bc75b8f1ade012cc49d453ebcccc2c"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=6 add_order=[e,a,c,d,b] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:4,0,2,3,1;t1:0,1,2,3,4;t2:4,1,2,3,0;t3:4,1,0,3,2;t4:4,1,0,2,3;t5:4,3,0,2,1;t8:1,3,4,0,2;t16:2,0,3,1,4;t32:3,2,1,4,0] distinct_ticks=9 last_change_tick=32 t2_vec=[e#0,b#0,c#0,d#0,a#0] t2_relpos=[32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000|0.0000,0.0000]",
+     "masked_sha": "966a4d5032f4704153abcd242f38aaca22bc75b8f1ade012cc49d453ebcccc2c"
+    }
+   ]
+  },
+  "r95b_order_perm7": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=perm",
+    "--perm=7"
+   ],
+   "signature_len": 357,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=7 add_order=[b,a,d,c,e] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:1,0,3,2,4;t1:0,4,3,2,1;t2:1,4,3,2,0;t3:1,4,0,2,3;t4:1,4,0,3,2;t5:1,2,0,3,4;t8:4,2,1,0,3;t16:3,0,2,4,1;t32:2,3,4,1,0] distinct_ticks=9 last_change_tick=32 t2_vec=[b#0,e#0,d#0,c#0,a#0] t2_relpos=[8.0000,0.0000|32.0000,0.0000|24.0000,0.0000|16.0000,0.0000|0.0000,0.0000]",
+     "masked_sha": "bd6617f50cb27861af355ba7f4b51f3b4b15fb2e318852d090d39ed830d55215"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=7 add_order=[b,a,d,c,e] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:1,0,3,2,4;t1:0,4,3,2,1;t2:1,4,3,2,0;t3:1,4,0,2,3;t4:1,4,0,3,2;t5:1,2,0,3,4;t8:4,2,1,0,3;t16:3,0,2,4,1;t32:2,3,4,1,0] distinct_ticks=9 last_change_tick=32 t2_vec=[b#0,e#0,d#0,c#0,a#0] t2_relpos=[8.0000,0.0000|32.0000,0.0000|24.0000,0.0000|16.0000,0.0000|0.0000,0.0000]",
+     "masked_sha": "bd6617f50cb27861af355ba7f4b51f3b4b15fb2e318852d090d39ed830d55215"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order perm perm=7 add_order=[b,a,d,c,e] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:1,0,3,2,4;t1:0,4,3,2,1;t2:1,4,3,2,0;t3:1,4,0,2,3;t4:1,4,0,3,2;t5:1,2,0,3,4;t8:4,2,1,0,3;t16:3,0,2,4,1;t32:2,3,4,1,0] distinct_ticks=9 last_change_tick=32 t2_vec=[b#0,e#0,d#0,c#0,a#0] t2_relpos=[8.0000,0.0000|32.0000,0.0000|24.0000,0.0000|16.0000,0.0000|0.0000,0.0000]",
+     "masked_sha": "bd6617f50cb27861af355ba7f4b51f3b4b15fb2e318852d090d39ed830d55215"
+    }
+   ]
+  },
+  "r95b_order_readd_a": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=readd",
+    "--which=a"
+   ],
+   "signature_len": 339,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order readd which=a add_order=[a,b,c,d,e] ladder=[t1:4,1,2,3,f;t2:f,1,2,3,4;t3:f,4,2,3,1;t4:f,4,1,3,2;t6:3,4,1,2,f;t8:3,f,4,2,1;t16:1,2,3,4,f] distinct_ticks=7 t1_vec=[e#0,b#0,c#0,d#0,f#0] t1_relpos=[32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000|0.0000,0.0000] t16_vec=[b#0,c#0,d#0,e#0,f#0] set=[b#0,c#0,d#0,e#0,f#0]",
+     "masked_sha": "7d0c37ad31e1d3ad3e219464e7f860c709ec2ca4fd84f01e8673f5855b13363e"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order readd which=a add_order=[a,b,c,d,e] ladder=[t1:4,1,2,3,f;t2:f,1,2,3,4;t3:f,4,2,3,1;t4:f,4,1,3,2;t6:3,4,1,2,f;t8:3,f,4,2,1;t16:1,2,3,4,f] distinct_ticks=7 t1_vec=[e#0,b#0,c#0,d#0,f#0] t1_relpos=[32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000|0.0000,0.0000] t16_vec=[b#0,c#0,d#0,e#0,f#0] set=[b#0,c#0,d#0,e#0,f#0]",
+     "masked_sha": "7d0c37ad31e1d3ad3e219464e7f860c709ec2ca4fd84f01e8673f5855b13363e"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order readd which=a add_order=[a,b,c,d,e] ladder=[t1:4,1,2,3,f;t2:f,1,2,3,4;t3:f,4,2,3,1;t4:f,4,1,3,2;t6:3,4,1,2,f;t8:3,f,4,2,1;t16:1,2,3,4,f] distinct_ticks=7 t1_vec=[e#0,b#0,c#0,d#0,f#0] t1_relpos=[32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000|0.0000,0.0000] t16_vec=[b#0,c#0,d#0,e#0,f#0] set=[b#0,c#0,d#0,e#0,f#0]",
+     "masked_sha": "7d0c37ad31e1d3ad3e219464e7f860c709ec2ca4fd84f01e8673f5855b13363e"
+    }
+   ]
+  },
+  "r95b_order_rigid": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=rigid"
+   ],
+   "signature_len": 124,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order rigid add_order=[a,b,c,d,e] ladder=[t1:2;t2:2;t3:2;t5:2;t10:2] distinct_ticks=1 t10_relpos=[15.9999,14.8732]",
+     "masked_sha": "9ed13130f2fd3a5927386f5aeea68e058c00f8d364b287b32212949529335d69"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order rigid add_order=[a,b,c,d,e] ladder=[t1:2;t2:2;t3:2;t5:2;t10:2] distinct_ticks=1 t10_relpos=[15.9999,14.8732]",
+     "masked_sha": "9ed13130f2fd3a5927386f5aeea68e058c00f8d364b287b32212949529335d69"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order rigid add_order=[a,b,c,d,e] ladder=[t1:2;t2:2;t3:2;t5:2;t10:2] distinct_ticks=1 t10_relpos=[15.9999,14.8732]",
+     "masked_sha": "9ed13130f2fd3a5927386f5aeea68e058c00f8d364b287b32212949529335d69"
+    }
+   ]
+  },
+  "r95b_order_scoutrev": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=scoutrev"
+   ],
+   "signature_len": 435,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order scoutrev add_order=[e,d,c,b,a] map=[e@0,d@8,c@16,b@24,a@32] ladder=[t0:4,3,2,1,0;t1:0,3,2,1,4;t2:0,4,2,1,3;t3:0,4,3,1,2;t4:0,4,3,2,1;t5:1,4,3,2,0;t8:1,0,4,3,2;t16:3,2,1,0,4;t32:2,1,0,4,3] distinct_ticks=9 t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] scout_row_rev_t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_vec_matches_scout_row=true t2_relpos_equals_canon=true",
+     "masked_sha": "e546d11a34efc8062a24d869111dcd80b02de6fd96abfe4974b91b0073845c65"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order scoutrev add_order=[e,d,c,b,a] map=[e@0,d@8,c@16,b@24,a@32] ladder=[t0:4,3,2,1,0;t1:0,3,2,1,4;t2:0,4,2,1,3;t3:0,4,3,1,2;t4:0,4,3,2,1;t5:1,4,3,2,0;t8:1,0,4,3,2;t16:3,2,1,0,4;t32:2,1,0,4,3] distinct_ticks=9 t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] scout_row_rev_t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_vec_matches_scout_row=true t2_relpos_equals_canon=true",
+     "masked_sha": "e546d11a34efc8062a24d869111dcd80b02de6fd96abfe4974b91b0073845c65"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order scoutrev add_order=[e,d,c,b,a] map=[e@0,d@8,c@16,b@24,a@32] ladder=[t0:4,3,2,1,0;t1:0,3,2,1,4;t2:0,4,2,1,3;t3:0,4,3,1,2;t4:0,4,3,2,1;t5:1,4,3,2,0;t8:1,0,4,3,2;t16:3,2,1,0,4;t32:2,1,0,4,3] distinct_ticks=9 t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] scout_row_rev_t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_vec_matches_scout_row=true t2_relpos_equals_canon=true",
+     "masked_sha": "e546d11a34efc8062a24d869111dcd80b02de6fd96abfe4974b91b0073845c65"
+    }
+   ]
+  },
+  "r95b_order_twopiles": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=twopiles"
+   ],
+   "signature_len": 486,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order twopiles a_t2_vec=[e#0,a#0,c#0,d#0,b#0] a_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] a_t4_with_b_vec=[e#0,a#0,c#0,b#0,d#0] a_t4_with_b_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|8.0000,0.0000|24.0000,0.0000] b_t2_vec=[e2#0,a2#0,b2#0,c2#0,d2#0] b_t2_relpos=[32.0000,1000.0000|0.0000,1000.0000|8.0000,1000.0000|16.0000,1000.0000|24.0000,1000.0000] a_t6_with_b_vec=[d#0,a#0,c#0,b#0,e#0] b_t4_vec=[e2#0,b2#0,c2#0,d2#0,a2#0]",
+     "masked_sha": "422640082d26b44e4735ab13fd0e312287c08fb386cc99f1f5fff293788be0a2"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order twopiles a_t2_vec=[e#0,a#0,c#0,d#0,b#0] a_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] a_t4_with_b_vec=[e#0,a#0,c#0,b#0,d#0] a_t4_with_b_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|8.0000,0.0000|24.0000,0.0000] b_t2_vec=[e2#0,a2#0,b2#0,c2#0,d2#0] b_t2_relpos=[32.0000,1000.0000|0.0000,1000.0000|8.0000,1000.0000|16.0000,1000.0000|24.0000,1000.0000] a_t6_with_b_vec=[d#0,a#0,c#0,b#0,e#0] b_t4_vec=[e2#0,b2#0,c2#0,d2#0,a2#0]",
+     "masked_sha": "422640082d26b44e4735ab13fd0e312287c08fb386cc99f1f5fff293788be0a2"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order twopiles a_t2_vec=[e#0,a#0,c#0,d#0,b#0] a_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] a_t4_with_b_vec=[e#0,a#0,c#0,b#0,d#0] a_t4_with_b_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|8.0000,0.0000|24.0000,0.0000] b_t2_vec=[e2#0,a2#0,b2#0,c2#0,d2#0] b_t2_relpos=[32.0000,1000.0000|0.0000,1000.0000|8.0000,1000.0000|16.0000,1000.0000|24.0000,1000.0000] a_t6_with_b_vec=[d#0,a#0,c#0,b#0,e#0] b_t4_vec=[e2#0,b2#0,c2#0,d2#0,a2#0]",
+     "masked_sha": "422640082d26b44e4735ab13fd0e312287c08fb386cc99f1f5fff293788be0a2"
+    }
+   ]
+  },
+  "r95b_order_warm_k32": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=warm",
+    "--k=32",
+    "--keep=0"
+   ],
+   "signature_len": 317,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order warm k=32 keep=0 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1] distinct_ticks=7 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t32_vec=[c#0,d#0,e#0,a#0,b#0]",
+     "masked_sha": "f0f8c3808d33d8efdf14f68d933377d3f43794ae7f69e3b52189b2ba457d7d98"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order warm k=32 keep=0 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1] distinct_ticks=7 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t32_vec=[c#0,d#0,e#0,a#0,b#0]",
+     "masked_sha": "f0f8c3808d33d8efdf14f68d933377d3f43794ae7f69e3b52189b2ba457d7d98"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order warm k=32 keep=0 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1] distinct_ticks=7 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t32_vec=[c#0,d#0,e#0,a#0,b#0]",
+     "masked_sha": "f0f8c3808d33d8efdf14f68d933377d3f43794ae7f69e3b52189b2ba457d7d98"
+    }
+   ]
+  },
+  "r95b_order_warm_keep8": {
+   "script": "r95b_order.gd",
+   "flags": [
+    "--arm=warm",
+    "--k=8",
+    "--keep=1"
+   ],
+   "signature_len": 316,
+   "passes": 3,
+   "exact_line": true,
+   "prefix_line": true,
+   "masked_stable": true,
+   "receipts": [
+    {
+     "rep": 1,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order warm k=8 keep=1 add_order=[a,b,c,d,e] ladder=[t2:0,4,1,2,3;t3:0,4,1,2,3;t4:0,4,1,2,3;t6:0,4,1,2,3;t8:4,1,2,3,0;t16:4,3,0,1,2;t32:4,3,2,0,1] distinct_ticks=4 t2_vec=[a#0,e#0,b#0,c#0,d#0] t2_relpos=[0.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000] t32_vec=[e#0,d#0,c#0,a#0,b#0]",
+     "masked_sha": "a54dfb520c16a31b7f8afc330c0657f05256115e23b0596d036d8e0ea9017e48"
+    },
+    {
+     "rep": 2,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order warm k=8 keep=1 add_order=[a,b,c,d,e] ladder=[t2:0,4,1,2,3;t3:0,4,1,2,3;t4:0,4,1,2,3;t6:0,4,1,2,3;t8:4,1,2,3,0;t16:4,3,0,1,2;t32:4,3,2,0,1] distinct_ticks=4 t2_vec=[a#0,e#0,b#0,c#0,d#0] t2_relpos=[0.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000] t32_vec=[e#0,d#0,c#0,a#0,b#0]",
+     "masked_sha": "a54dfb520c16a31b7f8afc330c0657f05256115e23b0596d036d8e0ea9017e48"
+    },
+    {
+     "rep": 3,
+     "rc": 0,
+     "error": null,
+     "passed": true,
+     "pass_line": "PASS r95b_order warm k=8 keep=1 add_order=[a,b,c,d,e] ladder=[t2:0,4,1,2,3;t3:0,4,1,2,3;t4:0,4,1,2,3;t6:0,4,1,2,3;t8:4,1,2,3,0;t16:4,3,0,1,2;t32:4,3,2,0,1] distinct_ticks=4 t2_vec=[a#0,e#0,b#0,c#0,d#0] t2_relpos=[0.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000] t32_vec=[e#0,d#0,c#0,a#0,b#0]",
+     "masked_sha": "a54dfb520c16a31b7f8afc330c0657f05256115e23b0596d036d8e0ea9017e48"
+    }
+   ]
+  }
+ },
+ "laws": [
+  {
+   "check": "canon cycle_len_dense==20",
+   "ok": true,
+   "detail": "20"
+  },
+  {
+   "check": "canon distinct_ticks==20",
+   "ok": true,
+   "detail": "20"
+  },
+  {
+   "check": "canon t0==0,1,2,3,4",
+   "ok": true,
+   "detail": "0,1,2,3,4"
+  },
+  {
+   "check": "canon t20==t0",
+   "ok": true,
+   "detail": "0,1,2,3,4 vs 0,1,2,3,4"
+  },
+  {
+   "check": "canon t21==t1",
+   "ok": true,
+   "detail": "4,1,2,3,0 vs 4,1,2,3,0"
+  },
+  {
+   "check": "canon t64==t4 (64-3*20)",
+   "ok": true,
+   "detail": "4,0,1,2,3 vs 4,0,1,2,3"
+  },
+  {
+   "check": "canon t40==t0",
+   "ok": true,
+   "detail": "0,1,2,3,4 vs 0,1,2,3,4"
+  },
+  {
+   "check": "canon t48==t8",
+   "ok": true,
+   "detail": "3,4,0,1,2 vs 3,4,0,1,2"
+  },
+  {
+   "check": "canon t56==t16",
+   "ok": true,
+   "detail": "1,2,3,4,0 vs 1,2,3,4,0"
+  },
+  {
+   "check": "canon t2_pt_eq_sh",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "canon pt_stable_interleaved",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "canon end_pt_eq_sh",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "r95b_order_periodx_k2 k==2",
+   "ok": true,
+   "detail": "2"
+  },
+  {
+   "check": "r95b_order_periodx_k2 expected_kk1==2",
+   "ok": true,
+   "detail": "2"
+  },
+  {
+   "check": "r95b_order_periodx_k2 cycle_len==2",
+   "ok": true,
+   "detail": "2"
+  },
+  {
+   "check": "r95b_order_periodx_k2 distinct_ticks==2",
+   "ok": true,
+   "detail": "2"
+  },
+  {
+   "check": "r95b_order_periodx_k2 n_ticks==5",
+   "ok": true,
+   "detail": "5"
+  },
+  {
+   "check": "r95b_order_periodx_k2 t0 is insertion order",
+   "ok": true,
+   "detail": "[p0#0,p1#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k2 t2_vec is a permutation of 0..1",
+   "ok": true,
+   "detail": "[p0#0,p1#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k2 t3_vec is a permutation of 0..1",
+   "ok": true,
+   "detail": "[p1#0,p0#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k3 k==3",
+   "ok": true,
+   "detail": "3"
+  },
+  {
+   "check": "r95b_order_periodx_k3 expected_kk1==6",
+   "ok": true,
+   "detail": "6"
+  },
+  {
+   "check": "r95b_order_periodx_k3 cycle_len==6",
+   "ok": true,
+   "detail": "6"
+  },
+  {
+   "check": "r95b_order_periodx_k3 distinct_ticks==6",
+   "ok": true,
+   "detail": "6"
+  },
+  {
+   "check": "r95b_order_periodx_k3 n_ticks==9",
+   "ok": true,
+   "detail": "9"
+  },
+  {
+   "check": "r95b_order_periodx_k3 t0 is insertion order",
+   "ok": true,
+   "detail": "[p0#0,p1#0,p2#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k3 t2_vec is a permutation of 0..2",
+   "ok": true,
+   "detail": "[p2#0,p0#0,p1#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k3 t3_vec is a permutation of 0..2",
+   "ok": true,
+   "detail": "[p1#0,p0#0,p2#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k4 k==4",
+   "ok": true,
+   "detail": "4"
+  },
+  {
+   "check": "r95b_order_periodx_k4 expected_kk1==12",
+   "ok": true,
+   "detail": "12"
+  },
+  {
+   "check": "r95b_order_periodx_k4 cycle_len==12",
+   "ok": true,
+   "detail": "12"
+  },
+  {
+   "check": "r95b_order_periodx_k4 distinct_ticks==12",
+   "ok": true,
+   "detail": "12"
+  },
+  {
+   "check": "r95b_order_periodx_k4 n_ticks==15",
+   "ok": true,
+   "detail": "15"
+  },
+  {
+   "check": "r95b_order_periodx_k4 t0 is insertion order",
+   "ok": true,
+   "detail": "[p0#0,p1#0,p2#0,p3#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k4 t2_vec is a permutation of 0..3",
+   "ok": true,
+   "detail": "[p3#0,p0#0,p2#0,p1#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k4 t3_vec is a permutation of 0..3",
+   "ok": true,
+   "detail": "[p3#0,p0#0,p1#0,p2#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k5 k==5",
+   "ok": true,
+   "detail": "5"
+  },
+  {
+   "check": "r95b_order_periodx_k5 expected_kk1==20",
+   "ok": true,
+   "detail": "20"
+  },
+  {
+   "check": "r95b_order_periodx_k5 cycle_len==20",
+   "ok": true,
+   "detail": "20"
+  },
+  {
+   "check": "r95b_order_periodx_k5 distinct_ticks==20",
+   "ok": true,
+   "detail": "20"
+  },
+  {
+   "check": "r95b_order_periodx_k5 n_ticks==23",
+   "ok": true,
+   "detail": "23"
+  },
+  {
+   "check": "r95b_order_periodx_k5 t0 is insertion order",
+   "ok": true,
+   "detail": "[p0#0,p1#0,p2#0,p3#0,p4#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k5 t2_vec is a permutation of 0..4",
+   "ok": true,
+   "detail": "[p4#0,p0#0,p2#0,p3#0,p1#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k5 t3_vec is a permutation of 0..4",
+   "ok": true,
+   "detail": "[p4#0,p0#0,p1#0,p3#0,p2#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k6 k==6",
+   "ok": true,
+   "detail": "6"
+  },
+  {
+   "check": "r95b_order_periodx_k6 expected_kk1==30",
+   "ok": true,
+   "detail": "30"
+  },
+  {
+   "check": "r95b_order_periodx_k6 cycle_len==30",
+   "ok": true,
+   "detail": "30"
+  },
+  {
+   "check": "r95b_order_periodx_k6 distinct_ticks==30",
+   "ok": true,
+   "detail": "30"
+  },
+  {
+   "check": "r95b_order_periodx_k6 n_ticks==33",
+   "ok": true,
+   "detail": "33"
+  },
+  {
+   "check": "r95b_order_periodx_k6 t0 is insertion order",
+   "ok": true,
+   "detail": "[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k6 t2_vec is a permutation of 0..5",
+   "ok": true,
+   "detail": "[p5#0,p0#0,p2#0,p3#0,p4#0,p1#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k6 t3_vec is a permutation of 0..5",
+   "ok": true,
+   "detail": "[p5#0,p0#0,p1#0,p3#0,p4#0,p2#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k7 k==7",
+   "ok": true,
+   "detail": "7"
+  },
+  {
+   "check": "r95b_order_periodx_k7 expected_kk1==42",
+   "ok": true,
+   "detail": "42"
+  },
+  {
+   "check": "r95b_order_periodx_k7 cycle_len==42",
+   "ok": true,
+   "detail": "42"
+  },
+  {
+   "check": "r95b_order_periodx_k7 distinct_ticks==42",
+   "ok": true,
+   "detail": "42"
+  },
+  {
+   "check": "r95b_order_periodx_k7 n_ticks==45",
+   "ok": true,
+   "detail": "45"
+  },
+  {
+   "check": "r95b_order_periodx_k7 t0 is insertion order",
+   "ok": true,
+   "detail": "[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k7 t2_vec is a permutation of 0..6",
+   "ok": true,
+   "detail": "[p6#0,p0#0,p2#0,p3#0,p4#0,p5#0,p1#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k7 t3_vec is a permutation of 0..6",
+   "ok": true,
+   "detail": "[p6#0,p0#0,p1#0,p3#0,p4#0,p5#0,p2#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k8 k==8",
+   "ok": true,
+   "detail": "8"
+  },
+  {
+   "check": "r95b_order_periodx_k8 expected_kk1==56",
+   "ok": true,
+   "detail": "56"
+  },
+  {
+   "check": "r95b_order_periodx_k8 cycle_len==56",
+   "ok": true,
+   "detail": "56"
+  },
+  {
+   "check": "r95b_order_periodx_k8 distinct_ticks==56",
+   "ok": true,
+   "detail": "56"
+  },
+  {
+   "check": "r95b_order_periodx_k8 n_ticks==59",
+   "ok": true,
+   "detail": "59"
+  },
+  {
+   "check": "r95b_order_periodx_k8 t0 is insertion order",
+   "ok": true,
+   "detail": "[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k8 t2_vec is a permutation of 0..7",
+   "ok": true,
+   "detail": "[p7#0,p0#0,p2#0,p3#0,p4#0,p5#0,p6#0,p1#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k8 t3_vec is a permutation of 0..7",
+   "ok": true,
+   "detail": "[p7#0,p0#0,p1#0,p3#0,p4#0,p5#0,p6#0,p2#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k10 k==10",
+   "ok": true,
+   "detail": "10"
+  },
+  {
+   "check": "r95b_order_periodx_k10 expected_kk1==90",
+   "ok": true,
+   "detail": "90"
+  },
+  {
+   "check": "r95b_order_periodx_k10 cycle_len==90",
+   "ok": true,
+   "detail": "90"
+  },
+  {
+   "check": "r95b_order_periodx_k10 distinct_ticks==90",
+   "ok": true,
+   "detail": "90"
+  },
+  {
+   "check": "r95b_order_periodx_k10 n_ticks==93",
+   "ok": true,
+   "detail": "93"
+  },
+  {
+   "check": "r95b_order_periodx_k10 t0 is insertion order",
+   "ok": true,
+   "detail": "[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p9#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k10 t2_vec is a permutation of 0..9",
+   "ok": true,
+   "detail": "[p9#0,p0#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p1#0]"
+  },
+  {
+   "check": "r95b_order_periodx_k10 t3_vec is a permutation of 0..9",
+   "ok": true,
+   "detail": "[p9#0,p0#0,p1#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p2#0]"
+  },
+  {
+   "check": "k5 spacing-independent",
+   "ok": true,
+   "detail": "s4 cycle=20 s8 cycle=20"
+  },
+  {
+   "check": "k5s8 spacing==8.0",
+   "ok": true,
+   "detail": "8.0"
+  },
+  {
+   "check": "period_k5 cycle_len==20",
+   "ok": true,
+   "detail": "20"
+  },
+  {
+   "check": "period_k5 distinct==20",
+   "ok": true,
+   "detail": "20"
+  },
+  {
+   "check": "r95b_order_perm0 t2_vec maps tag->fixed x",
+   "ok": true,
+   "detail": "[e#0,a#0,c#0,d#0,b#0]"
+  },
+  {
+   "check": "r95b_order_perm0 map key present",
+   "ok": true,
+   "detail": "[a@0,b@8,c@16,d@24,e@32]"
+  },
+  {
+   "check": "r95b_order_perm1 t2_vec maps tag->fixed x",
+   "ok": true,
+   "detail": "[a#0,e#0,c#0,b#0,d#0]"
+  },
+  {
+   "check": "r95b_order_perm1 map key present",
+   "ok": true,
+   "detail": "[a@0,b@8,c@16,d@24,e@32]"
+  },
+  {
+   "check": "r95b_order_perm2 t2_vec maps tag->fixed x",
+   "ok": true,
+   "detail": "[a#0,b#0,e#0,d#0,c#0]"
+  },
+  {
+   "check": "r95b_order_perm2 map key present",
+   "ok": true,
+   "detail": "[a@0,b@8,c@16,d@24,e@32]"
+  },
+  {
+   "check": "r95b_order_perm3 t2_vec maps tag->fixed x",
+   "ok": true,
+   "detail": "[c#0,e#0,b#0,d#0,a#0]"
+  },
+  {
+   "check": "r95b_order_perm3 map key present",
+   "ok": true,
+   "detail": "[a@0,b@8,c@16,d@24,e@32]"
+  },
+  {
+   "check": "r95b_order_perm4 t2_vec maps tag->fixed x",
+   "ok": true,
+   "detail": "[e#0,a#0,b#0,d#0,c#0]"
+  },
+  {
+   "check": "r95b_order_perm4 map key present",
+   "ok": true,
+   "detail": "[a@0,b@8,c@16,d@24,e@32]"
+  },
+  {
+   "check": "r95b_order_perm5 t2_vec maps tag->fixed x",
+   "ok": true,
+   "detail": "[d#0,e#0,b#0,c#0,a#0]"
+  },
+  {
+   "check": "r95b_order_perm5 map key present",
+   "ok": true,
+   "detail": "[a@0,b@8,c@16,d@24,e@32]"
+  },
+  {
+   "check": "r95b_order_perm6 t2_vec maps tag->fixed x",
+   "ok": true,
+   "detail": "[e#0,b#0,c#0,d#0,a#0]"
+  },
+  {
+   "check": "r95b_order_perm6 map key present",
+   "ok": true,
+   "detail": "[a@0,b@8,c@16,d@24,e@32]"
+  },
+  {
+   "check": "r95b_order_perm7 t2_vec maps tag->fixed x",
+   "ok": true,
+   "detail": "[b#0,e#0,d#0,c#0,a#0]"
+  },
+  {
+   "check": "r95b_order_perm7 map key present",
+   "ok": true,
+   "detail": "[a@0,b@8,c@16,d@24,e@32]"
+  },
+  {
+   "check": "perm0-7: 8 distinct add_order",
+   "ok": true,
+   "detail": [
+    "[a,b,c,d,e]",
+    "[a,c,b,e,d]",
+    "[b,a,d,c,e]",
+    "[b,c,a,e,d]",
+    "[c,a,e,d,b]",
+    "[d,a,b,e,c]",
+    "[e,a,c,d,b]",
+    "[e,d,c,b,a]"
+   ]
+  },
+  {
+   "check": "perm0-7: 8 distinct t2_vec",
+   "ok": true,
+   "detail": 8
+  },
+  {
+   "check": "perm0-7: 8 distinct ladders",
+   "ok": true,
+   "detail": 8
+  },
+  {
+   "check": "perm0: add_order==a,b,c,d,e",
+   "ok": true,
+   "detail": "[a,b,c,d,e]"
+  },
+  {
+   "check": "scoutrev t2_vec_matches_scout_row",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "scoutrev t2_relpos_equals_canon",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "scoutrev relpos == canon relpos (cross-row)",
+   "ok": true,
+   "detail": "[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] vs [32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]"
+  },
+  {
+   "check": "scoutrev t2_vec != canon t2_vec (labels differ)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "celloff ladders identical x0/x1000",
+   "ok": true,
+   "detail": "[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] vs [t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3]"
+  },
+  {
+   "check": "celloff ladders identical x0/y1000",
+   "ok": true,
+   "detail": "[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] vs [t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3]"
+  },
+  {
+   "check": "celloff relpos identical x0/x1000",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "celloff off echoed",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "twopiles A-alone != A-with-B (t2 vs t4)",
+   "ok": true,
+   "detail": "[e#0,a#0,c#0,d#0,b#0] vs [e#0,a#0,c#0,b#0,d#0]"
+  },
+  {
+   "check": "twopiles B pile is a 5-vector",
+   "ok": true,
+   "detail": "[e2#0,a2#0,b2#0,c2#0,d2#0]"
+  },
+  {
+   "check": "warm_k32 ladder == canon on common ticks",
+   "ok": true,
+   "detail": "all equal"
+  },
+  {
+   "check": "warm_keep8 t2_vec != canon t2_vec",
+   "ok": true,
+   "detail": "[a#0,e#0,b#0,c#0,d#0] vs [e#0,a#0,c#0,d#0,b#0]"
+  },
+  {
+   "check": "warm_keep8 distinct_ticks==4",
+   "ok": true,
+   "detail": "4"
+  },
+  {
+   "check": "free_ab != free_ba ladders",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "free_ab post-free t2==t8 (k=3 cycle 6)",
+   "ok": true,
+   "detail": "2,3,4 vs 2,3,4"
+  },
+  {
+   "check": "free_ab freed echoed",
+   "ok": true,
+   "detail": "[a,b]"
+  },
+  {
+   "check": "free_ba post-free t2==t8 (k=3 cycle 6)",
+   "ok": true,
+   "detail": "2,4,3 vs 2,4,3"
+  },
+  {
+   "check": "free_ba freed echoed",
+   "ok": true,
+   "detail": "[b,a]"
+  },
+  {
+   "check": "readd which==a",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "readd set at t16 has 5 entries",
+   "ok": true,
+   "detail": "[b#0,c#0,d#0,e#0,f#0]"
+  },
+  {
+   "check": "cap40_p0 n0==0",
+   "ok": true,
+   "detail": "0"
+  },
+  {
+   "check": "cap40_p0 n32==32",
+   "ok": true,
+   "detail": "32"
+  },
+  {
+   "check": "cap40_p0 n64==40",
+   "ok": true,
+   "detail": "40"
+  },
+  {
+   "check": "cap40_p0 set32_distinct==5",
+   "ok": true,
+   "detail": "5"
+  },
+  {
+   "check": "cap40_p0 set32_t2 has 32 entries",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "cap40_p1 n0==0",
+   "ok": true,
+   "detail": "0"
+  },
+  {
+   "check": "cap40_p1 n32==32",
+   "ok": true,
+   "detail": "32"
+  },
+  {
+   "check": "cap40_p1 n64==40",
+   "ok": true,
+   "detail": "40"
+  },
+  {
+   "check": "cap40_p1 set32_distinct==5",
+   "ok": true,
+   "detail": "5"
+  },
+  {
+   "check": "cap40_p1 set32_t2 has 32 entries",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "cap40_p2 n0==0",
+   "ok": true,
+   "detail": "0"
+  },
+  {
+   "check": "cap40_p2 n32==32",
+   "ok": true,
+   "detail": "32"
+  },
+  {
+   "check": "cap40_p2 n64==40",
+   "ok": true,
+   "detail": "40"
+  },
+  {
+   "check": "cap40_p2 set32_distinct==5",
+   "ok": true,
+   "detail": "5"
+  },
+  {
+   "check": "cap40_p2 set32_t2 has 32 entries",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "cap40 set32_t2 distinct across p0/p1/p2",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "layers_k0 pt_eq_sh==true",
+   "ok": true,
+   "detail": "true"
+  },
+  {
+   "check": "layers_k0 sh_len==5",
+   "ok": true,
+   "detail": "5"
+  },
+  {
+   "check": "layers_k0 pt0_t2_eq_sh==true",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "layers_k1 pt_eq_sh==false",
+   "ok": true,
+   "detail": "false"
+  },
+  {
+   "check": "layers_k1 sh_len==6",
+   "ok": true,
+   "detail": "6"
+  },
+  {
+   "check": "layers_k1 pt0_t2_eq_sh==false",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "layers_k1 invisible collider perturbs pt0 ladder",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "rigid distinct_ticks==1",
+   "ok": true,
+   "detail": "1"
+  },
+  {
+   "check": "rigid t10_relpos pinned",
+   "ok": true,
+   "detail": "[15.9999,14.8732]"
+  },
+  {
+   "check": "point_cap_rev add_order is reverse of point_cap",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "order_core_rev add_order is reverse of order_core",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "ray_order_rev tie==tie_a vs ray_order tie==tie_b",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "shape_lattice_rev touch==[a#0] vs shape_lattice touch==[e#0]",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "law_failures": 0,
+ "all_rows_pass_all_reps": true
+}

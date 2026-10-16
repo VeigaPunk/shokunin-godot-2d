@@ -1,0 +1,61 @@
+== fold candidate build ==
+  dss_lattice.gd   committed=77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627 folded=c128e9ccf3b3f512c6bda0a11d52348b3a5936a5ea4a32ada78c85967b951b5f  -3 lines
+  r95b_order.gd    committed=4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490 folded=b367559e831e5e9f9ab9e386591dd0035e24fb4e5ea2efc2c533e11aec2bdcf7  -2 lines
+  fold-proposal.diff: 150 lines
+  scratch: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r95-simplifier/fold-runs/20261016T073502779480Z/scratch-committed | /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r95-simplifier/fold-runs/20261016T073502779480Z/scratch-folded
+  1/52 dss_lattice_cast_rest              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+  2/52 dss_lattice_census                 masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+  3/52 dss_lattice_excl_space             masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+  4/52 dss_lattice_fresh                  masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+  5/52 dss_lattice_layer_forms            masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+  6/52 dss_lattice_order_core             masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+  7/52 dss_lattice_order_core_rev         masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+  8/52 dss_lattice_point_canvas           masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+  9/52 dss_lattice_point_cap              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 10/52 dss_lattice_point_cap_rev          masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 11/52 dss_lattice_point_edge             masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 12/52 dss_lattice_ray_flags              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 13/52 dss_lattice_ray_geom               masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 14/52 dss_lattice_ray_order              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 15/52 dss_lattice_ray_order_rev          masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 16/52 dss_lattice_shape                  masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 17/52 dss_lattice_shape_rev              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 18/52 r95b_order_canon                   masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 19/52 r95b_order_cap40_p0                masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 20/52 r95b_order_cap40_p1                masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 21/52 r95b_order_cap40_p2                masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 22/52 r95b_order_celloff_x0              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 23/52 r95b_order_celloff_x1000           masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 24/52 r95b_order_celloff_y1000           masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 25/52 r95b_order_free_ab                 masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 26/52 r95b_order_free_ba                 masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 27/52 r95b_order_layers_k0               masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 28/52 r95b_order_layers_k1               masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 29/52 r95b_order_period_k5               masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 30/52 r95b_order_periodx_k10             masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 31/52 r95b_order_periodx_k2              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 32/52 r95b_order_periodx_k3              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 33/52 r95b_order_periodx_k4              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 34/52 r95b_order_periodx_k5              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 35/52 r95b_order_periodx_k5s8            masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 36/52 r95b_order_periodx_k6              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 37/52 r95b_order_periodx_k7              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 38/52 r95b_order_periodx_k8              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 39/52 r95b_order_perm0                   masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 40/52 r95b_order_perm1                   masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 41/52 r95b_order_perm2                   masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 42/52 r95b_order_perm3                   masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 43/52 r95b_order_perm4                   masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 44/52 r95b_order_perm5                   masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 45/52 r95b_order_perm6                   masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 46/52 r95b_order_perm7                   masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 47/52 r95b_order_readd_a                 masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 48/52 r95b_order_rigid                   masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 49/52 r95b_order_scoutrev                masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 50/52 r95b_order_twopiles                masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 51/52 r95b_order_warm_k32                masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+ 52/52 r95b_order_warm_keep8              masked_cross_diff=0  passline_cross_diff=0  pass c=3/3 f=3/3
+launch phase: 274.1s
+
+cross masked diffs: 0   cross pass-line diffs: 0   all pass c=True f=True
+FOLD BYTE-NEUTRAL: True

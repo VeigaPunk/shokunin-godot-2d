@@ -1,0 +1,83 @@
+receipts scanned (.out): 472   distinct stems: 164
+author-run verdict records: 366 cases x 4 runs
+
+== per-row pin census (stem-matched receipts) ==
+row                                stem             recs   pin-hit distinct  author   
+dss_lattice_cast_rest              dss_cast_rest    3      3       1         4/4      
+dss_lattice_census                 dss_census       3      3       1         4/4      
+dss_lattice_excl_space             dss_excl_space   3      3       1         4/4      
+dss_lattice_fresh                  dss_fresh        3      3       1         4/4      
+dss_lattice_layer_forms            dss_layer_forms  3      3       1         4/4      
+dss_lattice_order_core             dss_order_core   3      3       1         4/4      
+dss_lattice_order_core_rev         dss_order_core_rev 3      3       1         4/4      
+dss_lattice_point_canvas           dss_point_canvas 3      3       1         4/4      
+dss_lattice_point_cap              dss_point_cap    3      3       1         4/4      
+dss_lattice_point_cap_rev          dss_point_cap_rev 3      3       1         4/4      
+dss_lattice_point_edge             dss_point_edge   3      3       1         4/4      
+dss_lattice_ray_flags              dss_ray_flags    3      3       1         4/4      
+dss_lattice_ray_geom               dss_ray_geom     3      3       1         4/4      
+dss_lattice_ray_order              dss_ray_order    3      3       1         4/4      
+dss_lattice_ray_order_rev          dss_ray_order_rev 3      3       1         4/4      
+dss_lattice_shape                  dss_shape_lattice 3      3       1         4/4      
+dss_lattice_shape_rev              dss_shape_lattice_rev 3      3       1         4/4      
+r95b_order_canon                   canon            24     24      16        4/4      
+r95b_order_cap40_p0                cap40_p0         7      7       7         4/4      
+r95b_order_cap40_p1                cap40_p1         5      5       4         4/4      
+r95b_order_cap40_p2                cap40_p2         3      3       3         4/4      
+r95b_order_celloff_x0              celloff_x0       8      8       6         4/4      
+r95b_order_celloff_x1000           celloff_x1000    5      5       5         4/4      
+r95b_order_celloff_y1000           celloff_y1000    5      5       5         4/4      
+r95b_order_free_ab                 free_ab          4      4       3         4/4      
+r95b_order_free_ba                 free_ba          4      4       4         4/4      
+r95b_order_layers_k0               layers_k0        3      3       3         4/4      
+r95b_order_layers_k1               layers_k1        7      7       6         4/4      
+r95b_order_period_k5               period_k5        9      9       7         4/4      
+r95b_order_periodx_k10             periodx_k10      1      1       1         4/4      
+r95b_order_periodx_k2              periodx_k2       2      2       2         4/4      
+r95b_order_periodx_k3              periodx_k3       2      2       2         4/4      
+r95b_order_periodx_k4              periodx_k4       1      1       1         4/4      
+r95b_order_periodx_k5              periodx_k5       2      2       2         4/4      
+r95b_order_periodx_k5s8            periodx_k5s8     2      2       2         4/4      
+r95b_order_periodx_k6              periodx_k6       1      1       1         4/4      
+r95b_order_periodx_k7              periodx_k7       1      1       1         4/4      
+r95b_order_periodx_k8              periodx_k8       1      1       1         4/4      
+r95b_order_perm0                   perm0            14     14      12        4/4      
+r95b_order_perm1                   perm1            13     13      9         4/4      
+r95b_order_perm2                   perm2            5      5       3         4/4      
+r95b_order_perm3                   perm3            3      3       3         4/4      
+r95b_order_perm4                   perm4            5      5       5         4/4      
+r95b_order_perm5                   perm5            3      3       3         4/4      
+r95b_order_perm6                   perm6            3      3       3         4/4      
+r95b_order_perm7                   perm7            3      3       3         4/4      
+r95b_order_readd_a                 readd_a          4      4       3         4/4      
+r95b_order_rigid                   rigid            5      5       4         4/4      
+r95b_order_scoutrev                scoutrev         4      4       3         4/4      
+r95b_order_twopiles                twopiles         9      9       8         4/4      
+r95b_order_warm_k32                warm_k32         4      4       4         4/4      
+r95b_order_warm_keep8              warm_keep8       4      4       4         4/4      
+
+rows with zero stem-matched receipts: 
+rows with pin-hits < receipts: none
+
+== r95 allowlist census ==
+  expected_errors entries: 0  rows: 0
+  required_stderr entries: 0  rows: 0
+  ERROR: lines across all r95 receipts: 6 (in 4 receipts)
+      corpus/live/r95-scout/runs/disc/d_layer_forms.out: ERROR: 1 RID allocations of type 'P11GodotBody2D' were leaked at exit.
+      corpus/live/r95-scout/runs/disc/d_layer_forms.out: ERROR: 1 RID allocations of type 'P12GodotShape2D' were leaked at exit.
+      corpus/live/r95-scout/runs/disc/d_shape_cap.out: ERROR: 1 RID allocations of type 'P12GodotShape2D' were leaked at exit.
+      corpus/live/r95-scout/runs/leak-hazard/pre_fix_layer_forms.rep1.out: ERROR: 1 RID allocations of type 'P11GodotBody2D' were leaked at exit.
+      corpus/live/r95-scout/runs/leak-hazard/pre_fix_layer_forms.rep1.out: ERROR: 1 RID allocations of type 'P12GodotShape2D' were leaked at exit.
+      corpus/live/r95-scout/runs/leak-hazard/pre_fix_shape_lattice.rep1.out: ERROR: 1 RID allocations of type 'P12GodotShape2D' were leaked at exit.
+
+== floor gates (prefixes) ==
+  line=3189  "phys2d_expected_errors_all_matched": all(           ['phys2d_']
+  line=3198  "r87_expected_errors_all_matched": all(              ['input_lattice_', 'r87_edge_', 'ei_bound']
+  line=3207  "r88_expected_errors_all_matched": all(              ['r88_']
+  line=3216  "r89_expected_errors_all_matched": all(              ['geo2d_lattice_', 'input89_edges_']
+  line=3224  "r90_expected_errors_all_matched": all(              ['r90_']
+  line=3232  "r91_expected_errors_all_matched": all(              ['nav_lattice_']
+  line=3240  "r92_expected_errors_all_matched": all(              ['r92_']
+  line=3250  "r93_expected_errors_all_matched": all(              ['r93_']
+  line=3261  "r94_expected_errors_all_matched": all(              ['r94_']
+  line=3272  "r95_expected_errors_all_matched": all(              ['dss_lattice_', 'r95b_order_']

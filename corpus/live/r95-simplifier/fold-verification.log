@@ -1,0 +1,209 @@
+r95 rows: 52   production classify_process segment sha256: 749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3
+scratch: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r95-simplifier/fold-runs/20261016T070937203618Z/scratch-committed
+  1/52 dss_lattice_cast_rest              pass=3/3 exact=True prefix=True masked_stable=True
+  2/52 dss_lattice_census                 pass=3/3 exact=True prefix=True masked_stable=True
+  3/52 dss_lattice_excl_space             pass=3/3 exact=True prefix=True masked_stable=True
+  4/52 dss_lattice_fresh                  pass=3/3 exact=True prefix=True masked_stable=True
+  5/52 dss_lattice_layer_forms            pass=3/3 exact=True prefix=True masked_stable=True
+  6/52 dss_lattice_order_core             pass=3/3 exact=False prefix=True masked_stable=True
+  7/52 dss_lattice_order_core_rev         pass=3/3 exact=False prefix=True masked_stable=True
+  8/52 dss_lattice_point_canvas           pass=3/3 exact=True prefix=True masked_stable=True
+  9/52 dss_lattice_point_cap              pass=3/3 exact=False prefix=True masked_stable=True
+ 10/52 dss_lattice_point_cap_rev          pass=3/3 exact=False prefix=True masked_stable=True
+ 11/52 dss_lattice_point_edge             pass=3/3 exact=True prefix=True masked_stable=True
+ 12/52 dss_lattice_ray_flags              pass=3/3 exact=True prefix=True masked_stable=True
+ 13/52 dss_lattice_ray_geom               pass=3/3 exact=True prefix=True masked_stable=True
+ 14/52 dss_lattice_ray_order              pass=3/3 exact=True prefix=True masked_stable=True
+ 15/52 dss_lattice_ray_order_rev          pass=3/3 exact=True prefix=True masked_stable=True
+ 16/52 dss_lattice_shape                  pass=3/3 exact=True prefix=True masked_stable=True
+ 17/52 dss_lattice_shape_rev              pass=3/3 exact=True prefix=True masked_stable=True
+ 18/52 r95b_order_canon                   pass=3/3 exact=True prefix=True masked_stable=True
+ 19/52 r95b_order_cap40_p0                pass=3/3 exact=True prefix=True masked_stable=True
+ 20/52 r95b_order_cap40_p1                pass=3/3 exact=True prefix=True masked_stable=True
+ 21/52 r95b_order_cap40_p2                pass=3/3 exact=True prefix=True masked_stable=True
+ 22/52 r95b_order_celloff_x0              pass=3/3 exact=True prefix=True masked_stable=True
+ 23/52 r95b_order_celloff_x1000           pass=3/3 exact=True prefix=True masked_stable=True
+ 24/52 r95b_order_celloff_y1000           pass=3/3 exact=True prefix=True masked_stable=True
+ 25/52 r95b_order_free_ab                 pass=3/3 exact=True prefix=True masked_stable=True
+ 26/52 r95b_order_free_ba                 pass=3/3 exact=True prefix=True masked_stable=True
+ 27/52 r95b_order_layers_k0               pass=3/3 exact=True prefix=True masked_stable=True
+ 28/52 r95b_order_layers_k1               pass=3/3 exact=True prefix=True masked_stable=True
+ 29/52 r95b_order_period_k5               pass=3/3 exact=True prefix=True masked_stable=True
+ 30/52 r95b_order_periodx_k10             pass=3/3 exact=True prefix=True masked_stable=True
+ 31/52 r95b_order_periodx_k2              pass=3/3 exact=True prefix=True masked_stable=True
+ 32/52 r95b_order_periodx_k3              pass=3/3 exact=True prefix=True masked_stable=True
+ 33/52 r95b_order_periodx_k4              pass=3/3 exact=True prefix=True masked_stable=True
+ 34/52 r95b_order_periodx_k5              pass=3/3 exact=True prefix=True masked_stable=True
+ 35/52 r95b_order_periodx_k5s8            pass=3/3 exact=True prefix=True masked_stable=True
+ 36/52 r95b_order_periodx_k6              pass=3/3 exact=True prefix=True masked_stable=True
+ 37/52 r95b_order_periodx_k7              pass=3/3 exact=True prefix=True masked_stable=True
+ 38/52 r95b_order_periodx_k8              pass=3/3 exact=True prefix=True masked_stable=True
+ 39/52 r95b_order_perm0                   pass=3/3 exact=True prefix=True masked_stable=True
+ 40/52 r95b_order_perm1                   pass=3/3 exact=True prefix=True masked_stable=True
+ 41/52 r95b_order_perm2                   pass=3/3 exact=True prefix=True masked_stable=True
+ 42/52 r95b_order_perm3                   pass=3/3 exact=True prefix=True masked_stable=True
+ 43/52 r95b_order_perm4                   pass=3/3 exact=True prefix=True masked_stable=True
+ 44/52 r95b_order_perm5                   pass=3/3 exact=True prefix=True masked_stable=True
+ 45/52 r95b_order_perm6                   pass=3/3 exact=True prefix=True masked_stable=True
+ 46/52 r95b_order_perm7                   pass=3/3 exact=True prefix=True masked_stable=True
+ 47/52 r95b_order_readd_a                 pass=3/3 exact=True prefix=True masked_stable=True
+ 48/52 r95b_order_rigid                   pass=3/3 exact=True prefix=True masked_stable=True
+ 49/52 r95b_order_scoutrev                pass=3/3 exact=True prefix=True masked_stable=True
+ 50/52 r95b_order_twopiles                pass=3/3 exact=True prefix=True masked_stable=True
+ 51/52 r95b_order_warm_k32                pass=3/3 exact=True prefix=True masked_stable=True
+ 52/52 r95b_order_warm_keep8              pass=3/3 exact=True prefix=True masked_stable=True
+launch phase: 165.8s
+
+== law checks: 149, failures: 0 ==
+  OK   canon cycle_len_dense==20 | 20
+  OK   canon distinct_ticks==20 | 20
+  OK   canon t0==0,1,2,3,4 | 0,1,2,3,4
+  OK   canon t20==t0 | 0,1,2,3,4 vs 0,1,2,3,4
+  OK   canon t21==t1 | 4,1,2,3,0 vs 4,1,2,3,0
+  OK   canon t64==t4 (64-3*20) | 4,0,1,2,3 vs 4,0,1,2,3
+  OK   canon t40==t0 | 0,1,2,3,4 vs 0,1,2,3,4
+  OK   canon t48==t8 | 3,4,0,1,2 vs 3,4,0,1,2
+  OK   canon t56==t16 | 1,2,3,4,0 vs 1,2,3,4,0
+  OK   canon t2_pt_eq_sh 
+  OK   canon pt_stable_interleaved 
+  OK   canon end_pt_eq_sh 
+  OK   r95b_order_periodx_k2 k==2 | 2
+  OK   r95b_order_periodx_k2 expected_kk1==2 | 2
+  OK   r95b_order_periodx_k2 cycle_len==2 | 2
+  OK   r95b_order_periodx_k2 distinct_ticks==2 | 2
+  OK   r95b_order_periodx_k2 n_ticks==5 | 5
+  OK   r95b_order_periodx_k2 t0 is insertion order | [p0#0,p1#0]
+  OK   r95b_order_periodx_k2 t2_vec is a permutation of 0..1 | [p0#0,p1#0]
+  OK   r95b_order_periodx_k2 t3_vec is a permutation of 0..1 | [p1#0,p0#0]
+  OK   r95b_order_periodx_k3 k==3 | 3
+  OK   r95b_order_periodx_k3 expected_kk1==6 | 6
+  OK   r95b_order_periodx_k3 cycle_len==6 | 6
+  OK   r95b_order_periodx_k3 distinct_ticks==6 | 6
+  OK   r95b_order_periodx_k3 n_ticks==9 | 9
+  OK   r95b_order_periodx_k3 t0 is insertion order | [p0#0,p1#0,p2#0]
+  OK   r95b_order_periodx_k3 t2_vec is a permutation of 0..2 | [p2#0,p0#0,p1#0]
+  OK   r95b_order_periodx_k3 t3_vec is a permutation of 0..2 | [p1#0,p0#0,p2#0]
+  OK   r95b_order_periodx_k4 k==4 | 4
+  OK   r95b_order_periodx_k4 expected_kk1==12 | 12
+  OK   r95b_order_periodx_k4 cycle_len==12 | 12
+  OK   r95b_order_periodx_k4 distinct_ticks==12 | 12
+  OK   r95b_order_periodx_k4 n_ticks==15 | 15
+  OK   r95b_order_periodx_k4 t0 is insertion order | [p0#0,p1#0,p2#0,p3#0]
+  OK   r95b_order_periodx_k4 t2_vec is a permutation of 0..3 | [p3#0,p0#0,p2#0,p1#0]
+  OK   r95b_order_periodx_k4 t3_vec is a permutation of 0..3 | [p3#0,p0#0,p1#0,p2#0]
+  OK   r95b_order_periodx_k5 k==5 | 5
+  OK   r95b_order_periodx_k5 expected_kk1==20 | 20
+  OK   r95b_order_periodx_k5 cycle_len==20 | 20
+  OK   r95b_order_periodx_k5 distinct_ticks==20 | 20
+  OK   r95b_order_periodx_k5 n_ticks==23 | 23
+  OK   r95b_order_periodx_k5 t0 is insertion order | [p0#0,p1#0,p2#0,p3#0,p4#0]
+  OK   r95b_order_periodx_k5 t2_vec is a permutation of 0..4 | [p4#0,p0#0,p2#0,p3#0,p1#0]
+  OK   r95b_order_periodx_k5 t3_vec is a permutation of 0..4 | [p4#0,p0#0,p1#0,p3#0,p2#0]
+  OK   r95b_order_periodx_k6 k==6 | 6
+  OK   r95b_order_periodx_k6 expected_kk1==30 | 30
+  OK   r95b_order_periodx_k6 cycle_len==30 | 30
+  OK   r95b_order_periodx_k6 distinct_ticks==30 | 30
+  OK   r95b_order_periodx_k6 n_ticks==33 | 33
+  OK   r95b_order_periodx_k6 t0 is insertion order | [p0#0,p1#0,p2#0,p3#0,p4#0,p5#0]
+  OK   r95b_order_periodx_k6 t2_vec is a permutation of 0..5 | [p5#0,p0#0,p2#0,p3#0,p4#0,p1#0]
+  OK   r95b_order_periodx_k6 t3_vec is a permutation of 0..5 | [p5#0,p0#0,p1#0,p3#0,p4#0,p2#0]
+  OK   r95b_order_periodx_k7 k==7 | 7
+  OK   r95b_order_periodx_k7 expected_kk1==42 | 42
+  OK   r95b_order_periodx_k7 cycle_len==42 | 42
+  OK   r95b_order_periodx_k7 distinct_ticks==42 | 42
+  OK   r95b_order_periodx_k7 n_ticks==45 | 45
+  OK   r95b_order_periodx_k7 t0 is insertion order | [p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0]
+  OK   r95b_order_periodx_k7 t2_vec is a permutation of 0..6 | [p6#0,p0#0,p2#0,p3#0,p4#0,p5#0,p1#0]
+  OK   r95b_order_periodx_k7 t3_vec is a permutation of 0..6 | [p6#0,p0#0,p1#0,p3#0,p4#0,p5#0,p2#0]
+  OK   r95b_order_periodx_k8 k==8 | 8
+  OK   r95b_order_periodx_k8 expected_kk1==56 | 56
+  OK   r95b_order_periodx_k8 cycle_len==56 | 56
+  OK   r95b_order_periodx_k8 distinct_ticks==56 | 56
+  OK   r95b_order_periodx_k8 n_ticks==59 | 59
+  OK   r95b_order_periodx_k8 t0 is insertion order | [p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0]
+  OK   r95b_order_periodx_k8 t2_vec is a permutation of 0..7 | [p7#0,p0#0,p2#0,p3#0,p4#0,p5#0,p6#0,p1#0]
+  OK   r95b_order_periodx_k8 t3_vec is a permutation of 0..7 | [p7#0,p0#0,p1#0,p3#0,p4#0,p5#0,p6#0,p2#0]
+  OK   r95b_order_periodx_k10 k==10 | 10
+  OK   r95b_order_periodx_k10 expected_kk1==90 | 90
+  OK   r95b_order_periodx_k10 cycle_len==90 | 90
+  OK   r95b_order_periodx_k10 distinct_ticks==90 | 90
+  OK   r95b_order_periodx_k10 n_ticks==93 | 93
+  OK   r95b_order_periodx_k10 t0 is insertion order | [p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p9#0]
+  OK   r95b_order_periodx_k10 t2_vec is a permutation of 0..9 | [p9#0,p0#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p1#0]
+  OK   r95b_order_periodx_k10 t3_vec is a permutation of 0..9 | [p9#0,p0#0,p1#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p2#0]
+  OK   k5 spacing-independent | s4 cycle=20 s8 cycle=20
+  OK   k5s8 spacing==8.0 | 8.0
+  OK   period_k5 cycle_len==20 | 20
+  OK   period_k5 distinct==20 | 20
+  OK   r95b_order_perm0 t2_vec maps tag->fixed x | [e#0,a#0,c#0,d#0,b#0]
+  OK   r95b_order_perm0 map key present | [a@0,b@8,c@16,d@24,e@32]
+  OK   r95b_order_perm1 t2_vec maps tag->fixed x | [a#0,e#0,c#0,b#0,d#0]
+  OK   r95b_order_perm1 map key present | [a@0,b@8,c@16,d@24,e@32]
+  OK   r95b_order_perm2 t2_vec maps tag->fixed x | [a#0,b#0,e#0,d#0,c#0]
+  OK   r95b_order_perm2 map key present | [a@0,b@8,c@16,d@24,e@32]
+  OK   r95b_order_perm3 t2_vec maps tag->fixed x | [c#0,e#0,b#0,d#0,a#0]
+  OK   r95b_order_perm3 map key present | [a@0,b@8,c@16,d@24,e@32]
+  OK   r95b_order_perm4 t2_vec maps tag->fixed x | [e#0,a#0,b#0,d#0,c#0]
+  OK   r95b_order_perm4 map key present | [a@0,b@8,c@16,d@24,e@32]
+  OK   r95b_order_perm5 t2_vec maps tag->fixed x | [d#0,e#0,b#0,c#0,a#0]
+  OK   r95b_order_perm5 map key present | [a@0,b@8,c@16,d@24,e@32]
+  OK   r95b_order_perm6 t2_vec maps tag->fixed x | [e#0,b#0,c#0,d#0,a#0]
+  OK   r95b_order_perm6 map key present | [a@0,b@8,c@16,d@24,e@32]
+  OK   r95b_order_perm7 t2_vec maps tag->fixed x | [b#0,e#0,d#0,c#0,a#0]
+  OK   r95b_order_perm7 map key present | [a@0,b@8,c@16,d@24,e@32]
+  OK   perm0-7: 8 distinct add_order | ['[a,b,c,d,e]', '[a,c,b,e,d]', '[b,a,d,c,e]', '[b,c,a,e,d]', '[c,a,e,d,b]', '[d,a,b,e,c]', '[e,a,c,d,b]', '[e,d,c,b,a]']
+  OK   perm0-7: 8 distinct t2_vec | 8
+  OK   perm0-7: 8 distinct ladders | 8
+  OK   perm0: add_order==a,b,c,d,e | [a,b,c,d,e]
+  OK   scoutrev t2_vec_matches_scout_row 
+  OK   scoutrev t2_relpos_equals_canon 
+  OK   scoutrev relpos == canon relpos (cross-row) | [32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] vs [32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]
+  OK   scoutrev t2_vec != canon t2_vec (labels differ) 
+  OK   celloff ladders identical x0/x1000 | [t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] vs [t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3]
+  OK   celloff ladders identical x0/y1000 | [t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] vs [t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3]
+  OK   celloff relpos identical x0/x1000 
+  OK   celloff off echoed 
+  OK   twopiles A-alone != A-with-B (t2 vs t4) | [e#0,a#0,c#0,d#0,b#0] vs [e#0,a#0,c#0,b#0,d#0]
+  OK   twopiles B pile is a 5-vector | [e2#0,a2#0,b2#0,c2#0,d2#0]
+  OK   warm_k32 ladder == canon on common ticks | all equal
+  OK   warm_keep8 t2_vec != canon t2_vec | [a#0,e#0,b#0,c#0,d#0] vs [e#0,a#0,c#0,d#0,b#0]
+  OK   warm_keep8 distinct_ticks==4 | 4
+  OK   free_ab != free_ba ladders 
+  OK   free_ab post-free t2==t8 (k=3 cycle 6) | 2,3,4 vs 2,3,4
+  OK   free_ab freed echoed | [a,b]
+  OK   free_ba post-free t2==t8 (k=3 cycle 6) | 2,4,3 vs 2,4,3
+  OK   free_ba freed echoed | [b,a]
+  OK   readd which==a 
+  OK   readd set at t16 has 5 entries | [b#0,c#0,d#0,e#0,f#0]
+  OK   cap40_p0 n0==0 | 0
+  OK   cap40_p0 n32==32 | 32
+  OK   cap40_p0 n64==40 | 40
+  OK   cap40_p0 set32_distinct==5 | 5
+  OK   cap40_p0 set32_t2 has 32 entries 
+  OK   cap40_p1 n0==0 | 0
+  OK   cap40_p1 n32==32 | 32
+  OK   cap40_p1 n64==40 | 40
+  OK   cap40_p1 set32_distinct==5 | 5
+  OK   cap40_p1 set32_t2 has 32 entries 
+  OK   cap40_p2 n0==0 | 0
+  OK   cap40_p2 n32==32 | 32
+  OK   cap40_p2 n64==40 | 40
+  OK   cap40_p2 set32_distinct==5 | 5
+  OK   cap40_p2 set32_t2 has 32 entries 
+  OK   cap40 set32_t2 distinct across p0/p1/p2 
+  OK   layers_k0 pt_eq_sh==true | true
+  OK   layers_k0 sh_len==5 | 5
+  OK   layers_k0 pt0_t2_eq_sh==true 
+  OK   layers_k1 pt_eq_sh==false | false
+  OK   layers_k1 sh_len==6 | 6
+  OK   layers_k1 pt0_t2_eq_sh==false 
+  OK   layers_k1 invisible collider perturbs pt0 ladder 
+  OK   rigid distinct_ticks==1 | 1
+  OK   rigid t10_relpos pinned | [15.9999,14.8732]
+  OK   point_cap_rev add_order is reverse of point_cap 
+  OK   order_core_rev add_order is reverse of order_core 
+  OK   ray_order_rev tie==tie_a vs ray_order tie==tie_b 
+  OK   shape_lattice_rev touch==[a#0] vs shape_lattice touch==[e#0] 
+
+all rows pass all reps: True
+law failures: 0

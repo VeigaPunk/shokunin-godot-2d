@@ -1,0 +1,36 @@
+ff30   r95b_order_canon               pass=2/2
+ff30   r95b_order_period_k5           pass=2/2
+ff30   r95b_order_periodx_k2          pass=2/2
+ff30   r95b_order_periodx_k3          pass=2/2
+ff30   r95b_order_periodx_k4          pass=2/2
+ff30   r95b_order_periodx_k5          pass=2/2
+ff30   r95b_order_periodx_k5s8        pass=2/2
+ff30   r95b_order_periodx_k6          pass=2/2
+ff30   r95b_order_periodx_k7          pass=2/2
+ff30   r95b_order_periodx_k8          pass=2/2
+ff30   r95b_order_periodx_k10         pass=2/2
+ff120  r95b_order_canon               pass=2/2
+ff120  r95b_order_period_k5           pass=2/2
+ff120  r95b_order_periodx_k2          pass=2/2
+ff120  r95b_order_periodx_k3          pass=2/2
+ff120  r95b_order_periodx_k4          pass=2/2
+ff120  r95b_order_periodx_k5          pass=2/2
+ff120  r95b_order_periodx_k5s8        pass=2/2
+ff120  r95b_order_periodx_k6          pass=2/2
+ff120  r95b_order_periodx_k7          pass=2/2
+ff120  r95b_order_periodx_k8          pass=2/2
+ff120  r95b_order_periodx_k10         pass=2/2
+hogs: [<Popen: returncode: None args: ['yes']>, <Popen: returncode: None args: ['yes']>, <Popen: returncode: None args: ['yes']>, <Popen: returncode: None args: ['yes']>, <Popen: returncode: None args: ['yes']>, <Popen: returncode: None args: ['yes']>, <Popen: returncode: None args: ['yes']>, <Popen: returncode: None args: ['yes']>, <Popen: returncode: None args: ['yes']>, <Popen: returncode: None args: ['yes']>, <Popen: returncode: None args: ['yes']>, <Popen: returncode: None args: ['yes']>]  loadavg 96.97 89.62 74.98 90/2494 312006
+load   r95b_order_canon               pass=2/2
+load   r95b_order_period_k5           pass=2/2
+load   r95b_order_periodx_k2          pass=2/2
+load   r95b_order_periodx_k3          pass=2/2
+load   r95b_order_periodx_k4          pass=2/2
+load   r95b_order_periodx_k5          pass=2/2
+load   r95b_order_periodx_k5s8        pass=2/2
+load   r95b_order_periodx_k6          pass=2/2
+load   r95b_order_periodx_k7          pass=2/2
+load   r95b_order_periodx_k8          pass=2/2
+load   r95b_order_periodx_k10         pass=2/2
+loadavg end: 103.09 91.61 76.02 88/2700 425887
+failures: 0  all_pass: True

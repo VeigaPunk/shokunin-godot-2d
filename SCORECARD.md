@@ -270,3 +270,13 @@ Sol `r76-adjudicator.md`: ADMIT-corr — deferred_abort admitted, destroy-edge l
 | calibration | **improved** | 2-seat cpu_contam tautology finding (signature is bookkeeping); tps exposure corrected 3->10-11; floor-fold inertness at authored steps disclosed; all defects fail-closed (absorptions recorded, none realized as false green). |
 
 | r94 | game-dev-2d | GPUParticles2D / CPU-emission lattice | ADMIT-with-findings | c7228893 |
+
+## Round 95 verdict — 2026-10-15
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | +52 rows → 366: 17 dss_lattice + 35 r95b_order (dense ladder, creation permutations, translation/co-presence, cap40, layers, warm, free/readd, rigid). 472/472 receipt hits. |
+| depth | **improved** | Cycle law re-derived k=2..10 + window-doubled (183 ticks, no artifact); 4780+3288 mutations reject; floor gate loud via injected dead entry; 6/6 battery runs r95 52/52. |
+| calibration | **improved** | Two seats independently found the dead --offy flag (Y-translation honestly unmeasured, not falsified); echo-pin class found on order_core (contrast point_cap which binds a real measurement); tps exposure bounded to exactly 1/52. |
+
+| r95 | game-dev-2d | DirectSpaceState2D query + order lattice | ADMIT-with-findings | 9cd47507 |

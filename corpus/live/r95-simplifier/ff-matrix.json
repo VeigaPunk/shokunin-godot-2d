@@ -1,0 +1,487 @@
+{
+ "stamp": "20261016T071300389172Z",
+ "rows": [
+  "r95b_order_canon",
+  "r95b_order_period_k5",
+  "r95b_order_periodx_k2",
+  "r95b_order_periodx_k3",
+  "r95b_order_periodx_k4",
+  "r95b_order_periodx_k5",
+  "r95b_order_periodx_k5s8",
+  "r95b_order_periodx_k6",
+  "r95b_order_periodx_k7",
+  "r95b_order_periodx_k8",
+  "r95b_order_periodx_k10"
+ ],
+ "variants": [
+  "ff30",
+  "ff120",
+  "load12"
+ ],
+ "results": {
+  "ff30/r95b_order_canon": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff30/r95b_order_period_k5": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff30/r95b_order_periodx_k2": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff30/r95b_order_periodx_k3": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff30/r95b_order_periodx_k4": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff30/r95b_order_periodx_k5": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff30/r95b_order_periodx_k5s8": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff30/r95b_order_periodx_k6": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff30/r95b_order_periodx_k7": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff30/r95b_order_periodx_k8": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff30/r95b_order_periodx_k10": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff120/r95b_order_canon": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff120/r95b_order_period_k5": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff120/r95b_order_periodx_k2": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff120/r95b_order_periodx_k3": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff120/r95b_order_periodx_k4": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff120/r95b_order_periodx_k5": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff120/r95b_order_periodx_k5s8": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff120/r95b_order_periodx_k6": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff120/r95b_order_periodx_k7": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff120/r95b_order_periodx_k8": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "ff120/r95b_order_periodx_k10": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "load/r95b_order_canon": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "load/r95b_order_period_k5": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "load/r95b_order_periodx_k2": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "load/r95b_order_periodx_k3": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "load/r95b_order_periodx_k4": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "load/r95b_order_periodx_k5": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "load/r95b_order_periodx_k5s8": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "load/r95b_order_periodx_k6": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "load/r95b_order_periodx_k7": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "load/r95b_order_periodx_k8": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ],
+  "load/r95b_order_periodx_k10": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "error": null,
+    "passed": true
+   }
+  ]
+ },
+ "failures": [],
+ "all_pass": true
+}

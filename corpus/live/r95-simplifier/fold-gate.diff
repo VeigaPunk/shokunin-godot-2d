@@ -1,0 +1,5 @@
+--- a/corpus/fixtures/run_battery.py
++++ b/fold-gate/run_battery.py
+@@ +1 stale r95 allowlist entry for r95b_order_canon @@
++            # r95-simplifier dead-entry fold probe (never emitted):
++            "r95b_order_canon": ("ERROR: r95-simplifier dead-entry fold probe (never emitted)",),

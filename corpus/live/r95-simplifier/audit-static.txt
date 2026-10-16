@@ -1,0 +1,628 @@
+### fixture: dss_lattice.gd (743 lines, sha256 77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627)
+
+== declarations and value observation (143) ==
+  <file>                 var   arm              line=27   reads=4  assigns=1  outargs=0  
+  <file>                 var   _rev             line=28   reads=8  assigns=1  outargs=0  
+  <file>                 var   _items           line=29   reads=1  assigns=0  outargs=0  
+  <file>                 const CAP              line=30   reads=80 assigns=0  outargs=0  
+  _sorted                var   c                line=93   reads=2  assigns=0  outargs=0  
+  _tag                   var   c                line=104  reads=3  assigns=1  outargs=0  
+  _ord                   var   parts            line=113  reads=1  assigns=0  outargs=0  
+  _setstr                var   keys             line=119  reads=2  assigns=0  outargs=0  
+  _setstr                var   k                line=121  reads=2  assigns=0  outargs=0  
+  _mk_body               var   b                line=127  reads=10 assigns=0  outargs=0  
+  _mk_body               var   cs               line=135  reads=2  assigns=0  outargs=0  
+  _mk_body               var   rs               line=136  reads=2  assigns=0  outargs=0  
+  _add_shape             var   cs               line=145  reads=3  assigns=0  outargs=0  
+  _add_shape             var   rs               line=146  reads=2  assigns=0  outargs=0  
+  _pt                    var   q                line=156  reads=3  assigns=0  outargs=0  
+  _sh                    var   q                line=163  reads=4  assigns=0  outargs=0  
+  _circle                var   c                line=170  reads=2  assigns=0  outargs=0  
+  _rect                  var   r                line=175  reads=2  assigns=0  outargs=0  
+  _arm_census            var   meths            line=194  reads=2  assigns=0  outargs=0  
+  _arm_census            var   sigs             line=195  reads=2  assigns=0  outargs=0  
+  _arm_census            var   args             line=198  reads=1  assigns=0  outargs=0  
+  _arm_census            var   s                line=200  reads=1  assigns=1  outargs=0  
+  _arm_census            var   skip             line=209  reads=1  assigns=0  outargs=0  
+  _arm_census            var   keys             line=211  reads=2  assigns=0  outargs=0  
+  _arm_census            var   props            line=214  reads=3  assigns=0  outargs=0  
+  _arm_census            var   nm               line=216  reads=4  assigns=0  outargs=0  
+  _arm_census            var   inst             line=221  reads=1  assigns=0  outargs=0  
+  _arm_census            var   vals             line=222  reads=1  assigns=0  outargs=0  
+  _arm_census            var   q                line=228  reads=2  assigns=0  outargs=0  
+  _arm_ray_flags         var   wall             line=239  reads=1  assigns=0  outargs=0  
+  _arm_ray_flags         var   area             line=240  reads=1  assigns=0  outargs=0  
+  _arm_ray_flags         var   dss              line=242  reads=13 assigns=0  outargs=0  
+  _arm_ray_flags         var   m2               line=244  reads=2  assigns=0  outargs=0  
+  _arm_ray_flags         var   m0               line=247  reads=2  assigns=0  outargs=0  
+  _arm_ray_flags         var   nb               line=250  reads=2  assigns=0  outargs=0  
+  _arm_ray_flags         var   ar               line=253  reads=2  assigns=0  outargs=0  
+  _arm_ray_flags         var   ar2              line=256  reads=3  assigns=0  outargs=0  
+  _arm_ray_flags         var   ex               line=260  reads=2  assigns=0  outargs=0  
+  _arm_ray_flags         var   ex2              line=263  reads=2  assigns=0  outargs=0  
+  _arm_ray_flags         var   in_on            line=267  reads=2  assigns=0  outargs=0  
+  _arm_ray_flags         var   ia               line=270  reads=3  assigns=0  outargs=0  
+  _arm_ray_flags         var   out_on           line=274  reads=2  assigns=0  outargs=0  
+  _arm_ray_geom          var   dss              line=286  reads=13 assigns=0  outargs=0  
+  _arm_ray_order         var   near             line=306  reads=3  assigns=0  outargs=0  
+  _arm_ray_order         var   far              line=307  reads=3  assigns=0  outargs=0  
+  _arm_ray_order         var   tie_tags         line=308  reads=4  assigns=0  outargs=0  
+  _arm_ray_order         var   ties             line=311  reads=2  assigns=0  outargs=0  
+  _arm_ray_order         var   dss              line=315  reads=5  assigns=0  outargs=0  
+  _arm_ray_order         var   tq               line=317  reads=3  assigns=0  outargs=0  
+  _arm_ray_order         var   q1               line=320  reads=2  assigns=0  outargs=0  
+  _arm_ray_order         var   q2               line=323  reads=2  assigns=0  outargs=0  
+  _arm_point_cap         var   order            line=334  reads=4  assigns=0  outargs=0  
+  _arm_point_cap         var   made             line=337  reads=1  assigns=0  outargs=0  
+  _arm_point_cap         var   dss              line=341  reads=11 assigns=0  outargs=0  
+  _arm_point_cap         var   m2               line=347  reads=2  assigns=0  outargs=0  
+  _arm_point_cap         var   nb               line=350  reads=2  assigns=0  outargs=0  
+  _arm_point_cap         var   ex               line=353  reads=2  assigns=0  outargs=0  
+  _arm_point_cap         var   pile             line=357  reads=0  assigns=0  outargs=0    <== dead-append-only
+        decl: var pile: Array = []
+        occ line=357  decl     var pile: Array = []
+        occ line=359  append   pile.append(_mk_body("p%d" % i, Vector2(1000 + i * 2, 0), Vector2(200, 40)))
+  _arm_point_edge        var   box              line=370  reads=0  assigns=0  outargs=0    <== dead-no-read
+        decl: var box := _mk_body("box", Vector2(100, 0), Vector2(40, 40))
+        occ line=370  decl     var box := _mk_body("box", Vector2(100, 0), Vector2(40, 40))
+  _arm_point_edge        var   circ             line=371  reads=1  assigns=0  outargs=0  
+  _arm_point_edge        var   cs               line=372  reads=1  assigns=0  outargs=0  
+  _arm_point_edge        var   rot              line=374  reads=1  assigns=0  outargs=0  
+  _arm_point_edge        var   dss              line=377  reads=6  assigns=0  outargs=0  
+  _arm_point_edge        var   probes           line=378  reads=3  assigns=0  outargs=0  
+  _arm_point_edge        var   shape_keys       line=390  reads=1  assigns=0  outargs=0  
+  _arm_point_edge        var   tiny             line=392  reads=1  assigns=0  outargs=0  
+  _arm_point_canvas      var   cl               line=405  reads=5  assigns=0  outargs=0  
+  _arm_point_canvas      var   clb              line=408  reads=5  assigns=0  outargs=0  
+  _arm_point_canvas      var   cs               line=411  reads=2  assigns=0  outargs=0  
+  _arm_point_canvas      var   rs               line=412  reads=2  assigns=0  outargs=0  
+  _arm_point_canvas      var   dss              line=419  reads=10 assigns=0  outargs=0  
+  _arm_point_canvas      var   cl_id            line=420  reads=4  assigns=0  outargs=0  
+  _arm_shape_lattice     var   order            line=439  reads=3  assigns=0  outargs=0  
+  _arm_shape_lattice     var   multi            line=444  reads=2  assigns=0  outargs=0  
+  _arm_shape_lattice     var   dss              line=448  reads=14 assigns=0  outargs=0  
+  _arm_shape_lattice     var   q                line=451  reads=1  assigns=0  outargs=0  
+  _arm_shape_lattice     var   touch            line=456  reads=1  assigns=0  outargs=0  
+  _arm_shape_lattice     var   touch_in         line=458  reads=1  assigns=0  outargs=0  
+  _arm_shape_lattice     var   touch_out        line=460  reads=1  assigns=0  outargs=0  
+  _arm_shape_lattice     var   sr               line=466  reads=5  assigns=0  outargs=0  
+  _arm_order_core        var   order            line=484  reads=2  assigns=0  outargs=1  
+  _arm_order_core        var   made             line=487  reads=1  assigns=0  outargs=1  
+  _arm_order_core        var   dss              line=490  reads=15 assigns=0  outargs=0  
+  _arm_order_core        var   first            line=492  reads=6  assigns=0  outargs=0  
+  _arm_order_core        var   made2            line=499  reads=0  assigns=0  outargs=1    <== dead-out-param
+        decl: var made2: Array = []
+        occ line=499  decl     var made2: Array = []
+        occ line=500  out-arg  _pile(["a2", "b2", "c2", "d2", "e2"], 0.0, 1000.0, made2)
+  _arm_order_core        var   made3            line=506  reads=0  assigns=0  outargs=1    <== dead-out-param
+        decl: var made3: Array = []
+        occ line=506  decl     var made3: Array = []
+        occ line=507  out-arg  _pile(["e3", "d3", "c3", "b3", "a3"], 0.0, 2000.0, made3)
+  _arm_order_core        var   fresh            line=514  reads=0  assigns=0  outargs=0    <== dead-no-read
+        decl: var fresh := _mk_body("f", Vector2(16, 0), Vector2(40, 40))
+        occ line=514  decl     var fresh := _mk_body("f", Vector2(16, 0), Vector2(40, 40))
+  _arm_layer_forms       var   canvas           line=524  reads=5  assigns=0  outargs=0  
+  _arm_layer_forms       var   spr              line=529  reads=1  assigns=0  outargs=0  
+  _arm_layer_forms       var   srv              line=535  reads=5  assigns=0  outargs=0  
+  _arm_layer_forms       var   srv_shape        line=538  reads=3  assigns=0  outargs=0  
+  _arm_layer_forms       var   dss              line=543  reads=13 assigns=0  outargs=0  
+  _arm_layer_forms       var   visible          line=544  reads=1  assigns=0  outargs=0  
+  _arm_layer_forms       var   pos              line=546  reads=3  assigns=0  outargs=0  
+  _arm_layer_forms       var   key              line=547  reads=1  assigns=0  outargs=0  
+  _arm_layer_forms       var   bodies           line=548  reads=1  assigns=0  outargs=0  
+  _arm_layer_forms       var   areas            line=549  reads=2  assigns=0  outargs=0  
+  _arm_layer_forms       var   areas_on         line=551  reads=1  assigns=0  outargs=0  
+  _arm_layer_forms       var   only             line=552  reads=3  assigns=0  outargs=0  
+  _arm_layer_forms       var   areas_only       line=555  reads=1  assigns=0  outargs=0  
+  _arm_layer_forms       var   ra               line=563  reads=2  assigns=0  outargs=0  
+  _arm_layer_forms       var   sa               line=568  reads=2  assigns=0  outargs=0  
+  _arm_layer_forms       var   cast             line=571  reads=0  assigns=0  outargs=0    <== dead-no-read
+        decl: var cast := _sh(_circle(20), Transform2D(0, Vector2(700, 0)), Vector2(400, 0))
+        occ line=571  decl     var cast := _sh(_circle(20), Transform2D(0, Vector2(700, 0)), Vector2(400, 0))
+  _arm_cast_rest         var   w1               line=583  reads=4  assigns=0  outargs=0  
+  _arm_cast_rest         var   w2               line=584  reads=1  assigns=0  outargs=0  
+  _arm_cast_rest         var   ar               line=585  reads=0  assigns=0  outargs=0    <== dead-no-read
+        decl: var ar := _mk_body("ar", Vector2(200, 0), Vector2(4, 400), "area")
+        occ line=585  decl     var ar := _mk_body("ar", Vector2(200, 0), Vector2(4, 400), "area")
+  _arm_cast_rest         var   dss              line=587  reads=31 assigns=0  outargs=0  
+  _arm_cast_rest         var   c                line=588  reads=31 assigns=0  outargs=0  
+  _arm_cast_rest         var   cm_m             line=591  reads=2  assigns=0  outargs=0  
+  _arm_cast_rest         var   cm_e             line=594  reads=3  assigns=0  outargs=0  
+  _arm_cast_rest         var   cm_b             line=597  reads=2  assigns=0  outargs=0  
+  _arm_cast_rest         var   cm_a             line=600  reads=2  assigns=0  outargs=0  
+  _arm_cast_rest         var   rl               line=614  reads=2  assigns=0  outargs=0  
+  _arm_cast_rest         var   rl2              line=617  reads=2  assigns=0  outargs=0  
+  _arm_cast_rest         var   rm               line=620  reads=2  assigns=0  outargs=0  
+  _arm_cast_rest         var   b1               line=628  reads=1  assigns=0  outargs=0  
+  _arm_cast_rest         var   b2               line=629  reads=0  assigns=0  outargs=0    <== dead-no-read
+        decl: var b2 := _mk_body("b2", Vector2(112, 0), Vector2(4, 400))
+        occ line=629  decl     var b2 := _mk_body("b2", Vector2(112, 0), Vector2(4, 400))
+  _arm_cast_rest         var   cs               line=631  reads=2  assigns=0  outargs=0  
+  _arm_cast_rest         var   pts              line=632  reads=1  assigns=0  outargs=0  
+  _arm_cast_rest         var   ce               line=639  reads=2  assigns=0  outargs=0  
+  _arm_cast_rest         var   cm2              line=642  reads=2  assigns=0  outargs=0  
+  _arm_excl_space        var   a                line=652  reads=2  assigns=0  outargs=0  
+  _arm_excl_space        var   dss              line=654  reads=7  assigns=0  outargs=0  
+  _arm_excl_space        var   cs               line=655  reads=1  assigns=0  outargs=0  
+  _arm_excl_space        var   shape_rid        line=656  reads=3  assigns=0  outargs=0  
+  _arm_excl_space        var   body_rid         line=657  reads=3  assigns=0  outargs=0  
+  _arm_excl_space        var   q1               line=659  reads=2  assigns=0  outargs=0  
+  _arm_excl_space        var   q2               line=662  reads=2  assigns=0  outargs=0  
+  _arm_excl_space        var   q3               line=665  reads=2  assigns=0  outargs=0  
+  _arm_excl_space        var   q4               line=668  reads=2  assigns=0  outargs=0  
+  _arm_excl_space        var   r1               line=671  reads=2  assigns=0  outargs=0  
+  _arm_excl_space        var   root_body        line=676  reads=1  assigns=0  outargs=0  
+  _arm_excl_space        var   sv               line=677  reads=5  assigns=0  outargs=0  
+  _arm_excl_space        var   svb              line=681  reads=6  assigns=0  outargs=0  
+  _arm_excl_space        var   scs              line=684  reads=2  assigns=0  outargs=0  
+  _arm_excl_space        var   srs              line=685  reads=2  assigns=0  outargs=0  
+  _arm_excl_space        var   s_root           line=692  reads=4  assigns=0  outargs=0  
+  _arm_excl_space        var   s_sv             line=693  reads=4  assigns=0  outargs=0  
+  _arm_fresh             var   dss              line=705  reads=20 assigns=0  outargs=0  
+  _arm_fresh             var   b                line=706  reads=2  assigns=0  outargs=0  
+  _arm_fresh             var   c                line=724  reads=1  assigns=0  outargs=0  
+  _arm_fresh             var   d                line=732  reads=1  assigns=0  outargs=0  
+  _arm_fresh             var   e                line=737  reads=1  assigns=0  outargs=0  
+
+== _pile call-result stores (var X := _pile(...)) ==
+
+== function call-site census ==
+  _initialize            line=32   call_sites=0
+  _run                   line=40   call_sites=0
+  _fail                  line=59   call_sites=1
+  _it                    line=63   call_sites=175
+  _pass                  line=67   call_sites=13
+  _frames                line=71   call_sites=27
+  _v2                    line=75   call_sites=8
+  _dv                    line=78   call_sites=1
+  _dss                   line=89   call_sites=14
+  _sorted                line=92   call_sites=4
+  _has_prop              line=97   call_sites=2
+  _tag                   line=103  call_sites=5
+  _ord                   line=112  call_sites=77
+  _setstr                line=118  call_sites=4
+  _mk_body               line=126  call_sites=32
+  _add_shape             line=144  call_sites=2
+  _ray                   line=152  call_sites=38
+  _pt                    line=155  call_sites=68
+  _sh                    line=162  call_sites=54
+  _circle                line=169  call_sites=4
+  _rect                  line=174  call_sites=21
+  _rayline               line=179  call_sites=36
+  _ri_line               line=185  call_sites=12
+  _arm_census            line=193  call_sites=1
+  _arm_ray_flags         line=238  call_sites=1
+  _arm_ray_geom          line=282  call_sites=1
+  _arm_ray_order         line=305  call_sites=1
+  _arm_point_cap         line=333  call_sites=1
+  _arm_point_edge        line=369  call_sites=1
+  _arm_point_canvas      line=403  call_sites=1
+  _arm_shape_lattice     line=438  call_sites=1
+  _pile                  line=479  call_sites=3
+  _arm_order_core        line=483  call_sites=1
+  _arm_layer_forms       line=523  call_sites=1
+  _arm_cast_rest         line=582  call_sites=1
+  _arm_excl_space        line=651  call_sites=1
+  _arm_fresh             line=704  call_sites=1
+
+== print-site census ==
+  line=60   print("FAIL dss_lattice %s reason=%s" % [arm, reason])
+  line=65   print("R95 %s %s=%s" % [arm, key, value])
+  line=68   print("PASS dss_lattice %s %s" % [arm, " ".join(_items)])
+
+== match-arm census ==
+  arms (13): census, ray_flags, ray_geom, ray_order, point_cap, point_edge, point_canvas, shape_lattice, order_core, layer_forms, cast_rest, excl_space, fresh
+
+== CLI knob census ==
+  line=33   for a in OS.get_cmdline_user_args():
+
+### fixture: r95b_order.gd (777 lines, sha256 4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490)
+
+== declarations and value observation (164) ==
+  <file>                 const CAP              line=39   reads=29 assigns=0  outargs=0  
+  <file>                 const TAGS5            line=40   reads=2  assigns=0  outargs=0  
+  <file>                 const TAG_X            line=41   reads=4  assigns=0  outargs=0  
+  <file>                 var   arm              line=43   reads=5  assigns=1  outargs=0  
+  <file>                 var   opt              line=44   reads=4  assigns=0  outargs=0  
+  <file>                 var   _items           line=45   reads=1  assigns=0  outargs=0  
+  _initialize            var   kv               line=52   reads=1  assigns=0  outargs=0  
+  _tag                   var   c                line=117  reads=3  assigns=1  outargs=0  
+  _vec                   var   parts            line=126  reads=1  assigns=0  outargs=0  
+  _pidx                  var   parts            line=133  reads=1  assigns=0  outargs=0  
+  _pidx                  var   t                line=135  reads=1  assigns=0  outargs=0  
+  _relpos                var   parts            line=140  reads=1  assigns=0  outargs=0  
+  _relpos                var   c                line=142  reads=1  assigns=0  outargs=0  
+  _relpos                var   n2               line=143  reads=2  assigns=0  outargs=0  
+  _relpos                var   p                line=147  reads=1  assigns=0  outargs=0  
+  _sorted                var   c                line=152  reads=2  assigns=0  outargs=0  
+  _setstr                var   keys             line=157  reads=2  assigns=0  outargs=0  
+  _setstr                var   k                line=159  reads=2  assigns=0  outargs=0  
+  _uniq_count            var   u                line=165  reads=2  assigns=0  outargs=0  
+  _last_change           var   lc               line=172  reads=1  assigns=1  outargs=0  
+  _ladderstr             var   parts            line=179  reads=1  assigns=0  outargs=0  
+  _ladder                var   dss              line=187  reads=3  assigns=0  outargs=0  
+  _ladder                var   q                line=188  reads=3  assigns=0  outargs=0  
+  _ladder                var   seq              line=189  reads=1  assigns=0  outargs=0  
+  _ladder                var   cur              line=190  reads=1  assigns=1  outargs=0  
+  _ladder                var   first_vec        line=191  reads=2  assigns=1  outargs=0  
+  _ladder                var   first_relpos     line=192  reads=1  assigns=1  outargs=0  
+  _ladder                var   first_set        line=193  reads=1  assigns=1  outargs=0  
+  _ladder                var   first_sh         line=194  reads=1  assigns=1  outargs=0  
+  _ladder                var   r                line=199  reads=4  assigns=0  outargs=0  
+  _ladder                var   last             line=206  reads=2  assigns=0  outargs=0  
+  _cycle_len             var   dense            line=213  reads=2  assigns=1  outargs=0  
+  _cycle_len             var   ok               line=217  reads=1  assigns=1  outargs=0  
+  _mk_body_node          var   b                line=227  reads=9  assigns=0  outargs=0  
+  _mk_body_node          var   cs               line=235  reads=2  assigns=0  outargs=0  
+  _mk_body_node          var   rs               line=236  reads=2  assigns=0  outargs=0  
+  _mk_body               var   b                line=244  reads=2  assigns=0  outargs=0  
+  _pile                  var   made             line=256  reads=1  assigns=0  outargs=0  
+  _pt                    var   q                line=262  reads=3  assigns=0  outargs=0  
+  _sh                    var   q                line=269  reads=3  assigns=0  outargs=0  
+  _rect                  var   r                line=275  reads=2  assigns=0  outargs=0  
+  _arm_canon             var   made             line=285  reads=1  assigns=0  outargs=0  
+  _arm_canon             var   dss              line=288  reads=6  assigns=0  outargs=0  
+  _arm_canon             var   ticks            line=289  reads=4  assigns=0  outargs=0  
+  _arm_canon             var   seq              line=290  reads=5  assigns=0  outargs=0  
+  _arm_canon             var   cur              line=291  reads=1  assigns=1  outargs=0  
+  _arm_canon             var   vec2             line=292  reads=2  assigns=1  outargs=0  
+  _arm_canon             var   relpos2          line=293  reads=1  assigns=1  outargs=0  
+  _arm_canon             var   sh2              line=294  reads=2  assigns=1  outargs=0  
+  _arm_canon             var   vec_end          line=295  reads=1  assigns=1  outargs=0  
+  _arm_canon             var   r                line=300  reads=4  assigns=0  outargs=0  
+  _arm_canon             var   p1               line=319  reads=2  assigns=0  outargs=0  
+  _arm_canon             var   shq              line=320  reads=1  assigns=0  outargs=0  
+  _arm_canon             var   sh               line=321  reads=2  assigns=0  outargs=0  
+  _arm_canon             var   p2               line=322  reads=1  assigns=0  outargs=0  
+  _arm_canon             var   p3               line=323  reads=1  assigns=0  outargs=0  
+  _arm_canon             var   ids              line=327  reads=1  assigns=0  outargs=0  
+  _arm_perm              var   perms            line=337  reads=1  assigns=0  outargs=0  
+  _arm_perm              var   p                line=341  reads=2  assigns=0  outargs=0  
+  _arm_perm              var   idx              line=342  reads=1  assigns=0  outargs=0  
+  _arm_perm              var   order            line=343  reads=1  assigns=0  outargs=1  
+  _arm_perm              var   made             line=346  reads=1  assigns=0  outargs=0  
+  _arm_perm              var   ticks            line=350  reads=3  assigns=0  outargs=0  
+  _arm_perm              var   seq              line=351  reads=3  assigns=0  outargs=0  
+  _arm_perm              var   cur              line=352  reads=1  assigns=1  outargs=0  
+  _arm_perm              var   dss              line=353  reads=1  assigns=0  outargs=0  
+  _arm_perm              var   vec2             line=354  reads=1  assigns=1  outargs=0  
+  _arm_perm              var   relpos2          line=355  reads=1  assigns=1  outargs=0  
+  _arm_perm              var   r                line=360  reads=3  assigns=0  outargs=0  
+  _arm_perm              var   ids              line=370  reads=1  assigns=0  outargs=0  
+  _arm_warm              var   k                line=380  reads=2  assigns=0  outargs=0  
+  _arm_warm              var   keep             line=381  reads=2  assigns=0  outargs=0  
+  _arm_warm              var   warm             line=382  reads=1  assigns=0  outargs=0  
+  _arm_warm              var   x                line=384  reads=1  assigns=0  outargs=0  
+  _arm_warm              var   y                line=385  reads=1  assigns=0  outargs=0  
+  _arm_warm              var   made             line=392  reads=1  assigns=0  outargs=0  
+  _arm_warm              var   ticks            line=396  reads=2  assigns=0  outargs=0  
+  _arm_warm              var   lad              line=397  reads=5  assigns=0  outargs=0  
+  _arm_warm              var   ids              line=403  reads=1  assigns=0  outargs=0  
+  _arm_free              var   made             line=413  reads=1  assigns=0  outargs=0  
+  _arm_free              var   dss              line=415  reads=0  assigns=0  outargs=0    <== dead-no-read
+        decl: var dss := _dss()
+        occ line=415  decl     var dss := _dss()
+  _arm_free              var   by_tag           line=416  reads=3  assigns=0  outargs=0  
+  _arm_free              var   which            line=419  reads=3  assigns=0  outargs=0  
+  _arm_free              var   order            line=420  reads=3  assigns=0  outargs=0  
+  _arm_free              var   freed            line=421  reads=1  assigns=0  outargs=0  
+  _arm_free              var   t                line=428  reads=2  assigns=0  outargs=0  
+  _arm_free              var   ticks            line=438  reads=3  assigns=0  outargs=0  
+  _arm_free              var   lad              line=439  reads=7  assigns=0  outargs=0  
+  _arm_readd             var   made             line=453  reads=1  assigns=0  outargs=0  
+  _arm_readd             var   dss              line=455  reads=0  assigns=0  outargs=0    <== dead-no-read
+        decl: var dss := _dss()
+        occ line=455  decl     var dss := _dss()
+  _arm_readd             var   by_tag           line=456  reads=2  assigns=0  outargs=0  
+  _arm_readd             var   which            line=459  reads=3  assigns=0  outargs=0  
+  _arm_readd             var   fresh            line=462  reads=1  assigns=0  outargs=0  
+  _arm_readd             var   ticks            line=465  reads=2  assigns=0  outargs=0  
+  _arm_readd             var   lad              line=466  reads=6  assigns=0  outargs=0  
+  _arm_cap40             var   p                line=480  reads=3  assigns=0  outargs=0  
+  _arm_cap40             var   idx              line=481  reads=2  assigns=0  outargs=0  
+  _arm_cap40             var   order            line=491  reads=1  assigns=0  outargs=0  
+  _arm_cap40             var   dss              line=498  reads=3  assigns=0  outargs=0  
+  _arm_cap40             var   q                line=499  reads=3  assigns=0  outargs=0  
+  _arm_cap40             var   ticks            line=500  reads=2  assigns=0  outargs=0  
+  _arm_cap40             var   sets             line=501  reads=3  assigns=0  outargs=0  
+  _arm_cap40             var   cur              line=502  reads=1  assigns=1  outargs=0  
+  _arm_cap40             var   r32_end          line=503  reads=3  assigns=1  outargs=0  
+  _arm_cap40             var   r                line=508  reads=2  assigns=0  outargs=0  
+  _arm_cap40             var   r64              line=512  reads=3  assigns=0  outargs=0  
+  _arm_layers            var   k                line=529  reads=2  assigns=0  outargs=0  
+  _arm_layers            var   made             line=530  reads=0  assigns=0  outargs=0    <== dead-no-read
+        decl: var made := _pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
+        occ line=530  decl     var made := _pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
+  _arm_layers            var   cl_id            line=531  reads=1  assigns=1  outargs=0  
+  _arm_layers            var   cl               line=533  reads=4  assigns=0  outargs=0  
+  _arm_layers            var   clb              line=536  reads=1  assigns=0  outargs=0  
+  _arm_layers            var   ticks            line=541  reads=2  assigns=0  outargs=0  
+  _arm_layers            var   lad              line=542  reads=5  assigns=0  outargs=0  
+  _arm_layers            var   dss              line=545  reads=3  assigns=0  outargs=0  
+  _arm_layers            var   pt0              line=546  reads=3  assigns=0  outargs=0  
+  _arm_layers            var   ptL              line=547  reads=1  assigns=0  outargs=0  
+  _arm_layers            var   shq              line=548  reads=1  assigns=0  outargs=0  
+  _arm_layers            var   sh               line=549  reads=4  assigns=0  outargs=0  
+  _arm_celloff           var   off              line=566  reads=2  assigns=0  outargs=1  
+  _arm_celloff           var   made             line=567  reads=0  assigns=0  outargs=0    <== dead-no-read
+        decl: var made := _pile(["a", "b", "c", "d", "e"], off, 0.0)
+        occ line=567  decl     var made := _pile(["a", "b", "c", "d", "e"], off, 0.0)
+  _arm_celloff           var   ticks            line=570  reads=3  assigns=0  outargs=0  
+  _arm_celloff           var   lad              line=571  reads=6  assigns=0  outargs=0  
+  _arm_rigid             var   made             line=584  reads=1  assigns=0  outargs=0  
+  _arm_rigid             var   dss              line=586  reads=2  assigns=0  outargs=0  
+  _arm_rigid             var   ticks            line=587  reads=2  assigns=0  outargs=0  
+  _arm_rigid             var   seq              line=588  reads=2  assigns=0  outargs=0  
+  _arm_rigid             var   cur              line=589  reads=1  assigns=1  outargs=0  
+  _arm_rigid             var   bp               line=595  reads=1  assigns=0  outargs=0  
+  _arm_rigid             var   n2               line=597  reads=1  assigns=0  outargs=0  
+  _arm_procwait          var   made             line=609  reads=0  assigns=0  outargs=0    <== dead-no-read
+        decl: var made := _pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
+        occ line=609  decl     var made := _pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
+  _arm_procwait          var   dss              line=611  reads=2  assigns=0  outargs=0  
+  _arm_procwait          var   pf0              line=612  reads=1  assigns=0  outargs=0  
+  _arm_procwait          var   pr0              line=613  reads=1  assigns=0  outargs=0  
+  _arm_procwait          var   pf_deltas        line=614  reads=1  assigns=0  outargs=0  
+  _arm_procwait          var   seq              line=615  reads=2  assigns=0  outargs=0  
+  _arm_periodx           var   k                line=632  reads=6  assigns=0  outargs=0  
+  _arm_periodx           var   sp               line=633  reads=2  assigns=0  outargs=0  
+  _arm_periodx           var   x                line=635  reads=1  assigns=0  outargs=0  
+  _arm_periodx           var   dss              line=639  reads=1  assigns=0  outargs=0  
+  _arm_periodx           var   nticks           line=640  reads=2  assigns=0  outargs=0  
+  _arm_periodx           var   seq              line=641  reads=6  assigns=0  outargs=0  
+  _arm_periodx           var   p_found          line=646  reads=1  assigns=1  outargs=0  
+  _arm_periodx           var   ok               line=648  reads=1  assigns=1  outargs=0  
+  _arm_period            var   k                line=669  reads=5  assigns=0  outargs=0  
+  _arm_period            var   x                line=671  reads=1  assigns=0  outargs=0  
+  _arm_period            var   dss              line=674  reads=1  assigns=0  outargs=0  
+  _arm_period            var   seq              line=675  reads=6  assigns=0  outargs=0  
+  _arm_period            var   cur              line=676  reads=1  assigns=1  outargs=0  
+  _arm_period            var   ticks            line=677  reads=1  assigns=0  outargs=0  
+  _arm_period            var   p_found          line=685  reads=1  assigns=1  outargs=0  
+  _arm_period            var   ok               line=687  reads=1  assigns=1  outargs=0  
+  _arm_scoutrev          var   tags             line=712  reads=3  assigns=0  outargs=0  
+  _arm_scoutrev          var   ticks            line=717  reads=2  assigns=0  outargs=0  
+  _arm_scoutrev          var   seq              line=718  reads=2  assigns=0  outargs=0  
+  _arm_scoutrev          var   cur              line=719  reads=1  assigns=1  outargs=0  
+  _arm_scoutrev          var   dss              line=720  reads=1  assigns=0  outargs=0  
+  _arm_scoutrev          var   vec2             line=721  reads=2  assigns=1  outargs=0  
+  _arm_scoutrev          var   relpos2          line=722  reads=2  assigns=1  outargs=0  
+  _arm_scoutrev          var   r                line=727  reads=3  assigns=0  outargs=0  
+  _arm_twopiles          var   a                line=745  reads=0  assigns=0  outargs=0    <== dead-no-read
+        decl: var a := _pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
+        occ line=745  decl     var a := _pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
+  _arm_twopiles          var   dss              line=746  reads=8  assigns=0  outargs=0  
+  _arm_twopiles          var   b                line=750  reads=0  assigns=0  outargs=0    <== dead-no-read
+        decl: var b := _pile(["a2", "b2", "c2", "d2", "e2"], 0.0, 1000.0)
+        occ line=750  decl     var b := _pile(["a2", "b2", "c2", "d2", "e2"], 0.0, 1000.0)
+  _arm_env               var   pf0              line=765  reads=2  assigns=0  outargs=0  
+  _arm_env               var   pr0              line=766  reads=2  assigns=0  outargs=0  
+
+== _pile call-result stores (var X := _pile(...)) ==
+  made       line=285  later_occurrences=[328, 346, 371, 392, 404, 413, 417, 453, 457, 530, 567, 584, 596, 609] 
+  made       line=346  later_occurrences=[371, 392, 404, 413, 417, 453, 457, 530, 567, 584, 596, 609] 
+  made       line=392  later_occurrences=[404, 413, 417, 453, 457, 530, 567, 584, 596, 609] 
+  made       line=413  later_occurrences=[417, 453, 457, 530, 567, 584, 596, 609] 
+  made       line=453  later_occurrences=[457, 530, 567, 584, 596, 609] 
+  made       line=530  later_occurrences=[567, 584, 596, 609] 
+  made       line=567  later_occurrences=[584, 596, 609] 
+  made       line=584  later_occurrences=[596, 609] 
+  made       line=609  later_occurrences=NONE <== dead-call-result
+  a          line=745  later_occurrences=NONE <== dead-call-result
+  b          line=750  later_occurrences=NONE <== dead-call-result
+
+== function call-site census ==
+  _initialize            line=47   call_sites=0
+  _run                   line=56   call_sites=0
+  _fail                  line=77   call_sites=2
+  _opt_str               line=81   call_sites=3
+  _opt_int               line=84   call_sites=7
+  _opt_float             line=87   call_sites=2
+  _it                    line=90   call_sites=132
+  _diag                  line=94   call_sites=20
+  _pass                  line=97   call_sites=15
+  _frames                line=101  call_sites=9
+  _dss                   line=105  call_sites=13
+  _envstr                line=108  call_sites=15
+  _tag                   line=116  call_sites=3
+  _vec                   line=125  call_sites=25
+  _pidx                  line=132  call_sites=6
+  _relpos                line=139  call_sites=13
+  _sorted                line=151  call_sites=1
+  _setstr                line=156  call_sites=5
+  _uniq_count            line=164  call_sites=13
+  _last_change           line=171  call_sites=4
+  _ladderstr             line=178  call_sites=11
+  _ladder                line=186  call_sites=5
+  _cycle_len             line=212  call_sites=1
+  _mk_body_node          line=226  call_sites=2
+  _mk_body               line=243  call_sites=7
+  _tagx                  line=249  call_sites=1
+  _pile                  line=255  call_sites=11
+  _pt                    line=261  call_sites=27
+  _sh                    line=268  call_sites=4
+  _rect                  line=274  call_sites=4
+  _q                     line=279  call_sites=22
+  _arm_canon             line=284  call_sites=1
+  _arm_perm              line=336  call_sites=1
+  _arm_warm              line=379  call_sites=1
+  _arm_free              line=412  call_sites=1
+  _arm_readd             line=452  call_sites=1
+  _arm_cap40             line=479  call_sites=1
+  _arm_layers            line=528  call_sites=1
+  _arm_celloff           line=565  call_sites=1
+  _arm_rigid             line=583  call_sites=1
+  _arm_procwait          line=608  call_sites=1
+  _arm_periodx           line=631  call_sites=1
+  _arm_period            line=668  call_sites=1
+  _arm_scoutrev          line=711  call_sites=1
+  _arm_twopiles          line=744  call_sites=1
+  _arm_env               line=764  call_sites=1
+
+== print-site census ==
+  line=78   print("FAIL r95b_order %s reason=%s" % [arm, reason])
+  line=92   print("R95B %s %s=%s" % [arm, key, value])
+  line=95   print("R95B %s %s=%s" % [arm, key, value])
+  line=98   print("PASS r95b_order %s %s" % [arm, " ".join(_items)])
+
+== match-arm census ==
+  arms (15): canon, perm, warm, free, readd, cap40, layers, celloff, rigid, procwait, period, periodx, twopiles, scoutrev, env
+
+== CLI knob census ==
+  line=48   for a in OS.get_cmdline_user_args():
+  line=82   return str(opt.get(k, d))
+  line=85   return int(opt.get(k, d))
+  line=88   return float(opt.get(k, d))
+
+### harness: run_battery.py (sha256 b93cbdaa3d5c6ae35d69970a545442d86898a959f0e2e2995f1adf58a3444ed7)
+== CASES rows ==
+  total rows: 359   r95 rows: 52 (dss_lattice_ 17, r95b_order_ 35)
+  r95 index range: 303..354 contiguous=True
+  predecessor: r94_particles_gpu_headless   successor: crash_spontaneous_sigabrt
+
+== r95 rows ==
+  dss_lattice_census                 script=dss_lattice.gd     flags=['--arm=census']                           exit=0 sig_len=1430
+  dss_lattice_ray_flags              script=dss_lattice.gd     flags=['--arm=ray_flags']                        exit=0 sig_len=560
+  dss_lattice_ray_geom               script=dss_lattice.gd     flags=['--arm=ray_geom']                         exit=0 sig_len=611
+  dss_lattice_ray_order              script=dss_lattice.gd     flags=['--arm=ray_order']                        exit=0 sig_len=332
+  dss_lattice_ray_order_rev          script=dss_lattice.gd     flags=['--arm=ray_order', '--rev']               exit=0 sig_len=331
+  dss_lattice_point_cap              script=dss_lattice.gd     flags=['--arm=point_cap']                        exit=0 sig_len=56
+  dss_lattice_point_cap_rev          script=dss_lattice.gd     flags=['--arm=point_cap', '--rev']               exit=0 sig_len=56
+  dss_lattice_point_edge             script=dss_lattice.gd     flags=['--arm=point_edge']                       exit=0 sig_len=378
+  dss_lattice_point_canvas           script=dss_lattice.gd     flags=['--arm=point_canvas']                     exit=0 sig_len=320
+  dss_lattice_shape                  script=dss_lattice.gd     flags=['--arm=shape_lattice']                    exit=0 sig_len=296
+  dss_lattice_shape_rev              script=dss_lattice.gd     flags=['--arm=shape_lattice', '--rev']           exit=0 sig_len=295
+  dss_lattice_order_core             script=dss_lattice.gd     flags=['--arm=order_core']                       exit=0 sig_len=49
+  dss_lattice_order_core_rev         script=dss_lattice.gd     flags=['--arm=order_core', '--rev']              exit=0 sig_len=49
+  dss_lattice_layer_forms            script=dss_lattice.gd     flags=['--arm=layer_forms']                      exit=0 sig_len=491
+  dss_lattice_cast_rest              script=dss_lattice.gd     flags=['--arm=cast_rest']                        exit=0 sig_len=1130
+  dss_lattice_excl_space             script=dss_lattice.gd     flags=['--arm=excl_space']                       exit=0 sig_len=334
+  dss_lattice_fresh                  script=dss_lattice.gd     flags=['--arm=fresh']                            exit=0 sig_len=458
+  r95b_order_canon                   script=r95b_order.gd      flags=['--arm=canon']                            exit=0 sig_len=935
+  r95b_order_periodx_k2              script=r95b_order.gd      flags=['--arm=periodx', '--k=2']                 exit=0 sig_len=150
+  r95b_order_periodx_k3              script=r95b_order.gd      flags=['--arm=periodx', '--k=3']                 exit=0 sig_len=165
+  r95b_order_periodx_k4              script=r95b_order.gd      flags=['--arm=periodx', '--k=4']                 exit=0 sig_len=184
+  r95b_order_periodx_k5              script=r95b_order.gd      flags=['--arm=periodx', '--k=5']                 exit=0 sig_len=199
+  r95b_order_periodx_k5s8            script=r95b_order.gd      flags=['--arm=periodx', '--k=5', '--spacing=8']  exit=0 sig_len=199
+  r95b_order_periodx_k6              script=r95b_order.gd      flags=['--arm=periodx', '--k=6']                 exit=0 sig_len=214
+  r95b_order_periodx_k7              script=r95b_order.gd      flags=['--arm=periodx', '--k=7']                 exit=0 sig_len=229
+  r95b_order_periodx_k8              script=r95b_order.gd      flags=['--arm=periodx', '--k=8']                 exit=0 sig_len=244
+  r95b_order_periodx_k10             script=r95b_order.gd      flags=['--arm=periodx', '--k=10']                exit=0 sig_len=275
+  r95b_order_period_k5               script=r95b_order.gd      flags=['--arm=period', '--k=5']                  exit=0 sig_len=163
+  r95b_order_perm0                   script=r95b_order.gd      flags=['--arm=perm', '--perm=0']                 exit=0 sig_len=357
+  r95b_order_perm1                   script=r95b_order.gd      flags=['--arm=perm', '--perm=1']                 exit=0 sig_len=357
+  r95b_order_perm2                   script=r95b_order.gd      flags=['--arm=perm', '--perm=2']                 exit=0 sig_len=357
+  r95b_order_perm3                   script=r95b_order.gd      flags=['--arm=perm', '--perm=3']                 exit=0 sig_len=357
+  r95b_order_perm4                   script=r95b_order.gd      flags=['--arm=perm', '--perm=4']                 exit=0 sig_len=357
+  r95b_order_perm5                   script=r95b_order.gd      flags=['--arm=perm', '--perm=5']                 exit=0 sig_len=357
+  r95b_order_perm6                   script=r95b_order.gd      flags=['--arm=perm', '--perm=6']                 exit=0 sig_len=357
+  r95b_order_perm7                   script=r95b_order.gd      flags=['--arm=perm', '--perm=7']                 exit=0 sig_len=357
+  r95b_order_scoutrev                script=r95b_order.gd      flags=['--arm=scoutrev']                         exit=0 sig_len=435
+  r95b_order_celloff_x0              script=r95b_order.gd      flags=['--arm=celloff', '--off=0']               exit=0 sig_len=409
+  r95b_order_celloff_x1000           script=r95b_order.gd      flags=['--arm=celloff', '--off=1000']            exit=0 sig_len=412
+  r95b_order_celloff_y1000           script=r95b_order.gd      flags=['--arm=celloff', '--off=0', '--offy=1000'] exit=0 sig_len=409
+  r95b_order_twopiles                script=r95b_order.gd      flags=['--arm=twopiles']                         exit=0 sig_len=486
+  r95b_order_warm_k32                script=r95b_order.gd      flags=['--arm=warm', '--k=32', '--keep=0']       exit=0 sig_len=317
+  r95b_order_warm_keep8              script=r95b_order.gd      flags=['--arm=warm', '--k=8', '--keep=1']        exit=0 sig_len=316
+  r95b_order_free_ab                 script=r95b_order.gd      flags=['--arm=free', '--order=ab']               exit=0 sig_len=282
+  r95b_order_free_ba                 script=r95b_order.gd      flags=['--arm=free', '--order=ba']               exit=0 sig_len=282
+  r95b_order_readd_a                 script=r95b_order.gd      flags=['--arm=readd', '--which=a']               exit=0 sig_len=339
+  r95b_order_cap40_p0                script=r95b_order.gd      flags=['--arm=cap40', '--perm=0']                exit=0 sig_len=2307
+  r95b_order_cap40_p1                script=r95b_order.gd      flags=['--arm=cap40', '--perm=1']                exit=0 sig_len=2370
+  r95b_order_cap40_p2                script=r95b_order.gd      flags=['--arm=cap40', '--perm=2']                exit=0 sig_len=2320
+  r95b_order_layers_k0               script=r95b_order.gd      flags=['--arm=layers', '--k=0']                  exit=0 sig_len=592
+  r95b_order_layers_k1               script=r95b_order.gd      flags=['--arm=layers', '--k=1']                  exit=0 sig_len=601
+  r95b_order_rigid                   script=r95b_order.gd      flags=['--arm=rigid']                            exit=0 sig_len=124
+
+== r95 expected_errors / required_stderr entries ==
+  expected_errors rows=0 entries=0
+  required_stderr rows=0 entries=0
+
+== expected_errors floor gates ==
+  line=3189  "phys2d_expected_errors_all_matched": all(             prefixes=['phys2d_']
+  line=3198  "r87_expected_errors_all_matched": all(                prefixes=['input_lattice_', 'r87_edge_', 'ei_bound']
+  line=3207  "r88_expected_errors_all_matched": all(                prefixes=['r88_']
+  line=3216  "r89_expected_errors_all_matched": all(                prefixes=['geo2d_lattice_', 'input89_edges_']
+  line=3224  "r90_expected_errors_all_matched": all(                prefixes=['r90_']
+  line=3232  "r91_expected_errors_all_matched": all(                prefixes=['nav_lattice_']
+  line=3240  "r92_expected_errors_all_matched": all(                prefixes=['r92_']
+  line=3250  "r93_expected_errors_all_matched": all(                prefixes=['r93_']
+  line=3261  "r94_expected_errors_all_matched": all(                prefixes=['r94_']
+  line=3272  "r95_expected_errors_all_matched": all(                prefixes=['dss_lattice_', 'r95b_order_']
+
+== gate-prefix non-redundancy (which gate can match an r95 case?) ==
+  gates matching a dss_lattice_/r95b_order_ case: dss_lattice_, r95b_order_
+
+== signature redundancy ==
+  exact-duplicate signatures across all 359 rows: 6
+    negative control: expected collected signal was absent <- ['negative_overlap', 'negative_signal']
+    PASS camera_limit moved=true current=true center_at_viewport_adjusted_ <- ['camera_top_limit', 'camera_left_limit', 'camera_bottom_limit']
+    UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipt <- ['button_activation_disconnected', 'button_activation_unfocused']
+    PASS r95b_order celloff off=0.0000 add_order=[a,b,c,d,e] ladder=[t2:4, <- ['r95b_order_celloff_x0', 'r95b_order_celloff_y1000']
+    SPONTANEOUS_CRASH_PROBE: expected signature <- ['crash_spontaneous_sigabrt', 'crash_self_sigkill']
+    DESCENDANT_PIPE_PROBE: expected signature <- ['descendant_pipe_detached_control', 'descendant_pipe_forged_signature_release']
+  shared-launch groups: 52  (sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+  identical-launch exact dups: 0  substring subsumption pairs: 0
+  r95 signatures containing a foreign row's signature: 0
+
+== row<->arm bijection ==
+  dss_lattice.gd: 17 rows, exits=[0]
+    duplicate arms: order_core, point_cap, ray_order, shape_lattice
+      dss_lattice_census                 arm=census       extra=[] exit=0
+      dss_lattice_ray_flags              arm=ray_flags    extra=[] exit=0
+      dss_lattice_ray_geom               arm=ray_geom     extra=[] exit=0
+      dss_lattice_ray_order              arm=ray_order    extra=[] exit=0
+      dss_lattice_ray_order_rev          arm=ray_order    extra=['--rev'] exit=0
+      dss_lattice_point_cap              arm=point_cap    extra=[] exit=0
+      dss_lattice_point_cap_rev          arm=point_cap    extra=['--rev'] exit=0
+      dss_lattice_point_edge             arm=point_edge   extra=[] exit=0
+      dss_lattice_point_canvas           arm=point_canvas extra=[] exit=0
+      dss_lattice_shape                  arm=shape_lattice extra=[] exit=0
+      dss_lattice_shape_rev              arm=shape_lattice extra=['--rev'] exit=0
+      dss_lattice_order_core             arm=order_core   extra=[] exit=0
+      dss_lattice_order_core_rev         arm=order_core   extra=['--rev'] exit=0
+      dss_lattice_layer_forms            arm=layer_forms  extra=[] exit=0
+      dss_lattice_cast_rest              arm=cast_rest    extra=[] exit=0
+      dss_lattice_excl_space             arm=excl_space   extra=[] exit=0
+      dss_lattice_fresh                  arm=fresh        extra=[] exit=0
+  r95b_order.gd: 35 rows, exits=[0]
+    duplicate arms: cap40, celloff, free, layers, periodx, perm, warm
+      r95b_order_canon                   arm=canon        extra=[] exit=0
+      r95b_order_periodx_k2              arm=periodx      extra=['--k=2'] exit=0
+      r95b_order_periodx_k3              arm=periodx      extra=['--k=3'] exit=0
+      r95b_order_periodx_k4              arm=periodx      extra=['--k=4'] exit=0
+      r95b_order_periodx_k5              arm=periodx      extra=['--k=5'] exit=0
+      r95b_order_periodx_k5s8            arm=periodx      extra=['--k=5', '--spacing=8'] exit=0
+      r95b_order_periodx_k6              arm=periodx      extra=['--k=6'] exit=0
+      r95b_order_periodx_k7              arm=periodx      extra=['--k=7'] exit=0
+      r95b_order_periodx_k8              arm=periodx      extra=['--k=8'] exit=0
+      r95b_order_periodx_k10             arm=periodx      extra=['--k=10'] exit=0
+      r95b_order_period_k5               arm=period       extra=['--k=5'] exit=0
+      r95b_order_perm0                   arm=perm         extra=['--perm=0'] exit=0
+      r95b_order_perm1                   arm=perm         extra=['--perm=1'] exit=0
+      r95b_order_perm2                   arm=perm         extra=['--perm=2'] exit=0
+      r95b_order_perm3                   arm=perm         extra=['--perm=3'] exit=0
+      r95b_order_perm4                   arm=perm         extra=['--perm=4'] exit=0
+      r95b_order_perm5                   arm=perm         extra=['--perm=5'] exit=0
+      r95b_order_perm6                   arm=perm         extra=['--perm=6'] exit=0
+      r95b_order_perm7                   arm=perm         extra=['--perm=7'] exit=0
+      r95b_order_scoutrev                arm=scoutrev     extra=[] exit=0
+      r95b_order_celloff_x0              arm=celloff      extra=['--off=0'] exit=0
+      r95b_order_celloff_x1000           arm=celloff      extra=['--off=1000'] exit=0
+      r95b_order_celloff_y1000           arm=celloff      extra=['--off=0', '--offy=1000'] exit=0
+      r95b_order_twopiles                arm=twopiles     extra=[] exit=0
+      r95b_order_warm_k32                arm=warm         extra=['--k=32', '--keep=0'] exit=0
+      r95b_order_warm_keep8              arm=warm         extra=['--k=8', '--keep=1'] exit=0
+      r95b_order_free_ab                 arm=free         extra=['--order=ab'] exit=0
+      r95b_order_free_ba                 arm=free         extra=['--order=ba'] exit=0
+      r95b_order_readd_a                 arm=readd        extra=['--which=a'] exit=0
+      r95b_order_cap40_p0                arm=cap40        extra=['--perm=0'] exit=0
+      r95b_order_cap40_p1                arm=cap40        extra=['--perm=1'] exit=0
+      r95b_order_cap40_p2                arm=cap40        extra=['--perm=2'] exit=0
+      r95b_order_layers_k0               arm=layers       extra=['--k=0'] exit=0
+      r95b_order_layers_k1               arm=layers       extra=['--k=1'] exit=0
+      r95b_order_rigid                   arm=rigid        extra=[] exit=0
+
+== cross-check: fixture arms vs row-referenced arms ==
+  dss_lattice.gd     fixture_arms=13 referenced=13  no_row=none  ghost_rows=none
+  r95b_order.gd      fixture_arms=15 referenced=13  no_row=env, procwait  ghost_rows=none
