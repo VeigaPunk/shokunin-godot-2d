@@ -1136,3 +1136,10 @@
 - LAWS: 7 SIGABRT + 1 NaN-hang vectors pinned to Clipper2 assert text;
   input89_edges_exact bimodal envelope (Q/L payloads); bridge/ring/
   contour/joins lattice byte-stable under load153.
+- ROUND 91 (2026-10-15): Navigation2D lattice. ADMIT at 77d2f7e (258
+  rows, +11). All wave-B green: critic PASS-WR, reviewer PASS,
+  simplifier PASS (-3 queued), verifier VERIFIED-WR (rep5 258/258
+  tuple-identical, nav 55/55), scribe CUSTODY HOLDS.
+- LAWS: iteration_id+reach sync gate (STALE+exit2, zero silent mis-PASS);
+  fin-before-reached query order; teardown crash armed rc=-6 bound to
+  double-free; scheduler fields tails-only; 4-frame settles 60tps-scoped.

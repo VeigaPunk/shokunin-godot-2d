@@ -230,3 +230,13 @@ Sol `r76-adjudicator.md`: ADMIT-corr — deferred_abort admitted, destroy-edge l
 | calibration | **improved** | Critic F1 crash-cause-blindness folded into `required_stderr`; SP1+F5 −51 dead/deceptive lines; gitignore custody hygiene; zero-rect atlas poisoning + NaN-hang classes pinned to named error classes. |
 
 | r89 | game-dev-2d | geometry/edges lattice | ADMIT-corr | 8cea888 + 53a0be7 + 1a23de5 |
+
+## Round 91 verdict — 2026-10-15
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | +11 `nav_lattice_*` rows → 258: sync gate, map change application, bake routes, agent avoidance, link/cost ops, region steering/layer, teardown crash+clean. Verifier rep5 258/258 fully green; nav 55/55 row-instances. |
+| depth | **improved** | All boundary falsifications folded pre-authoring (iteration_id gate not frame counts; query-order fix; crash bound to glibc fragment); STALE+exit-2 measured at ff30/ff120 with zero silent mis-PASS; crash forges reject 5/5. |
+| calibration | **improved** | Verifier F1 comment-formula defect recorded ((d−ra−rb)/τ not (ra+rb)/τ); settle pins declared 60-tps-conditioned (loud under ff); simplifier −3 queued; battery-run evidence gitignored per convention. |
+
+| r91 | game-dev-2d | Navigation2D lattice | ADMIT | 77d2f7e |
