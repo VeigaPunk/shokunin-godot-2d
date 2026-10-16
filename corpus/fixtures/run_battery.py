@@ -1225,6 +1225,60 @@ CASES = [
     # fresh D differ.
     ('r96b_seed_seedcheck', 'r96b_seed.gd', ['--arm=seedcheck'], 0,
      'PASS r96b_seed seedcheck A=aymj7,7o2mc,7hw4g,ipe4k B=1q5w0,cfyh7,d1oyj,rjvfj C=rl1nt,ewl6n,ch4ud,r4oop D=8od4a,nuoth,pm58n,vab63 A_eq_B=false A_eq_C=false A_eq_D=false'),
+    # --- r97 block: SceneTree groups / signal connect flags / call_deferred
+    # timing lattice ------------------------------------------------------
+    # Fixture stree_lattice.gd is an r97-author FOLD of the frozen r97-scout
+    # probe (corpus/live/r97-scout/probes/stree_lattice.gd sha256
+    # 4dd18e10e84f0da2…, 896 lines); fixture sha256 recorded in
+    # reports/round-97/r97-author.md. Folds (resource-namespace +
+    # comment-only, boundary-driven):
+    #   * scene_probe res:// paths renamed to r97_scene_*.tscn /
+    #     r97_scene_marker.gd — the mint-era scene_a/scene_b/scene_marker
+    #     fixtures are load-bearing for controls/scene_transition_probe.gd
+    #     (marker= property) and content-incompatible with this arm (tag=
+    #     on Node2D). Behaviour-neutral: no emitted byte changes.
+    #   * Comment-only law corrections carrying the r97-boundary verdicts:
+    #     L3 ordered snapshot + direct-call snapshot, L4 frame-epoch UNIQUE
+    #     key, L10 flush runs BEFORE process_frame (frozen phrasing refuted
+    #     in all 6 modes), L2 priority-inertness note.
+    # Auxiliary resources r97_scene_a.tscn / r97_scene_b.tscn /
+    # r97_scene_marker.gd land alongside (the .tscn ext_resource path is
+    # folded to the namespaced script name; marker .gd is byte-identical).
+    # Flags corrected vs the scout's author-rows.py.txt: every row carries
+    # its '--arm=<arm>' token (the probe dies _fail("unknown_arm") without
+    # it — the scout's ROWS list dropped the arm column; the signatures
+    # themselves are verbatim). All 12 signatures are full-line ^PASS rows,
+    # byte-stable on 48 scout + 36 loadtest + 216 boundary-mode receipts
+    # (r97-boundary §7: byte-identical in all 6 modes; the ROWS_PREFIX
+    # alternative was measured equivalent — the full-line form is shipped
+    # because the order vectors ARE the pinned laws). Rows inserted ahead
+    # of the crash/descendant tail — descendant_pipe_detached_control's
+    # sleep-8 gap stays adjacent to the meta probes. EXPECTED_ERRORS={} —
+    # every arm is ERROR:-clean with 0 B stderr on all 300 receipts.
+    ('stree_lattice_census', 'stree_lattice.gd', ['--arm=census'], 0,
+     'PASS stree_lattice census group_meths=[call_group,call_group_flags,get_first_node_in_group,get_node_count_in_group,get_nodes_in_group,has_group,notify_group,notify_group_flags,set_group,set_group_flags] group_sigs=[call_group(group:21,method:21),call_group_flags(flags:2,group:21,method:21),notify_group(group:21,notification:2),notify_group_flags(call_flags:2,group:21,notification:2),set_group(group:21,property:4,value:0),set_group_flags(call_flags:2,group:21,property:4,value:0)] group_flags=DEFAULT=0 REVERSE=1 DEFERRED=2 UNIQUE=4 connect_flags=DEFERRED=1 PERSIST=2 ONE_SHOT=4 REFERENCE_COUNTED=8 node_group_meths=[add_to_group,call_deferred_thread_group,get_groups,get_process_thread_group,get_process_thread_group_order,is_in_group,notify_deferred_thread_group,remove_from_group,set_deferred_thread_group,set_process_thread_group,set_process_thread_group_order] object_defer_meths=[call_deferred,set_deferred] scene_meths=[change_scene_to_file,change_scene_to_node,change_scene_to_packed,reload_current_scene,unload_current_scene] tree_cls=SceneTree root_cls=Window ticks=60 group_signal=process_frame=true physics_frame=true'),
+    ('stree_lattice_group_order', 'stree_lattice.gd', ['--arm=group_order'], 0,
+     'PASS stree_lattice group_order add_order=[a,b,c,d] t0=[a,b,c,d] first=a last=d count=4 removed=[a,c] readd_d_then_b=[a,b,c,d] tree_order=[DF,a,b,c,d] after_reparent=[a,b,d,c] after_move_child=[b,d,c,a] tree_order2=[DF,b,d,c,a] rep1=[b,d,c,a] rep2=[b,d,c,a] nested=[b,d,c,a,p,ch] nested_tree=[DF,b,d,c,a,p] dup_add=[b,d,c,a,p,ch] dup_count=6 double_remove=[d,c,a,p,ch] membership=has=true nothas=false in=true groups_a=[grp] unknown=[] first=null rev=false'),
+    ('stree_lattice_group_order_rev', 'stree_lattice.gd', ['--arm=group_order', '--rev'], 0,
+     'PASS stree_lattice group_order add_order=[d,c,b,a] t0=[a,b,c,d] first=a last=d count=4 removed=[a,c] readd_d_then_b=[a,b,c,d] tree_order=[DF,a,b,c,d] after_reparent=[a,b,d,c] after_move_child=[b,d,c,a] tree_order2=[DF,b,d,c,a] rep1=[b,d,c,a] rep2=[b,d,c,a] nested=[b,d,c,a,p,ch] nested_tree=[DF,b,d,c,a,p] dup_add=[b,d,c,a,p,ch] dup_count=6 double_remove=[d,c,a,p,ch] membership=has=true nothas=false in=true groups_a=[grp] unknown=[] first=null rev=true'),
+    ('stree_lattice_group_flags', 'stree_lattice.gd', ['--arm=group_flags'], 0,
+     'PASS stree_lattice group_flags direct=[direct1,direct1,direct1] reverse=[rev2,rev2,rev2] args=9/9 deferred_t0=[] deferred_t1=[def3,def3,def3] def_rev_t1=[dr4,dr4,dr4] cap_members_t0=[e] cap_t1=[cap1] cap_d_membership=false cap_e_membership=true drev_members=[f,h] drev_t1=[drev1,drev1] fifo=[q11,q11,q22,q22] uniq_direct_1=[u1] uniq_direct_2_same_args=[u2] uniq_direct_3_new_args=[u23] uniq_def_t0=[] uniq_def_t1=[ud1] uniq_def_next_frame=[ud2] plain_deferred_twice=[p1,p2] set_def_capture=(7.0000,7.0000)/(7.0000,7.0000) notify=[p.paused] paused_seen=1 paused_seen=2 missing_method=silent rev=false'),
+    ('stree_lattice_group_lifecycle', 'stree_lattice.gd', ['--arm=group_lifecycle'], 0,
+     'PASS stree_lattice group_lifecycle snapshot=[a,b] live=[a,b,c] root_in_group=[root] root_groups=[rootgrp] parent_child=[a,b,c,p,ch] child_stays=[a,b,c,ch] after_free=[b,c,ch] after_queue_free_t0=[b,c,ch] after_queue_free_t1=[c,ch] weird_group=[s] weird_groups=[a/b.c] multi_groups=[a/b.c]/true'),
+    ('stree_lattice_group_setters', 'stree_lattice.gd', ['--arm=group_setters'], 0,
+     'PASS stree_lattice group_setters set_group=(9.0000,9.0000)/(9.0000,9.0000) set_group_flags=(3.0000,3.0000)/(3.0000,3.0000) set_group_deferred_t0=(3.0000,3.0000)/(3.0000,3.0000) set_group_deferred_t1=(4.0000,4.0000)/(4.0000,4.0000) missing_prop=silent paused_seen=0 unknown_group=(4.0000,4.0000) rev=false'),
+    ('stree_lattice_signal_order', 'stree_lattice.gd', ['--arm=signal_order'], 0,
+     'PASS stree_lattice signal_order connect_order=[a1,b2] conn_n=2 flags_default=0 after_disconnect=[b3] reconnect_order=[b4,a5] byname_connected=false byname_order=[b6,a7] bind_order=[a1,b2] bind_conn_n=2 no_listeners=[] await_before=[] await_same_frame=[w1] await_next_frame=[w1] await_two=[w1,w2] rev=false'),
+    ('stree_lattice_signal_flags', 'stree_lattice.gd', ['--arm=signal_flags'], 0,
+     'PASS stree_lattice signal_flags mixed_t0=[a1] mixed_t1=[b2] defer_two_t0=[] defer_two_t1=[a1,a2] disc_t0_connected=false disc_t1_ran=[a1] oneshot=[a1] oneshot_connected=false osd_connected_t0=false osd_second_emit=[] osd_flush=[a1] osd_connected_t1=false rc_conn_n=1 rc_emit=[a1] rc_after_one_disconnect=true rc_emit2=[a2] persist=[a1] persist_flags=2 cross_t0=true cross_t1=[a1,b2] cross_rev_t1=[b3,a4] rev=false'),
+    ('stree_lattice_defer_ladder', 'stree_lattice.gd', ['--arm=defer_ladder'], 0,
+     'PASS stree_lattice defer_ladder ladder=[t0,t0_end,co_pf,after_pf1,after_pf2] df_log=[cd] no_wait=[no_wait] phys_defer_same_frame=true phys_co_in_log=true nested=[outer,inner] nested_t1=[outer,inner] rev=false'),
+    ('stree_lattice_defer_slots', 'stree_lattice.gd', ['--arm=defer_slots'], 0,
+     'PASS stree_lattice defer_slots t0=[] after_pf=[node1,tree] set_deferred_t0=false set_deferred_t1=true detached=[detached1] queue_free=[s41] queue_free_valid=false free_dropped=[] slots_t0=[] slots_t1=[A,B] slot_meta=z rev=false'),
+    ('stree_lattice_defer_order', 'stree_lattice.gd', ['--arm=defer_order'], 0,
+     'PASS stree_lattice defer_order frame1=[pf_sig,resume] | df=[] frame2=[queued,pf_sig,resume2] | df=[cd] emit_t0=[] | ord=[] emit_t1=[pf_sig] | ord=[a1] frame4=[sig_frame,pf_sig] | df=[from_sig] early_t1=[early] rev=false'),
+    ('stree_lattice_scene_probe', 'stree_lattice.gd', ['--arm=scene_probe'], 0,
+     'PASS stree_lattice scene_probe current_scene_t0=null file_t0=null file_children_t0=1 file_t1=null file_t5=SceneA tag=A file_children_t5=2 packed_loaded=true packed_t0=null packed_t1=SceneB tag=B packed_t3=SceneB tag=B packed_children_t3=2 node_t0=null node_t2=AdHoc node_children_t2=2 reload_exists=true rev=false'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
@@ -3516,6 +3570,17 @@ def main():
             not e["dead_in_run"]
             for r in census_rows
             if r["case"].startswith(("r96_scene_io_", "r96b_"))
+            for e in r["entries"]),
+        # r97 author: the r97 block carries no expected_errors entries
+        # today (every arm is ERROR:-clean with 0 B stderr across the 48
+        # scout + 36 loadtest + 216 boundary-mode receipts and this seat's
+        # 12-arm smoke pass on the fixture bytes) — the gate is carried
+        # anyway so a future r97 allowlist entry cannot die silently;
+        # same named-by-round / covers-round-prefixes shape as r87-r96.
+        "r97_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith("stree_lattice_")
             for e in r["entries"]),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
