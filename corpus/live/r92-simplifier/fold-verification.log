@@ -1,0 +1,169 @@
+classify_process segment sha256: 749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3
+r92 rows: 14  allowlist rows: 9  required_stderr rows: 1
+
+== A. envelope mode partition (nav, 3 reps per mode) ==
+  default  reps=3 payload_matches=[[True, False], [True, False], [True, False]] row_pass=[True, True, True]
+  ff120    reps=3 payload_matches=[[True, False], [True, False], [True, False]] row_pass=[True, True, True]
+  ff150    reps=3 payload_matches=[[False, True], [False, True], [False, True]] row_pass=[True, True, True]
+  ff600    reps=3 payload_matches=[[False, True], [False, True], [False, True]] row_pass=[True, True, True]
+
+== B. nav field variance across modes (envelope minimality) ==
+  modes=default,ff120,ff150,ff600 fields=19 varying=1
+    VARY regions_f1               ['0', '1']
+
+== C. nullts crash row: required_stderr liveness (3 reps) ==
+  [
+    {
+      "rc": -6,
+      "Q1_row_pass": true,
+      "Q2_foreign_stderr_rejects": true,
+      "Q3_drop_required_stderr_still_passes": true,
+      "stdout_anchor": true,
+      "fragments_in_stderr": [
+        true,
+        true
+      ]
+    },
+    {
+      "rc": -6,
+      "Q1_row_pass": true,
+      "Q2_foreign_stderr_rejects": true,
+      "Q3_drop_required_stderr_still_passes": true,
+      "stdout_anchor": true,
+      "fragments_in_stderr": [
+        true,
+        true
+      ]
+    },
+    {
+      "rc": -6,
+      "Q1_row_pass": true,
+      "Q2_foreign_stderr_rejects": true,
+      "Q3_drop_required_stderr_still_passes": true,
+      "stdout_anchor": true,
+      "fragments_in_stderr": [
+        true,
+        true
+      ]
+    }
+  ]
+
+== D. allowlist liveness (bare vs allowlisted, fresh reps) ==
+  r92_tilemap_atlas            entries=2 bare_rejects=True allowlisted_passes=True
+  r92_tilemap_cells            entries=2 bare_rejects=True allowlisted_passes=True
+  r92_tilemap_custom           entries=3 bare_rejects=True allowlisted_passes=True
+  r92_tilemap_encoding         entries=2 bare_rejects=True allowlisted_passes=True
+  r92_tilemap_fixinvalid       entries=3 bare_rejects=True allowlisted_passes=True
+  r92_tilemap_pattern          entries=1 bare_rejects=True allowlisted_passes=True
+  r92_tilemap_physics          entries=1 bare_rejects=True allowlisted_passes=True
+  r92_tilemap_srcids           entries=3 bare_rejects=True allowlisted_passes=True
+  r92_tilemap_terrain          entries=1 bare_rejects=True allowlisted_passes=True
+
+== E. tombstone encoding decode (from the landed encoding row) ==
+  {
+    "header": [
+      0,
+      0
+    ],
+    "set_record": [
+      [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "erase_record": [
+      [
+        1,
+        0,
+        1,
+        0,
+        255,
+        255,
+        255,
+        255,
+        255,
+        255,
+        255,
+        255
+      ]
+    ],
+    "clear_record": [
+      [
+        1,
+        0,
+        1,
+        0,
+        255,
+        255,
+        255,
+        255,
+        255,
+        255,
+        255,
+        255
+      ]
+    ],
+    "clear_then_set_records": [
+      [
+        1,
+        0,
+        1,
+        0,
+        255,
+        255,
+        255,
+        255,
+        255,
+        255,
+        255,
+        255
+      ],
+      [
+        5,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "stride": "12",
+    "erase_tail_all_ff": true,
+    "erase_xy_preserved": true,
+    "clear_equals_erase": true,
+    "high_water_mark": true
+  }
+
+== F. PASS-arm row classification on fresh default reps ==
+  r92_tilemap_atlas            rc=0 row_pass=True
+  r92_tilemap_cells            rc=0 row_pass=True
+  r92_tilemap_census           rc=0 row_pass=True
+  r92_tilemap_custom           rc=0 row_pass=True
+  r92_tilemap_encoding         rc=0 row_pass=True
+  r92_tilemap_fixinvalid       rc=0 row_pass=True
+  r92_tilemap_nav              rc=0 row_pass=True
+  r92_tilemap_pattern          rc=0 row_pass=True
+  r92_tilemap_physics          rc=0 row_pass=True
+  r92_tilemap_quadrant         rc=0 row_pass=True
+  r92_tilemap_srcids           rc=0 row_pass=True
+  r92_tilemap_terrain          rc=0 row_pass=True
+  r92_tilemap_timing           rc=0 row_pass=True
+
+wrote /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-simplifier/fold-verification.json
+FOLDS_LIVE=True

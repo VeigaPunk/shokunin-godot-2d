@@ -1,0 +1,23 @@
+== ERROR: line coverage per r92 arm (fresh default receipts) ==
+  r92_tilemap_atlas            arm=atlas       ERROR_lines=2  entries=2 uncovered=0
+  r92_tilemap_cells            arm=cells       ERROR_lines=5  entries=2 uncovered=0
+  r92_tilemap_census           arm=census      ERROR_lines=0  entries=0 uncovered=0
+      entry-less row stderr ERROR: lines: 0
+  r92_tilemap_custom           arm=custom      ERROR_lines=4  entries=3 uncovered=0
+  r92_tilemap_encoding         arm=encoding    ERROR_lines=2  entries=2 uncovered=0
+  r92_tilemap_fixinvalid       arm=fixinvalid  ERROR_lines=4  entries=3 uncovered=0
+  r92_tilemap_nav              arm=nav         ERROR_lines=0  entries=0 uncovered=0
+      entry-less row stderr ERROR: lines: 0
+      stderr WARNING: WARNING: Function make_polygons_from_outlines() is deprecated.
+  r92_tilemap_nullts_crash     arm=nullts      ERROR_lines=0  entries=0 uncovered=0
+      entry-less row stderr ERROR: lines: 0
+  r92_tilemap_pattern          arm=pattern     ERROR_lines=2  entries=1 uncovered=0
+  r92_tilemap_physics          arm=physics     ERROR_lines=2  entries=1 uncovered=0
+  r92_tilemap_quadrant         arm=quadrant    ERROR_lines=0  entries=0 uncovered=0
+      entry-less row stderr ERROR: lines: 0
+  r92_tilemap_srcids           arm=srcids      ERROR_lines=3  entries=3 uncovered=0
+  r92_tilemap_terrain          arm=terrain     ERROR_lines=1  entries=1 uncovered=0
+  r92_tilemap_timing           arm=timing      ERROR_lines=0  entries=0 uncovered=0
+      entry-less row stderr ERROR: lines: 0
+
+TOTAL_UNCOVERED_ERROR_LINES=0

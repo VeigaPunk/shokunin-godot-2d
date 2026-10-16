@@ -1,0 +1,339 @@
+{
+  "classify_segment_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+  "modes": {
+    "nav_envelope": {
+      "default": [
+        {
+          "rc": 0,
+          "payload_matches": [
+            true,
+            false
+          ],
+          "row_pass": true,
+          "line": [
+            "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=1 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0"
+          ]
+        },
+        {
+          "rc": 0,
+          "payload_matches": [
+            true,
+            false
+          ],
+          "row_pass": true,
+          "line": [
+            "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=1 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0"
+          ]
+        },
+        {
+          "rc": 0,
+          "payload_matches": [
+            true,
+            false
+          ],
+          "row_pass": true,
+          "line": [
+            "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=1 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0"
+          ]
+        }
+      ],
+      "ff120": [
+        {
+          "rc": 0,
+          "payload_matches": [
+            true,
+            false
+          ],
+          "row_pass": true,
+          "line": [
+            "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=1 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0"
+          ]
+        },
+        {
+          "rc": 0,
+          "payload_matches": [
+            true,
+            false
+          ],
+          "row_pass": true,
+          "line": [
+            "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=1 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0"
+          ]
+        },
+        {
+          "rc": 0,
+          "payload_matches": [
+            true,
+            false
+          ],
+          "row_pass": true,
+          "line": [
+            "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=1 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0"
+          ]
+        }
+      ],
+      "ff150": [
+        {
+          "rc": 0,
+          "payload_matches": [
+            false,
+            true
+          ],
+          "row_pass": true,
+          "line": [
+            "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=0 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0"
+          ]
+        },
+        {
+          "rc": 0,
+          "payload_matches": [
+            false,
+            true
+          ],
+          "row_pass": true,
+          "line": [
+            "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=0 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0"
+          ]
+        },
+        {
+          "rc": 0,
+          "payload_matches": [
+            false,
+            true
+          ],
+          "row_pass": true,
+          "line": [
+            "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=0 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0"
+          ]
+        }
+      ],
+      "ff600": [
+        {
+          "rc": 0,
+          "payload_matches": [
+            false,
+            true
+          ],
+          "row_pass": true,
+          "line": [
+            "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=0 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0"
+          ]
+        },
+        {
+          "rc": 0,
+          "payload_matches": [
+            false,
+            true
+          ],
+          "row_pass": true,
+          "line": [
+            "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=0 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0"
+          ]
+        },
+        {
+          "rc": 0,
+          "payload_matches": [
+            false,
+            true
+          ],
+          "row_pass": true,
+          "line": [
+            "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=0 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0"
+          ]
+        }
+      ]
+    },
+    "nav_field_variance": {
+      "regions_f1": [
+        "0",
+        "1"
+      ]
+    },
+    "nullts_required_stderr": [
+      {
+        "rc": -6,
+        "Q1_row_pass": true,
+        "Q2_foreign_stderr_rejects": true,
+        "Q3_drop_required_stderr_still_passes": true,
+        "stdout_anchor": true,
+        "fragments_in_stderr": [
+          true,
+          true
+        ]
+      },
+      {
+        "rc": -6,
+        "Q1_row_pass": true,
+        "Q2_foreign_stderr_rejects": true,
+        "Q3_drop_required_stderr_still_passes": true,
+        "stdout_anchor": true,
+        "fragments_in_stderr": [
+          true,
+          true
+        ]
+      },
+      {
+        "rc": -6,
+        "Q1_row_pass": true,
+        "Q2_foreign_stderr_rejects": true,
+        "Q3_drop_required_stderr_still_passes": true,
+        "stdout_anchor": true,
+        "fragments_in_stderr": [
+          true,
+          true
+        ]
+      }
+    ],
+    "allowlist_liveness": {
+      "r92_tilemap_atlas": {
+        "bare_rejects": true,
+        "allowlisted_passes": true,
+        "n_entries": 2
+      },
+      "r92_tilemap_cells": {
+        "bare_rejects": true,
+        "allowlisted_passes": true,
+        "n_entries": 2
+      },
+      "r92_tilemap_custom": {
+        "bare_rejects": true,
+        "allowlisted_passes": true,
+        "n_entries": 3
+      },
+      "r92_tilemap_encoding": {
+        "bare_rejects": true,
+        "allowlisted_passes": true,
+        "n_entries": 2
+      },
+      "r92_tilemap_fixinvalid": {
+        "bare_rejects": true,
+        "allowlisted_passes": true,
+        "n_entries": 3
+      },
+      "r92_tilemap_pattern": {
+        "bare_rejects": true,
+        "allowlisted_passes": true,
+        "n_entries": 1
+      },
+      "r92_tilemap_physics": {
+        "bare_rejects": true,
+        "allowlisted_passes": true,
+        "n_entries": 1
+      },
+      "r92_tilemap_srcids": {
+        "bare_rejects": true,
+        "allowlisted_passes": true,
+        "n_entries": 3
+      },
+      "r92_tilemap_terrain": {
+        "bare_rejects": true,
+        "allowlisted_passes": true,
+        "n_entries": 1
+      }
+    },
+    "tombstone_decode": {
+      "header": [
+        0,
+        0
+      ],
+      "set_record": [
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "erase_record": [
+        [
+          1,
+          0,
+          1,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      ],
+      "clear_record": [
+        [
+          1,
+          0,
+          1,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ]
+      ],
+      "clear_then_set_records": [
+        [
+          1,
+          0,
+          1,
+          0,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255,
+          255
+        ],
+        [
+          5,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "stride": "12",
+      "erase_tail_all_ff": true,
+      "erase_xy_preserved": true,
+      "clear_equals_erase": true,
+      "high_water_mark": true
+    },
+    "fresh_rows": {
+      "r92_tilemap_atlas": true,
+      "r92_tilemap_cells": true,
+      "r92_tilemap_census": true,
+      "r92_tilemap_custom": true,
+      "r92_tilemap_encoding": true,
+      "r92_tilemap_fixinvalid": true,
+      "r92_tilemap_nav": true,
+      "r92_tilemap_pattern": true,
+      "r92_tilemap_physics": true,
+      "r92_tilemap_quadrant": true,
+      "r92_tilemap_srcids": true,
+      "r92_tilemap_terrain": true,
+      "r92_tilemap_timing": true
+    }
+  }
+}

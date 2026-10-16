@@ -1,0 +1,10 @@
+ERROR: Cannot create tile. The tile is outside the texture or tiles are already present in the space the tile would cover.
+   at: create_tile (scene/resources/2d/tile_set.cpp:4998)
+   GDScript backtrace (most recent call first):
+       [0] _atlas (res://tilemap_lattice.gd:213)
+       [1] _run (res://tilemap_lattice.gd:121)
+ERROR: The TileSetAtlasSource atlas has no tile at (5, 5).
+   at: get_tile_data (scene/resources/2d/tile_set.cpp:5473)
+   GDScript backtrace (most recent call first):
+       [0] _atlas (res://tilemap_lattice.gd:229)
+       [1] _run (res://tilemap_lattice.gd:121)

@@ -1,0 +1,15 @@
+ERROR: Condition "p_tile_set_source.is_null()" is true. Returning: TileSet::INVALID_SOURCE
+   at: add_source (scene/resources/2d/tile_set.cpp:468)
+   GDScript backtrace (most recent call first):
+       [0] _srcids (res://tilemap_lattice.gd:647)
+       [1] _run (res://tilemap_lattice.gd:135)
+ERROR: Cannot create TileSet atlas source. Another atlas source exists with id 0.
+   at: add_source (scene/resources/2d/tile_set.cpp:469)
+   GDScript backtrace (most recent call first):
+       [0] _srcids (res://tilemap_lattice.gd:651)
+       [1] _run (res://tilemap_lattice.gd:135)
+ERROR: Provided source ID -3 is not valid. Negative source IDs are not allowed.
+   at: add_source (scene/resources/2d/tile_set.cpp:470)
+   GDScript backtrace (most recent call first):
+       [0] _srcids (res://tilemap_lattice.gd:655)
+       [1] _run (res://tilemap_lattice.gd:135)

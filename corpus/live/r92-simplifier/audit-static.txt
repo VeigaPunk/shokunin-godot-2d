@@ -1,0 +1,260 @@
+### fixture: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-simplifier/committed-fixtures/tilemap_lattice.gd
+== scope-aware store scan ==
+declarations: 138
+write-only stores (zero reads anywhere): 0
+declared names with a read only OUTSIDE their own scope:
+  XS  scope=<file>                 arm                  line=12   global_reads=7
+  XS  scope=<file>                 _items               line=13   global_reads=2
+
+== per-function store table ==
+  <file>                 arm                      line=12   reads=0
+  <file>                 _items                   line=13   reads=0
+  _coords                parts                    line=40   reads=2
+  _ints                  parts                    line=49   reads=2
+  _mk_texture            img                      line=57   reads=2
+  _mk_tileset            ts                       line=63   reads=3
+  _mk_tileset            src                      line=65   reads=8
+  _mk_tileset            sid                      line=72   reads=1
+  _mk_layer              layer                    line=76   reads=2
+  _src_ids               parts                    line=81   reads=3
+  _add_phys_tile         td                       line=89   reads=2
+  _mk_probe              probe                    line=95   reads=3
+  _mk_probe              cs                       line=96   reads=2
+  _mk_probe              shape                    line=97   reads=3
+  _mc                    hit                      line=105  reads=1
+  _run                   watchdog                 line=113  reads=1
+  _census                layer                    line=152  reads=13
+  _census                ts                       line=162  reads=11
+  _census                src                      line=168  reads=5
+  _atlas                 ts                       line=195  reads=7
+  _atlas                 tex                      line=196  reads=2
+  _atlas                 src                      line=197  reads=27
+  _atlas                 sid                      line=199  reads=2
+  _atlas                 ids                      line=209  reads=3
+  _atlas                 alt                      line=215  reads=2
+  _atlas                 alts                     line=218  reads=3
+  _atlas                 td                       line=225  reads=4
+  _atlas                 td_alt                   line=226  reads=2
+  _atlas                 td_none                  line=229  reads=1
+  _atlas                 src3                     line=234  reads=2
+  _atlas                 sid3                     line=236  reads=1
+  _cells                 tex                      line=248  reads=1
+  _cells                 d                        line=249  reads=2
+  _cells                 ts                       line=250  reads=1
+  _cells                 sid                      line=251  reads=7
+  _cells                 layer                    line=252  reads=50
+  _cells                 valid                    line=299  reads=2
+  _cells                 vkeys                    line=309  reads=2
+  _cells                 vparts                   line=311  reads=2
+  _cells                 invalid                  line=315  reads=2
+  _cells                 ikeys                    line=321  reads=2
+  _cells                 iparts                   line=323  reads=2
+  _custom                tex                      line=340  reads=1
+  _custom                d                        line=341  reads=3
+  _custom                ts                       line=342  reads=17
+  _custom                src                      line=343  reads=1
+  _custom                sid                      line=344  reads=1
+  _custom                layer                    line=345  reads=3
+  _custom                td                       line=360  reads=18
+  _custom                ctd                      line=376  reads=2
+  _custom                dup                      line=389  reads=3
+  _custom                dup_src                  line=390  reads=1
+  _custom                dup_td                   line=391  reads=2
+  _terrain               tex                      line=400  reads=1
+  _terrain               d                        line=401  reads=2
+  _terrain               ts                       line=402  reads=18
+  _terrain               src                      line=403  reads=2
+  _terrain               layer                    line=404  reads=23
+  _terrain               td                       line=422  reads=11
+  _terrain               td2                      line=435  reads=2
+  _pattern               tex                      line=472  reads=1
+  _pattern               d                        line=473  reads=2
+  _pattern               ts                       line=474  reads=2
+  _pattern               sid                      line=475  reads=5
+  _pattern               layer                    line=476  reads=16
+  _pattern               pat                      line=481  reads=11
+  _pattern               empty_pat                line=490  reads=3
+  _pattern               pat2                     line=503  reads=3
+  _pattern               other                    line=508  reads=6
+  _pattern               mapped                   line=510  reads=1
+  _pattern               mapped2                  line=512  reads=1
+  _pattern               pat3                     line=515  reads=1
+  _encoding              tex                      line=524  reads=1
+  _encoding              d                        line=525  reads=2
+  _encoding              ts                       line=526  reads=6
+  _encoding              sid                      line=527  reads=7
+  _encoding              layer                    line=528  reads=12
+  _encoding              empty_bytes              line=530  reads=1
+  _encoding              one                      line=535  reads=3
+  _encoding              two                      line=540  reads=6
+  _encoding              arr_form                 line=544  reads=1
+  _encoding              alt                      line=549  reads=2
+  _encoding              alt_bytes                line=552  reads=1
+  _encoding              layer5                   line=556  reads=16
+  _encoding              layer2                   line=574  reads=5
+  _encoding              layer3                   line=581  reads=4
+  _encoding              layer4                   line=587  reads=4
+  _encoding              truncated                line=589  reads=2
+  _fixinvalid            tex                      line=599  reads=1
+  _fixinvalid            d                        line=600  reads=2
+  _fixinvalid            ts                       line=601  reads=2
+  _fixinvalid            sid                      line=602  reads=3
+  _fixinvalid            layer                    line=603  reads=12
+  _srcids                tex                      line=623  reads=4
+  _srcids                ts                       line=624  reads=20
+  _srcids                src                      line=625  reads=3
+  _srcids                sid                      line=628  reads=2
+  _srcids                src_b                    line=631  reads=2
+  _srcids                sid_b                    line=633  reads=2
+  _srcids                src_c                    line=649  reads=2
+  _srcids                src_d                    line=653  reads=2
+  _physics               tex                      line=662  reads=1
+  _physics               d                        line=663  reads=3
+  _physics               ts                       line=664  reads=7
+  _physics               src                      line=665  reads=1
+  _physics               sid                      line=666  reads=3
+  _physics               td                       line=673  reads=11
+  _physics               layer                    line=687  reads=14
+  _physics               probe                    line=691  reads=15
+  _physics               hit                      line=720  reads=6
+  _physics               body_rid                 line=728  reads=4
+  _timing                tex                      line=746  reads=1
+  _timing                d                        line=747  reads=3
+  _timing                ts                       line=748  reads=2
+  _timing                src                      line=749  reads=1
+  _timing                sid                      line=750  reads=4
+  _timing                layer                    line=752  reads=15
+  _timing                probe                    line=754  reads=16
+  _quadrant              tex                      line=807  reads=1
+  _quadrant              d                        line=808  reads=3
+  _quadrant              ts                       line=809  reads=2
+  _quadrant              src                      line=810  reads=1
+  _quadrant              sid                      line=811  reads=2
+  _quadrant              layer                    line=813  reads=9
+  _quadrant              probe                    line=818  reads=12
+  _quadrant              parts                    line=837  reads=2
+  _quadrant              parts16                  line=850  reads=2
+  _nav                   tex                      line=864  reads=1
+  _nav                   d                        line=865  reads=3
+  _nav                   ts                       line=866  reads=7
+  _nav                   src                      line=867  reads=1
+  _nav                   sid                      line=868  reads=2
+  _nav                   td                       line=875  reads=3
+  _nav                   poly                     line=877  reads=3
+  _nav                   layer                    line=882  reads=9
+  _nav                   map                      line=886  reads=11
+  _nullts                layer                    line=920  reads=6
+  _nullts                td                       line=927  reads=1
+
+== function census ==
+  _initialize              line=15   call_sites=0
+  _it                      line=21   call_sites=276
+  _pass                    line=25   call_sites=14
+  _fail                    line=29   call_sites=2
+  _v2                      line=33   call_sites=5
+  _v2i                     line=36   call_sites=33
+  _coords                  line=39   call_sites=25
+  _b                       line=45   call_sites=50
+  _ints                    line=48   call_sites=10
+  _mk_texture              line=56   call_sites=12
+  _mk_tileset              line=62   call_sites=10
+  _mk_layer                line=75   call_sites=15
+  _src_ids                 line=80   call_sites=5
+  _add_phys_tile           line=87   call_sites=2
+  _mk_probe                line=94   call_sites=3
+  _mc                      line=104  call_sites=31
+  _run                     line=108  call_sites=0
+  _census                  line=151  call_sites=1
+  _atlas                   line=194  call_sites=1
+  _cells                   line=247  call_sites=1
+  _custom                  line=339  call_sites=1
+  _terrain                 line=399  call_sites=1
+  _pattern                 line=471  call_sites=1
+  _encoding                line=523  call_sites=1
+  _fixinvalid              line=598  call_sites=1
+  _srcids                  line=622  call_sites=1
+  _physics                 line=661  call_sites=1
+  _timing                  line=745  call_sites=1
+  _quadrant                line=806  call_sites=1
+  _nav                     line=863  call_sites=1
+  _nullts                  line=919  call_sites=1
+
+== print-site census ==
+  line=23   print("R92 %s %s=%s" % [arm, key, value])
+  line=26   print("PASS tilemap_lattice %s %s" % [arm, " ".join(_items)])
+  line=30   print("FAIL tilemap_lattice %s reason=%s" % [arm, reason])
+  line=109  print("arm=%s" % arm)
+  line=115  print("FAIL tilemap_lattice %s reason=watchdog" % arm)
+
+== arm census ==
+  match arms: census, atlas, cells, custom, terrain, pattern, encoding, fixinvalid, srcids, physics, timing, quadrant, nav, nullts, RIGHT_SIDE, BOTTOM_RIGHT_CORNER, BOTTOM_SIDE, BOTTOM_LEFT_CORNER, LEFT_SIDE, TOP_LEFT_CORNER, TOP_SIDE, TOP_RIGHT_CORNER, RIGHT_CORNER, BOTTOM_RIGHT_SIDE, BOTTOM_CORNER, TOP_RIGHT_SIDE
+
+== CLI knob census ==
+  line=16   for a in OS.get_cmdline_user_args():
+
+### harness: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-simplifier/committed-fixtures/run_battery.py
+== r92 CASES rows ==
+total rows: 265  r92 rows: 14
+  r92_tilemap_census           script=tilemap_lattice.gd   flags=['--arm=census'] exit=0
+  r92_tilemap_atlas            script=tilemap_lattice.gd   flags=['--arm=atlas'] exit=0
+  r92_tilemap_cells            script=tilemap_lattice.gd   flags=['--arm=cells'] exit=0
+  r92_tilemap_custom           script=tilemap_lattice.gd   flags=['--arm=custom'] exit=0
+  r92_tilemap_terrain          script=tilemap_lattice.gd   flags=['--arm=terrain'] exit=0
+  r92_tilemap_pattern          script=tilemap_lattice.gd   flags=['--arm=pattern'] exit=0
+  r92_tilemap_encoding         script=tilemap_lattice.gd   flags=['--arm=encoding'] exit=0
+  r92_tilemap_fixinvalid       script=tilemap_lattice.gd   flags=['--arm=fixinvalid'] exit=0
+  r92_tilemap_srcids           script=tilemap_lattice.gd   flags=['--arm=srcids'] exit=0
+  r92_tilemap_physics          script=tilemap_lattice.gd   flags=['--arm=physics'] exit=0
+  r92_tilemap_timing           script=tilemap_lattice.gd   flags=['--arm=timing'] exit=0
+  r92_tilemap_quadrant         script=tilemap_lattice.gd   flags=['--arm=quadrant'] exit=0
+  r92_tilemap_nav              script=tilemap_lattice.gd   flags=['--arm=nav'] exit=0
+  r92_tilemap_nullts_crash     script=tilemap_lattice.gd   flags=['--arm=nullts'] exit=-6
+
+== r92 expected_errors ==
+  r92_tilemap_atlas            n=2
+      ERROR: Cannot create tile. The tile is outside the texture or tiles are already present in the space the tile would cover.
+      ERROR: The TileSetAtlasSource atlas has no tile at (5, 5).
+  r92_tilemap_cells            n=2
+      ERROR: Method/function failed. Returning: p_coords
+      ERROR: The TileSetAtlasSource atlas has no tile at (9, 9).
+  r92_tilemap_custom           n=3
+      ERROR: TileSet has no layer with name: absent
+      ERROR: TileSet has no layer with name: ghost
+      ERROR: TileSet has no layer with name: tag
+  r92_tilemap_terrain          n=1
+      ERROR: Index p_terrain_set = 5 is out of bounds (tile_set->get_terrain_sets_count() = 1).
+  r92_tilemap_pattern          n=1
+      ERROR: Condition "!pattern.has(p_coords)" is true. Returning: TileSet::INVALID_SOURCE
+  r92_tilemap_encoding         n=2
+      ERROR: Corrupted tile map data: tiles might be missing.
+      ERROR: Unsupported tile map data format: 513. Expected format ID lower or equal to: 0
+  r92_tilemap_fixinvalid       n=3
+      ERROR: No TileSet atlas source with id -1.
+      ERROR: No TileSet atlas source with id 0.
+      ERROR: No TileSet atlas source with id 42.
+  r92_tilemap_srcids           n=3
+      ERROR: Cannot create TileSet atlas source. Another atlas source exists with id 0.
+      ERROR: Condition "p_tile_set_source.is_null()" is true. Returning: TileSet::INVALID_SOURCE
+      ERROR: Provided source ID -3 is not valid. Negative source IDs are not allowed.
+  r92_tilemap_physics          n=1
+      ERROR: Parameter "found" is null.
+  total entries: 18 across 9 rows
+
+== r92 required_stderr ==
+  r92_tilemap_nullts_crash     n=2
+      handle_crash: Program crashed with signal 11
+      _nullts (res://tilemap_lattice.gd:927)
+
+== expected_errors floor gates (prefix coverage) ==
+  line=2856  "phys2d_expected_errors_all_matched": all(
+  line=2865  "r87_expected_errors_all_matched": all(
+  line=2874  "r88_expected_errors_all_matched": all(
+  line=2883  "r89_expected_errors_all_matched": all(
+  line=2891  "r90_expected_errors_all_matched": all(
+  line=2899  "r91_expected_errors_all_matched": all(
+  line=2907  "r92_expected_errors_all_matched": all(
+
+== row<->arm bijection ==
+  arms referenced by r92 rows: census, atlas, cells, custom, terrain, pattern, encoding, fixinvalid, srcids, physics, timing, quadrant, nav, nullts
+  duplicate arms: none
+  scripts referenced: tilemap_lattice.gd

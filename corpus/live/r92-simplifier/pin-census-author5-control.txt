@@ -1,0 +1,96 @@
+receipt files: 6
+r92 rows seen: 14
+
+== r92_tilemap_atlas ==
+  receipts=6 runs=6 exits=[0] verdicts=['PASS'] distinct_lines=1
+  EXACT     presence=6/6 PASS tilemap_lattice atlas sid_first=0 count_1=1 has_source_0=1 src_class=TileSetAtlasSource tiles_after_2=2 has_tile_00=1 has_tile_11=0 tiles_list=n2
+  payload matched receipts: 6  sig=PASS tilemap_lattice atlas sid_first=0 count_1=1 has_source_0=1 src_cl...
+  line fields=26 varying=0 
+
+== r92_tilemap_cells ==
+  receipts=6 runs=6 exits=[0] verdicts=['PASS'] distinct_lines=1
+  EXACT     presence=6/6 PASS tilemap_lattice cells empty_used=n0[] empty_rect=[P: (0, 0), S: (0, 0)] empty_source=-1 empty_atlas=-1,-1 empty_alt=-1 empty_td=null used_after_3
+  payload matched receipts: 6  sig=PASS tilemap_lattice cells empty_used=n0[] empty_rect=[P: (0, 0), S: (...
+  line fields=39 varying=0 
+
+== r92_tilemap_census ==
+  receipts=6 runs=6 exits=[0] verdicts=['PASS'] distinct_lines=1
+  EXACT     presence=6/6 PASS tilemap_lattice census layer_defaults=enabled=1 collision_enabled=1 nav_enabled=1 use_kinematic=0 phys_quad=16 rend_quad=16 col_vis=0 nav_vis=0 y
+  payload matched receipts: 6  sig=PASS tilemap_lattice census layer_defaults=enabled=1 collision_enabled...
+  line fields=48 varying=0 
+
+== r92_tilemap_custom ==
+  receipts=6 runs=6 exits=[0] verdicts=['PASS'] distinct_lines=1
+  EXACT     presence=6/6 PASS tilemap_lattice custom layers_0=0 layers_2=2 name_0=hp type_0=2 index_of_hp=0 index_of_missing=-1 has_layer_hp=1 default_hp=0 default_tag= has_hp
+  payload matched receipts: 6  sig=PASS tilemap_lattice custom layers_0=0 layers_2=2 name_0=hp type_0=2 i...
+  line fields=26 varying=0 
+
+== r92_tilemap_encoding ==
+  receipts=6 runs=6 exits=[0] verdicts=['PASS'] distinct_lines=1
+  EXACT     presence=6/6 PASS tilemap_lattice encoding empty_bytes_len=0 empty_arr_len=0 one_bytes_len=14 one_bytes=[0,0,3,0,4,0,0,0,1,0,0,0,0,0] two_bytes_len=26 two_bytes=[0
+  payload matched receipts: 6  sig=PASS tilemap_lattice encoding empty_bytes_len=0 empty_arr_len=0 one_by...
+  line fields=28 varying=0 
+
+== r92_tilemap_fixinvalid ==
+  receipts=6 runs=6 exits=[0] verdicts=['PASS'] distinct_lines=1
+  EXACT     presence=6/6 PASS tilemap_lattice fixinvalid before_used=n3[0,0;1,0;2,0] after_used=n1[0,0] after_src_1_0=-1 after_src_2_0=-1 removed_used=n1[0,0] removed_fixed_us
+  payload matched receipts: 6  sig=PASS tilemap_lattice fixinvalid before_used=n3[0,0;1,0;2,0] after_used...
+  line fields=6 varying=0 
+
+== r92_tilemap_nav ==
+  receipts=6 runs=6 exits=[0] verdicts=['PASS'] distinct_lines=1
+  EXACT     presence=6/6 PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 
+  payload matched receipts: 6  sig=PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 valu...
+  payload matched receipts: 0  sig=PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 valu...
+  line fields=19 varying=0 
+
+== r92_tilemap_nullts_crash ==
+  receipts=6 runs=6 exits=[-6] verdicts=['PASS'] distinct_lines=4
+  EXACT     presence=6/6 R92 nullts about_to_call_tile_data=1
+  UNMATCHED presence=6/6 R92 nullts src_after_set=0
+  UNMATCHED presence=6/6 R92 nullts tileset_null=1
+  UNMATCHED presence=6/6 R92 nullts used_after_set=n1[0,0]
+  payload matched receipts: 6  sig=R92 nullts about_to_call_tile_data=1...
+  line fields=1 varying=0 
+  line fields=1 varying=0 
+  line fields=1 varying=0 
+  line fields=1 varying=0 
+
+== r92_tilemap_pattern ==
+  receipts=6 runs=6 exits=[0] verdicts=['PASS'] distinct_lines=1
+  EXACT     presence=6/6 PASS tilemap_lattice pattern class=TileMapPattern size=2,2 used=n3[0,0;1,0;0,1] src_0_0=0 atlas_1_0=1,0 has_cell_0_0=1 empty_at_1_1=-1 is_empty=0 empt
+  payload matched receipts: 6  sig=PASS tilemap_lattice pattern class=TileMapPattern size=2,2 used=n3[0,0...
+  line fields=21 varying=0 
+
+== r92_tilemap_physics ==
+  receipts=6 runs=6 exits=[0] verdicts=['PASS'] distinct_lines=1
+  EXACT     presence=6/6 PASS tilemap_lattice physics phys_layers=1 layer_defaults=cl=1 cm=1 prio=1.0000 mat_null=1 polys_0=0 polys_1=1 poly_pt0=-8.0000,-8.0000 poly_oneway=0 
+  payload matched receipts: 6  sig=PASS tilemap_lattice physics phys_layers=1 layer_defaults=cl=1 cm=1 pr...
+  line fields=30 varying=0 
+
+== r92_tilemap_quadrant ==
+  receipts=6 runs=6 exits=[0] verdicts=['PASS'] distinct_lines=1
+  EXACT     presence=6/6 PASS tilemap_lattice quadrant default_quad=16 quad16_near=hit quad16_far=hit quad_set=2 quad2_same_frame_far=hit quad2_f1_far=hit quad2_near=hit quad2
+  payload matched receipts: 6  sig=PASS tilemap_lattice quadrant default_quad=16 quad16_near=hit quad16_f...
+  line fields=11 varying=0 
+
+== r92_tilemap_srcids ==
+  receipts=6 runs=6 exits=[0] verdicts=['PASS'] distinct_lines=1
+  EXACT     presence=6/6 PASS tilemap_lattice srcids auto_id=0 next_after_auto=1 explicit_5=5 next_after_explicit=1 ids=n2[0;5] id_index_0=0 id_index_1=5 moved_ids=n2[0;2] has
+  payload matched receipts: 6  sig=PASS tilemap_lattice srcids auto_id=0 next_after_auto=1 explicit_5=5 n...
+  line fields=18 varying=0 
+
+== r92_tilemap_terrain ==
+  receipts=6 runs=6 exits=[0] verdicts=['PASS'] distinct_lines=1
+  EXACT     presence=6/6 PASS tilemap_lattice terrain sets_0=0 sets_1=1 mode_default=0 mode_set=0 terrains_0=0 terrains_2=2 names=grass,dirt color_0=(0.0, 1.0, 0.0, 1.0) td_te
+  payload matched receipts: 6  sig=PASS tilemap_lattice terrain sets_0=0 sets_1=1 mode_default=0 mode_set...
+  line fields=27 varying=0 
+
+== r92_tilemap_timing ==
+  receipts=6 runs=6 exits=[0] verdicts=['PASS'] distinct_lines=1
+  EXACT     presence=6/6 PASS tilemap_lattice timing empty=null set_same_frame_physics=null set_same_frame_td=obj set_same_frame_used=1 set_f1=hit set_f2=hit move_same_frame=h
+  payload matched receipts: 6  sig=PASS tilemap_lattice timing empty=null set_same_frame_physics=null set...
+  line fields=18 varying=0 
+
+EXACT=14 PREFIX=0 SUBSTRING=0 UNMATCHED=3
+ALL_SIGNATURES_ANCHORED=False

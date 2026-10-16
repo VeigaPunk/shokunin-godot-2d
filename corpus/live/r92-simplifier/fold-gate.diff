@@ -1,0 +1,10 @@
+--- committed-fixtures/run_battery.py	2026-10-15 21:15:47.716973122 -0300
++++ fold-gate/run_battery.py	2026-10-15 21:19:05.413730018 -0300
+@@ -1174,6 +1174,7 @@
+                 'r92_tilemap_atlas': (
+                     'ERROR: Cannot create tile. The tile is outside the texture or tiles are already present in the space the tile would cover.',
+                     'ERROR: The TileSetAtlasSource atlas has no tile at (5, 5).',
++                    'ERROR: The TileSetAtlasSource atlas has no tile at (99, 99).',
+                 ),
+                 'r92_tilemap_cells': (
+                     'ERROR: Method/function failed. Returning: p_coords',

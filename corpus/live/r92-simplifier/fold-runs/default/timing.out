@@ -1,0 +1,22 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=timing
+R92 timing empty=null
+R92 timing set_same_frame_physics=null
+R92 timing set_same_frame_td=obj
+R92 timing set_same_frame_used=1
+R92 timing set_f1=hit
+R92 timing set_f2=hit
+R92 timing move_same_frame=hit
+R92 timing move_f1=null
+R92 timing move_f2=null
+R92 timing moved_back=hit
+R92 timing erase_same_frame=hit
+R92 timing erase_f1=null
+R92 timing notify_same_frame=null
+R92 timing notify_f1=hit
+R92 timing update_erase_same_frame=null
+R92 timing update_erase_f1=null
+R92 timing update_set_same_frame=hit
+R92 timing data_immediate_control=1
+PASS tilemap_lattice timing empty=null set_same_frame_physics=null set_same_frame_td=obj set_same_frame_used=1 set_f1=hit set_f2=hit move_same_frame=hit move_f1=null move_f2=null moved_back=hit erase_same_frame=hit erase_f1=null notify_same_frame=null notify_f1=hit update_erase_same_frame=null update_erase_f1=null update_set_same_frame=hit data_immediate_control=1

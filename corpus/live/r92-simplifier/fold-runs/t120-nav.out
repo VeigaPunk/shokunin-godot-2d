@@ -1,0 +1,22 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=nav
+R92 nav nav_layers=1
+R92 nav nav_layer_defaults=layers=1 value1=1
+R92 nav nav_layer_set=3
+R92 nav nav_poly_default=null
+R92 nav nav_poly_set=obj
+R92 nav layer_nav_enabled=1
+R92 nav layer_nav_vis=0
+R92 nav nav_map_valid=1
+R92 nav regions_empty=0
+R92 nav regions_same_frame=0
+R92 nav regions_f1=1
+R92 nav regions_f2=1
+R92 nav regions_after_plain_cell=1
+R92 nav regions_disabled_same_frame=1
+R92 nav regions_disabled_f1=0
+R92 nav regions_reenabled=1
+R92 nav regions_erased_same_frame=1
+R92 nav regions_erased_f1=0
+PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=1 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0
