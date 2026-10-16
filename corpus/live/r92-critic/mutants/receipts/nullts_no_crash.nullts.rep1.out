@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=nullts
+R92 nullts tileset_null=1
+R92 nullts used_after_set=n1[0,0]
+R92 nullts src_after_set=0
+R92 nullts about_to_call_tile_data=1
+R92 nullts td_after_set=null
+PASS tilemap_lattice nullts tileset_null=1 used_after_set=n1[0,0] src_after_set=0 about_to_call_tile_data=1 td_after_set=null

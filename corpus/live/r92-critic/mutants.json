@@ -1,0 +1,257 @@
+{
+ "fixture": [
+  {
+   "name": "nav_f1_third_value",
+   "arm": "nav",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "rc": 0,
+   "passed": false,
+   "dead_entries": 0,
+   "gate_true": true,
+   "ok": true,
+   "rationale": "a third regions_f1 value is admitted by neither payload",
+   "stdout_tail": "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_",
+   "stderr_head": ""
+  },
+  {
+   "name": "nav_f2_zero",
+   "arm": "nav",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "rc": 0,
+   "passed": false,
+   "dead_entries": 0,
+   "gate_true": true,
+   "ok": true,
+   "rationale": "regions_f2=1 is pinned in BOTH payloads (the settled law)",
+   "stdout_tail": "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_",
+   "stderr_head": ""
+  },
+  {
+   "name": "nav_f1_stuck_zero",
+   "arm": "nav",
+   "expect": "PASS",
+   "observed": "PASS",
+   "rc": 0,
+   "passed": true,
+   "dead_entries": 0,
+   "gate_true": true,
+   "ok": true,
+   "rationale": "ENVELOPE COST: a permanent regression to the ratio>=2.5 mode still passes",
+   "stdout_tail": "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_",
+   "stderr_head": ""
+  },
+  {
+   "name": "nav_f1_stuck_one_ff",
+   "arm": "nav",
+   "expect": "PASS",
+   "observed": "PASS",
+   "rc": 0,
+   "passed": true,
+   "dead_entries": 0,
+   "gate_true": true,
+   "ok": true,
+   "rationale": "control for the previous: the pinned production mode passes",
+   "stdout_tail": "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_",
+   "stderr_head": ""
+  },
+  {
+   "name": "enc_cell_moved",
+   "arm": "encoding",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "rc": 0,
+   "passed": false,
+   "dead_entries": 0,
+   "gate_true": true,
+   "ok": true,
+   "rationale": "the two_bytes/two_arr_len/stride pins are measured bytes",
+   "stdout_tail": "PASS tilemap_lattice encoding empty_bytes_len=0 empty_arr_len=0 one_bytes_len=14 one_bytes=[0,0,3,0,4,0,0,0,1,0,0,0,0,0] two_bytes_len=26 two_bytes=[0,0,3,0,4,0",
+   "stderr_head": ""
+  },
+  {
+   "name": "enc_alt_field",
+   "arm": "encoding",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "rc": 0,
+   "passed": false,
+   "dead_entries": 0,
+   "gate_true": true,
+   "ok": true,
+   "rationale": "alt_bytes pins the alternative-id field verbatim",
+   "stdout_tail": "PASS tilemap_lattice encoding empty_bytes_len=0 empty_arr_len=0 one_bytes_len=14 one_bytes=[0,0,3,0,4,0,0,0,1,0,0,0,0,0] two_bytes_len=26 two_bytes=[0,0,3,0,4,0",
+   "stderr_head": ""
+  },
+  {
+   "name": "nullts_no_crash",
+   "arm": "nullts",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "rc": 0,
+   "passed": false,
+   "dead_entries": 0,
+   "gate_true": true,
+   "ok": true,
+   "rationale": "the row requires the crash (rc=-6), not just the arming diagnostic",
+   "stdout_tail": "PASS tilemap_lattice nullts tileset_null=1 used_after_set=n1[0,0] src_after_set=0 about_to_call_tile_data=1 td_after_set=null",
+   "stderr_head": ""
+  },
+  {
+   "name": "nullts_site_line_shift",
+   "arm": "nullts",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "rc": -6,
+   "passed": false,
+   "dead_entries": 0,
+   "gate_true": true,
+   "ok": true,
+   "rationale": "the _nullts :927 site fragment is line-number-bound",
+   "stdout_tail": "R92 nullts about_to_call_tile_data=1",
+   "stderr_head": "handle_crash: Program crashed with signal 11"
+  },
+  {
+   "name": "nullts_foreign_site",
+   "arm": "nullts",
+   "expect": "FAIL",
+   "observed": "PASS",
+   "rc": -6,
+   "passed": true,
+   "dead_entries": 0,
+   "gate_true": true,
+   "ok": false,
+   "rationale": "same engine null-deref, different GDScript site -> site fragment must reject",
+   "stdout_tail": "R92 nullts about_to_call_tile_data=1",
+   "stderr_head": "handle_crash: Program crashed with signal 11"
+  },
+  {
+   "name": "nullts_foreign_abort",
+   "arm": "nullts",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "rc": -6,
+   "passed": false,
+   "dead_entries": 0,
+   "gate_true": true,
+   "ok": true,
+   "rationale": "a foreign abort with the right exit code and the arming diagnostic",
+   "stdout_tail": "R92 nullts about_to_call_tile_data=1",
+   "stderr_head": "   at: crash (core/core_bind.cpp:349)"
+  },
+  {
+   "name": "nullts_foreign_cause",
+   "arm": "nullts",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "rc": -6,
+   "passed": false,
+   "dead_entries": 0,
+   "gate_true": true,
+   "ok": true,
+   "rationale": "same null-deref, same rc, same header, same stdout marker -- reached WITHOUT the _nullts:927 frame",
+   "stdout_tail": "R92 nullts about_to_call_tile_data=1",
+   "stderr_head": "handle_crash: Program crashed with signal 11"
+  },
+  {
+   "name": "atlas_allowlist_dead",
+   "arm": "atlas",
+   "expect": "PASS-GATE-FALSE",
+   "observed": "PASS-GATE-FALSE",
+   "rc": 0,
+   "passed": true,
+   "dead_entries": 1,
+   "gate_true": false,
+   "ok": true,
+   "rationale": "removing the refusal poke leaves the row PASSing but kills its allowlist entry",
+   "stdout_tail": "PASS tilemap_lattice atlas sid_first=0 count_1=1 has_source_0=1 src_class=TileSetAtlasSource tiles_after_2=2 has_tile_00=1 has_tile_11=0 tiles_list=n2[0,0;1,0] ",
+   "stderr_head": ""
+  }
+ ],
+ "harness": [
+  {
+   "name": "pin_travel",
+   "arm": "physics",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "ok": true,
+   "rationale": "pin token travel=0.0000,1.9531 perturbed to travel=0.0000,1.9532"
+  },
+  {
+   "name": "pin_stride",
+   "arm": "encoding",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "ok": true,
+   "rationale": "pin token stride=12 perturbed to stride=16"
+  },
+  {
+   "name": "pin_regions_f2",
+   "arm": "nav",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "ok": true,
+   "rationale": "pin token regions_f2=1 perturbed to regions_f2=0"
+  },
+  {
+   "name": "pin_bad_src_readback",
+   "arm": "cells",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "ok": true,
+   "rationale": "pin token bad_src_readback=42 perturbed to bad_src_readback=43"
+  },
+  {
+   "name": "pin_update_set_same_frame",
+   "arm": "timing",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "ok": true,
+   "rationale": "pin token update_set_same_frame=hit perturbed to update_set_same_frame=null"
+  },
+  {
+   "name": "allowlist_drop_atlas",
+   "arm": "atlas",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "ok": true,
+   "rationale": "entry 0 dropped: ERROR: Cannot create tile. The tile is outside the"
+  },
+  {
+   "name": "allowlist_drop_srcids",
+   "arm": "srcids",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "ok": true,
+   "rationale": "entry 1 dropped: ERROR: Condition \"p_tile_set_source.is_null()\" is "
+  },
+  {
+   "name": "nullts_stream_binding",
+   "arm": "nullts",
+   "expect": "FAIL",
+   "observed": {
+    "real_pass": true,
+    "fragment_on_stdout_only_passes": [
+     false,
+     false
+    ],
+    "signature_on_stderr_only_passes": false,
+    "fragment_deleted_passes": [
+     false,
+     false
+    ]
+   },
+   "ok": true,
+   "rationale": "stream anchoring rejects both one-directional shapes"
+  },
+  {
+   "name": "nullts_exit_pin",
+   "arm": "nullts",
+   "expect": "FAIL",
+   "observed": "FAIL",
+   "ok": true,
+   "rationale": "rc=-6 required: rc=-11 (raw SIGSEGV) is rejected"
+  }
+ ]
+}

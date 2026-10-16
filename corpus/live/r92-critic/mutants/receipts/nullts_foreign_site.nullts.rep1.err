@@ -1,0 +1,39 @@
+
+================================================================
+handle_crash: Program crashed with signal 11
+Engine version: Godot Engine v4.7.2.stable.arch_linux (ed1daf0bf001b61586d9930840f2f1394092c079)
+Dumping the backtrace. Please include this when reporting the bug on: https://github.com/godotengine/godot/issues
+Load address: 5565f8255000
+
+[1] 7fda3d23e6f0 (libc.so.6+3e6f0) - /usr/lib/libc.so.6(+0x3e6f0) [0x7fda3d23e6f0]
+[2] 5565fd5317f0 (main+52dc7f0) - godot(+0x52dc7f0) [0x5565fd5317f0]
+[3] 5565fce67bcc (main+4c12bcc) - godot(+0x4c12bcc) [0x5565fce67bcc]
+[4] 5565fcea5400 (main+4c50400) - godot(+0x4c50400) [0x5565fcea5400]
+[5] 5565f9b9891c (main+194391c) - godot(+0x194391c) [0x5565f9b9891c]
+[6] 5565f9a1e106 (main+17c9106) - godot(+0x17c9106) [0x5565f9a1e106]
+[7] 5565feaa8e9e (main+6853e9e) - godot(+0x6853e9e) [0x5565feaa8e9e]
+[8] 5565fe7764ca (main+65214ca) - godot(+0x65214ca) [0x5565fe7764ca]
+[9] 5565f9bab8af (main+19568af) - godot(+0x19568af) [0x5565f9bab8af]
+[10] 5565f9a1e106 (main+17c9106) - godot(+0x17c9106) [0x5565f9a1e106]
+[11] 5565feaa8e9e (main+6853e9e) - godot(+0x6853e9e) [0x5565feaa8e9e]
+[12] 5565fe7764ca (main+65214ca) - godot(+0x65214ca) [0x5565fe7764ca]
+[13] 5565f9bab8af (main+19568af) - godot(+0x19568af) [0x5565f9bab8af]
+[14] 5565f9a1e106 (main+17c9106) - godot(+0x17c9106) [0x5565f9a1e106]
+[15] 5565feaa8e9e (main+6853e9e) - godot(+0x6853e9e) [0x5565feaa8e9e]
+[16] 5565fe716863 (main+64c1863) - godot(+0x64c1863) [0x5565fe716863]
+[17] 5565feaa4f25 (main+684ff25) - godot(+0x684ff25) [0x5565feaa4f25]
+[18] 5565feaaeb44 (main+6859b44) - godot(+0x6859b44) [0x5565feaaeb44]
+[19] 5565fc398f78 (main+4143f78) - godot(+0x4143f78) [0x5565fc398f78]
+[20] 5565f943f278 (main+11ea278) - godot(+0x11ea278) [0x5565f943f278]
+[21] 5565f92b1062 (main+105c062) - godot(+0x105c062) [0x5565f92b1062]
+[22] 7fda3d227781 (libc.so.6+27781) - /usr/lib/libc.so.6(+0x27781) [0x7fda3d227781]
+[23] 7fda3d2278b9 (libc.so.6+278b9) - /usr/lib/libc.so.6(__libc_start_main+0x89) [0x7fda3d2278b9]
+[24] 5565f93256d5 (main+10d06d5) - godot(+0x10d06d5) [0x5565f93256d5]
+-- END OF C++ BACKTRACE --
+================================================================
+GDScript backtrace (most recent call first):
+    [0] _boom (res://tilemap_lattice.gd:932)
+    [1] _nullts (res://tilemap_lattice.gd:927)
+    [2] _run (res://tilemap_lattice.gd:145)
+-- END OF GDSCRIPT BACKTRACE --
+================================================================

@@ -1,0 +1,4 @@
+nullts_foreign_abort.nullts.rep1 rc=1 wall=0.611 err=None
+nullts_foreign_abort.nullts.rep1 rc=-6 wall=1.083 err=None
+nullts_foreign_abort.nullts.rep1 rc=-6 wall=1.194 err=None
+nullts_foreign_abort.nullts.rep1 rc=-6 wall=1.152 err=None

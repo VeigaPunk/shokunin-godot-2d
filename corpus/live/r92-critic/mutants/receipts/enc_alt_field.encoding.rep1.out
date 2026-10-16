@@ -1,0 +1,32 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=encoding
+R92 encoding empty_bytes_len=0
+R92 encoding empty_arr_len=0
+R92 encoding one_bytes_len=14
+R92 encoding one_bytes=[0,0,3,0,4,0,0,0,1,0,0,0,0,0]
+R92 encoding two_bytes_len=26
+R92 encoding two_bytes=[0,0,3,0,4,0,0,0,1,0,0,0,0,0,7,0,254,255,0,0,0,0,1,0,0,0]
+R92 encoding two_arr_len=26
+R92 encoding two_arr_equals_bytes=1
+R92 encoding stride=12
+R92 encoding alt_bytes=[0,0,3,0,4,0,0,0,1,0,0,0,0,0,7,0,254,255,255,255,255,255,255,255,255,255]
+R92 encoding alt_id_created=1
+R92 encoding tomb_set_bytes=[0,0,1,0,1,0,0,0,0,0,0,0,0,0]
+R92 encoding tomb_erase_len=14
+R92 encoding tomb_erase_bytes=[0,0,1,0,1,0,255,255,255,255,255,255,255,255]
+R92 encoding tomb_erase_used=n0[]
+R92 encoding tomb_reset_len=14
+R92 encoding tomb_reset_bytes=[0,0,1,0,1,0,0,0,0,0,0,0,0,0]
+R92 encoding tomb_clear_len=14
+R92 encoding tomb_clear_bytes=[0,0,1,0,1,0,255,255,255,255,255,255,255,255]
+R92 encoding tomb_clear_set_len=26
+R92 encoding tomb_clear_set_bytes=[0,0,1,0,1,0,255,255,255,255,255,255,255,255,5,0,5,0,0,0,0,0,0,0,0,0]
+R92 encoding arr_roundtrip_used=n2[3,4;7,-2]
+R92 encoding arr_roundtrip_src=0
+R92 encoding arr_roundtrip_atlas=0,1
+R92 encoding short_arr_used=n0[]
+R92 encoding short_arr_len=0
+R92 encoding truncated_used=n1[3,4]
+R92 encoding truncated_len=14
+PASS tilemap_lattice encoding empty_bytes_len=0 empty_arr_len=0 one_bytes_len=14 one_bytes=[0,0,3,0,4,0,0,0,1,0,0,0,0,0] two_bytes_len=26 two_bytes=[0,0,3,0,4,0,0,0,1,0,0,0,0,0,7,0,254,255,0,0,0,0,1,0,0,0] two_arr_len=26 two_arr_equals_bytes=1 stride=12 alt_bytes=[0,0,3,0,4,0,0,0,1,0,0,0,0,0,7,0,254,255,255,255,255,255,255,255,255,255] alt_id_created=1 tomb_set_bytes=[0,0,1,0,1,0,0,0,0,0,0,0,0,0] tomb_erase_len=14 tomb_erase_bytes=[0,0,1,0,1,0,255,255,255,255,255,255,255,255] tomb_erase_used=n0[] tomb_reset_len=14 tomb_reset_bytes=[0,0,1,0,1,0,0,0,0,0,0,0,0,0] tomb_clear_len=14 tomb_clear_bytes=[0,0,1,0,1,0,255,255,255,255,255,255,255,255] tomb_clear_set_len=26 tomb_clear_set_bytes=[0,0,1,0,1,0,255,255,255,255,255,255,255,255,5,0,5,0,0,0,0,0,0,0,0,0] arr_roundtrip_used=n2[3,4;7,-2] arr_roundtrip_src=0 arr_roundtrip_atlas=0,1 short_arr_used=n0[] short_arr_len=0 truncated_used=n1[3,4] truncated_len=14

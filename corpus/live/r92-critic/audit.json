@@ -1,0 +1,354 @@
+{
+ "commit": {
+  "files": 136,
+  "insertions": 5775,
+  "deletions": 0,
+  "run_battery_numstat": [
+   161,
+   0
+  ],
+  "run_battery_sha": "5e5182815e6e3c503f40c78b6416b5cf6aaf9d0d3ea3ed7577594bd9f35aa509",
+  "fixture_sha": "a699138945ec7c1c1e6c97b6bf052d0941596610ad4cb9d08d184c07409d3dfb",
+  "project_godot_sha": "8de8b3af9cc737edc3e5969b76bf049720266537ec366e03aa42702aa15406e9",
+  "parent": "045d925d9c600f82e02fdd4d892865d508317806",
+  "parent_rb_sha": "f5725ca441565b8c9903b5e98aeb1112ea5c56a11a1f422b6feb46f904953220"
+ },
+ "cases": {
+  "old": 251,
+  "new": 265,
+  "old_rows_intact": true,
+  "r92_index": [
+   247,
+   248,
+   249,
+   250,
+   251,
+   252,
+   253,
+   254,
+   255,
+   256,
+   257,
+   258,
+   259,
+   260
+  ],
+  "prev_row": "nav_lattice_teardown_clean",
+  "next_row": "crash_spontaneous_sigabrt"
+ },
+ "classify_process_segment_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+ "r92_rows": 14,
+ "r92_allowlisted_rows": [
+  "r92_tilemap_atlas",
+  "r92_tilemap_cells",
+  "r92_tilemap_custom",
+  "r92_tilemap_encoding",
+  "r92_tilemap_fixinvalid",
+  "r92_tilemap_pattern",
+  "r92_tilemap_physics",
+  "r92_tilemap_srcids",
+  "r92_tilemap_terrain"
+ ],
+ "r92_required_stderr_rows": [
+  "r92_tilemap_nullts_crash"
+ ],
+ "expected_errors_total": 18,
+ "envelopes": {
+  "r92_tilemap_nav": {
+   "payloads": 2,
+   "token_counts": [
+    22,
+    22
+   ],
+   "token_diffs": [
+    [
+     "regions_f1=1->regions_f1=0"
+    ]
+   ]
+  }
+ },
+ "volatile_token_hits": [
+  [
+   "r92_tilemap_cells",
+   "same_frame_td=obj"
+  ],
+  [
+   "r92_tilemap_cells",
+   "same_frame_used_has=1"
+  ],
+  [
+   "r92_tilemap_physics",
+   "disabled_same_frame=hit"
+  ],
+  [
+   "r92_tilemap_physics",
+   "enabled_same_frame=null"
+  ],
+  [
+   "r92_tilemap_physics",
+   "erase_same_frame=hit"
+  ],
+  [
+   "r92_tilemap_timing",
+   "set_same_frame_physics=null"
+  ],
+  [
+   "r92_tilemap_timing",
+   "set_same_frame_td=obj"
+  ],
+  [
+   "r92_tilemap_timing",
+   "set_same_frame_used=1"
+  ],
+  [
+   "r92_tilemap_timing",
+   "move_same_frame=hit"
+  ],
+  [
+   "r92_tilemap_timing",
+   "erase_same_frame=hit"
+  ],
+  [
+   "r92_tilemap_timing",
+   "notify_same_frame=null"
+  ],
+  [
+   "r92_tilemap_timing",
+   "update_erase_same_frame=null"
+  ],
+  [
+   "r92_tilemap_timing",
+   "update_set_same_frame=hit"
+  ],
+  [
+   "r92_tilemap_quadrant",
+   "quad2_same_frame_far=hit"
+  ],
+  [
+   "r92_tilemap_nav",
+   "regions_same_frame=0"
+  ],
+  [
+   "r92_tilemap_nav",
+   "regions_disabled_same_frame=1"
+  ],
+  [
+   "r92_tilemap_nav",
+   "regions_erased_same_frame=1"
+  ],
+  [
+   "r92_tilemap_nav",
+   "regions_same_frame=0"
+  ],
+  [
+   "r92_tilemap_nav",
+   "regions_disabled_same_frame=1"
+  ],
+  [
+   "r92_tilemap_nav",
+   "regions_erased_same_frame=1"
+  ]
+ ],
+ "census": [
+  {
+   "case": "r92_tilemap_atlas",
+   "entries": [
+    {
+     "entry": "ERROR: Cannot create tile. The tile is outside the texture or tiles are already present in the space the tile would cover.",
+     "matched_receipts": 3,
+     "dead_in_run": false
+    },
+    {
+     "entry": "ERROR: The TileSetAtlasSource atlas has no tile at (5, 5).",
+     "matched_receipts": 3,
+     "dead_in_run": false
+    }
+   ],
+   "any_entry_matched": true
+  },
+  {
+   "case": "r92_tilemap_cells",
+   "entries": [
+    {
+     "entry": "ERROR: Method/function failed. Returning: p_coords",
+     "matched_receipts": 12,
+     "dead_in_run": false
+    },
+    {
+     "entry": "ERROR: The TileSetAtlasSource atlas has no tile at (9, 9).",
+     "matched_receipts": 3,
+     "dead_in_run": false
+    }
+   ],
+   "any_entry_matched": true
+  },
+  {
+   "case": "r92_tilemap_custom",
+   "entries": [
+    {
+     "entry": "ERROR: TileSet has no layer with name: absent",
+     "matched_receipts": 3,
+     "dead_in_run": false
+    },
+    {
+     "entry": "ERROR: TileSet has no layer with name: ghost",
+     "matched_receipts": 6,
+     "dead_in_run": false
+    },
+    {
+     "entry": "ERROR: TileSet has no layer with name: tag",
+     "matched_receipts": 3,
+     "dead_in_run": false
+    }
+   ],
+   "any_entry_matched": true
+  },
+  {
+   "case": "r92_tilemap_encoding",
+   "entries": [
+    {
+     "entry": "ERROR: Corrupted tile map data: tiles might be missing.",
+     "matched_receipts": 3,
+     "dead_in_run": false
+    },
+    {
+     "entry": "ERROR: Unsupported tile map data format: 513. Expected format ID lower or equal to: 0",
+     "matched_receipts": 3,
+     "dead_in_run": false
+    }
+   ],
+   "any_entry_matched": true
+  },
+  {
+   "case": "r92_tilemap_fixinvalid",
+   "entries": [
+    {
+     "entry": "ERROR: No TileSet atlas source with id -1.",
+     "matched_receipts": 6,
+     "dead_in_run": false
+    },
+    {
+     "entry": "ERROR: No TileSet atlas source with id 0.",
+     "matched_receipts": 3,
+     "dead_in_run": false
+    },
+    {
+     "entry": "ERROR: No TileSet atlas source with id 42.",
+     "matched_receipts": 3,
+     "dead_in_run": false
+    }
+   ],
+   "any_entry_matched": true
+  },
+  {
+   "case": "r92_tilemap_pattern",
+   "entries": [
+    {
+     "entry": "ERROR: Condition \"!pattern.has(p_coords)\" is true. Returning: TileSet::INVALID_SOURCE",
+     "matched_receipts": 6,
+     "dead_in_run": false
+    }
+   ],
+   "any_entry_matched": true
+  },
+  {
+   "case": "r92_tilemap_physics",
+   "entries": [
+    {
+     "entry": "ERROR: Parameter \"found\" is null.",
+     "matched_receipts": 6,
+     "dead_in_run": false
+    }
+   ],
+   "any_entry_matched": true
+  },
+  {
+   "case": "r92_tilemap_srcids",
+   "entries": [
+    {
+     "entry": "ERROR: Cannot create TileSet atlas source. Another atlas source exists with id 0.",
+     "matched_receipts": 3,
+     "dead_in_run": false
+    },
+    {
+     "entry": "ERROR: Condition \"p_tile_set_source.is_null()\" is true. Returning: TileSet::INVALID_SOURCE",
+     "matched_receipts": 3,
+     "dead_in_run": false
+    },
+    {
+     "entry": "ERROR: Provided source ID -3 is not valid. Negative source IDs are not allowed.",
+     "matched_receipts": 3,
+     "dead_in_run": false
+    }
+   ],
+   "any_entry_matched": true
+  },
+  {
+   "case": "r92_tilemap_terrain",
+   "entries": [
+    {
+     "entry": "ERROR: Index p_terrain_set = 5 is out of bounds (tile_set->get_terrain_sets_count() = 1).",
+     "matched_receipts": 3,
+     "dead_in_run": false
+    }
+   ],
+   "any_entry_matched": true
+  }
+ ],
+ "dead_entries": [],
+ "r92_expected_errors_all_matched": true,
+ "nullts": {
+  "fragments": [
+   "handle_crash: Program crashed with signal 11",
+   "_nullts (res://tilemap_lattice.gd:927)"
+  ],
+  "per_rep": [
+   {
+    "stem": "fresh.nullts.rep1",
+    "rc": -6,
+    "sig_on_stdout": true,
+    "frag_on_stdout": [
+     false,
+     false
+    ],
+    "frag_on_stderr": [
+     true,
+     true
+    ],
+    "pass_line_absent": true
+   },
+   {
+    "stem": "fresh.nullts.rep2",
+    "rc": -6,
+    "sig_on_stdout": true,
+    "frag_on_stdout": [
+     false,
+     false
+    ],
+    "frag_on_stderr": [
+     true,
+     true
+    ],
+    "pass_line_absent": true
+   },
+   {
+    "stem": "fresh.nullts.rep3",
+    "rc": -6,
+    "sig_on_stdout": true,
+    "frag_on_stdout": [
+     false,
+     false
+    ],
+    "frag_on_stderr": [
+     true,
+     true
+    ],
+    "pass_line_absent": true
+   }
+  ]
+ },
+ "gate_expr": "all((not e['dead_in_run'] for r in census_rows if r['case'].startswith('r92_') for e in r['entries']))",
+ "gate_in_sf_discriminations": true,
+ "sf_meta_ok_expr": true,
+ "r92_prefix_covers_all_rows": true
+}
