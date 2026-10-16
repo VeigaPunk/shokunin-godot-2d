@@ -1183,3 +1183,11 @@
   group add/remove visibility; signal connect flags; call_deferred
   ordering vs _process/_physics_process; boundary refuted-universal
   corrected row-side.
+- ROUND 98 (2026-10-16): canvas/draw-flush lattice. ADMIT-with-findings
+  at 9d421fb2 (+150/-2 landed; 32 rows, CASES 431->463, results 470).
+  Union-splice dup rows repaired at 9ede7c50. Verifier 683/683 mutations,
+  gate discriminates alone; simplifier -19 queued (F5 dropped for
+  byte-copy chain). Landed-vs-branch counts recorded as CF1.
+- LAWS: per-physics-step flush; epsilon=1e-5 ratio; clip_children==MAX
+  refused (4294967293); grid ctor 75/0; rks 72/12/60; sign-pair lattice
+  24/12/12/12; epsilon max diff 4.77e-7; multitick flush coalesce.
