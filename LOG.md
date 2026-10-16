@@ -1191,3 +1191,11 @@
 - LAWS: per-physics-step flush; epsilon=1e-5 ratio; clip_children==MAX
   refused (4294967293); grid ctor 75/0; rks 72/12/60; sign-pair lattice
   24/12/12/12; epsilon max diff 4.77e-7; multitick flush coalesce.
+- ROUND 99 (2026-10-16): headless in-engine audio surface. ADMIT-with-
+  findings at 254e79dd (+151/-2 landed; 21 rows, CASES 463->485,
+  results 492). Custody-broken-at-link (evidence-rebase class, systemic
+  r98-r100); landed bytes green 492/492 x2 independent. Gate load-
+  bearing proven. Simplifier -2 queued.
+- LAWS: AudioStreamGeneratorPlayback clear_buffer refused live+stopped;
+  gen/gen_peak/gen2d arms; stream free/finish ordering; mix_rate real-
+  mutation discriminates; advance pos_after_gt_before is anti-frozen key.
