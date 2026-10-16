@@ -1225,6 +1225,129 @@ CASES = [
     # fresh D differ.
     ('r96b_seed_seedcheck', 'r96b_seed.gd', ['--arm=seedcheck'], 0,
      'PASS r96b_seed seedcheck A=aymj7,7o2mc,7hw4g,ipe4k B=1q5w0,cfyh7,d1oyj,rjvfj C=rl1nt,ewl6n,ch4ud,r4oop D=8od4a,nuoth,pm58n,vab63 A_eq_B=false A_eq_C=false A_eq_D=false'),
+    # --- r98 block: the CanvasItem draw/transform lattice --------------
+    # 32 rows: 15 r98-scout cells (frozen probe canvas_lattice.gd, BYTE-COPY
+    # sha256 866480a1aaa0a385…) + 16 r98-boundary cells (frozen attack probe
+    # r98b_attack.gd sha256 2e71c7158c4f53db… + the one-off r98b_rksenum.gd)
+    # + 1 r98-author cell (r98c_flush.gd).
+    #
+    # Boundary-driven encoding decisions (r98-boundary REFUTED-SCOPE findings):
+    #   * L1 "queue_redraw is an end-of-frame flush, at most once" is CONFIRMED
+    #     only for process-step queues; a queue set during a PHYSICS step
+    #     flushes at the end of that physics step, so a process frame carrying
+    #     N ticks draws N times (ff1: 359 draws / 359 ticks / 6 frames).
+    #     The battery launches rows with NO engine pacing flags, so that regime
+    #     is reached in-process by r98c_flush.gd (an 80 ms process-step block,
+    #     the in-process equivalent of --frame-delay): its row pins
+    #     draws_eq_ticks=1 draws_gt_frames=1 max_draws_per_pf_ge2=1
+    #     d_phf_delta=0 — the corrected law, in the battery's own launch shape.
+    #   * The scout's `queue` row is landed in its declared PREFIX form (cut
+    #     before events_tail=): the raw frame-number tail is deterministic
+    #     today but is process-frame plumbing, not law.
+    #   * Hazard #2 "hidden items drop queued redraws" is a SAME-FLUSH
+    #     condition, not a same-frame one: the frozen probe's
+    #     hide_before_flush_n=0 (synchronous queue+hide) holds everywhere,
+    #     while a tick-separated hide still draws (r98b_qflush_suppress pins
+    #     hide_ticksep_n=1 hidden_across_tick_n=0 show_after_tick_n=1).
+    #   * L4's "~2e-5 zero-scale epsilon" is REFUTED as a constant and pinned
+    #     as 1e-5 x parent scale, per axis (r98b_epssweep eps_exact chain).
+    #   * L3's ctor=1 / rks=1 exact pins survive for NON-degenerate scales
+    #     only (r98b_skewgrid ctor_fail_nz=0 vs ctor_fail_z=75; r98b_rksenum
+    #     shows the R*K*S product is float-fragile: 60/125 non-degenerate
+    #     combos differ, max component diff 4.77e-7).
+    #   * L5's global setters round-trip globally but their LOCAL readbacks
+    #     under a non-uniform parent are shear decompositions
+    #     (r98b_gskew gs_local=0.0258 gr_local=1.1808 gr_local_skew=0.0258).
+    #   * L9's refusal is generalized: every prior value survives, == MAX is
+    #     refused, negatives are stored as uint32 casts, recovery works
+    #     (r98b_clipmatrix; 6 allowlisted ERROR lines per run).
+    #   * L10's reparent set is FLAG-CONDITIONAL: it carries 35 only with
+    #     set_notify_local_transform(true) (r98b_notifyphase rep_tick).
+    #   * No r95-style tick-phase cycle exists in any r98 observable
+    #     (r98b_visphase pins the ladder in both schedulers; the qflush/qorder
+    #     rows pin only keys the boundary's 7-mode table shows invariant).
+    #
+    # Deliberately NOT authored:
+    #   * r98b_env — launch-mode fingerprint, informational by construction
+    #     (ph5 varies 2..298 across modes); it pins no law.
+    #   * qflush's coalesce_draws / coalesce_eq / frames_with_tick /
+    #     ticks_window / distinct_draw_pf / max_draws_per_pf /
+    #     hide_span_pf / hide_same_frame and qorder's stagger / stagger_off /
+    #     stag_groups / stagoff_groups — tick-phase dependent within a batch
+    #     and across batches (both classes measured rep-to-rep in this seat's
+    #     own receipts). Pinning them would pin the host's scheduling.
+    #   * the scout's full-line `queue` tail and its L1 wording — scope
+    #     corrected above; the gating prefix is the law.
+    #   * any effective/composed observable (z order, modulate composition,
+    #     sorted draw order, draw-transform state) — no headless readback.
+    # Rows inserted ahead of the crash/descendant tail —
+    # descendant_pipe_detached_control's sleep-8 gap stays adjacent to the
+    # meta probes.
+
+    ('r98_canvas_census', 'canvas_lattice.gd', ['--arm=census'], 0,
+     'PASS canvas_lattice census consts=NOTIFICATION_DRAW=30,NOTIFICATION_VISIBILITY_CHANGED=31,NOTIFICATION_ENTER_CANVAS=32,NOTIFICATION_EXIT_CANVAS=33,NOTIFICATION_TRANSFORM_CHANGED=2000,NOTIFICATION_LOCAL_TRANSFORM_CHANGED=35,CLIP_CHILDREN_DISABLED=0,CLIP_CHILDREN_ONLY=1,CLIP_CHILDREN_AND_DRAW=2,CLIP_CHILDREN_MAX=3,TEXTURE_FILTER_PARENT_NODE=0,TEXTURE_REPEAT_PARENT_NODE=0,OVERSAMPLING_WITH_SCALE_PARENT_NODE=0 props=Visibility,visible,modulate,self_modulate,show_behind_parent,top_level,clip_children,oversampling_with_scale,light_mask,visibility_layer,Ordering,z_index,z_as_relative,y_sort_enabled,Texture,texture_filter,texture_repeat,Material,material,use_parent_material draw_n=32 sigs=draw_ellipse_arc(center:5,major:3,minor:3,start_angle:3,end_angle:3,point_count:2,color:20,width:3,antialiased:1)|draw_rect(rect:7,color:20,filled:1,width:3,antialiased:1)|draw_string(font:24,pos:5,text:4,alignment:2,width:3,font_size:2,modulate:20,justification_flags:2,direction:2,orientation:2,oversampling:3)|draw_mesh(mesh:24,texture:24,transform:11,modulate:20)|draw_set_transform(position:5,rotation:3,scale:5)|draw_set_transform_matrix(xform:11)|draw_animation_slice(animation_length:3,slice_begin:3,slice_end:3,offset:3) defaults=z=0,zrel=1,ysort=0,behind=0,light=1,vislayer=1,clip=0,oversample=0,texfilter=0,texrepeat=0 has_pivot=0 has_global_modulate=0 has_global_z=0 rs_getters=3 notify_default=0 local_notify_default=0'),
+    ('r98_canvas_modulate', 'canvas_lattice.gd', ['--arm=modulate'], 0,
+     'PASS canvas_lattice modulate defaults=1.0000,1.0000,1.0000,1.0000|1.0000,1.0000,1.0000,1.0000 p_modulate=0.5000,1.0000,2.0000,0.2500 c_after_parent=1.0000,1.0000,1.0000,1.0000 c_self_after_parent=1.0000,1.0000,1.0000,1.0000 c_self=0.0000,0.0000,3.0000,1.0000 raw_neg=4.0000,-1.0000,0.5000,4.0000 hidden_same=4.0000,-1.0000,0.5000,4.0000 getter=0 upm=0 material_null=1'),
+    ('r98_canvas_queue', 'canvas_lattice.gd', ['--arm=queue'], 0,
+     'PASS canvas_lattice queue add_same=1 add_n=1 proc_same=1 proc_n=1 coalesce_n=1 from_draw_n=1 hidden_n=0 show_n=1 hide_before_flush_n=0 out_n=0 readd_n=1 outadd_n=1'),
+    ('r98_canvas_draw_surface', 'canvas_lattice.gd', ['--arm=draw_surface'], 0,
+     'PASS canvas_lattice draw_surface ok_n=33 rid=1 xform_same=1 matrix_same=1 order=nsd'),
+    ('r98_canvas_draw_refusal', 'canvas_lattice.gd', ['--arm=draw_refusal'], 0,
+     'PASS canvas_lattice draw_refusal outside_refused=1 proc_refused=1 sig_ok=1 notif_ok=1 draws=1'),
+    ('r98_canvas_vis_chain', 'canvas_lattice.gd', ['--arm=vis_chain'], 0,
+     'PASS canvas_lattice vis_chain hide_in_tree=0 hide_prop=1 hide_notif=1 hide_sig=1 hide_hidden_sig=1 hidden_queue_n=0 restore_in_tree=1 restore_n=1 child_hide_in_tree=0 hide_noop=0 show_in_tree=1 show_notif=1 show_sig=1 draws_total=5'),
+    ('r98_canvas_clip', 'canvas_lattice.gd', ['--arm=clip'], 0,
+     'PASS canvas_lattice clip default=0 only=1 and_draw=2 refused_stays=1 neg_cast=4294967293 vis_layer=3 bit0=1 bit1=1 bit2=0 light=1 oversample=0'),
+    ('r98_canvas_zorder', 'canvas_lattice.gd', ['--arm=zorder'], 0,
+     'PASS canvas_lattice zorder first=ABC z_read=-5,0,5 zrel=1 parent_isolated=1 parent_flag_isolated=1 ysort=1,0 behind=0 front_index=2 requeue=CBA'),
+    ('r98_canvas_xform_skew', 'canvas_lattice.gd', ['--arm=xform_skew'], 0,
+     'PASS canvas_lattice xform_skew m45=(1.0000,0.0000;-0.7071,0.7071;0.0000,0.0000) m90=(-0.0000,1.0000;-0.7071,-0.7071;0.0000,0.0000) ms=(2.0000,0.0000;-1.4383,2.6327;0.0000,0.0000) prop=0.5000 ctor=1 rks=1'),
+    ('r98_canvas_xform_mirror', 'canvas_lattice.gd', ['--arm=xform_mirror'], 0,
+     'PASS canvas_lattice xform_mirror mx_grot=-2.0416 mx_gscale=(2.0000,-2.0000) mx_gskew=0.0000 my_grot=1.1000 my_gscale=(2.0000,-2.0000) nu_gskew=1.3410 nu_grot_deg=42.1249 zero_gscale=(0.000020,0.000020) zero_grot=1.1000 zero_gskew=0.0000'),
+    ('r98_canvas_xform_global', 'canvas_lattice.gd', ['--arm=xform_global'], 0,
+     'PASS canvas_lattice xform_global gp_local=(7.0453,0.6031) grot_local_deg=11.4592 gscale_local=(1.0000,1.0000) translate=(1.0000,0.0000) apply_scale=(2.0000,2.0000) norm=-1.5832 deg45=0.7854 top=(1.4142,1.4142;-1.4142,1.4142;0.0000,0.0000) top_is=1 rel=(0.9211,0.3894;-0.3894,0.9211;0.0000,0.0000) edit_pivot=(0.0000,0.0000)'),
+    ('r98_canvas_notify', 'canvas_lattice.gd', ['--arm=notify'], 0,
+     'PASS canvas_lattice notify defaults=0,0 move_default=[] move_default_c=[] move_p=[35,2000] move_c=[2000] cmove_p=[] cmove_c=[35] reparent=[10,11,18,19,27,30,31,32,33,2000,2010] cl_node=1 reparent_back=[10,11,18,19,27,30,31,32,33,2000,2010] cl_node_back=0'),
+    ('r98_canvas_draw_state', 'canvas_lattice.gd', ['--arm=draw_state'], 0,
+     'PASS canvas_lattice draw_state same=1 matrix_same=1 canvas=(1.0000,0.0000;0.0000,1.0000;0.0000,0.0000) wc=(0.9689,0.2474;-0.2474,0.9689;7.0000,8.0000) screen_eq=1 vp=(64.0000,64.0000) mcl=(3.4015,1.1956) mouse=(-8.7616,-6.0195)'),
+    ('r98_canvas_redraw_triggers', 'canvas_lattice.gd', ['--arm=redraw_triggers'], 0,
+     'PASS canvas_lattice redraw_triggers table=idle=0,pos=0,rot=0,scale=0,skew=0,modulate=0,self_modulate=0,material=0,z=0,zrel=0,ysort=0,behind=0,vislayer=0,lightmask=0,clip=0,upm=0,shader=0,texfilter=1,texrepeat=1,oversample=1,toplevel=1,rename=0,visbit=0,hide=0,show=1'),
+    ('r98_canvas_redraw_context', 'canvas_lattice.gd', ['--arm=redraw_context'], 0,
+     'PASS canvas_lattice redraw_context trigger_n=1 control_n=0 nontransform_n=0'),
+    ('r98b_qflush_same_frame', 'r98b_attack.gd', ['--arm=qflush'], 0,
+     'PASS r98b qflush same_pf=1 d_pf_delta=0 d_n=1'),
+    ('r98b_qflush_suppress', 'r98b_attack.gd', ['--arm=qflush'], 0,
+     'hide_ticksep_n=1 hidden_across_tick_n=0 show_after_tick_n=1'),
+    ('r98b_qorder_tree', 'r98b_attack.gd', ['--arm=qorder'], 0,
+     'PASS r98b qorder tree=ABC||ABC||ABC||ABC||ABC||ABC||ABC rev=|CBA||CBA||CBA||CBA||CBA||CBA'),
+    ('r98b_qorder_flat', 'r98b_attack.gd', ['--arm=qorder'], 0,
+     'flat=CBACBA'),
+    ('r98b_latch_canon', 'r98b_attack.gd', ['--arm=latch', '--var=canon'], 0,
+     'PASS r98b latch trigger_n=1 control_n=0 nontransform_n=0 var=canon'),
+    ('r98b_latch_t1', 'r98b_attack.gd', ['--arm=latch', '--var=t1'], 0,
+     'PASS r98b latch trigger_n=1 tick_wait=1 var=t1'),
+    ('r98b_latch_t3', 'r98b_attack.gd', ['--arm=latch', '--var=t3'], 0,
+     'PASS r98b latch trigger_n=1 tick_wait=3 var=t3'),
+    ('r98b_latch_imm', 'r98b_attack.gd', ['--arm=latch', '--var=imm'], 0,
+     'PASS r98b latch trigger_n=1 var=imm'),
+    ('r98b_latch_second', 'r98b_attack.gd', ['--arm=latch', '--var=second'], 0,
+     'PASS r98b latch trigger_n=1 second_n=0 var=second'),
+    ('r98b_gskew', 'r98b_attack.gd', ['--arm=gskew'], 0,
+     'PASS r98b gskew gs_rt=1 gs_local=0.0258 gs_local_rot=0.0000 gs_global=0.3000 gr_rt=1 gr_local=1.1808 gr_local_skew=0.0258 gr_global=0.9000 gsc_rt=1 gsc_local=(1.7184,0.7131) gsc_global=(2.0000,2.0000) gs_rt_uniform=1 gs_local_uniform=0.3000 gr_rt_uniform=1 gr_local_uniform=0.2000'),
+    ('r98b_skewgrid', 'r98b_attack.gd', ['--arm=skewgrid'], 0,
+     'PASS r98b skewgrid combos=200 ctor_fail_n=75 ctor_fail_z=75 ctor_fail_nz=0 rks_fail_n=72 rks_fail_z=12 rks_fail_nz=60 first_fail=ctor@25(r=0.00,s=0.00,0.00,k=0.00) z_tf00=(0.00001000,0.00000000;-0.00000000,0.00001000) z_ctor_eq00=0 z_tf01=(0.00001000,0.00000000;-0.00000000,1.00000000) z_ctor_eq01=0 y_m0_5=(1.0000,0.0000;0.4794,0.8776;0.0000,0.0000) y_2_5=(1.0000,0.0000;-0.5985,-0.8011;0.0000,0.0000) rot4=(-0.6536,-0.7568;0.7568,-0.6536;0.0000,0.0000)'),
+    ('r98b_epssweep', 'r98b_attack.gd', ['--arm=epssweep'], 0,
+     'PASS r98b epssweep eps=ps=0.001 s=(0,0)->(0.000000,0.000000);ps=0.001 s=(0,1)->(0.000000,0.001000);ps=0.001 s=(1,0)->(0.001000,0.000000);ps=0.500 s=(0,0)->(0.000005,0.000005);ps=0.500 s=(0,1)->(0.000005,0.500000);ps=0.500 s=(1,0)->(0.500000,0.000005);ps=1.000 s=(0,0)->(0.000010,0.000010);ps=1.000 s=(0,1)->(0.000010,1.000000);ps=1.000 s=(1,0)->(1.000000,0.000010);ps=2.000 s=(0,0)->(0.000020,0.000020);ps=2.000 s=(0,1)->(0.000020,2.000000);ps=2.000 s=(1,0)->(2.000000,0.000020);ps=100.000 s=(0,0)->(0.001000,0.001000);ps=100.000 s=(0,1)->(0.001000,100.000000);ps=100.000 s=(1,0)->(100.000000,0.001000) eps_exact=ps=0.001->0.000000010,ps=0.500->0.000005000,ps=1.000->0.000010000,ps=2.000->0.000020000,ps=100.000->0.001000000 zero_rot_skew=(0.000020,0.000020)|grot=1.1000|gskew=0.5000|lscale=(0.0000,0.0000) local_zero=(0.0000,0.0000)|tf=(0.0000,0.0000;-0.0000,0.0000;0.0000,0.0000)'),
+    ('r98b_clipmatrix', 'r98b_attack.gd', ['--arm=clipmatrix'], 0,
+     'PASS r98b clipmatrix stay99=p0->0,p1->1,p2->2 stay3=1 ok2=2 neg=-1->4294967295,-2->4294967294,-3->4294967293,-5->4294967291,-2147483648->2147483648 neg_prop=4294967294 recover=1 stay_after_neg=1 stay_repeat=1 max_const=3 err_lines_expected=6'),
+    ('r98b_notifyphase', 'r98b_attack.gd', ['--arm=notifyphase'], 0,
+     'PASS r98b notifyphase move_tick=[2000] move_frame=[2000] rep_tick=[10,11,18,19,27,30,31,32,33,35,2000,2010] rep_frame=[10,11,18,19,27,30,31,32,33,35,2000,2010] cl_node=1 back_tick=[10,11,18,19,27,30,31,32,33,35,2000,2010] back_frame=[10,11,18,19,27,30,31,32,33,35,2000,2010] cl_node_back=0'),
+    ('r98b_visphase', 'r98b_attack.gd', ['--arm=visphase'], 0,
+     'PASS r98b visphase hide_in_tree=0 hide_notif=1 hide_sig=1 hide_hidden_sig=1 hidden_queue_n=0 restore_in_tree=1 restore_n=1 hide_noop=0 show_notif=1 draws_total=5 tick_hidden_queue_n=0 tick_restore_n=1 tick_hide_noop=0 tick_show_notif=1 tick_draws_total=5'),
+    ('r98b_rksenum', 'r98b_rksenum.gd', [], 0,
+     'PASS r98b_rksenum nz_fail_n=60 sign_pairs=++=24,-+=12,+-=12,--=12'),
+    ('r98c_flush', 'r98c_flush.gd', ['--arm=flush'], 0,
+     'PASS r98c flush multitick_frames_ge2=1 draws_eq_ticks=1 draws_gt_frames=1 max_draws_per_pf_ge2=1 same_pf=1 d_pf_delta=0 d_phf_delta=0 selfq_draws=1 sync_coalesce_n=1 hide_sync_n=0 hide_ticksep_n=1 hide_ticksep_same_frame=1 hidden_across_tick_n=0 show_after_tick_n=1 bounded=1'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
@@ -1772,6 +1895,23 @@ def main():
                     'ERROR: Parameter "p_scene" is null.',
                     'ERROR: Failed to instantiate scene state of "", node count is 0. Make sure the PackedScene resource is valid.',
                     "ERROR: Another resource is loaded from path 'user://r96/collide.tres' (possible cyclic resource inclusion).",
+                ),
+                # r98: two refusal cells are allowlisted with the EXACT
+                # engine lines they deliberately provoke — the clip
+                # refusal (scout `clip` 1/run, boundary `clipmatrix`
+                # 6/run) and the illegal-context draw refusal
+                # (scout `draw_refusal` 2/run). Every string is
+                # byte-equal to an observed line on this seat's own
+                # receipts; the row fails if it stops firing (see
+                # r98_expected_errors_all_matched).
+                'r98_canvas_clip': (
+                    'ERROR: Condition "p_clip_mode >= CLIP_CHILDREN_MAX" is true.',
+                ),
+                'r98_canvas_draw_refusal': (
+                    "ERROR: Drawing is only allowed inside this node's `_draw()`, functions connected to its `draw` signal, or when it receives NOTIFICATION_DRAW.",
+                ),
+                'r98b_clipmatrix': (
+                    'ERROR: Condition "p_clip_mode >= CLIP_CHILDREN_MAX" is true.',
                 ),
             }.get(name, ())
             # r89-fold (critic F1): stderr-fragment pins. geo2d_lattice_lineempty
@@ -3516,6 +3656,16 @@ def main():
             not e["dead_in_run"]
             for r in census_rows
             if r["case"].startswith(("r96_scene_io_", "r96b_"))
+            for e in r["entries"]),
+        # r98 author: three whitelist-bearing cases (canvas clip,
+        # canvas draw_refusal, r98b clipmatrix) and every sibling row carry
+        # the r98_canvas_ / r98b_ / r98c_ prefixes — same named-by-round /
+        # covers-round-prefixes shape as r87-r96, so a dead r98 allowlist
+        # entry cannot pass silently either.
+        "r98_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith(("r98_canvas_", "r98b_", "r98c_"))
             for e in r["entries"]),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
