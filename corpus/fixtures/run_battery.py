@@ -4012,6 +4012,19 @@ def main():
             for r in census_rows
             if r["case"].startswith(("r100_gui_", "r100b_"))
             for e in r["entries"]),
+        # r100-critic F1 (harness ceiling): no gate could see a duplicated,
+        # dropped, or renamed CASES row — a 25-tuple drop-mutant still ran
+        # PASS 491/491 with the per-round gates vacuously true over zero
+        # matching rows. This gate pins uniqueness plus a non-empty
+        # existence check per named-by-round prefix; it fails the
+        # splice-defect class that rode 9d421fb2->254e79dd->2dcbb6f6 green
+        # (repaired at 9ede7c50) and any future drop/dup/rename.
+        "cases_integrity": (
+            len({c[0] for c in CASES}) == len(CASES)
+            and all(
+                any(r["case"].startswith(p) for r in census_rows)
+                for p in ("stree_lattice_", "r98_canvas_", "r98b_", "r98c_",
+                          "r99_audio_", "r99b_", "r100_gui_", "r100b_"))),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
     # self-exit in well under a second; never gated).
