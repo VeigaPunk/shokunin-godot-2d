@@ -1225,6 +1225,138 @@ CASES = [
     # fresh D differ.
     ('r96b_seed_seedcheck', 'r96b_seed.gd', ['--arm=seedcheck'], 0,
      'PASS r96b_seed seedcheck A=aymj7,7o2mc,7hw4g,ipe4k B=1q5w0,cfyh7,d1oyj,rjvfj C=rl1nt,ewl6n,ch4ud,r4oop D=8od4a,nuoth,pm58n,vab63 A_eq_B=false A_eq_C=false A_eq_D=false'),
+    # --- r99 block: the headless in-engine audio surface (r88's
+    # "headless-null audio" verdict refuted) ------------------------------
+    # Fixture audio_lattice.gd is a BYTE-COPY of the frozen r99-scout probe
+    # (corpus/live/r99-scout/probes/audio_lattice.gd sha256
+    # 165571c410d506f14915326fd0806e9ff01e5056631620f565c9a7836a920baf, 773
+    # lines; identical bytes in the scout's proj/ and r99-boundary's
+    # probes/). It is deliberately NOT folded: r99-boundary F1 measured the
+    # probe's block waits as wall-time AND frame-capped, so every wall window
+    # collapses under `--fixed-fps` (which disables real-time sync: 100k-233k
+    # fps) and 14-16/18 cells flip there. That is a LAUNCH-MODE scope, not a
+    # defect to patch — this battery launches with no --fixed-fps/--max-fps
+    # (paced 149.8 fps), the regime where the frozen bytes are accepted 54/54
+    # quiet + 54/54 load by the production classifier. r99b_modes.gd is a
+    # BYTE-COPY of the frozen r99-boundary probe
+    # (corpus/live/r99-boundary/probes/r99b_modes.gd sha256
+    # b680e6f297b7534d02a3bdc33337961062f9f0a79393b2a48798308785d38624, 453
+    # lines) — the cap-free (wall-bounded) instrument for the three boundary
+    # law rows.
+    #
+    # Boundary-driven pin folds. r99-scout's two headline keys were REFUTED
+    # as clock laws by r99-boundary §3.1/§3.2: both are observer-rate
+    # statistics, and both flip in cap-free receipts at unpaced poll rates
+    # (blocks_ge6=false in 3/10; fin_same_frame=false in 2/12). No law is
+    # lost by the folds — each dropped law is re-pinned by a boundary row
+    # measured mode-invariantly:
+    #   * r99_audio_mixblock ends at `all_jumps_q=true` (the law: every
+    #     observed advance is a 128-frame multiple, 10/10 cap-free). Dropped
+    #     `block_jumps_ge6` counts exact-4096 deltas in a 700 ms window at an
+    #     unstated poll rate (the block update is observed split, m*128 +
+    #     (4096-m*128), when polls are us-scale). Dropped `period_is_block`
+    #     (mix period == block period) is re-pinned by r99b_mixfree.
+    #   * r99_audio_finish ends at `finished_seen=true` (the law: the
+    #     playing->false transition is observed and the position resets to
+    #     0). Dropped `fin_frame_ge_1`/`fin_same_frame` are observer
+    #     frame-index coincidences (the signal and the flip land in adjacent
+    #     frames when frames are ~10 us apart). Dropped `played_gt_02` — the
+    #     anti-degenerate assertion that separates this cell from the
+    #     one-sample loop_degenerate termination — is re-pinned by
+    #     r99b_finfree_played.
+    #   * r99_audio_pause pins its prefix only: the dropped tail is a
+    #     4-sample wall-clock ladder (a=0.2815419/b/c/d) that takes a second
+    #     value (a=0.3744218) at other paced rates (--max-fps 30/60/120
+    #     receipts) — a block-phase sample, not a law.
+    #   * r99_audio_loop_degenerate is pinned through `wraps=0`; the dropped
+    #     `frames=N` tail is a wall-clock frame count (17-900 across modes).
+    #   * census pins `max_fps=0` as an explicit LAUNCH-SHAPE fact (this
+    #     launch carries no --max-fps; `--max-fps 30/60/120` makes
+    #     Engine.max_fps read 30/60/120 — r99-boundary F5). A future launch
+    #     shape that adds the flag fails this row loudly, which is the intent.
+    # Every other pinned token is a law or a physical measurement at this
+    # launch shape: the 128-frame quantum / 4096-frame block / 0.092880 s
+    # period, the r88 confound (default-points LOOP_FORWARD self-terminates
+    # after one sample; a stopped/finished player reads 0.0), the generator
+    # capacity law next_pow2(bl*rate)-1 with its refused clear_buffer(), the
+    # peak dB scale 20*log10(level/32768), the linear 2D attenuation
+    # 1-d/max_distance with its -200 dB cutoff, the pan law
+    # clamp(x/128,+/-0.5)*panning_strength, and the silent invalid-bus
+    # fallback to Master.
+    # Deliberately NOT authored (boundary-rejected / measured as samples):
+    #   * block_jumps_ge6 / fin_same_frame as pinned keys (above).
+    #   * r99b_advfree's `after=` tail — 0.2815419 in quiet/load/ff30/ff60/
+    #     ff120/ff1/single/proj2d, but BOTH 0.2815419 and 0.3744218 across
+    #     --max-fps 30/60/120 reps: the boundary's "wall-clock exact 10/10"
+    #     was scoped to five modes; on the receipts it is a two-valued
+    #     sample. Its law prefix is already pinned by r99_audio_advance.
+    #   * r99b_peakphase / r99b_splitcycle / r99b_modeinfo / r99b_mixphase —
+    #     every printed value is mode- or poll-coupled (ranges and wall
+    #     samples, not laws); their content is the boundary's §3/§4 report.
+    #   * r99b_firstlaw's `disabled=`/`fwd4410=` groups — the after-150 ms
+    #     sample flips with the window; only fwd0's first two fields
+    #     (immediate readback = one sample) are invariant, and that law is
+    #     already pinned by the frozen loop_degenerate cell — a second
+    #     instrument for one law is not a second row.
+    #   * the r88 causal repro (r88_audio_repro.gd --fix-loop) — the
+    #     verbatim arm duplicates the existing r88_surfaces audio_pos row,
+    #     and the fix-loop arm's pos/peak samples are mix-block-phase
+    #     coupled (its discriminating power also needs 20 frames >= one mix
+    #     block, i.e. <= ~215 fps). The attribution stays in the report.
+    # 21 rows: 18 scout cells + 3 boundary law rows (r99b_startphase: the
+    # immediate post-play() readback is exactly 128 frames on 5 consecutive
+    # play/stop cycles, mode-invariant; r99b_mixfree: all_jumps_q +
+    # period_is_block cap-free; r99b_finfree_played: played_gt_02 cap-free).
+    # Accepted 1185/1185 receipts at the battery launch shape and every paced
+    # / threaded mode (quiet, load, --max-fps 30/60/120,
+    # --single-threaded-scene, threaded physics); every rejection in the
+    # corpus is confined to the unpaced --fixed-fps modes (this block's own
+    # receipts: corpus/live/r99-author/).
+    # Rows inserted ahead of the crash/descendant tail —
+    # descendant_pipe_detached_control's sleep-8 gap stays adjacent to the
+    # meta probes.
+    ('r99_audio_census', 'audio_lattice.gd', ['--arm=census'], 0,
+     'PASS r99_audio census driver=Dummy mix_rate=44100 speaker_mode=0 output_latency=0.00 bus_count=1 bus_names=["Master"] bus0_vol=0.00 bus0_mute=false bus0_solo=false bus0_send_empty=true bus0_effects=0 idle_peak=-200.00/-200.00 out_devices=["Default"] in_devices=["Default"] enable_input=false max_fps=0 tps=60'),
+    ('r99_audio_bus', 'audio_lattice.gd', ['--arm=bus'], 0,
+     'PASS r99_audio bus added_name=r99_probe_bus added_vol=-6.00 send_empty=true effects=1 eff_class=AudioEffectAmplify eff_vol=-3.00 eff_enabled=true resolved_idx=1 invalid_idx=-1 invalid_readback=Master valid_readback=r99_probe_bus advanced=true removed_effects=0 bus_count_end=1'),
+    ('r99_audio_autoplay', 'audio_lattice.gd', ['--arm=autoplay'], 0,
+     'PASS r99_audio autoplay pre=false at_add=false after1=true noauto=false manual=true'),
+    ('r99_audio_stoppos', 'audio_lattice.gd', ['--arm=stoppos'], 0,
+     'PASS r99_audio stoppos before_gt0=true imm_zero=true playing_after=false after_frame_zero=true'),
+    ('r99_audio_peak_calib', 'audio_lattice.gd', ['--arm=peak_calib'], 0,
+     'PASS r99_audio peak_calib const8191_minus12=true sine8191_matches_const=true const16384_minus6=true sine4096_minus18=true idle_after_minus200=true | const_8191=-12.04 sine_8191=-12.04 sine_4096=-18.06 const_16384=-6.02'),
+    ('r99_audio_mixblock', 'audio_lattice.gd', ['--arm=mixblock'], 0,
+     'PASS r99_audio mixblock q_frames=128 jump_frames=4096 jump6=0.092880 first=0.002902494 first_is_q=true all_jumps_q=true'),
+    ('r99_audio_advance', 'audio_lattice.gd', ['--arm=advance'], 0,
+     'PASS r99_audio advance playing=true advanced=true pb_nonnull=true pos_multiple_q=true pos_after_gt_before=true'),
+    ('r99_audio_finish', 'audio_lattice.gd', ['--arm=finish'], 0,
+     'PASS r99_audio finish stopped=true playing_end=false pos_end=0.0000000 finished_seen=true'),
+    ('r99_audio_loop_degenerate', 'audio_lattice.gd', ['--arm=loop_degenerate'], 0,
+     'PASS r99_audio loop_degenerate playing_end=false pos_end=0.0000000 looped=false maxpos_lt_001=true | maxpos=0.0000227 wraps=0'),
+    ('r99_audio_loop_pts', 'audio_lattice.gd', ['--arm=loop_pts'], 0,
+     'PASS r99_audio loop_pts playing_end=true looped=true wraps_ge2=true maxpos_le_loop=true'),
+    ('r99_audio_gen', 'audio_lattice.gd', ['--arm=gen'], 0,
+     'PASS r99_audio gen caps=["4095", "8191", "16383"] pushed=8191 avail_full=0 full_refused=true clear_noop_active=true clear_noop_stopped=true skips_dry_gt0=true'),
+    ('r99_audio_gen_peak', 'audio_lattice.gd', ['--arm=gen_peak'], 0,
+     'PASS r99_audio gen_peak live_gt_neg10=true dry_is_minus200=true live_gt_dry=true | pushed=8191 live=-0.92 dry=-200.00'),
+    ('r99_audio_poly', 'audio_lattice.gd', ['--arm=poly'], 0,
+     'PASS r99_audio poly voices=3 distinct=2 newest_tracked=true older_advanced=true all_playing=true playing=true'),
+    ('r99_audio_bus_peak', 'audio_lattice.gd', ['--arm=bus_peak'], 0,
+     'PASS r99_audio bus_peak live_gt_neg20=true idle_is_minus200=true live_gt_idle=true'),
+    ('r99_audio_p2d', 'audio_lattice.gd', ['--arm=p2d'], 0,
+     'PASS r99_audio p2d attenuation=1.00 max_distance=2000.00 panning=1.00 area_mask=0 bus=Master volume=0.00 pitch=1.00 listener_current=true advanced=true center_lr_equal=true left_louder=true right_louder=true far_att_lt_center=true cutoff_2001=true cutoff_2500=true diag_pan_saturated=true | center=-18.06/-18.06 x400_diff=9.54 x-800=-18.98/-28.52 x800=-28.52/-18.98 y-1500=-30.10 y-2001=-200.00 y-2500=-200.00 diag=-40.56/-31.02 probe=["x-400=-16.48/-26.02", "x-800=-18.98/-28.52", "x800=-28.52/-18.98", "y-1500=-30.10/-30.10", "y-2001=-200.00/-200.00", "y-2500=-200.00/-200.00", "diag800-1500=-40.56/-31.02"]'),
+    ('r99_audio_pan_law', 'audio_lattice.gd', ['--arm=pan_law'], 0,
+     'PASS r99_audio pan_law center_zero=true x32_diff=4.44 x64_diff=9.54 x200_sat=true maxd_independent=true ps_half=4.44 x_only=true | d32=-4.4370 d64=-9.5424 d200=-9.5424 d64_4k=-9.5424 d64_half=-4.4370 d32_far=-4.4370'),
+    ('r99_audio_gen2d', 'audio_lattice.gd', ['--arm=gen2d'], 0,
+     'PASS r99_audio gen2d pushed=8191 center_peak=-6.94/-6.94 center_half_pan=true advanced=true'),
+    ('r99_audio_pause', 'audio_lattice.gd', ['--arm=pause'], 0,
+     'PASS r99_audio pause playing_while_paused=false frozen_400ms=true resumed_advanced=true pos_gt_frozen=true'),
+    ('r99b_startphase', 'r99b_modes.gd', ['--arm=startphase'], 0,
+     'PASS r99b startphase imm=["0.0029025", "0.0029025", "0.0029025", "0.0029025", "0.0029025"] imm_q=["true", "true", "true", "true", "true"] imm_uniq=1'),
+    ('r99b_mixfree', 'r99b_modes.gd', ['--arm=mixfree'], 0,
+     'all_jumps_q=true period_is_block=true'),
+    ('r99b_finfree_played', 'r99b_modes.gd', ['--arm=finfree'], 0,
+     'played_gt_02=true'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
@@ -1772,6 +1904,15 @@ def main():
                     'ERROR: Parameter "p_scene" is null.',
                     'ERROR: Failed to instantiate scene state of "", node count is 0. Make sure the PackedScene resource is valid.',
                     "ERROR: Another resource is loaded from path 'user://r96/collide.tres' (possible cyclic resource inclusion).",
+                ),
+                # r99: the gen arm deliberately calls clear_buffer() on a
+                # live and then a stopped AudioStreamGeneratorPlayback — the
+                # engine refuses both with the same deterministic line (2x
+                # per receipt; the only stderr in the whole block, and the
+                # row fails if it stops firing — see
+                # r99_expected_errors_all_matched).
+                'r99_audio_gen': (
+                    'ERROR: Condition "active" is true.',
                 ),
             }.get(name, ())
             # r89-fold (critic F1): stderr-fragment pins. geo2d_lattice_lineempty
@@ -3516,6 +3657,15 @@ def main():
             not e["dead_in_run"]
             for r in census_rows
             if r["case"].startswith(("r96_scene_io_", "r96b_"))
+            for e in r["entries"]),
+        # r99 author: one whitelist-bearing case (the gen arm's two refused
+        # clear_buffer() calls) and every sibling row carry the r99_audio_ /
+        # r99b_ prefixes — same named-by-round / covers-round-prefixes shape
+        # as r87-r96.
+        "r99_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith(("r99_audio_", "r99b_"))
             for e in r["entries"]),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
