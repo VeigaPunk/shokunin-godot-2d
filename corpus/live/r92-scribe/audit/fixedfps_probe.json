@@ -1,0 +1,47 @@
+{
+ "default": {
+  "rc": 0,
+  "line": "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=1 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0",
+  "match": "payload0",
+  "envelope_accepts": true,
+  "payload0_only_accepts": true,
+  "regions_f2": "1",
+  "command": "godot --headless --path /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-scribe/fixedfps-proj --script res://tilemap_lattice.gd -- --arm=nav"
+ },
+ "ff120": {
+  "rc": 0,
+  "line": "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=1 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0",
+  "match": "payload0",
+  "envelope_accepts": true,
+  "payload0_only_accepts": true,
+  "regions_f2": "1",
+  "command": "godot --headless --fixed-fps 120 --path /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-scribe/fixedfps-proj --script res://tilemap_lattice.gd -- --arm=nav"
+ },
+ "ff150": {
+  "rc": 0,
+  "line": "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=0 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0",
+  "match": "payload1",
+  "envelope_accepts": true,
+  "payload0_only_accepts": false,
+  "regions_f2": "1",
+  "command": "godot --headless --fixed-fps 150 --path /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-scribe/fixedfps-proj --script res://tilemap_lattice.gd -- --arm=nav"
+ },
+ "ff180": {
+  "rc": 0,
+  "line": "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=0 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0",
+  "match": "payload1",
+  "envelope_accepts": true,
+  "payload0_only_accepts": false,
+  "regions_f2": "1",
+  "command": "godot --headless --fixed-fps 180 --path /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-scribe/fixedfps-proj --script res://tilemap_lattice.gd -- --arm=nav"
+ },
+ "ff600": {
+  "rc": 0,
+  "line": "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=0 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0",
+  "match": "payload1",
+  "envelope_accepts": true,
+  "payload0_only_accepts": false,
+  "regions_f2": "1",
+  "command": "godot --headless --fixed-fps 600 --path /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-scribe/fixedfps-proj --script res://tilemap_lattice.gd -- --arm=nav"
+ }
+}

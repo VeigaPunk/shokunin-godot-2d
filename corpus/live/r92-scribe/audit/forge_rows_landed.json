@@ -1,0 +1,64 @@
+{
+ "classify_process_segment_sha256": "13473e6def6cd2da8b9cbd86143bb21a1d12d0131ddf2f924f39bb8a49783727",
+ "total": 396,
+ "rejected": 396,
+ "accepted": 0,
+ "per_row": {
+  "r92_tilemap_census": {
+   "mutants": 52,
+   "rejected": 52
+  },
+  "r92_tilemap_atlas": {
+   "mutants": 30,
+   "rejected": 30
+  },
+  "r92_tilemap_cells": {
+   "mutants": 43,
+   "rejected": 43
+  },
+  "r92_tilemap_custom": {
+   "mutants": 29,
+   "rejected": 29
+  },
+  "r92_tilemap_terrain": {
+   "mutants": 31,
+   "rejected": 31
+  },
+  "r92_tilemap_pattern": {
+   "mutants": 25,
+   "rejected": 25
+  },
+  "r92_tilemap_encoding": {
+   "mutants": 32,
+   "rejected": 32
+  },
+  "r92_tilemap_fixinvalid": {
+   "mutants": 10,
+   "rejected": 10
+  },
+  "r92_tilemap_srcids": {
+   "mutants": 22,
+   "rejected": 22
+  },
+  "r92_tilemap_physics": {
+   "mutants": 34,
+   "rejected": 34
+  },
+  "r92_tilemap_timing": {
+   "mutants": 22,
+   "rejected": 22
+  },
+  "r92_tilemap_quadrant": {
+   "mutants": 15,
+   "rejected": 15
+  },
+  "r92_tilemap_nav": {
+   "mutants": 46,
+   "rejected": 46
+  },
+  "r92_tilemap_nullts_crash": {
+   "mutants": 5,
+   "rejected": 5
+  }
+ }
+}

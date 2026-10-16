@@ -1,0 +1,421 @@
+{
+ "author_fresh_reps": {
+  "arm_names": [
+   "atlas",
+   "cells",
+   "census",
+   "custom",
+   "encoding",
+   "fixinvalid",
+   "nav",
+   "nullts",
+   "pattern",
+   "physics",
+   "quadrant",
+   "srcids",
+   "terrain",
+   "timing"
+  ],
+  "arms": 14,
+  "files": 126,
+  "reps": [
+   "rep1",
+   "rep2",
+   "rep3"
+  ]
+ },
+ "cases": {
+  "contiguous_after_nav_teardown_clean": true,
+  "nav_teardown_clean_index": 246,
+  "r92_count": 14,
+  "r92_indices": [
+   247,
+   248,
+   249,
+   250,
+   251,
+   252,
+   253,
+   254,
+   255,
+   256,
+   257,
+   258,
+   259,
+   260
+  ],
+  "row_shape": [
+   {
+    "case": "r92_tilemap_census",
+    "expected_exit": 0,
+    "flags": [
+     "--arm=census"
+    ],
+    "payloads": 1,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "PASS tilemap_lattice census layer_defaults=enabled=1 collisi",
+    "signature_kind": "str"
+   },
+   {
+    "case": "r92_tilemap_atlas",
+    "expected_exit": 0,
+    "flags": [
+     "--arm=atlas"
+    ],
+    "payloads": 1,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "PASS tilemap_lattice atlas sid_first=0 count_1=1 has_source_",
+    "signature_kind": "str"
+   },
+   {
+    "case": "r92_tilemap_cells",
+    "expected_exit": 0,
+    "flags": [
+     "--arm=cells"
+    ],
+    "payloads": 1,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "PASS tilemap_lattice cells empty_used=n0[] empty_rect=[P: (0",
+    "signature_kind": "str"
+   },
+   {
+    "case": "r92_tilemap_custom",
+    "expected_exit": 0,
+    "flags": [
+     "--arm=custom"
+    ],
+    "payloads": 1,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "PASS tilemap_lattice custom layers_0=0 layers_2=2 name_0=hp ",
+    "signature_kind": "str"
+   },
+   {
+    "case": "r92_tilemap_terrain",
+    "expected_exit": 0,
+    "flags": [
+     "--arm=terrain"
+    ],
+    "payloads": 1,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "PASS tilemap_lattice terrain sets_0=0 sets_1=1 mode_default=",
+    "signature_kind": "str"
+   },
+   {
+    "case": "r92_tilemap_pattern",
+    "expected_exit": 0,
+    "flags": [
+     "--arm=pattern"
+    ],
+    "payloads": 1,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "PASS tilemap_lattice pattern class=TileMapPattern size=2,2 u",
+    "signature_kind": "str"
+   },
+   {
+    "case": "r92_tilemap_encoding",
+    "expected_exit": 0,
+    "flags": [
+     "--arm=encoding"
+    ],
+    "payloads": 1,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "PASS tilemap_lattice encoding empty_bytes_len=0 empty_arr_le",
+    "signature_kind": "str"
+   },
+   {
+    "case": "r92_tilemap_fixinvalid",
+    "expected_exit": 0,
+    "flags": [
+     "--arm=fixinvalid"
+    ],
+    "payloads": 1,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "PASS tilemap_lattice fixinvalid before_used=n3[0,0;1,0;2,0] ",
+    "signature_kind": "str"
+   },
+   {
+    "case": "r92_tilemap_srcids",
+    "expected_exit": 0,
+    "flags": [
+     "--arm=srcids"
+    ],
+    "payloads": 1,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "PASS tilemap_lattice srcids auto_id=0 next_after_auto=1 expl",
+    "signature_kind": "str"
+   },
+   {
+    "case": "r92_tilemap_physics",
+    "expected_exit": 0,
+    "flags": [
+     "--arm=physics"
+    ],
+    "payloads": 1,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "PASS tilemap_lattice physics phys_layers=1 layer_defaults=cl",
+    "signature_kind": "str"
+   },
+   {
+    "case": "r92_tilemap_timing",
+    "expected_exit": 0,
+    "flags": [
+     "--arm=timing"
+    ],
+    "payloads": 1,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "PASS tilemap_lattice timing empty=null set_same_frame_physic",
+    "signature_kind": "str"
+   },
+   {
+    "case": "r92_tilemap_quadrant",
+    "expected_exit": 0,
+    "flags": [
+     "--arm=quadrant"
+    ],
+    "payloads": 1,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "PASS tilemap_lattice quadrant default_quad=16 quad16_near=hi",
+    "signature_kind": "str"
+   },
+   {
+    "case": "r92_tilemap_nav",
+    "expected_exit": 0,
+    "flags": [
+     "--arm=nav"
+    ],
+    "payloads": 2,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=lay",
+    "signature_kind": "tuple"
+   },
+   {
+    "case": "r92_tilemap_nullts_crash",
+    "expected_exit": -6,
+    "flags": [
+     "--arm=nullts"
+    ],
+    "payloads": 1,
+    "script": "tilemap_lattice.gd",
+    "sig_prefix": "R92 nullts about_to_call_tile_data=1",
+    "signature_kind": "str"
+   }
+  ],
+  "tail_after_r92": true,
+  "tail_head": [
+   "crash_spontaneous_sigabrt",
+   "crash_self_sigkill",
+   "descendant_pipe_detached_control",
+   "descendant_pipe_forged_signature_release"
+  ],
+  "total": 265
+ },
+ "encoding_decode": {
+  "alt": [
+   [
+    3,
+    4,
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    7,
+    -2,
+    -1,
+    -1,
+    -1,
+    -1
+   ]
+  ],
+  "lens": {
+   "alt_bytes": 26,
+   "one_bytes": 14,
+   "tomb_clear_bytes": 14,
+   "tomb_clear_set_bytes": 26,
+   "tomb_erase_bytes": 14,
+   "two_bytes": 26
+  },
+  "one": [
+   [
+    3,
+    4,
+    0,
+    1,
+    0,
+    0
+   ]
+  ],
+  "pinned_len_fields": {
+   "one_bytes_len": "14",
+   "tomb_clear_len": "14",
+   "tomb_clear_set_len": "26",
+   "tomb_erase_len": "14",
+   "tomb_reset_len": "14",
+   "two_bytes_len": "26"
+  },
+  "stride_field": "12",
+  "tomb_clear": [
+   [
+    1,
+    1,
+    -1,
+    -1,
+    -1,
+    -1
+   ]
+  ],
+  "tomb_clear_set": [
+   [
+    1,
+    1,
+    -1,
+    -1,
+    -1,
+    -1
+   ],
+   [
+    5,
+    5,
+    0,
+    0,
+    0,
+    0
+   ]
+  ],
+  "tomb_erase": [
+   [
+    1,
+    1,
+    -1,
+    -1,
+    -1,
+    -1
+   ]
+  ],
+  "tomb_reset": [
+   [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ]
+  ],
+  "tomb_set": [
+   [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ]
+  ],
+  "two": [
+   [
+    3,
+    4,
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    7,
+    -2,
+    0,
+    0,
+    1,
+    0
+   ]
+  ]
+ },
+ "floor_gate_key": "r92_expected_errors_all_matched",
+ "landing_identity": {
+  "corpus/fixtures/project.godot": {
+   "head_sha256": "8de8b3af9cc737edc3e5969b76bf049720266537ec366e03aa42702aa15406e9",
+   "same": true,
+   "worktree_sha256": "8de8b3af9cc737edc3e5969b76bf049720266537ec366e03aa42702aa15406e9"
+  },
+  "corpus/fixtures/run_battery.py": {
+   "head_sha256": "5e5182815e6e3c503f40c78b6416b5cf6aaf9d0d3ea3ed7577594bd9f35aa509",
+   "same": true,
+   "worktree_sha256": "5e5182815e6e3c503f40c78b6416b5cf6aaf9d0d3ea3ed7577594bd9f35aa509"
+  },
+  "corpus/fixtures/tilemap_lattice.gd": {
+   "head_sha256": "a699138945ec7c1c1e6c97b6bf052d0941596610ad4cb9d08d184c07409d3dfb",
+   "same": true,
+   "worktree_sha256": "a699138945ec7c1c1e6c97b6bf052d0941596610ad4cb9d08d184c07409d3dfb"
+  }
+ },
+ "manifests": {
+  "r92-author": {
+   "entries": 1510,
+   "files_on_disk": 1511,
+   "missing_from_disk": [],
+   "unlisted_files": []
+  },
+  "r92-boundary": {
+   "entries": 2471,
+   "files_on_disk": 2472,
+   "missing_from_disk": [],
+   "unlisted_files": []
+  },
+  "r92-scout": {
+   "entries": 295,
+   "files_on_disk": 296,
+   "missing_from_disk": [],
+   "unlisted_files": []
+  }
+ },
+ "r92_expected_errors": {
+  "cases": 9,
+  "entries": {
+   "r92_tilemap_atlas": [
+    "ERROR: Cannot create tile. The tile is outside the texture or tiles are already present in the space the tile would cover.",
+    "ERROR: The TileSetAtlasSource atlas has no tile at (5, 5)."
+   ],
+   "r92_tilemap_cells": [
+    "ERROR: Method/function failed. Returning: p_coords",
+    "ERROR: The TileSetAtlasSource atlas has no tile at (9, 9)."
+   ],
+   "r92_tilemap_custom": [
+    "ERROR: TileSet has no layer with name: absent",
+    "ERROR: TileSet has no layer with name: ghost",
+    "ERROR: TileSet has no layer with name: tag"
+   ],
+   "r92_tilemap_encoding": [
+    "ERROR: Corrupted tile map data: tiles might be missing.",
+    "ERROR: Unsupported tile map data format: 513. Expected format ID lower or equal to: 0"
+   ],
+   "r92_tilemap_fixinvalid": [
+    "ERROR: No TileSet atlas source with id -1.",
+    "ERROR: No TileSet atlas source with id 0.",
+    "ERROR: No TileSet atlas source with id 42."
+   ],
+   "r92_tilemap_pattern": [
+    "ERROR: Condition \"!pattern.has(p_coords)\" is true. Returning: TileSet::INVALID_SOURCE"
+   ],
+   "r92_tilemap_physics": [
+    "ERROR: Parameter \"found\" is null."
+   ],
+   "r92_tilemap_srcids": [
+    "ERROR: Cannot create TileSet atlas source. Another atlas source exists with id 0.",
+    "ERROR: Condition \"p_tile_set_source.is_null()\" is true. Returning: TileSet::INVALID_SOURCE",
+    "ERROR: Provided source ID -3 is not valid. Negative source IDs are not allowed."
+   ],
+   "r92_tilemap_terrain": [
+    "ERROR: Index p_terrain_set = 5 is out of bounds (tile_set->get_terrain_sets_count() = 1)."
+   ]
+  },
+  "lines": 18
+ },
+ "r92_required_stderr": {
+  "r92_tilemap_nullts_crash": [
+   "handle_crash: Program crashed with signal 11",
+   "_nullts (res://tilemap_lattice.gd:927)"
+  ]
+ }
+}

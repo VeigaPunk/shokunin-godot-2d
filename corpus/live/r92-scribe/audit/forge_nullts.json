@@ -1,0 +1,142 @@
+{
+ "classify_process_segment_sha256": "13473e6def6cd2da8b9cbd86143bb21a1d12d0131ddf2f924f39bb8a49783727",
+ "expected_exit": -6,
+ "signature": "R92 nullts about_to_call_tile_data=1",
+ "required_stderr": [
+  "handle_crash: Program crashed with signal 11",
+  "_nullts (res://tilemap_lattice.gd:927)"
+ ],
+ "receipts": 10,
+ "variants": {
+  "author-fresh/nullts.rep1.out": {
+   "A_genuine_as_recorded": true,
+   "A2_rc_normalised_minus6": true,
+   "A3_rc_134_shell_encoding": false,
+   "B_stderr_stripped": false,
+   "C_stdout_stripped": false,
+   "D_stream_anchor_moved_to_stdout": false,
+   "E_rc0": false,
+   "F_other_hazard_signature": false,
+   "G_wrong_site_fragment": false,
+   "H_wrong_handler_fragment": false
+  },
+  "author-fresh/nullts.rep2.out": {
+   "A_genuine_as_recorded": true,
+   "A2_rc_normalised_minus6": true,
+   "A3_rc_134_shell_encoding": false,
+   "B_stderr_stripped": false,
+   "C_stdout_stripped": false,
+   "D_stream_anchor_moved_to_stdout": false,
+   "E_rc0": false,
+   "F_other_hazard_signature": false,
+   "G_wrong_site_fragment": false,
+   "H_wrong_handler_fragment": false
+  },
+  "author-fresh/nullts.rep3.out": {
+   "A_genuine_as_recorded": true,
+   "A2_rc_normalised_minus6": true,
+   "A3_rc_134_shell_encoding": false,
+   "B_stderr_stripped": false,
+   "C_stdout_stripped": false,
+   "D_stream_anchor_moved_to_stdout": false,
+   "E_rc0": false,
+   "F_other_hazard_signature": false,
+   "G_wrong_site_fragment": false,
+   "H_wrong_handler_fragment": false
+  },
+  "scribe-fresh/nullts.rep1.out": {
+   "A_genuine_as_recorded": true,
+   "A2_rc_normalised_minus6": true,
+   "A3_rc_134_shell_encoding": false,
+   "B_stderr_stripped": false,
+   "C_stdout_stripped": false,
+   "D_stream_anchor_moved_to_stdout": false,
+   "E_rc0": false,
+   "F_other_hazard_signature": false,
+   "G_wrong_site_fragment": false,
+   "H_wrong_handler_fragment": false
+  },
+  "scout-hazard/hazard-nullts.r1.out": {
+   "A_genuine_as_recorded": false,
+   "A2_rc_normalised_minus6": true,
+   "A3_rc_134_shell_encoding": false,
+   "B_stderr_stripped": false,
+   "C_stdout_stripped": false,
+   "D_stream_anchor_moved_to_stdout": false,
+   "E_rc0": false,
+   "F_other_hazard_signature": false,
+   "G_wrong_site_fragment": false,
+   "H_wrong_handler_fragment": false
+  },
+  "scout-hazard/hazard-nullts.r2.out": {
+   "A_genuine_as_recorded": false,
+   "A2_rc_normalised_minus6": true,
+   "A3_rc_134_shell_encoding": false,
+   "B_stderr_stripped": false,
+   "C_stdout_stripped": false,
+   "D_stream_anchor_moved_to_stdout": false,
+   "E_rc0": false,
+   "F_other_hazard_signature": false,
+   "G_wrong_site_fragment": false,
+   "H_wrong_handler_fragment": false
+  },
+  "scout-hazard/hazard-nullts.r3.out": {
+   "A_genuine_as_recorded": false,
+   "A2_rc_normalised_minus6": true,
+   "A3_rc_134_shell_encoding": false,
+   "B_stderr_stripped": false,
+   "C_stdout_stripped": false,
+   "D_stream_anchor_moved_to_stdout": false,
+   "E_rc0": false,
+   "F_other_hazard_signature": false,
+   "G_wrong_site_fragment": false,
+   "H_wrong_handler_fragment": false
+  },
+  "scout-hazard/disc4-setcell_td.r1.out": {
+   "A_genuine_as_recorded": false,
+   "A2_rc_normalised_minus6": false,
+   "A3_rc_134_shell_encoding": false,
+   "B_stderr_stripped": false,
+   "C_stdout_stripped": false,
+   "D_stream_anchor_moved_to_stdout": false,
+   "E_rc0": false,
+   "F_other_hazard_signature": false,
+   "G_wrong_site_fragment": false,
+   "H_wrong_handler_fragment": false
+  },
+  "scout-hazard/disc4-setcell_td.r2.out": {
+   "A_genuine_as_recorded": false,
+   "A2_rc_normalised_minus6": false,
+   "A3_rc_134_shell_encoding": false,
+   "B_stderr_stripped": false,
+   "C_stdout_stripped": false,
+   "D_stream_anchor_moved_to_stdout": false,
+   "E_rc0": false,
+   "F_other_hazard_signature": false,
+   "G_wrong_site_fragment": false,
+   "H_wrong_handler_fragment": false
+  },
+  "scout-hazard/disc4-setcell_td.r3.out": {
+   "A_genuine_as_recorded": false,
+   "A2_rc_normalised_minus6": false,
+   "A3_rc_134_shell_encoding": false,
+   "B_stderr_stripped": false,
+   "C_stdout_stripped": false,
+   "D_stream_anchor_moved_to_stdout": false,
+   "E_rc0": false,
+   "F_other_hazard_signature": false,
+   "G_wrong_site_fragment": false,
+   "H_wrong_handler_fragment": false
+  }
+ },
+ "cross_receipt": {
+  "r91-teardown-crash": {
+   "rc": 134,
+   "row_passes": false
+  },
+  "synthetic-foreign-sigabrt": {
+   "rc": -6,
+   "row_passes": false
+  }
+ }
+}

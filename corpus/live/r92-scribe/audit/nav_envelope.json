@@ -1,0 +1,123 @@
+{
+ "payload0_sha256_prefix": "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_l",
+ "payload1_sha256_prefix": "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_l",
+ "payload_token_counts": [
+  22,
+  22
+ ],
+ "payload_diff": [
+  {
+   "index": 14,
+   "payload0": "regions_f1=1",
+   "payload1": "regions_f1=0"
+  }
+ ],
+ "groups": {
+  "scout": {
+   "receipts": 10,
+   "payload0": 10,
+   "payload1": 0,
+   "neither": 0,
+   "dupes": 9
+  },
+  "boundary": {
+   "receipts": 126,
+   "payload0": 80,
+   "payload1": 46,
+   "neither": 0,
+   "dupes": 124
+  },
+  "author-fresh": {
+   "receipts": 3,
+   "payload0": 3,
+   "payload1": 0,
+   "neither": 0,
+   "dupes": 2
+  },
+  "author-runs": {
+   "receipts": 5,
+   "payload0": 5,
+   "payload1": 0,
+   "neither": 0,
+   "dupes": 4
+  },
+  "scribe-runs": {
+   "receipts": 0,
+   "payload0": 0,
+   "payload1": 0,
+   "neither": 0,
+   "dupes": 0
+  }
+ },
+ "distinct_lines": {
+  "PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=lay": 46
+ },
+ "distinct_line_count": 2,
+ "field_value_sets": {
+  "layer_nav_enabled": [
+   "1"
+  ],
+  "layer_nav_vis": [
+   "0"
+  ],
+  "nav_layer_defaults": [
+   "layers=1"
+  ],
+  "nav_layer_set": [
+   "3"
+  ],
+  "nav_layers": [
+   "1"
+  ],
+  "nav_map_valid": [
+   "1"
+  ],
+  "nav_poly_default": [
+   "null"
+  ],
+  "nav_poly_set": [
+   "obj"
+  ],
+  "regions_after_plain_cell": [
+   "1"
+  ],
+  "regions_disabled_f1": [
+   "0"
+  ],
+  "regions_disabled_same_frame": [
+   "1"
+  ],
+  "regions_empty": [
+   "0"
+  ],
+  "regions_erased_f1": [
+   "0"
+  ],
+  "regions_erased_same_frame": [
+   "1"
+  ],
+  "regions_f1": [
+   "0",
+   "1"
+  ],
+  "regions_f2": [
+   "1"
+  ],
+  "regions_reenabled": [
+   "1"
+  ],
+  "regions_same_frame": [
+   "0"
+  ],
+  "value1": [
+   "1"
+  ]
+ },
+ "multi_valued_fields": {
+  "regions_f1": [
+   "0",
+   "1"
+  ]
+ },
+ "neither_examples": []
+}

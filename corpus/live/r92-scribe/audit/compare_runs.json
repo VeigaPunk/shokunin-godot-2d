@@ -1,0 +1,3568 @@
+{
+ "run_a": {
+  "verdict": "PASS",
+  "rows": 272,
+  "fails": []
+ },
+ "run_b": {
+  "verdict": "FAIL",
+  "rows": 272,
+  "fails": [
+   "overlap"
+  ]
+ },
+ "common_rows": 272,
+ "only_a": [],
+ "only_b": [],
+ "buckets": {
+  "identical": {
+   "count": 217,
+   "cases": [
+    "animation_property",
+    "audio_bus_route",
+    "audio_playback",
+    "button_activation",
+    "button_activation_focus_loss",
+    "button_group_selection",
+    "button_group_selection_disconnected",
+    "camera_bottom_limit",
+    "camera_follow",
+    "camera_left_limit",
+    "camera_limit",
+    "camera_proc_cam_comp",
+    "camera_proc_cam_phase",
+    "camera_proc_cam_space",
+    "camera_proc_cam_subpixel",
+    "camera_proc_cam_zoom_center",
+    "camera_proc_cl_draworder",
+    "camera_proc_cl_follow",
+    "camera_proc_cl_phase",
+    "camera_proc_cl_stack",
+    "camera_proc_par_2d",
+    "camera_proc_par_layer",
+    "camera_proc_par_phase",
+    "camera_proc_vp_render_indep",
+    "camera_proc_vp_subcam",
+    "camera_proc_vp_worlds",
+    "camera_top_limit",
+    "causal",
+    "checkbox_toggle",
+    "checkbox_toggle_disconnected",
+    "contact_runtime",
+    "crash_self_sigkill",
+    "crash_spontaneous_sigabrt",
+    "descendant_pipe_detached_control",
+    "descendant_pipe_forged_signature_release",
+    "geo2d_lattice_atlasempty",
+    "geo2d_lattice_bridge",
+    "geo2d_lattice_census",
+    "geo2d_lattice_contain",
+    "geo2d_lattice_edge",
+    "geo2d_lattice_joins",
+    "geo2d_lattice_lineempty",
+    "geo2d_lattice_offdeg",
+    "geo2d_lattice_offempty",
+    "geo2d_lattice_ops",
+    "geo2d_lattice_pipedges",
+    "geo2d_lattice_polyendpoly",
+    "geo2d_lattice_pred",
+    "geo2d_lattice_ring",
+    "geo2d_lattice_ring2",
+    "geo2d_lattice_ring4",
+    "geo2d_lattice_ringhits",
+    "geo2d_lattice_trig",
+    "health_gauge",
+    "input89_edges_axisdev",
+    "input89_edges_exact",
+    "input_lattice_acc_flush",
+    "input_lattice_acc_off",
+    "input_lattice_burst",
+    "input_lattice_census",
+    "input_lattice_conflict",
+    "input_lattice_dev_joy",
+    "input_lattice_dispatch_order",
+    "input_lattice_dz_ladder",
+    "input_lattice_echo_edge",
+    "input_lattice_imap_erase",
+    "input_lattice_imap_mid_cb",
+    "input_lattice_joy_axis",
+    "input_lattice_key_map",
+    "input_lattice_mouse_hdls",
+    "input_lattice_null_edge",
+    "input_lattice_phys_peer",
+    "input_lattice_pre_frame",
+    "input_lattice_press_idle",
+    "input_lattice_press_phys",
+    "input_lattice_reentrant",
+    "input_lattice_release_edge",
+    "input_route",
+    "keyup",
+    "level_collision",
+    "mechanic",
+    "nav_lattice_census",
+    "nav_lattice_link",
+    "nav_lattice_path",
+    "nav_lattice_query",
+    "nav_lattice_sync",
+    "nav_lattice_teardown_clean",
+    "nav_lattice_teardown_crash",
+    "negative_route",
+    "negative_transition",
+    "phys2d_backends_census",
+    "phys2d_backends_dummy_degenerate",
+    "phys2d_backends_dummy_timeout",
+    "phys2d_backends_gate_duality",
+    "phys2d_backends_gate_matrix",
+    "phys2d_backends_jolt3d_live",
+    "phys2d_backends_lattice",
+    "phys2d_backends_xcheck",
+    "phys2d_events_area_dss_in_cb",
+    "phys2d_events_area_edge",
+    "phys2d_events_area_free_rid",
+    "phys2d_events_area_monitoring_deferred",
+    "phys2d_events_area_monitoring_direct",
+    "phys2d_events_area_node_position",
+    "phys2d_events_area_queue_free",
+    "phys2d_events_area_srv_set_state",
+    "phys2d_events_cm_deferred_cb",
+    "phys2d_events_cm_max0",
+    "phys2d_events_cm_max0_cb",
+    "phys2d_events_cm_off",
+    "phys2d_events_cm_on",
+    "phys2d_events_cm_toggle_cb",
+    "phys2d_events_edge_node",
+    "phys2d_events_edge_node_srv",
+    "phys2d_events_edge_revert",
+    "phys2d_events_edge_srv",
+    "phys2d_events_rb_dss_in_cb",
+    "phys2d_events_rb_free_rid",
+    "phys2d_events_rb_node_position",
+    "phys2d_events_rb_queue_free",
+    "phys2d_events_rb_srv_set_state",
+    "phys2d_joints_area_body_gate",
+    "phys2d_joints_area_entry_order",
+    "phys2d_joints_area_lattice",
+    "phys2d_joints_joint_census",
+    "phys2d_joints_joint_disable_coll",
+    "phys2d_joints_joint_freed_rid",
+    "phys2d_joints_joint_groove",
+    "phys2d_joints_joint_node_anchor",
+    "phys2d_joints_joint_node_clear",
+    "phys2d_joints_joint_node_freed_rid",
+    "phys2d_joints_joint_pin_clear",
+    "phys2d_joints_joint_pin_params",
+    "phys2d_joints_joint_pin_tiers",
+    "phys2d_joints_joint_spring_env",
+    "phys2d_joints_joint_unset_refusal",
+    "phys2d_joints_layer_dyn_pair",
+    "phys2d_joints_layer_flip_cb",
+    "phys2d_joints_layer_flip_mid",
+    "phys2d_joints_layer_or_table",
+    "phys2d_joints_layer_zero_table",
+    "phys2d_motion_bds_windows",
+    "phys2d_motion_btm_embed",
+    "phys2d_motion_btm_from",
+    "phys2d_motion_btm_from2",
+    "phys2d_motion_btm_hit",
+    "phys2d_motion_btm_margin",
+    "phys2d_motion_btm_recflag",
+    "phys2d_motion_ccd_edge",
+    "phys2d_motion_ccd_gap",
+    "phys2d_motion_ccd_ladder",
+    "phys2d_motion_ccd_spin",
+    "phys2d_motion_cont_cap",
+    "phys2d_motion_cont_persist",
+    "phys2d_motion_cont_windows",
+    "phys2d_motion_dss_embed",
+    "phys2d_motion_dss_motion",
+    "phys2d_motion_dss_purity",
+    "phys2d_motion_dss_shapes",
+    "phys2d_motion_dss_wrongarg",
+    "phys2d_motion_mac_chain",
+    "phys2d_motion_mac_embed",
+    "phys2d_motion_mac_hit",
+    "phys2d_motion_mac_maxcol",
+    "phys2d_motion_mac_miss",
+    "phys2d_motion_mac_nodecomp",
+    "phys2d_motion_mac_rigid",
+    "phys2d_motion_mac_test_only",
+    "phys2d_motion_tm_hit",
+    "r87_edge_jpbe",
+    "r88_surfaces_audio_pos",
+    "r88_surfaces_light_props",
+    "r88_surfaces_mp_loopback",
+    "r88_surfaces_mp_offline",
+    "r88_surfaces_mp_spawner",
+    "r88_surfaces_sprite_meta",
+    "r88_surfaces_sprite_phys",
+    "r88_surfaces_vis_not",
+    "r90_lattice_comread",
+    "r90_lattice_comrefuse",
+    "r90_lattice_contacts",
+    "r90_lattice_damp",
+    "r90_lattice_freezelock",
+    "r90_lattice_gravity",
+    "r90_lattice_impedge",
+    "r90_lattice_impulse",
+    "r90_lattice_lag",
+    "r90_lattice_order",
+    "r90_lattice_props",
+    "r90_lattice_write",
+    "r92_tilemap_atlas",
+    "r92_tilemap_cells",
+    "r92_tilemap_census",
+    "r92_tilemap_custom",
+    "r92_tilemap_encoding",
+    "r92_tilemap_fixinvalid",
+    "r92_tilemap_nav",
+    "r92_tilemap_nullts_crash",
+    "r92_tilemap_pattern",
+    "r92_tilemap_physics",
+    "r92_tilemap_quadrant",
+    "r92_tilemap_srcids",
+    "r92_tilemap_terrain",
+    "r92_tilemap_timing",
+    "route_toggle",
+    "save_corrupt_negative",
+    "save_process_missing",
+    "scene_signal",
+    "slider_adjust",
+    "slider_adjust_repeat_right",
+    "slider_adjust_repeat_right_focus_restore",
+    "slider_adjust_repeat_right_second_focus_restore",
+    "slider_adjust_repeat_right_second_focus_restore_press_after_late_reconnect",
+    "slider_adjust_repeat_right_second_focus_restore_reconnect_after_first_left",
+    "transition",
+    "ui_signal_hud",
+    "wrong_key"
+   ]
+  },
+  "tail-only": {
+   "count": 11,
+   "cases": [
+    "input_lattice_api_press",
+    "input_lattice_ui_ns",
+    "nav_lattice_agent",
+    "nav_lattice_avoid",
+    "nav_lattice_bake",
+    "nav_lattice_region",
+    "release",
+    "save_process_reader",
+    "save_process_writer",
+    "save_roundtrip",
+    "tween_flash"
+   ]
+  },
+  "pin-diff": {
+   "count": 0,
+   "cases": []
+  },
+  "no-pinned-line": {
+   "count": 44,
+   "cases": [
+    "animation_stuck",
+    "audio_bus_route_invalid_control",
+    "audio_no_play",
+    "button_activation_disconnected",
+    "button_activation_unfocused",
+    "button_group_selection_ungroup_b",
+    "camera_far_bottom_bound",
+    "camera_far_bound",
+    "camera_far_left_bound",
+    "camera_far_top_bound",
+    "camera_no_follow",
+    "contact_no_collision",
+    "ei_bound_refusal",
+    "export_preset_missing",
+    "export_readiness",
+    "health_gauge_disconnected",
+    "negative_overlap",
+    "negative_signal",
+    "overlap",
+    "probe_descendant_error_spoof",
+    "probe_descendant_pipe_eof",
+    "probe_descendant_signature_spoof",
+    "probe_error_clause_surface",
+    "probe_save_independent_process",
+    "probe_spontaneous_crash_classification",
+    "probe_while_live_signature_gate",
+    "slider_adjust_disconnected",
+    "slider_adjust_no_focus",
+    "slider_adjust_repeat_right_disconnected",
+    "slider_adjust_repeat_right_focus_handoff",
+    "slider_adjust_repeat_right_no_focus",
+    "slider_adjust_repeat_right_second_focus_loss",
+    "slider_adjust_repeat_right_second_focus_restore_clear_frame_then_push_release",
+    "slider_adjust_repeat_right_second_focus_restore_clear_then_push_release",
+    "slider_adjust_repeat_right_second_focus_restore_composite_push_and_clear",
+    "slider_adjust_repeat_right_second_focus_restore_disconnect_after_first",
+    "slider_adjust_repeat_right_second_focus_restore_disconnected",
+    "slider_adjust_repeat_right_second_focus_restore_observe_parsed_release",
+    "slider_adjust_repeat_right_second_focus_restore_observe_push_input_release",
+    "slider_adjust_repeat_right_second_focus_restore_push_frame_then_clear_release",
+    "slider_adjust_repeat_right_second_focus_restore_reconnect_after_final_left",
+    "slider_adjust_repeat_right_second_focus_restore_release_after_late_reconnect_press",
+    "tween_no_start",
+    "ui_signal_disconnected"
+   ]
+  }
+ },
+ "detail": {
+  "animation_stuck": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "audio_bus_route_invalid_control": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "audio_no_play": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "button_activation_disconnected": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "button_activation_unfocused": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "button_group_selection_ungroup_b": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "camera_far_bottom_bound": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "camera_far_bound": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "camera_far_left_bound": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "camera_far_top_bound": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "camera_no_follow": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "contact_no_collision": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "ei_bound_refusal": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "export_preset_missing": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 1,
+   "exit_b": 1
+  },
+  "export_readiness": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "health_gauge_disconnected": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "input_lattice_api_press": {
+   "kind": "tail-only",
+   "info": {
+    "pin": "PASS input_lattice api_press imm[1/0.70/1/0] raw=0.70 pl=[\"ap\"] recv=[] pr=[\"pr0{ap=1/0.70/1/0}\", \"pr1{ap=1/0.70/0/0}\", \"pr2{ap=0/0.00/0/1}\"] ph=[\"ph1{ap=1/0.70/1/0}\", \"ph2{ap=0/0.00/0/0}\", \"ph3{ap=0/0.00/0/1}\"]",
+    "a_tail": "",
+    "b_tail": ""
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "input_lattice_ui_ns": {
+   "kind": "tail-only",
+   "info": {
+    "pin": "PASS input_lattice ui_ns ua_ev=3 during[1/1.00/0/0|1/1.00/0/0] pl=[\"cx\", \"ui_accept\", \"ui_text_completion_accept\", \"ui_text_newline\", \"ui_text_submit\"] ua_has_after=false cx_after[0/0.00/0/0] recv=[1:ins0@pr+0/ph+0:K(kc=4194309,ph=0,pr=1,echo=0,dev=16,u=0,sh=0) m[ui_accept:1/0|I1/1/0,cx:1/0|I1/1/0] echo0 2:scs0@pr+0/ph+0:K(kc=4194309,ph=0,pr=1,echo=0,dev=16,u=0,sh=0) m[ui_accept:1/0|I1/1/0,cx:1/0|I1/1/0] echo0 3:uks0@pr+0/ph+0:K(kc=4194309,ph=0,pr=1,echo=0,dev=16,u=0,sh=0) m[ui_accept:1/0|I1/1/0,cx:1/0|I1/1/0] echo0 4:uhs0@pr+0/ph+0:K(kc=4194309,ph=0,pr=1,echo=0,dev=16,u=0,sh=0) m[ui_accept:1/0|I1/1/0,cx:1/0|I1/1/0] echo0 5:ins0@pr+2/ph+0:K(kc=4194309,ph=0,pr=0,echo=0,dev=16,u=0,sh=0) m[ui_accept:gone|Igone,cx:0/1|I0/0/1] echo0 6:scs0@pr+2/ph+0:K(kc=4194309,ph=0,pr=0,echo=0,dev=16,u=0,sh=0) m[ui_accept:gone|Igone,cx:0/1|I0/0/1] echo0 7:uks0@pr+2/ph+0:K(kc=4194309,ph=0,pr=0,echo=0,dev=16,u=0,sh=0) m[ui_accept:gone|Igone,cx:0/1|I0/0/1] echo0 8:uhs0@pr+2/ph+0:K(kc=4194309,ph=0,pr=0,echo=0,dev=16,u=0,sh=0) m[ui_accept:gone|Igone,cx:0/1|I0/0/1] echo0]",
+    "a_tail": "",
+    "b_tail": ""
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "nav_lattice_agent": {
+   "kind": "tail-only",
+   "info": {
+    "pin": "PASS nav_lattice agent settled=(180.0000,180.0000)/false/true/false/226.27/226.27/1 fin=true reached=true reachable=true dist=2.2741 final_pos=(178.3920,178.3920) final_target=(180.0000,180.0000) path=[(20.0000,20.0000),(180.0000,180.0000)] desired=4.0 target_desired=8.0",
+    "a_tail": " walk_steps=28 reached_at=28 first_reachable=8",
+    "b_tail": " walk_steps=28 reached_at=28 first_reachable=5"
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "nav_lattice_avoid": {
+   "kind": "tail-only",
+   "info": {
+    "pin": "PASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false",
+    "a_tail": " seq_a=[10.706,0.000,10.766,0.000,10.825,0.000,10.885,0.000,10.946,0.000] seq_b=[-9.175,0.000,-9.115,0.000,-9.055,0.000,-8.994,0.000,-8.933,0.000] vel_a=(10.9457,0.0000) vel_b=(-8.9329,0.0000) sum_max",
+    "b_tail": " seq_a=[14.195,0.000,14.273,0.000,14.353,0.000,14.432,0.000,14.512,0.000] seq_b=[-5.648,0.000,-5.568,0.000,-5.488,0.000,-5.408,0.000,-5.327,0.000] vel_a=(14.5122,0.0000) vel_b=(-5.3269,0.0000) sum_max"
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "nav_lattice_bake": {
+   "kind": "tail-only",
+   "info": {
+    "pin": "PASS nav_lattice bake outline_polys=4 outline_verts=8 hole_across=[(100.0000,20.0000),(140.0000,60.0000),(140.0000,140.0000),(100.0000,180.0000)] hole_straight=[(20.0000,100.0000),(60.0000,60.0000),(140.0000,60.0000),(180.0000,100.0000)] parse_obs=1 parse_trav=0 parse_has=false baked_polys=4 baked_verts=8 collider_only_polys=0 through=[(-100.0000,0.0000),(-55.0000,55.0000),(55.0000,55.0000),(100.0000,-0.0000)] around=[(-100.0000,-100.0000),(-55.0000,55.0000),(100.0000,100.0000)] outside=[(-145.0000,-145.0000),(-55.0000,55.0000),(100.0000,100.0000)]",
+    "a_tail": " iter_b=2 settle_a=3 settle_b=2",
+    "b_tail": " iter_b=2 settle_a=3 settle_b=1"
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "nav_lattice_region": {
+   "kind": "tail-only",
+   "info": {
+    "pin": "PASS nav_lattice region base=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] top_cost1=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] bot_cost1=[(10.0000,50.0000),(20.0000,40.0000),(80.0000,40.0000),(90.0000,50.0000)] enter500=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] l1=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] l2=[(20.0000,40.0000),(80.0000,40.0000)] l3=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] dis_settled=[(10.0000,50.0000),(20.0000,40.0000),(80.0000,40.0000),(90.0000,50.0000)] reenabled=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] swapped=[(10.0000,50.0000),(20.0000,40.0000),(80.0000,40.0000),(90.0000,50.0000)] restored=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] counts=regs=4,cost_a=1.0,cost_b=1.0,en_a=true,en_b=true",
+    "a_tail": " dis_same=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] settle=5 iter=11",
+    "b_tail": " dis_same=[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)] settle=3 iter=11"
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "negative_overlap": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 1,
+   "exit_b": 1
+  },
+  "negative_signal": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 1,
+   "exit_b": 1
+  },
+  "overlap": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": "PASS packed_scene=true area_shape=true layers=1/2 masks=2/0 pre_overlap_signals=0 overlap_signal_count=1 consumed=true",
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "FAIL",
+   "exit_a": 0,
+   "exit_b": 1
+  },
+  "probe_descendant_error_spoof": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": null,
+   "exit_b": null
+  },
+  "probe_descendant_pipe_eof": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": null,
+   "exit_b": null
+  },
+  "probe_descendant_signature_spoof": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": null,
+   "exit_b": null
+  },
+  "probe_error_clause_surface": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": null,
+   "exit_b": null
+  },
+  "probe_save_independent_process": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": null,
+   "exit_b": null
+  },
+  "probe_spontaneous_crash_classification": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": null,
+   "exit_b": null
+  },
+  "probe_while_live_signature_gate": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": null,
+   "exit_b": null
+  },
+  "release": {
+   "kind": "tail-only",
+   "info": {
+    "pin": "PASS release press_receipts=1",
+    "a_tail": " release_receipts=1 held_moves=3 post_release_moves=0 scene=A",
+    "b_tail": " release_receipts=1 held_moves=4 post_release_moves=0 scene=A"
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "save_process_reader": {
+   "kind": "tail-only",
+   "info": {
+    "pin": "PASS save_process reader=true pid=",
+    "a_tail": "3600074 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-scribe/battery-runs/20261016T001546769898Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261016T001546769898Z/r58-pr",
+    "b_tail": "57132 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-scribe/battery-committed/20261016T001825616636Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261016T001825616636Z/r58"
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "save_process_writer": {
+   "kind": "tail-only",
+   "info": {
+    "pin": "PASS save_process writer=true pid=",
+    "a_tail": "3598223 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-scribe/battery-runs/20261016T001546769898Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261016T001546769898Z/r58-pr",
+    "b_tail": "52156 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-scribe/battery-committed/20261016T001825616636Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261016T001825616636Z/r58"
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "save_roundtrip": {
+   "kind": "tail-only",
+   "info": {
+    "pin": "PASS save_roundtrip structured=true reopened=true values_match=true user_path=",
+    "a_tail": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-scribe/battery-runs/20261016T001546769898Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261016T001546769898Z/r57-save.json",
+    "b_tail": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r92-scribe/battery-committed/20261016T001825616636Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261016T001825616636Z/r57-save.json"
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "slider_adjust_disconnected": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_no_focus": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_disconnected": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_focus_handoff": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_no_focus": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_second_focus_loss": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_second_focus_restore_clear_frame_then_push_release": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_second_focus_restore_clear_then_push_release": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_second_focus_restore_composite_push_and_clear": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_second_focus_restore_disconnect_after_first": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_second_focus_restore_disconnected": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_second_focus_restore_observe_parsed_release": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_second_focus_restore_observe_push_input_release": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_second_focus_restore_push_frame_then_clear_release": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_second_focus_restore_reconnect_after_final_left": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "slider_adjust_repeat_right_second_focus_restore_release_after_late_reconnect_press": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "tween_flash": {
+   "kind": "tail-only",
+   "info": {
+    "pin": "PASS tween_flash transient_modulate=",
+    "a_tail": "(0.7104, 0.7792, 0.8722, 1.0) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=61",
+    "b_tail": "(0.7007, 0.7986, 0.8982, 1.0) baseline_modulate=(0.7, 0.8, 0.9, 1.0) frames_observed=62"
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "tween_no_start": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  },
+  "ui_signal_disconnected": {
+   "kind": "no-pinned-line",
+   "info": {
+    "a": null,
+    "b": null
+   },
+   "verdict_a": "PASS",
+   "verdict_b": "PASS",
+   "exit_a": 2,
+   "exit_b": 2
+  }
+ },
+ "r92": {
+  "r92_tilemap_atlas": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "r92_tilemap_cells": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "r92_tilemap_census": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "r92_tilemap_custom": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "r92_tilemap_encoding": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "r92_tilemap_fixinvalid": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "r92_tilemap_nav": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "r92_tilemap_nullts_crash": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": -6,
+   "exit_b": -6
+  },
+  "r92_tilemap_pattern": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "r92_tilemap_physics": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "r92_tilemap_quadrant": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "r92_tilemap_srcids": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "r92_tilemap_terrain": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": 0,
+   "exit_b": 0
+  },
+  "r92_tilemap_timing": {
+   "a": "PASS",
+   "b": "PASS",
+   "kind": "identical",
+   "exit_a": 0,
+   "exit_b": 0
+  }
+ },
+ "gates": {
+  "a": {
+   "probe_error_clause_surface": true
+  },
+  "b": {
+   "probe_error_clause_surface": true
+  }
+ },
+ "census": {
+  "a": {
+   "probe_error_clause_surface": {
+    "scope": "every CASES row carrying expected_errors in this battery run; opt-in probe rows execute after this census (their inline allowlists are listed, not censused)",
+    "rows_with_expected_errors": 68,
+    "rows": [
+     {
+      "case": "negative_overlap",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: negative control: expected collected signal was absent with disabled mask",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: negative control: expected collected signal was absent with disabled mask",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "negative_transition",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Can't change to a null scene. Use unload_current_scene() if you wish to unload it.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Can't change to a null scene. Use unload_current_scene() if you wish to unload it.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: negative control: deliberately invalid scene destination rejected",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: negative control: deliberately invalid scene destination rejected",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "negative_signal",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: negative control: expected collected signal was absent (dispatch deliberately disabled)",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: negative control: expected collected signal was absent (dispatch deliberately disabled)",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "camera_no_follow",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: camera follow assertion failed: target moved but active center did not track",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: camera follow assertion failed: target moved but active center did not track",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "camera_far_bound",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: camera limit assertion failed: expected active center within right boundary and distinct from target",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: camera limit assertion failed: expected active center within right boundary and distinct from target",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "camera_far_top_bound",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: camera limit assertion failed: expected active center within top boundary and distinct from target",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: camera limit assertion failed: expected active center within top boundary and distinct from target",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "camera_far_left_bound",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: camera limit assertion failed: expected active center within left boundary and distinct from target",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: camera limit assertion failed: expected active center within left boundary and distinct from target",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "camera_far_bottom_bound",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: camera limit assertion failed: expected active center within bottom boundary and distinct from target",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: camera limit assertion failed: expected active center within bottom boundary and distinct from target",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "ui_signal_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: UI assertion failed: expected in-tree HUD text=Score: 7",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: UI assertion failed: expected in-tree HUD text=Score: 7",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "health_gauge_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Health gauge assertion failed: expected in-tree TextureProgressBar value=35 value_changed=1 receipt=35",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Health gauge assertion failed: expected in-tree TextureProgressBar value=35 value_changed=1 receipt=35",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "contact_no_collision",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: CONTACT ASSERTION FAILED: body motion did not contact level tile at cell=2,3,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: CONTACT ASSERTION FAILED: body motion did not contact level tile at cell=2,3, start=(40.0, 36.0) end=(40.0, 76.0) contacted=false collider=null crossed=true",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "animation_stuck",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance, got 0.0",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "tween_no_start",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: TWEEN ASSERTION FAILED: modulate did not show flash then return to baseline,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: TWEEN ASSERTION FAILED: modulate did not show flash then return to baseline, transient_seen=false baseline_restored=false frames_observed=90 final_modulate=(0.7, 0.8, 0.9, 1.0)",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "audio_no_play",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: AUDIO ASSERTION FAILED: expected in-tree player playback to advance,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: AUDIO ASSERTION FAILED: expected in-tree player playback to advance, in_tree=true playing=false position_before=0.0 position_after=0.0",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "audio_bus_route_invalid_control",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: AUDIO BUS CONTROL ASSERTION FAILED: requested invalid route silently fell back to Master,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: AUDIO BUS CONTROL ASSERTION FAILED: requested invalid route silently fell back to Master, requested=NoSuchFixtureBus resolved_index=0 resolved_bus=Master playing=true position_advanced=true",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "button_activation_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1, got focused=true receipts=0 text=Ready",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "button_activation_unfocused",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1, got focused=false receipts=0 text=Ready",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "checkbox_toggle_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: CHECKBOX SIGNAL ASSERTION FAILED: expected toggled sequence [true,false], got []",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: CHECKBOX SIGNAL ASSERTION FAILED: expected toggled sequence [true,false], got []",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "button_group_selection_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: BUTTON_GROUP SIGNAL ASSERTION FAILED: expected transitions [A:false,B:true,B:false,A:true], got []",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: BUTTON_GROUP SIGNAL ASSERTION FAILED: expected transitions [A:false,B:true,B:false,A:true], got []",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "button_group_selection_ungroup_b",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: BUTTON_GROUP ABSENCE ASSERTION FAILED after B\u2192A: expected exclusive selection, got A=true B=true",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: BUTTON_GROUP ABSENCE ASSERTION FAILED after B\u2192A: expected exclusive selection, got A=true B=true",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER SIGNAL ASSERTION FAILED: expected value_changed receipts [6,5] and Labels [Value 6,Value 5]",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER SIGNAL ASSERTION FAILED: expected value_changed receipts [6,5] and Labels [Value 6,Value 5]",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_no_focus",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER NO-FOCUS ASSERTION FAILED: expected focus-dependent adjustment values=6,5",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER NO-FOCUS ASSERTION FAILED: expected focus-dependent adjustment values=6,5",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER REPEAT SIGNAL ASSERTION FAILED: expected value_changed receipts [6,7,6,5] and Labels [Value 6,Value 7,Value 6,Value 5]",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER REPEAT SIGNAL ASSERTION FAILED: expected value_changed receipts [6,7,6,5] and Labels [Value 6,Value 7,Value 6,Value 5]",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_no_focus",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER REPEAT NO-FOCUS ASSERTION FAILED: expected focus-dependent adjustment values=6,7,7,6,6,5,5",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER REPEAT NO-FOCUS ASSERTION FAILED: expected focus-dependent adjustment values=6,7,7,6,6,5,5",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_focus_handoff",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER REPEAT FOCUS-HANDOFF ASSERTION FAILED: expected post-handoff adjustment after seven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER REPEAT FOCUS-HANDOFF ASSERTION FAILED: expected post-handoff adjustment after seven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_loss",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER REPEAT SECOND-FOCUS-LOSS ASSERTION FAILED: expected final restored-focus adjustment after seven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER REPEAT SECOND-FOCUS-LOSS ASSERTION FAILED: expected final restored-focus adjustment after seven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER DOUBLE-RESTORE DISCONNECTED ASSERTION FAILED: expected signal-consumer updates",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER DOUBLE-RESTORE DISCONNECTED ASSERTION FAILED: expected signal-consumer updates",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_release_after_late_reconnect_press",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER RELEASE AFTER LATE-RECONNECT PRESS ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER RELEASE AFTER LATE-RECONNECT PRESS ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_observe_parsed_release",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER PARSED RELEASE OBSERVER ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER PARSED RELEASE OBSERVER ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_composite_push_and_clear",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER COMPOSITE PUSH AND CLEAR ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER COMPOSITE PUSH AND CLEAR ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_clear_then_push_release",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER CLEAR THEN PUSH RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER CLEAR THEN PUSH RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_clear_frame_then_push_release",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER CLEAR FRAME THEN PUSH RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER CLEAR FRAME THEN PUSH RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_push_frame_then_clear_release",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER PUSH FRAME THEN CLEAR RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER PUSH FRAME THEN CLEAR RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_observe_push_input_release",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER PUSH INPUT RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER PUSH INPUT RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_reconnect_after_final_left",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER LATE-RECONNECT ASSERTION FAILED: expected no retroactive receipt after nine checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER LATE-RECONNECT ASSERTION FAILED: expected no retroactive receipt after nine checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_disconnect_after_first",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER MID-DISCONNECT ASSERTION FAILED: expected cumulative callback history to stay [6]",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER MID-DISCONNECT ASSERTION FAILED: expected cumulative callback history to stay [6]",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "save_corrupt_negative",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "save_process_missing",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND,",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_events_cm_toggle_cb",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Can't disable contact monitoring during in/out callback. Use call_deferred(\"set_contact_monitor\", false) instead.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Can't disable contact monitoring during in/out callback. Use call_deferred(\"set_contact_monitor\", false) instead.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_events_rb_free_rid",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Parameter \"body\" is null.",
+        "shape": "exact",
+        "matched_lines": 4,
+        "first_match": "ERROR: Parameter \"body\" is null.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Invalid ID.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Invalid ID.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_events_area_monitoring_direct",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Function blocked during in/out signal. Use set_deferred(\"monitoring\", true/false).",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Function blocked during in/out signal. Use set_deferred(\"monitoring\", true/false).",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_events_area_free_rid",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Parameter \"body\" is null.",
+        "shape": "exact",
+        "matched_lines": 4,
+        "first_match": "ERROR: Parameter \"body\" is null.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Invalid ID.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Invalid ID.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_motion_mac_maxcol",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Error calling method from 'callv': 'CharacterBody2D::move_and_collide': Method expected 4 argument(s), but called with 5.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Error calling method from 'callv': 'CharacterBody2D::move_and_collide': Method expected 4 argument(s), but called with 5.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_motion_dss_wrongarg",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Required object \"rp_shape_query\" is null.",
+        "shape": "exact",
+        "matched_lines": 5,
+        "first_match": "ERROR: Required object \"rp_shape_query\" is null.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Required object \"rp_ray_query\" is null.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Required object \"rp_ray_query\" is null.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Required object \"rp_point_query\" is null.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Required object \"rp_point_query\" is null.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_joints_joint_unset_refusal",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0",
+        "shape": "exact",
+        "matched_lines": 6,
+        "first_match": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0",
+        "shape": "exact",
+        "matched_lines": 4,
+        "first_match": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: false",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: false",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_joints_joint_pin_clear",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_joints_joint_freed_rid",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Parameter \"joint\" is null.",
+        "shape": "exact",
+        "matched_lines": 6,
+        "first_match": "ERROR: Parameter \"joint\" is null.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Parameter \"prev_joint\" is null.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Parameter \"prev_joint\" is null.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_joints_joint_node_freed_rid",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Invalid ID.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Invalid ID.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Parameter \"joint\" is null.",
+        "shape": "exact",
+        "matched_lines": 6,
+        "first_match": "ERROR: Parameter \"joint\" is null.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "input_lattice_null_edge",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Required object \"rp_event\" is null.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Required object \"rp_event\" is null.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: The InputMap action \"never_existed\" doesn't exist.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: The InputMap action \"never_existed\" doesn't exist.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: The InputMap action \"never_existed2\" doesn't exist.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: The InputMap action \"never_existed2\" doesn't exist.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: The InputMap action \"never_existed3\" doesn't exist.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: The InputMap action \"never_existed3\" doesn't exist.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r87_edge_jpbe",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Input singleton does not support more than 32 events assigned to an action.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Input singleton does not support more than 32 events assigned to an action.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "ei_bound_refusal",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Input singleton does not support more than 32 events assigned to an action.",
+        "shape": "exact",
+        "matched_lines": 4,
+        "first_match": "ERROR: Input singleton does not support more than 32 events assigned to an action.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r88_surfaces_sprite_phys",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Index p_frame = 3 is out of bounds (vframes * hframes = 2).",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Index p_frame = 3 is out of bounds (vframes * hframes = 2).",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "geo2d_lattice_atlasempty",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Condition \"p_rects.is_empty()\" is true.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Condition \"p_rects.is_empty()\" is true.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "geo2d_lattice_polyendpoly",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Attempt to offset a polyline like a polygon (use offset_polygon instead).",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: Attempt to offset a polyline like a polygon (use offset_polygon instead).",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r90_lattice_comrefuse",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r90_lattice_impedge",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Condition \"p_inertia < 0\" is true.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Condition \"p_inertia < 0\" is true.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Condition \"p_mass <= 0\" is true.",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: Condition \"p_mass <= 0\" is true.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "nav_lattice_sync",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "nav_lattice_bake",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: The root node needs to be inside the SceneTree.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: The root node needs to be inside the SceneTree.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_atlas",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Cannot create tile. The tile is outside the texture or tiles are already present in the space the tile would cover.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Cannot create tile. The tile is outside the texture or tiles are already present in the space the tile would cover.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: The TileSetAtlasSource atlas has no tile at (5, 5).",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: The TileSetAtlasSource atlas has no tile at (5, 5).",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_cells",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Method/function failed. Returning: p_coords",
+        "shape": "exact",
+        "matched_lines": 4,
+        "first_match": "ERROR: Method/function failed. Returning: p_coords",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: The TileSetAtlasSource atlas has no tile at (9, 9).",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: The TileSetAtlasSource atlas has no tile at (9, 9).",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_custom",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: TileSet has no layer with name: absent",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: TileSet has no layer with name: absent",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: TileSet has no layer with name: ghost",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: TileSet has no layer with name: ghost",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: TileSet has no layer with name: tag",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: TileSet has no layer with name: tag",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_terrain",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Index p_terrain_set = 5 is out of bounds (tile_set->get_terrain_sets_count() = 1).",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Index p_terrain_set = 5 is out of bounds (tile_set->get_terrain_sets_count() = 1).",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_pattern",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Condition \"!pattern.has(p_coords)\" is true. Returning: TileSet::INVALID_SOURCE",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: Condition \"!pattern.has(p_coords)\" is true. Returning: TileSet::INVALID_SOURCE",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_encoding",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Corrupted tile map data: tiles might be missing.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Corrupted tile map data: tiles might be missing.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Unsupported tile map data format: 513. Expected format ID lower or equal to: 0",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Unsupported tile map data format: 513. Expected format ID lower or equal to: 0",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_fixinvalid",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: No TileSet atlas source with id -1.",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: No TileSet atlas source with id -1.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: No TileSet atlas source with id 0.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: No TileSet atlas source with id 0.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: No TileSet atlas source with id 42.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: No TileSet atlas source with id 42.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_srcids",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Cannot create TileSet atlas source. Another atlas source exists with id 0.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Cannot create TileSet atlas source. Another atlas source exists with id 0.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Condition \"p_tile_set_source.is_null()\" is true. Returning: TileSet::INVALID_SOURCE",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Condition \"p_tile_set_source.is_null()\" is true. Returning: TileSet::INVALID_SOURCE",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Provided source ID -3 is not valid. Negative source IDs are not allowed.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Provided source ID -3 is not valid. Negative source IDs are not allowed.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_physics",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Parameter \"found\" is null.",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: Parameter \"found\" is null.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "crash_spontaneous_sigabrt",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: r60 spontaneous crash probe",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: r60 spontaneous crash probe",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     }
+    ],
+    "dead_entry_count": 0,
+    "dead_entries": [],
+    "scan_clause_census": {
+     "SCRIPT ERROR:": 0,
+     "Parse Error:": 0,
+     "ERROR:_per_line_lines": 132,
+     "objectdb_leak_audio_lines": 0
+    },
+    "clause_granularity": "\"ERROR:\" is per-line (output.splitlines() scan); \"SCRIPT ERROR:\" and \"Parse Error:\" are whole-blob substrings \u2014 the labrat-flagged granularity asymmetry: a newline-split SCRIPT/parse token evades entirely",
+    "allowlists_outside_expected_errors": [
+     "export_preset_missing executes classify with (evidence,) inline",
+     "classify_mutant holds three inline tuples (probe-failing only)",
+     "stream probe uses classify_streams allowed_stderr=()",
+     "probe_audio_warning uses default allowlist ()"
+    ]
+   }
+  },
+  "b": {
+   "probe_error_clause_surface": {
+    "scope": "every CASES row carrying expected_errors in this battery run; opt-in probe rows execute after this census (their inline allowlists are listed, not censused)",
+    "rows_with_expected_errors": 68,
+    "rows": [
+     {
+      "case": "negative_overlap",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: negative control: expected collected signal was absent with disabled mask",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: negative control: expected collected signal was absent with disabled mask",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "negative_transition",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Can't change to a null scene. Use unload_current_scene() if you wish to unload it.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Can't change to a null scene. Use unload_current_scene() if you wish to unload it.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: negative control: deliberately invalid scene destination rejected",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: negative control: deliberately invalid scene destination rejected",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "negative_signal",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: negative control: expected collected signal was absent (dispatch deliberately disabled)",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: negative control: expected collected signal was absent (dispatch deliberately disabled)",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "camera_no_follow",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: camera follow assertion failed: target moved but active center did not track",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: camera follow assertion failed: target moved but active center did not track",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "camera_far_bound",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: camera limit assertion failed: expected active center within right boundary and distinct from target",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: camera limit assertion failed: expected active center within right boundary and distinct from target",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "camera_far_top_bound",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: camera limit assertion failed: expected active center within top boundary and distinct from target",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: camera limit assertion failed: expected active center within top boundary and distinct from target",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "camera_far_left_bound",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: camera limit assertion failed: expected active center within left boundary and distinct from target",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: camera limit assertion failed: expected active center within left boundary and distinct from target",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "camera_far_bottom_bound",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: camera limit assertion failed: expected active center within bottom boundary and distinct from target",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: camera limit assertion failed: expected active center within bottom boundary and distinct from target",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "ui_signal_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: UI assertion failed: expected in-tree HUD text=Score: 7",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: UI assertion failed: expected in-tree HUD text=Score: 7",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "health_gauge_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Health gauge assertion failed: expected in-tree TextureProgressBar value=35 value_changed=1 receipt=35",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Health gauge assertion failed: expected in-tree TextureProgressBar value=35 value_changed=1 receipt=35",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "contact_no_collision",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: CONTACT ASSERTION FAILED: body motion did not contact level tile at cell=2,3,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: CONTACT ASSERTION FAILED: body motion did not contact level tile at cell=2,3, start=(40.0, 36.0) end=(40.0, 76.0) contacted=false collider=null crossed=true",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "animation_stuck",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance, got 0.0",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "tween_no_start",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: TWEEN ASSERTION FAILED: modulate did not show flash then return to baseline,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: TWEEN ASSERTION FAILED: modulate did not show flash then return to baseline, transient_seen=false baseline_restored=false frames_observed=90 final_modulate=(0.7, 0.8, 0.9, 1.0)",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "audio_no_play",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: AUDIO ASSERTION FAILED: expected in-tree player playback to advance,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: AUDIO ASSERTION FAILED: expected in-tree player playback to advance, in_tree=true playing=false position_before=0.0 position_after=0.0",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "audio_bus_route_invalid_control",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: AUDIO BUS CONTROL ASSERTION FAILED: requested invalid route silently fell back to Master,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: AUDIO BUS CONTROL ASSERTION FAILED: requested invalid route silently fell back to Master, requested=NoSuchFixtureBus resolved_index=0 resolved_bus=Master playing=true position_advanced=true",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "button_activation_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1, got focused=true receipts=0 text=Ready",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "button_activation_unfocused",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1, got focused=false receipts=0 text=Ready",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "checkbox_toggle_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: CHECKBOX SIGNAL ASSERTION FAILED: expected toggled sequence [true,false], got []",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: CHECKBOX SIGNAL ASSERTION FAILED: expected toggled sequence [true,false], got []",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "button_group_selection_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: BUTTON_GROUP SIGNAL ASSERTION FAILED: expected transitions [A:false,B:true,B:false,A:true], got []",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: BUTTON_GROUP SIGNAL ASSERTION FAILED: expected transitions [A:false,B:true,B:false,A:true], got []",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "button_group_selection_ungroup_b",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: BUTTON_GROUP ABSENCE ASSERTION FAILED after B\u2192A: expected exclusive selection, got A=true B=true",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: BUTTON_GROUP ABSENCE ASSERTION FAILED after B\u2192A: expected exclusive selection, got A=true B=true",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER SIGNAL ASSERTION FAILED: expected value_changed receipts [6,5] and Labels [Value 6,Value 5]",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER SIGNAL ASSERTION FAILED: expected value_changed receipts [6,5] and Labels [Value 6,Value 5]",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_no_focus",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER NO-FOCUS ASSERTION FAILED: expected focus-dependent adjustment values=6,5",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER NO-FOCUS ASSERTION FAILED: expected focus-dependent adjustment values=6,5",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER REPEAT SIGNAL ASSERTION FAILED: expected value_changed receipts [6,7,6,5] and Labels [Value 6,Value 7,Value 6,Value 5]",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER REPEAT SIGNAL ASSERTION FAILED: expected value_changed receipts [6,7,6,5] and Labels [Value 6,Value 7,Value 6,Value 5]",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_no_focus",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER REPEAT NO-FOCUS ASSERTION FAILED: expected focus-dependent adjustment values=6,7,7,6,6,5,5",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER REPEAT NO-FOCUS ASSERTION FAILED: expected focus-dependent adjustment values=6,7,7,6,6,5,5",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_focus_handoff",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER REPEAT FOCUS-HANDOFF ASSERTION FAILED: expected post-handoff adjustment after seven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER REPEAT FOCUS-HANDOFF ASSERTION FAILED: expected post-handoff adjustment after seven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_loss",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER REPEAT SECOND-FOCUS-LOSS ASSERTION FAILED: expected final restored-focus adjustment after seven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER REPEAT SECOND-FOCUS-LOSS ASSERTION FAILED: expected final restored-focus adjustment after seven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_disconnected",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER DOUBLE-RESTORE DISCONNECTED ASSERTION FAILED: expected signal-consumer updates",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER DOUBLE-RESTORE DISCONNECTED ASSERTION FAILED: expected signal-consumer updates",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_release_after_late_reconnect_press",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER RELEASE AFTER LATE-RECONNECT PRESS ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER RELEASE AFTER LATE-RECONNECT PRESS ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_observe_parsed_release",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER PARSED RELEASE OBSERVER ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER PARSED RELEASE OBSERVER ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_composite_push_and_clear",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER COMPOSITE PUSH AND CLEAR ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER COMPOSITE PUSH AND CLEAR ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_clear_then_push_release",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER CLEAR THEN PUSH RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER CLEAR THEN PUSH RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_clear_frame_then_push_release",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER CLEAR FRAME THEN PUSH RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER CLEAR FRAME THEN PUSH RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_push_frame_then_clear_release",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER PUSH FRAME THEN CLEAR RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER PUSH FRAME THEN CLEAR RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_observe_push_input_release",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER PUSH INPUT RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER PUSH INPUT RELEASE ASSERTION FAILED: expected no new receipt after eleven checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_reconnect_after_final_left",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER LATE-RECONNECT ASSERTION FAILED: expected no retroactive receipt after nine checks",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER LATE-RECONNECT ASSERTION FAILED: expected no retroactive receipt after nine checks",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "slider_adjust_repeat_right_second_focus_restore_disconnect_after_first",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SLIDER MID-DISCONNECT ASSERTION FAILED: expected cumulative callback history to stay [6]",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SLIDER MID-DISCONNECT ASSERTION FAILED: expected cumulative callback history to stay [6]",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "save_corrupt_negative",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "save_process_missing",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND,",
+        "shape": "comma_prefix",
+        "matched_lines": 1,
+        "first_match": "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND,",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_events_cm_toggle_cb",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Can't disable contact monitoring during in/out callback. Use call_deferred(\"set_contact_monitor\", false) instead.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Can't disable contact monitoring during in/out callback. Use call_deferred(\"set_contact_monitor\", false) instead.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_events_rb_free_rid",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Parameter \"body\" is null.",
+        "shape": "exact",
+        "matched_lines": 4,
+        "first_match": "ERROR: Parameter \"body\" is null.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Invalid ID.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Invalid ID.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_events_area_monitoring_direct",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Function blocked during in/out signal. Use set_deferred(\"monitoring\", true/false).",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Function blocked during in/out signal. Use set_deferred(\"monitoring\", true/false).",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_events_area_free_rid",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Parameter \"body\" is null.",
+        "shape": "exact",
+        "matched_lines": 4,
+        "first_match": "ERROR: Parameter \"body\" is null.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Invalid ID.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Invalid ID.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_motion_mac_maxcol",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Error calling method from 'callv': 'CharacterBody2D::move_and_collide': Method expected 4 argument(s), but called with 5.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Error calling method from 'callv': 'CharacterBody2D::move_and_collide': Method expected 4 argument(s), but called with 5.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_motion_dss_wrongarg",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Required object \"rp_shape_query\" is null.",
+        "shape": "exact",
+        "matched_lines": 5,
+        "first_match": "ERROR: Required object \"rp_shape_query\" is null.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Required object \"rp_ray_query\" is null.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Required object \"rp_ray_query\" is null.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Required object \"rp_point_query\" is null.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Required object \"rp_point_query\" is null.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_joints_joint_unset_refusal",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0",
+        "shape": "exact",
+        "matched_lines": 6,
+        "first_match": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_DAMPED_SPRING\" is true. Returning: 0",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0",
+        "shape": "exact",
+        "matched_lines": 4,
+        "first_match": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: false",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: false",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_joints_joint_pin_clear",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Condition \"joint->get_type() != JOINT_TYPE_PIN\" is true. Returning: 0",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_joints_joint_freed_rid",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Parameter \"joint\" is null.",
+        "shape": "exact",
+        "matched_lines": 6,
+        "first_match": "ERROR: Parameter \"joint\" is null.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Parameter \"prev_joint\" is null.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Parameter \"prev_joint\" is null.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "phys2d_joints_joint_node_freed_rid",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Invalid ID.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Invalid ID.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Parameter \"joint\" is null.",
+        "shape": "exact",
+        "matched_lines": 6,
+        "first_match": "ERROR: Parameter \"joint\" is null.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "input_lattice_null_edge",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Required object \"rp_event\" is null.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Required object \"rp_event\" is null.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: The InputMap action \"never_existed\" doesn't exist.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: The InputMap action \"never_existed\" doesn't exist.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: The InputMap action \"never_existed2\" doesn't exist.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: The InputMap action \"never_existed2\" doesn't exist.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: The InputMap action \"never_existed3\" doesn't exist.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: The InputMap action \"never_existed3\" doesn't exist.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r87_edge_jpbe",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Input singleton does not support more than 32 events assigned to an action.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Input singleton does not support more than 32 events assigned to an action.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "ei_bound_refusal",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Input singleton does not support more than 32 events assigned to an action.",
+        "shape": "exact",
+        "matched_lines": 4,
+        "first_match": "ERROR: Input singleton does not support more than 32 events assigned to an action.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r88_surfaces_sprite_phys",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Index p_frame = 3 is out of bounds (vframes * hframes = 2).",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Index p_frame = 3 is out of bounds (vframes * hframes = 2).",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "geo2d_lattice_atlasempty",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Condition \"p_rects.is_empty()\" is true.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Condition \"p_rects.is_empty()\" is true.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "geo2d_lattice_polyendpoly",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Attempt to offset a polyline like a polygon (use offset_polygon instead).",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: Attempt to offset a polyline like a polygon (use offset_polygon instead).",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r90_lattice_comrefuse",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Condition \"center_of_mass_mode != CENTER_OF_MASS_MODE_CUSTOM\" is true.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r90_lattice_impedge",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Condition \"p_inertia < 0\" is true.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Condition \"p_inertia < 0\" is true.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Condition \"p_mass <= 0\" is true.",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: Condition \"p_mass <= 0\" is true.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "nav_lattice_sync",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "nav_lattice_bake",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: The root node needs to be inside the SceneTree.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: The root node needs to be inside the SceneTree.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_atlas",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Cannot create tile. The tile is outside the texture or tiles are already present in the space the tile would cover.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Cannot create tile. The tile is outside the texture or tiles are already present in the space the tile would cover.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: The TileSetAtlasSource atlas has no tile at (5, 5).",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: The TileSetAtlasSource atlas has no tile at (5, 5).",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_cells",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Method/function failed. Returning: p_coords",
+        "shape": "exact",
+        "matched_lines": 4,
+        "first_match": "ERROR: Method/function failed. Returning: p_coords",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: The TileSetAtlasSource atlas has no tile at (9, 9).",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: The TileSetAtlasSource atlas has no tile at (9, 9).",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_custom",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: TileSet has no layer with name: absent",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: TileSet has no layer with name: absent",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: TileSet has no layer with name: ghost",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: TileSet has no layer with name: ghost",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: TileSet has no layer with name: tag",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: TileSet has no layer with name: tag",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_terrain",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Index p_terrain_set = 5 is out of bounds (tile_set->get_terrain_sets_count() = 1).",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Index p_terrain_set = 5 is out of bounds (tile_set->get_terrain_sets_count() = 1).",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_pattern",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Condition \"!pattern.has(p_coords)\" is true. Returning: TileSet::INVALID_SOURCE",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: Condition \"!pattern.has(p_coords)\" is true. Returning: TileSet::INVALID_SOURCE",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_encoding",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Corrupted tile map data: tiles might be missing.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Corrupted tile map data: tiles might be missing.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Unsupported tile map data format: 513. Expected format ID lower or equal to: 0",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Unsupported tile map data format: 513. Expected format ID lower or equal to: 0",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_fixinvalid",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: No TileSet atlas source with id -1.",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: No TileSet atlas source with id -1.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: No TileSet atlas source with id 0.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: No TileSet atlas source with id 0.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: No TileSet atlas source with id 42.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: No TileSet atlas source with id 42.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_srcids",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Cannot create TileSet atlas source. Another atlas source exists with id 0.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Cannot create TileSet atlas source. Another atlas source exists with id 0.",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Condition \"p_tile_set_source.is_null()\" is true. Returning: TileSet::INVALID_SOURCE",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Condition \"p_tile_set_source.is_null()\" is true. Returning: TileSet::INVALID_SOURCE",
+        "dead_in_run": false
+       },
+       {
+        "entry": "ERROR: Provided source ID -3 is not valid. Negative source IDs are not allowed.",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: Provided source ID -3 is not valid. Negative source IDs are not allowed.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "r92_tilemap_physics",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: Parameter \"found\" is null.",
+        "shape": "exact",
+        "matched_lines": 2,
+        "first_match": "ERROR: Parameter \"found\" is null.",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     },
+     {
+      "case": "crash_spontaneous_sigabrt",
+      "verdict": "PASS",
+      "entries": [
+       {
+        "entry": "ERROR: r60 spontaneous crash probe",
+        "shape": "exact",
+        "matched_lines": 1,
+        "first_match": "ERROR: r60 spontaneous crash probe",
+        "dead_in_run": false
+       }
+      ],
+      "any_entry_matched": true,
+      "bare_classification_rejects": true,
+      "allowlisted_classification_passes": true
+     }
+    ],
+    "dead_entry_count": 0,
+    "dead_entries": [],
+    "scan_clause_census": {
+     "SCRIPT ERROR:": 0,
+     "Parse Error:": 0,
+     "ERROR:_per_line_lines": 133,
+     "objectdb_leak_audio_lines": 0
+    },
+    "clause_granularity": "\"ERROR:\" is per-line (output.splitlines() scan); \"SCRIPT ERROR:\" and \"Parse Error:\" are whole-blob substrings \u2014 the labrat-flagged granularity asymmetry: a newline-split SCRIPT/parse token evades entirely",
+    "allowlists_outside_expected_errors": [
+     "export_preset_missing executes classify with (evidence,) inline",
+     "classify_mutant holds three inline tuples (probe-failing only)",
+     "stream probe uses classify_streams allowed_stderr=()",
+     "probe_audio_warning uses default allowlist ()"
+    ]
+   }
+  }
+ }
+}
