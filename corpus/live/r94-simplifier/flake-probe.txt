@@ -1,0 +1,26 @@
+stamp: 20261016T071614032438Z
+host loadavg: 100.20 95.62 79.82 76/2495 814698
+case: controls/scene_transition_probe.gd
+launch: godot --headless --path <scratch> --script res://controls/scene_transition_probe.gd
+result: 4/10 PASS
+  rep  1 rc=1 pass=False wall=0.705s
+  rep  2 rc=1 pass=False wall=0.661s
+  rep  3 rc=1 pass=False wall=0.672s
+  rep  4 rc=0 pass=True wall=0.662s
+  rep  5 rc=0 pass=True wall=0.796s
+  rep  6 rc=1 pass=False wall=0.782s
+  rep  7 rc=0 pass=True wall=0.514s
+  rep  8 rc=0 pass=True wall=0.578s
+  rep  9 rc=1 pass=False wall=0.641s
+  rep 10 rc=1 pass=False wall=0.677s
+lines:
+  ERROR: scene transition probe: initial current_scene identity/marker mismatch
+  ERROR: scene transition probe: initial current_scene identity/marker mismatch
+  ERROR: scene transition probe: initial current_scene identity/marker mismatch
+  PASS valid_transition=true current_scene_replaced=true marker=B old_scene_freed=true frames=4
+  PASS valid_transition=true current_scene_replaced=true marker=B old_scene_freed=true frames=4
+  ERROR: scene transition probe: initial current_scene identity/marker mismatch
+  PASS valid_transition=true current_scene_replaced=true marker=B old_scene_freed=true frames=4
+  PASS valid_transition=true current_scene_replaced=true marker=B old_scene_freed=true frames=4
+  ERROR: scene transition probe: initial current_scene identity/marker mismatch
+  ERROR: scene transition probe: initial current_scene identity/marker mismatch

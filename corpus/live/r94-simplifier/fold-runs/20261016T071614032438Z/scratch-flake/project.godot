@@ -1,0 +1,3 @@
+[application]
+config/name="MechanicOneShotTest-scratch-flake"
+config/features=PackedStringArray("4.7")

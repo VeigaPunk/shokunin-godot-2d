@@ -1,0 +1,131 @@
+# r94-simplifier landing inventory — committed c7228893
+
+HEAD: 86ace53c677c5fdc4899b115d1a9a6288c249c03
+86ace53c r94 reviewer: PASS on c7228893 — 95/95 fresh + 6/7 forgery shapes reject + floor gate armed
+
+## shas (committed tree)
+0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9  corpus/fixtures/particles_lattice.gd
+b93cbdaa3d5c6ae35d69970a545442d86898a959f0e2e2995f1adf58a3444ed7  corpus/fixtures/run_battery.py
+
+## commit stat
+c7228893 r94 author: 19 particles rows (314 total) — folded scout probe (4-line diff: okb windows, floor); 314/314 x2
+ corpus/fixtures/particles_lattice.gd | 763 +++++++++++++++++++++++++++++++++++
+ corpus/fixtures/run_battery.py       |  91 +++++
+ reports/round-94/r94-author.md       | 201 +++++++++
+ 3 files changed, 1055 insertions(+)
+
+## insertion shape (numstat)
+91	0	corpus/fixtures/run_battery.py
+
+## fixture vs frozen scout probe (full diff)
+2a3,8
+> # r94-author fixture fold of the frozen scout probe (sha256 e6a2e0f5…b930):
+> # the only behavioral fold is cpu_pause — the three fin_after_* resume
+> # windows widen from [4,7] to [1,7] per r94-boundary §10 (the row rejects
+> # under --fixed-fps 30: the same freeze+resume law lands on 2 ticks
+> # there — a frame-quantization mode, not a law change). Comment-only
+> # corrections carry the boundary's other falsifications.
+10,13c16,24
+< #  - CPUParticles2D has process-global state: after ANY emitter has run, a
+< #    never-emitting emitter fires `finished` on its first update (cpu_contam).
+< #    Never-emitting cells are therefore single-emitter arms.
+< #  - Timing is measured in physics ticks at 60 tps (dt = 1/60 s).
+---
+> #  - A never-emitting emitter fires `finished` on its first update iff it
+> #    was added to the tree at/after the process's first idle frame
+> #    (add_pf>=1); a node added in frame 0 is clean (r94-boundary §8 —
+> #    this is a first-idle-frame rule, NOT process-global state).
+> #    Never-emitting cells therefore create the node inside _initialize.
+> #  - Timing is measured in physics ticks at 60 tps (dt = 1/60 s); the
+> #    launch project pins no physics_ticks_per_second, so the tick
+> #    windows below are valid only at the default 60 tps (r94-boundary §3:
+> #    the ladder is round(L*tps), a host-tps alias).
+19c30,33
+< #    quantizes but does not change the end time.
+---
+> #    quantizes the internal step and shifts the end time by up to one
+> #    quantum (r94-boundary §5 — "does not move the end time" holds only
+> #    for fixed_fps>=60; fixed_fps<=5 is a stall hazard, fixed_fps=1
+> #    never finishes — never authored).
+30,31c44,46
+< #  - request_particles_process(0.1) x5 with Engine.time_scale=0 finishes a
+< #    one-shot at exactly the 5th call (clock-free deterministic lattice).
+---
+> #  - request_particles_process(step) with Engine.time_scale=0 finishes a
+> #    one-shot on call floor(lifetime/step)+1 (r94-boundary §6 — the
+> #    closed form is floor, not round; clock-free, tps/load/ff-invariant).
+33,34c48,50
+< #    emitting within ~5 ticks, continuous stays emitting, manual emit_particle
+< #    and capture_rect are unobservable (zero rect).
+---
+> #    emitting within [1,7] ticks (r94-boundary §9 — wider than the
+> #    scout's 3-7; never pinned), continuous stays emitting, manual
+> #    emit_particle and capture_rect are unobservable (zero rect).
+341c357,358
+< # never-emitting emitter, FIRST emitter of the process -> no finished (60 ticks)
+---
+> # never-emitting emitter added inside _initialize (add_pf=0, before the
+> # process's first idle frame) -> no finished (60 ticks)
+357,358c374,376
+< # process-global contamination: after ANY emitter has run (5 ticks), a
+< # never-emitting emitter fires finished on its first update.
+---
+> # first-idle-frame rule (r94-boundary §8): the never nodes below are added
+> # at add_pf>=1 (after the prior emitter + waits), so each fires `finished`
+> # on its first update — the prior emitter only guarantees add_pf>=1.
+486,488c504,506
+< 	var okvis := _okb(int(out[0].split("fin_after_show=")[1].split(" ")[0]), 4, 7)
+< 	var okvp := _okb(int(out[1].split("fin_after_show=")[1].split(" ")[0]), 4, 7)
+< 	var okpm := _okb(int(out[2].split("fin_after_enable=")[1].split(" ")[0]), 4, 7)
+---
+> 	var okvis := _okb(int(out[0].split("fin_after_show=")[1].split(" ")[0]), 1, 7)
+> 	var okvp := _okb(int(out[1].split("fin_after_show=")[1].split(" ")[0]), 1, 7)
+> 	var okpm := _okb(int(out[2].split("fin_after_enable=")[1].split(" ")[0]), 1, 7)
+605,606c623,626
+< 	# measured law: the amount setter emits a SPURIOUS finished on the set tick
+< 	# while emitting/ise stay true; the genuine end-of-cycle finished is suppressed.
+---
+> 	# measured law (r94-boundary §7): the amount setter only ARMS a spurious
+> 	# finished — it fires on the node's next _process in the same frame, so
+> 	# fin_after_set=0 is a frame-order fact, not setter-synchronous; emitting/ise
+> 	# stay true at the signal and the genuine end-of-cycle finished is suppressed.
+636,637c656,659
+< 		# Measured lattice: finish on call round(lifetime/step) + 1.
+< 		var expected: int = int(round(0.5 / spec)) + 1
+---
+> 		# Measured lattice (r94-boundary §6): finish on call floor(lifetime/step)+1 —
+> 		# floor, not round (round falsified at steps 0.20/0.30); identical for the
+> 		# integer ratios pinned here (0.5/0.10=5->6, 0.5/0.05=10->11).
+> 		var expected: int = int(floor(0.5 / spec)) + 1
+
+## non-comment code diff only
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+< 	var okvis := _okb(int(out[0].split("fin_after_show=")[1].split(" ")[0]), 4, 7)
+< 	var okvp := _okb(int(out[1].split("fin_after_show=")[1].split(" ")[0]), 4, 7)
+< 	var okpm := _okb(int(out[2].split("fin_after_enable=")[1].split(" ")[0]), 4, 7)
+> 	var okvis := _okb(int(out[0].split("fin_after_show=")[1].split(" ")[0]), 1, 7)
+> 	var okvp := _okb(int(out[1].split("fin_after_show=")[1].split(" ")[0]), 1, 7)
+> 	var okpm := _okb(int(out[2].split("fin_after_enable=")[1].split(" ")[0]), 1, 7)
+> 	
+> 	
+< 		var expected: int = int(round(0.5 / spec)) + 1
+> 		
+> 		
+> 		var expected: int = int(floor(0.5 / spec)) + 1

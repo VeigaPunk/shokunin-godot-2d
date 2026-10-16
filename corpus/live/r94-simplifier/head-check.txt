@@ -1,0 +1,5 @@
+total rows: 307  unique names: 307
+duplicate case names: []
+r94 rows: 19
+census sig len: 8785  emitted line len: 8785  sig==line: True
+all 19 signatures are unique contiguous heads of their scout rep1 line: True

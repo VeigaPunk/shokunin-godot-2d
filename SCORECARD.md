@@ -260,3 +260,13 @@ Sol `r76-adjudicator.md`: ADMIT-corr — deferred_abort admitted, destroy-edge l
 | calibration | **improved** | Critic/reviewer/verifier converged on the "pre-play value" mechanism falsification (comment-level); vacuous gate + prefix-band findings filed; all findings fail-closed (mutants redden rather than silently pass). |
 
 | r93 | game-dev-2d | AnimationPlayer/Tween lattice | ADMIT-with-findings | 4b75151 |
+
+## Round 94 verdict — 2026-10-15
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | +19 `r94_particles_*` rows → 314: cpu_pause/never/contam/request ladders, gpu_headless arms, process-material census, floor gate. 618-receipt coverage 0 MISS. |
+| depth | **improved** | Fold verified three ways incl. frozen pre-fold probe 3/3 REJECT; 111/111+579+522 mutations reject; archive-extract battery 314/314 green; floor gate dead-entry-loud. |
+| calibration | **improved** | 2-seat cpu_contam tautology finding (signature is bookkeeping); tps exposure corrected 3->10-11; floor-fold inertness at authored steps disclosed; all defects fail-closed (absorptions recorded, none realized as false green). |
+
+| r94 | game-dev-2d | GPUParticles2D / CPU-emission lattice | ADMIT-with-findings | c7228893 |

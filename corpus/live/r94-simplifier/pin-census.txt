@@ -1,0 +1,54 @@
+== committed signatures vs scout ROWS_PREFIX ==
+  r94_particles_census                   committed==prefix: True
+  r94_particles_ppm                      committed==prefix: True
+  r94_particles_convert                  committed==prefix: True
+  r94_particles_cpu_lifetime             committed==prefix: True
+  r94_particles_cpu_expl                 committed==prefix: True
+  r94_particles_cpu_speed_pre            committed==prefix: True
+  r94_particles_cpu_stop                 committed==prefix: True
+  r94_particles_cpu_never                committed==prefix: True
+  r94_particles_cpu_contam               committed==prefix: True
+  r94_particles_cpu_oneshot_off          committed==prefix: True
+  r94_particles_cpu_oneshot_flag         committed==prefix: True
+  r94_particles_cpu_pause                committed==prefix: True
+  r94_particles_cpu_restart              committed==prefix: True
+  r94_particles_cpu_retrigger            committed==prefix: True
+  r94_particles_cpu_lt_mid               committed==prefix: True
+  r94_particles_cpu_speed_mid            committed==prefix: True
+  r94_particles_cpu_amount_mid           committed==prefix: True
+  r94_particles_cpu_request              committed==prefix: True
+  r94_particles_gpu_headless             committed==prefix: True
+
+== per-case census ==
+  r94_particles_census                   file_out=22  battery=2/2  (all matching files=66)
+  r94_particles_ppm                      file_out=22  battery=2/2  (all matching files=66)
+  r94_particles_convert                  file_out=22  battery=2/2  (all matching files=66)
+  r94_particles_cpu_lifetime             file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_expl                 file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_speed_pre            file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_stop                 file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_never                file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_contam               file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_oneshot_off          file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_oneshot_flag         file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_pause                file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_restart              file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_retrigger            file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_lt_mid               file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_speed_mid            file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_amount_mid           file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_cpu_request              file_out=25  battery=2/2  (all matching files=75)
+  r94_particles_gpu_headless             file_out=25  battery=2/2  (all matching files=75)
+
+== totals ==
+  receipts checked: 504  signature present: 501  missing: 3
+  non-zero rc / non-empty stderr / ERROR-line events: 0
+    MISS r94_particles_cpu_pause                corpus/live/r94-boundary/runs/ff30/r94_particles_cpu_pause.rep1.out (boundary)
+    MISS r94_particles_cpu_pause                corpus/live/r94-boundary/runs/ff30/r94_particles_cpu_pause.rep2.out (boundary)
+    MISS r94_particles_cpu_pause                corpus/live/r94-boundary/runs/ff30/r94_particles_cpu_pause.rep3.out (boundary)
+
+== cross-arm forge surface ==
+  (do foreign-arm receipts satisfy any committed r94 signature?)
+  non-r94-named receipts scanned: 70  (no particles PASS line: 1)
+  same-arm extra receipts (smoke etc.): 3 across 3 arms
+  FOREIGN-arm receipts satisfying a committed r94 signature: 0

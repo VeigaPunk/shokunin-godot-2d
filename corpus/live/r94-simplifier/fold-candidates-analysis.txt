@@ -1,0 +1,48 @@
+== per-arm byte analysis (committed c1..c3 vs folded f1..f3) ==
+census           prefix_stable=True  cross_mismatch=0/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=0/3
+convert          prefix_stable=True  cross_mismatch=0/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=0/3
+cpu_amount_mid   prefix_stable=True  cross_mismatch=0/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=0/3
+cpu_contam       prefix_stable=True  cross_mismatch=0/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=0/3
+cpu_expl         prefix_stable=True  cross_mismatch=0/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=0/3
+cpu_lifetime     prefix_stable=True  cross_mismatch=2/3 (prefix_eq all=True)  internal_committed=2/3  internal_folded=3/3
+    cross rep1 prefix_eq=True tail_diff=['ph=29] -> ph=30]', 'l1[delta=60 -> l1[delta=59']
+    cross rep2 prefix_eq=True tail_diff=['l025[delta=15 -> l025[delta=14', 'l05[delta=30 -> l05[delta=29', 'ph=60] -> ph=59]']
+    internal committed differing rep pairs: [(1, 2), (1, 3)]
+    internal folded differing rep pairs: [(1, 2), (1, 3), (2, 3)]
+cpu_lt_mid       prefix_stable=True  cross_mismatch=0/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=0/3
+cpu_never        prefix_stable=True  cross_mismatch=0/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=0/3
+cpu_oneshot_flag prefix_stable=True  cross_mismatch=0/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=0/3
+cpu_oneshot_off  prefix_stable=True  cross_mismatch=0/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=0/3
+cpu_pause        prefix_stable=True  cross_mismatch=3/3 (prefix_eq all=True)  internal_committed=3/3  internal_folded=2/3
+    cross rep1 prefix_eq=True tail_diff=['ts0[fin_after_restore=20 -> ts0[fin_after_restore=19']
+    cross rep2 prefix_eq=True tail_diff=['pm_disabled[fin_after_enable=4 -> pm_disabled[fin_after_enable=5', 'ts0[fin_after_restore=19 -> ts0[fin_after_restore=20']
+    cross rep3 prefix_eq=True tail_diff=['vis_parent[fin_after_show=4 -> vis_parent[fin_after_show=5', 'pm_disabled[fin_after_enable=4 -> pm_disabled[fin_after_enable=5']
+    internal committed differing rep pairs: [(1, 2), (1, 3), (2, 3)]
+    internal folded differing rep pairs: [(1, 2), (2, 3)]
+cpu_request      prefix_stable=True  cross_mismatch=0/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=0/3
+cpu_restart      prefix_stable=True  cross_mismatch=2/3 (prefix_eq all=True)  internal_committed=2/3  internal_folded=2/3
+    cross rep1 prefix_eq=True tail_diff=['second_after=15 -> second_after=14']
+    cross rep3 prefix_eq=True tail_diff=['second_after=14 -> second_after=15']
+    internal committed differing rep pairs: [(1, 3), (2, 3)]
+    internal folded differing rep pairs: [(1, 2), (1, 3)]
+cpu_retrigger    prefix_stable=True  cross_mismatch=0/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=0/3
+cpu_speed_mid    prefix_stable=True  cross_mismatch=0/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=0/3
+cpu_speed_pre    prefix_stable=True  cross_mismatch=2/3 (prefix_eq all=True)  internal_committed=3/3  internal_folded=3/3
+    cross rep1 prefix_eq=True tail_diff=['ss05[delta=59 -> ss05[delta=60', 'pre25[delta=14 -> pre25[delta=15', 'ph=31] -> ph=32]']
+    cross rep3 prefix_eq=True tail_diff=['ss05[delta=60 -> ss05[delta=59']
+    internal committed differing rep pairs: [(1, 2), (1, 3), (2, 3)]
+    internal folded differing rep pairs: [(1, 2), (1, 3), (2, 3)]
+cpu_stop         prefix_stable=True  cross_mismatch=1/3 (prefix_eq all=True)  internal_committed=2/3  internal_folded=0/3
+    cross rep3 prefix_eq=True tail_diff=['stop40[fin_after=19 -> stop40[fin_after=20']
+    internal committed differing rep pairs: [(1, 3), (2, 3)]
+gpu_headless     prefix_stable=True  cross_mismatch=1/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=2/3
+    cross rep1 prefix_eq=True tail_diff=['flip_after=2 -> flip_after=3']
+    internal folded differing rep pairs: [(1, 2), (1, 3)]
+ppm              prefix_stable=True  cross_mismatch=0/3 (prefix_eq all=True)  internal_committed=0/3  internal_folded=0/3
+
+== summary ==
+arms: 19  pairs: 57
+cross committed-vs-folded mismatching pairs: 11
+internal committed-vs-committed mismatching pairs (same fixture): 12
+internal folded-vs-folded mismatching pairs (same fixture): 12
+every arm's pinned prefix byte-stable across all 6 receipts: True

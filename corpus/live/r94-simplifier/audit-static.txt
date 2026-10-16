@@ -1,0 +1,309 @@
+### fixture: particles_lattice.gd (763 lines, sha256 0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9)
+declarations: 145 (var)
+  decl scope=<file>                 var     PH                     line=52   reads=45
+  decl scope=<file>                 var     T0                     line=53   reads=0
+  decl scope=_consts                var     parts                  line=76   reads=10
+  decl scope=_props                 var     inst                   line=84   reads=4
+  decl scope=_props                 var     parts                  line=85   reads=10
+  decl scope=_props                 var     usage                  line=87   reads=4
+  decl scope=_props                 var     name                   line=92   reads=11
+  decl scope=_curve_types           var     parts                  line=101  reads=10
+  decl scope=_curve_types           var     name                   line=103  reads=11
+  decl scope=_method_sigs           var     parts                  line=110  reads=10
+  decl scope=_method_sigs           var     args                   line=114  reads=2
+  decl scope=_new_cpu               var     n                      line=124  reads=119
+  decl scope=_free_node             var     parent                 line=138  reads=2
+  decl scope=_wait_ph               var     a                      line=144  reads=13
+  decl scope=_run_cpu               var     n                      line=150  reads=119
+  decl scope=_run_cpu               var     st                     line=152  reads=105
+  decl scope=_run_cpu               var     start                  line=154  reads=11
+  decl scope=_run_cpu               var     out                    line=158  reads=30
+  decl scope=_arm_ppm               var     m                      line=197  reads=39
+  decl scope=_arm_ppm               var     tex                    line=201  reads=2
+  decl scope=_arm_ppm               var     curve                  line=203  reads=2
+  decl scope=_arm_convert           var     g                      line=226  reads=27
+  decl scope=_arm_convert           var     m                      line=238  reads=39
+  decl scope=_arm_convert           var     c                      line=251  reads=28
+  decl scope=_arm_convert           var     c2                     line=255  reads=13
+  decl scope=_arm_convert           var     g2                     line=267  reads=8
+  decl scope=_arm_convert           var     pm2                    line=270  reads=14
+  decl scope=_arm_cpu_lifetime      var     l01                    line=291  reads=2
+  decl scope=_arm_cpu_lifetime      var     l025                   line=292  reads=2
+  decl scope=_arm_cpu_lifetime      var     l05                    line=293  reads=2
+  decl scope=_arm_cpu_lifetime      var     l1                     line=294  reads=2
+  decl scope=_arm_cpu_lifetime      var     ok01                   line=295  reads=2
+  decl scope=_arm_cpu_lifetime      var     ok025                  line=296  reads=2
+  decl scope=_arm_cpu_lifetime      var     ok05                   line=297  reads=2
+  decl scope=_arm_cpu_lifetime      var     ok1                    line=298  reads=2
+  decl scope=_arm_cpu_expl          var     e0                     line=306  reads=2
+  decl scope=_arm_cpu_expl          var     e05                    line=307  reads=2
+  decl scope=_arm_cpu_expl          var     e1                     line=308  reads=2
+  decl scope=_arm_cpu_expl          var     oke1                   line=309  reads=2
+  decl scope=_arm_cpu_expl          var     oke05                  line=310  reads=2
+  decl scope=_arm_cpu_expl          var     oke0                   line=311  reads=2
+  decl scope=_arm_cpu_speed_pre     var     ss2                    line=318  reads=2
+  decl scope=_arm_cpu_speed_pre     var     ss05                   line=319  reads=2
+  decl scope=_arm_cpu_speed_pre     var     pre                    line=320  reads=5
+  decl scope=_arm_cpu_speed_pre     var     ff                     line=321  reads=2
+  decl scope=_arm_cpu_speed_pre     var     oks2                   line=322  reads=2
+  decl scope=_arm_cpu_speed_pre     var     oks05                  line=323  reads=2
+  decl scope=_arm_cpu_speed_pre     var     okpre                  line=324  reads=2
+  decl scope=_arm_cpu_speed_pre     var     okff                   line=325  reads=2
+  decl scope=_arm_cpu_stop          var     out                    line=334  reads=30
+  decl scope=_arm_cpu_stop          var     oks                    line=335  reads=10
+  decl scope=_arm_cpu_stop          var     n                      line=337  reads=119
+  decl scope=_arm_cpu_stop          var     st                     line=339  reads=105
+  decl scope=_arm_cpu_stop          var     stop                   line=344  reads=2
+  decl scope=_arm_cpu_stop          var     fa                     line=347  reads=17
+  decl scope=_arm_cpu_never         var     n                      line=360  reads=119
+  decl scope=_arm_cpu_never         var     st                     line=362  reads=105
+  decl scope=_arm_cpu_never         var     start                  line=365  reads=11
+  decl scope=_arm_cpu_never         var     fd                     line=368  reads=3
+  decl scope=_arm_cpu_contam        var     pre                    line=378  reads=5
+  decl scope=_arm_cpu_contam        var     out                    line=383  reads=30
+  decl scope=_arm_cpu_contam        var     n                      line=385  reads=119
+  decl scope=_arm_cpu_contam        var     st                     line=387  reads=105
+  decl scope=_arm_cpu_contam        var     b                      line=390  reads=5
+  decl scope=_arm_cpu_oneshot_off   var     n                      line=401  reads=119
+  decl scope=_arm_cpu_oneshot_off   var     st                     line=403  reads=105
+  decl scope=_arm_cpu_oneshot_off   var     off                    line=408  reads=4
+  decl scope=_arm_cpu_oneshot_off   var     fa                     line=411  reads=17
+  decl scope=_arm_cpu_oneshot_flag  var     n                      line=421  reads=119
+  decl scope=_arm_cpu_oneshot_flag  var     st                     line=423  reads=105
+  decl scope=_arm_cpu_oneshot_flag  var     off                    line=428  reads=4
+  decl scope=_arm_cpu_oneshot_flag  var     fa                     line=431  reads=17
+  decl scope=_arm_cpu_pause         var     out                    line=441  reads=30
+  decl scope=_arm_cpu_pause         var     n                      line=443  reads=119
+  decl scope=_arm_cpu_pause         var     st                     line=445  reads=105
+  decl scope=_arm_cpu_pause         var     show_ph                line=452  reads=2
+  decl scope=_arm_cpu_pause         var     p                      line=458  reads=11
+  decl scope=_arm_cpu_pause         var     n2                     line=460  reads=4
+  decl scope=_arm_cpu_pause         var     st2                    line=462  reads=9
+  decl scope=_arm_cpu_pause         var     show2                  line=469  reads=2
+  decl scope=_arm_cpu_pause         var     n3                     line=475  reads=6
+  decl scope=_arm_cpu_pause         var     st3                    line=477  reads=5
+  decl scope=_arm_cpu_pause         var     en_ph                  line=484  reads=2
+  decl scope=_arm_cpu_pause         var     n4                     line=490  reads=4
+  decl scope=_arm_cpu_pause         var     st4                    line=492  reads=5
+  decl scope=_arm_cpu_pause         var     ts_ph                  line=499  reads=2
+  decl scope=_arm_cpu_pause         var     okvis                  line=504  reads=2
+  decl scope=_arm_cpu_pause         var     okvp                   line=505  reads=2
+  decl scope=_arm_cpu_pause         var     okpm                   line=506  reads=2
+  decl scope=_arm_cpu_pause         var     okts                   line=507  reads=2
+  decl scope=_arm_cpu_restart       var     n                      line=516  reads=119
+  decl scope=_arm_cpu_restart       var     st                     line=518  reads=105
+  decl scope=_arm_cpu_restart       var     start                  line=521  reads=11
+  decl scope=_arm_cpu_restart       var     first                  line=524  reads=6
+  decl scope=_arm_cpu_restart       var     first_em               line=525  reads=2
+  decl scope=_arm_cpu_restart       var     first_ise              line=526  reads=2
+  decl scope=_arm_cpu_restart       var     em_after_restart       line=528  reads=2
+  decl scope=_arm_cpu_restart       var     ise_after_restart      line=529  reads=2
+  decl scope=_arm_cpu_restart       var     rstart                 line=531  reads=2
+  decl scope=_arm_cpu_restart       var     second                 line=534  reads=6
+  decl scope=_arm_cpu_retrigger     var     n                      line=545  reads=119
+  decl scope=_arm_cpu_retrigger     var     st                     line=547  reads=105
+  decl scope=_arm_cpu_retrigger     var     start                  line=550  reads=11
+  decl scope=_arm_cpu_retrigger     var     first                  line=553  reads=6
+  decl scope=_arm_cpu_retrigger     var     set_ph                 line=555  reads=8
+  decl scope=_arm_cpu_retrigger     var     em_set                 line=557  reads=2
+  decl scope=_arm_cpu_retrigger     var     ise_set                line=558  reads=2
+  decl scope=_arm_cpu_retrigger     var     second                 line=562  reads=6
+  decl scope=_arm_cpu_lt_mid        var     n                      line=572  reads=119
+  decl scope=_arm_cpu_lt_mid        var     st                     line=574  reads=105
+  decl scope=_arm_cpu_lt_mid        var     set_ph                 line=579  reads=8
+  decl scope=_arm_cpu_lt_mid        var     fa                     line=582  reads=17
+  decl scope=_arm_cpu_speed_mid     var     n                      line=592  reads=119
+  decl scope=_arm_cpu_speed_mid     var     st                     line=594  reads=105
+  decl scope=_arm_cpu_speed_mid     var     set_ph                 line=599  reads=8
+  decl scope=_arm_cpu_speed_mid     var     fa                     line=602  reads=17
+  decl scope=_arm_cpu_amount_mid    var     n                      line=611  reads=119
+  decl scope=_arm_cpu_amount_mid    var     st                     line=613  reads=105
+  decl scope=_arm_cpu_amount_mid    var     set_ph                 line=618  reads=8
+  decl scope=_arm_cpu_amount_mid    var     em_at_set              line=619  reads=2
+  decl scope=_arm_cpu_amount_mid    var     fa                     line=622  reads=17
+  decl scope=_arm_cpu_amount_mid    var     ok_amt                 line=627  reads=1
+  decl scope=_arm_cpu_request       var     out                    line=637  reads=30
+  decl scope=_arm_cpu_request       var     oks                    line=638  reads=10
+  decl scope=_arm_cpu_request       var     n                      line=640  reads=119
+  decl scope=_arm_cpu_request       var     st                     line=642  reads=105
+  decl scope=_arm_cpu_request       var     calls                  line=649  reads=4
+  decl scope=_arm_cpu_request       var     expected               line=659  reads=2
+  decl scope=_arm_cpu_request       var     okc                    line=660  reads=2
+  decl scope=_arm_gpu_headless      var     out                    line=677  reads=30
+  decl scope=_arm_gpu_headless      var     n                      line=679  reads=119
+  decl scope=_arm_gpu_headless      var     st                     line=686  reads=105
+  decl scope=_arm_gpu_headless      var     start                  line=689  reads=11
+  decl scope=_arm_gpu_headless      var     flip                   line=690  reads=3
+  decl scope=_arm_gpu_headless      var     g                      line=700  reads=27
+  decl scope=_arm_gpu_headless      var     st2                    line=705  reads=9
+  decl scope=_arm_gpu_headless      var     start2                 line=709  reads=2
+  decl scope=_arm_gpu_headless      var     g3                     line=716  reads=9
+  decl scope=_arm_gpu_headless      var     start3                 line=723  reads=0
+  decl scope=_arm_gpu_headless      var     r                      line=725  reads=16
+  decl scope=_arm_gpu_headless      var     okos                   line=728  reads=2
+  decl scope=_arm_gpu_headless      var     okcont                 line=729  reads=2
+  decl scope=_arm_gpu_headless      var     okmanual               line=730  reads=2
+  decl scope=_arm_gpu_headless      var     okcap                  line=731  reads=2
+  decl scope=_initialize            var     arm                    line=741  reads=2
+write-only stores (zero reads anywhere): 2
+  WO  scope=<file>                 var     T0:53
+  WO  scope=_arm_gpu_headless      var     start3:723
+
+== function census (35 funcs) ==
+  _arg                     line=55   call_sites=1
+  _v2                      line=61   call_sites=2
+  _sv                      line=64   call_sites=1
+  _consts                  line=75   call_sites=3
+  _props                   line=83   call_sites=3
+  _curve_types             line=100  call_sites=1
+  _method_sigs             line=109  call_sites=3
+  _new_cpu                 line=123  call_sites=17
+  _watch                   line=129  call_sites=15
+  _free_node               line=137  call_sites=25
+  _wait_ph                 line=143  call_sites=17
+  _run_cpu                 line=149  call_sites=11
+  _okb                     line=167  call_sites=30
+  _fmt                     line=170  call_sites=11
+  _arm_census              line=177  call_sites=1
+  _arm_ppm                 line=196  call_sites=1
+  _arm_convert             line=225  call_sites=1
+  _arm_cpu_lifetime        line=290  call_sites=1
+  _arm_cpu_expl            line=305  call_sites=1
+  _arm_cpu_speed_pre       line=317  call_sites=1
+  _arm_cpu_stop            line=333  call_sites=1
+  _arm_cpu_never           line=359  call_sites=1
+  _arm_cpu_contam          line=377  call_sites=1
+  _arm_cpu_oneshot_off     line=400  call_sites=1
+  _arm_cpu_oneshot_flag    line=420  call_sites=1
+  _arm_cpu_pause           line=440  call_sites=1
+  _arm_cpu_restart         line=515  call_sites=1
+  _arm_cpu_retrigger       line=544  call_sites=1
+  _arm_cpu_lt_mid          line=571  call_sites=1
+  _arm_cpu_speed_mid       line=591  call_sites=1
+  _arm_cpu_amount_mid      line=610  call_sites=1
+  _arm_cpu_request         line=635  call_sites=1
+  _watch_gpu               line=670  call_sites=2
+  _arm_gpu_headless        line=676  call_sites=1
+  _initialize              line=738  call_sites=0
+
+== print-site census ==
+  line=179  print("PASS particles_lattice census",
+  line=211  print("PASS particles_lattice ppm",
+  line=271  print("PASS particles_lattice convert",
+  line=299  print("PASS particles_lattice cpu_lifetime",
+  line=312  print("PASS particles_lattice cpu_expl",
+  line=326  print("PASS particles_lattice cpu_speed_pre",
+  line=352  print("PASS particles_lattice cpu_stop",
+  line=369  print("PASS particles_lattice cpu_never",
+  line=395  print("PASS particles_lattice cpu_contam",
+  line=412  print("PASS particles_lattice cpu_oneshot_off",
+  line=432  print("PASS particles_lattice cpu_oneshot_flag",
+  line=508  print("PASS particles_lattice cpu_pause",
+  line=535  print("PASS particles_lattice cpu_restart",
+  line=563  print("PASS particles_lattice cpu_retrigger",
+  line=583  print("PASS particles_lattice cpu_lt_mid",
+  line=603  print("PASS particles_lattice cpu_speed_mid",
+  line=628  print("PASS particles_lattice cpu_amount_mid",
+  line=666  print("PASS particles_lattice cpu_request",
+  line=732  print("PASS particles_lattice gpu_headless",
+  line=762  _: print("PASS particles_lattice unknown arm=" + arm)
+
+== arm census ==
+  match arms (19): census, ppm, convert, cpu_lifetime, cpu_expl, cpu_speed_pre, cpu_stop, cpu_never, cpu_contam, cpu_oneshot_off, cpu_oneshot_flag, cpu_pause, cpu_restart, cpu_retrigger, cpu_lt_mid, cpu_speed_mid, cpu_amount_mid, cpu_request, gpu_headless
+  default arm (line 741): census
+  fixture fallback: unknown-arm print present
+  arms covered by match: 19  (+default census)
+
+== CLI knob census ==
+  line=55   func _arg(name: String, def: String = "") -> String:
+  line=56   for a in OS.get_cmdline_user_args():
+  line=741  var arm := _arg("arm", "census")
+
+### harness: run_battery.py (sha256 2b1f4df5426a8da679c58c58057817b75f6fd879f9ffc8ab1045b03deae04238)
+== CASES rows ==
+total rows: 307  r94 rows: 19
+  r94_particles_census                   script=particles_lattice.gd   flags=['--arm=census'] exit=0 sig_len=8785
+  r94_particles_ppm                      script=particles_lattice.gd   flags=['--arm=ppm'] exit=0 sig_len=168
+  r94_particles_convert                  script=particles_lattice.gd   flags=['--arm=convert'] exit=0 sig_len=475
+  r94_particles_cpu_lifetime             script=particles_lattice.gd   flags=['--arm=cpu_lifetime'] exit=0 sig_len=91
+  r94_particles_cpu_expl                 script=particles_lattice.gd   flags=['--arm=cpu_expl'] exit=0 sig_len=73
+  r94_particles_cpu_speed_pre            script=particles_lattice.gd   flags=['--arm=cpu_speed_pre'] exit=0 sig_len=96
+  r94_particles_cpu_stop                 script=particles_lattice.gd   flags=['--arm=cpu_stop'] exit=0 sig_len=69
+  r94_particles_cpu_never                script=particles_lattice.gd   flags=['--arm=cpu_never'] exit=0 sig_len=65
+  r94_particles_cpu_contam               script=particles_lattice.gd   flags=['--arm=cpu_contam'] exit=0 sig_len=51
+  r94_particles_cpu_oneshot_off          script=particles_lattice.gd   flags=['--arm=cpu_oneshot_off'] exit=0 sig_len=87
+  r94_particles_cpu_oneshot_flag         script=particles_lattice.gd   flags=['--arm=cpu_oneshot_flag'] exit=0 sig_len=93
+  r94_particles_cpu_pause                script=particles_lattice.gd   flags=['--arm=cpu_pause'] exit=0 sig_len=103
+  r94_particles_cpu_restart              script=particles_lattice.gd   flags=['--arm=cpu_restart'] exit=0 sig_len=162
+  r94_particles_cpu_retrigger            script=particles_lattice.gd   flags=['--arm=cpu_retrigger'] exit=0 sig_len=98
+  r94_particles_cpu_lt_mid               script=particles_lattice.gd   flags=['--arm=cpu_lt_mid'] exit=0 sig_len=68
+  r94_particles_cpu_speed_mid            script=particles_lattice.gd   flags=['--arm=cpu_speed_mid'] exit=0 sig_len=71
+  r94_particles_cpu_amount_mid           script=particles_lattice.gd   flags=['--arm=cpu_amount_mid'] exit=0 sig_len=81
+  r94_particles_cpu_request              script=particles_lattice.gd   flags=['--arm=cpu_request'] exit=0 sig_len=74
+  r94_particles_gpu_headless             script=particles_lattice.gd   flags=['--arm=gpu_headless'] exit=0 sig_len=98
+
+== block position ==
+  r94 index range: 284..302 (contiguous=True)
+  predecessor: r93_anim_blend_interleaved
+  successor:   crash_spontaneous_sigabrt
+
+== r94 expected_errors ==
+  rows carrying entries: 0  total entries: 0
+
+== r94 required_stderr ==
+  rows carrying entries: 0  total entries: 0
+
+== expected_errors floor gates ==
+  line=3037  "phys2d_expected_errors_all_matched": all(           prefix=phys2d_
+  line=3046  "r87_expected_errors_all_matched": all(              prefix=?
+  line=3055  "r88_expected_errors_all_matched": all(              prefix=r88_
+  line=3064  "r89_expected_errors_all_matched": all(              prefix=?
+  line=3072  "r90_expected_errors_all_matched": all(              prefix=r90_
+  line=3080  "r91_expected_errors_all_matched": all(              prefix=nav_lattice_
+  line=3088  "r92_expected_errors_all_matched": all(              prefix=r92_
+  line=3098  "r93_expected_errors_all_matched": all(              prefix=r93_
+  line=3109  "r94_expected_errors_all_matched": all(              prefix=r94_
+
+== gate-prefix non-redundancy ==
+  gate prefixes: phys2d_, ?, r88_, ?, r90_, nav_lattice_, r92_, r93_, r94_
+  prefixes that can match an r94_ case: r94_
+
+== signature redundancy ==
+  exact-duplicate signatures across all 307 rows: 5
+    negative control: expected collected signal was absent <- ['negative_overlap', 'negative_signal']
+    PASS camera_limit moved=true current=true center_at_viewport_adjusted_clamp=true <- ['camera_top_limit', 'camera_left_limit', 'camera_bottom_limit']
+    UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1 <- ['button_activation_disconnected', 'button_activation_unfocused']
+    SPONTANEOUS_CRASH_PROBE: expected signature <- ['crash_spontaneous_sigabrt', 'crash_self_sigkill']
+    DESCENDANT_PIPE_PROBE: expected signature <- ['descendant_pipe_detached_control', 'descendant_pipe_forged_signature_release']
+  r94 substring-subsumption pairs: 0
+  r94 signatures subsuming/containing a foreign row's signature: 0
+
+== row<->arm bijection ==
+  particles_lattice.gd: 19 rows
+    duplicate arms: none
+    exits: [0]
+      r94_particles_census                   arm=census         exit=0
+      r94_particles_ppm                      arm=ppm            exit=0
+      r94_particles_convert                  arm=convert        exit=0
+      r94_particles_cpu_lifetime             arm=cpu_lifetime   exit=0
+      r94_particles_cpu_expl                 arm=cpu_expl       exit=0
+      r94_particles_cpu_speed_pre            arm=cpu_speed_pre  exit=0
+      r94_particles_cpu_stop                 arm=cpu_stop       exit=0
+      r94_particles_cpu_never                arm=cpu_never      exit=0
+      r94_particles_cpu_contam               arm=cpu_contam     exit=0
+      r94_particles_cpu_oneshot_off          arm=cpu_oneshot_off exit=0
+      r94_particles_cpu_oneshot_flag         arm=cpu_oneshot_flag exit=0
+      r94_particles_cpu_pause                arm=cpu_pause      exit=0
+      r94_particles_cpu_restart              arm=cpu_restart    exit=0
+      r94_particles_cpu_retrigger            arm=cpu_retrigger  exit=0
+      r94_particles_cpu_lt_mid               arm=cpu_lt_mid     exit=0
+      r94_particles_cpu_speed_mid            arm=cpu_speed_mid  exit=0
+      r94_particles_cpu_amount_mid           arm=cpu_amount_mid exit=0
+      r94_particles_cpu_request              arm=cpu_request    exit=0
+      r94_particles_gpu_headless             arm=gpu_headless   exit=0
+
+== cross-check: harness arms vs fixture arms ==
+  fixture arms=19  referenced=19
+    arms with NO row: none
+    rows referencing a non-existent arm: none
+  gates: phys2d_, ?, r88_, ?, r90_, nav_lattice_, r92_, r93_, r94_

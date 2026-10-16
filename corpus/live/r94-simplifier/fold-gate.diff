@@ -1,0 +1,15 @@
+--- committed-fixtures/run_battery.py
++++ fold-gate/run_battery.py
+@@ -1388,6 +1388,12 @@
+                 'r92_tilemap_physics': (
+                     'ERROR: Parameter "found" is null.',
+                 ),
++                # r94-simplifier dead-entry fold: a stale r94 allowlist entry
++                # that no r94 arm can ever emit (all 19 rows are ERROR:-clean).
++                # The row must still PASS; the r94 floor gate must flip.
++                'r94_particles_cpu_never': (
++                    'ERROR: r94-simplifier dead-entry fold probe (never emitted)',
++                ),
+             }.get(name, ())
+             # r89-fold (critic F1): stderr-fragment pins. geo2d_lattice_lineempty
+             # classified on the merged stdout+stderr blob, so a foreign SIGABRT

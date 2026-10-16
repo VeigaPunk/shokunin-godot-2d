@@ -1,0 +1,119 @@
+== r94_particles_census
+   receipts carrying the signature: 24  distinct tails: 1
+     [24] 
+
+== r94_particles_convert
+   receipts carrying the signature: 24  distinct tails: 1
+     [24] 
+
+== r94_particles_cpu_amount_mid
+   receipts carrying the signature: 27  distinct tails: 1
+     [27]  | fin_after_set=0 n_fin=1 em_fin=true ise_fin=true em_at_end=false
+
+== r94_particles_cpu_contam
+   receipts carrying the signature: 27  distinct tails: 1
+     [27]  | never1[fin_delta=0 n=1] never2[fin_delta=0 n=1]
+
+== r94_particles_cpu_expl
+   receipts carrying the signature: 27  distinct tails: 6
+     [12]  | e1[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] e05[delta=43 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 5]  | e1[delta=29 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] e05[delta=42 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 3]  | e1[delta=29 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=29] e05[delta=42 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 3]  | e1[delta=28 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] e05[delta=40 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 3]  | e1[delta=29 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] e05[delta=42 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 1]  | e1[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] e05[delta=42 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+
+== r94_particles_cpu_lifetime
+   receipts carrying the signature: 27  distinct tails: 12
+     [ 6]  | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 5]  | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=7] l025[delta=14 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 3]  | l01[delta=8 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=9] l025[delta=14 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 3]  | l01[delta=7 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=9] l025[delta=12 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 3]  | l01[delta=7 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=8] l025[delta=14 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 1]  | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=14 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 1]  | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 1]  | l01[delta=8 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=9] l025[delta=14 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 1]  | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=7] l025[delta=14 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 1]  | l01[delta=7 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=8] l025[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 1]  | l01[delta=7 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=7] l025[delta=14 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+     [ 1]  | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_afte…
+
+== r94_particles_cpu_lt_mid
+   receipts carrying the signature: 27  distinct tails: 2
+     [24]  | fin_after_set=2 n_fin=1 em_fin=false
+     [ 3]  | fin_after_set=3 n_fin=1 em_fin=false
+
+== r94_particles_cpu_never
+   receipts carrying the signature: 27  distinct tails: 2
+     [24]  | fin_delta=-1 em_after=false ph_total=60
+     [ 3]  | fin_delta=-1 em_after=false ph_total=61
+
+== r94_particles_cpu_oneshot_flag
+   receipts carrying the signature: 27  distinct tails: 1
+     [27]  | fin_after_flag=-1 n_fin=0
+
+== r94_particles_cpu_oneshot_off
+   receipts carrying the signature: 27  distinct tails: 2
+     [24]  | fin_after_off=50 n_fin=1 em_fin=false
+     [ 3]  | fin_after_off=51 n_fin=1 em_fin=false
+
+== r94_particles_cpu_pause
+   receipts carrying the signature: 24  distinct tails: 5
+     [ 9]  | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=4 n=1] pm_disabled[fin_after_enable=4 n=1] ts0[fin_after_restore=19 n=1]
+     [ 5]  | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=5 n=1] pm_disabled[fin_after_enable=5 n=1] ts0[fin_after_restore=19 n=1]
+     [ 4]  | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=5 n=1] pm_disabled[fin_after_enable=5 n=1] ts0[fin_after_restore=20 n=1]
+     [ 3]  | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=5 n=1] pm_disabled[fin_after_enable=4 n=1] ts0[fin_after_restore=19 n=1]
+     [ 3]  | vis[fin_after_show=6 n=1] vis_parent[fin_after_show=4 n=1] pm_disabled[fin_after_enable=4 n=1] ts0[fin_after_restore=19 n=1]
+
+== r94_particles_cpu_request
+   receipts carrying the signature: 27  distinct tails: 1
+     [27]  | step0.10[fin_call1=6 fin_call_raw=4 expected=6 ok=true n_fin=1] step0.05[fin_call1=11 fin_call_raw=9 expected=11 ok=true n_fin=1]
+
+== r94_particles_cpu_restart
+   receipts carrying the signature: 27  distinct tails: 4
+     [11]  | first_delta=15 second_after=14 n_fin=2
+     [10]  | first_delta=15 second_after=15 n_fin=2
+     [ 3]  | first_delta=15 second_after=12 n_fin=2
+     [ 3]  | first_delta=16 second_after=14 n_fin=2
+
+== r94_particles_cpu_retrigger
+   receipts carrying the signature: 27  distinct tails: 3
+     [21]  | first_delta=15 second_after=14 n_fin=2 em_after=false
+     [ 3]  | first_delta=15 second_after=12 n_fin=2 em_after=false
+     [ 3]  | first_delta=16 second_after=14 n_fin=2 em_after=false
+
+== r94_particles_cpu_speed_mid
+   receipts carrying the signature: 27  distinct tails: 1
+     [27]  | fin_after_set=12 n_fin=1
+
+== r94_particles_cpu_speed_pre
+   receipts carrying the signature: 27  distinct tails: 7
+     [ 5]  | ss2[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] ss05[delta=59 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_af…
+     [ 5]  | ss2[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] ss05[delta=60 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_af…
+     [ 5]  | ss2[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=16] ss05[delta=59 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_af…
+     [ 3]  | ss2[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] ss05[delta=60 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_af…
+     [ 3]  | ss2[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=17] ss05[delta=58 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_af…
+     [ 3]  | ss2[delta=16 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=17] ss05[delta=59 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_af…
+     [ 3]  | ss2[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] ss05[delta=60 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_af…
+
+== r94_particles_cpu_stop
+   receipts carrying the signature: 27  distinct tails: 4
+     [15]  | stop10[fin_after=20 n=1 em_fin=false em_after=false] stop40[fin_after=19 n=1 em_fin=false em_after=false]
+     [ 6]  | stop10[fin_after=20 n=1 em_fin=false em_after=false] stop40[fin_after=20 n=1 em_fin=false em_after=false]
+     [ 3]  | stop10[fin_after=20 n=1 em_fin=false em_after=false] stop40[fin_after=18 n=1 em_fin=false em_after=false]
+     [ 3]  | stop10[fin_after=21 n=1 em_fin=false em_after=false] stop40[fin_after=19 n=1 em_fin=false em_after=false]
+
+== r94_particles_gpu_headless
+   receipts carrying the signature: 27  distinct tails: 7
+     [ 8]  | os[fin_delta=-1 n=0 flip_after=1 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] captur…
+     [ 4]  | os[fin_delta=-1 n=0 flip_after=5 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] captur…
+     [ 4]  | os[fin_delta=-1 n=0 flip_after=4 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] captur…
+     [ 4]  | os[fin_delta=-1 n=0 flip_after=3 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] captur…
+     [ 3]  | os[fin_delta=-1 n=0 flip_after=2 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] captur…
+     [ 2]  | os[fin_delta=-1 n=0 flip_after=6 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] captur…
+     [ 2]  | os[fin_delta=-1 n=0 flip_after=7 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] captur…
+
+== r94_particles_ppm
+   receipts carrying the signature: 24  distinct tails: 1
+     [24] 
+

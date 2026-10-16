@@ -1,0 +1,25 @@
+committed fixture sha: 0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9
+folded fixture sha:    afd2aa88876abc7a0923066b024c825aa111d3e471ee0e3a304a58f9e494a125
+removed line 53: var T0 := 0
+removed line 723: 	var start3: int = PH
+removed line 739: 	T0 = Time.get_ticks_usec()
+  census           reps=3 raw_identical=True
+  ppm              reps=3 raw_identical=True
+  convert          reps=3 raw_identical=True
+  cpu_lifetime     reps=3 raw_identical=False
+  cpu_expl         reps=3 raw_identical=True
+  cpu_speed_pre    reps=3 raw_identical=False
+  cpu_stop         reps=3 raw_identical=False
+  cpu_never        reps=3 raw_identical=True
+  cpu_contam       reps=3 raw_identical=True
+  cpu_oneshot_off  reps=3 raw_identical=True
+  cpu_oneshot_flag reps=3 raw_identical=True
+  cpu_pause        reps=3 raw_identical=False
+  cpu_restart      reps=3 raw_identical=False
+  cpu_retrigger    reps=3 raw_identical=True
+  cpu_lt_mid       reps=3 raw_identical=True
+  cpu_speed_mid    reps=3 raw_identical=True
+  cpu_amount_mid   reps=3 raw_identical=True
+  cpu_request      reps=3 raw_identical=True
+  gpu_headless     reps=3 raw_identical=False
+pairs=57 mismatches=11

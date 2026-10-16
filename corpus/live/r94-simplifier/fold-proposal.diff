@@ -1,0 +1,9 @@
+--- a/corpus/fixtures/particles_lattice.gd
++++ b/corpus/fixtures/particles_lattice.gd
+@@ dead stores: T0 (file scope) and start3 (_arm_gpu_headless) @@
+-var T0 := 0
+-	var start3: int = PH
+-	T0 = Time.get_ticks_usec()
+@@ fold-candidates/run_battery.py @@
+-# Probe particles_lattice.gd sha256 0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9
++# Probe particles_lattice.gd sha256 afd2aa88876abc7a0923066b024c825aa111d3e471ee0e3a304a58f9e494a125

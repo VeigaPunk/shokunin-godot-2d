@@ -1156,3 +1156,8 @@
 - LAWS: overshoot not clamp (BACK<start, SPRING>end, static -5/15); N-1
   await law pos=100*sum(deltas[1..N-1]); crossfade w=(i-1)/(N-1); DEFERRED
   flushes on process AND physics.
+- ROUND 94 (2026-10-15): GPUParticles2D/CPU-emission lattice.
+  ADMIT-with-findings at c7228893 (314 rows, +19). Verifier VERIFIED-WR
+  (fold 3-way verified); 2-seat tautology finding on cpu_contam queued.
+- LAWS: cpu_pause ff30 envelope [1,7]; round->floor request ladder;
+  emission census; gpu_headless arms; ff30 cpu_pause 75% of 8s bound.
