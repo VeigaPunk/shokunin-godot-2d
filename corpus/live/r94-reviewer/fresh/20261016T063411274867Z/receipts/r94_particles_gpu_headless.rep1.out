@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=3 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] capture[rect=(0.0000,0.0000,0.0000,0.0000) em_after=false]

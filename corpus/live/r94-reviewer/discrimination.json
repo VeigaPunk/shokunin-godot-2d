@@ -1,0 +1,412 @@
+{
+ "segment_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+ "fresh": "corpus/live/r94-reviewer/fresh/20261016T063411274867Z",
+ "rows": [
+  {
+   "case": "r94_particles_census",
+   "pin_len": 8785,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "digit_flipped": false,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_ppm",
+   "pin_len": 168,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "digit_flipped": false,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_convert",
+   "pin_len": 475,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "digit_flipped": false,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_lifetime",
+   "pin_len": 91,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "digit_flipped": false,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_expl",
+   "pin_len": 73,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "digit_flipped": false,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_speed_pre",
+   "pin_len": 96,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "digit_flipped": false,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_stop",
+   "pin_len": 69,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "digit_flipped": false,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_never",
+   "pin_len": 65,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "digit_flipped": false,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_contam",
+   "pin_len": 51,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "digit_flipped": false,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_oneshot_off",
+   "pin_len": 87,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_oneshot_flag",
+   "pin_len": 93,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_pause",
+   "pin_len": 103,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "digit_flipped": false,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_restart",
+   "pin_len": 162,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_retrigger",
+   "pin_len": 98,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_lt_mid",
+   "pin_len": 68,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_speed_mid",
+   "pin_len": 71,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_amount_mid",
+   "pin_len": 81,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_cpu_request",
+   "pin_len": 74,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "digit_flipped": false,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  },
+  {
+   "case": "r94_particles_gpu_headless",
+   "pin_len": 98,
+   "rc": 0,
+   "stderr_bytes": 0,
+   "mutations": {
+    "pin_dropped": false,
+    "stderr_only": true,
+    "wrong_rc": false,
+    "foreign_error": false,
+    "truncated_mid_pin": false,
+    "prefix_spoof": true,
+    "bool_flipped": false
+   },
+   "genuine_accept": true,
+   "stderr_only_stdout_anchored": true
+  }
+ ],
+ "summary": {
+  "pin_dropped": {
+   "tested": 19,
+   "rejected": 19,
+   "accepted": []
+  },
+  "digit_flipped": {
+   "tested": 11,
+   "rejected": 11,
+   "accepted": []
+  },
+  "bool_flipped": {
+   "tested": 19,
+   "rejected": 19,
+   "accepted": []
+  },
+  "stderr_only": {
+   "tested": 19,
+   "rejected": 0,
+   "accepted": [
+    "r94_particles_census",
+    "r94_particles_ppm",
+    "r94_particles_convert",
+    "r94_particles_cpu_lifetime",
+    "r94_particles_cpu_expl",
+    "r94_particles_cpu_speed_pre",
+    "r94_particles_cpu_stop",
+    "r94_particles_cpu_never",
+    "r94_particles_cpu_contam",
+    "r94_particles_cpu_oneshot_off",
+    "r94_particles_cpu_oneshot_flag",
+    "r94_particles_cpu_pause",
+    "r94_particles_cpu_restart",
+    "r94_particles_cpu_retrigger",
+    "r94_particles_cpu_lt_mid",
+    "r94_particles_cpu_speed_mid",
+    "r94_particles_cpu_amount_mid",
+    "r94_particles_cpu_request",
+    "r94_particles_gpu_headless"
+   ]
+  },
+  "wrong_rc": {
+   "tested": 19,
+   "rejected": 19,
+   "accepted": []
+  },
+  "foreign_error": {
+   "tested": 19,
+   "rejected": 19,
+   "accepted": []
+  },
+  "truncated_mid_pin": {
+   "tested": 19,
+   "rejected": 19,
+   "accepted": []
+  },
+  "genuine": {
+   "tested": 19,
+   "accepted": 19,
+   "rejected": []
+  },
+  "stderr_only_stdout_anchored": {
+   "tested": 19,
+   "rejected": 19,
+   "note": "stricter-than-production stdout anchor (r93-reviewer shape)"
+  },
+  "prefix_spoof": {
+   "tested": 19,
+   "accepted": 19,
+   "declared": "substring-anchored production classifier accepts trailing tokens"
+  }
+ }
+}
