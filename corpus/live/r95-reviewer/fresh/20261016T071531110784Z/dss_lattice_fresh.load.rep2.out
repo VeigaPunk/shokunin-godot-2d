@@ -1,0 +1,23 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95 fresh add_t0_point=[f#0]
+R95 fresh add_t0_ray=r={f pos=(80.0000,0.0000) n=(-1.0000,0.0000)}
+R95 fresh add_t0_shape=[f#0]
+R95 fresh add_same_frame=true
+R95 fresh node_move_t0_old=[f#0]
+R95 fresh node_move_t0_new=[]
+R95 fresh node_move_deferred=true
+R95 fresh node_move_t1_old=[]
+R95 fresh node_move_t1_new=[f#0]
+R95 fresh server_tele_t0_old=[]
+R95 fresh server_tele_t0_new=[f#0]
+R95 fresh server_write_live=true
+R95 fresh pre_free=[c#0]
+R95 fresh free_t0=[c#0]
+R95 fresh free_deferred=true
+R95 fresh free_t1=[]
+R95 fresh vis_off=[d#0]
+R95 fresh visible_irrelevant=true
+R95 fresh layer_change_t0=[e#0]
+R95 fresh layer_change_t1=[e#0]
+PASS dss_lattice fresh add_t0_point=[f#0] add_t0_ray=r={f pos=(80.0000,0.0000) n=(-1.0000,0.0000)} add_t0_shape=[f#0] add_same_frame=true node_move_t0_old=[f#0] node_move_t0_new=[] node_move_deferred=true node_move_t1_old=[] node_move_t1_new=[f#0] server_tele_t0_old=[] server_tele_t0_new=[f#0] server_write_live=true pre_free=[c#0] free_t0=[c#0] free_deferred=true free_t1=[] vis_off=[d#0] visible_irrelevant=true layer_change_t0=[e#0] layer_change_t1=[e#0]

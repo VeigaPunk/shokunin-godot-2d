@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95B scoutrev add_order=[e,d,c,b,a]
+R95B scoutrev map=[e@0,d@8,c@16,b@24,a@32]
+R95B scoutrev ladder=[t0:4,3,2,1,0;t1:0,3,2,1,4;t2:0,4,2,1,3;t3:0,4,3,1,2;t4:0,4,3,2,1;t5:1,4,3,2,0;t8:1,0,4,3,2;t16:3,2,1,0,4;t32:2,1,0,4,3]
+R95B scoutrev distinct_ticks=9
+R95B scoutrev t2_vec=[a#0,e#0,c#0,b#0,d#0]
+R95B scoutrev t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]
+R95B scoutrev scout_row_rev_t2_vec=[a#0,e#0,c#0,b#0,d#0]
+R95B scoutrev t2_vec_matches_scout_row=true
+R95B scoutrev t2_relpos_equals_canon=true
+R95B scoutrev env=tps=60 pf=33 proc=64 sep2d_has=true sep2d=false maxsteps=8
+PASS r95b_order scoutrev add_order=[e,d,c,b,a] map=[e@0,d@8,c@16,b@24,a@32] ladder=[t0:4,3,2,1,0;t1:0,3,2,1,4;t2:0,4,2,1,3;t3:0,4,3,1,2;t4:0,4,3,2,1;t5:1,4,3,2,0;t8:1,0,4,3,2;t16:3,2,1,0,4;t32:2,1,0,4,3] distinct_ticks=9 t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] scout_row_rev_t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_vec_matches_scout_row=true t2_relpos_equals_canon=true

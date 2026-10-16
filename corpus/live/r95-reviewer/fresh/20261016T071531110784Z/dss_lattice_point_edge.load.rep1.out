@@ -1,0 +1,21 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95 point_edge box_left=[box#0]
+R95 point_edge box_right=[]
+R95 point_edge box_top=[box#0]
+R95 point_edge box_bottom=[]
+R95 point_edge box_left_in=[box#0]
+R95 point_edge box_right_in=[box#0]
+R95 point_edge circ_left=[]
+R95 point_edge circ_left_in=[circ#0]
+R95 point_edge circ_top=[]
+R95 point_edge circ_center=[circ#0]
+R95 point_edge rot_left=[]
+R95 point_edge rot_right=[]
+R95 point_edge rot_top=[rot#0]
+R95 point_edge s_box_right=[box#0]
+R95 point_edge s_box_bottom=[box#0]
+R95 point_edge s_circ_top=[circ#0]
+R95 point_edge s_rot_right=[rot#0]
+R95 point_edge point_half_open=left=true right=false top=true bottom=false
+PASS dss_lattice point_edge box_left=[box#0] box_right=[] box_top=[box#0] box_bottom=[] box_left_in=[box#0] box_right_in=[box#0] circ_left=[] circ_left_in=[circ#0] circ_top=[] circ_center=[circ#0] rot_left=[] rot_right=[] rot_top=[rot#0] s_box_right=[box#0] s_box_bottom=[box#0] s_circ_top=[circ#0] s_rot_right=[rot#0] point_half_open=left=true right=false top=true bottom=false

@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95 excl_space baseline=[a#0]
+R95 excl_space body_rid=[]
+R95 excl_space shape_rid_inert=true
+R95 excl_space null_rid_inert=true
+R95 excl_space dup_rid=[]
+R95 excl_space ray_shape_rid_inert=r={a pos=(80.0000,0.0000) n=(-1.0000,0.0000)}
+R95 excl_space shape_rid_is_body_rid=false
+R95 excl_space same_space=false
+R95 excl_space root_view=[root_body#0]
+R95 excl_space sv_view=[sv_body#0]
+R95 excl_space space_scoped=true
+R95 excl_space dss_identity=same_across_calls=true
+R95 excl_space node_world_ok=true
+PASS dss_lattice excl_space baseline=[a#0] body_rid=[] shape_rid_inert=true null_rid_inert=true dup_rid=[] ray_shape_rid_inert=r={a pos=(80.0000,0.0000) n=(-1.0000,0.0000)} shape_rid_is_body_rid=false same_space=false root_view=[root_body#0] sv_view=[sv_body#0] space_scoped=true dss_identity=same_across_calls=true node_world_ok=true

@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95B rigid add_order=[a,b,c,d,e]
+R95B rigid t1_bodypos=[-50.4714,0.2722|-17.2727,0.2722|15.9445,0.2722|49.2242,0.2722|82.5754,0.2722]
+R95B rigid t2_bodypos=[-56.2700,3.3935|-20.0501,2.1068|16.0756,0.8082|52.1188,-0.4870|88.1256,-1.7404]
+R95B rigid t3_bodypos=[-61.8220,4.8122|-22.8989,3.2148|16.0131,1.6108|54.9117,0.0271|93.7960,-1.5072]
+R95B rigid t5_bodypos=[-63.3304,7.3370|-23.6688,5.6953|16.0006,4.0500|55.6703,2.4295|95.3284,0.8596]
+R95B rigid t10_bodypos=[-63.3938,18.1636|-23.7014,16.5202|15.9999,14.8732|55.7022,13.2512|95.3931,11.6799]
+R95B rigid ladder=[t1:2;t2:2;t3:2;t5:2;t10:2]
+R95B rigid distinct_ticks=1
+R95B rigid t10_relpos=[15.9999,14.8732]
+R95B rigid env=tps=60 pf=11 proc=26 sep2d_has=true sep2d=false maxsteps=8
+PASS r95b_order rigid add_order=[a,b,c,d,e] ladder=[t1:2;t2:2;t3:2;t5:2;t10:2] distinct_ticks=1 t10_relpos=[15.9999,14.8732]

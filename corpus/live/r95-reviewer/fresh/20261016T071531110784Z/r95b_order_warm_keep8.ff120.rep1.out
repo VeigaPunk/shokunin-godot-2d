@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95B warm k=8
+R95B warm keep=1
+R95B warm add_order=[a,b,c,d,e]
+R95B warm ladder=[t2:0,4,1,2,3;t3:0,4,1,2,3;t4:0,4,1,2,3;t6:0,4,1,2,3;t8:4,1,2,3,0;t16:4,3,0,1,2;t32:4,3,2,0,1]
+R95B warm distinct_ticks=4
+R95B warm t2_vec=[a#0,e#0,b#0,c#0,d#0]
+R95B warm t2_relpos=[0.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]
+R95B warm t32_vec=[e#0,d#0,c#0,a#0,b#0]
+R95B warm ids=[26877101541,26927433192,26977764843,27028096494,27078428145]
+R95B warm env=tps=60 pf=34 proc=66 sep2d_has=true sep2d=false maxsteps=8
+PASS r95b_order warm k=8 keep=1 add_order=[a,b,c,d,e] ladder=[t2:0,4,1,2,3;t3:0,4,1,2,3;t4:0,4,1,2,3;t6:0,4,1,2,3;t8:4,1,2,3,0;t16:4,3,0,1,2;t32:4,3,2,0,1] distinct_ticks=4 t2_vec=[a#0,e#0,b#0,c#0,d#0] t2_relpos=[0.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000] t32_vec=[e#0,d#0,c#0,a#0,b#0]

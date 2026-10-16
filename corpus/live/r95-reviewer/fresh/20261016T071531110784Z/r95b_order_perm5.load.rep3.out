@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95B perm perm=5
+R95B perm add_order=[d,a,b,e,c]
+R95B perm map=[a@0,b@8,c@16,d@24,e@32]
+R95B perm ladder=[t0:3,0,1,4,2;t1:0,4,1,2,3;t2:3,4,1,2,0;t3:3,4,0,2,1;t4:3,1,0,2,4;t5:3,1,0,4,2;t8:2,0,3,4,1;t16:1,2,4,0,3;t32:4,3,2,1,0]
+R95B perm distinct_ticks=9
+R95B perm last_change_tick=32
+R95B perm t2_vec=[d#0,e#0,b#0,c#0,a#0]
+R95B perm t2_relpos=[24.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|0.0000,0.0000]
+R95B perm ids=[26424116681,26491225550,26541557201,26591888852,26642220503]
+R95B perm env=tps=60 pf=33 proc=79 sep2d_has=true sep2d=false maxsteps=8
+PASS r95b_order perm perm=5 add_order=[d,a,b,e,c] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:3,0,1,4,2;t1:0,4,1,2,3;t2:3,4,1,2,0;t3:3,4,0,2,1;t4:3,1,0,2,4;t5:3,1,0,4,2;t8:2,0,3,4,1;t16:1,2,4,0,3;t32:4,3,2,1,0] distinct_ticks=9 last_change_tick=32 t2_vec=[d#0,e#0,b#0,c#0,a#0] t2_relpos=[24.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|0.0000,0.0000]

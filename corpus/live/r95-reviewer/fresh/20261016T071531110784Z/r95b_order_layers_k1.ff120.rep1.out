@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95B layers k=1
+R95B layers add_order=[a,b,c,d,e]
+R95B layers pt0_ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,0,1,2,4;t8:3,0,2,4,1;t16:1,4,0,2,3;t32:4,0,2,3,1]
+R95B layers pt0_distinct=6
+R95B layers pt0_vec=[e#0,a#0,c#0,d#0,b#0]
+R95B layers pt0_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]
+R95B layers pt0_t2_vec=[e#0,a#0,c#0,d#0,b#0]
+R95B layers pt0_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]
+R95B layers pt0_t2_eq_sh=false
+R95B layers ptL_vec=[clb#0]
+R95B layers sh_vec=[e#0,a#0,c#0,d#0,clb#0,b#0]
+R95B layers sh_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|16.0000,0.0000|8.0000,0.0000]
+R95B layers pt_eq_sh=false
+R95B layers sh_len=6
+R95B layers env=tps=60 pf=33 proc=64 sep2d_has=true sep2d=false maxsteps=8
+PASS r95b_order layers k=1 add_order=[a,b,c,d,e] pt0_ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,0,1,2,4;t8:3,0,2,4,1;t16:1,4,0,2,3;t32:4,0,2,3,1] pt0_distinct=6 pt0_vec=[e#0,a#0,c#0,d#0,b#0] pt0_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_vec=[e#0,a#0,c#0,d#0,b#0] pt0_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_eq_sh=false ptL_vec=[clb#0] sh_vec=[e#0,a#0,c#0,d#0,clb#0,b#0] sh_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|16.0000,0.0000|8.0000,0.0000] pt_eq_sh=false sh_len=6

@@ -1,0 +1,20 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95 shape_lattice cap0=n0
+R95 shape_lattice cap1=n1
+R95 shape_lattice cap3=n3
+R95 shape_lattice cap5=n5
+R95 shape_lattice cap_default=n5
+R95 shape_lattice keys=["collider", "collider_id", "rid", "shape"]
+R95 shape_lattice set=[a#0,b#0,c#0,d#0,e#0]
+R95 shape_lattice touch=[a#0]
+R95 shape_lattice touch_in=[a#0]
+R95 shape_lattice touch_out=[]
+R95 shape_lattice multi_c0=[m#0]
+R95 shape_lattice multi_c1=[m#1]
+R95 shape_lattice multi_c2=[m#2]
+R95 shape_lattice multi_set=[m#0,m#1,m#2]
+R95 shape_lattice shape_rid=[m#1]
+R95 shape_lattice empty=n0
+R95 shape_lattice rev=true
+PASS dss_lattice shape_lattice cap0=n0 cap1=n1 cap3=n3 cap5=n5 cap_default=n5 keys=["collider", "collider_id", "rid", "shape"] set=[a#0,b#0,c#0,d#0,e#0] touch=[a#0] touch_in=[a#0] touch_out=[] multi_c0=[m#0] multi_c1=[m#1] multi_c2=[m#2] multi_set=[m#0,m#1,m#2] shape_rid=[m#1] empty=n0 rev=true

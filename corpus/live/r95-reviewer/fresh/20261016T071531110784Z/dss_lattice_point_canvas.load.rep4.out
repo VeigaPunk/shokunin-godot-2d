@@ -1,0 +1,14 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95 point_canvas default_q=[def#0]
+R95 point_canvas layer_q=[clb#0]
+R95 point_canvas layer_q_at_default_spot=[clb#0]
+R95 point_canvas layer_scoped=true
+R95 point_canvas shifted_default_q=[def#0]
+R95 point_canvas shifted_layer_q=[clb#0]
+R95 point_canvas layer_offset_ignored=true
+R95 point_canvas ray_sees_default=r={def pos=(80.0000,0.0000) n=(-1.0000,0.0000)}
+R95 point_canvas shape_sees_both=[def#0,clb#0]
+R95 point_canvas shape_layer_agnostic=true
+R95 point_canvas rev=false
+PASS dss_lattice point_canvas default_q=[def#0] layer_q=[clb#0] layer_q_at_default_spot=[clb#0] layer_scoped=true shifted_default_q=[def#0] shifted_layer_q=[clb#0] layer_offset_ignored=true ray_sees_default=r={def pos=(80.0000,0.0000) n=(-1.0000,0.0000)} shape_sees_both=[def#0,clb#0] shape_layer_agnostic=true rev=false

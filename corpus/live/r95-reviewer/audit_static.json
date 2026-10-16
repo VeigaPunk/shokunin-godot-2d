@@ -1,0 +1,1458 @@
+{
+  "S1": {
+    "parent_cases": 307,
+    "head_cases": 359,
+    "delta": 52,
+    "common_prefix": 303,
+    "common_suffix": 4,
+    "inserted_count": 52,
+    "inserted_all_r95": true,
+    "inserted_is_exactly_r95_block": true,
+    "parent_rows_field_identical": true,
+    "names_unique": true,
+    "all_5_tuples": true,
+    "r95_count": 52,
+    "r95_exit_codes": [
+      0
+    ],
+    "r95_scripts": [
+      "dss_lattice.gd",
+      "r95b_order.gd"
+    ],
+    "insert_after": "r94_particles_gpu_headless",
+    "insert_before": "crash_spontaneous_sigabrt"
+  },
+  "S2": {
+    "arms_ok": 52,
+    "arms_missing": [],
+    "dispatch": {
+      "dss_lattice.gd": [
+        "cast_rest",
+        "census",
+        "excl_space",
+        "fresh",
+        "layer_forms",
+        "order_core",
+        "point_canvas",
+        "point_cap",
+        "point_edge",
+        "ray_flags",
+        "ray_geom",
+        "ray_order",
+        "shape_lattice"
+      ],
+      "r95b_order.gd": [
+        "canon",
+        "cap40",
+        "celloff",
+        "env",
+        "free",
+        "layers",
+        "period",
+        "periodx",
+        "perm",
+        "procwait",
+        "readd",
+        "rigid",
+        "scoutrev",
+        "twopiles",
+        "warm"
+      ]
+    }
+  },
+  "S3": {
+    "count": 17,
+    "all_prefix_equal": true,
+    "all_full_equal": false,
+    "full_equal_cells": [
+      "dss_lattice_cast_rest",
+      "dss_lattice_census",
+      "dss_lattice_excl_space",
+      "dss_lattice_fresh",
+      "dss_lattice_layer_forms",
+      "dss_lattice_point_canvas",
+      "dss_lattice_point_edge",
+      "dss_lattice_ray_flags",
+      "dss_lattice_ray_geom",
+      "dss_lattice_ray_order",
+      "dss_lattice_ray_order_rev",
+      "dss_lattice_shape",
+      "dss_lattice_shape_rev"
+    ],
+    "prefix_only_cells": [
+      "dss_lattice_order_core",
+      "dss_lattice_order_core_rev",
+      "dss_lattice_point_cap",
+      "dss_lattice_point_cap_rev"
+    ],
+    "all_prefix_of_full": true,
+    "all_cut_at_token_boundary": true,
+    "all_prefix_shorter": true
+  },
+  "S4": {
+    "rows": [
+      {
+        "case": "r95b_order_canon",
+        "cell": "canon",
+        "receipts": 24,
+        "whole_line_hits": 24,
+        "batches": [
+          [
+            "extra",
+            2
+          ],
+          [
+            "ff1",
+            2
+          ],
+          [
+            "ff120",
+            3
+          ],
+          [
+            "ff30",
+            3
+          ],
+          [
+            "load",
+            4
+          ],
+          [
+            "quiet",
+            6
+          ],
+          [
+            "thr",
+            4
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_periodx_k2",
+        "cell": "periodx_k2",
+        "receipts": 2,
+        "whole_line_hits": 2,
+        "batches": [
+          [
+            "extra",
+            2
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_periodx_k3",
+        "cell": "periodx_k3",
+        "receipts": 2,
+        "whole_line_hits": 2,
+        "batches": [
+          [
+            "extra",
+            2
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_periodx_k4",
+        "cell": "periodx_k4",
+        "receipts": 1,
+        "whole_line_hits": 1,
+        "batches": [
+          [
+            "extra",
+            1
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_periodx_k5",
+        "cell": "periodx_k5",
+        "receipts": 2,
+        "whole_line_hits": 2,
+        "batches": [
+          [
+            "extra",
+            2
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_periodx_k5s8",
+        "cell": "periodx_k5s8",
+        "receipts": 2,
+        "whole_line_hits": 2,
+        "batches": [
+          [
+            "extra",
+            2
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_periodx_k6",
+        "cell": "periodx_k6",
+        "receipts": 1,
+        "whole_line_hits": 1,
+        "batches": [
+          [
+            "extra",
+            1
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_periodx_k7",
+        "cell": "periodx_k7",
+        "receipts": 1,
+        "whole_line_hits": 1,
+        "batches": [
+          [
+            "extra",
+            1
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_periodx_k8",
+        "cell": "periodx_k8",
+        "receipts": 1,
+        "whole_line_hits": 1,
+        "batches": [
+          [
+            "extra",
+            1
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_periodx_k10",
+        "cell": "periodx_k10",
+        "receipts": 1,
+        "whole_line_hits": 1,
+        "batches": [
+          [
+            "extra",
+            1
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_period_k5",
+        "cell": "period_k5",
+        "receipts": 9,
+        "whole_line_hits": 9,
+        "batches": [
+          [
+            "ff1",
+            1
+          ],
+          [
+            "ff120",
+            2
+          ],
+          [
+            "ff30",
+            2
+          ],
+          [
+            "load",
+            2
+          ],
+          [
+            "thr",
+            2
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_perm0",
+        "cell": "perm0",
+        "receipts": 14,
+        "whole_line_hits": 14,
+        "batches": [
+          [
+            "ff1",
+            1
+          ],
+          [
+            "ff120",
+            2
+          ],
+          [
+            "ff30",
+            2
+          ],
+          [
+            "label",
+            2
+          ],
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            3
+          ],
+          [
+            "thr",
+            2
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_perm1",
+        "cell": "perm1",
+        "receipts": 13,
+        "whole_line_hits": 13,
+        "batches": [
+          [
+            "ff120",
+            2
+          ],
+          [
+            "ff30",
+            2
+          ],
+          [
+            "label",
+            2
+          ],
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            3
+          ],
+          [
+            "thr",
+            2
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_perm2",
+        "cell": "perm2",
+        "receipts": 5,
+        "whole_line_hits": 5,
+        "batches": [
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_perm3",
+        "cell": "perm3",
+        "receipts": 3,
+        "whole_line_hits": 3,
+        "batches": [
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_perm4",
+        "cell": "perm4",
+        "receipts": 5,
+        "whole_line_hits": 5,
+        "batches": [
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_perm5",
+        "cell": "perm5",
+        "receipts": 3,
+        "whole_line_hits": 3,
+        "batches": [
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_perm6",
+        "cell": "perm6",
+        "receipts": 3,
+        "whole_line_hits": 3,
+        "batches": [
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_perm7",
+        "cell": "perm7",
+        "receipts": 3,
+        "whole_line_hits": 3,
+        "batches": [
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_scoutrev",
+        "cell": "scoutrev",
+        "receipts": 4,
+        "whole_line_hits": 4,
+        "batches": [
+          [
+            "label",
+            4
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_celloff_x0",
+        "cell": "celloff_x0",
+        "receipts": 8,
+        "whole_line_hits": 8,
+        "batches": [
+          [
+            "ff1",
+            1
+          ],
+          [
+            "ff120",
+            1
+          ],
+          [
+            "ff30",
+            1
+          ],
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_celloff_x1000",
+        "cell": "celloff_x1000",
+        "receipts": 5,
+        "whole_line_hits": 5,
+        "batches": [
+          [
+            "ff120",
+            1
+          ],
+          [
+            "ff30",
+            1
+          ],
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            1
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_celloff_y1000",
+        "cell": "celloff_y1000",
+        "receipts": 5,
+        "whole_line_hits": 5,
+        "batches": [
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_twopiles",
+        "cell": "twopiles",
+        "receipts": 9,
+        "whole_line_hits": 9,
+        "batches": [
+          [
+            "load",
+            3
+          ],
+          [
+            "quiet",
+            4
+          ],
+          [
+            "thr",
+            2
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_warm_k32",
+        "cell": "warm_k32",
+        "receipts": 4,
+        "whole_line_hits": 4,
+        "batches": [
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            2
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_warm_keep8",
+        "cell": "warm_keep8",
+        "receipts": 4,
+        "whole_line_hits": 4,
+        "batches": [
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            2
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_free_ab",
+        "cell": "free_ab",
+        "receipts": 4,
+        "whole_line_hits": 4,
+        "batches": [
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            2
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_free_ba",
+        "cell": "free_ba",
+        "receipts": 4,
+        "whole_line_hits": 4,
+        "batches": [
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            2
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_readd_a",
+        "cell": "readd_a",
+        "receipts": 4,
+        "whole_line_hits": 4,
+        "batches": [
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            2
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_cap40_p0",
+        "cell": "cap40_p0",
+        "receipts": 7,
+        "whole_line_hits": 7,
+        "batches": [
+          [
+            "ff120",
+            1
+          ],
+          [
+            "ff30",
+            1
+          ],
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_cap40_p1",
+        "cell": "cap40_p1",
+        "receipts": 5,
+        "whole_line_hits": 5,
+        "batches": [
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_cap40_p2",
+        "cell": "cap40_p2",
+        "receipts": 3,
+        "whole_line_hits": 3,
+        "batches": [
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_layers_k0",
+        "cell": "layers_k0",
+        "receipts": 3,
+        "whole_line_hits": 3,
+        "batches": [
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_layers_k1",
+        "cell": "layers_k1",
+        "receipts": 7,
+        "whole_line_hits": 7,
+        "batches": [
+          [
+            "ff120",
+            1
+          ],
+          [
+            "ff30",
+            1
+          ],
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      },
+      {
+        "case": "r95b_order_rigid",
+        "cell": "rigid",
+        "receipts": 5,
+        "whole_line_hits": 5,
+        "batches": [
+          [
+            "load",
+            2
+          ],
+          [
+            "quiet",
+            3
+          ]
+        ],
+        "misses": []
+      }
+    ],
+    "receipts_scanned": 176,
+    "whole_line_hits": 176,
+    "per_cell": {
+      "r95b_order_canon": {
+        "receipts": 24,
+        "hits": 24,
+        "batches": {
+          "extra": 2,
+          "ff1": 2,
+          "ff120": 3,
+          "ff30": 3,
+          "load": 4,
+          "quiet": 6,
+          "thr": 4
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_periodx_k2": {
+        "receipts": 2,
+        "hits": 2,
+        "batches": {
+          "extra": 2
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_periodx_k3": {
+        "receipts": 2,
+        "hits": 2,
+        "batches": {
+          "extra": 2
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_periodx_k4": {
+        "receipts": 1,
+        "hits": 1,
+        "batches": {
+          "extra": 1
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_periodx_k5": {
+        "receipts": 2,
+        "hits": 2,
+        "batches": {
+          "extra": 2
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_periodx_k5s8": {
+        "receipts": 2,
+        "hits": 2,
+        "batches": {
+          "extra": 2
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_periodx_k6": {
+        "receipts": 1,
+        "hits": 1,
+        "batches": {
+          "extra": 1
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_periodx_k7": {
+        "receipts": 1,
+        "hits": 1,
+        "batches": {
+          "extra": 1
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_periodx_k8": {
+        "receipts": 1,
+        "hits": 1,
+        "batches": {
+          "extra": 1
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_periodx_k10": {
+        "receipts": 1,
+        "hits": 1,
+        "batches": {
+          "extra": 1
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_period_k5": {
+        "receipts": 9,
+        "hits": 9,
+        "batches": {
+          "ff1": 1,
+          "ff120": 2,
+          "ff30": 2,
+          "load": 2,
+          "thr": 2
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_perm0": {
+        "receipts": 14,
+        "hits": 14,
+        "batches": {
+          "ff1": 1,
+          "ff120": 2,
+          "ff30": 2,
+          "label": 2,
+          "load": 2,
+          "quiet": 3,
+          "thr": 2
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_perm1": {
+        "receipts": 13,
+        "hits": 13,
+        "batches": {
+          "ff120": 2,
+          "ff30": 2,
+          "label": 2,
+          "load": 2,
+          "quiet": 3,
+          "thr": 2
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_perm2": {
+        "receipts": 5,
+        "hits": 5,
+        "batches": {
+          "load": 2,
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_perm3": {
+        "receipts": 3,
+        "hits": 3,
+        "batches": {
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_perm4": {
+        "receipts": 5,
+        "hits": 5,
+        "batches": {
+          "load": 2,
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_perm5": {
+        "receipts": 3,
+        "hits": 3,
+        "batches": {
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_perm6": {
+        "receipts": 3,
+        "hits": 3,
+        "batches": {
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_perm7": {
+        "receipts": 3,
+        "hits": 3,
+        "batches": {
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_scoutrev": {
+        "receipts": 4,
+        "hits": 4,
+        "batches": {
+          "label": 4
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_celloff_x0": {
+        "receipts": 8,
+        "hits": 8,
+        "batches": {
+          "ff1": 1,
+          "ff120": 1,
+          "ff30": 1,
+          "load": 2,
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_celloff_x1000": {
+        "receipts": 5,
+        "hits": 5,
+        "batches": {
+          "ff120": 1,
+          "ff30": 1,
+          "load": 2,
+          "quiet": 1
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_celloff_y1000": {
+        "receipts": 5,
+        "hits": 5,
+        "batches": {
+          "load": 2,
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_twopiles": {
+        "receipts": 9,
+        "hits": 9,
+        "batches": {
+          "load": 3,
+          "quiet": 4,
+          "thr": 2
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_warm_k32": {
+        "receipts": 4,
+        "hits": 4,
+        "batches": {
+          "load": 2,
+          "quiet": 2
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_warm_keep8": {
+        "receipts": 4,
+        "hits": 4,
+        "batches": {
+          "load": 2,
+          "quiet": 2
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_free_ab": {
+        "receipts": 4,
+        "hits": 4,
+        "batches": {
+          "load": 2,
+          "quiet": 2
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_free_ba": {
+        "receipts": 4,
+        "hits": 4,
+        "batches": {
+          "load": 2,
+          "quiet": 2
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_readd_a": {
+        "receipts": 4,
+        "hits": 4,
+        "batches": {
+          "load": 2,
+          "quiet": 2
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_cap40_p0": {
+        "receipts": 7,
+        "hits": 7,
+        "batches": {
+          "ff120": 1,
+          "ff30": 1,
+          "load": 2,
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_cap40_p1": {
+        "receipts": 5,
+        "hits": 5,
+        "batches": {
+          "load": 2,
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_cap40_p2": {
+        "receipts": 3,
+        "hits": 3,
+        "batches": {
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_layers_k0": {
+        "receipts": 3,
+        "hits": 3,
+        "batches": {
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_layers_k1": {
+        "receipts": 7,
+        "hits": 7,
+        "batches": {
+          "ff120": 1,
+          "ff30": 1,
+          "load": 2,
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      },
+      "r95b_order_rigid": {
+        "receipts": 5,
+        "hits": 5,
+        "batches": {
+          "load": 2,
+          "quiet": 3
+        },
+        "payload_uniq": 1
+      }
+    },
+    "all_whole_line": true,
+    "cells_with_zero_receipts": [],
+    "cells_multi_payload": []
+  },
+  "S4b": {
+    "rows": [
+      {
+        "case": "dss_lattice_census",
+        "cell": "r95_dss_census",
+        "canonical": 3,
+        "canonical_hits": 3,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_ray_flags",
+        "cell": "r95_dss_ray_flags",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_ray_geom",
+        "cell": "r95_dss_ray_geom",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_ray_order",
+        "cell": "r95_dss_ray_order",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_ray_order_rev",
+        "cell": "r95_dss_ray_order_rev",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_point_cap",
+        "cell": "r95_dss_point_cap",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_point_cap_rev",
+        "cell": "r95_dss_point_cap_rev",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_point_edge",
+        "cell": "r95_dss_point_edge",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_point_canvas",
+        "cell": "r95_dss_point_canvas",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_shape",
+        "cell": "r95_dss_shape_lattice",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_shape_rev",
+        "cell": "r95_dss_shape_lattice_rev",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_order_core",
+        "cell": "r95_dss_order_core",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_order_core_rev",
+        "cell": "r95_dss_order_core_rev",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_layer_forms",
+        "cell": "r95_dss_layer_forms",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_cast_rest",
+        "cell": "r95_dss_cast_rest",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_excl_space",
+        "cell": "r95_dss_excl_space",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      },
+      {
+        "case": "dss_lattice_fresh",
+        "cell": "r95_dss_fresh",
+        "canonical": 6,
+        "canonical_hits": 6,
+        "loadtest": 3,
+        "loadtest_hits": 3
+      }
+    ],
+    "canonical_hits": 99,
+    "canonical_total": 99,
+    "loadtest_hits": 51,
+    "loadtest_total": 51,
+    "all_canonical": true,
+    "all_loadtest": true,
+    "prefix_rows": [
+      {
+        "case": "dss_lattice_census",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_ray_flags",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_ray_geom",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_ray_order",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_ray_order_rev",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_point_cap",
+        "whole_line": false,
+        "strict_prefix": true
+      },
+      {
+        "case": "dss_lattice_point_cap_rev",
+        "whole_line": false,
+        "strict_prefix": true
+      },
+      {
+        "case": "dss_lattice_point_edge",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_point_canvas",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_shape",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_shape_rev",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_order_core",
+        "whole_line": false,
+        "strict_prefix": true
+      },
+      {
+        "case": "dss_lattice_order_core_rev",
+        "whole_line": false,
+        "strict_prefix": true
+      },
+      {
+        "case": "dss_lattice_layer_forms",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_cast_rest",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_excl_space",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_fresh",
+        "whole_line": true,
+        "strict_prefix": false
+      }
+    ],
+    "prefix_rows_strict": [
+      {
+        "case": "dss_lattice_point_cap",
+        "whole_line": false,
+        "strict_prefix": true
+      },
+      {
+        "case": "dss_lattice_point_cap_rev",
+        "whole_line": false,
+        "strict_prefix": true
+      },
+      {
+        "case": "dss_lattice_order_core",
+        "whole_line": false,
+        "strict_prefix": true
+      },
+      {
+        "case": "dss_lattice_order_core_rev",
+        "whole_line": false,
+        "strict_prefix": true
+      }
+    ],
+    "prefix_rows_full_line": [
+      {
+        "case": "dss_lattice_census",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_ray_flags",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_ray_geom",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_ray_order",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_ray_order_rev",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_point_edge",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_point_canvas",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_shape",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_shape_rev",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_layer_forms",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_cast_rest",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_excl_space",
+        "whole_line": true,
+        "strict_prefix": false
+      },
+      {
+        "case": "dss_lattice_fresh",
+        "whole_line": true,
+        "strict_prefix": false
+      }
+    ]
+  },
+  "S5": {
+    "expected_errors_keys": 72,
+    "r95_keys": [],
+    "orphan_keys": [],
+    "required_stderr_keys": 3,
+    "required_stderr_r95_keys": [],
+    "r95_mentions_in_allowlists": 0
+  },
+  "S6": {
+    "gate_present": true,
+    "gate_covers_both_prefixes": true,
+    "gate_shape_same_as_r94": true,
+    "gate_count": 10
+  },
+  "S7": {
+    "dss_lattice.gd": {
+      "committed_sha256": "77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627",
+      "frozen_path": "corpus/live/r95-scout/probes/dss_lattice.gd",
+      "frozen_sha256": "77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627",
+      "byte_identical": true,
+      "lines": 744
+    },
+    "r95b_order.gd": {
+      "committed_sha256": "4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490",
+      "frozen_path": "corpus/live/r95-boundary/probes/r95b_order.gd",
+      "frozen_sha256": "4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490",
+      "byte_identical": true,
+      "lines": 778
+    },
+    "project_godot": {
+      "unchanged": true,
+      "sha256": "8de8b3af9cc737edc3e5969b76bf049720266537ec366e03aa42702aa15406e9",
+      "physics_tps_override": false
+    }
+  },
+  "S8": {
+    "layout_changes_order": 0,
+    "procwait": 0,
+    "env": 0,
+    "pile_b=": 0,
+    "pile_rev=": 0,
+    "repeat_stable": 0,
+    "instance_id": 1,
+    "RID(": 1
+  },
+  "S9": {
+    "duplicate_signature_pairs": {
+      "r95b_order_celloff_x0==r95b_order_celloff_y1000": "PASS r95b_order celloff off=0.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3"
+    },
+    "celloff_offy_occurrences_in_fixture": 0,
+    "celloff_flags": {
+      "r95b_order_celloff_x0": [
+        "--arm=celloff",
+        "--off=0"
+      ],
+      "r95b_order_celloff_x1000": [
+        "--arm=celloff",
+        "--off=1000"
+      ],
+      "r95b_order_celloff_y1000": [
+        "--arm=celloff",
+        "--off=0",
+        "--offy=1000"
+      ]
+    },
+    "celloff_arm_reads_off_only": true,
+    "celloff_arm_source": "var off := _opt_float(\"off\", 0.0)\n\tvar made := _pile([\"a\", \"b\", \"c\", \"d\", \"e\"], off, 0.0)\n\t_it(\"off\", \"%.4f\" % off)\n\t_it(\"add_order\", \"[a,b,c,d,e]\")\n\tvar ticks := [2, 3, 4, 6, 8, 16, 32, 64]\n\tvar lad := await _ladder(ticks, off)\n\t_it(\"ladder\", _ladderstr(ticks, lad[\"seq\"]))\n\t_it(\"distinct_ticks\", str(_uniq_count(lad[\"seq\"])))\n\t_it(\"last_change_tick\", str(_last_change(ticks, lad[\"seq\"])))\n\t_it(\"t2_vec\", lad[\"first_vec\"])\n\t_it(\"t2_relpos\", lad[\"first_relpos\"])\n\t_it(\"t64_relpos\", lad[\"last_relpos\"])\n\t_diag(\"env\", _envstr())\n\t_pass()"
+  }
+}
