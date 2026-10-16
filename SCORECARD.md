@@ -240,3 +240,13 @@ Sol `r76-adjudicator.md`: ADMIT-corr — deferred_abort admitted, destroy-edge l
 | calibration | **improved** | Verifier F1 comment-formula defect recorded ((d−ra−rb)/τ not (ra+rb)/τ); settle pins declared 60-tps-conditioned (loud under ff); simplifier −3 queued; battery-run evidence gitignored per convention. |
 
 | r91 | game-dev-2d | Navigation2D lattice | ADMIT | 77d2f7e |
+
+## Round 92 verdict — 2026-10-15
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | +14 `r92_tilemap_*` rows → 272: used/census cells, atlas sourcing, nav 2-payload envelope, tombstone encoding, nullts crash armed, 9 expected_errors classes + floor gate. |
+| depth | **improved** | Verifier: 2 reps tuple-identical to author greens, 595/595 receipt byte-match, 4/4 folds live-verified, 7/7 crash forges reject; critic 42/42 fresh + 28/28 load; simplifier proved floor gate loud. |
+| calibration | **improved** | F1 timeout flake filed as pre-existing host class (handler-bound, not a mis-PASS); F2 envelope absorb-class declared w/ regions_f2 guard; rc-comment defect + caption corrections recorded; simplifier 0 deletions. |
+
+| r92 | game-dev-2d | TileMapLayer lattice | ADMIT-with-findings | 5900431 |

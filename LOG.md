@@ -1143,3 +1143,10 @@
 - LAWS: iteration_id+reach sync gate (STALE+exit2, zero silent mis-PASS);
   fin-before-reached query order; teardown crash armed rc=-6 bound to
   double-free; scheduler fields tails-only; 4-frame settles 60tps-scoped.
+- ROUND 92 (2026-10-15): TileMapLayer lattice. ADMIT-with-findings at
+  5900431 (272 rows, +14). Verifier VERIFIED-WR (rep3/rep4 272/272
+  tuple-identical to author), all gates green. F1: nullts crash row
+  ~25% timeout flake (signal-11 dump handler, pre-existing host class).
+- LAWS: nav scheduler 2-payload envelope (ratio<=2 -> payload0, >=2.5 ->
+  payload1, regions_f2=1 pinned both); tombstone byte-layout (2B header
+  + 12B LE records); nullts rc=-6 bound to :927 site; floor gate loud.
