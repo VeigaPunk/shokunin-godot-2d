@@ -1,0 +1,293 @@
+{
+  "classify_process_segment_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+  "rows": {
+    "r94_particles_census": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.census.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 412,
+      "sig_rejected": 412,
+      "sig_accepted_kinds": [],
+      "out_mutants": 409,
+      "out_rejected": 409,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_ppm": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.ppm.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 14,
+      "sig_rejected": 14,
+      "sig_accepted_kinds": [],
+      "out_mutants": 11,
+      "out_rejected": 11,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_convert": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.convert.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 40,
+      "sig_rejected": 40,
+      "sig_accepted_kinds": [],
+      "out_mutants": 37,
+      "out_rejected": 37,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_lifetime": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_lifetime.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 8,
+      "sig_rejected": 8,
+      "sig_accepted_kinds": [],
+      "out_mutants": 5,
+      "out_rejected": 5,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_expl": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_expl.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 7,
+      "sig_rejected": 7,
+      "sig_accepted_kinds": [],
+      "out_mutants": 4,
+      "out_rejected": 4,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_speed_pre": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_speed_pre.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 8,
+      "sig_rejected": 8,
+      "sig_accepted_kinds": [],
+      "out_mutants": 5,
+      "out_rejected": 5,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_stop": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_stop.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 6,
+      "sig_rejected": 6,
+      "sig_accepted_kinds": [],
+      "out_mutants": 3,
+      "out_rejected": 3,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_never": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_never.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 6,
+      "sig_rejected": 6,
+      "sig_accepted_kinds": [],
+      "out_mutants": 3,
+      "out_rejected": 3,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_contam": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_contam.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 5,
+      "sig_rejected": 5,
+      "sig_accepted_kinds": [],
+      "out_mutants": 2,
+      "out_rejected": 2,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_oneshot_off": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_oneshot_off.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 7,
+      "sig_rejected": 7,
+      "sig_accepted_kinds": [],
+      "out_mutants": 4,
+      "out_rejected": 4,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_oneshot_flag": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_oneshot_flag.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 7,
+      "sig_rejected": 7,
+      "sig_accepted_kinds": [],
+      "out_mutants": 4,
+      "out_rejected": 4,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_pause": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_pause.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 8,
+      "sig_rejected": 8,
+      "sig_accepted_kinds": [],
+      "out_mutants": 5,
+      "out_rejected": 5,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_restart": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_restart.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 11,
+      "sig_rejected": 11,
+      "sig_accepted_kinds": [],
+      "out_mutants": 8,
+      "out_rejected": 8,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_retrigger": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_retrigger.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 8,
+      "sig_rejected": 8,
+      "sig_accepted_kinds": [],
+      "out_mutants": 5,
+      "out_rejected": 5,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_lt_mid": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_lt_mid.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 6,
+      "sig_rejected": 6,
+      "sig_accepted_kinds": [],
+      "out_mutants": 3,
+      "out_rejected": 3,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_speed_mid": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_speed_mid.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 6,
+      "sig_rejected": 6,
+      "sig_accepted_kinds": [],
+      "out_mutants": 3,
+      "out_rejected": 3,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_amount_mid": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_amount_mid.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 6,
+      "sig_rejected": 6,
+      "sig_accepted_kinds": [],
+      "out_mutants": 3,
+      "out_rejected": 3,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_cpu_request": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.cpu_request.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 6,
+      "sig_rejected": 6,
+      "sig_accepted_kinds": [],
+      "out_mutants": 3,
+      "out_rejected": 3,
+      "out_accepted_kinds": []
+    },
+    "r94_particles_gpu_headless": {
+      "receipt": "corpus/live/r94-scribe/fresh/particles_lattice.gpu_headless.default.rep1.out",
+      "baseline_pass": true,
+      "sig_mutants": 8,
+      "sig_rejected": 8,
+      "sig_accepted_kinds": [],
+      "out_mutants": 5,
+      "out_rejected": 5,
+      "out_accepted_kinds": []
+    }
+  },
+  "totals": {
+    "sig": 579,
+    "sig_rejected": 579,
+    "out": 522,
+    "out_rejected": 522,
+    "by_kind": {
+      "sig-numeric": [
+        412,
+        412
+      ],
+      "sig-boolean": [
+        110,
+        110
+      ],
+      "sig-append": [
+        57,
+        57
+      ],
+      "out-bool-out": [
+        110,
+        110
+      ],
+      "out-num-out": [
+        412,
+        412
+      ]
+    }
+  },
+  "baseline_all_pass": true,
+  "scout_recompute": {
+    "canonical_runs": 105,
+    "loadtest_runs": 38,
+    "rc_nonzero": [],
+    "err_nonempty": [],
+    "canonical_out_uniq": {
+      "census": 1,
+      "convert": 1,
+      "cpu_amount_mid": 1,
+      "cpu_contam": 1,
+      "cpu_expl": 2,
+      "cpu_lifetime": 5,
+      "cpu_lt_mid": 1,
+      "cpu_never": 1,
+      "cpu_oneshot_flag": 1,
+      "cpu_oneshot_off": 1,
+      "cpu_pause": 4,
+      "cpu_request": 1,
+      "cpu_restart": 2,
+      "cpu_retrigger": 1,
+      "cpu_speed_mid": 1,
+      "cpu_speed_pre": 2,
+      "cpu_stop": 2,
+      "gpu_headless": 4,
+      "ppm": 1
+    }
+  },
+  "boundary_recompute": {
+    "quiet": {
+      "out_files": 138,
+      "rc_nonzero": [],
+      "err_nonempty": []
+    },
+    "load": {
+      "out_files": 114,
+      "rc_nonzero": [],
+      "err_nonempty": []
+    },
+    "ff30": {
+      "out_files": 111,
+      "rc_nonzero": [],
+      "err_nonempty": []
+    },
+    "ff60": {
+      "out_files": 111,
+      "rc_nonzero": [],
+      "err_nonempty": []
+    },
+    "ff120": {
+      "out_files": 111,
+      "rc_nonzero": [],
+      "err_nonempty": []
+    },
+    "ff120load": {
+      "out_files": 62,
+      "rc_nonzero": [],
+      "err_nonempty": []
+    },
+    "ab": {
+      "out_files": 36,
+      "rc_nonzero": [],
+      "err_nonempty": []
+    },
+    "reprobe": {
+      "out_files": 51,
+      "rc_nonzero": [],
+      "err_nonempty": []
+    }
+  }
+}

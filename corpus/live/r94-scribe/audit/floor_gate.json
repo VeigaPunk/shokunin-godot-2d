@@ -1,0 +1,17 @@
+{
+  "gate_source": "all(\n            not e[\"dead_in_run\"]\n            for r in census_rows\n            if r[\"case\"].startswith(\"r94_\")\n            for e in r[\"entries\"])",
+  "synthetic": {
+    "live_only_gate": true,
+    "dead_only_gate": false,
+    "mixed_gate": false,
+    "non_r94_dead_row_gate": true
+  },
+  "real_run": {
+    "run": "20261016T063407989183Z",
+    "rows_with_expected_errors": 68,
+    "dead_entry_count": 2,
+    "r94_census_rows": [],
+    "gate_recomputed_from_census_rows": true,
+    "gate_reported_in_run": true
+  }
+}

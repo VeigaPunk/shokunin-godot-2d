@@ -1,0 +1,596 @@
+{
+  "ladder": {
+    "measured": {
+      "l01": [
+        6,
+        7,
+        8
+      ],
+      "l025": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "l05": [
+        28,
+        29,
+        30
+      ],
+      "l1": [
+        58,
+        59,
+        60
+      ]
+    },
+    "counts": {
+      "l01": 50,
+      "l025": 50,
+      "l05": 50,
+      "l1": 50
+    },
+    "round_L60": {
+      "l01": 6,
+      "l025": 15,
+      "l05": 30,
+      "l1": 60
+    },
+    "prefixes": {
+      "prefix": [
+        "PASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true"
+      ]
+    }
+  },
+  "expl": {
+    "measured": {
+      "e1": [
+        28,
+        29,
+        30
+      ],
+      "e05": [
+        40,
+        42,
+        43
+      ],
+      "e0": [
+        56,
+        57
+      ]
+    },
+    "model_ticks": {
+      "e1": 30.0,
+      "e05": 43.125,
+      "e0": 56.25
+    }
+  },
+  "speed_pre": {
+    "measured": {
+      "ss2": [
+        15,
+        16
+      ],
+      "ss05": [
+        58,
+        59,
+        60
+      ],
+      "pre25": [
+        12,
+        14,
+        15
+      ],
+      "ff30": [
+        28,
+        30,
+        31
+      ]
+    }
+  },
+  "request": {
+    "measured": {
+      "step010": [
+        6
+      ],
+      "step005": [
+        11
+      ]
+    },
+    "floor_L_over_step_plus1": {
+      "step010": 6,
+      "step005": 11
+    }
+  },
+  "pause": {
+    "vis": {
+      "values": [
+        4.0,
+        5.0,
+        6.0
+      ],
+      "by_source": {
+        "author-battery": [
+          5.0
+        ],
+        "boundary-ff120": [
+          5.0
+        ],
+        "boundary-ff120load": [
+          5.0
+        ],
+        "boundary-ff30": [
+          4.0
+        ],
+        "boundary-ff60": [
+          6.0
+        ],
+        "boundary-load": [
+          5.0
+        ],
+        "boundary-quiet": [
+          5.0
+        ],
+        "scout-canonical": [
+          5.0
+        ],
+        "scout-loadtest": [
+          5.0
+        ],
+        "scribe-battery-20261016T063407989183Z": [
+          4.0
+        ],
+        "scribe-battery-20261016T064405071549Z": [
+          5.0
+        ],
+        "scribe-fresh": [
+          5.0
+        ],
+        "scribe-fresh-ff30": [
+          4.0
+        ],
+        "scribe-fresh-ff60": [
+          6.0
+        ]
+      }
+    },
+    "vis_parent": {
+      "values": [
+        2.0,
+        4.0,
+        5.0
+      ],
+      "by_source": {
+        "author-battery": [
+          5.0
+        ],
+        "boundary-ff120": [
+          4.0
+        ],
+        "boundary-ff120load": [
+          4.0
+        ],
+        "boundary-ff30": [
+          2.0
+        ],
+        "boundary-ff60": [
+          4.0
+        ],
+        "boundary-load": [
+          5.0
+        ],
+        "boundary-quiet": [
+          4.0
+        ],
+        "scout-canonical": [
+          4.0,
+          5.0
+        ],
+        "scout-loadtest": [
+          5.0
+        ],
+        "scribe-battery-20261016T063407989183Z": [
+          4.0
+        ],
+        "scribe-battery-20261016T064405071549Z": [
+          5.0
+        ],
+        "scribe-fresh": [
+          4.0,
+          5.0
+        ],
+        "scribe-fresh-ff30": [
+          2.0
+        ],
+        "scribe-fresh-ff60": [
+          4.0
+        ]
+      }
+    },
+    "pm_disabled": {
+      "values": [
+        2.0,
+        4.0,
+        5.0
+      ],
+      "by_source": {
+        "author-battery": [
+          4.0,
+          5.0
+        ],
+        "boundary-ff120": [
+          4.0
+        ],
+        "boundary-ff120load": [
+          4.0
+        ],
+        "boundary-ff30": [
+          2.0
+        ],
+        "boundary-ff60": [
+          4.0
+        ],
+        "boundary-load": [
+          5.0
+        ],
+        "boundary-quiet": [
+          4.0
+        ],
+        "scout-canonical": [
+          4.0,
+          5.0
+        ],
+        "scout-loadtest": [
+          5.0
+        ],
+        "scribe-battery-20261016T063407989183Z": [
+          4.0
+        ],
+        "scribe-battery-20261016T064405071549Z": [
+          5.0
+        ],
+        "scribe-fresh": [
+          4.0,
+          5.0
+        ],
+        "scribe-fresh-ff30": [
+          2.0
+        ],
+        "scribe-fresh-ff60": [
+          4.0
+        ]
+      }
+    },
+    "ts0": {
+      "values": [
+        18.0,
+        19.0,
+        20.0
+      ],
+      "by_source": {
+        "author-battery": [
+          19.0
+        ],
+        "boundary-ff120": [
+          19.0
+        ],
+        "boundary-ff120load": [
+          19.0
+        ],
+        "boundary-ff30": [
+          18.0
+        ],
+        "boundary-ff60": [
+          19.0
+        ],
+        "boundary-load": [
+          19.0,
+          20.0
+        ],
+        "boundary-quiet": [
+          19.0
+        ],
+        "scout-canonical": [
+          19.0,
+          20.0
+        ],
+        "scout-loadtest": [
+          20.0
+        ],
+        "scribe-battery-20261016T063407989183Z": [
+          19.0
+        ],
+        "scribe-battery-20261016T064405071549Z": [
+          19.0
+        ],
+        "scribe-fresh": [
+          19.0,
+          20.0
+        ],
+        "scribe-fresh-ff30": [
+          18.0
+        ],
+        "scribe-fresh-ff60": [
+          19.0
+        ]
+      }
+    },
+    "prefixes": {
+      "prefix": [
+        "PASS particles_lattice cpu_pause ok=false vis_ok=true vis_parent_ok=false pm_disabled_ok=false ts0_ok=true",
+        "PASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true"
+      ]
+    }
+  },
+  "never": {
+    "n_fin": [
+      0.0
+    ],
+    "fin_delta": [
+      -1.0
+    ],
+    "n_never": [
+      2.0
+    ],
+    "never_fin_delta": [
+      0
+    ]
+  },
+  "restart": {
+    "first_delta": [
+      15,
+      16
+    ],
+    "second_after": [
+      12,
+      14,
+      15
+    ],
+    "n_fin": [
+      2.0
+    ]
+  },
+  "retrigger": {
+    "n_fin": [
+      2.0
+    ],
+    "second_after": [
+      12,
+      14
+    ]
+  },
+  "lt_mid": {
+    "fin_after_set": [
+      2.0,
+      3.0
+    ]
+  },
+  "speed_mid": {
+    "fin_after_set": [
+      12.0
+    ]
+  },
+  "amount_mid": {
+    "fin_after_set": [
+      0.0
+    ],
+    "em_fin": [
+      "true"
+    ],
+    "em_at_end": [
+      "false"
+    ]
+  },
+  "stop": {
+    "stop10": [
+      20,
+      21
+    ],
+    "stop40": [
+      18,
+      19,
+      20
+    ]
+  },
+  "oneshot_off": {
+    "fin_after_off": [
+      50.0,
+      51.0
+    ],
+    "n_fin": [
+      1.0
+    ]
+  },
+  "oneshot_flag": {
+    "fin_after_flag": [
+      -1.0
+    ],
+    "n_fin": [
+      0.0
+    ]
+  },
+  "gpu": {
+    "flip_after_values": [
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "flip_after_in_1_7": true,
+    "os_fin_delta": [
+      -1
+    ],
+    "capture_zero": true
+  },
+  "byte_stable": {
+    "census": {
+      "landed_receipts": 7,
+      "landed_distinct_full_lines": 1,
+      "all_receipts": 29,
+      "all_distinct_full_lines": 1
+    },
+    "ppm": {
+      "landed_receipts": 7,
+      "landed_distinct_full_lines": 1,
+      "all_receipts": 29,
+      "all_distinct_full_lines": 1
+    },
+    "convert": {
+      "landed_receipts": 7,
+      "landed_distinct_full_lines": 1,
+      "all_receipts": 29,
+      "all_distinct_full_lines": 1
+    },
+    "cpu_never": {
+      "landed_receipts": 7,
+      "landed_distinct_full_lines": 1,
+      "all_receipts": 32,
+      "all_distinct_full_lines": 2
+    },
+    "cpu_contam": {
+      "landed_receipts": 7,
+      "landed_distinct_full_lines": 1,
+      "all_receipts": 32,
+      "all_distinct_full_lines": 1
+    },
+    "cpu_oneshot_off": {
+      "landed_receipts": 7,
+      "landed_distinct_full_lines": 1,
+      "all_receipts": 32,
+      "all_distinct_full_lines": 2
+    },
+    "cpu_oneshot_flag": {
+      "landed_receipts": 7,
+      "landed_distinct_full_lines": 1,
+      "all_receipts": 32,
+      "all_distinct_full_lines": 1
+    },
+    "cpu_retrigger": {
+      "landed_receipts": 7,
+      "landed_distinct_full_lines": 1,
+      "all_receipts": 32,
+      "all_distinct_full_lines": 3
+    },
+    "cpu_lt_mid": {
+      "landed_receipts": 7,
+      "landed_distinct_full_lines": 1,
+      "all_receipts": 32,
+      "all_distinct_full_lines": 2
+    },
+    "cpu_speed_mid": {
+      "landed_receipts": 7,
+      "landed_distinct_full_lines": 1,
+      "all_receipts": 32,
+      "all_distinct_full_lines": 1
+    },
+    "cpu_amount_mid": {
+      "landed_receipts": 7,
+      "landed_distinct_full_lines": 1,
+      "all_receipts": 32,
+      "all_distinct_full_lines": 1
+    },
+    "cpu_request": {
+      "landed_receipts": 13,
+      "landed_distinct_full_lines": 1,
+      "all_receipts": 50,
+      "all_distinct_full_lines": 1
+    }
+  },
+  "fixture_okb_windows": {
+    "1-4": 2,
+    "1-7": 3,
+    "4-8": 1,
+    "12-16": 2,
+    "12-18": 11,
+    "15-25": 1,
+    "18-22": 1,
+    "27-33": 2,
+    "27-34": 1,
+    "40-46": 1,
+    "45-55": 2,
+    "52-60": 1,
+    "55-65": 1,
+    "57-63": 1
+  },
+  "landed_prefix_stability": {
+    "census": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "convert": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "cpu_amount_mid": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "cpu_contam": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "cpu_expl": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "cpu_lifetime": {
+      "receipts": 13,
+      "distinct_prefixes": 1
+    },
+    "cpu_lt_mid": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "cpu_never": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "cpu_oneshot_flag": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "cpu_oneshot_off": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "cpu_pause": {
+      "receipts": 13,
+      "distinct_prefixes": 1
+    },
+    "cpu_request": {
+      "receipts": 13,
+      "distinct_prefixes": 1
+    },
+    "cpu_restart": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "cpu_retrigger": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "cpu_speed_mid": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "cpu_speed_pre": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "cpu_stop": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "gpu_headless": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    },
+    "ppm": {
+      "receipts": 7,
+      "distinct_prefixes": 1
+    }
+  }
+}

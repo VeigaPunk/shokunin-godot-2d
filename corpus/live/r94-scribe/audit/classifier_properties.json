@@ -1,0 +1,106 @@
+{
+  "segment_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+  "rows": {
+    "r94_particles_census": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_convert": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_amount_mid": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_contam": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_expl": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_lifetime": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_lt_mid": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_never": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_oneshot_flag": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_oneshot_off": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_pause": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_request": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_restart": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_retrigger": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_speed_mid": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_speed_pre": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_cpu_stop": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_gpu_headless": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    },
+    "r94_particles_ppm": {
+      "trailing_token_accepted": true,
+      "stderr_only_accepted": true,
+      "control_signature_removed_rejected": true
+    }
+  },
+  "summary": {
+    "trailing_token_accepted": 19,
+    "stderr_only_accepted": 19,
+    "control_rejected": 19,
+    "rows": 19
+  }
+}

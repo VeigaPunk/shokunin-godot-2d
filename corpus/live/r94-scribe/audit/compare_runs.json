@@ -1,0 +1,88 @@
+{
+  "identical": 277,
+  "tail_only": [
+    "r94_particles_cpu_pause",
+    "r94_particles_cpu_restart",
+    "r94_particles_cpu_speed_pre",
+    "r94_particles_gpu_headless"
+  ],
+  "head_diff": [
+    "crash_spontaneous_sigabrt",
+    "descendant_pipe_detached_control",
+    "descendant_pipe_forged_signature_release",
+    "input_lattice_ui_ns",
+    "input_route",
+    "nav_lattice_avoid",
+    "nav_lattice_bake",
+    "nav_lattice_query",
+    "nav_lattice_region",
+    "nav_lattice_sync",
+    "negative_route",
+    "r88_surfaces_mp_loopback",
+    "r92_tilemap_nullts_crash",
+    "r93_anim_await_offbyone",
+    "r93_anim_blend_interleaved",
+    "r93_anim_deferred_flush",
+    "r93_anim_manual_clock_control",
+    "r93_anim_manual_clock_interleaved",
+    "r93_anim_phys_delta",
+    "r93_anim_physics_tick",
+    "r93_anim_process_manual",
+    "r93_anim_process_stable",
+    "r93_tween_phys_manual_step",
+    "save_process_missing",
+    "save_process_reader",
+    "save_process_writer",
+    "save_roundtrip",
+    "tween_flash"
+  ],
+  "verdict_flip": [
+    {
+      "case": "audio_playback",
+      "a": "FAIL",
+      "b": "PASS"
+    },
+    {
+      "case": "negative_transition",
+      "a": "FAIL",
+      "b": "PASS"
+    },
+    {
+      "case": "overlap",
+      "a": "FAIL",
+      "b": "PASS"
+    },
+    {
+      "case": "probe_error_clause_surface",
+      "a": "FAIL",
+      "b": "PASS"
+    },
+    {
+      "case": "transition",
+      "a": "FAIL",
+      "b": "PASS"
+    }
+  ],
+  "n_rows": 314,
+  "r94_rows": {
+    "r94_particles_census": "identical",
+    "r94_particles_convert": "identical",
+    "r94_particles_cpu_amount_mid": "identical",
+    "r94_particles_cpu_contam": "identical",
+    "r94_particles_cpu_expl": "identical",
+    "r94_particles_cpu_lifetime": "identical",
+    "r94_particles_cpu_lt_mid": "identical",
+    "r94_particles_cpu_never": "identical",
+    "r94_particles_cpu_oneshot_flag": "identical",
+    "r94_particles_cpu_oneshot_off": "identical",
+    "r94_particles_cpu_pause": "tail_only",
+    "r94_particles_cpu_request": "identical",
+    "r94_particles_cpu_restart": "tail_only",
+    "r94_particles_cpu_retrigger": "identical",
+    "r94_particles_cpu_speed_mid": "identical",
+    "r94_particles_cpu_speed_pre": "tail_only",
+    "r94_particles_cpu_stop": "identical",
+    "r94_particles_gpu_headless": "tail_only",
+    "r94_particles_ppm": "identical"
+  }
+}

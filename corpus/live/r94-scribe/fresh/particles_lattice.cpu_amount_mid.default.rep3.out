@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS particles_lattice cpu_amount_mid ok=true em_at_set=true spurious_finish=true | fin_after_set=0 n_fin=1 em_fin=true ise_fin=true em_at_end=false
