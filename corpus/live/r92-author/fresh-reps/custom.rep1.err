@@ -1,0 +1,20 @@
+ERROR: TileSet has no layer with name: ghost
+   at: set_custom_data (scene/resources/2d/tile_set.cpp:6658)
+   GDScript backtrace (most recent call first):
+       [0] _custom (res://tilemap_lattice.gd:380)
+       [1] _run (res://tilemap_lattice.gd:125)
+ERROR: TileSet has no layer with name: ghost
+   at: get_custom_data (scene/resources/2d/tile_set.cpp:6665)
+   GDScript backtrace (most recent call first):
+       [0] _custom (res://tilemap_lattice.gd:381)
+       [1] _run (res://tilemap_lattice.gd:125)
+ERROR: TileSet has no layer with name: absent
+   at: get_custom_data (scene/resources/2d/tile_set.cpp:6665)
+   GDScript backtrace (most recent call first):
+       [0] _custom (res://tilemap_lattice.gd:382)
+       [1] _run (res://tilemap_lattice.gd:125)
+ERROR: TileSet has no layer with name: tag
+   at: get_custom_data (scene/resources/2d/tile_set.cpp:6665)
+   GDScript backtrace (most recent call first):
+       [0] _custom (res://tilemap_lattice.gd:386)
+       [1] _run (res://tilemap_lattice.gd:125)

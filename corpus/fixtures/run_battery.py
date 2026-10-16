@@ -596,6 +596,104 @@ CASES = [
      'NAV_LATTICE_TEARDOWN_CRASH armed=live_cb has_cb=true'),
     ('nav_lattice_teardown_clean', 'nav_lattice.gd', ['--arm=teardown_clean'], 0,
      'PASS nav_lattice teardown_clean survived=true has_cb=false'),
+    # r92: the TileMapLayer/TileSet authorability lattice — cell
+    # set/erase/readback, atlas-source and alternative-tile management,
+    # custom data layers, terrain connect/path placement, TileMapPattern
+    # get/set/map_pattern, the tile_map_data byte encoding (header +
+    # 12-byte records, in-place tombstones), fix_invalid_tiles repair,
+    # source-id allocation, the physics quadrant and per-tile collision
+    # polygons, navigation region registration, the one-physics-step
+    # update-timing law with update_internals as the only synchronous
+    # lever, and the null-TileSet get_cell_tile_data SIGSEGV hazard.
+    # Probe tilemap_lattice.gd sha256 a699138945ec7c1c… — BYTE-COPY of
+    # the frozen r92-scout probe (no fixture folds; every boundary fold
+    # lands row-side in the signatures below).
+    # Boundary folds (r92-boundary 7a45a60) applied:
+    #   * r92_tilemap_nav carries a 2-payload envelope on regions_f1 —
+    #     the cold cell-write's region registration flushes through the
+    #     idle/process pass, not the physics step, so the first-step
+    #     read is scheduler-mode-sensitive: regions_f1=1 at
+    #     idle:physics <= 2 (the production harness — default scheduler
+    #     20/20 + all 65 quiet/load matrix receipts, and the 120-tps
+    #     project; boundary §3/§4.1) and regions_f1=0 at ratio >= 2.5
+    #     (--fixed-fps >= 150 at 60 tps, ff480 at 120 tps; ff150 0/10,
+    #     ff600 0/10). payload[0] is the production/pinned mode. The
+    #     settled form regions_f2=1 is single-valued across all 126
+    #     boundary nav receipts and stays pinned in BOTH payloads —
+    #     the envelope moves the frame-counted read, never the law.
+    #   * update_internals()/map_force_update() are NOT synchronous nav
+    #     levers (boundary F7: n_upd=0 n_force=0; one await
+    #     process_frame flushes the pending region, n_proc1=1) — no
+    #     claim about them is pinned on the nav path; the physics-path
+    #     update_internals pins live only in r92_tilemap_timing, where
+    #     the synchronous apply was measured (update_set_same_frame=hit
+    #     / update_erase_same_frame=null).
+    #   * r92_tilemap_nullts_crash arms the null-TileSet SIGSEGV hazard
+    #     (scout §4.7/§5.1): null tile_set + set_cell +
+    #     get_cell_tile_data -> the engine's signal-11 handler prints
+    #     the crash dump then abort()s — subprocess returncode -6
+    #     (SIGABRT), measured 3/3 fresh reps in this launch shape (the
+    #     scout's bash `timeout` wrapper reported the same exit as
+    #     134 = 128+6). The signature is the last pre-crash diagnostic
+    #     on stdout — the PASS line is never reached — and
+    #     required_stderr pins the signal-11 crash-handler header AND
+    #     the _nullts backtrace site, so the row is bound to THIS
+    #     null-deref, not merely to the -6 signal class (same shape as
+    #     geo2d_lattice_lineempty / nav_lattice_teardown_crash). The
+    #     halves alone are both safe: only the pair crashes (scout §5.1
+    #     isolation).
+    #   * Tombstone encoding pinned verbatim (scout §4.4): a 2-byte
+    #     header + 12-byte little-endian cell records; erase_cell
+    #     rewrites a record to 0xFF tombstones in place and clear()
+    #     tombstones every record — the buffer is a high-water mark,
+    #     never a live-cell count.
+    # Signatures byte-pinned from the scout's 51 canonical runs (all 13
+    # cells out_uniq=1 err_uniq=1 under loadavg 118.85 and the 120-tps
+    # project) and re-confirmed on 432 boundary scout-arm receipts (the
+    # only 2 mismatches are the nav regions_f1 flips the envelope now
+    # covers). Nine rows emit deterministic engine ERROR refusals —
+    # allowlisted below; census/timing/quadrant/nav are ERROR:-clean
+    # (nav's deprecation WARNING carries no ERROR: substring).
+    # Rows inserted ahead of the crash/descendant tail —
+    # descendant_pipe_detached_control's sleep-8 gap stays adjacent to
+    # the meta probes.
+    ('r92_tilemap_census', 'tilemap_lattice.gd', ['--arm=census'], 0,
+     'PASS tilemap_lattice census layer_defaults=enabled=1 collision_enabled=1 nav_enabled=1 use_kinematic=0 phys_quad=16 rend_quad=16 col_vis=0 nav_vis=0 y_sort_origin=0 x_draw_rev=0 occl=1 layer_props=n16[collision_enabled,collision_visibility_mode,enabled,navigation_enabled,navigation_visibility_mode,occlusion_enabled,physics_quadrant_size,rendering_quadrant_size,tile_map_data,tile_set,use_kinematic_bodies,x_draw_order_reversed,y_sort_origin] layer_no_collision_priority=1 ts_defaults=tile_size=16,16 physics_layers=0 nav_layers=0 custom_data_layers=0 terrain_sets=0 occlusion_layers=0 sources=0 tile_shape=0 tile_layout=0 tile_offset_axis=0 uv_clipping=0 atlas_defaults=region=16,16 margins=0,0 separation=0,0 tiles=0 padding=1 enum_terrainset=MATCH_CORNERS_AND_SIDES=0 MATCH_CORNERS=1 MATCH_SIDES=2 enum_tileshape=SQUARE=0 ISOMETRIC=1 HALF_OFFSET_SQUARE=2 HEXAGON=3 enum_neighbor=RIGHT_SIDE=0 RIGHT_CORNER=1 BOTTOM_RIGHT_SIDE=2 BOTTOM_RIGHT_CORNER=3 BOTTOM_SIDE=4 TOP_RIGHT_CORNER=15 invalid_source=-1 class_method_counts=TileMapLayer=58 TileSet=90 TileSetAtlasSource=41 TileData=54 TileMapPattern=10'),
+    ('r92_tilemap_atlas', 'tilemap_lattice.gd', ['--arm=atlas'], 0,
+     'PASS tilemap_lattice atlas sid_first=0 count_1=1 has_source_0=1 src_class=TileSetAtlasSource tiles_after_2=2 has_tile_00=1 has_tile_11=0 tiles_list=n2[0,0;1,0] tiles_after_dup=2 alt_id=1 alt_count=2 alt_list=n2[0;1] has_alt_0=1 has_alt_1=1 has_alt_7=0 td_class=TileData td_alt_distinct=1 td_missing=null tiles_after_remove=1 has_tile_10_after=0 sid_explicit_7=7 ids=n2[0;7] next_source_id=1 grid_size=2,2 tile_size_in_atlas=1,1 tex_region=[P: (0, 0), S: (16, 16)]'),
+    ('r92_tilemap_cells', 'tilemap_lattice.gd', ['--arm=cells'], 0,
+     'PASS tilemap_lattice cells empty_used=n0[] empty_rect=[P: (0, 0), S: (0, 0)] empty_source=-1 empty_atlas=-1,-1 empty_alt=-1 empty_td=null used_after_3=n3[0,0;3,2;-2,-1] rect_after_3=[P: (-2, -1), S: (6, 4)] src_3_2=0 atlas_3_2=1,0 td_3_2=obj same_frame_td=obj same_frame_used_has=1 erase_src=-1 erase_used_n=3 erase_used_n2=2 erase_absent_ok=1 bad_src_readback=42 bad_src_in_used=1 bad_atlas_readback=9,9 bad_atlas_td=null used_by_id_src=n3[-2,-1;9,9;6,6] used_by_id_bad=n1[5,5] clear_used_n=0 clear_rect=[P: (0, 0), S: (0, 0)] map_to_local_1_1=24.0000,24.0000 map_to_local_neg=-8.0000,-8.0000 local_to_map_16_16=1,1 local_to_map_8_8=0,0 local_to_map_neg=-1,-1 surrounding=n4[1,0;0,1;-1,0;0,-1] neighbors_valid8=BOTTOM_LEFT_CORNER:-1,1|BOTTOM_RIGHT_CORNER:1,1|BOTTOM_SIDE:0,1|LEFT_SIDE:-1,0|RIGHT_SIDE:1,0|TOP_LEFT_CORNER:-1,-1|TOP_RIGHT_CORNER:1,-1|TOP_SIDE:0,-1 neighbors_invalid4=BOTTOM_CORNER:0,0|BOTTOM_RIGHT_SIDE:0,0|RIGHT_CORNER:0,0|TOP_RIGHT_SIDE:0,0 empty_flip_h=1 empty_flip_v=1 empty_transpose=1 set_flip_h=0 set_flip_v=0 set_transpose=0'),
+    ('r92_tilemap_custom', 'tilemap_lattice.gd', ['--arm=custom'], 0,
+     'PASS tilemap_lattice custom layers_0=0 layers_2=2 name_0=hp type_0=2 index_of_hp=0 index_of_missing=-1 has_layer_hp=1 default_hp=0 default_tag= has_hp=1 hp_7=7 tag_alpha=alpha by_index_0=7 by_index_1=alpha hp_wrongtype=not-an-int hp_wrongtype_still=not-an-int layer_hp=not-an-int layer_tag=alpha ghost=<null> missing=<null> layers_after_remove=1 tag_after_remove=<null> hp_after_remove=not-an-int dup_layers=1 dup_hp=0 dup_is_distinct=1'),
+    ('r92_tilemap_terrain', 'tilemap_lattice.gd', ['--arm=terrain'], 0,
+     'PASS tilemap_lattice terrain sets_0=0 sets_1=1 mode_default=0 mode_set=0 terrains_0=0 terrains_2=2 names=grass,dirt color_0=(0.0, 1.0, 0.0, 1.0) td_terrain_set_default=-1 td_terrain_default=-1 td_terrain_set=0 td_terrain=0 peering_right=1 peering_left=-1 peering_right_valid=1 peering_right_corner_valid=0 connect_used=n2[1,0;0,0] connect_src_0_0=0 connect_atlas_0_0=0,0 connect_atlas_1_0=0,0 connect_atlas_2_0=-1,-1 connect_dirt_used=n3[1,0;0,0;2,0] connect_dirt_atlas_0_0=1,0 path_used=n2[1,0;0,0] bad_set_used=n0[] bad_terrain_used=n0[] no_terrain_used=n0[]'),
+    ('r92_tilemap_pattern', 'tilemap_lattice.gd', ['--arm=pattern'], 0,
+     'PASS tilemap_lattice pattern class=TileMapPattern size=2,2 used=n3[0,0;1,0;0,1] src_0_0=0 atlas_1_0=1,0 has_cell_0_0=1 empty_at_1_1=-1 is_empty=0 empty_size=0,0 empty_used=n0[] empty_is_empty=1 set_used=n3[4,4;5,4;4,5] set_rect=[P: (4, 4), S: (2, 2)] set_atlas_5_4=1,0 sparse_size=5,5 sparse_used=n2[0,0;4,4] sparse_hole_src=-1 map_pattern_10_10_1_0=11,10 map_pattern_0_0_0_0=0,0 cross_layer_used=n1[-2,-2] cross_layer_atlas=0,0'),
+    ('r92_tilemap_encoding', 'tilemap_lattice.gd', ['--arm=encoding'], 0,
+     'PASS tilemap_lattice encoding empty_bytes_len=0 empty_arr_len=0 one_bytes_len=14 one_bytes=[0,0,3,0,4,0,0,0,1,0,0,0,0,0] two_bytes_len=26 two_bytes=[0,0,3,0,4,0,0,0,1,0,0,0,0,0,7,0,254,255,0,0,0,0,1,0,0,0] two_arr_len=26 two_arr_equals_bytes=1 stride=12 alt_bytes=[0,0,3,0,4,0,0,0,1,0,0,0,1,0,7,0,254,255,255,255,255,255,255,255,255,255] alt_id_created=1 tomb_set_bytes=[0,0,1,0,1,0,0,0,0,0,0,0,0,0] tomb_erase_len=14 tomb_erase_bytes=[0,0,1,0,1,0,255,255,255,255,255,255,255,255] tomb_erase_used=n0[] tomb_reset_len=14 tomb_reset_bytes=[0,0,1,0,1,0,0,0,0,0,0,0,0,0] tomb_clear_len=14 tomb_clear_bytes=[0,0,1,0,1,0,255,255,255,255,255,255,255,255] tomb_clear_set_len=26 tomb_clear_set_bytes=[0,0,1,0,1,0,255,255,255,255,255,255,255,255,5,0,5,0,0,0,0,0,0,0,0,0] arr_roundtrip_used=n2[3,4;7,-2] arr_roundtrip_src=0 arr_roundtrip_atlas=0,1 short_arr_used=n0[] short_arr_len=0 truncated_used=n1[3,4] truncated_len=14'),
+    ('r92_tilemap_fixinvalid', 'tilemap_lattice.gd', ['--arm=fixinvalid'], 0,
+     'PASS tilemap_lattice fixinvalid before_used=n3[0,0;1,0;2,0] after_used=n1[0,0] after_src_1_0=-1 after_src_2_0=-1 removed_used=n1[0,0] removed_fixed_used=n0[]'),
+    ('r92_tilemap_srcids', 'tilemap_lattice.gd', ['--arm=srcids'], 0,
+     'PASS tilemap_lattice srcids auto_id=0 next_after_auto=1 explicit_5=5 next_after_explicit=1 ids=n2[0;5] id_index_0=0 id_index_1=5 moved_ids=n2[0;2] has_2=1 has_5=0 removed_ids=n1[0] count=1 add_null=-1 count_after_null=1 add_colliding=-1 count_after_colliding=1 add_negative=-1 ids_after_refusals=n1[0]'),
+    ('r92_tilemap_physics', 'tilemap_lattice.gd', ['--arm=physics'], 0,
+     'PASS tilemap_lattice physics phys_layers=1 layer_defaults=cl=1 cm=1 prio=1.0000 mat_null=1 polys_0=0 polys_1=1 poly_pt0=-8.0000,-8.0000 poly_oneway=0 poly_oneway_set=1 m=4.0000 tile0=hit tile1_no_polygon=null tile0_again=hit disabled_same_frame=hit disabled_f1=null enabled_same_frame=null enabled_f1=hit erase_same_frame=hit erase_f1=null collider=class=TileMapLayer travel=0.0000,1.9531 normal=0.0000,-1.0000 is_layer=1 shape=true coords_for_untracked_body=0,0 has_body_rid=0 kinematic_use=1 kinematic_body_tracked=0 kinematic_coords=0,0'),
+    ('r92_tilemap_timing', 'tilemap_lattice.gd', ['--arm=timing'], 0,
+     'PASS tilemap_lattice timing empty=null set_same_frame_physics=null set_same_frame_td=obj set_same_frame_used=1 set_f1=hit set_f2=hit move_same_frame=hit move_f1=null move_f2=null moved_back=hit erase_same_frame=hit erase_f1=null notify_same_frame=null notify_f1=hit update_erase_same_frame=null update_erase_f1=null update_set_same_frame=hit data_immediate_control=1'),
+    ('r92_tilemap_quadrant', 'tilemap_lattice.gd', ['--arm=quadrant'], 0,
+     'PASS tilemap_lattice quadrant default_quad=16 quad16_near=hit quad16_far=hit quad_set=2 quad2_same_frame_far=hit quad2_f1_far=hit quad2_near=hit quad2_spread=0,0:hit|15,0:hit|16,0:hit|40,0:hit quad16_spread=0,0:hit|15,0:hit|16,0:hit|40,0:hit quad_restored=16 rendering_quad_untouched=16'),
+    ('r92_tilemap_nav', 'tilemap_lattice.gd', ['--arm=nav'], 0,
+     ('PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=1 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0',
+      'PASS tilemap_lattice nav nav_layers=1 nav_layer_defaults=layers=1 value1=1 nav_layer_set=3 nav_poly_default=null nav_poly_set=obj layer_nav_enabled=1 layer_nav_vis=0 nav_map_valid=1 regions_empty=0 regions_same_frame=0 regions_f1=0 regions_f2=1 regions_after_plain_cell=1 regions_disabled_same_frame=1 regions_disabled_f1=0 regions_reenabled=1 regions_erased_same_frame=1 regions_erased_f1=0')),
+    # Null-TileSet SIGSEGV negative control: null tile_set + a written
+    # cell + get_cell_tile_data -> signal 11, and the engine crash
+    # handler's abort() exits the process -6 (measured 3/3 fresh reps in
+    # this launch shape). The signature is the last pre-crash diagnostic
+    # on stdout (the PASS line is never reached); required_stderr binds
+    # the crash to the signal-11 handler header and the _nullts site in
+    # this probe — a foreign SIGSEGV/SIGABRT or a stderr-only signature
+    # still fails.
+    ('r92_tilemap_nullts_crash', 'tilemap_lattice.gd', ['--arm=nullts'], -6,
+     'R92 nullts about_to_call_tile_data=1'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
@@ -1065,6 +1163,50 @@ def main():
                 'nav_lattice_bake': (
                     'ERROR: The root node needs to be inside the SceneTree.',
                 ),
+                # r92: nine tilemap arms deliberately poke deterministic
+                # typed refusals (scout §6.1 — every emitted line verified
+                # against canonical + boundary receipts; repeated identical
+                # lines are covered by one exact entry, same as
+                # geo2d_lattice_polyendpoly). census/timing/quadrant/nav
+                # emit no ERROR: line at all and need no entry; nav's only
+                # stderr is the make_polygons_from_outlines deprecation
+                # WARNING (no ERROR: substring — classifier-inert).
+                'r92_tilemap_atlas': (
+                    'ERROR: Cannot create tile. The tile is outside the texture or tiles are already present in the space the tile would cover.',
+                    'ERROR: The TileSetAtlasSource atlas has no tile at (5, 5).',
+                ),
+                'r92_tilemap_cells': (
+                    'ERROR: Method/function failed. Returning: p_coords',
+                    'ERROR: The TileSetAtlasSource atlas has no tile at (9, 9).',
+                ),
+                'r92_tilemap_custom': (
+                    'ERROR: TileSet has no layer with name: absent',
+                    'ERROR: TileSet has no layer with name: ghost',
+                    'ERROR: TileSet has no layer with name: tag',
+                ),
+                'r92_tilemap_terrain': (
+                    'ERROR: Index p_terrain_set = 5 is out of bounds (tile_set->get_terrain_sets_count() = 1).',
+                ),
+                'r92_tilemap_pattern': (
+                    'ERROR: Condition "!pattern.has(p_coords)" is true. Returning: TileSet::INVALID_SOURCE',
+                ),
+                'r92_tilemap_encoding': (
+                    'ERROR: Corrupted tile map data: tiles might be missing.',
+                    'ERROR: Unsupported tile map data format: 513. Expected format ID lower or equal to: 0',
+                ),
+                'r92_tilemap_fixinvalid': (
+                    'ERROR: No TileSet atlas source with id -1.',
+                    'ERROR: No TileSet atlas source with id 0.',
+                    'ERROR: No TileSet atlas source with id 42.',
+                ),
+                'r92_tilemap_srcids': (
+                    'ERROR: Cannot create TileSet atlas source. Another atlas source exists with id 0.',
+                    'ERROR: Condition "p_tile_set_source.is_null()" is true. Returning: TileSet::INVALID_SOURCE',
+                    'ERROR: Provided source ID -3 is not valid. Negative source IDs are not allowed.',
+                ),
+                'r92_tilemap_physics': (
+                    'ERROR: Parameter "found" is null.',
+                ),
             }.get(name, ())
             # r89-fold (critic F1): stderr-fragment pins. geo2d_lattice_lineempty
             # classified on the merged stdout+stderr blob, so a foreign SIGABRT
@@ -1090,6 +1232,17 @@ def main():
                 # tokens above; the `(!prev)` tail is deliberately NOT pinned.
                 'nav_lattice_teardown_crash': (
                     'double free or corruption',
+                ),
+                # r92 null-TileSet SIGSEGV negative control: binds the
+                # rc=-11 to the engine's own signal-11 crash handler AND
+                # the _nullts frame site in this probe — a foreign SIGSEGV
+                # (right signal, wrong cause) cannot satisfy the pair.
+                # The crash-dump header and the GDScript backtrace site
+                # are the pinned fragments; ASLR'd addresses and the C++
+                # backtrace are deliberately NOT pinned.
+                'r92_tilemap_nullts_crash': (
+                    'handle_crash: Program crashed with signal 11',
+                    '_nullts (res://tilemap_lattice.gd:927)',
                 ),
             }.get(name, ())
             classifier = classify_audio_process if name == "audio_playback" else classify_process
@@ -2747,6 +2900,14 @@ def main():
             not e["dead_in_run"]
             for r in census_rows
             if r["case"].startswith("nav_lattice_")
+            for e in r["entries"]),
+        # r92 author: the nine whitelist-bearing cases (atlas … physics)
+        # and every sibling row carry the r92_ prefix — same
+        # named-by-round / covers-round-prefixes shape as r87–r91.
+        "r92_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith("r92_")
             for e in r["entries"]),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms

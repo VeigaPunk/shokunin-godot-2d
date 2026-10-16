@@ -1,0 +1,25 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=pattern
+R92 pattern class=TileMapPattern
+R92 pattern size=2,2
+R92 pattern used=n3[0,0;1,0;0,1]
+R92 pattern src_0_0=0
+R92 pattern atlas_1_0=1,0
+R92 pattern has_cell_0_0=1
+R92 pattern empty_at_1_1=-1
+R92 pattern is_empty=0
+R92 pattern empty_size=0,0
+R92 pattern empty_used=n0[]
+R92 pattern empty_is_empty=1
+R92 pattern set_used=n3[4,4;5,4;4,5]
+R92 pattern set_rect=[P: (4, 4), S: (2, 2)]
+R92 pattern set_atlas_5_4=1,0
+R92 pattern sparse_size=5,5
+R92 pattern sparse_used=n2[0,0;4,4]
+R92 pattern sparse_hole_src=-1
+R92 pattern map_pattern_10_10_1_0=11,10
+R92 pattern map_pattern_0_0_0_0=0,0
+R92 pattern cross_layer_used=n1[-2,-2]
+R92 pattern cross_layer_atlas=0,0
+PASS tilemap_lattice pattern class=TileMapPattern size=2,2 used=n3[0,0;1,0;0,1] src_0_0=0 atlas_1_0=1,0 has_cell_0_0=1 empty_at_1_1=-1 is_empty=0 empty_size=0,0 empty_used=n0[] empty_is_empty=1 set_used=n3[4,4;5,4;4,5] set_rect=[P: (4, 4), S: (2, 2)] set_atlas_5_4=1,0 sparse_size=5,5 sparse_used=n2[0,0;4,4] sparse_hole_src=-1 map_pattern_10_10_1_0=11,10 map_pattern_0_0_0_0=0,0 cross_layer_used=n1[-2,-2] cross_layer_atlas=0,0

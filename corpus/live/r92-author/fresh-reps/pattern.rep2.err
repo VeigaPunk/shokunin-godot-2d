@@ -1,0 +1,10 @@
+ERROR: Condition "!pattern.has(p_coords)" is true. Returning: TileSet::INVALID_SOURCE
+   at: get_cell_source_id (scene/resources/2d/tile_set.cpp:124)
+   GDScript backtrace (most recent call first):
+       [0] _pattern (res://tilemap_lattice.gd:488)
+       [1] _run (res://tilemap_lattice.gd:129)
+ERROR: Condition "!pattern.has(p_coords)" is true. Returning: TileSet::INVALID_SOURCE
+   at: get_cell_source_id (scene/resources/2d/tile_set.cpp:124)
+   GDScript backtrace (most recent call first):
+       [0] _pattern (res://tilemap_lattice.gd:506)
+       [1] _run (res://tilemap_lattice.gd:129)

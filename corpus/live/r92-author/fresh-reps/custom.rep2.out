@@ -1,0 +1,30 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=custom
+R92 custom layers_0=0
+R92 custom layers_2=2
+R92 custom name_0=hp
+R92 custom type_0=2
+R92 custom index_of_hp=0
+R92 custom index_of_missing=-1
+R92 custom has_layer_hp=1
+R92 custom default_hp=0
+R92 custom default_tag=
+R92 custom has_hp=1
+R92 custom hp_7=7
+R92 custom tag_alpha=alpha
+R92 custom by_index_0=7
+R92 custom by_index_1=alpha
+R92 custom hp_wrongtype=not-an-int
+R92 custom hp_wrongtype_still=not-an-int
+R92 custom layer_hp=not-an-int
+R92 custom layer_tag=alpha
+R92 custom ghost=<null>
+R92 custom missing=<null>
+R92 custom layers_after_remove=1
+R92 custom tag_after_remove=<null>
+R92 custom hp_after_remove=not-an-int
+R92 custom dup_layers=1
+R92 custom dup_hp=0
+R92 custom dup_is_distinct=1
+PASS tilemap_lattice custom layers_0=0 layers_2=2 name_0=hp type_0=2 index_of_hp=0 index_of_missing=-1 has_layer_hp=1 default_hp=0 default_tag= has_hp=1 hp_7=7 tag_alpha=alpha by_index_0=7 by_index_1=alpha hp_wrongtype=not-an-int hp_wrongtype_still=not-an-int layer_hp=not-an-int layer_tag=alpha ghost=<null> missing=<null> layers_after_remove=1 tag_after_remove=<null> hp_after_remove=not-an-int dup_layers=1 dup_hp=0 dup_is_distinct=1

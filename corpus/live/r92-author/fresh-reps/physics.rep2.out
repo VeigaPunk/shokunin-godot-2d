@@ -1,0 +1,26 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=physics
+R92 physics phys_layers=1
+R92 physics layer_defaults=cl=1 cm=1 prio=1.0000 mat_null=1
+R92 physics polys_0=0
+R92 physics polys_1=1
+R92 physics poly_pt0=-8.0000,-8.0000
+R92 physics poly_oneway=0
+R92 physics poly_oneway_set=1 m=4.0000
+R92 physics tile0=hit
+R92 physics tile1_no_polygon=null
+R92 physics tile0_again=hit
+R92 physics disabled_same_frame=hit
+R92 physics disabled_f1=null
+R92 physics enabled_same_frame=null
+R92 physics enabled_f1=hit
+R92 physics erase_same_frame=hit
+R92 physics erase_f1=null
+R92 physics collider=class=TileMapLayer travel=0.0000,1.9531 normal=0.0000,-1.0000 is_layer=1 shape=true
+R92 physics coords_for_untracked_body=0,0
+R92 physics has_body_rid=0
+R92 physics kinematic_use=1
+R92 physics kinematic_body_tracked=0
+R92 physics kinematic_coords=0,0
+PASS tilemap_lattice physics phys_layers=1 layer_defaults=cl=1 cm=1 prio=1.0000 mat_null=1 polys_0=0 polys_1=1 poly_pt0=-8.0000,-8.0000 poly_oneway=0 poly_oneway_set=1 m=4.0000 tile0=hit tile1_no_polygon=null tile0_again=hit disabled_same_frame=hit disabled_f1=null enabled_same_frame=null enabled_f1=hit erase_same_frame=hit erase_f1=null collider=class=TileMapLayer travel=0.0000,1.9531 normal=0.0000,-1.0000 is_layer=1 shape=true coords_for_untracked_body=0,0 has_body_rid=0 kinematic_use=1 kinematic_body_tracked=0 kinematic_coords=0,0
