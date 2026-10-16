@@ -1,0 +1,31 @@
+receipts total: 618
+by kind: {'scout': 143, 'boundary': 323, 'battery': 95, 'fresh': 57}
+r94_particles_census                 checked=  30 exact=  30 tail=   0 reject=0
+r94_particles_ppm                    checked=  30 exact=  30 tail=   0 reject=0
+r94_particles_convert                checked=  30 exact=  30 tail=   0 reject=0
+r94_particles_cpu_lifetime           checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_cpu_expl               checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_cpu_speed_pre          checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_cpu_stop               checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_cpu_never              checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_cpu_contam             checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_cpu_oneshot_off        checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_cpu_oneshot_flag       checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_cpu_pause              checked=  33 exact=   0 tail=  30 reject=3
+r94_particles_cpu_restart            checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_cpu_retrigger          checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_cpu_lt_mid             checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_cpu_speed_mid          checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_cpu_amount_mid         checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_cpu_request            checked=  33 exact=   0 tail=  33 reject=0
+r94_particles_gpu_headless           checked=  33 exact=   0 tail=  33 reject=0
+TOTALS {'EXACT': 90, 'TAIL': 525, 'MISS': 0, 'REJECT': 3, 'CHECKED': 618}
+fallback lines in corpora: 0
+signature is substring of fallback text: []
+rejections: [('r94_particles_cpu_pause', 'corpus/live/r94-boundary/runs/ff30/r94_particles_cpu_pause.rep1.out'), ('r94_particles_cpu_pause', 'corpus/live/r94-boundary/runs/ff30/r94_particles_cpu_pause.rep2.out'), ('r94_particles_cpu_pause', 'corpus/live/r94-boundary/runs/ff30/r94_particles_cpu_pause.rep3.out')] count 3
+classify_process segment sha256 = 749fa0607e7707e6
+file receipts with .err: 523, total stderr bytes: 0
+foreign battery run 20261016T064148780406Z: r94 rows=19 fails=[]
+foreign battery run 20261016T064742446822Z: r94 rows=19 fails=[]
+foreign battery run 20261016T065335715243Z: r94 rows=19 fails=[]
+foreign battery runs: 3

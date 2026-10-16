@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS particles_lattice cpu_stop ok=false stop10_ok=false stop40_ok=false | stop10[fin_after=5 n=1 em_fin=false em_after=false] stop40[fin_after=5 n=1 em_fin=false em_after=false]

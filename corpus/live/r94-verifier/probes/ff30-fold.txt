@@ -1,0 +1,12 @@
+== re-derivation on boundary ff30 receipts (measured values vs committed windows)
+ rep1: values={'vis': 4, 'vis_parent': 2, 'pm_disabled': 2, 'ts0': 18} committed-windows-ok={'vis': True, 'vis_parent': True, 'pm_disabled': True, 'ts0': True} -> committed row would PASS
+ rep2: values={'vis': 4, 'vis_parent': 2, 'pm_disabled': 2, 'ts0': 18} committed-windows-ok={'vis': True, 'vis_parent': True, 'pm_disabled': True, 'ts0': True} -> committed row would PASS
+ rep3: values={'vis': 4, 'vis_parent': 2, 'pm_disabled': 2, 'ts0': 18} committed-windows-ok={'vis': True, 'vis_parent': True, 'pm_disabled': True, 'ts0': True} -> committed row would PASS
+== live ff30: committed-fixture (particles_lattice.gd)
+ rep1: committed-signature PASS rc=0 :: PASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=4 n=1] vis_parent[fin_after_show=2 n=1] pm_disabled[fin_after_enable=2 n=1]
+ rep2: committed-signature PASS rc=0 :: PASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=4 n=1] vis_parent[fin_after_show=2 n=1] pm_disabled[fin_after_enable=2 n=1]
+ rep3: committed-signature PASS rc=0 :: PASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=4 n=1] vis_parent[fin_after_show=2 n=1] pm_disabled[fin_after_enable=2 n=1]
+== live ff30: frozen-scout-probe (particles_lattice.gd)
+ rep1: committed-signature REJECT rc=0 :: PASS particles_lattice cpu_pause ok=false vis_ok=true vis_parent_ok=false pm_disabled_ok=false ts0_ok=true | vis[fin_after_show=4 n=1] vis_parent[fin_after_show=2 n=1] pm_disabled[fin_after_enable=2 n
+ rep2: committed-signature REJECT rc=0 :: PASS particles_lattice cpu_pause ok=false vis_ok=true vis_parent_ok=false pm_disabled_ok=false ts0_ok=true | vis[fin_after_show=4 n=1] vis_parent[fin_after_show=2 n=1] pm_disabled[fin_after_enable=2 n
+ rep3: committed-signature REJECT rc=0 :: PASS particles_lattice cpu_pause ok=false vis_ok=true vis_parent_ok=false pm_disabled_ok=false ts0_ok=true | vis[fin_after_show=4 n=1] vis_parent[fin_after_show=2 n=1] pm_disabled[fin_after_enable=2 n

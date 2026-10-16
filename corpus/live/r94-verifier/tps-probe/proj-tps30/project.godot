@@ -1,0 +1,6 @@
+[application]
+config/name="MechanicOneShotTest"
+config/features=PackedStringArray("4.7")
+
+[physics]
+common/physics_ticks_per_second=30

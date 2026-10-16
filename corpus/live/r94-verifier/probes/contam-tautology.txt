@@ -1,0 +1,8 @@
+r94_particles_cpu_contam signature: PASS particles_lattice cpu_contam ok=true n_never=2
+observed: PASS particles_lattice cpu_contam ok=true n_never=2 | never1[fin_delta=0 n=1] never2[fin_delta=0 n=1]
+baseline PASS: True
+mutate 'never1[fin_delta=0 n=1]' -> 'never1[fin_delta=-1 n=0]': PASS (ADMITTED - law not pinned)
+mutate 'never2[fin_delta=0 n=1]' -> 'never2[fin_delta=-1 n=0]': PASS (ADMITTED - law not pinned)
+mutate 'n_never=2' -> 'n_never=0': REJECT (load-bearing)
+receipts carrying the measured contamination tail: 25/25
+fixture ok-computation: ['" ok=%s n_never=%d" % [str(out.size() == 2), out.size()],']

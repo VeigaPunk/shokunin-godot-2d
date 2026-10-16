@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS particles_lattice ppm iv_min=7.0000 iv_max=9.0000 scale=(2.0000,3.0000) tex_same=true curve_same=true flags=truetrue sub_mode=3 sub_amt=3 coll=2 turb=true turb_n=1

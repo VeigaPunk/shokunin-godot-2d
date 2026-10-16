@@ -1,0 +1,13 @@
+# r94-verifier manifest scope (manifest.sha256 covers every listed path).
+# Excluded families (regenerable scratch / foreign copies, not evidence):
+#   runs/*/scratch/**, runs/*/missing-preset-scratch/**, runs/*/xdg-data/**
+#   gate-probe/runs/*/scratch/**, gate-probe/runs/*/missing-preset-scratch/**,
+#   gate-probe/runs/*/xdg-data/**, gate-probe/fixtures/** (mutant fixture copy;
+#     its only delta vs freeze/ is the one injected line, receipted in
+#     probes/gate-mutant-diff.txt)
+#   tps-probe/proj-{default,tps30,tps120}/** (launch-project copies)
+#   arms/scratch-*/**, ff30-probe/scratch-*/**, **/__pycache__/**
+# Included evidence: freeze/ (blob identity + pins), probes/ (scripts +
+# receipts), arms/ (57 fresh receipts), runs/ (3 battery verdicts.json),
+# gate-probe/battery.log + runs/*/verdicts.json, tps-probe/ receipts,
+# ff30-probe/ receipts, battery{1,2,3}.log + load stamps.

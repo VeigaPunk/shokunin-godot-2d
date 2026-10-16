@@ -1,0 +1,4 @@
+mutant harness: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r94-verifier/gate-probe/fixtures/run_battery.py
+injected line: "r94_particles_cpu_never": ("ERROR: r94-verifier injected dead entry (never emitted)",),
+line delta: 1
+fixture sha256 still: 0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9

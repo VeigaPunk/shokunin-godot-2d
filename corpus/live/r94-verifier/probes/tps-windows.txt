@@ -1,0 +1,60 @@
+[default] TPS_REPORT physics_ticks_per_second=60 time_scale=1.0 rc=0
+  [default] r94_particles_census               PASS rc=0 :: PASS particles_lattice census cpu_consts=DRAW_ORDER_INDEX=0,DRAW_ORDER_LIFETIME=1,PARAM_INITIAL_LINEAR_VELOCITY=0,PARAM_ANGULAR_VELOCITY=1,PARAM_ORBIT_VELOCITY=
+  [default] r94_particles_ppm                  PASS rc=0 :: PASS particles_lattice ppm iv_min=7.0000 iv_max=9.0000 scale=(2.0000,3.0000) tex_same=true curve_same=true flags=truetrue sub_mode=3 sub_amt=3 coll=2 turb=true 
+  [default] r94_particles_convert              PASS rc=0 :: PASS particles_lattice convert g2c[amount=12 lifetime=0.7000 os=true expl=0.2500 rand=0.5000 ss=2.0000 ffps=0 pre=0.1250 local=true draw=2] g2c_dir=(0.5000,0.50
+  [default] r94_particles_cpu_lifetime         PASS rc=0 :: PASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_afte
+  [default] r94_particles_cpu_expl             PASS rc=0 :: PASS particles_lattice cpu_expl ok=true e1_ok=true e05_ok=true e0_ok=true | e1[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=t
+  [default] r94_particles_cpu_speed_pre        PASS rc=0 :: PASS particles_lattice cpu_speed_pre ok=true ss2_ok=true ss05_ok=true pre25_ok=true ff30_ok=true | ss2[delta=15 n=1 em_fin=false ise_fin=false em_after=false is
+  [default] r94_particles_cpu_stop             PASS rc=0 :: PASS particles_lattice cpu_stop ok=true stop10_ok=true stop40_ok=true | stop10[fin_after=20 n=1 em_fin=false em_after=false] stop40[fin_after=19 n=1 em_fin=fals
+  [default] r94_particles_cpu_never            PASS rc=0 :: PASS particles_lattice cpu_never ok=true never_fired=true n_fin=0 | fin_delta=-1 em_after=false ph_total=60
+  [default] r94_particles_cpu_contam           PASS rc=0 :: PASS particles_lattice cpu_contam ok=true n_never=2 | never1[fin_delta=0 n=1] never2[fin_delta=0 n=1]
+  [default] r94_particles_cpu_oneshot_off      PASS rc=0 :: PASS particles_lattice cpu_oneshot_off ok=true fin_ok=true em_after=false os_after=true | fin_after_off=50 n_fin=1 em_fin=false
+  [default] r94_particles_cpu_oneshot_flag     PASS rc=0 :: PASS particles_lattice cpu_oneshot_flag ok=true never_fired=true em_after=true os_after=false | fin_after_flag=-1 n_fin=0
+  [default] r94_particles_cpu_pause            PASS rc=0 :: PASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=5 
+  [default] r94_particles_cpu_restart          PASS rc=0 :: PASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=fal
+  [default] r94_particles_cpu_retrigger        PASS rc=0 :: PASS particles_lattice cpu_retrigger ok=true first_ok=true second_ok=true em_set=true ise_set=true | first_delta=15 second_after=14 n_fin=2 em_after=false
+  [default] r94_particles_cpu_lt_mid           PASS rc=0 :: PASS particles_lattice cpu_lt_mid ok=true fin_ok=true em_after=false | fin_after_set=2 n_fin=1 em_fin=false
+  [default] r94_particles_cpu_speed_mid        PASS rc=0 :: PASS particles_lattice cpu_speed_mid ok=true fin_ok=true em_after=false | fin_after_set=12 n_fin=1
+  [default] r94_particles_cpu_amount_mid       PASS rc=0 :: PASS particles_lattice cpu_amount_mid ok=true em_at_set=true spurious_finish=true | fin_after_set=0 n_fin=1 em_fin=true ise_fin=true em_at_end=false
+  [default] r94_particles_cpu_request          PASS rc=0 :: PASS particles_lattice cpu_request ok=true step010_ok=true step005_ok=true | step0.10[fin_call1=6 fin_call_raw=4 expected=6 ok=true n_fin=1] step0.05[fin_call1=
+  [default] r94_particles_gpu_headless         PASS rc=0 :: PASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=1 em_after=false ise_after=f
+[tps30] TPS_REPORT physics_ticks_per_second=30 time_scale=1.0 rc=0
+  [tps30] r94_particles_census               PASS rc=0 :: PASS particles_lattice census cpu_consts=DRAW_ORDER_INDEX=0,DRAW_ORDER_LIFETIME=1,PARAM_INITIAL_LINEAR_VELOCITY=0,PARAM_ANGULAR_VELOCITY=1,PARAM_ORBIT_VELOCITY=
+  [tps30] r94_particles_ppm                  PASS rc=0 :: PASS particles_lattice ppm iv_min=7.0000 iv_max=9.0000 scale=(2.0000,3.0000) tex_same=true curve_same=true flags=truetrue sub_mode=3 sub_amt=3 coll=2 turb=true 
+  [tps30] r94_particles_convert              PASS rc=0 :: PASS particles_lattice convert g2c[amount=12 lifetime=0.7000 os=true expl=0.2500 rand=0.5000 ss=2.0000 ffps=0 pre=0.1250 local=true draw=2] g2c_dir=(0.5000,0.50
+  [tps30] r94_particles_cpu_lifetime         FAIL rc=0 :: PASS particles_lattice cpu_lifetime ok=false l01_ok=false l025_ok=false l05_ok=false l1_ok=false | l01[delta=3 n=1 em_fin=false ise_fin=false em_after=false ise
+  [tps30] r94_particles_cpu_expl             FAIL rc=0 :: PASS particles_lattice cpu_expl ok=false e1_ok=false e05_ok=false e0_ok=false | e1[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_aft
+  [tps30] r94_particles_cpu_speed_pre        FAIL rc=0 :: PASS particles_lattice cpu_speed_pre ok=false ss2_ok=false ss05_ok=false pre25_ok=false ff30_ok=false | ss2[delta=7 n=1 em_fin=false ise_fin=false em_after=fals
+  [tps30] r94_particles_cpu_stop             FAIL rc=0 :: PASS particles_lattice cpu_stop ok=false stop10_ok=false stop40_ok=false | stop10[fin_after=5 n=1 em_fin=false em_after=false] stop40[fin_after=5 n=1 em_fin=fal
+  [tps30] r94_particles_cpu_never            PASS rc=0 :: PASS particles_lattice cpu_never ok=true never_fired=true n_fin=0 | fin_delta=-1 em_after=false ph_total=60
+  [tps30] r94_particles_cpu_contam           PASS rc=0 :: PASS particles_lattice cpu_contam ok=true n_never=2 | never1[fin_delta=0 n=1] never2[fin_delta=0 n=1]
+  [tps30] r94_particles_cpu_oneshot_off      FAIL rc=0 :: PASS particles_lattice cpu_oneshot_off ok=false fin_ok=false em_after=false os_after=true | fin_after_off=20 n_fin=1 em_fin=false
+  [tps30] r94_particles_cpu_oneshot_flag     PASS rc=0 :: PASS particles_lattice cpu_oneshot_flag ok=true never_fired=true em_after=true os_after=false | fin_after_flag=-1 n_fin=0
+  [tps30] r94_particles_cpu_pause            FAIL rc=0 :: PASS particles_lattice cpu_pause ok=false vis_ok=false vis_parent_ok=false pm_disabled_ok=false ts0_ok=false | vis[fin_after_show=-33 n=1] vis_parent[fin_after_
+  [tps30] r94_particles_cpu_restart          FAIL rc=0 :: PASS particles_lattice cpu_restart ok=false first_ok=false second_ok=false first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=
+  [tps30] r94_particles_cpu_retrigger        FAIL rc=0 :: PASS particles_lattice cpu_retrigger ok=false first_ok=false second_ok=false em_set=true ise_set=true | first_delta=7 second_after=7 n_fin=2 em_after=false
+  [tps30] r94_particles_cpu_lt_mid           FAIL rc=0 :: PASS particles_lattice cpu_lt_mid ok=false fin_ok=false em_after=false | fin_after_set=0 n_fin=1 em_fin=false
+  [tps30] r94_particles_cpu_speed_mid        FAIL rc=0 :: PASS particles_lattice cpu_speed_mid ok=false fin_ok=false em_after=false | fin_after_set=5 n_fin=1
+  [tps30] r94_particles_cpu_amount_mid       PASS rc=0 :: PASS particles_lattice cpu_amount_mid ok=true em_at_set=true spurious_finish=true | fin_after_set=0 n_fin=1 em_fin=true ise_fin=true em_at_end=false
+  [tps30] r94_particles_cpu_request          PASS rc=0 :: PASS particles_lattice cpu_request ok=true step010_ok=true step005_ok=true | step0.10[fin_call1=6 fin_call_raw=4 expected=6 ok=true n_fin=1] step0.05[fin_call1=
+  [tps30] r94_particles_gpu_headless         PASS rc=0 :: PASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=1 em_after=false ise_after=f
+[tps120] TPS_REPORT physics_ticks_per_second=120 time_scale=1.0 rc=0
+  [tps120] r94_particles_census               PASS rc=0 :: PASS particles_lattice census cpu_consts=DRAW_ORDER_INDEX=0,DRAW_ORDER_LIFETIME=1,PARAM_INITIAL_LINEAR_VELOCITY=0,PARAM_ANGULAR_VELOCITY=1,PARAM_ORBIT_VELOCITY=
+  [tps120] r94_particles_ppm                  PASS rc=0 :: PASS particles_lattice ppm iv_min=7.0000 iv_max=9.0000 scale=(2.0000,3.0000) tex_same=true curve_same=true flags=truetrue sub_mode=3 sub_amt=3 coll=2 turb=true 
+  [tps120] r94_particles_convert              PASS rc=0 :: PASS particles_lattice convert g2c[amount=12 lifetime=0.7000 os=true expl=0.2500 rand=0.5000 ss=2.0000 ffps=0 pre=0.1250 local=true draw=2] g2c_dir=(0.5000,0.50
+  [tps120] r94_particles_cpu_lifetime         FAIL rc=0 :: PASS particles_lattice cpu_lifetime ok=false l01_ok=false l025_ok=false l05_ok=false l1_ok=false | l01[delta=12 n=1 em_fin=false ise_fin=false em_after=false is
+  [tps120] r94_particles_cpu_expl             FAIL rc=0 :: PASS particles_lattice cpu_expl ok=false e1_ok=false e05_ok=false e0_ok=false | e1[delta=59 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_aft
+  [tps120] r94_particles_cpu_speed_pre        FAIL rc=0 :: PASS particles_lattice cpu_speed_pre ok=false ss2_ok=false ss05_ok=false pre25_ok=false ff30_ok=false | ss2[delta=30 n=1 em_fin=false ise_fin=false em_after=fal
+  [tps120] r94_particles_cpu_stop             FAIL rc=0 :: PASS particles_lattice cpu_stop ok=false stop10_ok=false stop40_ok=true | stop10[fin_after=50 n=1 em_fin=false em_after=false] stop40[fin_after=19 n=1 em_fin=fa
+  [tps120] r94_particles_cpu_never            PASS rc=0 :: PASS particles_lattice cpu_never ok=true never_fired=true n_fin=0 | fin_delta=-1 em_after=false ph_total=60
+  [tps120] r94_particles_cpu_contam           PASS rc=0 :: PASS particles_lattice cpu_contam ok=true n_never=2 | never1[fin_delta=0 n=1] never2[fin_delta=0 n=1]
+  [tps120] r94_particles_cpu_oneshot_off      FAIL rc=0 :: PASS particles_lattice cpu_oneshot_off ok=false fin_ok=false em_after=false os_after=true | fin_after_off=-1 n_fin=0 em_fin=false
+  [tps120] r94_particles_cpu_oneshot_flag     PASS rc=0 :: PASS particles_lattice cpu_oneshot_flag ok=true never_fired=true em_after=true os_after=false | fin_after_flag=-1 n_fin=0
+  [tps120] r94_particles_cpu_pause            FAIL rc=0 :: PASS particles_lattice cpu_pause ok=false vis_ok=false vis_parent_ok=false pm_disabled_ok=false ts0_ok=false | vis[fin_after_show=20 n=1] vis_parent[fin_after_s
+  [tps120] r94_particles_cpu_restart          FAIL rc=0 :: PASS particles_lattice cpu_restart ok=false first_ok=false second_ok=false first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=
+  [tps120] r94_particles_cpu_retrigger        FAIL rc=0 :: PASS particles_lattice cpu_retrigger ok=false first_ok=false second_ok=false em_set=true ise_set=true | first_delta=30 second_after=28 n_fin=2 em_after=false
+  [tps120] r94_particles_cpu_lt_mid           FAIL rc=0 :: PASS particles_lattice cpu_lt_mid ok=false fin_ok=false em_after=false | fin_after_set=14 n_fin=1 em_fin=false
+  [tps120] r94_particles_cpu_speed_mid        FAIL rc=0 :: PASS particles_lattice cpu_speed_mid ok=false fin_ok=false em_after=false | fin_after_set=27 n_fin=1
+  [tps120] r94_particles_cpu_amount_mid       FAIL rc=0 :: PASS particles_lattice cpu_amount_mid ok=false em_at_set=true spurious_finish=true | fin_after_set=0 n_fin=1 em_fin=true ise_fin=true em_at_end=true
+  [tps120] r94_particles_cpu_request          PASS rc=0 :: PASS particles_lattice cpu_request ok=true step010_ok=true step005_ok=true | step0.10[fin_call1=6 fin_call_raw=4 expected=6 ok=true n_fin=1] step0.05[fin_call1=
+  [tps120] r94_particles_gpu_headless         PASS rc=0 :: PASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=4 em_after=false ise_after=f

@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS particles_lattice cpu_speed_pre ok=false ss2_ok=false ss05_ok=false pre25_ok=false ff30_ok=false | ss2[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=31] ss05[delta=118 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=119] pre25[delta=29 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] ff30[delta=-1 n=0 em_fin=false ise_fin=false em_after=true ise_after=true os_after=true ph=60]

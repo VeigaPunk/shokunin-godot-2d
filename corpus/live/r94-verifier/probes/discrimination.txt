@@ -1,0 +1,4 @@
+pinned-token mutations: 111, rejected: 111, admitted: 0
+tail controls: 32, admitted: 32, rejected: 0
+global axes: {'rc_flip': 19, 'injected_error': 19, 'injected_script_error': 19} of 57
+classify_process sha256 = 749fa0607e7707e6

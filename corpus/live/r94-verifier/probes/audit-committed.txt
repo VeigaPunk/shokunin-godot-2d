@@ -1,0 +1,51 @@
+== harness ==
+run_battery.py sha256 2b1f4df5426a8da679c58c58057817b75f6fd879f9ffc8ab1045b03deae04238
+CASES len 307
+r94 rows 19 indices 284 .. 302
+r94 names unique True
+row before first r94 r93_anim_blend_interleaved
+row after last r94 crash_spontaneous_sigabrt
+r94 rows with non --arm= flags []
+fixture match arms 23 ['fin_delta', 'n_fin', 'em_after', 'os_after', 'census', 'ppm', 'convert', 'cpu_lifetime', 'cpu_expl', 'cpu_speed_pre', 'cpu_stop', 'cpu_never', 'cpu_contam', 'cpu_oneshot_off', 'cpu_oneshot_flag', 'cpu_pause', 'cpu_restart', 'cpu_retrigger', 'cpu_lt_mid', 'cpu_speed_mid', 'cpu_amount_mid', 'cpu_request', 'gpu_headless']
+CASES arms not in fixture []
+fixture arms not in CASES ['em_after', 'fin_delta', 'n_fin', 'os_after']
+r94 expected_errors entries {}
+r94 required_stderr entries {}
+duplicate signatures in CASES [(11, 13, 'negative control: expected collected signal was absent'), (18, 20, 'PASS camera_limit moved=true current=true center_at_viewport'), (18, 22, 'PASS camera_limit moved=true current=true center_at_viewport'), (42, 43, 'UI BUTTON ASSERTION FAILED: expected release1 text=Activated'), (303, 304, 'SPONTANEOUS_CRASH_PROBE: expected signature'), (305, 306, 'DESCENDANT_PIPE_PROBE: expected signature')]
+scout ROWS 19 ROWS_PREFIX 19
+scout ROWS_PREFIX names == CASES r94 names True
+committed r94 tuple == scout ROWS_PREFIX tuple (all 19) True
+committed sig not a prefix of scout ROWS full line []
+== fixture ==
+fixture sha256 0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9
+fixture lines 763
+_okb window vis 1 7
+_okb window vp 1 7
+_okb window pm 1 7
+_okb window ts 15 25
+request expected line: var expected: int = int(floor(0.5 / spec)) + 1
+scout probe sha256 e6a2e0f55c6bbeaa0fee998f6d5655fe676db8b7e9fae6d36a80fd194004b930
+classify_process sha256 37f4094263ab0a73666401d78b4acb7d2496eea6d3342e1befb76d98d60207b9 lines 20
+floor gate present True
+floor gate text: "r94_expected_errors_all_matched": all( |             not e["dead_in_run"] |             for r in census_rows |             if r["case"].startswith("r94_") |             for e in r["entries"]),
+round gates in harness 8 ['r87_expected_errors_all_matched', 'r88_expected_errors_all_matched', 'r89_expected_errors_all_matched', 'r90_expected_errors_all_matched', 'r91_expected_errors_all_matched', 'r92_expected_errors_all_matched', 'r93_expected_errors_all_matched', 'r94_expected_errors_all_matched']
+== pin shapes ==
+r94_particles_census                 len= 8785 tail='icle_flag:2,enable:1)->0'
+r94_particles_ppm                    len=  168 tail='oll=2 turb=true turb_n=1'
+r94_particles_convert                len=  475 tail='0.100/0.200/0.300/0.400]'
+r94_particles_cpu_lifetime           len=   91 tail='e l05_ok=true l1_ok=true'
+r94_particles_cpu_expl               len=   73 tail='e e05_ok=true e0_ok=true'
+r94_particles_cpu_speed_pre          len=   96 tail='e25_ok=true ff30_ok=true'
+r94_particles_cpu_stop               len=   69 tail='0_ok=true stop40_ok=true'
+r94_particles_cpu_never              len=   65 tail='never_fired=true n_fin=0'
+r94_particles_cpu_contam             len=   51 tail='contam ok=true n_never=2'
+r94_particles_cpu_oneshot_off        len=   87 tail='fter=false os_after=true'
+r94_particles_cpu_oneshot_flag       len=   93 tail='fter=true os_after=false'
+r94_particles_cpu_pause              len=  103 tail='bled_ok=true ts0_ok=true'
+r94_particles_cpu_restart            len=  162 tail='tart=true em_after=false'
+r94_particles_cpu_retrigger          len=   98 tail='em_set=true ise_set=true'
+r94_particles_cpu_lt_mid             len=   68 tail='n_ok=true em_after=false'
+r94_particles_cpu_speed_mid          len=   71 tail='n_ok=true em_after=false'
+r94_particles_cpu_amount_mid         len=   81 tail='rue spurious_finish=true'
+r94_particles_cpu_request            len=   74 tail='_ok=true step005_ok=true'
+r94_particles_gpu_headless           len=   98 tail='_ok=true capture_ok=true'

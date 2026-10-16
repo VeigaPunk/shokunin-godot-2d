@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS particles_lattice cpu_expl ok=false e1_ok=false e05_ok=false e0_ok=false | e1[delta=59 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60] e05[delta=85 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=86] e0[delta=112 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=113]
