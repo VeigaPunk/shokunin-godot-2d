@@ -795,6 +795,86 @@ CASES = [
      'phys_delta=0.01666666666667'),
     ('r93_anim_blend_interleaved', 'r93b_anim.gd', ['--arm=blend'], 0,
      'PASS r93b_anim blend finished_010=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] finished_020=[100.0,200.0,300.0,400.0,500.0] interleaved=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] interleaved_eq_plain=true hard_after_frame=500.0'),
+    # --- r94 block: CPUParticles2D + GPUParticles2D emission lattice -----
+    # Probe particles_lattice.gd sha256 0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9
+    # — folded variant of the frozen r94-scout probe
+    # (corpus/live/r94-scout/probes/particles_lattice.gd sha256
+    # e6a2e0f55c6bbeaa…, 741 lines). Fixture folds (r94-boundary e741cf8
+    # §10 applied — the row-side signature text is unchanged by them):
+    #   * cpu_pause widens the three fin_after_* resume windows from
+    #     [4,7] to [1,7] — the ONLY behavioral fold. Boundary §4.2/§10:
+    #     the frozen windows reject 3/3 under --fixed-fps 30 (vis_parent
+    #     and pm_disabled land on 2 — the same freeze+resume law through
+    #     a different frame-quantization ratio; [1,7] covers every
+    #     condition measured: 4-5 quiet/load, 2 at ff30).
+    #   * Comment-only corrections carry the other boundary falsifications
+    #     (no emitted byte changes): contamination is the add_pf>=1
+    #     first-idle-frame rule, NOT process-global state (§8 — cpu_never
+    #     is created inside _initialize i.e. add_pf=0, cpu_contam's nevers
+    #     are later-added i.e. add_pf>=1; both arms still pin the same
+    #     booleans); the request lattice closed form is floor(L/step)+1
+    #     not round (§6 — the emitted expected= values are unchanged:
+    #     floor(0.5/0.10)=5->6, floor(0.5/0.05)=10->11); fixed_fps shifts
+    #     the end time by up to one quantum and fixed_fps<=5 is a stall
+    #     hazard, never authored (§5); the amount setter ARMS the spurious
+    #     finished which fires on the node's next _process same-frame —
+    #     fin_after_set=0 is a frame-order fact, not setter-synchronous
+    #     (§7); gpu flip_after is [1,7] not 3-7 and stays unpinned (§9).
+    #   * Deliberately NOT authored: the continuous-emitter amount
+    #     coupling (boundary §7.3 — unstable [U], set-tick and node-order
+    #     dependent); any tick-count tail after " | " (±1 modes, wider
+    #     under ff30); seed (random per instantiation); particle
+    #     positions/colors (no headless readback); GPU signals (headless
+    #     inert by law); fixed_fps<=5 (stall).
+    # Signatures are the gating boolean-block prefixes before " | " —
+    # byte-stable over 143 scout receipts and all 6 boundary conditions
+    # (quiet/load/ff30/ff60/ff120/ff120load: the ONLY rejection was the
+    # cpu_pause window now folded). The ladder/stream/pause ok=_ok
+    # booleans internally window fin_delta at the pinned 60-tps launch
+    # project (no physics_ticks_per_second override) — the law, not the
+    # ±1 measured tail, is pinned. 19 rows, all ERROR:-clean (0 B stderr
+    # on every receipt incl. this seat's smoke pass) — EXPECTED_ERRORS={}.
+    # Rows inserted ahead of the crash/descendant tail —
+    # descendant_pipe_detached_control's sleep-8 gap stays adjacent to
+    # the meta probes.
+    ('r94_particles_census', 'particles_lattice.gd', ['--arm=census'], 0,
+     'PASS particles_lattice census cpu_consts=DRAW_ORDER_INDEX=0,DRAW_ORDER_LIFETIME=1,PARAM_INITIAL_LINEAR_VELOCITY=0,PARAM_ANGULAR_VELOCITY=1,PARAM_ORBIT_VELOCITY=2,PARAM_LINEAR_ACCEL=3,PARAM_RADIAL_ACCEL=4,PARAM_TANGENTIAL_ACCEL=5,PARAM_DAMPING=6,PARAM_ANGLE=7,PARAM_SCALE=8,PARAM_HUE_VARIATION=9,PARAM_ANIM_SPEED=10,PARAM_ANIM_OFFSET=11,PARAM_MAX=12,PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY=0,PARTICLE_FLAG_ROTATE_Y=1,PARTICLE_FLAG_DISABLE_Z=2,PARTICLE_FLAG_MAX=3,EMISSION_SHAPE_POINT=0,EMISSION_SHAPE_SPHERE=1,EMISSION_SHAPE_SPHERE_SURFACE=2,EMISSION_SHAPE_RECTANGLE=3,EMISSION_SHAPE_POINTS=4,EMISSION_SHAPE_DIRECTED_POINTS=5,EMISSION_SHAPE_RING=6,EMISSION_SHAPE_MAX=7 gpu_consts=DRAW_ORDER_INDEX=0,DRAW_ORDER_LIFETIME=1,DRAW_ORDER_REVERSE_LIFETIME=2,EMIT_FLAG_POSITION=1,EMIT_FLAG_ROTATION_SCALE=2,EMIT_FLAG_VELOCITY=4,EMIT_FLAG_COLOR=8,EMIT_FLAG_CUSTOM=16 ppm_consts=PARAM_INITIAL_LINEAR_VELOCITY=0,PARAM_ANGULAR_VELOCITY=1,PARAM_ORBIT_VELOCITY=2,PARAM_LINEAR_ACCEL=3,PARAM_RADIAL_ACCEL=4,PARAM_TANGENTIAL_ACCEL=5,PARAM_DAMPING=6,PARAM_ANGLE=7,PARAM_SCALE=8,PARAM_HUE_VARIATION=9,PARAM_ANIM_SPEED=10,PARAM_ANIM_OFFSET=11,PARAM_RADIAL_VELOCITY=15,PARAM_DIRECTIONAL_VELOCITY=16,PARAM_SCALE_OVER_VELOCITY=17,PARAM_MAX=18,PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY=0,PARTICLE_FLAG_ROTATE_Y=1,PARTICLE_FLAG_DISABLE_Z=2,PARTICLE_FLAG_DAMPING_AS_FRICTION=3,PARTICLE_FLAG_INHERIT_EMITTER_SCALE=4,PARTICLE_FLAG_MAX=5,EMISSION_SHAPE_POINT=0,EMISSION_SHAPE_SPHERE=1,EMISSION_SHAPE_SPHERE_SURFACE=2,EMISSION_SHAPE_BOX=3,EMISSION_SHAPE_POINTS=4,EMISSION_SHAPE_DIRECTED_POINTS=5,EMISSION_SHAPE_RING=6,EMISSION_SHAPE_MAX=7,PARAM_TURB_VEL_INFLUENCE=13,PARAM_TURB_INIT_DISPLACEMENT=14,PARAM_TURB_INFLUENCE_OVER_LIFE=12,SUB_EMITTER_DISABLED=0,SUB_EMITTER_CONSTANT=1,SUB_EMITTER_AT_END=2,SUB_EMITTER_AT_COLLISION=3,SUB_EMITTER_AT_START=4,SUB_EMITTER_MAX=5,COLLISION_DISABLED=0,COLLISION_RIGID=1,COLLISION_HIDE_ON_CONTACT=2,COLLISION_MAX=3 cpu_props=unique_name_in_owner=false,process_mode=0,process_priority=0,process_physics_priority=0,process_thread_group=0,physics_interpolation_mode=2,auto_translate_mode=0,editor_description=,visible=true,modulate=1.000/1.000/1.000/1.000,self_modulate=1.000/1.000/1.000/1.000,show_behind_parent=false,top_level=false,clip_children=0,oversampling_with_scale=0,light_mask=1,visibility_layer=1,z_index=0,z_as_relative=true,y_sort_enabled=false,texture_filter=0,texture_repeat=0,material=<null>,use_parent_material=false,position=(0.0000,0.0000),rotation=0.0000,scale=(1.0000,1.0000),skew=0.0000,emitting=true,amount=8,texture=<null>,lifetime=1.0000,one_shot=false,preprocess=0.0000,speed_scale=1.0000,explosiveness=0.0000,randomness=0.0000,use_fixed_seed=false,lifetime_randomness=0.0000,fixed_fps=0,fract_delta=true,local_coords=false,draw_order=0,emission_shape=0,particle_flag_align_y=false,direction=(1.0000,0.0000),spread=45.0000,gravity=(0.0000,980.0000),initial_velocity_min=0.0000,initial_velocity_max=0.0000,angular_velocity_min=0.0000,angular_velocity_max=0.0000,angular_velocity_curve=<null>,orbit_velocity_min=0.0000,orbit_velocity_max=0.0000,orbit_velocity_curve=<null>,linear_accel_min=0.0000,linear_accel_max=0.0000,linear_accel_curve=<null>,radial_accel_min=0.0000,radial_accel_max=0.0000,radial_accel_curve=<null>,tangential_accel_min=0.0000,tangential_accel_max=0.0000,tangential_accel_curve=<null>,damping_min=0.0000,damping_max=0.0000,damping_curve=<null>,angle_min=0.0000,angle_max=0.0000,angle_curve=<null>,scale_amount_min=1.0000,scale_amount_max=1.0000,scale_amount_curve=<null>,split_scale=false,color=1.000/1.000/1.000/1.000,color_ramp=<null>,color_initial_ramp=<null>,hue_variation_min=0.0000,hue_variation_max=0.0000,hue_variation_curve=<null>,anim_speed_min=0.0000,anim_speed_max=0.0000,anim_speed_curve=<null>,anim_offset_min=0.0000,anim_offset_max=0.0000,anim_offset_curve=<null> gpu_props=unique_name_in_owner=false,process_mode=0,process_priority=0,process_physics_priority=0,process_thread_group=0,physics_interpolation_mode=0,auto_translate_mode=0,editor_description=,visible=true,modulate=1.000/1.000/1.000/1.000,self_modulate=1.000/1.000/1.000/1.000,show_behind_parent=false,top_level=false,clip_children=0,oversampling_with_scale=0,light_mask=1,visibility_layer=1,z_index=0,z_as_relative=true,y_sort_enabled=false,texture_filter=0,texture_repeat=0,material=<null>,use_parent_material=false,position=(0.0000,0.0000),rotation=0.0000,scale=(1.0000,1.0000),skew=0.0000,emitting=true,amount=8,amount_ratio=1.0000,sub_emitter=,texture=<null>,lifetime=1.0000,interp_to_end=0.0000,one_shot=false,preprocess=0.0000,speed_scale=1.0000,explosiveness=0.0000,randomness=0.0000,use_fixed_seed=false,fixed_fps=30,interpolate=true,fract_delta=true,collision_base_size=1.0000,visibility_rect=[P: (-100.0, -100.0), S: (200.0, 200.0)],local_coords=false,draw_order=1,trail_enabled=false,trail_lifetime=0.3000,trail_sections=8,trail_section_subdivisions=4,process_material=<null> ppm_props=lifetime_randomness=0.0000,particle_flag_align_y=false,particle_flag_rotate_y=false,particle_flag_disable_z=false,particle_flag_damping_as_friction=false,particle_flag_inherit_emitter_scale=false,emission_shape_offset=(0.0, 0.0, 0.0),emission_shape_scale=(1.0, 1.0, 1.0),emission_shape=0,angle=(0.0000,0.0000),angle_min=0.0000,angle_max=0.0000,angle_curve=<null>,use_rotation_3d=false,rotation_3d_min=(0.0, 0.0, 0.0),rotation_3d_max=(0.0, 0.0, 0.0),inherit_velocity_ratio=0.0000,velocity_pivot=(0.0, 0.0, 0.0),direction=(1.0, 0.0, 0.0),spread=45.0000,flatness=0.0000,initial_velocity=(0.0000,0.0000),initial_velocity_min=0.0000,initial_velocity_max=0.0000,angular_velocity=(0.0000,0.0000),angular_velocity_min=0.0000,angular_velocity_max=0.0000,angular_velocity_curve=<null>,directional_velocity=(1.0000,1.0000),directional_velocity_curve=<null>,orbit_velocity=(0.0000,0.0000),orbit_velocity_min=0.0000,orbit_velocity_max=0.0000,orbit_velocity_curve=<null>,radial_velocity=(0.0000,0.0000),radial_velocity_min=0.0000,radial_velocity_max=0.0000,radial_velocity_curve=<null>,velocity_limit_curve=<null>,use_rotation_velocity_3d=false,gravity=(0.0, -9.8, 0.0),linear_accel=(0.0000,0.0000),linear_accel_min=0.0000,linear_accel_max=0.0000,linear_accel_curve=<null>,radial_accel=(0.0000,0.0000),radial_accel_min=0.0000,radial_accel_max=0.0000,radial_accel_curve=<null>,tangential_accel=(0.0000,0.0000),tangential_accel_min=0.0000,tangential_accel_max=0.0000,tangential_accel_curve=<null>,damping=(0.0000,0.0000),damping_min=0.0000,damping_max=0.0000,damping_curve=<null>,attractor_interaction_enabled=true,use_scale_3d=false,scale_3d_min=(1.0, 1.0, 1.0),scale_3d_max=(1.0, 1.0, 1.0),scale=(1.0000,1.0000),scale_min=1.0000,scale_max=1.0000,scale_curve=<null>,scale_over_velocity=(0.0000,0.0000),scale_over_velocity_min=0.0000,scale_over_velocity_max=0.0000,scale_over_velocity_curve=<null>,color=1.000/1.000/1.000/1.000,color_ramp=<null>,color_initial_ramp=<null>,alpha_curve=<null>,emission_curve=<null>,hue_variation=(0.0000,0.0000),hue_variation_min=0.0000,hue_variation_max=0.0000,hue_variation_curve=<null>,anim_speed=(0.0000,0.0000),anim_speed_min=0.0000,anim_speed_max=0.0000,anim_speed_curve=<null>,anim_offset=(0.0000,0.0000),anim_offset_min=0.0000,anim_offset_max=0.0000,anim_offset_curve=<null>,turbulence_enabled=false,turbulence_noise_strength=1.0000,turbulence_noise_scale=9.0000,turbulence_noise_speed=(0.0, 0.0, 0.0),turbulence_noise_speed_random=0.2000,turbulence_influence=(0.1000,0.1000),turbulence_influence_min=0.1000,turbulence_influence_max=0.1000,turbulence_initial_displacement=(0.0000,0.0000),turbulence_initial_displacement_min=0.0000,turbulence_initial_displacement_max=0.0000,turbulence_influence_over_life=<null>,collision_mode=0,collision_use_scale=false,sub_emitter_mode=0,sub_emitter_keep_velocity=false ppm_curve_types=alpha:24,angle:24,angular_velocity:24,anim_offset:24,anim_speed:24,damping:24,directional_velocity:24,emission:24,hue_variation:24,linear_accel:24,orbit_velocity:24,radial_accel:24,radial_velocity:24,rotation_velocity_3d:24,scale:24,scale_over_velocity:24,tangential_accel:24,velocity_limit:24 cpu_sig=convert_from_particles(particles:24)->0|is_emitting()->1|request_particles_process(process_time:3,process_time_residual:3)->0|restart(keep_seed:1)->0 gpu_sig=capture_rect()->7|convert_from_particles(particles:24)->0|emit_particle(xform:11,velocity:5,color:20,custom:20,flags:2)->0|is_emitting()->1|request_particles_process(process_time:3,process_time_residual:3)->0|restart(keep_seed:1)->0 ppm_sig=get_param(param:2)->5|get_param_max(param:2)->3|get_param_min(param:2)->3|get_param_texture(param:2)->24|get_particle_flag(particle_flag:2)->1|set_param(param:2,value:5)->0|set_param_max(param:2,value:3)->0|set_param_min(param:2,value:3)->0|set_param_texture(param:2,texture:24)->0|set_particle_flag(particle_flag:2,enable:1)->0'),
+    ('r94_particles_ppm', 'particles_lattice.gd', ['--arm=ppm'], 0,
+     'PASS particles_lattice ppm iv_min=7.0000 iv_max=9.0000 scale=(2.0000,3.0000) tex_same=true curve_same=true flags=truetrue sub_mode=3 sub_amt=3 coll=2 turb=true turb_n=1'),
+    ('r94_particles_convert', 'particles_lattice.gd', ['--arm=convert'], 0,
+     'PASS particles_lattice convert g2c[amount=12 lifetime=0.7000 os=true expl=0.2500 rand=0.5000 ss=2.0000 ffps=0 pre=0.1250 local=true draw=2] g2c_dir=(0.5000,0.5000) spread=30.0000 grav=(0.0000,98.0000) iv=10.0000..20.0000 scale=2.0000..3.0000 g2c_col=0.250/0.500/0.750/0.500 shape=1 sph=5.0000 c2g[amount=5 lifetime=0.4000 os=false expl=0.5000 pm_null=false dir=(0.0000,-1.0000,0.0000) spread=10.0000 grav=(0.0000,30.0000,0.0000) iv=3.0000..4.0000 col=0.100/0.200/0.300/0.400]'),
+    ('r94_particles_cpu_lifetime', 'particles_lattice.gd', ['--arm=cpu_lifetime'], 0,
+     'PASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true'),
+    ('r94_particles_cpu_expl', 'particles_lattice.gd', ['--arm=cpu_expl'], 0,
+     'PASS particles_lattice cpu_expl ok=true e1_ok=true e05_ok=true e0_ok=true'),
+    ('r94_particles_cpu_speed_pre', 'particles_lattice.gd', ['--arm=cpu_speed_pre'], 0,
+     'PASS particles_lattice cpu_speed_pre ok=true ss2_ok=true ss05_ok=true pre25_ok=true ff30_ok=true'),
+    ('r94_particles_cpu_stop', 'particles_lattice.gd', ['--arm=cpu_stop'], 0,
+     'PASS particles_lattice cpu_stop ok=true stop10_ok=true stop40_ok=true'),
+    ('r94_particles_cpu_never', 'particles_lattice.gd', ['--arm=cpu_never'], 0,
+     'PASS particles_lattice cpu_never ok=true never_fired=true n_fin=0'),
+    ('r94_particles_cpu_contam', 'particles_lattice.gd', ['--arm=cpu_contam'], 0,
+     'PASS particles_lattice cpu_contam ok=true n_never=2'),
+    ('r94_particles_cpu_oneshot_off', 'particles_lattice.gd', ['--arm=cpu_oneshot_off'], 0,
+     'PASS particles_lattice cpu_oneshot_off ok=true fin_ok=true em_after=false os_after=true'),
+    ('r94_particles_cpu_oneshot_flag', 'particles_lattice.gd', ['--arm=cpu_oneshot_flag'], 0,
+     'PASS particles_lattice cpu_oneshot_flag ok=true never_fired=true em_after=true os_after=false'),
+    ('r94_particles_cpu_pause', 'particles_lattice.gd', ['--arm=cpu_pause'], 0,
+     'PASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true'),
+    ('r94_particles_cpu_restart', 'particles_lattice.gd', ['--arm=cpu_restart'], 0,
+     'PASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=false'),
+    ('r94_particles_cpu_retrigger', 'particles_lattice.gd', ['--arm=cpu_retrigger'], 0,
+     'PASS particles_lattice cpu_retrigger ok=true first_ok=true second_ok=true em_set=true ise_set=true'),
+    ('r94_particles_cpu_lt_mid', 'particles_lattice.gd', ['--arm=cpu_lt_mid'], 0,
+     'PASS particles_lattice cpu_lt_mid ok=true fin_ok=true em_after=false'),
+    ('r94_particles_cpu_speed_mid', 'particles_lattice.gd', ['--arm=cpu_speed_mid'], 0,
+     'PASS particles_lattice cpu_speed_mid ok=true fin_ok=true em_after=false'),
+    ('r94_particles_cpu_amount_mid', 'particles_lattice.gd', ['--arm=cpu_amount_mid'], 0,
+     'PASS particles_lattice cpu_amount_mid ok=true em_at_set=true spurious_finish=true'),
+    ('r94_particles_cpu_request', 'particles_lattice.gd', ['--arm=cpu_request'], 0,
+     'PASS particles_lattice cpu_request ok=true step010_ok=true step005_ok=true'),
+    ('r94_particles_gpu_headless', 'particles_lattice.gd', ['--arm=gpu_headless'], 0,
+     'PASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
@@ -3019,6 +3099,17 @@ def main():
             not e["dead_in_run"]
             for r in census_rows
             if r["case"].startswith("r93_")
+            for e in r["entries"]),
+        # r94 author: the r94 block carries no expected_errors entries
+        # today (every arm is ERROR:-clean, 0 B stderr across the 143
+        # scout + 734 boundary receipts and this seat's smoke pass) — the
+        # gate is carried anyway so a future r94 allowlist entry cannot
+        # die silently; same named-by-round / covers-round-prefixes shape
+        # as r87–r93.
+        "r94_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith("r94_")
             for e in r["entries"]),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
