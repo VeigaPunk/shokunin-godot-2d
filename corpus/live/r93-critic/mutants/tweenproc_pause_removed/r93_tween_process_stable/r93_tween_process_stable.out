@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS anim_lattice tweenproc auto=[y0=0.0,after3proc=5.02704000473022] paused=[at_pause=5.02704000473022,after3frames=6.35875988006592,running=true] phys=[x0=0.0,after3proc=33.3333358764648,after3phys=66.6666717529297] phys_manual=[before=1.0,after_step025=2.0] stable=[auto_advanced=true,paused_frozen=false,phys_advanced=true,manual_exact=true]

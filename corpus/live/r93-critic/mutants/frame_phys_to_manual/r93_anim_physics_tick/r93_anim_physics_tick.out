@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS r93b_anim frame idle=[x1=0.0,x2=1.52777779102325,x3=1.70716667175293,x5=3.18126678466797,x10=6.54206657409668] idle_per_frame=0.67215995788574 pos10=0.06542066666667 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=0.0,y6=0.0] proc_frames_during_6phys=13 tween5=[0.0,0.4137000143528,0.82782000303268,1.2422399520874,1.65551996231079] quick=[frames=16,fin_frame=15,x=5.0,pos=0.1] proc_delta=0.00666666666667 phys_delta=0.01666666666667

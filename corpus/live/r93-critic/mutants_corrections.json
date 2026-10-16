@@ -1,0 +1,14 @@
+{
+ "tweenproc_paused_advance": {
+  "design_error": "inserted custom_step(0.25) AFTER pause() but BEFORE reading the baseline, so paused_frozen stayed true (baseline shifted, invariant intact)",
+  "corrected_by": "tweenproc_pause_removed (mutants2.json, OK): pause() removed -> tween auto-advances -> paused_frozen=false -> row FAIL"
+ },
+ "census_autocapture": {
+  "design_error": "replaced ap.is_auto_capture() with the literal true; the engine value IS true, so the emitted bytes were identical",
+  "corrected_by": "census_autocapture_false (receipts mutants/census_autocapture_false/): literal false -> census line changes -> signature absent -> row FAIL"
+ },
+ "frame_idle_stopped": {
+  "design_error": "player.stop() instead of play('move') made a later read hit 'AnimationPlayer has no current animation.' -> the row FAILed on the unrelated-ERROR clause, not on the signature",
+  "corrected_by": "frame_idle_to_manual (mutants.json, OK): IDLE->MANUAL keeps a current animation, 0 B stderr, pinned signature present with mixer_applied_10=0 -> row PASSES (the F2 absorb receipt)"
+ }
+}

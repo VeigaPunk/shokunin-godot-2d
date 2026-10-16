@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS r93b_anim manual_inv paused=[a=5.0,b=5.0,c=7.5,d=7.5,e=10.0] manual=[f=25.0,g=25.0,h=50.0,k=50.0,m=100.0] unpaused=[n=15.0,o=15.7999992370605] inv=[paused_proc=true,paused_phys=true,manual_proc=true,manual_phys=true] step_exact=[paused025=false,paused_done=true,manual025=true,manual_done=true] unpaused_moved=true proc_delta=0.00666666666667

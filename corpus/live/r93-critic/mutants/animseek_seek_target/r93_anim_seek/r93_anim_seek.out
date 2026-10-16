@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS anim_lattice animseek at_play=[7.0,true,0.0,move] adv025=[25.0,0.25] seek_up=[50.0,0.5] seek_noup=[50.0,0.5] cross=[100.0,1.0,false,1] after_frame=[100.0,1] before_stop=50.0 after_stop=[0.0,false,,move] speed2=[50.0,0.5] speed0=[50.0,0.5] replay_before=[50.0,0.5] replay_same=[50.0,0.5] play_other=[50.0,0.0,loop] back_other=[50.0,0.0] paused_adv=[50.0,false] looped=[25.0,0.25,0] seek_over=[100.0,1.0,true] manual_frames=[0.0,0.0]

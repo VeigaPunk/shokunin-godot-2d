@@ -1,0 +1,171 @@
+[
+ {
+  "mutant": "tweenproc_pause_removed",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_tween_process_stable": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "tweenval_grid_t",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_tween_interp_grid_a": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   },
+   "r93_tween_interp_grid_b": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "census_autocapture",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_tween_census": {
+    "mutant_pass": true,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": false
+ },
+ {
+  "mutant": "animtrack_mid_key",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_anim_track_interp": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "tweenstep_paused_50",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_tween_manual_step": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "tweenchain_second_leg",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_tween_chain": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "animseek_seek_target",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_anim_seek": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "animproc_manual_advance",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_anim_process_manual": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   },
+   "r93_anim_process_stable": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "phys_manual_target",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_tween_phys_manual_step": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "project_phys_120",
+  "fixture": "project.godot",
+  "rows": {
+   "r93_anim_phys_delta": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   },
+   "r93_anim_physics_tick": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   },
+   "r93_anim_await_offbyone": {
+    "mutant_pass": true,
+    "control_pass": true,
+    "expected_mutant": "PASS"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "frame_idle_stopped",
+  "fixture": "r93b_anim.gd",
+  "rows": {
+   "r93_anim_physics_tick": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   },
+   "r93_anim_await_offbyone": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "PASS"
+   }
+  },
+  "ok": false
+ },
+ {
+  "mutant": "deferred_no_queue",
+  "fixture": "r93b_anim.gd",
+  "rows": {
+   "r93_anim_deferred_flush": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ }
+]

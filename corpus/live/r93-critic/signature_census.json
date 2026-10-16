@@ -1,0 +1,252 @@
+[
+ {
+  "row": "r93_tween_census",
+  "script": "anim_lattice.gd",
+  "arm": "census",
+  "own_receipts": 20,
+  "own_hits": 20,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_tween_interp_value",
+  "script": "anim_lattice.gd",
+  "arm": "tweenval",
+  "own_receipts": 23,
+  "own_hits": 23,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_tween_interp_grid_a",
+  "script": "anim_lattice.gd",
+  "arm": "tweenval_grid",
+  "own_receipts": 20,
+  "own_hits": 20,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_tween_interp_grid_b",
+  "script": "anim_lattice.gd",
+  "arm": "tweenval_grid",
+  "own_receipts": 20,
+  "own_hits": 20,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_track_interp",
+  "script": "anim_lattice.gd",
+  "arm": "animtrack",
+  "own_receipts": 20,
+  "own_hits": 20,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_tween_manual_step",
+  "script": "anim_lattice.gd",
+  "arm": "tweenstep",
+  "own_receipts": 28,
+  "own_hits": 28,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_tween_chain",
+  "script": "anim_lattice.gd",
+  "arm": "tweenchain",
+  "own_receipts": 26,
+  "own_hits": 26,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_tween_process_stable",
+  "script": "anim_lattice.gd",
+  "arm": "tweenproc",
+  "own_receipts": 28,
+  "own_hits": 28,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_tween_phys_manual_step",
+  "script": "anim_lattice.gd",
+  "arm": "tweenproc",
+  "own_receipts": 28,
+  "own_hits": 28,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_seek",
+  "script": "anim_lattice.gd",
+  "arm": "animseek",
+  "own_receipts": 28,
+  "own_hits": 28,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_method_callback",
+  "script": "anim_lattice.gd",
+  "arm": "animmethod",
+  "own_receipts": 26,
+  "own_hits": 26,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_blend_finished",
+  "script": "anim_lattice.gd",
+  "arm": "animblend",
+  "own_receipts": 26,
+  "own_hits": 26,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_blend_running",
+  "script": "anim_lattice.gd",
+  "arm": "animblend",
+  "own_receipts": 26,
+  "own_hits": 26,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_process_manual",
+  "script": "anim_lattice.gd",
+  "arm": "animproc",
+  "own_receipts": 28,
+  "own_hits": 28,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_process_stable",
+  "script": "anim_lattice.gd",
+  "arm": "animproc",
+  "own_receipts": 28,
+  "own_hits": 28,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_overshoot",
+  "script": "r93b_anim.gd",
+  "arm": "purity",
+  "own_receipts": 19,
+  "own_hits": 19,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_manual_clock_interleaved",
+  "script": "r93b_anim.gd",
+  "arm": "manual_inv",
+  "own_receipts": 19,
+  "own_hits": 19,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_manual_clock_control",
+  "script": "r93b_anim.gd",
+  "arm": "manual_inv",
+  "own_receipts": 19,
+  "own_hits": 19,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_deferred_flush",
+  "script": "r93b_anim.gd",
+  "arm": "deferred",
+  "own_receipts": 19,
+  "own_hits": 19,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_await_offbyone",
+  "script": "r93b_anim.gd",
+  "arm": "frame",
+  "own_receipts": 19,
+  "own_hits": 19,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_physics_tick",
+  "script": "r93b_anim.gd",
+  "arm": "frame",
+  "own_receipts": 19,
+  "own_hits": 19,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_phys_delta",
+  "script": "r93b_anim.gd",
+  "arm": "frame",
+  "own_receipts": 19,
+  "own_hits": 19,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [
+   "author:r93b_anim.clock.rep1.out",
+   "author:r93b_anim.clock.rep2.out",
+   "author:r93b_anim.clock.rep3.out",
+   "boundary:f120_clock.rep1.out",
+   "boundary:f120_clock.rep2.out",
+   "boundary:f120l_clock.rep1.out",
+   "boundary:f120l_clock.rep2.out",
+   "boundary:f30_clock.rep1.out",
+   "boundary:f30_clock.rep2.out",
+   "boundary:f60_clock.rep1.out",
+   "boundary:f60_clock.rep2.out",
+   "boundary:l32_clock.rep1.out",
+   "boundary:l32_clock.rep2.out",
+   "boundary:l_clock.rep1.out",
+   "boundary:l_clock.rep2.out",
+   "boundary:l_clock.rep3.out",
+   "boundary:q_clock.rep1.out",
+   "boundary:q_clock.rep2.out",
+   "boundary:q_clock.rep3.out"
+  ],
+  "miss_corpora": []
+ },
+ {
+  "row": "r93_anim_blend_interleaved",
+  "script": "r93b_anim.gd",
+  "arm": "blend",
+  "own_receipts": 19,
+  "own_hits": 19,
+  "own_hit_pct": 100.0,
+  "cross_arm_hits": [],
+  "miss_corpora": []
+ }
+]

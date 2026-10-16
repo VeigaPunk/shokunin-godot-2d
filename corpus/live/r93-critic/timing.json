@@ -1,0 +1,101 @@
+{
+ "rows": [
+  {
+   "case": "r93_anim_phys_delta",
+   "elapsed": 0.875
+  },
+  {
+   "case": "r93_anim_physics_tick",
+   "elapsed": 0.874
+  },
+  {
+   "case": "r93_anim_manual_clock_interleaved",
+   "elapsed": 0.791
+  },
+  {
+   "case": "r93_anim_deferred_flush",
+   "elapsed": 0.787
+  },
+  {
+   "case": "r93_anim_await_offbyone",
+   "elapsed": 0.785
+  },
+  {
+   "case": "r93_anim_process_stable",
+   "elapsed": 0.77
+  },
+  {
+   "case": "r93_anim_process_manual",
+   "elapsed": 0.761
+  },
+  {
+   "case": "r93_anim_manual_clock_control",
+   "elapsed": 0.696
+  },
+  {
+   "case": "r93_tween_chain",
+   "elapsed": 0.606
+  },
+  {
+   "case": "r93_tween_phys_manual_step",
+   "elapsed": 0.601
+  },
+  {
+   "case": "r93_anim_blend_running",
+   "elapsed": 0.596
+  },
+  {
+   "case": "r93_anim_blend_interleaved",
+   "elapsed": 0.593
+  },
+  {
+   "case": "r93_tween_process_stable",
+   "elapsed": 0.59
+  },
+  {
+   "case": "r93_tween_interp_value",
+   "elapsed": 0.578
+  },
+  {
+   "case": "r93_anim_seek",
+   "elapsed": 0.575
+  },
+  {
+   "case": "r93_anim_track_interp",
+   "elapsed": 0.573
+  },
+  {
+   "case": "r93_tween_manual_step",
+   "elapsed": 0.541
+  },
+  {
+   "case": "r93_tween_census",
+   "elapsed": 0.522
+  },
+  {
+   "case": "r93_tween_interp_grid_b",
+   "elapsed": 0.488
+  },
+  {
+   "case": "r93_anim_blend_finished",
+   "elapsed": 0.487
+  },
+  {
+   "case": "r93_tween_interp_grid_a",
+   "elapsed": 0.484
+  },
+  {
+   "case": "r93_anim_overshoot",
+   "elapsed": 0.479
+  },
+  {
+   "case": "r93_anim_method_callback",
+   "elapsed": 0.476
+  }
+ ],
+ "min": 0.476,
+ "mean": 0.632,
+ "max": 0.875,
+ "per_case_bound_seconds": 8,
+ "loadavg": "55.62 55.72 53.76 62/1978 2068690"
+}

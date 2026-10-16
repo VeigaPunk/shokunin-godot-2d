@@ -1,0 +1,23 @@
+{
+ "byte_equal": 32,
+ "differing": 16,
+ "no_counterpart": 0,
+ "diffs": [
+  "anim_lattice.gd.animproc.rep1.out",
+  "anim_lattice.gd.animproc.rep2.out",
+  "anim_lattice.gd.animproc.rep3.out",
+  "anim_lattice.gd.tweenproc.rep1.out",
+  "anim_lattice.gd.tweenproc.rep2.out",
+  "anim_lattice.gd.tweenproc.rep3.out",
+  "r93b_anim.gd.blend.rep1.out",
+  "r93b_anim.gd.blend.rep3.out",
+  "r93b_anim.gd.deferred.rep1.out",
+  "r93b_anim.gd.deferred.rep3.out",
+  "r93b_anim.gd.frame.rep1.out",
+  "r93b_anim.gd.frame.rep2.out",
+  "r93b_anim.gd.frame.rep3.out",
+  "r93b_anim.gd.manual_inv.rep1.out",
+  "r93b_anim.gd.manual_inv.rep2.out",
+  "r93b_anim.gd.manual_inv.rep3.out"
+ ]
+}

@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS anim_lattice animtrack two_key=[it0=[t05=0.0,t09=0.0,t10=10.0],it1=[t05=5.0,t09=8.99999976158142,t10=10.0],it2=[t05=5.0,t09=9.71999987125395,t10=10.0]] three_key=[it0=[t025=0.0,t075=5.0],it1=[t025=2.5,t075=2.5],it2=[t025=2.5,t075=2.5]] two_default_interp=1 three_key_count=3 k0=0.0 kt1=0.5 k1=5.0 bezier=[1.05892944335938,5.0,8.94107055664062] bezier_key_count=2 track_enabled=true track_type=0 track_path=.:position:x

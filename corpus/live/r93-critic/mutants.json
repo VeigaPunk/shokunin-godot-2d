@@ -1,0 +1,195 @@
+[
+ {
+  "mutant": "back_to_linear",
+  "fixture": "r93b_anim.gd",
+  "rows": {
+   "r93_anim_overshoot": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "spr_to_linear",
+  "fixture": "r93b_anim.gd",
+  "rows": {
+   "r93_anim_overshoot": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "await_extra_step",
+  "fixture": "r93b_anim.gd",
+  "rows": {
+   "r93_anim_await_offbyone": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   },
+   "r93_anim_physics_tick": {
+    "mutant_pass": true,
+    "control_pass": true,
+    "expected_mutant": "PASS"
+   },
+   "r93_anim_phys_delta": {
+    "mutant_pass": true,
+    "control_pass": true,
+    "expected_mutant": "PASS"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "frame_idle_to_manual",
+  "fixture": "r93b_anim.gd",
+  "rows": {
+   "r93_anim_physics_tick": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   },
+   "r93_anim_await_offbyone": {
+    "mutant_pass": true,
+    "control_pass": true,
+    "expected_mutant": "PASS"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "frame_phys_to_manual",
+  "fixture": "r93b_anim.gd",
+  "rows": {
+   "r93_anim_physics_tick": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   },
+   "r93_anim_await_offbyone": {
+    "mutant_pass": true,
+    "control_pass": true,
+    "expected_mutant": "PASS"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "blend_time_2",
+  "fixture": "r93b_anim.gd",
+  "rows": {
+   "r93_anim_blend_interleaved": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "deferred_immediate_b",
+  "fixture": "r93b_anim.gd",
+  "rows": {
+   "r93_anim_deferred_flush": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "manual_step_05",
+  "fixture": "r93b_anim.gd",
+  "rows": {
+   "r93_anim_manual_clock_control": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   },
+   "r93_anim_manual_clock_interleaved": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "hard_switch_blend",
+  "fixture": "r93b_anim.gd",
+  "rows": {
+   "r93_anim_blend_interleaved": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "animblend_time_2",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_anim_blend_finished": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "animblend_steps_9",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_anim_blend_finished": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "tweenproc_paused_advance",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_tween_process_stable": {
+    "mutant_pass": true,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": false
+ },
+ {
+  "mutant": "tweenval_expo_linear",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_tween_interp_value": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ },
+ {
+  "mutant": "animmethod_deferred_off",
+  "fixture": "anim_lattice.gd",
+  "rows": {
+   "r93_anim_method_callback": {
+    "mutant_pass": false,
+    "control_pass": true,
+    "expected_mutant": "FAIL"
+   }
+  },
+  "ok": true
+ }
+]

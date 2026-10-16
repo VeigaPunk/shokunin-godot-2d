@@ -1,0 +1,70 @@
+[
+ {
+  "variant": "base",
+  "rc": 1,
+  "rows": {
+   "save_process_writer": "PASS",
+   "save_process_reader": "PASS",
+   "save_process_missing": "PASS",
+   "r93_tween_census": "PASS",
+   "r93_tween_interp_value": "PASS",
+   "r93_anim_overshoot": "PASS",
+   "probe_save_independent_process": "PASS",
+   "probe_spontaneous_crash_classification": "FAIL",
+   "probe_descendant_pipe_eof": "FAIL",
+   "probe_descendant_signature_spoof": "FAIL",
+   "probe_while_live_signature_gate": "PASS",
+   "probe_descendant_error_spoof": "FAIL",
+   "probe_error_clause_surface": "FAIL"
+  },
+  "gate": true,
+  "flipped_false": [
+   "detached_control_row_still_passes",
+   "prior_meta_rows_stable_29_discriminations"
+  ],
+  "census_r93": []
+ },
+ {
+  "variant": "dead",
+  "rc": 1,
+  "rows": {
+   "save_process_writer": "PASS",
+   "save_process_reader": "PASS",
+   "save_process_missing": "PASS",
+   "r93_tween_census": "PASS",
+   "r93_tween_interp_value": "PASS",
+   "r93_anim_overshoot": "PASS",
+   "probe_save_independent_process": "PASS",
+   "probe_spontaneous_crash_classification": "FAIL",
+   "probe_descendant_pipe_eof": "FAIL",
+   "probe_descendant_signature_spoof": "FAIL",
+   "probe_while_live_signature_gate": "PASS",
+   "probe_descendant_error_spoof": "FAIL",
+   "probe_error_clause_surface": "FAIL"
+  },
+  "gate": false,
+  "flipped_false": [
+   "detached_control_row_still_passes",
+   "prior_meta_rows_stable_29_discriminations",
+   "r93_expected_errors_all_matched"
+  ],
+  "census_r93": [
+   {
+    "case": "r93_tween_census",
+    "verdict": "PASS",
+    "entries": [
+     {
+      "entry": "ERROR: r93-critic fabricated dead entry",
+      "shape": "exact",
+      "matched_lines": 0,
+      "first_match": null,
+      "dead_in_run": true
+     }
+    ],
+    "any_entry_matched": false,
+    "bare_classification_rejects": false,
+    "allowlisted_classification_passes": true
+   }
+  ]
+ }
+]
