@@ -1,0 +1,1532 @@
+{
+  "stamp": "20261016T010544258744Z",
+  "classifier_segment_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+  "godot": "4.7.2.stable.arch_linux.ed1daf0bf",
+  "reps": 3,
+  "rows": {
+    "r93_tween_census": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=census"
+      ],
+      "sig_len": 2720,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.609,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice census ap_is_mixer=true ap_is_node=true tw_is_ref=true anim_is_res=true anim_consts=[TYPE_VALUE=0,TYPE_POSITION_3D=1,TYPE_ROTATION_3D=2,TYPE_SCALE_3D=3,TYPE_BLEND_SHAPE=4,TYPE_METHOD=5,TYPE_BEZIER=6,TYPE_AUDIO=7,TYPE_ANIMATION=8,INTERPOLATION_NEAREST=0,INTERPOLATION_LINEAR=1,INTERPOLATION_CUBIC=2,INTERPOLATION_LINEAR_ANGLE=3,INTERPOLATION_CUBIC_ANGLE=4,UPDATE_CONTINUOUS=0,UPDATE_DISCRETE=1,UPDATE_CAPTURE=2,LOOP_NONE=0,LOOP_LINEAR=1,LOOP_PINGPONG=2,LOOPED_FLAG_NONE=0,LOOPED_FLAG_END=1,LOOPED_FLAG_START=2,FIND_MODE_NEAREST=0,FIND_MODE_APPROX=1,FIND_MODE_EXACT=2] mixer_consts=[ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS=0,ANIMATION_CALLBACK_MODE_PROCESS_IDLE=1,ANIMATION_CALLBACK_MODE_PROCESS_MANUAL=2,ANIMATION_CALLBACK_MODE_METHOD_DEFERRED=0,ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE=1,ANIMATION_CALLBACK_MODE_DISCRETE_DOMINANT=0,ANIMATION_CALLBACK_MODE_DISCRETE_RECESSIVE=1,ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS=2] player_consts=[ANIMATION_PROCESS_PHYSICS=0,ANIMATION_PROCESS_IDLE=1,ANIMATION_PROCESS_MANUAL=2,ANIMATION_METHOD_CALL_DEFERRED=0,ANIMATION_METHOD_CALL_IMMEDIATE=1] tween_consts=[TWEEN_PROCESS_PHYSICS=0,TWEEN_PROCESS_IDLE=1,TWEEN_PAUSE_BOUND=0,TWEEN_PAUSE_STOP=1,TWEEN_PAUSE_PROCESS=2,TRANS_LINEAR=0,TRANS_SINE=1,TRANS_QUINT=2,TRANS_QUART=3,TRANS_QUAD=4,TRANS_EXPO=5,TRANS_ELASTIC=6,TRANS_CUBIC=7,TRANS_CIRC=8,TRANS_BOUNCE=9,TRANS_BACK=10,TRANS_SPRING=11,EASE_IN=0,EASE_OUT=1,EASE_IN_OUT=2,EASE_OUT_IN=3] ap_defaults=[proc=1,cbm=0,cbp=1,cbd=1,root=..,active=true,speed=1.0,default_blend=0.0,auto_capture=true] anim_defaults=[len=1.0,loop=0,step=0.0333333350718,tracks=0] ap_signals=[script_changed,property_list_changed,ready,renamed,tree_entered,tree_exiting,tree_exited,child_entered_tree,child_exiting_tree,child_order_changed,replacing_by,editor_description_changed,editor_state_changed,animation_list_changed,animation_libraries_updated,animation_finished,animation_started,caches_cleared,mixer_applied,mixer_updated,current_animation_changed,animation_changed] tw_signals=[script_changed,property_list_changed,step_finished,loop_finished,finished] an_m_count=177 tw_m_count=94 ap_m_count=293 cache_methods=[clear_caches] capture_methods=[set_auto_capture,is_auto_capture,set_auto_capture_duration,get_auto_capture_duration,set_auto_capture_transition_type,get_auto_capture_transition_type,set_auto_capture_ease_type,get_auto_capture_ease_type,play_with_capture,capture] blend_methods=[set_blend_time,get_blend_time,set_default_blend_time,get_default_blend_time] an_sample_methods=[position_track_interpolate,rotation_track_interpolate,scale_track_interpolate,blend_shape_track_interpolate,value_track_interpolate,bezier_track_interpolate] tw_step_methods=[custom_step]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.597,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice census ap_is_mixer=true ap_is_node=true tw_is_ref=true anim_is_res=true anim_consts=[TYPE_VALUE=0,TYPE_POSITION_3D=1,TYPE_ROTATION_3D=2,TYPE_SCALE_3D=3,TYPE_BLEND_SHAPE=4,TYPE_METHOD=5,TYPE_BEZIER=6,TYPE_AUDIO=7,TYPE_ANIMATION=8,INTERPOLATION_NEAREST=0,INTERPOLATION_LINEAR=1,INTERPOLATION_CUBIC=2,INTERPOLATION_LINEAR_ANGLE=3,INTERPOLATION_CUBIC_ANGLE=4,UPDATE_CONTINUOUS=0,UPDATE_DISCRETE=1,UPDATE_CAPTURE=2,LOOP_NONE=0,LOOP_LINEAR=1,LOOP_PINGPONG=2,LOOPED_FLAG_NONE=0,LOOPED_FLAG_END=1,LOOPED_FLAG_START=2,FIND_MODE_NEAREST=0,FIND_MODE_APPROX=1,FIND_MODE_EXACT=2] mixer_consts=[ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS=0,ANIMATION_CALLBACK_MODE_PROCESS_IDLE=1,ANIMATION_CALLBACK_MODE_PROCESS_MANUAL=2,ANIMATION_CALLBACK_MODE_METHOD_DEFERRED=0,ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE=1,ANIMATION_CALLBACK_MODE_DISCRETE_DOMINANT=0,ANIMATION_CALLBACK_MODE_DISCRETE_RECESSIVE=1,ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS=2] player_consts=[ANIMATION_PROCESS_PHYSICS=0,ANIMATION_PROCESS_IDLE=1,ANIMATION_PROCESS_MANUAL=2,ANIMATION_METHOD_CALL_DEFERRED=0,ANIMATION_METHOD_CALL_IMMEDIATE=1] tween_consts=[TWEEN_PROCESS_PHYSICS=0,TWEEN_PROCESS_IDLE=1,TWEEN_PAUSE_BOUND=0,TWEEN_PAUSE_STOP=1,TWEEN_PAUSE_PROCESS=2,TRANS_LINEAR=0,TRANS_SINE=1,TRANS_QUINT=2,TRANS_QUART=3,TRANS_QUAD=4,TRANS_EXPO=5,TRANS_ELASTIC=6,TRANS_CUBIC=7,TRANS_CIRC=8,TRANS_BOUNCE=9,TRANS_BACK=10,TRANS_SPRING=11,EASE_IN=0,EASE_OUT=1,EASE_IN_OUT=2,EASE_OUT_IN=3] ap_defaults=[proc=1,cbm=0,cbp=1,cbd=1,root=..,active=true,speed=1.0,default_blend=0.0,auto_capture=true] anim_defaults=[len=1.0,loop=0,step=0.0333333350718,tracks=0] ap_signals=[script_changed,property_list_changed,ready,renamed,tree_entered,tree_exiting,tree_exited,child_entered_tree,child_exiting_tree,child_order_changed,replacing_by,editor_description_changed,editor_state_changed,animation_list_changed,animation_libraries_updated,animation_finished,animation_started,caches_cleared,mixer_applied,mixer_updated,current_animation_changed,animation_changed] tw_signals=[script_changed,property_list_changed,step_finished,loop_finished,finished] an_m_count=177 tw_m_count=94 ap_m_count=293 cache_methods=[clear_caches] capture_methods=[set_auto_capture,is_auto_capture,set_auto_capture_duration,get_auto_capture_duration,set_auto_capture_transition_type,get_auto_capture_transition_type,set_auto_capture_ease_type,get_auto_capture_ease_type,play_with_capture,capture] blend_methods=[set_blend_time,get_blend_time,set_default_blend_time,get_default_blend_time] an_sample_methods=[position_track_interpolate,rotation_track_interpolate,scale_track_interpolate,blend_shape_track_interpolate,value_track_interpolate,bezier_track_interpolate] tw_step_methods=[custom_step]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.596,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice census ap_is_mixer=true ap_is_node=true tw_is_ref=true anim_is_res=true anim_consts=[TYPE_VALUE=0,TYPE_POSITION_3D=1,TYPE_ROTATION_3D=2,TYPE_SCALE_3D=3,TYPE_BLEND_SHAPE=4,TYPE_METHOD=5,TYPE_BEZIER=6,TYPE_AUDIO=7,TYPE_ANIMATION=8,INTERPOLATION_NEAREST=0,INTERPOLATION_LINEAR=1,INTERPOLATION_CUBIC=2,INTERPOLATION_LINEAR_ANGLE=3,INTERPOLATION_CUBIC_ANGLE=4,UPDATE_CONTINUOUS=0,UPDATE_DISCRETE=1,UPDATE_CAPTURE=2,LOOP_NONE=0,LOOP_LINEAR=1,LOOP_PINGPONG=2,LOOPED_FLAG_NONE=0,LOOPED_FLAG_END=1,LOOPED_FLAG_START=2,FIND_MODE_NEAREST=0,FIND_MODE_APPROX=1,FIND_MODE_EXACT=2] mixer_consts=[ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS=0,ANIMATION_CALLBACK_MODE_PROCESS_IDLE=1,ANIMATION_CALLBACK_MODE_PROCESS_MANUAL=2,ANIMATION_CALLBACK_MODE_METHOD_DEFERRED=0,ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE=1,ANIMATION_CALLBACK_MODE_DISCRETE_DOMINANT=0,ANIMATION_CALLBACK_MODE_DISCRETE_RECESSIVE=1,ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS=2] player_consts=[ANIMATION_PROCESS_PHYSICS=0,ANIMATION_PROCESS_IDLE=1,ANIMATION_PROCESS_MANUAL=2,ANIMATION_METHOD_CALL_DEFERRED=0,ANIMATION_METHOD_CALL_IMMEDIATE=1] tween_consts=[TWEEN_PROCESS_PHYSICS=0,TWEEN_PROCESS_IDLE=1,TWEEN_PAUSE_BOUND=0,TWEEN_PAUSE_STOP=1,TWEEN_PAUSE_PROCESS=2,TRANS_LINEAR=0,TRANS_SINE=1,TRANS_QUINT=2,TRANS_QUART=3,TRANS_QUAD=4,TRANS_EXPO=5,TRANS_ELASTIC=6,TRANS_CUBIC=7,TRANS_CIRC=8,TRANS_BOUNCE=9,TRANS_BACK=10,TRANS_SPRING=11,EASE_IN=0,EASE_OUT=1,EASE_IN_OUT=2,EASE_OUT_IN=3] ap_defaults=[proc=1,cbm=0,cbp=1,cbd=1,root=..,active=true,speed=1.0,default_blend=0.0,auto_capture=true] anim_defaults=[len=1.0,loop=0,step=0.0333333350718,tracks=0] ap_signals=[script_changed,property_list_changed,ready,renamed,tree_entered,tree_exiting,tree_exited,child_entered_tree,child_exiting_tree,child_order_changed,replacing_by,editor_description_changed,editor_state_changed,animation_list_changed,animation_libraries_updated,animation_finished,animation_started,caches_cleared,mixer_applied,mixer_updated,current_animation_changed,animation_changed] tw_signals=[script_changed,property_list_changed,step_finished,loop_finished,finished] an_m_count=177 tw_m_count=94 ap_m_count=293 cache_methods=[clear_caches] capture_methods=[set_auto_capture,is_auto_capture,set_auto_capture_duration,get_auto_capture_duration,set_auto_capture_transition_type,get_auto_capture_transition_type,set_auto_capture_ease_type,get_auto_capture_ease_type,play_with_capture,capture] blend_methods=[set_blend_time,get_blend_time,set_default_blend_time,get_default_blend_time] an_sample_methods=[position_track_interpolate,rotation_track_interpolate,scale_track_interpolate,blend_shape_track_interpolate,value_track_interpolate,bezier_track_interpolate] tw_step_methods=[custom_step]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 1
+    },
+    "r93_tween_interp_value": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=tweenval"
+      ],
+      "sig_len": 326,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.542,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenval r91_exact=9.69718754291534 expo_in_05=0.30249999836087 expo_in_10=9.99000012874603 expo_out_05=9.69718754291534 expo_out_10=10.0 clamp_neg=-5.0 clamp_over=15.0 int_025=3 int_050=5 int_075=8 vec_025=(2.0, 4.0) color_050=(0.5, 0.25, 0.0, 1.0) form_in_err=0.00000000016391 form_out_err=0.00000000429153"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.705,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenval r91_exact=9.69718754291534 expo_in_05=0.30249999836087 expo_in_10=9.99000012874603 expo_out_05=9.69718754291534 expo_out_10=10.0 clamp_neg=-5.0 clamp_over=15.0 int_025=3 int_050=5 int_075=8 vec_025=(2.0, 4.0) color_050=(0.5, 0.25, 0.0, 1.0) form_in_err=0.00000000016391 form_out_err=0.00000000429153"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.491,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenval r91_exact=9.69718754291534 expo_in_05=0.30249999836087 expo_in_10=9.99000012874603 expo_out_05=9.69718754291534 expo_out_10=10.0 clamp_neg=-5.0 clamp_over=15.0 int_025=3 int_050=5 int_075=8 vec_025=(2.0, 4.0) color_050=(0.5, 0.25, 0.0, 1.0) form_in_err=0.00000000016391 form_out_err=0.00000000429153"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 1
+    },
+    "r93_tween_interp_grid_a": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=tweenval_grid"
+      ],
+      "sig_len": 738,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.61,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenval_grid lin in=0.0,2.5,5.0,7.5,10.0 out=0.0,2.5,5.0,7.5,10.0 io=0.0,2.5,5.0,7.5,10.0 oi=0.0,2.5,5.0,7.5,10.0 sin in=0.0,0.76120465993881,2.9289323091507,6.17316544055939,10.0 out=0.0,3.82683426141739,7.0710676908493,9.23879504203796,10.0 io=0.0,1.46446615457535,5.0,8.53553414344788,10.0 oi=0.0,3.53553384542465,5.0,6.46446585655212,10.0 qui in=0.0,0.009765625,0.3125,2.373046875,10.0 out=0.0,7.626953125,9.6875,9.990234375,10.0 io=0.0,0.15625,5.0,9.84375,10.0 oi=0.0,4.84375,5.0,5.15625,10.0 qua in=0.0,0.0390625,0.625,3.1640625,10.0 out=0.0,6.8359375,9.375,9.9609375,10.0 io=0.0,0.3125,5.0,9.6875,10.0 oi=0.0,4.6875,5.0,5.3125,10.0 qad in=0.0,0.625,2.5,5.625,10.0 out=0.0,4.375,7.5,9.375,10.0 io=0.0,1.25,5.0,8.75,10.0 oi=0.0,3.75,5.0,6.25,10.0 expo in=0.0,0.04524271469563,0.30249999836087,1.75776690244675,9.99000012874603 out=0.0,8.24046492576599,9.69718754291534,9.95470225811005,10.0 io=0.0,0.15124999918044,5.00249981880188,9.84867215156555,10.0 oi=0.0,4.84859377145767,5.0,5.15124976634979,9.99499976634979 ela in=0.0,-0.05524271633476,-0.15625020489097,0.8838826417923,10.0 out=0.0,9.11611676216125,10.15625,10.0552427768707,10.0 io=0.0,0.11969446204603,5.0,9.88030552864075,10.0 oi=0.0,5.078125,5.0,4.921875,10.0 cub in=0.0,0.15625,1.25,4.21875,10.0 out=0.0,5.78125,8.75,9.84375,10.0 io=0.0,0.625,5.0,9.375,10.0 oi=0.0,4.375,5.0,5.625,10.0 cir in=0.0,0.3175413608551,1.33974611759186,3.38562190532684,10.0 out=0.0,6.61437809467316,8.66025388240814,9.6824586391449,10.0 io=0.0,0.66987305879593,5.0,9.33012723922729,10.0 oi=0.0,4.33012694120407,5.0,5.66987276077271,10.0 bou in=0.0,0.2734375,2.34375,5.2734375,10.0 out=0.0,4.7265625,7.65625,9.7265625,10.0 io=0.0,1.171875,5.0,8.828125,10.0 oi=0.0,3.828125,5.0,6.171875,10.0 bac in=0.0,-0.64136564731598,-0.87697505950928,1.82590305805206,10.0 out=0.0,8.17409694194794,10.8769750595093,10.6413650512695,10.0 io=0.0,-0.99681839346886,5.0,10.9968185424805,10.0 oi=0.0,5.43848752975464,5.0,4.56151247024536,10.0 spr in=0.0,0.13654887676239,-0.51015734672546,3.3666330575943,10.0 out=0.0,6.6333669424057,10.5101573467255,9.86345112323761,10.0 io=0.0,-0.25507867336273,5.0,10.2550792694092,10.0 oi=0.0,5.25507867336273,5.0,4.74492132663727,10.0"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.626,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenval_grid lin in=0.0,2.5,5.0,7.5,10.0 out=0.0,2.5,5.0,7.5,10.0 io=0.0,2.5,5.0,7.5,10.0 oi=0.0,2.5,5.0,7.5,10.0 sin in=0.0,0.76120465993881,2.9289323091507,6.17316544055939,10.0 out=0.0,3.82683426141739,7.0710676908493,9.23879504203796,10.0 io=0.0,1.46446615457535,5.0,8.53553414344788,10.0 oi=0.0,3.53553384542465,5.0,6.46446585655212,10.0 qui in=0.0,0.009765625,0.3125,2.373046875,10.0 out=0.0,7.626953125,9.6875,9.990234375,10.0 io=0.0,0.15625,5.0,9.84375,10.0 oi=0.0,4.84375,5.0,5.15625,10.0 qua in=0.0,0.0390625,0.625,3.1640625,10.0 out=0.0,6.8359375,9.375,9.9609375,10.0 io=0.0,0.3125,5.0,9.6875,10.0 oi=0.0,4.6875,5.0,5.3125,10.0 qad in=0.0,0.625,2.5,5.625,10.0 out=0.0,4.375,7.5,9.375,10.0 io=0.0,1.25,5.0,8.75,10.0 oi=0.0,3.75,5.0,6.25,10.0 expo in=0.0,0.04524271469563,0.30249999836087,1.75776690244675,9.99000012874603 out=0.0,8.24046492576599,9.69718754291534,9.95470225811005,10.0 io=0.0,0.15124999918044,5.00249981880188,9.84867215156555,10.0 oi=0.0,4.84859377145767,5.0,5.15124976634979,9.99499976634979 ela in=0.0,-0.05524271633476,-0.15625020489097,0.8838826417923,10.0 out=0.0,9.11611676216125,10.15625,10.0552427768707,10.0 io=0.0,0.11969446204603,5.0,9.88030552864075,10.0 oi=0.0,5.078125,5.0,4.921875,10.0 cub in=0.0,0.15625,1.25,4.21875,10.0 out=0.0,5.78125,8.75,9.84375,10.0 io=0.0,0.625,5.0,9.375,10.0 oi=0.0,4.375,5.0,5.625,10.0 cir in=0.0,0.3175413608551,1.33974611759186,3.38562190532684,10.0 out=0.0,6.61437809467316,8.66025388240814,9.6824586391449,10.0 io=0.0,0.66987305879593,5.0,9.33012723922729,10.0 oi=0.0,4.33012694120407,5.0,5.66987276077271,10.0 bou in=0.0,0.2734375,2.34375,5.2734375,10.0 out=0.0,4.7265625,7.65625,9.7265625,10.0 io=0.0,1.171875,5.0,8.828125,10.0 oi=0.0,3.828125,5.0,6.171875,10.0 bac in=0.0,-0.64136564731598,-0.87697505950928,1.82590305805206,10.0 out=0.0,8.17409694194794,10.8769750595093,10.6413650512695,10.0 io=0.0,-0.99681839346886,5.0,10.9968185424805,10.0 oi=0.0,5.43848752975464,5.0,4.56151247024536,10.0 spr in=0.0,0.13654887676239,-0.51015734672546,3.3666330575943,10.0 out=0.0,6.6333669424057,10.5101573467255,9.86345112323761,10.0 io=0.0,-0.25507867336273,5.0,10.2550792694092,10.0 oi=0.0,5.25507867336273,5.0,4.74492132663727,10.0"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.514,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenval_grid lin in=0.0,2.5,5.0,7.5,10.0 out=0.0,2.5,5.0,7.5,10.0 io=0.0,2.5,5.0,7.5,10.0 oi=0.0,2.5,5.0,7.5,10.0 sin in=0.0,0.76120465993881,2.9289323091507,6.17316544055939,10.0 out=0.0,3.82683426141739,7.0710676908493,9.23879504203796,10.0 io=0.0,1.46446615457535,5.0,8.53553414344788,10.0 oi=0.0,3.53553384542465,5.0,6.46446585655212,10.0 qui in=0.0,0.009765625,0.3125,2.373046875,10.0 out=0.0,7.626953125,9.6875,9.990234375,10.0 io=0.0,0.15625,5.0,9.84375,10.0 oi=0.0,4.84375,5.0,5.15625,10.0 qua in=0.0,0.0390625,0.625,3.1640625,10.0 out=0.0,6.8359375,9.375,9.9609375,10.0 io=0.0,0.3125,5.0,9.6875,10.0 oi=0.0,4.6875,5.0,5.3125,10.0 qad in=0.0,0.625,2.5,5.625,10.0 out=0.0,4.375,7.5,9.375,10.0 io=0.0,1.25,5.0,8.75,10.0 oi=0.0,3.75,5.0,6.25,10.0 expo in=0.0,0.04524271469563,0.30249999836087,1.75776690244675,9.99000012874603 out=0.0,8.24046492576599,9.69718754291534,9.95470225811005,10.0 io=0.0,0.15124999918044,5.00249981880188,9.84867215156555,10.0 oi=0.0,4.84859377145767,5.0,5.15124976634979,9.99499976634979 ela in=0.0,-0.05524271633476,-0.15625020489097,0.8838826417923,10.0 out=0.0,9.11611676216125,10.15625,10.0552427768707,10.0 io=0.0,0.11969446204603,5.0,9.88030552864075,10.0 oi=0.0,5.078125,5.0,4.921875,10.0 cub in=0.0,0.15625,1.25,4.21875,10.0 out=0.0,5.78125,8.75,9.84375,10.0 io=0.0,0.625,5.0,9.375,10.0 oi=0.0,4.375,5.0,5.625,10.0 cir in=0.0,0.3175413608551,1.33974611759186,3.38562190532684,10.0 out=0.0,6.61437809467316,8.66025388240814,9.6824586391449,10.0 io=0.0,0.66987305879593,5.0,9.33012723922729,10.0 oi=0.0,4.33012694120407,5.0,5.66987276077271,10.0 bou in=0.0,0.2734375,2.34375,5.2734375,10.0 out=0.0,4.7265625,7.65625,9.7265625,10.0 io=0.0,1.171875,5.0,8.828125,10.0 oi=0.0,3.828125,5.0,6.171875,10.0 bac in=0.0,-0.64136564731598,-0.87697505950928,1.82590305805206,10.0 out=0.0,8.17409694194794,10.8769750595093,10.6413650512695,10.0 io=0.0,-0.99681839346886,5.0,10.9968185424805,10.0 oi=0.0,5.43848752975464,5.0,4.56151247024536,10.0 spr in=0.0,0.13654887676239,-0.51015734672546,3.3666330575943,10.0 out=0.0,6.6333669424057,10.5101573467255,9.86345112323761,10.0 io=0.0,-0.25507867336273,5.0,10.2550792694092,10.0 oi=0.0,5.25507867336273,5.0,4.74492132663727,10.0"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 1
+    },
+    "r93_tween_interp_grid_b": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=tweenval_grid"
+      ],
+      "sig_len": 1450,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.498,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenval_grid lin in=0.0,2.5,5.0,7.5,10.0 out=0.0,2.5,5.0,7.5,10.0 io=0.0,2.5,5.0,7.5,10.0 oi=0.0,2.5,5.0,7.5,10.0 sin in=0.0,0.76120465993881,2.9289323091507,6.17316544055939,10.0 out=0.0,3.82683426141739,7.0710676908493,9.23879504203796,10.0 io=0.0,1.46446615457535,5.0,8.53553414344788,10.0 oi=0.0,3.53553384542465,5.0,6.46446585655212,10.0 qui in=0.0,0.009765625,0.3125,2.373046875,10.0 out=0.0,7.626953125,9.6875,9.990234375,10.0 io=0.0,0.15625,5.0,9.84375,10.0 oi=0.0,4.84375,5.0,5.15625,10.0 qua in=0.0,0.0390625,0.625,3.1640625,10.0 out=0.0,6.8359375,9.375,9.9609375,10.0 io=0.0,0.3125,5.0,9.6875,10.0 oi=0.0,4.6875,5.0,5.3125,10.0 qad in=0.0,0.625,2.5,5.625,10.0 out=0.0,4.375,7.5,9.375,10.0 io=0.0,1.25,5.0,8.75,10.0 oi=0.0,3.75,5.0,6.25,10.0 expo in=0.0,0.04524271469563,0.30249999836087,1.75776690244675,9.99000012874603 out=0.0,8.24046492576599,9.69718754291534,9.95470225811005,10.0 io=0.0,0.15124999918044,5.00249981880188,9.84867215156555,10.0 oi=0.0,4.84859377145767,5.0,5.15124976634979,9.99499976634979 ela in=0.0,-0.05524271633476,-0.15625020489097,0.8838826417923,10.0 out=0.0,9.11611676216125,10.15625,10.0552427768707,10.0 io=0.0,0.11969446204603,5.0,9.88030552864075,10.0 oi=0.0,5.078125,5.0,4.921875,10.0 cub in=0.0,0.15625,1.25,4.21875,10.0 out=0.0,5.78125,8.75,9.84375,10.0 io=0.0,0.625,5.0,9.375,10.0 oi=0.0,4.375,5.0,5.625,10.0 cir in=0.0,0.3175413608551,1.33974611759186,3.38562190532684,10.0 out=0.0,6.61437809467316,8.66025388240814,9.6824586391449,10.0 io=0.0,0.66987305879593,5.0,9.33012723922729,10.0 oi=0.0,4.33012694120407,5.0,5.66987276077271,10.0 bou in=0.0,0.2734375,2.34375,5.2734375,10.0 out=0.0,4.7265625,7.65625,9.7265625,10.0 io=0.0,1.171875,5.0,8.828125,10.0 oi=0.0,3.828125,5.0,6.171875,10.0 bac in=0.0,-0.64136564731598,-0.87697505950928,1.82590305805206,10.0 out=0.0,8.17409694194794,10.8769750595093,10.6413650512695,10.0 io=0.0,-0.99681839346886,5.0,10.9968185424805,10.0 oi=0.0,5.43848752975464,5.0,4.56151247024536,10.0 spr in=0.0,0.13654887676239,-0.51015734672546,3.3666330575943,10.0 out=0.0,6.6333669424057,10.5101573467255,9.86345112323761,10.0 io=0.0,-0.25507867336273,5.0,10.2550792694092,10.0 oi=0.0,5.25507867336273,5.0,4.74492132663727,10.0"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.685,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenval_grid lin in=0.0,2.5,5.0,7.5,10.0 out=0.0,2.5,5.0,7.5,10.0 io=0.0,2.5,5.0,7.5,10.0 oi=0.0,2.5,5.0,7.5,10.0 sin in=0.0,0.76120465993881,2.9289323091507,6.17316544055939,10.0 out=0.0,3.82683426141739,7.0710676908493,9.23879504203796,10.0 io=0.0,1.46446615457535,5.0,8.53553414344788,10.0 oi=0.0,3.53553384542465,5.0,6.46446585655212,10.0 qui in=0.0,0.009765625,0.3125,2.373046875,10.0 out=0.0,7.626953125,9.6875,9.990234375,10.0 io=0.0,0.15625,5.0,9.84375,10.0 oi=0.0,4.84375,5.0,5.15625,10.0 qua in=0.0,0.0390625,0.625,3.1640625,10.0 out=0.0,6.8359375,9.375,9.9609375,10.0 io=0.0,0.3125,5.0,9.6875,10.0 oi=0.0,4.6875,5.0,5.3125,10.0 qad in=0.0,0.625,2.5,5.625,10.0 out=0.0,4.375,7.5,9.375,10.0 io=0.0,1.25,5.0,8.75,10.0 oi=0.0,3.75,5.0,6.25,10.0 expo in=0.0,0.04524271469563,0.30249999836087,1.75776690244675,9.99000012874603 out=0.0,8.24046492576599,9.69718754291534,9.95470225811005,10.0 io=0.0,0.15124999918044,5.00249981880188,9.84867215156555,10.0 oi=0.0,4.84859377145767,5.0,5.15124976634979,9.99499976634979 ela in=0.0,-0.05524271633476,-0.15625020489097,0.8838826417923,10.0 out=0.0,9.11611676216125,10.15625,10.0552427768707,10.0 io=0.0,0.11969446204603,5.0,9.88030552864075,10.0 oi=0.0,5.078125,5.0,4.921875,10.0 cub in=0.0,0.15625,1.25,4.21875,10.0 out=0.0,5.78125,8.75,9.84375,10.0 io=0.0,0.625,5.0,9.375,10.0 oi=0.0,4.375,5.0,5.625,10.0 cir in=0.0,0.3175413608551,1.33974611759186,3.38562190532684,10.0 out=0.0,6.61437809467316,8.66025388240814,9.6824586391449,10.0 io=0.0,0.66987305879593,5.0,9.33012723922729,10.0 oi=0.0,4.33012694120407,5.0,5.66987276077271,10.0 bou in=0.0,0.2734375,2.34375,5.2734375,10.0 out=0.0,4.7265625,7.65625,9.7265625,10.0 io=0.0,1.171875,5.0,8.828125,10.0 oi=0.0,3.828125,5.0,6.171875,10.0 bac in=0.0,-0.64136564731598,-0.87697505950928,1.82590305805206,10.0 out=0.0,8.17409694194794,10.8769750595093,10.6413650512695,10.0 io=0.0,-0.99681839346886,5.0,10.9968185424805,10.0 oi=0.0,5.43848752975464,5.0,4.56151247024536,10.0 spr in=0.0,0.13654887676239,-0.51015734672546,3.3666330575943,10.0 out=0.0,6.6333669424057,10.5101573467255,9.86345112323761,10.0 io=0.0,-0.25507867336273,5.0,10.2550792694092,10.0 oi=0.0,5.25507867336273,5.0,4.74492132663727,10.0"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.645,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenval_grid lin in=0.0,2.5,5.0,7.5,10.0 out=0.0,2.5,5.0,7.5,10.0 io=0.0,2.5,5.0,7.5,10.0 oi=0.0,2.5,5.0,7.5,10.0 sin in=0.0,0.76120465993881,2.9289323091507,6.17316544055939,10.0 out=0.0,3.82683426141739,7.0710676908493,9.23879504203796,10.0 io=0.0,1.46446615457535,5.0,8.53553414344788,10.0 oi=0.0,3.53553384542465,5.0,6.46446585655212,10.0 qui in=0.0,0.009765625,0.3125,2.373046875,10.0 out=0.0,7.626953125,9.6875,9.990234375,10.0 io=0.0,0.15625,5.0,9.84375,10.0 oi=0.0,4.84375,5.0,5.15625,10.0 qua in=0.0,0.0390625,0.625,3.1640625,10.0 out=0.0,6.8359375,9.375,9.9609375,10.0 io=0.0,0.3125,5.0,9.6875,10.0 oi=0.0,4.6875,5.0,5.3125,10.0 qad in=0.0,0.625,2.5,5.625,10.0 out=0.0,4.375,7.5,9.375,10.0 io=0.0,1.25,5.0,8.75,10.0 oi=0.0,3.75,5.0,6.25,10.0 expo in=0.0,0.04524271469563,0.30249999836087,1.75776690244675,9.99000012874603 out=0.0,8.24046492576599,9.69718754291534,9.95470225811005,10.0 io=0.0,0.15124999918044,5.00249981880188,9.84867215156555,10.0 oi=0.0,4.84859377145767,5.0,5.15124976634979,9.99499976634979 ela in=0.0,-0.05524271633476,-0.15625020489097,0.8838826417923,10.0 out=0.0,9.11611676216125,10.15625,10.0552427768707,10.0 io=0.0,0.11969446204603,5.0,9.88030552864075,10.0 oi=0.0,5.078125,5.0,4.921875,10.0 cub in=0.0,0.15625,1.25,4.21875,10.0 out=0.0,5.78125,8.75,9.84375,10.0 io=0.0,0.625,5.0,9.375,10.0 oi=0.0,4.375,5.0,5.625,10.0 cir in=0.0,0.3175413608551,1.33974611759186,3.38562190532684,10.0 out=0.0,6.61437809467316,8.66025388240814,9.6824586391449,10.0 io=0.0,0.66987305879593,5.0,9.33012723922729,10.0 oi=0.0,4.33012694120407,5.0,5.66987276077271,10.0 bou in=0.0,0.2734375,2.34375,5.2734375,10.0 out=0.0,4.7265625,7.65625,9.7265625,10.0 io=0.0,1.171875,5.0,8.828125,10.0 oi=0.0,3.828125,5.0,6.171875,10.0 bac in=0.0,-0.64136564731598,-0.87697505950928,1.82590305805206,10.0 out=0.0,8.17409694194794,10.8769750595093,10.6413650512695,10.0 io=0.0,-0.99681839346886,5.0,10.9968185424805,10.0 oi=0.0,5.43848752975464,5.0,4.56151247024536,10.0 spr in=0.0,0.13654887676239,-0.51015734672546,3.3666330575943,10.0 out=0.0,6.6333669424057,10.5101573467255,9.86345112323761,10.0 io=0.0,-0.25507867336273,5.0,10.2550792694092,10.0 oi=0.0,5.25507867336273,5.0,4.74492132663727,10.0"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 1
+    },
+    "r93_anim_track_interp": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=animtrack"
+      ],
+      "sig_len": 425,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.542,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animtrack two_key=[it0=[t05=0.0,t09=0.0,t10=10.0],it1=[t05=5.0,t09=8.99999976158142,t10=10.0],it2=[t05=5.0,t09=9.71999987125395,t10=10.0]] three_key=[it0=[t025=0.0,t075=10.0],it1=[t025=5.0,t075=5.0],it2=[t025=5.0,t075=5.0]] two_default_interp=1 three_key_count=3 k0=0.0 kt1=0.5 k1=10.0 bezier=[1.05892944335938,5.0,8.94107055664062] bezier_key_count=2 track_enabled=true track_type=0 track_path=.:position:x"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.604,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animtrack two_key=[it0=[t05=0.0,t09=0.0,t10=10.0],it1=[t05=5.0,t09=8.99999976158142,t10=10.0],it2=[t05=5.0,t09=9.71999987125395,t10=10.0]] three_key=[it0=[t025=0.0,t075=10.0],it1=[t025=5.0,t075=5.0],it2=[t025=5.0,t075=5.0]] two_default_interp=1 three_key_count=3 k0=0.0 kt1=0.5 k1=10.0 bezier=[1.05892944335938,5.0,8.94107055664062] bezier_key_count=2 track_enabled=true track_type=0 track_path=.:position:x"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.515,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animtrack two_key=[it0=[t05=0.0,t09=0.0,t10=10.0],it1=[t05=5.0,t09=8.99999976158142,t10=10.0],it2=[t05=5.0,t09=9.71999987125395,t10=10.0]] three_key=[it0=[t025=0.0,t075=10.0],it1=[t025=5.0,t075=5.0],it2=[t025=5.0,t075=5.0]] two_default_interp=1 three_key_count=3 k0=0.0 kt1=0.5 k1=10.0 bezier=[1.05892944335938,5.0,8.94107055664062] bezier_key_count=2 track_enabled=true track_type=0 track_path=.:position:x"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 1
+    },
+    "r93_tween_manual_step": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=tweenstep"
+      ],
+      "sig_len": 239,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.491,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenstep created=[true,true,0.0,0.0] step05=[5.0,true,0.5,0,0] step10=[10.0,false,1.0,1,1] step_again=[10.0,false,1.0,1,1] paused=[5.0,false,true,0.25,0] paused_done=[20.0,false,1.0,1] loop1=[2.0,1,0,1] loop2=[2.0,0,1,1]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.515,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenstep created=[true,true,0.0,0.0] step05=[5.0,true,0.5,0,0] step10=[10.0,false,1.0,1,1] step_again=[10.0,false,1.0,1,1] paused=[5.0,false,true,0.25,0] paused_done=[20.0,false,1.0,1] loop1=[2.0,1,0,1] loop2=[2.0,0,1,1]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.745,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenstep created=[true,true,0.0,0.0] step05=[5.0,true,0.5,0,0] step10=[10.0,false,1.0,1,1] step_again=[10.0,false,1.0,1,1] paused=[5.0,false,true,0.25,0] paused_done=[20.0,false,1.0,1] loop1=[2.0,1,0,1] loop2=[2.0,0,1,1]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 1
+    },
+    "r93_tween_chain": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=tweenchain"
+      ],
+      "sig_len": 309,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.804,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenchain seq=[20.0,30.0,40.0] par=[30.0,2.0] interval=[cb_at_050=0,mvals_at_050=[],cb_at_100=1,mvals_at_100=[5.0],cb_after_extra=1] node_free=[before=[true,true],right_after=[true,true],stepped_after_free=[true,true],after_frame=[false,true]] kill=[before=[true,false],after=[false,false]]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.576,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenchain seq=[20.0,30.0,40.0] par=[30.0,2.0] interval=[cb_at_050=0,mvals_at_050=[],cb_at_100=1,mvals_at_100=[5.0],cb_after_extra=1] node_free=[before=[true,true],right_after=[true,true],stepped_after_free=[true,true],after_frame=[false,true]] kill=[before=[true,false],after=[false,false]]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.664,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenchain seq=[20.0,30.0,40.0] par=[30.0,2.0] interval=[cb_at_050=0,mvals_at_050=[],cb_at_100=1,mvals_at_100=[5.0],cb_after_extra=1] node_free=[before=[true,true],right_after=[true,true],stepped_after_free=[true,true],after_frame=[false,true]] kill=[before=[true,false],after=[false,false]]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 1
+    },
+    "r93_tween_process_stable": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=tweenproc"
+      ],
+      "sig_len": 83,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.619,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenproc auto=[y0=0.0,after3proc=2.14160656929016] paused=[at_pause=2.14160656929016,after3frames=2.14160656929016,running=false] phys=[x0=0.0,after3proc=16.6666679382324,after3phys=50.0] phys_manual=[before=1.0,after_step025=2.0] stable=[auto_advanced=true,paused_frozen=true,phys_advanced=true,manual_exact=true]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.704,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenproc auto=[y0=0.0,after3proc=3.34508013725281] paused=[at_pause=3.34508013725281,after3frames=3.34508013725281,running=false] phys=[x0=0.0,after3proc=16.6666679382324,after3phys=50.0] phys_manual=[before=1.0,after_step025=2.0] stable=[auto_advanced=true,paused_frozen=true,phys_advanced=true,manual_exact=true]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.716,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenproc auto=[y0=0.0,after3proc=2.01140666007996] paused=[at_pause=2.01140666007996,after3frames=2.01140666007996,running=false] phys=[x0=0.0,after3proc=16.6666679382324,after3phys=50.0] phys_manual=[before=1.0,after_step025=2.0] stable=[auto_advanced=true,paused_frozen=true,phys_advanced=true,manual_exact=true]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 3
+    },
+    "r93_tween_phys_manual_step": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=tweenproc"
+      ],
+      "sig_len": 42,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.718,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenproc auto=[y0=0.0,after3proc=2.0] paused=[at_pause=2.0,after3frames=2.0,running=false] phys=[x0=0.0,after3proc=16.6666679382324,after3phys=50.0] phys_manual=[before=1.0,after_step025=2.0] stable=[auto_advanced=true,paused_frozen=true,phys_advanced=true,manual_exact=true]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.715,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenproc auto=[y0=0.0,after3proc=2.0] paused=[at_pause=2.0,after3frames=2.0,running=false] phys=[x0=0.0,after3proc=16.6666679382324,after3phys=50.0] phys_manual=[before=1.0,after_step025=2.0] stable=[auto_advanced=true,paused_frozen=true,phys_advanced=true,manual_exact=true]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.726,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice tweenproc auto=[y0=0.0,after3proc=2.0] paused=[at_pause=2.0,after3frames=2.0,running=false] phys=[x0=0.0,after3proc=16.6666679382324,after3phys=50.0] phys_manual=[before=1.0,after_step025=2.0] stable=[auto_advanced=true,paused_frozen=true,phys_advanced=true,manual_exact=true]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 1
+    },
+    "r93_anim_seek": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=animseek"
+      ],
+      "sig_len": 437,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.601,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animseek at_play=[7.0,true,0.0,move] adv025=[25.0,0.25] seek_up=[75.0,0.75] seek_noup=[75.0,0.5] cross=[100.0,1.0,false,1] after_frame=[100.0,1] before_stop=50.0 after_stop=[0.0,false,,move] speed2=[50.0,0.5] speed0=[50.0,0.5] replay_before=[50.0,0.5] replay_same=[50.0,0.5] play_other=[50.0,0.0,loop] back_other=[50.0,0.0] paused_adv=[50.0,false] looped=[25.0,0.25,0] seek_over=[100.0,1.0,true] manual_frames=[0.0,0.0]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.622,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animseek at_play=[7.0,true,0.0,move] adv025=[25.0,0.25] seek_up=[75.0,0.75] seek_noup=[75.0,0.5] cross=[100.0,1.0,false,1] after_frame=[100.0,1] before_stop=50.0 after_stop=[0.0,false,,move] speed2=[50.0,0.5] speed0=[50.0,0.5] replay_before=[50.0,0.5] replay_same=[50.0,0.5] play_other=[50.0,0.0,loop] back_other=[50.0,0.0] paused_adv=[50.0,false] looped=[25.0,0.25,0] seek_over=[100.0,1.0,true] manual_frames=[0.0,0.0]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.597,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animseek at_play=[7.0,true,0.0,move] adv025=[25.0,0.25] seek_up=[75.0,0.75] seek_noup=[75.0,0.5] cross=[100.0,1.0,false,1] after_frame=[100.0,1] before_stop=50.0 after_stop=[0.0,false,,move] speed2=[50.0,0.5] speed0=[50.0,0.5] replay_before=[50.0,0.5] replay_same=[50.0,0.5] play_other=[50.0,0.0,loop] back_other=[50.0,0.0] paused_adv=[50.0,false] looped=[25.0,0.25,0] seek_over=[100.0,1.0,true] manual_frames=[0.0,0.0]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 1
+    },
+    "r93_anim_method_callback": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=animmethod"
+      ],
+      "sig_len": 223,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.604,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animmethod sig_at_play=[1,0,1] deferred_adv=[] deferred_frame=[7,8] sig_after_frame=[1,0,2] immediate_adv=[7,8] immediate_frame=[7,8] disabled_track=[] started_names=[m,m,m] changed=[] cur_changed=[m,,,,,]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.6,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animmethod sig_at_play=[1,0,1] deferred_adv=[] deferred_frame=[7,8] sig_after_frame=[1,0,2] immediate_adv=[7,8] immediate_frame=[7,8] disabled_track=[] started_names=[m,m,m] changed=[] cur_changed=[m,,,,,]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.485,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animmethod sig_at_play=[1,0,1] deferred_adv=[] deferred_frame=[7,8] sig_after_frame=[1,0,2] immediate_adv=[7,8] immediate_frame=[7,8] disabled_track=[] started_names=[m,m,m] changed=[] cur_changed=[m,,,,,]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 1
+    },
+    "r93_anim_blend_finished": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=animblend"
+      ],
+      "sig_len": 539,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.618,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animblend blend_get=1.0 finished_010=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] finished_005=[100.0,121.052627563477,142.105255126953,163.15788269043,184.210525512695,205.263168334961,226.315795898438,247.368408203125,268.421051025391,289.473663330078,310.526336669922,331.578948974609,352.631561279297,373.684204101562,394.736846923828,415.789489746094,436.842071533203,457.894714355469,478.947357177734,500.0] finished_020=[100.0,200.0,300.0,400.0,500.0] running_from_50=[60.0000038146973,117.777778625488,173.333343505859,226.66667175293,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] hard=[at_play=100.0,after_025=500.0] default_blend_mid=100.0 capture=[before=50.0,seq=60.0000038146973,117.777778625488,173.333343505859,226.66667175293,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.48,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animblend blend_get=1.0 finished_010=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] finished_005=[100.0,121.052627563477,142.105255126953,163.15788269043,184.210525512695,205.263168334961,226.315795898438,247.368408203125,268.421051025391,289.473663330078,310.526336669922,331.578948974609,352.631561279297,373.684204101562,394.736846923828,415.789489746094,436.842071533203,457.894714355469,478.947357177734,500.0] finished_020=[100.0,200.0,300.0,400.0,500.0] running_from_50=[60.0000038146973,117.777778625488,173.333343505859,226.66667175293,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] hard=[at_play=100.0,after_025=500.0] default_blend_mid=100.0 capture=[before=50.0,seq=60.0000038146973,117.777778625488,173.333343505859,226.66667175293,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.601,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animblend blend_get=1.0 finished_010=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] finished_005=[100.0,121.052627563477,142.105255126953,163.15788269043,184.210525512695,205.263168334961,226.315795898438,247.368408203125,268.421051025391,289.473663330078,310.526336669922,331.578948974609,352.631561279297,373.684204101562,394.736846923828,415.789489746094,436.842071533203,457.894714355469,478.947357177734,500.0] finished_020=[100.0,200.0,300.0,400.0,500.0] running_from_50=[60.0000038146973,117.777778625488,173.333343505859,226.66667175293,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] hard=[at_play=100.0,after_025=500.0] default_blend_mid=100.0 capture=[before=50.0,seq=60.0000038146973,117.777778625488,173.333343505859,226.66667175293,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 1
+    },
+    "r93_anim_blend_running": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=animblend"
+      ],
+      "sig_len": 420,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.625,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animblend blend_get=1.0 finished_010=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] finished_005=[100.0,121.052627563477,142.105255126953,163.15788269043,184.210525512695,205.263168334961,226.315795898438,247.368408203125,268.421051025391,289.473663330078,310.526336669922,331.578948974609,352.631561279297,373.684204101562,394.736846923828,415.789489746094,436.842071533203,457.894714355469,478.947357177734,500.0] finished_020=[100.0,200.0,300.0,400.0,500.0] running_from_50=[60.0000038146973,117.777778625488,173.333343505859,226.66667175293,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] hard=[at_play=100.0,after_025=500.0] default_blend_mid=100.0 capture=[before=50.0,seq=60.0000038146973,117.777778625488,173.333343505859,226.66667175293,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.51,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animblend blend_get=1.0 finished_010=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] finished_005=[100.0,121.052627563477,142.105255126953,163.15788269043,184.210525512695,205.263168334961,226.315795898438,247.368408203125,268.421051025391,289.473663330078,310.526336669922,331.578948974609,352.631561279297,373.684204101562,394.736846923828,415.789489746094,436.842071533203,457.894714355469,478.947357177734,500.0] finished_020=[100.0,200.0,300.0,400.0,500.0] running_from_50=[60.0000038146973,117.777778625488,173.333343505859,226.66667175293,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] hard=[at_play=100.0,after_025=500.0] default_blend_mid=100.0 capture=[before=50.0,seq=60.0000038146973,117.777778625488,173.333343505859,226.66667175293,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.509,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animblend blend_get=1.0 finished_010=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] finished_005=[100.0,121.052627563477,142.105255126953,163.15788269043,184.210525512695,205.263168334961,226.315795898438,247.368408203125,268.421051025391,289.473663330078,310.526336669922,331.578948974609,352.631561279297,373.684204101562,394.736846923828,415.789489746094,436.842071533203,457.894714355469,478.947357177734,500.0] finished_020=[100.0,200.0,300.0,400.0,500.0] running_from_50=[60.0000038146973,117.777778625488,173.333343505859,226.66667175293,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] hard=[at_play=100.0,after_025=500.0] default_blend_mid=100.0 capture=[before=50.0,seq=60.0000038146973,117.777778625488,173.333343505859,226.66667175293,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 1
+    },
+    "r93_anim_process_manual": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=animproc"
+      ],
+      "sig_len": 76,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.858,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animproc idle=[x0=0.0,after3proc=1.70756673812866,after3phys=7.20933294296265,pos=0.1] phys=[x0=0.0,after3proc=1.66666674613953,after3phys=5.0] manual=[x=25.0,after3frames=25.0] frozen=[0.0,true,0.0] inactive=[50.0,true] quick=[frames_to_finish=17,fin_frame=16,x=5.0] caches_delta=1 caches_total=11 mixer_updated=0 mixer_applied=43 is_playing=false stable=[manual_frame_frozen=true,manual_exact=true,speed0_frozen=true,inactive_advance=true,fin_fired=true,caches_once=true,mixer_updated_zero=true]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.772,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animproc idle=[x0=0.0,after3proc=1.70556664466858,after3phys=6.04111099243164,pos=0.1] phys=[x0=0.0,after3proc=0.0,after3phys=3.33333349227905] manual=[x=25.0,after3frames=25.0] frozen=[0.0,true,0.0] inactive=[50.0,true] quick=[frames_to_finish=16,fin_frame=15,x=5.0] caches_delta=1 caches_total=11 mixer_updated=0 mixer_applied=41 is_playing=false stable=[manual_frame_frozen=true,manual_exact=true,speed0_frozen=true,inactive_advance=true,fin_fired=true,caches_once=true,mixer_updated_zero=true]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.775,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animproc idle=[x0=0.0,after3proc=1.74996662139893,after3phys=5.58387804031372,pos=0.1] phys=[x0=0.0,after3proc=0.0,after3phys=3.33333349227905] manual=[x=25.0,after3frames=25.0] frozen=[0.0,true,0.0] inactive=[50.0,true] quick=[frames_to_finish=17,fin_frame=16,x=5.0] caches_delta=1 caches_total=11 mixer_updated=0 mixer_applied=40 is_playing=false stable=[manual_frame_frozen=true,manual_exact=true,speed0_frozen=true,inactive_advance=true,fin_fired=true,caches_once=true,mixer_updated_zero=true]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 3
+    },
+    "r93_anim_process_stable": {
+      "script": "anim_lattice.gd",
+      "flags": [
+        "--arm=animproc"
+      ],
+      "sig_len": 148,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.812,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animproc idle=[x0=0.0,after3proc=1.70696675777435,after3phys=5.51737785339355,pos=0.1] phys=[x0=0.0,after3proc=0.0,after3phys=3.33333349227905] manual=[x=25.0,after3frames=25.0] frozen=[0.0,true,0.0] inactive=[50.0,true] quick=[frames_to_finish=16,fin_frame=15,x=5.0] caches_delta=1 caches_total=11 mixer_updated=0 mixer_applied=39 is_playing=false stable=[manual_frame_frozen=true,manual_exact=true,speed0_frozen=true,inactive_advance=true,fin_fired=true,caches_once=true,mixer_updated_zero=true]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.804,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animproc idle=[x0=0.0,after3proc=1.71026659011841,after3phys=5.52177762985229,pos=0.1] phys=[x0=0.0,after3proc=0.0,after3phys=3.33333349227905] manual=[x=25.0,after3frames=25.0] frozen=[0.0,true,0.0] inactive=[50.0,true] quick=[frames_to_finish=16,fin_frame=15,x=5.0] caches_delta=1 caches_total=11 mixer_updated=0 mixer_applied=39 is_playing=false stable=[manual_frame_frozen=true,manual_exact=true,speed0_frozen=true,inactive_advance=true,fin_fired=true,caches_once=true,mixer_updated_zero=true]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.779,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS anim_lattice animproc idle=[x0=0.0,after3proc=1.70886659622192,after3phys=6.54346656799316,pos=0.1] phys=[x0=0.0,after3proc=1.66666674613953,after3phys=5.0] manual=[x=25.0,after3frames=25.0] frozen=[0.0,true,0.0] inactive=[50.0,true] quick=[frames_to_finish=16,fin_frame=15,x=5.0] caches_delta=1 caches_total=11 mixer_updated=0 mixer_applied=41 is_playing=false stable=[manual_frame_frozen=true,manual_exact=true,speed0_frozen=true,inactive_advance=true,fin_fired=true,caches_once=true,mixer_updated_zero=true]"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 3
+    },
+    "r93_anim_overshoot": {
+      "script": "r93b_anim.gd",
+      "flags": [
+        "--arm=purity"
+      ],
+      "sig_len": 538,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.512,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim purity expo=[out05=9.69718754291534,in05=0.30249999836087,in10=9.99000012874603,out10=10.0] clamp=[neg=-5.0,over=15.0] int050=5 vec025=(2.0, 4.0) col050=(0.5, 0.25, 0.0, 1.0) track=[it0=[t05=0.0,t09=0.0,t10=10.0],it1=[t05=5.0,t09=8.99999976158142,t10=10.0],it2=[t05=5.0,t09=9.71999987125395,t10=10.0]] deltas=[tiny=0.00000001,mid=2.5,huge=10.0,huge_running=false,neg=0.0,neg_elapsed=-0.5] overshoot=[back025=0.10286344587803,back050=5.5] overshoot2=[spr050=10.510157585144,spr100=10.0,ela025=9.11611652374268] accum1000=1.0"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.613,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim purity expo=[out05=9.69718754291534,in05=0.30249999836087,in10=9.99000012874603,out10=10.0] clamp=[neg=-5.0,over=15.0] int050=5 vec025=(2.0, 4.0) col050=(0.5, 0.25, 0.0, 1.0) track=[it0=[t05=0.0,t09=0.0,t10=10.0],it1=[t05=5.0,t09=8.99999976158142,t10=10.0],it2=[t05=5.0,t09=9.71999987125395,t10=10.0]] deltas=[tiny=0.00000001,mid=2.5,huge=10.0,huge_running=false,neg=0.0,neg_elapsed=-0.5] overshoot=[back025=0.10286344587803,back050=5.5] overshoot2=[spr050=10.510157585144,spr100=10.0,ela025=9.11611652374268] accum1000=1.0"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.516,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim purity expo=[out05=9.69718754291534,in05=0.30249999836087,in10=9.99000012874603,out10=10.0] clamp=[neg=-5.0,over=15.0] int050=5 vec025=(2.0, 4.0) col050=(0.5, 0.25, 0.0, 1.0) track=[it0=[t05=0.0,t09=0.0,t10=10.0],it1=[t05=5.0,t09=8.99999976158142,t10=10.0],it2=[t05=5.0,t09=9.71999987125395,t10=10.0]] deltas=[tiny=0.00000001,mid=2.5,huge=10.0,huge_running=false,neg=0.0,neg_elapsed=-0.5] overshoot=[back025=0.10286344587803,back050=5.5] overshoot2=[spr050=10.510157585144,spr100=10.0,ela025=9.11611652374268] accum1000=1.0"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 1
+    },
+    "r93_anim_manual_clock_interleaved": {
+      "script": "r93b_anim.gd",
+      "flags": [
+        "--arm=manual_inv"
+      ],
+      "sig_len": 110,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.718,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim manual_inv paused=[a=2.5,b=2.5,c=5.0,d=5.0,e=10.0] manual=[f=25.0,g=25.0,h=50.0,k=50.0,m=100.0] unpaused=[n=15.0,o=15.7999992370605] inv=[paused_proc=true,paused_phys=true,manual_proc=true,manual_phys=true] step_exact=[paused025=true,paused_done=true,manual025=true,manual_done=true] unpaused_moved=true proc_delta=0.00666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.717,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim manual_inv paused=[a=2.5,b=2.5,c=5.0,d=5.0,e=10.0] manual=[f=25.0,g=25.0,h=50.0,k=50.0,m=100.0] unpaused=[n=15.0,o=15.8278799057007] inv=[paused_proc=true,paused_phys=true,manual_proc=true,manual_phys=true] step_exact=[paused025=true,paused_done=true,manual025=true,manual_done=true] unpaused_moved=true proc_delta=0.006901"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.842,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim manual_inv paused=[a=2.5,b=2.5,c=5.0,d=5.0,e=10.0] manual=[f=25.0,g=25.0,h=50.0,k=50.0,m=100.0] unpaused=[n=15.0,o=15.8283596038818] inv=[paused_proc=true,paused_phys=true,manual_proc=true,manual_phys=true] step_exact=[paused025=true,paused_done=true,manual025=true,manual_done=true] unpaused_moved=true proc_delta=0.00666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 3
+    },
+    "r93_anim_manual_clock_control": {
+      "script": "r93b_anim.gd",
+      "flags": [
+        "--arm=manual_inv"
+      ],
+      "sig_len": 170,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.711,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim manual_inv paused=[a=2.5,b=2.5,c=5.0,d=5.0,e=10.0] manual=[f=25.0,g=25.0,h=50.0,k=50.0,m=100.0] unpaused=[n=15.0,o=15.7999992370605] inv=[paused_proc=true,paused_phys=true,manual_proc=true,manual_phys=true] step_exact=[paused025=true,paused_done=true,manual025=true,manual_done=true] unpaused_moved=true proc_delta=0.00666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.691,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim manual_inv paused=[a=2.5,b=2.5,c=5.0,d=5.0,e=10.0] manual=[f=25.0,g=25.0,h=50.0,k=50.0,m=100.0] unpaused=[n=15.0,o=15.8280000686646] inv=[paused_proc=true,paused_phys=true,manual_proc=true,manual_phys=true] step_exact=[paused025=true,paused_done=true,manual025=true,manual_done=true] unpaused_moved=true proc_delta=0.0069"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.69,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim manual_inv paused=[a=2.5,b=2.5,c=5.0,d=5.0,e=10.0] manual=[f=25.0,g=25.0,h=50.0,k=50.0,m=100.0] unpaused=[n=15.0,o=15.8273401260376] inv=[paused_proc=true,paused_phys=true,manual_proc=true,manual_phys=true] step_exact=[paused025=true,paused_done=true,manual025=true,manual_done=true] unpaused_moved=true proc_delta=0.006904"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 3
+    },
+    "r93_anim_deferred_flush": {
+      "script": "r93b_anim.gd",
+      "flags": [
+        "--arm=deferred"
+      ],
+      "sig_len": 208,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.796,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim deferred manual_def=[after_adv=[],next_proc=[7,8],second_proc=[7,8]] manual_def_phys=[after_adv=[],after_phys=[7,8]] two_adv=[after=[],flush=[7,8]] immediate=[after_adv=[7,8],after_frame=[7,8]] idle_lag=[frames=32,first_at=9,first_pos=0.04444444444444,second_at=18,second_pos=0.10471666666667,final=[1,2]] proc_delta=0.00694444444444"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.804,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim deferred manual_def=[after_adv=[],next_proc=[7,8],second_proc=[7,8]] manual_def_phys=[after_adv=[],after_phys=[7,8]] two_adv=[after=[],flush=[7,8]] immediate=[after_adv=[7,8],after_frame=[7,8]] idle_lag=[frames=32,first_at=8,first_pos=0.045,second_at=17,second_pos=0.10184533333333,final=[1,2]] proc_delta=0.00666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.93,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim deferred manual_def=[after_adv=[],next_proc=[7,8],second_proc=[7,8]] manual_def_phys=[after_adv=[],after_phys=[7,8]] two_adv=[after=[],flush=[7,8]] immediate=[after_adv=[7,8],after_frame=[7,8]] idle_lag=[frames=30,first_at=7,first_pos=0.0414,second_at=16,second_pos=0.103494,final=[1,2]] proc_delta=0.00666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 3
+    },
+    "r93_anim_await_offbyone": {
+      "script": "r93b_anim.gd",
+      "flags": [
+        "--arm=frame"
+      ],
+      "sig_len": 33,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.815,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim frame idle=[x1=0.0,x2=1.10396671295166,x3=1.10516667366028,x5=2.48956656455994,x10=5.73956680297852] idle_per_frame=0.65000004768372 pos10=0.05739566666667 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=14 tween5=[0.0,0.40000000596046,0.80000001192093,1.19999992847443,1.60000002384186] quick=[frames=16,fin_frame=15,x=5.0,pos=0.1] proc_delta=0.00666666666667 phys_delta=0.01666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 1.211,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim frame idle=[x1=0.0,x2=1.66666674613953,x3=1.6668416261673,x5=2.31966686248779,x10=4.93623304367065] idle_per_frame=0.52331323623657 pos10=0.04936233333333 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=14 tween5=[0.0,0.49230667948723,0.90897333621979,1.32563996315002,1.74230670928955] quick=[frames=16,fin_frame=15,x=5.0,pos=0.1] proc_delta=0.00694444444444 phys_delta=0.01666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.796,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim frame idle=[x1=0.0,x2=0.93156665563583,x3=0.93266665935516,x5=2.04377770423889,x10=4.82155561447144] idle_per_frame=0.55555558204651 pos10=0.04821555555556 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=15 tween5=[0.0,0.41666665673256,0.83333331346512,1.25,1.66666662693024] quick=[frames=16,fin_frame=15,x=5.0,pos=0.1] proc_delta=0.00694444444444 phys_delta=0.01666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 3
+    },
+    "r93_anim_physics_tick": {
+      "script": "r93b_anim.gd",
+      "flags": [
+        "--arm=frame"
+      ],
+      "sig_len": 80,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.97,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim frame idle=[x1=0.0,x2=1.11111116409302,x3=1.29306674003601,x5=2.6772665977478,x10=6.12836647033691] idle_per_frame=0.69021997451782 pos10=0.06128366666667 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=16 tween5=[0.0,0.375,0.75396001338959,1.15395998954773,1.55396008491516] quick=[frames=16,fin_frame=15,x=5.0,pos=0.1] proc_delta=0.00666666666667 phys_delta=0.01666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.989,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim frame idle=[x1=0.0,x2=1.11111116409302,x3=1.58916676044464,x5=2.97406673431396,x10=6.92600011825562] idle_per_frame=0.79038667678833 pos10=0.06926 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=12 tween5=[0.0,0.45454546809196,0.86840724945068,1.2824672460556,1.69658732414246] quick=[frames=16,fin_frame=15,x=5.0,pos=0.1] proc_delta=0.00666666666667 phys_delta=0.01666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 1.4,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim frame idle=[x1=0.0,x2=1.66666674613953,x3=1.70836675167084,x5=3.0933666229248,x10=5.98225545883179] idle_per_frame=0.5777777671814 pos10=0.05982255555556 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=16 tween5=[0.0,0.41351997852325,0.8277599811554,1.24442660808563,1.66109335422516] quick=[frames=16,fin_frame=15,x=5.0,pos=0.1] proc_delta=0.00694444444444 phys_delta=0.01666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 3
+    },
+    "r93_anim_phys_delta": {
+      "script": "r93b_anim.gd",
+      "flags": [
+        "--arm=frame"
+      ],
+      "sig_len": 27,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.803,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim frame idle=[x1=0.0,x2=1.11111116409302,x3=1.25696671009064,x5=2.64156675338745,x10=5.89156675338745] idle_per_frame=0.65 pos10=0.05891566666667 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=14 tween5=[0.0,0.40000000596046,0.80000001192093,1.19999992847443,1.60000002384186] quick=[frames=16,fin_frame=15,x=5.0,pos=0.1] proc_delta=0.00666666666667 phys_delta=0.01666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.92,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim frame idle=[x1=0.0,x2=0.97336667776108,x3=0.97426670789719,x5=2.35986661911011,x10=5.66666698455811] idle_per_frame=0.6613600730896 pos10=0.05666666666667 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=14 tween5=[0.0,0.40000000596046,0.80000001192093,1.19999992847443,1.60000002384186] quick=[frames=13,fin_frame=12,x=5.0,pos=0.1] proc_delta=0.006909 phys_delta=0.01666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 1.018,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim frame idle=[x1=0.0,x2=1.52777779102325,x3=2.08506655693054,x5=3.46896648406982,x10=7.18446683883667] idle_per_frame=0.74310007095337 pos10=0.07184466666667 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=15 tween5=[0.0,0.375,0.75,1.125,1.50603997707367] quick=[frames=16,fin_frame=15,x=5.0,pos=0.1] proc_delta=0.00666666666667 phys_delta=0.01666666666667"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 3
+    },
+    "r93_anim_blend_interleaved": {
+      "script": "r93b_anim.gd",
+      "flags": [
+        "--arm=blend"
+      ],
+      "sig_len": 439,
+      "pass_count": 3,
+      "reps": 3,
+      "rep_detail": [
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.635,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim blend finished_010=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] finished_020=[100.0,200.0,300.0,400.0,500.0] interleaved=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] interleaved_eq_plain=true hard_after_frame=500.0 proc_delta=0.00555555555556"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.681,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim blend finished_010=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] finished_020=[100.0,200.0,300.0,400.0,500.0] interleaved=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] interleaved_eq_plain=true hard_after_frame=500.0 proc_delta=0.00694444444444"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        },
+        {
+          "rc": 0,
+          "error": null,
+          "wall_s": 0.636,
+          "stdout_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "PASS r93b_anim blend finished_010=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] finished_020=[100.0,200.0,300.0,400.0,500.0] interleaved=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] interleaved_eq_plain=true hard_after_frame=500.0 proc_delta=0.00625"
+          ],
+          "stderr_bytes": 0,
+          "pass": true
+        }
+      ],
+      "distinct_stdout": 3
+    }
+  },
+  "law_runs": {
+    "frame_fixed_fps_30": [
+      {
+        "rc": 0,
+        "checks": {
+          "x1_is_pre_play_zero": true,
+          "x1": 0.0,
+          "x2": 3.33333349227905,
+          "x3": 7.50000047683716,
+          "x5": 13.4166669845581,
+          "x10": 30.0000019073486,
+          "x2_is_1_step": false,
+          "x3_is_2_steps": false,
+          "x5_is_4_steps": false,
+          "x10_is_9_steps": false,
+          "pos10_is_9_steps": true,
+          "pos10": 0.3,
+          "expected_delta": 0.03333333333333333,
+          "mixer_applied_10_is_10": true,
+          "phys_lattice": [
+            0.0,
+            0.0,
+            1.66666674613953,
+            6.66666698455811
+          ],
+          "phys_y1_y2_zero": true,
+          "phys_increment_2ticks": false,
+          "phys_delta": 0.01666666666667,
+          "phys_delta_is_1_60": true
+        },
+        "stdout": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "PASS r93b_anim frame idle=[x1=0.0,x2=3.33333349227905,x3=7.50000047683716,x5=13.4166669845581,x10=30.0000019073486] idle_per_frame=3.31666698455811 pos10=0.3 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=3 tween5=[0.0,2.0,4.0,6.0,8.0] quick=[frames=4,fin_frame=3,x=5.0,pos=0.1] proc_delta=0.03333333333333 phys_delta=0.01666666666667"
+        ]
+      },
+      {
+        "rc": 0,
+        "checks": {
+          "x1_is_pre_play_zero": true,
+          "x1": 0.0,
+          "x2": 3.33333349227905,
+          "x3": 7.50000047683716,
+          "x5": 13.4166669845581,
+          "x10": 30.0000019073486,
+          "x2_is_1_step": false,
+          "x3_is_2_steps": false,
+          "x5_is_4_steps": false,
+          "x10_is_9_steps": false,
+          "pos10_is_9_steps": true,
+          "pos10": 0.3,
+          "expected_delta": 0.03333333333333333,
+          "mixer_applied_10_is_10": true,
+          "phys_lattice": [
+            0.0,
+            0.0,
+            1.66666674613953,
+            6.66666698455811
+          ],
+          "phys_y1_y2_zero": true,
+          "phys_increment_2ticks": false,
+          "phys_delta": 0.01666666666667,
+          "phys_delta_is_1_60": true
+        },
+        "stdout": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "PASS r93b_anim frame idle=[x1=0.0,x2=3.33333349227905,x3=7.50000047683716,x5=13.4166669845581,x10=30.0000019073486] idle_per_frame=3.31666698455811 pos10=0.3 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=3 tween5=[0.0,2.0,4.0,6.0,8.0] quick=[frames=4,fin_frame=3,x=5.0,pos=0.1] proc_delta=0.03333333333333 phys_delta=0.01666666666667"
+        ]
+      }
+    ],
+    "frame_fixed_fps_60": [
+      {
+        "rc": 0,
+        "checks": {
+          "x1_is_pre_play_zero": true,
+          "x1": 0.0,
+          "x2": 1.66666674613953,
+          "x3": 3.33333349227905,
+          "x5": 6.66666698455811,
+          "x10": 15.0000009536743,
+          "x2_is_1_step": false,
+          "x3_is_2_steps": false,
+          "x5_is_4_steps": false,
+          "x10_is_9_steps": false,
+          "pos10_is_9_steps": true,
+          "pos10": 0.15,
+          "expected_delta": 0.016666666666666666,
+          "mixer_applied_10_is_10": true,
+          "phys_lattice": [
+            0.0,
+            0.0,
+            1.66666674613953,
+            6.66666698455811
+          ],
+          "phys_y1_y2_zero": true,
+          "phys_increment_2ticks": false,
+          "phys_delta": 0.01666666666667,
+          "phys_delta_is_1_60": true
+        },
+        "stdout": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "PASS r93b_anim frame idle=[x1=0.0,x2=1.66666674613953,x3=3.33333349227905,x5=6.66666698455811,x10=15.0000009536743] idle_per_frame=1.66666679382324 pos10=0.15 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=6 tween5=[0.0,1.0,2.0,3.0,4.0] quick=[frames=7,fin_frame=6,x=5.0,pos=0.1] proc_delta=0.01666666666667 phys_delta=0.01666666666667"
+        ]
+      },
+      {
+        "rc": 0,
+        "checks": {
+          "x1_is_pre_play_zero": true,
+          "x1": 0.0,
+          "x2": 1.66666674613953,
+          "x3": 3.33333349227905,
+          "x5": 6.66666698455811,
+          "x10": 15.0000009536743,
+          "x2_is_1_step": false,
+          "x3_is_2_steps": false,
+          "x5_is_4_steps": false,
+          "x10_is_9_steps": false,
+          "pos10_is_9_steps": true,
+          "pos10": 0.15,
+          "expected_delta": 0.016666666666666666,
+          "mixer_applied_10_is_10": true,
+          "phys_lattice": [
+            0.0,
+            0.0,
+            1.66666674613953,
+            6.66666698455811
+          ],
+          "phys_y1_y2_zero": true,
+          "phys_increment_2ticks": false,
+          "phys_delta": 0.01666666666667,
+          "phys_delta_is_1_60": true
+        },
+        "stdout": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "PASS r93b_anim frame idle=[x1=0.0,x2=1.66666674613953,x3=3.33333349227905,x5=6.66666698455811,x10=15.0000009536743] idle_per_frame=1.66666679382324 pos10=0.15 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=6 tween5=[0.0,1.0,2.0,3.0,4.0] quick=[frames=7,fin_frame=6,x=5.0,pos=0.1] proc_delta=0.01666666666667 phys_delta=0.01666666666667"
+        ]
+      }
+    ],
+    "frame_fixed_fps_120": [
+      {
+        "rc": 0,
+        "checks": {
+          "x1_is_pre_play_zero": true,
+          "x1": 0.0,
+          "x2": 0.83333337306976,
+          "x3": 1.66666674613953,
+          "x5": 3.33333349227905,
+          "x10": 7.50000047683716,
+          "x2_is_1_step": false,
+          "x3_is_2_steps": false,
+          "x5_is_4_steps": false,
+          "x10_is_9_steps": false,
+          "pos10_is_9_steps": true,
+          "pos10": 0.075,
+          "expected_delta": 0.008333333333333333,
+          "mixer_applied_10_is_10": true,
+          "phys_lattice": [
+            0.0,
+            0.0,
+            1.66666674613953,
+            6.66666698455811
+          ],
+          "phys_y1_y2_zero": true,
+          "phys_increment_2ticks": false,
+          "phys_delta": 0.01666666666667,
+          "phys_delta_is_1_60": true
+        },
+        "stdout": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "PASS r93b_anim frame idle=[x1=0.0,x2=0.83333337306976,x3=1.66666674613953,x5=3.33333349227905,x10=7.50000047683716] idle_per_frame=0.83333339691162 pos10=0.075 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=12 tween5=[0.0,0.5,1.0,1.5,2.0] quick=[frames=13,fin_frame=12,x=5.0,pos=0.1] proc_delta=0.00833333333333 phys_delta=0.01666666666667"
+        ]
+      },
+      {
+        "rc": 0,
+        "checks": {
+          "x1_is_pre_play_zero": true,
+          "x1": 0.0,
+          "x2": 0.83333337306976,
+          "x3": 1.66666674613953,
+          "x5": 3.33333349227905,
+          "x10": 7.50000047683716,
+          "x2_is_1_step": false,
+          "x3_is_2_steps": false,
+          "x5_is_4_steps": false,
+          "x10_is_9_steps": false,
+          "pos10_is_9_steps": true,
+          "pos10": 0.075,
+          "expected_delta": 0.008333333333333333,
+          "mixer_applied_10_is_10": true,
+          "phys_lattice": [
+            0.0,
+            0.0,
+            1.66666674613953,
+            6.66666698455811
+          ],
+          "phys_y1_y2_zero": true,
+          "phys_increment_2ticks": false,
+          "phys_delta": 0.01666666666667,
+          "phys_delta_is_1_60": true
+        },
+        "stdout": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "PASS r93b_anim frame idle=[x1=0.0,x2=0.83333337306976,x3=1.66666674613953,x5=3.33333349227905,x10=7.50000047683716] idle_per_frame=0.83333339691162 pos10=0.075 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=12 tween5=[0.0,0.5,1.0,1.5,2.0] quick=[frames=13,fin_frame=12,x=5.0,pos=0.1] proc_delta=0.00833333333333 phys_delta=0.01666666666667"
+        ]
+      }
+    ],
+    "frame_default": [
+      {
+        "rc": 0,
+        "checks": {
+          "x1_is_pre_play_zero": true,
+          "x1": 0.0,
+          "x2": 1.11111116409302,
+          "x3": 1.14886665344238,
+          "x5": 2.53306674957275,
+          "x10": 5.78306674957275,
+          "mixer_applied_10_is_10": true,
+          "phys_lattice": [
+            0.0,
+            0.0,
+            1.66666674613953,
+            6.66666698455811
+          ],
+          "phys_y1_y2_zero": true,
+          "phys_increment_2ticks": false,
+          "phys_delta": 0.01666666666667,
+          "phys_delta_is_1_60": true
+        },
+        "stdout": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "PASS r93b_anim frame idle=[x1=0.0,x2=1.11111116409302,x3=1.14886665344238,x5=2.53306674957275,x10=5.78306674957275] idle_per_frame=0.65 pos10=0.05783066666667 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=14 tween5=[0.0,0.40000000596046,0.80000001192093,1.19999992847443,1.60000002384186] quick=[frames=16,fin_frame=15,x=5.0,pos=0.1] proc_delta=0.00666666666667 phys_delta=0.01666666666667"
+        ]
+      },
+      {
+        "rc": 0,
+        "checks": {
+          "x1_is_pre_play_zero": true,
+          "x1": 0.0,
+          "x2": 1.04126667976379,
+          "x3": 1.0424667596817,
+          "x5": 2.4226667881012,
+          "x10": 5.67266702651978,
+          "mixer_applied_10_is_10": true,
+          "phys_lattice": [
+            0.0,
+            0.0,
+            1.66666674613953,
+            6.66666698455811
+          ],
+          "phys_y1_y2_zero": true,
+          "phys_increment_2ticks": false,
+          "phys_delta": 0.01666666666667,
+          "phys_delta_is_1_60": true
+        },
+        "stdout": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "PASS r93b_anim frame idle=[x1=0.0,x2=1.04126667976379,x3=1.0424667596817,x5=2.4226667881012,x10=5.67266702651978] idle_per_frame=0.65000004768372 pos10=0.05672666666667 mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811] proc_frames_during_6phys=14 tween5=[0.0,0.40000000596046,0.80000001192093,1.19999992847443,1.60000002384186] quick=[frames=16,fin_frame=15,x=5.0,pos=0.1] proc_delta=0.00666666666667 phys_delta=0.01666666666667"
+        ]
+      }
+    ]
+  },
+  "folds": {
+    "blend": [
+      {
+        "r93_anim_blend_finished": [
+          {
+            "finished_010_parsed": true,
+            "finished_010_len": 10,
+            "finished_010_law": true,
+            "finished_005_parsed": true,
+            "finished_005_len": 20,
+            "finished_005_law": true,
+            "finished_020_parsed": true,
+            "finished_020_len": 5,
+            "finished_020_law": true,
+            "interleaved_eq_plain_token": false
+          },
+          {
+            "finished_010_parsed": true,
+            "finished_010_len": 10,
+            "finished_010_law": true,
+            "finished_005_parsed": true,
+            "finished_005_len": 20,
+            "finished_005_law": true,
+            "finished_020_parsed": true,
+            "finished_020_len": 5,
+            "finished_020_law": true,
+            "interleaved_eq_plain_token": false
+          },
+          {
+            "finished_010_parsed": true,
+            "finished_010_len": 10,
+            "finished_010_law": true,
+            "finished_005_parsed": true,
+            "finished_005_len": 20,
+            "finished_005_law": true,
+            "finished_020_parsed": true,
+            "finished_020_len": 5,
+            "finished_020_law": true,
+            "interleaved_eq_plain_token": false
+          }
+        ]
+      },
+      {
+        "r93_anim_blend_interleaved": [
+          {
+            "finished_010_parsed": true,
+            "finished_010_len": 10,
+            "finished_010_law": true,
+            "finished_005_parsed": false,
+            "finished_020_parsed": true,
+            "finished_020_len": 5,
+            "finished_020_law": true,
+            "interleaved_eq_plain": true,
+            "interleaved_eq_plain_token": true,
+            "hard_after_frame_500": true
+          },
+          {
+            "finished_010_parsed": true,
+            "finished_010_len": 10,
+            "finished_010_law": true,
+            "finished_005_parsed": false,
+            "finished_020_parsed": true,
+            "finished_020_len": 5,
+            "finished_020_law": true,
+            "interleaved_eq_plain": true,
+            "interleaved_eq_plain_token": true,
+            "hard_after_frame_500": true
+          },
+          {
+            "finished_010_parsed": true,
+            "finished_010_len": 10,
+            "finished_010_law": true,
+            "finished_005_parsed": false,
+            "finished_020_parsed": true,
+            "finished_020_len": 5,
+            "finished_020_law": true,
+            "interleaved_eq_plain": true,
+            "interleaved_eq_plain_token": true,
+            "hard_after_frame_500": true
+          }
+        ]
+      }
+    ],
+    "overshoot": [
+      {
+        "back025": 0.10286344587803,
+        "back_below_start": true,
+        "back050": 5.5,
+        "back_midpoint": true,
+        "spr050": 10.510157585144,
+        "spring_above_end": true,
+        "spr100": 10.0,
+        "spring_endpoint": true,
+        "ela025": 9.11611652374268,
+        "static_no_clamp": true
+      },
+      {
+        "back025": 0.10286344587803,
+        "back_below_start": true,
+        "back050": 5.5,
+        "back_midpoint": true,
+        "spr050": 10.510157585144,
+        "spring_above_end": true,
+        "spr100": 10.0,
+        "spring_endpoint": true,
+        "ela025": 9.11611652374268,
+        "static_no_clamp": true
+      },
+      {
+        "back025": 0.10286344587803,
+        "back_below_start": true,
+        "back050": 5.5,
+        "back_midpoint": true,
+        "spr050": 10.510157585144,
+        "spring_above_end": true,
+        "spr100": 10.0,
+        "spring_endpoint": true,
+        "ela025": 9.11611652374268,
+        "static_no_clamp": true
+      }
+    ],
+    "deferred": [
+      {
+        "manual_def_exact": true,
+        "manual_def_phys_exact": true,
+        "two_adv_exact": true,
+        "immediate_exact": true
+      },
+      {
+        "manual_def_exact": true,
+        "manual_def_phys_exact": true,
+        "two_adv_exact": true,
+        "immediate_exact": true
+      },
+      {
+        "manual_def_exact": true,
+        "manual_def_phys_exact": true,
+        "two_adv_exact": true,
+        "immediate_exact": true
+      }
+    ]
+  },
+  "cross_arm": {
+    "phys_delta_token_in_clock": true,
+    "finished_010_token_in_clock": false,
+    "signature_satisfied_by_a_foreign_arm": [],
+    "arms_launched": 16,
+    "signature_satisfied_by_the_unknown_arm_fallback": [],
+    "clock_out_head": [
+      "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org"
+    ]
+  }
+}

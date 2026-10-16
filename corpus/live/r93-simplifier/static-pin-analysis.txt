@@ -1,0 +1,52 @@
+== signature redundancy census ==
+exact duplicate signatures: 0
+strict substring subsumption within a shared (script,arm): 0
+shared-arm groups: 6
+  anim_lattice.gd    --arm=animblend        rows=2
+  anim_lattice.gd    --arm=animproc         rows=2
+  anim_lattice.gd    --arm=tweenproc        rows=2
+  anim_lattice.gd    --arm=tweenval_grid    rows=2
+  r93b_anim.gd       --arm=frame            rows=3
+  r93b_anim.gd       --arm=manual_inv       rows=2
+
+== crossfade weight-law arithmetic vs pinned arrays ==
+  finished_010   N=10  len=10  max_abs_err=2.374e-05  max_rel_err=8.545e-08  law=HOLDS
+      first=100.0 mid=322.222229003906 last=500.0
+  finished_005   N=20  len=20  max_abs_err=3.373e-05  max_rel_err=7.721e-08  law=HOLDS
+      first=100.0 mid=310.526336669922 last=500.0
+  finished_020   N=5   len=5  max_abs_err=0.000e+00  max_rel_err=0.000e+00  law=HOLDS
+      first=100.0 mid=300.0 last=500.0
+  interleaved == finished_010 (same bytes in pin): True
+  OVERALL crossfade law: HOLDS
+
+== overshoot pin internal check ==
+  BACK/EASE_IN_OUT 1.0->10.0: t=0.25 -> 0.10286344587803 (start=1.0) below-start=True
+  BACK t=0.5 midpoint=5.5 (expected 5.5) midpoint_holds=True
+  SPRING/EASE_OUT 0.0->10.0: t=0.5 -> 10.510157585144 above-end=True ; t=1.0 -> 10.0 endpoint=True
+  ELASTIC/EASE_OUT t=0.25 -> 9.11611652374268 (inside [0,10]=True)
+  static interpolate_value extrapolates: neg=-5.0 over=15.0 (t=-0.5 -> -5.0, t=1.5 -> 15.0) no-clamp=True
+
+== N-1 await-law pin shape ==
+  r93_anim_await_offbyone sig = 'PASS r93b_anim frame idle=[x1=0.0'
+  prefix ends before ',x2=' (binds only the first-await read): True
+  r93_anim_physics_tick sig = 'mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811]'
+  r93_anim_phys_delta sig = 'phys_delta=0.01666666666667'
+  r93_anim_deferred_flush sig = 'PASS r93b_anim deferred manual_def=[after_adv=[],next_proc=[7,8],second_proc=[7,8]] manual_def_phys=[after_adv=[],after_phys=[7,8]] two_adv=[after=[],flush=[7,8]] immediate=[after_adv=[7,8],after_frame=[7,8]]'
+  r93_anim_manual_clock_interleaved sig = 'PASS r93b_anim manual_inv paused=[a=2.5,b=2.5,c=5.0,d=5.0,e=10.0] manual=[f=25.0,g=25.0,h=50.0,k=50.0,m=100.0]'
+  r93_anim_manual_clock_control sig = 'inv=[paused_proc=true,paused_phys=true,manual_proc=true,manual_phys=true] step_exact=[paused025=true,paused_done=true,manual025=true,manual_done=true] unpaused_moved=true'
+
+== harness-comment claims vs pins (spot checks) ==
+  comment: BACK/EASE_IN_OUT reads 0.1029 BELOW the start at t=0.25       CONSISTENT
+  comment: SPRING/EASE_OUT reads 10.5102 ABOVE the end at t=0.5          CONSISTENT
+  comment: idle=[x1=0.0 pinned in 258/258 frame runs                     CONSISTENT
+  comment: DEFERRED flushes on a physics frame (new route)               CONSISTENT
+  comment: w_i=(i-1)/(N-1)                                               CONSISTENT
+  comment: all 23 rows are ERROR:-clean / no expected_errors entries     CONSISTENT
+
+== floor gate ==
+  line=3018: "r93_expected_errors_all_matched": all(
+                  not e["dead_in_run"]
+                  for r in census_rows
+                  if r["case"].startswith("r93_")
+                  for e in r["entries"]),
+          }

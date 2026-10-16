@@ -1,0 +1,36 @@
+receipt files scanned: 51
+
+== emitted vs pinned token census ==
+  anim_lattice   animblend      tokens=10 pinned=9 unpinned=1
+      unpinned: blend_get
+  anim_lattice   animmethod     tokens=10 pinned=10 unpinned=0
+  anim_lattice   animproc       tokens=16 pinned=6 unpinned=10
+      unpinned: caches_delta, caches_total, frames_to_finish, idle, is_playing, mixer_applied, mixer_updated, phys, quick, x0
+  anim_lattice   animseek       tokens=18 pinned=18 unpinned=0
+  anim_lattice   animtrack      tokens=15 pinned=15 unpinned=0
+  anim_lattice   census         tokens=26 pinned=26 unpinned=0
+  anim_lattice   tweenchain     tokens=7 pinned=7 unpinned=0
+  anim_lattice   tweenproc      tokens=10 pinned=4 unpinned=6
+      unpinned: at_pause, auto, paused, phys, x0, y0
+  anim_lattice   tweenstep      tokens=8 pinned=8 unpinned=0
+  anim_lattice   tweenval       tokens=14 pinned=14 unpinned=0
+  anim_lattice   tweenval_grid  tokens=4 pinned=4 unpinned=0
+  r93b_anim      blend          tokens=6 pinned=5 unpinned=1
+      unpinned: proc_delta
+  r93b_anim      deferred       tokens=9 pinned=6 unpinned=3
+      unpinned: frames, idle_lag, proc_delta
+  r93b_anim      frame          tokens=13 pinned=6 unpinned=7
+      unpinned: frames, idle_per_frame, pos10, proc_delta, proc_frames_during_6phys, quick, tween5
+  r93b_anim      manual_inv     tokens=12 pinned=9 unpinned=3
+      unpinned: n, proc_delta, unpaused
+  r93b_anim      purity         tokens=17 pinned=17 unpinned=0
+
+== helper-parameter census ==
+  anim_lattice.gd
+    _arg               optional=['def']  required=1  positional_passes={'def': 1}  keyword_passes={}
+    _value_anim        optional=['length', 'loop_mode']  required=1  positional_passes={'length': 2, 'loop_mode': 1}  keyword_passes={}
+    _const_anim        optional=['length']  required=1  positional_passes={'length': 0}  keyword_passes={}
+  r93b_anim.gd
+    _arg               optional=['def']  required=1  positional_passes={'def': 1}  keyword_passes={}
+    _value_anim        optional=['length', 'loop_mode']  required=1  positional_passes={'length': 2, 'loop_mode': 0}  keyword_passes={}
+    _const_anim        optional=['length']  required=1  positional_passes={'length': 0}  keyword_passes={}

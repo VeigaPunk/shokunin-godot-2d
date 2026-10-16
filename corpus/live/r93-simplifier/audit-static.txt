@@ -1,0 +1,183 @@
+### fixture: anim_lattice.gd (689 lines)
+declarations: 160 (var)
+write-only stores (zero reads anywhere): 0
+declared names read only OUTSIDE their own scope: 0
+
+== function census (23 funcs) ==
+  _arg                     line=19   call_sites=1
+  _names                   line=25   call_sites=2
+  _consts                  line=31   call_sites=4
+  _method_names            line=37   call_sites=5
+  _ps                      line=45   call_sites=50
+  _lib                     line=51   call_sites=1
+  _value_anim              line=57   call_sites=5
+  _const_anim              line=67   call_sites=1
+  _player_for              line=76   call_sites=4
+  _initialize              line=83   call_sites=0
+  _arm_census              line=101  call_sites=1
+  _arm_tweenval            line=131  call_sites=1
+  _arm_tweenval_grid       line=147  call_sites=1
+  _arm_tweenstep           line=166  call_sites=1
+  _arm_tweenchain          line=212  call_sites=1
+  _arm_tweenproc           line=284  call_sites=1
+  _arm_animseek            line=335  call_sites=1
+  _arm_animmethod          line=424  call_sites=1
+  notify                   line=474  call_sites=0
+  _arm_animtrack           line=478  call_sites=1
+  _blend_from_finished     line=520  call_sites=3
+  _arm_animblend           line=531  call_sites=1
+  _arm_animproc            line=594  call_sites=1
+
+== print-site census ==
+  line=97   _: print("PASS anim_lattice unknown arm=", arm)
+  line=105  print("PASS anim_lattice census ",
+  line=132  print("PASS anim_lattice tweenval r91_exact=", str(Tween.interpolate_value(0.0, 10.0, 0.5, 1.0, Tween.TRANS_EXPO, Tween.EASE_OUT)),
+  line=163  print("PASS anim_lattice tweenval_grid ", " ".join(rows))
+  line=206  print("PASS anim_lattice tweenstep ",
+  line=274  print("PASS anim_lattice tweenchain ",
+  line=324  print("PASS anim_lattice tweenproc ",
+  line=411  print("PASS anim_lattice animseek ",
+  line=465  print("PASS anim_lattice animmethod ",
+  line=510  print("PASS anim_lattice animtrack ",
+  line=583  print("PASS anim_lattice animblend ",
+  line=677  print("PASS anim_lattice animproc ",
+
+== arm census ==
+  match arms (11): census, tweenval, tweenval_grid, tweenstep, tweenchain, tweenproc, animseek, animmethod, animtrack, animblend, animproc
+  default arm (line 84): census
+  fixture fallback: unknown-arm print present
+  arms covered by match: 11  (+default census)
+
+== CLI knob census ==
+  line=19   func _arg(name: String, def: String = "") -> String:
+  line=20   for a in OS.get_cmdline_user_args():
+  line=84   var arm := _arg("arm", "census")
+
+### fixture: r93b_anim.gd (466 lines)
+declarations: 112 (var)
+write-only stores (zero reads anywhere): 0
+declared names read only OUTSIDE their own scope: 0
+
+== function census (15 funcs) ==
+  _arg                     line=20   call_sites=1
+  _ps                      line=26   call_sites=13
+  _lib                     line=32   call_sites=1
+  _value_anim              line=38   call_sites=4
+  _const_anim              line=48   call_sites=1
+  _player_for              line=57   call_sites=4
+  _initialize              line=64   call_sites=0
+  _arm_clock               line=77   call_sites=1
+  _arm_manual_inv          line=108  call_sites=1
+  _arm_frame               line=167  call_sites=1
+  notify                   line=235  call_sites=0
+  _arm_deferred            line=239  call_sites=1
+  _arm_purity              line=328  call_sites=1
+  _blend_from_finished     line=418  call_sites=2
+  _arm_blend               line=429  call_sites=1
+
+== print-site census ==
+  line=73   _: print("PASS r93b_anim unknown arm=", arm)
+  line=95   print("PASS r93b_anim clock",
+  line=155  print("PASS r93b_anim manual_inv",
+  line=222  print("PASS r93b_anim frame",
+  line=318  print("PASS r93b_anim deferred",
+  line=406  print("PASS r93b_anim purity",
+  line=460  print("PASS r93b_anim blend",
+
+== arm census ==
+  match arms (6): clock, manual_inv, frame, deferred, purity, blend
+  default arm (line 65): clock
+  fixture fallback: unknown-arm print present
+  arms covered by match: 6  (+default clock)
+
+== CLI knob census ==
+  line=20   func _arg(name: String, def: String = "") -> String:
+  line=21   for a in OS.get_cmdline_user_args():
+  line=65   var arm := _arg("arm", "clock")
+
+### harness: run_battery.py
+== CASES rows ==
+total rows: 288  r93 rows: 23
+  r93_tween_census                       script=anim_lattice.gd    flags=['--arm=census'] exit=0 sig_len=2720
+  r93_tween_interp_value                 script=anim_lattice.gd    flags=['--arm=tweenval'] exit=0 sig_len=326
+  r93_tween_interp_grid_a                script=anim_lattice.gd    flags=['--arm=tweenval_grid'] exit=0 sig_len=738
+  r93_tween_interp_grid_b                script=anim_lattice.gd    flags=['--arm=tweenval_grid'] exit=0 sig_len=1450
+  r93_anim_track_interp                  script=anim_lattice.gd    flags=['--arm=animtrack'] exit=0 sig_len=425
+  r93_tween_manual_step                  script=anim_lattice.gd    flags=['--arm=tweenstep'] exit=0 sig_len=239
+  r93_tween_chain                        script=anim_lattice.gd    flags=['--arm=tweenchain'] exit=0 sig_len=309
+  r93_tween_process_stable               script=anim_lattice.gd    flags=['--arm=tweenproc'] exit=0 sig_len=83
+  r93_tween_phys_manual_step             script=anim_lattice.gd    flags=['--arm=tweenproc'] exit=0 sig_len=42
+  r93_anim_seek                          script=anim_lattice.gd    flags=['--arm=animseek'] exit=0 sig_len=437
+  r93_anim_method_callback               script=anim_lattice.gd    flags=['--arm=animmethod'] exit=0 sig_len=223
+  r93_anim_blend_finished                script=anim_lattice.gd    flags=['--arm=animblend'] exit=0 sig_len=539
+  r93_anim_blend_running                 script=anim_lattice.gd    flags=['--arm=animblend'] exit=0 sig_len=420
+  r93_anim_process_manual                script=anim_lattice.gd    flags=['--arm=animproc'] exit=0 sig_len=76
+  r93_anim_process_stable                script=anim_lattice.gd    flags=['--arm=animproc'] exit=0 sig_len=148
+  r93_anim_overshoot                     script=r93b_anim.gd       flags=['--arm=purity'] exit=0 sig_len=538
+  r93_anim_manual_clock_interleaved      script=r93b_anim.gd       flags=['--arm=manual_inv'] exit=0 sig_len=110
+  r93_anim_manual_clock_control          script=r93b_anim.gd       flags=['--arm=manual_inv'] exit=0 sig_len=170
+  r93_anim_deferred_flush                script=r93b_anim.gd       flags=['--arm=deferred'] exit=0 sig_len=208
+  r93_anim_await_offbyone                script=r93b_anim.gd       flags=['--arm=frame'] exit=0 sig_len=33
+  r93_anim_physics_tick                  script=r93b_anim.gd       flags=['--arm=frame'] exit=0 sig_len=80
+  r93_anim_phys_delta                    script=r93b_anim.gd       flags=['--arm=frame'] exit=0 sig_len=27
+  r93_anim_blend_interleaved             script=r93b_anim.gd       flags=['--arm=blend'] exit=0 sig_len=439
+
+== block position ==
+  r93 index range: 261..283 (contiguous=True)
+  predecessor: r92_tilemap_nullts_crash
+  successor:   crash_spontaneous_sigabrt
+
+== r93 expected_errors ==
+  rows carrying entries: 0  total entries: 0
+
+== r93 required_stderr ==
+  rows carrying entries: 0  total entries: 0
+
+== expected_errors floor gates ==
+  line=2957  "phys2d_expected_errors_all_matched": all(     prefix=phys2d_
+  line=2966  "r87_expected_errors_all_matched": all(        prefix=?
+  line=2975  "r88_expected_errors_all_matched": all(        prefix=r88_
+  line=2984  "r89_expected_errors_all_matched": all(        prefix=?
+  line=2992  "r90_expected_errors_all_matched": all(        prefix=r90_
+  line=3000  "r91_expected_errors_all_matched": all(        prefix=nav_lattice_
+  line=3008  "r92_expected_errors_all_matched": all(        prefix=r92_
+  line=3018  "r93_expected_errors_all_matched": all(        prefix=r93_
+
+== row<->arm bijection ==
+  anim_lattice.gd: 15 rows
+    duplicate arms: animblend, animproc, tweenproc, tweenval_grid
+    exits: [0]
+      r93_tween_census                       arm=census       exit=0
+      r93_tween_interp_value                 arm=tweenval     exit=0
+      r93_tween_interp_grid_a                arm=tweenval_grid exit=0
+      r93_tween_interp_grid_b                arm=tweenval_grid exit=0
+      r93_anim_track_interp                  arm=animtrack    exit=0
+      r93_tween_manual_step                  arm=tweenstep    exit=0
+      r93_tween_chain                        arm=tweenchain   exit=0
+      r93_tween_process_stable               arm=tweenproc    exit=0
+      r93_tween_phys_manual_step             arm=tweenproc    exit=0
+      r93_anim_seek                          arm=animseek     exit=0
+      r93_anim_method_callback               arm=animmethod   exit=0
+      r93_anim_blend_finished                arm=animblend    exit=0
+      r93_anim_blend_running                 arm=animblend    exit=0
+      r93_anim_process_manual                arm=animproc     exit=0
+      r93_anim_process_stable                arm=animproc     exit=0
+  r93b_anim.gd: 8 rows
+    duplicate arms: frame, manual_inv
+    exits: [0]
+      r93_anim_overshoot                     arm=purity       exit=0
+      r93_anim_manual_clock_interleaved      arm=manual_inv   exit=0
+      r93_anim_manual_clock_control          arm=manual_inv   exit=0
+      r93_anim_deferred_flush                arm=deferred     exit=0
+      r93_anim_await_offbyone                arm=frame        exit=0
+      r93_anim_physics_tick                  arm=frame        exit=0
+      r93_anim_phys_delta                    arm=frame        exit=0
+      r93_anim_blend_interleaved             arm=blend        exit=0
+
+== cross-check: harness arms vs fixture arms ==
+  anim_lattice.gd: fixture arms=11  referenced=11
+    arms with NO row: none
+    rows referencing a non-existent arm: none
+  r93b_anim.gd: fixture arms=6  referenced=5
+    arms with NO row: clock
+    rows referencing a non-existent arm: none

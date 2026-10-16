@@ -1,0 +1,51 @@
+receipts collected: 518
+arms seen: 17
+  anim_lattice     animblend      receipts=35 sources=author,boundary,r93-author,r93-simplifier,scout
+  anim_lattice     animmethod     receipts=29 sources=author,boundary,r93-author,r93-simplifier,scout
+  anim_lattice     animproc       receipts=37 sources=author,boundary,r93-author,r93-simplifier,scout
+  anim_lattice     animseek       receipts=31 sources=author,boundary,r93-author,r93-simplifier,scout
+  anim_lattice     animtrack      receipts=26 sources=author,boundary,r93-author,r93-simplifier,scout
+  anim_lattice     census         receipts=26 sources=author,boundary,r93-author,r93-simplifier,scout
+  anim_lattice     tweenchain     receipts=29 sources=author,boundary,r93-author,r93-simplifier,scout
+  anim_lattice     tweenproc      receipts=37 sources=author,boundary,r93-author,r93-simplifier,scout
+  anim_lattice     tweenstep      receipts=31 sources=author,boundary,r93-author,r93-simplifier,scout
+  anim_lattice     tweenval       receipts=26 sources=author,boundary,r93-author,r93-simplifier,scout
+  anim_lattice     tweenval_grid  receipts=32 sources=author,boundary,r93-author,r93-simplifier,scout
+  r93b_anim        blend          receipts=25 sources=author,boundary,r93-author,r93-simplifier
+  r93b_anim        clock          receipts=19 sources=author,boundary
+  r93b_anim        deferred       receipts=25 sources=author,boundary,r93-author,r93-simplifier
+  r93b_anim        frame          receipts=37 sources=author,boundary,r93-author,r93-simplifier
+  r93b_anim        manual_inv     receipts=31 sources=author,boundary,r93-author,r93-simplifier
+  r93b_anim        purity         receipts=25 sources=author,boundary,r93-author,r93-simplifier
+
+== per-row pin census ==
+case                                   script           arm        receipts sig_hits distinct  error verdicts
+r93_anim_await_offbyone                r93b_anim.gd     frame            37       37     32      0 PASS
+r93_anim_blend_finished                anim_lattice.gd  animblend        35       35      1      0 PASS
+r93_anim_blend_interleaved             r93b_anim.gd     blend            25       25     13      0 PASS
+r93_anim_blend_running                 anim_lattice.gd  animblend        35       35      1      0 PASS
+r93_anim_deferred_flush                r93b_anim.gd     deferred         25       25     19      0 PASS
+r93_anim_manual_clock_control          r93b_anim.gd     manual_inv       31       31     21      0 PASS
+r93_anim_manual_clock_interleaved      r93b_anim.gd     manual_inv       31       31     21      0 PASS
+r93_anim_method_callback               anim_lattice.gd  animmethod       29       29      1      0 PASS
+r93_anim_overshoot                     r93b_anim.gd     purity           25       25      1      0 PASS
+r93_anim_phys_delta                    r93b_anim.gd     frame            37       37     32      0 PASS
+r93_anim_physics_tick                  r93b_anim.gd     frame            37       37     32      0 PASS
+r93_anim_process_manual                anim_lattice.gd  animproc         37       37     32      0 PASS
+r93_anim_process_stable                anim_lattice.gd  animproc         37       37     32      0 PASS
+r93_anim_seek                          anim_lattice.gd  animseek         31       31      1      0 PASS
+r93_anim_track_interp                  anim_lattice.gd  animtrack        26       26      1      0 PASS
+r93_tween_census                       anim_lattice.gd  census           26       26      1      0 PASS
+r93_tween_chain                        anim_lattice.gd  tweenchain       29       29      1      0 PASS
+r93_tween_interp_grid_a                anim_lattice.gd  tweenval_grid       32       32      1      0 PASS
+r93_tween_interp_grid_b                anim_lattice.gd  tweenval_grid       32       32      1      0 PASS
+r93_tween_interp_value                 anim_lattice.gd  tweenval         26       26      1      0 PASS
+r93_tween_manual_step                  anim_lattice.gd  tweenstep        31       31      1      0 PASS
+r93_tween_phys_manual_step             anim_lattice.gd  tweenproc        37       37     19      0 PASS
+r93_tween_process_stable               anim_lattice.gd  tweenproc        37       37     19      0 PASS
+
+== problems ==
+  (none)
+
+== ERROR:-line coverage over all receipts ==
+distinct ERROR: lines in r93 receipts: 0

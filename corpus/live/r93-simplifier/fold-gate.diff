@@ -1,0 +1,15 @@
+--- committed-fixtures/run_battery.py	2026-10-15 22:00:12.012315575 -0300
++++ fold-gate/run_battery.py	2026-10-15 22:01:36.670646624 -0300
+@@ -1308,6 +1308,12 @@
+                 'r92_tilemap_physics': (
+                     'ERROR: Parameter "found" is null.',
+                 ),
++                # r93-simplifier dead-entry fold: a stale r93 allowlist entry
++                # that no r93 arm can ever emit (all 23 rows are ERROR:-clean).
++                # The row must still PASS; the r93 floor gate must flip.
++                'r93_tween_census': (
++                    'ERROR: r93-simplifier dead-entry fold probe (never emitted)',
++                ),
+             }.get(name, ())
+             # r89-fold (critic F1): stderr-fragment pins. geo2d_lattice_lineempty
+             # classified on the merged stdout+stderr blob, so a foreign SIGABRT

@@ -1,0 +1,178 @@
+classify_process segment sha256 = 749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3 (1068 bytes)
+rows: 23
+r93_tween_census                       rep1 rc=0 pass=True wall=0.63s stderr=0B
+r93_tween_census                       rep2 rc=0 pass=True wall=0.60s stderr=0B
+r93_tween_census                       rep3 rc=0 pass=True wall=0.60s stderr=0B
+r93_tween_interp_value                 rep1 rc=0 pass=True wall=0.50s stderr=0B
+r93_tween_interp_value                 rep2 rc=0 pass=True wall=0.60s stderr=0B
+r93_tween_interp_value                 rep3 rc=0 pass=True wall=0.51s stderr=0B
+r93_tween_interp_grid_a                rep1 rc=0 pass=True wall=0.50s stderr=0B
+r93_tween_interp_grid_a                rep2 rc=0 pass=True wall=0.51s stderr=0B
+r93_tween_interp_grid_a                rep3 rc=0 pass=True wall=0.50s stderr=0B
+r93_tween_interp_grid_b                rep1 rc=0 pass=True wall=0.59s stderr=0B
+r93_tween_interp_grid_b                rep2 rc=0 pass=True wall=0.49s stderr=0B
+r93_tween_interp_grid_b                rep3 rc=0 pass=True wall=0.60s stderr=0B
+r93_anim_track_interp                  rep1 rc=0 pass=True wall=0.51s stderr=0B
+r93_anim_track_interp                  rep2 rc=0 pass=True wall=0.60s stderr=0B
+r93_anim_track_interp                  rep3 rc=0 pass=True wall=0.52s stderr=0B
+r93_tween_manual_step                  rep1 rc=0 pass=True wall=0.51s stderr=0B
+r93_tween_manual_step                  rep2 rc=0 pass=True wall=0.62s stderr=0B
+r93_tween_manual_step                  rep3 rc=0 pass=True wall=0.51s stderr=0B
+r93_tween_chain                        rep1 rc=0 pass=True wall=0.62s stderr=0B
+r93_tween_chain                        rep2 rc=0 pass=True wall=0.49s stderr=0B
+r93_tween_chain                        rep3 rc=0 pass=True wall=0.52s stderr=0B
+r93_tween_process_stable               rep1 rc=0 pass=True wall=0.71s stderr=0B
+r93_tween_process_stable               rep2 rc=0 pass=True wall=0.59s stderr=0B
+r93_tween_process_stable               rep3 rc=0 pass=True wall=0.58s stderr=0B
+r93_tween_phys_manual_step             rep1 rc=0 pass=True wall=0.61s stderr=0B
+r93_tween_phys_manual_step             rep2 rc=0 pass=True wall=0.69s stderr=0B
+r93_tween_phys_manual_step             rep3 rc=0 pass=True wall=0.60s stderr=0B
+r93_anim_seek                          rep1 rc=0 pass=True wall=0.50s stderr=0B
+r93_anim_seek                          rep2 rc=0 pass=True wall=0.61s stderr=0B
+r93_anim_seek                          rep3 rc=0 pass=True wall=0.57s stderr=0B
+r93_anim_method_callback               rep1 rc=0 pass=True wall=0.60s stderr=0B
+r93_anim_method_callback               rep2 rc=0 pass=True wall=0.59s stderr=0B
+r93_anim_method_callback               rep3 rc=0 pass=True wall=0.54s stderr=0B
+r93_anim_blend_finished                rep1 rc=0 pass=True wall=0.50s stderr=0B
+r93_anim_blend_finished                rep2 rc=0 pass=True wall=0.59s stderr=0B
+r93_anim_blend_finished                rep3 rc=0 pass=True wall=0.50s stderr=0B
+r93_anim_blend_running                 rep1 rc=0 pass=True wall=0.49s stderr=0B
+r93_anim_blend_running                 rep2 rc=0 pass=True wall=0.61s stderr=0B
+r93_anim_blend_running                 rep3 rc=0 pass=True wall=0.61s stderr=0B
+r93_anim_process_manual                rep1 rc=0 pass=True wall=0.77s stderr=0B
+r93_anim_process_manual                rep2 rc=0 pass=True wall=0.89s stderr=0B
+r93_anim_process_manual                rep3 rc=0 pass=True wall=0.79s stderr=0B
+r93_anim_process_stable                rep1 rc=0 pass=True wall=0.79s stderr=0B
+r93_anim_process_stable                rep2 rc=0 pass=True wall=0.79s stderr=0B
+r93_anim_process_stable                rep3 rc=0 pass=True wall=0.77s stderr=0B
+r93_anim_overshoot                     rep1 rc=0 pass=True wall=0.50s stderr=0B
+r93_anim_overshoot                     rep2 rc=0 pass=True wall=0.50s stderr=0B
+r93_anim_overshoot                     rep3 rc=0 pass=True wall=0.48s stderr=0B
+r93_anim_manual_clock_interleaved      rep1 rc=0 pass=True wall=0.69s stderr=0B
+r93_anim_manual_clock_interleaved      rep2 rc=0 pass=True wall=0.68s stderr=0B
+r93_anim_manual_clock_interleaved      rep3 rc=0 pass=True wall=0.69s stderr=0B
+r93_anim_manual_clock_control          rep1 rc=0 pass=True wall=0.68s stderr=0B
+r93_anim_manual_clock_control          rep2 rc=0 pass=True wall=0.71s stderr=0B
+r93_anim_manual_clock_control          rep3 rc=0 pass=True wall=0.69s stderr=0B
+r93_anim_deferred_flush                rep1 rc=0 pass=True wall=0.75s stderr=0B
+r93_anim_deferred_flush                rep2 rc=0 pass=True wall=0.76s stderr=0B
+r93_anim_deferred_flush                rep3 rc=0 pass=True wall=0.79s stderr=0B
+r93_anim_await_offbyone                rep1 rc=0 pass=True wall=0.93s stderr=0B
+r93_anim_await_offbyone                rep2 rc=0 pass=True wall=0.86s stderr=0B
+r93_anim_await_offbyone                rep3 rc=0 pass=True wall=0.88s stderr=0B
+r93_anim_physics_tick                  rep1 rc=0 pass=True wall=0.77s stderr=0B
+r93_anim_physics_tick                  rep2 rc=0 pass=True wall=1.00s stderr=0B
+r93_anim_physics_tick                  rep3 rc=0 pass=True wall=0.87s stderr=0B
+r93_anim_phys_delta                    rep1 rc=0 pass=True wall=0.87s stderr=0B
+r93_anim_phys_delta                    rep2 rc=0 pass=True wall=0.87s stderr=0B
+r93_anim_phys_delta                    rep3 rc=0 pass=True wall=0.87s stderr=0B
+r93_anim_blend_interleaved             rep1 rc=0 pass=True wall=0.60s stderr=0B
+r93_anim_blend_interleaved             rep2 rc=0 pass=True wall=0.72s stderr=0B
+r93_anim_blend_interleaved             rep3 rc=0 pass=True wall=0.61s stderr=0B
+
+== per-row distinct stdout across 3 reps ==
+  r93_anim_await_offbyone                distinct=3 pass=3/3
+  r93_anim_blend_finished                distinct=1 pass=3/3
+  r93_anim_blend_interleaved             distinct=2 pass=3/3
+  r93_anim_blend_running                 distinct=1 pass=3/3
+  r93_anim_deferred_flush                distinct=3 pass=3/3
+  r93_anim_manual_clock_control          distinct=3 pass=3/3
+  r93_anim_manual_clock_interleaved      distinct=3 pass=3/3
+  r93_anim_method_callback               distinct=1 pass=3/3
+  r93_anim_overshoot                     distinct=1 pass=3/3
+  r93_anim_phys_delta                    distinct=3 pass=3/3
+  r93_anim_physics_tick                  distinct=3 pass=3/3
+  r93_anim_process_manual                distinct=3 pass=3/3
+  r93_anim_process_stable                distinct=3 pass=3/3
+  r93_anim_seek                          distinct=1 pass=3/3
+  r93_anim_track_interp                  distinct=1 pass=3/3
+  r93_tween_census                       distinct=1 pass=3/3
+  r93_tween_chain                        distinct=1 pass=3/3
+  r93_tween_interp_grid_a                distinct=1 pass=3/3
+  r93_tween_interp_grid_b                distinct=1 pass=3/3
+  r93_tween_interp_value                 distinct=1 pass=3/3
+  r93_tween_manual_step                  distinct=1 pass=3/3
+  r93_tween_phys_manual_step             distinct=2 pass=3/3
+  r93_tween_process_stable               distinct=2 pass=3/3
+
+== N-1 await law under --fixed-fps (frame arm) ==
+  ff30   rep1 rc=0 x1=0.0 x2=3.33333349227905 x3=7.50000047683716 x5=13.4166669845581 pos10=0.3 law=True
+  ff30   rep2 rc=0 x1=0.0 x2=3.33333349227905 x3=7.50000047683716 x5=13.4166669845581 pos10=0.3 law=True
+  ff60   rep1 rc=0 x1=0.0 x2=1.66666674613953 x3=3.33333349227905 x5=6.66666698455811 pos10=0.15 law=True
+  ff60   rep2 rc=0 x1=0.0 x2=1.66666674613953 x3=3.33333349227905 x5=6.66666698455811 pos10=0.15 law=True
+  ff120  rep1 rc=0 x1=0.0 x2=0.83333337306976 x3=1.66666674613953 x5=3.33333349227905 pos10=0.075 law=True
+  ff120  rep2 rc=0 x1=0.0 x2=0.83333337306976 x3=1.66666674613953 x5=3.33333349227905 pos10=0.075 law=True
+  default rep1 rc=0 x1=0.0 mixer10=True phys_delta=0.01666666666667
+  default rep2 rc=0 x1=0.0 mixer10=True phys_delta=0.01666666666667
+
+== fold checks (from the per-row receipts) ==
+overshoot reps: [
+ {
+  "back025": 0.10286344587803,
+  "back_below_start": true,
+  "back050": 5.5,
+  "back_midpoint": true,
+  "spr050": 10.510157585144,
+  "spring_above_end": true,
+  "spr100": 10.0,
+  "spring_endpoint": true,
+  "ela025": 9.11611652374268,
+  "static_no_clamp": true
+ },
+ {
+  "back025": 0.10286344587803,
+  "back_below_start": true,
+  "back050": 5.5,
+  "back_midpoint": true,
+  "spr050": 10.510157585144,
+  "spring_above_end": true,
+  "spr100": 10.0,
+  "spring_endpoint": true,
+  "ela025": 9.11611652374268,
+  "static_no_clamp": true
+ },
+ {
+  "back025": 0.10286344587803,
+  "back_below_start": true,
+  "back050": 5.5,
+  "back_midpoint": true,
+  "spr050": 10.510157585144,
+  "spring_above_end": true,
+  "spr100": 10.0,
+  "spring_endpoint": true,
+  "ela025": 9.11611652374268,
+  "static_no_clamp": true
+ }
+]
+deferred reps: [
+ {
+  "manual_def_exact": true,
+  "manual_def_phys_exact": true,
+  "two_adv_exact": true,
+  "immediate_exact": true
+ },
+ {
+  "manual_def_exact": true,
+  "manual_def_phys_exact": true,
+  "two_adv_exact": true,
+  "immediate_exact": true
+ },
+ {
+  "manual_def_exact": true,
+  "manual_def_phys_exact": true,
+  "two_adv_exact": true,
+  "immediate_exact": true
+ }
+]
+
+== cross-arm substring check ==
+{
+ "phys_delta_token_in_clock": true,
+ "finished_010_token_in_clock": false,
+ "signature_satisfied_by_a_foreign_arm": [],
+ "arms_launched": 16,
+ "signature_satisfied_by_the_unknown_arm_fallback": [],
+ "clock_out_head": [
+  "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org"
+ ]
+}
