@@ -1532,8 +1532,116 @@ CASES = [
      'all_jumps_q=true period_is_block=true'),
     ('r99b_finfree_played', 'r99b_modes.gd', ['--arm=finfree'], 0,
      'played_gt_02=true'),
-    ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),    ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
-    ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
+    ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),    ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),    # r100 author — Viewport/Control GUI input routing + pointer-gesture
+    # lattice, and the boundary's corrected mechanisms. 25 rows:
+    #   14 scout cells (r100_gui.gd — BYTE-COPY of the frozen r100-scout
+    #      probe, sha256 dd826f6e7b74ba62fcfd175ab7a1cf0c40fd9712de4b33a18554930cf6dad073,
+    #      every cell byte-identical over 6 canonical + 2 loadtest reps)
+    #   11 boundary rows (r100b_phase.gd sha256 49298e6cc18c4e0de627105b9d95ff28ed2ccfa52bb1cc2da364b76d5430d4b7
+    #      — 8 arms; r100b_emul.gd sha256 31087e7821eb4d2d5cf4bd28d9e5d8ca11bd52f83057fcd41889ecfecdbd4960
+    #      — 1 arm; r100b_seq.gd sha256 4718a19e0050f4043613a5a93a13cbd812c811605f7a14d33e000544eafa94dd
+    #      — 2 variants) — all BYTE-COPYs of the frozen r100-boundary probes,
+    #      no fixture folds; every boundary fold lands row-side here.
+    #
+    # r100-boundary verdicts applied — the encoded law is the surviving one:
+    #   * CONFIRMED byte-identical in 7 launch modes (quiet, 16-hog load,
+    #     --fixed-fps 30/60/120/1, threaded 2D physics): routing matrix +
+    #     set_input_as_handled, push_input-is-a-scene-tree-injection (incl.
+    #     synchronous hover), event.position control-locality vs the
+    #     cursor-derived helpers, the hover-clip/button-routing asymmetry,
+    #     drop-target = hover-picked, touch positional/tracked + both
+    #     emulation directions, SubViewport input isolation + private
+    #     cursor, warp/OS-cursor inertness, focus-owned key delivery, and
+    #     the headless-null render surface. No envelope/mode split needed.
+    #   * REFUTED as worded — "drag start = accumulated |relative| > 10":
+    #     the law is |SUM of relative| > 10 on a motion whose own
+    #     button_mask carries LEFT (dp_sign_same: relative +6 then -6, net
+    #     displacement 0, sum-of-absolutes 12 -> NO drag; dp_rel_only:
+    #     relative 30 with the event's own position unchanged -> drag;
+    #     dp_pos_only: position 40 with relative 0 -> no drag). The scout's
+    #     d7 row is consistent with both models; dragphase is the
+    #     separating sign test.
+    #   * REFUTED — "parse_input_event moves the cursor": the write is
+    #     FLUSH-GATED (cursorphase: mm_imm=(0.0, 0.0) at the call,
+    #     mm_flush=(20.0, 20.0) after Input.flush_buffered_events(); same
+    #     for the button state held 0 -> 1), and the implicit input flush
+    #     runs BEFORE the process_frame signal (flushpos sig@1=(20.0, 20.0)),
+    #     so the scout's post-await cursor observable survives unchanged —
+    #     only the mechanism statement was wrong.
+    #   * NEW mechanisms: delivery order is _input then _gui_input (orderin),
+    #     so a _gui_input-side set_input_as_handled cannot suppress the
+    #     _input copy; parse-path motions COALESCE at the flush (one event,
+    #     summed relative, last position) while push-path events stay 1:1
+    #     (coalesce); the engine never computes double_click for synthetic
+    #     events (dblclick); hover is synchronous with push_input
+    #     (hoverphase); get_last_mouse_velocity stays (0.0, 0.0) at every
+    #     sampled phase on both paths (velphase — the scout's do-not-pin
+    #     warning was about the warp path, which no row prints).
+    #   * NEW HAZARD — the cells are single-cell-per-process ONLY: with tree
+    #     cleanup the leaked viewport cursor + emulated mouse-button state
+    #     still diverge (seq_clean 10/14; first divergence the cursor cell's
+    #     c0=(30.0, 14.0), pinned here); without cleanup the tree leftovers
+    #     dominate (seq_noclean 5/14; first divergence hover h0=P, pinned
+    #     here). execute() launches one fresh process per case, so the rows
+    #     are safe — any future batched probe must reset both states.
+    # All 25 signatures are full PASS lines verified fresh-process x3 in a
+    # scratch replicating this harness's staging, classified with the
+    # production clause on merged stdout+stderr: 75/75 accepts, 0
+    # rejections, 0 unstable cells. Rows inserted ahead of the
+    # crash/descendant tail — descendant_pipe_detached_control's sleep-8 gap
+    # stays adjacent to the meta probes.
+    ('r100_gui_census', 'r100_gui.gd', ['--arm=census'], 0,
+     'PASS r100_gui census dv=headless vpsize=(64.0, 64.0) final=(1.0000,0.0000;0.0000,1.0000;0.0000,0.0000) mf_ctrl=0 mf_label=2 mf_button=0 mf_panel=0 mf_container=1 focus_mode_ctrl=0 vpmethods=[push_input=1|push_unhandled_input=1|gui_get_focus_owner=1|gui_get_hovered_control=1|gui_is_dragging=1|gui_get_drag_data=1|gui_release_focus=1|set_input_as_handled=1|is_input_handled=1|get_mouse_position=1|warp_mouse=1|get_final_transform=1] ctrlmethods=[force_drag=1|accept_event=1|grab_focus=1|has_focus=1|release_focus=1|get_local_mouse_position=1|set_drag_preview=1] inputmethods=[warp_mouse=1|get_mouse_position=0|set_emulate_mouse_from_touch=1|is_emulating_mouse_from_touch=1|set_emulate_touch_from_mouse=1|is_emulating_touch_from_mouse=1|get_last_mouse_velocity=1|get_last_mouse_screen_velocity=1|parse_input_event=1|flush_buffered_events=1|is_mouse_button_pressed=1] emul_mouse=1 emul_touch=0 mbprops=[alt_pressed|button_index|button_mask|canceled|ctrl_pressed|device|double_click|factor|global_position|meta_pressed|position|pressed|resource_local_to_scene|resource_name|script|shift_pressed|window_id] mmprops=[alt_pressed|button_mask|ctrl_pressed|device|global_position|meta_pressed|pen_inverted|position|pressure|relative|resource_local_to_scene|resource_name|screen_relative|screen_velocity|script|shift_pressed|tilt|velocity|window_id] stprops=[canceled|device|double_tap|index|position|pressed|resource_local_to_scene|resource_name|script|window_id] sdprops=[device|index|pen_inverted|position|pressure|relative|resource_local_to_scene|resource_name|screen_relative|screen_velocity|script|tilt|velocity|window_id]'),
+    ('r100_gui_routing', 'r100_gui.gd', ['--arm=routing'], 0,
+     'PASS r100_gui routing s1_cc[[C:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|C:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]]- s2_ci[-][P:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|P:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)] s3_cp[[C:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|C:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]][P:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|P:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)] s4_ch[[C:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|C:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]]- s5_ci_pp[-][P:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|P:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)] s6_ii[-]- s7_inparent[-][P:mb(b=1,p=1,dc=0,bm=0,pos=24.0,24.0,gpos=24.0,24.0)|P:mb(b=1,p=0,dc=0,bm=0,pos=24.0,24.0,gpos=24.0,24.0)] s8_out[-]- s9_rb[-][P:mb(b=2,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)] s10_input_state held_push=0 cursor=(0.0, 0.0)'),
+    ('r100_gui_hover', 'r100_gui.gd', ['--arm=hover'], 0,
+     'PASS r100_gui hover h0=null h1=A ev=[A_in] h2=A ev=[A_in] h3=B ev=[A_in|A_out|B_in] h4=null ev=[A_in|A_out|B_in|B_out] h5=C ev=[A_in|A_out|B_in|B_out] h6_press=A ev=[A_in|A_out|B_in|B_out|A_in] h7_after_release=A'),
+    ('r100_gui_motion', 'r100_gui.gd', ['--arm=motion'], 0,
+     'PASS r100_gui motion m1[[S:mm(bm=0,pos=10.0,10.0,gpos=10.0,10.0,rel=5.0,7.0,vel=0.0,0.0)]] m2[[S:mm(bm=0,pos=20.0,30.0,gpos=20.0,30.0,rel=10.0,20.0,vel=0.0,0.0)]] m3_dc[[S:mb(b=1,p=1,dc=1,bm=0,pos=10.0,10.0,gpos=10.0,10.0)|S:mb(b=1,p=0,dc=0,bm=0,pos=10.0,10.0,gpos=10.0,10.0)]] m4_push_input_state held=0 cursor=(0.0, 0.0) vel=(0.0, 0.0)'),
+    ('r100_gui_localpos', 'r100_gui.gd', ['--arm=localpos'], 0,
+     'PASS r100_gui localpos lp_push_p[-] c[[C:mb(b=1,p=1,dc=0,bm=0,pos=6.0,2.0,gpos=30.0,14.0)]] loc_c=-24.0,-12.0 lp_push_local_p[-] c[[C:mb(b=1,p=1,dc=0,bm=0,pos=6.0,2.0,gpos=30.0,14.0)]] lp_parse_p[-] c[[C:mb(b=1,p=1,dc=0,bm=0,pos=6.0,2.0,gpos=30.0,14.0)]] loc_c=6.0,2.0 gloc_c=30.0,14.0'),
+    ('r100_gui_cursor', 'r100_gui.gd', ['--arm=cursor'], 0,
+     'PASS r100_gui cursor c0=(0.0, 0.0) c1_push_mm=(0.0, 0.0) c2_push_mb=(0.0, 0.0) c3_parse_mb=(24.0, 24.0) c4_parse_mm=(30.0, 30.0) c5_gpos_drives=(60.0, 60.0) c6_parse_st=(44.0, 44.0) c7_push_mm2=(44.0, 44.0) c8 ds=(0, 0)'),
+    ('r100_gui_clip', 'r100_gui.gd', ['--arm=clip'], 0,
+     'PASS r100_gui clip cp0_vis=[P: (0.0, 0.0), S: (64.0, 64.0)] cp_hover(62.0, 4.0)=ED cp_press(62.0, 4.0) in=- ed=[ED:mb(b=1,p=1,dc=0,bm=0,pos=2.0,4.0,gpos=62.0,4.0)] fa=- cp_hover(63.9, 4.0)=ED cp_press(63.9, 4.0) in=- ed=[ED:mb(b=1,p=1,dc=0,bm=0,pos=3.9,4.0,gpos=63.9,4.0)] fa=- cp_hover(64.0, 4.0)=null cp_press(64.0, 4.0) in=- ed=[ED:mb(b=1,p=1,dc=0,bm=0,pos=4.0,4.0,gpos=64.0,4.0)] fa=- cp_hover(64.1, 4.0)=null cp_press(64.1, 4.0) in=- ed=[ED:mb(b=1,p=1,dc=0,bm=0,pos=4.1,4.0,gpos=64.1,4.0)] fa=- cp_hover(70.0, 4.0)=null cp_press(70.0, 4.0) in=- ed=[ED:mb(b=1,p=1,dc=0,bm=0,pos=10.0,4.0,gpos=70.0,4.0)] fa=- cp_hover(90.0, 4.0)=null cp_press(90.0, 4.0) in=- ed=- fa=[FA:mb(b=1,p=1,dc=0,bm=0,pos=10.0,4.0,gpos=90.0,4.0)] cp_hover200=null'),
+    ('r100_gui_drag', 'r100_gui.gd', ['--arm=drag'], 0,
+     'PASS r100_gui drag d1_at_threshold drag=0 calls=0 d2_over_threshold drag=1 calls=1 data=fromA at=[(8.0,8.0)] d3_over_b drag=1 a_drop=[can(fromA)] b_drop=[can(fromA)] b_get=0 d4_over_b2 b_drop=[can(fromA)|can(fromA)] d5_release drag=0 b_drop=[can(fromA)|can(fromA)|can(fromA)|drop(fromA)] d6_unmasked_motion drag=0 calls=1 d7_accum[1:0 2:1 3:1 ] calls=2 d8_no_target drag=0 a_drop=[can(fromA)|can(fromA)|can(fromA)|can(fromA)|drop(fromA)|can(fromA)|can(fromA)|drop(fromA)] b_drop=[can(fromA)|can(fromA)|can(fromA)|drop(fromA)] d9_force drag=1 data=forced calls=0 d10_force_over_d d_drop=[can(forced)] d11_force_drop drag=0 d_drop=[can(forced)|can(forced)|drop(forced)] d12_nodrop drag=0 d_drop=[can(forced)|can(forced)|drop(forced)|can(no)]'),
+    ('r100_gui_touch', 'r100_gui.gd', ['--arm=touch'], 0,
+     'PASS r100_gui touch t1_push_a=- b=[B:st(i=0,p=1,dt=1,pos=4.0,4.0)] t2_pushdrag_a=- b=[B:sd(i=0,pos=-12.0,4.0,rel=-16.0,0.0)] t3_emul_touch held=1 a=[A:mb(b=1,p=1,dc=0,bm=1,pos=8.0,8.0,gpos=8.0,8.0)|A:st(i=0,p=1,dt=0,pos=8.0,8.0)] b=- emul=1 t4_emul_mouse a_gui=- a_in=[A:st(i=0,p=1,dt=0,pos=20.0,4.0)|A:mb(b=1,p=1,dc=0,bm=0,pos=20.0,4.0,gpos=20.0,4.0)] emul_t=1'),
+    ('r100_gui_subvp', 'r100_gui.gd', ['--arm=subvp'], 0,
+     'PASS r100_gui subvp v0_local=1 size=(64, 64) cursor=(0.0, 0.0) v1_sub[[S:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]] root=- v2_hovered=S cursor_sub=(8.0, 8.0) cursor_root=(0.0, 0.0) v3_root_push_sub[-] root=[R:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)] v4_cursors sub=(8.0, 8.0) root=(0.0, 0.0) v5_local_false local=0 s2=[[S2:mb(b=1,p=1,dc=0,bm=0,pos=12.0,12.0,gpos=12.0,12.0)]] cursor=(12.0, 12.0)'),
+    ('r100_gui_warp', 'r100_gui.gd', ['--arm=warp'], 0,
+     'PASS r100_gui warp w0 dv=headless cursor=(0.0, 0.0) ds_mouse=(0, 0) w1 after_push cursor=(0.0, 0.0) ds_mouse=(0, 0) w2 after_input_warp cursor=(0.0, 0.0) ds_mouse=(0, 0) w3 after_vp_warp cursor=(0.0, 0.0) ds_mouse=(0, 0) w4 mode=0'),
+    ('r100_gui_focus', 'r100_gui.gd', ['--arm=focus'], 0,
+     'PASS r100_gui focus f0 owner=F f_focus=1 g_focus=0 f1_key gui_f=[F:key(k=65,p=1)] gui_g=- in_f=[F:key(k=65,p=1)] f2_handled gui_f=[F:key(k=65,p=1)] gui_g=- f3_regrab gui_f=- gui_g=[G:key(k=65,p=1)] owner=G f4_released gui_f=- gui_g=- owner=null'),
+    ('r100_gui_render', 'r100_gui.gd', ['--arm=render'], 0,
+     'PASS r100_gui render r0 tex_cls=ViewportTexture size=(64.0, 64.0) r1 img_null=1 r2 adapter= rd_null=1 r3 method=forward_plus screens=0 ssize=(0, 0) win_size=(64, 64) r4 light sh=0 filt=0 smooth=0.0 blend=0 r5 gpu_capture=[P: (0.0, 0.0), S: (0.0, 0.0)]'),
+    ('r100_gui_osmeta', 'r100_gui.gd', ['--arm=osmeta'], 0,
+     'PASS r100_gui osmeta Thread[e=1,m=7] Mutex[e=1,m=3] Semaphore[e=1,m=3] WorkerThreadPool[e=1,m=9] Time[e=1,m=21] os=Linux procs_gt0=1 wtp_has_thread_count=0'),
+    ('r100b_phase_cursorphase', 'r100b_phase.gd', ['--arm=cursorphase'], 0,
+     'PASS r100b_phase cursorphase init=(0.0, 0.0) mm_imm=(0.0, 0.0) mm_flush=(20.0, 20.0) mm_f1=(20.0, 20.0) mm_f2=(20.0, 20.0) mb_imm=(20.0, 20.0) held=0 mb_flush=(24.0, 24.0) held=1 mb_f1=(24.0, 24.0) held=1 push_imm=(24.0, 24.0) push_f1=(24.0, 24.0) gpos_imm=(24.0, 24.0) gpos_f1=(52.0, 52.0) hovered=null'),
+    ('r100b_phase_hoverphase', 'r100b_phase.gd', ['--arm=hoverphase'], 0,
+     'PASS r100b_phase hoverphase h0=null ev=- pf=0 h_imm=A ev=[in@0] h_f1=A ev=[in@0] h_f2=A ev=[in@0] leave_imm=null ev=[in@0|out@2] leave_f1=null ev=[in@0|out@2] press_imm=A press_f1=A rel_f1=A'),
+    ('r100b_phase_dragphase', 'r100b_phase.gd', ['--arm=dragphase'], 0,
+     'PASS r100b_phase dragphase dp_multiframe[1:0 2:1 3:1 ] calls=1 dp_sameframe[1:0 2:1 3:1 ] calls=2 dp_sign_same drag=0 calls=0 dp_sign_multi mid=0 after=0 calls=0 dp_net16 drag=1 calls=1 dp_10p5 drag=1 calls=1 dp_small3 drag=1 calls=1 dp_rel_only drag=1 calls=1 dp_pos_only drag=0 calls=0 dp_pos_thresh at10=0 at11=0 calls=0'),
+    ('r100b_phase_coalesce', 'r100b_phase.gd', ['--arm=coalesce'], 0,
+     'PASS r100b_phase coalesce p2_imm n=0 rel=(0.0, 0.0) log=- p2_flush n=1 rel=(20.0, 0.0) p2_f1 n=1 rel=(20.0, 0.0) log=[S:mm(bm=0,pos=20.0,10.0,gpos=20.0,10.0,rel=20.0,0.0,vel=0.0,0.0)] p2_sep imm n=1 p2_sep flush n=2 rel=(20.0, 0.0) log=[S:mm(bm=0,pos=30.0,10.0,gpos=30.0,10.0,rel=10.0,0.0,vel=0.0,0.0)|S:mm(bm=0,pos=40.0,10.0,gpos=40.0,10.0,rel=10.0,0.0,vel=0.0,0.0)] push2 imm n=2 rel=(20.0, 0.0) log=[S:mm(bm=0,pos=50.0,10.0,gpos=50.0,10.0,rel=10.0,0.0,vel=0.0,0.0)|S:mm(bm=0,pos=60.0,10.0,gpos=60.0,10.0,rel=10.0,0.0,vel=0.0,0.0)] push2_f1 n=2 rel=(20.0, 0.0)'),
+    ('r100b_phase_velphase', 'r100b_phase.gd', ['--arm=velphase'], 0,
+     'PASS r100b_phase velphase v0_none=(0.0, 0.0) screen=(0.0, 0.0) v1_push=(0.0, 0.0) v2_parse_imm=(0.0, 0.0) screen=(0.0, 0.0) v3_f1=(0.0, 0.0) v4_f2=(0.0, 0.0) v5_parse2_imm=(0.0, 0.0) v6_f1=(0.0, 0.0)'),
+    ('r100b_phase_flushpos', 'r100b_phase.gd', ['--arm=flushpos'], 0,
+     'PASS r100b_phase flushpos pre=(0.0, 0.0) pf=0 post_parse=(0.0, 0.0) after_await=(20.0, 20.0) log=[sig@1=(20.0, 20.0)] post_parse2=(20.0, 20.0) after_await2=(44.0, 44.0) log=[sig@1=(20.0, 20.0)|sig@2=(44.0, 44.0)] post_flush=(12.0, 12.0) after_await3=(12.0, 12.0) log=[sig@1=(20.0, 20.0)|sig@2=(44.0, 44.0)|sig@3=(12.0, 12.0)]'),
+    ('r100b_phase_orderin', 'r100b_phase.gd', ['--arm=orderin'], 0,
+     'PASS r100b_phase orderin press[[i:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|g:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]] motion[[i:mm(bm=0,pos=12.0,12.0,gpos=12.0,12.0,rel=4.0,4.0,vel=0.0,0.0)|g:mm(bm=0,pos=12.0,12.0,gpos=12.0,12.0,rel=4.0,4.0,vel=0.0,0.0)]] key[[i:key(k=65,p=1)|g:key(k=65,p=1)]] touch[[i:st(i=0,p=1,dt=0,pos=8.0,8.0)|g:st(i=0,p=1,dt=0,pos=8.0,8.0)]] handled_press[[i:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|g:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]] two_in_frame[[i:mm(bm=0,pos=20.0,20.0,gpos=20.0,20.0,rel=8.0,8.0,vel=0.0,0.0)|g:mm(bm=0,pos=20.0,20.0,gpos=20.0,20.0,rel=8.0,8.0,vel=0.0,0.0)|i:mb(b=1,p=1,dc=0,bm=0,pos=20.0,20.0,gpos=20.0,20.0)|g:mb(b=1,p=1,dc=0,bm=0,pos=20.0,20.0,gpos=20.0,20.0)]]'),
+    ('r100b_phase_dblclick', 'r100b_phase.gd', ['--arm=dblclick'], 0,
+     'PASS r100b_phase dblclick parsed_pair[[A:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|A:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|A:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|A:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]] pushed_pair[[A:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|A:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|A:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|A:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]] parsed_third[[A:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]]'),
+    ('r100b_emul_state', 'r100b_emul.gd', [], 0,
+     'PASS r100b_emul held0=0 emul_mouse=1 touch_press held=1 cursor=(44.0, 44.0) touch_release held=0 second_press held=1 cursor=(10.0, 10.0)'),
+    ('r100b_seq_clean', 'r100b_seq.gd', ['--clean=1'], 0,
+     'PASS r100_gui cursor c0=(30.0, 14.0) c1_push_mm=(30.0, 14.0) c2_push_mb=(30.0, 14.0) c3_parse_mb=(24.0, 24.0) c4_parse_mm=(30.0, 30.0) c5_gpos_drives=(60.0, 60.0) c6_parse_st=(44.0, 44.0) c7_push_mm2=(44.0, 44.0) c8 ds=(0, 0)'),
+    ('r100b_seq_noclean', 'r100b_seq.gd', ['--clean=0'], 0,
+     'PASS r100_gui hover h0=P h1=A ev=[A_in] h2=A ev=[A_in] h3=B ev=[A_in|A_out|B_in] h4=null ev=[A_in|A_out|B_in|B_out] h5=C ev=[A_in|A_out|B_in|B_out] h6_press=A ev=[A_in|A_out|B_in|B_out|A_in] h7_after_release=A'),
+    ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
+    ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),    ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
     # r63 KNOWN-ACCEPTING FORGERY ROW: the child withholds the signature; a
     # pipe-holding descendant writes it after the parent's exit
     # (reparenting-gated) and releases the pipes before the bound. The row
@@ -2104,6 +2212,20 @@ def main():
                 # r99_expected_errors_all_matched).
                 'r99_audio_gen': (
                     'ERROR: Condition "active" is true.',
+                ),
+                # r100 author: the render cell (and both seq variants that
+                # replay it) exercises the dummy rendering storage's
+                # backbuffer readback — deterministic headless ERROR, one
+                # exact allowlist entry per case (the ERROR line is the
+                # classified unit; its backtrace lines carry no ERROR:).
+                'r100_gui_render': (
+                    'ERROR: Parameter "t" is null.',
+                ),
+                'r100b_seq_clean': (
+                    'ERROR: Parameter "t" is null.',
+                ),
+                'r100b_seq_noclean': (
+                    'ERROR: Parameter "t" is null.',
                 ),
             }.get(name, ())
             # r89-fold (critic F1): stderr-fragment pins. geo2d_lattice_lineempty
@@ -3878,6 +4000,16 @@ def main():
             not e["dead_in_run"]
             for r in census_rows
             if r["case"].startswith(("r99_audio_", "r99b_"))
+            for e in r["entries"]),
+        # r100 author: the three whitelist-bearing cases (the render cell's
+        # deterministic dummy-texture readback ERROR plus its two seq
+        # replays) carry the r100_gui_ / r100b_ prefixes — same
+        # named-by-round / covers-round-prefixes shape as r87-r96, so a dead
+        # r100 allowlist entry cannot pass silently.
+        "r100_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith(("r100_gui_", "r100b_"))
             for e in r["entries"]),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
