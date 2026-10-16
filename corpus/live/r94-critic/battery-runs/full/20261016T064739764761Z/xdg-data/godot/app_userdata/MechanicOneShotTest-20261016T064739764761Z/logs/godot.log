@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS save_process missing=true pid=3250571 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r94-critic/battery-runs/full/20261016T064739764761Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261016T064739764761Z/r58-process-missing.json
+ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND,
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] run (res://save_process.gd:33)

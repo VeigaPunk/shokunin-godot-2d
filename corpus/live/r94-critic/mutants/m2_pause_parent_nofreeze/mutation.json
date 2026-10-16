@@ -1,0 +1,12 @@
+{
+  "mutant": "m2_pause_parent_nofreeze",
+  "substitutions": [
+    {
+      "old": "\tp.visible = false\n",
+      "new": "\tp.visible = true  # CRITIC MUTANT: parent lever no longer freezes\n",
+      "note": "cpu_pause: parent-visibility lever hides nothing (no freeze); predicted vis_parent fin_after_show=-25"
+    }
+  ],
+  "source": "/tmp/r94crit-frozen/corpus/fixtures/particles_lattice.gd",
+  "source_sha256_note": "0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9"
+}

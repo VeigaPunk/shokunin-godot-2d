@@ -1,0 +1,12 @@
+{
+  "mutant": "m3_pause_pm_nofreeze",
+  "substitutions": [
+    {
+      "old": "\tn3.process_mode = Node.PROCESS_MODE_DISABLED\n",
+      "new": "\tn3.process_mode = Node.PROCESS_MODE_INHERIT  # CRITIC MUTANT: no disable\n",
+      "note": "cpu_pause: process_mode lever never disables; predicted pm_disabled fin_after_enable=-25"
+    }
+  ],
+  "source": "/tmp/r94crit-frozen/corpus/fixtures/particles_lattice.gd",
+  "source_sha256_note": "0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9"
+}

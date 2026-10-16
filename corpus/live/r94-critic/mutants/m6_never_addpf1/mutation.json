@@ -1,0 +1,12 @@
+{
+  "mutant": "m6_never_addpf1",
+  "substitutions": [
+    {
+      "old": "func _arm_cpu_never() -> void:\n\tvar n := _new_cpu(",
+      "new": "func _arm_cpu_never() -> void:\n\tawait process_frame  # CRITIC MUTANT: node now added at add_pf=1\n\tvar n := _new_cpu(",
+      "note": "cpu_never: node added after the first idle frame (add_pf=1); predicted the node fires -> ok=false"
+    }
+  ],
+  "source": "/tmp/r94crit-frozen/corpus/fixtures/particles_lattice.gd",
+  "source_sha256_note": "0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9"
+}

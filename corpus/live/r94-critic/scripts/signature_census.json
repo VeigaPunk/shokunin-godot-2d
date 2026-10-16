@@ -1,0 +1,53 @@
+{
+  "scout-canonical": {
+    "receipts": 105,
+    "missing": {},
+    "missing_files": []
+  },
+  "scout-loadtest": {
+    "receipts": 38,
+    "missing": {},
+    "missing_files": []
+  },
+  "boundary-quiet": {
+    "receipts": 57,
+    "missing": {},
+    "missing_files": []
+  },
+  "boundary-load": {
+    "receipts": 57,
+    "missing": {},
+    "missing_files": []
+  },
+  "boundary-ff30": {
+    "receipts": 57,
+    "missing": {
+      "r94_particles_cpu_pause": 3
+    },
+    "missing_files": [
+      "corpus/live/r94-boundary/runs/ff30/r94_particles_cpu_pause.rep1.out",
+      "corpus/live/r94-boundary/runs/ff30/r94_particles_cpu_pause.rep2.out",
+      "corpus/live/r94-boundary/runs/ff30/r94_particles_cpu_pause.rep3.out"
+    ]
+  },
+  "boundary-ff60": {
+    "receipts": 57,
+    "missing": {},
+    "missing_files": []
+  },
+  "boundary-ff120": {
+    "receipts": 57,
+    "missing": {},
+    "missing_files": []
+  },
+  "boundary-ff120load": {
+    "receipts": 38,
+    "missing": {},
+    "missing_files": []
+  },
+  "boundary-ab": {
+    "receipts": 12,
+    "missing": {},
+    "missing_files": []
+  }
+}

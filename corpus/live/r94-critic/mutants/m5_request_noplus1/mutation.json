@@ -1,0 +1,12 @@
+{
+  "mutant": "m5_request_noplus1",
+  "substitutions": [
+    {
+      "old": "\t\tvar expected: int = int(floor(0.5 / spec)) + 1",
+      "new": "\t\tvar expected: int = int(floor(0.5 / spec))  # CRITIC MUTANT: +1 removed",
+      "note": "cpu_request: +1 removed from the closed form; predicted fin_call1=6 vs expected=5 -> FAIL"
+    }
+  ],
+  "source": "/tmp/r94crit-frozen/corpus/fixtures/particles_lattice.gd",
+  "source_sha256_note": "0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9"
+}

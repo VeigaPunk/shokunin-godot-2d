@@ -1,0 +1,12 @@
+{
+  "mutant": "m4_request_round",
+  "substitutions": [
+    {
+      "old": "\t\tvar expected: int = int(floor(0.5 / spec)) + 1",
+      "new": "\t\tvar expected: int = int(round(0.5 / spec)) + 1  # CRITIC MUTANT: pre-fold form",
+      "note": "cpu_request: floor reverted to round (the falsified scout form); expected values unchanged at 0.10/0.05 -> row cannot discriminate"
+    }
+  ],
+  "source": "/tmp/r94crit-frozen/corpus/fixtures/particles_lattice.gd",
+  "source_sha256_note": "0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9"
+}

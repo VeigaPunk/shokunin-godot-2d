@@ -1,0 +1,674 @@
+{
+  "load": {
+    "r94_particles_census": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        0.737,
+        0.773
+      ],
+      "max_wall": 0.773,
+      "distinct_pass_lines": [
+        "PASS particles_lattice census cpu_consts=DRAW_ORDER_INDEX=0,DRAW_ORDER_LIFETIME=1,PARAM_INITIAL_LINEAR_VELOCITY=0,PARAM_ANGULAR_VELOCITY=1,PARAM_ORBIT_VELOCITY=2,PARAM_LINEAR_ACCEL=3,PARAM_RADIAL_ACCEL=4,PARAM_TANGENTIAL_ACCEL=5,PARAM_DAMPING=6,PARAM_ANGLE=7,PARAM_SCALE=8,PARAM_HUE_VARIATION=9,PARAM_ANIM_SPEED=10,PARAM_ANIM_OFFSET=11,PARAM_MAX=12,PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY=0,PARTICLE_FLAG_ROTATE_Y=1,PARTICLE_FLAG_DISABLE_Z=2,PARTICLE_FLAG_MAX=3,EMISSION_SHAPE_POINT=0,EMISSION_SHAPE_SPHERE=1,EMISSION_SHAPE_SPHERE_SURFACE=2,EMISSION_SHAPE_RECTANGLE=3,EMISSION_SHAPE_POINTS=4,EMISSION_SHAPE_DIRECTED_POINTS=5,EMISSION_SHAPE_RING=6,EMISSION_SHAPE_MAX=7 gpu_consts=DRAW_ORDER_INDEX=0,DRAW_ORDER_LIFETIME=1,DRAW_ORDER_REVERSE_LIFETIME=2,EMIT_FLAG_POSITION=1,EMIT_FLAG_ROTATION_SCALE=2,EMIT_FLAG_VELOCITY=4,EMIT_FLAG_COLOR=8,EMIT_FLAG_CUSTOM=16 ppm_consts=PARAM_INITIAL_LINEAR_VELOCITY=0,PARAM_ANGULAR_VELOCITY=1,PARAM_ORBIT_VELOCITY=2,PARAM_LINEAR_ACCEL=3,PARAM_RADIAL_ACCEL=4,PARAM_TANGENTIAL_ACCEL=5,PARAM_DAMPING=6,PARAM_ANGLE=7,PARAM_SCALE=8,PARAM_HUE_VARIATION=9,PARAM_ANIM_SPEED=10,PARAM_ANIM_OFFSET=11,PARAM_RADIAL_VELOCITY=15,PARAM_DIRECTIONAL_VELOCITY=16,PARAM_SCALE_OVER_VELOCITY=17,PARAM_MAX=18,PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY=0,PARTICLE_FLAG_ROTATE_Y=1,PARTICLE_FLAG_DISABLE_Z=2,PARTICLE_FLAG_DAMPING_AS_FRICTION=3,PARTICLE_FLAG_INHERIT_EMITTER_SCALE=4,PARTICLE_FLAG_MAX=5,EMISSION_SHAPE_POINT=0,EMISSION_SHAPE_SPHERE=1,EMISSION_SHAPE_SPHERE_SURFACE=2,EMISSION_SHAPE_BOX=3,EMISSION_SHAPE_POINTS=4,EMISSION_SHAPE_DIRECTED_POINTS=5,EMISSION_SHAPE_RING=6,EMISSION_SHAPE_MAX=7,PARAM_TURB_VEL_INFLUENCE=13,PARAM_TURB_INIT_DISPLACEMENT=14,PARAM_TURB_INFLUENCE_OVER_LIFE=12,SUB_EMITTER_DISABLED=0,SUB_EMITTER_CONSTANT=1,SUB_EMITTER_AT_END=2,SUB_EMITTER_AT_COLLISION=3,SUB_EMITTER_AT_START=4,SUB_EMITTER_MAX=5,COLLISION_DISABLED=0,COLLISION_RIGID=1,COLLISION_HIDE_ON_CONTACT=2,COLLISION_MAX=3 cpu_props=unique_name_in_owner=false,process_mode=0,process_priority=0,process_physics_priority=0,process_thread_group=0,physics_interpolation_mode=2,auto_translate_mode=0,editor_description=,visible=true,modulate=1.000/1.000/1.000/1.000,self_modulate=1.000/1.000/1.000/1.000,show_behind_parent=false,top_level=false,clip_children=0,oversampling_with_scale=0,light_mask=1,visibility_layer=1,z_index=0,z_as_relative=true,y_sort_enabled=false,texture_filter=0,texture_repeat=0,material=<null>,use_parent_material=false,position=(0.0000,0.0000),rotation=0.0000,scale=(1.0000,1.0000),skew=0.0000,emitting=true,amount=8,texture=<null>,lifetime=1.0000,one_shot=false,preprocess=0.0000,speed_scale=1.0000,explosiveness=0.0000,randomness=0.0000,use_fixed_seed=false,lifetime_randomness=0.0000,fixed_fps=0,fract_delta=true,local_coords=false,draw_order=0,emission_shape=0,particle_flag_align_y=false,direction=(1.0000,0.0000),spread=45.0000,gravity=(0.0000,980.0000),initial_velocity_min=0.0000,initial_velocity_max=0.0000,angular_velocity_min=0.0000,angular_velocity_max=0.0000,angular_velocity_curve=<null>,orbit_velocity_min=0.0000,orbit_velocity_max=0.0000,orbit_velocity_curve=<null>,linear_accel_min=0.0000,linear_accel_max=0.0000,linear_accel_curve=<null>,radial_accel_min=0.0000,radial_accel_max=0.0000,radial_accel_curve=<null>,tangential_accel_min=0.0000,tangential_accel_max=0.0000,tangential_accel_curve=<null>,damping_min=0.0000,damping_max=0.0000,damping_curve=<null>,angle_min=0.0000,angle_max=0.0000,angle_curve=<null>,scale_amount_min=1.0000,scale_amount_max=1.0000,scale_amount_curve=<null>,split_scale=false,color=1.000/1.000/1.000/1.000,color_ramp=<null>,color_initial_ramp=<null>,hue_variation_min=0.0000,hue_variation_max=0.0000,hue_variation_curve=<null>,anim_speed_min=0.0000,anim_speed_max=0.0000,anim_speed_curve=<null>,anim_offset_min=0.0000,anim_offset_max=0.0000,anim_offset_curve=<null> gpu_props=unique_name_in_owner=false,process_mode=0,process_priority=0,process_physics_priority=0,process_thread_group=0,physics_interpolation_mode=0,auto_translate_mode=0,editor_description=,visible=true,modulate=1.000/1.000/1.000/1.000,self_modulate=1.000/1.000/1.000/1.000,show_behind_parent=false,top_level=false,clip_children=0,oversampling_with_scale=0,light_mask=1,visibility_layer=1,z_index=0,z_as_relative=true,y_sort_enabled=false,texture_filter=0,texture_repeat=0,material=<null>,use_parent_material=false,position=(0.0000,0.0000),rotation=0.0000,scale=(1.0000,1.0000),skew=0.0000,emitting=true,amount=8,amount_ratio=1.0000,sub_emitter=,texture=<null>,lifetime=1.0000,interp_to_end=0.0000,one_shot=false,preprocess=0.0000,speed_scale=1.0000,explosiveness=0.0000,randomness=0.0000,use_fixed_seed=false,fixed_fps=30,interpolate=true,fract_delta=true,collision_base_size=1.0000,visibility_rect=[P: (-100.0, -100.0), S: (200.0, 200.0)],local_coords=false,draw_order=1,trail_enabled=false,trail_lifetime=0.3000,trail_sections=8,trail_section_subdivisions=4,process_material=<null> ppm_props=lifetime_randomness=0.0000,particle_flag_align_y=false,particle_flag_rotate_y=false,particle_flag_disable_z=false,particle_flag_damping_as_friction=false,particle_flag_inherit_emitter_scale=false,emission_shape_offset=(0.0, 0.0, 0.0),emission_shape_scale=(1.0, 1.0, 1.0),emission_shape=0,angle=(0.0000,0.0000),angle_min=0.0000,angle_max=0.0000,angle_curve=<null>,use_rotation_3d=false,rotation_3d_min=(0.0, 0.0, 0.0),rotation_3d_max=(0.0, 0.0, 0.0),inherit_velocity_ratio=0.0000,velocity_pivot=(0.0, 0.0, 0.0),direction=(1.0, 0.0, 0.0),spread=45.0000,flatness=0.0000,initial_velocity=(0.0000,0.0000),initial_velocity_min=0.0000,initial_velocity_max=0.0000,angular_velocity=(0.0000,0.0000),angular_velocity_min=0.0000,angular_velocity_max=0.0000,angular_velocity_curve=<null>,directional_velocity=(1.0000,1.0000),directional_velocity_curve=<null>,orbit_velocity=(0.0000,0.0000),orbit_velocity_min=0.0000,orbit_velocity_max=0.0000,orbit_velocity_curve=<null>,radial_velocity=(0.0000,0.0000),radial_velocity_min=0.0000,radial_velocity_max=0.0000,radial_velocity_curve=<null>,velocity_limit_curve=<null>,use_rotation_velocity_3d=false,gravity=(0.0, -9.8, 0.0),linear_accel=(0.0000,0.0000),linear_accel_min=0.0000,linear_accel_max=0.0000,linear_accel_curve=<null>,radial_accel=(0.0000,0.0000),radial_accel_min=0.0000,radial_accel_max=0.0000,radial_accel_curve=<null>,tangential_accel=(0.0000,0.0000),tangential_accel_min=0.0000,tangential_accel_max=0.0000,tangential_accel_curve=<null>,damping=(0.0000,0.0000),damping_min=0.0000,damping_max=0.0000,damping_curve=<null>,attractor_interaction_enabled=true,use_scale_3d=false,scale_3d_min=(1.0, 1.0, 1.0),scale_3d_max=(1.0, 1.0, 1.0),scale=(1.0000,1.0000),scale_min=1.0000,scale_max=1.0000,scale_curve=<null>,scale_over_velocity=(0.0000,0.0000),scale_over_velocity_min=0.0000,scale_over_velocity_max=0.0000,scale_over_velocity_curve=<null>,color=1.000/1.000/1.000/1.000,color_ramp=<null>,color_initial_ramp=<null>,alpha_curve=<null>,emission_curve=<null>,hue_variation=(0.0000,0.0000),hue_variation_min=0.0000,hue_variation_max=0.0000,hue_variation_curve=<null>,anim_speed=(0.0000,0.0000),anim_speed_min=0.0000,anim_speed_max=0.0000,anim_speed_curve=<null>,anim_offset=(0.0000,0.0000),anim_offset_min=0.0000,anim_offset_max=0.0000,anim_offset_curve=<null>,turbulence_enabled=false,turbulence_noise_strength=1.0000,turbulence_noise_scale=9.0000,turbulence_noise_speed=(0.0, 0.0, 0.0),turbulence_noise_speed_random=0.2000,turbulence_influence=(0.1000,0.1000),turbulence_influence_min=0.1000,turbulence_influence_max=0.1000,turbulence_initial_displacement=(0.0000,0.0000),turbulence_initial_displacement_min=0.0000,turbulence_initial_displacement_max=0.0000,turbulence_influence_over_life=<null>,collision_mode=0,collision_use_scale=false,sub_emitter_mode=0,sub_emitter_keep_velocity=false ppm_curve_types=alpha:24,angle:24,angular_velocity:24,anim_offset:24,anim_speed:24,damping:24,directional_velocity:24,emission:24,hue_variation:24,linear_accel:24,orbit_velocity:24,radial_accel:24,radial_velocity:24,rotation_velocity_3d:24,scale:24,scale_over_velocity:24,tangential_accel:24,velocity_limit:24 cpu_sig=convert_from_particles(particles:24)->0|is_emitting()->1|request_particles_process(process_time:3,process_time_residual:3)->0|restart(keep_seed:1)->0 gpu_sig=capture_rect()->7|convert_from_particles(particles:24)->0|emit_particle(xform:11,velocity:5,color:20,custom:20,flags:2)->0|is_emitting()->1|request_particles_process(process_time:3,process_time_residual:3)->0|restart(keep_seed:1)->0 ppm_sig=get_param(param:2)->5|get_param_max(param:2)->3|get_param_min(param:2)->3|get_param_texture(param:2)->24|get_particle_flag(particle_flag:2)->1|set_param(param:2,value:5)->0|set_param_max(param:2,value:3)->0|set_param_min(param:2,value:3)->0|set_param_texture(param:2,texture:24)->0|set_particle_flag(particle_flag:2,enable:1)->0"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/census.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice census cpu_consts=DRAW_ORDER_INDEX=0,DRAW_ORDER_LIFETIME=1,PARAM_INITIAL_LINEAR_VELOCITY=0,PARAM_ANGULAR_VELOCITY=1,PARAM_ORBIT_VELOCITY=2,PARAM_LINEAR_ACCEL=3,PARAM_RADIAL_ACCEL=4,PARAM_TANGENTIAL_ACCEL=5,PARAM_DAMPING=6,PARAM_ANGLE=7,PARAM_SCALE=8,PARAM_HUE_VARIATION=9,PARAM_ANIM_SPEED=10,PARAM_ANIM_OFFSET=11,PARAM_MAX=12,PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY=0,PARTICLE_FLAG_ROTATE_Y=1,PARTICLE_FLAG_DISABLE_Z=2,PARTICLE_FLAG_MAX=3,EMISSION_SHAPE_POINT=0,EMISSION_SHAPE_SPHERE=1,EMISSION_SHAPE_SPHERE_SURFACE=2,EMISSION_SHAPE_RECTANGLE=3,EMISSION_SHAPE_POINTS=4,EMISSION_SHAPE_DIRECTED_POINTS=5,EMISSION_SHAPE_RING=6,EMISSION_SHAPE_MAX=7 gpu_consts=DRAW_ORDER_INDEX=0,DRAW_ORDER_LIFETIME=1,DRAW_ORDER_REVERSE_LIFETIME=2,EMIT_FLAG_POSITION=1,EMIT_FLAG_ROTATION_SCALE=2,EMIT_FLAG_VELOCITY=4,EMIT_FLAG_COLOR=8,EMIT_FLAG_CUSTOM=16 ppm_consts=PARAM_INITIAL_LINEAR_VELOCITY=0,PARAM_ANGULAR_VELOCITY=1,PARAM_ORBIT_VELOCITY=2,PARAM_LINEAR_ACCEL=3,PARAM_RADIAL_ACCEL=4,PARAM_TANGENTIAL_ACCEL=5,PARAM_DAMPING=6,PARAM_ANGLE=7,PARAM_SCALE=8,PARAM_HUE_VARIATION=9,PARAM_ANIM_SPEED=10,PARAM_ANIM_OFFSET=11,PARAM_RADIAL_VELOCITY=15,PARAM_DIRECTIONAL_VELOCITY=16,PARAM_SCALE_OVER_VELOCITY=17,PARAM_MAX=18,PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY=0,PARTICLE_FLAG_ROTATE_Y=1,PARTICLE_FLAG_DISABLE_Z=2,PARTICLE_FLAG_DAMPING_AS_FRICTION=3,PARTICLE_FLAG_INHERIT_EMITTER_SCALE=4,PARTICLE_FLAG_MAX=5,EMISSION_SHAPE_POINT=0,EMISSION_SHAPE_SPHERE=1,EMISSION_SHAPE_SPHERE_SURFACE=2,EMISSION_SHAPE_BOX=3,EMISSION_SHAPE_POINTS=4,EMISSION_SHAPE_DIRECTED_POINTS=5,EMISSION_SHAPE_RING=6,EMISSION_SHAPE_MAX=7,PARAM_TURB_VEL_INFLUENCE=13,PARAM_TURB_INIT_DISPLACEMENT=14,PARAM_TURB_INFLUENCE_OVER_LIFE=12,SUB_EMITTER_DISABLED=0,SUB_EMITTER_CONSTANT=1,SUB_EMITTER_AT_END=2,SUB_EMITTER_AT_COLLISION=3,SUB_EMITTER_AT_START=4,SUB_EMITTER_MAX=5,COLLISION_DISABLED=0,COLLISION_RIGID=1,COLLISION_HIDE_ON_CONTACT=2,COLLISION_MAX=3 cpu_props=unique_name_in_owner=false,process_mode=0,process_priority=0,process_physics_priority=0,process_thread_group=0,physics_interpolation_mode=2,auto_translate_mode=0,editor_description=,visible=true,modulate=1.000/1.000/1.000/1.000,self_modulate=1.000/1.000/1.000/1.000,show_behind_parent=false,top_level=false,clip_children=0,oversampling_with_scale=0,light_mask=1,visibility_layer=1,z_index=0,z_as_relative=true,y_sort_enabled=false,texture_filter=0,texture_repeat=0,material=<null>,use_parent_material=false,position=(0.0000,0.0000),rotation=0.0000,scale=(1.0000,1.0000),skew=0.0000,emitting=true,amount=8,texture=<null>,lifetime=1.0000,one_shot=false,preprocess=0.0000,speed_scale=1.0000,explosiveness=0.0000,randomness=0.0000,use_fixed_seed=false,lifetime_randomness=0.0000,fixed_fps=0,fract_delta=true,local_coords=false,draw_order=0,emission_shape=0,particle_flag_align_y=false,direction=(1.0000,0.0000),spread=45.0000,gravity=(0.0000,980.0000),initial_velocity_min=0.0000,initial_velocity_max=0.0000,angular_velocity_min=0.0000,angular_velocity_max=0.0000,angular_velocity_curve=<null>,orbit_velocity_min=0.0000,orbit_velocity_max=0.0000,orbit_velocity_curve=<null>,linear_accel_min=0.0000,linear_accel_max=0.0000,linear_accel_curve=<null>,radial_accel_min=0.0000,radial_accel_max=0.0000,radial_accel_curve=<null>,tangential_accel_min=0.0000,tangential_accel_max=0.0000,tangential_accel_curve=<null>,damping_min=0.0000,damping_max=0.0000,damping_curve=<null>,angle_min=0.0000,angle_max=0.0000,angle_curve=<null>,scale_amount_min=1.0000,scale_amount_max=1.0000,scale_amount_curve=<null>,split_scale=false,color=1.000/1.000/1.000/1.000,color_ramp=<null>,color_initial_ramp=<null>,hue_variation_min=0.0000,hue_variation_max=0.0000,hue_variation_curve=<null>,anim_speed_min=0.0000,anim_speed_max=0.0000,anim_speed_curve=<null>,anim_offset_min=0.0000,anim_offset_max=0.0000,anim_offset_curve=<null> gpu_props=unique_name_in_owner=false,process_mode=0,process_priority=0,process_physics_priority=0,process_thread_group=0,physics_interpolation_mode=0,auto_translate_mode=0,editor_description=,visible=true,modulate=1.000/1.000/1.000/1.000,self_modulate=1.000/1.000/1.000/1.000,show_behind_parent=false,top_level=false,clip_children=0,oversampling_with_scale=0,light_mask=1,visibility_layer=1,z_index=0,z_as_relative=true,y_sort_enabled=false,texture_filter=0,texture_repeat=0,material=<null>,use_parent_material=false,position=(0.0000,0.0000),rotation=0.0000,scale=(1.0000,1.0000),skew=0.0000,emitting=true,amount=8,amount_ratio=1.0000,sub_emitter=,texture=<null>,lifetime=1.0000,interp_to_end=0.0000,one_shot=false,preprocess=0.0000,speed_scale=1.0000,explosiveness=0.0000,randomness=0.0000,use_fixed_seed=false,fixed_fps=30,interpolate=true,fract_delta=true,collision_base_size=1.0000,visibility_rect=[P: (-100.0, -100.0), S: (200.0, 200.0)],local_coords=false,draw_order=1,trail_enabled=false,trail_lifetime=0.3000,trail_sections=8,trail_section_subdivisions=4,process_material=<null> ppm_props=lifetime_randomness=0.0000,particle_flag_align_y=false,particle_flag_rotate_y=false,particle_flag_disable_z=false,particle_flag_damping_as_friction=false,particle_flag_inherit_emitter_scale=false,emission_shape_offset=(0.0, 0.0, 0.0),emission_shape_scale=(1.0, 1.0, 1.0),emission_shape=0,angle=(0.0000,0.0000),angle_min=0.0000,angle_max=0.0000,angle_curve=<null>,use_rotation_3d=false,rotation_3d_min=(0.0, 0.0, 0.0),rotation_3d_max=(0.0, 0.0, 0.0),inherit_velocity_ratio=0.0000,velocity_pivot=(0.0, 0.0, 0.0),direction=(1.0, 0.0, 0.0),spread=45.0000,flatness=0.0000,initial_velocity=(0.0000,0.0000),initial_velocity_min=0.0000,initial_velocity_max=0.0000,angular_velocity=(0.0000,0.0000),angular_velocity_min=0.0000,angular_velocity_max=0.0000,angular_velocity_curve=<null>,directional_velocity=(1.0000,1.0000),directional_velocity_curve=<null>,orbit_velocity=(0.0000,0.0000),orbit_velocity_min=0.0000,orbit_velocity_max=0.0000,orbit_velocity_curve=<null>,radial_velocity=(0.0000,0.0000),radial_velocity_min=0.0000,radial_velocity_max=0.0000,radial_velocity_curve=<null>,velocity_limit_curve=<null>,use_rotation_velocity_3d=false,gravity=(0.0, -9.8, 0.0),linear_accel=(0.0000,0.0000),linear_accel_min=0.0000,linear_accel_max=0.0000,linear_accel_curve=<null>,radial_accel=(0.0000,0.0000),radial_accel_min=0.0000,radial_accel_max=0.0000,radial_accel_curve=<null>,tangential_accel=(0.0000,0.0000),tangential_accel_min=0.0000,tangential_accel_max=0.0000,tangential_accel_curve=<null>,damping=(0.0000,0.0000),damping_min=0.0000,damping_max=0.0000,damping_curve=<null>,attractor_interaction_enabled=true,use_scale_3d=false,scale_3d_min=(1.0, 1.0, 1.0),scale_3d_max=(1.0, 1.0, 1.0),scale=(1.0000,1.0000),scale_min=1.0000,scale_max=1.0000,scale_curve=<null>,scale_over_velocity=(0.0000,0.0000),scale_over_velocity_min=0.0000,scale_over_velocity_max=0.0000,scale_over_velocity_curve=<null>,color=1.000/1.000/1.000/1.000,color_ramp=<null>,color_initial_ramp=<null>,alpha_curve=<null>,emission_curve=<null>,hue_variation=(0.0000,0.0000),hue_variation_min=0.0000,hue_variation_max=0.0000,hue_variation_curve=<null>,anim_speed=(0.0000,0.0000),anim_speed_min=0.0000,anim_speed_max=0.0000,anim_speed_curve=<null>,anim_offset=(0.0000,0.0000),anim_offset_min=0.0000,anim_offset_max=0.0000,anim_offset_curve=<null>,turbulence_enabled=false,turbulence_noise_strength=1.0000,turbulence_noise_scale=9.0000,turbulence_noise_speed=(0.0, 0.0, 0.0),turbulence_noise_speed_random=0.2000,turbulence_influence=(0.1000,0.1000),turbulence_influence_min=0.1000,turbulence_influence_max=0.1000,turbulence_initial_displacement=(0.0000,0.0000),turbulence_initial_displacement_min=0.0000,turbulence_initial_displacement_max=0.0000,turbulence_influence_over_life=<null>,collision_mode=0,collision_use_scale=false,sub_emitter_mode=0,sub_emitter_keep_velocity=false ppm_curve_types=alpha:24,angle:24,angular_velocity:24,anim_offset:24,anim_speed:24,damping:24,directional_velocity:24,emission:24,hue_variation:24,linear_accel:24,orbit_velocity:24,radial_accel:24,radial_velocity:24,rotation_velocity_3d:24,scale:24,scale_over_velocity:24,tangential_accel:24,velocity_limit:24 cpu_sig=convert_from_particles(particles:24)->0|is_emitting()->1|request_particles_process(process_time:3,process_time_residual:3)->0|restart(keep_seed:1)->0 gpu_sig=capture_rect()->7|convert_from_particles(particles:24)->0|emit_particle(xform:11,velocity:5,color:20,custom:20,flags:2)->0|is_emitting()->1|request_particles_process(process_time:3,process_time_residual:3)->0|restart(keep_seed:1)->0 ppm_sig=get_param(param:2)->5|get_param_max(param:2)->3|get_param_min(param:2)->3|get_param_texture(param:2)->24|get_particle_flag(particle_flag:2)->1|set_param(param:2,value:5)->0|set_param_max(param:2,value:3)->0|set_param_min(param:2,value:3)->0|set_param_texture(param:2,texture:24)->0|set_particle_flag(particle_flag:2,enable:1)->0",
+          "wall": 0.737
+        },
+        {
+          "receipt": "runs/load/census.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice census cpu_consts=DRAW_ORDER_INDEX=0,DRAW_ORDER_LIFETIME=1,PARAM_INITIAL_LINEAR_VELOCITY=0,PARAM_ANGULAR_VELOCITY=1,PARAM_ORBIT_VELOCITY=2,PARAM_LINEAR_ACCEL=3,PARAM_RADIAL_ACCEL=4,PARAM_TANGENTIAL_ACCEL=5,PARAM_DAMPING=6,PARAM_ANGLE=7,PARAM_SCALE=8,PARAM_HUE_VARIATION=9,PARAM_ANIM_SPEED=10,PARAM_ANIM_OFFSET=11,PARAM_MAX=12,PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY=0,PARTICLE_FLAG_ROTATE_Y=1,PARTICLE_FLAG_DISABLE_Z=2,PARTICLE_FLAG_MAX=3,EMISSION_SHAPE_POINT=0,EMISSION_SHAPE_SPHERE=1,EMISSION_SHAPE_SPHERE_SURFACE=2,EMISSION_SHAPE_RECTANGLE=3,EMISSION_SHAPE_POINTS=4,EMISSION_SHAPE_DIRECTED_POINTS=5,EMISSION_SHAPE_RING=6,EMISSION_SHAPE_MAX=7 gpu_consts=DRAW_ORDER_INDEX=0,DRAW_ORDER_LIFETIME=1,DRAW_ORDER_REVERSE_LIFETIME=2,EMIT_FLAG_POSITION=1,EMIT_FLAG_ROTATION_SCALE=2,EMIT_FLAG_VELOCITY=4,EMIT_FLAG_COLOR=8,EMIT_FLAG_CUSTOM=16 ppm_consts=PARAM_INITIAL_LINEAR_VELOCITY=0,PARAM_ANGULAR_VELOCITY=1,PARAM_ORBIT_VELOCITY=2,PARAM_LINEAR_ACCEL=3,PARAM_RADIAL_ACCEL=4,PARAM_TANGENTIAL_ACCEL=5,PARAM_DAMPING=6,PARAM_ANGLE=7,PARAM_SCALE=8,PARAM_HUE_VARIATION=9,PARAM_ANIM_SPEED=10,PARAM_ANIM_OFFSET=11,PARAM_RADIAL_VELOCITY=15,PARAM_DIRECTIONAL_VELOCITY=16,PARAM_SCALE_OVER_VELOCITY=17,PARAM_MAX=18,PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY=0,PARTICLE_FLAG_ROTATE_Y=1,PARTICLE_FLAG_DISABLE_Z=2,PARTICLE_FLAG_DAMPING_AS_FRICTION=3,PARTICLE_FLAG_INHERIT_EMITTER_SCALE=4,PARTICLE_FLAG_MAX=5,EMISSION_SHAPE_POINT=0,EMISSION_SHAPE_SPHERE=1,EMISSION_SHAPE_SPHERE_SURFACE=2,EMISSION_SHAPE_BOX=3,EMISSION_SHAPE_POINTS=4,EMISSION_SHAPE_DIRECTED_POINTS=5,EMISSION_SHAPE_RING=6,EMISSION_SHAPE_MAX=7,PARAM_TURB_VEL_INFLUENCE=13,PARAM_TURB_INIT_DISPLACEMENT=14,PARAM_TURB_INFLUENCE_OVER_LIFE=12,SUB_EMITTER_DISABLED=0,SUB_EMITTER_CONSTANT=1,SUB_EMITTER_AT_END=2,SUB_EMITTER_AT_COLLISION=3,SUB_EMITTER_AT_START=4,SUB_EMITTER_MAX=5,COLLISION_DISABLED=0,COLLISION_RIGID=1,COLLISION_HIDE_ON_CONTACT=2,COLLISION_MAX=3 cpu_props=unique_name_in_owner=false,process_mode=0,process_priority=0,process_physics_priority=0,process_thread_group=0,physics_interpolation_mode=2,auto_translate_mode=0,editor_description=,visible=true,modulate=1.000/1.000/1.000/1.000,self_modulate=1.000/1.000/1.000/1.000,show_behind_parent=false,top_level=false,clip_children=0,oversampling_with_scale=0,light_mask=1,visibility_layer=1,z_index=0,z_as_relative=true,y_sort_enabled=false,texture_filter=0,texture_repeat=0,material=<null>,use_parent_material=false,position=(0.0000,0.0000),rotation=0.0000,scale=(1.0000,1.0000),skew=0.0000,emitting=true,amount=8,texture=<null>,lifetime=1.0000,one_shot=false,preprocess=0.0000,speed_scale=1.0000,explosiveness=0.0000,randomness=0.0000,use_fixed_seed=false,lifetime_randomness=0.0000,fixed_fps=0,fract_delta=true,local_coords=false,draw_order=0,emission_shape=0,particle_flag_align_y=false,direction=(1.0000,0.0000),spread=45.0000,gravity=(0.0000,980.0000),initial_velocity_min=0.0000,initial_velocity_max=0.0000,angular_velocity_min=0.0000,angular_velocity_max=0.0000,angular_velocity_curve=<null>,orbit_velocity_min=0.0000,orbit_velocity_max=0.0000,orbit_velocity_curve=<null>,linear_accel_min=0.0000,linear_accel_max=0.0000,linear_accel_curve=<null>,radial_accel_min=0.0000,radial_accel_max=0.0000,radial_accel_curve=<null>,tangential_accel_min=0.0000,tangential_accel_max=0.0000,tangential_accel_curve=<null>,damping_min=0.0000,damping_max=0.0000,damping_curve=<null>,angle_min=0.0000,angle_max=0.0000,angle_curve=<null>,scale_amount_min=1.0000,scale_amount_max=1.0000,scale_amount_curve=<null>,split_scale=false,color=1.000/1.000/1.000/1.000,color_ramp=<null>,color_initial_ramp=<null>,hue_variation_min=0.0000,hue_variation_max=0.0000,hue_variation_curve=<null>,anim_speed_min=0.0000,anim_speed_max=0.0000,anim_speed_curve=<null>,anim_offset_min=0.0000,anim_offset_max=0.0000,anim_offset_curve=<null> gpu_props=unique_name_in_owner=false,process_mode=0,process_priority=0,process_physics_priority=0,process_thread_group=0,physics_interpolation_mode=0,auto_translate_mode=0,editor_description=,visible=true,modulate=1.000/1.000/1.000/1.000,self_modulate=1.000/1.000/1.000/1.000,show_behind_parent=false,top_level=false,clip_children=0,oversampling_with_scale=0,light_mask=1,visibility_layer=1,z_index=0,z_as_relative=true,y_sort_enabled=false,texture_filter=0,texture_repeat=0,material=<null>,use_parent_material=false,position=(0.0000,0.0000),rotation=0.0000,scale=(1.0000,1.0000),skew=0.0000,emitting=true,amount=8,amount_ratio=1.0000,sub_emitter=,texture=<null>,lifetime=1.0000,interp_to_end=0.0000,one_shot=false,preprocess=0.0000,speed_scale=1.0000,explosiveness=0.0000,randomness=0.0000,use_fixed_seed=false,fixed_fps=30,interpolate=true,fract_delta=true,collision_base_size=1.0000,visibility_rect=[P: (-100.0, -100.0), S: (200.0, 200.0)],local_coords=false,draw_order=1,trail_enabled=false,trail_lifetime=0.3000,trail_sections=8,trail_section_subdivisions=4,process_material=<null> ppm_props=lifetime_randomness=0.0000,particle_flag_align_y=false,particle_flag_rotate_y=false,particle_flag_disable_z=false,particle_flag_damping_as_friction=false,particle_flag_inherit_emitter_scale=false,emission_shape_offset=(0.0, 0.0, 0.0),emission_shape_scale=(1.0, 1.0, 1.0),emission_shape=0,angle=(0.0000,0.0000),angle_min=0.0000,angle_max=0.0000,angle_curve=<null>,use_rotation_3d=false,rotation_3d_min=(0.0, 0.0, 0.0),rotation_3d_max=(0.0, 0.0, 0.0),inherit_velocity_ratio=0.0000,velocity_pivot=(0.0, 0.0, 0.0),direction=(1.0, 0.0, 0.0),spread=45.0000,flatness=0.0000,initial_velocity=(0.0000,0.0000),initial_velocity_min=0.0000,initial_velocity_max=0.0000,angular_velocity=(0.0000,0.0000),angular_velocity_min=0.0000,angular_velocity_max=0.0000,angular_velocity_curve=<null>,directional_velocity=(1.0000,1.0000),directional_velocity_curve=<null>,orbit_velocity=(0.0000,0.0000),orbit_velocity_min=0.0000,orbit_velocity_max=0.0000,orbit_velocity_curve=<null>,radial_velocity=(0.0000,0.0000),radial_velocity_min=0.0000,radial_velocity_max=0.0000,radial_velocity_curve=<null>,velocity_limit_curve=<null>,use_rotation_velocity_3d=false,gravity=(0.0, -9.8, 0.0),linear_accel=(0.0000,0.0000),linear_accel_min=0.0000,linear_accel_max=0.0000,linear_accel_curve=<null>,radial_accel=(0.0000,0.0000),radial_accel_min=0.0000,radial_accel_max=0.0000,radial_accel_curve=<null>,tangential_accel=(0.0000,0.0000),tangential_accel_min=0.0000,tangential_accel_max=0.0000,tangential_accel_curve=<null>,damping=(0.0000,0.0000),damping_min=0.0000,damping_max=0.0000,damping_curve=<null>,attractor_interaction_enabled=true,use_scale_3d=false,scale_3d_min=(1.0, 1.0, 1.0),scale_3d_max=(1.0, 1.0, 1.0),scale=(1.0000,1.0000),scale_min=1.0000,scale_max=1.0000,scale_curve=<null>,scale_over_velocity=(0.0000,0.0000),scale_over_velocity_min=0.0000,scale_over_velocity_max=0.0000,scale_over_velocity_curve=<null>,color=1.000/1.000/1.000/1.000,color_ramp=<null>,color_initial_ramp=<null>,alpha_curve=<null>,emission_curve=<null>,hue_variation=(0.0000,0.0000),hue_variation_min=0.0000,hue_variation_max=0.0000,hue_variation_curve=<null>,anim_speed=(0.0000,0.0000),anim_speed_min=0.0000,anim_speed_max=0.0000,anim_speed_curve=<null>,anim_offset=(0.0000,0.0000),anim_offset_min=0.0000,anim_offset_max=0.0000,anim_offset_curve=<null>,turbulence_enabled=false,turbulence_noise_strength=1.0000,turbulence_noise_scale=9.0000,turbulence_noise_speed=(0.0, 0.0, 0.0),turbulence_noise_speed_random=0.2000,turbulence_influence=(0.1000,0.1000),turbulence_influence_min=0.1000,turbulence_influence_max=0.1000,turbulence_initial_displacement=(0.0000,0.0000),turbulence_initial_displacement_min=0.0000,turbulence_initial_displacement_max=0.0000,turbulence_influence_over_life=<null>,collision_mode=0,collision_use_scale=false,sub_emitter_mode=0,sub_emitter_keep_velocity=false ppm_curve_types=alpha:24,angle:24,angular_velocity:24,anim_offset:24,anim_speed:24,damping:24,directional_velocity:24,emission:24,hue_variation:24,linear_accel:24,orbit_velocity:24,radial_accel:24,radial_velocity:24,rotation_velocity_3d:24,scale:24,scale_over_velocity:24,tangential_accel:24,velocity_limit:24 cpu_sig=convert_from_particles(particles:24)->0|is_emitting()->1|request_particles_process(process_time:3,process_time_residual:3)->0|restart(keep_seed:1)->0 gpu_sig=capture_rect()->7|convert_from_particles(particles:24)->0|emit_particle(xform:11,velocity:5,color:20,custom:20,flags:2)->0|is_emitting()->1|request_particles_process(process_time:3,process_time_residual:3)->0|restart(keep_seed:1)->0 ppm_sig=get_param(param:2)->5|get_param_max(param:2)->3|get_param_min(param:2)->3|get_param_texture(param:2)->24|get_particle_flag(particle_flag:2)->1|set_param(param:2,value:5)->0|set_param_max(param:2,value:3)->0|set_param_min(param:2,value:3)->0|set_param_texture(param:2,texture:24)->0|set_particle_flag(particle_flag:2,enable:1)->0",
+          "wall": 0.773
+        }
+      ]
+    },
+    "r94_particles_convert": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        0.596,
+        0.816
+      ],
+      "max_wall": 0.816,
+      "distinct_pass_lines": [
+        "PASS particles_lattice convert g2c[amount=12 lifetime=0.7000 os=true expl=0.2500 rand=0.5000 ss=2.0000 ffps=0 pre=0.1250 local=true draw=2] g2c_dir=(0.5000,0.5000) spread=30.0000 grav=(0.0000,98.0000) iv=10.0000..20.0000 scale=2.0000..3.0000 g2c_col=0.250/0.500/0.750/0.500 shape=1 sph=5.0000 c2g[amount=5 lifetime=0.4000 os=false expl=0.5000 pm_null=false dir=(0.0000,-1.0000,0.0000) spread=10.0000 grav=(0.0000,30.0000,0.0000) iv=3.0000..4.0000 col=0.100/0.200/0.300/0.400]"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/convert.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice convert g2c[amount=12 lifetime=0.7000 os=true expl=0.2500 rand=0.5000 ss=2.0000 ffps=0 pre=0.1250 local=true draw=2] g2c_dir=(0.5000,0.5000) spread=30.0000 grav=(0.0000,98.0000) iv=10.0000..20.0000 scale=2.0000..3.0000 g2c_col=0.250/0.500/0.750/0.500 shape=1 sph=5.0000 c2g[amount=5 lifetime=0.4000 os=false expl=0.5000 pm_null=false dir=(0.0000,-1.0000,0.0000) spread=10.0000 grav=(0.0000,30.0000,0.0000) iv=3.0000..4.0000 col=0.100/0.200/0.300/0.400]",
+          "wall": 0.596
+        },
+        {
+          "receipt": "runs/load/convert.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice convert g2c[amount=12 lifetime=0.7000 os=true expl=0.2500 rand=0.5000 ss=2.0000 ffps=0 pre=0.1250 local=true draw=2] g2c_dir=(0.5000,0.5000) spread=30.0000 grav=(0.0000,98.0000) iv=10.0000..20.0000 scale=2.0000..3.0000 g2c_col=0.250/0.500/0.750/0.500 shape=1 sph=5.0000 c2g[amount=5 lifetime=0.4000 os=false expl=0.5000 pm_null=false dir=(0.0000,-1.0000,0.0000) spread=10.0000 grav=(0.0000,30.0000,0.0000) iv=3.0000..4.0000 col=0.100/0.200/0.300/0.400]",
+          "wall": 0.816
+        }
+      ]
+    },
+    "r94_particles_cpu_amount_mid": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        2.346,
+        2.304
+      ],
+      "max_wall": 2.346,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_amount_mid ok=true em_at_set=true spurious_finish=true | fin_after_set=0 n_fin=1 em_fin=true ise_fin=true em_at_end=false"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_amount_mid.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_amount_mid ok=true em_at_set=true spurious_finish=true | fin_after_set=0 n_fin=1 em_fin=true ise_fin=true em_at_end=false",
+          "wall": 2.346
+        },
+        {
+          "receipt": "runs/load/cpu_amount_mid.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_amount_mid ok=true em_at_set=true spurious_finish=true | fin_after_set=0 n_fin=1 em_fin=true ise_fin=true em_at_end=false",
+          "wall": 2.304
+        }
+      ]
+    },
+    "r94_particles_cpu_contam": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        0.777,
+        0.796
+      ],
+      "max_wall": 0.796,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_contam ok=true n_never=2 | never1[fin_delta=0 n=1] never2[fin_delta=0 n=1]"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_contam.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_contam ok=true n_never=2 | never1[fin_delta=0 n=1] never2[fin_delta=0 n=1]",
+          "wall": 0.777
+        },
+        {
+          "receipt": "runs/load/cpu_contam.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_contam ok=true n_never=2 | never1[fin_delta=0 n=1] never2[fin_delta=0 n=1]",
+          "wall": 0.796
+        }
+      ]
+    },
+    "r94_particles_cpu_expl": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        2.856,
+        2.826
+      ],
+      "max_wall": 2.856,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_expl ok=true e1_ok=true e05_ok=true e0_ok=true | e1[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] e05[delta=42 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=42] e0[delta=56 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=57]",
+        "PASS particles_lattice cpu_expl ok=true e1_ok=true e05_ok=true e0_ok=true | e1[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] e05[delta=43 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=43] e0[delta=56 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=56]"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_expl.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_expl ok=true e1_ok=true e05_ok=true e0_ok=true | e1[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] e05[delta=42 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=42] e0[delta=56 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=57]",
+          "wall": 2.856
+        },
+        {
+          "receipt": "runs/load/cpu_expl.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_expl ok=true e1_ok=true e05_ok=true e0_ok=true | e1[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] e05[delta=43 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=43] e0[delta=56 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=56]",
+          "wall": 2.826
+        }
+      ]
+    },
+    "r94_particles_cpu_lifetime": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        2.49,
+        2.553
+      ],
+      "max_wall": 2.553,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] l05[delta=29 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] l1[delta=59 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60]",
+        "PASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] l05[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] l1[delta=60 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60]"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_lifetime.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] l05[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] l1[delta=60 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60]",
+          "wall": 2.49
+        },
+        {
+          "receipt": "runs/load/cpu_lifetime.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] l05[delta=29 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] l1[delta=59 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60]",
+          "wall": 2.553
+        }
+      ]
+    },
+    "r94_particles_cpu_lt_mid": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        0.73,
+        0.846
+      ],
+      "max_wall": 0.846,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_lt_mid ok=true fin_ok=true em_after=false | fin_after_set=2 n_fin=1 em_fin=false"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_lt_mid.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_lt_mid ok=true fin_ok=true em_after=false | fin_after_set=2 n_fin=1 em_fin=false",
+          "wall": 0.73
+        },
+        {
+          "receipt": "runs/load/cpu_lt_mid.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_lt_mid ok=true fin_ok=true em_after=false | fin_after_set=2 n_fin=1 em_fin=false",
+          "wall": 0.846
+        }
+      ]
+    },
+    "r94_particles_cpu_never": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        1.714,
+        1.616
+      ],
+      "max_wall": 1.714,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_never ok=true never_fired=true n_fin=0 | fin_delta=-1 em_after=false ph_total=60"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_never.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_never ok=true never_fired=true n_fin=0 | fin_delta=-1 em_after=false ph_total=60",
+          "wall": 1.714
+        },
+        {
+          "receipt": "runs/load/cpu_never.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_never ok=true never_fired=true n_fin=0 | fin_delta=-1 em_after=false ph_total=60",
+          "wall": 1.616
+        }
+      ]
+    },
+    "r94_particles_cpu_oneshot_flag": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        2.125,
+        2.014
+      ],
+      "max_wall": 2.125,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_oneshot_flag ok=true never_fired=true em_after=true os_after=false | fin_after_flag=-1 n_fin=0"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_oneshot_flag.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_oneshot_flag ok=true never_fired=true em_after=true os_after=false | fin_after_flag=-1 n_fin=0",
+          "wall": 2.125
+        },
+        {
+          "receipt": "runs/load/cpu_oneshot_flag.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_oneshot_flag ok=true never_fired=true em_after=true os_after=false | fin_after_flag=-1 n_fin=0",
+          "wall": 2.014
+        }
+      ]
+    },
+    "r94_particles_cpu_oneshot_off": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        1.745,
+        1.762
+      ],
+      "max_wall": 1.762,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_oneshot_off ok=true fin_ok=true em_after=false os_after=true | fin_after_off=50 n_fin=1 em_fin=false"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_oneshot_off.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_oneshot_off ok=true fin_ok=true em_after=false os_after=true | fin_after_off=50 n_fin=1 em_fin=false",
+          "wall": 1.745
+        },
+        {
+          "receipt": "runs/load/cpu_oneshot_off.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_oneshot_off ok=true fin_ok=true em_after=false os_after=true | fin_after_off=50 n_fin=1 em_fin=false",
+          "wall": 1.762
+        }
+      ]
+    },
+    "r94_particles_cpu_pause": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        3.841,
+        4.118
+      ],
+      "max_wall": 4.118,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=4 n=1] pm_disabled[fin_after_enable=4 n=1] ts0[fin_after_restore=19 n=1]"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_pause.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=4 n=1] pm_disabled[fin_after_enable=4 n=1] ts0[fin_after_restore=19 n=1]",
+          "wall": 3.841
+        },
+        {
+          "receipt": "runs/load/cpu_pause.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=4 n=1] pm_disabled[fin_after_enable=4 n=1] ts0[fin_after_restore=19 n=1]",
+          "wall": 4.118
+        }
+      ]
+    },
+    "r94_particles_cpu_request": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        0.839,
+        0.81
+      ],
+      "max_wall": 0.839,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_request ok=true step010_ok=true step005_ok=true | step0.10[fin_call1=6 fin_call_raw=4 expected=6 ok=true n_fin=1] step0.05[fin_call1=11 fin_call_raw=9 expected=11 ok=true n_fin=1]"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_request.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_request ok=true step010_ok=true step005_ok=true | step0.10[fin_call1=6 fin_call_raw=4 expected=6 ok=true n_fin=1] step0.05[fin_call1=11 fin_call_raw=9 expected=11 ok=true n_fin=1]",
+          "wall": 0.839
+        },
+        {
+          "receipt": "runs/load/cpu_request.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_request ok=true step010_ok=true step005_ok=true | step0.10[fin_call1=6 fin_call_raw=4 expected=6 ok=true n_fin=1] step0.05[fin_call1=11 fin_call_raw=9 expected=11 ok=true n_fin=1]",
+          "wall": 0.81
+        }
+      ]
+    },
+    "r94_particles_cpu_restart": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        1.198,
+        1.164
+      ],
+      "max_wall": 1.198,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=false | first_delta=15 second_after=14 n_fin=2",
+        "PASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=false | first_delta=15 second_after=15 n_fin=2"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_restart.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=false | first_delta=15 second_after=14 n_fin=2",
+          "wall": 1.198
+        },
+        {
+          "receipt": "runs/load/cpu_restart.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=false | first_delta=15 second_after=15 n_fin=2",
+          "wall": 1.164
+        }
+      ]
+    },
+    "r94_particles_cpu_retrigger": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        1.765,
+        1.891
+      ],
+      "max_wall": 1.891,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_retrigger ok=true first_ok=true second_ok=true em_set=true ise_set=true | first_delta=15 second_after=14 n_fin=2 em_after=false"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_retrigger.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_retrigger ok=true first_ok=true second_ok=true em_set=true ise_set=true | first_delta=15 second_after=14 n_fin=2 em_after=false",
+          "wall": 1.765
+        },
+        {
+          "receipt": "runs/load/cpu_retrigger.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_retrigger ok=true first_ok=true second_ok=true em_set=true ise_set=true | first_delta=15 second_after=14 n_fin=2 em_after=false",
+          "wall": 1.891
+        }
+      ]
+    },
+    "r94_particles_cpu_speed_mid": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        1.173,
+        1.547
+      ],
+      "max_wall": 1.547,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_speed_mid ok=true fin_ok=true em_after=false | fin_after_set=12 n_fin=1"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_speed_mid.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_speed_mid ok=true fin_ok=true em_after=false | fin_after_set=12 n_fin=1",
+          "wall": 1.173
+        },
+        {
+          "receipt": "runs/load/cpu_speed_mid.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_speed_mid ok=true fin_ok=true em_after=false | fin_after_set=12 n_fin=1",
+          "wall": 1.547
+        }
+      ]
+    },
+    "r94_particles_cpu_speed_pre": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        2.895,
+        2.651
+      ],
+      "max_wall": 2.895,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_speed_pre ok=true ss2_ok=true ss05_ok=true pre25_ok=true ff30_ok=true | ss2[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] ss05[delta=59 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60] pre25[delta=14 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] ff30[delta=31 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=31]",
+        "PASS particles_lattice cpu_speed_pre ok=true ss2_ok=true ss05_ok=true pre25_ok=true ff30_ok=true | ss2[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] ss05[delta=60 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60] pre25[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] ff30[delta=31 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=32]"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_speed_pre.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_speed_pre ok=true ss2_ok=true ss05_ok=true pre25_ok=true ff30_ok=true | ss2[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] ss05[delta=59 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60] pre25[delta=14 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] ff30[delta=31 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=31]",
+          "wall": 2.895
+        },
+        {
+          "receipt": "runs/load/cpu_speed_pre.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_speed_pre ok=true ss2_ok=true ss05_ok=true pre25_ok=true ff30_ok=true | ss2[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] ss05[delta=60 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60] pre25[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] ff30[delta=31 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=32]",
+          "wall": 2.651
+        }
+      ]
+    },
+    "r94_particles_cpu_stop": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        2.148,
+        2.234
+      ],
+      "max_wall": 2.234,
+      "distinct_pass_lines": [
+        "PASS particles_lattice cpu_stop ok=true stop10_ok=true stop40_ok=true | stop10[fin_after=20 n=1 em_fin=false em_after=false] stop40[fin_after=20 n=1 em_fin=false em_after=false]"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/cpu_stop.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_stop ok=true stop10_ok=true stop40_ok=true | stop10[fin_after=20 n=1 em_fin=false em_after=false] stop40[fin_after=20 n=1 em_fin=false em_after=false]",
+          "wall": 2.148
+        },
+        {
+          "receipt": "runs/load/cpu_stop.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice cpu_stop ok=true stop10_ok=true stop40_ok=true | stop10[fin_after=20 n=1 em_fin=false em_after=false] stop40[fin_after=20 n=1 em_fin=false em_after=false]",
+          "wall": 2.234
+        }
+      ]
+    },
+    "r94_particles_gpu_headless": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        2.783,
+        2.757
+      ],
+      "max_wall": 2.783,
+      "distinct_pass_lines": [
+        "PASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=1 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] capture[rect=(0.0000,0.0000,0.0000,0.0000) em_after=false]",
+        "PASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=5 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] capture[rect=(0.0000,0.0000,0.0000,0.0000) em_after=false]"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/gpu_headless.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=5 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] capture[rect=(0.0000,0.0000,0.0000,0.0000) em_after=false]",
+          "wall": 2.783
+        },
+        {
+          "receipt": "runs/load/gpu_headless.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=1 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] capture[rect=(0.0000,0.0000,0.0000,0.0000) em_after=false]",
+          "wall": 2.757
+        }
+      ]
+    },
+    "r94_particles_ppm": {
+      "n": 2,
+      "all_rc0": true,
+      "all_stderr0": true,
+      "all_sig": true,
+      "all_prefix": true,
+      "walls": [
+        0.69,
+        0.828
+      ],
+      "max_wall": 0.828,
+      "distinct_pass_lines": [
+        "PASS particles_lattice ppm iv_min=7.0000 iv_max=9.0000 scale=(2.0000,3.0000) tex_same=true curve_same=true flags=truetrue sub_mode=3 sub_amt=3 coll=2 turb=true turb_n=1"
+      ],
+      "receipts": [
+        {
+          "receipt": "runs/load/ppm.rep1",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice ppm iv_min=7.0000 iv_max=9.0000 scale=(2.0000,3.0000) tex_same=true curve_same=true flags=truetrue sub_mode=3 sub_amt=3 coll=2 turb=true turb_n=1",
+          "wall": 0.69
+        },
+        {
+          "receipt": "runs/load/ppm.rep2",
+          "rc": 0,
+          "stderr_bytes": 0,
+          "signature_present": true,
+          "line_startswith_signature": true,
+          "pass_line": "PASS particles_lattice ppm iv_min=7.0000 iv_max=9.0000 scale=(2.0000,3.0000) tex_same=true curve_same=true flags=truetrue sub_mode=3 sub_amt=3 coll=2 turb=true turb_n=1",
+          "wall": 0.828
+        }
+      ]
+    }
+  }
+}

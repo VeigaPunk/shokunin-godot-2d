@@ -1,0 +1,12 @@
+{
+  "variant": "dead",
+  "dead_entry": true,
+  "cases": [
+    "mechanic",
+    "save_process_writer",
+    "save_process_reader",
+    "save_process_missing",
+    "r94_particles_census",
+    "r94_particles_ppm"
+  ]
+}

@@ -1,0 +1,13 @@
+r94 rows: 19
+scout-canonical: 105 receipts, missing={}
+scout-loadtest: 38 receipts, missing={}
+boundary-quiet: 57 receipts, missing={}
+boundary-load: 57 receipts, missing={}
+boundary-ff30: 57 receipts, missing={'r94_particles_cpu_pause': 3}
+   MISS: corpus/live/r94-boundary/runs/ff30/r94_particles_cpu_pause.rep1.out
+   MISS: corpus/live/r94-boundary/runs/ff30/r94_particles_cpu_pause.rep2.out
+   MISS: corpus/live/r94-boundary/runs/ff30/r94_particles_cpu_pause.rep3.out
+boundary-ff60: 57 receipts, missing={}
+boundary-ff120: 57 receipts, missing={}
+boundary-ff120load: 38 receipts, missing={}
+boundary-ab: 12 receipts, missing={}

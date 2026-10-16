@@ -1,0 +1,8 @@
+=== rep1 start 2026-10-16T06:42:46Z loadavg=59.05 71.16 66.53
+rep1 rc=0 2026-10-16T06:47:39Z loadavg=59.53 63.58 64.47
+PASS error-clause surface meta
+PASS battery: corpus/live/r94-critic/battery-runs/full/20261016T064246905292Z/verdicts.json
+=== rep2 start 2026-10-16T06:47:39Z loadavg=59.53 63.58 64.47
+rep2 rc=0 2026-10-16T06:52:35Z loadavg=57.60 60.38 62.93
+PASS error-clause surface meta
+PASS battery: corpus/live/r94-critic/battery-runs/full/20261016T064739764761Z/verdicts.json
