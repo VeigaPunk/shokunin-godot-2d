@@ -1,0 +1,228 @@
+{
+ "sha256": {
+  "dss_lattice.gd": "77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627",
+  "dss_lattice.gd_claimed": "77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627",
+  "dss_lattice.gd_scout_probe": "77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627",
+  "r95b_order.gd": "4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490",
+  "r95b_order.gd_claimed": "4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490",
+  "r95b_order.gd_boundary_probe": "4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490"
+ },
+ "provenance_ok": true,
+ "prefix_rows": [
+  "dss_lattice_order_core",
+  "dss_lattice_order_core_rev",
+  "dss_lattice_point_cap",
+  "dss_lattice_point_cap_rev"
+ ],
+ "prefix_rows_count": 4,
+ "dss_rows": 17,
+ "order_rows": 35,
+ "total_rows": 52,
+ "token_scan": {
+  "procwait": false,
+  "env": false,
+  "layout_changes_order": false,
+  "instance_id": true,
+  "RID(": true
+ },
+ "block_contains_case_names": [
+  "dss_lattice_cast_rest",
+  "dss_lattice_census",
+  "dss_lattice_excl_space",
+  "dss_lattice_fresh",
+  "dss_lattice_layer_forms",
+  "dss_lattice_order_core",
+  "dss_lattice_order_core_rev",
+  "dss_lattice_point_canvas",
+  "dss_lattice_point_cap",
+  "dss_lattice_point_cap_rev",
+  "dss_lattice_point_edge",
+  "dss_lattice_ray_flags",
+  "dss_lattice_ray_geom",
+  "dss_lattice_ray_order",
+  "dss_lattice_ray_order_rev",
+  "dss_lattice_shape",
+  "dss_lattice_shape_rev",
+  "r95b_order_canon",
+  "r95b_order_cap40_p0",
+  "r95b_order_cap40_p1",
+  "r95b_order_cap40_p2",
+  "r95b_order_celloff_x0",
+  "r95b_order_celloff_x1000",
+  "r95b_order_celloff_y1000",
+  "r95b_order_free_ab",
+  "r95b_order_free_ba",
+  "r95b_order_layers_k0",
+  "r95b_order_layers_k1",
+  "r95b_order_period_k5",
+  "r95b_order_periodx_k10",
+  "r95b_order_periodx_k2",
+  "r95b_order_periodx_k3",
+  "r95b_order_periodx_k4",
+  "r95b_order_periodx_k5",
+  "r95b_order_periodx_k5s8",
+  "r95b_order_periodx_k6",
+  "r95b_order_periodx_k7",
+  "r95b_order_periodx_k8",
+  "r95b_order_perm0",
+  "r95b_order_perm1",
+  "r95b_order_perm2",
+  "r95b_order_perm3",
+  "r95b_order_perm4",
+  "r95b_order_perm5",
+  "r95b_order_perm6",
+  "r95b_order_perm7",
+  "r95b_order_readd_a",
+  "r95b_order_rigid",
+  "r95b_order_scoutrev",
+  "r95b_order_twopiles",
+  "r95b_order_warm_k32",
+  "r95b_order_warm_keep8"
+ ],
+ "perm_t2_distinct": 8,
+ "perm_ladder_distinct": 8,
+ "perm_t2": {
+  "r95b_order_perm0": "[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]",
+  "r95b_order_perm1": "[0.0000,0.0000|32.0000,0.0000|16.0000,0.0000|8.0000,0.0000|24.0000,0.0000]",
+  "r95b_order_perm2": "[0.0000,0.0000|8.0000,0.0000|32.0000,0.0000|24.0000,0.0000|16.0000,0.0000]",
+  "r95b_order_perm3": "[16.0000,0.0000|32.0000,0.0000|8.0000,0.0000|24.0000,0.0000|0.0000,0.0000]",
+  "r95b_order_perm4": "[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|24.0000,0.0000|16.0000,0.0000]",
+  "r95b_order_perm5": "[24.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|0.0000,0.0000]",
+  "r95b_order_perm6": "[32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000|0.0000,0.0000]",
+  "r95b_order_perm7": "[8.0000,0.0000|32.0000,0.0000|24.0000,0.0000|16.0000,0.0000|0.0000,0.0000]"
+ },
+ "cap40_set32_t2_distinct": 3,
+ "cap40_counts": {
+  "r95b_order_cap40_p0": [
+   "32",
+   "40",
+   "0"
+  ],
+  "r95b_order_cap40_p1": [
+   "32",
+   "40",
+   "0"
+  ],
+  "r95b_order_cap40_p2": [
+   "32",
+   "40",
+   "0"
+  ]
+ },
+ "cap40_set32_distinct": {
+  "r95b_order_cap40_p0": "5",
+  "r95b_order_cap40_p1": "5",
+  "r95b_order_cap40_p2": "5"
+ },
+ "periodx": {
+  "r95b_order_periodx_k2": [
+   "2",
+   "4.0",
+   "2",
+   "2",
+   "2",
+   "5"
+  ],
+  "r95b_order_periodx_k3": [
+   "3",
+   "4.0",
+   "6",
+   "6",
+   "6",
+   "9"
+  ],
+  "r95b_order_periodx_k4": [
+   "4",
+   "4.0",
+   "12",
+   "12",
+   "12",
+   "15"
+  ],
+  "r95b_order_periodx_k5": [
+   "5",
+   "4.0",
+   "20",
+   "20",
+   "20",
+   "23"
+  ],
+  "r95b_order_periodx_k5s8": [
+   "5",
+   "8.0",
+   "20",
+   "20",
+   "20",
+   "23"
+  ],
+  "r95b_order_periodx_k6": [
+   "6",
+   "4.0",
+   "30",
+   "30",
+   "30",
+   "33"
+  ],
+  "r95b_order_periodx_k7": [
+   "7",
+   "4.0",
+   "42",
+   "42",
+   "42",
+   "45"
+  ],
+  "r95b_order_periodx_k8": [
+   "8",
+   "4.0",
+   "56",
+   "56",
+   "56",
+   "59"
+  ],
+  "r95b_order_periodx_k10": [
+   "10",
+   "4.0",
+   "90",
+   "90",
+   "90",
+   "93"
+  ]
+ },
+ "periodx_law_holds_in_pinned_bytes": true,
+ "canon_t0": "0,1,2,3,4",
+ "canon_t20": "0,1,2,3,4",
+ "canon_t20_eq_t0": true,
+ "canon_distinct_ticks": "20",
+ "EXPECTED_ERRORS_found": false,
+ "REQUIRED_STDERR_found": false,
+ "r95_in_expected_errors": true,
+ "gate_name_present": true,
+ "dss_lattice.gd_write_surface": {
+  "FileAccess": 0,
+  "DirAccess": 0,
+  "ResourceSaver": 0,
+  "OS.execute": 0,
+  "OS.create_process": 0
+ },
+ "r95b_order.gd_write_surface": {
+  "FileAccess": 0,
+  "DirAccess": 0,
+  "ResourceSaver": 0,
+  "OS.execute": 0,
+  "OS.create_process": 0
+ },
+ "scout_out_maxdepth1": 99,
+ "scout_out_loadtest": 51,
+ "scout_out_all": 211,
+ "boundary_out": 261,
+ "boundary_batches": [
+  "extra",
+  "ff1",
+  "ff120",
+  "ff30",
+  "label",
+  "load",
+  "quiet",
+  "thr"
+ ]
+}

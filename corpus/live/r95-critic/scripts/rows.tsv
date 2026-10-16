@@ -1,0 +1,360 @@
+idx	case	script	args	rc	siglen
+0	mechanic	controls/mechanic_test.gd		0	15
+1	scene_signal	controls/test_scene_signal.gd		0	22
+2	input_route	controls/input_route.gd		0	43
+3	route_toggle	controls/input_route_toggle.gd		0	31
+4	overlap	controls/overlap_probe.gd		0	22
+5	transition	controls/scene_transition_probe.gd		0	26
+6	causal	causal_chain.gd		0	21
+7	wrong_key	causal_chain.gd	--wrong-key-negative	1	16
+8	release	causal_chain.gd	--release-test	0	29
+9	keyup	causal_chain.gd	--keyup-test	0	29
+10	negative_route	controls/input_route_negative.gd		1	33
+11	negative_overlap	controls/overlap_negative.gd		1	54
+12	negative_transition	controls/scene_transition_negative.gd		1	38
+13	negative_signal	controls/test_scene_signal_negative.gd		1	54
+14	camera_follow	camera_follow.gd		0	69
+15	camera_no_follow	camera_follow.gd	--no-follow	2	76
+16	camera_limit	camera_limit.gd		0	128
+17	camera_far_bound	camera_limit.gd	--far-bound	2	100
+18	camera_top_limit	camera_limit.gd	--top-bound	0	112
+19	camera_far_top_bound	camera_limit.gd	--far-top-bound	2	98
+20	camera_left_limit	camera_limit.gd	--left-bound	0	112
+21	camera_far_left_bound	camera_limit.gd	--far-left-bound	2	99
+22	camera_bottom_limit	camera_limit.gd	--bottom-bound	0	112
+23	camera_far_bottom_bound	camera_limit.gd	--far-bottom-bound	2	101
+24	ui_signal_hud	ui_signal_hud.gd		0	81
+25	ui_signal_disconnected	ui_signal_hud.gd	--disconnect-signal	2	55
+26	health_gauge	health_gauge.gd		0	87
+27	health_gauge_disconnected	health_gauge.gd	--disconnect-signal	2	102
+28	level_collision	level_collision/level_probe.gd		0	58
+29	contact_runtime	contact_probe.gd		0	40
+30	contact_no_collision	contact_probe.gd	--no-collision	2	76
+31	animation_property	animation_property.gd		0	49
+32	animation_stuck	animation_property.gd	--stuck	2	81
+33	tween_flash	tween_flash.gd		0	36
+34	tween_no_start	tween_flash.gd	--no-tween	2	76
+35	audio_playback	audio_playback.gd		0	68
+36	audio_no_play	audio_playback.gd	--no-play	2	67
+37	audio_bus_route	audio_bus_route.gd		0	131
+38	audio_bus_route_invalid_control	audio_bus_route.gd	--invalid	2	88
+39	export_readiness	__godot_export__		0	48
+40	export_preset_missing	__godot_export_missing__		1	39
+41	button_activation	button_activation.gd		0	123
+42	button_activation_disconnected	button_activation.gd	--disconnect-signal	2	73
+43	button_activation_unfocused	button_activation.gd	--no-focus	2	73
+44	button_activation_focus_loss	button_activation.gd	--lose-focus-after-first	0	122
+45	checkbox_toggle	checkbox_toggle.gd		0	93
+46	checkbox_toggle_disconnected	checkbox_toggle.gd	--disconnect-signal	2	87
+47	button_group_selection	button_group_selection.gd		0	95
+48	button_group_selection_disconnected	button_group_selection.gd	--disconnect-signal	2	105
+49	button_group_selection_ungroup_b	button_group_selection.gd	--ungroup-b	2	96
+50	slider_adjust	slider_adjust.gd		0	97
+51	slider_adjust_disconnected	slider_adjust.gd	--disconnect-signal	2	98
+52	slider_adjust_no_focus	slider_adjust.gd	--no-focus	2	80
+53	slider_adjust_repeat_right	slider_adjust.gd	--repeat-right	0	134
+54	slider_adjust_repeat_right_disconnected	slider_adjust.gd	--repeat-right --disconnect-signal	2	125
+55	slider_adjust_repeat_right_no_focus	slider_adjust.gd	--repeat-right --no-focus	2	97
+56	slider_adjust_repeat_right_focus_handoff	slider_adjust.gd	--repeat-right --focus-handoff	2	97
+57	slider_adjust_repeat_right_focus_restore	slider_adjust.gd	--repeat-right --focus-restore	0	138
+58	slider_adjust_repeat_right_second_focus_loss	slider_adjust.gd	--repeat-right --second-focus-loss	2	109
+59	slider_adjust_repeat_right_second_focus_restore	slider_adjust.gd	--repeat-right --second-focus-restore	0	130
+60	slider_adjust_repeat_right_second_focus_restore_disconnected	slider_adjust.gd	--repeat-right --second-focus-restore --disconnect-signal	2	85
+61	slider_adjust_repeat_right_second_focus_restore_reconnect_after_first_left	slider_adjust.gd	--repeat-right --second-focus-restore --reconnect-after-first-left	0	117
+62	slider_adjust_repeat_right_second_focus_restore_release_after_late_reconnect_press	slider_adjust.gd	--repeat-right --second-focus-restore --release-after-late-reconnect-press	2	103
+63	slider_adjust_repeat_right_second_focus_restore_observe_parsed_release	slider_adjust.gd	--repeat-right --second-focus-restore --observe-parsed-release	2	92
+64	slider_adjust_repeat_right_second_focus_restore_composite_push_and_clear	slider_adjust.gd	--repeat-right --second-focus-restore --composite-push-and-clear	2	93
+65	slider_adjust_repeat_right_second_focus_restore_clear_then_push_release	slider_adjust.gd	--repeat-right --second-focus-restore --clear-then-push-release	2	92
+66	slider_adjust_repeat_right_second_focus_restore_clear_frame_then_push_release	slider_adjust.gd	--repeat-right --second-focus-restore --clear-frame-then-push-release	2	98
+67	slider_adjust_repeat_right_second_focus_restore_push_frame_then_clear_release	slider_adjust.gd	--repeat-right --second-focus-restore --push-frame-then-clear-release	2	98
+68	slider_adjust_repeat_right_second_focus_restore_observe_push_input_release	slider_adjust.gd	--repeat-right --second-focus-restore --observe-push-input-release	2	87
+69	slider_adjust_repeat_right_second_focus_restore_press_after_late_reconnect	slider_adjust.gd	--repeat-right --second-focus-restore --press-after-late-reconnect	0	136
+70	slider_adjust_repeat_right_second_focus_restore_reconnect_after_final_left	slider_adjust.gd	--repeat-right --second-focus-restore --reconnect-after-final-left	2	89
+71	slider_adjust_repeat_right_second_focus_restore_disconnect_after_first	slider_adjust.gd	--repeat-right --second-focus-restore --disconnect-after-first	2	88
+72	save_roundtrip	save_roundtrip.gd		0	78
+73	save_corrupt_negative	save_roundtrip.gd	--corrupt-negative	2	81
+74	save_process_writer	__save_process_writer__		0	34
+75	save_process_reader	__save_process_reader__		0	34
+76	save_process_missing	__save_process_missing__		2	85
+77	phys2d_events_edge_srv	phys2d_events.gd	--arm=edge_srv	0	123
+78	phys2d_events_edge_node_srv	phys2d_events.gd	--arm=edge_node_srv	0	179
+79	phys2d_events_edge_node	phys2d_events.gd	--arm=edge_node	0	138
+80	phys2d_events_edge_revert	phys2d_events.gd	--arm=edge_revert	0	186
+81	phys2d_events_area_edge	phys2d_events.gd	--arm=area_edge	0	310
+82	phys2d_events_cm_on	phys2d_events.gd	--arm=cm_on	0	164
+83	phys2d_events_cm_off	phys2d_events.gd	--arm=cm_off	0	195
+84	phys2d_events_cm_max0	phys2d_events.gd	--arm=cm_max0	0	195
+85	phys2d_events_cm_toggle_cb	phys2d_events.gd	--arm=cm_toggle_cb	0	219
+86	phys2d_events_cm_deferred_cb	phys2d_events.gd	--arm=cm_deferred_cb	0	210
+87	phys2d_events_cm_max0_cb	phys2d_events.gd	--arm=cm_max0_cb	0	194
+88	phys2d_events_rb_srv_set_state	phys2d_events.gd	--arm=rb_srv_set_state	0	310
+89	phys2d_events_rb_node_position	phys2d_events.gd	--arm=rb_node_position	0	331
+90	phys2d_events_rb_queue_free	phys2d_events.gd	--arm=rb_queue_free	0	267
+91	phys2d_events_rb_free_rid	phys2d_events.gd	--arm=rb_free_rid	0	291
+92	phys2d_events_rb_dss_in_cb	phys2d_events.gd	--arm=rb_dss_in_cb	0	325
+93	phys2d_events_area_monitoring_direct	phys2d_events.gd	--arm=area_monitoring_direct	0	360
+94	phys2d_events_area_monitoring_deferred	phys2d_events.gd	--arm=area_monitoring_deferred	0	363
+95	phys2d_events_area_free_rid	phys2d_events.gd	--arm=area_free_rid	0	342
+96	phys2d_events_area_queue_free	phys2d_events.gd	--arm=area_queue_free	0	325
+97	phys2d_events_area_srv_set_state	phys2d_events.gd	--arm=area_srv_set_state	0	382
+98	phys2d_events_area_node_position	phys2d_events.gd	--arm=area_node_position	0	366
+99	phys2d_events_area_dss_in_cb	phys2d_events.gd	--arm=area_dss_in_cb	0	379
+100	phys2d_motion_ccd_ladder	phys2d_motion.gd	--arm=ccd_ladder	0	522
+101	phys2d_motion_ccd_gap	phys2d_motion.gd	--arm=ccd_gap	0	139
+102	phys2d_motion_ccd_spin	phys2d_motion.gd	--arm=ccd_spin	0	218
+103	phys2d_motion_ccd_edge	phys2d_motion.gd	--arm=ccd_edge	0	365
+104	phys2d_motion_btm_from	phys2d_motion.gd	--arm=btm_from	0	317
+105	phys2d_motion_btm_hit	phys2d_motion.gd	--arm=btm_hit	0	213
+106	phys2d_motion_btm_embed	phys2d_motion.gd	--arm=btm_embed	0	861
+107	phys2d_motion_btm_margin	phys2d_motion.gd	--arm=btm_margin	0	706
+108	phys2d_motion_btm_from2	phys2d_motion.gd	--arm=btm_from2	0	835
+109	phys2d_motion_btm_recflag	phys2d_motion.gd	--arm=btm_recflag	0	688
+110	phys2d_motion_mac_hit	phys2d_motion.gd	--arm=mac_hit	0	199
+111	phys2d_motion_mac_miss	phys2d_motion.gd	--arm=mac_miss	0	61
+112	phys2d_motion_tm_hit	phys2d_motion.gd	--arm=tm_hit	0	206
+113	phys2d_motion_mac_test_only	phys2d_motion.gd	--arm=mac_test_only	0	288
+114	phys2d_motion_mac_nodecomp	phys2d_motion.gd	--arm=mac_nodecomp	0	213
+115	phys2d_motion_mac_chain	phys2d_motion.gd	--arm=mac_chain	0	235
+116	phys2d_motion_mac_maxcol	phys2d_motion.gd	--arm=mac_maxcol	0	65
+117	phys2d_motion_mac_rigid	phys2d_motion.gd	--arm=mac_rigid	0	357
+118	phys2d_motion_mac_embed	phys2d_motion.gd	--arm=mac_embed	0	577
+119	phys2d_motion_dss_motion	phys2d_motion.gd	--arm=dss_motion	0	265
+120	phys2d_motion_dss_embed	phys2d_motion.gd	--arm=dss_embed	0	264
+121	phys2d_motion_dss_shapes	phys2d_motion.gd	--arm=dss_shapes	0	428
+122	phys2d_motion_dss_purity	phys2d_motion.gd	--arm=dss_purity	0	287
+123	phys2d_motion_dss_wrongarg	phys2d_motion.gd	--arm=dss_wrongarg	0	89
+124	phys2d_motion_cont_windows	phys2d_motion.gd	--arm=cont_windows	0	147
+125	phys2d_motion_cont_cap	phys2d_motion.gd	--arm=cont_cap	0	105
+126	phys2d_motion_bds_windows	phys2d_motion.gd	--arm=bds_windows	0	215
+127	phys2d_motion_cont_persist	phys2d_motion.gd	--arm=cont_persist	0	125
+128	phys2d_joints_joint_census	phys2d_joints.gd	--arm=joint_census	0	2037
+129	phys2d_joints_joint_unset_refusal	phys2d_joints.gd	--arm=joint_unset_refusal	0	209
+130	phys2d_joints_joint_pin_tiers	phys2d_joints.gd	--arm=joint_pin_tiers	0	335
+131	phys2d_joints_joint_pin_clear	phys2d_joints.gd	--arm=joint_pin_clear	0	288
+132	phys2d_joints_joint_node_clear	phys2d_joints.gd	--arm=joint_node_clear	0	347
+133	phys2d_joints_joint_freed_rid	phys2d_joints.gd	--arm=joint_freed_rid	0	218
+134	phys2d_joints_joint_node_freed_rid	phys2d_joints.gd	--arm=joint_node_freed_rid	0	207
+135	phys2d_joints_joint_spring_env	phys2d_joints.gd	--arm=joint_spring_env	0	481
+136	phys2d_joints_joint_pin_params	phys2d_joints.gd	--arm=joint_pin_params	0	871
+137	phys2d_joints_joint_node_anchor	phys2d_joints.gd	--arm=joint_node_anchor	0	205
+138	phys2d_joints_joint_groove	phys2d_joints.gd	--arm=joint_groove	0	360
+139	phys2d_joints_joint_disable_coll	phys2d_joints.gd	--arm=joint_disable_coll	0	512
+140	phys2d_joints_layer_or_table	phys2d_joints.gd	--arm=layer_or_table	0	304
+141	phys2d_joints_layer_zero_table	phys2d_joints.gd	--arm=layer_zero_table	0	314
+142	phys2d_joints_layer_dyn_pair	phys2d_joints.gd	--arm=layer_dyn_pair	0	491
+143	phys2d_joints_layer_flip_mid	phys2d_joints.gd	--arm=layer_flip_mid	0	638
+144	phys2d_joints_layer_flip_cb	phys2d_joints.gd	--arm=layer_flip_cb	0	166
+145	phys2d_joints_area_lattice	phys2d_joints.gd	--arm=area_lattice	0	552
+146	phys2d_joints_area_body_gate	phys2d_joints.gd	--arm=area_body_gate	0	243
+147	phys2d_joints_area_entry_order	phys2d_joints.gd	--arm=area_entry_order	0	174
+148	camera_proc_cam_comp	camera_proc.gd	--arm=cam_comp	0	803
+149	camera_proc_cam_zoom_center	camera_proc.gd	--arm=cam_zoom_center	0	359
+150	camera_proc_cam_phase	camera_proc.gd	--arm=cam_phase	0	1066
+151	camera_proc_cam_subpixel	camera_proc.gd	--arm=cam_subpixel	0	402
+152	camera_proc_cam_space	camera_proc.gd	--arm=cam_space	0	1208
+153	camera_proc_cl_stack	camera_proc.gd	--arm=cl_stack	0	730
+154	camera_proc_cl_follow	camera_proc.gd	--arm=cl_follow	0	670
+155	camera_proc_cl_phase	camera_proc.gd	--arm=cl_phase	0	713
+156	camera_proc_cl_draworder	camera_proc.gd	--arm=cl_draworder	0	318
+157	camera_proc_vp_worlds	camera_proc.gd	--arm=vp_worlds	0	221
+158	camera_proc_vp_render_indep	camera_proc.gd	--arm=vp_render_indep	0	227
+159	camera_proc_vp_subcam	camera_proc.gd	--arm=vp_subcam	0	427
+160	camera_proc_par_layer	camera_proc.gd	--arm=par_layer	0	1057
+161	camera_proc_par_2d	camera_proc.gd	--arm=par_2d	0	429
+162	camera_proc_par_phase	camera_proc.gd	--arm=par_phase	0	770
+163	phys2d_backends_census	phys2d_backends.gd	--arm=census	0	460
+164	phys2d_backends_lattice	phys2d_backends.gd	--arm=lattice	0	635
+165	phys2d_backends_jolt3d_live	phys2d_backends.gd	--arm=jolt3d_live	0	221
+166	phys2d_backends_xcheck	phys2d_backends.gd	--arm=xcheck	0	348
+167	phys2d_backends_gate_matrix	phys2d_backends.gd	--arm=gate_matrix	0	244
+168	phys2d_backends_gate_duality	phys2d_backends.gd	--arm=gate_duality	0	56
+169	phys2d_backends_dummy_degenerate	phys2d_backends.gd	--arm=dummy_degenerate	0	386
+170	phys2d_backends_dummy_timeout	phys2d_backends.gd	--arm=dummy_timeout	0	109
+171	input_lattice_census	input_lattice.gd	--arm=census	0	4974
+172	input_lattice_press_idle	input_lattice.gd	--arm=press_idle	0	382
+173	input_lattice_acc_off	input_lattice.gd	--arm=acc_off	0	344
+174	input_lattice_acc_flush	input_lattice.gd	--arm=acc_flush	0	245
+175	input_lattice_pre_frame	input_lattice.gd	--arm=pre_frame	0	2
+176	input_lattice_api_press	input_lattice.gd	--arm=api_press	0	2
+177	input_lattice_burst	input_lattice.gd	--arm=burst	0	507
+178	input_lattice_dz_ladder	input_lattice.gd	--arm=dz_ladder	0	491
+179	input_lattice_joy_axis	input_lattice.gd	--arm=joy_axis	0	503
+180	input_lattice_echo_edge	input_lattice.gd	--arm=echo_edge	0	1384
+181	input_lattice_key_map	input_lattice.gd	--arm=key_map	0	1684
+182	input_lattice_imap_erase	input_lattice.gd	--arm=imap_erase	0	480
+183	input_lattice_imap_mid_cb	input_lattice.gd	--arm=imap_mid_cb	0	785
+184	input_lattice_conflict	input_lattice.gd	--arm=conflict	0	1056
+185	input_lattice_dev_joy	input_lattice.gd	--arm=dev_joy	0	1157
+186	input_lattice_mouse_hdls	input_lattice.gd	--arm=mouse_hdls	0	318
+187	input_lattice_null_edge	input_lattice.gd	--arm=null_edge	0	356
+188	input_lattice_dispatch_order	input_lattice.gd	--arm=dispatch_order	0	162
+189	input_lattice_reentrant	input_lattice.gd	--arm=reentrant	0	519
+190	input_lattice_phys_peer	input_lattice.gd	--arm=phys_peer	0	6
+191	input_lattice_press_phys	input_lattice.gd	--arm=press_phys	0	2
+192	input_lattice_release_edge	input_lattice.gd	--arm=release_edge	0	2
+193	input_lattice_ui_ns	input_lattice.gd	--arm=ui_ns	0	2
+194	r87_edge_jpbe	r87_edge.gd	--arm=jpbe	0	285
+195	ei_bound_refusal	ei_bound.gd		0	169
+196	r88_surfaces_mp_offline	r88_surfaces.gd	--arm=mp_offline	0	97
+197	r88_surfaces_mp_loopback	r88_surfaces.gd	--arm=mp_loopback	0	220
+198	r88_surfaces_mp_spawner	r88_surfaces.gd	--arm=mp_spawner	0	168
+199	r88_surfaces_light_props	r88_surfaces.gd	--arm=light_props	0	296
+200	r88_surfaces_sprite_meta	r88_surfaces.gd	--arm=sprite_meta	0	352
+201	r88_surfaces_sprite_phys	r88_surfaces.gd	--arm=sprite_phys	0	575
+202	r88_surfaces_audio_pos	r88_surfaces.gd	--arm=audio_pos	0	187
+203	r88_surfaces_vis_not	r88_surfaces.gd	--arm=vis_not	0	109
+204	geo2d_lattice_census	geo2d_lattice.gd	--arm=census	0	738
+205	geo2d_lattice_ops	geo2d_lattice.gd	--arm=ops	0	1275
+206	geo2d_lattice_contain	geo2d_lattice.gd	--arm=contain	0	1607
+207	geo2d_lattice_joins	geo2d_lattice.gd	--arm=joins	0	2531
+208	geo2d_lattice_trig	geo2d_lattice.gd	--arm=trig	0	628
+209	geo2d_lattice_pred	geo2d_lattice.gd	--arm=pred	0	553
+210	geo2d_lattice_pipedges	geo2d_lattice.gd	--arm=pipedges	0	306
+211	geo2d_lattice_edge	geo2d_lattice.gd	--arm=edge	0	1151
+212	geo2d_lattice_offempty	geo2d_lattice.gd	--arm=offempty	0	82
+213	geo2d_lattice_offdeg	geo2d_lattice.gd	--arm=offdeg	0	465
+214	geo2d_lattice_atlasempty	geo2d_lattice.gd	--arm=atlasempty	0	90
+215	geo2d_lattice_polyendpoly	geo2d_lattice.gd	--arm=polyendpoly	0	599
+216	geo2d_lattice_bridge	geo2d_lattice.gd	--arm=bridge	0	166
+217	geo2d_lattice_ring	geo2d_lattice.gd	--arm=ring	0	294
+218	geo2d_lattice_ring2	geo2d_lattice.gd	--arm=ring2	0	294
+219	geo2d_lattice_ring4	geo2d_lattice.gd	--arm=ring4	0	97
+220	geo2d_lattice_ringhits	geo2d_lattice.gd	--arm=ringhits	0	365
+221	input89_edges_exact	input89_edges.gd	--arm=exact	0	2
+222	input89_edges_axisdev	input89_edges.gd	--arm=axisdev	0	531
+223	geo2d_lattice_lineempty	geo2d_lattice.gd	--arm=lineempty	-6	67
+224	r90_lattice_props	rb_lattice.gd	--arm=props	0	2646
+225	r90_lattice_comread	rb_lattice.gd	--arm=comread	0	278
+226	r90_lattice_comrefuse	rb_lattice.gd	--arm=comrefuse	0	232
+227	r90_lattice_gravity	rb_lattice.gd	--arm=gravity	0	546
+228	r90_lattice_damp	rb_lattice.gd	--arm=damp	0	446
+229	r90_lattice_order	rb_lattice.gd	--arm=order	0	703
+230	r90_lattice_write	rb_lattice.gd	--arm=write	0	290
+231	r90_lattice_impulse	rb_lattice.gd	--arm=impulse	0	430
+232	r90_lattice_impedge	rb_lattice.gd	--arm=impedge	0	469
+233	r90_lattice_freezelock	rb_lattice.gd	--arm=freezelock --frames=120	0	434
+234	r90_lattice_contacts	rb_lattice.gd	--arm=contacts	0	199
+235	r90_lattice_lag	rb_lattice.gd	--arm=lag --frames=30	0	333
+236	nav_lattice_census	nav_lattice.gd	--arm=census	0	649
+237	nav_lattice_path	nav_lattice.gd	--arm=path	0	604
+238	nav_lattice_query	nav_lattice.gd	--arm=query	0	607
+239	nav_lattice_sync	nav_lattice.gd	--arm=sync	0	249
+240	nav_lattice_region	nav_lattice.gd	--arm=region	0	939
+241	nav_lattice_agent	nav_lattice.gd	--arm=agent	0	271
+242	nav_lattice_avoid	nav_lattice.gd	--arm=avoid	0	210
+243	nav_lattice_bake	nav_lattice.gd	--arm=bake	0	554
+244	nav_lattice_link	nav_lattice.gd	--arm=link	0	618
+245	nav_lattice_teardown_crash	nav_lattice.gd	--arm=teardown_crash	-6	52
+246	nav_lattice_teardown_clean	nav_lattice.gd	--arm=teardown_clean	0	58
+247	r92_tilemap_census	tilemap_lattice.gd	--arm=census	0	1103
+248	r92_tilemap_atlas	tilemap_lattice.gd	--arm=atlas	0	463
+249	r92_tilemap_cells	tilemap_lattice.gd	--arm=cells	0	1048
+250	r92_tilemap_custom	tilemap_lattice.gd	--arm=custom	0	436
+251	r92_tilemap_terrain	tilemap_lattice.gd	--arm=terrain	0	560
+252	r92_tilemap_pattern	tilemap_lattice.gd	--arm=pattern	0	428
+253	r92_tilemap_encoding	tilemap_lattice.gd	--arm=encoding	0	912
+254	r92_tilemap_fixinvalid	tilemap_lattice.gd	--arm=fixinvalid	0	157
+255	r92_tilemap_srcids	tilemap_lattice.gd	--arm=srcids	0	301
+256	r92_tilemap_physics	tilemap_lattice.gd	--arm=physics	0	539
+257	r92_tilemap_timing	tilemap_lattice.gd	--arm=timing	0	366
+258	r92_tilemap_quadrant	tilemap_lattice.gd	--arm=quadrant	0	286
+259	r92_tilemap_nav	tilemap_lattice.gd	--arm=nav	0	2
+260	r92_tilemap_nullts_crash	tilemap_lattice.gd	--arm=nullts	-6	36
+261	r93_tween_census	anim_lattice.gd	--arm=census	0	2720
+262	r93_tween_interp_value	anim_lattice.gd	--arm=tweenval	0	326
+263	r93_tween_interp_grid_a	anim_lattice.gd	--arm=tweenval_grid	0	738
+264	r93_tween_interp_grid_b	anim_lattice.gd	--arm=tweenval_grid	0	1450
+265	r93_anim_track_interp	anim_lattice.gd	--arm=animtrack	0	425
+266	r93_tween_manual_step	anim_lattice.gd	--arm=tweenstep	0	239
+267	r93_tween_chain	anim_lattice.gd	--arm=tweenchain	0	309
+268	r93_tween_process_stable	anim_lattice.gd	--arm=tweenproc	0	83
+269	r93_tween_phys_manual_step	anim_lattice.gd	--arm=tweenproc	0	42
+270	r93_anim_seek	anim_lattice.gd	--arm=animseek	0	437
+271	r93_anim_method_callback	anim_lattice.gd	--arm=animmethod	0	223
+272	r93_anim_blend_finished	anim_lattice.gd	--arm=animblend	0	539
+273	r93_anim_blend_running	anim_lattice.gd	--arm=animblend	0	420
+274	r93_anim_process_manual	anim_lattice.gd	--arm=animproc	0	76
+275	r93_anim_process_stable	anim_lattice.gd	--arm=animproc	0	148
+276	r93_anim_overshoot	r93b_anim.gd	--arm=purity	0	538
+277	r93_anim_manual_clock_interleaved	r93b_anim.gd	--arm=manual_inv	0	110
+278	r93_anim_manual_clock_control	r93b_anim.gd	--arm=manual_inv	0	170
+279	r93_anim_deferred_flush	r93b_anim.gd	--arm=deferred	0	208
+280	r93_anim_await_offbyone	r93b_anim.gd	--arm=frame	0	33
+281	r93_anim_physics_tick	r93b_anim.gd	--arm=frame	0	80
+282	r93_anim_phys_delta	r93b_anim.gd	--arm=frame	0	27
+283	r93_anim_blend_interleaved	r93b_anim.gd	--arm=blend	0	439
+284	r94_particles_census	particles_lattice.gd	--arm=census	0	8785
+285	r94_particles_ppm	particles_lattice.gd	--arm=ppm	0	168
+286	r94_particles_convert	particles_lattice.gd	--arm=convert	0	475
+287	r94_particles_cpu_lifetime	particles_lattice.gd	--arm=cpu_lifetime	0	91
+288	r94_particles_cpu_expl	particles_lattice.gd	--arm=cpu_expl	0	73
+289	r94_particles_cpu_speed_pre	particles_lattice.gd	--arm=cpu_speed_pre	0	96
+290	r94_particles_cpu_stop	particles_lattice.gd	--arm=cpu_stop	0	69
+291	r94_particles_cpu_never	particles_lattice.gd	--arm=cpu_never	0	65
+292	r94_particles_cpu_contam	particles_lattice.gd	--arm=cpu_contam	0	51
+293	r94_particles_cpu_oneshot_off	particles_lattice.gd	--arm=cpu_oneshot_off	0	87
+294	r94_particles_cpu_oneshot_flag	particles_lattice.gd	--arm=cpu_oneshot_flag	0	93
+295	r94_particles_cpu_pause	particles_lattice.gd	--arm=cpu_pause	0	103
+296	r94_particles_cpu_restart	particles_lattice.gd	--arm=cpu_restart	0	162
+297	r94_particles_cpu_retrigger	particles_lattice.gd	--arm=cpu_retrigger	0	98
+298	r94_particles_cpu_lt_mid	particles_lattice.gd	--arm=cpu_lt_mid	0	68
+299	r94_particles_cpu_speed_mid	particles_lattice.gd	--arm=cpu_speed_mid	0	71
+300	r94_particles_cpu_amount_mid	particles_lattice.gd	--arm=cpu_amount_mid	0	81
+301	r94_particles_cpu_request	particles_lattice.gd	--arm=cpu_request	0	74
+302	r94_particles_gpu_headless	particles_lattice.gd	--arm=gpu_headless	0	98
+303	dss_lattice_census	dss_lattice.gd	--arm=census	0	1430
+304	dss_lattice_ray_flags	dss_lattice.gd	--arm=ray_flags	0	560
+305	dss_lattice_ray_geom	dss_lattice.gd	--arm=ray_geom	0	611
+306	dss_lattice_ray_order	dss_lattice.gd	--arm=ray_order	0	332
+307	dss_lattice_ray_order_rev	dss_lattice.gd	--arm=ray_order --rev	0	331
+308	dss_lattice_point_cap	dss_lattice.gd	--arm=point_cap	0	56
+309	dss_lattice_point_cap_rev	dss_lattice.gd	--arm=point_cap --rev	0	56
+310	dss_lattice_point_edge	dss_lattice.gd	--arm=point_edge	0	378
+311	dss_lattice_point_canvas	dss_lattice.gd	--arm=point_canvas	0	320
+312	dss_lattice_shape	dss_lattice.gd	--arm=shape_lattice	0	296
+313	dss_lattice_shape_rev	dss_lattice.gd	--arm=shape_lattice --rev	0	295
+314	dss_lattice_order_core	dss_lattice.gd	--arm=order_core	0	49
+315	dss_lattice_order_core_rev	dss_lattice.gd	--arm=order_core --rev	0	49
+316	dss_lattice_layer_forms	dss_lattice.gd	--arm=layer_forms	0	491
+317	dss_lattice_cast_rest	dss_lattice.gd	--arm=cast_rest	0	1130
+318	dss_lattice_excl_space	dss_lattice.gd	--arm=excl_space	0	334
+319	dss_lattice_fresh	dss_lattice.gd	--arm=fresh	0	458
+320	r95b_order_canon	r95b_order.gd	--arm=canon	0	935
+321	r95b_order_periodx_k2	r95b_order.gd	--arm=periodx --k=2	0	150
+322	r95b_order_periodx_k3	r95b_order.gd	--arm=periodx --k=3	0	165
+323	r95b_order_periodx_k4	r95b_order.gd	--arm=periodx --k=4	0	184
+324	r95b_order_periodx_k5	r95b_order.gd	--arm=periodx --k=5	0	199
+325	r95b_order_periodx_k5s8	r95b_order.gd	--arm=periodx --k=5 --spacing=8	0	199
+326	r95b_order_periodx_k6	r95b_order.gd	--arm=periodx --k=6	0	214
+327	r95b_order_periodx_k7	r95b_order.gd	--arm=periodx --k=7	0	229
+328	r95b_order_periodx_k8	r95b_order.gd	--arm=periodx --k=8	0	244
+329	r95b_order_periodx_k10	r95b_order.gd	--arm=periodx --k=10	0	275
+330	r95b_order_period_k5	r95b_order.gd	--arm=period --k=5	0	163
+331	r95b_order_perm0	r95b_order.gd	--arm=perm --perm=0	0	357
+332	r95b_order_perm1	r95b_order.gd	--arm=perm --perm=1	0	357
+333	r95b_order_perm2	r95b_order.gd	--arm=perm --perm=2	0	357
+334	r95b_order_perm3	r95b_order.gd	--arm=perm --perm=3	0	357
+335	r95b_order_perm4	r95b_order.gd	--arm=perm --perm=4	0	357
+336	r95b_order_perm5	r95b_order.gd	--arm=perm --perm=5	0	357
+337	r95b_order_perm6	r95b_order.gd	--arm=perm --perm=6	0	357
+338	r95b_order_perm7	r95b_order.gd	--arm=perm --perm=7	0	357
+339	r95b_order_scoutrev	r95b_order.gd	--arm=scoutrev	0	435
+340	r95b_order_celloff_x0	r95b_order.gd	--arm=celloff --off=0	0	409
+341	r95b_order_celloff_x1000	r95b_order.gd	--arm=celloff --off=1000	0	412
+342	r95b_order_celloff_y1000	r95b_order.gd	--arm=celloff --off=0 --offy=1000	0	409
+343	r95b_order_twopiles	r95b_order.gd	--arm=twopiles	0	486
+344	r95b_order_warm_k32	r95b_order.gd	--arm=warm --k=32 --keep=0	0	317
+345	r95b_order_warm_keep8	r95b_order.gd	--arm=warm --k=8 --keep=1	0	316
+346	r95b_order_free_ab	r95b_order.gd	--arm=free --order=ab	0	282
+347	r95b_order_free_ba	r95b_order.gd	--arm=free --order=ba	0	282
+348	r95b_order_readd_a	r95b_order.gd	--arm=readd --which=a	0	339
+349	r95b_order_cap40_p0	r95b_order.gd	--arm=cap40 --perm=0	0	2307
+350	r95b_order_cap40_p1	r95b_order.gd	--arm=cap40 --perm=1	0	2370
+351	r95b_order_cap40_p2	r95b_order.gd	--arm=cap40 --perm=2	0	2320
+352	r95b_order_layers_k0	r95b_order.gd	--arm=layers --k=0	0	592
+353	r95b_order_layers_k1	r95b_order.gd	--arm=layers --k=1	0	601
+354	r95b_order_rigid	r95b_order.gd	--arm=rigid	0	124
+355	crash_spontaneous_sigabrt	spontaneous_crash_probe.gd	--spontaneous-crash	-6	43
+356	crash_self_sigkill	spontaneous_crash_probe.gd	--spontaneous-sigkill	-9	43
+357	descendant_pipe_detached_control	descendant_pipe_probe.gd	--spawn-detach	0	41
+358	descendant_pipe_forged_signature_release	descendant_pipe_probe.gd	--spawn-forge-release	0	41

@@ -1,0 +1,23 @@
+{
+ "head_cases": 359,
+ "parent_cases": 307,
+ "delta": 52,
+ "r95_rows": 52,
+ "r95_index_range": [
+  303,
+  354
+ ],
+ "parent_preserved_in_order": true,
+ "parent_rows_elsewhere": 0,
+ "r95_rc_all_zero": true,
+ "diff_plus": 163,
+ "diff_minus": 0,
+ "diff_minus_lines": [],
+ "hunks": [
+  "@@ -877,0 +878,152 @@",
+  "@@ -3112,0 +3265,11 @@"
+ ],
+ "gate_in_head": true,
+ "gate_in_parent": false,
+ "expected_errors_has_r95": false
+}

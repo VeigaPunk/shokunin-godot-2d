@@ -1,0 +1,12 @@
+{
+ "name": "harness-base",
+ "dead_entry": false,
+ "cases": [
+  "save_process_writer",
+  "save_process_reader",
+  "save_process_missing",
+  "dss_lattice_point_cap",
+  "dss_lattice_order_core",
+  "dss_lattice_fresh"
+ ]
+}

@@ -1,0 +1,485 @@
+{
+ "files_scanned": 472,
+ "cells_seen": 163,
+ "nonempty_err_files": [
+  "corpus/live/r95-scout/runs/smoke/census.err"
+ ],
+ "rows": [
+  {
+   "case": "dss_lattice_census",
+   "cell": "r95_dss_census",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "dss_lattice_ray_flags",
+   "cell": "r95_dss_ray_flags",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "dss_lattice_ray_geom",
+   "cell": "r95_dss_ray_geom",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "dss_lattice_ray_order",
+   "cell": "r95_dss_ray_order",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "dss_lattice_ray_order_rev",
+   "cell": "r95_dss_ray_order_rev",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "dss_lattice_point_cap",
+   "cell": "r95_dss_point_cap",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": false,
+   "distinct_payloads": 1,
+   "other_payloads": [
+    "PASS dss_lattice point_cap add_order=[a,b,c,d,e] cap0=[] cap1=[e#0] cap2=[e#0,a#0] cap3=[e#0,a#0,c#0] cap5=[e#0,a#0,c#0,d#0,b#0] cap_default=[e#0,a#0,c#0,d#0,b#0] mask2=[] nobodies=[] excl_first=[e#0,c#0,d#0,b#0] far_out=[] pile40_default=n32 pile40_cap0=n0 pile40_cap64=n40 cap32_truncates=true"
+   ]
+  },
+  {
+   "case": "dss_lattice_point_cap_rev",
+   "cell": "r95_dss_point_cap_rev",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": false,
+   "distinct_payloads": 1,
+   "other_payloads": [
+    "PASS dss_lattice point_cap add_order=[e,d,c,b,a] cap0=[] cap1=[a#0] cap2=[a#0,e#0] cap3=[a#0,e#0,c#0] cap5=[a#0,e#0,c#0,b#0,d#0] cap_default=[a#0,e#0,c#0,b#0,d#0] mask2=[] nobodies=[] excl_first=[a#0,c#0,b#0,d#0] far_out=[] pile40_default=n32 pile40_cap0=n0 pile40_cap64=n40 cap32_truncates=true"
+   ]
+  },
+  {
+   "case": "dss_lattice_point_edge",
+   "cell": "r95_dss_point_edge",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "dss_lattice_point_canvas",
+   "cell": "r95_dss_point_canvas",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "dss_lattice_shape",
+   "cell": "r95_dss_shape_lattice",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "dss_lattice_shape_rev",
+   "cell": "r95_dss_shape_lattice_rev",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "dss_lattice_order_core",
+   "cell": "r95_dss_order_core",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": false,
+   "distinct_payloads": 1,
+   "other_payloads": [
+    "PASS dss_lattice order_core add_order=[a,b,c,d,e] rep1=[e#0,a#0,c#0,d#0,b#0] rep2=[e#0,a#0,c#0,d#0,b#0] rep3=[e#0,a#0,c#0,d#0,b#0] repeat_stable=true set=[a#0,b#0,c#0,d#0,e#0] shape_same_order=true pile_b=[e2#0,a2#0,b2#0,c2#0,d2#0] layout_changes_order=true pile_a_after_insert=[e#0,a#0,c#0,b#0,d#0] insert_perturbs=true pile_rev=[a3#0,e3#0,d3#0,c3#0,b3#0] after_free=[a#0,b#0,e#0,d#0] free_perturbs=true after_readd=[a#0,b#0,e#0,f#0,d#0] readd_set=[a#0,b#0,d#0,e#0,f#0] rev=false"
+   ]
+  },
+  {
+   "case": "dss_lattice_order_core_rev",
+   "cell": "r95_dss_order_core_rev",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": false,
+   "distinct_payloads": 1,
+   "other_payloads": [
+    "PASS dss_lattice order_core add_order=[e,d,c,b,a] rep1=[a#0,e#0,c#0,b#0,d#0] rep2=[a#0,e#0,c#0,b#0,d#0] rep3=[a#0,e#0,c#0,b#0,d#0] repeat_stable=true set=[a#0,b#0,c#0,d#0,e#0] shape_same_order=true pile_b=[e2#0,a2#0,b2#0,c2#0,d2#0] layout_changes_order=true pile_a_after_insert=[a#0,e#0,c#0,d#0,b#0] insert_perturbs=true pile_rev=[a3#0,e3#0,d3#0,c3#0,b3#0] after_free=[e#0,d#0,a#0,b#0] free_perturbs=true after_readd=[e#0,d#0,a#0,f#0,b#0] readd_set=[a#0,b#0,d#0,e#0,f#0] rev=true"
+   ]
+  },
+  {
+   "case": "dss_lattice_layer_forms",
+   "cell": "r95_dss_layer_forms",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "dss_lattice_cast_rest",
+   "cell": "r95_dss_cast_rest",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "dss_lattice_excl_space",
+   "cell": "r95_dss_excl_space",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "dss_lattice_fresh",
+   "cell": "r95_dss_fresh",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_canon",
+   "cell": "canon",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_periodx_k2",
+   "cell": "periodx_k2",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_periodx_k3",
+   "cell": "periodx_k3",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_periodx_k4",
+   "cell": "periodx_k4",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_periodx_k5",
+   "cell": "periodx_k5",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_periodx_k5s8",
+   "cell": "periodx_k5s8",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_periodx_k6",
+   "cell": "periodx_k6",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_periodx_k7",
+   "cell": "periodx_k7",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_periodx_k8",
+   "cell": "periodx_k8",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_periodx_k10",
+   "cell": "periodx_k10",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_period_k5",
+   "cell": "period_k5",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_perm0",
+   "cell": "perm0",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_perm1",
+   "cell": "perm1",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_perm2",
+   "cell": "perm2",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_perm3",
+   "cell": "perm3",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_perm4",
+   "cell": "perm4",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_perm5",
+   "cell": "perm5",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_perm6",
+   "cell": "perm6",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_perm7",
+   "cell": "perm7",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_scoutrev",
+   "cell": "scoutrev",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_celloff_x0",
+   "cell": "celloff_x0",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_celloff_x1000",
+   "cell": "celloff_x1000",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_celloff_y1000",
+   "cell": "celloff_y1000",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_twopiles",
+   "cell": "twopiles",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_warm_k32",
+   "cell": "warm_k32",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_warm_keep8",
+   "cell": "warm_keep8",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_free_ab",
+   "cell": "free_ab",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_free_ba",
+   "cell": "free_ba",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_readd_a",
+   "cell": "readd_a",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_cap40_p0",
+   "cell": "cap40_p0",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_cap40_p1",
+   "cell": "cap40_p1",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_cap40_p2",
+   "cell": "cap40_p2",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_layers_k0",
+   "cell": "layers_k0",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_layers_k1",
+   "cell": "layers_k1",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  },
+  {
+   "case": "r95b_order_rigid",
+   "cell": "rigid",
+   "receipts_payloads": 1,
+   "sig_present": true,
+   "sig_exact_line": true,
+   "distinct_payloads": 1,
+   "other_payloads": []
+  }
+ ]
+}

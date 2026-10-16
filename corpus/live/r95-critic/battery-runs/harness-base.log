@@ -1,0 +1,14 @@
+PASS save_process_writer: exit=0 signature='PASS save_process writer=true pid='
+PASS save_process_reader: exit=0 signature='PASS save_process reader=true pid='
+PASS save_process_missing: exit=2 signature='ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND'
+PASS dss_lattice_point_cap: exit=0 signature='PASS dss_lattice point_cap add_order=[a,b,c,d,e] cap0=[]'
+PASS dss_lattice_order_core: exit=0 signature='PASS dss_lattice order_core add_order=[a,b,c,d,e]'
+PASS dss_lattice_fresh: exit=0 signature='PASS dss_lattice fresh add_t0_point=[f#0] add_t0_ray=r={f pos=(80.0000,0.0000) n=(-1.0000,0.0000)} add_t0_shape=[f#0] add_same_frame=true node_move_t0_old=[f#0] node_move_t0_new=[] node_move_deferred=true node_move_t1_old=[] node_move_t1_new=[f#0] server_tele_t0_old=[] server_tele_t0_new=[f#0] server_write_live=true pre_free=[c#0] free_t0=[c#0] free_deferred=true free_t1=[] vis_off=[d#0] visible_irrelevant=true layer_change_t0=[e#0] layer_change_t1=[e#0]'
+PASS independent save process probe: corpus/live/r95-critic/battery-runs/harness-base/20261016T071202379796Z/save-process-verdicts.json
+FAIL spontaneous crash classification meta
+FAIL descendant pipe-EOF meta
+FAIL descendant signature-spoof meta
+PASS while-live signature-gate meta
+FAIL descendant error-spoof meta
+FAIL error-clause surface meta
+FAIL battery: corpus/live/r95-critic/battery-runs/harness-base/20261016T071202379796Z/verdicts.json

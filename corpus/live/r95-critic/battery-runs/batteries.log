@@ -1,0 +1,5 @@
+=== battery start 07:23:52 loadavg=75.79
+rep1 rc=1
+=== rep1 done 07:29:52 loadavg=71.93
+rep2 rc=0
+=== battery done 07:35:26 loadavg=53.34

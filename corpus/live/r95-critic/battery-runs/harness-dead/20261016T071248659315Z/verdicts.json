@@ -1,0 +1,1579 @@
+{
+  "godot": "godot",
+  "seed": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r95-critic/mutants/harness-dead/fixtures",
+  "scratch": "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+  "probe_failing": false,
+  "results": [
+    {
+      "case": "save_process_writer",
+      "script": "__save_process_writer__",
+      "flags": [],
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+        "--script",
+        "res://save_process.gd",
+        "--"
+      ],
+      "xdg_data_home": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/xdg-data",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS save_process writer=true pid=",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS save_process writer=true pid=155458 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261016T071248659315Z/r58-process-save.json"
+      ],
+      "expected_errors": [],
+      "required_stderr": []
+    },
+    {
+      "case": "save_process_reader",
+      "script": "__save_process_reader__",
+      "flags": [],
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+        "--script",
+        "res://save_process.gd",
+        "--",
+        "--reader"
+      ],
+      "xdg_data_home": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/xdg-data",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS save_process reader=true pid=",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS save_process reader=true pid=158612 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261016T071248659315Z/r58-process-save.json values_match=true"
+      ],
+      "expected_errors": [],
+      "required_stderr": []
+    },
+    {
+      "case": "save_process_missing",
+      "script": "__save_process_missing__",
+      "flags": [],
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+        "--script",
+        "res://save_process.gd",
+        "--",
+        "--missing"
+      ],
+      "xdg_data_home": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/xdg-data",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "signature": "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "PASS save_process missing=true pid=161132 path=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/xdg-data/godot/app_userdata/MechanicOneShotTest-20261016T071248659315Z/r58-process-missing.json",
+        "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND,",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "   GDScript backtrace (most recent call first):",
+        "       [0] run (res://save_process.gd:33)"
+      ],
+      "expected_errors": [
+        "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND,"
+      ],
+      "required_stderr": []
+    },
+    {
+      "case": "dss_lattice_point_cap",
+      "script": "dss_lattice.gd",
+      "flags": [
+        "--arm=point_cap"
+      ],
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+        "--script",
+        "res://dss_lattice.gd",
+        "--",
+        "--arm=point_cap"
+      ],
+      "xdg_data_home": null,
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS dss_lattice point_cap add_order=[a,b,c,d,e] cap0=[]",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "R95 point_cap add_order=[a,b,c,d,e]",
+        "R95 point_cap cap0=[]",
+        "R95 point_cap cap1=[e#0]",
+        "R95 point_cap cap2=[e#0,a#0]",
+        "R95 point_cap cap3=[e#0,a#0,c#0]",
+        "R95 point_cap cap5=[e#0,a#0,c#0,d#0,b#0]",
+        "R95 point_cap cap_default=[e#0,a#0,c#0,d#0,b#0]",
+        "R95 point_cap mask2=[]",
+        "R95 point_cap nobodies=[]",
+        "R95 point_cap excl_first=[e#0,c#0,d#0,b#0]",
+        "R95 point_cap far_out=[]",
+        "R95 point_cap pile40_default=n32",
+        "R95 point_cap pile40_cap0=n0",
+        "R95 point_cap pile40_cap64=n40",
+        "R95 point_cap cap32_truncates=true",
+        "PASS dss_lattice point_cap add_order=[a,b,c,d,e] cap0=[] cap1=[e#0] cap2=[e#0,a#0] cap3=[e#0,a#0,c#0] cap5=[e#0,a#0,c#0,d#0,b#0] cap_default=[e#0,a#0,c#0,d#0,b#0] mask2=[] nobodies=[] excl_first=[e#0,c#0,d#0,b#0] far_out=[] pile40_default=n32 pile40_cap0=n0 pile40_cap64=n40 cap32_truncates=true"
+      ],
+      "expected_errors": [],
+      "required_stderr": []
+    },
+    {
+      "case": "dss_lattice_order_core",
+      "script": "dss_lattice.gd",
+      "flags": [
+        "--arm=order_core"
+      ],
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+        "--script",
+        "res://dss_lattice.gd",
+        "--",
+        "--arm=order_core"
+      ],
+      "xdg_data_home": null,
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS dss_lattice order_core add_order=[a,b,c,d,e]",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "R95 order_core add_order=[a,b,c,d,e]",
+        "R95 order_core rep1=[e#0,a#0,c#0,d#0,b#0]",
+        "R95 order_core rep2=[e#0,a#0,c#0,d#0,b#0]",
+        "R95 order_core rep3=[e#0,a#0,c#0,d#0,b#0]",
+        "R95 order_core repeat_stable=true",
+        "R95 order_core set=[a#0,b#0,c#0,d#0,e#0]",
+        "R95 order_core shape_same_order=true",
+        "R95 order_core pile_b=[e2#0,a2#0,b2#0,c2#0,d2#0]",
+        "R95 order_core layout_changes_order=true",
+        "R95 order_core pile_a_after_insert=[e#0,a#0,c#0,b#0,d#0]",
+        "R95 order_core insert_perturbs=true",
+        "R95 order_core pile_rev=[a3#0,e3#0,d3#0,c3#0,b3#0]",
+        "R95 order_core after_free=[a#0,b#0,e#0,d#0]",
+        "R95 order_core free_perturbs=true",
+        "R95 order_core after_readd=[a#0,b#0,e#0,f#0,d#0]",
+        "R95 order_core readd_set=[a#0,b#0,d#0,e#0,f#0]",
+        "R95 order_core rev=false",
+        "PASS dss_lattice order_core add_order=[a,b,c,d,e] rep1=[e#0,a#0,c#0,d#0,b#0] rep2=[e#0,a#0,c#0,d#0,b#0] rep3=[e#0,a#0,c#0,d#0,b#0] repeat_stable=true set=[a#0,b#0,c#0,d#0,e#0] shape_same_order=true pile_b=[e2#0,a2#0,b2#0,c2#0,d2#0] layout_changes_order=true pile_a_after_insert=[e#0,a#0,c#0,b#0,d#0] insert_perturbs=true pile_rev=[a3#0,e3#0,d3#0,c3#0,b3#0] after_free=[a#0,b#0,e#0,d#0] free_perturbs=true after_readd=[a#0,b#0,e#0,f#0,d#0] readd_set=[a#0,b#0,d#0,e#0,f#0] rev=false"
+      ],
+      "expected_errors": [
+        "ERROR: synthetic dead entry never emitted by this probe"
+      ],
+      "required_stderr": []
+    },
+    {
+      "case": "dss_lattice_fresh",
+      "script": "dss_lattice.gd",
+      "flags": [
+        "--arm=fresh"
+      ],
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+        "--script",
+        "res://dss_lattice.gd",
+        "--",
+        "--arm=fresh"
+      ],
+      "xdg_data_home": null,
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "signature": "PASS dss_lattice fresh add_t0_point=[f#0] add_t0_ray=r={f pos=(80.0000,0.0000) n=(-1.0000,0.0000)} add_t0_shape=[f#0] add_same_frame=true node_move_t0_old=[f#0] node_move_t0_new=[] node_move_deferred=true node_move_t1_old=[] node_move_t1_new=[f#0] server_tele_t0_old=[] server_tele_t0_new=[f#0] server_write_live=true pre_free=[c#0] free_t0=[c#0] free_deferred=true free_t1=[] vis_off=[d#0] visible_irrelevant=true layer_change_t0=[e#0] layer_change_t1=[e#0]",
+      "verdict": "PASS",
+      "error": null,
+      "output": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "R95 fresh add_t0_point=[f#0]",
+        "R95 fresh add_t0_ray=r={f pos=(80.0000,0.0000) n=(-1.0000,0.0000)}",
+        "R95 fresh add_t0_shape=[f#0]",
+        "R95 fresh add_same_frame=true",
+        "R95 fresh node_move_t0_old=[f#0]",
+        "R95 fresh node_move_t0_new=[]",
+        "R95 fresh node_move_deferred=true",
+        "R95 fresh node_move_t1_old=[]",
+        "R95 fresh node_move_t1_new=[f#0]",
+        "R95 fresh server_tele_t0_old=[]",
+        "R95 fresh server_tele_t0_new=[f#0]",
+        "R95 fresh server_write_live=true",
+        "R95 fresh pre_free=[c#0]",
+        "R95 fresh free_t0=[c#0]",
+        "R95 fresh free_deferred=true",
+        "R95 fresh free_t1=[]",
+        "R95 fresh vis_off=[d#0]",
+        "R95 fresh visible_irrelevant=true",
+        "R95 fresh layer_change_t0=[e#0]",
+        "R95 fresh layer_change_t1=[e#0]",
+        "PASS dss_lattice fresh add_t0_point=[f#0] add_t0_ray=r={f pos=(80.0000,0.0000) n=(-1.0000,0.0000)} add_t0_shape=[f#0] add_same_frame=true node_move_t0_old=[f#0] node_move_t0_new=[] node_move_deferred=true node_move_t1_old=[] node_move_t1_new=[f#0] server_tele_t0_old=[] server_tele_t0_new=[f#0] server_write_live=true pre_free=[c#0] free_t0=[c#0] free_deferred=true free_t1=[] vis_off=[d#0] visible_irrelevant=true layer_change_t0=[e#0] layer_change_t1=[e#0]"
+      ],
+      "expected_errors": [],
+      "required_stderr": []
+    },
+    {
+      "case": "probe_save_independent_process",
+      "verdict": "PASS",
+      "artifact": "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/save-process-verdicts.json",
+      "pids": [
+        155458,
+        158612
+      ]
+    },
+    {
+      "case": "probe_spontaneous_crash_classification",
+      "verdict": "FAIL",
+      "mode": "captured_output_reclassification",
+      "sigabrt_exit": null,
+      "self_sigkill_exit": null,
+      "crash_allowlist": [
+        "ERROR: r60 spontaneous crash probe"
+      ],
+      "discriminations": {
+        "sigabrt_expected_-9_rejects": false,
+        "sigabrt_missing_allowlist_rejects": false,
+        "sigabrt_wrong_allowlist_rejects": false,
+        "self_sigkill_expected_-6_rejects": false
+      },
+      "bounded_claim": "spontaneous SIGABRT/SIGKILL exit-shape classification on Linux headless Godot 4.7.2 only; signal origin unprovable from returncode"
+    },
+    {
+      "case": "probe_descendant_pipe_eof",
+      "verdict": "FAIL",
+      "mode": "bounded_popen_plus_cases_control",
+      "bound_seconds": 3.0,
+      "hold_arm": {
+        "case": "descendant_pipe_hold_arm",
+        "bound_seconds": 3.0,
+        "timed_out": true,
+        "child_exit_at_timeout": 0,
+        "actual_exit": null,
+        "error": "TIMEOUT after 3.0 seconds",
+        "marker_observed": true,
+        "post_exit_write_captured": true,
+        "godot_pid": 171070,
+        "descendant_pid": 172363,
+        "godot_alive_at_return": false,
+        "descendant_alive_at_return": true,
+        "inner_classification": false,
+        "elapsed_seconds": 3.002
+      },
+      "hold_output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE godot_pid=171070",
+        "DESCENDANT_PIPE spawned_pid=172363",
+        "DESCENDANT_PIPE_AFTER_EXIT_WRITE"
+      ],
+      "detached_control_case": "descendant_pipe_detached_control",
+      "detached_control_descendant_pid": null,
+      "discriminations": {
+        "hold_timed_out_with_child_dead": true,
+        "hold_post_exit_write_captured": true,
+        "hold_misattributed_rejects": true,
+        "hold_descendant_orphaned_alive": true,
+        "detached_case_passes_clean": false,
+        "detached_lacks_post_exit_write": true,
+        "detached_descendant_orphaned_alive": false
+      },
+      "bounded_claim": "Linux headless Godot 4.7.2 POSIX pipe semantics: communicate(timeout) is a completion+pipe-drain bound, timeout kill is direct-child-only, descendants orphan; not a Windows/macOS or exported-build claim"
+    },
+    {
+      "case": "probe_descendant_signature_spoof",
+      "verdict": "FAIL",
+      "mode": "bounded_popen_plus_cases_forgery_row",
+      "bound_seconds": 3.0,
+      "hold_arm": {
+        "case": "descendant_pipe_forge_hold_arm",
+        "bound_seconds": 3.0,
+        "timed_out": true,
+        "child_exit_at_timeout": 0,
+        "actual_exit": null,
+        "error": "TIMEOUT after 3.0 seconds",
+        "marker_observed": true,
+        "write_ppid": 1537,
+        "godot_pid": 180880,
+        "descendant_pid": 182986,
+        "godot_alive_at_return": false,
+        "descendant_alive_at_return": true,
+        "descendant_kernel_ppid_at_return": 1537,
+        "inner_classification": false,
+        "elapsed_seconds": 3.005
+      },
+      "hold_output_lines": [
+        "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+        "",
+        "DESCENDANT_PIPE_FORGE child_signature=withheld",
+        "DESCENDANT_PIPE godot_pid=180880",
+        "DESCENDANT_PIPE spawned_pid=182986",
+        "DESCENDANT_PIPE_PROBE: expected signature",
+        "DESCENDANT_PIPE_FORGE write_ppid=1537"
+      ],
+      "forged_release_case": "descendant_pipe_forged_signature_release",
+      "forged_release_descendant_pid": null,
+      "discriminations": {
+        "hold_timed_out_with_child_dead": true,
+        "hold_forged_signature_captured": true,
+        "hold_write_post_orphan": true,
+        "hold_rejects_via_timeout_axis_only": true,
+        "hold_descendant_orphaned_alive": true,
+        "release_row_passes_on_forged_signature": false,
+        "release_write_post_orphan": false,
+        "hold_write_ppid_kernel_corroborated": true,
+        "release_withheld_banner_present": false,
+        "release_shape_matches_genuine": false
+      },
+      "bounded_claim": "signature presence over merged captured output is origin-blind: a descendant's post-child-exit write of the expected signature satisfies it; accepted (verdict PASS) whenever the pipes release before the bound, separable only via the timed_out/child_exit_at_timeout evidence when held past it \u2014 documented forgery-accepting boundary, not a fix; Linux headless Godot 4.7.2 POSIX pipe semantics only"
+    },
+    {
+      "case": "probe_while_live_signature_gate",
+      "verdict": "PASS",
+      "mode": "poll_gated_bounded_popen_signature_read",
+      "bound_seconds": 3.0,
+      "poll_tick_seconds": 0.005,
+      "arms": [
+        {
+          "case": "genuine_default_r0",
+          "flags": [],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "actual_exit": 0,
+          "error": null,
+          "marker_observed": true,
+          "marker_observed_at": 0.592847,
+          "child_alive_at_marker_observation": true,
+          "child_alive_after_marker_read": true,
+          "dead_observed_at": null,
+          "elapsed_seconds": 0.677,
+          "withheld_banner": false,
+          "write_ppid": null,
+          "godot_pid": 191383,
+          "descendant_pid": null,
+          "descendant_alive_at_return": null,
+          "descendant_kernel_ppid_at_return": null,
+          "gated_signature_accepted": true,
+          "inner_classification": true,
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--"
+          ],
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE godot_pid=191383"
+          ]
+        },
+        {
+          "case": "genuine_default_r1",
+          "flags": [],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "actual_exit": 0,
+          "error": null,
+          "marker_observed": true,
+          "marker_observed_at": 0.656149,
+          "child_alive_at_marker_observation": true,
+          "child_alive_after_marker_read": true,
+          "dead_observed_at": null,
+          "elapsed_seconds": 0.791,
+          "withheld_banner": false,
+          "write_ppid": null,
+          "godot_pid": 193794,
+          "descendant_pid": null,
+          "descendant_alive_at_return": null,
+          "descendant_kernel_ppid_at_return": null,
+          "gated_signature_accepted": true,
+          "inner_classification": true,
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--"
+          ],
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE godot_pid=193794"
+          ]
+        },
+        {
+          "case": "genuine_default_r2",
+          "flags": [],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "actual_exit": 0,
+          "error": null,
+          "marker_observed": true,
+          "marker_observed_at": 0.478216,
+          "child_alive_at_marker_observation": true,
+          "child_alive_after_marker_read": true,
+          "dead_observed_at": 0.520873,
+          "elapsed_seconds": 0.521,
+          "withheld_banner": false,
+          "write_ppid": null,
+          "godot_pid": 196841,
+          "descendant_pid": null,
+          "descendant_alive_at_return": null,
+          "descendant_kernel_ppid_at_return": null,
+          "gated_signature_accepted": true,
+          "inner_classification": true,
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--"
+          ],
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE godot_pid=196841"
+          ]
+        },
+        {
+          "case": "genuine_detach",
+          "flags": [
+            "--spawn-detach"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "actual_exit": 0,
+          "error": null,
+          "marker_observed": true,
+          "marker_observed_at": 0.578073,
+          "child_alive_at_marker_observation": true,
+          "child_alive_after_marker_read": true,
+          "dead_observed_at": null,
+          "elapsed_seconds": 0.694,
+          "withheld_banner": false,
+          "write_ppid": null,
+          "godot_pid": 198545,
+          "descendant_pid": 200154,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": 1537,
+          "gated_signature_accepted": true,
+          "inner_classification": true,
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-detach"
+          ],
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE godot_pid=198545",
+            "DESCENDANT_PIPE spawned_pid=200154"
+          ]
+        },
+        {
+          "case": "forge_release_r0",
+          "flags": [
+            "--spawn-forge-release"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "actual_exit": 0,
+          "error": null,
+          "marker_observed": true,
+          "marker_observed_at": 0.526353,
+          "child_alive_at_marker_observation": false,
+          "child_alive_after_marker_read": false,
+          "dead_observed_at": 0.517244,
+          "elapsed_seconds": 0.526,
+          "withheld_banner": true,
+          "write_ppid": 1537,
+          "godot_pid": 200625,
+          "descendant_pid": 201449,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": null,
+          "gated_signature_accepted": false,
+          "inner_classification": true,
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-forge-release"
+          ],
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_FORGE child_signature=withheld",
+            "DESCENDANT_PIPE godot_pid=200625",
+            "DESCENDANT_PIPE spawned_pid=201449",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE_FORGE write_ppid=1537"
+          ]
+        },
+        {
+          "case": "forge_release_r1",
+          "flags": [
+            "--spawn-forge-release"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "actual_exit": 0,
+          "error": null,
+          "marker_observed": true,
+          "marker_observed_at": 0.610014,
+          "child_alive_at_marker_observation": false,
+          "child_alive_after_marker_read": false,
+          "dead_observed_at": 0.572199,
+          "elapsed_seconds": 0.61,
+          "withheld_banner": true,
+          "write_ppid": 1537,
+          "godot_pid": 201496,
+          "descendant_pid": 202713,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": 1537,
+          "gated_signature_accepted": false,
+          "inner_classification": true,
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-forge-release"
+          ],
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_FORGE child_signature=withheld",
+            "DESCENDANT_PIPE godot_pid=201496",
+            "DESCENDANT_PIPE spawned_pid=202713",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE_FORGE write_ppid=1537"
+          ]
+        },
+        {
+          "case": "forge_release_r2",
+          "flags": [
+            "--spawn-forge-release"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "actual_exit": 0,
+          "error": null,
+          "marker_observed": true,
+          "marker_observed_at": 0.657917,
+          "child_alive_at_marker_observation": false,
+          "child_alive_after_marker_read": false,
+          "dead_observed_at": 0.653211,
+          "elapsed_seconds": 0.658,
+          "withheld_banner": true,
+          "write_ppid": 1537,
+          "godot_pid": 202937,
+          "descendant_pid": 204489,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": 1537,
+          "gated_signature_accepted": false,
+          "inner_classification": true,
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-forge-release"
+          ],
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_FORGE child_signature=withheld",
+            "DESCENDANT_PIPE godot_pid=202937",
+            "DESCENDANT_PIPE spawned_pid=204489",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE_FORGE write_ppid=1537"
+          ]
+        },
+        {
+          "case": "forge_hold",
+          "flags": [
+            "--spawn-forge-hold"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": true,
+          "actual_exit": 0,
+          "error": "TIMEOUT after 3.0 seconds",
+          "marker_observed": true,
+          "marker_observed_at": 0.726407,
+          "child_alive_at_marker_observation": false,
+          "child_alive_after_marker_read": false,
+          "dead_observed_at": 0.695919,
+          "elapsed_seconds": 3.0,
+          "withheld_banner": true,
+          "write_ppid": 1537,
+          "godot_pid": 204920,
+          "descendant_pid": 207623,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": 1537,
+          "gated_signature_accepted": false,
+          "inner_classification": false,
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-forge-hold"
+          ],
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_FORGE child_signature=withheld",
+            "DESCENDANT_PIPE godot_pid=204920",
+            "DESCENDANT_PIPE spawned_pid=207623",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE_FORGE write_ppid=1537"
+          ]
+        }
+      ],
+      "discriminations": {
+        "genuine_marker_accepted_while_live": true,
+        "genuine_never_observed_post_death": true,
+        "detach_marker_accepted_while_live": true,
+        "forge_release_marker_captured_post_death": true,
+        "forge_release_gate_rejects_what_classifier_accepts": true,
+        "forge_hold_marker_captured_post_death": true,
+        "forge_hold_gate_rejects": true,
+        "forge_withheld_banner_present": true,
+        "forge_write_post_orphan": true,
+        "forge_hold_write_ppid_kernel_corroborated": true,
+        "hold_descendant_orphaned_alive": true,
+        "gate_discriminates_forged_from_genuine": true
+      },
+      "bounded_claim": "a poll()-gated signature read accepts the expected marker only when observed while the direct child is alive: genuine child signatures (default and detached-descendant arms) were observed while-live in every rep; reparenting-gated forged signatures (--spawn-forge-release/--spawn-forge-hold) arrived after observed child death in every rep and were rejected though present \u2014 on this fixture the gate discriminates forged post-death writes from genuine writes; not a claim that observation-time liveness proves authorship in general (a pre-death-scheduled or faster-racing forge is out of scope); Linux headless Godot 4.7.2 POSIX semantics only"
+    },
+    {
+      "case": "probe_descendant_error_spoof",
+      "verdict": "FAIL",
+      "mode": "bounded_popen_dual_marker_gate_and_stream_split",
+      "bound_seconds": 3.0,
+      "release_arm": {
+        "case": "errforge_release",
+        "flags": [
+          "--spawn-errforge-release"
+        ],
+        "bound_seconds": 3.0,
+        "timed_out": false,
+        "child_exit_at_timeout": null,
+        "actual_exit": 0,
+        "error": null,
+        "elapsed_seconds": 0.678,
+        "signature_observed": true,
+        "error_marker_captured": true,
+        "banner": "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+        "write_ppid": 1537,
+        "godot_pid": 216391,
+        "descendant_pid": 218816,
+        "descendant_alive_at_return": false,
+        "descendant_kernel_ppid_at_return": null,
+        "error_lines": [
+          "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic"
+        ],
+        "inner_classification": false,
+        "stripped_classification": true,
+        "output_lines": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "DESCENDANT_PIPE_PROBE: expected signature",
+          "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+          "DESCENDANT_PIPE godot_pid=216391",
+          "DESCENDANT_PIPE spawned_pid=218816",
+          "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+          "DESCENDANT_PIPE_ERRFORGE write_ppid=1537"
+        ],
+        "command": [
+          "godot",
+          "--headless",
+          "--path",
+          "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+          "--script",
+          "res://descendant_pipe_probe.gd",
+          "--",
+          "--spawn-errforge-release"
+        ]
+      },
+      "hold_arm": {
+        "case": "errforge_hold",
+        "flags": [
+          "--spawn-errforge-hold"
+        ],
+        "bound_seconds": 3.0,
+        "timed_out": true,
+        "child_exit_at_timeout": 0,
+        "actual_exit": null,
+        "error": "TIMEOUT after 3.0 seconds",
+        "elapsed_seconds": 3.002,
+        "signature_observed": true,
+        "error_marker_captured": true,
+        "banner": "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+        "write_ppid": 1537,
+        "godot_pid": 219353,
+        "descendant_pid": 222154,
+        "descendant_alive_at_return": true,
+        "descendant_kernel_ppid_at_return": 1537,
+        "error_lines": [
+          "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic"
+        ],
+        "inner_classification": false,
+        "stripped_classification": false,
+        "output_lines": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "DESCENDANT_PIPE_PROBE: expected signature",
+          "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+          "DESCENDANT_PIPE godot_pid=219353",
+          "DESCENDANT_PIPE spawned_pid=222154",
+          "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+          "DESCENDANT_PIPE_ERRFORGE write_ppid=1537"
+        ],
+        "command": [
+          "godot",
+          "--headless",
+          "--path",
+          "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+          "--script",
+          "res://descendant_pipe_probe.gd",
+          "--",
+          "--spawn-errforge-hold"
+        ]
+      },
+      "genuine_control": {
+        "case": "errforge_genuine",
+        "flags": [
+          "--emit-errforge"
+        ],
+        "bound_seconds": 3.0,
+        "timed_out": false,
+        "child_exit_at_timeout": null,
+        "actual_exit": 0,
+        "error": null,
+        "elapsed_seconds": 0.876,
+        "signature_observed": true,
+        "error_marker_captured": true,
+        "banner": "DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit",
+        "write_ppid": null,
+        "godot_pid": 233237,
+        "descendant_pid": null,
+        "descendant_alive_at_return": null,
+        "descendant_kernel_ppid_at_return": null,
+        "error_lines": [
+          "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic"
+        ],
+        "inner_classification": false,
+        "stripped_classification": true,
+        "output_lines": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "DESCENDANT_PIPE_PROBE: expected signature",
+          "DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit",
+          "DESCENDANT_PIPE godot_pid=233237",
+          "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+          "   at: push_error (core/variant/variant_utility.cpp:1023)",
+          "   GDScript backtrace (most recent call first):",
+          "       [0] _initialize (res://descendant_pipe_probe.gd:140)"
+        ],
+        "command": [
+          "godot",
+          "--headless",
+          "--path",
+          "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+          "--script",
+          "res://descendant_pipe_probe.gd",
+          "--",
+          "--emit-errforge"
+        ]
+      },
+      "gated_release_reps": [
+        {
+          "case": "errforge_release_gate_r0",
+          "flags": [
+            "--spawn-errforge-release"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "actual_exit": 0,
+          "error": null,
+          "signature_observed": true,
+          "signature_observed_at": 0.680505,
+          "child_alive_at_signature_observation": true,
+          "child_alive_after_signature_read": true,
+          "error_observed": true,
+          "error_observed_at": 0.791978,
+          "child_alive_at_error_observation": false,
+          "child_alive_after_error_read": false,
+          "dead_observed_at": 0.789991,
+          "elapsed_seconds": 0.792,
+          "banner": "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+          "write_ppid": 1537,
+          "godot_pid": 237052,
+          "descendant_pid": 240025,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": 1537,
+          "gated_signature_accepted": true,
+          "inner_classification": false,
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-errforge-release"
+          ],
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+            "DESCENDANT_PIPE godot_pid=237052",
+            "DESCENDANT_PIPE spawned_pid=240025",
+            "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+            "DESCENDANT_PIPE_ERRFORGE write_ppid=1537"
+          ]
+        },
+        {
+          "case": "errforge_release_gate_r1",
+          "flags": [
+            "--spawn-errforge-release"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "actual_exit": 0,
+          "error": null,
+          "signature_observed": true,
+          "signature_observed_at": 0.619098,
+          "child_alive_at_signature_observation": true,
+          "child_alive_after_signature_read": true,
+          "error_observed": true,
+          "error_observed_at": 0.83723,
+          "child_alive_at_error_observation": false,
+          "child_alive_after_error_read": false,
+          "dead_observed_at": 0.80776,
+          "elapsed_seconds": 0.837,
+          "banner": "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+          "write_ppid": 1537,
+          "godot_pid": 240511,
+          "descendant_pid": 243682,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": 1537,
+          "gated_signature_accepted": true,
+          "inner_classification": false,
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-errforge-release"
+          ],
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+            "DESCENDANT_PIPE godot_pid=240511",
+            "DESCENDANT_PIPE spawned_pid=243682",
+            "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+            "DESCENDANT_PIPE_ERRFORGE write_ppid=1537"
+          ]
+        },
+        {
+          "case": "errforge_release_gate_r2",
+          "flags": [
+            "--spawn-errforge-release"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "actual_exit": 0,
+          "error": null,
+          "signature_observed": true,
+          "signature_observed_at": 0.639525,
+          "child_alive_at_signature_observation": true,
+          "child_alive_after_signature_read": true,
+          "error_observed": true,
+          "error_observed_at": 0.69887,
+          "child_alive_at_error_observation": false,
+          "child_alive_after_error_read": false,
+          "dead_observed_at": 0.68415,
+          "elapsed_seconds": 0.699,
+          "banner": "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+          "write_ppid": 1537,
+          "godot_pid": 244635,
+          "descendant_pid": 247493,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": 1537,
+          "gated_signature_accepted": true,
+          "inner_classification": false,
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-errforge-release"
+          ],
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+            "DESCENDANT_PIPE godot_pid=244635",
+            "DESCENDANT_PIPE spawned_pid=247493",
+            "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+            "DESCENDANT_PIPE_ERRFORGE write_ppid=1537"
+          ]
+        }
+      ],
+      "gated_genuine_reps": [
+        {
+          "case": "errforge_genuine_gate_r0",
+          "flags": [
+            "--emit-errforge"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "actual_exit": 0,
+          "error": null,
+          "signature_observed": true,
+          "signature_observed_at": 0.737582,
+          "child_alive_at_signature_observation": true,
+          "child_alive_after_signature_read": true,
+          "error_observed": true,
+          "error_observed_at": 0.742187,
+          "child_alive_at_error_observation": true,
+          "child_alive_after_error_read": true,
+          "dead_observed_at": 0.820804,
+          "elapsed_seconds": 0.821,
+          "banner": "DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit",
+          "write_ppid": null,
+          "godot_pid": 247713,
+          "descendant_pid": null,
+          "descendant_alive_at_return": null,
+          "descendant_kernel_ppid_at_return": null,
+          "gated_signature_accepted": true,
+          "inner_classification": false,
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--emit-errforge"
+          ],
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit",
+            "DESCENDANT_PIPE godot_pid=247713",
+            "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+            "   at: push_error (core/variant/variant_utility.cpp:1023)",
+            "   GDScript backtrace (most recent call first):",
+            "       [0] _initialize (res://descendant_pipe_probe.gd:140)"
+          ]
+        },
+        {
+          "case": "errforge_genuine_gate_r1",
+          "flags": [
+            "--emit-errforge"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "actual_exit": 0,
+          "error": null,
+          "signature_observed": true,
+          "signature_observed_at": 0.724098,
+          "child_alive_at_signature_observation": true,
+          "child_alive_after_signature_read": true,
+          "error_observed": true,
+          "error_observed_at": 0.724098,
+          "child_alive_at_error_observation": true,
+          "child_alive_after_error_read": true,
+          "dead_observed_at": null,
+          "elapsed_seconds": 0.755,
+          "banner": "DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit",
+          "write_ppid": null,
+          "godot_pid": 250901,
+          "descendant_pid": null,
+          "descendant_alive_at_return": null,
+          "descendant_kernel_ppid_at_return": null,
+          "gated_signature_accepted": true,
+          "inner_classification": false,
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--emit-errforge"
+          ],
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit",
+            "DESCENDANT_PIPE godot_pid=250901",
+            "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+            "   at: push_error (core/variant/variant_utility.cpp:1023)",
+            "   GDScript backtrace (most recent call first):",
+            "       [0] _initialize (res://descendant_pipe_probe.gd:140)"
+          ]
+        }
+      ],
+      "split_release": {
+        "case": "errforge_release_split",
+        "flags": [
+          "--spawn-errforge-release"
+        ],
+        "bound_seconds": 3.0,
+        "actual_exit": 0,
+        "error": null,
+        "error_on_stdout": true,
+        "error_on_stderr": false,
+        "merged_classification": false,
+        "raw_stdout_lines": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "DESCENDANT_PIPE_PROBE: expected signature",
+          "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+          "DESCENDANT_PIPE godot_pid=253515",
+          "DESCENDANT_PIPE spawned_pid=254880",
+          "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+          "DESCENDANT_PIPE_ERRFORGE write_ppid=1537"
+        ],
+        "raw_stderr_lines": [],
+        "command": [
+          "godot",
+          "--headless",
+          "--path",
+          "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+          "--script",
+          "res://descendant_pipe_probe.gd",
+          "--",
+          "--spawn-errforge-release"
+        ]
+      },
+      "split_genuine": {
+        "case": "errforge_genuine_split",
+        "flags": [
+          "--emit-errforge"
+        ],
+        "bound_seconds": 3.0,
+        "actual_exit": 0,
+        "error": null,
+        "error_on_stdout": false,
+        "error_on_stderr": true,
+        "merged_classification": false,
+        "raw_stdout_lines": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "DESCENDANT_PIPE_PROBE: expected signature",
+          "DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit",
+          "DESCENDANT_PIPE godot_pid=254999"
+        ],
+        "raw_stderr_lines": [
+          "ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic",
+          "   at: push_error (core/variant/variant_utility.cpp:1023)",
+          "   GDScript backtrace (most recent call first):",
+          "       [0] _initialize (res://descendant_pipe_probe.gd:140)"
+        ],
+        "command": [
+          "godot",
+          "--headless",
+          "--path",
+          "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+          "--script",
+          "res://descendant_pipe_probe.gd",
+          "--",
+          "--emit-errforge"
+        ]
+      },
+      "provenance_only_line_diff": [
+        "       [0] _initialize (res://descendant_pipe_probe.gd:140)",
+        "   GDScript backtrace (most recent call first):",
+        "   at: push_error (core/variant/variant_utility.cpp:1023)",
+        "DESCENDANT_PIPE godot_pid=216391",
+        "DESCENDANT_PIPE godot_pid=233237",
+        "DESCENDANT_PIPE spawned_pid=218816",
+        "DESCENDANT_PIPE_ERRFORGE child=clean signature=genuine error=descendant_post_exit",
+        "DESCENDANT_PIPE_ERRFORGE child_error=genuine_pre_exit",
+        "DESCENDANT_PIPE_ERRFORGE write_ppid=1537"
+      ],
+      "discriminations": {
+        "release_clean_exit0_record": true,
+        "release_genuine_signature_present": true,
+        "release_forged_error_captured": true,
+        "release_error_write_post_orphan": true,
+        "release_flips_to_fail": true,
+        "release_counterfactual_passes_without_error": true,
+        "genuine_clean_exit0_record": true,
+        "genuine_error_captured": true,
+        "genuine_error_rejects": true,
+        "genuine_counterfactual_passes_without_error": true,
+        "genuine_carries_no_descendant_provenance": true,
+        "error_marker_bytes_identical": true,
+        "forged_vs_genuine_cases_fields_identical": true,
+        "forged_vs_genuine_differ_only_in_provenance": true,
+        "detached_control_row_still_passes": false,
+        "hold_timed_out_with_child_dead": true,
+        "hold_forged_error_captured": true,
+        "hold_rejects": true,
+        "hold_timeout_alone_rejects": true,
+        "hold_write_ppid_kernel_corroborated": true,
+        "hold_descendant_orphaned_alive": true,
+        "gate_release_signature_accepted_while_live": true,
+        "gate_release_forged_error_observed_post_death": true,
+        "gate_does_not_reject_forged_error_arm": true,
+        "gate_genuine_error_observed_while_live": true,
+        "gate_error_axis_timing_split": true,
+        "forged_error_lands_on_stdout": true,
+        "genuine_error_lands_on_stderr": true,
+        "merged_classification_stream_blind": true
+      },
+      "bounded_claim": "the un-allowlisted-ERROR rejection axis is as origin-blind as the signature axis: a reparenting-gated descendant's post-death error write lands in the merged capture and flips a clean exit-0 + signature-present record to FAIL, byte-identical in classification-visible fields to the child-authored push_error control, separable only by the r63-style provenance lines (banner/spawned_pid/write_ppid) and write timing; the r64 while-live gate does NOT reject the forged-error arm \u2014 its criterion is the signature marker only, so the genuine while-live signature is accepted and the post-death error is gate-invisible, though the gated read does record the error arriving only after observed child death; Linux headless Godot 4.7.2 POSIX pipe semantics only"
+    },
+    {
+      "case": "probe_error_clause_surface",
+      "verdict": "FAIL",
+      "mode": "bounded_popen_surface_arms_plus_allowlist_census",
+      "bound_seconds": 3.0,
+      "arms": [
+        {
+          "case": "surface_allowforge",
+          "flags": [
+            "--spawn-allowforge"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.737,
+          "signature_observed": true,
+          "error_lines": [
+            "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR"
+          ],
+          "write_ppid": 1537,
+          "godot_pid": 257434,
+          "descendant_pid": 260743,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": 1537,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit",
+            "DESCENDANT_PIPE godot_pid=257434",
+            "DESCENDANT_PIPE spawned_pid=260743",
+            "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR",
+            "DESCENDANT_PIPE_ALLOWFORGE write_ppid=1537"
+          ],
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-allowforge"
+          ]
+        },
+        {
+          "case": "surface_splitforge",
+          "flags": [
+            "--spawn-splitforge"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.669,
+          "signature_observed": true,
+          "error_lines": [],
+          "write_ppid": 1537,
+          "godot_pid": 261006,
+          "descendant_pid": 262881,
+          "descendant_alive_at_return": false,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": true,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit",
+            "DESCENDANT_PIPE godot_pid=261006",
+            "DESCENDANT_PIPE spawned_pid=262881",
+            "ERR",
+            "OR: DESCENDANT_PIPE_SPLITFORGE newline-split diagnostic",
+            "DESCENDANT_PIPE_SPLITFORGE write_ppid=1537"
+          ],
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-splitforge"
+          ]
+        },
+        {
+          "case": "surface_seamforge",
+          "flags": [
+            "--spawn-seamforge"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.589,
+          "signature_observed": true,
+          "error_lines": [
+            "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR: SEAMFORGE phantom fabricated line"
+          ],
+          "write_ppid": 1537,
+          "godot_pid": 263267,
+          "descendant_pid": 265440,
+          "descendant_alive_at_return": true,
+          "descendant_kernel_ppid_at_return": 1537,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_PROBE: expected signature",
+            "DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit",
+            "DESCENDANT_PIPE godot_pid=263267",
+            "DESCENDANT_PIPE spawned_pid=265440",
+            "DESCENDANT_PIPE_SEAMFORGE post_death_write=1",
+            "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR: SEAMFORGE phantom fabricated line",
+            "DESCENDANT_PIPE_SEAMFORGE write_ppid=1537"
+          ],
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-seamforge"
+          ]
+        },
+        {
+          "case": "surface_midlineforge",
+          "flags": [
+            "--spawn-midlineforge"
+          ],
+          "bound_seconds": 3.0,
+          "timed_out": false,
+          "child_exit_at_timeout": null,
+          "actual_exit": 0,
+          "error": null,
+          "elapsed_seconds": 0.88,
+          "signature_observed": false,
+          "error_lines": [
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice"
+          ],
+          "write_ppid": 265782,
+          "godot_pid": 265782,
+          "descendant_pid": 267840,
+          "descendant_alive_at_return": false,
+          "descendant_kernel_ppid_at_return": null,
+          "inner_classification": false,
+          "output_lines": [
+            "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+            "",
+            "DESCENDANT_PIPE_MIDLINE child=splice_target signature=halved gap_ms=200",
+            "DESCENDANT_PIPE godot_pid=265782",
+            "DESCENDANT_PIPE spawned_pid=267840",
+            "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+            "DESCENDANT_PIPE_MIDLINE write_ppid=265782",
+            "signature"
+          ],
+          "command": [
+            "godot",
+            "--headless",
+            "--path",
+            "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+            "--script",
+            "res://descendant_pipe_probe.gd",
+            "--",
+            "--spawn-midlineforge"
+          ]
+        }
+      ],
+      "seam_split_run": {
+        "case": "surface_seamforge_split",
+        "flags": [
+          "--spawn-seamforge"
+        ],
+        "bound_seconds": 3.0,
+        "actual_exit": 0,
+        "error": null,
+        "merged_classification": false,
+        "raw_stdout_lines": [
+          "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+          "",
+          "DESCENDANT_PIPE_PROBE: expected signature",
+          "DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit",
+          "DESCENDANT_PIPE godot_pid=269620",
+          "DESCENDANT_PIPE spawned_pid=272197",
+          "DESCENDANT_PIPE_SEAMFORGE post_death_write=1",
+          "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR"
+        ],
+        "raw_stderr_lines": [
+          ": SEAMFORGE phantom fabricated line",
+          "DESCENDANT_PIPE_SEAMFORGE write_ppid=1537"
+        ],
+        "command": [
+          "godot",
+          "--headless",
+          "--path",
+          "corpus/live/r95-critic/battery-runs/harness-dead/20261016T071248659315Z/scratch",
+          "--script",
+          "res://descendant_pipe_probe.gd",
+          "--",
+          "--spawn-seamforge"
+        ],
+        "stdout_tail_line": "DESCENDANT_PIPE_SEAMFORGE tail ends in ERROR",
+        "stderr_head_line": ": SEAMFORGE phantom fabricated line"
+      },
+      "midline_spliced_line": "DESCENDANT_PIPE_PROBE: expected ERROR: DESCENDANT_PIPE_MIDLINE forged splice",
+      "shape_matrix": {
+        "exact__exact_line": {
+          "entry_shape": "exact",
+          "line": "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR",
+          "expected_absorbed": true,
+          "absorbed": true
+        },
+        "exact__suffixed_twin": {
+          "entry_shape": "exact",
+          "line": "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR ERROR: tail-forged",
+          "expected_absorbed": false,
+          "absorbed": false
+        },
+        "comma__prefix_line": {
+          "entry_shape": "comma_prefix",
+          "line": "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND, path=/tmp/x",
+          "expected_absorbed": true,
+          "absorbed": true
+        },
+        "comma__count2_tail_forge": {
+          "entry_shape": "comma_prefix",
+          "line": "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND, path=/tmp/x ERROR: tail-forged",
+          "expected_absorbed": false,
+          "absorbed": false
+        },
+        "comma__unanchored_line": {
+          "entry_shape": "comma_prefix",
+          "line": "prefix text ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND, path=/tmp/x",
+          "expected_absorbed": false,
+          "absorbed": false
+        },
+        "comma_entry__exact_shaped_line": {
+          "entry_shape": "comma_prefix",
+          "line": "ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR",
+          "expected_absorbed": false,
+          "absorbed": false
+        },
+        "structured__full_shape": {
+          "entry_shape": "structured",
+          "line": "ERROR: chain incomplete collections=1 scene=SceneB:<Node#7> old_alive=false",
+          "expected_absorbed": true,
+          "absorbed": true
+        },
+        "structured__missing_conjunct": {
+          "entry_shape": "structured",
+          "line": "ERROR: chain incomplete collections=1 scene=SceneB:<Node#7>",
+          "expected_absorbed": false,
+          "absorbed": false
+        },
+        "structured__count2_tail_forge": {
+          "entry_shape": "structured",
+          "line": "ERROR: chain incomplete collections=1 scene=SceneB:<Node#7> old_alive=false ERROR: tail-forged",
+          "expected_absorbed": false,
+          "absorbed": false
+        }
+      },
+      "census": {
+        "scope": "every CASES row carrying expected_errors in this battery run; opt-in probe rows execute after this census (their inline allowlists are listed, not censused)",
+        "rows_with_expected_errors": 2,
+        "rows": [
+          {
+            "case": "save_process_missing",
+            "verdict": "PASS",
+            "entries": [
+              {
+                "entry": "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND,",
+                "shape": "comma_prefix",
+                "matched_lines": 1,
+                "first_match": "ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND,",
+                "dead_in_run": false
+              }
+            ],
+            "any_entry_matched": true,
+            "bare_classification_rejects": true,
+            "allowlisted_classification_passes": true
+          },
+          {
+            "case": "dss_lattice_order_core",
+            "verdict": "PASS",
+            "entries": [
+              {
+                "entry": "ERROR: synthetic dead entry never emitted by this probe",
+                "shape": "exact",
+                "matched_lines": 0,
+                "first_match": null,
+                "dead_in_run": true
+              }
+            ],
+            "any_entry_matched": false,
+            "bare_classification_rejects": false,
+            "allowlisted_classification_passes": true
+          }
+        ],
+        "dead_entry_count": 1,
+        "dead_entries": [
+          {
+            "case": "dss_lattice_order_core",
+            "entry": "ERROR: synthetic dead entry never emitted by this probe",
+            "shape": "exact"
+          }
+        ],
+        "scan_clause_census": {
+          "SCRIPT ERROR:": 0,
+          "Parse Error:": 0,
+          "ERROR:_per_line_lines": 1,
+          "objectdb_leak_audio_lines": 0
+        },
+        "clause_granularity": "\"ERROR:\" is per-line (output.splitlines() scan); \"SCRIPT ERROR:\" and \"Parse Error:\" are whole-blob substrings \u2014 the labrat-flagged granularity asymmetry: a newline-split SCRIPT/parse token evades entirely",
+        "allowlists_outside_expected_errors": [
+          "export_preset_missing executes classify with (evidence,) inline",
+          "classify_mutant holds three inline tuples (probe-failing only)",
+          "stream probe uses classify_streams allowed_stderr=()",
+          "probe_audio_warning uses default allowlist ()"
+        ]
+      },
+      "discriminations": {
+        "allowforge_clean_exit0_record": true,
+        "allowforge_signature_present": true,
+        "allowforge_forged_error_captured": true,
+        "allowforge_write_post_orphan": true,
+        "allowforge_rejects_without_allowlist": true,
+        "allowforge_absorbed_by_matching_allowlist": true,
+        "allowforge_rejects_under_foreign_allowlist": true,
+        "allowforge_counterfactual_passes_without_error": true,
+        "allowlist_shape_matrix_all_expected": true,
+        "splitforge_clean_exit0_record": true,
+        "splitforge_signature_present": true,
+        "splitforge_forged_bytes_in_record": true,
+        "splitforge_no_error_line_captured": true,
+        "splitforge_evades_merged_scan": true,
+        "splitforge_contiguous_twin_rejects": true,
+        "splitforge_write_post_orphan": true,
+        "seamforge_clean_exit0_record": true,
+        "seamforge_signature_present": true,
+        "seamforge_fabricated_line_in_merged": true,
+        "seamforge_fabricated_line_rejects": true,
+        "seamforge_line_in_neither_stream": true,
+        "seamforge_split_run_also_rejects_post_merge": true,
+        "seamforge_write_post_orphan": true,
+        "midlineforge_error_spliced_into_signature": true,
+        "midlineforge_signature_destroyed": true,
+        "midlineforge_rejects": true,
+        "midlineforge_counterfactual_defeated": true,
+        "midlineforge_write_pre_death": true,
+        "surface_verdicts_follow_merged_line_presence": true,
+        "census_covers_all_allowlisted_rows": true,
+        "census_bare_classifier_consistent": true,
+        "census_allowlisted_reproduces_verdicts": true,
+        "detached_control_row_still_passes": false,
+        "prior_meta_rows_stable_29_discriminations": false,
+        "phys2d_expected_errors_all_matched": true,
+        "r87_expected_errors_all_matched": true,
+        "r88_expected_errors_all_matched": true,
+        "r89_expected_errors_all_matched": true,
+        "r90_expected_errors_all_matched": true,
+        "r91_expected_errors_all_matched": true,
+        "r92_expected_errors_all_matched": true,
+        "r93_expected_errors_all_matched": true,
+        "r94_expected_errors_all_matched": true,
+        "r95_expected_errors_all_matched": false
+      },
+      "bounded_claim": "the rejection clause's verdict is a pure function of merged-output line presence modulo the per-case allowlist \u2014 measured forgeable in both directions by a post-death descendant on this fixture: (a) a forged error matching the allowlist is verdict-inert (absorbed) while the identical captured bytes reject under () and under a foreign entry; (b) exact/, -prefix/count==1/structured entry shapes all gate as declared incl. tail-forge count==2 defeats; (c) ERR\\n+OR: newline-split EVADES the line-local scan while a stdout-tail+stderr-head seam FABRICATES a reject line present in neither stream, and a pre-death mid-signature splice fabricates an error line AND destroys the signature substring (dual-clause corruption); (d) dead-entry census over expected_errors carried as data, self-validated by the real classifier; Linux headless Godot 4.7.2 POSIX pipe semantics only"
+    }
+  ],
+  "verdict": "FAIL"
+}
