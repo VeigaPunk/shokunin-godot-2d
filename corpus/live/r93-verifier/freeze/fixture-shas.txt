@@ -1,0 +1,4 @@
+# fixture sha256 (frozen extraction; blob-identity.txt ties it to HEAD)
+6a919ae04d4e754953b9f8067c49b74c46cf5f3bdc1dce76d4e29597faa2cd4a  anim_lattice.gd
+3c8dd8f10d6888e120c2420a3dcfc8c0867372ad0907d99d88b1eb98f1efd966  r93b_anim.gd
+a79bfdd6f3f468d7cf904608a053b22bb4f3d6423d199e4e81bfa1605506df83  run_battery.py

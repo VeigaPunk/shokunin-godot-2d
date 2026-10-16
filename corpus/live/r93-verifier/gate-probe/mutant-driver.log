@@ -1,0 +1,6 @@
+mutant battery verdict=FAIL rows=295
+r93_expected_errors_all_matched=False
+dead_entry_count=3 dead_entries=[{'case': 'negative_transition', 'entry': "ERROR: Can't change to a null scene. Use unload_current_scene() if you wish to unload it.", 'shape': 'exact'}, {'case': 'negative_transition', 'entry': 'ERROR: negative control: deliberately invalid scene destination rejected', 'shape': 'exact'}, {'case': 'r93_tween_census', 'entry': 'ERROR: r93 verifier dead-entry mutation (never emitted)', 'shape': 'exact'}]
+r93_tween_census row verdict=PASS (allowlist cannot change classification)
+r93 rows pass=23/23
+verdicts=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r93-verifier/gate-probe/mutant-runs/20261016T055014097116Z/verdicts.json log=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r93-verifier/gate-probe/mutant.log

@@ -1,0 +1,13 @@
+# r93 verifier — freeze record
+# Extraction created at seat start (corpus/live/r93-verifier/freeze/x/, directory
+# mtime 2026-10-15 22:00 -0300 == 2026-10-16 01:00Z) via:
+#   git archive HEAD corpus/fixtures | tar -x -C corpus/live/r93-verifier/freeze/x
+# Re-verified at the timestamps below (HEAD unchanged, tracked tree clean):
+# freeze-time: 2026-10-16T05:50:45Z
+# HEAD: 4b751512c5bfc231d09df1354505271672081436
+git diff --quiet HEAD rc=0
+tracked modifications:
+  none
+# fileset: 80 committed corpus/fixtures entries vs 80 extracted files, 0 diffs
+#          (freeze/fileset-diff.txt is empty)
+# blob identity: 80/80 OK, 0 mismatches (freeze/blob-identity.txt)

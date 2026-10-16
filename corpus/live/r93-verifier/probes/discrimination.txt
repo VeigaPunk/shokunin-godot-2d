@@ -1,0 +1,151 @@
+r93_tween_census: baseline PASS (receipt anim_lattice.census.rep1)
+  rejected ap_is_mixer=true => ap_is_mixer=false
+  rejected TYPE_BEZIER=6 => TYPE_BEZIER=7
+  rejected proc=1, => proc=2,
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_tween_interp_value: baseline PASS (receipt anim_lattice.tweenval.rep1)
+  rejected clamp_neg=-5.0 => clamp_neg=-4.0
+  rejected int_050=5 => int_050=6
+  rejected expo_out_10=10.0 => expo_out_10=11.0
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_tween_interp_grid_a: baseline PASS (receipt anim_lattice.tweenval_grid.rep1)
+  rejected lin in=0.0,2.5 => lin in=0.0,3.5
+  rejected io=0.0,0.15625,5.0 => io=0.0,0.15625,6.0
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_tween_interp_grid_b: baseline PASS (receipt anim_lattice.tweenval_grid.rep1)
+  rejected io=0.0,-0.99681839346886,5.0 => io=0.0,-0.99681839346886,6.0
+  rejected out=0.0,6.6333669424057 => out=0.0,7.6333669424057
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_track_interp: baseline PASS (receipt anim_lattice.animtrack.rep1)
+  rejected two_default_interp=1 => two_default_interp=2
+  rejected t10=10.0 => t10=11.0
+  rejected bezier_key_count=2 => bezier_key_count=3
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_tween_manual_step: baseline PASS (receipt anim_lattice.tweenstep.rep1)
+  rejected step10=[10.0,false,1.0,1,1] => step10=[10.0,true,1.0,1,1]
+  rejected paused=[5.0,false,true,0.25,0] => paused=[5.0,false,false,0.25,0]
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_tween_chain: baseline PASS (receipt anim_lattice.tweenchain.rep1)
+  rejected seq=[20.0,30.0,40.0] => seq=[20.0,30.0,41.0]
+  rejected cb_at_050=0 => cb_at_050=1
+  rejected after=[false,false] => after=[true,false]
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_tween_process_stable: baseline PASS (receipt anim_lattice.tweenproc.rep1)
+  rejected auto_advanced=true => auto_advanced=false
+  rejected manual_exact=true => manual_exact=false
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_tween_phys_manual_step: baseline PASS (receipt anim_lattice.tweenproc.rep1)
+  rejected after_step025=2.0 => after_step025=3.0
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_seek: baseline PASS (receipt anim_lattice.animseek.rep1)
+  rejected seek_noup=[75.0,0.5] => seek_noup=[75.0,1.5]
+  rejected manual_frames=[0.0,0.0] => manual_frames=[0.0,1.0]
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_method_callback: baseline PASS (receipt anim_lattice.animmethod.rep1)
+  rejected deferred_adv=[] => deferred_adv=[7,8]
+  rejected immediate_adv=[7,8] => immediate_adv=[7,9]
+  rejected disabled_track=[] => disabled_track=[7,8]
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_blend_finished: baseline PASS (receipt anim_lattice.animblend.rep1)
+  rejected finished_020=[100.0,200.0,300.0,400.0,500.0] => finished_020=[100.0,200.0,300.0,400.0,501.0]
+  rejected finished_010=[100.0,144.444442749023 => finished_010=[100.0,145.444442749023
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_blend_running: baseline PASS (receipt anim_lattice.animblend.rep1)
+  rejected after_025=500.0 => after_025=501.0
+  rejected default_blend_mid=100.0 => default_blend_mid=101.0
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_process_manual: baseline PASS (receipt anim_lattice.animproc.rep1)
+  rejected after3frames=25.0 => after3frames=26.0
+  rejected frozen=[0.0,true,0.0] => frozen=[0.0,false,0.0]
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_process_stable: baseline PASS (receipt anim_lattice.animproc.rep1)
+  rejected caches_once=true => caches_once=false
+  rejected mixer_updated_zero=true => mixer_updated_zero=false
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_overshoot: baseline PASS (receipt r93b_anim.purity.rep1)
+  rejected back025=0.10286344587803 => back025=1.10286344587803
+  rejected spr050=10.510157585144 => spr050=11.510157585144
+  rejected neg=-5.0 => neg=-4.0
+  rejected neg_elapsed=-0.5 => neg_elapsed=0.5
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_manual_clock_interleaved: baseline PASS (receipt r93b_anim.manual_inv.rep1)
+  rejected e=10.0] => e=11.0]
+  rejected m=100.0] => m=101.0]
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_manual_clock_control: baseline PASS (receipt r93b_anim.manual_inv.rep1)
+  rejected unpaused_moved=true => unpaused_moved=false
+  rejected paused_proc=true => paused_proc=false
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_deferred_flush: baseline PASS (receipt r93b_anim.deferred.rep1)
+  rejected after_adv=[] => after_adv=[7,8]
+  rejected after_phys=[7,8] => after_phys=[7,9]
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_await_offbyone: baseline PASS (receipt r93b_anim.frame.rep1)
+  ADMITTED idle=[x1=0.0,->idle=[x1=0.01,
+  ADMITTED idle=[x1=0.0,->idle=[x1=0.05,
+  ADMITTED idle=[x1=0.0,->idle=[x1=0.099,
+  rejected idle=[x1=0.0,->idle=[x1=0.1,
+  rejected idle=[x1=0.0,->idle=[x1=1.0,
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_physics_tick: baseline PASS (receipt r93b_anim.frame.rep1)
+  rejected mixer_applied_10=10 => mixer_applied_10=11
+  rejected y6=6.66666698455811 => y6=7.66666698455811
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_phys_delta: baseline PASS (receipt r93b_anim.frame.rep1)
+  rejected phys_delta=0.01666666666667 => phys_delta=1.01666666666667
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+r93_anim_blend_interleaved: baseline PASS (receipt r93b_anim.blend.rep1)
+  rejected interleaved_eq_plain=true => interleaved_eq_plain=false
+  rejected hard_after_frame=500.0 => hard_after_frame=501.0
+  rejected rc-flip
+  rejected timeout
+  rejected unrelated-error
+
+mutations rejected=120 admitted=3
+  ADMITTED ('r93_anim_await_offbyone', 'idle=[x1=0.0,->idle=[x1=0.01,')
+  ADMITTED ('r93_anim_await_offbyone', 'idle=[x1=0.0,->idle=[x1=0.05,')
+  ADMITTED ('r93_anim_await_offbyone', 'idle=[x1=0.0,->idle=[x1=0.099,')

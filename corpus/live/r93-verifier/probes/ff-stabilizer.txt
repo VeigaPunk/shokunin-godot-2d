@@ -1,0 +1,16 @@
+anim_lattice.tweenproc default: reps=3 unique_pass_lines=3
+anim_lattice.tweenproc ff60: reps=3 unique_pass_lines=1
+anim_lattice.animproc default: reps=3 unique_pass_lines=3
+anim_lattice.animproc ff60: reps=3 unique_pass_lines=1
+r93b_anim.manual_inv default: reps=3 unique_pass_lines=3
+r93b_anim.manual_inv ff60: reps=3 unique_pass_lines=1
+r93b_anim.deferred default: reps=3 unique_pass_lines=3
+r93b_anim.deferred ff60: reps=3 unique_pass_lines=1
+r93b_anim.frame default: reps=3 unique_pass_lines=3
+r93b_anim.frame ff60: reps=3 unique_pass_lines=1
+r93b_anim.blend default: reps=3 unique_pass_lines=2
+r93b_anim.blend ff60: reps=3 unique_pass_lines=1
+r93b_anim.clock default: reps=3 unique_pass_lines=3
+r93b_anim.clock ff60: reps=3 unique_pass_lines=3
+
+claim: ff60 collapses each mode cell to 1 unique line while default varies

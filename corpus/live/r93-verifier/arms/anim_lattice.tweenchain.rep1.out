@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS anim_lattice tweenchain seq=[20.0,30.0,40.0] par=[30.0,2.0] interval=[cb_at_050=0,mvals_at_050=[],cb_at_100=1,mvals_at_100=[5.0],cb_after_extra=1] node_free=[before=[true,true],right_after=[true,true],stepped_after_free=[true,true],after_frame=[false,true]] kill=[before=[true,false],after=[false,false]]

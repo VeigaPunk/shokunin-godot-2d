@@ -1,0 +1,110 @@
+frozen harness sha256=a79bfdd6f3f468d7cf904608a053b22bb4f3d6423d199e4e81bfa1605506df83
+classify_process segment sha256=749fa0607e7707e6 (r89-r92 pinned 749fa0607e7707e6)
+arms=17 rows=23 reps=3 bound=8s
+
+OK anim_lattice.census.rep1 r93_tween_census                     classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.census.rep2 r93_tween_census                     classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.census.rep3 r93_tween_census                     classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+
+OK anim_lattice.tweenval.rep1 r93_tween_interp_value               classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenval.rep2 r93_tween_interp_value               classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenval.rep3 r93_tween_interp_value               classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+
+OK anim_lattice.tweenval_grid.rep1 r93_tween_interp_grid_a              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenval_grid.rep1 r93_tween_interp_grid_b              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenval_grid.rep2 r93_tween_interp_grid_a              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenval_grid.rep2 r93_tween_interp_grid_b              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenval_grid.rep3 r93_tween_interp_grid_a              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenval_grid.rep3 r93_tween_interp_grid_b              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+
+OK anim_lattice.animtrack.rep1 r93_anim_track_interp                classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.animtrack.rep2 r93_anim_track_interp                classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.animtrack.rep3 r93_anim_track_interp                classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+
+OK anim_lattice.tweenstep.rep1 r93_tween_manual_step                classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenstep.rep2 r93_tween_manual_step                classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenstep.rep3 r93_tween_manual_step                classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+
+OK anim_lattice.tweenchain.rep1 r93_tween_chain                      classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenchain.rep2 r93_tween_chain                      classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenchain.rep3 r93_tween_chain                      classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+
+OK anim_lattice.tweenproc.rep1 r93_tween_process_stable             classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenproc.rep1 r93_tween_phys_manual_step           classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenproc.rep2 r93_tween_process_stable             classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenproc.rep2 r93_tween_phys_manual_step           classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenproc.rep3 r93_tween_process_stable             classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.tweenproc.rep3 r93_tween_phys_manual_step           classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+
+OK anim_lattice.animseek.rep1 r93_anim_seek                        classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.animseek.rep2 r93_anim_seek                        classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.animseek.rep3 r93_anim_seek                        classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+
+OK anim_lattice.animmethod.rep1 r93_anim_method_callback             classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.animmethod.rep2 r93_anim_method_callback             classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK anim_lattice.animmethod.rep3 r93_anim_method_callback             classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+
+OK anim_lattice.animblend.rep1 r93_anim_blend_finished              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.animblend.rep1 r93_anim_blend_running               classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.animblend.rep2 r93_anim_blend_finished              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.animblend.rep2 r93_anim_blend_running               classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.animblend.rep3 r93_anim_blend_finished              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.animblend.rep3 r93_anim_blend_running               classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+
+OK anim_lattice.animproc.rep1 r93_anim_process_manual              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.animproc.rep1 r93_anim_process_stable              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.animproc.rep2 r93_anim_process_manual              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.animproc.rep2 r93_anim_process_stable              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.animproc.rep3 r93_anim_process_manual              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK anim_lattice.animproc.rep3 r93_anim_process_stable              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+
+OK r93b_anim.purity.rep1 r93_anim_overshoot                   classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK r93b_anim.purity.rep2 r93_anim_overshoot                   classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+OK r93b_anim.purity.rep3 r93_anim_overshoot                   classify=True stdout_anchor=True full_line=True rc=0 err=None stderr_bytes=0
+
+OK r93b_anim.manual_inv.rep1 r93_anim_manual_clock_interleaved    classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.manual_inv.rep1 r93_anim_manual_clock_control        classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.manual_inv.rep2 r93_anim_manual_clock_interleaved    classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.manual_inv.rep2 r93_anim_manual_clock_control        classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.manual_inv.rep3 r93_anim_manual_clock_interleaved    classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.manual_inv.rep3 r93_anim_manual_clock_control        classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+
+OK r93b_anim.deferred.rep1 r93_anim_deferred_flush              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.deferred.rep2 r93_anim_deferred_flush              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.deferred.rep3 r93_anim_deferred_flush              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+
+OK r93b_anim.frame.rep1 r93_anim_await_offbyone              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.frame.rep1 r93_anim_physics_tick                classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.frame.rep1 r93_anim_phys_delta                  classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.frame.rep2 r93_anim_await_offbyone              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.frame.rep2 r93_anim_physics_tick                classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.frame.rep2 r93_anim_phys_delta                  classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.frame.rep3 r93_anim_await_offbyone              classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.frame.rep3 r93_anim_physics_tick                classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.frame.rep3 r93_anim_phys_delta                  classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+
+OK r93b_anim.blend.rep1 r93_anim_blend_interleaved           classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.blend.rep2 r93_anim_blend_interleaved           classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+OK r93b_anim.blend.rep3 r93_anim_blend_interleaved           classify=True stdout_anchor=True full_line=False rc=0 err=None stderr_bytes=0
+
+
+--- per-arm signature stability (unique rendered PASS lines across 3 reps) ---
+  anim_lattice.census: reps_pass_lines=[1, 1, 1] unique=1
+  anim_lattice.tweenval: reps_pass_lines=[1, 1, 1] unique=1
+  anim_lattice.tweenval_grid: reps_pass_lines=[1, 1, 1] unique=1
+  anim_lattice.animtrack: reps_pass_lines=[1, 1, 1] unique=1
+  anim_lattice.tweenstep: reps_pass_lines=[1, 1, 1] unique=1
+  anim_lattice.tweenchain: reps_pass_lines=[1, 1, 1] unique=1
+  anim_lattice.tweenproc: reps_pass_lines=[1, 1, 1] unique=3
+  anim_lattice.animseek: reps_pass_lines=[1, 1, 1] unique=1
+  anim_lattice.animmethod: reps_pass_lines=[1, 1, 1] unique=1
+  anim_lattice.animblend: reps_pass_lines=[1, 1, 1] unique=1
+  anim_lattice.animproc: reps_pass_lines=[1, 1, 1] unique=3
+  r93b_anim.purity: reps_pass_lines=[1, 1, 1] unique=1
+  r93b_anim.manual_inv: reps_pass_lines=[1, 1, 1] unique=3
+  r93b_anim.deferred: reps_pass_lines=[1, 1, 1] unique=3
+  r93b_anim.frame: reps_pass_lines=[1, 1, 1] unique=3
+  r93b_anim.blend: reps_pass_lines=[1, 1, 1] unique=3
+  r93b_anim.clock: reps_pass_lines=[1, 1, 1] unique=3
+
+ALL_ROWS_OK=True

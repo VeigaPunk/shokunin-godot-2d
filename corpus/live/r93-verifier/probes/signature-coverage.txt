@@ -1,0 +1,51 @@
+receipts with a PASS line: 438
+  arm anim_lattice.animblend   receipts=29
+  arm anim_lattice.animmethod  receipts=29
+  arm anim_lattice.animproc    receipts=31
+  arm anim_lattice.animseek    receipts=31
+  arm anim_lattice.animtrack   receipts=23
+  arm anim_lattice.census      receipts=23
+  arm anim_lattice.tweenchain  receipts=29
+  arm anim_lattice.tweenproc   receipts=31
+  arm anim_lattice.tweenstep   receipts=31
+  arm anim_lattice.tweenval    receipts=26
+  arm anim_lattice.tweenval_grid receipts=23
+  arm r93b_anim.blend          receipts=22
+  arm r93b_anim.clock          receipts=22
+  arm r93b_anim.deferred       receipts=22
+  arm r93b_anim.frame          receipts=22
+  arm r93b_anim.manual_inv     receipts=22
+  arm r93b_anim.purity         receipts=22
+
+--- per-row coverage ---
+  r93_tween_census                     arm=anim_lattice.census    receipts=  23 exact=  23 tail=   0 miss=   0
+  r93_tween_interp_value               arm=anim_lattice.tweenval  receipts=  26 exact=  26 tail=   0 miss=   0
+  r93_tween_interp_grid_a              arm=anim_lattice.tweenval_grid receipts=  23 exact=   0 tail=  23 miss=   0
+  r93_tween_interp_grid_b              arm=anim_lattice.tweenval_grid receipts=  23 exact=   0 tail=  23 miss=   0
+  r93_anim_track_interp                arm=anim_lattice.animtrack receipts=  23 exact=  23 tail=   0 miss=   0
+  r93_tween_manual_step                arm=anim_lattice.tweenstep receipts=  31 exact=  31 tail=   0 miss=   0
+  r93_tween_chain                      arm=anim_lattice.tweenchain receipts=  29 exact=  29 tail=   0 miss=   0
+  r93_tween_process_stable             arm=anim_lattice.tweenproc receipts=  31 exact=   0 tail=  31 miss=   0
+  r93_tween_phys_manual_step           arm=anim_lattice.tweenproc receipts=  31 exact=   0 tail=  31 miss=   0
+  r93_anim_seek                        arm=anim_lattice.animseek  receipts=  31 exact=  31 tail=   0 miss=   0
+  r93_anim_method_callback             arm=anim_lattice.animmethod receipts=  29 exact=  29 tail=   0 miss=   0
+  r93_anim_blend_finished              arm=anim_lattice.animblend receipts=  29 exact=   0 tail=  29 miss=   0
+  r93_anim_blend_running               arm=anim_lattice.animblend receipts=  29 exact=   0 tail=  29 miss=   0
+  r93_anim_process_manual              arm=anim_lattice.animproc  receipts=  31 exact=   0 tail=  31 miss=   0
+  r93_anim_process_stable              arm=anim_lattice.animproc  receipts=  31 exact=   0 tail=  31 miss=   0
+  r93_anim_overshoot                   arm=r93b_anim.purity       receipts=  22 exact=  22 tail=   0 miss=   0
+  r93_anim_manual_clock_interleaved    arm=r93b_anim.manual_inv   receipts=  22 exact=   0 tail=  22 miss=   0
+  r93_anim_manual_clock_control        arm=r93b_anim.manual_inv   receipts=  22 exact=   0 tail=  22 miss=   0
+  r93_anim_deferred_flush              arm=r93b_anim.deferred     receipts=  22 exact=   0 tail=  22 miss=   0
+  r93_anim_await_offbyone              arm=r93b_anim.frame        receipts=  22 exact=   0 tail=  22 miss=   0
+  r93_anim_physics_tick                arm=r93b_anim.frame        receipts=  22 exact=   0 tail=  22 miss=   0
+  r93_anim_phys_delta                  arm=r93b_anim.frame        receipts=  22 exact=   0 tail=  22 miss=   0
+  r93_anim_blend_interleaved           arm=r93b_anim.blend        receipts=  22 exact=   0 tail=  22 miss=   0
+
+totals: EXACT=214 TAIL=382 MISS=0
+
+--- cross-arm hits (signature in a foreign arm's PASS line) ---
+  r93_anim_phys_delta: r93b_anim.clock=22
+
+--- unknown-arm fallback lines in the corpora ---
+  fallback PASS lines=0

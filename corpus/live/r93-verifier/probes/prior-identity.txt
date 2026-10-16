@@ -1,0 +1,154 @@
+this seat's completed battery reps: 5
+  20261016T010048191292Z: verdict=FAIL rows=295 r93_pass=23/23 failing=['audio_bus_route', 'transition']
+  20261016T010535849447Z: verdict=FAIL rows=295 r93_pass=23/23 failing=['transition']
+  20261016T011014142035Z: verdict=FAIL rows=295 r93_pass=23/23 failing=['negative_transition', 'probe_error_clause_surface']
+  20261016T011438785737Z: verdict=FAIL rows=295 r93_pass=23/23 failing=['negative_transition', 'probe_error_clause_surface']
+  20261016T011854260199Z: verdict=PASS rows=295 r93_pass=23/23 failing=[]
+
+--- author runs ---
+  runs1: verdict=PASS rows=295 failing=[]
+  runs2: verdict=FAIL rows=295 failing=['crash_spontaneous_sigabrt', 'probe_error_clause_surface', 'probe_spontaneous_crash_classification']
+  runs3: verdict=PASS rows=295 failing=[]
+
+--- pin-shape identity vs author greens ---
+  20261016T010048191292Z vs runs1: pin-shape mismatches=3 ['audio_bus_route', 'input_lattice_api_press', 'transition']
+  20261016T010048191292Z vs runs3: pin-shape mismatches=2 ['audio_bus_route', 'transition']
+  20261016T010535849447Z vs runs1: pin-shape mismatches=1 ['transition']
+  20261016T010535849447Z vs runs3: pin-shape mismatches=2 ['input_lattice_api_press', 'transition']
+  20261016T011014142035Z vs runs1: pin-shape mismatches=2 ['negative_transition', 'probe_error_clause_surface']
+  20261016T011014142035Z vs runs3: pin-shape mismatches=3 ['input_lattice_api_press', 'negative_transition', 'probe_error_clause_surface']
+  20261016T011438785737Z vs runs1: pin-shape mismatches=3 ['input_lattice_api_press', 'negative_transition', 'probe_error_clause_surface']
+  20261016T011438785737Z vs runs3: pin-shape mismatches=2 ['negative_transition', 'probe_error_clause_surface']
+  20261016T011854260199Z vs runs1: pin-shape mismatches=0 []
+  20261016T011854260199Z vs runs3: pin-shape mismatches=1 ['input_lattice_api_press']
+
+--- strict-shape identity vs author greens (mode tails allowed to differ) ---
+  20261016T010048191292Z vs runs1: strict mismatches=27 (r93 of them: 10)
+  20261016T010048191292Z vs runs3: strict mismatches=25 (r93 of them: 10)
+  20261016T010535849447Z vs runs1: strict mismatches=20 (r93 of them: 11)
+  20261016T010535849447Z vs runs3: strict mismatches=21 (r93 of them: 11)
+  20261016T011014142035Z vs runs1: strict mismatches=18 (r93 of them: 9)
+  20261016T011014142035Z vs runs3: strict mismatches=17 (r93 of them: 8)
+  20261016T011438785737Z vs runs1: strict mismatches=23 (r93 of them: 10)
+  20261016T011438785737Z vs runs3: strict mismatches=20 (r93 of them: 9)
+  20261016T011854260199Z vs runs1: strict mismatches=17 (r93 of them: 9)
+  20261016T011854260199Z vs runs3: strict mismatches=17 (r93 of them: 8)
+
+--- r93 strict mismatches vs the author greens, row by row ---
+  20261016T010048191292Z vs runs1: r93_anim_await_offbyone
+  20261016T010048191292Z vs runs1: r93_anim_blend_interleaved
+  20261016T010048191292Z vs runs1: r93_anim_deferred_flush
+  20261016T010048191292Z vs runs1: r93_anim_manual_clock_control
+  20261016T010048191292Z vs runs1: r93_anim_manual_clock_interleaved
+  20261016T010048191292Z vs runs1: r93_anim_phys_delta
+  20261016T010048191292Z vs runs1: r93_anim_physics_tick
+  20261016T010048191292Z vs runs1: r93_anim_process_manual
+  20261016T010048191292Z vs runs1: r93_anim_process_stable
+  20261016T010048191292Z vs runs1: r93_tween_phys_manual_step
+  20261016T010048191292Z vs runs3: r93_anim_await_offbyone
+  20261016T010048191292Z vs runs3: r93_anim_blend_interleaved
+  20261016T010048191292Z vs runs3: r93_anim_deferred_flush
+  20261016T010048191292Z vs runs3: r93_anim_manual_clock_control
+  20261016T010048191292Z vs runs3: r93_anim_manual_clock_interleaved
+  20261016T010048191292Z vs runs3: r93_anim_phys_delta
+  20261016T010048191292Z vs runs3: r93_anim_physics_tick
+  20261016T010048191292Z vs runs3: r93_anim_process_manual
+  20261016T010048191292Z vs runs3: r93_anim_process_stable
+  20261016T010048191292Z vs runs3: r93_tween_phys_manual_step
+  20261016T010535849447Z vs runs1: r93_anim_await_offbyone
+  20261016T010535849447Z vs runs1: r93_anim_blend_interleaved
+  20261016T010535849447Z vs runs1: r93_anim_deferred_flush
+  20261016T010535849447Z vs runs1: r93_anim_manual_clock_control
+  20261016T010535849447Z vs runs1: r93_anim_manual_clock_interleaved
+  20261016T010535849447Z vs runs1: r93_anim_phys_delta
+  20261016T010535849447Z vs runs1: r93_anim_physics_tick
+  20261016T010535849447Z vs runs1: r93_anim_process_manual
+  20261016T010535849447Z vs runs1: r93_anim_process_stable
+  20261016T010535849447Z vs runs1: r93_tween_phys_manual_step
+  20261016T010535849447Z vs runs1: r93_tween_process_stable
+  20261016T010535849447Z vs runs3: r93_anim_await_offbyone
+  20261016T010535849447Z vs runs3: r93_anim_blend_interleaved
+  20261016T010535849447Z vs runs3: r93_anim_deferred_flush
+  20261016T010535849447Z vs runs3: r93_anim_manual_clock_control
+  20261016T010535849447Z vs runs3: r93_anim_manual_clock_interleaved
+  20261016T010535849447Z vs runs3: r93_anim_phys_delta
+  20261016T010535849447Z vs runs3: r93_anim_physics_tick
+  20261016T010535849447Z vs runs3: r93_anim_process_manual
+  20261016T010535849447Z vs runs3: r93_anim_process_stable
+  20261016T010535849447Z vs runs3: r93_tween_phys_manual_step
+  20261016T010535849447Z vs runs3: r93_tween_process_stable
+  20261016T011014142035Z vs runs1: r93_anim_await_offbyone
+  20261016T011014142035Z vs runs1: r93_anim_deferred_flush
+  20261016T011014142035Z vs runs1: r93_anim_manual_clock_control
+  20261016T011014142035Z vs runs1: r93_anim_manual_clock_interleaved
+  20261016T011014142035Z vs runs1: r93_anim_phys_delta
+  20261016T011014142035Z vs runs1: r93_anim_physics_tick
+  20261016T011014142035Z vs runs1: r93_anim_process_manual
+  20261016T011014142035Z vs runs1: r93_anim_process_stable
+  20261016T011014142035Z vs runs1: r93_tween_phys_manual_step
+  20261016T011014142035Z vs runs3: r93_anim_await_offbyone
+  20261016T011014142035Z vs runs3: r93_anim_deferred_flush
+  20261016T011014142035Z vs runs3: r93_anim_manual_clock_interleaved
+  20261016T011014142035Z vs runs3: r93_anim_phys_delta
+  20261016T011014142035Z vs runs3: r93_anim_physics_tick
+  20261016T011014142035Z vs runs3: r93_anim_process_manual
+  20261016T011014142035Z vs runs3: r93_anim_process_stable
+  20261016T011014142035Z vs runs3: r93_tween_phys_manual_step
+  20261016T011438785737Z vs runs1: r93_anim_await_offbyone
+  20261016T011438785737Z vs runs1: r93_anim_deferred_flush
+  20261016T011438785737Z vs runs1: r93_anim_manual_clock_control
+  20261016T011438785737Z vs runs1: r93_anim_manual_clock_interleaved
+  20261016T011438785737Z vs runs1: r93_anim_phys_delta
+  20261016T011438785737Z vs runs1: r93_anim_physics_tick
+  20261016T011438785737Z vs runs1: r93_anim_process_manual
+  20261016T011438785737Z vs runs1: r93_anim_process_stable
+  20261016T011438785737Z vs runs1: r93_tween_phys_manual_step
+  20261016T011438785737Z vs runs1: r93_tween_process_stable
+  20261016T011438785737Z vs runs3: r93_anim_await_offbyone
+  20261016T011438785737Z vs runs3: r93_anim_deferred_flush
+  20261016T011438785737Z vs runs3: r93_anim_manual_clock_control
+  20261016T011438785737Z vs runs3: r93_anim_manual_clock_interleaved
+  20261016T011438785737Z vs runs3: r93_anim_phys_delta
+  20261016T011438785737Z vs runs3: r93_anim_physics_tick
+  20261016T011438785737Z vs runs3: r93_anim_process_manual
+  20261016T011438785737Z vs runs3: r93_anim_process_stable
+  20261016T011438785737Z vs runs3: r93_tween_process_stable
+  20261016T011854260199Z vs runs1: r93_anim_await_offbyone
+  20261016T011854260199Z vs runs1: r93_anim_deferred_flush
+  20261016T011854260199Z vs runs1: r93_anim_manual_clock_control
+  20261016T011854260199Z vs runs1: r93_anim_manual_clock_interleaved
+  20261016T011854260199Z vs runs1: r93_anim_phys_delta
+  20261016T011854260199Z vs runs1: r93_anim_physics_tick
+  20261016T011854260199Z vs runs1: r93_anim_process_manual
+  20261016T011854260199Z vs runs1: r93_anim_process_stable
+  20261016T011854260199Z vs runs1: r93_tween_phys_manual_step
+  20261016T011854260199Z vs runs3: r93_anim_await_offbyone
+  20261016T011854260199Z vs runs3: r93_anim_deferred_flush
+  20261016T011854260199Z vs runs3: r93_anim_manual_clock_control
+  20261016T011854260199Z vs runs3: r93_anim_manual_clock_interleaved
+  20261016T011854260199Z vs runs3: r93_anim_phys_delta
+  20261016T011854260199Z vs runs3: r93_anim_physics_tick
+  20261016T011854260199Z vs runs3: r93_anim_process_manual
+  20261016T011854260199Z vs runs3: r93_anim_process_stable
+
+--- pre-existing rows: pin-shape vs r92 verifier greens ---
+  20261016T010048191292Z vs r92green 20261016T003135088173Z: pre-existing pin-shape mismatches=4 ['audio_bus_route', 'input_lattice_api_press', 'input_lattice_release_edge', 'transition']
+  20261016T010048191292Z vs r92green 20261016T003533246361Z: pre-existing pin-shape mismatches=3 ['audio_bus_route', 'input_lattice_api_press', 'transition']
+  20261016T010535849447Z vs r92green 20261016T003135088173Z: pre-existing pin-shape mismatches=2 ['input_lattice_release_edge', 'transition']
+  20261016T010535849447Z vs r92green 20261016T003533246361Z: pre-existing pin-shape mismatches=1 ['transition']
+  20261016T011014142035Z vs r92green 20261016T003135088173Z: pre-existing pin-shape mismatches=3 ['input_lattice_release_edge', 'negative_transition', 'probe_error_clause_surface']
+  20261016T011014142035Z vs r92green 20261016T003533246361Z: pre-existing pin-shape mismatches=2 ['negative_transition', 'probe_error_clause_surface']
+  20261016T011438785737Z vs r92green 20261016T003135088173Z: pre-existing pin-shape mismatches=4 ['input_lattice_api_press', 'input_lattice_release_edge', 'negative_transition', 'probe_error_clause_surface']
+  20261016T011438785737Z vs r92green 20261016T003533246361Z: pre-existing pin-shape mismatches=3 ['input_lattice_api_press', 'negative_transition', 'probe_error_clause_surface']
+  20261016T011854260199Z vs r92green 20261016T003135088173Z: pre-existing pin-shape mismatches=1 ['input_lattice_release_edge']
+  20261016T011854260199Z vs r92green 20261016T003533246361Z: pre-existing pin-shape mismatches=0 []
+
+--- per-row pin-shape stability across this seat's reps ---
+  rows with >1 pin-shape: 5 of 295 ['audio_bus_route', 'input_lattice_api_press', 'negative_transition', 'probe_error_clause_surface', 'transition']
+
+--- r93 observed PASS line vs committed signature (per rep) ---
+  20261016T010048191292Z: full-line-equal=8 clause-contains=15 missing=0
+  20261016T010535849447Z: full-line-equal=8 clause-contains=15 missing=0
+  20261016T011014142035Z: full-line-equal=8 clause-contains=15 missing=0
+  20261016T011438785737Z: full-line-equal=8 clause-contains=15 missing=0
+  20261016T011854260199Z: full-line-equal=8 clause-contains=15 missing=0

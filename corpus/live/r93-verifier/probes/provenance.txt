@@ -1,0 +1,13 @@
+OK anim_lattice.gd == corpus/live/r93-scout/probes/anim_lattice.gd  6a919ae04d4e7549
+OK anim_lattice.gd == corpus/live/r93-scout/proj/anim_lattice.gd  6a919ae04d4e7549
+OK anim_lattice.gd == corpus/live/r93-boundary/probes/scout_anim_lattice.gd  6a919ae04d4e7549
+OK r93b_anim.gd == corpus/live/r93-boundary/probes/r93b_anim.gd  3c8dd8f10d6888e1
+OK r93b_anim.gd == corpus/live/r93-boundary/proj/r93b_anim.gd  3c8dd8f10d6888e1
+scout ROWS carried verbatim: 15/15
+informational ROWS_FULL excluded: ['r93_tween_process_full', 'r93_anim_process_full']
+commit paths total=239
+  corpus/fixtures/anim_lattice.gd: 1
+  corpus/fixtures/r93b_anim.gd: 1
+  corpus/fixtures/run_battery.py: 1
+  corpus/live/r93-author/**: 235
+  reports/round-93/r93-author.md: 1

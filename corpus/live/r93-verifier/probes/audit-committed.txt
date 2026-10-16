@@ -1,0 +1,72 @@
+harness sha256=a79bfdd6f3f468d7cf904608a053b22bb4f3d6423d199e4e81bfa1605506df83
+harness lines=4336
+
+CASES tuples=288
+tuple arities={5: 288}
+
+r93 rows=23 indices=261..283
+predecessor='r92_tilemap_nullts_crash' successor='crash_spontaneous_sigabrt'
+  [261] r93_tween_census                     script=anim_lattice.gd    flags=['--arm=census'] exit=0 scalar
+  [262] r93_tween_interp_value               script=anim_lattice.gd    flags=['--arm=tweenval'] exit=0 scalar
+  [263] r93_tween_interp_grid_a              script=anim_lattice.gd    flags=['--arm=tweenval_grid'] exit=0 scalar
+  [264] r93_tween_interp_grid_b              script=anim_lattice.gd    flags=['--arm=tweenval_grid'] exit=0 scalar
+  [265] r93_anim_track_interp                script=anim_lattice.gd    flags=['--arm=animtrack'] exit=0 scalar
+  [266] r93_tween_manual_step                script=anim_lattice.gd    flags=['--arm=tweenstep'] exit=0 scalar
+  [267] r93_tween_chain                      script=anim_lattice.gd    flags=['--arm=tweenchain'] exit=0 scalar
+  [268] r93_tween_process_stable             script=anim_lattice.gd    flags=['--arm=tweenproc'] exit=0 scalar
+  [269] r93_tween_phys_manual_step           script=anim_lattice.gd    flags=['--arm=tweenproc'] exit=0 scalar
+  [270] r93_anim_seek                        script=anim_lattice.gd    flags=['--arm=animseek'] exit=0 scalar
+  [271] r93_anim_method_callback             script=anim_lattice.gd    flags=['--arm=animmethod'] exit=0 scalar
+  [272] r93_anim_blend_finished              script=anim_lattice.gd    flags=['--arm=animblend'] exit=0 scalar
+  [273] r93_anim_blend_running               script=anim_lattice.gd    flags=['--arm=animblend'] exit=0 scalar
+  [274] r93_anim_process_manual              script=anim_lattice.gd    flags=['--arm=animproc'] exit=0 scalar
+  [275] r93_anim_process_stable              script=anim_lattice.gd    flags=['--arm=animproc'] exit=0 scalar
+  [276] r93_anim_overshoot                   script=r93b_anim.gd       flags=['--arm=purity'] exit=0 scalar
+  [277] r93_anim_manual_clock_interleaved    script=r93b_anim.gd       flags=['--arm=manual_inv'] exit=0 scalar
+  [278] r93_anim_manual_clock_control        script=r93b_anim.gd       flags=['--arm=manual_inv'] exit=0 scalar
+  [279] r93_anim_deferred_flush              script=r93b_anim.gd       flags=['--arm=deferred'] exit=0 scalar
+  [280] r93_anim_await_offbyone              script=r93b_anim.gd       flags=['--arm=frame'] exit=0 scalar
+  [281] r93_anim_physics_tick                script=r93b_anim.gd       flags=['--arm=frame'] exit=0 scalar
+  [282] r93_anim_phys_delta                  script=r93b_anim.gd       flags=['--arm=frame'] exit=0 scalar
+  [283] r93_anim_blend_interleaved           script=r93b_anim.gd       flags=['--arm=blend'] exit=0 scalar
+
+meta result rows=17 ['crash_exit_accept', 'probe_crash_exit', 'probe_descendant_error_spoof', 'probe_descendant_pipe_eof', 'probe_descendant_signature_spoof', 'probe_error_clause_surface', 'probe_export_launch', 'probe_godot_error', 'probe_midlineforge_gapladder', 'probe_midlineforge_ladder', 'probe_save_independent_process', 'probe_spontaneous_crash_classification', 'probe_timeout', 'probe_unrelated_error_', 'probe_unrelated_error_export_preset_missing', 'probe_unrelated_error_export_readiness', 'probe_while_live_signature_gate']
+row arithmetic: CASES 288 + meta 17 = 305
+
+expected_errors total cases=72 entries=91
+r93 expected_errors cases=0 lines=0
+r93 required_stderr cases=0
+
+floor gate occurrences=1
+  r93_expected_errors_all_matched -> not e["dead_in_run"] for r in census_rows if r["case"].startswith("r93_"
+
+--- signature token inventory (delimiter-aware) ---
+  r93_tween_census                     fields=33 active an_m_count an_sample_methods anim_consts anim_defaults anim_is_res ap_defaults ap_is_mixer ap_is_node ap_m_count ap_signals auto_capture blend_methods cache_methods capture_methods cbd cbm cbp default_blend len loop mixer_consts player_consts proc root speed step tracks tw_is_ref tw_m_count tw_signals tw_step_methods tween_consts
+  r93_tween_interp_value               fields=14 clamp_neg clamp_over color_050 expo_in_05 expo_in_10 expo_out_05 expo_out_10 form_in_err form_out_err int_025 int_050 int_075 r91_exact vec_025
+  r93_tween_interp_grid_a              fields=4 in io oi out
+  r93_tween_interp_grid_b              fields=4 in io oi out
+  r93_anim_track_interp                fields=20 bezier bezier_key_count it0 it1 it2 k0 k1 kt1 t025 t05 t075 t09 t10 three_key three_key_count track_enabled track_path track_type two_default_interp two_key
+  r93_tween_manual_step                fields=8 created loop1 loop2 paused paused_done step05 step10 step_again
+  r93_tween_chain                      fields=15 after after_frame before cb_after_extra cb_at_050 cb_at_100 interval kill mvals_at_050 mvals_at_100 node_free par right_after seq stepped_after_free
+  r93_tween_process_stable             fields=5 auto_advanced manual_exact paused_frozen phys_advanced stable
+  r93_tween_phys_manual_step           fields=3 after_step025 before phys_manual
+  r93_anim_seek                        fields=18 adv025 after_frame after_stop at_play back_other before_stop cross looped manual_frames paused_adv play_other replay_before replay_same seek_noup seek_over seek_up speed0 speed2
+  r93_anim_method_callback             fields=10 changed cur_changed deferred_adv deferred_frame disabled_track immediate_adv immediate_frame sig_after_frame sig_at_play started_names
+  r93_anim_blend_finished              fields=3 finished_005 finished_010 finished_020
+  r93_anim_blend_running               fields=8 after_025 at_play before capture default_blend_mid hard running_from_50 seq
+  r93_anim_process_manual              fields=5 after3frames frozen inactive manual x
+  r93_anim_process_stable              fields=8 caches_once fin_fired inactive_advance manual_exact manual_frame_frozen mixer_updated_zero speed0_frozen stable
+  r93_anim_overshoot                   fields=32 accum1000 back025 back050 clamp col050 deltas ela025 expo huge huge_running in05 in10 int050 it0 it1 it2 mid neg neg_elapsed out05 out10 over overshoot overshoot2 spr050 spr100 t05 t09 t10 tiny track vec025
+  r93_anim_manual_clock_interleaved    fields=12 a b c d e f g h k m manual paused
+  r93_anim_manual_clock_control        fields=11 inv manual025 manual_done manual_phys manual_proc paused025 paused_done paused_phys paused_proc step_exact unpaused_moved
+  r93_anim_deferred_flush              fields=11 after after_adv after_frame after_phys flush immediate manual_def manual_def_phys next_proc second_proc two_adv
+  r93_anim_await_offbyone              fields=2 idle x1
+  r93_anim_physics_tick                fields=6 mixer_applied_10 phys y1 y2 y3 y6
+  r93_anim_phys_delta                  fields=1 phys_delta
+  r93_anim_blend_interleaved           fields=5 finished_010 finished_020 hard_after_frame interleaved interleaved_eq_plain
+
+--- probes ---
+anim_lattice.gd: sha256=6a919ae04d4e754953b9f8067c49b74c46cf5f3bdc1dce76d4e29597faa2cd4a lines=689 arms=['census', 'tweenval', 'tweenval_grid', 'tweenstep', 'animtrack']
+r93b_anim.gd: sha256=3c8dd8f10d6888e120c2420a3dcfc8c0867372ad0907d99d88b1eb98f1efd966 lines=466 arms=['purity']
+
+classify_process segment sha256=749fa0607e7707e6 (bytes=1068, lines=18)

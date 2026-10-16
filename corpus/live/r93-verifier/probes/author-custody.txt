@@ -1,0 +1,7 @@
+author fresh-reps re-classified with production classify_process: OK=69 BAD=0 (of 69)
+author proj/anim_lattice.gd == committed fixture: True 6a919ae04d4e7549
+author proj/r93b_anim.gd == committed fixture: True 3c8dd8f10d6888e1
+author battery1.log: r93 lines=23 fails=0
+author battery2.log: r93 lines=23 fails=0
+author battery3.log: r93 lines=23 fails=0
+author manifest.sha256: entries=1086 sha256sum -c rc=0 non-OK lines=0

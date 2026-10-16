@@ -1,0 +1,42 @@
+== L1 crossfade weight law  v_i = 100 + 400*(i-1)/(N-1) ==
+  anim_lattice: receipts=29
+    finished_010: present=29 distinct_arrays=1 formula_violations=0
+    finished_005: present=29 distinct_arrays=1 formula_violations=0
+    finished_020: present=29 distinct_arrays=1 formula_violations=0
+    distinct lattices 010/005/020: 1/1/1; at t=0.6: 010[5]=322.222229 vs 020[2]=300.000000 (same 1s blend, different N)
+  r93b_anim: receipts=22
+    finished_010: present=22 distinct_arrays=1 formula_violations=0
+    finished_005: present=0 distinct_arrays=0 formula_violations=0
+    finished_020: present=22 distinct_arrays=1 formula_violations=0
+    interleaved==finished_010 elementwise in all receipts: True
+    distinct lattices 010/005/020: 1/0/1; at t=0.6: 010[5]=322.222229 vs 020[2]=300.000000 (same 1s blend, different N)
+
+== L2 runtime overshoot + no-clamp (r93b purity) ==
+  purity receipts=22
+  back025_below_start=22/22 spr050_above_end=22/22 spr100_endpoint=22/22 ela025_inside=22/22 clamp_extrapolates=22/22
+  pure grid: bac_io(0.25)=-0.99681839346886 spr_out(0.5)=10.5101573467255 ela_out(0.25)=9.11611676216125
+  runtime-normalized: back f=-0.099681839346886 vs pure f=-0.099681839346886 delta=4.44e-16
+  runtime-normalized: spr  f=1.051015758514400 vs pure f=1.051015734672550 delta=2.38e-08
+  runtime-normalized: ela  f=0.911611652374268 vs pure f=0.911611676216125 delta=2.38e-08
+
+== L3 N-1 await law ==
+  frame receipts=22
+  distinct x1 values: {'0.0': 22}
+  distinct unpinned tails: x2=12 x3=17 x5=17 x10=16
+  independent probe default: 3 reps
+    pos=[0.0, 0.93996661901474, 0.94136667251587, 1.77469992637634, 2.32646679878235, 2.95146656036377]
+    predicted 100*sum(deltas[1..N-1])=[0.0, 0.939966666667, 0.941366666667, 1.7747, 2.326466666667, 2.9514666666669997]
+    max deviation=1.32e-07  (law: N awaits => N-1 applied steps)
+  independent probe ff60: 3 reps
+    pos=[0.0, 1.66666674613953, 3.33333349227905, 5.0, 6.66666698455811, 8.33333396911621]
+    predicted 100*sum(deltas[1..N-1])=[0.0, 1.666666666667, 3.333333333334, 5.000000000001, 6.666666666668, 8.333333333335]
+    max deviation=6.36e-07  (law: N awaits => N-1 applied steps)
+
+== L4 DEFERRED flush routes ==
+  deferred receipts=22
+  manual_def: 22/22
+  manual_def_phys: 22/22
+  two_adv: 22/22
+  immediate: 22/22
+  independent probe default: R93V deferred proc=[->7,8] phys=[->7,8] two_adv=[->7,8] immediate=[7,8->7,8]
+  independent probe ff60: R93V deferred proc=[->7,8] phys=[->7,8] two_adv=[->7,8] immediate=[7,8->7,8]
