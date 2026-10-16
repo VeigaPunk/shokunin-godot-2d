@@ -1,0 +1,23 @@
+r91 green rows=258
+
+=== 20261016T003135088173Z: rows=272 ===
+verdict tally: {'PASS': 272, 'FAIL': 0}
+vs r91 green (77d2f7e): common=258 mismatches=0 only_in_first=0 only_in_second=14
+   only_in_second: ['r92_tilemap_atlas', 'r92_tilemap_cells', 'r92_tilemap_census', 'r92_tilemap_custom', 'r92_tilemap_encoding', 'r92_tilemap_fixinvalid', 'r92_tilemap_nav', 'r92_tilemap_nullts_crash', 'r92_tilemap_pattern', 'r92_tilemap_physics', 'r92_tilemap_quadrant', 'r92_tilemap_srcids', 'r92_tilemap_terrain', 'r92_tilemap_timing']
+
+--- vs r92 author runs4/20261016T000237277486Z (rows=272) ---
+vs r92 author runs4: common=272 mismatches=0 only_in_first=0 only_in_second=0
+
+--- vs r92 author runs5/20261016T000655453477Z (rows=272) ---
+vs r92 author runs5: common=272 mismatches=0 only_in_first=0 only_in_second=0
+
+=== 20261016T003533246361Z: rows=272 ===
+verdict tally: {'PASS': 272, 'FAIL': 0}
+vs r91 green (77d2f7e): common=258 mismatches=0 only_in_first=0 only_in_second=14
+   only_in_second: ['r92_tilemap_atlas', 'r92_tilemap_cells', 'r92_tilemap_census', 'r92_tilemap_custom', 'r92_tilemap_encoding', 'r92_tilemap_fixinvalid', 'r92_tilemap_nav', 'r92_tilemap_nullts_crash', 'r92_tilemap_pattern', 'r92_tilemap_physics', 'r92_tilemap_quadrant', 'r92_tilemap_srcids', 'r92_tilemap_terrain', 'r92_tilemap_timing']
+
+--- vs r92 author runs4/20261016T000237277486Z (rows=272) ---
+vs r92 author runs4: common=272 mismatches=0 only_in_first=0 only_in_second=0
+
+--- vs r92 author runs5/20261016T000655453477Z (rows=272) ---
+vs r92 author runs5: common=272 mismatches=0 only_in_first=0 only_in_second=0

@@ -1,0 +1,6 @@
+WARNING: Function make_polygons_from_outlines() is deprecated.
+Use NavigationServer2D.parse_source_geometry_data() and NavigationServer2D.bake_from_source_geometry_data() instead.
+     at: make_polygons_from_outlines (scene/resources/2d/navigation_polygon.cpp:316)
+     GDScript backtrace (most recent call first):
+         [0] _nav (res://tilemap_lattice.gd:879)
+         [1] _run (res://tilemap_lattice.gd:143)

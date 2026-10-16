@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=quadrant
+R92 quadrant default_quad=16
+R92 quadrant quad16_near=hit
+R92 quadrant quad16_far=hit
+R92 quadrant quad_set=2
+R92 quadrant quad2_same_frame_far=hit
+R92 quadrant quad2_f1_far=hit
+R92 quadrant quad2_near=hit
+R92 quadrant quad2_spread=0,0:hit|15,0:hit|16,0:hit|40,0:hit
+R92 quadrant quad16_spread=0,0:hit|15,0:hit|16,0:hit|40,0:hit
+R92 quadrant quad_restored=16
+R92 quadrant rendering_quad_untouched=16
+PASS tilemap_lattice quadrant default_quad=16 quad16_near=hit quad16_far=hit quad_set=2 quad2_same_frame_far=hit quad2_f1_far=hit quad2_near=hit quad2_spread=0,0:hit|15,0:hit|16,0:hit|40,0:hit quad16_spread=0,0:hit|15,0:hit|16,0:hit|40,0:hit quad_restored=16 rendering_quad_untouched=16

@@ -1,0 +1,21 @@
+scout -> committed fixture provenance (byte-identity, not a fold):
+
+a699138945ec7c1c1e6c97b6bf052d0941596610ad4cb9d08d184c07409d3dfb  corpus/live/r92-scout/probes/tilemap_lattice.gd
+a699138945ec7c1c1e6c97b6bf052d0941596610ad4cb9d08d184c07409d3dfb  corpus/live/r92-boundary/probes/scout_tilemap_lattice.gd
+a699138945ec7c1c1e6c97b6bf052d0941596610ad4cb9d08d184c07409d3dfb  corpus/live/r92-scout/proj/tilemap_lattice.gd
+a699138945ec7c1c1e6c97b6bf052d0941596610ad4cb9d08d184c07409d3dfb  corpus/live/r92-verifier/tree/corpus/fixtures/tilemap_lattice.gd
+a699138945ec7c1c1e6c97b6bf052d0941596610ad4cb9d08d184c07409d3dfb  corpus/fixtures/tilemap_lattice.gd
+
+diff -q of each copy vs the committed extraction:
+  IDENTICAL  corpus/live/r92-scout/probes/tilemap_lattice.gd
+  IDENTICAL  corpus/live/r92-boundary/probes/scout_tilemap_lattice.gd
+  IDENTICAL  corpus/live/r92-scout/proj/tilemap_lattice.gd
+
+harness delta 045d925 -> 5900431 (insertion-only):
+161	0	corpus/fixtures/run_battery.py
+@@ -598,0 +599,98 @@ CASES = [
+@@ -1067,0 +1166,44 @@ def main():
+@@ -1093,0 +1236,11 @@ def main():
+@@ -2750,0 +2904,8 @@ def main():
+
+other fixtures touched by 5900431: corpus/fixtures/run_battery.py corpus/fixtures/tilemap_lattice.gd 

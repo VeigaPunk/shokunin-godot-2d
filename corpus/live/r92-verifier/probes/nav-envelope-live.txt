@@ -1,0 +1,15 @@
+classify_process segment sha256=749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3
+OK   default rep1 rc=0 regions_f1=1 verdict=p0 want=p0 admitted=True
+OK   default rep2 rc=0 regions_f1=1 verdict=p0 want=p0 admitted=True
+OK   default rep3 rc=0 regions_f1=1 verdict=p0 want=p0 admitted=True
+OK   ff120 rep1 rc=0 regions_f1=1 verdict=p0 want=p0 admitted=True
+OK   ff120 rep2 rc=0 regions_f1=1 verdict=p0 want=p0 admitted=True
+OK   ff120 rep3 rc=0 regions_f1=1 verdict=p0 want=p0 admitted=True
+OK   ff150 rep1 rc=0 regions_f1=0 verdict=p1 want=p1 admitted=True
+OK   ff150 rep2 rc=0 regions_f1=0 verdict=p1 want=p1 admitted=True
+OK   ff150 rep3 rc=0 regions_f1=0 verdict=p1 want=p1 admitted=True
+OK   ff600 rep1 rc=0 regions_f1=0 verdict=p1 want=p1 admitted=True
+OK   ff600 rep2 rc=0 regions_f1=0 verdict=p1 want=p1 admitted=True
+OK   ff600 rep3 rc=0 regions_f1=0 verdict=p1 want=p1 admitted=True
+
+cells=4 reps=3 fails=0

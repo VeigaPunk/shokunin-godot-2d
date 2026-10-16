@@ -1,0 +1,71 @@
+harness sha256=5e5182815e6e3c503f40c78b6416b5cf6aaf9d0d3ea3ed7577594bd9f35aa509
+harness lines=4225
+
+CASES tuples=265
+tuple arities={5: 265}
+
+r92 rows=14 indices=247..260
+predecessor='nav_lattice_teardown_clean' successor='crash_spontaneous_sigabrt'
+  [247] r92_tilemap_census           script=tilemap_lattice.gd   flags=['--arm=census'] exit=0 scalar
+  [248] r92_tilemap_atlas            script=tilemap_lattice.gd   flags=['--arm=atlas'] exit=0 scalar
+  [249] r92_tilemap_cells            script=tilemap_lattice.gd   flags=['--arm=cells'] exit=0 scalar
+  [250] r92_tilemap_custom           script=tilemap_lattice.gd   flags=['--arm=custom'] exit=0 scalar
+  [251] r92_tilemap_terrain          script=tilemap_lattice.gd   flags=['--arm=terrain'] exit=0 scalar
+  [252] r92_tilemap_pattern          script=tilemap_lattice.gd   flags=['--arm=pattern'] exit=0 scalar
+  [253] r92_tilemap_encoding         script=tilemap_lattice.gd   flags=['--arm=encoding'] exit=0 scalar
+  [254] r92_tilemap_fixinvalid       script=tilemap_lattice.gd   flags=['--arm=fixinvalid'] exit=0 scalar
+  [255] r92_tilemap_srcids           script=tilemap_lattice.gd   flags=['--arm=srcids'] exit=0 scalar
+  [256] r92_tilemap_physics          script=tilemap_lattice.gd   flags=['--arm=physics'] exit=0 scalar
+  [257] r92_tilemap_timing           script=tilemap_lattice.gd   flags=['--arm=timing'] exit=0 scalar
+  [258] r92_tilemap_quadrant         script=tilemap_lattice.gd   flags=['--arm=quadrant'] exit=0 scalar
+  [259] r92_tilemap_nav              script=tilemap_lattice.gd   flags=['--arm=nav'] exit=0 ENVELOPE[2]
+  [260] r92_tilemap_nullts_crash     script=tilemap_lattice.gd   flags=['--arm=nullts'] exit=-6 scalar
+
+meta result rows=17 ['crash_exit_accept', 'probe_crash_exit', 'probe_descendant_error_spoof', 'probe_descendant_pipe_eof', 'probe_descendant_signature_spoof', 'probe_error_clause_surface', 'probe_export_launch', 'probe_godot_error', 'probe_midlineforge_gapladder', 'probe_midlineforge_ladder', 'probe_save_independent_process', 'probe_spontaneous_crash_classification', 'probe_timeout', 'probe_unrelated_error_', 'probe_unrelated_error_export_preset_missing', 'probe_unrelated_error_export_readiness', 'probe_while_live_signature_gate']
+
+expected_errors total entries=72
+r92 expected_errors cases=9 lines=18
+  r92_tilemap_atlas            'ERROR: Cannot create tile. The tile is outside the texture or tiles are already present in the space the tile would cover.'
+  r92_tilemap_atlas            'ERROR: The TileSetAtlasSource atlas has no tile at (5, 5).'
+  r92_tilemap_cells            'ERROR: Method/function failed. Returning: p_coords'
+  r92_tilemap_cells            'ERROR: The TileSetAtlasSource atlas has no tile at (9, 9).'
+  r92_tilemap_custom           'ERROR: TileSet has no layer with name: absent'
+  r92_tilemap_custom           'ERROR: TileSet has no layer with name: ghost'
+  r92_tilemap_custom           'ERROR: TileSet has no layer with name: tag'
+  r92_tilemap_encoding         'ERROR: Corrupted tile map data: tiles might be missing.'
+  r92_tilemap_encoding         'ERROR: Unsupported tile map data format: 513. Expected format ID lower or equal to: 0'
+  r92_tilemap_fixinvalid       'ERROR: No TileSet atlas source with id -1.'
+  r92_tilemap_fixinvalid       'ERROR: No TileSet atlas source with id 0.'
+  r92_tilemap_fixinvalid       'ERROR: No TileSet atlas source with id 42.'
+  r92_tilemap_pattern          'ERROR: Condition "!pattern.has(p_coords)" is true. Returning: TileSet::INVALID_SOURCE'
+  r92_tilemap_physics          'ERROR: Parameter "found" is null.'
+  r92_tilemap_srcids           'ERROR: Cannot create TileSet atlas source. Another atlas source exists with id 0.'
+  r92_tilemap_srcids           'ERROR: Condition "p_tile_set_source.is_null()" is true. Returning: TileSet::INVALID_SOURCE'
+  r92_tilemap_srcids           'ERROR: Provided source ID -3 is not valid. Negative source IDs are not allowed.'
+  r92_tilemap_terrain          'ERROR: Index p_terrain_set = 5 is out of bounds (tile_set->get_terrain_sets_count() = 1).'
+
+r92 required_stderr cases=1
+  r92_tilemap_nullts_crash     ('handle_crash: Program crashed with signal 11', '_nullts (res://tilemap_lattice.gd:927)')
+
+floor gate occurrences=1
+  r92_expected_errors_all_matched -> not e["dead_in_run"] for r in census_rows if r["case"].startswith("r92_"
+
+--- signature token inventory (delimiter-aware) ---
+  r92_tilemap_census           fields=37 atlas_defaults class_method_counts col_vis collision_enabled custom_data_layers enabled enum_neighbor enum_terrainset enum_tileshape invalid_source layer_defaults layer_no_collision_priority layer_props margins nav_enabled nav_layers nav_vis occl occlusion_layers padding phys_quad physics_layers region rend_quad separation sources terrain_sets tile_layout tile_offset_axis tile_shape tile_size tiles ts_defaults use_kinematic uv_clipping x_draw_rev y_sort_origin
+  r92_tilemap_atlas            fields=16 alt_count alt_id alt_list grid_size ids next_source_id sid_first src_class td_alt_distinct td_class td_missing tex_region tile_size_in_atlas tiles_after_dup tiles_after_remove tiles_list
+  r92_tilemap_cells            fields=28 bad_atlas_readback bad_atlas_td bad_src_in_used bad_src_readback clear_rect clear_used_n empty_alt empty_atlas empty_flip_h empty_flip_v empty_rect empty_source empty_td empty_transpose empty_used erase_absent_ok erase_src erase_used_n local_to_map_neg map_to_local_neg same_frame_td same_frame_used_has set_flip_h set_flip_v set_transpose surrounding used_by_id_bad used_by_id_src
+  r92_tilemap_custom           fields=19 default_hp default_tag dup_hp dup_is_distinct dup_layers ghost has_hp has_layer_hp hp_after_remove hp_wrongtype hp_wrongtype_still index_of_hp index_of_missing layer_hp layer_tag layers_after_remove missing tag_after_remove tag_alpha
+  r92_tilemap_terrain          fields=17 bad_set_used bad_terrain_used connect_dirt_used connect_used mode_default mode_set names no_terrain_used path_used peering_left peering_right peering_right_corner_valid peering_right_valid td_terrain td_terrain_default td_terrain_set td_terrain_set_default
+  r92_tilemap_pattern          fields=14 class cross_layer_atlas cross_layer_used empty_is_empty empty_size empty_used is_empty set_rect set_used size sparse_hole_src sparse_size sparse_used used
+  r92_tilemap_encoding         fields=28 alt_bytes alt_id_created arr_roundtrip_atlas arr_roundtrip_src arr_roundtrip_used empty_arr_len empty_bytes_len one_bytes one_bytes_len short_arr_len short_arr_used stride tomb_clear_bytes tomb_clear_len tomb_clear_set_bytes tomb_clear_set_len tomb_erase_bytes tomb_erase_len tomb_erase_used tomb_reset_bytes tomb_reset_len tomb_set_bytes truncated_len truncated_used two_arr_equals_bytes two_arr_len two_bytes two_bytes_len
+  r92_tilemap_fixinvalid       fields=4 after_used before_used removed_fixed_used removed_used
+  r92_tilemap_srcids           fields=13 add_colliding add_negative add_null auto_id count count_after_colliding count_after_null ids ids_after_refusals moved_ids next_after_auto next_after_explicit removed_ids
+  r92_tilemap_physics          fields=23 cl class cm collider coords_for_untracked_body disabled_same_frame enabled_same_frame erase_same_frame has_body_rid is_layer kinematic_body_tracked kinematic_coords kinematic_use layer_defaults m mat_null normal phys_layers poly_oneway poly_oneway_set prio shape travel
+  r92_tilemap_timing           fields=11 data_immediate_control empty erase_same_frame move_same_frame moved_back notify_same_frame set_same_frame_physics set_same_frame_td set_same_frame_used update_erase_same_frame update_set_same_frame
+  r92_tilemap_quadrant         fields=4 default_quad quad_restored quad_set rendering_quad_untouched
+  r92_tilemap_nav              fields=15 layer_nav_enabled layer_nav_vis layers nav_layer_defaults nav_layer_set nav_layers nav_map_valid nav_poly_default nav_poly_set regions_after_plain_cell regions_disabled_same_frame regions_empty regions_erased_same_frame regions_reenabled regions_same_frame
+  r92_tilemap_nullts_crash     fields=1 about_to_call_tile_data
+
+--- probe arms ---
+probe sha256=a699138945ec7c1c1e6c97b6bf052d0941596610ad4cb9d08d184c07409d3dfb lines=929
+probe arms=[]

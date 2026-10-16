@@ -1,0 +1,10 @@
+ERROR: Unsupported tile map data format: 513. Expected format ID lower or equal to: 0
+   at: set_tile_map_data_from_array (scene/2d/tile_map_layer.cpp:3238)
+   GDScript backtrace (most recent call first):
+       [0] _encoding (res://tilemap_lattice.gd:583)
+       [1] _run (res://tilemap_lattice.gd:131)
+ERROR: Corrupted tile map data: tiles might be missing.
+   at: set_tile_map_data_from_array (scene/2d/tile_map_layer.cpp:3244)
+   GDScript backtrace (most recent call first):
+       [0] _encoding (res://tilemap_lattice.gd:591)
+       [1] _run (res://tilemap_lattice.gd:131)

@@ -1,0 +1,14 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=census
+R92 census layer_defaults=enabled=1 collision_enabled=1 nav_enabled=1 use_kinematic=0 phys_quad=16 rend_quad=16 col_vis=0 nav_vis=0 y_sort_origin=0 x_draw_rev=0 occl=1
+R92 census layer_props=n16[collision_enabled,collision_visibility_mode,enabled,navigation_enabled,navigation_visibility_mode,occlusion_enabled,physics_quadrant_size,rendering_quadrant_size,tile_map_data,tile_set,use_kinematic_bodies,x_draw_order_reversed,y_sort_origin]
+R92 census layer_no_collision_priority=1
+R92 census ts_defaults=tile_size=16,16 physics_layers=0 nav_layers=0 custom_data_layers=0 terrain_sets=0 occlusion_layers=0 sources=0 tile_shape=0 tile_layout=0 tile_offset_axis=0 uv_clipping=0
+R92 census atlas_defaults=region=16,16 margins=0,0 separation=0,0 tiles=0 padding=1
+R92 census enum_terrainset=MATCH_CORNERS_AND_SIDES=0 MATCH_CORNERS=1 MATCH_SIDES=2
+R92 census enum_tileshape=SQUARE=0 ISOMETRIC=1 HALF_OFFSET_SQUARE=2 HEXAGON=3
+R92 census enum_neighbor=RIGHT_SIDE=0 RIGHT_CORNER=1 BOTTOM_RIGHT_SIDE=2 BOTTOM_RIGHT_CORNER=3 BOTTOM_SIDE=4 TOP_RIGHT_CORNER=15
+R92 census invalid_source=-1
+R92 census class_method_counts=TileMapLayer=58 TileSet=90 TileSetAtlasSource=41 TileData=54 TileMapPattern=10
+PASS tilemap_lattice census layer_defaults=enabled=1 collision_enabled=1 nav_enabled=1 use_kinematic=0 phys_quad=16 rend_quad=16 col_vis=0 nav_vis=0 y_sort_origin=0 x_draw_rev=0 occl=1 layer_props=n16[collision_enabled,collision_visibility_mode,enabled,navigation_enabled,navigation_visibility_mode,occlusion_enabled,physics_quadrant_size,rendering_quadrant_size,tile_map_data,tile_set,use_kinematic_bodies,x_draw_order_reversed,y_sort_origin] layer_no_collision_priority=1 ts_defaults=tile_size=16,16 physics_layers=0 nav_layers=0 custom_data_layers=0 terrain_sets=0 occlusion_layers=0 sources=0 tile_shape=0 tile_layout=0 tile_offset_axis=0 uv_clipping=0 atlas_defaults=region=16,16 margins=0,0 separation=0,0 tiles=0 padding=1 enum_terrainset=MATCH_CORNERS_AND_SIDES=0 MATCH_CORNERS=1 MATCH_SIDES=2 enum_tileshape=SQUARE=0 ISOMETRIC=1 HALF_OFFSET_SQUARE=2 HEXAGON=3 enum_neighbor=RIGHT_SIDE=0 RIGHT_CORNER=1 BOTTOM_RIGHT_SIDE=2 BOTTOM_RIGHT_CORNER=3 BOTTOM_SIDE=4 TOP_RIGHT_CORNER=15 invalid_source=-1 class_method_counts=TileMapLayer=58 TileSet=90 TileSetAtlasSource=41 TileData=54 TileMapPattern=10

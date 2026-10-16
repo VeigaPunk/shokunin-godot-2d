@@ -1,0 +1,3 @@
+[application]
+config/name="MechanicOneShotTest-r92verifier"
+config/features=PackedStringArray("4.7")

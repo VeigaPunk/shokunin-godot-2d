@@ -1,0 +1,20 @@
+payload[0] regions_f1=1: True
+payload[1] regions_f1=0: True
+payloads differ only in regions_f1: True
+both pin regions_f2=1: True
+
+receipts: payload[0]=90 payload[1]=46 NEITHER=0
+total=136
+
+--- distinct receipt shapes ---
+  n=136 residual-after-payload=''
+
+--- per-directory regime ---
+  corpus/live/r92-boundary/runs                           p0= 30 p1=  2
+  corpus/live/r92-boundary/runs/extreme                   p0=  4 p1=  0
+  corpus/live/r92-boundary/runs/reps                      p0= 40 p1= 20
+  corpus/live/r92-boundary/runs/scan                      p0=  0 p1= 14
+  corpus/live/r92-boundary/runs/scan2                     p0=  6 p1= 10
+  corpus/live/r92-scout/runs                              p0=  6 p1=  0
+  corpus/live/r92-scout/runs/loadtest                     p0=  1 p1=  0
+  corpus/live/r92-scout/runs/tps120                       p0=  3 p1=  0

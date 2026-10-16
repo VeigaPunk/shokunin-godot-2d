@@ -1,0 +1,34 @@
+
+================================================================
+handle_crash: Program crashed with signal 11
+Engine version: Godot Engine v4.7.2.stable.arch_linux (ed1daf0bf001b61586d9930840f2f1394092c079)
+Dumping the backtrace. Please include this when reporting the bug on: https://github.com/godotengine/godot/issues
+Load address: 561c9b81c000
+
+[1] 7f035323e6f0 (libc.so.6+3e6f0) - /usr/lib/libc.so.6(+0x3e6f0) [0x7f035323e6f0]
+[2] 561ca0af87f0 (main+52dc7f0) - godot(+0x52dc7f0) [0x561ca0af87f0]
+[3] 561ca042ebcc (main+4c12bcc) - godot(+0x4c12bcc) [0x561ca042ebcc]
+[4] 561ca046c400 (main+4c50400) - godot(+0x4c50400) [0x561ca046c400]
+[5] 561c9d15f91c (main+194391c) - godot(+0x194391c) [0x561c9d15f91c]
+[6] 561c9cfe5106 (main+17c9106) - godot(+0x17c9106) [0x561c9cfe5106]
+[7] 561ca206fe9e (main+6853e9e) - godot(+0x6853e9e) [0x561ca206fe9e]
+[8] 561ca1d3d4ca (main+65214ca) - godot(+0x65214ca) [0x561ca1d3d4ca]
+[9] 561c9d1728af (main+19568af) - godot(+0x19568af) [0x561c9d1728af]
+[10] 561c9cfe5106 (main+17c9106) - godot(+0x17c9106) [0x561c9cfe5106]
+[11] 561ca206fe9e (main+6853e9e) - godot(+0x6853e9e) [0x561ca206fe9e]
+[12] 561ca1cdd863 (main+64c1863) - godot(+0x64c1863) [0x561ca1cdd863]
+[13] 561ca206bf25 (main+684ff25) - godot(+0x684ff25) [0x561ca206bf25]
+[14] 561ca2075b44 (main+6859b44) - godot(+0x6859b44) [0x561ca2075b44]
+[15] 561c9f95ff78 (main+4143f78) - godot(+0x4143f78) [0x561c9f95ff78]
+[16] 561c9ca06278 (main+11ea278) - godot(+0x11ea278) [0x561c9ca06278]
+[17] 561c9c878062 (main+105c062) - godot(+0x105c062) [0x561c9c878062]
+[18] 7f0353227781 (libc.so.6+27781) - /usr/lib/libc.so.6(+0x27781) [0x7f0353227781]
+[19] 7f03532278b9 (libc.so.6+278b9) - /usr/lib/libc.so.6(__libc_start_main+0x89) [0x7f03532278b9]
+[20] 561c9c8ec6d5 (main+10d06d5) - godot(+0x10d06d5) [0x561c9c8ec6d5]
+-- END OF C++ BACKTRACE --
+================================================================
+GDScript backtrace (most recent call first):
+    [0] _nullts (res://tilemap_lattice.gd:927)
+    [1] _run (res://tilemap_lattice.gd:145)
+-- END OF GDSCRIPT BACKTRACE --
+================================================================

@@ -1,0 +1,2 @@
+extracted fixtures hashed (git blob sha1) = 78
+mismatches = 0

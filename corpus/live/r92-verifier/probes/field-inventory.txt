@@ -1,0 +1,35 @@
+probe _it keys emitted: 270
+r92_tilemap_census           pinned_keys= 34 not_emitted_by_any_it=['col_vis', 'collision_enabled', 'custom_data_layers', 'margins', 'nav_enabled', 'nav_vis', 'occl', 'occlusion_layers', 'padding', 'phys_quad', 'physics_layers', 'rend_quad', 'separation', 'sources', 'terrain_sets', 'tile_layout', 'tile_offset_axis', 'tile_shape', 'tiles', 'use_kinematic', 'uv_clipping', 'x_draw_rev', 'y_sort_origin']
+r92_tilemap_atlas            pinned_keys= 26 not_emitted_by_any_it=[]
+r92_tilemap_cells            pinned_keys= 39 not_emitted_by_any_it=[]
+r92_tilemap_custom           pinned_keys= 26 not_emitted_by_any_it=[]
+r92_tilemap_terrain          pinned_keys= 27 not_emitted_by_any_it=[]
+r92_tilemap_pattern          pinned_keys= 21 not_emitted_by_any_it=[]
+r92_tilemap_encoding         pinned_keys= 28 not_emitted_by_any_it=[]
+r92_tilemap_fixinvalid       pinned_keys=  6 not_emitted_by_any_it=[]
+r92_tilemap_srcids           pinned_keys= 18 not_emitted_by_any_it=[]
+r92_tilemap_physics          pinned_keys= 30 not_emitted_by_any_it=['cm', 'is_layer', 'm', 'mat_null', 'normal', 'prio', 'shape', 'travel']
+r92_tilemap_timing           pinned_keys= 18 not_emitted_by_any_it=[]
+r92_tilemap_quadrant         pinned_keys= 11 not_emitted_by_any_it=[]
+r92_tilemap_nav              pinned_keys= 19 not_emitted_by_any_it=['value1']
+r92_tilemap_nullts_crash     pinned_keys=  1 not_emitted_by_any_it=[]
+
+total pinned keys=304  probe emits=270
+probe keys not pinned by any r92 row (4): ['src_after_set', 'td_after_set', 'tileset_null', 'used_after_set']
+
+--- NOTE (verifier) ---
+The `not_emitted_by_any_it` lists above are NOT defects: they are sub-fields
+inside COMPOSITE `_it` values.  The probe emits e.g. ONE `_it("layer_defaults",
+"enabled=1 collision_enabled=1 ... y_sort_origin=0")` whose value text carries
+23 `key=value` tokens; `_it("atlas_defaults", "region=16,16 ... tiles=0")`,
+`_it("nav_layer_defaults", "layers=1 value1=1")`, and
+`_it("layer_defaults", "cl=1 cm=1 prio=1.0000 mat_null=1")` (physics) /
+`_it("collider", "class=TileMapLayer travel=... is_layer=1 shape=true")` are the
+same shape.  The independent labrat probe (agent 9c32ddd9) enumerated the
+`_it` CALL-SITE keys per arm and found exact set equality with the committed
+signature for all 13 PASS arms (census 10, atlas 26, cells 39, custom 26,
+terrain 27, pattern 21, encoding 28, fixinvalid 6, srcids 18, physics 22,
+timing 18, quadrant 11, nav 18).  The decisive empirical form is
+probes/signature-coverage.txt: 598/598 committed receipts are byte-identical to
+one of the committed full-line signatures, so every pinned token is emitted at
+runtime by construction.

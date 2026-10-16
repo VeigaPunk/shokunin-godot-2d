@@ -1,0 +1,68 @@
+one_bytes              len= 14 pinned_len=  14 header=0 records=1 remainder=0
+      rec x=   3 y=   4 f2=     0 f3=     1 f4=     0 f5=     0
+two_bytes              len= 26 pinned_len=  26 header=0 records=2 remainder=0
+      rec x=   3 y=   4 f2=     0 f3=     1 f4=     0 f5=     0
+      rec x=   7 y=  -2 f2=     0 f3=     0 f4=     1 f5=     0
+alt_bytes              len= 26 pinned_len= n/a header=0 records=2 remainder=0
+      rec x=   3 y=   4 f2=     0 f3=     1 f4=     0 f5=     1
+      rec x=   7 y=  -2 f2=    -1 f3=    -1 f4=    -1 f5=    -1
+tomb_set_bytes         len= 14 pinned_len= n/a header=0 records=1 remainder=0
+      rec x=   1 y=   1 f2=     0 f3=     0 f4=     0 f5=     0
+tomb_erase_bytes       len= 14 pinned_len= n/a header=0 records=1 remainder=0
+      rec x=   1 y=   1 f2=    -1 f3=    -1 f4=    -1 f5=    -1
+tomb_reset_bytes       len= 14 pinned_len= n/a header=0 records=1 remainder=0
+      rec x=   1 y=   1 f2=     0 f3=     0 f4=     0 f5=     0
+tomb_clear_bytes       len= 14 pinned_len= n/a header=0 records=1 remainder=0
+      rec x=   1 y=   1 f2=    -1 f3=    -1 f4=    -1 f5=    -1
+tomb_clear_set_bytes   len= 26 pinned_len= n/a header=0 records=2 remainder=0
+      rec x=   1 y=   1 f2=    -1 f3=    -1 f4=    -1 f5=    -1
+      rec x=   5 y=   5 f2=     0 f3=     0 f4=     0 f5=     0
+OK   one_bytes: header==0
+OK   one_bytes: len==2+12k
+OK   one_bytes: len matches pinned
+OK   one_bytes: no remainder
+OK   two_bytes: header==0
+OK   two_bytes: len==2+12k
+OK   two_bytes: len matches pinned
+OK   two_bytes: no remainder
+OK   alt_bytes: header==0
+OK   alt_bytes: len==2+12k
+OK   alt_bytes: no remainder
+OK   tomb_set_bytes: header==0
+OK   tomb_set_bytes: len==2+12k
+OK   tomb_set_bytes: no remainder
+OK   tomb_erase_bytes: header==0
+OK   tomb_erase_bytes: len==2+12k
+OK   tomb_erase_bytes: no remainder
+OK   tomb_reset_bytes: header==0
+OK   tomb_reset_bytes: len==2+12k
+OK   tomb_reset_bytes: no remainder
+OK   tomb_clear_bytes: header==0
+OK   tomb_clear_bytes: len==2+12k
+OK   tomb_clear_bytes: no remainder
+OK   tomb_clear_set_bytes: header==0
+OK   tomb_clear_set_bytes: len==2+12k
+OK   tomb_clear_set_bytes: no remainder
+OK   one_bytes cell == (3,4) src 0 atlas (1,0)
+OK   two_bytes records == [(3,4,0,1,0,0), (7,-2,0,0,1,0)]
+OK   stride == 12
+OK   two_bytes_len - one_bytes_len == stride
+OK   arr_roundtrip_used == n2[3,4;7,-2]
+OK   arr_roundtrip_atlas == 0,1 (the (7,-2) record's atlas)
+OK   alt_bytes rec0 == (3,4,0,1,0,alt_id)
+OK   alt_bytes rec1 == tombstoned (7,-2) with f3..f5 == -1
+OK   alt_bytes: exactly one live (non-tombstoned) record
+OK   tomb_erase: length unchanged (high-water mark)
+OK   tomb_erase: x/y preserved, 8-byte tail (fields 2..5) set to -1
+OK   tomb_erase bytes == tomb_clear bytes (one tombstone encoding)
+OK   tombstone tail is exactly 8 x 0xFF at the record end
+OK   tomb_erase_used == n0[]
+OK   tomb_reset == tomb_set (re-set rewrites the record)
+OK   tomb_clear: length unchanged, every field after f1 tombstoned
+OK   tomb_clear_set: 2 records, rec0 tombstoned, rec1 == (5,5,0,0,0,0)
+OK   tomb_clear_set_len == 2+2*12
+OK   truncated_len == 14 (one record survives 20-element input)
+OK   short_arr_len == 0
+OK   20-element input leaves a 6-byte partial record (corrupted)
+
+checks=47 fails=0

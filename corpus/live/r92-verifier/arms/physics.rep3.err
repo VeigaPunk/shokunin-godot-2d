@@ -1,0 +1,8 @@
+ERROR: Parameter "found" is null.
+   at: get_coords_for_body_rid (scene/2d/tile_map_layer.cpp:3124)
+   GDScript backtrace (most recent call first):
+       [0] _physics (res://tilemap_lattice.gd:729)
+ERROR: Parameter "found" is null.
+   at: get_coords_for_body_rid (scene/2d/tile_map_layer.cpp:3124)
+   GDScript backtrace (most recent call first):
+       [0] _physics (res://tilemap_lattice.gd:740)

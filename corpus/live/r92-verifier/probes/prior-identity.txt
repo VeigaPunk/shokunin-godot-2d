@@ -1,0 +1,47 @@
+r91 green rows=258
+
+=== 20261016T001542945819Z: rows=272 ===
+verdict tally: {'PASS': 271, 'FAIL': 1}
+vs r91 green (77d2f7e): common=258 mismatches=1 only_in_first=0 only_in_second=14
+   MISMATCH nav_lattice_path
+     first =('PASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000', 'PASS', 0, None)
+     second=('PASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000', 'FAIL', 0, None)
+   only_in_second: ['r92_tilemap_atlas', 'r92_tilemap_cells', 'r92_tilemap_census', 'r92_tilemap_custom', 'r92_tilemap_encoding', 'r92_tilemap_fixinvalid', 'r92_tilemap_nav', 'r92_tilemap_nullts_crash', 'r92_tilemap_pattern', 'r92_tilemap_physics', 'r92_tilemap_quadrant', 'r92_tilemap_srcids', 'r92_tilemap_terrain', 'r92_tilemap_timing']
+
+--- vs r92 author runs4/20261016T000237277486Z (rows=272) ---
+vs r92 author runs4: common=272 mismatches=1 only_in_first=0 only_in_second=0
+   MISMATCH nav_lattice_path
+     first =('PASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000', 'PASS', 0, None)
+     second=('PASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000', 'FAIL', 0, None)
+
+--- vs r92 author runs5/20261016T000655453477Z (rows=272) ---
+vs r92 author runs5: common=272 mismatches=1 only_in_first=0 only_in_second=0
+   MISMATCH nav_lattice_path
+     first =('PASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000', 'PASS', 0, None)
+     second=('PASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000', 'FAIL', 0, None)
+
+=== 20261016T002302210530Z: rows=272 ===
+verdict tally: {'PASS': 270, 'FAIL': 2}
+vs r91 green (77d2f7e): common=258 mismatches=1 only_in_first=0 only_in_second=14
+   MISMATCH overlap
+     first =('PASS packed_scene=true', 'PASS', 0, None)
+     second=('PASS packed_scene=true', 'FAIL', 1, None)
+   only_in_second: ['r92_tilemap_atlas', 'r92_tilemap_cells', 'r92_tilemap_census', 'r92_tilemap_custom', 'r92_tilemap_encoding', 'r92_tilemap_fixinvalid', 'r92_tilemap_nav', 'r92_tilemap_nullts_crash', 'r92_tilemap_pattern', 'r92_tilemap_physics', 'r92_tilemap_quadrant', 'r92_tilemap_srcids', 'r92_tilemap_terrain', 'r92_tilemap_timing']
+
+--- vs r92 author runs4/20261016T000237277486Z (rows=272) ---
+vs r92 author runs4: common=272 mismatches=2 only_in_first=0 only_in_second=0
+   MISMATCH overlap
+     first =('PASS packed_scene=true', 'PASS', 0, None)
+     second=('PASS packed_scene=true', 'FAIL', 1, None)
+   MISMATCH r92_tilemap_nullts_crash
+     first =('R92 nullts about_to_call_tile_data=1', 'PASS', -6, None)
+     second=('R92 nullts about_to_call_tile_data=1', 'FAIL', None, 'TIMEOUT after 8 seconds')
+
+--- vs r92 author runs5/20261016T000655453477Z (rows=272) ---
+vs r92 author runs5: common=272 mismatches=2 only_in_first=0 only_in_second=0
+   MISMATCH overlap
+     first =('PASS packed_scene=true', 'PASS', 0, None)
+     second=('PASS packed_scene=true', 'FAIL', 1, None)
+   MISMATCH r92_tilemap_nullts_crash
+     first =('R92 nullts about_to_call_tile_data=1', 'PASS', -6, None)
+     second=('R92 nullts about_to_call_tile_data=1', 'FAIL', None, 'TIMEOUT after 8 seconds')

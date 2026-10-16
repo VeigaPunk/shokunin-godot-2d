@@ -1,0 +1,16 @@
+arm             n  EXACT  MATCH  MISS  miss-shapes
+atlas          36     36      0     0
+cells          36     36      0     0
+census         36     36      0     0
+custom         36     36      0     0
+encoding       36     36      0     0
+fixinvalid     36     36      0     0
+nav           136    136      0     0
+pattern        36     36      0     0
+physics        46     46      0     0
+quadrant       43     43      0     0
+srcids         36     36      0     0
+terrain        36     36      0     0
+timing         46     46      0     0
+
+TOTAL receipts=595 EXACT=595 misses=0

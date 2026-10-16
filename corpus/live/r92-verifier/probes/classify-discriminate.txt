@@ -1,0 +1,30 @@
+classify_process segment sha256=749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3
+
+--- allowlist load-bearing (real fresh receipts) ---
+  r92_tilemap_atlas            with_allowlist=True  bare=False ERROR_lines=2
+  r92_tilemap_cells            with_allowlist=True  bare=False ERROR_lines=5
+  r92_tilemap_custom           with_allowlist=True  bare=False ERROR_lines=4
+  r92_tilemap_terrain          with_allowlist=True  bare=False ERROR_lines=1
+  r92_tilemap_pattern          with_allowlist=True  bare=False ERROR_lines=2
+  r92_tilemap_encoding         with_allowlist=True  bare=False ERROR_lines=2
+  r92_tilemap_fixinvalid       with_allowlist=True  bare=False ERROR_lines=4
+  r92_tilemap_srcids           with_allowlist=True  bare=False ERROR_lines=3
+  r92_tilemap_physics          with_allowlist=True  bare=False ERROR_lines=2
+
+--- nullts crash row: real + forged shapes ---
+  OK   real receipt (rc=-6, sig on stdout, fragments on stderr): verdict=True want=True
+  OK   fragments moved to stdout, stderr empty: verdict=False want=False
+  OK   signature on stderr only: verdict=False want=False
+  OK   signature absent everywhere: verdict=False want=False
+  OK   rc flipped to 0: verdict=False want=False
+  OK   one fragment removed from stderr: verdict=False want=False
+  OK   foreign SIGSEGV class (stderr has no pinned fragments): verdict=False want=False
+
+--- nav envelope: both payloads admitted, mutations rejected ---
+  live nav receipt rc=0 payload[0] present=True payload[1] present=False
+  OK   nav mutation regions_f1 -> regions_f1=7: verdict=False want=False
+  OK   nav mutation regions_f2 -> regions_f2=0: verdict=False want=False
+  OK   nav mutation regions_reenabled -> regions_reenabled=0: verdict=False want=False
+  OK   nav mutation nav_map_valid -> nav_map_valid=0: verdict=False want=False
+
+checks=32 fails=0

@@ -1,0 +1,46 @@
+classify_process segment sha256=749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3
+classify_streams segment sha256=a886968fd3acf4dec4192e8141de44f0da7dddec9aacfceb5f5d3cafab68c6d7
+OK   r92_tilemap_atlas rep1 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_atlas rep2 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_atlas rep3 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_cells rep1 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_cells rep2 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_cells rep3 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_census rep1 rc=0 payloads_on_stdout=[0]
+OK   r92_tilemap_census rep2 rc=0 payloads_on_stdout=[0]
+OK   r92_tilemap_census rep3 rc=0 payloads_on_stdout=[0]
+OK   r92_tilemap_custom rep1 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_custom rep2 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_custom rep3 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_encoding rep1 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_encoding rep2 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_encoding rep3 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_fixinvalid rep1 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_fixinvalid rep2 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_fixinvalid rep3 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_nav rep1 rc=0 payloads_on_stdout=[0]
+OK   r92_tilemap_nav rep2 rc=0 payloads_on_stdout=[0]
+OK   r92_tilemap_nav rep3 rc=0 payloads_on_stdout=[0]
+FAIL r92_tilemap_nullts_crash rep1 rc=None payloads_on_stdout=[0]
+OK   r92_tilemap_nullts_crash rep2 rc=-6 payloads_on_stdout=[0]
+OK   r92_tilemap_nullts_crash rep3 rc=-6 payloads_on_stdout=[0]
+OK   r92_tilemap_pattern rep1 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_pattern rep2 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_pattern rep3 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_physics rep1 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_physics rep2 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_physics rep3 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_quadrant rep1 rc=0 payloads_on_stdout=[0]
+OK   r92_tilemap_quadrant rep2 rc=0 payloads_on_stdout=[0]
+OK   r92_tilemap_quadrant rep3 rc=0 payloads_on_stdout=[0]
+OK   r92_tilemap_srcids rep1 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_srcids rep2 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_srcids rep3 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_terrain rep1 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_terrain rep2 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_terrain rep3 rc=0 payloads_on_stdout=[0] bare=False
+OK   r92_tilemap_timing rep1 rc=0 payloads_on_stdout=[0]
+OK   r92_tilemap_timing rep2 rc=0 payloads_on_stdout=[0]
+OK   r92_tilemap_timing rep3 rc=0 payloads_on_stdout=[0]
+
+TOTAL row-reps=42 fails=1

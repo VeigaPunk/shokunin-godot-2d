@@ -1,0 +1,39 @@
+case                           rep1   rep2   rep3   rep4   rep5   exits
+r92_tilemap_atlas              PASS   PASS   PASS   PASS   PASS   [0, 0, 0, 0, 0]
+r92_tilemap_cells              PASS   PASS   PASS   PASS   PASS   [0, 0, 0, 0, 0]
+r92_tilemap_census             PASS   PASS   PASS   PASS   PASS   [0, 0, 0, 0, 0]
+r92_tilemap_custom             PASS   PASS   PASS   PASS   PASS   [0, 0, 0, 0, 0]
+r92_tilemap_encoding           PASS   PASS   PASS   PASS   PASS   [0, 0, 0, 0, 0]
+r92_tilemap_fixinvalid         PASS   PASS   PASS   PASS   PASS   [0, 0, 0, 0, 0]
+r92_tilemap_nav                PASS   PASS   PASS   PASS   PASS   [0, 0, 0, 0, 0]
+r92_tilemap_nullts_crash       PASS   FAIL   PASS   PASS   FAIL   [-6, None, -6, -6, None]
+r92_tilemap_pattern            PASS   PASS   PASS   PASS   PASS   [0, 0, 0, 0, 0]
+r92_tilemap_physics            PASS   PASS   PASS   PASS   PASS   [0, 0, 0, 0, 0]
+r92_tilemap_quadrant           PASS   PASS   PASS   PASS   PASS   [0, 0, 0, 0, 0]
+r92_tilemap_srcids             PASS   PASS   PASS   PASS   PASS   [0, 0, 0, 0, 0]
+r92_tilemap_terrain            PASS   PASS   PASS   PASS   PASS   [0, 0, 0, 0, 0]
+r92_tilemap_timing             PASS   PASS   PASS   PASS   PASS   [0, 0, 0, 0, 0]
+
+r92_tilemap_atlas            distinct observed-output shapes across 5 reps: 1
+r92_tilemap_cells            distinct observed-output shapes across 5 reps: 1
+r92_tilemap_census           distinct observed-output shapes across 5 reps: 1
+r92_tilemap_custom           distinct observed-output shapes across 5 reps: 1
+r92_tilemap_encoding         distinct observed-output shapes across 5 reps: 1
+r92_tilemap_fixinvalid       distinct observed-output shapes across 5 reps: 1
+r92_tilemap_nav              distinct observed-output shapes across 5 reps: 1
+r92_tilemap_pattern          distinct observed-output shapes across 5 reps: 1
+r92_tilemap_physics          distinct observed-output shapes across 5 reps: 1
+r92_tilemap_quadrant         distinct observed-output shapes across 5 reps: 1
+r92_tilemap_srcids           distinct observed-output shapes across 5 reps: 1
+r92_tilemap_terrain          distinct observed-output shapes across 5 reps: 1
+r92_tilemap_timing           distinct observed-output shapes across 5 reps: 1
+rep1 nav payload=p0
+rep2 nav payload=p0
+rep3 nav payload=p0
+rep4 nav payload=p0
+rep5 nav payload=p0
+rep1 r92_expected_errors_all_matched=True dead_entries=0 r87..r91 gates=[True, True, True, True, True, True, True]
+rep2 r92_expected_errors_all_matched=True dead_entries=0 r87..r91 gates=[True, True, True, True, True, True, True]
+rep3 r92_expected_errors_all_matched=True dead_entries=0 r87..r91 gates=[True, True, True, True, True, True, True]
+rep4 r92_expected_errors_all_matched=True dead_entries=0 r87..r91 gates=[True, True, True, True, True, True, True]
+rep5 r92_expected_errors_all_matched=True dead_entries=0 r87..r91 gates=[True, True, True, True, True, True, True]
