@@ -1,0 +1,4 @@
+[ROWS(full-line)] rows=17 receipts_checked=150 rejected=[]
+[ROWS_PREFIX(stable-prefix, GATING)] rows=17 receipts_checked=150 rejected=[]
+classify_process segment sha256=749fa0607e7707e6
+full_line_rejections=0  prefix_rejections=0

@@ -1,0 +1,7 @@
+[application]
+config/name="MechanicOneShotTest-r95-scribe-fresh"
+config/features=PackedStringArray("4.7")
+
+[physics]
+
+2d/run_on_separate_thread=true

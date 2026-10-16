@@ -1,0 +1,262 @@
+{
+ "dss_lattice_census": {
+  "cell": "dss_census",
+  "receipts": 6,
+  "hits": 6
+ },
+ "dss_lattice_ray_flags": {
+  "cell": "dss_ray_flags",
+  "receipts": 9,
+  "hits": 9
+ },
+ "dss_lattice_ray_geom": {
+  "cell": "dss_ray_geom",
+  "receipts": 9,
+  "hits": 9
+ },
+ "dss_lattice_ray_order": {
+  "cell": "dss_ray_order",
+  "receipts": 9,
+  "hits": 9
+ },
+ "dss_lattice_ray_order_rev": {
+  "cell": "dss_ray_order_rev",
+  "receipts": 9,
+  "hits": 9
+ },
+ "dss_lattice_point_cap": {
+  "cell": "dss_point_cap",
+  "receipts": 9,
+  "hits": 9
+ },
+ "dss_lattice_point_cap_rev": {
+  "cell": "dss_point_cap_rev",
+  "receipts": 9,
+  "hits": 9
+ },
+ "dss_lattice_point_edge": {
+  "cell": "dss_point_edge",
+  "receipts": 9,
+  "hits": 9
+ },
+ "dss_lattice_point_canvas": {
+  "cell": "dss_point_canvas",
+  "receipts": 9,
+  "hits": 9
+ },
+ "dss_lattice_shape": {
+  "cell": "shape_lattice",
+  "receipts": 0,
+  "hits": 0
+ },
+ "dss_lattice_shape_rev": {
+  "cell": "shape_lattice_rev",
+  "receipts": 0,
+  "hits": 0
+ },
+ "dss_lattice_order_core": {
+  "cell": "dss_order_core",
+  "receipts": 9,
+  "hits": 9
+ },
+ "dss_lattice_order_core_rev": {
+  "cell": "dss_order_core_rev",
+  "receipts": 9,
+  "hits": 9
+ },
+ "dss_lattice_layer_forms": {
+  "cell": "dss_layer_forms",
+  "receipts": 9,
+  "hits": 9
+ },
+ "dss_lattice_cast_rest": {
+  "cell": "dss_cast_rest",
+  "receipts": 9,
+  "hits": 9
+ },
+ "dss_lattice_excl_space": {
+  "cell": "dss_excl_space",
+  "receipts": 9,
+  "hits": 9
+ },
+ "dss_lattice_fresh": {
+  "cell": "dss_fresh",
+  "receipts": 9,
+  "hits": 9
+ },
+ "r95b_order_canon": {
+  "cell": "canon",
+  "receipts": 24,
+  "hits": 24
+ },
+ "r95b_order_periodx_k2": {
+  "cell": "periodx_k2",
+  "receipts": 2,
+  "hits": 2
+ },
+ "r95b_order_periodx_k3": {
+  "cell": "periodx_k3",
+  "receipts": 2,
+  "hits": 2
+ },
+ "r95b_order_periodx_k4": {
+  "cell": "periodx_k4",
+  "receipts": 1,
+  "hits": 1
+ },
+ "r95b_order_periodx_k5": {
+  "cell": "periodx_k5",
+  "receipts": 2,
+  "hits": 2
+ },
+ "r95b_order_periodx_k5s8": {
+  "cell": "periodx_k5s8",
+  "receipts": 2,
+  "hits": 2
+ },
+ "r95b_order_periodx_k6": {
+  "cell": "periodx_k6",
+  "receipts": 1,
+  "hits": 1
+ },
+ "r95b_order_periodx_k7": {
+  "cell": "periodx_k7",
+  "receipts": 1,
+  "hits": 1
+ },
+ "r95b_order_periodx_k8": {
+  "cell": "periodx_k8",
+  "receipts": 1,
+  "hits": 1
+ },
+ "r95b_order_periodx_k10": {
+  "cell": "periodx_k10",
+  "receipts": 1,
+  "hits": 1
+ },
+ "r95b_order_period_k5": {
+  "cell": "period_k5",
+  "receipts": 9,
+  "hits": 9
+ },
+ "r95b_order_perm0": {
+  "cell": "perm0",
+  "receipts": 14,
+  "hits": 14
+ },
+ "r95b_order_perm1": {
+  "cell": "perm1",
+  "receipts": 13,
+  "hits": 13
+ },
+ "r95b_order_perm2": {
+  "cell": "perm2",
+  "receipts": 5,
+  "hits": 5
+ },
+ "r95b_order_perm3": {
+  "cell": "perm3",
+  "receipts": 3,
+  "hits": 3
+ },
+ "r95b_order_perm4": {
+  "cell": "perm4",
+  "receipts": 5,
+  "hits": 5
+ },
+ "r95b_order_perm5": {
+  "cell": "perm5",
+  "receipts": 3,
+  "hits": 3
+ },
+ "r95b_order_perm6": {
+  "cell": "perm6",
+  "receipts": 3,
+  "hits": 3
+ },
+ "r95b_order_perm7": {
+  "cell": "perm7",
+  "receipts": 3,
+  "hits": 3
+ },
+ "r95b_order_scoutrev": {
+  "cell": "scoutrev",
+  "receipts": 4,
+  "hits": 4
+ },
+ "r95b_order_celloff_x0": {
+  "cell": "celloff_x0",
+  "receipts": 8,
+  "hits": 8
+ },
+ "r95b_order_celloff_x1000": {
+  "cell": "celloff_x1000",
+  "receipts": 5,
+  "hits": 5
+ },
+ "r95b_order_celloff_y1000": {
+  "cell": "celloff_y1000",
+  "receipts": 5,
+  "hits": 5
+ },
+ "r95b_order_twopiles": {
+  "cell": "twopiles",
+  "receipts": 9,
+  "hits": 9
+ },
+ "r95b_order_warm_k32": {
+  "cell": "warm_k32",
+  "receipts": 4,
+  "hits": 4
+ },
+ "r95b_order_warm_keep8": {
+  "cell": "warm_keep8",
+  "receipts": 4,
+  "hits": 4
+ },
+ "r95b_order_free_ab": {
+  "cell": "free_ab",
+  "receipts": 4,
+  "hits": 4
+ },
+ "r95b_order_free_ba": {
+  "cell": "free_ba",
+  "receipts": 4,
+  "hits": 4
+ },
+ "r95b_order_readd_a": {
+  "cell": "readd_a",
+  "receipts": 4,
+  "hits": 4
+ },
+ "r95b_order_cap40_p0": {
+  "cell": "cap40_p0",
+  "receipts": 7,
+  "hits": 7
+ },
+ "r95b_order_cap40_p1": {
+  "cell": "cap40_p1",
+  "receipts": 5,
+  "hits": 5
+ },
+ "r95b_order_cap40_p2": {
+  "cell": "cap40_p2",
+  "receipts": 3,
+  "hits": 3
+ },
+ "r95b_order_layers_k0": {
+  "cell": "layers_k0",
+  "receipts": 3,
+  "hits": 3
+ },
+ "r95b_order_layers_k1": {
+  "cell": "layers_k1",
+  "receipts": 7,
+  "hits": 7
+ },
+ "r95b_order_rigid": {
+  "cell": "rigid",
+  "receipts": 5,
+  "hits": 5
+ }
+}

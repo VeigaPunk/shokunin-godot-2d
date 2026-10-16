@@ -1,0 +1,434 @@
+{
+  "baseline_fail": [],
+  "baseline_pass": 52,
+  "classifier_segment_lines": 18,
+  "classifier_segment_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+  "output_accepted_examples": [],
+  "output_mutants": 1492,
+  "output_mutants_per_row": {
+    "dss_lattice_cast_rest": [
+      42,
+      42
+    ],
+    "dss_lattice_census": [
+      48,
+      48
+    ],
+    "dss_lattice_excl_space": [
+      14,
+      14
+    ],
+    "dss_lattice_fresh": [
+      19,
+      19
+    ],
+    "dss_lattice_layer_forms": [
+      18,
+      18
+    ],
+    "dss_lattice_order_core": [
+      0,
+      0
+    ],
+    "dss_lattice_order_core_rev": [
+      0,
+      0
+    ],
+    "dss_lattice_point_canvas": [
+      15,
+      15
+    ],
+    "dss_lattice_point_cap": [
+      0,
+      0
+    ],
+    "dss_lattice_point_cap_rev": [
+      0,
+      0
+    ],
+    "dss_lattice_point_edge": [
+      15,
+      15
+    ],
+    "dss_lattice_ray_flags": [
+      28,
+      28
+    ],
+    "dss_lattice_ray_geom": [
+      32,
+      32
+    ],
+    "dss_lattice_ray_order": [
+      18,
+      18
+    ],
+    "dss_lattice_ray_order_rev": [
+      18,
+      18
+    ],
+    "dss_lattice_shape": [
+      15,
+      15
+    ],
+    "dss_lattice_shape_rev": [
+      15,
+      15
+    ],
+    "r95b_order_canon": [
+      43,
+      43
+    ],
+    "r95b_order_cap40_p0": [
+      40,
+      40
+    ],
+    "r95b_order_cap40_p1": [
+      40,
+      40
+    ],
+    "r95b_order_cap40_p2": [
+      40,
+      40
+    ],
+    "r95b_order_celloff_x0": [
+      40,
+      40
+    ],
+    "r95b_order_celloff_x1000": [
+      40,
+      40
+    ],
+    "r95b_order_celloff_y1000": [
+      40,
+      40
+    ],
+    "r95b_order_free_ab": [
+      38,
+      38
+    ],
+    "r95b_order_free_ba": [
+      38,
+      38
+    ],
+    "r95b_order_layers_k0": [
+      42,
+      42
+    ],
+    "r95b_order_layers_k1": [
+      42,
+      42
+    ],
+    "r95b_order_period_k5": [
+      18,
+      18
+    ],
+    "r95b_order_periodx_k10": [
+      36,
+      36
+    ],
+    "r95b_order_periodx_k2": [
+      12,
+      12
+    ],
+    "r95b_order_periodx_k3": [
+      15,
+      15
+    ],
+    "r95b_order_periodx_k4": [
+      18,
+      18
+    ],
+    "r95b_order_periodx_k5": [
+      21,
+      21
+    ],
+    "r95b_order_periodx_k5s8": [
+      21,
+      21
+    ],
+    "r95b_order_periodx_k6": [
+      24,
+      24
+    ],
+    "r95b_order_periodx_k7": [
+      27,
+      27
+    ],
+    "r95b_order_periodx_k8": [
+      30,
+      30
+    ],
+    "r95b_order_perm0": [
+      40,
+      40
+    ],
+    "r95b_order_perm1": [
+      40,
+      40
+    ],
+    "r95b_order_perm2": [
+      40,
+      40
+    ],
+    "r95b_order_perm3": [
+      40,
+      40
+    ],
+    "r95b_order_perm4": [
+      40,
+      40
+    ],
+    "r95b_order_perm5": [
+      40,
+      40
+    ],
+    "r95b_order_perm6": [
+      40,
+      40
+    ],
+    "r95b_order_perm7": [
+      40,
+      40
+    ],
+    "r95b_order_readd_a": [
+      40,
+      40
+    ],
+    "r95b_order_rigid": [
+      8,
+      8
+    ],
+    "r95b_order_scoutrev": [
+      42,
+      42
+    ],
+    "r95b_order_twopiles": [
+      40,
+      40
+    ],
+    "r95b_order_warm_k32": [
+      40,
+      40
+    ],
+    "r95b_order_warm_keep8": [
+      40,
+      40
+    ]
+  },
+  "output_rejected": 1492,
+  "receipts_available": 52,
+  "rows": 52,
+  "sig_accepted_examples": [],
+  "sig_mutants": 3288,
+  "sig_mutants_per_row": {
+    "dss_lattice_cast_rest": [
+      71,
+      71
+    ],
+    "dss_lattice_census": [
+      51,
+      51
+    ],
+    "dss_lattice_excl_space": [
+      17,
+      17
+    ],
+    "dss_lattice_fresh": [
+      22,
+      22
+    ],
+    "dss_lattice_layer_forms": [
+      21,
+      21
+    ],
+    "dss_lattice_order_core": [
+      3,
+      3
+    ],
+    "dss_lattice_order_core_rev": [
+      3,
+      3
+    ],
+    "dss_lattice_point_canvas": [
+      18,
+      18
+    ],
+    "dss_lattice_point_cap": [
+      3,
+      3
+    ],
+    "dss_lattice_point_cap_rev": [
+      3,
+      3
+    ],
+    "dss_lattice_point_edge": [
+      18,
+      18
+    ],
+    "dss_lattice_ray_flags": [
+      31,
+      31
+    ],
+    "dss_lattice_ray_geom": [
+      35,
+      35
+    ],
+    "dss_lattice_ray_order": [
+      21,
+      21
+    ],
+    "dss_lattice_ray_order_rev": [
+      21,
+      21
+    ],
+    "dss_lattice_shape": [
+      18,
+      18
+    ],
+    "dss_lattice_shape_rev": [
+      18,
+      18
+    ],
+    "r95b_order_canon": [
+      234,
+      234
+    ],
+    "r95b_order_cap40_p0": [
+      352,
+      352
+    ],
+    "r95b_order_cap40_p1": [
+      352,
+      352
+    ],
+    "r95b_order_cap40_p2": [
+      352,
+      352
+    ],
+    "r95b_order_celloff_x0": [
+      71,
+      71
+    ],
+    "r95b_order_celloff_x1000": [
+      71,
+      71
+    ],
+    "r95b_order_celloff_y1000": [
+      71,
+      71
+    ],
+    "r95b_order_free_ab": [
+      41,
+      41
+    ],
+    "r95b_order_free_ba": [
+      41,
+      41
+    ],
+    "r95b_order_layers_k0": [
+      93,
+      93
+    ],
+    "r95b_order_layers_k1": [
+      92,
+      92
+    ],
+    "r95b_order_period_k5": [
+      21,
+      21
+    ],
+    "r95b_order_periodx_k10": [
+      39,
+      39
+    ],
+    "r95b_order_periodx_k2": [
+      15,
+      15
+    ],
+    "r95b_order_periodx_k3": [
+      18,
+      18
+    ],
+    "r95b_order_periodx_k4": [
+      21,
+      21
+    ],
+    "r95b_order_periodx_k5": [
+      24,
+      24
+    ],
+    "r95b_order_periodx_k5s8": [
+      24,
+      24
+    ],
+    "r95b_order_periodx_k6": [
+      27,
+      27
+    ],
+    "r95b_order_periodx_k7": [
+      30,
+      30
+    ],
+    "r95b_order_periodx_k8": [
+      33,
+      33
+    ],
+    "r95b_order_perm0": [
+      71,
+      71
+    ],
+    "r95b_order_perm1": [
+      71,
+      71
+    ],
+    "r95b_order_perm2": [
+      71,
+      71
+    ],
+    "r95b_order_perm3": [
+      71,
+      71
+    ],
+    "r95b_order_perm4": [
+      71,
+      71
+    ],
+    "r95b_order_perm5": [
+      71,
+      71
+    ],
+    "r95b_order_perm6": [
+      71,
+      71
+    ],
+    "r95b_order_perm7": [
+      71,
+      71
+    ],
+    "r95b_order_readd_a": [
+      57,
+      57
+    ],
+    "r95b_order_rigid": [
+      11,
+      11
+    ],
+    "r95b_order_scoutrev": [
+      76,
+      76
+    ],
+    "r95b_order_twopiles": [
+      58,
+      58
+    ],
+    "r95b_order_warm_k32": [
+      61,
+      61
+    ],
+    "r95b_order_warm_keep8": [
+      61,
+      61
+    ]
+  },
+  "sig_rejected": 3288
+}

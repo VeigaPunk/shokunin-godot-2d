@@ -1,0 +1,104 @@
+[
+ {
+  "case": "dss_lattice_census",
+  "cell": "dss_census",
+  "receipts": 6,
+  "hits": 6
+ },
+ {
+  "case": "dss_lattice_ray_flags",
+  "cell": "dss_ray_flags",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_ray_geom",
+  "cell": "dss_ray_geom",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_ray_order",
+  "cell": "dss_ray_order",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_ray_order_rev",
+  "cell": "dss_ray_order_rev",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_point_cap",
+  "cell": "dss_point_cap",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_point_cap_rev",
+  "cell": "dss_point_cap_rev",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_point_edge",
+  "cell": "dss_point_edge",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_point_canvas",
+  "cell": "dss_point_canvas",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_shape",
+  "cell": "dss_shape_lattice",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_shape_rev",
+  "cell": "dss_shape_lattice_rev",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_order_core",
+  "cell": "dss_order_core",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_order_core_rev",
+  "cell": "dss_order_core_rev",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_layer_forms",
+  "cell": "dss_layer_forms",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_cast_rest",
+  "cell": "dss_cast_rest",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_excl_space",
+  "cell": "dss_excl_space",
+  "receipts": 9,
+  "hits": 9
+ },
+ {
+  "case": "dss_lattice_fresh",
+  "cell": "dss_fresh",
+  "receipts": 9,
+  "hits": 9
+ }
+]

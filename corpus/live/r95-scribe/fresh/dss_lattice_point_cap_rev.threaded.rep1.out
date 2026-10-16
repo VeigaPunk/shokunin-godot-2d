@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95 point_cap add_order=[e,d,c,b,a]
+R95 point_cap cap0=[]
+R95 point_cap cap1=[a#0]
+R95 point_cap cap2=[a#0,e#0]
+R95 point_cap cap3=[a#0,e#0,c#0]
+R95 point_cap cap5=[a#0,e#0,c#0,b#0,d#0]
+R95 point_cap cap_default=[a#0,e#0,c#0,b#0,d#0]
+R95 point_cap mask2=[]
+R95 point_cap nobodies=[]
+R95 point_cap excl_first=[a#0,c#0,b#0,d#0]
+R95 point_cap far_out=[]
+R95 point_cap pile40_default=n32
+R95 point_cap pile40_cap0=n0
+R95 point_cap pile40_cap64=n40
+R95 point_cap cap32_truncates=true
+PASS dss_lattice point_cap add_order=[e,d,c,b,a] cap0=[] cap1=[a#0] cap2=[a#0,e#0] cap3=[a#0,e#0,c#0] cap5=[a#0,e#0,c#0,b#0,d#0] cap_default=[a#0,e#0,c#0,b#0,d#0] mask2=[] nobodies=[] excl_first=[a#0,c#0,b#0,d#0] far_out=[] pile40_default=n32 pile40_cap0=n0 pile40_cap64=n40 cap32_truncates=true

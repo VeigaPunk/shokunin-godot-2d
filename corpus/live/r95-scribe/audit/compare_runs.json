@@ -1,0 +1,196 @@
+{
+  "differing_rows": 59,
+  "identical_rows": 307,
+  "r95_differing_rows": [
+    {
+      "a_len": 16,
+      "b_len": 16,
+      "case": "r95b_order_cap40_p1",
+      "why": "output differs"
+    },
+    {
+      "a_len": 12,
+      "b_len": 12,
+      "case": "r95b_order_celloff_y1000",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_free_ab",
+      "why": "output differs"
+    },
+    {
+      "a_len": 18,
+      "b_len": 18,
+      "case": "r95b_order_layers_k0",
+      "why": "output differs"
+    },
+    {
+      "a_len": 18,
+      "b_len": 18,
+      "case": "r95b_order_layers_k1",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_periodx_k10",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_periodx_k2",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_periodx_k3",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_periodx_k4",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_periodx_k5",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_periodx_k5s8",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_periodx_k6",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_periodx_k7",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_periodx_k8",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_perm1",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_perm3",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_perm4",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_perm5",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_perm6",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_readd_a",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_rigid",
+      "why": "output differs"
+    },
+    {
+      "a_len": 12,
+      "b_len": 12,
+      "case": "r95b_order_twopiles",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_warm_k32",
+      "why": "output differs"
+    },
+    {
+      "a_len": 13,
+      "b_len": 13,
+      "case": "r95b_order_warm_keep8",
+      "why": "output differs"
+    }
+  ],
+  "run_a": {
+    "fail_cases": [
+      "overlap",
+      "transition",
+      "negative_transition",
+      "audio_bus_route",
+      "probe_error_clause_surface"
+    ],
+    "path": "corpus/live/r95-scribe/battery-runs/20261016T070820061770Z/verdicts.json",
+    "r95_pass": 52,
+    "r95_rows": 52,
+    "rows": 366,
+    "rows_pass": 361,
+    "stamp": "20261016T070820061770Z",
+    "verdict": "FAIL"
+  },
+  "run_b": {
+    "fail_cases": [
+      "negative_transition",
+      "probe_error_clause_surface"
+    ],
+    "path": "corpus/live/r95-scribe/battery-committed/20261016T071623277563Z/verdicts.json",
+    "r95_pass": 52,
+    "r95_rows": 52,
+    "rows": 366,
+    "rows_pass": 364,
+    "stamp": "20261016T071623277563Z",
+    "verdict": "FAIL"
+  },
+  "verdict_flips": [
+    {
+      "a": "FAIL",
+      "b": "PASS",
+      "case": "audio_bus_route"
+    },
+    {
+      "a": "FAIL",
+      "b": "PASS",
+      "case": "overlap"
+    },
+    {
+      "a": "FAIL",
+      "b": "PASS",
+      "case": "transition"
+    }
+  ]
+}

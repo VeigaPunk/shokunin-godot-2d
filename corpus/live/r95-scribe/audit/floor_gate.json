@@ -1,0 +1,24 @@
+{
+  "classifier_properties": {
+    "control_destroyed_signature_accepted": 0,
+    "rows": 52,
+    "stderr_only_pass_accepted": 52,
+    "trailing_token_after_pin_accepted": 52
+  },
+  "gate_expression": "all((not e['dead_in_run'] for r in census_rows if r['case'].startswith(('dss_lattice_', 'r95b_order_')) for e in r['entries']))",
+  "gate_segment_sha256": "486414297a7cb3af77beae39778b9204c1c2fe37add54d5fd89d12dc7a80ecb6",
+  "real_census": {
+    "dead_entry_count": 0,
+    "gate": true,
+    "r95_rows_in_census": 0,
+    "rows": 68
+  },
+  "synthetic": {
+    "dead_non_r95_entry": true,
+    "dead_r95_entry": false,
+    "empty_census": true,
+    "live_r95_entry": true,
+    "mixed_r95_entries": false,
+    "no_entries": true
+  }
+}

@@ -1,0 +1,909 @@
+{
+  "cross_arm_collision_count": 20,
+  "cross_arm_collisions": [
+    {
+      "case": "r95b_order_celloff_x0",
+      "foreign_sig_case": "r95b_order_celloff_y1000",
+      "path": "corpus/live/runs/20261016T064148780406Z/verdicts.json",
+      "source": "author"
+    },
+    {
+      "case": "r95b_order_celloff_y1000",
+      "foreign_sig_case": "r95b_order_celloff_x0",
+      "path": "corpus/live/runs/20261016T064148780406Z/verdicts.json",
+      "source": "author"
+    },
+    {
+      "case": "r95b_order_celloff_x0",
+      "foreign_sig_case": "r95b_order_celloff_y1000",
+      "path": "corpus/live/runs/20261016T064742446822Z/verdicts.json",
+      "source": "author"
+    },
+    {
+      "case": "r95b_order_celloff_y1000",
+      "foreign_sig_case": "r95b_order_celloff_x0",
+      "path": "corpus/live/runs/20261016T064742446822Z/verdicts.json",
+      "source": "author"
+    },
+    {
+      "case": "r95b_order_celloff_x0",
+      "foreign_sig_case": "r95b_order_celloff_y1000",
+      "path": "corpus/live/runs/20261016T065335715243Z/verdicts.json",
+      "source": "author"
+    },
+    {
+      "case": "r95b_order_celloff_y1000",
+      "foreign_sig_case": "r95b_order_celloff_x0",
+      "path": "corpus/live/runs/20261016T065335715243Z/verdicts.json",
+      "source": "author"
+    },
+    {
+      "case": "r95b_order_celloff_x0",
+      "foreign_sig_case": "r95b_order_celloff_y1000",
+      "path": "corpus/live/runs/20261016T065922894811Z/verdicts.json",
+      "source": "author"
+    },
+    {
+      "case": "r95b_order_celloff_y1000",
+      "foreign_sig_case": "r95b_order_celloff_x0",
+      "path": "corpus/live/runs/20261016T065922894811Z/verdicts.json",
+      "source": "author"
+    },
+    {
+      "case": "r95b_order_celloff_x0",
+      "foreign_sig_case": "r95b_order_celloff_y1000",
+      "path": "corpus/live/r95-scribe/battery-runs/20261016T070820061770Z/verdicts.json",
+      "source": "scribe-battery"
+    },
+    {
+      "case": "r95b_order_celloff_y1000",
+      "foreign_sig_case": "r95b_order_celloff_x0",
+      "path": "corpus/live/r95-scribe/battery-runs/20261016T070820061770Z/verdicts.json",
+      "source": "scribe-battery"
+    },
+    {
+      "case": "r95b_order_celloff_x0",
+      "foreign_sig_case": "r95b_order_celloff_y1000",
+      "path": "corpus/live/r95-scribe/battery-committed/20261016T071623277563Z/verdicts.json",
+      "source": "scribe-battery"
+    },
+    {
+      "case": "r95b_order_celloff_y1000",
+      "foreign_sig_case": "r95b_order_celloff_x0",
+      "path": "corpus/live/r95-scribe/battery-committed/20261016T071623277563Z/verdicts.json",
+      "source": "scribe-battery"
+    },
+    {
+      "case": "r95b_order_celloff_x0",
+      "foreign_sig_case": "r95b_order_celloff_y1000",
+      "path": "corpus/live/r95-scribe/fresh/r95b_order_celloff_x0.default.rep1.out",
+      "source": "scribe-fresh"
+    },
+    {
+      "case": "r95b_order_celloff_x0",
+      "foreign_sig_case": "r95b_order_celloff_y1000",
+      "path": "corpus/live/r95-scribe/fresh/r95b_order_celloff_x0.default.rep2.out",
+      "source": "scribe-fresh"
+    },
+    {
+      "case": "r95b_order_celloff_x0",
+      "foreign_sig_case": "r95b_order_celloff_y1000",
+      "path": "corpus/live/r95-scribe/fresh/r95b_order_celloff_x0.ff120.rep1.out",
+      "source": "scribe-fresh"
+    },
+    {
+      "case": "r95b_order_celloff_x0",
+      "foreign_sig_case": "r95b_order_celloff_y1000",
+      "path": "corpus/live/r95-scribe/fresh/r95b_order_celloff_x0.ff30.rep1.out",
+      "source": "scribe-fresh"
+    },
+    {
+      "case": "r95b_order_celloff_x0",
+      "foreign_sig_case": "r95b_order_celloff_y1000",
+      "path": "corpus/live/r95-scribe/fresh/r95b_order_celloff_x0.threaded.rep1.out",
+      "source": "scribe-fresh"
+    },
+    {
+      "case": "r95b_order_celloff_y1000",
+      "foreign_sig_case": "r95b_order_celloff_x0",
+      "path": "corpus/live/r95-scribe/fresh/r95b_order_celloff_y1000.default.rep1.out",
+      "source": "scribe-fresh"
+    },
+    {
+      "case": "r95b_order_celloff_y1000",
+      "foreign_sig_case": "r95b_order_celloff_x0",
+      "path": "corpus/live/r95-scribe/fresh/r95b_order_celloff_y1000.default.rep2.out",
+      "source": "scribe-fresh"
+    },
+    {
+      "case": "r95b_order_celloff_y1000",
+      "foreign_sig_case": "r95b_order_celloff_x0",
+      "path": "corpus/live/r95-scribe/fresh/r95b_order_celloff_y1000.ff30.rep1.out",
+      "source": "scribe-fresh"
+    }
+  ],
+  "error_line_count": 0,
+  "error_line_receipts": [],
+  "own_arm_checks": 472,
+  "own_arm_hits": 472,
+  "own_arm_misses": [],
+  "per_case_receipts": {
+    "alt_p0.1.out": {
+      "scout": 1
+    },
+    "alt_p0.2.out": {
+      "scout": 1
+    },
+    "alt_p0.3.out": {
+      "scout": 1
+    },
+    "alt_p1.1.out": {
+      "scout": 1
+    },
+    "alt_p1.2.out": {
+      "scout": 1
+    },
+    "alt_p1.3.out": {
+      "scout": 1
+    },
+    "alt_p2.1.out": {
+      "scout": 1
+    },
+    "alt_p2.2.out": {
+      "scout": 1
+    },
+    "alt_p2.3.out": {
+      "scout": 1
+    },
+    "canon": {
+      "boundary": 24
+    },
+    "cap40_p0": {
+      "boundary": 7
+    },
+    "cap40_p1": {
+      "boundary": 5
+    },
+    "cap40_p2": {
+      "boundary": 3
+    },
+    "cast_rest.out": {
+      "scout": 1
+    },
+    "celloff_x0": {
+      "boundary": 8
+    },
+    "celloff_x0.25": {
+      "boundary": 5
+    },
+    "celloff_x0.5": {
+      "boundary": 2
+    },
+    "celloff_x1": {
+      "boundary": 1
+    },
+    "celloff_x1000": {
+      "boundary": 5
+    },
+    "celloff_x16": {
+      "boundary": 1
+    },
+    "celloff_x2": {
+      "boundary": 1
+    },
+    "celloff_x32": {
+      "boundary": 1
+    },
+    "celloff_x4": {
+      "boundary": 1
+    },
+    "celloff_x64": {
+      "boundary": 1
+    },
+    "celloff_x8": {
+      "boundary": 1
+    },
+    "celloff_xm0.25": {
+      "boundary": 2
+    },
+    "celloff_xm1000": {
+      "boundary": 1
+    },
+    "celloff_y1000": {
+      "boundary": 5
+    },
+    "census.out": {
+      "scout": 1
+    },
+    "d_cast_lattice.out": {
+      "scout": 1
+    },
+    "d_census.out": {
+      "scout": 1
+    },
+    "d_collide_pair.out": {
+      "scout": 1
+    },
+    "d_excl_forms.out": {
+      "scout": 1
+    },
+    "d_fresh.out": {
+      "scout": 1
+    },
+    "d_layer_forms.out": {
+      "scout": 1
+    },
+    "d_order_stab.out": {
+      "scout": 1
+    },
+    "d_point_canvas.out": {
+      "scout": 1
+    },
+    "d_point_cap.out": {
+      "scout": 1
+    },
+    "d_point_edge.out": {
+      "scout": 1
+    },
+    "d_ray_boundary.out": {
+      "scout": 1
+    },
+    "d_ray_edge.out": {
+      "scout": 1
+    },
+    "d_ray_order.out": {
+      "scout": 1
+    },
+    "d_ray_params.out": {
+      "scout": 1
+    },
+    "d_rest_deep.out": {
+      "scout": 1
+    },
+    "d_shape_cap.out": {
+      "scout": 1
+    },
+    "d_space_scope.out": {
+      "scout": 1
+    },
+    "dss_cast_rest": {
+      "scout": 3
+    },
+    "dss_census": {
+      "scout": 3
+    },
+    "dss_excl_space": {
+      "scout": 3
+    },
+    "dss_fresh": {
+      "scout": 3
+    },
+    "dss_lattice_cast_rest": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "dss_lattice_census": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "dss_lattice_excl_space": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 2
+    },
+    "dss_lattice_fresh": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 2
+    },
+    "dss_lattice_layer_forms": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 2
+    },
+    "dss_lattice_order_core": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "dss_lattice_order_core_rev": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "dss_lattice_point_canvas": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 2
+    },
+    "dss_lattice_point_cap": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "dss_lattice_point_cap_rev": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "dss_lattice_point_edge": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 2
+    },
+    "dss_lattice_ray_flags": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 2
+    },
+    "dss_lattice_ray_geom": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 2
+    },
+    "dss_lattice_ray_order": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "dss_lattice_ray_order_rev": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "dss_lattice_shape": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "dss_lattice_shape_rev": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "dss_layer_forms": {
+      "scout": 3
+    },
+    "dss_order_core": {
+      "scout": 3
+    },
+    "dss_order_core_rev": {
+      "scout": 3
+    },
+    "dss_point_canvas": {
+      "scout": 3
+    },
+    "dss_point_cap": {
+      "scout": 3
+    },
+    "dss_point_cap_rev": {
+      "scout": 3
+    },
+    "dss_point_edge": {
+      "scout": 3
+    },
+    "dss_ray_flags": {
+      "scout": 3
+    },
+    "dss_ray_geom": {
+      "scout": 3
+    },
+    "dss_ray_order": {
+      "scout": 3
+    },
+    "dss_ray_order_rev": {
+      "scout": 3
+    },
+    "dss_shape_lattice": {
+      "scout": 3
+    },
+    "dss_shape_lattice_rev": {
+      "scout": 3
+    },
+    "env": {
+      "boundary": 4
+    },
+    "excl_space.out": {
+      "scout": 1
+    },
+    "free_a": {
+      "boundary": 2
+    },
+    "free_ab": {
+      "boundary": 4
+    },
+    "free_ac": {
+      "boundary": 2
+    },
+    "free_b": {
+      "boundary": 2
+    },
+    "free_ba": {
+      "boundary": 4
+    },
+    "free_c": {
+      "boundary": 4
+    },
+    "free_ca": {
+      "boundary": 2
+    },
+    "free_d": {
+      "boundary": 2
+    },
+    "free_e": {
+      "boundary": 2
+    },
+    "fresh.out": {
+      "scout": 1
+    },
+    "layer_forms.out": {
+      "scout": 1
+    },
+    "layers_k0": {
+      "boundary": 3
+    },
+    "layers_k1": {
+      "boundary": 7
+    },
+    "order_core.out": {
+      "scout": 1
+    },
+    "order_stab.1.out": {
+      "scout": 1
+    },
+    "order_stab.2.out": {
+      "scout": 1
+    },
+    "order_stab.3.out": {
+      "scout": 1
+    },
+    "order_stab.4.out": {
+      "scout": 1
+    },
+    "order_stab_rev.1.out": {
+      "scout": 1
+    },
+    "order_stab_rev.2.out": {
+      "scout": 1
+    },
+    "order_stab_rev.3.out": {
+      "scout": 1
+    },
+    "order_stab_rev.4.out": {
+      "scout": 1
+    },
+    "period_k2": {
+      "boundary": 2
+    },
+    "period_k3": {
+      "boundary": 2
+    },
+    "period_k4": {
+      "boundary": 2
+    },
+    "period_k5": {
+      "boundary": 9
+    },
+    "period_k6": {
+      "boundary": 2
+    },
+    "period_k8": {
+      "boundary": 2
+    },
+    "periodx_k10": {
+      "boundary": 1
+    },
+    "periodx_k2": {
+      "boundary": 2
+    },
+    "periodx_k3": {
+      "boundary": 2
+    },
+    "periodx_k4": {
+      "boundary": 1
+    },
+    "periodx_k5": {
+      "boundary": 2
+    },
+    "periodx_k5s8": {
+      "boundary": 2
+    },
+    "periodx_k6": {
+      "boundary": 1
+    },
+    "periodx_k7": {
+      "boundary": 1
+    },
+    "periodx_k8": {
+      "boundary": 1
+    },
+    "perm0": {
+      "boundary": 14
+    },
+    "perm1": {
+      "boundary": 13
+    },
+    "perm2": {
+      "boundary": 5
+    },
+    "perm3": {
+      "boundary": 3
+    },
+    "perm4": {
+      "boundary": 5
+    },
+    "perm5": {
+      "boundary": 3
+    },
+    "perm6": {
+      "boundary": 3
+    },
+    "perm7": {
+      "boundary": 3
+    },
+    "point_canvas.out": {
+      "scout": 1
+    },
+    "point_cap.1.out": {
+      "scout": 1
+    },
+    "point_cap.2.out": {
+      "scout": 1
+    },
+    "point_cap.3.out": {
+      "scout": 1
+    },
+    "point_cap.4.out": {
+      "scout": 1
+    },
+    "point_cap.out": {
+      "scout": 1
+    },
+    "point_edge.out": {
+      "scout": 1
+    },
+    "pre_fix_layer_forms": {
+      "scout": 1
+    },
+    "pre_fix_shape_lattice": {
+      "scout": 1
+    },
+    "procwait": {
+      "boundary": 16
+    },
+    "r95_dss_cast_rest": {
+      "scout": 6
+    },
+    "r95_dss_census": {
+      "scout": 3
+    },
+    "r95_dss_excl_space": {
+      "scout": 6
+    },
+    "r95_dss_fresh": {
+      "scout": 6
+    },
+    "r95_dss_layer_forms": {
+      "scout": 6
+    },
+    "r95_dss_order_core": {
+      "scout": 6
+    },
+    "r95_dss_order_core_rev": {
+      "scout": 6
+    },
+    "r95_dss_point_canvas": {
+      "scout": 6
+    },
+    "r95_dss_point_cap": {
+      "scout": 6
+    },
+    "r95_dss_point_cap_rev": {
+      "scout": 6
+    },
+    "r95_dss_point_edge": {
+      "scout": 6
+    },
+    "r95_dss_ray_flags": {
+      "scout": 6
+    },
+    "r95_dss_ray_geom": {
+      "scout": 6
+    },
+    "r95_dss_ray_order": {
+      "scout": 6
+    },
+    "r95_dss_ray_order_rev": {
+      "scout": 6
+    },
+    "r95_dss_shape_lattice": {
+      "scout": 6
+    },
+    "r95_dss_shape_lattice_rev": {
+      "scout": 6
+    },
+    "r95b_order_canon": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 5
+    },
+    "r95b_order_cap40_p0": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 5
+    },
+    "r95b_order_cap40_p1": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_cap40_p2": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_celloff_x0": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 5
+    },
+    "r95b_order_celloff_x1000": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_celloff_y1000": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_free_ab": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_free_ba": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_layers_k0": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_layers_k1": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_period_k5": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 5
+    },
+    "r95b_order_periodx_k10": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_periodx_k2": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_periodx_k3": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_periodx_k4": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_periodx_k5": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_periodx_k5s8": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_periodx_k6": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_periodx_k7": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_periodx_k8": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_perm0": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 5
+    },
+    "r95b_order_perm1": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_perm2": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_perm3": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_perm4": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_perm5": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_perm6": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_perm7": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_readd_a": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_rigid": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_scoutrev": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_twopiles": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 4
+    },
+    "r95b_order_warm_k32": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "r95b_order_warm_keep8": {
+      "author": 4,
+      "scribe-battery": 2,
+      "scribe-fresh": 3
+    },
+    "ray_flags.out": {
+      "scout": 1
+    },
+    "ray_geom.out": {
+      "scout": 1
+    },
+    "ray_order.1.out": {
+      "scout": 1
+    },
+    "ray_order.2.out": {
+      "scout": 1
+    },
+    "ray_order.3.out": {
+      "scout": 1
+    },
+    "ray_order.4.out": {
+      "scout": 1
+    },
+    "ray_order.out": {
+      "scout": 1
+    },
+    "ray_order_rev.1.out": {
+      "scout": 1
+    },
+    "ray_order_rev.2.out": {
+      "scout": 1
+    },
+    "ray_order_rev.3.out": {
+      "scout": 1
+    },
+    "ray_order_rev.4.out": {
+      "scout": 1
+    },
+    "readd_a": {
+      "boundary": 4
+    },
+    "readd_c": {
+      "boundary": 2
+    },
+    "rigid": {
+      "boundary": 5
+    },
+    "scoutrev": {
+      "boundary": 4
+    },
+    "shape_lattice.out": {
+      "scout": 1
+    },
+    "twopiles": {
+      "boundary": 9
+    },
+    "warm_k0": {
+      "boundary": 2
+    },
+    "warm_k1": {
+      "boundary": 4
+    },
+    "warm_k13": {
+      "boundary": 2
+    },
+    "warm_k2": {
+      "boundary": 2
+    },
+    "warm_k3": {
+      "boundary": 2
+    },
+    "warm_k32": {
+      "boundary": 4
+    },
+    "warm_k5": {
+      "boundary": 2
+    },
+    "warm_k8": {
+      "boundary": 2
+    },
+    "warm_keep64": {
+      "boundary": 4
+    },
+    "warm_keep8": {
+      "boundary": 4
+    }
+  },
+  "receipts_named_by_landed_case": 472,
+  "receipts_unmapped_probe_names": 472,
+  "sources": {
+    "author": {
+      "distinct_cases": 52,
+      "receipts": 208
+    },
+    "boundary": {
+      "distinct_cases": 69,
+      "receipts": 261
+    },
+    "scout": {
+      "distinct_cases": 95,
+      "receipts": 211
+    },
+    "scribe-battery": {
+      "distinct_cases": 52,
+      "receipts": 104
+    },
+    "scribe-fresh": {
+      "distinct_cases": 52,
+      "receipts": 160
+    }
+  },
+  "total_receipts": 944
+}
