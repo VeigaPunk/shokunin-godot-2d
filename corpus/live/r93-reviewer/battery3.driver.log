@@ -1,0 +1,7 @@
+=== reviewer battery run 3 start 2026-10-16T05:49:14Z loadavg=52.42 54.21 52.77 ===
+run 3 rc=1 2026-10-16T05:53:37Z loadavg=55.34 55.64 53.80
+PASS descendant signature-spoof meta
+PASS while-live signature-gate meta
+PASS descendant error-spoof meta
+PASS error-clause surface meta
+FAIL battery: corpus/live/r93-reviewer/runs3/20261016T054914451887Z/verdicts.json

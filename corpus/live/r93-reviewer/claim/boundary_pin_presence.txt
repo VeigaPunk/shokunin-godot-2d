@@ -1,0 +1,25 @@
+r93_anim_await_offbyone            16/16
+r93_anim_blend_finished            14/14
+r93_anim_blend_interleaved         16/16
+r93_anim_blend_running             14/14
+r93_anim_deferred_flush            16/16
+r93_anim_manual_clock_control      16/16
+r93_anim_manual_clock_interleaved  16/16
+r93_anim_method_callback           14/14
+r93_anim_overshoot                 16/16
+r93_anim_phys_delta                16/16
+r93_anim_physics_tick              16/16
+r93_anim_process_manual            16/16
+r93_anim_process_stable            16/16
+r93_anim_seek                      16/16
+r93_anim_track_interp              14/14
+r93_tween_census                   14/14
+r93_tween_chain                    14/14
+r93_tween_interp_grid_a            14/14
+r93_tween_interp_grid_b            14/14
+r93_tween_interp_value             14/14
+r93_tween_manual_step              16/16
+r93_tween_phys_manual_step         16/16
+r93_tween_process_stable           16/16
+
+rows=23 all-pins-in-all-boundary-receipts=True bad=[]

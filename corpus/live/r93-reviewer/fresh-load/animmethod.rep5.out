@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS anim_lattice animmethod sig_at_play=[1,0,1] deferred_adv=[] deferred_frame=[7,8] sig_after_frame=[1,0,2] immediate_adv=[7,8] immediate_frame=[7,8] disabled_track=[] started_names=[m,m,m] changed=[] cur_changed=[m,,,,,]

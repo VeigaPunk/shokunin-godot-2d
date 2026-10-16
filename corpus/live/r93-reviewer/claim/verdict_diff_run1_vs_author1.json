@@ -1,0 +1,72 @@
+{
+ "mine": {
+  "verdict": "FAIL",
+  "n": 295
+ },
+ "ref": {
+  "verdict": "PASS",
+  "n": 295
+ },
+ "mine_only": [],
+ "ref_only": [],
+ "verdict_diffs": [
+  {
+   "case": "audio_bus_route_invalid_control",
+   "mine": "FAIL",
+   "ref": "PASS"
+  },
+  {
+   "case": "overlap",
+   "mine": "FAIL",
+   "ref": "PASS"
+  },
+  {
+   "case": "probe_error_clause_surface",
+   "mine": "FAIL",
+   "ref": "PASS"
+  },
+  {
+   "case": "transition",
+   "mine": "FAIL",
+   "ref": "PASS"
+  }
+ ],
+ "field_diffs": [
+  {
+   "case": "audio_bus_route_invalid_control",
+   "field": "verdict",
+   "mine": "FAIL",
+   "ref": "PASS"
+  },
+  {
+   "case": "overlap",
+   "field": "verdict",
+   "mine": "FAIL",
+   "ref": "PASS"
+  },
+  {
+   "case": "overlap",
+   "field": "actual_exit",
+   "mine": 1,
+   "ref": 0
+  },
+  {
+   "case": "probe_error_clause_surface",
+   "field": "verdict",
+   "mine": "FAIL",
+   "ref": "PASS"
+  },
+  {
+   "case": "transition",
+   "field": "verdict",
+   "mine": "FAIL",
+   "ref": "PASS"
+  },
+  {
+   "case": "transition",
+   "field": "actual_exit",
+   "mine": 1,
+   "ref": 0
+  }
+ ]
+}

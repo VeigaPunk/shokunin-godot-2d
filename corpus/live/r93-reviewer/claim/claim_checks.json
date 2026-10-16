@@ -1,0 +1,851 @@
+{
+ "classify": {
+  "mine": {
+   "r93_anim_await_offbyone": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_blend_finished": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_blend_interleaved": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_blend_running": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_deferred_flush": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_manual_clock_control": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_manual_clock_interleaved": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_method_callback": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_overshoot": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_phys_delta": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_physics_tick": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_process_manual": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_process_stable": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_seek": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_anim_track_interp": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_tween_census": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_tween_chain": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_tween_interp_grid_a": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_tween_interp_grid_b": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_tween_interp_value": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_tween_manual_step": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_tween_phys_manual_step": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "r93_tween_process_stable": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ]
+  },
+  "author": {
+   "r93_anim_await_offbyone": [],
+   "r93_anim_blend_finished": [],
+   "r93_anim_blend_interleaved": [],
+   "r93_anim_blend_running": [],
+   "r93_anim_deferred_flush": [],
+   "r93_anim_manual_clock_control": [],
+   "r93_anim_manual_clock_interleaved": [],
+   "r93_anim_method_callback": [],
+   "r93_anim_overshoot": [],
+   "r93_anim_phys_delta": [],
+   "r93_anim_physics_tick": [],
+   "r93_anim_process_manual": [],
+   "r93_anim_process_stable": [],
+   "r93_anim_seek": [],
+   "r93_anim_track_interp": [],
+   "r93_tween_census": [],
+   "r93_tween_chain": [],
+   "r93_tween_interp_grid_a": [],
+   "r93_tween_interp_grid_b": [],
+   "r93_tween_interp_value": [],
+   "r93_tween_manual_step": [],
+   "r93_tween_phys_manual_step": [],
+   "r93_tween_process_stable": []
+  }
+ },
+ "stability": {
+  "mine": {
+   "r93_anim_await_offbyone": {
+    "arm": "frame",
+    "out_uniq": 5,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_blend_finished": {
+    "arm": "animblend",
+    "out_uniq": 1,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_blend_interleaved": {
+    "arm": "blend",
+    "out_uniq": 4,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_blend_running": {
+    "arm": "animblend",
+    "out_uniq": 1,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_deferred_flush": {
+    "arm": "deferred",
+    "out_uniq": 5,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_manual_clock_control": {
+    "arm": "manual_inv",
+    "out_uniq": 4,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_manual_clock_interleaved": {
+    "arm": "manual_inv",
+    "out_uniq": 4,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_method_callback": {
+    "arm": "animmethod",
+    "out_uniq": 1,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_overshoot": {
+    "arm": "purity",
+    "out_uniq": 1,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_phys_delta": {
+    "arm": "frame",
+    "out_uniq": 5,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_physics_tick": {
+    "arm": "frame",
+    "out_uniq": 5,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_process_manual": {
+    "arm": "animproc",
+    "out_uniq": 5,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_process_stable": {
+    "arm": "animproc",
+    "out_uniq": 5,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_seek": {
+    "arm": "animseek",
+    "out_uniq": 1,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_anim_track_interp": {
+    "arm": "animtrack",
+    "out_uniq": 1,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_tween_census": {
+    "arm": "census",
+    "out_uniq": 1,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_tween_chain": {
+    "arm": "tweenchain",
+    "out_uniq": 1,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_tween_interp_grid_a": {
+    "arm": "tweenval_grid",
+    "out_uniq": 1,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_tween_interp_grid_b": {
+    "arm": "tweenval_grid",
+    "out_uniq": 1,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_tween_interp_value": {
+    "arm": "tweenval",
+    "out_uniq": 1,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_tween_manual_step": {
+    "arm": "tweenstep",
+    "out_uniq": 1,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_tween_phys_manual_step": {
+    "arm": "tweenproc",
+    "out_uniq": 5,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   },
+   "r93_tween_process_stable": {
+    "arm": "tweenproc",
+    "out_uniq": 5,
+    "err_uniq": 1,
+    "rc_uniq": 1,
+    "clause_sig_uniq": 1
+   }
+  }
+ },
+ "laws": {
+  "C1_overshoot": {
+   "pinned_tokens": [
+    "[back025=0.10286344587803,back050=5.5]",
+    "[neg=-5.0,over=15.0]",
+    "[spr050=10.510157585144,spr100=10.0,ela025=9.11611652374268]"
+   ],
+   "back025": 0.10286344587803,
+   "back050": 5.5,
+   "spr050": 10.510157585144,
+   "spr100": 10.0,
+   "ela025": 9.11611652374268,
+   "back025_below_start_1.0": true,
+   "spr050_above_end_10.0": true,
+   "spr100_exact_end": true,
+   "ela025_below_end": true,
+   "clamp_no_clamp": "[neg=-5.0,over=15.0]",
+   "token_stable_all_reps": true
+  },
+  "C2_await": {
+   "x1_zero_all_reps": true,
+   "idle_pin_substring_stable": true,
+   "mixer10_stable": true,
+   "phys_lattice_stable": true,
+   "phys_delta_stable": true,
+   "rep1": {
+    "idle": "[x1=0.0,x2=0.46646663546562,x3=0.87963330745697,x5=2.13313317298889,x10=5.46646690368652]",
+    "mixer": "10",
+    "phys": "[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811]",
+    "pos10": "0.05466466666667",
+    "phys_delta": "0.01666666666667\n"
+   }
+  },
+  "C3_crossfade": {
+   "per_rep": {
+    "1": {
+     "finished_010": [
+      true,
+      "ok"
+     ],
+     "finished_005": [
+      true,
+      "ok"
+     ],
+     "finished_020": [
+      true,
+      "ok"
+     ],
+     "running_from_50": [
+      true,
+      "ok"
+     ]
+    },
+    "2": {
+     "finished_010": [
+      true,
+      "ok"
+     ],
+     "finished_005": [
+      true,
+      "ok"
+     ],
+     "finished_020": [
+      true,
+      "ok"
+     ],
+     "running_from_50": [
+      true,
+      "ok"
+     ]
+    },
+    "3": {
+     "finished_010": [
+      true,
+      "ok"
+     ],
+     "finished_005": [
+      true,
+      "ok"
+     ],
+     "finished_020": [
+      true,
+      "ok"
+     ],
+     "running_from_50": [
+      true,
+      "ok"
+     ]
+    },
+    "4": {
+     "finished_010": [
+      true,
+      "ok"
+     ],
+     "finished_005": [
+      true,
+      "ok"
+     ],
+     "finished_020": [
+      true,
+      "ok"
+     ],
+     "running_from_50": [
+      true,
+      "ok"
+     ]
+    },
+    "5": {
+     "finished_010": [
+      true,
+      "ok"
+     ],
+     "finished_005": [
+      true,
+      "ok"
+     ],
+     "finished_020": [
+      true,
+      "ok"
+     ],
+     "running_from_50": [
+      true,
+      "ok"
+     ]
+    }
+   },
+   "all_ok": true,
+   "mid_060_010": 322.222229003906,
+   "mid_060_020": 300.0,
+   "mid_060_005": 331.578948974609,
+   "granularity_distinct": true
+  },
+  "C4_deferred": {
+   "token_stable": true,
+   "rep1": {
+    "manual_def": "[after_adv=[],next_proc=[7,8],second_proc=[7,8]]",
+    "manual_def_phys": "[after_adv=[],after_phys=[7,8]]",
+    "two_adv": "[after=[],flush=[7,8]]",
+    "immediate": "[after_adv=[7,8],after_frame=[7,8]]"
+   },
+   "routes": {
+    "manual_no_call_in_advance": true,
+    "process_frame_flush": true,
+    "physics_frame_flush": true,
+    "two_adv_queue": true,
+    "immediate_in_advance": true
+   }
+  },
+  "C5_manual": {
+   "token_stable": true,
+   "rep1": {
+    "paused": "[a=2.5,b=2.5,c=5.0,d=5.0,e=10.0]",
+    "manual": "[f=25.0,g=25.0,h=50.0,k=50.0,m=100.0]",
+    "inv": "[paused_proc=true,paused_phys=true,manual_proc=true,manual_phys=true]",
+    "step_exact": "[paused025=true,paused_done=true,manual025=true,manual_done=true]",
+    "unpaused_moved": "true"
+   },
+   "inv_all_true": true,
+   "step_exact_all_true": true,
+   "unpaused_moved": true
+  },
+  "C6_controls": {
+   "all_present_all_reps": true,
+   "rep1": {
+    "deferred_adv_empty": true,
+    "disabled_track_empty": true,
+    "manual_frames_zero": true,
+    "at_play_pre_pose": true,
+    "kill_immediate": true,
+    "node_free_lazy": true,
+    "phys_manual_step": true,
+    "deltas_tokens": "[tiny=0.00000001,mid=2.5,huge=10.0,huge_running=false,neg=0.0,neg_elapsed=-0.5]",
+    "accum1000": "1.0\n"
+   }
+  }
+ },
+ "cross_session": {
+  "r93_anim_await_offbyone": {
+   "arm": "frame",
+   "full_line_pin": false,
+   "tails": [
+    414,
+    415,
+    416,
+    425,
+    427,
+    428
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 5,
+   "author_line_uniq": 3
+  },
+  "r93_anim_blend_finished": {
+   "arm": "animblend",
+   "full_line_pin": false,
+   "tails": [
+    463
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 1,
+   "author_line_uniq": 1
+  },
+  "r93_anim_blend_interleaved": {
+   "arm": "blend",
+   "full_line_pin": false,
+   "tails": [
+    19,
+    20,
+    28
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 4,
+   "author_line_uniq": 2
+  },
+  "r93_anim_blend_running": {
+   "arm": "animblend",
+   "full_line_pin": false,
+   "tails": [
+    582
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 1,
+   "author_line_uniq": 1
+  },
+  "r93_anim_deferred_flush": {
+   "arm": "deferred",
+   "full_line_pin": false,
+   "tails": [
+    114,
+    116,
+    124,
+    132,
+    140
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 5,
+   "author_line_uniq": 3
+  },
+  "r93_anim_manual_clock_control": {
+   "arm": "manual_inv",
+   "full_line_pin": false,
+   "tails": [
+    166,
+    168,
+    176
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 4,
+   "author_line_uniq": 2
+  },
+  "r93_anim_manual_clock_interleaved": {
+   "arm": "manual_inv",
+   "full_line_pin": false,
+   "tails": [
+    226,
+    228,
+    236
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 4,
+   "author_line_uniq": 2
+  },
+  "r93_anim_method_callback": {
+   "arm": "animmethod",
+   "full_line_pin": true,
+   "tails": [
+    0
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": true,
+   "mine_line_uniq": 1,
+   "author_line_uniq": 1
+  },
+  "r93_anim_overshoot": {
+   "arm": "purity",
+   "full_line_pin": true,
+   "tails": [
+    0
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": true,
+   "mine_line_uniq": 1,
+   "author_line_uniq": 1
+  },
+  "r93_anim_phys_delta": {
+   "arm": "frame",
+   "full_line_pin": false,
+   "tails": [
+    420,
+    421,
+    422,
+    431,
+    433,
+    434
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 5,
+   "author_line_uniq": 3
+  },
+  "r93_anim_physics_tick": {
+   "arm": "frame",
+   "full_line_pin": false,
+   "tails": [
+    367,
+    368,
+    369,
+    378,
+    380,
+    381
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 5,
+   "author_line_uniq": 3
+  },
+  "r93_anim_process_manual": {
+   "arm": "animproc",
+   "full_line_pin": false,
+   "tails": [
+    436,
+    439
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 5,
+   "author_line_uniq": 3
+  },
+  "r93_anim_process_stable": {
+   "arm": "animproc",
+   "full_line_pin": false,
+   "tails": [
+    364,
+    367
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 5,
+   "author_line_uniq": 3
+  },
+  "r93_anim_seek": {
+   "arm": "animseek",
+   "full_line_pin": true,
+   "tails": [
+    0
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": true,
+   "mine_line_uniq": 1,
+   "author_line_uniq": 1
+  },
+  "r93_anim_track_interp": {
+   "arm": "animtrack",
+   "full_line_pin": true,
+   "tails": [
+    0
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": true,
+   "mine_line_uniq": 1,
+   "author_line_uniq": 1
+  },
+  "r93_tween_census": {
+   "arm": "census",
+   "full_line_pin": true,
+   "tails": [
+    0
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": true,
+   "mine_line_uniq": 1,
+   "author_line_uniq": 1
+  },
+  "r93_tween_chain": {
+   "arm": "tweenchain",
+   "full_line_pin": true,
+   "tails": [
+    0
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": true,
+   "mine_line_uniq": 1,
+   "author_line_uniq": 1
+  },
+  "r93_tween_interp_grid_a": {
+   "arm": "tweenval_grid",
+   "full_line_pin": false,
+   "tails": [
+    1483
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 1,
+   "author_line_uniq": 1
+  },
+  "r93_tween_interp_grid_b": {
+   "arm": "tweenval_grid",
+   "full_line_pin": false,
+   "tails": [
+    771
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 1,
+   "author_line_uniq": 1
+  },
+  "r93_tween_interp_value": {
+   "arm": "tweenval",
+   "full_line_pin": true,
+   "tails": [
+    0
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": true,
+   "mine_line_uniq": 1,
+   "author_line_uniq": 1
+  },
+  "r93_tween_manual_step": {
+   "arm": "tweenstep",
+   "full_line_pin": true,
+   "tails": [
+    0
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": true,
+   "mine_line_uniq": 1,
+   "author_line_uniq": 1
+  },
+  "r93_tween_phys_manual_step": {
+   "arm": "tweenproc",
+   "full_line_pin": false,
+   "tails": [
+    252,
+    291,
+    303
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 5,
+   "author_line_uniq": 2
+  },
+  "r93_tween_process_stable": {
+   "arm": "tweenproc",
+   "full_line_pin": false,
+   "tails": [
+    211,
+    250,
+    262
+   ],
+   "pins_present_in_all_mine_and_author": true,
+   "pass_lines_identical_across_sessions": null,
+   "mine_line_uniq": 5,
+   "author_line_uniq": 2
+  }
+ },
+ "static_vs_runtime": {
+  "static_file": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r93-reviewer/claim/static2.out",
+  "exists": true,
+  "static": {
+   "back_io_025_1to10": "0.10286344587803",
+   "back_io_050_1to10": "5.5",
+   "spr_out_050_0to10": "10.5101573467255",
+   "spr_out_100_0to10": "10.0",
+   "ela_out_025_0to10": "9.11611676216125",
+   "bac_io_025_0to10": "-0.99681839346886",
+   "lin_neg_050": "-5.0",
+   "lin_over_150": "15.0"
+  },
+  "runtime": {
+   "back025": "0.10286344587803",
+   "back050": "5.5",
+   "spr050": "10.510157585144",
+   "spr100": "10.0",
+   "ela025": "9.11611652374268"
+  },
+  "runtime_vs_static": {
+   "back025_exact": true,
+   "back050_exact": true,
+   "spr100_exact": true,
+   "spr050_absdiff": 2.3841850094186157e-07,
+   "ela025_absdiff": 2.384185702197783e-07,
+   "clamp_static": [
+    "-5.0",
+    "15.0"
+   ]
+  }
+ }
+}

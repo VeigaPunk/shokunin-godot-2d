@@ -1,0 +1,232 @@
+{
+ "r93_anim_await_offbyone": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_blend_finished": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_blend_interleaved": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_blend_running": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_deferred_flush": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_manual_clock_control": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_manual_clock_interleaved": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_method_callback": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_overshoot": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_phys_delta": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_physics_tick": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_process_manual": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_process_stable": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_seek": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_anim_track_interp": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_tween_census": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_tween_chain": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_tween_interp_grid_a": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_tween_interp_grid_b": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_tween_interp_value": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_tween_manual_step": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_tween_phys_manual_step": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ },
+ "r93_tween_process_stable": {
+  "genuine": true,
+  "pin_dropped": false,
+  "pin_flipped": false,
+  "sig_to_stderr": false,
+  "wrong_rc": false,
+  "extra_error": false,
+  "truncate": false,
+  "tail_appended": true
+ }
+}
