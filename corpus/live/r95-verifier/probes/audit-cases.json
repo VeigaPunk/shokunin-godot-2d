@@ -1,0 +1,233 @@
+{
+  "cases_total": 359,
+  "r95_count": 52,
+  "r95_first_index": 303,
+  "r95_last_index": 354,
+  "r95_contiguous": true,
+  "dss_count": 17,
+  "order_count": 35,
+  "flags": {
+    "dss_lattice_census": [
+      "--arm=census"
+    ],
+    "dss_lattice_ray_flags": [
+      "--arm=ray_flags"
+    ],
+    "dss_lattice_ray_geom": [
+      "--arm=ray_geom"
+    ],
+    "dss_lattice_ray_order": [
+      "--arm=ray_order"
+    ],
+    "dss_lattice_ray_order_rev": [
+      "--arm=ray_order",
+      "--rev"
+    ],
+    "dss_lattice_point_cap": [
+      "--arm=point_cap"
+    ],
+    "dss_lattice_point_cap_rev": [
+      "--arm=point_cap",
+      "--rev"
+    ],
+    "dss_lattice_point_edge": [
+      "--arm=point_edge"
+    ],
+    "dss_lattice_point_canvas": [
+      "--arm=point_canvas"
+    ],
+    "dss_lattice_shape": [
+      "--arm=shape_lattice"
+    ],
+    "dss_lattice_shape_rev": [
+      "--arm=shape_lattice",
+      "--rev"
+    ],
+    "dss_lattice_order_core": [
+      "--arm=order_core"
+    ],
+    "dss_lattice_order_core_rev": [
+      "--arm=order_core",
+      "--rev"
+    ],
+    "dss_lattice_layer_forms": [
+      "--arm=layer_forms"
+    ],
+    "dss_lattice_cast_rest": [
+      "--arm=cast_rest"
+    ],
+    "dss_lattice_excl_space": [
+      "--arm=excl_space"
+    ],
+    "dss_lattice_fresh": [
+      "--arm=fresh"
+    ],
+    "r95b_order_canon": [
+      "--arm=canon"
+    ],
+    "r95b_order_periodx_k2": [
+      "--arm=periodx",
+      "--k=2"
+    ],
+    "r95b_order_periodx_k3": [
+      "--arm=periodx",
+      "--k=3"
+    ],
+    "r95b_order_periodx_k4": [
+      "--arm=periodx",
+      "--k=4"
+    ],
+    "r95b_order_periodx_k5": [
+      "--arm=periodx",
+      "--k=5"
+    ],
+    "r95b_order_periodx_k5s8": [
+      "--arm=periodx",
+      "--k=5",
+      "--spacing=8"
+    ],
+    "r95b_order_periodx_k6": [
+      "--arm=periodx",
+      "--k=6"
+    ],
+    "r95b_order_periodx_k7": [
+      "--arm=periodx",
+      "--k=7"
+    ],
+    "r95b_order_periodx_k8": [
+      "--arm=periodx",
+      "--k=8"
+    ],
+    "r95b_order_periodx_k10": [
+      "--arm=periodx",
+      "--k=10"
+    ],
+    "r95b_order_period_k5": [
+      "--arm=period",
+      "--k=5"
+    ],
+    "r95b_order_perm0": [
+      "--arm=perm",
+      "--perm=0"
+    ],
+    "r95b_order_perm1": [
+      "--arm=perm",
+      "--perm=1"
+    ],
+    "r95b_order_perm2": [
+      "--arm=perm",
+      "--perm=2"
+    ],
+    "r95b_order_perm3": [
+      "--arm=perm",
+      "--perm=3"
+    ],
+    "r95b_order_perm4": [
+      "--arm=perm",
+      "--perm=4"
+    ],
+    "r95b_order_perm5": [
+      "--arm=perm",
+      "--perm=5"
+    ],
+    "r95b_order_perm6": [
+      "--arm=perm",
+      "--perm=6"
+    ],
+    "r95b_order_perm7": [
+      "--arm=perm",
+      "--perm=7"
+    ],
+    "r95b_order_scoutrev": [
+      "--arm=scoutrev"
+    ],
+    "r95b_order_celloff_x0": [
+      "--arm=celloff",
+      "--off=0"
+    ],
+    "r95b_order_celloff_x1000": [
+      "--arm=celloff",
+      "--off=1000"
+    ],
+    "r95b_order_celloff_y1000": [
+      "--arm=celloff",
+      "--off=0",
+      "--offy=1000"
+    ],
+    "r95b_order_twopiles": [
+      "--arm=twopiles"
+    ],
+    "r95b_order_warm_k32": [
+      "--arm=warm",
+      "--k=32",
+      "--keep=0"
+    ],
+    "r95b_order_warm_keep8": [
+      "--arm=warm",
+      "--k=8",
+      "--keep=1"
+    ],
+    "r95b_order_free_ab": [
+      "--arm=free",
+      "--order=ab"
+    ],
+    "r95b_order_free_ba": [
+      "--arm=free",
+      "--order=ba"
+    ],
+    "r95b_order_readd_a": [
+      "--arm=readd",
+      "--which=a"
+    ],
+    "r95b_order_cap40_p0": [
+      "--arm=cap40",
+      "--perm=0"
+    ],
+    "r95b_order_cap40_p1": [
+      "--arm=cap40",
+      "--perm=1"
+    ],
+    "r95b_order_cap40_p2": [
+      "--arm=cap40",
+      "--perm=2"
+    ],
+    "r95b_order_layers_k0": [
+      "--arm=layers",
+      "--k=0"
+    ],
+    "r95b_order_layers_k1": [
+      "--arm=layers",
+      "--k=1"
+    ],
+    "r95b_order_rigid": [
+      "--arm=rigid"
+    ]
+  },
+  "scripts": [
+    "dss_lattice.gd",
+    "r95b_order.gd"
+  ],
+  "expected_exit_set": [
+    0
+  ],
+  "floor_gate_present": true,
+  "r95_tokens_outside_cases_block": [
+    [
+      3272,
+      "        \"r95_expected_errors_all_matched\": all("
+    ],
+    [
+      3275,
+      "            if r[\"case\"].startswith((\"dss_lattice_\", \"r95b_order_\"))"
+    ]
+  ],
+  "r95_names_as_dict_keys": [],
+  "next_case_after_r95": "crash_spontaneous_sigabrt",
+  "prev_case_before_r95": "r94_particles_gpu_headless",
+  "last_cases": [
+    "crash_spontaneous_sigabrt",
+    "crash_self_sigkill",
+    "descendant_pipe_detached_control",
+    "descendant_pipe_forged_signature_release"
+  ]
+}

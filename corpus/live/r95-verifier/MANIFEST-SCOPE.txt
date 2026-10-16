@@ -1,0 +1,7 @@
+manifest.sha256 covers every file under corpus/live/r95-verifier/ EXCEPT:
+  - runs/*/scratch/**            battery scratch copy of the fixtures (regenerable; byte-identical to freeze/corpus/fixtures)
+  - scratch-arms/**              fresh-arms scratch copy (same staging recipe)
+  - freeze/**                    git archive of 9cd47507 corpus/fixtures (83 files; blob-identity verified in freeze/blob-identity-mismatches.txt = 0 mismatches)
+  - gate-mutant/**               the mutant harness copy (regenerable by probes/make_gate_mutant.py; build log probes/gate-mutant-build.txt)
+  - manifest.sha256, RECEIPTS.md themselves
+Every other file (probes, run verdicts/logs, arm receipts, gate-mutant run, analysis outputs) is covered.

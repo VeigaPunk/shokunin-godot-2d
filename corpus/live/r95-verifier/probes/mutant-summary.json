@@ -1,0 +1,32 @@
+{
+  "runs": [
+    {
+      "run": "20261016T071733368310Z",
+      "verdict": "FAIL",
+      "rows": 366,
+      "fails": [
+        "negative_transition",
+        "probe_error_clause_surface"
+      ],
+      "r95_instances": 52,
+      "r95_fails": [],
+      "r95_gate": false,
+      "dead_entry_count": 3,
+      "all_round_gates": {
+        "phys2d_expected_errors_all_matched": true,
+        "r87_expected_errors_all_matched": true,
+        "r88_expected_errors_all_matched": true,
+        "r89_expected_errors_all_matched": true,
+        "r90_expected_errors_all_matched": true,
+        "r91_expected_errors_all_matched": true,
+        "r92_expected_errors_all_matched": true,
+        "r93_expected_errors_all_matched": true,
+        "r94_expected_errors_all_matched": true,
+        "r95_expected_errors_all_matched": false
+      }
+    }
+  ],
+  "r95_instances_total": 52,
+  "r95_fails_total": 0,
+  "rows_with_mixed_verdicts": []
+}

@@ -1,0 +1,4 @@
+boundary cells: 69
+cells with >1 distinct PASS line: {'procwait': 8, 'env': 2}
+scout cells: 34
+scout cells with >1 distinct PASS line: none

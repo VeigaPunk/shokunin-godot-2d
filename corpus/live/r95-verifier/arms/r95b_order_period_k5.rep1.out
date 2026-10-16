@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95B period k=5
+R95B period cycle_len=20
+R95B period distinct_ticks=20
+R95B period t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0]
+R95B period t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0]
+R95B period t_last_vec=[p3#0,p4#0,p0#0,p2#0,p1#0]
+R95B period env=tps=60 pf=28 proc=67 sep2d_has=true sep2d=false maxsteps=8
+PASS r95b_order period k=5 cycle_len=20 distinct_ticks=20 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0] t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0] t_last_vec=[p3#0,p4#0,p0#0,p2#0,p1#0]

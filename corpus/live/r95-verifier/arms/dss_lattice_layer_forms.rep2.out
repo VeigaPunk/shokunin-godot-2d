@@ -1,0 +1,14 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95 layer_forms point_vis=[sb:body1/areas1/only0,ar:body0/areas1/only1,rb:body1/areas1/only0,cb:body1/areas1/only0,srv:body1/areas1/only0,canvas:body0/areas0/only0]
+R95 layer_forms ray_sb=r={sb pos=(80.0000,0.0000) n=(-1.0000,0.0000)}
+R95 layer_forms ray_srv=r={? pos=(860.0000,0.0000) n=(-1.0000,0.0000)}
+R95 layer_forms ray_area_off=r={}
+R95 layer_forms ray_area_on=r={ar pos=(280.0000,0.0000) n=(-1.0000,0.0000)}
+R95 layer_forms shape_srv=[?#0]
+R95 layer_forms shape_area_off=[]
+R95 layer_forms shape_area_on=[ar#0]
+R95 layer_forms cast_srv_ignored=[1.0, 1.0]
+R95 layer_forms server_tier_visible=true
+R95 layer_forms canvas_absent=true
+PASS dss_lattice layer_forms point_vis=[sb:body1/areas1/only0,ar:body0/areas1/only1,rb:body1/areas1/only0,cb:body1/areas1/only0,srv:body1/areas1/only0,canvas:body0/areas0/only0] ray_sb=r={sb pos=(80.0000,0.0000) n=(-1.0000,0.0000)} ray_srv=r={? pos=(860.0000,0.0000) n=(-1.0000,0.0000)} ray_area_off=r={} ray_area_on=r={ar pos=(280.0000,0.0000) n=(-1.0000,0.0000)} shape_srv=[?#0] shape_area_off=[] shape_area_on=[ar#0] cast_srv_ignored=[1.0, 1.0] server_tier_visible=true canvas_absent=true

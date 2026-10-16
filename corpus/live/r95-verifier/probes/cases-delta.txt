@@ -1,0 +1,7 @@
+parent CASES: 307 child CASES: 359
+child == parent + r95 block inserted at 303: True
+last 4 parent tuples == last 4 child tuples: True
+last 4 cases: ['crash_spontaneous_sigabrt', 'crash_self_sigkill', 'descendant_pipe_detached_control', 'descendant_pipe_forged_signature_release']
+inserted block head: dss_lattice_census | block tail: r95b_order_rigid
+tuple after block: crash_spontaneous_sigabrt
+r95 allowlist keys in child: []

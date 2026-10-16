@@ -1,0 +1,5 @@
+results rows: 366
+r95 result indices: 303 .. 354 contiguous: True
+prev: r94_particles_gpu_headless | next: crash_spontaneous_sigabrt
+meta rows (last 7): ['probe_save_independent_process', 'probe_spontaneous_crash_classification', 'probe_descendant_pipe_eof', 'probe_descendant_signature_spoof', 'probe_while_live_signature_gate', 'probe_descendant_error_spoof', 'probe_error_clause_surface']
+row order matches CASES order: True

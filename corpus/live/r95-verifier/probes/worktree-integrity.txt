@@ -1,0 +1,18 @@
+== HEAD state at report time ==
+5d3a947c6f0626faa5db0b87c07dc744724f6726
+5d3a947c r95 scribe: CUSTODY HOLDS on 9cd47507 — 52/52 x6 runs, 4780 mutants reject, k(k-1) law re-derived k=2..10
+35001d1d r94 simplifier PASS -3 + adjudicated ADMIT-with-findings — 19 particle rows on c7228893
+9cd47507 r95 author: 52 dss/order rows (366 total) — k(k-1) cycle ladder, perm0-7 creation perms, co-presence attribution folded; 366/366 x2
+
+== corpus/fixtures diff 9cd47507..HEAD (empty = verified bytes unchanged at HEAD) ==
+(end)
+
+== worktree tracked modification (foreign, r96 author) ==
+ M corpus/fixtures/__pycache__/run_battery.cpython-314.pyc
+ M corpus/fixtures/run_battery.py
+
+== worktree r95 block integrity vs frozen 9cd47507 ==
+frozen r95 tuples: 52 | worktree r95 tuples: 52 | byte-identical: True
+worktree CASES total: 419 | r95 block still at 303..354: True
+r95 floor gate present in worktree: True
+r95 allowlist keys in worktree: []

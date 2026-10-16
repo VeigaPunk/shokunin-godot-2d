@@ -1,0 +1,17 @@
+dss_lattice.gd
+  CASES arms: ['cast_rest', 'census', 'excl_space', 'fresh', 'layer_forms', 'order_core', 'point_canvas', 'point_cap', 'point_edge', 'ray_flags', 'ray_geom', 'ray_order', 'shape_lattice']
+  declared arms: ['cast_rest', 'census', 'excl_space', 'fresh', 'layer_forms', 'order_core', 'point_canvas', 'point_cap', 'point_edge', 'ray_flags', 'ray_geom', 'ray_order', 'shape_lattice']
+  used-not-declared: []
+  declared-not-used: []
+r95b_order.gd
+  CASES arms: ['canon', 'cap40', 'celloff', 'free', 'layers', 'period', 'periodx', 'perm', 'readd', 'rigid', 'scoutrev', 'twopiles', 'warm']
+  declared arms: ['canon', 'celloff', 'env', 'free', 'layers', 'period', 'periodx', 'perm', 'procwait', 'readd', 'rigid', 'scoutrev', 'twopiles', 'warm']
+  used-not-declared: ['cap40']
+  declared-not-used: ['env', 'procwait']
+INSTANCE-LIKE TOKEN dss_lattice_census ['RID(']
+token 'procwait' in committed signatures: 0
+token 'env' in committed signatures: 0
+token 'layout_changes_order' in committed signatures: 0
+token 'insert_perturbs' in committed signatures: 0
+token 'repeat_stable' in committed signatures: 0
+token 'shape_same_order' in committed signatures: 0

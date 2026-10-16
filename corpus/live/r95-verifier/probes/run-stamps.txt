@@ -1,0 +1,5 @@
+run                                  started (UTC)      loadavg(1m) at start   notes
+rep1 runs/20261016T070634425299Z     2026-10-16T07:06:34Z  ~95 (host busy)       alone (other lanes' load)
+rep2 runs/20261016T071643670729Z     2026-10-16T07:16:43Z  97.88                 concurrent with the gate-mutant battery
+mutant runs-mutant/20261016T071733368310Z 2026-10-16T07:17:33Z 93.08             concurrent with rep2
+rep3 runs/20261016T072400528215Z     2026-10-16T07:24:00Z  75.20                 alone

@@ -1,0 +1,210 @@
+{
+  "A_canon": {
+    "t0": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "t20": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "t20_equals_t0": true,
+    "t21_equals_t1": true,
+    "t22_equals_t2": true,
+    "t64_equals_t4": true,
+    "distinct_phases_t0_t19": 20,
+    "distinct_ticks_field": 20,
+    "cycle_len_dense_field": 20,
+    "t0_is_insertion_order": true,
+    "pt_stable_interleaved": true
+  },
+  "B_periodx": {
+    "2": {
+      "k": 2,
+      "cycle_len": 2,
+      "expected_kk1": 2,
+      "distinct_ticks": 2,
+      "cycle_len_eq_k(k-1)": true,
+      "expected_matches_field": true,
+      "distinct_eq_cycle": true
+    },
+    "3": {
+      "k": 3,
+      "cycle_len": 6,
+      "expected_kk1": 6,
+      "distinct_ticks": 6,
+      "cycle_len_eq_k(k-1)": true,
+      "expected_matches_field": true,
+      "distinct_eq_cycle": true
+    },
+    "4": {
+      "k": 4,
+      "cycle_len": 12,
+      "expected_kk1": 12,
+      "distinct_ticks": 12,
+      "cycle_len_eq_k(k-1)": true,
+      "expected_matches_field": true,
+      "distinct_eq_cycle": true
+    },
+    "5": {
+      "k": 5,
+      "cycle_len": 20,
+      "expected_kk1": 20,
+      "distinct_ticks": 20,
+      "cycle_len_eq_k(k-1)": true,
+      "expected_matches_field": true,
+      "distinct_eq_cycle": true
+    },
+    "5s8": {
+      "k": 5,
+      "cycle_len": 20,
+      "expected_kk1": 20,
+      "distinct_ticks": 20,
+      "cycle_len_eq_k(k-1)": true,
+      "expected_matches_field": true,
+      "distinct_eq_cycle": true
+    },
+    "6": {
+      "k": 6,
+      "cycle_len": 30,
+      "expected_kk1": 30,
+      "distinct_ticks": 30,
+      "cycle_len_eq_k(k-1)": true,
+      "expected_matches_field": true,
+      "distinct_eq_cycle": true
+    },
+    "7": {
+      "k": 7,
+      "cycle_len": 42,
+      "expected_kk1": 42,
+      "distinct_ticks": 42,
+      "cycle_len_eq_k(k-1)": true,
+      "expected_matches_field": true,
+      "distinct_eq_cycle": true
+    },
+    "8": {
+      "k": 8,
+      "cycle_len": 56,
+      "expected_kk1": 56,
+      "distinct_ticks": 56,
+      "cycle_len_eq_k(k-1)": true,
+      "expected_matches_field": true,
+      "distinct_eq_cycle": true
+    },
+    "10": {
+      "k": 10,
+      "cycle_len": 90,
+      "expected_kk1": 90,
+      "distinct_ticks": 90,
+      "cycle_len_eq_k(k-1)": true,
+      "expected_matches_field": true,
+      "distinct_eq_cycle": true
+    }
+  },
+  "C_perms": {
+    "distinct_t2_relpos": 8,
+    "distinct_ladders": 8,
+    "distinct_t2_vec": 8,
+    "map_field_constant": true,
+    "add_orders_distinct": 8
+  },
+  "D_cap40": {
+    "n0": [
+      "0",
+      "0",
+      "0"
+    ],
+    "n32": [
+      "32",
+      "32",
+      "32"
+    ],
+    "n64": [
+      "40",
+      "40",
+      "40"
+    ],
+    "set32_distinct": [
+      "5",
+      "5",
+      "5"
+    ],
+    "set32_ladder_distinct_over_sampled_ticks": [
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "distinct_set32_t2_across_perms": 3,
+    "set32_t2_sizes": [
+      32,
+      32,
+      32
+    ]
+  },
+  "E_celloff": {
+    "ladders_identical": true,
+    "t2_vec_identical": true,
+    "t2_relpos_identical": true
+  },
+  "F_free": {
+    "ticks": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      16
+    ],
+    "differ_at_all_ticks": true,
+    "same_final_set": true,
+    "post_free_cycle_t2_eq_t8": true
+  },
+  "G_warm": {
+    "k32_ladder_equals_canon_on_common_ticks": true,
+    "k32_t2_vec_equals_canon": true,
+    "keep8_t2_vec_differs_from_canon": true,
+    "keep8_distinct_ticks": "4"
+  },
+  "H_scoutrev": {
+    "t2_vec_matches_scout_row": true,
+    "t2_relpos_equals_canon": true,
+    "t2_vec": "[a#0,e#0,c#0,b#0,d#0]",
+    "t2_relpos": "[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]",
+    "canon_t2_relpos": "[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]"
+  },
+  "I_layers": {
+    "k0_pt_eq_sh": "true",
+    "k0_sh_len": "5",
+    "k1_pt_eq_sh": "false",
+    "k1_sh_len": "6",
+    "k1_pt0_t2_eq_sh": "false",
+    "k0_pt0_t2_eq_sh": "true"
+  },
+  "J_rigid": {
+    "distinct_ticks": "1",
+    "t10_relpos": "[15.9999,14.8732]"
+  },
+  "K_twopiles": {
+    "a_t2_eq_canon_t2": true,
+    "a_t4_with_b_vec": "[e#0,a#0,c#0,b#0,d#0]",
+    "canon_t4_tags": "e#0,a#0,b#0,c#0,d#0",
+    "a_t4_with_b_differs_from_canon_t4": true,
+    "b_t2_vec": "[e2#0,a2#0,b2#0,c2#0,d2#0]"
+  }
+}

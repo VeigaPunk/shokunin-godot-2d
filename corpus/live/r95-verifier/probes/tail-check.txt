@@ -1,0 +1,8 @@
+== r95 tokens in parent harness ==
+0
+== tail tuples identical? ==
+TAIL IDENTICAL (last 30 lines)
+== last 4 CASES tuples ==
+102:    # between descendant_pipe_detached_control and the meta probes.
+158:    # descendant_pipe_detached_control and the meta probes.
+226:    # descendant_pipe_detached_control and the meta probes.

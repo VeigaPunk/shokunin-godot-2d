@@ -1,0 +1,30 @@
+{
+  "rows": 52,
+  "rc_flip_rejects": 52,
+  "inject_error_rejects": 52,
+  "inject_script_error_rejects": 52,
+  "inject_parse_error_rejects": 52,
+  "signature_deleted_rejects": 52,
+  "token_mutations_total": 250,
+  "token_mutations_rejected": 250,
+  "rows_with_token_mutation_gap": [],
+  "tail_junk_admitted_rows": 52,
+  "prefix_tail_controls": {
+    "dss_lattice_order_core": {
+      "tail_len": 431,
+      "admitted": true
+    },
+    "dss_lattice_order_core_rev": {
+      "tail_len": 430,
+      "admitted": true
+    },
+    "dss_lattice_point_cap": {
+      "tail_len": 239,
+      "admitted": true
+    },
+    "dss_lattice_point_cap_rev": {
+      "tail_len": 239,
+      "admitted": true
+    }
+  }
+}

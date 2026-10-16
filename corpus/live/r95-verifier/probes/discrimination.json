@@ -1,0 +1,2376 @@
+{
+  "rows": 52,
+  "rc_flip_rejects": 52,
+  "inject_error_rejects": 52,
+  "inject_script_error_rejects": 52,
+  "inject_parse_error_rejects": 52,
+  "signature_deleted_rejects": 52,
+  "token_mutations_total": 250,
+  "token_mutations_rejected": 250,
+  "rows_with_token_mutation_gap": [],
+  "tail_junk_admitted_rows": 52,
+  "prefix_tail_controls": {
+    "dss_lattice_order_core": {
+      "tail_len": 431,
+      "admitted": true
+    },
+    "dss_lattice_order_core_rev": {
+      "tail_len": 430,
+      "admitted": true
+    },
+    "dss_lattice_point_cap": {
+      "tail_len": 239,
+      "admitted": true
+    },
+    "dss_lattice_point_cap_rev": {
+      "tail_len": 239,
+      "admitted": true
+    }
+  },
+  "detail": [
+    {
+      "case": "dss_lattice_cast_rest",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "1.0",
+            "to": "1.1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "n",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_census",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "false",
+            "to": "true",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "4294967295",
+            "to": "4294967296",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "4.0000",
+            "to": "4.0001",
+            "rejected": true
+          },
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_excl_space",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_fresh",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_layer_forms",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "1.0",
+            "to": "1.1",
+            "rejected": true
+          },
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_order_core",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": {
+          "tail_len": 431,
+          "admitted": true
+        }
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_order_core_rev",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "letter",
+            "from": "a",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": {
+          "tail_len": 430,
+          "admitted": true
+        }
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_point_canvas",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_point_cap",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "p",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": {
+          "tail_len": 239,
+          "admitted": true
+        }
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_point_cap_rev",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "p",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": {
+          "tail_len": 239,
+          "admitted": true
+        }
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_point_edge",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "bool",
+            "from": "false",
+            "to": "true",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_ray_flags",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "2",
+            "to": "3",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "98.0000",
+            "to": "98.0001",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_ray_geom",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "float",
+            "from": "98.0000",
+            "to": "98.0001",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "220.0000",
+            "to": "220.0001",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "r",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_ray_order",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "bool",
+            "from": "false",
+            "to": "true",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_ray_order_rev",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_shape",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "false",
+            "to": "true",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "dss_lattice_shape_rev",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_canon",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "1",
+            "to": "2",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_cap40_p0",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "40",
+            "to": "41",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "d",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_cap40_p1",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "40",
+            "to": "41",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "d",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_cap40_p2",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "40",
+            "to": "41",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "d",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_celloff_x0",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "4",
+            "to": "5",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "2",
+            "to": "3",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "s",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_celloff_x1000",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "4",
+            "to": "5",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "2",
+            "to": "3",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "s",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_celloff_y1000",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "4",
+            "to": "5",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "2",
+            "to": "3",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "s",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_free_ab",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "4",
+            "to": "5",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "1",
+            "to": "2",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_free_ba",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "3",
+            "to": "4",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "1",
+            "to": "2",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_layers_k0",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "n",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_layers_k1",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "false",
+            "to": "true",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "bool",
+            "from": "false",
+            "to": "true",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "n",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_period_k5",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "5",
+            "to": "6",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "p",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_periodx_k10",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "3",
+            "to": "4",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "4.0",
+            "to": "4.1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "10",
+            "to": "11",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "p",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_periodx_k2",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "4.0",
+            "to": "4.1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "2",
+            "to": "3",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "p",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_periodx_k3",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "2",
+            "to": "3",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "4.0",
+            "to": "4.1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "3",
+            "to": "4",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "p",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_periodx_k4",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "3",
+            "to": "4",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "4.0",
+            "to": "4.1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "4",
+            "to": "5",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "p",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_periodx_k5",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "4.0",
+            "to": "4.1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "5",
+            "to": "6",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "p",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_periodx_k5s8",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "8.0",
+            "to": "8.1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "5",
+            "to": "6",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "p",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_periodx_k6",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "4.0",
+            "to": "4.1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "6",
+            "to": "7",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "p",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_periodx_k7",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "4.0",
+            "to": "4.1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "7",
+            "to": "8",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "p",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_periodx_k8",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "2",
+            "to": "3",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "4.0",
+            "to": "4.1",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "8",
+            "to": "9",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "p",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_perm0",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "1",
+            "to": "2",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "s",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_perm1",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "3",
+            "to": "4",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "1",
+            "to": "2",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "s",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_perm2",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "2",
+            "to": "3",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "s",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_perm3",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "3",
+            "to": "4",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "3",
+            "to": "4",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "s",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_perm4",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "2",
+            "to": "3",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "4",
+            "to": "5",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "s",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_perm5",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "5",
+            "to": "6",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "s",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_perm6",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "6",
+            "to": "7",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "s",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_perm7",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "7",
+            "to": "8",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "s",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_readd_a",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "1",
+            "to": "2",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "1",
+            "to": "2",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "f",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_rigid",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "5",
+            "to": "6",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "14.8732",
+            "to": "14.8733",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "1",
+            "to": "2",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "s",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_scoutrev",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "8",
+            "to": "9",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "bool",
+            "from": "true",
+            "to": "false",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "e",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_twopiles",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "0",
+            "to": "1",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "1000.0000",
+            "to": "1000.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "2",
+            "to": "3",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "a",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_warm_k32",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "1",
+            "to": "2",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "32",
+            "to": "33",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "b",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    },
+    {
+      "case": "r95b_order_warm_keep8",
+      "axes": {
+        "rc_flip": true,
+        "inject_error": true,
+        "inject_script_error": true,
+        "inject_parse_error": true,
+        "signature_deleted": true,
+        "token_mutations": [
+          {
+            "kind": "int",
+            "from": "95",
+            "to": "96",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "4",
+            "to": "5",
+            "rejected": true
+          },
+          {
+            "kind": "float",
+            "from": "0.0000",
+            "to": "0.0001",
+            "rejected": true
+          },
+          {
+            "kind": "int",
+            "from": "8",
+            "to": "9",
+            "rejected": true
+          },
+          {
+            "kind": "letter",
+            "from": "b",
+            "to": "z",
+            "rejected": true
+          }
+        ],
+        "token_mutations_all_reject": true,
+        "tail_junk_admitted": true,
+        "prefix_tail_mutation": null
+      },
+      "baseline_pass": true
+    }
+  ]
+}

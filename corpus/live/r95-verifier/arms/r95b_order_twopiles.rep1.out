@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95B twopiles a_t2_vec=[e#0,a#0,c#0,d#0,b#0]
+R95B twopiles a_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]
+R95B twopiles a_t4_with_b_vec=[e#0,a#0,c#0,b#0,d#0]
+R95B twopiles a_t4_with_b_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|8.0000,0.0000|24.0000,0.0000]
+R95B twopiles b_t2_vec=[e2#0,a2#0,b2#0,c2#0,d2#0]
+R95B twopiles b_t2_relpos=[32.0000,1000.0000|0.0000,1000.0000|8.0000,1000.0000|16.0000,1000.0000|24.0000,1000.0000]
+R95B twopiles a_t6_with_b_vec=[d#0,a#0,c#0,b#0,e#0]
+R95B twopiles b_t4_vec=[e2#0,b2#0,c2#0,d2#0,a2#0]
+R95B twopiles env=tps=60 pf=7 proc=15 sep2d_has=true sep2d=false maxsteps=8
+PASS r95b_order twopiles a_t2_vec=[e#0,a#0,c#0,d#0,b#0] a_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] a_t4_with_b_vec=[e#0,a#0,c#0,b#0,d#0] a_t4_with_b_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|8.0000,0.0000|24.0000,0.0000] b_t2_vec=[e2#0,a2#0,b2#0,c2#0,d2#0] b_t2_relpos=[32.0000,1000.0000|0.0000,1000.0000|8.0000,1000.0000|16.0000,1000.0000|24.0000,1000.0000] a_t6_with_b_vec=[d#0,a#0,c#0,b#0,e#0] b_t4_vec=[e2#0,b2#0,c2#0,d2#0,a2#0]

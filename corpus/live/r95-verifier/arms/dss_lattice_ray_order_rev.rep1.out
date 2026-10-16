@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95 ray_order nearest=r={near pos=(98.0000,0.0000) n=(-1.0000,0.0000)}
+R95 ray_order tie=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)}
+R95 ray_order tie_minus_first=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)}
+R95 ray_order tie_minus_second=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)}
+R95 ray_order tie_add_order=[tie_b,tie_a]
+R95 ray_order last_added_wins=true
+R95 ray_order rev=true
+PASS dss_lattice ray_order nearest=r={near pos=(98.0000,0.0000) n=(-1.0000,0.0000)} tie=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_first=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_second=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_add_order=[tie_b,tie_a] last_added_wins=true rev=true

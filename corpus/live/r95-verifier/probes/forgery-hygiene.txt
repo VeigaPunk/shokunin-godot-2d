@@ -1,0 +1,29 @@
+== fallback text in fixtures ==
+corpus/live/r95-verifier/freeze/corpus/fixtures/dss_lattice.gd:55:		_: _fail("unknown_arm")
+corpus/live/r95-verifier/freeze/corpus/fixtures/dss_lattice.gd:59:func _fail(reason: String) -> void:
+corpus/live/r95-verifier/freeze/corpus/fixtures/r95b_order.gd:73:		_: _fail("unknown_arm")
+corpus/live/r95-verifier/freeze/corpus/fixtures/r95b_order.gd:77:func _fail(reason: String) -> void:
+corpus/live/r95-verifier/freeze/corpus/fixtures/r95b_order.gd:434:		_fail("free_needs_which_or_order")
+
+== fallback lines in receipts ==
+(none above = no fallback)
+
+== stderr bytes ==
+450
+1
+total stderr bytes: 332
+
+== ERROR: lines in receipts ==
+corpus/live/r95-scout/runs/disc/d_shape_cap.out
+corpus/live/r95-scout/runs/disc/d_layer_forms.out
+corpus/live/r95-scout/runs/smoke/census.err
+corpus/live/r95-scout/runs/leak-hazard/pre_fix_shape_lattice.rep1.out
+corpus/live/r95-scout/runs/leak-hazard/pre_fix_layer_forms.rep1.out
+(none above = clean)
+== nonzero .err files ==
+332 corpus/live/r95-scout/runs/smoke/census.err
+
+== canonical-set stderr/ERROR check ==
+canonical receipts: 411
+stderr bytes in canonical set: 0
+receipts containing ERROR: : 0 []

@@ -1,0 +1,1857 @@
+{
+  "godot": "godot",
+  "scratch": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r95-verifier/scratch-arms",
+  "rows": [
+    {
+      "case": "dss_lattice_census",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.711,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.932,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.832,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.932,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_ray_flags",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.93,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.6,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.66,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.93,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_ray_geom",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.678,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.794,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.704,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.794,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_ray_order",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.709,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.59,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.663,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.709,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_ray_order_rev",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.856,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.634,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.74,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.856,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_point_cap",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.636,
+          "pass": true,
+          "sig_exact_line": false
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.675,
+          "pass": true,
+          "sig_exact_line": false
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.67,
+          "pass": true,
+          "sig_exact_line": false
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.675,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_point_cap_rev",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.776,
+          "pass": true,
+          "sig_exact_line": false
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.804,
+          "pass": true,
+          "sig_exact_line": false
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.796,
+          "pass": true,
+          "sig_exact_line": false
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.804,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_point_edge",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.676,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.68,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.777,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.777,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_point_canvas",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.801,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.67,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.619,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.801,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_shape",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.749,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.7,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.649,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.749,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_shape_rev",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.809,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.758,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.631,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.809,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_order_core",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.749,
+          "pass": true,
+          "sig_exact_line": false
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.695,
+          "pass": true,
+          "sig_exact_line": false
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.705,
+          "pass": true,
+          "sig_exact_line": false
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.749,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_order_core_rev",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.807,
+          "pass": true,
+          "sig_exact_line": false
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.89,
+          "pass": true,
+          "sig_exact_line": false
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.956,
+          "pass": true,
+          "sig_exact_line": false
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.956,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_layer_forms",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.636,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.746,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.718,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.746,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_cast_rest",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.622,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.805,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.85,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.85,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_excl_space",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.777,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.795,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.75,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.795,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "dss_lattice_fresh",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.007,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.957,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.935,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.007,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_canon",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.799,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.72,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.726,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.799,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_periodx_k2",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.795,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.744,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.829,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.829,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_periodx_k3",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.875,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.755,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.727,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.875,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_periodx_k4",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.849,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.829,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.893,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.893,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_periodx_k5",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.155,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.949,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.958,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.155,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_periodx_k5s8",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.107,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.03,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.108,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.108,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_periodx_k6",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.339,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.2,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.294,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.339,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_periodx_k7",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.423,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.372,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.48,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.48,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_periodx_k8",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.828,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.813,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.727,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.828,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_periodx_k10",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 2.252,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 2.315,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 2.213,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 2.315,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_period_k5",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.198,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.199,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.163,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.199,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_perm0",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.168,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.384,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.332,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.384,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_perm1",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.123,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.298,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.297,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.298,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_perm2",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.354,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.216,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.268,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.354,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_perm3",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.384,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.37,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.178,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.384,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_perm4",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.248,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.153,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.268,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.268,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_perm5",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.286,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.291,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.188,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.291,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_perm6",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.281,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.315,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.293,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.315,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_perm7",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.234,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.173,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.324,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.324,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_scoutrev",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.321,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.304,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.235,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.321,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_celloff_x0",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.778,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.8,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.686,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.8,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_celloff_x1000",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.69,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.623,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.708,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.708,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_celloff_y1000",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.695,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.639,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.7,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.7,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_twopiles",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.77,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.741,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.812,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.812,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_warm_k32",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.246,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.252,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.242,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.252,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_warm_keep8",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.243,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.288,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.2,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.288,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_free_ab",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.963,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.957,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.085,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.085,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_free_ba",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.956,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.044,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.135,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.135,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_readd_a",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.917,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.947,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.961,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.961,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_cap40_p0",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.076,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.147,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.311,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.311,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_cap40_p1",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.463,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.193,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.326,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.463,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_cap40_p2",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.14,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.265,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.361,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.361,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_layers_k0",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.163,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.278,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.276,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.278,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_layers_k1",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.316,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.223,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 1.129,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 1.316,
+      "total_stderr_bytes": 0
+    },
+    {
+      "case": "r95b_order_rigid",
+      "reps": [
+        {
+          "rep": 1,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.883,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 2,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.816,
+          "pass": true,
+          "sig_exact_line": true
+        },
+        {
+          "rep": 3,
+          "rc": 0,
+          "error": null,
+          "stderr_bytes": 0,
+          "wall_s": 0.735,
+          "pass": true,
+          "sig_exact_line": true
+        }
+      ],
+      "all_pass": true,
+      "max_wall_s": 0.883,
+      "total_stderr_bytes": 0
+    }
+  ],
+  "all_pass": true,
+  "failures": [],
+  "slowest": [
+    [
+      2.315,
+      "r95b_order_periodx_k10"
+    ],
+    [
+      1.828,
+      "r95b_order_periodx_k8"
+    ],
+    [
+      1.8,
+      "r95b_order_celloff_x0"
+    ],
+    [
+      1.799,
+      "r95b_order_canon"
+    ],
+    [
+      1.708,
+      "r95b_order_celloff_x1000"
+    ]
+  ],
+  "nonzero_stderr_rows": [],
+  "nonexact_rows": [
+    "dss_lattice_point_cap",
+    "dss_lattice_point_cap_rev",
+    "dss_lattice_order_core",
+    "dss_lattice_order_core_rev"
+  ]
+}

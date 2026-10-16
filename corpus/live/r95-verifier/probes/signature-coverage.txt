@@ -1,0 +1,23 @@
+{
+  "classifier_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+  "totals": {
+    "exact": 290,
+    "sub": 36,
+    "miss": 0,
+    "pass": 326,
+    "reject": 0
+  },
+  "rows_with_miss": [],
+  "rows_with_reject": [],
+  "rows_with_sub_only": [
+    "dss_lattice_order_core",
+    "dss_lattice_order_core_rev",
+    "dss_lattice_point_cap",
+    "dss_lattice_point_cap_rev"
+  ],
+  "dss_prefix_mismatches": [],
+  "dss_not_prefix_of_rows": [],
+  "r95b_not_exact_everywhere": [],
+  "r95b_multi_full_lines": []
+}
+receipt instances: 326

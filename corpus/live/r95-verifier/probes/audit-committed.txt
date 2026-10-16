@@ -1,0 +1,24 @@
+== git show --stat 9cd47507 ==
+commit 9cd475078dfb8c7df1d394c68d81a1dce14d585b
+Author: game-dev-2d-shokunin <game-dev-2d@shokunin.local>
+Date:   Fri Oct 16 04:05:32 2026 -0300
+
+    r95 author: 52 dss/order rows (366 total) — k(k-1) cycle ladder, perm0-7 creation perms, co-presence attribution folded; 366/366 x2
+
+ corpus/fixtures/dss_lattice.gd | 743 +++++++++++++++++++++++++++++++++++++++
+ corpus/fixtures/r95b_order.gd  | 777 +++++++++++++++++++++++++++++++++++++++++
+ corpus/fixtures/run_battery.py | 163 +++++++++
+ reports/round-95/r95-author.md | 224 ++++++++++++
+ 4 files changed, 1907 insertions(+)
+
+== git diff --numstat 6f817d10 9cd47507 ==
+743	0	corpus/fixtures/dss_lattice.gd
+777	0	corpus/fixtures/r95b_order.gd
+163	0	corpus/fixtures/run_battery.py
+224	0	reports/round-95/r95-author.md
+
+== run_battery.py delta hunks ==
+--- a/corpus/fixtures/run_battery.py
+@@ -877,0 +878,152 @@ CASES = [
+@@ -3113,0 +3266,11 @@ def main():
++        "r95_expected_errors_all_matched": all(

@@ -1,0 +1,12 @@
+mutant built at /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r95-verifier/gate-mutant
+--- frozen/run_battery.py
++++ gate-mutant/run_battery.py
+@@ -1356,6 +1356,7 @@
+         required_stderr = ()
+         if passed is None:
+             expected_errors = {
++                "dss_lattice_census": ("ERROR: r95-verifier dead entry that can never be emitted",),
+                 "negative_overlap": ("ERROR: negative control: expected collected signal was absent with disabled mask",),
+                 "negative_transition": ("ERROR: Can't change to a null scene. Use unload_current_scene() if you wish to unload it.",
+                                       "ERROR: negative control: deliberately invalid scene destination rejected"),
+

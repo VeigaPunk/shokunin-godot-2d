@@ -1,0 +1,4 @@
+scout: 150 rc files -> {'0': 150}
+boundary: 261 rc files -> {'0': 261}
+scout cells with >1 distinct out: none (17 cells)
+boundary cells with >1 distinct out: ['canon', 'periodx_k2', 'periodx_k3', 'periodx_k5', 'periodx_k5s8', 'celloff_x0', 'period_k5', 'perm0', 'procwait', 'cap40_p0', 'celloff_x1000', 'layers_k1', 'perm1', 'scoutrev', 'cap40_p1', 'celloff_x0.25', 'celloff_y1000', 'env', 'free_ab', 'free_ba', 'free_c', 'perm2', 'perm4', 'readd_a', 'rigid', 'twopiles', 'warm_k1', 'warm_k32', 'warm_keep64', 'warm_keep8', 'cap40_p2', 'celloff_x0.5', 'celloff_xm0.25', 'free_a', 'free_ac', 'free_b', 'free_ca', 'free_d', 'free_e', 'layers_k0', 'period_k2', 'period_k3', 'period_k4', 'period_k6', 'period_k8', 'perm3', 'perm5', 'perm6', 'perm7', 'readd_c', 'warm_k0', 'warm_k13', 'warm_k2', 'warm_k3', 'warm_k5', 'warm_k8'] (69 cells)
