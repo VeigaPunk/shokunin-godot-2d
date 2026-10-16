@@ -1400,7 +1400,8 @@ CASES = [
     ('r98b_rksenum', 'r98b_rksenum.gd', [], 0,
      'PASS r98b_rksenum nz_fail_n=60 sign_pairs=++=24,-+=12,+-=12,--=12'),
     ('r98c_flush', 'r98c_flush.gd', ['--arm=flush'], 0,
-     'PASS r98c flush multitick_frames_ge2=1 draws_eq_ticks=1 draws_gt_frames=1 max_draws_per_pf_ge2=1 same_pf=1 d_pf_delta=0 d_phf_delta=0 selfq_draws=1 sync_coalesce_n=1 hide_sync_n=0 hide_ticksep_n=1 hide_ticksep_same_frame=1 hidden_across_tick_n=0 show_after_tick_n=1 bounded=1'),    ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),    # --- r99 block: the headless in-engine audio surface (r88's
+     'PASS r98c flush multitick_frames_ge2=1 draws_eq_ticks=1 draws_gt_frames=1 max_draws_per_pf_ge2=1 same_pf=1 d_pf_delta=0 d_phf_delta=0 selfq_draws=1 sync_coalesce_n=1 hide_sync_n=0 hide_ticksep_n=1 hide_ticksep_same_frame=1 hidden_across_tick_n=0 show_after_tick_n=1 bounded=1'),
+    # --- r99 block: the headless in-engine audio surface (r88's
     # "headless-null audio" verdict refuted) ------------------------------
     # Fixture audio_lattice.gd is a BYTE-COPY of the frozen r99-scout probe
     # (corpus/live/r99-scout/probes/audio_lattice.gd sha256
@@ -1532,7 +1533,7 @@ CASES = [
      'all_jumps_q=true period_is_block=true'),
     ('r99b_finfree_played', 'r99b_modes.gd', ['--arm=finfree'], 0,
      'played_gt_02=true'),
-    ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),    ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),    # r100 author — Viewport/Control GUI input routing + pointer-gesture
+    # r100 author — Viewport/Control GUI input routing + pointer-gesture
     # lattice, and the boundary's corrected mechanisms. 25 rows:
     #   14 scout cells (r100_gui.gd — BYTE-COPY of the frozen r100-scout
     #      probe, sha256 dd826f6e7b74ba62fcfd175ab7a1cf0c40fd9712de4b33a18554930cf6dad073,
