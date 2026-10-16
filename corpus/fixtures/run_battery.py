@@ -875,6 +875,158 @@ CASES = [
      'PASS particles_lattice cpu_request ok=true step010_ok=true step005_ok=true'),
     ('r94_particles_gpu_headless', 'particles_lattice.gd', ['--arm=gpu_headless'], 0,
      'PASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true'),
+    # --- r95 block: PhysicsDirectSpaceState2D query lattice + the
+    # multi-hit order k(k-1) cycle law -----------------------------------
+    # Two probes, both byte-copies of the frozen lane artifacts:
+    #   dss_lattice.gd sha256
+    #   77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627
+    #   (corpus/live/r95-scout/probes/dss_lattice.gd, identical bytes)
+    #   r95b_order.gd sha256
+    #   4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490
+    #   (corpus/live/r95-boundary/probes/r95b_order.gd, identical bytes)
+    # Boundary-surviving encoding (r95-boundary verdicts applied):
+    #   * The 13 non-order-vector dss_lattice rows pin their full PASS
+    #     lines; the four order-vector cells (point_cap, point_cap_rev,
+    #     order_core, order_core_rev) pin only the order-free head — the
+    #     scout's ROWS_PREFIX form. The vectors are the t=2 phase of a
+    #     k(k-1)-tick broadphase cycle (boundary §2) and the full
+    #     order_core line carries the refuted layout_changes_order key
+    #     (§4: co-presence, not translation) — both excluded from the
+    #     signatures (the bytes still print as data).
+    #   * The ordering law is pinned phase-resolved by the r95b rows:
+    #     canon dense ladder (t0=insertion, t20==t0), periodx k=2..10
+    #     (cycle_len = k(k-1)), period_k5 (the ff/thr/load-covered k=5
+    #     cell), perm0..7 (creation-order permutations under a fixed
+    #     tag->position map — the insertion-order evidence the scout's
+    #     label-only --rev could not be), scoutrev (the label-mirror
+    #     counter-pin), celloff (translation invariance — refutes
+    #     "layout dependent"), twopiles + warm_keep8 (co-presence
+    #     perturbation — the true attribution), warm_k32 (freed
+    #     allocation history is inert), free_ab/ba + readd_a (mutation
+    #     coordinates), cap40_p0..p2 (n0/n32/n64 counts and
+    #     set32_distinct=5 — the set is NOT invariant above the cap),
+    #     layers_k0/k1 (point/shape order agreement is
+    #     canvas-layer-conditional), rigid (solver positions
+    #     byte-deterministic).
+    #   * Deliberately NOT authored: procwait (boundary §9 [U] — a
+    #     process-frame await lands on a different tick phase per rep;
+    #     8 distinct payloads across 16 receipts), env (frame counters,
+    #     2 distinct payloads), every full-line multi-hit order vector,
+    #     every instance_id/RID (warm_k1 proves ids change while the
+    #     ladder holds — ids are never semantic).
+    # Signatures verified fresh-process on the fixture bytes: 52/52
+    # arms rc=0, 0 B stderr, signature substring-matched — the
+    # dss_lattice 17 are the scout's verify_rows-accepted ROWS_PREFIX
+    # set (150/150 receipts); the r95b 35 are canonical PASS lines
+    # byte-identical across the boundary's 261-run matrix (pass_uniq=1
+    # per authored cell). EXPECTED_ERRORS={} — every arm is
+    # ERROR:-clean. Rows inserted ahead of the crash/descendant tail —
+    # descendant_pipe_detached_control's sleep-8 gap stays adjacent to
+    # the meta probes.
+    ('dss_lattice_census', 'dss_lattice.gd', ["--arm=census"], 0,
+     'PASS dss_lattice census dss_methods=n6[cast_motion,collide_shape,get_rest_info,intersect_point,intersect_ray,intersect_shape] dss_sigs=[cast_motion(parameters:24)|collide_shape(parameters:24,max_results:2)|get_rest_info(parameters:24)|intersect_point(parameters:24,max_results:2)|intersect_ray(parameters:24)|intersect_shape(parameters:24,max_results:2)] ray=props=[collide_with_areas,collide_with_bodies,collision_mask,exclude,from,hit_from_inside,to] defaults=[collide_with_areas=false,collide_with_bodies=true,collision_mask=4294967295,exclude=n0,from=(0.0000,0.0000),hit_from_inside=false,to=(0.0000,0.0000)] pt=props=[canvas_instance_id,collide_with_areas,collide_with_bodies,collision_mask,exclude,position] defaults=[canvas_instance_id=0,collide_with_areas=false,collide_with_bodies=true,collision_mask=4294967295,exclude=n0,position=(0.0000,0.0000)] sh=props=[collide_with_areas,collide_with_bodies,collision_mask,exclude,margin,motion,shape,shape_rid,transform] defaults=[collide_with_areas=false,collide_with_bodies=true,collision_mask=4294967295,exclude=n0,margin=0.0000,motion=(0.0000,0.0000),shape=<Object#null>,shape_rid=RID(0),transform=[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)]] ray_backface=has=false pt_canvas=has=true ray_create=from=(1.0000,2.0000) to=(3.0000,4.0000) mask=4294967295 excl=0 bodies=true areas=false inside=false dss_cls=cls=GodotPhysicsDirectSpaceState2D dss_identity=same_across_calls=true'),
+    ('dss_lattice_ray_flags', 'dss_lattice.gd', ["--arm=ray_flags"], 0,
+     'PASS dss_lattice ray_flags base=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} mask2=r={} mask0=r={} nobodies=r={} areas_on=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} areas_only=r={w2 pos=(298.0000,0.0000) n=(-1.0000,0.0000)} excl_wall=r={} excl_area=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} inside_off=r={} inside_on=r={w pos=(100.0000,0.0000) n=(0.0000,0.0000)} inside_area_on=r={w2 pos=(300.0000,0.0000) n=(0.0000,0.0000)} outside_on=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} keys=["collider", "collider_id", "normal", "position", "rid", "shape"]'),
+    ('dss_lattice_ray_geom', 'dss_lattice.gd', ["--arm=ray_geom"], 0,
+     'PASS dss_lattice ray_geom end_at_face=r={w pos=(98.0000,0.0000) n=(-1.0000,0.0000)} end_eps_before=r={} graze_top=r={w pos=(98.0000,-200.0000) n=(-1.0000,0.0000)} graze_inside=r={w pos=(98.0000,-199.9990) n=(-1.0000,0.0000)} corner_diag=r={c pos=(180.0000,-20.0000) n=(-1.0000,0.0000)} zero_len_face=r={} zero_len_out=r={} reverse=r={c pos=(220.0000,0.0000) n=(1.0000,0.0000)} from_left_away=r={} from_left_through=r={c pos=(180.0000,0.0000) n=(-1.0000,0.0000)} from_right_away=r={w pos=(102.0000,0.0000) n=(0.0000,0.0000)} from_right_through=r={w pos=(102.0000,0.0000) n=(0.0000,0.0000)} corner_start_away=r={}'),
+    ('dss_lattice_ray_order', 'dss_lattice.gd', ["--arm=ray_order"], 0,
+     'PASS dss_lattice ray_order nearest=r={near pos=(98.0000,0.0000) n=(-1.0000,0.0000)} tie=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_first=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_second=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_add_order=[tie_a,tie_b] last_added_wins=true rev=false'),
+    ('dss_lattice_ray_order_rev', 'dss_lattice.gd', ["--arm=ray_order", "--rev"], 0,
+     'PASS dss_lattice ray_order nearest=r={near pos=(98.0000,0.0000) n=(-1.0000,0.0000)} tie=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_first=r={tie_a pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_minus_second=r={tie_b pos=(298.0000,0.0000) n=(-1.0000,0.0000)} tie_add_order=[tie_b,tie_a] last_added_wins=true rev=true'),
+    ('dss_lattice_point_cap', 'dss_lattice.gd', ["--arm=point_cap"], 0,
+     'PASS dss_lattice point_cap add_order=[a,b,c,d,e] cap0=[]'),
+    ('dss_lattice_point_cap_rev', 'dss_lattice.gd', ["--arm=point_cap", "--rev"], 0,
+     'PASS dss_lattice point_cap add_order=[e,d,c,b,a] cap0=[]'),
+    ('dss_lattice_point_edge', 'dss_lattice.gd', ["--arm=point_edge"], 0,
+     'PASS dss_lattice point_edge box_left=[box#0] box_right=[] box_top=[box#0] box_bottom=[] box_left_in=[box#0] box_right_in=[box#0] circ_left=[] circ_left_in=[circ#0] circ_top=[] circ_center=[circ#0] rot_left=[] rot_right=[] rot_top=[rot#0] s_box_right=[box#0] s_box_bottom=[box#0] s_circ_top=[circ#0] s_rot_right=[rot#0] point_half_open=left=true right=false top=true bottom=false'),
+    ('dss_lattice_point_canvas', 'dss_lattice.gd', ["--arm=point_canvas"], 0,
+     'PASS dss_lattice point_canvas default_q=[def#0] layer_q=[clb#0] layer_q_at_default_spot=[clb#0] layer_scoped=true shifted_default_q=[def#0] shifted_layer_q=[clb#0] layer_offset_ignored=true ray_sees_default=r={def pos=(80.0000,0.0000) n=(-1.0000,0.0000)} shape_sees_both=[def#0,clb#0] shape_layer_agnostic=true rev=false'),
+    ('dss_lattice_shape', 'dss_lattice.gd', ["--arm=shape_lattice"], 0,
+     'PASS dss_lattice shape_lattice cap0=n0 cap1=n1 cap3=n3 cap5=n5 cap_default=n5 keys=["collider", "collider_id", "rid", "shape"] set=[a#0,b#0,c#0,d#0,e#0] touch=[e#0] touch_in=[e#0] touch_out=[] multi_c0=[m#0] multi_c1=[m#1] multi_c2=[m#2] multi_set=[m#0,m#1,m#2] shape_rid=[m#1] empty=n0 rev=false'),
+    ('dss_lattice_shape_rev', 'dss_lattice.gd', ["--arm=shape_lattice", "--rev"], 0,
+     'PASS dss_lattice shape_lattice cap0=n0 cap1=n1 cap3=n3 cap5=n5 cap_default=n5 keys=["collider", "collider_id", "rid", "shape"] set=[a#0,b#0,c#0,d#0,e#0] touch=[a#0] touch_in=[a#0] touch_out=[] multi_c0=[m#0] multi_c1=[m#1] multi_c2=[m#2] multi_set=[m#0,m#1,m#2] shape_rid=[m#1] empty=n0 rev=true'),
+    ('dss_lattice_order_core', 'dss_lattice.gd', ["--arm=order_core"], 0,
+     'PASS dss_lattice order_core add_order=[a,b,c,d,e]'),
+    ('dss_lattice_order_core_rev', 'dss_lattice.gd', ["--arm=order_core", "--rev"], 0,
+     'PASS dss_lattice order_core add_order=[e,d,c,b,a]'),
+    ('dss_lattice_layer_forms', 'dss_lattice.gd', ["--arm=layer_forms"], 0,
+     'PASS dss_lattice layer_forms point_vis=[sb:body1/areas1/only0,ar:body0/areas1/only1,rb:body1/areas1/only0,cb:body1/areas1/only0,srv:body1/areas1/only0,canvas:body0/areas0/only0] ray_sb=r={sb pos=(80.0000,0.0000) n=(-1.0000,0.0000)} ray_srv=r={? pos=(860.0000,0.0000) n=(-1.0000,0.0000)} ray_area_off=r={} ray_area_on=r={ar pos=(280.0000,0.0000) n=(-1.0000,0.0000)} shape_srv=[?#0] shape_area_off=[] shape_area_on=[ar#0] cast_srv_ignored=[1.0, 1.0] server_tier_visible=true canvas_absent=true'),
+    ('dss_lattice_cast_rest', 'dss_lattice.gd', ["--arm=cast_rest"], 0,
+     'PASS dss_lattice cast_rest cm_base=[0.220703125, 0.2265625] cm_to_wall1=[0.59765625, 0.6015625] cm_mask2=[1.0, 1.0] cm_excl_w1=[0.72265625, 0.7265625] cm_excl_both=[1.0, 1.0] cm_areas_on=[0.220703125, 0.2265625] cm_zero=[1.0, 1.0] cm_negative=[1.0, 1.0] cm_from_inside=[0.47265625, 0.4765625] cm_inside_skips_overlap=true cm_inside_matches_later_wall=true ri_m50={} ri_m200={w1 pt=(98.0000,0.0000) n=(-1.0000,0.0000) shape=0} ri_m290={w1 pt=(102.0000,0.0000) n=(1.0000,0.0000) shape=0} ri_m300={w1 pt=(102.0000,0.0000) n=(1.0000,0.0000) shape=0} ri_m400={w1 pt=(102.0000,0.0000) n=(1.0000,0.0000) shape=0} ri_m600={w2 pt=(298.0000,200.0000) n=(0.0000,1.0000) shape=0} ri_m200_excl_w1={} ri_m400_excl_w1={w2 pt=(298.0000,0.0000) n=(-1.0000,0.0000) shape=0} ri_mask2={} ri_empty={} ri_offaxis={} ri_keys=["collider_id", "linear_velocity", "normal", "point", "rid", "shape"] ri_zero_motion={w1 pt=(98.0000,0.0000) n=(-1.0000,0.0000) shape=0} cs_n=6 cs_pts=[(98.0000,0.0000),(102.0000,0.0000),(114.0000,0.0000),(110.0000,0.0000),(98.0000,0.0000),(102.0000,0.0000)] cs_cap1=n2 cs_cap2=n4 cs_excl_b1=n4 cs_mask2=n0 cs_rep=n6 cs_empty=n0'),
+    ('dss_lattice_excl_space', 'dss_lattice.gd', ["--arm=excl_space"], 0,
+     'PASS dss_lattice excl_space baseline=[a#0] body_rid=[] shape_rid_inert=true null_rid_inert=true dup_rid=[] ray_shape_rid_inert=r={a pos=(80.0000,0.0000) n=(-1.0000,0.0000)} shape_rid_is_body_rid=false same_space=false root_view=[root_body#0] sv_view=[sv_body#0] space_scoped=true dss_identity=same_across_calls=true node_world_ok=true'),
+    ('dss_lattice_fresh', 'dss_lattice.gd', ["--arm=fresh"], 0,
+     'PASS dss_lattice fresh add_t0_point=[f#0] add_t0_ray=r={f pos=(80.0000,0.0000) n=(-1.0000,0.0000)} add_t0_shape=[f#0] add_same_frame=true node_move_t0_old=[f#0] node_move_t0_new=[] node_move_deferred=true node_move_t1_old=[] node_move_t1_new=[f#0] server_tele_t0_old=[] server_tele_t0_new=[f#0] server_write_live=true pre_free=[c#0] free_t0=[c#0] free_deferred=true free_t1=[] vis_off=[d#0] visible_irrelevant=true layer_change_t0=[e#0] layer_change_t1=[e#0]'),
+    ('r95b_order_canon', 'r95b_order.gd', ["--arm=canon"], 0,
+     'PASS r95b_order canon add_order=[a,b,c,d,e] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t6:3,4,1,2,0;t7:3,4,0,2,1;t8:3,4,0,1,2;t9:2,4,0,1,3;t10:2,3,0,1,4;t11:2,3,4,1,0;t12:2,3,4,0,1;t13:1,3,4,0,2;t14:1,2,4,0,3;t15:1,2,3,0,4;t16:1,2,3,4,0;t17:0,2,3,4,1;t18:0,1,3,4,2;t19:0,1,2,4,3;t20:0,1,2,3,4;t21:4,1,2,3,0;t22:4,0,2,3,1;t23:4,0,1,3,2;t24:4,0,1,2,3;t25:3,0,1,2,4;t26:3,4,1,2,0;t27:3,4,0,2,1;t28:3,4,0,1,2;t29:2,4,0,1,3;t30:2,3,0,1,4;t32:2,3,4,0,1;t36:1,2,3,4,0;t40:0,1,2,3,4;t48:3,4,0,1,2;t56:1,2,3,4,0;t64:4,0,1,2,3] distinct_ticks=20 last_change_tick=64 cycle_len_dense=20 t0_pidx=0,1,2,3,4 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t2_sh_vec=[e#0,a#0,c#0,d#0,b#0] t2_pt_eq_sh=true t64_vec=[e#0,a#0,b#0,c#0,d#0] end_sh_vec=[e#0,a#0,b#0,c#0,d#0] end_pt_eq_sh=true pt_stable_interleaved=true'),
+    ('r95b_order_periodx_k2', 'r95b_order.gd', ["--arm=periodx", "--k=2"], 0,
+     'PASS r95b_order periodx k=2 spacing=4.0 cycle_len=2 expected_kk1=2 distinct_ticks=2 n_ticks=5 t0_vec=[p0#0,p1#0] t2_vec=[p0#0,p1#0] t3_vec=[p1#0,p0#0]'),
+    ('r95b_order_periodx_k3', 'r95b_order.gd', ["--arm=periodx", "--k=3"], 0,
+     'PASS r95b_order periodx k=3 spacing=4.0 cycle_len=6 expected_kk1=6 distinct_ticks=6 n_ticks=9 t0_vec=[p0#0,p1#0,p2#0] t2_vec=[p2#0,p0#0,p1#0] t3_vec=[p1#0,p0#0,p2#0]'),
+    ('r95b_order_periodx_k4', 'r95b_order.gd', ["--arm=periodx", "--k=4"], 0,
+     'PASS r95b_order periodx k=4 spacing=4.0 cycle_len=12 expected_kk1=12 distinct_ticks=12 n_ticks=15 t0_vec=[p0#0,p1#0,p2#0,p3#0] t2_vec=[p3#0,p0#0,p2#0,p1#0] t3_vec=[p3#0,p0#0,p1#0,p2#0]'),
+    ('r95b_order_periodx_k5', 'r95b_order.gd', ["--arm=periodx", "--k=5"], 0,
+     'PASS r95b_order periodx k=5 spacing=4.0 cycle_len=20 expected_kk1=20 distinct_ticks=20 n_ticks=23 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0] t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0] t3_vec=[p4#0,p0#0,p1#0,p3#0,p2#0]'),
+    ('r95b_order_periodx_k5s8', 'r95b_order.gd', ["--arm=periodx", "--k=5", "--spacing=8"], 0,
+     'PASS r95b_order periodx k=5 spacing=8.0 cycle_len=20 expected_kk1=20 distinct_ticks=20 n_ticks=23 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0] t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0] t3_vec=[p4#0,p0#0,p1#0,p3#0,p2#0]'),
+    ('r95b_order_periodx_k6', 'r95b_order.gd', ["--arm=periodx", "--k=6"], 0,
+     'PASS r95b_order periodx k=6 spacing=4.0 cycle_len=30 expected_kk1=30 distinct_ticks=30 n_ticks=33 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0] t2_vec=[p5#0,p0#0,p2#0,p3#0,p4#0,p1#0] t3_vec=[p5#0,p0#0,p1#0,p3#0,p4#0,p2#0]'),
+    ('r95b_order_periodx_k7', 'r95b_order.gd', ["--arm=periodx", "--k=7"], 0,
+     'PASS r95b_order periodx k=7 spacing=4.0 cycle_len=42 expected_kk1=42 distinct_ticks=42 n_ticks=45 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0] t2_vec=[p6#0,p0#0,p2#0,p3#0,p4#0,p5#0,p1#0] t3_vec=[p6#0,p0#0,p1#0,p3#0,p4#0,p5#0,p2#0]'),
+    ('r95b_order_periodx_k8', 'r95b_order.gd', ["--arm=periodx", "--k=8"], 0,
+     'PASS r95b_order periodx k=8 spacing=4.0 cycle_len=56 expected_kk1=56 distinct_ticks=56 n_ticks=59 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0] t2_vec=[p7#0,p0#0,p2#0,p3#0,p4#0,p5#0,p6#0,p1#0] t3_vec=[p7#0,p0#0,p1#0,p3#0,p4#0,p5#0,p6#0,p2#0]'),
+    ('r95b_order_periodx_k10', 'r95b_order.gd', ["--arm=periodx", "--k=10"], 0,
+     'PASS r95b_order periodx k=10 spacing=4.0 cycle_len=90 expected_kk1=90 distinct_ticks=90 n_ticks=93 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p9#0] t2_vec=[p9#0,p0#0,p2#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p1#0] t3_vec=[p9#0,p0#0,p1#0,p3#0,p4#0,p5#0,p6#0,p7#0,p8#0,p2#0]'),
+    ('r95b_order_period_k5', 'r95b_order.gd', ["--arm=period", "--k=5"], 0,
+     'PASS r95b_order period k=5 cycle_len=20 distinct_ticks=20 t0_vec=[p0#0,p1#0,p2#0,p3#0,p4#0] t2_vec=[p4#0,p0#0,p2#0,p3#0,p1#0] t_last_vec=[p3#0,p4#0,p0#0,p2#0,p1#0]'),
+    ('r95b_order_perm0', 'r95b_order.gd', ["--arm=perm", "--perm=0"], 0,
+     'PASS r95b_order perm perm=0 add_order=[a,b,c,d,e] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:0,1,2,3,4;t1:4,1,2,3,0;t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t5:3,0,1,2,4;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1] distinct_ticks=9 last_change_tick=32 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]'),
+    ('r95b_order_perm1', 'r95b_order.gd', ["--arm=perm", "--perm=1"], 0,
+     'PASS r95b_order perm perm=1 add_order=[e,d,c,b,a] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:4,3,2,1,0;t1:0,3,2,1,4;t2:0,4,2,1,3;t3:0,4,3,1,2;t4:0,4,3,2,1;t5:1,4,3,2,0;t8:1,0,4,3,2;t16:3,2,1,0,4;t32:2,1,0,4,3] distinct_ticks=9 last_change_tick=32 t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_relpos=[0.0000,0.0000|32.0000,0.0000|16.0000,0.0000|8.0000,0.0000|24.0000,0.0000]'),
+    ('r95b_order_perm2', 'r95b_order.gd', ["--arm=perm", "--perm=2"], 0,
+     'PASS r95b_order perm perm=2 add_order=[b,c,a,e,d] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:1,2,0,4,3;t1:0,2,4,3,1;t2:0,1,4,3,2;t3:2,1,4,3,0;t4:2,1,0,3,4;t5:2,1,0,4,3;t8:1,3,2,4,0;t16:4,0,3,2,1;t32:3,4,1,0,2] distinct_ticks=9 last_change_tick=32 t2_vec=[a#0,b#0,e#0,d#0,c#0] t2_relpos=[0.0000,0.0000|8.0000,0.0000|32.0000,0.0000|24.0000,0.0000|16.0000,0.0000]'),
+    ('r95b_order_perm3', 'r95b_order.gd', ["--arm=perm", "--perm=3"], 0,
+     'PASS r95b_order perm perm=3 add_order=[c,a,e,d,b] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:2,0,4,3,1;t1:0,4,1,3,2;t2:2,4,1,3,0;t3:2,0,1,3,4;t4:2,0,1,4,3;t5:2,0,3,4,1;t8:1,2,3,0,4;t16:4,3,0,1,2;t32:3,1,4,2,0] distinct_ticks=9 last_change_tick=32 t2_vec=[c#0,e#0,b#0,d#0,a#0] t2_relpos=[16.0000,0.0000|32.0000,0.0000|8.0000,0.0000|24.0000,0.0000|0.0000,0.0000]'),
+    ('r95b_order_perm4', 'r95b_order.gd', ["--arm=perm", "--perm=4"], 0,
+     'PASS r95b_order perm perm=4 add_order=[a,c,b,e,d] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:0,2,1,4,3;t1:4,2,1,3,0;t2:4,0,1,3,2;t3:4,0,2,3,1;t4:1,0,2,3,4;t5:1,0,2,4,3;t8:2,3,0,4,1;t16:3,1,4,2,0;t32:0,4,3,1,2] distinct_ticks=9 last_change_tick=32 t2_vec=[e#0,a#0,b#0,d#0,c#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|24.0000,0.0000|16.0000,0.0000]'),
+    ('r95b_order_perm5', 'r95b_order.gd', ["--arm=perm", "--perm=5"], 0,
+     'PASS r95b_order perm perm=5 add_order=[d,a,b,e,c] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:3,0,1,4,2;t1:0,4,1,2,3;t2:3,4,1,2,0;t3:3,4,0,2,1;t4:3,1,0,2,4;t5:3,1,0,4,2;t8:2,0,3,4,1;t16:1,2,4,0,3;t32:4,3,2,1,0] distinct_ticks=9 last_change_tick=32 t2_vec=[d#0,e#0,b#0,c#0,a#0] t2_relpos=[24.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|0.0000,0.0000]'),
+    ('r95b_order_perm6', 'r95b_order.gd', ["--arm=perm", "--perm=6"], 0,
+     'PASS r95b_order perm perm=6 add_order=[e,a,c,d,b] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:4,0,2,3,1;t1:0,1,2,3,4;t2:4,1,2,3,0;t3:4,1,0,3,2;t4:4,1,0,2,3;t5:4,3,0,2,1;t8:1,3,4,0,2;t16:2,0,3,1,4;t32:3,2,1,4,0] distinct_ticks=9 last_change_tick=32 t2_vec=[e#0,b#0,c#0,d#0,a#0] t2_relpos=[32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000|0.0000,0.0000]'),
+    ('r95b_order_perm7', 'r95b_order.gd', ["--arm=perm", "--perm=7"], 0,
+     'PASS r95b_order perm perm=7 add_order=[b,a,d,c,e] map=[a@0,b@8,c@16,d@24,e@32] ladder=[t0:1,0,3,2,4;t1:0,4,3,2,1;t2:1,4,3,2,0;t3:1,4,0,2,3;t4:1,4,0,3,2;t5:1,2,0,3,4;t8:4,2,1,0,3;t16:3,0,2,4,1;t32:2,3,4,1,0] distinct_ticks=9 last_change_tick=32 t2_vec=[b#0,e#0,d#0,c#0,a#0] t2_relpos=[8.0000,0.0000|32.0000,0.0000|24.0000,0.0000|16.0000,0.0000|0.0000,0.0000]'),
+    ('r95b_order_scoutrev', 'r95b_order.gd', ["--arm=scoutrev"], 0,
+     'PASS r95b_order scoutrev add_order=[e,d,c,b,a] map=[e@0,d@8,c@16,b@24,a@32] ladder=[t0:4,3,2,1,0;t1:0,3,2,1,4;t2:0,4,2,1,3;t3:0,4,3,1,2;t4:0,4,3,2,1;t5:1,4,3,2,0;t8:1,0,4,3,2;t16:3,2,1,0,4;t32:2,1,0,4,3] distinct_ticks=9 t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] scout_row_rev_t2_vec=[a#0,e#0,c#0,b#0,d#0] t2_vec_matches_scout_row=true t2_relpos_equals_canon=true'),
+    ('r95b_order_celloff_x0', 'r95b_order.gd', ["--arm=celloff", "--off=0"], 0,
+     'PASS r95b_order celloff off=0.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] distinct_ticks=7 last_change_tick=64 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]'),
+    ('r95b_order_celloff_x1000', 'r95b_order.gd', ["--arm=celloff", "--off=1000"], 0,
+     'PASS r95b_order celloff off=1000.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] distinct_ticks=7 last_change_tick=64 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]'),
+    ('r95b_order_celloff_y1000', 'r95b_order.gd', ["--arm=celloff", "--off=0", "--offy=1000"], 0,
+     'PASS r95b_order celloff off=0.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] distinct_ticks=7 last_change_tick=64 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]'),
+    ('r95b_order_twopiles', 'r95b_order.gd', ["--arm=twopiles"], 0,
+     'PASS r95b_order twopiles a_t2_vec=[e#0,a#0,c#0,d#0,b#0] a_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] a_t4_with_b_vec=[e#0,a#0,c#0,b#0,d#0] a_t4_with_b_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|8.0000,0.0000|24.0000,0.0000] b_t2_vec=[e2#0,a2#0,b2#0,c2#0,d2#0] b_t2_relpos=[32.0000,1000.0000|0.0000,1000.0000|8.0000,1000.0000|16.0000,1000.0000|24.0000,1000.0000] a_t6_with_b_vec=[d#0,a#0,c#0,b#0,e#0] b_t4_vec=[e2#0,b2#0,c2#0,d2#0,a2#0]'),
+    ('r95b_order_warm_k32', 'r95b_order.gd', ["--arm=warm", "--k=32", "--keep=0"], 0,
+     'PASS r95b_order warm k=32 keep=0 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1] distinct_ticks=7 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t32_vec=[c#0,d#0,e#0,a#0,b#0]'),
+    ('r95b_order_warm_keep8', 'r95b_order.gd', ["--arm=warm", "--k=8", "--keep=1"], 0,
+     'PASS r95b_order warm k=8 keep=1 add_order=[a,b,c,d,e] ladder=[t2:0,4,1,2,3;t3:0,4,1,2,3;t4:0,4,1,2,3;t6:0,4,1,2,3;t8:4,1,2,3,0;t16:4,3,0,1,2;t32:4,3,2,0,1] distinct_ticks=4 t2_vec=[a#0,e#0,b#0,c#0,d#0] t2_relpos=[0.0000,0.0000|32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000] t32_vec=[e#0,d#0,c#0,a#0,b#0]'),
+    ('r95b_order_free_ab', 'r95b_order.gd', ["--arm=free", "--order=ab"], 0,
+     'PASS r95b_order free freed=[a,b] add_order=[a,b,c,d,e] ladder=[t1:4,3,2;t2:2,3,4;t3:2,4,3;t4:3,4,2;t6:4,2,3;t8:2,3,4;t16:3,4,2] distinct_ticks=5 last_change_tick=16 t1_vec=[e#0,d#0,c#0] t1_relpos=[32.0000,0.0000|24.0000,0.0000|16.0000,0.0000] t16_vec=[d#0,e#0,c#0] set=[c#0,d#0,e#0]'),
+    ('r95b_order_free_ba', 'r95b_order.gd', ["--arm=free", "--order=ba"], 0,
+     'PASS r95b_order free freed=[b,a] add_order=[a,b,c,d,e] ladder=[t1:3,4,2;t2:2,4,3;t3:2,3,4;t4:4,3,2;t6:3,2,4;t8:2,4,3;t16:4,3,2] distinct_ticks=5 last_change_tick=16 t1_vec=[d#0,e#0,c#0] t1_relpos=[24.0000,0.0000|32.0000,0.0000|16.0000,0.0000] t16_vec=[e#0,d#0,c#0] set=[c#0,d#0,e#0]'),
+    ('r95b_order_readd_a', 'r95b_order.gd', ["--arm=readd", "--which=a"], 0,
+     'PASS r95b_order readd which=a add_order=[a,b,c,d,e] ladder=[t1:4,1,2,3,f;t2:f,1,2,3,4;t3:f,4,2,3,1;t4:f,4,1,3,2;t6:3,4,1,2,f;t8:3,f,4,2,1;t16:1,2,3,4,f] distinct_ticks=7 t1_vec=[e#0,b#0,c#0,d#0,f#0] t1_relpos=[32.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000|0.0000,0.0000] t16_vec=[b#0,c#0,d#0,e#0,f#0] set=[b#0,c#0,d#0,e#0,f#0]'),
+    ('r95b_order_cap40_p0', 'r95b_order.gd', ["--arm=cap40", "--perm=0"], 0,
+     'PASS r95b_order cap40 perm=0 add_order_head=[t0,t1,t2,t3,t4,t5,t6,t7] set32_ladder=[t2:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0];t4:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0];t8:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t8#0,t9#0];t16:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0];t32:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0]] set32_distinct=5 set32_t2=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] n32=32 n64=40 n0=0 set32_t32=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos32_t32=[0.0000,0.0000|2.0000,0.0000|78.0000,0.0000|4.0000,0.0000|6.0000,0.0000|8.0000,0.0000|10.0000,0.0000|12.0000,0.0000|14.0000,0.0000|16.0000,0.0000|18.0000,0.0000|20.0000,0.0000|22.0000,0.0000|24.0000,0.0000|26.0000,0.0000|28.0000,0.0000|30.0000,0.0000|32.0000,0.0000|34.0000,0.0000|36.0000,0.0000|38.0000,0.0000|40.0000,0.0000|42.0000,0.0000|44.0000,0.0000|46.0000,0.0000|48.0000,0.0000|50.0000,0.0000|52.0000,0.0000|54.0000,0.0000|56.0000,0.0000|58.0000,0.0000|60.0000,0.0000] set64=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos64_head=[0.0000,0.0000|2.0000,0.0000|78.0000,0.0000|4.0000,0.0000|6.0000,0.0000|8.0000,0.0000|10.0000,0.0000|12.0000,0.0000]'),
+    ('r95b_order_cap40_p1', 'r95b_order.gd', ["--arm=cap40", "--perm=1"], 0,
+     'PASS r95b_order cap40 perm=1 add_order_head=[t39,t38,t37,t36,t35,t34,t33,t32] set32_ladder=[t2:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t39#0,t8#0,t9#0];t4:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t37#0,t38#0,t39#0,t8#0,t9#0];t8:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t8#0,t9#0];t16:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t8#0,t9#0];t32:[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t9#0]] set32_distinct=5 set32_t2=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t39#0,t8#0,t9#0] n32=32 n64=40 n0=0 set32_t32=[t0#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t9#0] relpos32_t32=[78.0000,0.0000|76.0000,0.0000|0.0000,0.0000|74.0000,0.0000|72.0000,0.0000|70.0000,0.0000|68.0000,0.0000|66.0000,0.0000|64.0000,0.0000|62.0000,0.0000|60.0000,0.0000|58.0000,0.0000|56.0000,0.0000|54.0000,0.0000|52.0000,0.0000|50.0000,0.0000|48.0000,0.0000|46.0000,0.0000|44.0000,0.0000|42.0000,0.0000|40.0000,0.0000|38.0000,0.0000|36.0000,0.0000|34.0000,0.0000|32.0000,0.0000|30.0000,0.0000|28.0000,0.0000|26.0000,0.0000|24.0000,0.0000|22.0000,0.0000|20.0000,0.0000|18.0000,0.0000] set64=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos64_head=[78.0000,0.0000|76.0000,0.0000|0.0000,0.0000|74.0000,0.0000|72.0000,0.0000|70.0000,0.0000|68.0000,0.0000|66.0000,0.0000]'),
+    ('r95b_order_cap40_p2', 'r95b_order.gd', ["--arm=cap40", "--perm=2"], 0,
+     'PASS r95b_order cap40 perm=2 add_order_head=[t3,t10,t17,t24,t31,t38,t5,t12] set32_ladder=[t2:[t0#0,t1#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t4:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t8:[t0#0,t1#0,t10#0,t11#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t16:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0];t32:[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t33#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t9#0]] set32_distinct=5 set32_t2=[t0#0,t1#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t32#0,t33#0,t35#0,t36#0,t37#0,t38#0,t4#0,t5#0,t6#0,t7#0,t9#0] n32=32 n64=40 n0=0 set32_t32=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t16#0,t17#0,t18#0,t19#0,t2#0,t21#0,t23#0,t24#0,t25#0,t26#0,t28#0,t3#0,t30#0,t31#0,t33#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t9#0] relpos32_t32=[66.0000,0.0000|6.0000,0.0000|20.0000,0.0000|34.0000,0.0000|48.0000,0.0000|62.0000,0.0000|76.0000,0.0000|10.0000,0.0000|24.0000,0.0000|38.0000,0.0000|52.0000,0.0000|72.0000,0.0000|0.0000,0.0000|14.0000,0.0000|28.0000,0.0000|42.0000,0.0000|56.0000,0.0000|70.0000,0.0000|4.0000,0.0000|18.0000,0.0000|32.0000,0.0000|46.0000,0.0000|60.0000,0.0000|74.0000,0.0000|8.0000,0.0000|22.0000,0.0000|36.0000,0.0000|50.0000,0.0000|2.0000,0.0000|78.0000,0.0000|12.0000,0.0000|26.0000,0.0000] set64=[t0#0,t1#0,t10#0,t11#0,t12#0,t13#0,t14#0,t15#0,t16#0,t17#0,t18#0,t19#0,t2#0,t20#0,t21#0,t22#0,t23#0,t24#0,t25#0,t26#0,t27#0,t28#0,t29#0,t3#0,t30#0,t31#0,t32#0,t33#0,t34#0,t35#0,t36#0,t37#0,t38#0,t39#0,t4#0,t5#0,t6#0,t7#0,t8#0,t9#0] relpos64_head=[66.0000,0.0000|6.0000,0.0000|20.0000,0.0000|34.0000,0.0000|48.0000,0.0000|62.0000,0.0000|76.0000,0.0000|10.0000,0.0000]'),
+    ('r95b_order_layers_k0', 'r95b_order.gd', ["--arm=layers", "--k=0"], 0,
+     'PASS r95b_order layers k=0 add_order=[a,b,c,d,e] pt0_ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1] pt0_distinct=7 pt0_vec=[c#0,d#0,e#0,a#0,b#0] pt0_relpos=[16.0000,0.0000|24.0000,0.0000|32.0000,0.0000|0.0000,0.0000|8.0000,0.0000] pt0_t2_vec=[e#0,a#0,c#0,d#0,b#0] pt0_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_eq_sh=true ptL_vec=[c#0,d#0,e#0,a#0,b#0] sh_vec=[c#0,d#0,e#0,a#0,b#0] sh_relpos=[16.0000,0.0000|24.0000,0.0000|32.0000,0.0000|0.0000,0.0000|8.0000,0.0000] pt_eq_sh=true sh_len=5'),
+    ('r95b_order_layers_k1', 'r95b_order.gd', ["--arm=layers", "--k=1"], 0,
+     'PASS r95b_order layers k=1 add_order=[a,b,c,d,e] pt0_ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,0,1,2,4;t8:3,0,2,4,1;t16:1,4,0,2,3;t32:4,0,2,3,1] pt0_distinct=6 pt0_vec=[e#0,a#0,c#0,d#0,b#0] pt0_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_vec=[e#0,a#0,c#0,d#0,b#0] pt0_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_eq_sh=false ptL_vec=[clb#0] sh_vec=[e#0,a#0,c#0,d#0,clb#0,b#0] sh_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|16.0000,0.0000|8.0000,0.0000] pt_eq_sh=false sh_len=6'),
+    ('r95b_order_rigid', 'r95b_order.gd', ["--arm=rigid"], 0,
+     'PASS r95b_order rigid add_order=[a,b,c,d,e] ladder=[t1:2;t2:2;t3:2;t5:2;t10:2] distinct_ticks=1 t10_relpos=[15.9999,14.8732]'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
@@ -3110,6 +3262,17 @@ def main():
             not e["dead_in_run"]
             for r in census_rows
             if r["case"].startswith("r94_")
+            for e in r["entries"]),
+        # r95 author: the r95 block carries no expected_errors entries
+        # today (every arm is ERROR:-clean, 0 B stderr across the 150
+        # scout + 261 boundary receipts and this seat's 52-arm smoke
+        # pass on the fixture bytes) — the gate is carried anyway so a
+        # future r95 allowlist entry cannot die silently; same
+        # named-by-round / covers-round-prefixes shape as r87-r94.
+        "r95_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith(("dss_lattice_", "r95b_order_"))
             for e in r["entries"]),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
