@@ -1,0 +1,36 @@
+== r91 pin<->emission census ==
+run: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r91-simplifier/runs-control/20261015T224739373652Z
+battery verdict: PASS
+
+nav_lattice_agent              prefix=True rest_len=46   tail_fields=['walk_steps', 'reached_at', 'first_reachable'] unpinned_in_tail=none
+nav_lattice_avoid              prefix=True rest_len=217  tail_fields=['seq_a', 'seq_b', 'vel_a', 'vel_b', 'sum_max', 'settle'] unpinned_in_tail=none
+nav_lattice_bake               prefix=True rest_len=31   tail_fields=['iter_b', 'settle_a', 'settle_b'] unpinned_in_tail=none
+nav_lattice_census             prefix=True rest_len=0    tail_fields=[] unpinned_in_tail=none
+nav_lattice_link               prefix=True rest_len=123  tail_fields=['fwd_disabled_same', 'settle', 'iter', 'link_iter'] unpinned_in_tail=none
+nav_lattice_path               prefix=True rest_len=16   tail_fields=['settle', 'iter'] unpinned_in_tail=none
+nav_lattice_query              prefix=True rest_len=16   tail_fields=['settle', 'iter'] unpinned_in_tail=none
+nav_lattice_region             prefix=True rest_len=100  tail_fields=['dis_same', 'settle', 'iter'] unpinned_in_tail=none
+nav_lattice_sync               prefix=True rest_len=188  tail_fields=['dis_same', 'chg_iter_same', 'chg_iter_settled', 'gate', 'ladder', 'first_reach', 'first_reach_sync'] unpinned_in_tail=none
+nav_lattice_teardown_clean     prefix=True rest_len=0    tail_fields=[] unpinned_in_tail=none
+nav_lattice_teardown_crash     prefix=True rest_len=0    tail_fields=[] unpinned_in_tail=none
+
+ALL_PINS_ARE_BYTE_EXACT_PREFIXES_OF_EMISSION=True
+
+-- whitelist / crash-pin liveness (from the run's own census) --
+nav_lattice_sync               any_entry_matched=True  bare_rejects=True  allowlisted_passes=True  entries=[('ERROR: NavigationServer navigation map query fai', 1, False)]
+nav_lattice_bake               any_entry_matched=True  bare_rejects=True  allowlisted_passes=True  entries=[('ERROR: The root node needs to be inside the Scen', 1, False)]
+census dead_entry_count=0
+census dead_entries=[]
+
+-- gate values (from the run's discrimination payload) --
+  census_allowlisted_reproduces_verdicts         True
+  census_bare_classifier_consistent              True
+  census_covers_all_allowlisted_rows             True
+  detached_control_row_still_passes              True
+  phys2d_expected_errors_all_matched             True
+  prior_meta_rows_stable_29_discriminations      True
+  r87_expected_errors_all_matched                True
+  r88_expected_errors_all_matched                True
+  r89_expected_errors_all_matched                True
+  r90_expected_errors_all_matched                True
+  r91_expected_errors_all_matched                True

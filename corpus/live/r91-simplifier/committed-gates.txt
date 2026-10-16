@@ -1,0 +1,11 @@
+  census_allowlisted_reproduces_verdicts           True
+  census_bare_classifier_consistent                True
+  census_covers_all_allowlisted_rows               True
+  detached_control_row_still_passes                True
+  phys2d_expected_errors_all_matched               True
+  prior_meta_rows_stable_29_discriminations        True
+  r87_expected_errors_all_matched                  True
+  r88_expected_errors_all_matched                  True
+  r89_expected_errors_all_matched                  True
+  r90_expected_errors_all_matched                  True
+  r91_expected_errors_all_matched                  True

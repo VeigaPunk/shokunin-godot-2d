@@ -1,0 +1,276 @@
+== r91-simplifier static audit (committed 77d2f7e snapshot) ==
+
+-- 1. arm <-> row bijection --
+dispatch branches (11):
+  arm=census           -> _arm_census
+  arm=sync             -> _arm_sync
+  arm=path             -> _arm_path
+  arm=query            -> _arm_query
+  arm=region           -> _arm_region
+  arm=agent            -> _arm_agent
+  arm=avoid            -> _arm_avoid
+  arm=bake             -> _arm_bake
+  arm=link             -> _arm_link
+  arm=teardown_crash   -> _arm_teardown_crash
+  arm=teardown_clean   -> _arm_teardown_clean
+CASES rows (11):
+  row=nav_lattice_census           arm=census           rc=0
+  row=nav_lattice_path             arm=path             rc=0
+  row=nav_lattice_query            arm=query            rc=0
+  row=nav_lattice_sync             arm=sync             rc=0
+  row=nav_lattice_region           arm=region           rc=0
+  row=nav_lattice_agent            arm=agent            rc=0
+  row=nav_lattice_avoid            arm=avoid            rc=0
+  row=nav_lattice_bake             arm=bake             rc=0
+  row=nav_lattice_link             arm=link             rc=0
+  row=nav_lattice_teardown_crash   arm=teardown_crash   rc=-6
+  row=nav_lattice_teardown_clean   arm=teardown_clean   rc=0
+row arms == dispatch arms: True
+orphan rows (row without arm): []
+orphan arms (arm without row): []
+duplicate rows: []
+non-nav rows that use nav_lattice.gd: []
+
+-- 2. function census --
+func definitions (26):
+  _arg                     def@61    callsites=1 [139]
+  _v                       def@67    callsites=12 [73, 234, 332, 333, 548, 579]...
+  _path                    def@70    callsites=35 [233, 326, 327, 328, 329, 330]...
+  _ps                      def@76    callsites=10 [165, 170, 173, 176, 178, 181]...
+  _pia                     def@82    callsites=1 [389]
+  _quad_poly               def@88    callsites=17 [230, 279, 315, 316, 318, 366]...
+  _server_region           def@94    callsites=16 [230, 279, 315, 316, 318, 366]...
+  _new_map                 def@100   callsites=11 [229, 277, 313, 365, 448, 592]...
+  _await_frames            def@105   callsites=22 [265, 272, 339, 465, 469, 475]...
+  _reach                   def@109   callsites=10 [123, 127, 241, 242, 263, 266]...
+  _await_sync              def@120   callsites=8 [247, 319, 368, 454, 595, 746]...
+  _stale                   def@134   callsites=8 [249, 321, 370, 456, 543, 597]...
+  _initialize              def@138   callsites=0 []
+  _arm_census              def@157   callsites=1 [141]
+  _arm_sync                def@228   callsites=1 [142]
+  _arm_path                def@312   callsites=1 [143]
+  _arm_query               def@364   callsites=1 [144]
+  _qpath                   def@421   callsites=7 [379, 394, 397, 400, 403, 406]...
+  _qresult                 def@426   callsites=3 [387, 412, 423]
+  _arm_region              def@447   callsites=1 [145]
+  _arm_agent               def@520   callsites=1 [146]
+  _arm_avoid               def@591   callsites=1 [147]
+  _arm_bake                def@697   callsites=1 [148]
+  _arm_link                def@780   callsites=1 [149]
+  _arm_teardown_crash      def@848   callsites=1 [150]
+  _arm_teardown_clean      def@868   callsites=1 [151]
+funcs with zero call sites: [(138, '_initialize')]
+match branches naming a missing func: []
+
+-- 3. write-only store scan (var/const) --
+  file  SETTLE     decl@56    read_lines=NONE
+  file  SYNC_BOUND decl@57    read_lines=[120, 136, 536]
+  file  _exit_code decl@59    read_lines=[154]
+  local parts      decl@71    read_lines=[73, 74, 77, 79, 80, 83, 85, 86]
+  local parts      decl@77    read_lines=[71, 73, 74, 79, 80, 83, 85, 86]
+  local parts      decl@83    read_lines=[71, 73, 74, 77, 79, 80, 85, 86]
+  local p          decl@89    read_lines=[70, 72, 91, 92, 110, 111, 111, 111]
+  local r          decl@95    read_lines=[96, 97, 98, 201, 322, 323, 359, 360, 387, 389, 390, 390, 423, 424, 457, 458, 515, 516]
+  local m          decl@101   read_lines=[102, 103]
+  local p          decl@110   read_lines=[70, 72, 89, 91, 92, 111, 111, 111]
+  local frames     decl@121   read_lines=[15, 47, 118, 122, 124, 126, 128]
+  local arm        decl@139   read_lines=[5, 5, 6, 6, 15, 16, 20, 25, 134, 136, 140, 153, 153, 863]
+  local poly       decl@158   read_lines=[94, 97, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196]
+  local reg        decl@159   read_lines=[197, 198, 199, 200, 225, 230, 240, 250, 261, 269, 274, 523, 525, 528, 593, 598, 693]
+  local ag         decl@160   read_lines=[201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 224, 529, 532, 539, 548, 549, 550, 551, 552, 553, 554, 562, 566, 567, 569, 570, 571, 578, 580, 581, 582, 583, 610, 611, 612, 613, 614, 615, 616, 617, 618]
+  local qp         decl@161   read_lines=[215, 216, 217, 218, 219, 220, 221, 222, 223, 429, 443]
+  local map        decl@229   read_lines=[17, 45, 94, 96, 109, 110, 113, 114, 120, 123, 123, 127, 127, 133, 230, 231, 232, 233, 234, 239, 241, 242, 245, 247, 251, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264, 266, 267, 270, 271, 273, 275, 313, 315, 316, 318, 319, 324, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 337, 338, 340, 341, 342, 358, 361, 365, 366, 367, 368, 373, 379, 387, 394, 397, 400, 403, 406, 409, 412, 416, 419, 421, 423, 426, 430, 430, 448, 450, 451, 452, 453, 454, 459, 461, 466, 470, 476, 482, 483, 484, 489, 491, 494, 498, 501, 507, 514, 517, 592, 593, 594, 595, 599, 611, 619, 694, 781, 782, 783, 785, 788, 794, 798, 799, 802, 804, 806, 811, 815, 816, 834, 839, 849, 852, 860, 869, 872, 880]
+  local reg        decl@230   read_lines=[159, 197, 198, 199, 200, 225, 240, 250, 261, 269, 274, 523, 525, 528, 593, 598, 693]
+  local pre_iter   decl@231   read_lines=[287, 287]
+  local pre_regions decl@232   read_lines=[288, 288]
+  local pre_path   decl@233   read_lines=[289, 289]
+  local pre_closest decl@234   read_lines=[290, 290]
+  local ladder     decl@235   read_lines=[10, 11, 227, 239, 244, 305, 305]
+  local first_reach decl@236   read_lines=[10, 12, 116, 242, 306, 306]
+  local gate       decl@247   read_lines=[11, 14, 114, 116, 131, 248, 304, 304]
+  local act_after  decl@253   read_lines=[297]
+  local cellsize   decl@254   read_lines=[291, 291]
+  local edgemargin decl@255   read_lines=[292, 292]
+  local linkradius decl@256   read_lines=[293, 293]
+  local merge_scale decl@257   read_lines=[294, 294]
+  local useedge    decl@258   read_lines=[295, 295]
+  local useasync   decl@259   read_lines=[296]
+  local chg_same   decl@263   read_lines=[22, 298, 298]
+  local chg_iter_same decl@264   read_lines=[302, 302]
+  local chg_settled decl@266   read_lines=[299, 299]
+  local chg_iter_settled decl@267   read_lines=[303, 303]
+  local dis_same   decl@271   read_lines=[19, 301, 301, 489, 512, 512]
+  local dis_settled decl@273   read_lines=[300, 300, 491, 505, 505]
+  local map2       decl@277   read_lines=[278, 279, 283, 309]
+  local reg2       decl@279   read_lines=[308]
+  local first_reach_sync decl@280   read_lines=[283, 307, 307]
+  local map        decl@313   read_lines=[17, 45, 94, 96, 109, 110, 113, 114, 120, 123, 123, 127, 127, 133, 229, 230, 231, 232, 233, 234, 239, 241, 242, 245, 247, 251, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264, 266, 267, 270, 271, 273, 275, 315, 316, 318, 319, 324, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 337, 338, 340, 341, 342, 358, 361, 365, 366, 367, 368, 373, 379, 387, 394, 397, 400, 403, 406, 409, 412, 416, 419, 421, 423, 426, 430, 430, 448, 450, 451, 452, 453, 454, 459, 461, 466, 470, 476, 482, 483, 484, 489, 491, 494, 498, 501, 507, 514, 517, 592, 593, 594, 595, 599, 611, 619, 694, 781, 782, 783, 785, 788, 794, 798, 799, 802, 804, 806, 811, 815, 816, 834, 839, 849, 852, 860, 869, 872, 880]
+  local rv         decl@315   read_lines=[322, 334, 335, 359, 366, 371, 417]
+  local rh         decl@316   read_lines=[322, 359, 367, 372, 418]
+  local rg         decl@318   read_lines=[322, 359]
+  local settle     decl@319   read_lines=[14, 119, 260, 320, 357, 357, 368, 369, 415, 415, 454, 455, 462, 513, 513, 595, 596, 685, 685, 788, 789, 833, 833]
+  local diag       decl@326   read_lines=[344, 344]
+  local diag_raw   decl@327   read_lines=[345, 345]
+  local same       decl@328   read_lines=[23, 260, 268, 285, 346, 346, 487, 847]
+  local out_start  decl@329   read_lines=[347, 347]
+  local out_target decl@330   read_lines=[348, 348]
+  local gap        decl@331   read_lines=[317, 336, 349, 349]
+  local closest_in decl@332   read_lines=[350, 350]
+  local closest_out decl@333   read_lines=[351, 351]
+  local owner_in_is_rv decl@334   read_lines=[352, 352]
+  local owner_out_is_rv decl@335   read_lines=[353, 353]
+  local gap20      decl@340   read_lines=[354, 354]
+  local gap20_reach decl@341   read_lines=[355, 355]
+  local gap20_margin decl@342   read_lines=[356, 356]
+  local map        decl@365   read_lines=[17, 45, 94, 96, 109, 110, 113, 114, 120, 123, 123, 127, 127, 133, 229, 230, 231, 232, 233, 234, 239, 241, 242, 245, 247, 251, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264, 266, 267, 270, 271, 273, 275, 313, 315, 316, 318, 319, 324, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 337, 338, 340, 341, 342, 358, 361, 366, 367, 368, 373, 379, 387, 394, 397, 400, 403, 406, 409, 412, 416, 419, 421, 423, 426, 430, 430, 448, 450, 451, 452, 453, 454, 459, 461, 466, 470, 476, 482, 483, 484, 489, 491, 494, 498, 501, 507, 514, 517, 592, 593, 594, 595, 599, 611, 619, 694, 781, 782, 783, 785, 788, 794, 798, 799, 802, 804, 806, 811, 815, 816, 834, 839, 849, 852, 860, 869, 872, 880]
+  local rv         decl@366   read_lines=[315, 322, 334, 335, 359, 371, 417]
+  local rh         decl@367   read_lines=[316, 322, 359, 372, 418]
+  local settle     decl@368   read_lines=[14, 119, 260, 319, 320, 357, 357, 369, 415, 415, 454, 455, 462, 513, 513, 595, 596, 685, 685, 788, 789, 833, 833]
+  local out        decl@375   read_lines=[379, 392, 495]
+  local md         decl@381   read_lines=[181, 216, 389, 389, 393]
+  local r          decl@423   read_lines=[95, 96, 97, 98, 201, 322, 323, 359, 360, 387, 389, 390, 390, 424, 457, 458, 515, 516]
+  local qp         decl@429   read_lines=[161, 215, 216, 217, 218, 219, 220, 221, 222, 223, 443]
+  local qr         decl@442   read_lines=[443, 444]
+  local map        decl@448   read_lines=[17, 45, 94, 96, 109, 110, 113, 114, 120, 123, 123, 127, 127, 133, 229, 230, 231, 232, 233, 234, 239, 241, 242, 245, 247, 251, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264, 266, 267, 270, 271, 273, 275, 313, 315, 316, 318, 319, 324, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 337, 338, 340, 341, 342, 358, 361, 365, 366, 367, 368, 373, 379, 387, 394, 397, 400, 403, 406, 409, 412, 416, 419, 421, 423, 426, 430, 430, 450, 451, 452, 453, 454, 459, 461, 466, 470, 476, 482, 483, 484, 489, 491, 494, 498, 501, 507, 514, 517, 592, 593, 594, 595, 599, 611, 619, 694, 781, 782, 783, 785, 788, 794, 798, 799, 802, 804, 806, 811, 815, 816, 834, 839, 849, 852, 860, 869, 872, 880]
+  local c          decl@450   read_lines=[457, 515]
+  local a          decl@451   read_lines=[14, 14, 16, 26, 31, 33, 34, 38, 39, 43, 50, 51, 62, 63, 64, 114, 117, 117, 131, 132, 132, 133, 245, 246, 457, 463, 467, 472, 474, 477, 479, 488, 492, 496, 499, 508, 510, 515, 601, 606, 610, 627, 629, 640, 642, 657, 659, 677, 678, 679, 687, 690, 743, 842, 850, 852, 853, 854, 858, 859, 861, 866, 870, 872, 873, 874, 877, 879, 882]
+  local b          decl@452   read_lines=[31, 33, 457, 464, 468, 473, 480, 485, 509, 511, 515, 602, 608, 610, 628, 630, 641, 643, 658, 659, 688, 691]
+  local d          decl@453   read_lines=[239, 239, 239, 379, 389, 390, 390, 457, 515, 574]
+  local settle     decl@454   read_lines=[14, 119, 260, 319, 320, 357, 357, 368, 369, 415, 415, 455, 462, 513, 513, 595, 596, 685, 685, 788, 789, 833, 833]
+  local base       decl@461   read_lines=[503, 503]
+  local top        decl@466   read_lines=[449, 503]
+  local bot        decl@470   read_lines=[503]
+  local enter      decl@476   read_lines=[198, 471, 471, 503, 830]
+  local l1         decl@482   read_lines=[504, 504]
+  local l2         decl@483   read_lines=[504, 504]
+  local l3         decl@484   read_lines=[504, 504]
+  local dis_same   decl@489   read_lines=[19, 271, 301, 301, 512, 512]
+  local dis_settled decl@491   read_lines=[273, 300, 300, 505, 505]
+  local reenabled  decl@494   read_lines=[505, 505]
+  local swapped    decl@498   read_lines=[506, 506]
+  local restored   decl@501   read_lines=[506, 506]
+  local root       decl@521   read_lines=[522, 525, 544, 587, 706, 707, 709, 755, 776]
+  local reg        decl@523   read_lines=[159, 197, 198, 199, 200, 225, 230, 240, 250, 261, 269, 274, 525, 528, 593, 598, 693]
+  local holder     decl@526   read_lines=[528, 532, 555, 563, 579]
+  local ag         decl@529   read_lines=[160, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 224, 532, 539, 548, 549, 550, 551, 552, 553, 554, 562, 566, 567, 569, 570, 571, 578, 580, 581, 582, 583, 610, 611, 612, 613, 614, 615, 616, 617, 618]
+  local first_reachable decl@534   read_lines=[10, 542, 586, 586]
+  local frames_waited decl@535   read_lines=[536, 538, 540]
+  local s_next     decl@548   read_lines=[573]
+  local s_fin      decl@549   read_lines=[573]
+  local s_reachable decl@550   read_lines=[573]
+  local s_reached  decl@551   read_lines=[573]
+  local s_dist     decl@552   read_lines=[574]
+  local s_plen     decl@553   read_lines=[574]
+  local s_idx      decl@554   read_lines=[574]
+  local steps      decl@558   read_lines=[561, 564, 568, 584]
+  local reached_at decl@559   read_lines=[10, 26, 28, 567, 585, 585]
+  local fin_now    decl@560   read_lines=[561]
+  local fin_v      decl@569   read_lines=[575]
+  local reached_v  decl@570   read_lines=[576]
+  local reachable_v decl@571   read_lines=[577]
+  local map        decl@592   read_lines=[17, 45, 94, 96, 109, 110, 113, 114, 120, 123, 123, 127, 127, 133, 229, 230, 231, 232, 233, 234, 239, 241, 242, 245, 247, 251, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264, 266, 267, 270, 271, 273, 275, 313, 315, 316, 318, 319, 324, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 337, 338, 340, 341, 342, 358, 361, 365, 366, 367, 368, 373, 379, 387, 394, 397, 400, 403, 406, 409, 412, 416, 419, 421, 423, 426, 430, 430, 448, 450, 451, 452, 453, 454, 459, 461, 466, 470, 476, 482, 483, 484, 489, 491, 494, 498, 501, 507, 514, 517, 593, 594, 595, 599, 611, 619, 694, 781, 782, 783, 785, 788, 794, 798, 799, 802, 804, 806, 811, 815, 816, 834, 839, 849, 852, 860, 869, 872, 880]
+  local reg        decl@593   read_lines=[159, 197, 198, 199, 200, 225, 230, 240, 250, 261, 269, 274, 523, 525, 528, 598, 693]
+  local settle     decl@595   read_lines=[14, 119, 260, 319, 320, 357, 357, 368, 369, 415, 415, 454, 455, 462, 513, 513, 596, 685, 685, 788, 789, 833, 833]
+  local a          decl@601   read_lines=[14, 14, 16, 26, 31, 33, 34, 38, 39, 43, 50, 51, 62, 63, 64, 114, 117, 117, 131, 132, 132, 133, 245, 246, 451, 457, 463, 467, 472, 474, 477, 479, 488, 492, 496, 499, 508, 510, 515, 606, 610, 627, 629, 640, 642, 657, 659, 677, 678, 679, 687, 690, 743, 842, 850, 852, 853, 854, 858, 859, 861, 866, 870, 872, 873, 874, 877, 879, 882]
+  local b          decl@602   read_lines=[31, 33, 452, 457, 464, 468, 473, 480, 485, 509, 511, 515, 608, 610, 628, 630, 641, 643, 658, 659, 688, 691]
+  local obs        decl@603   read_lines=[619, 620, 621, 622, 680, 681, 692]
+  local hits_a     decl@604   read_lines=[607, 632, 637, 645, 646, 646, 651, 653, 654, 654, 654, 654, 674]
+  local hits_b     decl@605   read_lines=[609, 638, 645, 647, 647, 652, 655, 656, 656, 656, 656, 674]
+  local pa         decl@623   read_lines=[627, 640, 672, 672]
+  local pb         decl@624   read_lines=[628, 641, 672, 672]
+  local hits_before decl@632   read_lines=[673]
+  local seq_a      decl@633   read_lines=[653, 654, 682, 682]
+  local seq_b      decl@634   read_lines=[655, 656, 682, 682]
+  local sums       decl@635   read_lines=[648, 664, 665]
+  local dir_frames decl@636   read_lines=[650, 670]
+  local last_ia    decl@637   read_lines=[645]
+  local last_ib    decl@638   read_lines=[645]
+  local va         decl@657   read_lines=[670, 683]
+  local vb         decl@658   read_lines=[670, 683]
+  local sum_max    decl@663   read_lines=[666, 684, 684]
+  local sum_bound_ok decl@664   read_lines=[30, 675, 675]
+  local dirs_ok    decl@670   read_lines=[33, 676, 676]
+  local poly_a     decl@699   read_lines=[700, 701, 702, 704, 759, 760]
+  local map_a      decl@703   read_lines=[704, 746, 751, 761, 762, 772]
+  local reg_a      decl@704   read_lines=[750, 771]
+  local root       decl@706   read_lines=[521, 522, 525, 544, 587, 707, 709, 755, 776]
+  local reg_node   decl@708   read_lines=[709, 716, 727, 740]
+  local sb         decl@710   read_lines=[715, 716]
+  local cs         decl@711   read_lines=[715]
+  local rect       decl@712   read_lines=[714]
+  local poly_b     decl@717   read_lines=[720, 727, 733, 734, 735, 745]
+  local orphan     decl@722   read_lines=[721, 724, 754, 775]
+  local sgd        decl@726   read_lines=[727, 728, 729, 730, 731, 733]
+  local obs_n      decl@728   read_lines=[763]
+  local trav_n     decl@729   read_lines=[763]
+  local has_before decl@730   read_lines=[763]
+  local polys_b    decl@734   read_lines=[764]
+  local verts_b    decl@735   read_lines=[764]
+  local poly_c     decl@737   read_lines=[740, 741, 742]
+  local sgd_c      decl@739   read_lines=[740, 741]
+  local polys_c    decl@742   read_lines=[765]
+  local map_b      decl@744   read_lines=[745, 747, 753, 766, 767, 768, 769, 774]
+  local reg_b      decl@745   read_lines=[752, 773]
+  local settle_a   decl@746   read_lines=[748, 770, 770]
+  local settle_b   decl@747   read_lines=[748, 770, 770]
+  local map        decl@781   read_lines=[17, 45, 94, 96, 109, 110, 113, 114, 120, 123, 123, 127, 127, 133, 229, 230, 231, 232, 233, 234, 239, 241, 242, 245, 247, 251, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264, 266, 267, 270, 271, 273, 275, 313, 315, 316, 318, 319, 324, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 337, 338, 340, 341, 342, 358, 361, 365, 366, 367, 368, 373, 379, 387, 394, 397, 400, 403, 406, 409, 412, 416, 419, 421, 423, 426, 430, 430, 448, 450, 451, 452, 453, 454, 459, 461, 466, 470, 476, 482, 483, 484, 489, 491, 494, 498, 501, 507, 514, 517, 592, 593, 594, 595, 599, 611, 619, 694, 782, 783, 785, 788, 794, 798, 799, 802, 804, 806, 811, 815, 816, 834, 839, 849, 852, 860, 869, 872, 880]
+  local r1         decl@782   read_lines=[792, 837]
+  local r2         decl@783   read_lines=[793, 838]
+  local link       decl@784   read_lines=[20, 149, 779, 785, 786, 787, 790, 791, 796, 797, 800, 803, 807, 808, 809, 812, 813, 817, 825, 826, 827, 828, 829, 830, 831, 835, 836]
+  local settle     decl@788   read_lines=[14, 119, 260, 319, 320, 357, 357, 368, 369, 415, 415, 454, 455, 462, 513, 513, 595, 596, 685, 685, 789, 833, 833]
+  local bidir_default decl@796   read_lines=[818, 818]
+  local en_default decl@797   read_lines=[818, 818]
+  local fwd_default decl@798   read_lines=[819, 819]
+  local rev_default decl@799   read_lines=[820, 820]
+  local rev_bidir  decl@802   read_lines=[821, 821]
+  local fwd_disabled_same decl@804   read_lines=[20, 832, 832]
+  local fwd_disabled_settled decl@806   read_lines=[822, 822]
+  local cost300    decl@811   read_lines=[823, 823]
+  local layer1     decl@815   read_lines=[824, 824]
+  local layer2     decl@816   read_lines=[824, 824]
+  local map        decl@849   read_lines=[17, 45, 94, 96, 109, 110, 113, 114, 120, 123, 123, 127, 127, 133, 229, 230, 231, 232, 233, 234, 239, 241, 242, 245, 247, 251, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264, 266, 267, 270, 271, 273, 275, 313, 315, 316, 318, 319, 324, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 337, 338, 340, 341, 342, 358, 361, 365, 366, 367, 368, 373, 379, 387, 394, 397, 400, 403, 406, 409, 412, 416, 419, 421, 423, 426, 430, 430, 448, 450, 451, 452, 453, 454, 459, 461, 466, 470, 476, 482, 483, 484, 489, 491, 494, 498, 501, 507, 514, 517, 592, 593, 594, 595, 599, 611, 619, 694, 781, 782, 783, 785, 788, 794, 798, 799, 802, 804, 806, 811, 815, 816, 834, 839, 852, 860, 869, 872, 880]
+  local a          decl@850   read_lines=[14, 14, 16, 26, 31, 33, 34, 38, 39, 43, 50, 51, 62, 63, 64, 114, 117, 117, 131, 132, 132, 133, 245, 246, 451, 457, 463, 467, 472, 474, 477, 479, 488, 492, 496, 499, 508, 510, 515, 601, 606, 610, 627, 629, 640, 642, 657, 659, 677, 678, 679, 687, 690, 743, 842, 852, 853, 854, 858, 859, 861, 866, 870, 872, 873, 874, 877, 879, 882]
+  local hits       decl@851   read_lines=[855, 871, 875]
+  local map        decl@869   read_lines=[17, 45, 94, 96, 109, 110, 113, 114, 120, 123, 123, 127, 127, 133, 229, 230, 231, 232, 233, 234, 239, 241, 242, 245, 247, 251, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264, 266, 267, 270, 271, 273, 275, 313, 315, 316, 318, 319, 324, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 337, 338, 340, 341, 342, 358, 361, 365, 366, 367, 368, 373, 379, 387, 394, 397, 400, 403, 406, 409, 412, 416, 419, 421, 423, 426, 430, 430, 448, 450, 451, 452, 453, 454, 459, 461, 466, 470, 476, 482, 483, 484, 489, 491, 494, 498, 501, 507, 514, 517, 592, 593, 594, 595, 599, 611, 619, 694, 781, 782, 783, 785, 788, 794, 798, 799, 802, 804, 806, 811, 815, 816, 834, 839, 849, 852, 860, 872, 880]
+  local a          decl@870   read_lines=[14, 14, 16, 26, 31, 33, 34, 38, 39, 43, 50, 51, 62, 63, 64, 114, 117, 117, 131, 132, 132, 133, 245, 246, 451, 457, 463, 467, 472, 474, 477, 479, 488, 492, 496, 499, 508, 510, 515, 601, 606, 610, 627, 629, 640, 642, 657, 659, 677, 678, 679, 687, 690, 743, 842, 850, 852, 853, 854, 858, 859, 861, 866, 872, 873, 874, 877, 879, 882]
+  local hits       decl@871   read_lines=[851, 855, 875]
+write-only stores: ['SETTLE']
+
+-- 4. print site census --
+print( sites: 13
+  136   print("STALE nav_lattice ", arm, " sync_bound_exhausted bound=", SYNC_BOUND)
+  153   print("PASS nav_lattice unknown arm=", arm)
+  162   print("PASS nav_lattice census ",
+  286   print("PASS nav_lattice sync ",
+  343   print("PASS nav_lattice path ",
+  391   print("PASS nav_lattice query ",
+  502   print("PASS nav_lattice region ",
+  572   print("PASS nav_lattice agent ",
+  671   print("PASS nav_lattice avoid ",
+  758   print("PASS nav_lattice bake ",
+  817   print("PASS nav_lattice link ",
+  857   print("NAV_LATTICE_TEARDOWN_CRASH armed=live_cb has_cb=",
+  881   print("PASS nav_lattice teardown_clean survived=true has_cb=",
+PASS-shaped print sites: 11 = 10 real arm lines + 1 unknown-arm fallback (the fallback also starts with `PASS nav_lattice `, hence a naive grep counts 11)
+STALE sites: 1 ; crash-marker sites: 1 ; total = 13
+
+-- 5. CLI knob usage in nav_lattice.gd --
+  arm            occurrences=39 [5, 6, 15, 16, 20, 25, 34, 134, 136, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 153, 157, 228, 312, 364, 447, 520, 591, 625, 673, 697, 780, 844, 848, 857, 863, 868]
+  frames         occurrences=39 [15, 47, 105, 118, 120, 121, 122, 124, 126, 128, 265, 272, 339, 465, 469, 475, 481, 486, 490, 493, 497, 500, 535, 536, 538, 540, 547, 636, 650, 670, 689, 725, 801, 805, 810, 814, 856, 876, 878]
+  fixed-fps      occurrences=4 [13, 18, 48, 246]
+  physics-ticks  occurrences=0 []
+
+-- 6. declared diagnostic tail fields vs pinned signatures --
+  nav_lattice_census           pinned_len=649  tail_fields_inside_pin=[]
+  nav_lattice_path             pinned_len=604  tail_fields_inside_pin=[]
+  nav_lattice_query            pinned_len=607  tail_fields_inside_pin=[]
+  nav_lattice_sync             pinned_len=249  tail_fields_inside_pin=[]
+  nav_lattice_region           pinned_len=939  tail_fields_inside_pin=[]
+  nav_lattice_agent            pinned_len=271  tail_fields_inside_pin=[]
+  nav_lattice_avoid            pinned_len=210  tail_fields_inside_pin=[]
+  nav_lattice_bake             pinned_len=554  tail_fields_inside_pin=[]
+  nav_lattice_link             pinned_len=618  tail_fields_inside_pin=[]
+  nav_lattice_teardown_crash   pinned_len=52   tail_fields_inside_pin=[]
+  nav_lattice_teardown_clean   pinned_len=58   tail_fields_inside_pin=[]
+
+== end static audit ==

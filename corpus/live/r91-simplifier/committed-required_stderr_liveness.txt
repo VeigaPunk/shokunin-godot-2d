@@ -1,0 +1,17 @@
+== required_stderr liveness ==
+production classify_process extracted by AST from committed run_battery.py (f5725ca4...) — 4 statements
+required_stderr clause source (run_battery.py:1105-1112):
+  1105|             if required_stderr:
+  1106|                 # Stream-anchored: every pinned fragment must appear on the
+  1107|                 # stderr stream alone, and at least one payload of the row's
+  1108|                 # signature must appear on stdout alone — the two directions
+  1109|                 # of the merged-blob blindness closed together.
+  1110|                 sigs = evidence if isinstance(evidence, (tuple, list)) else (evidence,)
+  1111|                 passed = (passed
+  1112|                           and all(fragment in proc_stderr for fragment in required_stderr)
+
+Traceback (most recent call last):
+  File "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r91-simplifier/required_stderr_liveness.py", line 60, in <module>
+    assert stderr_real, "no captured stderr receipt"
+           ^^^^^^^^^^^
+AssertionError: no captured stderr receipt

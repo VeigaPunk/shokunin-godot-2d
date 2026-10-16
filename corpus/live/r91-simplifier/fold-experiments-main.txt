@@ -1,0 +1,111 @@
+== r91-simplifier fold experiments ==
+control  nav_lattice.gd sha256=088843399ce37eb272dfb8cbf7e2a115f1b9af01a44859ea05610297875e3796 lines=883
+foldA    nav_lattice.gd sha256=ea49f6134349542221a492975bbc79c580185eb1c118442d2d113c45c78cd265 lines=882
+foldB    nav_lattice.gd sha256=b23887e5b05d830629689010baf8bf5ed044e32548831945fe134983cd07450e lines=880
+stale    nav_lattice.gd sha256=4702301fb352bcfc16af5a81884c0ffbf701c07f04e4347870dd9da7ca7c9fa7 lines=882
+
+-- launch matrix (battery shape: godot --headless --path <proj> --script res://nav_lattice.gd -- --arm=<a>) --
+  control  census           rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  census           rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  census           rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  sync             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=7
+  control  sync             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=7
+  control  sync             rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=7
+  control  path             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  path             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  path             rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  query            rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  query            rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  query            rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  region           rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  region           rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  region           rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  agent            rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  agent            rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  agent            rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  avoid            rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  avoid            rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  avoid            rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  bake             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=11
+  control  bake             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=11
+  control  bake             rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=11
+  control  link             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  link             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  link             rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  teardown_crash   rep1 rc=-6   stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=1
+  control  teardown_crash   rep2 rc=-6   stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=1
+  control  teardown_crash   rep3 rc=-6   stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=1
+  control  teardown_clean   rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  teardown_clean   rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  teardown_clean   rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    census           rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    census           rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    census           rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    sync             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=7
+  foldA    sync             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=7
+  foldA    sync             rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=7
+  foldA    path             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    path             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    path             rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    query            rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    query            rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    query            rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    region           rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    region           rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    region           rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    agent            rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    agent            rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    agent            rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    avoid            rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    avoid            rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    avoid            rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    bake             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=11
+  foldA    bake             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=11
+  foldA    bake             rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=11
+  foldA    link             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    link             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    link             rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    teardown_crash   rep1 rc=-6   stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=1
+  foldA    teardown_crash   rep2 rc=-6   stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=1
+  foldA    teardown_crash   rep3 rc=-6   stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=1
+  foldA    teardown_clean   rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    teardown_clean   rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldA    teardown_clean   rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    census           rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    census           rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    census           rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    sync             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=7
+  foldB    sync             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=7
+  foldB    sync             rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=7
+  foldB    path             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    path             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    path             rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    query            rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    query            rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    query            rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    region           rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    region           rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    region           rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    agent            rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    agent            rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    agent            rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    avoid            rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    avoid            rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    avoid            rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    bake             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=11
+  foldB    bake             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=11
+  foldB    bake             rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=11
+  foldB    link             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    link             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    link             rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    teardown_crash   rep1 rc=-6   stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=1
+  foldB    teardown_crash   rep2 rc=-6   stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=1
+  foldB    teardown_crash   rep3 rc=-6   stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=1
+  foldB    teardown_clean   rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    teardown_clean   rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  foldB    teardown_clean   rep3 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+
+-- observable comparison vs control (declared tails masked) --
+
+MISMATCHES=0  raw-byte-identical receipts=32
+== end fold experiments ==

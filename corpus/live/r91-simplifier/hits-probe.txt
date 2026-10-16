@@ -1,0 +1,5 @@
+scratch probe sha256=3da1f465a13b28fbfaa04138118c42554a890dbfcca72671c730b3779b8ef0bd lines=885 (committed base sha256=088843399ce37eb272dfb8cbf7e2a115f1b9af01a44859ea05610297875e3796)
+  teardown_crash   rep1 rc=-6  ['R91S_HITS_CRASH 2']
+  teardown_crash   rep2 rc=-6  ['R91S_HITS_CRASH 2']
+  teardown_clean   rep1 rc=0   ['R91S_HITS_CLEAN 2']
+  teardown_clean   rep2 rc=0   ['R91S_HITS_CLEAN 2']

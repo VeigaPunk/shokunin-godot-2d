@@ -1,0 +1,124 @@
+== r91-simplifier fold experiments ==
+control  nav_lattice.gd sha256=088843399ce37eb272dfb8cbf7e2a115f1b9af01a44859ea05610297875e3796 lines=883
+foldA    nav_lattice.gd sha256=ea49f6134349542221a492975bbc79c580185eb1c118442d2d113c45c78cd265 lines=882
+foldB    nav_lattice.gd sha256=b23887e5b05d830629689010baf8bf5ed044e32548831945fe134983cd07450e lines=880
+stale    nav_lattice.gd sha256=4702301fb352bcfc16af5a81884c0ffbf701c07f04e4347870dd9da7ca7c9fa7 lines=882
+
+-- launch matrix (battery shape: godot --headless --path <proj> --script res://nav_lattice.gd -- --arm=<a>) --
+  control  sync             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=7
+  control  sync             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=7
+  control  path             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  path             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  query            rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  query            rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  region           rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  region           rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  avoid            rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  avoid            rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  bake             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=11
+  control  bake             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=11
+  control  link             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  link             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  agent            rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  agent            rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  census           rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  control  census           rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    sync             rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=7
+  stale    sync             rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=7
+  stale    path             rep1 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    path             rep2 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    query            rep1 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    query            rep2 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    region           rep1 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    region           rep2 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    avoid            rep1 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    avoid            rep2 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    bake             rep1 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=11
+  stale    bake             rep2 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=11
+  stale    link             rep1 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    link             rep2 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    agent            rep1 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    agent            rep2 rc=2    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    census           rep1 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+  stale    census           rep2 rc=0    stdout[:60]='Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 ' stderr_lines=0
+
+-- observable comparison vs control (declared tails masked) --
+  stale    path             rep1 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice path sync_bound_exhausted bound=1
+      rc 0 -> 2
+  stale    path             rep2 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice path sync_bound_exhausted bound=1
+      rc 0 -> 2
+  stale    query            rep1 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice query postproc=[pp2=[(20.0000,180.0000),(40
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice query sync_bound_exhausted bound=1
+      rc 0 -> 2
+  stale    query            rep2 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice query postproc=[pp2=[(20.0000,180.0000),(40
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice query sync_bound_exhausted bound=1
+      rc 0 -> 2
+  stale    region           rep1 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice region base=[(10.0000,50.0000),(20.0000,60.
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice region sync_bound_exhausted bound=1
+      rc 0 -> 2
+  stale    region           rep2 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice region base=[(10.0000,50.0000),(20.0000,60.
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice region sync_bound_exhausted bound=1
+      rc 0 -> 2
+  stale    avoid            rep1 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,1
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice avoid sync_bound_exhausted bound=1
+      rc 0 -> 2
+  stale    avoid            rep2 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,1
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice avoid sync_bound_exhausted bound=1
+      rc 0 -> 2
+  stale    bake             rep1 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice bake outline_polys=4 outline_verts=8 hole_a
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice bake sync_bound_exhausted bound=1
+      rc 0 -> 2
+  stale    bake             rep2 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice bake outline_polys=4 outline_verts=8 hole_a
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice bake sync_bound_exhausted bound=1
+      rc 0 -> 2
+  stale    link             rep1 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice link bidir_default=true en_default=true fwd
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice link sync_bound_exhausted bound=1
+      rc 0 -> 2
+  stale    link             rep2 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice link bidir_default=true en_default=true fwd
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice link sync_bound_exhausted bound=1
+      rc 0 -> 2
+  stale    agent            rep1 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice agent settled=(180.0000,180.0000)/false/tru
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice agent sync_bound_exhausted bound=1
+      rc 0 -> 2
+  stale    agent            rep2 DIFF (out=False err=True rc=False)
+      control: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org PASS nav_lattice agent settled=(180.0000,180.0000)/false/tru
+      variant: Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org STALE nav_lattice agent sync_bound_exhausted bound=1
+      rc 0 -> 2
+
+MISMATCHES=14  raw-byte-identical receipts=2
+
+-- stale variant invariants (fold 2: loud failure, never a PASS-shaped payload off an unsynced map) --
+  sync             rep1 rc=0   stale_line=False pass_line=True 
+  sync             rep2 rc=0   stale_line=False pass_line=True 
+  path             rep1 rc=2   stale_line=True  pass_line=False
+  path             rep2 rc=2   stale_line=True  pass_line=False
+  query            rep1 rc=2   stale_line=True  pass_line=False
+  query            rep2 rc=2   stale_line=True  pass_line=False
+  region           rep1 rc=2   stale_line=True  pass_line=False
+  region           rep2 rc=2   stale_line=True  pass_line=False
+  avoid            rep1 rc=2   stale_line=True  pass_line=False
+  avoid            rep2 rc=2   stale_line=True  pass_line=False
+  bake             rep1 rc=2   stale_line=True  pass_line=False
+  bake             rep2 rc=2   stale_line=True  pass_line=False
+  link             rep1 rc=2   stale_line=True  pass_line=False
+  link             rep2 rc=2   stale_line=True  pass_line=False
+  agent            rep1 rc=2   stale_line=True  pass_line=False
+  agent            rep2 rc=2   stale_line=True  pass_line=False
+  census           rep1 rc=0   stale_line=False pass_line=True 
+  census           rep2 rc=0   stale_line=False pass_line=True 
+== end fold experiments ==

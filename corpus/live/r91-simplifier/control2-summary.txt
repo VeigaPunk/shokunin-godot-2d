@@ -1,0 +1,5 @@
+control run 2 (committed bytes): runs-control2/20261016T000152182018Z/verdicts.json
+  verdict=PASS rows=272 nav_pass=11/11 fails=[]
+  r91_expected_errors_all_matched=True
+  census dead_entry_count=0
+  mode=bounded_popen_surface_arms_plus_allowlist_census verdict=PASS

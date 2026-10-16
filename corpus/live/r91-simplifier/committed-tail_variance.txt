@@ -1,0 +1,47 @@
+== tail-variance census (fields deliberately moved out of the pin) ==
+sources: r91-author (3 reps/arm) + control battery run (1 rep/arm)
+
+-- census (4 receipts) --
+   (no declared tail field emitted by this arm)
+-- sync (4 receipts) --
+   ladder             constant  n=4 distinct=1 ['[f0:0/0/0,f1:0/0/0,f2:1/1/0,f3:1/1/0,f4:2/1/1,f5:2/1/1,f6:2/1/1,f7:2/1/1,f8:2/1/1,f9:2/1/1]']
+   first_reach_sync   constant  n=4 distinct=1 ['1']
+   first_reach        constant  n=4 distinct=1 ['4']
+   gate               constant  n=4 distinct=1 ['0']
+   chg_iter_same      constant  n=4 distinct=1 ['2']
+   chg_iter_settled   constant  n=4 distinct=1 ['3']
+   dis_same           constant  n=4 distinct=1 ['true']
+-- path (4 receipts) --
+   settle             constant  n=4 distinct=1 ['5']
+   iter               constant  n=4 distinct=1 ['3']
+-- query (4 receipts) --
+   settle             constant  n=4 distinct=1 ['5']
+   iter               constant  n=4 distinct=1 ['2']
+-- region (4 receipts) --
+   settle             VARIES    n=4 distinct=2 ['4', '5']
+   iter               constant  n=4 distinct=1 ['11']
+   dis_same           constant  n=4 distinct=1 ['[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)]']
+-- agent (4 receipts) --
+   walk_steps         constant  n=4 distinct=1 ['28']
+   reached_at         constant  n=4 distinct=1 ['28']
+   first_reachable    VARIES    n=4 distinct=2 ['4', '5']
+-- avoid (4 receipts) --
+   settle             constant  n=4 distinct=1 ['5']
+   seq_a              VARIES    n=4 distinct=4 ['[10.620,0.000,10.674,0.000,10.732,0.000,10.684,0.000,10.738,0.000]', '[14.117,0.000,14.195,0.000,14.273,0.000,14.273,0.000,14.273,0.000]', '[14.404,0.000,14.484,0.000,14.564,0.000,14.645,0.000,14.726,0.000]', '[14.409,0.000,14.488,0.000,14.568,0.000,14.648,0.000,14.730,0.000]']
+   seq_b              VARIES    n=4 distinct=4 ['[-5.434,0.000,-5.352,0.000,-5.271,0.000,-5.189,0.000,-5.107,0.000]', '[-5.436,0.000,-5.355,0.000,-5.274,0.000,-5.193,0.000,-5.110,0.000]', '[-5.728,0.000,-5.648,0.000,-5.727,0.000,-5.727,0.000,-5.608,0.000]', '[-9.273,0.000,-9.211,0.000,-9.150,0.000,-9.209,0.000,-9.262,0.000]']
+   vel_a              VARIES    n=4 distinct=4 ['(10.7377,0.0000)', '(14.2732,0.0000)', '(14.7262,0.0000)', '(14.7296,0.0000)']
+   vel_b              VARIES    n=4 distinct=4 ['(-5.1071,0.0000)', '(-5.1105,0.0000)', '(-5.6079,0.0000)', '(-9.2623,0.0000)']
+   sum_max            VARIES    n=4 distinct=3 ['19.8402', '19.8426', '20.0000']
+-- bake (4 receipts) --
+   settle_a           constant  n=4 distinct=1 ['3']
+   settle_b           constant  n=4 distinct=1 ['1']
+   iter_b             constant  n=4 distinct=1 ['2']
+-- link (4 receipts) --
+   settle             constant  n=4 distinct=1 ['5']
+   iter               constant  n=4 distinct=1 ['5']
+   link_iter          constant  n=4 distinct=1 ['4']
+   fwd_disabled_same  constant  n=4 distinct=1 ['[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)]']
+-- teardown_crash (4 receipts) --
+   (no declared tail field emitted by this arm)
+-- teardown_clean (4 receipts) --
+   (no declared tail field emitted by this arm)

@@ -1,0 +1,9 @@
+folded-run1  runs-fold-battery/20261015T232721056362Z/verdicts.json
+   verdict=FAIL rows=258 nav_pass=11/11 fails=['audio_bus_route']
+   r91_expected_errors_all_matched=True census_allowlisted_reproduces_verdicts=True dead_entries=0
+   failing row: audio_bus_route exit=2
+folded-run2  runs-fold-battery2/20261015T233207565605Z/verdicts.json
+   verdict=FAIL rows=258 nav_pass=11/11 fails=['negative_transition', 'probe_error_clause_surface']
+   r91_expected_errors_all_matched=True census_allowlisted_reproduces_verdicts=True dead_entries=2
+   failing row: negative_transition exit=1
+   failing row: probe_error_clause_surface exit=None

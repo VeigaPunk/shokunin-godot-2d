@@ -1,0 +1,10 @@
+== corpus/live/r91-author/runs1/20261015T223815564642Z/verdicts.json ==
+  mine rows=258 author rows=258 common=258 mine_only=[] author_only=[]
+  verdict diffs: 0 []
+  exit diffs: 0 []
+  nav rows compared=11 verdict-diffs=0
+== corpus/live/r91-author/runs2/20261015T224213073214Z/verdicts.json ==
+  mine rows=258 author rows=258 common=258 mine_only=[] author_only=[]
+  verdict diffs: 0 []
+  exit diffs: 0 []
+  nav rows compared=11 verdict-diffs=0

@@ -1,0 +1,16 @@
+== cross-session pin stability (tails masked) ==
+this seat's control run: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r91-simplifier/runs-control/20261015T224739373652Z
+
+nav_lattice_agent            receipts_compared=5  identical=ALL
+nav_lattice_avoid            receipts_compared=5  identical=ALL
+nav_lattice_bake             receipts_compared=5  identical=ALL
+nav_lattice_census           receipts_compared=5  identical=ALL
+nav_lattice_link             receipts_compared=5  identical=ALL
+nav_lattice_path             receipts_compared=5  identical=ALL
+nav_lattice_query            receipts_compared=5  identical=ALL
+nav_lattice_region           receipts_compared=5  identical=ALL
+nav_lattice_sync             receipts_compared=5  identical=ALL
+nav_lattice_teardown_clean   receipts_compared=5  identical=ALL
+nav_lattice_teardown_crash   receipts_compared=5  identical=ALL
+
+TOTAL_MISMATCHES=0

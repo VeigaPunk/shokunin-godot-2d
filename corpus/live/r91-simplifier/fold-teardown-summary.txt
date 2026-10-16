@@ -1,0 +1,35 @@
+== per-arm fold comparison vs control (receipts in runs-fold-teardown) ==
+arm               variant   raw-ident   masked-ident notes
+census            foldA     0/0         0/0         -
+census            foldB     0/0         0/0         -
+census            hitsprobe 0/0         0/0         -
+sync              foldA     0/0         0/0         -
+sync              foldB     0/0         0/0         -
+sync              hitsprobe 0/0         0/0         -
+path              foldA     0/0         0/0         -
+path              foldB     0/0         0/0         -
+path              hitsprobe 0/0         0/0         -
+query             foldA     0/0         0/0         -
+query             foldB     0/0         0/0         -
+query             hitsprobe 0/0         0/0         -
+region            foldA     0/0         0/0         -
+region            foldB     0/0         0/0         -
+region            hitsprobe 0/0         0/0         -
+agent             foldA     0/0         0/0         -
+agent             foldB     0/0         0/0         -
+agent             hitsprobe 0/0         0/0         -
+avoid             foldA     0/0         0/0         -
+avoid             foldB     0/0         0/0         -
+avoid             hitsprobe 0/0         0/0         -
+bake              foldA     0/0         0/0         -
+bake              foldB     0/0         0/0         -
+bake              hitsprobe 0/0         0/0         -
+link              foldA     0/0         0/0         -
+link              foldB     0/0         0/0         -
+link              hitsprobe 0/0         0/0         -
+teardown_crash    foldA     3/3         3/3         -
+teardown_crash    foldB     3/3         3/3         -
+teardown_crash    hitsprobe 0/3         0/3         stdout differs (tail only)
+teardown_clean    foldA     3/3         3/3         -
+teardown_clean    foldB     3/3         3/3         -
+teardown_clean    hitsprobe 0/3         0/3         stdout differs (tail only)
