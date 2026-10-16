@@ -1,0 +1,7 @@
+ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.
+	NavigationServer 'map_changed' signal can be used to receive update notifications.
+	NavigationServer 'map_get_iteration_id()' can be used to check if a map has finished its newest iteration.
+   at: get_closest_point (modules/navigation_2d/nav_map_2d.cpp:165)
+   GDScript backtrace (most recent call first):
+       [0] _arm_sync (res://nav_lattice.gd:234)
+       [1] _initialize (res://nav_lattice.gd:142)

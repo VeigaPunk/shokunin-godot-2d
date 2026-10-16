@@ -1,0 +1,76 @@
+CASES total tuples: 251
+nav_lattice CASES: 11 at indices [236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246]
+first/last nav idx: 236 / 246  (total idx max 250)
+case before first nav: r90_lattice_lag
+case after last nav: crash_spontaneous_sigabrt
+
+expected_errors nav entries:
+  nav_lattice_sync: ('ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.',)
+  nav_lattice_bake: ('ERROR: The root node needs to be inside the SceneTree.',)
+required_stderr nav entries:
+  nav_lattice_teardown_crash: ('double free or corruption',)
+
+r91 floor gate present: True
+gate source lines: [2746]
+gate prefix predicate lines: [2749]
+
+per-row audit:
+  [236] nav_lattice_census: script=nav_lattice.gd flags=['--arm=census'] exit=0 sig_len=649 field_form_leaks=NONE pinned_counts=- stale_discriminates=True
+  [237] nav_lattice_path: script=nav_lattice.gd flags=['--arm=path'] exit=0 sig_len=604 field_form_leaks=NONE pinned_counts=- stale_discriminates=True
+  [238] nav_lattice_query: script=nav_lattice.gd flags=['--arm=query'] exit=0 sig_len=607 field_form_leaks=NONE pinned_counts=- stale_discriminates=True
+  [239] nav_lattice_sync: script=nav_lattice.gd flags=['--arm=sync'] exit=0 sig_len=249 field_form_leaks=NONE pinned_counts=['pre_iter='] stale_discriminates=True
+  [240] nav_lattice_region: script=nav_lattice.gd flags=['--arm=region'] exit=0 sig_len=939 field_form_leaks=NONE pinned_counts=- stale_discriminates=True
+  [241] nav_lattice_agent: script=nav_lattice.gd flags=['--arm=agent'] exit=0 sig_len=271 field_form_leaks=NONE pinned_counts=['settled='] stale_discriminates=True
+  [242] nav_lattice_avoid: script=nav_lattice.gd flags=['--arm=avoid'] exit=0 sig_len=210 field_form_leaks=NONE pinned_counts=['warm_n_a=', 'n_a=', 'n_b='] stale_discriminates=True
+  [243] nav_lattice_bake: script=nav_lattice.gd flags=['--arm=bake'] exit=0 sig_len=554 field_form_leaks=NONE pinned_counts=- stale_discriminates=True
+  [244] nav_lattice_link: script=nav_lattice.gd flags=['--arm=link'] exit=0 sig_len=618 field_form_leaks=NONE pinned_counts=- stale_discriminates=True
+  [245] nav_lattice_teardown_crash: script=nav_lattice.gd flags=['--arm=teardown_crash'] exit=-6 sig_len=52 field_form_leaks=NONE pinned_counts=- stale_discriminates=True
+  [246] nav_lattice_teardown_clean: script=nav_lattice.gd flags=['--arm=teardown_clean'] exit=0 sig_len=58 field_form_leaks=NONE pinned_counts=- stale_discriminates=True
+
+fixture print sites (line: first 90 chars):
+  16: #     aborts with `STALE nav_lattice <arm>` + exit 2 instead of printing a
+  136: print("STALE nav_lattice ", arm, " sync_bound_exhausted bound=", SYNC_BOUND)
+  153: print("PASS nav_lattice unknown arm=", arm)
+  162: print("PASS nav_lattice census ",
+  286: print("PASS nav_lattice sync ",
+  343: print("PASS nav_lattice path ",
+  391: print("PASS nav_lattice query ",
+  502: print("PASS nav_lattice region ",
+  572: print("PASS nav_lattice agent ",
+  671: print("PASS nav_lattice avoid ",
+  758: print("PASS nav_lattice bake ",
+  817: print("PASS nav_lattice link ",
+  857: print("NAV_LATTICE_TEARDOWN_CRASH armed=live_cb has_cb=",
+  881: print("PASS nav_lattice teardown_clean survived=true has_cb=",
+
+tail-token print sites (line: token):
+  301: dis_same :: " dis_same=", dis_same,
+  302: chg_iter_same :: " chg_iter_same=", chg_iter_same,
+  303: chg_iter_settled :: " chg_iter_settled=", chg_iter_settled,
+  304: gate :: " gate=", gate,
+  305: ladder :: " ladder=", _ps(ladder),
+  306: first_reach :: " first_reach=", first_reach,
+  307: first_reach_sync :: " first_reach_sync=", first_reach_sync)
+  357: settle :: " settle=", settle,
+  358: iter :: " iter=", NavigationServer2D.map_get_iteration_id(map))
+  415: settle :: " settle=", settle,
+  416: iter :: " iter=", NavigationServer2D.map_get_iteration_id(map))
+  512: dis_same :: " dis_same=", dis_same,
+  513: settle :: " settle=", settle,
+  514: iter :: " iter=", NavigationServer2D.map_get_iteration_id(map))
+  584: walk_steps :: " walk_steps=", steps,
+  585: reached_at :: " reached_at=", reached_at,
+  586: first_reachable :: " first_reachable=", first_reachable)
+  682: seq_a :: " seq_a=", _ps(seq_a), " seq_b=", _ps(seq_b),
+  682: seq_b :: " seq_a=", _ps(seq_a), " seq_b=", _ps(seq_b),
+  683: vel_a :: " vel_a=", _v(va), " vel_b=", _v(vb),
+  683: vel_b :: " vel_a=", _v(va), " vel_b=", _v(vb),
+  685: settle :: " settle=", settle)
+  769: iter_b :: " iter_b=", NavigationServer2D.map_get_iteration_id(map_b),
+  832: fwd_disabled_same :: " fwd_disabled_same=", fwd_disabled_same,
+  833: settle :: " settle=", settle,
+  834: iter :: " iter=", NavigationServer2D.map_get_iteration_id(map),
+  835: link_iter :: " link_iter=", NavigationServer2D.link_get_iteration_id(link))
+
+violations (field-form leak inside signature): none
+substring-only hits (false positives of bare-token matching): none

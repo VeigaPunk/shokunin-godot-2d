@@ -1,0 +1,62 @@
+== committed fresh-reps custody ==
+  OK  census.rep2 rc=0 
+  OK  census.rep3 rc=0 
+  OK  census.rep4 rc=0 
+  OK  path.rep2 rc=0 
+  OK  path.rep3 rc=0 
+  OK  path.rep4 rc=0 
+  OK  query.rep2 rc=0 
+  OK  query.rep3 rc=0 
+  OK  query.rep4 rc=0 
+  OK  sync.rep2 rc=0 err_nonempty=7 error_lines=1
+  OK  sync.rep3 rc=0 err_nonempty=7 error_lines=1
+  OK  sync.rep4 rc=0 err_nonempty=7 error_lines=1
+  OK  region.rep2 rc=0 
+  OK  region.rep3 rc=0 
+  OK  region.rep4 rc=0 
+  OK  agent.rep2 rc=0 
+  OK  agent.rep3 rc=0 
+  OK  agent.rep4 rc=0 
+  OK  avoid.rep2 rc=0 
+  OK  avoid.rep3 rc=0 
+  OK  avoid.rep4 rc=0 
+  OK  bake.rep2 rc=0 err_nonempty=11 error_lines=1
+  OK  bake.rep3 rc=0 err_nonempty=11 error_lines=1
+  OK  bake.rep4 rc=0 err_nonempty=11 error_lines=1
+  OK  link.rep2 rc=0 
+  OK  link.rep3 rc=0 
+  OK  link.rep4 rc=0 
+  OK  teardown_crash.rep2 rc=-6 stderr_fragment=yes
+  OK  teardown_crash.rep3 rc=-6 stderr_fragment=yes
+  OK  teardown_crash.rep4 rc=-6 stderr_fragment=yes
+  OK  teardown_clean.rep2 rc=0 err_bytes=0
+  OK  teardown_clean.rep3 rc=0 err_bytes=0
+  OK  teardown_clean.rep4 rc=0 err_bytes=0
+fresh-reps bad=0
+
+== author battery runs vs my reps (signature tuples) ==
+  author-rep1 vs mine-rep1: verdicts=PASS/FAIL common=258 only_a=0 only_m=0 tuple_mismatches=2
+     negative_transition: author=PASS mine=FAIL
+     probe_error_clause_surface: author=PASS mine=FAIL
+  author-rep2 vs mine-rep2: verdicts=PASS/FAIL common=258 only_a=0 only_m=0 tuple_mismatches=4
+     input_lattice_pre_frame: author=PASS mine=FAIL
+     negative_transition: author=PASS mine=FAIL
+     overlap: author=PASS mine=FAIL
+     probe_error_clause_surface: author=PASS mine=FAIL
+  author-rep1 vs author-rep2: verdicts=PASS/PASS common=258 only_a=0 only_m=0 tuple_mismatches=0
+  mine-rep1 vs mine-rep2: verdicts=FAIL/FAIL common=258 only_a=0 only_m=0 tuple_mismatches=2
+     input_lattice_pre_frame: author=PASS mine=FAIL
+     overlap: author=PASS mine=FAIL
+
+== nav row payload stability across 4 battery runs ==
+  nav_lattice_census: signature_identical_all4=True
+  nav_lattice_path: signature_identical_all4=True
+  nav_lattice_query: signature_identical_all4=True
+  nav_lattice_sync: signature_identical_all4=True
+  nav_lattice_region: signature_identical_all4=True
+  nav_lattice_agent: signature_identical_all4=True
+  nav_lattice_avoid: signature_identical_all4=True
+  nav_lattice_bake: signature_identical_all4=True
+  nav_lattice_link: signature_identical_all4=True
+  nav_lattice_teardown_crash: signature_identical_all4=True
+  nav_lattice_teardown_clean: signature_identical_all4=True

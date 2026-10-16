@@ -1,0 +1,34 @@
+extracted: ['classify_process', 'classify_streams']
+  census.rep1: bare=True allowlist=True
+  census.rep2: bare=True allowlist=True
+  census.rep3: bare=True allowlist=True
+  path.rep1: bare=True allowlist=True
+  path.rep2: bare=True allowlist=True
+  path.rep3: bare=True allowlist=True
+  query.rep1: bare=True allowlist=True
+  query.rep2: bare=True allowlist=True
+  query.rep3: bare=True allowlist=True
+  sync.rep1: bare=False allowlist=True
+  sync.rep2: bare=False allowlist=True
+  sync.rep3: bare=False allowlist=True
+  region.rep1: bare=True allowlist=True
+  region.rep2: bare=True allowlist=True
+  region.rep3: bare=True allowlist=True
+  agent.rep1: bare=True allowlist=True
+  agent.rep2: bare=True allowlist=True
+  agent.rep3: bare=True allowlist=True
+  avoid.rep1: bare=True allowlist=True
+  avoid.rep2: bare=True allowlist=True
+  avoid.rep3: bare=True allowlist=True
+  bake.rep1: bare=False allowlist=True
+  bake.rep2: bare=False allowlist=True
+  bake.rep3: bare=False allowlist=True
+  link.rep1: bare=True allowlist=True
+  link.rep2: bare=True allowlist=True
+  link.rep3: bare=True allowlist=True
+  teardown_crash.rep1: row=True spoof_fragment_on_stdout=False sig_on_stderr_only=False streams_bare=False streams_allow=False
+  teardown_crash.rep2: row=True spoof_fragment_on_stdout=False sig_on_stderr_only=False streams_bare=False streams_allow=False
+  teardown_crash.rep3: row=True spoof_fragment_on_stdout=False sig_on_stderr_only=False streams_bare=False streams_allow=False
+  teardown_clean.rep1: bare=True allowlist=True
+  teardown_clean.rep2: bare=True allowlist=True
+  teardown_clean.rep3: bare=True allowlist=True

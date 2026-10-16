@@ -1,0 +1,46 @@
+PASS R1a diag polyline length = 200*sqrt2: expected='282.8427' actual='282.8427' 
+PASS R1b edge-center cell polyline length: expected='301.2452' actual='301.2452' NOTE: this is the EDGECENTERED(1) cell (pp1); the row's length pin is the CORRIDORFUNNEL(0) cell (pp0, corner-cut, 282.8427)
+PASS R1c out_start crossing x=40: expected='(40.0000,8.8889)' actual='(40.0000,8.8889)' 
+PASS R1d out_target crossing x=40: expected='(40.0000,22.2222)' actual='(40.0000,22.2222)' 
+PASS R1e out_target endpoint = closest point on rh to (400,400): expected='(200.0000,40.0000)' actual='(200.0000,40.0000)' 
+PASS R1f gap20 bridge midpoint of x=200..210: expected='(205.0000,20.0000)' actual='(205.0000,20.0000)' 
+PASS R1g gap20 margin >= 10 px gap: expected='20.0000' actual='20.0000' 
+PASS R2a maxlen=30 truncation point: expected='[(20.0000,180.0000),(24.2426,150.3015)]' actual='[(20.0000,180.0000),(24.2426,150.3015)]' 
+INFO R2b maxrad=60 pinned: [(20.0000,180.0000),(20.0814,179.4301)]
+PASS R2c maxpolys=1 first-polygon cut: expected='[(20.0000,180.0000),(40.0000,20.0000)]' actual='[(20.0000,180.0000),(40.0000,20.0000)]' 
+PASS R2d metadata flag matrix: expected='md0:[]|n0|n0,md2:[]|n3|n0,md1:[0,0,0]|n0|n0,md4:[]|n0|n3,md7:[0,0,0]|n3|n3' actual='md0:[]|n0|n0,md2:[]|n3|n0,md1:[0,0,0]|n0|n0,md4:[]|n0|n3,md7:[0,0,0]|n3|n3' 
+PASS R2e length pin = polyline length of the CORRIDORFUNNEL(0) cell (pp0 corner-cut): expected='282.8427' actual='282.8427' NOTE: enum order NONE=2/CORRIDORFUNNEL=0/EDGECENTERED=1 (scout 3.1); pp0 path polyline = 200*sqrt2
+PASS R3a settled straight-line dist 160*sqrt2 -> %.2f: expected='226.27' actual='226.27' 
+PASS R3b path length 160*sqrt2 -> %.2f: expected='226.27' actual='226.27' 
+PASS R3c final_pos = target - 1.608 each axis (dist 1.608*sqrt2=2.2741): expected='(178.3920,178.3920)' actual='(178.3920,178.3920)' 
+PASS R3d dist pin = 1.608*sqrt2: expected='2.2741' actual='2.2741' 
+PASS R3e settled next-point = path endpoint: expected='(180.0000,180.0000)' actual='(180.0000,180.0000)' 
+PASS R4a warmup 16 + measured 5 = 21: expected='21' actual='21' 
+PASS R4b warm_n_a = 16: expected='16' actual='16' 
+PASS R4c ORCA bound (10+10)/1.0: expected='20.0000' actual='20.0000' 
+PASS R4d radii/speed from fixture set calls: expected=('10.0', '50.0') actual=('10.0', '50.0') 
+PASS R4e obstacle from fixture: expected=('(170.0000,150.0000)', 'false') actual=('(170.0000,150.0000)', 'false') 
+PASS R5a outline 4 verts + 4 verts hole: expected=('4', '8') actual=('4', '8') 
+PASS R5b square annulus bake = 4 polys / 8 verts: expected=('4', '8') actual=('4', '8') 
+PASS R5c collider-only silent empty: expected='0' actual='0' 
+PASS R5d agent_radius=5 erosion: hole +-50 -> +-55: expected=[(-100.0, 0.0), (-55.0, 55.0), (55.0, 55.0), (100.0, 0.0)] actual=[(-100.0, 0.0), (-55.0, 55.0), (55.0, 55.0), (100.0, -0.0)] 
+PASS R5e baking_rect -150 + agent_radius 5 = -145: expected=(-145.0, -145.0) actual=(-145.0, -145.0) 
+PASS R5f around path corners: expected=[(-100.0, -100.0), (-55.0, 55.0), (100.0, 100.0)] actual=[(-100.0, -100.0), (-55.0, 55.0), (100.0, 100.0)] 
+PASS R6a b-corridor endpoints are closest points of b to start/target: expected='[(20.0000,40.0000),(80.0000,40.0000)]' actual='[(20.0000,40.0000),(80.0000,40.0000)]' 
+PASS R6b base (tie) chooses top corridor: expected='[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)]' actual='[(10.0000,50.0000),(20.0000,60.0000),(80.0000,60.0000),(90.0000,50.0000)]' 
+PASS R6c dis_settled falls back to bottom: expected='[(10.0000,50.0000),(20.0000,40.0000),(80.0000,40.0000),(90.0000,50.0000)]' actual='[(10.0000,50.0000),(20.0000,40.0000),(80.0000,40.0000),(90.0000,50.0000)]' 
+PASS R6d counts regs=4 and reset costs: expected='regs=4,cost_a=1.0,cost_b=1.0,en_a=true,en_b=true' actual='regs=4,cost_a=1.0,cost_b=1.0,en_a=true,en_b=true' 
+PASS R7a fwd path = r1 run + link + r2 run: expected='[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)]' actual='[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)]' 
+PASS R7b disabled link truncates at r1 end: expected='[(10.0000,50.0000),(100.0000,50.0000)]' actual='[(10.0000,50.0000),(100.0000,50.0000)]' 
+PASS R7c layer1 excludes the layer-2 link: expected='[(10.0000,50.0000),(100.0000,50.0000)]' actual='[(10.0000,50.0000),(100.0000,50.0000)]' 
+PASS R7d layer2 excludes layer-1 regions: expected='[]' actual='[]' 
+PASS R7e link property reads: expected=('(100.0000,50.0000)', '(400.0000,50.0000)', '1.0', '0.0', '2') actual=('(100.0000,50.0000)', '(400.0000,50.0000)', '1.0', '0.0', '2') 
+PASS R8a pre-sync state (iteration 0, no regions, empty path, zero closest): expected=('0', '0', '[]', '(0.0000,0.0000)') actual=('0', '0', '[]', '(0.0000,0.0000)') 
+PASS R8b sync law halves (new answer not same-frame, settled true, disable not settled): expected=('false', 'true', 'false') actual=('false', 'true', 'false') 
+PASS R9a qp_defaults (pp=0, md=7, maxpolys=4096, layers=1): expected='pp=0,md=7,layers=1,maxlen=0.0000,maxrad=0.0000,maxdist=0.0000,maxpolys=4096,simpl=false,eps=0.0000' actual='pp=0,md=7,layers=1,maxlen=0.0000,maxrad=0.0000,maxdist=0.0000,maxpolys=4096,simpl=false,eps=0.0000' 
+PASS R9b agent_defaults radius/path/target: expected='r=10.0000,path_d=20.0000,tgt_d=10.0000' actual='r=10.0000,path_d=20.0000,tgt_d=10.0000' 
+PASS R10a crash marker stdout-anchored: expected='NAV_LATTICE_TEARDOWN_CRASH armed=live_cb has_cb=true' actual='NAV_LATTICE_TEARDOWN_CRASH armed=live_cb has_cb=true' 
+PASS R10b expected exit -6: expected='-6' actual='-6' 
+PASS R10c clean control exit 0: expected='0' actual='0' 
+
+TOTAL 43 / 43 checks pass

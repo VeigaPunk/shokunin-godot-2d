@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+V91 avoid_bound r=5.0 d=40.0 gap=30.0000 tau=2.0 gap_over_tau=15.0000 radii_sum=10.0000 n_a=21 n_b=21 n_sums=5 sum_max=15.0000 dir_ok=true sums=[14.957377910614, 14.9572548866272, 14.957136631012, 14.957019329071, 14.9999995231628]
