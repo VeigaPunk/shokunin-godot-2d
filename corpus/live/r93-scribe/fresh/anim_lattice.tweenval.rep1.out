@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+PASS anim_lattice tweenval r91_exact=9.69718754291534 expo_in_05=0.30249999836087 expo_in_10=9.99000012874603 expo_out_05=9.69718754291534 expo_out_10=10.0 clamp_neg=-5.0 clamp_over=15.0 int_025=3 int_050=5 int_075=8 vec_025=(2.0, 4.0) color_050=(0.5, 0.25, 0.0, 1.0) form_in_err=0.00000000016391 form_out_err=0.00000000429153

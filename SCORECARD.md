@@ -250,3 +250,13 @@ Sol `r76-adjudicator.md`: ADMIT-corr — deferred_abort admitted, destroy-edge l
 | calibration | **improved** | F1 timeout flake filed as pre-existing host class (handler-bound, not a mis-PASS); F2 envelope absorb-class declared w/ regions_f2 guard; rc-comment defect + caption corrections recorded; simplifier 0 deletions. |
 
 | r92 | game-dev-2d | TileMapLayer lattice | ADMIT-with-findings | 5900431 |
+
+## Round 93 verdict — 2026-10-15
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | +23 `r93_anim_*`/`r93_tween_*`/`r93_blend_*` rows → 295: tween curve families, await laws, crossfade weights, DEFERRED routes, blend/mixer arms. 596 row-receipt matches, 0 MISS across 438 receipts. |
+| depth | **improved** | Overshoot re-derived to 4.4e-16 vs pure interpolation grid; crossfade to 8.5e-8; N-1 law holds on variable deltas (1.3e-7); 120/120+ semantic mutations rejected; floor gate proven armed. |
+| calibration | **improved** | Critic/reviewer/verifier converged on the "pre-play value" mechanism falsification (comment-level); vacuous gate + prefix-band findings filed; all findings fail-closed (mutants redden rather than silently pass). |
+
+| r93 | game-dev-2d | AnimationPlayer/Tween lattice | ADMIT-with-findings | 4b75151 |

@@ -1,0 +1,514 @@
+{
+ "binding": {
+  "r93_anim_await_offbyone": {
+   "all_hit": true,
+   "arm": "r93b_anim:frame",
+   "hits": 16,
+   "misses": [],
+   "receipts": 16
+  },
+  "r93_anim_blend_finished": {
+   "all_hit": true,
+   "arm": "anim_lattice:animblend",
+   "hits": 23,
+   "misses": [],
+   "receipts": 23
+  },
+  "r93_anim_blend_interleaved": {
+   "all_hit": true,
+   "arm": "r93b_anim:blend",
+   "hits": 16,
+   "misses": [],
+   "receipts": 16
+  },
+  "r93_anim_blend_running": {
+   "all_hit": true,
+   "arm": "anim_lattice:animblend",
+   "hits": 23,
+   "misses": [],
+   "receipts": 23
+  },
+  "r93_anim_deferred_flush": {
+   "all_hit": true,
+   "arm": "r93b_anim:deferred",
+   "hits": 16,
+   "misses": [],
+   "receipts": 16
+  },
+  "r93_anim_manual_clock_control": {
+   "all_hit": true,
+   "arm": "r93b_anim:manual_inv",
+   "hits": 16,
+   "misses": [],
+   "receipts": 16
+  },
+  "r93_anim_manual_clock_interleaved": {
+   "all_hit": true,
+   "arm": "r93b_anim:manual_inv",
+   "hits": 16,
+   "misses": [],
+   "receipts": 16
+  },
+  "r93_anim_method_callback": {
+   "all_hit": true,
+   "arm": "anim_lattice:animmethod",
+   "hits": 23,
+   "misses": [],
+   "receipts": 23
+  },
+  "r93_anim_overshoot": {
+   "all_hit": true,
+   "arm": "r93b_anim:purity",
+   "hits": 16,
+   "misses": [],
+   "receipts": 16
+  },
+  "r93_anim_phys_delta": {
+   "all_hit": true,
+   "arm": "r93b_anim:frame",
+   "hits": 16,
+   "misses": [],
+   "receipts": 16
+  },
+  "r93_anim_physics_tick": {
+   "all_hit": true,
+   "arm": "r93b_anim:frame",
+   "hits": 16,
+   "misses": [],
+   "receipts": 16
+  },
+  "r93_anim_process_manual": {
+   "all_hit": true,
+   "arm": "anim_lattice:animproc",
+   "hits": 25,
+   "misses": [],
+   "receipts": 25
+  },
+  "r93_anim_process_stable": {
+   "all_hit": true,
+   "arm": "anim_lattice:animproc",
+   "hits": 25,
+   "misses": [],
+   "receipts": 25
+  },
+  "r93_anim_seek": {
+   "all_hit": true,
+   "arm": "anim_lattice:animseek",
+   "hits": 25,
+   "misses": [],
+   "receipts": 25
+  },
+  "r93_anim_track_interp": {
+   "all_hit": true,
+   "arm": "anim_lattice:animtrack",
+   "hits": 17,
+   "misses": [],
+   "receipts": 17
+  },
+  "r93_tween_census": {
+   "all_hit": true,
+   "arm": "anim_lattice:census",
+   "hits": 17,
+   "misses": [],
+   "receipts": 17
+  },
+  "r93_tween_chain": {
+   "all_hit": true,
+   "arm": "anim_lattice:tweenchain",
+   "hits": 23,
+   "misses": [],
+   "receipts": 23
+  },
+  "r93_tween_interp_grid_a": {
+   "all_hit": true,
+   "arm": "anim_lattice:tweenval_grid",
+   "hits": 17,
+   "misses": [],
+   "receipts": 17
+  },
+  "r93_tween_interp_grid_b": {
+   "all_hit": true,
+   "arm": "anim_lattice:tweenval_grid",
+   "hits": 17,
+   "misses": [],
+   "receipts": 17
+  },
+  "r93_tween_interp_value": {
+   "all_hit": true,
+   "arm": "anim_lattice:tweenval",
+   "hits": 20,
+   "misses": [],
+   "receipts": 20
+  },
+  "r93_tween_manual_step": {
+   "all_hit": true,
+   "arm": "anim_lattice:tweenstep",
+   "hits": 25,
+   "misses": [],
+   "receipts": 25
+  },
+  "r93_tween_phys_manual_step": {
+   "all_hit": true,
+   "arm": "anim_lattice:tweenproc",
+   "hits": 25,
+   "misses": [],
+   "receipts": 25
+  },
+  "r93_tween_process_stable": {
+   "all_hit": true,
+   "arm": "anim_lattice:tweenproc",
+   "hits": 25,
+   "misses": [],
+   "receipts": 25
+  }
+ },
+ "clause_constancy": {
+  "anim_lattice:animproc": {
+   "receipts": 25,
+   "tokens": {
+    "manual=[x=25.0,after3frames=25.0] frozen=[0.0,true,0.0] inactive=[50.0,true]": 25,
+    "stable=[manual_frame_frozen=true,manual_exact=true,speed0_frozen=true,inactive_advance=true,fin_fired=true,caches_once=true,mixer_updated_zero=true]": 25
+   }
+  },
+  "anim_lattice:tweenproc": {
+   "receipts": 25,
+   "tokens": {
+    "phys_manual=[before=1.0,after_step025=2.0]": 25,
+    "stable=[auto_advanced=true,paused_frozen=true,phys_advanced=true,manual_exact=true]": 25
+   }
+  },
+  "r93b_anim:blend": {
+   "receipts": 16,
+   "tokens": {
+    "hard_after_frame=500.0": 16,
+    "interleaved_eq_plain=true": 16
+   }
+  },
+  "r93b_anim:deferred": {
+   "receipts": 16,
+   "tokens": {
+    "immediate=[after_adv=[7,8],after_frame=[7,8]]": 16,
+    "manual_def=[after_adv=[],next_proc=[7,8],second_proc=[7,8]]": 16,
+    "manual_def_phys=[after_adv=[],after_phys=[7,8]]": 16,
+    "two_adv=[after=[],flush=[7,8]]": 16
+   }
+  },
+  "r93b_anim:frame": {
+   "receipts": 16,
+   "tokens": {
+    "mixer_applied_10=10 phys=[y1=0.0,y2=0.0,y3=1.66666674613953,y6=6.66666698455811]": 16,
+    "phys_delta=0.01666666666667": 16
+   }
+  },
+  "r93b_anim:manual_inv": {
+   "receipts": 16,
+   "tokens": {
+    "inv=[paused_proc=true,paused_phys=true,manual_proc=true,manual_phys=true]": 16,
+    "step_exact=[paused025=true,paused_done=true,manual025=true,manual_done=true]": 16
+   }
+  },
+  "r93b_anim:purity": {
+   "receipts": 16,
+   "tokens": {
+    "overshoot2=[spr050=10.510157585144,spr100=10.0,ela025=9.11611652374268]": 16,
+    "overshoot=[back025=0.10286344587803,back050=5.5]": 16
+   }
+  }
+ },
+ "collisions": {
+  "r93_anim_phys_delta": {
+   "r93b_anim:clock": 16
+  }
+ },
+ "laws": {
+  "crossfade": {
+   "interleaved_eq_plain_all": true,
+   "interleaved_eq_plain_n": 16,
+   "rederived": {
+    "animblend:finished_005:N=20": {
+     "first": 100.0,
+     "last": 500.0,
+     "max_abs_err_vs_law": 3.372995490735775e-05
+    },
+    "animblend:finished_010:N=10": {
+     "first": 100.0,
+     "last": 500.0,
+     "max_abs_err_vs_law": 2.3735894217224995e-05
+    },
+    "animblend:finished_020:N=5": {
+     "first": 100.0,
+     "last": 500.0,
+     "max_abs_err_vs_law": 0.0
+    },
+    "r93b:finished_010:N=10": {
+     "first": 100.0,
+     "last": 500.0,
+     "max_abs_err_vs_law": 2.3735894217224995e-05
+    },
+    "r93b:finished_020:N=5": {
+     "first": 100.0,
+     "last": 500.0,
+     "max_abs_err_vs_law": 0.0
+    }
+   },
+   "sets": {
+    "animblend": {
+     "arrays": {
+      "finished_005": [
+       [
+        100.0,
+        121.052627563477,
+        142.105255126953,
+        163.15788269043,
+        184.210525512695,
+        205.263168334961,
+        226.315795898438,
+        247.368408203125,
+        268.421051025391,
+        289.473663330078,
+        310.526336669922,
+        331.578948974609,
+        352.631561279297,
+        373.684204101562,
+        394.736846923828,
+        415.789489746094,
+        436.842071533203,
+        457.894714355469,
+        478.947357177734,
+        500.0
+       ]
+      ],
+      "finished_010": [
+       [
+        100.0,
+        144.444442749023,
+        188.888900756836,
+        233.333343505859,
+        277.777801513672,
+        322.222229003906,
+        366.666687011719,
+        411.111114501953,
+        455.555572509766,
+        500.0
+       ]
+      ],
+      "finished_020": [
+       [
+        100.0,
+        200.0,
+        300.0,
+        400.0,
+        500.0
+       ]
+      ]
+     },
+     "receipts": 23
+    },
+    "r93b-blend": {
+     "arrays": {
+      "finished_010": [
+       [
+        100.0,
+        144.444442749023,
+        188.888900756836,
+        233.333343505859,
+        277.777801513672,
+        322.222229003906,
+        366.666687011719,
+        411.111114501953,
+        455.555572509766,
+        500.0
+       ]
+      ],
+      "finished_020": [
+       [
+        100.0,
+        200.0,
+        300.0,
+        400.0,
+        500.0
+       ]
+      ]
+     },
+     "receipts": 16
+    }
+   }
+  },
+  "deferred": {
+   "immediate_in_adv": 16,
+   "manual_def_after_adv_empty": 16,
+   "next_proc_78": 16,
+   "phys_flush_78": 16,
+   "receipts": 16,
+   "two_adv_queue_then_flush": 16
+  },
+  "manual_clock": {
+   "inv_all_true": 16,
+   "receipts": 16,
+   "step_exact_all_true": 16
+  },
+  "n_minus_1_await": {
+   "mixer_applied_10": [
+    10
+   ],
+   "phys_delta": [
+    0.01666666666667
+   ],
+   "phys_lattice": [
+    "(0.0, 0.0, 1.66666674613953, 6.66666698455811)"
+   ],
+   "pos10_per_batch": {
+    "f120": [
+     0.075
+    ],
+    "f120l": [
+     0.075
+    ],
+    "f30": [
+     0.3
+    ],
+    "f60": [
+     0.15
+    ],
+    "l": [
+     0.04594755555556,
+     0.06290466666667,
+     0.07186966666667
+    ],
+    "l32": [
+     0.06540066666667,
+     0.06544966666667
+    ],
+    "q": [
+     0.05691666666667,
+     0.06537666666667,
+     0.06540066666667
+    ]
+   },
+   "pos10_values": [
+    0.04594755555556,
+    0.05691666666667,
+    0.06290466666667,
+    0.06537666666667,
+    0.06540066666667,
+    0.06544966666667,
+    0.07186966666667,
+    0.075,
+    0.15,
+    0.3
+   ],
+   "pos10_vs_law": {
+    "f120": [
+     "pos10=0.075 9*delta=0.075 err=0"
+    ],
+    "f120l": [
+     "pos10=0.075 9*delta=?"
+    ],
+    "f30": [
+     "pos10=0.3 9*delta=0.3 err=0"
+    ],
+    "f60": [
+     "pos10=0.15 9*delta=0.15 err=0"
+    ],
+    "l": [
+     "pos10=0.0459475556 9*delta=?",
+     "pos10=0.0629046667 9*delta=?",
+     "pos10=0.0718696667 9*delta=?"
+    ],
+    "l32": [
+     "pos10=0.0654006667 9*delta=?",
+     "pos10=0.0654496667 9*delta=?"
+    ],
+    "q": [
+     "pos10=0.0569166667 9*delta=?",
+     "pos10=0.0653766667 9*delta=?",
+     "pos10=0.0654006667 9*delta=?"
+    ]
+   },
+   "receipts": 16,
+   "x1_values": [
+    0.0
+   ]
+  },
+  "overshoot": {
+   "back025_below_start": 16,
+   "distinct_values": {
+    "back025": [
+     0.10286344587803
+    ],
+    "back050": [
+     5.5
+    ],
+    "ela025": [
+     9.11611652374268
+    ],
+    "spr050": [
+     10.510157585144
+    ],
+    "spr100": [
+     10.0
+    ]
+   },
+   "ela025_inside": 16,
+   "receipts": 16,
+   "spr050_above_end": 16
+  }
+ },
+ "n_receipts": 387,
+ "own_arm_contains_other_signature": {
+  "r93_anim_await_offbyone": [
+   "r93_anim_physics_tick",
+   "r93_anim_phys_delta"
+  ],
+  "r93_anim_blend_finished": [
+   "r93_anim_blend_running"
+  ],
+  "r93_anim_blend_running": [
+   "r93_anim_blend_finished"
+  ],
+  "r93_anim_manual_clock_control": [
+   "r93_anim_manual_clock_interleaved"
+  ],
+  "r93_anim_manual_clock_interleaved": [
+   "r93_anim_manual_clock_control"
+  ],
+  "r93_anim_phys_delta": [
+   "r93_anim_await_offbyone",
+   "r93_anim_physics_tick"
+  ],
+  "r93_anim_physics_tick": [
+   "r93_anim_await_offbyone",
+   "r93_anim_phys_delta"
+  ],
+  "r93_anim_process_manual": [
+   "r93_anim_process_stable"
+  ],
+  "r93_anim_process_stable": [
+   "r93_anim_process_manual"
+  ],
+  "r93_tween_interp_grid_a": [
+   "r93_tween_interp_grid_b"
+  ],
+  "r93_tween_interp_grid_b": [
+   "r93_tween_interp_grid_a"
+  ],
+  "r93_tween_phys_manual_step": [
+   "r93_tween_process_stable"
+  ],
+  "r93_tween_process_stable": [
+   "r93_tween_phys_manual_step"
+  ]
+ },
+ "receipts_by_source": {
+  "author-fresh": 51,
+  "boundary-f120": 34,
+  "boundary-f120l": 34,
+  "boundary-f30": 34,
+  "boundary-f60": 34,
+  "boundary-l": 51,
+  "boundary-l32": 20,
+  "boundary-q": 51,
+  "scout": 54,
+  "scout-load": 24
+ }
+}

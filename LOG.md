@@ -1150,3 +1150,9 @@
 - LAWS: nav scheduler 2-payload envelope (ratio<=2 -> payload0, >=2.5 ->
   payload1, regions_f2=1 pinned both); tombstone byte-layout (2B header
   + 12B LE records); nullts rc=-6 bound to :927 site; floor gate loud.
+- ROUND 93 (2026-10-15): AnimationPlayer/Tween lattice. ADMIT-with-findings
+  at 4b75151 (295 rows, +23). Verifier rep5 295/295 shape-identical;
+  all gates green; F1: pre-play comment falsified (first await = t=0 pose).
+- LAWS: overshoot not clamp (BACK<start, SPRING>end, static -5/15); N-1
+  await law pos=100*sum(deltas[1..N-1]); crossfade w=(i-1)/(N-1); DEFERRED
+  flushes on process AND physics.

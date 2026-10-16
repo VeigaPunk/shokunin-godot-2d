@@ -1,0 +1,493 @@
+{
+ "author": {
+  "arm_reps": {
+   "anim_lattice:animblend": 3,
+   "anim_lattice:animmethod": 3,
+   "anim_lattice:animproc": 3,
+   "anim_lattice:animseek": 3,
+   "anim_lattice:animtrack": 3,
+   "anim_lattice:census": 3,
+   "anim_lattice:tweenchain": 3,
+   "anim_lattice:tweenproc": 3,
+   "anim_lattice:tweenstep": 3,
+   "anim_lattice:tweenval": 3,
+   "anim_lattice:tweenval_grid": 3,
+   "r93b_anim:blend": 3,
+   "r93b_anim:clock": 3,
+   "r93b_anim:deferred": 3,
+   "r93b_anim:frame": 3,
+   "r93b_anim:manual_inv": 3,
+   "r93b_anim:purity": 3
+  },
+  "arms": 17,
+  "battery_runs": {
+   "runs1:20261016T003655768134Z": {
+    "census_allowlisted_reproduces_verdicts": true,
+    "census_bare_classifier_consistent": true,
+    "dead_entry_count": 0,
+    "fails": [],
+    "gate_r92": true,
+    "gate_r93": true,
+    "n_pass": 295,
+    "r93": {
+     "PASS": 23
+    },
+    "rows": 295,
+    "rows_with_expected_errors": 68,
+    "verdict": "PASS"
+   },
+   "runs2:20261016T004127802572Z": {
+    "census_allowlisted_reproduces_verdicts": true,
+    "census_bare_classifier_consistent": true,
+    "dead_entry_count": 0,
+    "fails": [
+     "crash_spontaneous_sigabrt",
+     "probe_spontaneous_crash_classification",
+     "probe_error_clause_surface"
+    ],
+    "gate_r92": true,
+    "gate_r93": true,
+    "n_pass": 292,
+    "r93": {
+     "PASS": 23
+    },
+    "rows": 295,
+    "rows_with_expected_errors": 68,
+    "verdict": "FAIL"
+   },
+   "runs3:20261016T004609760557Z": {
+    "census_allowlisted_reproduces_verdicts": true,
+    "census_bare_classifier_consistent": true,
+    "dead_entry_count": 0,
+    "fails": [],
+    "gate_r92": true,
+    "gate_r93": true,
+    "n_pass": 295,
+    "r93": {
+     "PASS": 23
+    },
+    "rows": 295,
+    "rows_with_expected_errors": 68,
+    "verdict": "PASS"
+   }
+  },
+  "err_bytes": [
+   0
+  ],
+  "fresh_out_files": 51,
+  "r93_classify_fail": [],
+  "r93_classify_pass": 69,
+  "r93_classify_total": 69,
+  "rc": [
+   0
+  ]
+ },
+ "boundary": {
+  "batches": {
+   "f120": 34,
+   "f120l": 34,
+   "f30": 34,
+   "f60": 34,
+   "l": 51,
+   "l32": 20,
+   "q": 51
+  },
+  "cells": {
+   "animblend": {
+    "f120": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "l": {
+     "reps": 3,
+     "uniq": 1
+    },
+    "q": {
+     "reps": 3,
+     "uniq": 1
+    }
+   },
+   "animmethod": {
+    "f120": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "l": {
+     "reps": 3,
+     "uniq": 1
+    },
+    "q": {
+     "reps": 3,
+     "uniq": 1
+    }
+   },
+   "animproc": {
+    "f120": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "l": {
+     "reps": 3,
+     "uniq": 3
+    },
+    "l32": {
+     "reps": 2,
+     "uniq": 2
+    },
+    "q": {
+     "reps": 3,
+     "uniq": 3
+    }
+   },
+   "animseek": {
+    "f120": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "l": {
+     "reps": 3,
+     "uniq": 1
+    },
+    "l32": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "q": {
+     "reps": 3,
+     "uniq": 1
+    }
+   },
+   "animtrack": {
+    "f120": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "l": {
+     "reps": 3,
+     "uniq": 1
+    },
+    "q": {
+     "reps": 3,
+     "uniq": 1
+    }
+   },
+   "blend": {
+    "f120": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "l": {
+     "reps": 3,
+     "uniq": 3
+    },
+    "l32": {
+     "reps": 2,
+     "uniq": 2
+    },
+    "q": {
+     "reps": 3,
+     "uniq": 3
+    }
+   },
+   "census": {
+    "f120": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "l": {
+     "reps": 3,
+     "uniq": 1
+    },
+    "q": {
+     "reps": 3,
+     "uniq": 1
+    }
+   },
+   "clock": {
+    "f120": {
+     "reps": 2,
+     "uniq": 2
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 2
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 2
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 2
+    },
+    "l": {
+     "reps": 3,
+     "uniq": 3
+    },
+    "l32": {
+     "reps": 2,
+     "uniq": 2
+    },
+    "q": {
+     "reps": 3,
+     "uniq": 3
+    }
+   },
+   "deferred": {
+    "f120": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "l": {
+     "reps": 3,
+     "uniq": 3
+    },
+    "l32": {
+     "reps": 2,
+     "uniq": 2
+    },
+    "q": {
+     "reps": 3,
+     "uniq": 3
+    }
+   },
+   "frame": {
+    "f120": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "l": {
+     "reps": 3,
+     "uniq": 3
+    },
+    "l32": {
+     "reps": 2,
+     "uniq": 2
+    },
+    "q": {
+     "reps": 3,
+     "uniq": 3
+    }
+   },
+   "manual_inv": {
+    "f120": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "l": {
+     "reps": 3,
+     "uniq": 3
+    },
+    "l32": {
+     "reps": 2,
+     "uniq": 2
+    },
+    "q": {
+     "reps": 3,
+     "uniq": 3
+    }
+   },
+   "purity": {
+    "f120": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "l": {
+     "reps": 3,
+     "uniq": 1
+    },
+    "l32": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "q": {
+     "reps": 3,
+     "uniq": 1
+    }
+   },
+   "tweenchain": {
+    "f120": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "l": {
+     "reps": 3,
+     "uniq": 1
+    },
+    "q": {
+     "reps": 3,
+     "uniq": 1
+    }
+   },
+   "tweenproc": {
+    "f120": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f120l": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f30": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "f60": {
+     "reps": 2,
+     "uniq": 1
+    },
+    "l": {
+     "reps": 3,
+     "
+MUTANTS: {
+ "value_flips": 57,
+ "boolean_flips": 7,
+ "appended_conjuncts": 46,
+ "rejected": 110,
+ "accepted": [],
+ "total": 110
+}
