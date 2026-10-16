@@ -1,0 +1,20 @@
+ERROR: No TileSet atlas source with id 42.
+   at: get_source (scene/resources/2d/tile_set.cpp:543)
+   GDScript backtrace (most recent call first):
+       [0] _fixinvalid (res://tilemap_lattice.gd:609)
+       [1] _run (res://tilemap_lattice.gd:133)
+ERROR: No TileSet atlas source with id 0.
+   at: get_source (scene/resources/2d/tile_set.cpp:543)
+   GDScript backtrace (most recent call first):
+       [0] _fixinvalid (res://tilemap_lattice.gd:616)
+       [1] _run (res://tilemap_lattice.gd:133)
+ERROR: No TileSet atlas source with id -1.
+   at: get_source (scene/resources/2d/tile_set.cpp:543)
+   GDScript backtrace (most recent call first):
+       [0] _fixinvalid (res://tilemap_lattice.gd:616)
+       [1] _run (res://tilemap_lattice.gd:133)
+ERROR: No TileSet atlas source with id -1.
+   at: get_source (scene/resources/2d/tile_set.cpp:543)
+   GDScript backtrace (most recent call first):
+       [0] _fixinvalid (res://tilemap_lattice.gd:616)
+       [1] _run (res://tilemap_lattice.gd:133)

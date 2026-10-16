@@ -1,0 +1,30 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=atlas
+R92 atlas sid_first=0
+R92 atlas count_1=1
+R92 atlas has_source_0=1
+R92 atlas src_class=TileSetAtlasSource
+R92 atlas tiles_after_2=2
+R92 atlas has_tile_00=1
+R92 atlas has_tile_11=0
+R92 atlas tiles_list=n2[0,0;1,0]
+R92 atlas tiles_after_dup=2
+R92 atlas alt_id=1
+R92 atlas alt_count=2
+R92 atlas alt_list=n2[0;1]
+R92 atlas has_alt_0=1
+R92 atlas has_alt_1=1
+R92 atlas has_alt_7=0
+R92 atlas td_class=TileData
+R92 atlas td_alt_distinct=1
+R92 atlas td_missing=null
+R92 atlas tiles_after_remove=1
+R92 atlas has_tile_10_after=0
+R92 atlas sid_explicit_7=7
+R92 atlas ids=n2[0;7]
+R92 atlas next_source_id=1
+R92 atlas grid_size=2,2
+R92 atlas tile_size_in_atlas=1,1
+R92 atlas tex_region=[P: (0, 0), S: (16, 16)]
+PASS tilemap_lattice atlas sid_first=0 count_1=1 has_source_0=1 src_class=TileSetAtlasSource tiles_after_2=2 has_tile_00=1 has_tile_11=0 tiles_list=n2[0,0;1,0] tiles_after_dup=2 alt_id=1 alt_count=2 alt_list=n2[0;1] has_alt_0=1 has_alt_1=1 has_alt_7=0 td_class=TileData td_alt_distinct=1 td_missing=null tiles_after_remove=1 has_tile_10_after=0 sid_explicit_7=7 ids=n2[0;7] next_source_id=1 grid_size=2,2 tile_size_in_atlas=1,1 tex_region=[P: (0, 0), S: (16, 16)]

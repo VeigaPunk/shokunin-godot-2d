@@ -1,0 +1,43 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=cells
+R92 cells empty_used=n0[]
+R92 cells empty_rect=[P: (0, 0), S: (0, 0)]
+R92 cells empty_source=-1
+R92 cells empty_atlas=-1,-1
+R92 cells empty_alt=-1
+R92 cells empty_td=null
+R92 cells used_after_3=n3[0,0;3,2;-2,-1]
+R92 cells rect_after_3=[P: (-2, -1), S: (6, 4)]
+R92 cells src_3_2=0
+R92 cells atlas_3_2=1,0
+R92 cells td_3_2=obj
+R92 cells same_frame_td=obj
+R92 cells same_frame_used_has=1
+R92 cells erase_src=-1
+R92 cells erase_used_n=3
+R92 cells erase_used_n2=2
+R92 cells erase_absent_ok=1
+R92 cells bad_src_readback=42
+R92 cells bad_src_in_used=1
+R92 cells bad_atlas_readback=9,9
+R92 cells bad_atlas_td=null
+R92 cells used_by_id_src=n3[-2,-1;9,9;6,6]
+R92 cells used_by_id_bad=n1[5,5]
+R92 cells clear_used_n=0
+R92 cells clear_rect=[P: (0, 0), S: (0, 0)]
+R92 cells map_to_local_1_1=24.0000,24.0000
+R92 cells map_to_local_neg=-8.0000,-8.0000
+R92 cells local_to_map_16_16=1,1
+R92 cells local_to_map_8_8=0,0
+R92 cells local_to_map_neg=-1,-1
+R92 cells surrounding=n4[1,0;0,1;-1,0;0,-1]
+R92 cells neighbors_valid8=BOTTOM_LEFT_CORNER:-1,1|BOTTOM_RIGHT_CORNER:1,1|BOTTOM_SIDE:0,1|LEFT_SIDE:-1,0|RIGHT_SIDE:1,0|TOP_LEFT_CORNER:-1,-1|TOP_RIGHT_CORNER:1,-1|TOP_SIDE:0,-1
+R92 cells neighbors_invalid4=BOTTOM_CORNER:0,0|BOTTOM_RIGHT_SIDE:0,0|RIGHT_CORNER:0,0|TOP_RIGHT_SIDE:0,0
+R92 cells empty_flip_h=1
+R92 cells empty_flip_v=1
+R92 cells empty_transpose=1
+R92 cells set_flip_h=0
+R92 cells set_flip_v=0
+R92 cells set_transpose=0
+PASS tilemap_lattice cells empty_used=n0[] empty_rect=[P: (0, 0), S: (0, 0)] empty_source=-1 empty_atlas=-1,-1 empty_alt=-1 empty_td=null used_after_3=n3[0,0;3,2;-2,-1] rect_after_3=[P: (-2, -1), S: (6, 4)] src_3_2=0 atlas_3_2=1,0 td_3_2=obj same_frame_td=obj same_frame_used_has=1 erase_src=-1 erase_used_n=3 erase_used_n2=2 erase_absent_ok=1 bad_src_readback=42 bad_src_in_used=1 bad_atlas_readback=9,9 bad_atlas_td=null used_by_id_src=n3[-2,-1;9,9;6,6] used_by_id_bad=n1[5,5] clear_used_n=0 clear_rect=[P: (0, 0), S: (0, 0)] map_to_local_1_1=24.0000,24.0000 map_to_local_neg=-8.0000,-8.0000 local_to_map_16_16=1,1 local_to_map_8_8=0,0 local_to_map_neg=-1,-1 surrounding=n4[1,0;0,1;-1,0;0,-1] neighbors_valid8=BOTTOM_LEFT_CORNER:-1,1|BOTTOM_RIGHT_CORNER:1,1|BOTTOM_SIDE:0,1|LEFT_SIDE:-1,0|RIGHT_SIDE:1,0|TOP_LEFT_CORNER:-1,-1|TOP_RIGHT_CORNER:1,-1|TOP_SIDE:0,-1 neighbors_invalid4=BOTTOM_CORNER:0,0|BOTTOM_RIGHT_SIDE:0,0|RIGHT_CORNER:0,0|TOP_RIGHT_SIDE:0,0 empty_flip_h=1 empty_flip_v=1 empty_transpose=1 set_flip_h=0 set_flip_v=0 set_transpose=0

@@ -1,0 +1,5 @@
+ERROR: Index p_terrain_set = 5 is out of bounds (tile_set->get_terrain_sets_count() = 1).
+   at: set_cells_terrain_connect (scene/2d/tile_map_layer.cpp:3040)
+   GDScript backtrace (most recent call first):
+       [0] _terrain (res://tilemap_lattice.gd:456)
+       [1] _run (res://tilemap_lattice.gd:127)

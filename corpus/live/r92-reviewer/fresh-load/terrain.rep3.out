@@ -1,0 +1,31 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=terrain
+R92 terrain sets_0=0
+R92 terrain sets_1=1
+R92 terrain mode_default=0
+R92 terrain mode_set=0
+R92 terrain terrains_0=0
+R92 terrain terrains_2=2
+R92 terrain names=grass,dirt
+R92 terrain color_0=(0.0, 1.0, 0.0, 1.0)
+R92 terrain td_terrain_set_default=-1
+R92 terrain td_terrain_default=-1
+R92 terrain td_terrain_set=0
+R92 terrain td_terrain=0
+R92 terrain peering_right=1
+R92 terrain peering_left=-1
+R92 terrain peering_right_valid=1
+R92 terrain peering_right_corner_valid=0
+R92 terrain connect_used=n2[1,0;0,0]
+R92 terrain connect_src_0_0=0
+R92 terrain connect_atlas_0_0=0,0
+R92 terrain connect_atlas_1_0=0,0
+R92 terrain connect_atlas_2_0=-1,-1
+R92 terrain connect_dirt_used=n3[1,0;0,0;2,0]
+R92 terrain connect_dirt_atlas_0_0=1,0
+R92 terrain path_used=n2[1,0;0,0]
+R92 terrain bad_set_used=n0[]
+R92 terrain bad_terrain_used=n0[]
+R92 terrain no_terrain_used=n0[]
+PASS tilemap_lattice terrain sets_0=0 sets_1=1 mode_default=0 mode_set=0 terrains_0=0 terrains_2=2 names=grass,dirt color_0=(0.0, 1.0, 0.0, 1.0) td_terrain_set_default=-1 td_terrain_default=-1 td_terrain_set=0 td_terrain=0 peering_right=1 peering_left=-1 peering_right_valid=1 peering_right_corner_valid=0 connect_used=n2[1,0;0,0] connect_src_0_0=0 connect_atlas_0_0=0,0 connect_atlas_1_0=0,0 connect_atlas_2_0=-1,-1 connect_dirt_used=n3[1,0;0,0;2,0] connect_dirt_atlas_0_0=1,0 path_used=n2[1,0;0,0] bad_set_used=n0[] bad_terrain_used=n0[] no_terrain_used=n0[]

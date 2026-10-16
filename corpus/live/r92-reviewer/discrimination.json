@@ -1,0 +1,654 @@
+{
+ "cells": [
+  {
+   "cell": "nullts/clean-receipt",
+   "case": "nullts",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "rc=-6 both fragments on stderr, sig on stdout"
+  },
+  {
+   "cell": "nullts/clean-receipt/author-committed",
+   "case": "nullts",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "committed author receipt"
+  },
+  {
+   "cell": "nullts/fragment-dropped",
+   "case": "nullts",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "signal-11 header removed from stderr"
+  },
+  {
+   "cell": "nullts/site-fragment-dropped",
+   "case": "nullts",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "backtrace site fragment removed"
+  },
+  {
+   "cell": "nullts/signature-on-stderr-only",
+   "case": "nullts",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "stdout anchor must fail (merged-blob spoof)"
+  },
+  {
+   "cell": "nullts/wrong-signal-class-rc0",
+   "case": "nullts",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "right fragments, rc=0 (not the crash class)"
+  },
+  {
+   "cell": "nullts/foreign-error-line",
+   "case": "nullts",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "foreign ERROR line rejects"
+  },
+  {
+   "cell": "nullts/rc-134-shell-encoding",
+   "case": "nullts",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "the scout's 128+6 shell encoding must NOT classify (battery wants -6)"
+  },
+  {
+   "cell": "nullts/pass-line-forged-rc0",
+   "case": "nullts",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "forged PASS + rc=0 without the crash"
+  },
+  {
+   "cell": "nullts/rc-minus-11",
+   "case": "nullts",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "raw SIGSEGV rc must NOT classify (row pins -6)"
+  },
+  {
+   "cell": "atlas/allowlisted-passes",
+   "case": "r92_tilemap_atlas",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "production clause + committed allowlist"
+  },
+  {
+   "cell": "atlas/bare-classifier-rejects",
+   "case": "r92_tilemap_atlas",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "without the allowlist the row is rejected (entry is load-bearing)"
+  },
+  {
+   "cell": "atlas/one-entry-dropped-rejects",
+   "case": "r92_tilemap_atlas",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "drop first of 2 entries -> must reject"
+  },
+  {
+   "cell": "atlas/author-receipt",
+   "case": "r92_tilemap_atlas",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "committed author receipt"
+  },
+  {
+   "cell": "cells/allowlisted-passes",
+   "case": "r92_tilemap_cells",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "production clause + committed allowlist"
+  },
+  {
+   "cell": "cells/bare-classifier-rejects",
+   "case": "r92_tilemap_cells",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "without the allowlist the row is rejected (entry is load-bearing)"
+  },
+  {
+   "cell": "cells/one-entry-dropped-rejects",
+   "case": "r92_tilemap_cells",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "drop first of 2 entries -> must reject"
+  },
+  {
+   "cell": "cells/author-receipt",
+   "case": "r92_tilemap_cells",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "committed author receipt"
+  },
+  {
+   "cell": "custom/allowlisted-passes",
+   "case": "r92_tilemap_custom",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "production clause + committed allowlist"
+  },
+  {
+   "cell": "custom/bare-classifier-rejects",
+   "case": "r92_tilemap_custom",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "without the allowlist the row is rejected (entry is load-bearing)"
+  },
+  {
+   "cell": "custom/one-entry-dropped-rejects",
+   "case": "r92_tilemap_custom",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "drop first of 3 entries -> must reject"
+  },
+  {
+   "cell": "custom/author-receipt",
+   "case": "r92_tilemap_custom",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "committed author receipt"
+  },
+  {
+   "cell": "encoding/allowlisted-passes",
+   "case": "r92_tilemap_encoding",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "production clause + committed allowlist"
+  },
+  {
+   "cell": "encoding/bare-classifier-rejects",
+   "case": "r92_tilemap_encoding",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "without the allowlist the row is rejected (entry is load-bearing)"
+  },
+  {
+   "cell": "encoding/one-entry-dropped-rejects",
+   "case": "r92_tilemap_encoding",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "drop first of 2 entries -> must reject"
+  },
+  {
+   "cell": "encoding/author-receipt",
+   "case": "r92_tilemap_encoding",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "committed author receipt"
+  },
+  {
+   "cell": "fixinvalid/allowlisted-passes",
+   "case": "r92_tilemap_fixinvalid",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "production clause + committed allowlist"
+  },
+  {
+   "cell": "fixinvalid/bare-classifier-rejects",
+   "case": "r92_tilemap_fixinvalid",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "without the allowlist the row is rejected (entry is load-bearing)"
+  },
+  {
+   "cell": "fixinvalid/one-entry-dropped-rejects",
+   "case": "r92_tilemap_fixinvalid",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "drop first of 3 entries -> must reject"
+  },
+  {
+   "cell": "fixinvalid/author-receipt",
+   "case": "r92_tilemap_fixinvalid",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "committed author receipt"
+  },
+  {
+   "cell": "pattern/allowlisted-passes",
+   "case": "r92_tilemap_pattern",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "production clause + committed allowlist"
+  },
+  {
+   "cell": "pattern/bare-classifier-rejects",
+   "case": "r92_tilemap_pattern",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "without the allowlist the row is rejected (entry is load-bearing)"
+  },
+  {
+   "cell": "pattern/one-entry-dropped-rejects",
+   "case": "r92_tilemap_pattern",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "drop first of 1 entries -> must reject"
+  },
+  {
+   "cell": "pattern/author-receipt",
+   "case": "r92_tilemap_pattern",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "committed author receipt"
+  },
+  {
+   "cell": "physics/allowlisted-passes",
+   "case": "r92_tilemap_physics",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "production clause + committed allowlist"
+  },
+  {
+   "cell": "physics/bare-classifier-rejects",
+   "case": "r92_tilemap_physics",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "without the allowlist the row is rejected (entry is load-bearing)"
+  },
+  {
+   "cell": "physics/one-entry-dropped-rejects",
+   "case": "r92_tilemap_physics",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "drop first of 1 entries -> must reject"
+  },
+  {
+   "cell": "physics/author-receipt",
+   "case": "r92_tilemap_physics",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "committed author receipt"
+  },
+  {
+   "cell": "srcids/allowlisted-passes",
+   "case": "r92_tilemap_srcids",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "production clause + committed allowlist"
+  },
+  {
+   "cell": "srcids/bare-classifier-rejects",
+   "case": "r92_tilemap_srcids",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "without the allowlist the row is rejected (entry is load-bearing)"
+  },
+  {
+   "cell": "srcids/one-entry-dropped-rejects",
+   "case": "r92_tilemap_srcids",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "drop first of 3 entries -> must reject"
+  },
+  {
+   "cell": "srcids/author-receipt",
+   "case": "r92_tilemap_srcids",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "committed author receipt"
+  },
+  {
+   "cell": "terrain/allowlisted-passes",
+   "case": "r92_tilemap_terrain",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "production clause + committed allowlist"
+  },
+  {
+   "cell": "terrain/bare-classifier-rejects",
+   "case": "r92_tilemap_terrain",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "without the allowlist the row is rejected (entry is load-bearing)"
+  },
+  {
+   "cell": "terrain/one-entry-dropped-rejects",
+   "case": "r92_tilemap_terrain",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "drop first of 1 entries -> must reject"
+  },
+  {
+   "cell": "terrain/author-receipt",
+   "case": "r92_tilemap_terrain",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "committed author receipt"
+  },
+  {
+   "cell": "nav/clean-receipt-payload0",
+   "case": "r92_tilemap_nav",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "production receipt matches payload[0] (regions_f1=1)"
+  },
+  {
+   "cell": "nav/f1-zero-admitted-by-payload1",
+   "case": "r92_tilemap_nav",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "the declared envelope admits the ff>=150 state (payload[1])"
+  },
+  {
+   "cell": "nav/f1-zero-under-payload0-only",
+   "case": "r92_tilemap_nav",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "the falsified one-step read is NOT admitted by payload[0]"
+  },
+  {
+   "cell": "nav/f2-zero-rejects-both-payloads",
+   "case": "r92_tilemap_nav",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "settled registration law is single-valued: f2=0 rejects"
+  },
+  {
+   "cell": "nav/lever-tail-drift-rejects",
+   "case": "r92_tilemap_nav",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "erase-lever read outside both payloads"
+  },
+  {
+   "cell": "nav/foreign-error-rejects",
+   "case": "r92_tilemap_nav",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "no-entry row: any ERROR line rejects"
+  },
+  {
+   "cell": "nav/ff120-classifies",
+   "case": "r92_tilemap_nav",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "ff120 receipt matches payload[0]"
+  },
+  {
+   "cell": "nav/ff150-classifies",
+   "case": "r92_tilemap_nav",
+   "got": true,
+   "want": false,
+   "ok": false,
+   "note": "ff150 receipt matches payload[1]"
+  },
+  {
+   "cell": "nav/ff600-classifies",
+   "case": "r92_tilemap_nav",
+   "got": true,
+   "want": false,
+   "ok": false,
+   "note": "ff600 receipt matches payload[1]"
+  },
+  {
+   "cell": "census/clean",
+   "case": "r92_tilemap_census",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "clean receipt"
+  },
+  {
+   "cell": "census/pin-byte-mutated",
+   "case": "r92_tilemap_census",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "one byte inside the pin flipped"
+  },
+  {
+   "cell": "atlas/clean",
+   "case": "r92_tilemap_atlas",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "clean receipt"
+  },
+  {
+   "cell": "atlas/pin-byte-mutated",
+   "case": "r92_tilemap_atlas",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "one byte inside the pin flipped"
+  },
+  {
+   "cell": "cells/clean",
+   "case": "r92_tilemap_cells",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "clean receipt"
+  },
+  {
+   "cell": "cells/pin-byte-mutated",
+   "case": "r92_tilemap_cells",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "one byte inside the pin flipped"
+  },
+  {
+   "cell": "custom/clean",
+   "case": "r92_tilemap_custom",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "clean receipt"
+  },
+  {
+   "cell": "custom/pin-byte-mutated",
+   "case": "r92_tilemap_custom",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "one byte inside the pin flipped"
+  },
+  {
+   "cell": "terrain/clean",
+   "case": "r92_tilemap_terrain",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "clean receipt"
+  },
+  {
+   "cell": "terrain/pin-byte-mutated",
+   "case": "r92_tilemap_terrain",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "one byte inside the pin flipped"
+  },
+  {
+   "cell": "pattern/clean",
+   "case": "r92_tilemap_pattern",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "clean receipt"
+  },
+  {
+   "cell": "pattern/pin-byte-mutated",
+   "case": "r92_tilemap_pattern",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "one byte inside the pin flipped"
+  },
+  {
+   "cell": "encoding/clean",
+   "case": "r92_tilemap_encoding",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "clean receipt"
+  },
+  {
+   "cell": "encoding/pin-byte-mutated",
+   "case": "r92_tilemap_encoding",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "one byte inside the pin flipped"
+  },
+  {
+   "cell": "fixinvalid/clean",
+   "case": "r92_tilemap_fixinvalid",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "clean receipt"
+  },
+  {
+   "cell": "fixinvalid/pin-byte-mutated",
+   "case": "r92_tilemap_fixinvalid",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "one byte inside the pin flipped"
+  },
+  {
+   "cell": "srcids/clean",
+   "case": "r92_tilemap_srcids",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "clean receipt"
+  },
+  {
+   "cell": "srcids/pin-byte-mutated",
+   "case": "r92_tilemap_srcids",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "one byte inside the pin flipped"
+  },
+  {
+   "cell": "physics/clean",
+   "case": "r92_tilemap_physics",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "clean receipt"
+  },
+  {
+   "cell": "physics/pin-byte-mutated",
+   "case": "r92_tilemap_physics",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "one byte inside the pin flipped"
+  },
+  {
+   "cell": "timing/clean",
+   "case": "r92_tilemap_timing",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "clean receipt"
+  },
+  {
+   "cell": "timing/pin-byte-mutated",
+   "case": "r92_tilemap_timing",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "one byte inside the pin flipped"
+  },
+  {
+   "cell": "quadrant/clean",
+   "case": "r92_tilemap_quadrant",
+   "got": true,
+   "want": true,
+   "ok": true,
+   "note": "clean receipt"
+  },
+  {
+   "cell": "quadrant/pin-byte-mutated",
+   "case": "r92_tilemap_quadrant",
+   "got": false,
+   "want": false,
+   "ok": true,
+   "note": "one byte inside the pin flipped"
+  }
+ ],
+ "bad": [
+  {
+   "cell": "nav/ff150-classifies",
+   "case": "r92_tilemap_nav",
+   "got": true,
+   "want": false,
+   "ok": false,
+   "note": "ff150 receipt matches payload[1]"
+  },
+  {
+   "cell": "nav/ff600-classifies",
+   "case": "r92_tilemap_nav",
+   "got": true,
+   "want": false,
+   "ok": false,
+   "note": "ff600 receipt matches payload[1]"
+  }
+ ]
+}

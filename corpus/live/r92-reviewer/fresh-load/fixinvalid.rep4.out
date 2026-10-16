@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+arm=fixinvalid
+R92 fixinvalid before_used=n3[0,0;1,0;2,0]
+R92 fixinvalid after_used=n1[0,0]
+R92 fixinvalid after_src_1_0=-1
+R92 fixinvalid after_src_2_0=-1
+R92 fixinvalid removed_used=n1[0,0]
+R92 fixinvalid removed_fixed_used=n0[]
+PASS tilemap_lattice fixinvalid before_used=n3[0,0;1,0;2,0] after_used=n1[0,0] after_src_1_0=-1 after_src_2_0=-1 removed_used=n1[0,0] removed_fixed_used=n0[]

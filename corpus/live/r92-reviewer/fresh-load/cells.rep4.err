@@ -1,0 +1,25 @@
+ERROR: The TileSetAtlasSource atlas has no tile at (9, 9).
+   at: get_tile_data (scene/resources/2d/tile_set.cpp:5473)
+   GDScript backtrace (most recent call first):
+       [0] _cells (res://tilemap_lattice.gd:285)
+       [1] _run (res://tilemap_lattice.gd:123)
+ERROR: Method/function failed. Returning: p_coords
+   at: get_neighbor_cell (scene/resources/2d/tile_set.cpp:1840)
+   GDScript backtrace (most recent call first):
+       [0] _cells (res://tilemap_lattice.gd:325)
+       [1] _run (res://tilemap_lattice.gd:123)
+ERROR: Method/function failed. Returning: p_coords
+   at: get_neighbor_cell (scene/resources/2d/tile_set.cpp:1840)
+   GDScript backtrace (most recent call first):
+       [0] _cells (res://tilemap_lattice.gd:325)
+       [1] _run (res://tilemap_lattice.gd:123)
+ERROR: Method/function failed. Returning: p_coords
+   at: get_neighbor_cell (scene/resources/2d/tile_set.cpp:1840)
+   GDScript backtrace (most recent call first):
+       [0] _cells (res://tilemap_lattice.gd:325)
+       [1] _run (res://tilemap_lattice.gd:123)
+ERROR: Method/function failed. Returning: p_coords
+   at: get_neighbor_cell (scene/resources/2d/tile_set.cpp:1840)
+   GDScript backtrace (most recent call first):
+       [0] _cells (res://tilemap_lattice.gd:325)
+       [1] _run (res://tilemap_lattice.gd:123)

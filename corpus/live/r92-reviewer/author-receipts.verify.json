@@ -1,0 +1,399 @@
+{
+ "segment_sha256": "749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3",
+ "harness_sha256": "5e5182815e6e3c503f40c78b6416b5cf6aaf9d0d3ea3ed7577594bd9f35aa509",
+ "dir": "corpus/live/r92-author/fresh-reps",
+ "rows": [
+  {
+   "case": "r92_tilemap_atlas",
+   "arm": "atlas",
+   "reps": 3,
+   "rcs": [
+    0
+   ],
+   "expected_exit": 0,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 1,
+   "bare_classifier_passes": [
+    false,
+    false,
+    false
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=463)",
+    "0 (pin_len=463)",
+    "0 (pin_len=463)"
+   ],
+   "envelope_payloads": 1
+  },
+  {
+   "case": "r92_tilemap_cells",
+   "arm": "cells",
+   "reps": 3,
+   "rcs": [
+    0
+   ],
+   "expected_exit": 0,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 1,
+   "bare_classifier_passes": [
+    false,
+    false,
+    false
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=1048)",
+    "0 (pin_len=1048)",
+    "0 (pin_len=1048)"
+   ],
+   "envelope_payloads": 1
+  },
+  {
+   "case": "r92_tilemap_census",
+   "arm": "census",
+   "reps": 3,
+   "rcs": [
+    0
+   ],
+   "expected_exit": 0,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 1,
+   "bare_classifier_passes": [
+    true,
+    true,
+    true
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=1103)",
+    "0 (pin_len=1103)",
+    "0 (pin_len=1103)"
+   ],
+   "envelope_payloads": 1
+  },
+  {
+   "case": "r92_tilemap_custom",
+   "arm": "custom",
+   "reps": 3,
+   "rcs": [
+    0
+   ],
+   "expected_exit": 0,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 1,
+   "bare_classifier_passes": [
+    false,
+    false,
+    false
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=436)",
+    "0 (pin_len=436)",
+    "0 (pin_len=436)"
+   ],
+   "envelope_payloads": 1
+  },
+  {
+   "case": "r92_tilemap_encoding",
+   "arm": "encoding",
+   "reps": 3,
+   "rcs": [
+    0
+   ],
+   "expected_exit": 0,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 1,
+   "bare_classifier_passes": [
+    false,
+    false,
+    false
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=912)",
+    "0 (pin_len=912)",
+    "0 (pin_len=912)"
+   ],
+   "envelope_payloads": 1
+  },
+  {
+   "case": "r92_tilemap_fixinvalid",
+   "arm": "fixinvalid",
+   "reps": 3,
+   "rcs": [
+    0
+   ],
+   "expected_exit": 0,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 1,
+   "bare_classifier_passes": [
+    false,
+    false,
+    false
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=157)",
+    "0 (pin_len=157)",
+    "0 (pin_len=157)"
+   ],
+   "envelope_payloads": 1
+  },
+  {
+   "case": "r92_tilemap_nav",
+   "arm": "nav",
+   "reps": 3,
+   "rcs": [
+    0
+   ],
+   "expected_exit": 0,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 1,
+   "bare_classifier_passes": [
+    true,
+    true,
+    true
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=391)",
+    "0 (pin_len=391)",
+    "0 (pin_len=391)"
+   ],
+   "envelope_payloads": 2
+  },
+  {
+   "case": "r92_tilemap_nullts_crash",
+   "arm": "nullts",
+   "reps": 3,
+   "rcs": [
+    -6
+   ],
+   "expected_exit": -6,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 3,
+   "bare_classifier_passes": [
+    true,
+    true,
+    true
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=36)",
+    "0 (pin_len=36)",
+    "0 (pin_len=36)"
+   ],
+   "envelope_payloads": 1
+  },
+  {
+   "case": "r92_tilemap_pattern",
+   "arm": "pattern",
+   "reps": 3,
+   "rcs": [
+    0
+   ],
+   "expected_exit": 0,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 1,
+   "bare_classifier_passes": [
+    false,
+    false,
+    false
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=428)",
+    "0 (pin_len=428)",
+    "0 (pin_len=428)"
+   ],
+   "envelope_payloads": 1
+  },
+  {
+   "case": "r92_tilemap_physics",
+   "arm": "physics",
+   "reps": 3,
+   "rcs": [
+    0
+   ],
+   "expected_exit": 0,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 1,
+   "bare_classifier_passes": [
+    false,
+    false,
+    false
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=539)",
+    "0 (pin_len=539)",
+    "0 (pin_len=539)"
+   ],
+   "envelope_payloads": 1
+  },
+  {
+   "case": "r92_tilemap_quadrant",
+   "arm": "quadrant",
+   "reps": 3,
+   "rcs": [
+    0
+   ],
+   "expected_exit": 0,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 1,
+   "bare_classifier_passes": [
+    true,
+    true,
+    true
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=286)",
+    "0 (pin_len=286)",
+    "0 (pin_len=286)"
+   ],
+   "envelope_payloads": 1
+  },
+  {
+   "case": "r92_tilemap_srcids",
+   "arm": "srcids",
+   "reps": 3,
+   "rcs": [
+    0
+   ],
+   "expected_exit": 0,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 1,
+   "bare_classifier_passes": [
+    false,
+    false,
+    false
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=301)",
+    "0 (pin_len=301)",
+    "0 (pin_len=301)"
+   ],
+   "envelope_payloads": 1
+  },
+  {
+   "case": "r92_tilemap_terrain",
+   "arm": "terrain",
+   "reps": 3,
+   "rcs": [
+    0
+   ],
+   "expected_exit": 0,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 1,
+   "bare_classifier_passes": [
+    false,
+    false,
+    false
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=560)",
+    "0 (pin_len=560)",
+    "0 (pin_len=560)"
+   ],
+   "envelope_payloads": 1
+  },
+  {
+   "case": "r92_tilemap_timing",
+   "arm": "timing",
+   "reps": 3,
+   "rcs": [
+    0
+   ],
+   "expected_exit": 0,
+   "verdicts": [
+    true,
+    true,
+    true
+   ],
+   "fails": 0,
+   "out_uniq": 1,
+   "err_uniq": 1,
+   "bare_classifier_passes": [
+    true,
+    true,
+    true
+   ],
+   "first_divergence_vs_pin": [
+    "0 (pin_len=366)",
+    "0 (pin_len=366)",
+    "0 (pin_len=366)"
+   ],
+   "envelope_payloads": 1
+  }
+ ]
+}

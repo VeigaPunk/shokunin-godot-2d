@@ -1,0 +1,10 @@
+=== reviewer battery run 1 start 2026-10-16T00:17:06Z loadavg=59.17 59.17 58.94 ===
+run 1 rc=0 2026-10-16T00:21:27Z
+PASS descendant error-spoof meta
+PASS error-clause surface meta
+PASS battery: corpus/live/r92-reviewer/runs1/20261016T001706487857Z/verdicts.json
+=== reviewer battery run 2 start 2026-10-16T00:21:27Z loadavg=64.77 63.25 60.74 ===
+run 2 rc=0 2026-10-16T00:25:43Z
+PASS descendant error-spoof meta
+PASS error-clause surface meta
+PASS battery: corpus/live/r92-reviewer/runs2/20261016T002127197810Z/verdicts.json
