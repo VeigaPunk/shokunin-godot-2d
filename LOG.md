@@ -1174,3 +1174,12 @@
 - LAWS: 16-entry expected-error allowlist all live-matched; uid
   diagnostic deterministic iff .godot/uid_cache.bin; floor gate
   load-bearing (dead-entry mutant detected).
+- ROUND 97 (2026-10-16): SceneTree groups/signal-flags/call_deferred lattice.
+  ADMIT-with-findings at f67094bb (+65/-0, 12 rows, CASES 419->431).
+  Verifier VERIFIED (540/540 mutations, 438/438 x2); critic F1/F2 fold
+  candidates (frame-delta pin, round-prefix gate tuple); simplifier -21
+  queued. LSP device found: --editor --lsp-port in headless editor mode.
+- LAWS: deferred call lands in emitting physics frame (window-pinned);
+  group add/remove visibility; signal connect flags; call_deferred
+  ordering vs _process/_physics_process; boundary refuted-universal
+  corrected row-side.
