@@ -1167,3 +1167,10 @@
   order_core echo pins queued.
 - LAWS: cycle_len=k(k-1) k=2..10; perm0-7 distinct; co-presence
   attribution; cap40 set32_distinct=5; rigid 60tps-only (1 of 52).
+- ROUND 96 (2026-10-16): scene_io + r96b boundary lattices.
+  ADMIT-with-findings at 89f85ed8 (426 rows, +60). Verifier VERIFIED
+  (2124/2124 mutations reject); critic+reviewer PASS; scribe HOLDS;
+  simplifier -55 proven queued; uid_cache context-dependence proven.
+- LAWS: 16-entry expected-error allowlist all live-matched; uid
+  diagnostic deterministic iff .godot/uid_cache.bin; floor gate
+  load-bearing (dead-entry mutant detected).
