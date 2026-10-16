@@ -1027,6 +1027,204 @@ CASES = [
      'PASS r95b_order layers k=1 add_order=[a,b,c,d,e] pt0_ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,0,1,2,4;t8:3,0,2,4,1;t16:1,4,0,2,3;t32:4,0,2,3,1] pt0_distinct=6 pt0_vec=[e#0,a#0,c#0,d#0,b#0] pt0_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_vec=[e#0,a#0,c#0,d#0,b#0] pt0_t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] pt0_t2_eq_sh=false ptL_vec=[clb#0] sh_vec=[e#0,a#0,c#0,d#0,clb#0,b#0] sh_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|16.0000,0.0000|8.0000,0.0000] pt_eq_sh=false sh_len=6'),
     ('r95b_order_rigid', 'r95b_order.gd', ["--arm=rigid"], 0,
      'PASS r95b_order rigid add_order=[a,b,c,d,e] ladder=[t1:2;t2:2;t3:2;t5:2;t10:2] distinct_ticks=1 t10_relpos=[15.9999,14.8732]'),
+    # --- r96 block: PackedScene/ResourceSaver/ResourceLoader round-trip
+    # lattice -----------------------------------------------------------
+    # Fixture scene_io_lattice.gd is an r96-author FOLD of the frozen
+    # r96-scout probe (corpus/live/r96-scout/probes/scene_io_lattice.gd
+    # sha256 2eded40b74971c4f…, 805 lines); fixture sha256 recorded in
+    # reports/round-96/r96-author.md. Folds (all boundary-driven):
+    #   * pack_basic: size_in_190_200 -> size_in_176_194. Save size is
+    #     174 fixed bytes + digit-width of the two minted node unique_ids;
+    #     ids are bounded < 2^31 (1-10 digits) so [176,194] is the provable
+    #     support while the frozen bound flipped once at 189 in the
+    #     boundary's size scans (documented rare-flake class).
+    #   * extres: the frozen id_stable_across_saves / id_stable_same_obj_
+    #     resave booleans encoded the scout's refuted "ext ids are random
+    #     per save" model. r96-boundary measured ext ids as a pure function
+    #     of (output path, slot): keys renamed id_differs_across_paths /
+    #     id_differs_other_path (both now true — the measured physical
+    #     fact, re-signed under the boundary law) and a same-path resave
+    #     block adds save_same_path / id_stable_same_path /
+    #     same_path_bytes_identical (all true).
+    #   * L4 law comment corrected to the boundary id law (comment-only).
+    # Boundary probes land byte-identical: r96b_cache.gd (deep cache-mode
+    # lattice + threaded load), r96b_id.gd (path+slot id law incl. sticky
+    # resave hazard), r96b_seq.gd (pinned-bundle byte determinism incl.
+    # ext resources — the headline), r96b_var.gd (unique_id-only variance
+    # on a feature-rich scene, persistent conns/groups, meta order, no
+    # public id lever, <2^31 gate), r96b_phase.gd (physics/process-frame
+    # phase attacks at 5 tick offsets each — no phase coordinate),
+    # r96b_seed.gd (loaded-resource id sequences reproduce across
+    # processes). r96b_size.gd deliberately NOT landed — its size-law
+    # conclusion is the pack_basic fold above.
+    # Deliberately NOT authored (boundary-rejected / measured-unstable):
+    #   * r96b_id_finger0 — first-process draws of Resource.new() vary
+    #     across processes (5/5 distinct; the generator is not
+    #     process-global for pathless base-class instances).
+    #   * r96b_id_seqAA3 / subextra1 — strict subsets of seqA2/subextra3.
+    #   * r96b_var_idstat min=/max= tokens — process-random minted ids
+    #     (5/5 distinct); only n=200 distinct=200 (collision-free
+    #     breadth) and the <2^31/pinned-drop gates are pinned.
+    #   * r96b_seed fresh2 — two fresh gradients' sequences were equal
+    #     in-run but the claim adds nothing over seedcheck.
+    #   * any raw unique_id/sub_id/ext_id literal under random minting —
+    #     ids are sequence/path dependent (boundary: never assert raw
+    #     unless pinned or masked); every pinned literal here is
+    #     path-derived and reproduced identically in proj_alt receipts.
+    # 60 rows: 13 scout-surviving cells + 47 boundary cells. Every arm
+    # byte-stable across 114 scout + 5-family/8-rep boundary receipts
+    # (canonical lines identical in all retained receipts) and this
+    # seat's fresh-process smoke pass on the fixture bytes.
+    # Rows inserted ahead of the crash/descendant tail —
+    # descendant_pipe_detached_control's sleep-8 gap stays adjacent to
+    # the meta probes.
+    ('r96_scene_io_census', 'scene_io_lattice.gd', ['--arm=census'], 0,
+     'PASS scene_io_lattice census ps_methods=_get_bundled_scene,_set_bundled_scene,can_instantiate,get_state,instantiate,pack ps_props=bundled ps_consts=GEN_EDIT_STATE_DISABLED=0,GEN_EDIT_STATE_INSTANCE=1,GEN_EDIT_STATE_MAIN=2,GEN_EDIT_STATE_MAIN_INHERITED=3 saver_methods=add_resource_format_saver,get_recognized_extensions,get_resource_id_for_path,remove_resource_format_saver,save,set_uid saver_flags=FLAG_NONE=0,FLAG_RELATIVE_PATHS=1,FLAG_BUNDLE_RESOURCES=2,FLAG_CHANGE_PATH=4,FLAG_OMIT_EDITOR_PROPERTIES=8,FLAG_SAVE_BIG_ENDIAN=16,FLAG_COMPRESS=32,FLAG_REPLACE_SUBRESOURCE_PATHS=64 loader_methods=add_resource_format_loader,exists,get_cached_ref,get_dependencies,get_recognized_extensions_for_type,get_resource_uid,has_cached,list_directory,load,load_threaded_get,load_threaded_get_status,load_threaded_request,remove_resource_format_loader,set_abort_on_missing_resources loader_modes=THREAD_LOAD_INVALID_RESOURCE=0,THREAD_LOAD_IN_PROGRESS=1,THREAD_LOAD_FAILED=2,THREAD_LOAD_LOADED=3,CACHE_MODE_IGNORE=0,CACHE_MODE_REUSE=1,CACHE_MODE_REPLACE=2,CACHE_MODE_IGNORE_DEEP=3,CACHE_MODE_REPLACE_DEEP=4 uid_methods=add_id,create_id,create_id_for_path,ensure_path,get_id_path,has_id,id_to_text,path_to_uid,remove_id,set_id,text_to_id,uid_to_path uid_consts=INVALID_ID=-1 res_props=Resource,resource_local_to_scene,resource_name,resource_path,resource_scene_unique_id ss_methods=get_base_scene_state,get_connection_binds,get_connection_count,get_connection_flags,get_connection_method,get_connection_signal,get_connection_source,get_connection_target,get_connection_unbinds,get_node_count,get_node_groups,get_node_index,get_node_instance,get_node_instance_placeholder,get_node_name,get_node_owner_path,get_node_path,get_node_property_count,get_node_property_name,get_node_property_value,get_node_type,get_path,is_node_instance_placeholder empty_can_instantiate=false pack_is_instance_method=true'),
+    ('r96_scene_io_pack_basic', 'scene_io_lattice.gd', ['--arm=pack_basic'], 0,
+     'PASS scene_io_lattice pack_basic save=OK(0) can=true nodes=2 names=Root,Child pcounts=1,1 types=Node2D,Node2D state_path_empty=true header=[gd_scene format=3] has_uid=false has_unique_id=true size_in_176_194=true sha_len=64 inst_name=Root inst_pos=(10.0, 20.0) kids=1 kid_name=Child kid_pos=(3.0, 4.0) kid_owner_root=true scene_file_is_path=true back_path_is_path=true resave=OK(0) resave_same_in_process=true load_cached_identity=true'),
+    ('r96_scene_io_ownership', 'scene_io_lattice.gd', ['--arm=ownership'], 0,
+     'PASS scene_io_lattice ownership save=OK(0) packed_nodes=2 packed_names=Root,Owned orphan_dropped=true deep_dropped=true bad_owner_refused=true self_owner_refused=true cleared_owner_null=true child_of_tree_nodes=1 unparented_nodes=2 inst_child_owner_root=true owner_paths=Root:.:,Owned:./Owned:.'),
+    ('r96_scene_io_formats', 'scene_io_lattice.gd', ['--arm=formats'], 0,
+     'PASS scene_io_lattice formats grad_tres=OK(0) size=101 sha=94ca8c1804aa166ebfce76ff354bc9adbcf5fb0ea108436dedf560fd7ba2356a header=[gd_resource type="Gradient" format=3] colors_match=true grad_res=OK(0) size=354 sha=6f13538bfb452af9193d4ba487ccdf755afda3db8d4f5034c3f149c703e3ef76 magic=RSRC colors_match=true text_eq_bin=false grad_refused=tscn=File unrecognized(15),tres.bak=File unrecognized(15),resx=File unrecognized(15),json=File unrecognized(15) refused_files_absent=true scene_scn=OK(0) scene_res=OK(0) scn_eq_res=true both_reload=true scene_tres_refused=File unrecognized(15)'),
+    ('r96_scene_io_det', 'scene_io_lattice.gd', ['--arm=det'], 0,
+     'PASS scene_io_lattice det save=OK(0) same_obj_resave=OK(0) unpinned_sha_len=64 two_builds_same=false subid_minted=true subid_settable=true bundle_keys=conn_count,conns,editable_instances,id_paths,names,node_count,node_ids,node_paths,nodes,variants,version bundle_version=3 node_ids_len=2 pinned_save=OK(0) pinned_save2=OK(0) pinned_sha=a9041c7939a77470f126e51458f7bb14e9a5b1a36fba46bbcbf5c8a572b84fb9 two_pinned_builds_same=true pinned_unique_ids=true instantiate_ok=true'),
+    ('r96_scene_io_uid', 'scene_io_lattice.gd', ['--arm=uid'], 0,
+     'PASS scene_io_lattice uid create_id_text_prefix=true create_id_unregistered=true get_id_path_unknown_empty=true roundtrip=103876737118377468 roundtrip_text=uid://bqk3m5n7qar1 invalid_text=-1 invalid_text_back=uid://<invalid> invalid_id=-1 tres_save=OK(0) header_has_uid=false saver_id_before=-1 loader_uid_before=-1 loader_uid_after_add=4242 saver_id_after_add=-1 scene_save=OK(0) ext_line_has_uid=false header_has_uid=false any_uid_token=false'),
+    ('r96_scene_io_takeover', 'scene_io_lattice.gd', ['--arm=takeover'], 0,
+     'PASS scene_io_lattice takeover save=OK(0) path_after_save_empty=true load_after_save_is_new=true b_wins=true b_path_is_p=true a_path_empty=true c_wins=true b_displaced=true disk_sha=ad113a5cb9144c27c0461d59b0c4164804f769acb97990f688b978e3c3c98716 disk_unchanged=true exists=true exists_missing=true has_cached=true get_cached_ref=true deps_empty=true'),
+    ('r96_scene_io_cache', 'scene_io_lattice.gd', ['--arm=cache'], 0,
+     'PASS scene_io_lattice cache save=OK(0) default_identity=true ignore_distinct=true ignore_path_kept=true ignore_two_distinct=true external_write=OK(0) stale_after_write=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] repl_same_object=true repl_refreshed=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] after_repl_identity=true ignore_refreshed=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] reuse_is_repl=true cached_now_refreshed=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] exists_dir=false exists_empty=false'),
+    ('r96_scene_io_subres', 'scene_io_lattice.gd', ['--arm=subres'], 0,
+     'PASS scene_io_lattice subres save=OK(0) subid=Gradient_643c0 subid_present=true shared_across_instances=true shared_with_source=true mutation_leaks=true local_save=OK(0) flag_in_file=true local_shared=false local_leak=false nest_save=OK(0) nested_reuses_subid=true dup_shallow_distinct=true dup_deep_distinct=true'),
+    ('r96_scene_io_extres', 'scene_io_lattice.gd', ['--arm=extres'], 0,
+     'PASS scene_io_lattice extres ext_save=OK(0) save=OK(0) save2=OK(0) save_same_obj=OK(0) ext_line=true id_prefix=true id_differs_across_paths=true id_differs_other_path=true save_same_path=OK(0) id_stable_same_path=true same_path_bytes_identical=true gen_id_len=5 inst_is_loaded=true two_instances_share=true inst_path_is_ext=true deps=["user://r96/ext.tres"] bundle_flag=OK(0) inlined_as_subresource=true no_ext_line=true nopath_save=OK(0) serialized_as_subresource=true no_ext_line=true relative_flag=OK(0) keeps_path=true'),
+    ('r96_scene_io_editstate', 'scene_io_lattice.gd', ['--arm=editstate'], 0,
+     'PASS scene_io_lattice editstate save=OK(0) states=s0[kids=1,owner=true,name=EditRoot,ph=false,ed=false]|s1[kids=1,owner=true,name=EditRoot,ph=false,ed=false]|s2[kids=1,owner=true,name=EditRoot,ph=false,ed=false]|s3[kids=1,owner=true,name=EditRoot,ph=false,ed=false] scene_file_is_path=true part_of_edited=false editable_readback=true placeholder_readback=true unique_name_before=false unique_name_after=true root_placeholder=false'),
+    ('r96_scene_io_refuse', 'scene_io_lattice.gd', ['--arm=refuse'], 0,
+     "PASS scene_io_lattice refuse save_missing_dir=Can't open(19) no_file=true save_null=Invalid parameter(31) save_empty_path=Invalid parameter(31) save_no_ext=File unrecognized(15) save_dir=File unrecognized(15) load_missing_null=true load_dir_null=true load_empty_null=true pack_null=Invalid parameter(31) empty_can_instantiate=false empty_instantiate_null=true relative_save=OK(0) relative_file_created=true relative_in_project_dir=true deleted=true set_path_collision_refused=true"),
+    ('r96_scene_io_edges', 'scene_io_lattice.gd', ['--arm=edges'], 0,
+     'PASS scene_io_lattice edges save=OK(0) inst_names=NameRoot,NameRoot added_names=NameRoot,@Node2D@2 auto_renamed=true state_path_is_p=true duplicate_cls=PackedScene packed_twice_same_object=false groups_save=OK(0) state_groups=["grp_a", "grp_b"] inst_groups=grp_a,grp_b owner_paths=ORoot:.:,OChild:./OChild:.,OGrand:./OChild/OGrand:.'),
+    # r96-boundary id law — ext/sub ids are f(output path, slot):
+    # reproduced byte-identically across processes at fixed paths.
+    ('r96b_id_seqA2', 'r96b_id.gd', ['--arm=seqA2'], 0,
+     'PASS r96b_id seqA2 seq=a:1_vwxho/OK a:1_vwxho/OK'),
+    ('r96b_id_seqAB2', 'r96b_id.gd', ['--arm=seqAB2'], 0,
+     'PASS r96b_id seqAB2 seq=a:1_vwxho/OK b:1_0187o/OK a:1_vwxho/OK'),
+    ('r96b_id_seq2obj', 'r96b_id.gd', ['--arm=seq2obj'], 0,
+     'PASS r96b_id seq2obj obj1=1_vwxho obj2=1_vwxho'),
+    ('r96b_id_twoext', 'r96b_id.gd', ['--arm=twoext'], 0,
+     'PASS r96b_id twoext seq=a:1_c7i3r,2_ku7em b:1_cre6b,2_kmhwg a:1_c7i3r,2_ku7em'),
+    ('r96b_id_extother', 'r96b_id.gd', ['--arm=extother'], 0,
+     'PASS r96b_id extother id=1_vwxho'),
+    ('r96b_id_extshift', 'r96b_id.gd', ['--arm=extshift'], 0,
+     'PASS r96b_id extshift pre=dg01n,6ddvb,3nsch ext_id=1_vwxho'),
+    ('r96b_id_mint_two', 'r96b_id.gd', ['--arm=mint_two'], 0,
+     'PASS r96b_id mint_two seq=pa:Gradient_elxub sp:Gradient_xlqlr pa:Gradient_elxub sp:Gradient_xlqlr'),
+    ('r96b_id_subsamepath', 'r96b_id.gd', ['--arm=subsamepath'], 0,
+     'PASS r96b_id subsamepath seq=m0:Gradient_xlqlr m1:Gradient_xlqlr'),
+    ('r96b_id_subcontent', 'r96b_id.gd', ['--arm=subcontent'], 0,
+     'PASS r96b_id subcontent id=Gradient_xlqlr'),
+    ('r96b_id_subextra0', 'r96b_id.gd', ['--arm=subextra0'], 0,
+     'PASS r96b_id subextra0 extra=0 id=Gradient_xlqlr'),
+    ('r96b_id_subextra3', 'r96b_id.gd', ['--arm=subextra3'], 0,
+     'PASS r96b_id subextra3 extra=3 id=Gradient_xlqlr'),
+    ('r96b_id_subsame', 'r96b_id.gd', ['--arm=subsame'], 0,
+     'PASS r96b_id subsame id1=Gradient_elxub id2=Gradient_elxub'),
+    ('r96b_id_subpath', 'r96b_id.gd', ['--arm=subpath'], 0,
+     'PASS r96b_id subpath seq=a:Gradient_elxub b:Gradient_elxub a:Gradient_elxub'),
+    ('r96b_id_fingerB', 'r96b_id.gd', ['--arm=fingerB'], 0,
+     'PASS r96b_id fingerB vals=dg01n,6ddvb,3nsch,07j4t,2c3ee,pghoq,dqro8,lahlw'),
+    # r96-boundary determinism: pinning bundle node_ids +
+    # resource_scene_unique_id makes even ext-resource scenes
+    # byte-identical across processes (minimal/extpin pin sha_raw; the
+    # BUNDLE flag inlines deps into sub_resources).
+    ('r96b_seq_extseq', 'r96b_seq.gd', ['--arm=extseq'], 0,
+     'PASS r96b_seq extseq save=OK save2=OK save_same_obj=OK ext_ids1=1_efiak ext_ids2=1_f4hst ext_ids1b=1_xfevf sha_uonly=6213ed4980248283a13a4259482c5790a3878fdf75f3698f385f045532aa36fd sha_usub=6213ed4980248283a13a4259482c5790a3878fdf75f3698f385f045532aa36fd'),
+    ('r96b_seq_extpin', 'r96b_seq.gd', ['--arm=extpin'], 0,
+     'PASS r96b_seq extpin save=OK save2=OK ext_ids1=1_fukgi ext_ids2=1_fa8qf sha_raw=a6fa9a9e0c4661fa8d319ac93e8db6b8c17e71ce3d8d51eb394a9381cb0ee88a sha_uonly=1f5ea37c55787e43418bb5157fae62fc99f97dbaf196183d31fc7108340a421e two_builds_same_text=false unique_pinned=true'),
+    ('r96b_seq_extbundle', 'r96b_seq.gd', ['--arm=extbundle'], 0,
+     'PASS r96b_seq extbundle save=OK ids1=Gradient_jbi7l sha_raw=6074989d6503c1a72c59de380883b003972b7f103fc4e45ea1f1ef202583e156 sha_uonly=84cd406dcb3b6479b4a77d14b3199338616ee778c8d9a10cecd019deaf9aff26 sha_u_sub=aa74d540a72391153eca41ca9be36279c328c40cb8c1c5717eb7a88c67457ce5 ext_line=false sub_line=true unique_pinned=true'),
+    ('r96b_seq_extgen', 'r96b_seq.gd', ['--arm=extgen'], 0,
+     'PASS r96b_seq extgen seq=r0s0=1_6o14o/OK g0s0=ies2y r0s1=1_dwhle/OK g0s1=nb1tx r1s0=1_ii61a/OK g1s0=sxvai r1s1=1_xjtd8/OK g1s1=dsgfn'),
+    ('r96b_seq_minimal', 'r96b_seq.gd', ['--arm=minimal'], 0,
+     'PASS r96b_seq minimal save=OK ids=1_k3tv1,Gradient_gtys7 sha_raw=c16f3241a476f4de1484bf07fea7c6a7dc9f5ef8c3408f18eed5f95c6361e0b9 sha_uonly=27eead3cdb1ecec7b8d2ddbe70f430e8ff95e8f013b12a6dd748976944c61de1'),
+    # r96-boundary deep cache lattice: shallow REPLACE/IGNORE refresh only
+    # the top resource (deps stay stale); REPLACE_DEEP refreshes deps
+    # in-place (identity kept); IGNORE_DEEP loads the graph fresh
+    # (old cache objects untouched); threaded load is deterministic.
+    ('r96b_cache_deep_reuse', 'r96b_cache.gd', ['--arm=deep_reuse'], 0,
+     'PASS r96b_cache deep_reuse mode=reuse save_dep=OK save_sc=OK col_before=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] sc_same=true ch_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] ch_same=true dep_obj_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] cached_dep_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] sc_path_kept=true'),
+    ('r96b_cache_deep_replace', 'r96b_cache.gd', ['--arm=deep_replace'], 0,
+     'PASS r96b_cache deep_replace mode=replace save_dep=OK save_sc=OK col_before=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] sc_same=true ch_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] ch_same=true dep_obj_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] cached_dep_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] sc_path_kept=true'),
+    ('r96b_cache_deep_ignore', 'r96b_cache.gd', ['--arm=deep_ignore'], 0,
+     'PASS r96b_cache deep_ignore mode=ignore save_dep=OK save_sc=OK col_before=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] sc_same=false ch_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] ch_same=true dep_obj_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] cached_dep_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] sc_path_kept=true'),
+    ('r96b_cache_deep_repl_deep', 'r96b_cache.gd', ['--arm=deep_repl_deep'], 0,
+     'PASS r96b_cache deep_replace_deep mode=replace_deep save_dep=OK save_sc=OK col_before=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] sc_same=true ch_col=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] ch_same=true dep_obj_col=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] cached_dep_col=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] sc_path_kept=true'),
+    ('r96b_cache_deep_ign_deep', 'r96b_cache.gd', ['--arm=deep_ign_deep'], 0,
+     'PASS r96b_cache deep_ignore_deep mode=ignore_deep save_dep=OK save_sc=OK col_before=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] sc_same=false ch_col=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] ch_same=false dep_obj_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] cached_dep_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] sc_path_kept=true'),
+    ('r96b_cache_ignoredeep', 'r96b_cache.gd', ['--arm=ignoredeep'], 0,
+     'PASS r96b_cache ignoredeep fresh_sc_same_cached=false fresh_sc_path_kept=true fresh_child_same_cached_dep=false after_sc_same_cached=true fresh_dep_same_cached=true'),
+    ('r96b_cache_repl_uncached', 'r96b_cache.gd', ['--arm=repl_uncached'], 0,
+     'PASS r96b_cache repl_uncached first_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] second_same=true cached_after=true cached_same=true'),
+    ('r96b_cache_reuse_delete', 'r96b_cache.gd', ['--arm=reuse_delete'], 0,
+     'PASS r96b_cache reuse_delete del=true after_delete_same=true after_delete_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] reuse_same=true exists=true'),
+    ('r96b_cache_reuse_delay', 'r96b_cache.gd', ['--arm=reuse_delay'], 0,
+     'PASS r96b_cache reuse_delay immediate_same=true immediate_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] after2500ms_same=true after2500ms_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] reuse_same=true'),
+    ('r96b_cache_threaded', 'r96b_cache.gd', ['--arm=threaded'], 0,
+     'PASS r96b_cache threaded req=OK status=3 got_col=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] cached_same_as_got=true status_after=0 has_cached=true'),
+    # r96-boundary variance surface: on a feature-rich 10-node scene
+    # (shared/nested/local sub-resources, 6 persistent connections,
+    # scrambled persistent groups, 8 metadata keys, fractional floats)
+    # unique_id stays the ONLY byte variance; pinning node_ids +
+    # resource_scene_unique_id pins sha_raw across processes.
+    # Connections serialize sorted-canonical; persistent groups serialize
+    # sorted; metadata keeps insertion order; there is no public Node
+    # unique_id lever; minted ids are bounded < 2^31 and pinned ids
+    # >= 2^31 are silently dropped on save.
+    ('r96b_var_rich', 'r96b_var.gd', ['--arm=rich'], 0,
+     'PASS r96b_var rich save=OK nodes=10 sha_uonly=3c89984fd6bde63d749b3de761f9e19a944b499b193e6fb7c88fb288be6be8c4 sha_u_sub=9d1963b2c10905ff611aabe6f796e50bb1d8eb7bbefbbabb7f97041658d526de pinned_save=OK pinned_nodes=10 pinned_sha=e6675739cc972b2a8c7f414b21dd5e8e043ebdb61dc2e28270c2733b005afa94 pinned_uonly=c060161cbdd0c48a2c1283aabdf5c1c6479f288c4766f1cac3c6a1c37349fb03'),
+    ('r96b_var_conn', 'r96b_var.gd', ['--arm=conn'], 0,
+     'PASS r96b_var conn save=OK nconn=6 conns=[connection signal="renamed" from="N0" to="N2" method="get_path"]|[connection signal="renamed" from="N0" to="N5" method="get_path"]|[connection signal="renamed" from="N1" to="N4" method="get_path"]|[connection signal="renamed" from="N2" to="N0" method="get_path"]|[connection signal="renamed" from="N3" to="N1" method="get_path"]|[connection signal="renamed" from="N4" to="N3" method="get_path"] sha_uonly=a231c0644085647052f31c32431e9f5326afb086a24a1a2ebb459173c54a7954'),
+    ('r96b_var_groups', 'r96b_var.gd', ['--arm=groups'], 0,
+     'PASS r96b_var groups save=OK lines=[node name="GA" type="Node2D" parent="." unique_id=# groups=["alpha", "bravo", "mike", "zulu"]]|[node name="GB" type="Node2D" parent="." unique_id=# groups=["mike", "zulu"]] sha_uonly=12459b60839f480a01bb5e00826c88dffb87dbf5f07d2c4844171c21f52abb81'),
+    ('r96b_var_meta', 'r96b_var.gd', ['--arm=meta'], 0,
+     'PASS r96b_var meta save=OK lines=metadata/k08 = 0|metadata/k03 = 1000|metadata/k11 = 2000|metadata/k01 = 3000|metadata/k07 = 4000|metadata/k02 = 5000|metadata/k10 = 6000|metadata/k05 = 7000 sha_uonly=998695a4af9a438fa41f514491c81616e488d29aae5398cbbab9065da732af58'),
+    ('r96b_var_lever', 'r96b_var.gd', ['--arm=lever'], 0,
+     'PASS r96b_var lever has_get=false has_set=false node_methods=set_scene_file_path,get_scene_file_path,set_scene_instance_load_placeholder,get_scene_instance_load_placeholder,set_unique_name_in_owner,is_unique_name_in_owner readback= text_has_setter_value=n/a'),
+    ('r96b_var_idstat_breadth', 'r96b_var.gd', ['--arm=idstat'], 0,
+     'PASS r96b_var idstat n=200 distinct=200'),
+    ('r96b_var_idstat_u31_gate', 'r96b_var.gd', ['--arm=idstat'], 0,
+     'gt2p31=0 pin_save=OK pin_found=true,true,false,false,false instantiate_ok=true'),
+    # r96-boundary phase attacks: minted ids, ext ids, and pinned-bundle
+    # saves carry no physics/process-frame phase coordinate — identical
+    # payloads at k={0,1,2,5,30} ticks in both schedulers.
+    ('r96b_phase_ph0', 'r96b_phase.gd', ['--arm=ph0'], 0,
+     'PASS r96b_phase ph0 k=0 use_process=false ext_id=1_qotou sub_id=Gradient_doj0s gen1=jk34a save=OK save2=OK save3=OK uonly_sha=4a3df3fd08a2ffc5f78534aceb67ad41d6cc4eb1da80be1a5e6633d66f8692fe pinned_sha=c264d6ebfdd2f071841f65a79f759ff31128f0527948fdf53060923b318b001a pinned_uonly=4d032ff636f1015fcb07f89fdf958e1a8d8f346394b8f6c57e106ee4cdc41201'),
+    ('r96b_phase_ph1', 'r96b_phase.gd', ['--arm=ph1'], 0,
+     'PASS r96b_phase ph1 k=1 use_process=false ext_id=1_qotou sub_id=Gradient_doj0s gen1=jk34a save=OK save2=OK save3=OK uonly_sha=4a3df3fd08a2ffc5f78534aceb67ad41d6cc4eb1da80be1a5e6633d66f8692fe pinned_sha=c264d6ebfdd2f071841f65a79f759ff31128f0527948fdf53060923b318b001a pinned_uonly=4d032ff636f1015fcb07f89fdf958e1a8d8f346394b8f6c57e106ee4cdc41201'),
+    ('r96b_phase_ph2', 'r96b_phase.gd', ['--arm=ph2'], 0,
+     'PASS r96b_phase ph2 k=2 use_process=false ext_id=1_qotou sub_id=Gradient_doj0s gen1=jk34a save=OK save2=OK save3=OK uonly_sha=4a3df3fd08a2ffc5f78534aceb67ad41d6cc4eb1da80be1a5e6633d66f8692fe pinned_sha=c264d6ebfdd2f071841f65a79f759ff31128f0527948fdf53060923b318b001a pinned_uonly=4d032ff636f1015fcb07f89fdf958e1a8d8f346394b8f6c57e106ee4cdc41201'),
+    ('r96b_phase_ph5', 'r96b_phase.gd', ['--arm=ph5'], 0,
+     'PASS r96b_phase ph5 k=5 use_process=false ext_id=1_qotou sub_id=Gradient_doj0s gen1=jk34a save=OK save2=OK save3=OK uonly_sha=4a3df3fd08a2ffc5f78534aceb67ad41d6cc4eb1da80be1a5e6633d66f8692fe pinned_sha=c264d6ebfdd2f071841f65a79f759ff31128f0527948fdf53060923b318b001a pinned_uonly=4d032ff636f1015fcb07f89fdf958e1a8d8f346394b8f6c57e106ee4cdc41201'),
+    ('r96b_phase_ph30', 'r96b_phase.gd', ['--arm=ph30'], 0,
+     'PASS r96b_phase ph30 k=30 use_process=false ext_id=1_qotou sub_id=Gradient_doj0s gen1=jk34a save=OK save2=OK save3=OK uonly_sha=4a3df3fd08a2ffc5f78534aceb67ad41d6cc4eb1da80be1a5e6633d66f8692fe pinned_sha=c264d6ebfdd2f071841f65a79f759ff31128f0527948fdf53060923b318b001a pinned_uonly=4d032ff636f1015fcb07f89fdf958e1a8d8f346394b8f6c57e106ee4cdc41201'),
+    ('r96b_phase_pph0', 'r96b_phase.gd', ['--arm=pph0'], 0,
+     'PASS r96b_phase pph0 k=0 use_process=true ext_id=1_qotou sub_id=Gradient_doj0s gen1=jk34a save=OK save2=OK save3=OK uonly_sha=4a3df3fd08a2ffc5f78534aceb67ad41d6cc4eb1da80be1a5e6633d66f8692fe pinned_sha=c264d6ebfdd2f071841f65a79f759ff31128f0527948fdf53060923b318b001a pinned_uonly=4d032ff636f1015fcb07f89fdf958e1a8d8f346394b8f6c57e106ee4cdc41201'),
+    ('r96b_phase_pph1', 'r96b_phase.gd', ['--arm=pph1'], 0,
+     'PASS r96b_phase pph1 k=1 use_process=true ext_id=1_qotou sub_id=Gradient_doj0s gen1=jk34a save=OK save2=OK save3=OK uonly_sha=4a3df3fd08a2ffc5f78534aceb67ad41d6cc4eb1da80be1a5e6633d66f8692fe pinned_sha=c264d6ebfdd2f071841f65a79f759ff31128f0527948fdf53060923b318b001a pinned_uonly=4d032ff636f1015fcb07f89fdf958e1a8d8f346394b8f6c57e106ee4cdc41201'),
+    ('r96b_phase_pph2', 'r96b_phase.gd', ['--arm=pph2'], 0,
+     'PASS r96b_phase pph2 k=2 use_process=true ext_id=1_qotou sub_id=Gradient_doj0s gen1=jk34a save=OK save2=OK save3=OK uonly_sha=4a3df3fd08a2ffc5f78534aceb67ad41d6cc4eb1da80be1a5e6633d66f8692fe pinned_sha=c264d6ebfdd2f071841f65a79f759ff31128f0527948fdf53060923b318b001a pinned_uonly=4d032ff636f1015fcb07f89fdf958e1a8d8f346394b8f6c57e106ee4cdc41201'),
+    ('r96b_phase_pph5', 'r96b_phase.gd', ['--arm=pph5'], 0,
+     'PASS r96b_phase pph5 k=5 use_process=true ext_id=1_qotou sub_id=Gradient_doj0s gen1=jk34a save=OK save2=OK save3=OK uonly_sha=4a3df3fd08a2ffc5f78534aceb67ad41d6cc4eb1da80be1a5e6633d66f8692fe pinned_sha=c264d6ebfdd2f071841f65a79f759ff31128f0527948fdf53060923b318b001a pinned_uonly=4d032ff636f1015fcb07f89fdf958e1a8d8f346394b8f6c57e106ee4cdc41201'),
+    ('r96b_phase_pph30', 'r96b_phase.gd', ['--arm=pph30'], 0,
+     'PASS r96b_phase pph30 k=30 use_process=true ext_id=1_qotou sub_id=Gradient_doj0s gen1=jk34a save=OK save2=OK save3=OK uonly_sha=4a3df3fd08a2ffc5f78534aceb67ad41d6cc4eb1da80be1a5e6633d66f8692fe pinned_sha=c264d6ebfdd2f071841f65a79f759ff31128f0527948fdf53060923b318b001a pinned_uonly=4d032ff636f1015fcb07f89fdf958e1a8d8f346394b8f6c57e106ee4cdc41201'),
+    # r96-boundary seed check: a loaded resource's
+    # generate_scene_unique_id() sequence reproduces byte-identically
+    # across processes (path-seeded); A==B holds because REUSE returns
+    # the same cached object (B continues A's sequence) — paths C and
+    # fresh D differ.
+    ('r96b_seed_seedcheck', 'r96b_seed.gd', ['--arm=seedcheck'], 0,
+     'PASS r96b_seed seedcheck A=aymj7,7o2mc,7hw4g,ipe4k B=1q5w0,cfyh7,d1oyj,rjvfj C=rl1nt,ewl6n,ch4ud,r4oop D=8od4a,nuoth,pm58n,vab63 A_eq_B=false A_eq_C=false A_eq_D=false'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
@@ -1539,6 +1737,41 @@ def main():
                 ),
                 'r92_tilemap_physics': (
                     'ERROR: Parameter "found" is null.',
+                ),
+                # r96: ownership deliberately pokes the non-ancestor and
+                # self-owner refusals; refuse exercises the save/load
+                # refusal surface — each line is a deterministic engine
+                # ERROR observed on every scout + boundary receipt
+                # (exact strings; the row fails if any of them stops
+                # firing — see r96_expected_errors_all_matched).
+                'r96_scene_io_ownership': (
+                    'ERROR: Invalid owner. Owner must be an ancestor in the tree.',
+                    'ERROR: Condition "p_owner == this" is true.',
+                ),
+                # r96-author fold: the arm reads get_id_path on the FIXED
+                # sample uid (bqk3m5n7qar1), not a fresh create_id() — the
+                # "Unrecognized UID" diagnostic echoes the queried uid and
+                # would otherwise carry a per-process random text. It fires
+                # iff the scratch project has .godot/uid_cache.bin (the
+                # export_readiness row populates it before this row runs;
+                # absent in standalone runs the line is simply absent).
+                'r96_scene_io_uid': (
+                    'ERROR: Unrecognized UID: "uid://bqk3m5n7qar1".',
+                ),
+                'r96_scene_io_refuse': (
+                    "ERROR: Cannot save file 'user://r96_absent_dir_xyz/deep/x.tscn'.",
+                    "ERROR: Can't save empty resource to path 'user://r96/null.tscn'.",
+                    "ERROR: Can't save resource to empty path. Provide non-empty path or a Resource with non-empty resource_path.",
+                    "ERROR: Cannot open file 'user://r96/nope.tscn'.",
+                    'ERROR: Failed loading resource: user://r96/nope.tscn.',
+                    "ERROR: Error loading resource: 'user://r96/nope.tscn'.",
+                    'ERROR: Resource file not found: user://r96 (expected type: unknown)',
+                    "ERROR: Error loading resource: 'user://r96'.",
+                    'ERROR: Resource file not found: res:// (expected type: unknown)',
+                    "ERROR: Error loading resource: ''.",
+                    'ERROR: Parameter "p_scene" is null.',
+                    'ERROR: Failed to instantiate scene state of "", node count is 0. Make sure the PackedScene resource is valid.',
+                    "ERROR: Another resource is loaded from path 'user://r96/collide.tres' (possible cyclic resource inclusion).",
                 ),
             }.get(name, ())
             # r89-fold (critic F1): stderr-fragment pins. geo2d_lattice_lineempty
@@ -3273,6 +3506,16 @@ def main():
             not e["dead_in_run"]
             for r in census_rows
             if r["case"].startswith(("dss_lattice_", "r95b_order_"))
+            for e in r["entries"]),
+        # r96 author: the two whitelist-bearing cases (ownership pokes
+        # the non-ancestor + self-owner refusals; refuse exercises the
+        # save/load refusal surface — 15 entries total) and every sibling
+        # row carry the r96_scene_io_ / r96b_ prefixes — same
+        # named-by-round / covers-round-prefixes shape as r87-r95.
+        "r96_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith(("r96_scene_io_", "r96b_"))
             for e in r["entries"]),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
