@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://r97_scene_marker.gd" id="1_marker"]
+
+[node name="SceneA" type="Node2D"]
+script = ExtResource("1_marker")
+tag = "A"
