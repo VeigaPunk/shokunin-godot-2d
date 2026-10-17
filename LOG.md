@@ -1215,3 +1215,12 @@
 - Already present as real fields: `axes` (score table, lines 6–10), `planned` (inline `planned:` field carrying r61–r64 planned claims), `retired` (inline `retired: none.`). No duplicate sections added for these.
 - Added at end of `SCORECARD.md`: `## Capabilities` repertoire-table scaffold (empty, `— none yet —`) and `## Saturation` placeholder — the saturation line + stagnation window N remain the lane's to declare on a round per `AXES.md` §The stagnation nudge.
 - No axis claim was made, no score moved, no verdict changed; no capability row enters through this rollout.
+
+## 2026-10-17 — root README
+
+Motivating evidence: the previous root README was the shared lane template
+and named a root `SKILL.md` this repo does not have. The replacement cites
+`PROVINCE.md`, `SHONEN.md` (open boxes), `corpus/README.md` (the lesson
+index, including surfaces left unprobed), and
+`corpus/fixtures/run_battery.py` (default `--godot` is `godot` on `PATH`;
+probe flags are opt-in). No Devin wiki URL was present; none was added.
