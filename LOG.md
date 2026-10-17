@@ -1215,3 +1215,8 @@
 - Already present as real fields: `axes` (score table, lines 6–10), `planned` (inline `planned:` field carrying r61–r64 planned claims), `retired` (inline `retired: none.`). No duplicate sections added for these.
 - Added at end of `SCORECARD.md`: `## Capabilities` repertoire-table scaffold (empty, `— none yet —`) and `## Saturation` placeholder — the saturation line + stagnation window N remain the lane's to declare on a round per `AXES.md` §The stagnation nudge.
 - No axis claim was made, no score moved, no verdict changed; no capability row enters through this rollout.
+## 2026-10-17 — root README rewritten
+
+- **Trigger.** Operator request for a repository front door. The previous `README.md` was the shared lane template.
+- **Action.** Rewrote `README.md` from `PROVINCE.md` (Godot 4.7.2 headless, owned surfaces, refusals), `corpus/README.md` (fixture index and unprobed surfaces), and `corpus/fixtures/run_battery.py` (scratch copy; `--godot` and `--probe-*` in argparse). Root listing has no `SKILL.md`. Scorecard statement that scores stay unassigned is repeated. No Devin wiki URL was present and none was added.
+- **Non-claims.** No axis claim, no score change, no Godot run. Not a craft round.
