@@ -1208,3 +1208,10 @@
 - LAWS: drag law = |sum relative|>10; flush-gated cursor write;
   flush-before-process_frame; _input before _gui_input; coalescing;
   dummy-texture readback ERROR x3 exact allowlist; seq replay 10/14.
+
+## 2026-10-16 — protocol conformance: SCORECARD contract fields
+
+- Operator rollout of the 2026-10-16 amendment (fleet-root `84bade0`); additive scaffolds only.
+- Already present as real fields: `axes` (score table, lines 6–10), `planned` (inline `planned:` field carrying r61–r64 planned claims), `retired` (inline `retired: none.`). No duplicate sections added for these.
+- Added at end of `SCORECARD.md`: `## Capabilities` repertoire-table scaffold (empty, `— none yet —`) and `## Saturation` placeholder — the saturation line + stagnation window N remain the lane's to declare on a round per `AXES.md` §The stagnation nudge.
+- No axis claim was made, no score moved, no verdict changed; no capability row enters through this rollout.

@@ -280,3 +280,15 @@ Sol `r76-adjudicator.md`: ADMIT-corr — deferred_abort admitted, destroy-edge l
 | calibration | **improved** | Two seats independently found the dead --offy flag (Y-translation honestly unmeasured, not falsified); echo-pin class found on order_core (contrast point_cap which binds a real measurement); tps exposure bounded to exactly 1/52. |
 
 | r95 | game-dev-2d | DirectSpaceState2D query + order lattice | ADMIT-with-findings | 9cd47507 |
+
+## Capabilities
+
+| Capability | What it can now do | Evidence pointer | First-working round |
+|---|---|---|---|
+| — none yet — | | | |
+
+Rows enter only through a round that demonstrates the capability running (`AXES.md` §Capabilities); none enter through this rollout.
+
+## Saturation
+
+The lane's saturation line and stagnation window N are to be declared by the lane on its next round per `AXES.md` §The stagnation nudge; not asserted by this conformance change.
