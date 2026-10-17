@@ -1215,3 +1215,17 @@
 - Already present as real fields: `axes` (score table, lines 6–10), `planned` (inline `planned:` field carrying r61–r64 planned claims), `retired` (inline `retired: none.`). No duplicate sections added for these.
 - Added at end of `SCORECARD.md`: `## Capabilities` repertoire-table scaffold (empty, `— none yet —`) and `## Saturation` placeholder — the saturation line + stagnation window N remain the lane's to declare on a round per `AXES.md` §The stagnation nudge.
 - No axis claim was made, no score moved, no verdict changed; no capability row enters through this rollout.
+
+## 2026-10-17 — README: replace the shared shonen template
+
+Operator request: make the README a useful front door. Evidence:
+
+- The previous `README.md` was the shared 23-line shonen-lane template
+  (identical across the 2026-10 public remotes except for the Domain
+  line, plus this lane's extra command section when one existed).
+- Replacement text restates `PROVINCE.md`, existing command blocks, and
+  file-tree facts from `ls` of this checkout. No new craft claim.
+- Devin wiki URLs were not added or rewritten. The only verified fleet
+  wiki link remains the fleet-root line in `VeigaPunk/shokunin`.
+
+Not a craft round. No axis claim.
