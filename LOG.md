@@ -1215,3 +1215,24 @@
 - Already present as real fields: `axes` (score table, lines 6–10), `planned` (inline `planned:` field carrying r61–r64 planned claims), `retired` (inline `retired: none.`). No duplicate sections added for these.
 - Added at end of `SCORECARD.md`: `## Capabilities` repertoire-table scaffold (empty, `— none yet —`) and `## Saturation` placeholder — the saturation line + stagnation window N remain the lane's to declare on a round per `AXES.md` §The stagnation nudge.
 - No axis claim was made, no score moved, no verdict changed; no capability row enters through this rollout.
+
+## 2026-10-17 — root README as the public door (not a craft round)
+
+**Trigger.** GitHub landing pages for this lane were a missing or thin
+template README (`ls README.md` at repo root before this commit). A
+stranger could not name the domain question, the refusals, or the gate
+command without oral context. Operator request: make the READMEs of every
+shokunin repo in this workspace the public door, without touching Devin
+wiki links.
+
+**Action.** Wrote `README.md` from in-repo sources only: `PROVINCE.md`,
+`SKILL.md` (when present), the gate/tool headers whose `--help`/`--selftest`
+flags were executed or grepped in this session, and the fleet
+[README](https://github.com/VeigaPunk/shokunin#readme) contract. No corpus
+knowledge claim was admitted; this is a map, not a round. Any
+`app.devin.ai/org/veigapunk/wiki/...` link already present was left
+verbatim (shokunin fleet root only, as of this workspace).
+
+**Outcome.** A cold reader can find the province, the question this lane
+answers, the refusals, and at least one runnable gate. No axis score
+moved. No `SHONEN.md` box is self-checked.
