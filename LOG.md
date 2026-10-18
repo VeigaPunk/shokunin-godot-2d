@@ -1260,7 +1260,7 @@
   unrelated); 3D side-round deferred via L0 (3D lane under parallel r104).
 
 - ROUND 102 (2026-10-18): export launch matrix + timeout-probe old-bound repair
-  + simplifier-queue/stale-cite folds. ADMIT-WITH-FINDINGS at ⟨COMMIT⟩ (+8 CASES,
+  + simplifier-queue/stale-cite folds. ADMIT-WITH-FINDINGS at adf1e693 (+8 CASES,
   CASES 528->536; receipts 553 PASS, 2 by-design reject-arm print lines, battery
   + timeout probe meta PASS x2). 64-seat swarm opencode-go-7, 61+ completed.
 - ATTRIBUTION CORRECTION (r101 record, append-only): the timeout-probe redness

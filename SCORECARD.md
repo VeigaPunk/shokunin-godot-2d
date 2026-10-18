@@ -309,9 +309,9 @@ census routed. Work commit ac4eb8d4.
 `r102-adjudicator.md` (orchestrator): ADMIT-WITH-FINDINGS. 64-seat swarm,
 opencode-go-7, 61+ completed. Bounded: pre/post-span foreign-line residual
 routed; 2 reject-arm print lines informational (probe metas green). Work
-commit ⟨COMMIT⟩.
+commit adf1e693.
 
-| r102 | game-dev-2d | export launch matrix + timeout-probe repair + simplifier/stale-cite folds | ADMIT-with-findings | ⟨COMMIT⟩ |
+| r102 | game-dev-2d | export launch matrix + timeout-probe repair + simplifier/stale-cite folds | ADMIT-with-findings | adf1e693 |
 
 ## Capabilities
 
