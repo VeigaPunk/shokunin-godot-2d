@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+VER17 marker engine.string=4.7.2-stable (arch_linux)
+VER17 marker engine.major=4 engine.minor=7 engine.patch=2 engine.hex=263938 engine.status=stable
+VER17 marker engine.build=arch_linux engine.hash=ed1daf0bf001b61586d9930840f2f1394092c079 engine.timestamp=1786929518
+VER17 marker display_server=headless headless_hint=false
+VER17 marker os=Linux vp=(64.0, 64.0) tps=60
+VER17 marker render_pre method=forward_plus driver=vulkan adapter=
+VER17 marker render_post method=forward_plus driver=vulkan adapter=

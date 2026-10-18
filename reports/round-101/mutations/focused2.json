@@ -1,0 +1,332 @@
+{
+ "r99_audio_advance": {
+  "base": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   }
+  ],
+  "f_audio": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "6c38157469dc4d52"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "6c38157469dc4d52"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   }
+  ]
+ },
+ "r99_audio_finish": {
+  "base": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "4b25df4d2fb7f06b"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "65a8e11da4eab328"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "083c6c31094f3f14"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "23b9008d882ee3d5"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "d5ee2a2b5fe849f4"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "91157ebea30d660f"
+   }
+  ],
+  "f_audio": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "04dad33d08468fcd"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "ebc97586eeadd451"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "f1890d86ba947f0f"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "661e79fb3373997e"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "9caaf9e3c452aaa2"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "03fe7e7dd0a1448e"
+   }
+  ]
+ },
+ "r99_audio_loop_pts": {
+  "base": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   }
+  ],
+  "f_audio": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   }
+  ]
+ },
+ "r99_audio_gen": {
+  "base": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   }
+  ],
+  "f_audio": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "4a2a11fcad015341"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   }
+  ]
+ },
+ "r99_audio_poly": {
+  "base": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "02f98ad8a67ca364"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "02f98ad8a67ca364"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "02f98ad8a67ca364"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "02f98ad8a67ca364"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "1670cb99700dda9d"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "1670cb99700dda9d"
+   }
+  ],
+  "f_audio": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "49a1a159cb24a5c1"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "02f98ad8a67ca364"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "02f98ad8a67ca364"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "02f98ad8a67ca364"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "1670cb99700dda9d"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "02f98ad8a67ca364"
+   }
+  ]
+ }
+}

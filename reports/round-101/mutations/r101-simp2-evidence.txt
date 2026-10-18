@@ -1,0 +1,153 @@
+# r101 SIMP-2 evidence log (full row tables; sha256 in shard)
+
+## diff-committed-vs-folded.txt
+rows=27 raw_diffs=1 masked_diffs=0
+r96_scene_io_cache                               rc 0==0:True raw:True masked:True bytes 604/604
+r96_scene_io_census                              rc 0==0:True raw:True masked:True bytes 2030/2030
+r96_scene_io_det                                 rc 0==0:True raw:True masked:True bytes 1193/1193
+r96_scene_io_edges                               rc 0==0:True raw:True masked:True bytes 609/609
+r96_scene_io_editstate                           rc 0==0:True raw:True masked:True bytes 532/532
+r96_scene_io_extres                              rc 0==0:True raw:True masked:True bytes 1416/1416
+r96_scene_io_formats                             rc 0==0:True raw:True masked:True bytes 810/810
+r96_scene_io_ownership                           rc 0==0:True raw:True masked:True bytes 1064/1064
+r96_scene_io_pack_basic                          rc 0==0:True raw:True masked:True bytes 759/759
+r96_scene_io_refuse                              rc 0==0:True raw:False masked:True bytes 4006/4006
+r96_scene_io_subres                              rc 0==0:True raw:True masked:True bytes 955/955
+r96_scene_io_takeover                            rc 0==0:True raw:True masked:True bytes 452/452
+r96_scene_io_uid                                 rc 0==0:True raw:True masked:True bytes 854/854
+stree_lattice_census                             rc 0==0:True raw:True masked:True bytes 2462/2462
+stree_lattice_defer_ladder                       rc 0==0:True raw:True masked:True bytes 623/623
+stree_lattice_defer_order                        rc 0==0:True raw:True masked:True bytes 622/622
+stree_lattice_defer_slots                        rc 0==0:True raw:True masked:True bytes 718/718
+stree_lattice_group_flags                        rc 0==0:True raw:True masked:True bytes 1686/1686
+stree_lattice_group_lifecycle                    rc 0==0:True raw:True masked:True bytes 894/894
+stree_lattice_group_order                        rc 0==0:True raw:True masked:True bytes 1334/1334
+stree_lattice_group_order_rev                    rc 0==0:True raw:True masked:True bytes 1332/1332
+stree_lattice_group_setters                      rc 0==0:True raw:True masked:True bytes 822/822
+stree_lattice_scene_probe                        rc 0==0:True raw:True masked:True bytes 954/954
+stree_lattice_signal_flags                       rc 0==0:True raw:True masked:True bytes 1271/1271
+stree_lattice_signal_order                       rc 0==0:True raw:True masked:True bytes 936/936
+unknown_arm_control_scene_io                     rc 0==0:True raw:True masked:True bytes 154/154
+unknown_arm_control_stree                        rc 1==1:True raw:True masked:True bytes 151/151
+
+## stab-committed.txt
+rows=27 raw_diffs=0 masked_diffs=0
+r96_scene_io_cache                               rc 0==0:True raw:True masked:True bytes 604/604
+r96_scene_io_census                              rc 0==0:True raw:True masked:True bytes 2030/2030
+r96_scene_io_det                                 rc 0==0:True raw:True masked:True bytes 1193/1193
+r96_scene_io_edges                               rc 0==0:True raw:True masked:True bytes 609/609
+r96_scene_io_editstate                           rc 0==0:True raw:True masked:True bytes 532/532
+r96_scene_io_extres                              rc 0==0:True raw:True masked:True bytes 1416/1416
+r96_scene_io_formats                             rc 0==0:True raw:True masked:True bytes 810/810
+r96_scene_io_ownership                           rc 0==0:True raw:True masked:True bytes 1064/1064
+r96_scene_io_pack_basic                          rc 0==0:True raw:True masked:True bytes 759/759
+r96_scene_io_refuse                              rc 0==0:True raw:True masked:True bytes 4006/4006
+r96_scene_io_subres                              rc 0==0:True raw:True masked:True bytes 955/955
+r96_scene_io_takeover                            rc 0==0:True raw:True masked:True bytes 452/452
+r96_scene_io_uid                                 rc 0==0:True raw:True masked:True bytes 854/854
+stree_lattice_census                             rc 0==0:True raw:True masked:True bytes 2462/2462
+stree_lattice_defer_ladder                       rc 0==0:True raw:True masked:True bytes 623/623
+stree_lattice_defer_order                        rc 0==0:True raw:True masked:True bytes 622/622
+stree_lattice_defer_slots                        rc 0==0:True raw:True masked:True bytes 718/718
+stree_lattice_group_flags                        rc 0==0:True raw:True masked:True bytes 1686/1686
+stree_lattice_group_lifecycle                    rc 0==0:True raw:True masked:True bytes 894/894
+stree_lattice_group_order                        rc 0==0:True raw:True masked:True bytes 1334/1334
+stree_lattice_group_order_rev                    rc 0==0:True raw:True masked:True bytes 1332/1332
+stree_lattice_group_setters                      rc 0==0:True raw:True masked:True bytes 822/822
+stree_lattice_scene_probe                        rc 0==0:True raw:True masked:True bytes 954/954
+stree_lattice_signal_flags                       rc 0==0:True raw:True masked:True bytes 1271/1271
+stree_lattice_signal_order                       rc 0==0:True raw:True masked:True bytes 936/936
+unknown_arm_control_scene_io                     rc 0==0:True raw:True masked:True bytes 154/154
+unknown_arm_control_stree                        rc 1==1:True raw:True masked:True bytes 151/151
+
+## stab-folded.txt
+rows=27 raw_diffs=0 masked_diffs=0
+r96_scene_io_cache                               rc 0==0:True raw:True masked:True bytes 604/604
+r96_scene_io_census                              rc 0==0:True raw:True masked:True bytes 2030/2030
+r96_scene_io_det                                 rc 0==0:True raw:True masked:True bytes 1193/1193
+r96_scene_io_edges                               rc 0==0:True raw:True masked:True bytes 609/609
+r96_scene_io_editstate                           rc 0==0:True raw:True masked:True bytes 532/532
+r96_scene_io_extres                              rc 0==0:True raw:True masked:True bytes 1416/1416
+r96_scene_io_formats                             rc 0==0:True raw:True masked:True bytes 810/810
+r96_scene_io_ownership                           rc 0==0:True raw:True masked:True bytes 1064/1064
+r96_scene_io_pack_basic                          rc 0==0:True raw:True masked:True bytes 759/759
+r96_scene_io_refuse                              rc 0==0:True raw:True masked:True bytes 4006/4006
+r96_scene_io_subres                              rc 0==0:True raw:True masked:True bytes 955/955
+r96_scene_io_takeover                            rc 0==0:True raw:True masked:True bytes 452/452
+r96_scene_io_uid                                 rc 0==0:True raw:True masked:True bytes 854/854
+stree_lattice_census                             rc 0==0:True raw:True masked:True bytes 2462/2462
+stree_lattice_defer_ladder                       rc 0==0:True raw:True masked:True bytes 623/623
+stree_lattice_defer_order                        rc 0==0:True raw:True masked:True bytes 622/622
+stree_lattice_defer_slots                        rc 0==0:True raw:True masked:True bytes 718/718
+stree_lattice_group_flags                        rc 0==0:True raw:True masked:True bytes 1686/1686
+stree_lattice_group_lifecycle                    rc 0==0:True raw:True masked:True bytes 894/894
+stree_lattice_group_order                        rc 0==0:True raw:True masked:True bytes 1334/1334
+stree_lattice_group_order_rev                    rc 0==0:True raw:True masked:True bytes 1332/1332
+stree_lattice_group_setters                      rc 0==0:True raw:True masked:True bytes 822/822
+stree_lattice_scene_probe                        rc 0==0:True raw:True masked:True bytes 954/954
+stree_lattice_signal_flags                       rc 0==0:True raw:True masked:True bytes 1271/1271
+stree_lattice_signal_order                       rc 0==0:True raw:True masked:True bytes 936/936
+unknown_arm_control_scene_io                     rc 0==0:True raw:True masked:True bytes 154/154
+unknown_arm_control_stree                        rc 1==1:True raw:True masked:True bytes 151/151
+
+## cross2.txt
+rows=27 raw_diffs=1 masked_diffs=0
+r96_scene_io_cache                               rc 0==0:True raw:True masked:True bytes 604/604
+r96_scene_io_census                              rc 0==0:True raw:True masked:True bytes 2030/2030
+r96_scene_io_det                                 rc 0==0:True raw:True masked:True bytes 1193/1193
+r96_scene_io_edges                               rc 0==0:True raw:True masked:True bytes 609/609
+r96_scene_io_editstate                           rc 0==0:True raw:True masked:True bytes 532/532
+r96_scene_io_extres                              rc 0==0:True raw:True masked:True bytes 1416/1416
+r96_scene_io_formats                             rc 0==0:True raw:True masked:True bytes 810/810
+r96_scene_io_ownership                           rc 0==0:True raw:True masked:True bytes 1064/1064
+r96_scene_io_pack_basic                          rc 0==0:True raw:True masked:True bytes 759/759
+r96_scene_io_refuse                              rc 0==0:True raw:False masked:True bytes 4006/4006
+r96_scene_io_subres                              rc 0==0:True raw:True masked:True bytes 955/955
+r96_scene_io_takeover                            rc 0==0:True raw:True masked:True bytes 452/452
+r96_scene_io_uid                                 rc 0==0:True raw:True masked:True bytes 854/854
+stree_lattice_census                             rc 0==0:True raw:True masked:True bytes 2462/2462
+stree_lattice_defer_ladder                       rc 0==0:True raw:True masked:True bytes 623/623
+stree_lattice_defer_order                        rc 0==0:True raw:True masked:True bytes 622/622
+stree_lattice_defer_slots                        rc 0==0:True raw:True masked:True bytes 718/718
+stree_lattice_group_flags                        rc 0==0:True raw:True masked:True bytes 1686/1686
+stree_lattice_group_lifecycle                    rc 0==0:True raw:True masked:True bytes 894/894
+stree_lattice_group_order                        rc 0==0:True raw:True masked:True bytes 1334/1334
+stree_lattice_group_order_rev                    rc 0==0:True raw:True masked:True bytes 1332/1332
+stree_lattice_group_setters                      rc 0==0:True raw:True masked:True bytes 822/822
+stree_lattice_scene_probe                        rc 0==0:True raw:True masked:True bytes 954/954
+stree_lattice_signal_flags                       rc 0==0:True raw:True masked:True bytes 1271/1271
+stree_lattice_signal_order                       rc 0==0:True raw:True masked:True bytes 936/936
+unknown_arm_control_scene_io                     rc 0==0:True raw:True masked:True bytes 154/154
+unknown_arm_control_stree                        rc 1==1:True raw:True masked:True bytes 151/151
+
+## teeth-diff.txt
+rows=2 raw_diffs=2 masked_diffs=2
+r96_scene_io_refuse                              rc 0==0:True raw:False masked:False bytes 4006/4007
+--- committed
++++ folded
+@@ -1,6 +1,6 @@
+ Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+ 
+-PASS scene_io_lattice refuse save_missing_dir=Can't open(19) no_file=true save_null=Invalid parameter(31) save_empty_path=Invalid parameter(31) save_no_ext=File unrecognized(15) save_dir=File unrecognized(15) load_missing_null=true load_dir_null=true load_empty_null=true pack_null=Invalid parameter(31) empty_can_instantiate=false empty_instantiate_null=true relative_save=OK(0) relative_file_created=true relative_in_project_dir=true deleted=true set_path_collision_refused=true
++PASS scene_io_lattice refuse save_missing_dirX=Can't open(19) no_file=true save_null=Invalid parameter(31) save_empty_path=Invalid parameter(31) save_no_ext=File unrecognized(15) save_dir=File unrecognized(15) load_missing_null=true load_dir_null=true load_empty_null=true pack_null=Invalid parameter(31) empty_can_instantiate=false empty_instantiate_null=true relative_save=OK(0) relative_file_created=true relative_in_project_dir=true deleted=true set_path_collision_refused=true
+ ERROR: Cannot save file 'user://r96_absent_dir_xyz/deep/x.tscn'.
+    at: save (scene/resources/resource_format_text.cpp:1768)
+    GDScript backtrace (most recent call first):
+stree_lattice_census                             rc 0==0:True raw:False masked:False bytes 2462/2462
+--- committed
++++ folded
+@@ -1,6 +1,6 @@
+ Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+ 
+-R97 census group_meths=[call_group,call_group_flags,get_first_node_in_group,get_node_count_in_group,get_nodes_in_group,has_group,notify_group,notify_group_flags,set_group,set_group_flags]
++R97 census group_methx=[call_group,call_group_flags,get_first_node_in_group,get_node_count_in_group,get_nodes_in_group,has_group,notify_group,notify_group_flags,set_group,set_group_flags]
+ R97 census group_sigs=[call_group(group:21,method:21),call_group_flags(flags:2,group:21,method:21),notify_group(group:21,notification:2),notify_group_flags(call_flags:2,group:21,notification:2),set_group(group:21,property:4,value:0),set_group_flags(call_flags:2,group:21,property:4,value:0)]
+ R97 census group_flags=DEFAULT=0 REVERSE=1 DEFERRED=2 UNIQUE=4
+ R97 census connect_flags=DEFERRED=1 PERSIST=2 ONE_SHOT=4 REFERENCE_COUNTED=8
+@@ -11,4 +11,4 @@
+ R97 census root_cls=Window
+ R97 census ticks=60
+ R97 census group_signal=process_frame=true physics_frame=true
+-PASS stree_lattice census group_meths=[call_group,call_group_flags,get_first_node_in_group,get_node_count_in_group,get_nodes_in_group,has_group,notify_group,notify_group_flags,set_group,set_group_flags] group_sigs=[call_group(group:21,method:21),call_group_flags(flags:2,group:21,method:21),notify_group(group:21,notification:2),notify_group_flags(call_flags:2,group:21,notification:2),set_group(group:21,property:4,value:0),set_group_flags(call_flags:2,group:21,property:4,value:0)] group_flags=DEFAULT=0 REVERSE=1 DEFERRED=2 UNIQUE=4 connect_flags=DEFERRED=1 PERSIST=2 ONE_SHOT=4 REFERENCE_COUNTED=8 node_group_meths=[add_to_group,call_deferred_thread_group,get_groups,get_process_thread_group,get_process_thread_group_order,is_in_group,notify_deferred_thread_group,remove_from_group,set_deferred_thread_group,set_process_thread_group,set_process_thread_group_order] object_defer_meths=[call_deferred,set_deferred] scene_meths=[change_scene_to_file,change_scene_to_node,change_scene_to_packed,reload_current_scene,unload_current_scene] tree_cls=SceneTree root_cls=Window ticks=60 group_signal=process_frame=true physics_frame=true
++PASS stree_lattice census group_methx=[call_group,call_group_flags,get_first_node_in_group,get_node_count_in_group,get_nodes_in_group,has_group,notify_group,notify_group_flags,set_group,set_group_flags] group_sigs=[call_group(group:21,method:21),call_group_flags(flags:2,group:21,method:21),notify_group(group:21,notification:2),notify_group_flags(call_flags:2,group:21,notification:2),set_group(group:21,property:4,value:0),set_group_flags(call_flags:2,group:21,property:4,value:0)] group_flags=DEFAULT=0 REVERSE=1 DEFERRED=2 UNIQUE=4 connect_flags=DEFERRED=1 PERSIST=2 ONE_SHOT=4 REFERENCE_COUNTED=8 node_group_meths=[add_to_group,call_deferred_thread_group,get_groups,get_process_thread_group,get_process_thread_group_order,is_in_group,notify_deferred_thread_group,remove_from_group,set_deferred_thread_group,set_process_thread_group,set_process_thread_group_order] object_defer_meths=[call_deferred,set_deferred] scene_meths=[change_scene_to_file,change_scene_to_node,change_scene_to_packed,reload_current_scene,unload_current_scene] tree_cls=SceneTree root_cls=Window ticks=60 group_signal=process_frame=true physics_frame=true
+

@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+R95B celloff off=1000.0000
+R95B celloff add_order=[a,b,c,d,e]
+R95B celloff ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3]
+R95B celloff distinct_ticks=7
+R95B celloff last_change_tick=64
+R95B celloff t2_vec=[e#0,a#0,c#0,d#0,b#0]
+R95B celloff t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000]
+R95B celloff t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]
+R95B celloff env=tps=60 pf=65 proc=153 sep2d_has=true sep2d=false maxsteps=8
+PASS r95b_order celloff off=1000.0000 add_order=[a,b,c,d,e] ladder=[t2:4,0,2,3,1;t3:4,0,1,3,2;t4:4,0,1,2,3;t6:3,4,1,2,0;t8:3,4,0,1,2;t16:1,2,3,4,0;t32:2,3,4,0,1;t64:4,0,1,2,3] distinct_ticks=7 last_change_tick=64 t2_vec=[e#0,a#0,c#0,d#0,b#0] t2_relpos=[32.0000,0.0000|0.0000,0.0000|16.0000,0.0000|24.0000,0.0000|8.0000,0.0000] t64_relpos=[32.0000,0.0000|0.0000,0.0000|8.0000,0.0000|16.0000,0.0000|24.0000,0.0000]

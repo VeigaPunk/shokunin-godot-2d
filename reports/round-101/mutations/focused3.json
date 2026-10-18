@@ -1,0 +1,320 @@
+{
+ "r99_audio_advance": {
+  "base": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "6c38157469dc4d52"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 7,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 8,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 9,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 10,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   }
+  ],
+  "f_audio": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "6c38157469dc4d52"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "6c38157469dc4d52"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "6c38157469dc4d52"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 7,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 8,
+    "rc": 0,
+    "sha": "6176929b9dc7b7cc"
+   },
+   {
+    "rep": 9,
+    "rc": 0,
+    "sha": "6c38157469dc4d52"
+   },
+   {
+    "rep": 10,
+    "rc": 0,
+    "sha": "6c38157469dc4d52"
+   }
+  ]
+ },
+ "r99_audio_gen": {
+  "base": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 7,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 8,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 9,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 10,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   }
+  ],
+  "f_audio": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 7,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 8,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 9,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   },
+   {
+    "rep": 10,
+    "rc": 0,
+    "sha": "6c561f863bb70d18"
+   }
+  ]
+ },
+ "r99_audio_loop_pts": {
+  "base": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 7,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 8,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 9,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 10,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   }
+  ],
+  "f_audio": [
+   {
+    "rep": 1,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 4,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 5,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 6,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 7,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 8,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 9,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   },
+   {
+    "rep": 10,
+    "rc": 0,
+    "sha": "0d7620bdd3cd8daa"
+   }
+  ]
+ }
+}

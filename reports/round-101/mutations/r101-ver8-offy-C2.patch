@@ -1,0 +1,30 @@
+--- a/corpus/fixtures/r95b_order.gd
++++ b/corpus/fixtures/r95b_order.gd
+@@ -183,9 +183,9 @@
+ 
+ # Query the pile point across a tick ladder; returns the pidx sequence plus the
+ # full first/last samples (captured in-frame, so no mislabeling).
+-func _ladder(ticks: Array, ox: float) -> Dictionary:
++func _ladder(ticks: Array, ox: float, oy: float = 0.0) -> Dictionary:
+ 	var dss := _dss()
+-	var q := Vector2(16.0 + ox, 0.0)
++	var q := Vector2(16.0 + ox, oy)
+ 	var seq: Array = []
+ 	var cur := 0
+ 	var first_vec := ""
+@@ -564,11 +564,13 @@
+ 
+ func _arm_celloff() -> void:
+ 	var off := _opt_float("off", 0.0)
+-	var made := _pile(["a", "b", "c", "d", "e"], off, 0.0)
++	var offy := _opt_float("offy", 0.0)
++	var made := _pile(["a", "b", "c", "d", "e"], off, offy)
+ 	_it("off", "%.4f" % off)
++	_it("offy", "%.4f" % offy)
+ 	_it("add_order", "[a,b,c,d,e]")
+ 	var ticks := [2, 3, 4, 6, 8, 16, 32, 64]
+-	var lad := await _ladder(ticks, off)
++	var lad := await _ladder(ticks, off, offy)
+ 	_it("ladder", _ladderstr(ticks, lad["seq"]))
+ 	_it("distinct_ticks", str(_uniq_count(lad["seq"])))
+ 	_it("last_change_tick", str(_last_change(ticks, lad["seq"])))

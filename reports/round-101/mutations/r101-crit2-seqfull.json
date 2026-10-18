@@ -1,0 +1,99 @@
+{
+ "base": {
+  "clean1_s": 1.7,
+  "clean0_s": 1.57,
+  "exit": [
+   0,
+   0
+  ],
+  "begin": "SEQ_BEGIN cells=14 clean=1 pins=14",
+  "census1": "SEQ_CENSUS identical=10 divergent_n=4 divergent=[cursor|touch|subvp|warp]",
+  "census0": "SEQ_CENSUS identical=5 divergent_n=9 divergent=[hover|motion|localpos|cursor|clip|drag|touch|subvp|warp]",
+  "end1": "SEQ_END digest=5be029c7d129bf6d9289a3b484efac34c73e2eae8fd34e47f8cdf4f88293718c",
+  "end0": "SEQ_END digest=da5cd7d773a50624f8bb9ae5ef90f2fa282901cab00d192d0eb67bee7bcf856a",
+  "printed_digest_matches_recomputed_over_captured_cells": true,
+  "stdout_pass_lines": 14,
+  "stderr_pass_lines": 0,
+  "stderr_line_count": 6,
+  "span1_in_stdout": true,
+  "end1_in_stdout": true,
+  "span_lines": 14
+ },
+ "SF1_forged_print_inside_span": {
+  "variant": "SF1_forged_print_inside_span",
+  "note": "foreign print() between cells (m_seq shape)",
+  "exit": 0,
+  "error": null,
+  "s": 1.63,
+  "pin_D": true,
+  "pin_DS": true,
+  "pin_SPAN": false,
+  "span_stdout_anchor": false,
+  "pass_lines_total": 14
+ },
+ "SF2_forged_print_after_end": {
+  "variant": "SF2_forged_print_after_end",
+  "note": "foreign print() after receipt",
+  "exit": 0,
+  "error": null,
+  "s": 1.65,
+  "pin_D": true,
+  "pin_DS": true,
+  "pin_SPAN": true,
+  "span_stdout_anchor": true,
+  "pass_lines_total": 14
+ },
+ "SF3_stderr_forgery": {
+  "variant": "SF3_stderr_forgery",
+  "note": "printerr payload",
+  "exit": 0,
+  "error": null,
+  "s": 1.67,
+  "pin_D": true,
+  "pin_DS": true,
+  "pin_SPAN": true,
+  "span_stdout_anchor": true,
+  "pass_lines_total": 14
+ },
+ "SF4_receipts_on_stderr": {
+  "variant": "SF4_receipts_on_stderr",
+  "note": "census+digest lines on stderr",
+  "exit": 0,
+  "error": null,
+  "s": 1.74,
+  "pin_D": true,
+  "pin_DS": true,
+  "pin_SPAN": false,
+  "span_stdout_anchor": false,
+  "pass_lines_total": 14
+ },
+ "SF5_mfocus_mutation": {
+  "variant": "SF5_mfocus_mutation",
+  "note": "f.grab_focus() removed in focus cell",
+  "exit": 0,
+  "error": null,
+  "s": 1.67,
+  "pin_D": false,
+  "pin_DS": false,
+  "pin_SPAN": false,
+  "span_stdout_anchor": false,
+  "pass_lines_total": 14,
+  "focused_cell_line_changed": true,
+  "digest_line_changed": true,
+  "census_line_changed": true
+ },
+ "SF6_crlf_receipts": {
+  "variant": "SF6_crlf_receipts",
+  "note": "BEGIN/CELLS/CENSUS/END emitted CRLF (printraw)",
+  "exit": 0,
+  "error": null,
+  "s": 1.78,
+  "pin_D": true,
+  "pin_DS": true,
+  "pin_SPAN": true,
+  "span_stdout_anchor": true,
+  "pass_lines_total": 14,
+  "textmode_has_cr": false,
+  "raw_has_crlf": true
+ }
+}

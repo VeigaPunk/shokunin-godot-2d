@@ -1,0 +1,241 @@
+[
+ {
+  "label": "R0 real-independent-run post-dedupe",
+  "expected": "PASS",
+  "expected_class": null,
+  "observed_verdict": "PASS",
+  "observed_classes": [],
+  "ok": true,
+  "rc": 0,
+  "mode": "receipt",
+  "criterion": {}
+ },
+ {
+  "label": "M1 prior row dropped",
+  "expected": "FAIL",
+  "expected_class": "prior_case_dropped",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "prior_case_dropped"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {}
+ },
+ {
+  "label": "M2 extra identical copy (forgery)",
+  "expected": "FAIL",
+  "expected_class": "multiplicity",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "multiplicity"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {}
+ },
+ {
+  "label": "M3 verdict flip",
+  "expected": "FAIL",
+  "expected_class": "non_pass_rows",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "non_pass_rows",
+   "prior_tuple_mismatch"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {}
+ },
+ {
+  "label": "M4 one signature char",
+  "expected": "FAIL",
+  "expected_class": "prior_tuple_mismatch",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "prior_tuple_mismatch"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {}
+ },
+ {
+  "label": "M5 expected_exit drift",
+  "expected": "FAIL",
+  "expected_class": "prior_tuple_mismatch",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "prior_tuple_mismatch"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {}
+ },
+ {
+  "label": "M6 error field drift",
+  "expected": "FAIL",
+  "expected_class": "prior_tuple_mismatch",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "prior_tuple_mismatch"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {}
+ },
+ {
+  "label": "M7 probe row dropped",
+  "expected": "FAIL",
+  "expected_class": "prior_probe_dropped",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "prior_probe_dropped"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {}
+ },
+ {
+  "label": "M8 probe verdict flip",
+  "expected": "FAIL",
+  "expected_class": "probe_verdict_drift",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "probe_verdict_drift"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {}
+ },
+ {
+  "label": "M9 discrimination flipped",
+  "expected": "FAIL",
+  "expected_class": "discriminations_not_preserved",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "discriminations_not_preserved"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {}
+ },
+ {
+  "label": "M10 discrimination deleted",
+  "expected": "FAIL",
+  "expected_class": "discriminations_not_preserved",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "discriminations_not_preserved"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {}
+ },
+ {
+  "label": "M11 census dead entry",
+  "expected": "FAIL",
+  "expected_class": "census_dead_entry",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "census_dead_entry"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {}
+ },
+ {
+  "label": "M12 new row ok w/ prefix",
+  "expected": "PASS",
+  "expected_class": null,
+  "observed_verdict": "PASS",
+  "observed_classes": [],
+  "ok": true,
+  "rc": 0,
+  "mode": "receipt",
+  "criterion": {
+   "r101_": 1
+  }
+ },
+ {
+  "label": "M13 new row non-PASS",
+  "expected": "FAIL",
+  "expected_class": "new_row_non_pass",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "new_row_non_pass",
+   "non_pass_rows"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {
+   "r101_": 1
+  }
+ },
+ {
+  "label": "M14 new row stray prefix",
+  "expected": "FAIL",
+  "expected_class": "new_row_unexpected_prefix",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "new_prefix_empty",
+   "new_row_unexpected_prefix"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {
+   "r101_": 0
+  }
+ },
+ {
+  "label": "M15 registry drop (stub runner)",
+  "expected": "FAIL",
+  "expected_class": "registry_prior_case_missing",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "registry_prior_case_missing",
+   "registry_static_mismatch"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "receipt",
+  "criterion": {}
+ },
+ {
+  "label": "M16 registry-only preflight (real)",
+  "expected": "PASS",
+  "expected_class": null,
+  "observed_verdict": "PASS",
+  "observed_classes": [],
+  "ok": true,
+  "rc": 0,
+  "mode": "registry_only",
+  "criterion": {}
+ },
+ {
+  "label": "M17 registry-only via stub runner",
+  "expected": "FAIL",
+  "expected_class": "registry_prior_case_missing",
+  "observed_verdict": "FAIL",
+  "observed_classes": [
+   "registry_prior_case_missing",
+   "registry_static_mismatch"
+  ],
+  "ok": true,
+  "rc": 1,
+  "mode": "registry_only",
+  "criterion": {}
+ }
+]

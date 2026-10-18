@@ -1,0 +1,5837 @@
+{
+ "nav_lattice_census|f_all|1": {
+  "row": "nav_lattice_census",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.832,
+  "stdout_sha": "c951e9b92fca5921",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_census|f_nav|1": {
+  "row": "nav_lattice_census",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_nav",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.839,
+  "stdout_sha": "c951e9b92fca5921",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_census|base|1": {
+  "row": "nav_lattice_census",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.851,
+  "stdout_sha": "c951e9b92fca5921",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_path|f_all|1": {
+  "row": "nav_lattice_path",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=path"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.934,
+  "stdout_sha": "6a89f6f8f1e35d7d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_path|f_nav|1": {
+  "row": "nav_lattice_path",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=path"
+  ],
+  "tree": "f_nav",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.007,
+  "stdout_sha": "f506bc3394b2daba",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_path|base|1": {
+  "row": "nav_lattice_path",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=path"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.024,
+  "stdout_sha": "f506bc3394b2daba",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_query|f_all|1": {
+  "row": "nav_lattice_query",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=query"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.834,
+  "stdout_sha": "2481326c4945df7d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_query|f_nav|1": {
+  "row": "nav_lattice_query",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=query"
+  ],
+  "tree": "f_nav",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.902,
+  "stdout_sha": "8de91c9752ea61de",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_query|base|1": {
+  "row": "nav_lattice_query",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=query"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.962,
+  "stdout_sha": "4788d093bafd0987",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_sync|base|1": {
+  "row": "nav_lattice_sync",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=sync"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.247,
+  "stdout_sha": "c6e2638087172852",
+  "stderr_sha": "129e1e246b974a2b",
+  "verdict": false
+ },
+ "nav_lattice_sync|f_nav|1": {
+  "row": "nav_lattice_sync",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=sync"
+  ],
+  "tree": "f_nav",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.247,
+  "stdout_sha": "dea8c2408c8d63db",
+  "stderr_sha": "6264bb8a0bb7f8ec",
+  "verdict": false
+ },
+ "nav_lattice_sync|f_all|1": {
+  "row": "nav_lattice_sync",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=sync"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.257,
+  "stdout_sha": "86d9716df01016e1",
+  "stderr_sha": "6264bb8a0bb7f8ec",
+  "verdict": false
+ },
+ "nav_lattice_region|base|1": {
+  "row": "nav_lattice_region",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=region"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.51,
+  "stdout_sha": "b2dfe53c09aa758b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_region|f_nav|1": {
+  "row": "nav_lattice_region",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=region"
+  ],
+  "tree": "f_nav",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.553,
+  "stdout_sha": "61ff4ef0ce251300",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_region|f_all|1": {
+  "row": "nav_lattice_region",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=region"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.549,
+  "stdout_sha": "61ff4ef0ce251300",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_agent|base|1": {
+  "row": "nav_lattice_agent",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=agent"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.44,
+  "stdout_sha": "68eafe3673063271",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_agent|f_all|1": {
+  "row": "nav_lattice_agent",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=agent"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.38,
+  "stdout_sha": "68eafe3673063271",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_agent|f_nav|1": {
+  "row": "nav_lattice_agent",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=agent"
+  ],
+  "tree": "f_nav",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.419,
+  "stdout_sha": "68eafe3673063271",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_avoid|base|1": {
+  "row": "nav_lattice_avoid",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=avoid"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.145,
+  "stdout_sha": "e9aa5ebb5445a7fc",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_bake|base|1": {
+  "row": "nav_lattice_bake",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=bake"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.757,
+  "stdout_sha": "0ca526105419eb48",
+  "stderr_sha": "1218b033c63cb851",
+  "verdict": false
+ },
+ "nav_lattice_avoid|f_nav|1": {
+  "row": "nav_lattice_avoid",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=avoid"
+  ],
+  "tree": "f_nav",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.143,
+  "stdout_sha": "60be561f2b9eb8ab",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_avoid|f_all|1": {
+  "row": "nav_lattice_avoid",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=avoid"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.166,
+  "stdout_sha": "e991806aa55b0c9b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_bake|f_nav|1": {
+  "row": "nav_lattice_bake",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=bake"
+  ],
+  "tree": "f_nav",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.869,
+  "stdout_sha": "0ca526105419eb48",
+  "stderr_sha": "1aeec83ab0f75f2a",
+  "verdict": false
+ },
+ "nav_lattice_bake|f_all|1": {
+  "row": "nav_lattice_bake",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=bake"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.886,
+  "stdout_sha": "0ca526105419eb48",
+  "stderr_sha": "1aeec83ab0f75f2a",
+  "verdict": false
+ },
+ "nav_lattice_link|base|1": {
+  "row": "nav_lattice_link",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=link"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.122,
+  "stdout_sha": "09796f831abdbd52",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_link|f_nav|1": {
+  "row": "nav_lattice_link",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=link"
+  ],
+  "tree": "f_nav",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.119,
+  "stdout_sha": "09796f831abdbd52",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_link|f_all|1": {
+  "row": "nav_lattice_link",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=link"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.145,
+  "stdout_sha": "a641412488b2d776",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_teardown_crash|base|1": {
+  "row": "nav_lattice_teardown_crash",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_crash"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": -6,
+  "err": null,
+  "dur": 1.611,
+  "stdout_sha": "b438db5862e33ed7",
+  "stderr_sha": "2a013c75c84a3219",
+  "verdict": true
+ },
+ "nav_lattice_teardown_crash|f_nav|1": {
+  "row": "nav_lattice_teardown_crash",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_crash"
+  ],
+  "tree": "f_nav",
+  "rep": 1,
+  "rc": -6,
+  "err": null,
+  "dur": 1.602,
+  "stdout_sha": "b438db5862e33ed7",
+  "stderr_sha": "2a013c75c84a3219",
+  "verdict": true
+ },
+ "nav_lattice_teardown_crash|f_all|1": {
+  "row": "nav_lattice_teardown_crash",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_crash"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": -6,
+  "err": null,
+  "dur": 1.603,
+  "stdout_sha": "b438db5862e33ed7",
+  "stderr_sha": "2a013c75c84a3219",
+  "verdict": true
+ },
+ "nav_lattice_teardown_clean|f_nav|1": {
+  "row": "nav_lattice_teardown_clean",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_clean"
+  ],
+  "tree": "f_nav",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.911,
+  "stdout_sha": "e0bdb47c4cf1130d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_teardown_clean|base|1": {
+  "row": "nav_lattice_teardown_clean",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_clean"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.976,
+  "stdout_sha": "e0bdb47c4cf1130d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_teardown_clean|f_all|1": {
+  "row": "nav_lattice_teardown_clean",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_clean"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.91,
+  "stdout_sha": "e0bdb47c4cf1130d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_census|f_canvas|1": {
+  "row": "r98_canvas_census",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.792,
+  "stdout_sha": "7756af95dcdaaea6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_census|base|1": {
+  "row": "r98_canvas_census",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.852,
+  "stdout_sha": "7756af95dcdaaea6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_census|f_r98all|1": {
+  "row": "r98_canvas_census",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.877,
+  "stdout_sha": "7756af95dcdaaea6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_census|f_all|1": {
+  "row": "r98_canvas_census",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.863,
+  "stdout_sha": "7756af95dcdaaea6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_modulate|base|1": {
+  "row": "r98_canvas_modulate",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=modulate"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.865,
+  "stdout_sha": "501bae69f10f54c6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_modulate|f_canvas|1": {
+  "row": "r98_canvas_modulate",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=modulate"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.879,
+  "stdout_sha": "501bae69f10f54c6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_modulate|f_r98all|1": {
+  "row": "r98_canvas_modulate",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=modulate"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.724,
+  "stdout_sha": "501bae69f10f54c6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_modulate|f_all|1": {
+  "row": "r98_canvas_modulate",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=modulate"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.753,
+  "stdout_sha": "501bae69f10f54c6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_queue|base|1": {
+  "row": "r98_canvas_queue",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=queue"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.857,
+  "stdout_sha": "4757960039babaf9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_queue|f_canvas|1": {
+  "row": "r98_canvas_queue",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=queue"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.945,
+  "stdout_sha": "4757960039babaf9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_queue|f_r98all|1": {
+  "row": "r98_canvas_queue",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=queue"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.96,
+  "stdout_sha": "4757960039babaf9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_queue|f_all|1": {
+  "row": "r98_canvas_queue",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=queue"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.887,
+  "stdout_sha": "4757960039babaf9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_surface|base|1": {
+  "row": "r98_canvas_draw_surface",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_surface"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.863,
+  "stdout_sha": "462f99a9cf408d1b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_surface|f_canvas|1": {
+  "row": "r98_canvas_draw_surface",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_surface"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.827,
+  "stdout_sha": "462f99a9cf408d1b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_surface|f_r98all|1": {
+  "row": "r98_canvas_draw_surface",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_surface"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.857,
+  "stdout_sha": "462f99a9cf408d1b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_surface|f_all|1": {
+  "row": "r98_canvas_draw_surface",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_surface"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.865,
+  "stdout_sha": "462f99a9cf408d1b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_refusal|base|1": {
+  "row": "r98_canvas_draw_refusal",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_refusal"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.885,
+  "stdout_sha": "df46ce199774732e",
+  "stderr_sha": "2bce1ede11407f40",
+  "verdict": false
+ },
+ "r98_canvas_draw_refusal|f_canvas|1": {
+  "row": "r98_canvas_draw_refusal",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_refusal"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.918,
+  "stdout_sha": "df46ce199774732e",
+  "stderr_sha": "208d211957544b2f",
+  "verdict": false
+ },
+ "r98_canvas_draw_refusal|f_r98all|1": {
+  "row": "r98_canvas_draw_refusal",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_refusal"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.919,
+  "stdout_sha": "df46ce199774732e",
+  "stderr_sha": "208d211957544b2f",
+  "verdict": false
+ },
+ "r98_canvas_draw_refusal|f_all|1": {
+  "row": "r98_canvas_draw_refusal",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_refusal"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.952,
+  "stdout_sha": "df46ce199774732e",
+  "stderr_sha": "208d211957544b2f",
+  "verdict": false
+ },
+ "r98_canvas_vis_chain|base|1": {
+  "row": "r98_canvas_vis_chain",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=vis_chain"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.913,
+  "stdout_sha": "197911717ce94165",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_vis_chain|f_canvas|1": {
+  "row": "r98_canvas_vis_chain",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=vis_chain"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.899,
+  "stdout_sha": "197911717ce94165",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_vis_chain|f_r98all|1": {
+  "row": "r98_canvas_vis_chain",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=vis_chain"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.851,
+  "stdout_sha": "197911717ce94165",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_vis_chain|f_all|1": {
+  "row": "r98_canvas_vis_chain",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=vis_chain"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.878,
+  "stdout_sha": "197911717ce94165",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_clip|base|1": {
+  "row": "r98_canvas_clip",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=clip"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.84,
+  "stdout_sha": "e3b7a34f24b36ff8",
+  "stderr_sha": "81a51d4d690b0cc5",
+  "verdict": false
+ },
+ "r98_canvas_clip|f_canvas|1": {
+  "row": "r98_canvas_clip",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=clip"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.844,
+  "stdout_sha": "e3b7a34f24b36ff8",
+  "stderr_sha": "e7256c91724ce210",
+  "verdict": false
+ },
+ "r98_canvas_clip|f_r98all|1": {
+  "row": "r98_canvas_clip",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=clip"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.829,
+  "stdout_sha": "e3b7a34f24b36ff8",
+  "stderr_sha": "e7256c91724ce210",
+  "verdict": false
+ },
+ "r98_canvas_clip|f_all|1": {
+  "row": "r98_canvas_clip",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=clip"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.704,
+  "stdout_sha": "e3b7a34f24b36ff8",
+  "stderr_sha": "e7256c91724ce210",
+  "verdict": false
+ },
+ "r98_canvas_zorder|base|1": {
+  "row": "r98_canvas_zorder",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=zorder"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.829,
+  "stdout_sha": "d2acd10f168084d4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_zorder|f_canvas|1": {
+  "row": "r98_canvas_zorder",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=zorder"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.83,
+  "stdout_sha": "d2acd10f168084d4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_zorder|f_r98all|1": {
+  "row": "r98_canvas_zorder",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=zorder"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.703,
+  "stdout_sha": "d2acd10f168084d4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_zorder|f_all|1": {
+  "row": "r98_canvas_zorder",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=zorder"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.73,
+  "stdout_sha": "d2acd10f168084d4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_skew|base|1": {
+  "row": "r98_canvas_xform_skew",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_skew"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.709,
+  "stdout_sha": "b5871fbc850e5513",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_skew|f_canvas|1": {
+  "row": "r98_canvas_xform_skew",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_skew"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.733,
+  "stdout_sha": "b5871fbc850e5513",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_skew|f_r98all|1": {
+  "row": "r98_canvas_xform_skew",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_skew"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.725,
+  "stdout_sha": "b5871fbc850e5513",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_skew|f_all|1": {
+  "row": "r98_canvas_xform_skew",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_skew"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.705,
+  "stdout_sha": "b5871fbc850e5513",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_mirror|base|1": {
+  "row": "r98_canvas_xform_mirror",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_mirror"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.866,
+  "stdout_sha": "930fb83b9e541663",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_mirror|f_canvas|1": {
+  "row": "r98_canvas_xform_mirror",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_mirror"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.831,
+  "stdout_sha": "930fb83b9e541663",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_mirror|f_r98all|1": {
+  "row": "r98_canvas_xform_mirror",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_mirror"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.751,
+  "stdout_sha": "930fb83b9e541663",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_mirror|f_all|1": {
+  "row": "r98_canvas_xform_mirror",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_mirror"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.732,
+  "stdout_sha": "930fb83b9e541663",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_global|base|1": {
+  "row": "r98_canvas_xform_global",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_global"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.841,
+  "stdout_sha": "ea7607acff27eee7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_global|f_canvas|1": {
+  "row": "r98_canvas_xform_global",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_global"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.854,
+  "stdout_sha": "ea7607acff27eee7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_global|f_r98all|1": {
+  "row": "r98_canvas_xform_global",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_global"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.817,
+  "stdout_sha": "ea7607acff27eee7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_global|f_all|1": {
+  "row": "r98_canvas_xform_global",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_global"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.802,
+  "stdout_sha": "ea7607acff27eee7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_notify|base|1": {
+  "row": "r98_canvas_notify",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=notify"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.818,
+  "stdout_sha": "ea84942ccecbbf29",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_notify|f_canvas|1": {
+  "row": "r98_canvas_notify",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=notify"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.814,
+  "stdout_sha": "ea84942ccecbbf29",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_notify|f_r98all|1": {
+  "row": "r98_canvas_notify",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=notify"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.824,
+  "stdout_sha": "ea84942ccecbbf29",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_notify|f_all|1": {
+  "row": "r98_canvas_notify",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=notify"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.833,
+  "stdout_sha": "ea84942ccecbbf29",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_state|base|1": {
+  "row": "r98_canvas_draw_state",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_state"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.774,
+  "stdout_sha": "caca88a304435e88",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_state|f_canvas|1": {
+  "row": "r98_canvas_draw_state",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_state"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.791,
+  "stdout_sha": "caca88a304435e88",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_state|f_r98all|1": {
+  "row": "r98_canvas_draw_state",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_state"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.894,
+  "stdout_sha": "caca88a304435e88",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_state|f_all|1": {
+  "row": "r98_canvas_draw_state",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_state"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.759,
+  "stdout_sha": "caca88a304435e88",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_triggers|base|1": {
+  "row": "r98_canvas_redraw_triggers",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_triggers"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.106,
+  "stdout_sha": "f8d23ff9687e5c8d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_triggers|f_canvas|1": {
+  "row": "r98_canvas_redraw_triggers",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_triggers"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.145,
+  "stdout_sha": "f8d23ff9687e5c8d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_triggers|f_r98all|1": {
+  "row": "r98_canvas_redraw_triggers",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_triggers"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.212,
+  "stdout_sha": "f8d23ff9687e5c8d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_triggers|f_all|1": {
+  "row": "r98_canvas_redraw_triggers",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_triggers"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.242,
+  "stdout_sha": "f8d23ff9687e5c8d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_context|base|1": {
+  "row": "r98_canvas_redraw_context",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_context"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.453,
+  "stdout_sha": "4823456170a5e529",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_context|f_canvas|1": {
+  "row": "r98_canvas_redraw_context",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_context"
+  ],
+  "tree": "f_canvas",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.463,
+  "stdout_sha": "4823456170a5e529",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_same_frame|f_attack|1": {
+  "row": "r98b_qflush_same_frame",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.403,
+  "stdout_sha": "bee15546fc403432",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_same_frame|base|1": {
+  "row": "r98b_qflush_same_frame",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.617,
+  "stdout_sha": "91ada311bb0134b8",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_context|f_all|1": {
+  "row": "r98_canvas_redraw_context",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_context"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.907,
+  "stdout_sha": "4823456170a5e529",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_context|f_r98all|1": {
+  "row": "r98_canvas_redraw_context",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_context"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 2.221,
+  "stdout_sha": "4823456170a5e529",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_same_frame|f_r98all|1": {
+  "row": "r98b_qflush_same_frame",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.746,
+  "stdout_sha": "bee15546fc403432",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_same_frame|f_all|1": {
+  "row": "r98b_qflush_same_frame",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.722,
+  "stdout_sha": "bee15546fc403432",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_suppress|f_attack|1": {
+  "row": "r98b_qflush_suppress",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.135,
+  "stdout_sha": "bee15546fc403432",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_suppress|base|1": {
+  "row": "r98b_qflush_suppress",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.288,
+  "stdout_sha": "bee15546fc403432",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_suppress|f_r98all|1": {
+  "row": "r98b_qflush_suppress",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.163,
+  "stdout_sha": "bee15546fc403432",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_suppress|f_all|1": {
+  "row": "r98b_qflush_suppress",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.133,
+  "stdout_sha": "0b1970904b421526",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_tree|base|1": {
+  "row": "r98b_qorder_tree",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.371,
+  "stdout_sha": "740e40f533e85ddc",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_tree|f_attack|1": {
+  "row": "r98b_qorder_tree",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.387,
+  "stdout_sha": "67dc1216a5d104f9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_tree|f_r98all|1": {
+  "row": "r98b_qorder_tree",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.225,
+  "stdout_sha": "67dc1216a5d104f9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_tree|f_all|1": {
+  "row": "r98b_qorder_tree",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.248,
+  "stdout_sha": "740e40f533e85ddc",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_flat|base|1": {
+  "row": "r98b_qorder_flat",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.223,
+  "stdout_sha": "740e40f533e85ddc",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_flat|f_attack|1": {
+  "row": "r98b_qorder_flat",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.219,
+  "stdout_sha": "285c7d35c3235bbf",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_flat|f_r98all|1": {
+  "row": "r98b_qorder_flat",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.243,
+  "stdout_sha": "285c7d35c3235bbf",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_flat|f_all|1": {
+  "row": "r98b_qorder_flat",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.241,
+  "stdout_sha": "da4c4b12df347b85",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_canon|f_attack|1": {
+  "row": "r98b_latch_canon",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=canon"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.106,
+  "stdout_sha": "0e64a7c7f107fbbd",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_canon|base|1": {
+  "row": "r98b_latch_canon",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=canon"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.206,
+  "stdout_sha": "0e64a7c7f107fbbd",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_canon|f_r98all|1": {
+  "row": "r98b_latch_canon",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=canon"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.139,
+  "stdout_sha": "0e64a7c7f107fbbd",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_canon|f_all|1": {
+  "row": "r98b_latch_canon",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=canon"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.147,
+  "stdout_sha": "0e64a7c7f107fbbd",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t1|base|1": {
+  "row": "r98b_latch_t1",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t1"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.115,
+  "stdout_sha": "174b22f8e95b9847",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t1|f_attack|1": {
+  "row": "r98b_latch_t1",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t1"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.118,
+  "stdout_sha": "174b22f8e95b9847",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t1|f_all|1": {
+  "row": "r98b_latch_t1",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t1"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.003,
+  "stdout_sha": "174b22f8e95b9847",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t1|f_r98all|1": {
+  "row": "r98b_latch_t1",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t1"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.146,
+  "stdout_sha": "174b22f8e95b9847",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t3|base|1": {
+  "row": "r98b_latch_t3",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t3"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.188,
+  "stdout_sha": "0df2fab6ad03e302",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t3|f_attack|1": {
+  "row": "r98b_latch_t3",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t3"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.244,
+  "stdout_sha": "0df2fab6ad03e302",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t3|f_r98all|1": {
+  "row": "r98b_latch_t3",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t3"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.082,
+  "stdout_sha": "0df2fab6ad03e302",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t3|f_all|1": {
+  "row": "r98b_latch_t3",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t3"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.098,
+  "stdout_sha": "0df2fab6ad03e302",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_imm|base|1": {
+  "row": "r98b_latch_imm",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=imm"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.982,
+  "stdout_sha": "0f9f33a625eea3cb",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_imm|f_r98all|1": {
+  "row": "r98b_latch_imm",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=imm"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.941,
+  "stdout_sha": "0f9f33a625eea3cb",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_imm|f_attack|1": {
+  "row": "r98b_latch_imm",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=imm"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.058,
+  "stdout_sha": "0f9f33a625eea3cb",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_imm|f_all|1": {
+  "row": "r98b_latch_imm",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=imm"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.989,
+  "stdout_sha": "0f9f33a625eea3cb",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_second|base|1": {
+  "row": "r98b_latch_second",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=second"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.05,
+  "stdout_sha": "5e528030a9a7bb7f",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_gskew|base|1": {
+  "row": "r98b_gskew",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=gskew"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.804,
+  "stdout_sha": "d8f1077d810c5c9d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_second|f_attack|1": {
+  "row": "r98b_latch_second",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=second"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.077,
+  "stdout_sha": "5e528030a9a7bb7f",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_second|f_r98all|1": {
+  "row": "r98b_latch_second",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=second"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.08,
+  "stdout_sha": "5e528030a9a7bb7f",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_second|f_all|1": {
+  "row": "r98b_latch_second",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=second"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.975,
+  "stdout_sha": "5e528030a9a7bb7f",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_gskew|f_attack|1": {
+  "row": "r98b_gskew",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=gskew"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.839,
+  "stdout_sha": "d8f1077d810c5c9d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_gskew|f_r98all|1": {
+  "row": "r98b_gskew",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=gskew"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.923,
+  "stdout_sha": "d8f1077d810c5c9d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_skewgrid|base|1": {
+  "row": "r98b_skewgrid",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=skewgrid"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.951,
+  "stdout_sha": "a913320871cb63e5",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_gskew|f_all|1": {
+  "row": "r98b_gskew",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=gskew"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.972,
+  "stdout_sha": "d8f1077d810c5c9d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_skewgrid|f_attack|1": {
+  "row": "r98b_skewgrid",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=skewgrid"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.996,
+  "stdout_sha": "a913320871cb63e5",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_skewgrid|f_all|1": {
+  "row": "r98b_skewgrid",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=skewgrid"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.795,
+  "stdout_sha": "a913320871cb63e5",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_skewgrid|f_r98all|1": {
+  "row": "r98b_skewgrid",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=skewgrid"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.018,
+  "stdout_sha": "a913320871cb63e5",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_epssweep|f_r98all|1": {
+  "row": "r98b_epssweep",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=epssweep"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.793,
+  "stdout_sha": "3180e60784a1d2e6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_epssweep|base|1": {
+  "row": "r98b_epssweep",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=epssweep"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.035,
+  "stdout_sha": "3180e60784a1d2e6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_epssweep|f_attack|1": {
+  "row": "r98b_epssweep",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=epssweep"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.926,
+  "stdout_sha": "3180e60784a1d2e6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_clipmatrix|base|1": {
+  "row": "r98b_clipmatrix",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=clipmatrix"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.929,
+  "stdout_sha": "63aa2ef41fcaca19",
+  "stderr_sha": "956f12fab9d63cc8",
+  "verdict": false
+ },
+ "r98b_epssweep|f_all|1": {
+  "row": "r98b_epssweep",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=epssweep"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.035,
+  "stdout_sha": "3180e60784a1d2e6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_clipmatrix|f_attack|1": {
+  "row": "r98b_clipmatrix",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=clipmatrix"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.015,
+  "stdout_sha": "63aa2ef41fcaca19",
+  "stderr_sha": "5589299f1c18863b",
+  "verdict": false
+ },
+ "r98b_clipmatrix|f_r98all|1": {
+  "row": "r98b_clipmatrix",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=clipmatrix"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.923,
+  "stdout_sha": "63aa2ef41fcaca19",
+  "stderr_sha": "5589299f1c18863b",
+  "verdict": false
+ },
+ "r98b_clipmatrix|f_all|1": {
+  "row": "r98b_clipmatrix",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=clipmatrix"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.943,
+  "stdout_sha": "63aa2ef41fcaca19",
+  "stderr_sha": "5589299f1c18863b",
+  "verdict": false
+ },
+ "r98b_notifyphase|base|1": {
+  "row": "r98b_notifyphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=notifyphase"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.997,
+  "stdout_sha": "6538e775828d1221",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_notifyphase|f_attack|1": {
+  "row": "r98b_notifyphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=notifyphase"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.943,
+  "stdout_sha": "6538e775828d1221",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_notifyphase|f_r98all|1": {
+  "row": "r98b_notifyphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=notifyphase"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.045,
+  "stdout_sha": "6538e775828d1221",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_notifyphase|f_all|1": {
+  "row": "r98b_notifyphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=notifyphase"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.95,
+  "stdout_sha": "6538e775828d1221",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_visphase|base|1": {
+  "row": "r98b_visphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=visphase"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.344,
+  "stdout_sha": "5465d44e2ef28d81",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_rksenum|f_rksenum|1": {
+  "row": "r98b_rksenum",
+  "script": "r98b_rksenum.gd",
+  "flags": [],
+  "tree": "f_rksenum",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.933,
+  "stdout_sha": "23f7184276c044e4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_visphase|f_attack|1": {
+  "row": "r98b_visphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=visphase"
+  ],
+  "tree": "f_attack",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.332,
+  "stdout_sha": "5465d44e2ef28d81",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_rksenum|base|1": {
+  "row": "r98b_rksenum",
+  "script": "r98b_rksenum.gd",
+  "flags": [],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.033,
+  "stdout_sha": "23f7184276c044e4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_visphase|f_r98all|1": {
+  "row": "r98b_visphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=visphase"
+  ],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.389,
+  "stdout_sha": "5465d44e2ef28d81",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_visphase|f_all|1": {
+  "row": "r98b_visphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=visphase"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.375,
+  "stdout_sha": "5465d44e2ef28d81",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_rksenum|f_r98all|1": {
+  "row": "r98b_rksenum",
+  "script": "r98b_rksenum.gd",
+  "flags": [],
+  "tree": "f_r98all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.949,
+  "stdout_sha": "23f7184276c044e4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_rksenum|f_all|1": {
+  "row": "r98b_rksenum",
+  "script": "r98b_rksenum.gd",
+  "flags": [],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.899,
+  "stdout_sha": "23f7184276c044e4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_census|base|2": {
+  "row": "nav_lattice_census",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.111,
+  "stdout_sha": "c951e9b92fca5921",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_census|f_nav|2": {
+  "row": "nav_lattice_census",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_nav",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.111,
+  "stdout_sha": "c951e9b92fca5921",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_census|f_all|2": {
+  "row": "nav_lattice_census",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.081,
+  "stdout_sha": "c951e9b92fca5921",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_path|base|2": {
+  "row": "nav_lattice_path",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=path"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.517,
+  "stdout_sha": "f506bc3394b2daba",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_path|f_all|2": {
+  "row": "nav_lattice_path",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=path"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.034,
+  "stdout_sha": "c127b90ed9e07be7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_path|f_nav|2": {
+  "row": "nav_lattice_path",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=path"
+  ],
+  "tree": "f_nav",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.125,
+  "stdout_sha": "f506bc3394b2daba",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_query|base|2": {
+  "row": "nav_lattice_query",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=query"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.932,
+  "stdout_sha": "4191c2e2426bdc80",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_query|f_nav|2": {
+  "row": "nav_lattice_query",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=query"
+  ],
+  "tree": "f_nav",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.943,
+  "stdout_sha": "2481326c4945df7d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_query|f_all|2": {
+  "row": "nav_lattice_query",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=query"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.985,
+  "stdout_sha": "8de91c9752ea61de",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_sync|base|2": {
+  "row": "nav_lattice_sync",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=sync"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.22,
+  "stdout_sha": "33b3bf72f6040048",
+  "stderr_sha": "129e1e246b974a2b",
+  "verdict": false
+ },
+ "nav_lattice_sync|f_nav|2": {
+  "row": "nav_lattice_sync",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=sync"
+  ],
+  "tree": "f_nav",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.232,
+  "stdout_sha": "c6e2638087172852",
+  "stderr_sha": "6264bb8a0bb7f8ec",
+  "verdict": false
+ },
+ "nav_lattice_sync|f_all|2": {
+  "row": "nav_lattice_sync",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=sync"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.206,
+  "stdout_sha": "99ec55f2079ba7e8",
+  "stderr_sha": "6264bb8a0bb7f8ec",
+  "verdict": false
+ },
+ "nav_lattice_region|base|2": {
+  "row": "nav_lattice_region",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=region"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.406,
+  "stdout_sha": "5e5730ff98e0c12c",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_region|f_nav|2": {
+  "row": "nav_lattice_region",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=region"
+  ],
+  "tree": "f_nav",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.512,
+  "stdout_sha": "61ff4ef0ce251300",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_region|f_all|2": {
+  "row": "nav_lattice_region",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=region"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.42,
+  "stdout_sha": "61ff4ef0ce251300",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_agent|base|2": {
+  "row": "nav_lattice_agent",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=agent"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.351,
+  "stdout_sha": "5173891c198740f0",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_agent|f_nav|2": {
+  "row": "nav_lattice_agent",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=agent"
+  ],
+  "tree": "f_nav",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.315,
+  "stdout_sha": "b6fb268f7bddd08e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_agent|f_all|2": {
+  "row": "nav_lattice_agent",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=agent"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.405,
+  "stdout_sha": "5173891c198740f0",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_avoid|base|2": {
+  "row": "nav_lattice_avoid",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=avoid"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.323,
+  "stdout_sha": "5ce47adb417b10e6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_avoid|f_nav|2": {
+  "row": "nav_lattice_avoid",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=avoid"
+  ],
+  "tree": "f_nav",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.202,
+  "stdout_sha": "3aadc67ef71f1e8d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_avoid|f_all|2": {
+  "row": "nav_lattice_avoid",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=avoid"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.261,
+  "stdout_sha": "f517376c4345d065",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_bake|base|2": {
+  "row": "nav_lattice_bake",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=bake"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.849,
+  "stdout_sha": "f416d6121bb58b3f",
+  "stderr_sha": "1218b033c63cb851",
+  "verdict": false
+ },
+ "nav_lattice_bake|f_nav|2": {
+  "row": "nav_lattice_bake",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=bake"
+  ],
+  "tree": "f_nav",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.933,
+  "stdout_sha": "0ca526105419eb48",
+  "stderr_sha": "1aeec83ab0f75f2a",
+  "verdict": false
+ },
+ "nav_lattice_bake|f_all|2": {
+  "row": "nav_lattice_bake",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=bake"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.98,
+  "stdout_sha": "2b001910f4b9938d",
+  "stderr_sha": "1aeec83ab0f75f2a",
+  "verdict": false
+ },
+ "nav_lattice_link|base|2": {
+  "row": "nav_lattice_link",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=link"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.103,
+  "stdout_sha": "9af9b22a00f98ec7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_link|f_nav|2": {
+  "row": "nav_lattice_link",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=link"
+  ],
+  "tree": "f_nav",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.121,
+  "stdout_sha": "09796f831abdbd52",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_link|f_all|2": {
+  "row": "nav_lattice_link",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=link"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.125,
+  "stdout_sha": "09796f831abdbd52",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_teardown_crash|base|2": {
+  "row": "nav_lattice_teardown_crash",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_crash"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": -6,
+  "err": null,
+  "dur": 1.39,
+  "stdout_sha": "b438db5862e33ed7",
+  "stderr_sha": "2a013c75c84a3219",
+  "verdict": true
+ },
+ "nav_lattice_teardown_crash|f_nav|2": {
+  "row": "nav_lattice_teardown_crash",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_crash"
+  ],
+  "tree": "f_nav",
+  "rep": 2,
+  "rc": -6,
+  "err": null,
+  "dur": 1.34,
+  "stdout_sha": "b438db5862e33ed7",
+  "stderr_sha": "2a013c75c84a3219",
+  "verdict": true
+ },
+ "nav_lattice_teardown_clean|base|2": {
+  "row": "nav_lattice_teardown_clean",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_clean"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.888,
+  "stdout_sha": "e0bdb47c4cf1130d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_teardown_clean|f_nav|2": {
+  "row": "nav_lattice_teardown_clean",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_clean"
+  ],
+  "tree": "f_nav",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.899,
+  "stdout_sha": "e0bdb47c4cf1130d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_teardown_clean|f_all|2": {
+  "row": "nav_lattice_teardown_clean",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_clean"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.881,
+  "stdout_sha": "e0bdb47c4cf1130d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_teardown_crash|f_all|2": {
+  "row": "nav_lattice_teardown_crash",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_crash"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": -6,
+  "err": null,
+  "dur": 1.364,
+  "stdout_sha": "b438db5862e33ed7",
+  "stderr_sha": "2a013c75c84a3219",
+  "verdict": true
+ },
+ "r98_canvas_census|base|2": {
+  "row": "r98_canvas_census",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.817,
+  "stdout_sha": "7756af95dcdaaea6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_census|f_canvas|2": {
+  "row": "r98_canvas_census",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.809,
+  "stdout_sha": "7756af95dcdaaea6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_modulate|base|2": {
+  "row": "r98_canvas_modulate",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=modulate"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.75,
+  "stdout_sha": "501bae69f10f54c6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_census|f_r98all|2": {
+  "row": "r98_canvas_census",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.863,
+  "stdout_sha": "7756af95dcdaaea6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_modulate|f_canvas|2": {
+  "row": "r98_canvas_modulate",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=modulate"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.758,
+  "stdout_sha": "501bae69f10f54c6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_census|f_all|2": {
+  "row": "r98_canvas_census",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.853,
+  "stdout_sha": "7756af95dcdaaea6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_modulate|f_r98all|2": {
+  "row": "r98_canvas_modulate",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=modulate"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.862,
+  "stdout_sha": "501bae69f10f54c6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_modulate|f_all|2": {
+  "row": "r98_canvas_modulate",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=modulate"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.89,
+  "stdout_sha": "501bae69f10f54c6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_queue|f_r98all|2": {
+  "row": "r98_canvas_queue",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=queue"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.819,
+  "stdout_sha": "4757960039babaf9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_queue|f_all|2": {
+  "row": "r98_canvas_queue",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=queue"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.837,
+  "stdout_sha": "4757960039babaf9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_queue|base|2": {
+  "row": "r98_canvas_queue",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=queue"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.88,
+  "stdout_sha": "4757960039babaf9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_queue|f_canvas|2": {
+  "row": "r98_canvas_queue",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=queue"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.887,
+  "stdout_sha": "4757960039babaf9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_surface|base|2": {
+  "row": "r98_canvas_draw_surface",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_surface"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.729,
+  "stdout_sha": "462f99a9cf408d1b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_surface|f_canvas|2": {
+  "row": "r98_canvas_draw_surface",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_surface"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.803,
+  "stdout_sha": "462f99a9cf408d1b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_surface|f_r98all|2": {
+  "row": "r98_canvas_draw_surface",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_surface"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.786,
+  "stdout_sha": "462f99a9cf408d1b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_refusal|base|2": {
+  "row": "r98_canvas_draw_refusal",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_refusal"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.767,
+  "stdout_sha": "df46ce199774732e",
+  "stderr_sha": "2bce1ede11407f40",
+  "verdict": false
+ },
+ "r98_canvas_draw_surface|f_all|2": {
+  "row": "r98_canvas_draw_surface",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_surface"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.812,
+  "stdout_sha": "462f99a9cf408d1b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_refusal|f_canvas|2": {
+  "row": "r98_canvas_draw_refusal",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_refusal"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.839,
+  "stdout_sha": "df46ce199774732e",
+  "stderr_sha": "208d211957544b2f",
+  "verdict": false
+ },
+ "r98_canvas_draw_refusal|f_r98all|2": {
+  "row": "r98_canvas_draw_refusal",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_refusal"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.795,
+  "stdout_sha": "df46ce199774732e",
+  "stderr_sha": "208d211957544b2f",
+  "verdict": false
+ },
+ "r98_canvas_draw_refusal|f_all|2": {
+  "row": "r98_canvas_draw_refusal",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_refusal"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.824,
+  "stdout_sha": "df46ce199774732e",
+  "stderr_sha": "208d211957544b2f",
+  "verdict": false
+ },
+ "r98_canvas_vis_chain|base|2": {
+  "row": "r98_canvas_vis_chain",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=vis_chain"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.787,
+  "stdout_sha": "197911717ce94165",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_vis_chain|f_canvas|2": {
+  "row": "r98_canvas_vis_chain",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=vis_chain"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.8,
+  "stdout_sha": "197911717ce94165",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_vis_chain|f_r98all|2": {
+  "row": "r98_canvas_vis_chain",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=vis_chain"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.81,
+  "stdout_sha": "197911717ce94165",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_vis_chain|f_all|2": {
+  "row": "r98_canvas_vis_chain",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=vis_chain"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.793,
+  "stdout_sha": "197911717ce94165",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_clip|base|2": {
+  "row": "r98_canvas_clip",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=clip"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.693,
+  "stdout_sha": "e3b7a34f24b36ff8",
+  "stderr_sha": "81a51d4d690b0cc5",
+  "verdict": false
+ },
+ "r98_canvas_clip|f_canvas|2": {
+  "row": "r98_canvas_clip",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=clip"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.846,
+  "stdout_sha": "e3b7a34f24b36ff8",
+  "stderr_sha": "e7256c91724ce210",
+  "verdict": false
+ },
+ "r98_canvas_clip|f_all|2": {
+  "row": "r98_canvas_clip",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=clip"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.806,
+  "stdout_sha": "e3b7a34f24b36ff8",
+  "stderr_sha": "e7256c91724ce210",
+  "verdict": false
+ },
+ "r98_canvas_clip|f_r98all|2": {
+  "row": "r98_canvas_clip",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=clip"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.879,
+  "stdout_sha": "e3b7a34f24b36ff8",
+  "stderr_sha": "e7256c91724ce210",
+  "verdict": false
+ },
+ "r98_canvas_zorder|base|2": {
+  "row": "r98_canvas_zorder",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=zorder"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.831,
+  "stdout_sha": "d2acd10f168084d4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_zorder|f_canvas|2": {
+  "row": "r98_canvas_zorder",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=zorder"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.855,
+  "stdout_sha": "d2acd10f168084d4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_zorder|f_r98all|2": {
+  "row": "r98_canvas_zorder",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=zorder"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.874,
+  "stdout_sha": "d2acd10f168084d4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_zorder|f_all|2": {
+  "row": "r98_canvas_zorder",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=zorder"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.862,
+  "stdout_sha": "d2acd10f168084d4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_skew|f_canvas|2": {
+  "row": "r98_canvas_xform_skew",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_skew"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.845,
+  "stdout_sha": "b5871fbc850e5513",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_skew|base|2": {
+  "row": "r98_canvas_xform_skew",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_skew"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.956,
+  "stdout_sha": "b5871fbc850e5513",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_skew|f_all|2": {
+  "row": "r98_canvas_xform_skew",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_skew"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.857,
+  "stdout_sha": "b5871fbc850e5513",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_skew|f_r98all|2": {
+  "row": "r98_canvas_xform_skew",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_skew"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.968,
+  "stdout_sha": "b5871fbc850e5513",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_mirror|base|2": {
+  "row": "r98_canvas_xform_mirror",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_mirror"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.884,
+  "stdout_sha": "930fb83b9e541663",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_mirror|f_canvas|2": {
+  "row": "r98_canvas_xform_mirror",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_mirror"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.849,
+  "stdout_sha": "930fb83b9e541663",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_global|base|2": {
+  "row": "r98_canvas_xform_global",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_global"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.727,
+  "stdout_sha": "ea7607acff27eee7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_mirror|f_r98all|2": {
+  "row": "r98_canvas_xform_mirror",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_mirror"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.831,
+  "stdout_sha": "930fb83b9e541663",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_mirror|f_all|2": {
+  "row": "r98_canvas_xform_mirror",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_mirror"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.849,
+  "stdout_sha": "930fb83b9e541663",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_global|f_canvas|2": {
+  "row": "r98_canvas_xform_global",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_global"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.825,
+  "stdout_sha": "ea7607acff27eee7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_global|f_r98all|2": {
+  "row": "r98_canvas_xform_global",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_global"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.852,
+  "stdout_sha": "ea7607acff27eee7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_global|f_all|2": {
+  "row": "r98_canvas_xform_global",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_global"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.808,
+  "stdout_sha": "ea7607acff27eee7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_notify|base|2": {
+  "row": "r98_canvas_notify",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=notify"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.841,
+  "stdout_sha": "ea84942ccecbbf29",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_notify|f_canvas|2": {
+  "row": "r98_canvas_notify",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=notify"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.841,
+  "stdout_sha": "ea84942ccecbbf29",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_notify|f_r98all|2": {
+  "row": "r98_canvas_notify",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=notify"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.864,
+  "stdout_sha": "ea84942ccecbbf29",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_notify|f_all|2": {
+  "row": "r98_canvas_notify",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=notify"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.844,
+  "stdout_sha": "ea84942ccecbbf29",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_state|base|2": {
+  "row": "r98_canvas_draw_state",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_state"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.707,
+  "stdout_sha": "caca88a304435e88",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_state|f_canvas|2": {
+  "row": "r98_canvas_draw_state",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_state"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.856,
+  "stdout_sha": "caca88a304435e88",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_state|f_r98all|2": {
+  "row": "r98_canvas_draw_state",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_state"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.799,
+  "stdout_sha": "caca88a304435e88",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_state|f_all|2": {
+  "row": "r98_canvas_draw_state",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_state"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.904,
+  "stdout_sha": "caca88a304435e88",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_triggers|base|2": {
+  "row": "r98_canvas_redraw_triggers",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_triggers"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.209,
+  "stdout_sha": "f8d23ff9687e5c8d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_triggers|f_canvas|2": {
+  "row": "r98_canvas_redraw_triggers",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_triggers"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.17,
+  "stdout_sha": "f8d23ff9687e5c8d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_triggers|f_r98all|2": {
+  "row": "r98_canvas_redraw_triggers",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_triggers"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.164,
+  "stdout_sha": "f8d23ff9687e5c8d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_context|base|2": {
+  "row": "r98_canvas_redraw_context",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_context"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.243,
+  "stdout_sha": "4823456170a5e529",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_context|f_canvas|2": {
+  "row": "r98_canvas_redraw_context",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_context"
+  ],
+  "tree": "f_canvas",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.179,
+  "stdout_sha": "4823456170a5e529",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_triggers|f_all|2": {
+  "row": "r98_canvas_redraw_triggers",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_triggers"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.34,
+  "stdout_sha": "f8d23ff9687e5c8d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_context|f_r98all|2": {
+  "row": "r98_canvas_redraw_context",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_context"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.061,
+  "stdout_sha": "4823456170a5e529",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_context|f_all|2": {
+  "row": "r98_canvas_redraw_context",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_context"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.089,
+  "stdout_sha": "4823456170a5e529",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_same_frame|base|2": {
+  "row": "r98b_qflush_same_frame",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.988,
+  "stdout_sha": "0b1970904b421526",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_same_frame|f_attack|2": {
+  "row": "r98b_qflush_same_frame",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.896,
+  "stdout_sha": "0b1970904b421526",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_same_frame|f_r98all|2": {
+  "row": "r98b_qflush_same_frame",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.006,
+  "stdout_sha": "bee15546fc403432",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_same_frame|f_all|2": {
+  "row": "r98b_qflush_same_frame",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.005,
+  "stdout_sha": "bee15546fc403432",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_suppress|base|2": {
+  "row": "r98b_qflush_suppress",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.952,
+  "stdout_sha": "0b1970904b421526",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_suppress|f_attack|2": {
+  "row": "r98b_qflush_suppress",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.039,
+  "stdout_sha": "bee15546fc403432",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_suppress|f_r98all|2": {
+  "row": "r98b_qflush_suppress",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.043,
+  "stdout_sha": "91ada311bb0134b8",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_suppress|f_all|2": {
+  "row": "r98b_qflush_suppress",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.022,
+  "stdout_sha": "91ada311bb0134b8",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_tree|base|2": {
+  "row": "r98b_qorder_tree",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.224,
+  "stdout_sha": "da4c4b12df347b85",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_tree|f_attack|2": {
+  "row": "r98b_qorder_tree",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.31,
+  "stdout_sha": "da4c4b12df347b85",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_tree|f_r98all|2": {
+  "row": "r98b_qorder_tree",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.232,
+  "stdout_sha": "67dc1216a5d104f9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_flat|base|2": {
+  "row": "r98b_qorder_flat",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.329,
+  "stdout_sha": "67dc1216a5d104f9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_tree|f_all|2": {
+  "row": "r98b_qorder_tree",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.401,
+  "stdout_sha": "700a46ebe70f8b05",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_flat|f_attack|2": {
+  "row": "r98b_qorder_flat",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.478,
+  "stdout_sha": "740e40f533e85ddc",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_flat|f_r98all|2": {
+  "row": "r98b_qorder_flat",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.791,
+  "stdout_sha": "ded3fafd09121f39",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_canon|base|2": {
+  "row": "r98b_latch_canon",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=canon"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.628,
+  "stdout_sha": "0e64a7c7f107fbbd",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_canon|f_attack|2": {
+  "row": "r98b_latch_canon",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=canon"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.519,
+  "stdout_sha": "0e64a7c7f107fbbd",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_flat|f_all|2": {
+  "row": "r98b_qorder_flat",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.92,
+  "stdout_sha": "da4c4b12df347b85",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_canon|f_r98all|2": {
+  "row": "r98b_latch_canon",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=canon"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.7,
+  "stdout_sha": "0e64a7c7f107fbbd",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t1|f_all|2": {
+  "row": "r98b_latch_t1",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t1"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.79,
+  "stdout_sha": "174b22f8e95b9847",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_canon|f_all|2": {
+  "row": "r98b_latch_canon",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=canon"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.785,
+  "stdout_sha": "0e64a7c7f107fbbd",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t1|f_r98all|2": {
+  "row": "r98b_latch_t1",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t1"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.144,
+  "stdout_sha": "174b22f8e95b9847",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t1|f_attack|2": {
+  "row": "r98b_latch_t1",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t1"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.583,
+  "stdout_sha": "174b22f8e95b9847",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t1|base|2": {
+  "row": "r98b_latch_t1",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t1"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.897,
+  "stdout_sha": "174b22f8e95b9847",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t3|base|2": {
+  "row": "r98b_latch_t3",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t3"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.666,
+  "stdout_sha": "0df2fab6ad03e302",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t3|f_all|2": {
+  "row": "r98b_latch_t3",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t3"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.112,
+  "stdout_sha": "0df2fab6ad03e302",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_imm|f_attack|2": {
+  "row": "r98b_latch_imm",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=imm"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.76,
+  "stdout_sha": "0f9f33a625eea3cb",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t3|f_attack|2": {
+  "row": "r98b_latch_t3",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t3"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.624,
+  "stdout_sha": "0df2fab6ad03e302",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t3|f_r98all|2": {
+  "row": "r98b_latch_t3",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t3"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.572,
+  "stdout_sha": "0df2fab6ad03e302",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_imm|base|2": {
+  "row": "r98b_latch_imm",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=imm"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.056,
+  "stdout_sha": "0f9f33a625eea3cb",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_imm|f_r98all|2": {
+  "row": "r98b_latch_imm",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=imm"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.071,
+  "stdout_sha": "0f9f33a625eea3cb",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_imm|f_all|2": {
+  "row": "r98b_latch_imm",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=imm"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.978,
+  "stdout_sha": "0f9f33a625eea3cb",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_second|base|2": {
+  "row": "r98b_latch_second",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=second"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.053,
+  "stdout_sha": "5e528030a9a7bb7f",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_second|f_attack|2": {
+  "row": "r98b_latch_second",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=second"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.104,
+  "stdout_sha": "5e528030a9a7bb7f",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_second|f_r98all|2": {
+  "row": "r98b_latch_second",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=second"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.127,
+  "stdout_sha": "5e528030a9a7bb7f",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_second|f_all|2": {
+  "row": "r98b_latch_second",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=second"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.11,
+  "stdout_sha": "5e528030a9a7bb7f",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_gskew|base|2": {
+  "row": "r98b_gskew",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=gskew"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.981,
+  "stdout_sha": "d8f1077d810c5c9d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_gskew|f_attack|2": {
+  "row": "r98b_gskew",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=gskew"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.979,
+  "stdout_sha": "d8f1077d810c5c9d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_gskew|f_r98all|2": {
+  "row": "r98b_gskew",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=gskew"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.96,
+  "stdout_sha": "d8f1077d810c5c9d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_gskew|f_all|2": {
+  "row": "r98b_gskew",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=gskew"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.922,
+  "stdout_sha": "d8f1077d810c5c9d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_skewgrid|f_attack|2": {
+  "row": "r98b_skewgrid",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=skewgrid"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.896,
+  "stdout_sha": "a913320871cb63e5",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_skewgrid|base|2": {
+  "row": "r98b_skewgrid",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=skewgrid"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.986,
+  "stdout_sha": "a913320871cb63e5",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_skewgrid|f_r98all|2": {
+  "row": "r98b_skewgrid",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=skewgrid"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.896,
+  "stdout_sha": "a913320871cb63e5",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_skewgrid|f_all|2": {
+  "row": "r98b_skewgrid",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=skewgrid"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.931,
+  "stdout_sha": "a913320871cb63e5",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_epssweep|base|2": {
+  "row": "r98b_epssweep",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=epssweep"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.879,
+  "stdout_sha": "3180e60784a1d2e6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_epssweep|f_attack|2": {
+  "row": "r98b_epssweep",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=epssweep"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.87,
+  "stdout_sha": "3180e60784a1d2e6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_epssweep|f_r98all|2": {
+  "row": "r98b_epssweep",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=epssweep"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.901,
+  "stdout_sha": "3180e60784a1d2e6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_epssweep|f_all|2": {
+  "row": "r98b_epssweep",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=epssweep"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.853,
+  "stdout_sha": "3180e60784a1d2e6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_clipmatrix|base|2": {
+  "row": "r98b_clipmatrix",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=clipmatrix"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.777,
+  "stdout_sha": "63aa2ef41fcaca19",
+  "stderr_sha": "956f12fab9d63cc8",
+  "verdict": false
+ },
+ "r98b_clipmatrix|f_attack|2": {
+  "row": "r98b_clipmatrix",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=clipmatrix"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.877,
+  "stdout_sha": "63aa2ef41fcaca19",
+  "stderr_sha": "5589299f1c18863b",
+  "verdict": false
+ },
+ "r98b_clipmatrix|f_r98all|2": {
+  "row": "r98b_clipmatrix",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=clipmatrix"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.852,
+  "stdout_sha": "63aa2ef41fcaca19",
+  "stderr_sha": "5589299f1c18863b",
+  "verdict": false
+ },
+ "r98b_notifyphase|base|2": {
+  "row": "r98b_notifyphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=notifyphase"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.847,
+  "stdout_sha": "6538e775828d1221",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_clipmatrix|f_all|2": {
+  "row": "r98b_clipmatrix",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=clipmatrix"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.927,
+  "stdout_sha": "63aa2ef41fcaca19",
+  "stderr_sha": "5589299f1c18863b",
+  "verdict": false
+ },
+ "r98b_notifyphase|f_attack|2": {
+  "row": "r98b_notifyphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=notifyphase"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.931,
+  "stdout_sha": "6538e775828d1221",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_notifyphase|f_r98all|2": {
+  "row": "r98b_notifyphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=notifyphase"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.866,
+  "stdout_sha": "6538e775828d1221",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_notifyphase|f_all|2": {
+  "row": "r98b_notifyphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=notifyphase"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.854,
+  "stdout_sha": "6538e775828d1221",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_visphase|base|2": {
+  "row": "r98b_visphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=visphase"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.048,
+  "stdout_sha": "5465d44e2ef28d81",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_visphase|f_attack|2": {
+  "row": "r98b_visphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=visphase"
+  ],
+  "tree": "f_attack",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.032,
+  "stdout_sha": "5465d44e2ef28d81",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_visphase|f_r98all|2": {
+  "row": "r98b_visphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=visphase"
+  ],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.064,
+  "stdout_sha": "5465d44e2ef28d81",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_rksenum|base|2": {
+  "row": "r98b_rksenum",
+  "script": "r98b_rksenum.gd",
+  "flags": [],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.883,
+  "stdout_sha": "23f7184276c044e4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_visphase|f_all|2": {
+  "row": "r98b_visphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=visphase"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.061,
+  "stdout_sha": "5465d44e2ef28d81",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_rksenum|f_rksenum|2": {
+  "row": "r98b_rksenum",
+  "script": "r98b_rksenum.gd",
+  "flags": [],
+  "tree": "f_rksenum",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.787,
+  "stdout_sha": "23f7184276c044e4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_rksenum|f_r98all|2": {
+  "row": "r98b_rksenum",
+  "script": "r98b_rksenum.gd",
+  "flags": [],
+  "tree": "f_r98all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.78,
+  "stdout_sha": "23f7184276c044e4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_rksenum|f_all|2": {
+  "row": "r98b_rksenum",
+  "script": "r98b_rksenum.gd",
+  "flags": [],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.796,
+  "stdout_sha": "23f7184276c044e4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_census|f_all|3": {
+  "row": "nav_lattice_census",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.773,
+  "stdout_sha": "c951e9b92fca5921",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_query|f_all|3": {
+  "row": "nav_lattice_query",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=query"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.871,
+  "stdout_sha": "8de91c9752ea61de",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_path|f_all|3": {
+  "row": "nav_lattice_path",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=path"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.959,
+  "stdout_sha": "f506bc3394b2daba",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_sync|f_all|3": {
+  "row": "nav_lattice_sync",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=sync"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.221,
+  "stdout_sha": "c6e2638087172852",
+  "stderr_sha": "6264bb8a0bb7f8ec",
+  "verdict": false
+ },
+ "nav_lattice_bake|f_all|3": {
+  "row": "nav_lattice_bake",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=bake"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.991,
+  "stdout_sha": "0ca526105419eb48",
+  "stderr_sha": "1aeec83ab0f75f2a",
+  "verdict": false
+ },
+ "nav_lattice_avoid|f_all|3": {
+  "row": "nav_lattice_avoid",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=avoid"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.246,
+  "stdout_sha": "3769a715707c6663",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_link|f_all|3": {
+  "row": "nav_lattice_link",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=link"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.148,
+  "stdout_sha": "9af9b22a00f98ec7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_agent|f_all|3": {
+  "row": "nav_lattice_agent",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=agent"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.421,
+  "stdout_sha": "b6fb268f7bddd08e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_region|f_all|3": {
+  "row": "nav_lattice_region",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=region"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.567,
+  "stdout_sha": "b2dfe53c09aa758b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_teardown_clean|f_all|3": {
+  "row": "nav_lattice_teardown_clean",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_clean"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.887,
+  "stdout_sha": "e0bdb47c4cf1130d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_census|f_r98all|3": {
+  "row": "r98_canvas_census",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.861,
+  "stdout_sha": "7756af95dcdaaea6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "nav_lattice_teardown_crash|f_all|3": {
+  "row": "nav_lattice_teardown_crash",
+  "script": "nav_lattice.gd",
+  "flags": [
+   "--arm=teardown_crash"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": -6,
+  "err": null,
+  "dur": 1.426,
+  "stdout_sha": "b438db5862e33ed7",
+  "stderr_sha": "2a013c75c84a3219",
+  "verdict": true
+ },
+ "r98_canvas_census|f_all|3": {
+  "row": "r98_canvas_census",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.873,
+  "stdout_sha": "7756af95dcdaaea6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_modulate|f_r98all|3": {
+  "row": "r98_canvas_modulate",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=modulate"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.884,
+  "stdout_sha": "501bae69f10f54c6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_modulate|f_all|3": {
+  "row": "r98_canvas_modulate",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=modulate"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.86,
+  "stdout_sha": "501bae69f10f54c6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_queue|f_r98all|3": {
+  "row": "r98_canvas_queue",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=queue"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.886,
+  "stdout_sha": "4757960039babaf9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_queue|f_all|3": {
+  "row": "r98_canvas_queue",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=queue"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.869,
+  "stdout_sha": "4757960039babaf9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_surface|f_r98all|3": {
+  "row": "r98_canvas_draw_surface",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_surface"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.833,
+  "stdout_sha": "462f99a9cf408d1b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_surface|f_all|3": {
+  "row": "r98_canvas_draw_surface",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_surface"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.853,
+  "stdout_sha": "462f99a9cf408d1b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_refusal|f_r98all|3": {
+  "row": "r98_canvas_draw_refusal",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_refusal"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.83,
+  "stdout_sha": "df46ce199774732e",
+  "stderr_sha": "208d211957544b2f",
+  "verdict": false
+ },
+ "r98_canvas_draw_refusal|f_all|3": {
+  "row": "r98_canvas_draw_refusal",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_refusal"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.841,
+  "stdout_sha": "df46ce199774732e",
+  "stderr_sha": "208d211957544b2f",
+  "verdict": false
+ },
+ "r98_canvas_clip|f_r98all|3": {
+  "row": "r98_canvas_clip",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=clip"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.683,
+  "stdout_sha": "e3b7a34f24b36ff8",
+  "stderr_sha": "e7256c91724ce210",
+  "verdict": false
+ },
+ "r98_canvas_vis_chain|f_r98all|3": {
+  "row": "r98_canvas_vis_chain",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=vis_chain"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.816,
+  "stdout_sha": "197911717ce94165",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_vis_chain|f_all|3": {
+  "row": "r98_canvas_vis_chain",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=vis_chain"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.8,
+  "stdout_sha": "197911717ce94165",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_clip|f_all|3": {
+  "row": "r98_canvas_clip",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=clip"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.716,
+  "stdout_sha": "e3b7a34f24b36ff8",
+  "stderr_sha": "e7256c91724ce210",
+  "verdict": false
+ },
+ "r98_canvas_zorder|f_r98all|3": {
+  "row": "r98_canvas_zorder",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=zorder"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.803,
+  "stdout_sha": "d2acd10f168084d4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_zorder|f_all|3": {
+  "row": "r98_canvas_zorder",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=zorder"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.804,
+  "stdout_sha": "d2acd10f168084d4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_skew|f_all|3": {
+  "row": "r98_canvas_xform_skew",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_skew"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.819,
+  "stdout_sha": "b5871fbc850e5513",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_skew|f_r98all|3": {
+  "row": "r98_canvas_xform_skew",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_skew"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.874,
+  "stdout_sha": "b5871fbc850e5513",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_mirror|f_r98all|3": {
+  "row": "r98_canvas_xform_mirror",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_mirror"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.814,
+  "stdout_sha": "930fb83b9e541663",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_global|f_r98all|3": {
+  "row": "r98_canvas_xform_global",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_global"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.783,
+  "stdout_sha": "ea7607acff27eee7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_mirror|f_all|3": {
+  "row": "r98_canvas_xform_mirror",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_mirror"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.938,
+  "stdout_sha": "930fb83b9e541663",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_xform_global|f_all|3": {
+  "row": "r98_canvas_xform_global",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=xform_global"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.764,
+  "stdout_sha": "ea7607acff27eee7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_notify|f_r98all|3": {
+  "row": "r98_canvas_notify",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=notify"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.826,
+  "stdout_sha": "ea84942ccecbbf29",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_notify|f_all|3": {
+  "row": "r98_canvas_notify",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=notify"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.836,
+  "stdout_sha": "ea84942ccecbbf29",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_state|f_r98all|3": {
+  "row": "r98_canvas_draw_state",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_state"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.837,
+  "stdout_sha": "caca88a304435e88",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_draw_state|f_all|3": {
+  "row": "r98_canvas_draw_state",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=draw_state"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.828,
+  "stdout_sha": "caca88a304435e88",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_triggers|f_r98all|3": {
+  "row": "r98_canvas_redraw_triggers",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_triggers"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.109,
+  "stdout_sha": "f8d23ff9687e5c8d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_triggers|f_all|3": {
+  "row": "r98_canvas_redraw_triggers",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_triggers"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.122,
+  "stdout_sha": "f8d23ff9687e5c8d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_same_frame|f_r98all|3": {
+  "row": "r98b_qflush_same_frame",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.909,
+  "stdout_sha": "bee15546fc403432",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_context|f_r98all|3": {
+  "row": "r98_canvas_redraw_context",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_context"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.031,
+  "stdout_sha": "4823456170a5e529",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98_canvas_redraw_context|f_all|3": {
+  "row": "r98_canvas_redraw_context",
+  "script": "canvas_lattice.gd",
+  "flags": [
+   "--arm=redraw_context"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.058,
+  "stdout_sha": "4823456170a5e529",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_same_frame|f_all|3": {
+  "row": "r98b_qflush_same_frame",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.043,
+  "stdout_sha": "bee15546fc403432",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_suppress|f_r98all|3": {
+  "row": "r98b_qflush_suppress",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.95,
+  "stdout_sha": "0b1970904b421526",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qflush_suppress|f_all|3": {
+  "row": "r98b_qflush_suppress",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qflush"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.07,
+  "stdout_sha": "0b1970904b421526",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_tree|f_r98all|3": {
+  "row": "r98b_qorder_tree",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.218,
+  "stdout_sha": "da4c4b12df347b85",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_tree|f_all|3": {
+  "row": "r98b_qorder_tree",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.27,
+  "stdout_sha": "740e40f533e85ddc",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_flat|f_r98all|3": {
+  "row": "r98b_qorder_flat",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.357,
+  "stdout_sha": "700a46ebe70f8b05",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_qorder_flat|f_all|3": {
+  "row": "r98b_qorder_flat",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=qorder"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.409,
+  "stdout_sha": "a961ea4a1b353ad7",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_canon|f_all|3": {
+  "row": "r98b_latch_canon",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=canon"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.086,
+  "stdout_sha": "0e64a7c7f107fbbd",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_canon|f_r98all|3": {
+  "row": "r98b_latch_canon",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=canon"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.256,
+  "stdout_sha": "0e64a7c7f107fbbd",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t1|f_r98all|3": {
+  "row": "r98b_latch_t1",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t1"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.034,
+  "stdout_sha": "174b22f8e95b9847",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t1|f_all|3": {
+  "row": "r98b_latch_t1",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t1"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.04,
+  "stdout_sha": "174b22f8e95b9847",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t3|f_r98all|3": {
+  "row": "r98b_latch_t3",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t3"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.13,
+  "stdout_sha": "0df2fab6ad03e302",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_t3|f_all|3": {
+  "row": "r98b_latch_t3",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=t3"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.045,
+  "stdout_sha": "0df2fab6ad03e302",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_imm|f_r98all|3": {
+  "row": "r98b_latch_imm",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=imm"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.088,
+  "stdout_sha": "0f9f33a625eea3cb",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_imm|f_all|3": {
+  "row": "r98b_latch_imm",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=imm"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.1,
+  "stdout_sha": "0f9f33a625eea3cb",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_second|f_r98all|3": {
+  "row": "r98b_latch_second",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=second"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.02,
+  "stdout_sha": "5e528030a9a7bb7f",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_latch_second|f_all|3": {
+  "row": "r98b_latch_second",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=latch",
+   "--var=second"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.327,
+  "stdout_sha": "5e528030a9a7bb7f",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_gskew|f_r98all|3": {
+  "row": "r98b_gskew",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=gskew"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.181,
+  "stdout_sha": "d8f1077d810c5c9d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_skewgrid|f_all|3": {
+  "row": "r98b_skewgrid",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=skewgrid"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.018,
+  "stdout_sha": "a913320871cb63e5",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_gskew|f_all|3": {
+  "row": "r98b_gskew",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=gskew"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.177,
+  "stdout_sha": "d8f1077d810c5c9d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_skewgrid|f_r98all|3": {
+  "row": "r98b_skewgrid",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=skewgrid"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.13,
+  "stdout_sha": "a913320871cb63e5",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_epssweep|f_r98all|3": {
+  "row": "r98b_epssweep",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=epssweep"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.907,
+  "stdout_sha": "3180e60784a1d2e6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_clipmatrix|f_r98all|3": {
+  "row": "r98b_clipmatrix",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=clipmatrix"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.766,
+  "stdout_sha": "63aa2ef41fcaca19",
+  "stderr_sha": "5589299f1c18863b",
+  "verdict": false
+ },
+ "r98b_epssweep|f_all|3": {
+  "row": "r98b_epssweep",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=epssweep"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.868,
+  "stdout_sha": "3180e60784a1d2e6",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_clipmatrix|f_all|3": {
+  "row": "r98b_clipmatrix",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=clipmatrix"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.886,
+  "stdout_sha": "63aa2ef41fcaca19",
+  "stderr_sha": "5589299f1c18863b",
+  "verdict": false
+ },
+ "r98b_notifyphase|f_r98all|3": {
+  "row": "r98b_notifyphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=notifyphase"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.889,
+  "stdout_sha": "6538e775828d1221",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_notifyphase|f_all|3": {
+  "row": "r98b_notifyphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=notifyphase"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.892,
+  "stdout_sha": "6538e775828d1221",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_visphase|f_r98all|3": {
+  "row": "r98b_visphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=visphase"
+  ],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.128,
+  "stdout_sha": "5465d44e2ef28d81",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_rksenum|f_r98all|3": {
+  "row": "r98b_rksenum",
+  "script": "r98b_rksenum.gd",
+  "flags": [],
+  "tree": "f_r98all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.87,
+  "stdout_sha": "23f7184276c044e4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_rksenum|f_all|3": {
+  "row": "r98b_rksenum",
+  "script": "r98b_rksenum.gd",
+  "flags": [],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.832,
+  "stdout_sha": "23f7184276c044e4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r98b_visphase|f_all|3": {
+  "row": "r98b_visphase",
+  "script": "r98b_attack.gd",
+  "flags": [
+   "--arm=visphase"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.106,
+  "stdout_sha": "5465d44e2ef28d81",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ }
+}

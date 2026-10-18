@@ -1,0 +1,111 @@
+{
+  "seat": "VER-17",
+  "round": 101,
+  "lane": "game-dev-2d-shokunin",
+  "observed_at": "2026-10-18T16:21:52-03:00",
+  "host": "plazir27",
+  "pins": {
+    "godot_cli_version": {
+      "cmd": "godot --version",
+      "stdout": "4.7.2.stable.arch_linux.ed1daf0bf\n",
+      "stdout_bytes": 34,
+      "stdout_sha256": "b5190ad236d29d9169a65c5abf6f3057633f4ba7c66f642f971da397e113d4f6",
+      "stderr_bytes": 0,
+      "reps": 3,
+      "byte_stable": true
+    },
+    "godot_binary": {
+      "path": "/usr/bin/godot",
+      "bytes": 182015704,
+      "sha256": "3a72f85d53b84d7656ad8a633b06b019a11ad170a5718ff50bacc1c83cd4e72b",
+      "file": "ELF 64-bit LSB pie executable, x86-64"
+    },
+    "godot_runtime": {
+      "api": "Engine.get_version_info()",
+      "string": "4.7.2-stable (arch_linux)",
+      "major": 4, "minor": 7, "patch": 2, "hex": 263938, "status": "stable",
+      "build": "arch_linux",
+      "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+      "timestamp": 1786929518,
+      "display_server": "headless",
+      "os_has_feature_headless": false,
+      "render_method": "forward_plus",
+      "render_driver": "vulkan",
+      "adapter": "",
+      "viewport_post_defer": [64.0, 64.0],
+      "viewport_in_initialize": [100.0, 100.0],
+      "tps": 60
+    },
+    "python": {
+      "cmd": "python --version",
+      "stdout": "Python 3.14.7\n",
+      "stdout_bytes": 14,
+      "stdout_sha256": "0366d77cc1f1ac88ea458231ba4f639323d5caf34de0d50b7618277fd4395f1f",
+      "stderr_bytes": 0,
+      "exe": "/usr/bin/python3.14",
+      "exe_sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "exe_bytes": 14424,
+      "full": "3.14.7 (main, Aug 10 2026, 07:46:56) [GCC 16.1.1 20260728]"
+    },
+    "node_default": {
+      "cmd": "node --version",
+      "stdout": "v26.12.0\n",
+      "stdout_bytes": 9,
+      "stdout_sha256": "4117ab00dc2f8c90d93ceede8620caac1d817bf404f006f025788ac760102631",
+      "stderr_bytes": 0,
+      "exe": "/home/vgpnk/.local/share/mise/installs/node/26.12.0/bin/node",
+      "exe_sha256": "caa24debe02770c92a70677e2a62ca98890150e7ac1c17bcfe31bcc98cc89943",
+      "exe_bytes": 150275912
+    },
+    "node_fnm_held": {
+      "exe": "/home/vgpnk/.local/share/fnm/node-versions/v24.21.0/installation/bin/node",
+      "stdout": "v24.21.0\n",
+      "exe_sha256": "7fde7b8afa198da66257f42ee2001d874c7355631e6d1579a5fb5ef1f246df4c",
+      "exe_bytes": 126595440
+    },
+    "host_env": {
+      "hostname": "plazir27",
+      "uname": "Linux 7.2.3-arch1-3 x86_64 GNU/Linux",
+      "nproc": 32,
+      "memtotal_kb": 31721792,
+      "swaptotal_kb": 35917176,
+      "tmp_fstype": "tmpfs",
+      "tmp_options_has_usrquota": true,
+      "tmp_writes": "fail Disk quota exceeded (EDQUOT)"
+    },
+    "load": {
+      "uptime_1": " 16:21:52 up 1 day, 16:22,  1 user,  load average: 37.32, 22.36, 14.27",
+      "uptime_2": " 16:22:53 up 1 day, 16:23,  1 user,  load average: 53.88, 30.58, 17.65",
+      "proc_loadavg": "56.34 32.61 18.59 22/3318 1109443"
+    },
+    "export_templates": {
+      "dir": "/home/vgpnk/.local/share/godot/export_templates/4.7.2.stable",
+      "version_txt": "4.7.2.stable\n",
+      "linux_release_x86_64_bytes": 73519416,
+      "linux_release_x86_64_sha256": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63"
+    },
+    "committed_chip_affected": {
+      "file": "corpus/fixtures/pygame_battery.py",
+      "line": 163,
+      "chip": "node_ver",
+      "expects": "v24.21.0",
+      "gets_under_current_PATH": "v26.12.0",
+      "gets_under_fnm_first_PATH": "v24.21.0"
+    },
+    "repo_head": "05a7289961bafad79b041309d74913dff577ef1c",
+    "repo_branch": "main"
+  },
+  "receipts_sha256": {
+    "ver17_cli_version.out": "b5190ad236d29d9169a65c5abf6f3057633f4ba7c66f642f971da397e113d4f6",
+    "ver17_python_version.out": "0366d77cc1f1ac88ea458231ba4f639323d5caf34de0d50b7618277fd4395f1f",
+    "ver17_node_version.out": "4117ab00dc2f8c90d93ceede8620caac1d817bf404f006f025788ac760102631",
+    "ver17_uptime.out": "5d8e7d7cbb3bcfc2fbc70e04f09337588c7b206e6425a6fd5292f592858961cb",
+    "ver17_date.out": "19eb2cd9721b4090a49c2eb7c7485d267627c4f8007e8c16870b094370f543c3",
+    "ver17_hostname.out": "694cd433b4212f7ed2f6b1bb23c8ef980056bf36de62d37e9f0a01c04f6fa194",
+    "ver17_probe.rep1.out": "7d87c65391013b4e6f831e019be915bc517f11a9380fb3896d231308fab2ba38",
+    "ver17_probe.rep2.out": "7d87c65391013b4e6f831e019be915bc517f11a9380fb3896d231308fab2ba38",
+    "ver17_probe.dummydriver.out": "014352f8ef09a9803dc0ab1bce7ea6c45763087c3d242cdb2ff30795a248a940",
+    "ver17_env_probe.gd": "ec1984670ad7ab8e7309dbed8ee298fe7d3bef1a298a39dfea607387099a1d37",
+    "scratch/project.godot": "168699f3a11a6ae28b8f6a9796643752ac52a6921975b5ee739464c602f049d8"
+  }
+}

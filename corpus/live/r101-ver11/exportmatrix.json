@@ -1,0 +1,216 @@
+{
+ "captures": {
+  "pack_out_sha256": "d83360fd936193288b0e8f59f4a478973e4096a0df9e06944450a91db5770f6a",
+  "exe_out_sha256": "d83360fd936193288b0e8f59f4a478973e4096a0df9e06944450a91db5770f6a",
+  "launch_out_sha256": "823994af35eb9a0a2874a981740535d14642203a0e036701430ab82e9d9c951c"
+ },
+ "real_pck": {
+  "path": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r101-ver11/scratch/exportproj/out/prod1.pck",
+  "bytes": 1816,
+  "sha256": "75bb54582667ddb54dcc3b28e41a6a4a1cf94dfbbcc28e8ad30549e115665a6a",
+  "magic": "GDPC"
+ },
+ "real_exe": {
+  "path": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r101-ver11/scratch/exportproj/out/prod.x86_64",
+  "bytes": 73519416,
+  "sha256": "d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63",
+  "magic": "\u007fELF"
+ },
+ "forged_line": "EXPORT PROD PASS preset=Linux/X11 executable=nonempty magic=GDPC census=12/12",
+ "forged_error": "ERROR: r101-ver11 forged receipt diagnostic",
+ "table": [
+  {
+   "arm": "A0_control",
+   "desc": "real PCK export, real artifact, real receipt",
+   "artifact": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r101-ver11/scratch/exportproj/out/prod1.pck",
+   "bytes": 1816,
+   "sha256": "75bb54582667ddb54dcc3b28e41a6a4a1cf94dfbbcc28e8ad30549e115665a6a",
+   "magic": "GDPC",
+   "landed_size_only": "PASS",
+   "magic_gdp_c": "PASS",
+   "sha256_pin": "PASS",
+   "receipt_line_pin": "PASS",
+   "receipt_line_set_pin": "FAIL",
+   "exact_transcript_pin": "PASS"
+  },
+  {
+   "arm": "A1_extra_success",
+   "desc": "real receipt + forged success receipt line",
+   "artifact": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r101-ver11/scratch/exportproj/out/prod1.pck",
+   "bytes": 1816,
+   "sha256": "75bb54582667ddb54dcc3b28e41a6a4a1cf94dfbbcc28e8ad30549e115665a6a",
+   "magic": "GDPC",
+   "landed_size_only": "PASS",
+   "magic_gdp_c": "PASS",
+   "sha256_pin": "PASS",
+   "receipt_line_pin": "PASS",
+   "receipt_line_set_pin": "PASS",
+   "exact_transcript_pin": "FAIL"
+  },
+  {
+   "arm": "A1b_dupe_done",
+   "desc": "real receipt + duplicate '[ DONE ] savepack' marker",
+   "artifact": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r101-ver11/scratch/exportproj/out/prod1.pck",
+   "bytes": 1816,
+   "sha256": "75bb54582667ddb54dcc3b28e41a6a4a1cf94dfbbcc28e8ad30549e115665a6a",
+   "magic": "GDPC",
+   "landed_size_only": "PASS",
+   "magic_gdp_c": "PASS",
+   "sha256_pin": "PASS",
+   "receipt_line_pin": "PASS",
+   "receipt_line_set_pin": "FAIL",
+   "exact_transcript_pin": "FAIL"
+  },
+  {
+   "arm": "A2_forged_error",
+   "desc": "real receipt + forged ERROR: line",
+   "artifact": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r101-ver11/scratch/exportproj/out/prod1.pck",
+   "bytes": 1816,
+   "sha256": "75bb54582667ddb54dcc3b28e41a6a4a1cf94dfbbcc28e8ad30549e115665a6a",
+   "magic": "GDPC",
+   "landed_size_only": "FAIL",
+   "magic_gdp_c": "FAIL",
+   "sha256_pin": "FAIL",
+   "receipt_line_pin": "FAIL",
+   "receipt_line_set_pin": "FAIL",
+   "exact_transcript_pin": "FAIL"
+  },
+  {
+   "arm": "A3_junk_artifact",
+   "desc": "real receipt + artifact swapped to junk (magic MUT2, size>0)",
+   "artifact": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r101-ver11/armartifacts/junk.bin",
+   "bytes": 4608,
+   "sha256": "f9015e6cc213aa0e72c9ffb6c9c9feb5a52f44218a6a1c94465d037bcf54dd62",
+   "magic": "MUT2",
+   "landed_size_only": "PASS",
+   "magic_gdp_c": "FAIL",
+   "sha256_pin": "FAIL",
+   "receipt_line_pin": "PASS",
+   "receipt_line_set_pin": "FAIL",
+   "exact_transcript_pin": "PASS"
+  },
+  {
+   "arm": "A4_json_artifact",
+   "desc": "real receipt + artifact swapped to a JSON file",
+   "artifact": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r101-ver11/armartifacts/not_a_pack.json",
+   "bytes": 22,
+   "sha256": "ffb045152c651c78513e70cd6e8810539c834c1f5766d1cb9b4cc7b2373261ae",
+   "magic": "{\"fo",
+   "landed_size_only": "PASS",
+   "magic_gdp_c": "FAIL",
+   "sha256_pin": "FAIL",
+   "receipt_line_pin": "PASS",
+   "receipt_line_set_pin": "FAIL",
+   "exact_transcript_pin": "PASS"
+  },
+  {
+   "arm": "A5_magic_tampered",
+   "desc": "real receipt + real PCK with magic patched GDPC->GDPX",
+   "artifact": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r101-ver11/armartifacts/prod_magic_tampered.pck",
+   "bytes": 1816,
+   "sha256": "eaab9d8bdf67ccf15059ab11b9d792d94aa96d224ba49468844380d7536f9ee0",
+   "magic": "GDPX",
+   "landed_size_only": "PASS",
+   "magic_gdp_c": "FAIL",
+   "sha256_pin": "FAIL",
+   "receipt_line_pin": "PASS",
+   "receipt_line_set_pin": "FAIL",
+   "exact_transcript_pin": "PASS"
+  },
+  {
+   "arm": "A6_empty_artifact",
+   "desc": "real receipt + artifact truncated to 0 bytes",
+   "artifact": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r101-ver11/armartifacts/empty.bin",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "magic": null,
+   "landed_size_only": "FAIL",
+   "magic_gdp_c": "FAIL",
+   "sha256_pin": "FAIL",
+   "receipt_line_pin": "PASS",
+   "receipt_line_set_pin": "FAIL",
+   "exact_transcript_pin": "PASS"
+  },
+  {
+   "arm": "A7_absent_artifact",
+   "desc": "real receipt + artifact deleted",
+   "artifact": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r101-ver11/armartifacts/absent.bin",
+   "bytes": 0,
+   "sha256": null,
+   "magic": null,
+   "landed_size_only": "FAIL",
+   "magic_gdp_c": "FAIL",
+   "sha256_pin": "FAIL",
+   "receipt_line_pin": "PASS",
+   "receipt_line_set_pin": "FAIL",
+   "exact_transcript_pin": "PASS"
+  },
+  {
+   "arm": "A5b_body_byte_flip",
+   "desc": "real PCK with one body byte flipped (magic+size intact, sha changed)",
+   "artifact": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r101-ver11/armartifacts/prod_body_flip.pck",
+   "bytes": 1816,
+   "sha256": "56fa1377fae9701d5b79004bb3739575537f8da7c1cbc19614d2ba97725b6b12",
+   "magic": "GDPC",
+   "landed_size_only": "PASS",
+   "magic_gdp_c": "PASS",
+   "sha256_pin": "FAIL",
+   "receipt_line_pin": "PASS",
+   "receipt_line_set_pin": "FAIL",
+   "exact_transcript_pin": "PASS"
+  },
+  {
+   "arm": "A8_marker_substituted",
+   "desc": "true '[ DONE ]' marker line substituted (line-pin kill)",
+   "artifact": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r101-ver11/scratch/exportproj/out/prod1.pck",
+   "bytes": 1816,
+   "sha256": "75bb54582667ddb54dcc3b28e41a6a4a1cf94dfbbcc28e8ad30549e115665a6a",
+   "magic": "GDPC",
+   "landed_size_only": "FAIL",
+   "magic_gdp_c": "FAIL",
+   "sha256_pin": "FAIL",
+   "receipt_line_pin": "FAIL",
+   "receipt_line_set_pin": "FAIL",
+   "exact_transcript_pin": "FAIL"
+  }
+ ],
+ "launch_table": [
+  {
+   "arm": "L0_control",
+   "desc": "real launch output, real receipt",
+   "pin": "VER11_PACK_STARTED scene=main",
+   "verdict": "PASS",
+   "receipt_lines": [
+    "VER11_PACK_STARTED scene=main"
+   ]
+  },
+  {
+   "arm": "L1_forged_scene",
+   "desc": "receipt line replaced by a foreign scene value",
+   "pin": "VER11_PACK_STARTED scene=main",
+   "verdict": "FAIL",
+   "receipt_lines": [
+    "VER11_PACK_STARTED scene=other"
+   ]
+  },
+  {
+   "arm": "L2_prefix_pin_forge",
+   "desc": "same foreign-scene bytes vs a prefix-only pin",
+   "pin": "VER11_PACK_STARTED",
+   "verdict": "PASS",
+   "receipt_lines": [
+    "VER11_PACK_STARTED scene=other"
+   ]
+  },
+  {
+   "arm": "L3_silent_plus_forge",
+   "desc": "launch output with receipt stripped then a forged receipt appended",
+   "pin": "VER11_PACK_STARTED scene=main",
+   "verdict": "PASS",
+   "receipt_lines": [
+    "VER11_PACK_STARTED scene=main"
+   ]
+  }
+ ],
+ "landed_row_shape": "run_battery.py:1877-1880 (size-only, no magic/sha/receipt-line conjunct)"
+}

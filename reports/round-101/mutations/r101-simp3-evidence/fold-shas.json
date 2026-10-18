@@ -1,0 +1,26 @@
+{
+ "nav": {
+  "file": "nav_lattice.gd",
+  "before": "088843399ce37eb272dfb8cbf7e2a115f1b9af01a44859ea05610297875e3796",
+  "after": "b23887e5b05d830629689010baf8bf5ed044e32548831945fe134983cd07450e"
+ },
+ "particles": {
+  "file": "particles_lattice.gd",
+  "before": "0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9",
+  "after": "afd2aa88876abc7a0923066b024c825aa111d3e471ee0e3a304a58f9e494a125"
+ },
+ "r95": {
+  "patch_log": [
+   "patching file dss_lattice.gd",
+   "patching file r95b_order.gd"
+  ],
+  "dss_lattice.gd": {
+   "before": "77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627",
+   "after": "c128e9ccf3b3f512c6bda0a11d52348b3a5936a5ea4a32ada78c85967b951b5f"
+  },
+  "r95b_order.gd": {
+   "before": "4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490",
+   "after": "b367559e831e5e9f9ab9e386591dd0035e24fb4e5ea2efc2c533e11aec2bdcf7"
+  }
+ }
+}

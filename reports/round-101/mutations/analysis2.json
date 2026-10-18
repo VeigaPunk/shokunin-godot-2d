@@ -1,0 +1,1719 @@
+{
+ "rows": {
+  "nav_lattice_census": {
+   "script": "nav_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "nav_lattice_path": {
+   "script": "nav_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "nav_lattice_query": {
+   "script": "nav_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "nav_lattice_sync": {
+   "script": "nav_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "nav_lattice_region": {
+   "script": "nav_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "nav_lattice_agent": {
+   "script": "nav_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "nav_lattice_avoid": {
+   "script": "nav_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "nav_lattice_bake": {
+   "script": "nav_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "nav_lattice_link": {
+   "script": "nav_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "nav_lattice_teardown_crash": {
+   "script": "nav_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "nav_lattice_teardown_clean": {
+   "script": "nav_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_census": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_modulate": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_queue": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_draw_surface": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_draw_refusal": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_vis_chain": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_clip": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_zorder": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_xform_skew": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_xform_mirror": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_xform_global": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_notify": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_draw_state": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_redraw_triggers": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98_canvas_redraw_context": {
+   "script": "canvas_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_qflush_same_frame": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_qflush_suppress": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_qorder_tree": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_qorder_flat": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_latch_canon": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_latch_t1": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_latch_t3": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_latch_imm": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_latch_second": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_gskew": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_skewgrid": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_epssweep": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_clipmatrix": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_notifyphase": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_visphase": {
+   "script": "r98b_attack.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r98b_rksenum": {
+   "script": "r98b_rksenum.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_r98all": [
+     true
+    ],
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_census": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_bus": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_autoplay": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_stoppos": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_peak_calib": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_mixblock": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_advance": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_finish": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_loop_degenerate": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_loop_pts": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_gen": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_gen_peak": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_poly": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_bus_peak": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_p2d": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_pan_law": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_gen2d": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  },
+  "r99_audio_pause": {
+   "script": "audio_lattice.gd",
+   "base": {
+    "1": {
+     "sha": null
+    },
+    "2": {
+     "sha": null
+    }
+   },
+   "base_verdicts": [
+    true,
+    true
+   ],
+   "cand_verdicts": [
+    true,
+    true
+   ],
+   "other": {
+    "f_all": [
+     true
+    ]
+   }
+  }
+ },
+ "masked_diffs": [
+  {
+   "row": "nav_lattice_sync",
+   "rep": 1,
+   "tree": "f_nav",
+   "base": "egions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=true dis_settled=false dis_same=true chg_iter_same=2 chg_iter_settled=3 gate=0 ladder=[f0:0/0/0,f1:0/0/0,f2:0/1/0,f3:1/1/0,f4:1/1/0,f5:2/1/1,f6:2/1/1,f7:2/1/1,f8:2/1/1,f9:2/1/1] first_reach=5 first_reach_sync=1\n",
+   "cand": "egions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=true dis_settled=false dis_same=true chg_iter_same=2 chg_iter_settled=3 gate=0 ladder=[f0:0/0/0,f1:1/0/0,f2:1/1/0,f3:2/1/1,f4:2/1/1,f5:2/1/1,f6:2/1/1,f7:2/1/1,f8:2/1/1,f9:2/1/1] first_reach=3 first_reach_sync=1\n"
+  },
+  {
+   "row": "r98b_qflush_same_frame",
+   "rep": 1,
+   "tree": "f_attack",
+   "base": "sh hide_span_pf=2\nR98B qflush hide_same_frame=0\nR98B qflush hide_ticksep_n=1\nR98B qflush hidden_across_tick_n=0\nR98B qflush show_after_tick_n=1\nPASS r98b qflush same_pf=1 d_pf_delta=0 d_n=1 coalesce_draws=1 frames_with_tick=1 ticks_window=1 coalesce_eq=1 max_draws_per_pf=1 distinct_draw_pf=1 selfq_draws=1 hide_span_pf=2 hide_same_frame=0 hide_ticksep_n=1 hidden_across_tick_n=0 show_after_tick_n=1\n",
+   "cand": "sh hide_span_pf=3\nR98B qflush hide_same_frame=0\nR98B qflush hide_ticksep_n=1\nR98B qflush hidden_across_tick_n=0\nR98B qflush show_after_tick_n=1\nPASS r98b qflush same_pf=1 d_pf_delta=0 d_n=1 coalesce_draws=2 frames_with_tick=2 ticks_window=2 coalesce_eq=1 max_draws_per_pf=1 distinct_draw_pf=2 selfq_draws=1 hide_span_pf=3 hide_same_frame=0 hide_ticksep_n=1 hidden_across_tick_n=0 show_after_tick_n=1\n"
+  },
+  {
+   "row": "r98b_qorder_tree",
+   "rep": 1,
+   "tree": "f_attack",
+   "base": "1\nR98B qorder rev_stable=1\nPASS r98b qorder tree=ABC||ABC||ABC||ABC||ABC||ABC||ABC rev=|CBA||CBA||CBA||CBA||CBA||CBA stagger=|||C||||B||||||A|||||||||| stagger_off=|||||||||||||||||||||||||||||C||||||B||||A|||||||||||||||||||||||||||||||||||||||| flat=CBACBA tree_groups=ABC,ABC,ABC,ABC,ABC,ABC,ABC rev_groups=CBA,CBA,CBA,CBA,CBA,CBA stag_groups=C,B,A stagoff_groups=C,B,A tree_stable=1 rev_stable=1\n",
+   "cand": "1\nR98B qorder rev_stable=1\nPASS r98b qorder tree=ABC||ABC||ABC||ABC||ABC||ABC||ABC rev=|CBA||CBA||CBA||CBA||CBA||CBA stagger=|C||||B||||||A|||||||||||| stagger_off=|||||||||||||||||||||||||||C||||B||||||A|||||||||||||||||||||||||||||||||||||||||| flat=CBACBA tree_groups=ABC,ABC,ABC,ABC,ABC,ABC,ABC rev_groups=CBA,CBA,CBA,CBA,CBA,CBA stag_groups=C,B,A stagoff_groups=C,B,A tree_stable=1 rev_stable=1\n"
+  },
+  {
+   "row": "r99_audio_advance",
+   "rep": 2,
+   "tree": "f_audio",
+   "base": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS r99_audio advance playing=true advanced=true pb_nonnull=true pos_multiple_q=true pos_after_gt_before=true | before=0.0029025 after=0.3744218\n",
+   "cand": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS r99_audio advance playing=true advanced=true pb_nonnull=true pos_multiple_q=true pos_after_gt_before=true | before=0.0029025 after=0.2815419\n"
+  },
+  {
+   "row": "r99_audio_finish",
+   "rep": 1,
+   "tree": "f_audio",
+   "base": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS r99_audio finish stopped=true playing_end=false pos_end=0.0000000 finished_seen=true fin_frame_ge_1=true fin_same_frame=true played_gt_02=true | transition_f=45 fin_frame=45 fin_us=296847 last_pos=0.2815419 frames=76\n",
+   "cand": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS r99_audio finish stopped=true playing_end=false pos_end=0.0000000 finished_seen=true fin_frame_ge_1=true fin_same_frame=true played_gt_02=true | transition_f=44 fin_frame=44 fin_us=289963 last_pos=0.2815419 frames=75\n"
+  },
+  {
+   "row": "r99_audio_finish",
+   "rep": 2,
+   "tree": "f_audio",
+   "base": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS r99_audio finish stopped=true playing_end=false pos_end=0.0000000 finished_seen=true fin_frame_ge_1=true fin_same_frame=true played_gt_02=true | transition_f=45 fin_frame=45 fin_us=296865 last_pos=0.2815419 frames=76\n",
+   "cand": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS r99_audio finish stopped=true playing_end=false pos_end=0.0000000 finished_seen=true fin_frame_ge_1=true fin_same_frame=true played_gt_02=true | transition_f=47 fin_frame=47 fin_us=310651 last_pos=0.2815419 frames=78\n"
+  },
+  {
+   "row": "r99_audio_loop_pts",
+   "rep": 1,
+   "tree": "f_audio",
+   "base": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS r99_audio loop_pts playing_end=true looped=true wraps_ge2=true maxpos_le_loop=true | wraps=7 maxpos=0.0957823 frames=104\n",
+   "cand": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS r99_audio loop_pts playing_end=true looped=true wraps_ge2=true maxpos_le_loop=true | wraps=7 maxpos=0.0957823 frames=103\n"
+  },
+  {
+   "row": "r99_audio_gen",
+   "rep": 1,
+   "tree": "f_audio",
+   "base": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS r99_audio gen caps=[\"4095\", \"8191\", \"16383\"] pushed=8191 avail_full=0 full_refused=true clear_noop_active=true clear_noop_stopped=true skips_dry_gt0=true | avail_after_refused=0 avail_stopped=512 avail_after_stop=512 skips_dry=96\n",
+   "cand": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS r99_audio gen caps=[\"4095\", \"8191\", \"16383\"] pushed=8191 avail_full=0 full_refused=true clear_noop_active=true clear_noop_stopped=true skips_dry_gt0=true | avail_after_refused=0 avail_stopped=512 avail_after_stop=512 skips_dry=128\n"
+  },
+  {
+   "row": "r99_audio_poly",
+   "rep": 1,
+   "tree": "f_audio",
+   "base": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS r99_audio poly voices=3 distinct=2 newest_tracked=true older_advanced=true all_playing=true playing=true | p1=0.2815420 p2=0.2815420 p3=0.2815420 p1b=0.5601814 p2b=0.5601814 p1c=0.8388209 player_read=0.2815419\n",
+   "cand": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS r99_audio poly voices=3 distinct=2 newest_tracked=true older_advanced=true all_playing=true playing=true | p1=0.3744218 p2=0.2815420 p3=0.2815420 p1b=0.6530612 p2b=0.5601814 p1c=0.9317007 player_read=0.2815419\n"
+  }
+ ],
+ "base_fail": [],
+ "cand_fail": [],
+ "verdict_flips": [],
+ "noisy_keys": {
+  "nav_lattice_census": [],
+  "nav_lattice_path": [],
+  "nav_lattice_query": [
+   "settle"
+  ],
+  "nav_lattice_sync": [
+   "ladder"
+  ],
+  "nav_lattice_region": [
+   "settle"
+  ],
+  "nav_lattice_agent": [
+   "first_reachable"
+  ],
+  "nav_lattice_avoid": [
+   "seq_a",
+   "seq_b",
+   "settle",
+   "sum_max",
+   "vel_a",
+   "vel_b"
+  ],
+  "nav_lattice_bake": [
+   "settle_a"
+  ],
+  "nav_lattice_link": [
+   "settle"
+  ],
+  "nav_lattice_teardown_crash": [],
+  "nav_lattice_teardown_clean": [],
+  "r98_canvas_census": [],
+  "r98_canvas_modulate": [],
+  "r98_canvas_queue": [],
+  "r98_canvas_draw_surface": [],
+  "r98_canvas_draw_refusal": [],
+  "r98_canvas_vis_chain": [],
+  "r98_canvas_clip": [],
+  "r98_canvas_zorder": [],
+  "r98_canvas_xform_skew": [],
+  "r98_canvas_xform_mirror": [],
+  "r98_canvas_xform_global": [],
+  "r98_canvas_notify": [],
+  "r98_canvas_draw_state": [],
+  "r98_canvas_redraw_triggers": [],
+  "r98_canvas_redraw_context": [],
+  "r98b_qflush_same_frame": [
+   "coalesce_draws",
+   "distinct_draw_pf",
+   "frames_with_tick",
+   "ticks_window"
+  ],
+  "r98b_qflush_suppress": [
+   "hide_span_pf"
+  ],
+  "r98b_qorder_tree": [
+   "stagger_off"
+  ],
+  "r98b_qorder_flat": [
+   "stagger",
+   "stagger_off"
+  ],
+  "r98b_latch_canon": [],
+  "r98b_latch_t1": [],
+  "r98b_latch_t3": [],
+  "r98b_latch_imm": [],
+  "r98b_latch_second": [],
+  "r98b_gskew": [],
+  "r98b_skewgrid": [],
+  "r98b_epssweep": [
+   "s"
+  ],
+  "r98b_clipmatrix": [],
+  "r98b_notifyphase": [],
+  "r98b_visphase": [],
+  "r98b_rksenum": [
+   "ctor",
+   "rks",
+   "t"
+  ],
+  "r99_audio_census": [],
+  "r99_audio_bus": [],
+  "r99_audio_autoplay": [],
+  "r99_audio_stoppos": [],
+  "r99_audio_peak_calib": [],
+  "r99_audio_mixblock": [
+   "block_jumps",
+   "jumps"
+  ],
+  "r99_audio_advance": [],
+  "r99_audio_finish": [
+   "fin_us"
+  ],
+  "r99_audio_loop_degenerate": [],
+  "r99_audio_loop_pts": [],
+  "r99_audio_gen": [],
+  "r99_audio_gen_peak": [],
+  "r99_audio_poly": [
+   "p1b",
+   "p1c",
+   "p2",
+   "p2b"
+  ],
+  "r99_audio_bus_peak": [
+   "pos_live"
+  ],
+  "r99_audio_p2d": [
+   "x800"
+  ],
+  "r99_audio_pan_law": [],
+  "r99_audio_gen2d": [],
+  "r99_audio_pause": []
+ },
+ "pinned_field_issues": []
+}

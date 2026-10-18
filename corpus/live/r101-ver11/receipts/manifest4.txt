@@ -1,0 +1,5 @@
+--- exe determinism
+cmp: corpus/live/r101-ver11/scratch/exportproj/out/prod_b.x86_64: No such file or directory
+cmp=differ
+d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63  corpus/live/r101-ver11/scratch/exportproj/out/prod.x86_64
+sha256sum: corpus/live/r101-ver11/scratch/exportproj/out/prod_b.x86_64: No such file or directory

@@ -1,0 +1,36 @@
+{
+ "base": {
+  "run_s": 1.51,
+  "exit": 0,
+  "cells": 14,
+  "full_pin_in_stdout": true,
+  "seq_in_stdout": true
+ },
+ "A_cursor_line_on_stderr": {
+  "run_s": 1.52,
+  "exit": 0,
+  "landed_cursor_pin_merged": true,
+  "full14_pin": false,
+  "cursor_in_stdout": false,
+  "cursor_in_stderr": true,
+  "stdout_pass_lines": 13,
+  "stderr_pass_lines": 1
+ },
+ "B_echo_full_transcript_plus_mfocus": {
+  "run_s": 1.5,
+  "exit": 0,
+  "block_matches_merged": true,
+  "block_plus_seq_matches_merged": true,
+  "landed_cursor_pin": true,
+  "pass_line_total": 28,
+  "focus_real_line": "PASS r100_gui focus f0 owner=F f_focus=1 g_focus=0 f1_key gui_f=[F:key(k=65,p=1)] gui_g=- in_f=[F:key(k=65,p=1)] f2_handled gui_f=[F:key(k=65,p=1)] gui_g=- f3_regrab gui_f=- gui_g=[G:key(k=65,p=1)] owner=G f4_released gui_f=- gui_g=- owner=null",
+  "closure_one_per_cell_would_reject": true
+ },
+ "C_timeout_expired_stdout_type": {
+  "elapsed_s": 3.01,
+  "type": "bytes",
+  "cr_present": true,
+  "repr": "b'Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\\n\\nPROBE_A\\r\\nPROB",
+  "note": "bytes path"
+ }
+}

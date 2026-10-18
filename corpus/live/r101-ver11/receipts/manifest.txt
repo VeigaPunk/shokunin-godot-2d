@@ -1,0 +1,25 @@
+2026-10-18T16:23:49-03:00
+load:  16:23:49 up 1 day, 16:24,  1 user,  load average: 54.78, 34.83, 19.86
+godot: 4.7.2.stable.arch_linux.ed1daf0bf
+--- r100b_seq baseline --clean=0
+reports/round-101/mutations/ver11_seqforgery.sh: line 22: bc: command not found
+seq_base_clean0 rc=0 secs= stdout_sha=bb1e76767fcd3bf08807cebca6ac7340c5029096793e838d0c6bf92029a95c83 stderr_sha=f7561237b69bab109c264b1c4c24dcca2373d23df1eac996f50c737a0c4f9c91
+--- r100b_seq baseline --clean=1
+reports/round-101/mutations/ver11_seqforgery.sh: line 22: bc: command not found
+seq_base_clean1 rc=0 secs= stdout_sha=2fc9a28f0dc2a44f4301d346ef46a81bfab87a6514bf21b070a9334412b0372a stderr_sha=2dc7981c9e2bc0650d133869dac10835b0c0b5defb7e3ec0ea87378a15d4efad
+--- r100b_seq FORGED (extra replay line) --clean=0
+reports/round-101/mutations/ver11_seqforgery.sh: line 22: bc: command not found
+seq_forged_clean0 rc=0 secs= stdout_sha=02dca2f8893f1daf4b800c8fbea60ae696b10bb62b34e2ec1a5f6ad087627a52 stderr_sha=aa17bc9edb54d3e654b98589aae94cfea30becaf12ed80dfb1316e68294b3bb3
+--- r100b_seq FORGED --clean=1
+reports/round-101/mutations/ver11_seqforgery.sh: line 22: bc: command not found
+seq_forged_clean1 rc=0 secs= stdout_sha=d99cdb39e8647f36b95c0df26b9f277c632e0eeab1203663e6b5ef01a5278895 stderr_sha=b7c45bc4faa66c2af3f53a58656811e251bf3231fde0e9c195ba32eea367497d
+--- offy dead-flag triple (r95b_order celloff)
+reports/round-101/mutations/ver11_seqforgery.sh: line 22: bc: command not found
+offy_1000 rc=0 secs= stdout_sha=36af4675fc0f24c47448d5d2c9f95142d744f1760e785d6327b878c2a2728f3b stderr_sha=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+reports/round-101/mutations/ver11_seqforgery.sh: line 22: bc: command not found
+offy_absent rc=0 secs= stdout_sha=e497f8b0e685f89da2035948b80b1e1071f7594e49c515db56a27679f0247fd7 stderr_sha=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+reports/round-101/mutations/ver11_seqforgery.sh: line 22: bc: command not found
+offy_999999 rc=0 secs= stdout_sha=e497f8b0e685f89da2035948b80b1e1071f7594e49c515db56a27679f0247fd7 stderr_sha=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+reports/round-101/mutations/ver11_seqforgery.sh: line 22: bc: command not found
+offy_x1000 rc=0 secs= stdout_sha=ef8c1977afb8be543530b95f8a522daa213a1e7add3c93ddbefd6f45ce0b4951 stderr_sha=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-10-18T16:24:05-03:00

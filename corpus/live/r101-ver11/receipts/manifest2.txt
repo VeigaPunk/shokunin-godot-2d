@@ -1,0 +1,7 @@
+2026-10-18T16:25:06-03:00
+load:  16:25:06 up 1 day, 16:25,  1 user,  load average: 57.46, 40.89, 23.25
+--- arm extra_pass: extra PASS-dialect cell line (mut01 forged_cell dialect)
+seq_extra_pass_clean0 rc=0 stdout_sha=f0f4d63c6031e8cfb025a5a374a375d33c12760c72e8f915427091d2eb64e424 stderr_sha=aa17bc9edb54d3e654b98589aae94cfea30becaf12ed80dfb1316e68294b3bb3
+--- arm substitute: pinned cursor line replaced by a forged value
+seq_subst_clean1 rc=0 stdout_sha=beb15f4dc6ec44b00a6f53b4873d969b44e89e91e9e125489060c98eeadcf566 stderr_sha=2dc7981c9e2bc0650d133869dac10835b0c0b5defb7e3ec0ea87378a15d4efad
+2026-10-18T16:25:09-03:00

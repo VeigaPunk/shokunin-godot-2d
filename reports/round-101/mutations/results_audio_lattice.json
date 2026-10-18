@@ -1,0 +1,1892 @@
+{
+ "r99_audio_census|f_all|1": {
+  "row": "r99_audio_census",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.68,
+  "stdout_sha": "b752a8d99f2435e0",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_census|base|1": {
+  "row": "r99_audio_census",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.788,
+  "stdout_sha": "b752a8d99f2435e0",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_census|f_audio|1": {
+  "row": "r99_audio_census",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 0.831,
+  "stdout_sha": "b752a8d99f2435e0",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_bus|base|1": {
+  "row": "r99_audio_bus",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.348,
+  "stdout_sha": "2de8ca68483ba294",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_bus|f_audio|1": {
+  "row": "r99_audio_bus",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.359,
+  "stdout_sha": "2de8ca68483ba294",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_bus|f_all|1": {
+  "row": "r99_audio_bus",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.396,
+  "stdout_sha": "2de8ca68483ba294",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_autoplay|base|1": {
+  "row": "r99_audio_autoplay",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=autoplay"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.027,
+  "stdout_sha": "678c1bf542e93b39",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_autoplay|f_audio|1": {
+  "row": "r99_audio_autoplay",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=autoplay"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.069,
+  "stdout_sha": "678c1bf542e93b39",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_autoplay|f_all|1": {
+  "row": "r99_audio_autoplay",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=autoplay"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.055,
+  "stdout_sha": "678c1bf542e93b39",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_stoppos|base|1": {
+  "row": "r99_audio_stoppos",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=stoppos"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.302,
+  "stdout_sha": "b34be5f1d310b81c",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_stoppos|f_audio|1": {
+  "row": "r99_audio_stoppos",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=stoppos"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.328,
+  "stdout_sha": "b34be5f1d310b81c",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_stoppos|f_all|1": {
+  "row": "r99_audio_stoppos",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=stoppos"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.315,
+  "stdout_sha": "b34be5f1d310b81c",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_mixblock|base|1": {
+  "row": "r99_audio_mixblock",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=mixblock"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.804,
+  "stdout_sha": "ea235e8ada307573",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_peak_calib|base|1": {
+  "row": "r99_audio_peak_calib",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=peak_calib"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 2.766,
+  "stdout_sha": "756fc336c1a2469e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_mixblock|f_all|1": {
+  "row": "r99_audio_mixblock",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=mixblock"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.784,
+  "stdout_sha": "ea235e8ada307573",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_mixblock|f_audio|1": {
+  "row": "r99_audio_mixblock",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=mixblock"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.911,
+  "stdout_sha": "ea235e8ada307573",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_peak_calib|f_audio|1": {
+  "row": "r99_audio_peak_calib",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=peak_calib"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 2.769,
+  "stdout_sha": "756fc336c1a2469e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_peak_calib|f_all|1": {
+  "row": "r99_audio_peak_calib",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=peak_calib"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 2.759,
+  "stdout_sha": "756fc336c1a2469e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_advance|f_audio|1": {
+  "row": "r99_audio_advance",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=advance"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.367,
+  "stdout_sha": "6c38157469dc4d52",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_advance|base|1": {
+  "row": "r99_audio_advance",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=advance"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.444,
+  "stdout_sha": "6c38157469dc4d52",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_advance|f_all|1": {
+  "row": "r99_audio_advance",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=advance"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.514,
+  "stdout_sha": "6c38157469dc4d52",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_finish|base|1": {
+  "row": "r99_audio_finish",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=finish"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.59,
+  "stdout_sha": "b8e90f949df81d43",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_finish|f_audio|1": {
+  "row": "r99_audio_finish",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=finish"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.576,
+  "stdout_sha": "2f0f1ca205c2c14c",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_finish|f_all|1": {
+  "row": "r99_audio_finish",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=finish"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.569,
+  "stdout_sha": "39ef18199b870cc4",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_degenerate|base|1": {
+  "row": "r99_audio_loop_degenerate",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_degenerate"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.591,
+  "stdout_sha": "0cb22865b869de0e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_degenerate|f_audio|1": {
+  "row": "r99_audio_loop_degenerate",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_degenerate"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.63,
+  "stdout_sha": "0cb22865b869de0e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_degenerate|f_all|1": {
+  "row": "r99_audio_loop_degenerate",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_degenerate"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.798,
+  "stdout_sha": "0cb22865b869de0e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_pts|f_all|1": {
+  "row": "r99_audio_loop_pts",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_pts"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.769,
+  "stdout_sha": "0b5507434e800b8f",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_pts|base|1": {
+  "row": "r99_audio_loop_pts",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_pts"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.836,
+  "stdout_sha": "0d7620bdd3cd8daa",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_pts|f_audio|1": {
+  "row": "r99_audio_loop_pts",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_pts"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.896,
+  "stdout_sha": "0b5507434e800b8f",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen_peak|base|1": {
+  "row": "r99_audio_gen_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen_peak"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.702,
+  "stdout_sha": "46c9eccf2c72a028",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen_peak|f_all|1": {
+  "row": "r99_audio_gen_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen_peak"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.601,
+  "stdout_sha": "46c9eccf2c72a028",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen_peak|f_audio|1": {
+  "row": "r99_audio_gen_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen_peak"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.682,
+  "stdout_sha": "46c9eccf2c72a028",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen|base|1": {
+  "row": "r99_audio_gen",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 2.421,
+  "stdout_sha": "6c561f863bb70d18",
+  "stderr_sha": "2282663993d87128",
+  "verdict": false
+ },
+ "r99_audio_gen|f_audio|1": {
+  "row": "r99_audio_gen",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 2.446,
+  "stdout_sha": "4a2a11fcad015341",
+  "stderr_sha": "c4ba4e9720140f1d",
+  "verdict": false
+ },
+ "r99_audio_gen|f_all|1": {
+  "row": "r99_audio_gen",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 2.286,
+  "stdout_sha": "6c561f863bb70d18",
+  "stderr_sha": "c4ba4e9720140f1d",
+  "verdict": false
+ },
+ "r99_audio_bus_peak|base|1": {
+  "row": "r99_audio_bus_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus_peak"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.637,
+  "stdout_sha": "dc3cac7f9057ff6e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_bus_peak|f_audio|1": {
+  "row": "r99_audio_bus_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus_peak"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.599,
+  "stdout_sha": "dc3cac7f9057ff6e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_poly|base|1": {
+  "row": "r99_audio_poly",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=poly"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.919,
+  "stdout_sha": "d444d9e423299537",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_bus_peak|f_all|1": {
+  "row": "r99_audio_bus_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus_peak"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.592,
+  "stdout_sha": "dc3cac7f9057ff6e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_poly|f_all|1": {
+  "row": "r99_audio_poly",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=poly"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 2.061,
+  "stdout_sha": "d444d9e423299537",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_poly|f_audio|1": {
+  "row": "r99_audio_poly",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=poly"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 2.125,
+  "stdout_sha": "1670cb99700dda9d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_p2d|base|1": {
+  "row": "r99_audio_p2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=p2d"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 4.208,
+  "stdout_sha": "d8ea201a3d4f8604",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_p2d|f_audio|1": {
+  "row": "r99_audio_p2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=p2d"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 4.241,
+  "stdout_sha": "d8ea201a3d4f8604",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_p2d|f_all|1": {
+  "row": "r99_audio_p2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=p2d"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 4.274,
+  "stdout_sha": "d8ea201a3d4f8604",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen2d|base|1": {
+  "row": "r99_audio_gen2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen2d"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.114,
+  "stdout_sha": "8b86aeb281067005",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen2d|f_audio|1": {
+  "row": "r99_audio_gen2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen2d"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.092,
+  "stdout_sha": "8b86aeb281067005",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen2d|f_all|1": {
+  "row": "r99_audio_gen2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen2d"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 1.109,
+  "stdout_sha": "8b86aeb281067005",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pan_law|base|1": {
+  "row": "r99_audio_pan_law",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pan_law"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 5.963,
+  "stdout_sha": "3ea08a0cedee6c7b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pan_law|f_audio|1": {
+  "row": "r99_audio_pan_law",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pan_law"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 5.95,
+  "stdout_sha": "3ea08a0cedee6c7b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pan_law|f_all|1": {
+  "row": "r99_audio_pan_law",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pan_law"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 5.913,
+  "stdout_sha": "3ea08a0cedee6c7b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_census|base|2": {
+  "row": "r99_audio_census",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.778,
+  "stdout_sha": "b752a8d99f2435e0",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_census|f_audio|2": {
+  "row": "r99_audio_census",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.782,
+  "stdout_sha": "b752a8d99f2435e0",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_census|f_all|2": {
+  "row": "r99_audio_census",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.822,
+  "stdout_sha": "b752a8d99f2435e0",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pause|base|1": {
+  "row": "r99_audio_pause",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pause"
+  ],
+  "tree": "base",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 2.249,
+  "stdout_sha": "26a17f605eb5e968",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pause|f_audio|1": {
+  "row": "r99_audio_pause",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pause"
+  ],
+  "tree": "f_audio",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 2.222,
+  "stdout_sha": "26a17f605eb5e968",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pause|f_all|1": {
+  "row": "r99_audio_pause",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pause"
+  ],
+  "tree": "f_all",
+  "rep": 1,
+  "rc": 0,
+  "err": null,
+  "dur": 2.181,
+  "stdout_sha": "26a17f605eb5e968",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_bus|base|2": {
+  "row": "r99_audio_bus",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.316,
+  "stdout_sha": "2de8ca68483ba294",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_bus|f_audio|2": {
+  "row": "r99_audio_bus",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.276,
+  "stdout_sha": "2de8ca68483ba294",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_bus|f_all|2": {
+  "row": "r99_audio_bus",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.272,
+  "stdout_sha": "2de8ca68483ba294",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_autoplay|base|2": {
+  "row": "r99_audio_autoplay",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=autoplay"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.979,
+  "stdout_sha": "678c1bf542e93b39",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_autoplay|f_audio|2": {
+  "row": "r99_audio_autoplay",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=autoplay"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.974,
+  "stdout_sha": "678c1bf542e93b39",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_autoplay|f_all|2": {
+  "row": "r99_audio_autoplay",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=autoplay"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 0.999,
+  "stdout_sha": "678c1bf542e93b39",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_stoppos|base|2": {
+  "row": "r99_audio_stoppos",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=stoppos"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.253,
+  "stdout_sha": "b34be5f1d310b81c",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_stoppos|f_audio|2": {
+  "row": "r99_audio_stoppos",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=stoppos"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.266,
+  "stdout_sha": "b34be5f1d310b81c",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_stoppos|f_all|2": {
+  "row": "r99_audio_stoppos",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=stoppos"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.281,
+  "stdout_sha": "b34be5f1d310b81c",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_mixblock|base|2": {
+  "row": "r99_audio_mixblock",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=mixblock"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.647,
+  "stdout_sha": "ce0102a17927cd52",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_peak_calib|base|2": {
+  "row": "r99_audio_peak_calib",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=peak_calib"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.622,
+  "stdout_sha": "756fc336c1a2469e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_mixblock|f_audio|2": {
+  "row": "r99_audio_mixblock",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=mixblock"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.639,
+  "stdout_sha": "ce0102a17927cd52",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_peak_calib|f_audio|2": {
+  "row": "r99_audio_peak_calib",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=peak_calib"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.599,
+  "stdout_sha": "756fc336c1a2469e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_peak_calib|f_all|2": {
+  "row": "r99_audio_peak_calib",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=peak_calib"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.578,
+  "stdout_sha": "756fc336c1a2469e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_mixblock|f_all|2": {
+  "row": "r99_audio_mixblock",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=mixblock"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.678,
+  "stdout_sha": "881da18dbbdde3a9",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_advance|base|2": {
+  "row": "r99_audio_advance",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=advance"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.292,
+  "stdout_sha": "6c38157469dc4d52",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_advance|f_audio|2": {
+  "row": "r99_audio_advance",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=advance"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.304,
+  "stdout_sha": "6176929b9dc7b7cc",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_advance|f_all|2": {
+  "row": "r99_audio_advance",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=advance"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.284,
+  "stdout_sha": "6176929b9dc7b7cc",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_finish|base|2": {
+  "row": "r99_audio_finish",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=finish"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.505,
+  "stdout_sha": "09fb31d783eb021d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_finish|f_audio|2": {
+  "row": "r99_audio_finish",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=finish"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.516,
+  "stdout_sha": "61891d8422cd2d41",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_finish|f_all|2": {
+  "row": "r99_audio_finish",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=finish"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.498,
+  "stdout_sha": "f910fa44b57f0cdc",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_degenerate|f_audio|2": {
+  "row": "r99_audio_loop_degenerate",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_degenerate"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.43,
+  "stdout_sha": "0cb22865b869de0e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_degenerate|base|2": {
+  "row": "r99_audio_loop_degenerate",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_degenerate"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.461,
+  "stdout_sha": "0cb22865b869de0e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_degenerate|f_all|2": {
+  "row": "r99_audio_loop_degenerate",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_degenerate"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.498,
+  "stdout_sha": "0cb22865b869de0e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_pts|base|2": {
+  "row": "r99_audio_loop_pts",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_pts"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.65,
+  "stdout_sha": "0d7620bdd3cd8daa",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_pts|f_audio|2": {
+  "row": "r99_audio_loop_pts",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_pts"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.653,
+  "stdout_sha": "0d7620bdd3cd8daa",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_pts|f_all|2": {
+  "row": "r99_audio_loop_pts",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_pts"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.65,
+  "stdout_sha": "0d7620bdd3cd8daa",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen_peak|base|2": {
+  "row": "r99_audio_gen_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen_peak"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.518,
+  "stdout_sha": "46c9eccf2c72a028",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen_peak|f_audio|2": {
+  "row": "r99_audio_gen_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen_peak"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.561,
+  "stdout_sha": "46c9eccf2c72a028",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen_peak|f_all|2": {
+  "row": "r99_audio_gen_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen_peak"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.555,
+  "stdout_sha": "46c9eccf2c72a028",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen|base|2": {
+  "row": "r99_audio_gen",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.245,
+  "stdout_sha": "6c561f863bb70d18",
+  "stderr_sha": "2282663993d87128",
+  "verdict": false
+ },
+ "r99_audio_gen|f_audio|2": {
+  "row": "r99_audio_gen",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.263,
+  "stdout_sha": "6c561f863bb70d18",
+  "stderr_sha": "c4ba4e9720140f1d",
+  "verdict": false
+ },
+ "r99_audio_gen|f_all|2": {
+  "row": "r99_audio_gen",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.249,
+  "stdout_sha": "6c561f863bb70d18",
+  "stderr_sha": "c4ba4e9720140f1d",
+  "verdict": false
+ },
+ "r99_audio_bus_peak|base|2": {
+  "row": "r99_audio_bus_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus_peak"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.538,
+  "stdout_sha": "9592fc3656a67278",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_poly|base|2": {
+  "row": "r99_audio_poly",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=poly"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.856,
+  "stdout_sha": "02f98ad8a67ca364",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_bus_peak|f_audio|2": {
+  "row": "r99_audio_bus_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus_peak"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.571,
+  "stdout_sha": "9592fc3656a67278",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_poly|f_audio|2": {
+  "row": "r99_audio_poly",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=poly"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.801,
+  "stdout_sha": "02f98ad8a67ca364",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_bus_peak|f_all|2": {
+  "row": "r99_audio_bus_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus_peak"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.571,
+  "stdout_sha": "9592fc3656a67278",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_poly|f_all|2": {
+  "row": "r99_audio_poly",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=poly"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.829,
+  "stdout_sha": "02f98ad8a67ca364",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_p2d|base|2": {
+  "row": "r99_audio_p2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=p2d"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 4.095,
+  "stdout_sha": "d8ea201a3d4f8604",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_p2d|f_all|2": {
+  "row": "r99_audio_p2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=p2d"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 4.092,
+  "stdout_sha": "d8ea201a3d4f8604",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_p2d|f_audio|2": {
+  "row": "r99_audio_p2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=p2d"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 4.109,
+  "stdout_sha": "d8ea201a3d4f8604",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen2d|base|2": {
+  "row": "r99_audio_gen2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen2d"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.133,
+  "stdout_sha": "8b86aeb281067005",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen2d|f_audio|2": {
+  "row": "r99_audio_gen2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen2d"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.107,
+  "stdout_sha": "8b86aeb281067005",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen2d|f_all|2": {
+  "row": "r99_audio_gen2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen2d"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 1.111,
+  "stdout_sha": "8b86aeb281067005",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pan_law|f_audio|2": {
+  "row": "r99_audio_pan_law",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pan_law"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 5.875,
+  "stdout_sha": "3ea08a0cedee6c7b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pan_law|base|2": {
+  "row": "r99_audio_pan_law",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pan_law"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 5.922,
+  "stdout_sha": "3ea08a0cedee6c7b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pan_law|f_all|2": {
+  "row": "r99_audio_pan_law",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pan_law"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 5.964,
+  "stdout_sha": "3ea08a0cedee6c7b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_census|f_all|3": {
+  "row": "r99_audio_census",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.71,
+  "stdout_sha": "b752a8d99f2435e0",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_autoplay|f_all|3": {
+  "row": "r99_audio_autoplay",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=autoplay"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 0.975,
+  "stdout_sha": "678c1bf542e93b39",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_bus|f_all|3": {
+  "row": "r99_audio_bus",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.274,
+  "stdout_sha": "2de8ca68483ba294",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pause|base|2": {
+  "row": "r99_audio_pause",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pause"
+  ],
+  "tree": "base",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.232,
+  "stdout_sha": "26a17f605eb5e968",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pause|f_audio|2": {
+  "row": "r99_audio_pause",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pause"
+  ],
+  "tree": "f_audio",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.248,
+  "stdout_sha": "26a17f605eb5e968",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pause|f_all|2": {
+  "row": "r99_audio_pause",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pause"
+  ],
+  "tree": "f_all",
+  "rep": 2,
+  "rc": 0,
+  "err": null,
+  "dur": 2.261,
+  "stdout_sha": "26a17f605eb5e968",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_stoppos|f_all|3": {
+  "row": "r99_audio_stoppos",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=stoppos"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.241,
+  "stdout_sha": "b34be5f1d310b81c",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_advance|f_all|3": {
+  "row": "r99_audio_advance",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=advance"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.304,
+  "stdout_sha": "6176929b9dc7b7cc",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_mixblock|f_all|3": {
+  "row": "r99_audio_mixblock",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=mixblock"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.617,
+  "stdout_sha": "ce0102a17927cd52",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_finish|f_all|3": {
+  "row": "r99_audio_finish",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=finish"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.469,
+  "stdout_sha": "55f97848aafe5f67",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_degenerate|f_all|3": {
+  "row": "r99_audio_loop_degenerate",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_degenerate"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.466,
+  "stdout_sha": "0cb22865b869de0e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_loop_pts|f_all|3": {
+  "row": "r99_audio_loop_pts",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=loop_pts"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.679,
+  "stdout_sha": "0d7620bdd3cd8daa",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_peak_calib|f_all|3": {
+  "row": "r99_audio_peak_calib",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=peak_calib"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 2.586,
+  "stdout_sha": "756fc336c1a2469e",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen_peak|f_all|3": {
+  "row": "r99_audio_gen_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen_peak"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.589,
+  "stdout_sha": "46c9eccf2c72a028",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_bus_peak|f_all|3": {
+  "row": "r99_audio_bus_peak",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=bus_peak"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.58,
+  "stdout_sha": "9592fc3656a67278",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_poly|f_all|3": {
+  "row": "r99_audio_poly",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=poly"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.856,
+  "stdout_sha": "1670cb99700dda9d",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_gen|f_all|3": {
+  "row": "r99_audio_gen",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 2.227,
+  "stdout_sha": "4a2a11fcad015341",
+  "stderr_sha": "c4ba4e9720140f1d",
+  "verdict": false
+ },
+ "r99_audio_gen2d|f_all|3": {
+  "row": "r99_audio_gen2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=gen2d"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 1.072,
+  "stdout_sha": "8b86aeb281067005",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pause|f_all|3": {
+  "row": "r99_audio_pause",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pause"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 2.094,
+  "stdout_sha": "489d05b5fad6f6a0",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_p2d|f_all|3": {
+  "row": "r99_audio_p2d",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=p2d"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 4.18,
+  "stdout_sha": "d8ea201a3d4f8604",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ },
+ "r99_audio_pan_law|f_all|3": {
+  "row": "r99_audio_pan_law",
+  "script": "audio_lattice.gd",
+  "flags": [
+   "--arm=pan_law"
+  ],
+  "tree": "f_all",
+  "rep": 3,
+  "rc": 0,
+  "err": null,
+  "dur": 5.936,
+  "stdout_sha": "3ea08a0cedee6c7b",
+  "stderr_sha": "e3b0c44298fc1c14",
+  "verdict": true
+ }
+}

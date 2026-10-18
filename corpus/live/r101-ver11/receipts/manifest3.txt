@@ -1,0 +1,22 @@
+2026-10-18T16:25:27-03:00
+load:  16:25:27 up 1 day, 16:25,  1 user,  load average: 61.38, 42.85, 24.27
+--- export-pack (PCK) run 1
+rc=0
+--- export-pack (PCK) run 2 (determinism)
+rc=0
+--- export-release (executable+embedded pack) run 1
+rc=0
+--- census
+prod1.pck    bytes=1816       sha256=75bb54582667ddb54dcc3b28e41a6a4a1cf94dfbbcc28e8ad30549e115665a6a magic=GDPC
+prod2.pck    bytes=1816       sha256=75bb54582667ddb54dcc3b28e41a6a4a1cf94dfbbcc28e8ad30549e115665a6a magic=GDPC
+prod.x86_64  bytes=73519416   sha256=d9f79ab89b5ae369aeed11c6052d402e8218cd503bf85b4a235f9c30c46a7c63 magic=^?ELF
+--- pck determinism (cmp prod1 vs prod2)
+cmp=identical
+--- main-pack launch receipt
+rc=0
+3:VER11_PACK_STARTED scene=main
+--- export output tail (row predicate tokens)
+18:[  50% ] [90m[1msavepack[22m | Storing File: res://.godot/uid_cache.bin[39m[0m
+19:[  50% ] [90m[1msavepack[22m | Storing File: res://project.binary[39m[0m
+20:[92m[ DONE ][39m [1msavepack[22m
+2026-10-18T16:25:37-03:00

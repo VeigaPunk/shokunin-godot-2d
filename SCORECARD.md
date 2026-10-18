@@ -10,7 +10,7 @@ quality rubric; a row count is a measurement, not a score or verdict.
 | calibration | unscored | `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-stream-attribution --probe-crash-exit --probe-timeout` → named non-author 81/81 PASS; `corpus/lessons/r56-pushframe-non-author.json`: after push+frame observer3→4/action stays true; after direct clear+next frame observer remains4/action false, numeric3/[6,3]/Value3 and focus/callback stable. All 71 prior tuples and nine opt-ins unchanged; separate fault and two omissions reject early. R55 omit-await ineffective, so no frame-necessity claim. Initial nil-observer author failure, critic wrong guard and verifier setup failures retained adverse; no HSlider internal consumption, OS timing or general provenance claim; work commit cited r56 report | r56 |
 
 planned: r64 (devin, ADMIT) — while-live signature gate tracked (poll()-gated read rejects forged post-death markers; primitive load-bearing; live-window forge defeated-by-construction). Next: forged-rejection dual (XConnector Arm 1 — post-death un-allowlisted ERROR: converts PASS→FAIL), stall-knee margins, kill(0)-trap lint. Prior: r63 (devin, ADMIT) — signature-spoof forgery boundary tracked (release forged PASS + hold forged-TIMEOUT; 10 discriminations; kernel ppid corroboration). Next: boundary-measured surfaces — transitive-depth forgery (depth-agnostic), startup-knee stochastic band (7.55–7.65@8s, size margins ≤7.4/≥7.9), while-live marker gate (XConnector proposal from 3d), zombie persistence; runner --runs relative-path trap (from 3d r72 verifier). Prior: r62 tracked pipe-EOF descendant-timeout surface (hold/detach arms + meta discriminations, reparenting-gated post-exit write); 94/94 non-author verified. Prior: r61 tracked spontaneous-crash classification: crash_spontaneous_sigabrt (−6 + exact ERROR-marker allowlist) + crash_self_sigkill (−9) CASES rows and meta probe_spontaneous_crash_classification (4 rejection discriminations + marker-presence clause, critic-driven); 92/92 verified non-author. Next: boundary-probed candidates — tree-timeout is a pipe-EOF wait misattributed to child liveness (no process-group kill, descendant orphans), startup-margin knee ∈(7.5,7.6]s under bound 8; port of 3d's tree-timeout mechanism is a proposed sibling import; other diagnostic shapes unprobed. Coverage: production-project launch, GUI/rendering, and other platforms remain unprobed. The relative-export-target failure is causally reproduced and both fixture export targets normalized at r25; historical r16/r20/r24 adverse and first r25 49/50 remain recorded, with production/general export reliability unproven.
-retired: none.
+retired: r95b_order_celloff_y1000 (r101 — unmeasured duplicate of celloff_x0; y=±1000 coverage lives in r101_ytrans_y1000/ym1000 + falsification cell ysep).
 
 
 ## Round 64 verdict — 2026-10-14
@@ -281,14 +281,44 @@ Sol `r76-adjudicator.md`: ADMIT-corr — deferred_abort admitted, destroy-edge l
 
 | r95 | game-dev-2d | DirectSpaceState2D query + order lattice | ADMIT-with-findings | 9cd47507 |
 
+## Round 101 verdict — 2026-10-18
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | +12 `export_prod` rows (PCK magic/size/census, zip EOCD, include/exclude filters, warm-warm determinism `byte_diff_count=0`, main-scene swap + `--main-pack` + `--quit-after`, remap/UID census, icon/UID, unknown-preset + templates-missing refusals); 12/12 PASS ×2 in-battery; `headless production export` capability entered below; counting: `grep -c '^PASS export_prod' <battery log>` = 12 both runs |
+| depth | **improved** | r100-critic F2 closed in-battery ×2: `r101_seqfull_clean/_noclean` 17-line/6.8 KB contiguous pins (SEQ_CENSUS identical=10 divergent_n=4 + SEQ_END sha256 digest); live forgery tests on committed bytes — interleaved-line (m_seq shape) REJECT via contiguity; content-splice REJECT via pin + digest (5be029c7->6b3b6704); non-author D2/D3/VER-5/6 corroboration; E12-verify 28/28 |
+| calibration | **improved** | r95b `--offy` dead-flag repair (retired unmeasured `r95b_order_celloff_y1000`; 6 rows + sha tripwire `r95b_offy_tokens=0`); F1 phase-invariant fold (measured pf=3-vs-64 bimodality, invariants held); F2 `cases_integrity` re-anchored to all results rows (run-2 meta all-True, dead_entry_count=0); F3 legacy `joys` host-conditional pins folded vs both phases' receipts |
+
+`r101-adjudicator.md` (orchestrator): ADMIT-WITH-FINDINGS. 64-seat swarm,
+opencode-go-7/deepseek-v4.1-flash, 60/64 (4 provider-400 casualties orphaned
+with scenarios covered). Bounded: r62 timeout-probe arm red both runs
+(round-unrelated host class); 3 legacy rows red under pre-fold pins, folded
+pins verified against their receipts; VER-13 dead-code + scout stale-cite
+census routed. Work commit ⟨COMMIT⟩.
+
+| r101 | game-dev-2d | export_prod capability + F2 replay pins + --offy repair | ADMIT-with-findings | ⟨COMMIT⟩ |
+
 ## Capabilities
 
 | Capability | What it can now do | Evidence pointer | First-working round |
 |---|---|---|---|
-| — none yet — | | | |
+| headless production export | build a production-shaped Godot 4.7.2 project to PCK / ZIP with the installed templates, census the pack (magic/EOCD/entries), prove warm-warm byte determinism, pin preset + templates-missing refusal classes, and run the product via `--main-pack` + `--quit-after` | `corpus/lessons/r101-export-capability.md` + `reports/round-101/r101-E0-spec.md` (12 rows, 12/12 PASS ×2 in-battery) | r101 |
 
 Rows enter only through a round that demonstrates the capability running (`AXES.md` §Capabilities); none enter through this rollout.
 
 ## Saturation
 
 The lane's saturation line and stagnation window N are to be declared by the lane on its next round per `AXES.md` §The stagnation nudge; not asserted by this conformance change.
+
+## Saturation (declared at r101, per the scorecard's owed declaration)
+
+An axis is *saturated at round R* when R's verdict for that axis is `unchanged`
+— no new mechanism class, no new pinned cell, no corrected pin. **Stagnation
+window N = 5**: five consecutive rounds with no `improved` verdict on any axis
+trigger the stagnation nudge. Rationale (r88–r101, 14 rounds): every round in
+the window returned `improved` on all three axes (r88 207→215 … r100 →509,
+r101 →528 CASES) — the stagnation count is 0 across the whole window, so N is
+declared as a conservative fleet default, not calibrated from history.
+Saturation is *plausible* on coverage of the in-engine headless 2D API; the
+export/build-product surface opened at r101 (C1) and non-headless/platform
+surfaces remain open — the lane is **not** saturated at r101.

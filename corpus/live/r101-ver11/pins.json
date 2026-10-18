@@ -1,0 +1,177 @@
+[
+ {
+  "name": "r100_gui_census",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=census']",
+  "exit": 0,
+  "evidence": "PASS r100_gui census dv=headless vpsize=(64.0, 64.0) final=(1.0000,0.0000;0.0000,1.0000;0.0000,0.0000) mf_ctrl=0 mf_label=2 mf_button=0 mf_panel=0 mf_container=1 focus_mode_ctrl=0 vpmethods=[push_input=1|push_unhandled_input=1|gui_get_focus_owner=1|gui_get_hovered_control=1|gui_is_dragging=1|gui_get_drag_data=1|gui_release_focus=1|set_input_as_handled=1|is_input_handled=1|get_mouse_position=1|warp_mouse=1|get_final_transform=1] ctrlmethods=[force_drag=1|accept_event=1|grab_focus=1|has_focus=1|release_focus=1|get_local_mouse_position=1|set_drag_preview=1] inputmethods=[warp_mouse=1|get_mouse_position=0|set_emulate_mouse_from_touch=1|is_emulating_mouse_from_touch=1|set_emulate_touch_from_mouse=1|is_emulating_touch_from_mouse=1|get_last_mouse_velocity=1|get_last_mouse_screen_velocity=1|parse_input_event=1|flush_buffered_events=1|is_mouse_button_pressed=1] emul_mouse=1 emul_touch=0 mbprops=[alt_pressed|button_index|button_mask|canceled|ctrl_pressed|device|double_click|factor|global_position|meta_pressed|position|pressed|resource_local_to_scene|resource_name|script|shift_pressed|window_id] mmprops=[alt_pressed|button_mask|ctrl_pressed|device|global_position|meta_pressed|pen_inverted|position|pressure|relative|resource_local_to_scene|resource_name|screen_relative|screen_velocity|script|shift_pressed|tilt|velocity|window_id] stprops=[canceled|device|double_tap|index|position|pressed|resource_local_to_scene|resource_name|script|window_id] sdprops=[device|index|pen_inverted|position|pressure|relative|resource_local_to_scene|resource_name|screen_relative|screen_velocity|script|tilt|velocity|window_id]"
+ },
+ {
+  "name": "r100_gui_routing",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=routing']",
+  "exit": 0,
+  "evidence": "PASS r100_gui routing s1_cc[[C:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|C:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]]- s2_ci[-][P:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|P:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)] s3_cp[[C:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|C:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]][P:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|P:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)] s4_ch[[C:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|C:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]]- s5_ci_pp[-][P:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|P:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)] s6_ii[-]- s7_inparent[-][P:mb(b=1,p=1,dc=0,bm=0,pos=24.0,24.0,gpos=24.0,24.0)|P:mb(b=1,p=0,dc=0,bm=0,pos=24.0,24.0,gpos=24.0,24.0)] s8_out[-]- s9_rb[-][P:mb(b=2,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)] s10_input_state held_push=0 cursor=(0.0, 0.0)"
+ },
+ {
+  "name": "r100_gui_hover",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=hover']",
+  "exit": 0,
+  "evidence": "PASS r100_gui hover h0=null h1=A ev=[A_in] h2=A ev=[A_in] h3=B ev=[A_in|A_out|B_in] h4=null ev=[A_in|A_out|B_in|B_out] h5=C ev=[A_in|A_out|B_in|B_out] h6_press=A ev=[A_in|A_out|B_in|B_out|A_in] h7_after_release=A"
+ },
+ {
+  "name": "r100_gui_motion",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=motion']",
+  "exit": 0,
+  "evidence": "PASS r100_gui motion m1[[S:mm(bm=0,pos=10.0,10.0,gpos=10.0,10.0,rel=5.0,7.0,vel=0.0,0.0)]] m2[[S:mm(bm=0,pos=20.0,30.0,gpos=20.0,30.0,rel=10.0,20.0,vel=0.0,0.0)]] m3_dc[[S:mb(b=1,p=1,dc=1,bm=0,pos=10.0,10.0,gpos=10.0,10.0)|S:mb(b=1,p=0,dc=0,bm=0,pos=10.0,10.0,gpos=10.0,10.0)]] m4_push_input_state held=0 cursor=(0.0, 0.0) vel=(0.0, 0.0)"
+ },
+ {
+  "name": "r100_gui_localpos",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=localpos']",
+  "exit": 0,
+  "evidence": "PASS r100_gui localpos lp_push_p[-] c[[C:mb(b=1,p=1,dc=0,bm=0,pos=6.0,2.0,gpos=30.0,14.0)]] loc_c=-24.0,-12.0 lp_push_local_p[-] c[[C:mb(b=1,p=1,dc=0,bm=0,pos=6.0,2.0,gpos=30.0,14.0)]] lp_parse_p[-] c[[C:mb(b=1,p=1,dc=0,bm=0,pos=6.0,2.0,gpos=30.0,14.0)]] loc_c=6.0,2.0 gloc_c=30.0,14.0"
+ },
+ {
+  "name": "r100_gui_cursor",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=cursor']",
+  "exit": 0,
+  "evidence": "PASS r100_gui cursor c0=(0.0, 0.0) c1_push_mm=(0.0, 0.0) c2_push_mb=(0.0, 0.0) c3_parse_mb=(24.0, 24.0) c4_parse_mm=(30.0, 30.0) c5_gpos_drives=(60.0, 60.0) c6_parse_st=(44.0, 44.0) c7_push_mm2=(44.0, 44.0) c8 ds=(0, 0)"
+ },
+ {
+  "name": "r100_gui_clip",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=clip']",
+  "exit": 0,
+  "evidence": "PASS r100_gui clip cp0_vis=[P: (0.0, 0.0), S: (64.0, 64.0)] cp_hover(62.0, 4.0)=ED cp_press(62.0, 4.0) in=- ed=[ED:mb(b=1,p=1,dc=0,bm=0,pos=2.0,4.0,gpos=62.0,4.0)] fa=- cp_hover(63.9, 4.0)=ED cp_press(63.9, 4.0) in=- ed=[ED:mb(b=1,p=1,dc=0,bm=0,pos=3.9,4.0,gpos=63.9,4.0)] fa=- cp_hover(64.0, 4.0)=null cp_press(64.0, 4.0) in=- ed=[ED:mb(b=1,p=1,dc=0,bm=0,pos=4.0,4.0,gpos=64.0,4.0)] fa=- cp_hover(64.1, 4.0)=null cp_press(64.1, 4.0) in=- ed=[ED:mb(b=1,p=1,dc=0,bm=0,pos=4.1,4.0,gpos=64.1,4.0)] fa=- cp_hover(70.0, 4.0)=null cp_press(70.0, 4.0) in=- ed=[ED:mb(b=1,p=1,dc=0,bm=0,pos=10.0,4.0,gpos=70.0,4.0)] fa=- cp_hover(90.0, 4.0)=null cp_press(90.0, 4.0) in=- ed=- fa=[FA:mb(b=1,p=1,dc=0,bm=0,pos=10.0,4.0,gpos=90.0,4.0)] cp_hover200=null"
+ },
+ {
+  "name": "r100_gui_drag",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=drag']",
+  "exit": 0,
+  "evidence": "PASS r100_gui drag d1_at_threshold drag=0 calls=0 d2_over_threshold drag=1 calls=1 data=fromA at=[(8.0,8.0)] d3_over_b drag=1 a_drop=[can(fromA)] b_drop=[can(fromA)] b_get=0 d4_over_b2 b_drop=[can(fromA)|can(fromA)] d5_release drag=0 b_drop=[can(fromA)|can(fromA)|can(fromA)|drop(fromA)] d6_unmasked_motion drag=0 calls=1 d7_accum[1:0 2:1 3:1 ] calls=2 d8_no_target drag=0 a_drop=[can(fromA)|can(fromA)|can(fromA)|can(fromA)|drop(fromA)|can(fromA)|can(fromA)|drop(fromA)] b_drop=[can(fromA)|can(fromA)|can(fromA)|drop(fromA)] d9_force drag=1 data=forced calls=0 d10_force_over_d d_drop=[can(forced)] d11_force_drop drag=0 d_drop=[can(forced)|can(forced)|drop(forced)] d12_nodrop drag=0 d_drop=[can(forced)|can(forced)|drop(forced)|can(no)]"
+ },
+ {
+  "name": "r100_gui_touch",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=touch']",
+  "exit": 0,
+  "evidence": "PASS r100_gui touch t1_push_a=- b=[B:st(i=0,p=1,dt=1,pos=4.0,4.0)] t2_pushdrag_a=- b=[B:sd(i=0,pos=-12.0,4.0,rel=-16.0,0.0)] t3_emul_touch held=1 a=[A:mb(b=1,p=1,dc=0,bm=1,pos=8.0,8.0,gpos=8.0,8.0)|A:st(i=0,p=1,dt=0,pos=8.0,8.0)] b=- emul=1 t4_emul_mouse a_gui=- a_in=[A:st(i=0,p=1,dt=0,pos=20.0,4.0)|A:mb(b=1,p=1,dc=0,bm=0,pos=20.0,4.0,gpos=20.0,4.0)] emul_t=1"
+ },
+ {
+  "name": "r100_gui_subvp",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=subvp']",
+  "exit": 0,
+  "evidence": "PASS r100_gui subvp v0_local=1 size=(64, 64) cursor=(0.0, 0.0) v1_sub[[S:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]] root=- v2_hovered=S cursor_sub=(8.0, 8.0) cursor_root=(0.0, 0.0) v3_root_push_sub[-] root=[R:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)] v4_cursors sub=(8.0, 8.0) root=(0.0, 0.0) v5_local_false local=0 s2=[[S2:mb(b=1,p=1,dc=0,bm=0,pos=12.0,12.0,gpos=12.0,12.0)]] cursor=(12.0, 12.0)"
+ },
+ {
+  "name": "r100_gui_warp",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=warp']",
+  "exit": 0,
+  "evidence": "PASS r100_gui warp w0 dv=headless cursor=(0.0, 0.0) ds_mouse=(0, 0) w1 after_push cursor=(0.0, 0.0) ds_mouse=(0, 0) w2 after_input_warp cursor=(0.0, 0.0) ds_mouse=(0, 0) w3 after_vp_warp cursor=(0.0, 0.0) ds_mouse=(0, 0) w4 mode=0"
+ },
+ {
+  "name": "r100_gui_focus",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=focus']",
+  "exit": 0,
+  "evidence": "PASS r100_gui focus f0 owner=F f_focus=1 g_focus=0 f1_key gui_f=[F:key(k=65,p=1)] gui_g=- in_f=[F:key(k=65,p=1)] f2_handled gui_f=[F:key(k=65,p=1)] gui_g=- f3_regrab gui_f=- gui_g=[G:key(k=65,p=1)] owner=G f4_released gui_f=- gui_g=- owner=null"
+ },
+ {
+  "name": "r100_gui_render",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=render']",
+  "exit": 0,
+  "evidence": "PASS r100_gui render r0 tex_cls=ViewportTexture size=(64.0, 64.0) r1 img_null=1 r2 adapter= rd_null=1 r3 method=forward_plus screens=0 ssize=(0, 0) win_size=(64, 64) r4 light sh=0 filt=0 smooth=0.0 blend=0 r5 gpu_capture=[P: (0.0, 0.0), S: (0.0, 0.0)]"
+ },
+ {
+  "name": "r100_gui_osmeta",
+  "script": "r100_gui.gd",
+  "flags": "['--arm=osmeta']",
+  "exit": 0,
+  "evidence": "PASS r100_gui osmeta Thread[e=1,m=7] Mutex[e=1,m=3] Semaphore[e=1,m=3] WorkerThreadPool[e=1,m=9] Time[e=1,m=21] os=Linux procs_gt0=1 wtp_has_thread_count=0"
+ },
+ {
+  "name": "r100b_phase_cursorphase",
+  "script": "r100b_phase.gd",
+  "flags": "['--arm=cursorphase']",
+  "exit": 0,
+  "evidence": "PASS r100b_phase cursorphase init=(0.0, 0.0) mm_imm=(0.0, 0.0) mm_flush=(20.0, 20.0) mm_f1=(20.0, 20.0) mm_f2=(20.0, 20.0) mb_imm=(20.0, 20.0) held=0 mb_flush=(24.0, 24.0) held=1 mb_f1=(24.0, 24.0) held=1 push_imm=(24.0, 24.0) push_f1=(24.0, 24.0) gpos_imm=(24.0, 24.0) gpos_f1=(52.0, 52.0) hovered=null"
+ },
+ {
+  "name": "r100b_phase_hoverphase",
+  "script": "r100b_phase.gd",
+  "flags": "['--arm=hoverphase']",
+  "exit": 0,
+  "evidence": "PASS r100b_phase hoverphase h0=null ev=- pf=0 h_imm=A ev=[in@0] h_f1=A ev=[in@0] h_f2=A ev=[in@0] leave_imm=null ev=[in@0|out@2] leave_f1=null ev=[in@0|out@2] press_imm=A press_f1=A rel_f1=A"
+ },
+ {
+  "name": "r100b_phase_dragphase",
+  "script": "r100b_phase.gd",
+  "flags": "['--arm=dragphase']",
+  "exit": 0,
+  "evidence": "PASS r100b_phase dragphase dp_multiframe[1:0 2:1 3:1 ] calls=1 dp_sameframe[1:0 2:1 3:1 ] calls=2 dp_sign_same drag=0 calls=0 dp_sign_multi mid=0 after=0 calls=0 dp_net16 drag=1 calls=1 dp_10p5 drag=1 calls=1 dp_small3 drag=1 calls=1 dp_rel_only drag=1 calls=1 dp_pos_only drag=0 calls=0 dp_pos_thresh at10=0 at11=0 calls=0"
+ },
+ {
+  "name": "r100b_phase_coalesce",
+  "script": "r100b_phase.gd",
+  "flags": "['--arm=coalesce']",
+  "exit": 0,
+  "evidence": "PASS r100b_phase coalesce p2_imm n=0 rel=(0.0, 0.0) log=- p2_flush n=1 rel=(20.0, 0.0) p2_f1 n=1 rel=(20.0, 0.0) log=[S:mm(bm=0,pos=20.0,10.0,gpos=20.0,10.0,rel=20.0,0.0,vel=0.0,0.0)] p2_sep imm n=1 p2_sep flush n=2 rel=(20.0, 0.0) log=[S:mm(bm=0,pos=30.0,10.0,gpos=30.0,10.0,rel=10.0,0.0,vel=0.0,0.0)|S:mm(bm=0,pos=40.0,10.0,gpos=40.0,10.0,rel=10.0,0.0,vel=0.0,0.0)] push2 imm n=2 rel=(20.0, 0.0) log=[S:mm(bm=0,pos=50.0,10.0,gpos=50.0,10.0,rel=10.0,0.0,vel=0.0,0.0)|S:mm(bm=0,pos=60.0,10.0,gpos=60.0,10.0,rel=10.0,0.0,vel=0.0,0.0)] push2_f1 n=2 rel=(20.0, 0.0)"
+ },
+ {
+  "name": "r100b_phase_velphase",
+  "script": "r100b_phase.gd",
+  "flags": "['--arm=velphase']",
+  "exit": 0,
+  "evidence": "PASS r100b_phase velphase v0_none=(0.0, 0.0) screen=(0.0, 0.0) v1_push=(0.0, 0.0) v2_parse_imm=(0.0, 0.0) screen=(0.0, 0.0) v3_f1=(0.0, 0.0) v4_f2=(0.0, 0.0) v5_parse2_imm=(0.0, 0.0) v6_f1=(0.0, 0.0)"
+ },
+ {
+  "name": "r100b_phase_flushpos",
+  "script": "r100b_phase.gd",
+  "flags": "['--arm=flushpos']",
+  "exit": 0,
+  "evidence": "PASS r100b_phase flushpos pre=(0.0, 0.0) pf=0 post_parse=(0.0, 0.0) after_await=(20.0, 20.0) log=[sig@1=(20.0, 20.0)] post_parse2=(20.0, 20.0) after_await2=(44.0, 44.0) log=[sig@1=(20.0, 20.0)|sig@2=(44.0, 44.0)] post_flush=(12.0, 12.0) after_await3=(12.0, 12.0) log=[sig@1=(20.0, 20.0)|sig@2=(44.0, 44.0)|sig@3=(12.0, 12.0)]"
+ },
+ {
+  "name": "r100b_phase_orderin",
+  "script": "r100b_phase.gd",
+  "flags": "['--arm=orderin']",
+  "exit": 0,
+  "evidence": "PASS r100b_phase orderin press[[i:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|g:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]] motion[[i:mm(bm=0,pos=12.0,12.0,gpos=12.0,12.0,rel=4.0,4.0,vel=0.0,0.0)|g:mm(bm=0,pos=12.0,12.0,gpos=12.0,12.0,rel=4.0,4.0,vel=0.0,0.0)]] key[[i:key(k=65,p=1)|g:key(k=65,p=1)]] touch[[i:st(i=0,p=1,dt=0,pos=8.0,8.0)|g:st(i=0,p=1,dt=0,pos=8.0,8.0)]] handled_press[[i:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|g:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]] two_in_frame[[i:mm(bm=0,pos=20.0,20.0,gpos=20.0,20.0,rel=8.0,8.0,vel=0.0,0.0)|g:mm(bm=0,pos=20.0,20.0,gpos=20.0,20.0,rel=8.0,8.0,vel=0.0,0.0)|i:mb(b=1,p=1,dc=0,bm=0,pos=20.0,20.0,gpos=20.0,20.0)|g:mb(b=1,p=1,dc=0,bm=0,pos=20.0,20.0,gpos=20.0,20.0)]]"
+ },
+ {
+  "name": "r100b_phase_dblclick",
+  "script": "r100b_phase.gd",
+  "flags": "['--arm=dblclick']",
+  "exit": 0,
+  "evidence": "PASS r100b_phase dblclick parsed_pair[[A:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|A:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|A:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|A:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]] pushed_pair[[A:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|A:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|A:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)|A:mb(b=1,p=0,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]] parsed_third[[A:mb(b=1,p=1,dc=0,bm=0,pos=8.0,8.0,gpos=8.0,8.0)]]"
+ },
+ {
+  "name": "r100b_emul_state",
+  "script": "r100b_emul.gd",
+  "flags": "[]",
+  "exit": 0,
+  "evidence": "PASS r100b_emul held0=0 emul_mouse=1 touch_press held=1 cursor=(44.0, 44.0) touch_release held=0 second_press held=1 cursor=(10.0, 10.0)"
+ },
+ {
+  "name": "r100b_seq_clean",
+  "script": "r100b_seq.gd",
+  "flags": "['--clean=1']",
+  "exit": 0,
+  "evidence": "PASS r100_gui cursor c0=(30.0, 14.0) c1_push_mm=(30.0, 14.0) c2_push_mb=(30.0, 14.0) c3_parse_mb=(24.0, 24.0) c4_parse_mm=(30.0, 30.0) c5_gpos_drives=(60.0, 60.0) c6_parse_st=(44.0, 44.0) c7_push_mm2=(44.0, 44.0) c8 ds=(0, 0)"
+ },
+ {
+  "name": "r100b_seq_noclean",
+  "script": "r100b_seq.gd",
+  "flags": "['--clean=0']",
+  "exit": 0,
+  "evidence": "PASS r100_gui hover h0=P h1=A ev=[A_in] h2=A ev=[A_in] h3=B ev=[A_in|A_out|B_in] h4=null ev=[A_in|A_out|B_in|B_out] h5=C ev=[A_in|A_out|B_in|B_out] h6_press=A ev=[A_in|A_out|B_in|B_out|A_in] h7_after_release=A"
+ }
+]

@@ -1,0 +1,26 @@
+--- a/corpus/fixtures/particles_lattice.gd
++++ b/corpus/fixtures/particles_lattice.gd
+@@ -50,7 +50,6 @@
+ #    emit_particle and capture_rect are unobservable (zero rect).
+ 
+ var PH := 0
+-var T0 := 0
+ 
+ func _arg(name: String, def: String = "") -> String:
+ 	for a in OS.get_cmdline_user_args():
+@@ -720,7 +719,6 @@
+ 	g3.one_shot = true
+ 	root.add_child(g3)
+ 	g3.emitting = true
+-	var start3: int = PH
+ 	await _wait_ph(10)
+ 	var r: Rect2 = g3.capture_rect()
+ 	out.append("capture[rect=(%.4f,%.4f,%.4f,%.4f) em_after=%s]" % [r.position.x, r.position.y, r.size.x, r.size.y, str(g3.emitting)])
+@@ -736,7 +734,6 @@
+ 		" | " + " ".join(out))
+ 
+ func _initialize() -> void:
+-	T0 = Time.get_ticks_usec()
+ 	physics_frame.connect(func(): PH += 1)
+ 	var arm := _arg("arm", "census")
+ 	match arm:

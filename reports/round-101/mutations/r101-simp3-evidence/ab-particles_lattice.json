@@ -1,0 +1,218 @@
+{
+ "r94_particles_cpu_lifetime": {
+  "base": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] l05[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] l1[delta=60 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] l05[delta=29 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] l1[delta=59 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=14 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] l05[delta=29 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] l1[delta=59 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] l05[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] l1[delta=60 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60]\n",
+    "stderr": ""
+   }
+  ],
+  "fold": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] l05[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] l1[delta=60 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=14 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] l05[delta=29 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] l1[delta=59 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=15 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] l05[delta=30 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] l1[delta=60 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_lifetime ok=true l01_ok=true l025_ok=true l05_ok=true l1_ok=true | l01[delta=6 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=6] l025[delta=14 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=15] l05[delta=29 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=30] l1[delta=59 n=1 em_fin=false ise_fin=false em_after=false ise_after=false os_after=true ph=60]\n",
+    "stderr": ""
+   }
+  ]
+ },
+ "r94_particles_cpu_pause": {
+  "base": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=5 n=1] pm_disabled[fin_after_enable=4 n=1] ts0[fin_after_restore=19 n=1]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=4 n=1] pm_disabled[fin_after_enable=4 n=1] ts0[fin_after_restore=19 n=1]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=5 n=1] pm_disabled[fin_after_enable=5 n=1] ts0[fin_after_restore=19 n=1]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=5 n=1] pm_disabled[fin_after_enable=5 n=1] ts0[fin_after_restore=20 n=1]\n",
+    "stderr": ""
+   }
+  ],
+  "fold": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=5 n=1] pm_disabled[fin_after_enable=5 n=1] ts0[fin_after_restore=20 n=1]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=5 n=1] pm_disabled[fin_after_enable=5 n=1] ts0[fin_after_restore=20 n=1]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=5 n=1] pm_disabled[fin_after_enable=5 n=1] ts0[fin_after_restore=19 n=1]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_pause ok=true vis_ok=true vis_parent_ok=true pm_disabled_ok=true ts0_ok=true | vis[fin_after_show=5 n=1] vis_parent[fin_after_show=5 n=1] pm_disabled[fin_after_enable=5 n=1] ts0[fin_after_restore=20 n=1]\n",
+    "stderr": ""
+   }
+  ]
+ },
+ "r94_particles_cpu_restart": {
+  "base": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=false | first_delta=15 second_after=15 n_fin=2\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=false | first_delta=15 second_after=14 n_fin=2\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=false | first_delta=15 second_after=15 n_fin=2\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=false | first_delta=15 second_after=15 n_fin=2\n",
+    "stderr": ""
+   }
+  ],
+  "fold": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=false | first_delta=15 second_after=15 n_fin=2\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=false | first_delta=15 second_after=15 n_fin=2\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=false | first_delta=15 second_after=15 n_fin=2\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice cpu_restart ok=true first_ok=true second_ok=true first_em=false first_ise=false em_after_restart=true ise_after_restart=true em_after=false | first_delta=15 second_after=15 n_fin=2\n",
+    "stderr": ""
+   }
+  ]
+ },
+ "r94_particles_gpu_headless": {
+  "base": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=1 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] capture[rect=(0.0000,0.0000,0.0000,0.0000) em_after=false]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=1 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] capture[rect=(0.0000,0.0000,0.0000,0.0000) em_after=false]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=1 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] capture[rect=(0.0000,0.0000,0.0000,0.0000) em_after=false]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=1 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] capture[rect=(0.0000,0.0000,0.0000,0.0000) em_after=false]\n",
+    "stderr": ""
+   }
+  ],
+  "fold": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=1 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] capture[rect=(0.0000,0.0000,0.0000,0.0000) em_after=false]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=1 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] capture[rect=(0.0000,0.0000,0.0000,0.0000) em_after=false]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=1 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] capture[rect=(0.0000,0.0000,0.0000,0.0000) em_after=false]\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS particles_lattice gpu_headless ok=true os_ok=true cont_ok=true manual_ok=true capture_ok=true | os[fin_delta=-1 n=0 flip_after=1 em_after=false ise_after=false] cont[fin_delta=-1 n=0 flip_after=-1 em_after=true ise_after=true] manual[fin_delta=-1 n=0 em_after=false] capture[rect=(0.0000,0.0000,0.0000,0.0000) em_after=false]\n",
+    "stderr": ""
+   }
+  ]
+ }
+}

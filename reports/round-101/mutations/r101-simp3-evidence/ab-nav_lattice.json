@@ -1,0 +1,326 @@
+{
+ "nav_lattice_path": {
+  "base": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000 settle=5 iter=3\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000 settle=5 iter=3\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000 settle=5 iter=3\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000 settle=5 iter=3\n",
+    "stderr": ""
+   }
+  ],
+  "fold": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000 settle=5 iter=3\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000 settle=5 iter=3\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000 settle=6 iter=3\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice path diag=[(20.0000,180.0000),(40.0000,40.0000),(180.0000,20.0000)] diag_raw=[(20.0000,180.0000),(40.0000,20.0000),(180.0000,20.0000)] same=[(20.0000,20.0000),(20.0000,20.0000)] out_start=[(0.0000,0.0000),(40.0000,8.8889),(90.0000,20.0000)] out_target=[(20.0000,20.0000),(40.0000,22.2222),(200.0000,40.0000)] gap=[(20.0000,20.0000),(40.0000,20.0000),(200.0000,20.0000)] closest_in=(20.0000,20.0000) closest_out=(0.0000,0.0000) owner_in_is_rv=true owner_out_is_rv=true gap20=[(20.0000,20.0000),(40.0000,20.0000),(205.0000,20.0000),(250.0000,20.0000)] gap20_reach=true gap20_margin=20.0000 settle=5 iter=3\n",
+    "stderr": ""
+   }
+  ]
+ },
+ "nav_lattice_sync": {
+  "base": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice sync pre_iter=0 pre_regions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=true dis_settled=false dis_same=true chg_iter_same=2 chg_iter_settled=3 gate=0 ladder=[f0:0/0/0,f1:0/0/0,f2:1/1/0,f3:1/1/0,f4:2/1/1,f5:2/1/1,f6:2/1/1,f7:2/1/1,f8:2/1/1,f9:2/1/1] first_reach=4 first_reach_sync=1\n",
+    "stderr": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.\n\tNavigationServer 'map_changed' signal can be used to receive update notifications.\n\tNavigationServer 'map_get_iteration_id()' can be used to check if a map has finished its newest iteration.\n   at: get_closest_point (modules/navigation_2d/nav_map_2d.cpp:165)\n   GDScript backtrace (most recent call first):\n       [0] _arm_sync (res://nav_lattice.gd:234)\n       [1] _initialize (res://nav_lattice.gd:142)\n"
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice sync pre_iter=0 pre_regions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=true dis_settled=false dis_same=true chg_iter_same=2 chg_iter_settled=3 gate=0 ladder=[f0:0/0/0,f1:0/0/0,f2:1/1/0,f3:1/1/0,f4:2/1/1,f5:2/1/1,f6:2/1/1,f7:2/1/1,f8:2/1/1,f9:2/1/1] first_reach=4 first_reach_sync=1\n",
+    "stderr": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.\n\tNavigationServer 'map_changed' signal can be used to receive update notifications.\n\tNavigationServer 'map_get_iteration_id()' can be used to check if a map has finished its newest iteration.\n   at: get_closest_point (modules/navigation_2d/nav_map_2d.cpp:165)\n   GDScript backtrace (most recent call first):\n       [0] _arm_sync (res://nav_lattice.gd:234)\n       [1] _initialize (res://nav_lattice.gd:142)\n"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice sync pre_iter=0 pre_regions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=true dis_settled=false dis_same=true chg_iter_same=2 chg_iter_settled=3 gate=0 ladder=[f0:0/0/0,f1:0/0/0,f2:0/0/0,f3:1/1/0,f4:1/1/0,f5:2/1/1,f6:2/1/1,f7:2/1/1,f8:2/1/1,f9:2/1/1] first_reach=5 first_reach_sync=1\n",
+    "stderr": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.\n\tNavigationServer 'map_changed' signal can be used to receive update notifications.\n\tNavigationServer 'map_get_iteration_id()' can be used to check if a map has finished its newest iteration.\n   at: get_closest_point (modules/navigation_2d/nav_map_2d.cpp:165)\n   GDScript backtrace (most recent call first):\n       [0] _arm_sync (res://nav_lattice.gd:234)\n       [1] _initialize (res://nav_lattice.gd:142)\n"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice sync pre_iter=0 pre_regions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=true dis_settled=false dis_same=true chg_iter_same=2 chg_iter_settled=3 gate=0 ladder=[f0:0/0/0,f1:0/0/0,f2:1/1/0,f3:1/1/0,f4:2/1/1,f5:2/1/1,f6:2/1/1,f7:2/1/1,f8:2/1/1,f9:2/1/1] first_reach=4 first_reach_sync=1\n",
+    "stderr": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.\n\tNavigationServer 'map_changed' signal can be used to receive update notifications.\n\tNavigationServer 'map_get_iteration_id()' can be used to check if a map has finished its newest iteration.\n   at: get_closest_point (modules/navigation_2d/nav_map_2d.cpp:165)\n   GDScript backtrace (most recent call first):\n       [0] _arm_sync (res://nav_lattice.gd:234)\n       [1] _initialize (res://nav_lattice.gd:142)\n"
+   }
+  ],
+  "fold": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice sync pre_iter=0 pre_regions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=true dis_settled=false dis_same=true chg_iter_same=2 chg_iter_settled=3 gate=0 ladder=[f0:0/0/0,f1:0/0/0,f2:1/1/0,f3:1/1/0,f4:2/1/1,f5:2/1/1,f6:2/1/1,f7:2/1/1,f8:2/1/1,f9:2/1/1] first_reach=4 first_reach_sync=1\n",
+    "stderr": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.\n\tNavigationServer 'map_changed' signal can be used to receive update notifications.\n\tNavigationServer 'map_get_iteration_id()' can be used to check if a map has finished its newest iteration.\n   at: get_closest_point (modules/navigation_2d/nav_map_2d.cpp:165)\n   GDScript backtrace (most recent call first):\n       [0] _arm_sync (res://nav_lattice.gd:233)\n       [1] _initialize (res://nav_lattice.gd:141)\n"
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice sync pre_iter=0 pre_regions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=true dis_settled=false dis_same=true chg_iter_same=2 chg_iter_settled=3 gate=0 ladder=[f0:0/0/0,f1:0/0/0,f2:1/1/0,f3:1/1/0,f4:2/1/1,f5:2/1/1,f6:2/1/1,f7:2/1/1,f8:2/1/1,f9:2/1/1] first_reach=4 first_reach_sync=1\n",
+    "stderr": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.\n\tNavigationServer 'map_changed' signal can be used to receive update notifications.\n\tNavigationServer 'map_get_iteration_id()' can be used to check if a map has finished its newest iteration.\n   at: get_closest_point (modules/navigation_2d/nav_map_2d.cpp:165)\n   GDScript backtrace (most recent call first):\n       [0] _arm_sync (res://nav_lattice.gd:233)\n       [1] _initialize (res://nav_lattice.gd:141)\n"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice sync pre_iter=0 pre_regions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=true dis_settled=false dis_same=true chg_iter_same=2 chg_iter_settled=3 gate=0 ladder=[f0:0/0/0,f1:0/0/0,f2:1/1/0,f3:1/1/0,f4:2/1/1,f5:2/1/1,f6:2/1/1,f7:2/1/1,f8:2/1/1,f9:2/1/1] first_reach=4 first_reach_sync=1\n",
+    "stderr": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.\n\tNavigationServer 'map_changed' signal can be used to receive update notifications.\n\tNavigationServer 'map_get_iteration_id()' can be used to check if a map has finished its newest iteration.\n   at: get_closest_point (modules/navigation_2d/nav_map_2d.cpp:165)\n   GDScript backtrace (most recent call first):\n       [0] _arm_sync (res://nav_lattice.gd:233)\n       [1] _initialize (res://nav_lattice.gd:141)\n"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice sync pre_iter=0 pre_regions=0 pre_path=[] pre_closest=(0.0000,0.0000) cellsize=1.0000 edgemargin=1.0000 linkradius=4.0000 merge_scale=0.1000 useedge=true async=true active_after=true chg_same=false chg_settled=true dis_settled=false dis_same=true chg_iter_same=2 chg_iter_settled=3 gate=0 ladder=[f0:0/0/0,f1:0/0/0,f2:1/1/0,f3:1/1/0,f4:2/1/1,f5:2/1/1,f6:2/1/1,f7:2/1/1,f8:2/1/1,f9:2/1/1] first_reach=4 first_reach_sync=1\n",
+    "stderr": "ERROR: NavigationServer navigation map query failed because it was made before first map synchronization.\n\tNavigationServer 'map_changed' signal can be used to receive update notifications.\n\tNavigationServer 'map_get_iteration_id()' can be used to check if a map has finished its newest iteration.\n   at: get_closest_point (modules/navigation_2d/nav_map_2d.cpp:165)\n   GDScript backtrace (most recent call first):\n       [0] _arm_sync (res://nav_lattice.gd:233)\n       [1] _initialize (res://nav_lattice.gd:141)\n"
+   }
+  ]
+ },
+ "nav_lattice_agent": {
+  "base": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice agent settled=(180.0000,180.0000)/false/true/false/226.27/226.27/1 fin=true reached=true reachable=true dist=2.2741 final_pos=(178.3920,178.3920) final_target=(180.0000,180.0000) path=[(20.0000,20.0000),(180.0000,180.0000)] desired=4.0 target_desired=8.0 walk_steps=28 reached_at=28 first_reachable=5\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice agent settled=(180.0000,180.0000)/false/true/false/226.27/226.27/1 fin=true reached=true reachable=true dist=2.2741 final_pos=(178.3920,178.3920) final_target=(180.0000,180.0000) path=[(20.0000,20.0000),(180.0000,180.0000)] desired=4.0 target_desired=8.0 walk_steps=28 reached_at=28 first_reachable=5\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice agent settled=(180.0000,180.0000)/false/true/false/226.27/226.27/1 fin=true reached=true reachable=true dist=2.2741 final_pos=(178.3920,178.3920) final_target=(180.0000,180.0000) path=[(20.0000,20.0000),(180.0000,180.0000)] desired=4.0 target_desired=8.0 walk_steps=28 reached_at=28 first_reachable=5\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice agent settled=(180.0000,180.0000)/false/true/false/226.27/226.27/1 fin=true reached=true reachable=true dist=2.2741 final_pos=(178.3920,178.3920) final_target=(180.0000,180.0000) path=[(20.0000,20.0000),(180.0000,180.0000)] desired=4.0 target_desired=8.0 walk_steps=28 reached_at=28 first_reachable=5\n",
+    "stderr": ""
+   }
+  ],
+  "fold": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice agent settled=(180.0000,180.0000)/false/true/false/226.27/226.27/1 fin=true reached=true reachable=true dist=2.2741 final_pos=(178.3920,178.3920) final_target=(180.0000,180.0000) path=[(20.0000,20.0000),(180.0000,180.0000)] desired=4.0 target_desired=8.0 walk_steps=28 reached_at=28 first_reachable=5\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice agent settled=(180.0000,180.0000)/false/true/false/226.27/226.27/1 fin=true reached=true reachable=true dist=2.2741 final_pos=(178.3920,178.3920) final_target=(180.0000,180.0000) path=[(20.0000,20.0000),(180.0000,180.0000)] desired=4.0 target_desired=8.0 walk_steps=28 reached_at=28 first_reachable=5\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice agent settled=(180.0000,180.0000)/false/true/false/226.27/226.27/1 fin=true reached=true reachable=true dist=2.2741 final_pos=(178.3920,178.3920) final_target=(180.0000,180.0000) path=[(20.0000,20.0000),(180.0000,180.0000)] desired=4.0 target_desired=8.0 walk_steps=28 reached_at=28 first_reachable=5\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice agent settled=(180.0000,180.0000)/false/true/false/226.27/226.27/1 fin=true reached=true reachable=true dist=2.2741 final_pos=(178.3920,178.3920) final_target=(180.0000,180.0000) path=[(20.0000,20.0000),(180.0000,180.0000)] desired=4.0 target_desired=8.0 walk_steps=28 reached_at=28 first_reachable=5\n",
+    "stderr": ""
+   }
+  ]
+ },
+ "nav_lattice_avoid": {
+  "base": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false seq_a=[13.755,0.000,13.812,0.000,13.884,0.000,13.884,0.000,13.884,0.000] seq_b=[-6.131,0.000,-6.044,0.000,-6.116,0.000,-6.116,0.000,-6.000,0.000] vel_a=(13.8838,0.0000) vel_b=(-6.0005,0.0000) sum_max=20.0000 settle=5\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false seq_a=[10.341,0.000,10.341,0.000,10.384,0.000,10.384,0.000,10.384,0.000] seq_b=[-9.659,0.000,-9.573,0.000,-9.616,0.000,-9.616,0.000,-9.530,0.000] vel_a=(10.3837,0.0000) vel_b=(-9.5298,0.0000) sum_max=20.0000 settle=6\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false seq_a=[10.485,0.000,10.485,0.000,10.528,0.000,10.583,0.000,10.583,0.000] seq_b=[-9.515,0.000,-9.428,0.000,-9.362,0.000,-9.417,0.000,-9.329,0.000] vel_a=(10.5830,0.0000) vel_b=(-9.3288,0.0000) sum_max=20.0000 settle=5\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false seq_a=[12.952,0.000,12.952,0.000,12.952,0.000,12.952,0.000,13.006,0.000] seq_b=[-7.048,0.000,-7.048,0.000,-7.048,0.000,-6.940,0.000,-6.994,0.000] vel_a=(13.0061,0.0000) vel_b=(-6.9939,0.0000) sum_max=20.0000 settle=5\n",
+    "stderr": ""
+   }
+  ],
+  "fold": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false seq_a=[10.430,0.000,10.485,0.000,10.542,0.000,10.542,0.000,10.586,0.000] seq_b=[-9.461,0.000,-9.401,0.000,-9.458,0.000,-9.370,0.000,-9.304,0.000] vel_a=(10.5857,0.0000) vel_b=(-9.3041,0.0000) sum_max=20.0000 settle=5\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false seq_a=[13.632,0.000,13.689,0.000,13.689,0.000,13.689,0.000,13.689,0.000] seq_b=[-6.254,0.000,-6.311,0.000,-6.311,0.000,-6.311,0.000,-6.197,0.000] vel_a=(13.6889,0.0000) vel_b=(-6.1971,0.0000) sum_max=20.0000 settle=5\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false seq_a=[10.304,0.000,10.304,0.000,10.304,0.000,10.347,0.000,10.347,0.000] seq_b=[-9.696,0.000,-9.696,0.000,-9.610,0.000,-9.653,0.000,-9.653,0.000] vel_a=(10.3473,0.0000) vel_b=(-9.6527,0.0000) sum_max=20.0000 settle=5\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice avoid pa=(150.0000,150.0000) pb=(190.0000,150.0000) warm_n_a=16 n_a=21 n_b=21 sum_bound_ok=true dirs_ok=true has_cb_a=true radius_a=10.0 maxspeed_a=50.0 obs_pos=(170.0000,150.0000) obs_en=false seq_a=[12.835,0.000,12.835,0.000,12.835,0.000,12.835,0.000,12.888,0.000] seq_b=[-7.165,0.000,-7.165,0.000,-7.165,0.000,-7.058,0.000,-6.977,0.000] vel_a=(12.8884,0.0000) vel_b=(-6.9775,0.0000) sum_max=20.0000 settle=5\n",
+    "stderr": ""
+   }
+  ]
+ },
+ "nav_lattice_bake": {
+  "base": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice bake outline_polys=4 outline_verts=8 hole_across=[(100.0000,20.0000),(140.0000,60.0000),(140.0000,140.0000),(100.0000,180.0000)] hole_straight=[(20.0000,100.0000),(60.0000,60.0000),(140.0000,60.0000),(180.0000,100.0000)] parse_obs=1 parse_trav=0 parse_has=false baked_polys=4 baked_verts=8 collider_only_polys=0 through=[(-100.0000,0.0000),(-55.0000,55.0000),(55.0000,55.0000),(100.0000,-0.0000)] around=[(-100.0000,-100.0000),(-55.0000,55.0000),(100.0000,100.0000)] outside=[(-145.0000,-145.0000),(-55.0000,55.0000),(100.0000,100.0000)] iter_b=2 settle_a=3 settle_b=1\n",
+    "stderr": "WARNING: Function make_polygons_from_outlines() is deprecated.\nUse NavigationServer2D.parse_source_geometry_data() and NavigationServer2D.bake_from_source_geometry_data() instead.\n     at: make_polygons_from_outlines (scene/resources/2d/navigation_polygon.cpp:316)\n     GDScript backtrace (most recent call first):\n         [0] _arm_bake (res://nav_lattice.gd:702)\n         [1] _initialize (res://nav_lattice.gd:148)\nERROR: The root node needs to be inside the SceneTree.\n   at: parse_source_geometry_data (modules/navigation_2d/2d/godot_navigation_server_2d.cpp:115)\n   GDScript backtrace (most recent call first):\n       [0] _arm_bake (res://nav_lattice.gd:724)\n       [1] _initialize (res://nav_lattice.gd:148)\n"
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice bake outline_polys=4 outline_verts=8 hole_across=[(100.0000,20.0000),(140.0000,60.0000),(140.0000,140.0000),(100.0000,180.0000)] hole_straight=[(20.0000,100.0000),(60.0000,60.0000),(140.0000,60.0000),(180.0000,100.0000)] parse_obs=1 parse_trav=0 parse_has=false baked_polys=4 baked_verts=8 collider_only_polys=0 through=[(-100.0000,0.0000),(-55.0000,55.0000),(55.0000,55.0000),(100.0000,-0.0000)] around=[(-100.0000,-100.0000),(-55.0000,55.0000),(100.0000,100.0000)] outside=[(-145.0000,-145.0000),(-55.0000,55.0000),(100.0000,100.0000)] iter_b=2 settle_a=3 settle_b=1\n",
+    "stderr": "WARNING: Function make_polygons_from_outlines() is deprecated.\nUse NavigationServer2D.parse_source_geometry_data() and NavigationServer2D.bake_from_source_geometry_data() instead.\n     at: make_polygons_from_outlines (scene/resources/2d/navigation_polygon.cpp:316)\n     GDScript backtrace (most recent call first):\n         [0] _arm_bake (res://nav_lattice.gd:702)\n         [1] _initialize (res://nav_lattice.gd:148)\nERROR: The root node needs to be inside the SceneTree.\n   at: parse_source_geometry_data (modules/navigation_2d/2d/godot_navigation_server_2d.cpp:115)\n   GDScript backtrace (most recent call first):\n       [0] _arm_bake (res://nav_lattice.gd:724)\n       [1] _initialize (res://nav_lattice.gd:148)\n"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice bake outline_polys=4 outline_verts=8 hole_across=[(100.0000,20.0000),(140.0000,60.0000),(140.0000,140.0000),(100.0000,180.0000)] hole_straight=[(20.0000,100.0000),(60.0000,60.0000),(140.0000,60.0000),(180.0000,100.0000)] parse_obs=1 parse_trav=0 parse_has=false baked_polys=4 baked_verts=8 collider_only_polys=0 through=[(-100.0000,0.0000),(-55.0000,55.0000),(55.0000,55.0000),(100.0000,-0.0000)] around=[(-100.0000,-100.0000),(-55.0000,55.0000),(100.0000,100.0000)] outside=[(-145.0000,-145.0000),(-55.0000,55.0000),(100.0000,100.0000)] iter_b=2 settle_a=3 settle_b=1\n",
+    "stderr": "WARNING: Function make_polygons_from_outlines() is deprecated.\nUse NavigationServer2D.parse_source_geometry_data() and NavigationServer2D.bake_from_source_geometry_data() instead.\n     at: make_polygons_from_outlines (scene/resources/2d/navigation_polygon.cpp:316)\n     GDScript backtrace (most recent call first):\n         [0] _arm_bake (res://nav_lattice.gd:702)\n         [1] _initialize (res://nav_lattice.gd:148)\nERROR: The root node needs to be inside the SceneTree.\n   at: parse_source_geometry_data (modules/navigation_2d/2d/godot_navigation_server_2d.cpp:115)\n   GDScript backtrace (most recent call first):\n       [0] _arm_bake (res://nav_lattice.gd:724)\n       [1] _initialize (res://nav_lattice.gd:148)\n"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice bake outline_polys=4 outline_verts=8 hole_across=[(100.0000,20.0000),(140.0000,60.0000),(140.0000,140.0000),(100.0000,180.0000)] hole_straight=[(20.0000,100.0000),(60.0000,60.0000),(140.0000,60.0000),(180.0000,100.0000)] parse_obs=1 parse_trav=0 parse_has=false baked_polys=4 baked_verts=8 collider_only_polys=0 through=[(-100.0000,0.0000),(-55.0000,55.0000),(55.0000,55.0000),(100.0000,-0.0000)] around=[(-100.0000,-100.0000),(-55.0000,55.0000),(100.0000,100.0000)] outside=[(-145.0000,-145.0000),(-55.0000,55.0000),(100.0000,100.0000)] iter_b=2 settle_a=3 settle_b=1\n",
+    "stderr": "WARNING: Function make_polygons_from_outlines() is deprecated.\nUse NavigationServer2D.parse_source_geometry_data() and NavigationServer2D.bake_from_source_geometry_data() instead.\n     at: make_polygons_from_outlines (scene/resources/2d/navigation_polygon.cpp:316)\n     GDScript backtrace (most recent call first):\n         [0] _arm_bake (res://nav_lattice.gd:702)\n         [1] _initialize (res://nav_lattice.gd:148)\nERROR: The root node needs to be inside the SceneTree.\n   at: parse_source_geometry_data (modules/navigation_2d/2d/godot_navigation_server_2d.cpp:115)\n   GDScript backtrace (most recent call first):\n       [0] _arm_bake (res://nav_lattice.gd:724)\n       [1] _initialize (res://nav_lattice.gd:148)\n"
+   }
+  ],
+  "fold": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice bake outline_polys=4 outline_verts=8 hole_across=[(100.0000,20.0000),(140.0000,60.0000),(140.0000,140.0000),(100.0000,180.0000)] hole_straight=[(20.0000,100.0000),(60.0000,60.0000),(140.0000,60.0000),(180.0000,100.0000)] parse_obs=1 parse_trav=0 parse_has=false baked_polys=4 baked_verts=8 collider_only_polys=0 through=[(-100.0000,0.0000),(-55.0000,55.0000),(55.0000,55.0000),(100.0000,-0.0000)] around=[(-100.0000,-100.0000),(-55.0000,55.0000),(100.0000,100.0000)] outside=[(-145.0000,-145.0000),(-55.0000,55.0000),(100.0000,100.0000)] iter_b=2 settle_a=3 settle_b=1\n",
+    "stderr": "WARNING: Function make_polygons_from_outlines() is deprecated.\nUse NavigationServer2D.parse_source_geometry_data() and NavigationServer2D.bake_from_source_geometry_data() instead.\n     at: make_polygons_from_outlines (scene/resources/2d/navigation_polygon.cpp:316)\n     GDScript backtrace (most recent call first):\n         [0] _arm_bake (res://nav_lattice.gd:701)\n         [1] _initialize (res://nav_lattice.gd:147)\nERROR: The root node needs to be inside the SceneTree.\n   at: parse_source_geometry_data (modules/navigation_2d/2d/godot_navigation_server_2d.cpp:115)\n   GDScript backtrace (most recent call first):\n       [0] _arm_bake (res://nav_lattice.gd:723)\n       [1] _initialize (res://nav_lattice.gd:147)\n"
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice bake outline_polys=4 outline_verts=8 hole_across=[(100.0000,20.0000),(140.0000,60.0000),(140.0000,140.0000),(100.0000,180.0000)] hole_straight=[(20.0000,100.0000),(60.0000,60.0000),(140.0000,60.0000),(180.0000,100.0000)] parse_obs=1 parse_trav=0 parse_has=false baked_polys=4 baked_verts=8 collider_only_polys=0 through=[(-100.0000,0.0000),(-55.0000,55.0000),(55.0000,55.0000),(100.0000,-0.0000)] around=[(-100.0000,-100.0000),(-55.0000,55.0000),(100.0000,100.0000)] outside=[(-145.0000,-145.0000),(-55.0000,55.0000),(100.0000,100.0000)] iter_b=2 settle_a=3 settle_b=1\n",
+    "stderr": "WARNING: Function make_polygons_from_outlines() is deprecated.\nUse NavigationServer2D.parse_source_geometry_data() and NavigationServer2D.bake_from_source_geometry_data() instead.\n     at: make_polygons_from_outlines (scene/resources/2d/navigation_polygon.cpp:316)\n     GDScript backtrace (most recent call first):\n         [0] _arm_bake (res://nav_lattice.gd:701)\n         [1] _initialize (res://nav_lattice.gd:147)\nERROR: The root node needs to be inside the SceneTree.\n   at: parse_source_geometry_data (modules/navigation_2d/2d/godot_navigation_server_2d.cpp:115)\n   GDScript backtrace (most recent call first):\n       [0] _arm_bake (res://nav_lattice.gd:723)\n       [1] _initialize (res://nav_lattice.gd:147)\n"
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice bake outline_polys=4 outline_verts=8 hole_across=[(100.0000,20.0000),(140.0000,60.0000),(140.0000,140.0000),(100.0000,180.0000)] hole_straight=[(20.0000,100.0000),(60.0000,60.0000),(140.0000,60.0000),(180.0000,100.0000)] parse_obs=1 parse_trav=0 parse_has=false baked_polys=4 baked_verts=8 collider_only_polys=0 through=[(-100.0000,0.0000),(-55.0000,55.0000),(55.0000,55.0000),(100.0000,-0.0000)] around=[(-100.0000,-100.0000),(-55.0000,55.0000),(100.0000,100.0000)] outside=[(-145.0000,-145.0000),(-55.0000,55.0000),(100.0000,100.0000)] iter_b=2 settle_a=3 settle_b=1\n",
+    "stderr": "WARNING: Function make_polygons_from_outlines() is deprecated.\nUse NavigationServer2D.parse_source_geometry_data() and NavigationServer2D.bake_from_source_geometry_data() instead.\n     at: make_polygons_from_outlines (scene/resources/2d/navigation_polygon.cpp:316)\n     GDScript backtrace (most recent call first):\n         [0] _arm_bake (res://nav_lattice.gd:701)\n         [1] _initialize (res://nav_lattice.gd:147)\nERROR: The root node needs to be inside the SceneTree.\n   at: parse_source_geometry_data (modules/navigation_2d/2d/godot_navigation_server_2d.cpp:115)\n   GDScript backtrace (most recent call first):\n       [0] _arm_bake (res://nav_lattice.gd:723)\n       [1] _initialize (res://nav_lattice.gd:147)\n"
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice bake outline_polys=4 outline_verts=8 hole_across=[(100.0000,20.0000),(140.0000,60.0000),(140.0000,140.0000),(100.0000,180.0000)] hole_straight=[(20.0000,100.0000),(60.0000,60.0000),(140.0000,60.0000),(180.0000,100.0000)] parse_obs=1 parse_trav=0 parse_has=false baked_polys=4 baked_verts=8 collider_only_polys=0 through=[(-100.0000,0.0000),(-55.0000,55.0000),(55.0000,55.0000),(100.0000,-0.0000)] around=[(-100.0000,-100.0000),(-55.0000,55.0000),(100.0000,100.0000)] outside=[(-145.0000,-145.0000),(-55.0000,55.0000),(100.0000,100.0000)] iter_b=2 settle_a=3 settle_b=1\n",
+    "stderr": "WARNING: Function make_polygons_from_outlines() is deprecated.\nUse NavigationServer2D.parse_source_geometry_data() and NavigationServer2D.bake_from_source_geometry_data() instead.\n     at: make_polygons_from_outlines (scene/resources/2d/navigation_polygon.cpp:316)\n     GDScript backtrace (most recent call first):\n         [0] _arm_bake (res://nav_lattice.gd:701)\n         [1] _initialize (res://nav_lattice.gd:147)\nERROR: The root node needs to be inside the SceneTree.\n   at: parse_source_geometry_data (modules/navigation_2d/2d/godot_navigation_server_2d.cpp:115)\n   GDScript backtrace (most recent call first):\n       [0] _arm_bake (res://nav_lattice.gd:723)\n       [1] _initialize (res://nav_lattice.gd:147)\n"
+   }
+  ]
+ },
+ "nav_lattice_link": {
+  "base": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice link bidir_default=true en_default=true fwd_default=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] rev_default=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] rev_bidir=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] fwd_disabled_settled=[(10.0000,50.0000),(100.0000,50.0000)] cost300=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] layer1=[(10.0000,50.0000),(100.0000,50.0000)] layer2=[] start=(100.0000,50.0000) end=(400.0000,50.0000) bidir=false en=true cost=1.0 enter=0.0 layers=2 fwd_disabled_same=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] settle=5 iter=5 link_iter=4\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice link bidir_default=true en_default=true fwd_default=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] rev_default=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] rev_bidir=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] fwd_disabled_settled=[(10.0000,50.0000),(100.0000,50.0000)] cost300=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] layer1=[(10.0000,50.0000),(100.0000,50.0000)] layer2=[] start=(100.0000,50.0000) end=(400.0000,50.0000) bidir=false en=true cost=1.0 enter=0.0 layers=2 fwd_disabled_same=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] settle=5 iter=5 link_iter=4\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice link bidir_default=true en_default=true fwd_default=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] rev_default=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] rev_bidir=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] fwd_disabled_settled=[(10.0000,50.0000),(100.0000,50.0000)] cost300=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] layer1=[(10.0000,50.0000),(100.0000,50.0000)] layer2=[] start=(100.0000,50.0000) end=(400.0000,50.0000) bidir=false en=true cost=1.0 enter=0.0 layers=2 fwd_disabled_same=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] settle=5 iter=5 link_iter=4\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice link bidir_default=true en_default=true fwd_default=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] rev_default=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] rev_bidir=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] fwd_disabled_settled=[(10.0000,50.0000),(100.0000,50.0000)] cost300=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] layer1=[(10.0000,50.0000),(100.0000,50.0000)] layer2=[] start=(100.0000,50.0000) end=(400.0000,50.0000) bidir=false en=true cost=1.0 enter=0.0 layers=2 fwd_disabled_same=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] settle=5 iter=5 link_iter=4\n",
+    "stderr": ""
+   }
+  ],
+  "fold": [
+   {
+    "rep": 0,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice link bidir_default=true en_default=true fwd_default=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] rev_default=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] rev_bidir=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] fwd_disabled_settled=[(10.0000,50.0000),(100.0000,50.0000)] cost300=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] layer1=[(10.0000,50.0000),(100.0000,50.0000)] layer2=[] start=(100.0000,50.0000) end=(400.0000,50.0000) bidir=false en=true cost=1.0 enter=0.0 layers=2 fwd_disabled_same=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] settle=5 iter=5 link_iter=4\n",
+    "stderr": ""
+   },
+   {
+    "rep": 1,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice link bidir_default=true en_default=true fwd_default=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] rev_default=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] rev_bidir=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] fwd_disabled_settled=[(10.0000,50.0000),(100.0000,50.0000)] cost300=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] layer1=[(10.0000,50.0000),(100.0000,50.0000)] layer2=[] start=(100.0000,50.0000) end=(400.0000,50.0000) bidir=false en=true cost=1.0 enter=0.0 layers=2 fwd_disabled_same=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] settle=5 iter=5 link_iter=4\n",
+    "stderr": ""
+   },
+   {
+    "rep": 2,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice link bidir_default=true en_default=true fwd_default=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] rev_default=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] rev_bidir=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] fwd_disabled_settled=[(10.0000,50.0000),(100.0000,50.0000)] cost300=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] layer1=[(10.0000,50.0000),(100.0000,50.0000)] layer2=[] start=(100.0000,50.0000) end=(400.0000,50.0000) bidir=false en=true cost=1.0 enter=0.0 layers=2 fwd_disabled_same=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] settle=5 iter=5 link_iter=4\n",
+    "stderr": ""
+   },
+   {
+    "rep": 3,
+    "rc": 0,
+    "stdout": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org\n\nPASS nav_lattice link bidir_default=true en_default=true fwd_default=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] rev_default=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] rev_bidir=[(490.0000,50.0000),(400.0000,50.0000),(100.0000,50.0000),(10.0000,50.0000)] fwd_disabled_settled=[(10.0000,50.0000),(100.0000,50.0000)] cost300=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] layer1=[(10.0000,50.0000),(100.0000,50.0000)] layer2=[] start=(100.0000,50.0000) end=(400.0000,50.0000) bidir=false en=true cost=1.0 enter=0.0 layers=2 fwd_disabled_same=[(10.0000,50.0000),(100.0000,50.0000),(400.0000,50.0000),(490.0000,50.0000)] settle=5 iter=5 link_iter=4\n",
+    "stderr": ""
+   }
+  ]
+ }
+}

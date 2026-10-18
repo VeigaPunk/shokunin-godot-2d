@@ -1,0 +1,18 @@
+--- a/corpus/fixtures/audio_lattice.gd
++++ b/corpus/fixtures/audio_lattice.gd
+@@ -158,7 +158,6 @@
+ 	var jumps: Array[float] = []
+ 	var wall: Array[float] = []
+ 	var prev := -1.0
+-	var prev_t := Time.get_ticks_usec()
+ 	var last_jump_t := Time.get_ticks_usec()
+ 	var frames := 0
+ 	while Time.get_ticks_usec() - t0 < 700000 and frames < 900:
+@@ -173,7 +172,6 @@
+ 			wall.append(float(now - last_jump_t) / 1000000.0)
+ 			last_jump_t = now
+ 		prev = pos
+-		prev_t = now
+ 	var period := AudioServer.get_time_since_last_mix() + AudioServer.get_time_to_next_mix()
+ 	var block := 4096.0 / 44100.0
+ 	var jmax := 0.0

@@ -1,0 +1,499 @@
+{
+ "receipts": {
+  "seq_base_clean1": {
+   "merged_sha256": "63e48ee1291bbe6541b9c4197d33200398e6105fa13720489aa0c088e5d4b52c",
+   "merged_lines": 23,
+   "pass_r100_gui_lines": 14,
+   "cells_in_order": [
+    "census",
+    "routing",
+    "hover",
+    "motion",
+    "localpos",
+    "cursor",
+    "clip",
+    "drag",
+    "touch",
+    "subvp",
+    "warp",
+    "focus",
+    "render",
+    "osmeta"
+   ]
+  },
+  "seq_base_clean0": {
+   "merged_sha256": "9b15512b78c5ab1d189acadf1b861b5f0a86488b378dc6447b04d128f08d31a4",
+   "merged_lines": 23,
+   "pass_r100_gui_lines": 14,
+   "cells_in_order": [
+    "census",
+    "routing",
+    "hover",
+    "motion",
+    "localpos",
+    "cursor",
+    "clip",
+    "drag",
+    "touch",
+    "subvp",
+    "warp",
+    "focus",
+    "render",
+    "osmeta"
+   ]
+  },
+  "seq_forged_clean1": {
+   "merged_sha256": "5f63f31c5f493cc1b3e28445ead44dabb5ecdb24d689793688566344a2b144b7",
+   "merged_lines": 24,
+   "pass_r100_gui_lines": 14,
+   "cells_in_order": [
+    "census",
+    "routing",
+    "hover",
+    "motion",
+    "localpos",
+    "cursor",
+    "clip",
+    "drag",
+    "touch",
+    "subvp",
+    "warp",
+    "focus",
+    "render",
+    "osmeta"
+   ]
+  },
+  "seq_forged_clean0": {
+   "merged_sha256": "f937c47d03db73eef454a9bd9bcbb46cac8ebfa4fad1afe8bf09c3ebcd5e5ab8",
+   "merged_lines": 24,
+   "pass_r100_gui_lines": 14,
+   "cells_in_order": [
+    "census",
+    "routing",
+    "hover",
+    "motion",
+    "localpos",
+    "cursor",
+    "clip",
+    "drag",
+    "touch",
+    "subvp",
+    "warp",
+    "focus",
+    "render",
+    "osmeta"
+   ]
+  },
+  "seq_extra_pass_clean0": {
+   "merged_sha256": "5d3c998075aad5e4e031a72514ca222d5cc4a3e6aaba4288fa6f7a39f3e3871d",
+   "merged_lines": 24,
+   "pass_r100_gui_lines": 15,
+   "cells_in_order": [
+    "census",
+    "routing",
+    "hover",
+    "hover",
+    "motion",
+    "localpos",
+    "cursor",
+    "clip",
+    "drag",
+    "touch",
+    "subvp",
+    "warp",
+    "focus",
+    "render",
+    "osmeta"
+   ]
+  },
+  "seq_subst_clean1": {
+   "merged_sha256": "540d887e7aa0b3db8eefa6b26c62be864e6932f77adf79717348ef782d669e87",
+   "merged_lines": 23,
+   "pass_r100_gui_lines": 14,
+   "cells_in_order": [
+    "census",
+    "routing",
+    "hover",
+    "motion",
+    "localpos",
+    "cursor",
+    "clip",
+    "drag",
+    "touch",
+    "subvp",
+    "warp",
+    "focus",
+    "render",
+    "osmeta"
+   ]
+  }
+ },
+ "divergence_census": {
+  "clean=1": {
+   "pinned_by_seq_row": "r100b_seq_clean",
+   "seq_row_pin_cell": "cursor",
+   "cells": {
+    "census": "identical",
+    "routing": "identical",
+    "hover": "identical",
+    "motion": "identical",
+    "localpos": "identical",
+    "cursor": {
+     "state": "diverges",
+     "first_diff_col": 25,
+     "replay": "gui cursor c0=(30.0, 14.0) c1_push_mm=(30.0, 14.0) c2_push_mb=(30.0, 1",
+     "fresh": "gui cursor c0=(0.0, 0.0) c1_push_mm=(0.0, 0.0) c2_push_mb=(0.0, 0.0) c"
+    },
+    "clip": "identical",
+    "drag": "identical",
+    "touch": {
+     "state": "diverges",
+     "first_diff_col": 151,
+     "replay": "ch held=1 a=[A:st(i=0,p=1,dt=0,pos=8.0,8.0)] b=- emul=1 t4_emul_mouse ",
+     "fresh": "ch held=1 a=[A:mb(b=1,p=1,dc=0,bm=1,pos=8.0,8.0,gpos=8.0,8.0)|A:st(i=0"
+    },
+    "subvp": {
+     "state": "diverges",
+     "first_diff_col": 177,
+     "replay": ") cursor_root=(20.0, 4.0) v3_root_push_sub[-] root=[R:mb(b=1,p=1,dc=0,",
+     "fresh": ") cursor_root=(0.0, 0.0) v3_root_push_sub[-] root=[R:mb(b=1,p=1,dc=0,b"
+    },
+    "warp": {
+     "state": "diverges",
+     "first_diff_col": 42,
+     "replay": "adless cursor=(20.0, 4.0) ds_mouse=(0, 0) w1 after_push cursor=(20.0, ",
+     "fresh": "adless cursor=(0.0, 0.0) ds_mouse=(0, 0) w1 after_push cursor=(0.0, 0."
+    },
+    "focus": "identical",
+    "render": "identical",
+    "osmeta": "identical"
+   },
+   "diverging": [
+    "cursor",
+    "touch",
+    "subvp",
+    "warp"
+   ],
+   "identical_count": 10
+  },
+  "clean=0": {
+   "pinned_by_seq_row": "r100b_seq_noclean",
+   "seq_row_pin_cell": "hover",
+   "cells": {
+    "census": "identical",
+    "routing": "identical",
+    "hover": {
+     "state": "diverges",
+     "first_diff_col": 23,
+     "replay": "0_gui hover h0=P h1=A ev=[A_in] h2=A ev=[A_in] h3=B ev=[A_in|A_out|B_i",
+     "fresh": "0_gui hover h0=null h1=A ev=[A_in] h2=A ev=[A_in] h3=B ev=[A_in|A_out|"
+    },
+    "motion": {
+     "state": "diverges",
+     "first_diff_col": 24,
+     "replay": "_gui motion m1[-] m2[-] m3_dc[-] m4_push_input_state held=0 cursor=(0.",
+     "fresh": "_gui motion m1[[S:mm(bm=0,pos=10.0,10.0,gpos=10.0,10.0,rel=5.0,7.0,vel"
+    },
+    "localpos": {
+     "state": "diverges",
+     "first_diff_col": 38,
+     "replay": "lp_push_p[-] c[-] loc_c=-24.0,-12.0 lp_push_local_p[-] c[[C:mb(b=1,p=1",
+     "fresh": "lp_push_p[-] c[[C:mb(b=1,p=1,dc=0,bm=0,pos=6.0,2.0,gpos=30.0,14.0)]] l"
+    },
+    "cursor": {
+     "state": "diverges",
+     "first_diff_col": 25,
+     "replay": "gui cursor c0=(30.0, 14.0) c1_push_mm=(30.0, 14.0) c2_push_mb=(30.0, 1",
+     "fresh": "gui cursor c0=(0.0, 0.0) c1_push_mm=(0.0, 0.0) c2_push_mb=(0.0, 0.0) c"
+    },
+    "clip": {
+     "state": "diverges",
+     "first_diff_col": 665,
+     "replay": ", 4.0) in=- ed=[ED:mb(b=1,p=1,dc=0,bm=0,pos=30.0,4.0,gpos=90.0,4.0)] f",
+     "fresh": ", 4.0) in=- ed=- fa=[FA:mb(b=1,p=1,dc=0,bm=0,pos=10.0,4.0,gpos=90.0,4."
+    },
+    "drag": {
+     "state": "diverges",
+     "first_diff_col": 73,
+     "replay": "threshold drag=0 calls=0 data=null at=- d3_over_b drag=0 a_drop=- b_dr",
+     "fresh": "threshold drag=1 calls=1 data=fromA at=[(8.0,8.0)] d3_over_b drag=1 a_"
+    },
+    "touch": {
+     "state": "diverges",
+     "first_diff_col": 151,
+     "replay": "ch held=1 a=[A:st(i=0,p=1,dt=0,pos=8.0,8.0)] b=- emul=1 t4_emul_mouse ",
+     "fresh": "ch held=1 a=[A:mb(b=1,p=1,dc=0,bm=1,pos=8.0,8.0,gpos=8.0,8.0)|A:st(i=0"
+    },
+    "subvp": {
+     "state": "diverges",
+     "first_diff_col": 177,
+     "replay": ") cursor_root=(20.0, 4.0) v3_root_push_sub[-] root=[R:mb(b=1,p=1,dc=0,",
+     "fresh": ") cursor_root=(0.0, 0.0) v3_root_push_sub[-] root=[R:mb(b=1,p=1,dc=0,b"
+    },
+    "warp": {
+     "state": "diverges",
+     "first_diff_col": 42,
+     "replay": "adless cursor=(20.0, 4.0) ds_mouse=(0, 0) w1 after_push cursor=(20.0, ",
+     "fresh": "adless cursor=(0.0, 0.0) ds_mouse=(0, 0) w1 after_push cursor=(0.0, 0."
+    },
+    "focus": "identical",
+    "render": "identical",
+    "osmeta": "identical"
+   },
+   "diverging": [
+    "hover",
+    "motion",
+    "localpos",
+    "cursor",
+    "clip",
+    "drag",
+    "touch",
+    "subvp",
+    "warp"
+   ],
+   "identical_count": 5
+  }
+ },
+ "predicates": {
+  "clean=1": {
+   "row": "r100b_seq_clean",
+   "block_sha256": "3bd85c74ea0d26934d7e5050c46914a615b1d75bd1a1b69fcea13621d9e75467",
+   "block_bytes": 6702,
+   "block_lines": 15,
+   "arms": {
+    "base/seq_base_clean1": {
+     "forgery": "control, unmutated fixture",
+     "verdicts": {
+      "landed_1line_pin": {
+       "verdict": "PASS",
+       "detail": null
+      },
+      "full_replay_block_pin": {
+       "verdict": "PASS",
+       "detail": null
+      },
+      "ordered_14cell_equality": {
+       "verdict": "PASS",
+       "detail": null
+      },
+      "line_multiset_equality": {
+       "verdict": "PASS",
+       "detail": {
+        "extra": []
+       }
+      },
+      "pass_line_count_14": {
+       "verdict": "PASS",
+       "detail": {
+        "pass_line_count": 14
+       }
+      }
+     },
+     "battery_stdout_prefix": "PASS r100b_seq_clean: exit=0 signature='PASS r100_gui cursor c0=(30.0, 14.0) c1_push_mm=(30.0, 14.0) c2...",
+     "postfix_stdout_prefix": "PASS r100b_seq_clean: exit=0 signature='PASS r100_gui census dv=headless vpsize=(64.0, 64.0) fi...(6702B)"
+    },
+    "forged_nopass/seq_forged_clean1": {
+     "forgery": "extra non-PASS line 'FORGED r100_gui cursor ...' after hover",
+     "verdicts": {
+      "landed_1line_pin": {
+       "verdict": "PASS",
+       "detail": null
+      },
+      "full_replay_block_pin": {
+       "verdict": "FAIL",
+       "detail": {
+        "first_mismatch_line": 0,
+        "expected": "PASS r100_gui census dv=headless vpsize=(64.0, 64.0) final=(1.0000,0.0000;0.0000,1.0000;0.0000,0.0000) mf_ctrl",
+        "actual": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org"
+       }
+      },
+      "ordered_14cell_equality": {
+       "verdict": "PASS",
+       "detail": null
+      },
+      "line_multiset_equality": {
+       "verdict": "PASS",
+       "detail": {
+        "extra": []
+       }
+      },
+      "pass_line_count_14": {
+       "verdict": "PASS",
+       "detail": {
+        "pass_line_count": 14
+       }
+      }
+     },
+     "battery_stdout_prefix": "PASS r100b_seq_clean: exit=0 signature='PASS r100_gui cursor c0=(30.0, 14.0) c1_push_mm=(30.0, 14.0) c2...",
+     "postfix_stdout_prefix": "FAIL r100b_seq_clean: exit=0 signature='PASS r100_gui census dv=headless vpsize=(64.0, 64.0) fi...(6702B)"
+    },
+    "substitute/seq_subst_clean1": {
+     "forgery": "pinned cursor-c0 value replaced (30.0,14.0)->(99.0,99.0)",
+     "verdicts": {
+      "landed_1line_pin": {
+       "verdict": "FAIL",
+       "detail": null
+      },
+      "full_replay_block_pin": {
+       "verdict": "FAIL",
+       "detail": {
+        "first_mismatch_line": 0,
+        "expected": "PASS r100_gui census dv=headless vpsize=(64.0, 64.0) final=(1.0000,0.0000;0.0000,1.0000;0.0000,0.0000) mf_ctrl",
+        "actual": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org"
+       }
+      },
+      "ordered_14cell_equality": {
+       "verdict": "FAIL",
+       "detail": null
+      },
+      "line_multiset_equality": {
+       "verdict": "FAIL",
+       "detail": {
+        "extra": [
+         "PASS r100_gui cursor c0=(99.0, 99.0) c1_push_mm=(30.0, 14.0) c2_push_m"
+        ]
+       }
+      },
+      "pass_line_count_14": {
+       "verdict": "PASS",
+       "detail": {
+        "pass_line_count": 14
+       }
+      }
+     },
+     "battery_stdout_prefix": "FAIL r100b_seq_clean: exit=0 signature='PASS r100_gui cursor c0=(30.0, 14.0) c1_push_mm=(30.0, 14.0) c2...",
+     "postfix_stdout_prefix": "FAIL r100b_seq_clean: exit=0 signature='PASS r100_gui census dv=headless vpsize=(64.0, 64.0) fi...(6702B)"
+    }
+   }
+  },
+  "clean=0": {
+   "row": "r100b_seq_noclean",
+   "block_sha256": "0975086d640305ed965bd517df7fa0e58c30c1c53aa85d9478c228649ad94138",
+   "block_bytes": 6177,
+   "block_lines": 15,
+   "arms": {
+    "base/seq_base_clean0": {
+     "forgery": "control, unmutated fixture",
+     "verdicts": {
+      "landed_1line_pin": {
+       "verdict": "PASS",
+       "detail": null
+      },
+      "full_replay_block_pin": {
+       "verdict": "PASS",
+       "detail": null
+      },
+      "ordered_14cell_equality": {
+       "verdict": "PASS",
+       "detail": null
+      },
+      "line_multiset_equality": {
+       "verdict": "PASS",
+       "detail": {
+        "extra": []
+       }
+      },
+      "pass_line_count_14": {
+       "verdict": "PASS",
+       "detail": {
+        "pass_line_count": 14
+       }
+      }
+     },
+     "battery_stdout_prefix": "PASS r100b_seq_noclean: exit=0 signature='PASS r100_gui hover h0=P h1=A ev=[A_in] h2=A ev=[A_in] h3=B ev=...",
+     "postfix_stdout_prefix": "PASS r100b_seq_noclean: exit=0 signature='PASS r100_gui census dv=headless vpsize=(64.0, 64.0) fi...(6177B)"
+    },
+    "forged_nopass/seq_forged_clean0": {
+     "forgery": "extra non-PASS line 'FORGED r100_gui cursor ...' after hover",
+     "verdicts": {
+      "landed_1line_pin": {
+       "verdict": "PASS",
+       "detail": null
+      },
+      "full_replay_block_pin": {
+       "verdict": "FAIL",
+       "detail": {
+        "first_mismatch_line": 0,
+        "expected": "PASS r100_gui census dv=headless vpsize=(64.0, 64.0) final=(1.0000,0.0000;0.0000,1.0000;0.0000,0.0000) mf_ctrl",
+        "actual": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org"
+       }
+      },
+      "ordered_14cell_equality": {
+       "verdict": "PASS",
+       "detail": null
+      },
+      "line_multiset_equality": {
+       "verdict": "PASS",
+       "detail": {
+        "extra": []
+       }
+      },
+      "pass_line_count_14": {
+       "verdict": "PASS",
+       "detail": {
+        "pass_line_count": 14
+       }
+      }
+     },
+     "battery_stdout_prefix": "PASS r100b_seq_noclean: exit=0 signature='PASS r100_gui hover h0=P h1=A ev=[A_in] h2=A ev=[A_in] h3=B ev=...",
+     "postfix_stdout_prefix": "FAIL r100b_seq_noclean: exit=0 signature='PASS r100_gui census dv=headless vpsize=(64.0, 64.0) fi...(6177B)"
+    },
+    "forged_pass/seq_extra_pass_clean0": {
+     "forgery": "extra PASS-dialect line 'PASS r100_gui hover FORGED_EXTRA_CELL_OUTPUT h0=P'",
+     "verdicts": {
+      "landed_1line_pin": {
+       "verdict": "PASS",
+       "detail": null
+      },
+      "full_replay_block_pin": {
+       "verdict": "FAIL",
+       "detail": {
+        "first_mismatch_line": 0,
+        "expected": "PASS r100_gui census dv=headless vpsize=(64.0, 64.0) final=(1.0000,0.0000;0.0000,1.0000;0.0000,0.0000) mf_ctrl",
+        "actual": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org"
+       }
+      },
+      "ordered_14cell_equality": {
+       "verdict": "FAIL",
+       "detail": null
+      },
+      "line_multiset_equality": {
+       "verdict": "FAIL",
+       "detail": {
+        "extra": [
+         "PASS r100_gui hover FORGED_EXTRA_CELL_OUTPUT h0=P"
+        ]
+       }
+      },
+      "pass_line_count_14": {
+       "verdict": "FAIL",
+       "detail": {
+        "pass_line_count": 15
+       }
+      }
+     },
+     "battery_stdout_prefix": "PASS r100b_seq_noclean: exit=0 signature='PASS r100_gui hover h0=P h1=A ev=[A_in] h2=A ev=[A_in] h3=B ev=...",
+     "postfix_stdout_prefix": "FAIL r100b_seq_noclean: exit=0 signature='PASS r100_gui census dv=headless vpsize=(64.0, 64.0) fi...(6177B)"
+    }
+   }
+  }
+ },
+ "offy": {
+  "pass_line_sha256": {
+   "offy_absent": "1eab873963cf1161f91e8ee10db68b36d2da4136a081b8e3e2771b68fa12acf5",
+   "offy_1000": "1eab873963cf1161f91e8ee10db68b36d2da4136a081b8e3e2771b68fa12acf5",
+   "offy_999999": "1eab873963cf1161f91e8ee10db68b36d2da4136a081b8e3e2771b68fa12acf5",
+   "offy_x1000": "afa038f6cea2c147009bc9f43263c94fd948cdf0329642bd3a5778f7a31eae8c"
+  },
+  "pass_line_identical_1000_vs_absent": true,
+  "pass_line_identical_999999_vs_absent": true,
+  "whole_output_identical_999999_vs_absent": true,
+  "whole_output_diff_1000_vs_absent": [
+   "R95B celloff env=tps=60 pf=65 proc=156 sep2d_has=true sep2d=false maxsteps=8"
+  ],
+  "off_x_pin_changes": true,
+  "fixture_offy_occurrences": 0,
+  "celloff_body_offy_occurrences": 0,
+  "row_definition": "run_battery.py:1004 flags=[--arm=celloff, --off=0, --offy=1000]"
+ }
+}

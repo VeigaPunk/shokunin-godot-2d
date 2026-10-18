@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/reports/round-101/mutations/mut02.py", line 226, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/reports/round-101/mutations/mut02.py", line 140, in main
+    real = pck.read_bytes()
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 777, in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'corpus/live/r101-ver11/mut02run/proj/out/prod.pck'
+mut02 rc=1

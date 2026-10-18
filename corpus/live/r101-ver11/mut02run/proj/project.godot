@@ -1,0 +1,7 @@
+config_version=5
+
+[application]
+
+config/name="r101-mut2-scratch"
+config/features=PackedStringArray("4.7")
+run/main_scene="res://main.tscn"

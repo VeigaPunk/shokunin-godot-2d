@@ -1223,3 +1223,38 @@
   Evidence: the org's Devin wiki index lists this repo's generated wiki;
   sibling lane READMEs carry the same `**Wiki:**` header.
   Documentation-only change; no round run, no axis moved.
+
+- ROUND 101 (2026-10-18): export_prod capability lattice + r100b full-replay
+  pins + --offy dead-flag repair. ADMIT-WITH-FINDINGS at ⟨COMMIT⟩ (+20 CASES,
+  CASES 509->528; r95b family 52->51 net +5; 20/20 new rows PASS in-battery
+  run 2, run 1 caught the phase fold pre-landing). 64-seat swarm on
+  opencode-go-7/deepseek-v4.1-flash (60/64; E3/E5/E6/E9 died on provider 400
+  reasoning_content error, fixtures orphaned with all scenarios covered by the
+  12 landed harness rows). Receipts: run 1 535 PASS/12 FAIL, run 2 540/7
+  (delta = the F1 fold + cases_integrity fix); r1<->r2 receipts byte-identical
+  modulo run-dir paths.
+- LAWS: warm-warm export determinism only (first cold export of an unimported
+  project is corrupt: 3672 B, bad ECFG header, non-loadable); offy!=0 child
+  order is phase-bimodal (settling order follows real-frame count: quiet pf=3
+  vs in-battery pf=64) — pin translation invariants, diagnose orders; the
+  order law at offy!=0 is a mode-envelope diagnostic, not a row pin (r87
+  api_press instance 2). cases_integrity existence must scan all run rows,
+  not census_rows (entry-less families vacuous-fail otherwise). Pack bytes are
+  root-path dependent (sha drifts across scratch roots) — pin sizes/magic/
+  census names/in-process byte compares, never cross-root shas. joys=N is a
+  live host-conditional token on this host NOW (/dev/input/js0,js1 enumerate
+  intermittently; in-battery joys=1 vs standalone joys=0, two runs each) —
+  3 legacy pins (r87/r89) folded to drop it; never pin device-census tokens.
+- FOLDS: F1 phase-invariant pins (y0/y1000/ym1000/ycop) + R101Y diagnostics;
+  F2 cases_integrity re-anchored to results; F3 legacy joys-token pins
+  (input_lattice_census, input_lattice_dev_joy, input89_edges_axisdev).
+- RETIRED: r95b_order_celloff_y1000 (unmeasured duplicate of celloff_x0 —
+  --offy occurred 0 times in r95b_order.gd; byte-identity reproduced).
+- ROUTED (r102+): export_prod_s03/s05/s06/s09 (+superseded s01/s02/s04/s07/
+  s08/s10/s11) companion fixtures in reports/round-101/mutations/
+  orphaned-fixtures/ (4 provider-orphaned, 7 design-superseded; register only
+  with fresh pins); export_preset_missing expected_errors dict entry is dead
+  code (inline-passed rows never consume it, VER-13); stale
+  .shokunin/game-dev-2d/corpus/ citations census (scout); r62 timeout-probe
+  hold_open_new_bound arm red in BOTH runs (deterministic host class, round-
+  unrelated); 3D side-round deferred via L0 (3D lane under parallel r104).

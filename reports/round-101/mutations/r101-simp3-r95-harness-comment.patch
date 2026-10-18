@@ -1,0 +1,13 @@
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -880,8 +880,8 @@
+     # Two probes, both byte-copies of the frozen lane artifacts:
+     #   dss_lattice.gd sha256
+-    #   77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627
++    #   c128e9ccf3b3f512c6bda0a11d52348b3a5936a5ea4a32ada78c85967b951b5f
+     #   (corpus/live/r95-scout/probes/dss_lattice.gd, identical bytes)
+     #   r95b_order.gd sha256
+-    #   4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490
++    #   b367559e831e5e9f9ab9e386591dd0035e24fb4e5ea2efc2c533e11aec2bdcf7
+     #   (corpus/live/r95-boundary/probes/r95b_order.gd, identical bytes)
+     # Boundary-surviving encoding (r95-boundary verdicts applied):

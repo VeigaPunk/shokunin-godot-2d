@@ -1,0 +1,130 @@
+--- a/corpus/fixtures/nav_lattice.gd
++++ b/corpus/fixtures/nav_lattice.gd
+@@ -53,7 +53,6 @@
+ #    navmesh silently.
+ #  - map_get_random_point() is random per call (not pinnable).
+ 
+-const SETTLE := 10
+ const SYNC_BOUND := 48
+ 
+ var _exit_code := 0
+@@ -848,11 +847,10 @@
+ func _arm_teardown_crash() -> void:
+ 	var map := _new_map()
+ 	var a := NavigationServer2D.agent_create()
+-	var hits: Array[Vector2] = []
+ 	NavigationServer2D.agent_set_map(a, map)
+ 	NavigationServer2D.agent_set_avoidance_enabled(a, true)
+-	NavigationServer2D.agent_set_avoidance_callback(a, func(v: Vector2) -> void:
+-		hits.append(v))
++	NavigationServer2D.agent_set_avoidance_callback(a, func(_v: Vector2) -> void:
++		pass)
+ 	await _await_frames(3)
+ 	print("NAV_LATTICE_TEARDOWN_CRASH armed=live_cb has_cb=",
+ 		NavigationServer2D.agent_has_avoidance_callback(a))
+@@ -868,11 +866,10 @@
+ func _arm_teardown_clean() -> void:
+ 	var map := _new_map()
+ 	var a := NavigationServer2D.agent_create()
+-	var hits: Array[Vector2] = []
+ 	NavigationServer2D.agent_set_map(a, map)
+ 	NavigationServer2D.agent_set_avoidance_enabled(a, true)
+-	NavigationServer2D.agent_set_avoidance_callback(a, func(v: Vector2) -> void:
+-		hits.append(v))
++	NavigationServer2D.agent_set_avoidance_callback(a, func(_v: Vector2) -> void:
++		pass)
+ 	await _await_frames(3)
+ 	NavigationServer2D.agent_set_avoidance_callback(a, Callable())
+ 	await _await_frames(1)
+--- a/corpus/fixtures/canvas_lattice.gd
++++ b/corpus/fixtures/canvas_lattice.gd
+@@ -100,14 +100,6 @@
+ func _col(c: Color) -> String:
+ 	return "%.4f,%.4f,%.4f,%.4f" % [c.r, c.g, c.b, c.a]
+ 
+-func _notif_keys(d: Dictionary) -> String:
+-	var keys: Array = []
+-	for k in d.keys():
+-		if int(d[k]) != 0:
+-			keys.append(int(k))
+-	keys.sort()
+-	return "[%s]" % ",".join(keys)
+-
+ # --------------------------------------------------------------- census
+ 
+ func _arm_census() -> void:
+@@ -123,11 +115,9 @@
+ 	for p in ClassDB.class_get_property_list("CanvasItem", true):
+ 		props.append(str(p.get("name")))
+ 	_it("props", ",".join(props))
+-	var methods: Array = []
+ 	var drawm: Array = []
+ 	for m in ClassDB.class_get_method_list("CanvasItem", true):
+ 		var nm := str(m.get("name"))
+-		methods.append(nm)
+ 		if nm.begins_with("draw_"):
+ 			drawm.append(nm)
+ 	_it("draw_n", str(drawm.size()))
+--- a/corpus/fixtures/r98b_attack.gd
++++ b/corpus/fixtures/r98b_attack.gd
+@@ -116,7 +116,6 @@
+ 
+ class QF:
+ 	extends Node2D
+-	var owner_ref
+ 	var q_pending := false
+ 	var q_every := false
+ 	var queue_from_draw := false
+@@ -141,10 +140,8 @@
+ class QH:
+ 	extends Node2D
+ 	var draws := 0
+-	var pfs: Array = []
+ 	func _draw() -> void:
+ 		draws += 1
+-		pfs.append(Engine.get_process_frames())
+ 
+ class QHC:
+ 	extends Node2D
+@@ -170,7 +167,6 @@
+ 
+ func _arm_qflush() -> void:
+ 	var t := QF.new()
+-	t.owner_ref = self
+ 	t.set_physics_process(true)
+ 	root.add_child(t)
+ 	await _frames(1)
+--- a/corpus/fixtures/r98b_rksenum.gd
++++ b/corpus/fixtures/r98b_rksenum.gd
+@@ -3,13 +3,10 @@
+ # claimed R*K*S product differs from the engine's Transform2D(r, s, k, p).
+ # Not part of the batch matrix; receipts land in runs/rksenum/.
+ 
+-var _items: PackedStringArray = []
+-
+ func _initialize() -> void:
+ 	_run.call_deferred()
+ 
+ func _it(key: String, value: String) -> void:
+-	_items.append("%s=%s" % [key, value])
+ 	print("R98BRKS %s=%s" % [key, value])
+ 
+ func _tm(t: Transform2D) -> String:
+--- a/corpus/fixtures/audio_lattice.gd
++++ b/corpus/fixtures/audio_lattice.gd
+@@ -158,7 +158,6 @@
+ 	var jumps: Array[float] = []
+ 	var wall: Array[float] = []
+ 	var prev := -1.0
+-	var prev_t := Time.get_ticks_usec()
+ 	var last_jump_t := Time.get_ticks_usec()
+ 	var frames := 0
+ 	while Time.get_ticks_usec() - t0 < 700000 and frames < 900:
+@@ -173,7 +172,6 @@
+ 			wall.append(float(now - last_jump_t) / 1000000.0)
+ 			last_jump_t = now
+ 		prev = pos
+-		prev_t = now
+ 	var period := AudioServer.get_time_since_last_mix() + AudioServer.get_time_to_next_mix()
+ 	var block := 4096.0 / 44100.0
+ 	var jmax := 0.0
