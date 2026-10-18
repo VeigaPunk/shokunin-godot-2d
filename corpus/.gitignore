@@ -16,3 +16,13 @@ live/**/*tree*/
 # bytecode caches (fixtures + live drivers) and Godot .godot/ project caches.
 **/__pycache__/
 **/.godot/
+# cleanup 2026-10-18: same regenerable class, names the tree/frozen rules
+# missed. r79-baseline/freeze alone re-entered history at 615 MB / 43.5k
+# files; these are round-local materializations, never evidence.
+live/**/freeze/
+live/**/scratch/
+live/**/*-scratch/
+live/**/measure-env/
+live/**/recovery-prior/
+live/**/baseline-tree/
+live/**/*.tar
