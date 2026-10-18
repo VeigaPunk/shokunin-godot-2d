@@ -1,0 +1,29 @@
+--- a/corpus/fixtures/canvas_lattice.gd
++++ b/corpus/fixtures/canvas_lattice.gd
+@@ -100,14 +100,6 @@
+ func _col(c: Color) -> String:
+ 	return "%.4f,%.4f,%.4f,%.4f" % [c.r, c.g, c.b, c.a]
+ 
+-func _notif_keys(d: Dictionary) -> String:
+-	var keys: Array = []
+-	for k in d.keys():
+-		if int(d[k]) != 0:
+-			keys.append(int(k))
+-	keys.sort()
+-	return "[%s]" % ",".join(keys)
+-
+ # --------------------------------------------------------------- census
+ 
+ func _arm_census() -> void:
+@@ -123,11 +115,9 @@
+ 	for p in ClassDB.class_get_property_list("CanvasItem", true):
+ 		props.append(str(p.get("name")))
+ 	_it("props", ",".join(props))
+-	var methods: Array = []
+ 	var drawm: Array = []
+ 	for m in ClassDB.class_get_method_list("CanvasItem", true):
+ 		var nm := str(m.get("name"))
+-		methods.append(nm)
+ 		if nm.begins_with("draw_"):
+ 			drawm.append(nm)
+ 	_it("draw_n", str(drawm.size()))

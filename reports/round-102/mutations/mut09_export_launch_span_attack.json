@@ -1,0 +1,337 @@
+{
+ "engine": "4.7.2.stable.arch_linux.ed1daf0bf",
+ "quit_after": 5,
+ "marker": "EXPORT_LAUNCH_READY scene=fixture",
+ "variants": {
+  "base": {
+   "inject": null,
+   "export": {
+    "cmd": [
+     "unshare",
+     "-m",
+     "--map-root-user",
+     "sh",
+     "-c",
+     "mount -t tmpfs tmpfs /tmp && exec godot --headless --path /var/tmp/r102-w8/base --export-debug \"Linux/X11\" /var/tmp/r102-w8/base/out/launch.x86_64"
+    ],
+    "exit": 0,
+    "binary": "/var/tmp/r102-w8/base/out/launch.x86_64",
+    "binary_size": 73705792,
+    "binary_sha256": "8adbfc9b4117e8ba30528d80e65a0529ab3dbaf39bca6292c2bd442c804750b3",
+    "log_tail": [
+     "[  50% ] \u001b[90m\u001b[1msavepack\u001b[22m | Storing File: res://project.binary\u001b[39m\u001b[0m",
+     "\u001b[92m[ DONE ]\u001b[39m \u001b[1msavepack\u001b[22m",
+     "\u001b[0m"
+    ]
+   },
+   "launch_exit": 0,
+   "deterministic_two_runs": true,
+   "stdout_sha256": "b089fc3f8b34d5d5856f08e8d900d37fad6dfda56e6709a2e9853ef6f65c3fe1",
+   "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "stdout_text": [
+    "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+    "",
+    "EXPORT_LAUNCH_READY scene=fixture",
+    "FRAME 1",
+    "FRAME 2",
+    "FRAME 3",
+    "FRAME 4",
+    "FRAME 5"
+   ],
+   "stderr_text": [],
+   "frames": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "foreign_lines_in_tail_window": [],
+   "extra_naive": false,
+   "extra_honest": false,
+   "stdout_nonempty_lines": 7,
+   "pin_marker_presence": true,
+   "pin_span_contiguous": true,
+   "digest_expected_only": "c7e263472afa716ab3208f4f32ce60b690db3bb810136e180d8a2e26b810eb08",
+   "digest_tail_window_raw": "c7e263472afa716ab3208f4f32ce60b690db3bb810136e180d8a2e26b810eb08",
+   "receipt_naive": "PASS export_launch s02 marker=ok frames=[1,2,3,4,5] extra=false exit=0",
+   "receipt_honest": "PASS export_launch s02 marker=ok frames=[1,2,3,4,5] extra=false exit=0",
+   "row_verdict": {
+    "pin_marker_only": true,
+    "pin_frames_vector_substring": true,
+    "pin_receipt_naive_extra_false": true,
+    "pin_receipt_honest_extra_false": true,
+    "pin_span_contiguous": true,
+    "pin_digest_expected_only_matches_base": true,
+    "pin_digest_tail_window_matches_base": true,
+    "pin_stdout_bytes_sha256_matches_base": true,
+    "pin_stdout_nonempty_count_matches_base": true
+   }
+  },
+  "A1": {
+   "inject": "A1",
+   "export": {
+    "cmd": [
+     "unshare",
+     "-m",
+     "--map-root-user",
+     "sh",
+     "-c",
+     "mount -t tmpfs tmpfs /tmp && exec godot --headless --path /var/tmp/r102-w8/A1 --export-debug \"Linux/X11\" /var/tmp/r102-w8/A1/out/launch.x86_64"
+    ],
+    "exit": 0,
+    "binary": "/var/tmp/r102-w8/A1/out/launch.x86_64",
+    "binary_size": 73705856,
+    "binary_sha256": "a80d381cc3ec5a6a20095bd018988de8f236e535fd86537c1b80002e0299abad",
+    "log_tail": [
+     "[  50% ] \u001b[90m\u001b[1msavepack\u001b[22m | Storing File: res://project.binary\u001b[39m\u001b[0m",
+     "\u001b[92m[ DONE ]\u001b[39m \u001b[1msavepack\u001b[22m",
+     "\u001b[0m"
+    ]
+   },
+   "launch_exit": 0,
+   "deterministic_two_runs": true,
+   "stdout_sha256": "adad5ae210b97404144297a6b904139a572c35cc44517e4e0787b6431be657ad",
+   "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "stdout_text": [
+    "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+    "",
+    "EXPORT_LAUNCH_READY scene=fixture",
+    "FRAME 1",
+    "FRAME 2",
+    "FOREIGN_EXTRA injected=into_span",
+    "FRAME 3",
+    "FRAME 4",
+    "FRAME 5"
+   ],
+   "stderr_text": [],
+   "frames": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "foreign_lines_in_tail_window": [
+    "FOREIGN_EXTRA injected=into_span"
+   ],
+   "extra_naive": false,
+   "extra_honest": true,
+   "stdout_nonempty_lines": 8,
+   "pin_marker_presence": true,
+   "pin_span_contiguous": false,
+   "digest_expected_only": "c7e263472afa716ab3208f4f32ce60b690db3bb810136e180d8a2e26b810eb08",
+   "digest_tail_window_raw": "799362b872ce4cf5c59a06c82c36cd58cc09b51da3f6f08e664bbe9e79dc48aa",
+   "receipt_naive": "PASS export_launch s02 marker=ok frames=[1,2,3,4,5] extra=false exit=0",
+   "receipt_honest": "PASS export_launch s02 marker=ok frames=[1,2,3,4,5] extra=true exit=0",
+   "row_verdict": {
+    "pin_marker_only": true,
+    "pin_frames_vector_substring": true,
+    "pin_receipt_naive_extra_false": true,
+    "pin_receipt_honest_extra_false": false,
+    "pin_span_contiguous": false,
+    "pin_digest_expected_only_matches_base": true,
+    "pin_digest_tail_window_matches_base": false,
+    "pin_stdout_bytes_sha256_matches_base": false,
+    "pin_stdout_nonempty_count_matches_base": false
+   }
+  },
+  "A2": {
+   "inject": "A2",
+   "export": {
+    "cmd": [
+     "unshare",
+     "-m",
+     "--map-root-user",
+     "sh",
+     "-c",
+     "mount -t tmpfs tmpfs /tmp && exec godot --headless --path /var/tmp/r102-w8/A2 --export-debug \"Linux/X11\" /var/tmp/r102-w8/A2/out/launch.x86_64"
+    ],
+    "exit": 0,
+    "binary": "/var/tmp/r102-w8/A2/out/launch.x86_64",
+    "binary_size": 73705856,
+    "binary_sha256": "f8b8f781a6af3cf2355bc6956a95ad4e720e74716f78b3f768783a4091a9691d",
+    "log_tail": [
+     "[  50% ] \u001b[90m\u001b[1msavepack\u001b[22m | Storing File: res://project.binary\u001b[39m\u001b[0m",
+     "\u001b[92m[ DONE ]\u001b[39m \u001b[1msavepack\u001b[22m",
+     "\u001b[0m"
+    ]
+   },
+   "launch_exit": 0,
+   "deterministic_two_runs": true,
+   "stdout_sha256": "a2095e39ed87a00192abc8134c4c0498affc873cd5425a321b70675fe68127e6",
+   "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "stdout_text": [
+    "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+    "",
+    "EXPORT_LAUNCH_READY scene=fixture",
+    "FRAME 1",
+    "FRAME 2",
+    "FRAME 3",
+    "FRAME 4",
+    "FRAME 5",
+    "FOREIGN_EXTRA injected=post_span"
+   ],
+   "stderr_text": [],
+   "frames": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "foreign_lines_in_tail_window": [
+    "FOREIGN_EXTRA injected=post_span"
+   ],
+   "extra_naive": false,
+   "extra_honest": true,
+   "stdout_nonempty_lines": 8,
+   "pin_marker_presence": true,
+   "pin_span_contiguous": true,
+   "digest_expected_only": "c7e263472afa716ab3208f4f32ce60b690db3bb810136e180d8a2e26b810eb08",
+   "digest_tail_window_raw": "5cb4f7611cf181da3852350a14478612156ae8fae0e683d30e996c1b3cb860d2",
+   "receipt_naive": "PASS export_launch s02 marker=ok frames=[1,2,3,4,5] extra=false exit=0",
+   "receipt_honest": "PASS export_launch s02 marker=ok frames=[1,2,3,4,5] extra=true exit=0",
+   "row_verdict": {
+    "pin_marker_only": true,
+    "pin_frames_vector_substring": true,
+    "pin_receipt_naive_extra_false": true,
+    "pin_receipt_honest_extra_false": false,
+    "pin_span_contiguous": true,
+    "pin_digest_expected_only_matches_base": true,
+    "pin_digest_tail_window_matches_base": false,
+    "pin_stdout_bytes_sha256_matches_base": false,
+    "pin_stdout_nonempty_count_matches_base": false
+   }
+  },
+  "A3": {
+   "inject": "A3",
+   "export": {
+    "cmd": [
+     "unshare",
+     "-m",
+     "--map-root-user",
+     "sh",
+     "-c",
+     "mount -t tmpfs tmpfs /tmp && exec godot --headless --path /var/tmp/r102-w8/A3 --export-debug \"Linux/X11\" /var/tmp/r102-w8/A3/out/launch.x86_64"
+    ],
+    "exit": 0,
+    "binary": "/var/tmp/r102-w8/A3/out/launch.x86_64",
+    "binary_size": 73705840,
+    "binary_sha256": "289e597b72dcc7d77ab158a2ce3e752847212bbd348adaa3b3284d95b7d6ef1e",
+    "log_tail": [
+     "[  50% ] \u001b[90m\u001b[1msavepack\u001b[22m | Storing File: res://project.binary\u001b[39m\u001b[0m",
+     "\u001b[92m[ DONE ]\u001b[39m \u001b[1msavepack\u001b[22m",
+     "\u001b[0m"
+    ]
+   },
+   "launch_exit": 0,
+   "deterministic_two_runs": true,
+   "stdout_sha256": "bf2a6bd67205183695a18465d8941978581215ab1cb8135ca97d3458dabf0466",
+   "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "stdout_text": [
+    "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+    "",
+    "FOREIGN_EXTRA injected=pre_span",
+    "EXPORT_LAUNCH_READY scene=fixture",
+    "FRAME 1",
+    "FRAME 2",
+    "FRAME 3",
+    "FRAME 4",
+    "FRAME 5"
+   ],
+   "stderr_text": [],
+   "frames": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "foreign_lines_in_tail_window": [],
+   "extra_naive": false,
+   "extra_honest": false,
+   "stdout_nonempty_lines": 8,
+   "pin_marker_presence": true,
+   "pin_span_contiguous": true,
+   "digest_expected_only": "c7e263472afa716ab3208f4f32ce60b690db3bb810136e180d8a2e26b810eb08",
+   "digest_tail_window_raw": "c7e263472afa716ab3208f4f32ce60b690db3bb810136e180d8a2e26b810eb08",
+   "receipt_naive": "PASS export_launch s02 marker=ok frames=[1,2,3,4,5] extra=false exit=0",
+   "receipt_honest": "PASS export_launch s02 marker=ok frames=[1,2,3,4,5] extra=false exit=0",
+   "row_verdict": {
+    "pin_marker_only": true,
+    "pin_frames_vector_substring": true,
+    "pin_receipt_naive_extra_false": true,
+    "pin_receipt_honest_extra_false": true,
+    "pin_span_contiguous": true,
+    "pin_digest_expected_only_matches_base": true,
+    "pin_digest_tail_window_matches_base": true,
+    "pin_stdout_bytes_sha256_matches_base": false,
+    "pin_stdout_nonempty_count_matches_base": false
+   }
+  }
+ },
+ "landed_fixture": {
+  "fixture": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/fixtures/export_launch_s02.gd",
+  "fixture_sha256": "3909882f2351c3bca893ffd3c6211b1c2f1eb9cae7dd6c16b73cabb4e0d509ac",
+  "pristine": {
+   "cmd": [
+    "/usr/bin/godot",
+    "--headless",
+    "--path",
+    "/var/tmp/r102-w8/fx/proj",
+    "--script",
+    "res://export_launch_s02.gd",
+    "--",
+    "--arm=embed"
+   ],
+   "exit": 0,
+   "seconds": 3.11,
+   "pass_lines": [
+    "PASS export_launch s02 arm=embed embed=true pck_sibling=false trailer_gdpc=true trailer_size_consistent=true pack_magic_at_start=true bin_gt_template=true quit_after=5 frames=[1,2,3,4,5] extra=false marker_lines=1 exit=0 bin_bytes=73521464 template_bytes=73519416 pack_bytes=2036 proj=/var/tmp/r102-w8/fx/root-pristine/embed/proj"
+   ],
+   "fail_lines": [],
+   "stderr_tail": [],
+   "foreign_in_run_log": false,
+   "run_log_span": [
+    "LAUNCH_S02_MARKER boot=true",
+    "LAUNCH_S02_FRAME 1",
+    "LAUNCH_S02_FRAME 2",
+    "LAUNCH_S02_FRAME 3",
+    "LAUNCH_S02_FRAME 4",
+    "LAUNCH_S02_FRAME 5"
+   ]
+  },
+  "attacked": {
+   "cmd": [
+    "/usr/bin/godot",
+    "--headless",
+    "--path",
+    "/var/tmp/r102-w8/fx/proj",
+    "--script",
+    "res://mut_s02.gd",
+    "--",
+    "--arm=embed"
+   ],
+   "exit": 0,
+   "seconds": 3.27,
+   "pass_lines": [
+    "PASS export_launch s02 arm=embed embed=true pck_sibling=false trailer_gdpc=true trailer_size_consistent=true pack_magic_at_start=true bin_gt_template=true quit_after=5 frames=[1,2,3,4,5] extra=false marker_lines=1 exit=0 bin_bytes=73521544 template_bytes=73519416 pack_bytes=2116 proj=/var/tmp/r102-w8/fx/root-mutant/embed/proj"
+   ],
+   "fail_lines": [],
+   "stderr_tail": [],
+   "foreign_in_run_log": true,
+   "run_log_span": [
+    "LAUNCH_S02_MARKER boot=true",
+    "LAUNCH_S02_FRAME 1",
+    "LAUNCH_S02_FRAME 2",
+    "FOREIGN_EXTRA injected=into_span",
+    "LAUNCH_S02_FRAME 3",
+    "LAUNCH_S02_FRAME 4",
+    "LAUNCH_S02_FRAME 5"
+   ]
+  },
+  "pinned_region_identical": true,
+  "attack_lands": true
+ }
+}

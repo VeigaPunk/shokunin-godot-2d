@@ -1,0 +1,38 @@
+diff --git a/corpus/fixtures/run_battery.py b/corpus/fixtures/run_battery.py
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -5369,18 +5369,31 @@
+             return record
+ 
+         old_positive = bounded_run("slow_clean_old_bound", ["--delay-clean"], old_timeout_seconds)
+         new_positive = bounded_run("slow_clean_new_bound", ["--delay-clean"], timeout_seconds)
+         hold_open = bounded_run("hold_open_new_bound", ["--hold-open"], timeout_seconds)
+-        probe_results = [old_positive, new_positive, hold_open]
+-        old_rejects = (old_positive["timed_out"] and old_positive["marker_observed"]
+-                       and old_positive["inner_classification"] is False
+-                       and old_positive["direct_child_alive_after_cleanup"] is False)
++        # r102-D4: the 0.75s bound and the marker print both sit inside the
++        # engine-startup latency band (measured 0.63-0.80s, loadavg 8-18;
++        # r101 runs at loadavg ~40 measured startup > bound). The marker
++        # clause is host-latency-conditional, so gate it on an in-run
++        # measurement of the startup floor instead of on a fixed constant.
++        clean_baseline = bounded_run("clean_baseline", [], timeout_seconds)
++        probe_results = [old_positive, new_positive, hold_open, clean_baseline]
++        marker_requirable = clean_baseline["elapsed_seconds"] < old_timeout_seconds
++        old_rejects = (old_positive["timed_out"]
++                       and old_positive["inner_classification"] is False
++                       and old_positive["direct_child_alive_after_cleanup"] is False
++                       and (old_positive["marker_observed"] or not marker_requirable))
+         new_accepts = (not new_positive["timed_out"] and new_positive["actual_exit"] == expected_exit
+                        and new_positive["marker_observed"]
+                        and new_positive["inner_classification"] is True)
+@@ -5388,6 +5401,9 @@
+                          "constants": {"old_timeout_seconds": old_timeout_seconds,
+                                        "measured_delay_seconds": measured_delay_seconds,
+                                        "new_timeout_seconds": timeout_seconds,
+                                        "cleanup_seconds": cleanup_seconds},
++                         "startup_floor_seconds": clean_baseline["elapsed_seconds"],
++                         "marker_requirable": marker_requirable,
++                         "old_marker_within_bound": old_positive["marker_observed"],
+                          "bounded_claim": "controlled delayed clean startup is rejected by old bound and accepted by new bound; hold-open marker still times out; direct child cleanup only",
+                          "verdict": "PASS" if meta_pass else "FAIL"}

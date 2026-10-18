@@ -412,7 +412,6 @@ func _arm_warm() -> void:
 func _arm_free() -> void:
 	var made := _pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
 	await _frames(2)
-	var dss := _dss()
 	var by_tag := {}
 	for b in made:
 		by_tag[str(b.get_meta("tag"))] = b
@@ -452,7 +451,6 @@ func _arm_free() -> void:
 func _arm_readd() -> void:
 	var made := _pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
 	await _frames(2)
-	var dss := _dss()
 	var by_tag := {}
 	for b in made:
 		by_tag[str(b.get_meta("tag"))] = b
@@ -527,7 +525,7 @@ func _arm_cap40() -> void:
 
 func _arm_layers() -> void:
 	var k := _opt_int("k", 0)
-	var made := _pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
+	_pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
 	var cl_id := 0
 	if k == 1:
 		var cl := CanvasLayer.new()
@@ -564,7 +562,7 @@ func _arm_layers() -> void:
 
 func _arm_celloff() -> void:
 	var off := _opt_float("off", 0.0)
-	var made := _pile(["a", "b", "c", "d", "e"], off, 0.0)
+	_pile(["a", "b", "c", "d", "e"], off, 0.0)
 	_it("off", "%.4f" % off)
 	_it("add_order", "[a,b,c,d,e]")
 	var ticks := [2, 3, 4, 6, 8, 16, 32, 64]
@@ -606,7 +604,7 @@ func _arm_rigid() -> void:
 # --------------------------------------------------------------- procwait
 
 func _arm_procwait() -> void:
-	var made := _pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
+	_pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
 	_it("add_order", "[a,b,c,d,e]")
 	var dss := _dss()
 	var pf0 := Engine.get_physics_frames()
@@ -742,12 +740,12 @@ func _arm_scoutrev() -> void:
 # --------------------------------------------------------------- twopiles
 
 func _arm_twopiles() -> void:
-	var a := _pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
+	_pile(["a", "b", "c", "d", "e"], 0.0, 0.0)
 	var dss := _dss()
 	await _frames(2)
 	_it("a_t2_vec", _vec(dss.intersect_point(_pt(_q()), CAP)))
 	_it("a_t2_relpos", _relpos(dss.intersect_point(_pt(_q()), CAP), 0.0))
-	var b := _pile(["a2", "b2", "c2", "d2", "e2"], 0.0, 1000.0)
+	_pile(["a2", "b2", "c2", "d2", "e2"], 0.0, 1000.0)
 	await _frames(2)
 	_it("a_t4_with_b_vec", _vec(dss.intersect_point(_pt(_q()), CAP)))
 	_it("a_t4_with_b_relpos", _relpos(dss.intersect_point(_pt(_q()), CAP), 0.0))

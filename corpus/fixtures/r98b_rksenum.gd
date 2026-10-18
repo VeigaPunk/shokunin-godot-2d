@@ -3,13 +3,10 @@ extends SceneTree
 # claimed R*K*S product differs from the engine's Transform2D(r, s, k, p).
 # Not part of the batch matrix; receipts land in runs/rksenum/.
 
-var _items: PackedStringArray = []
-
 func _initialize() -> void:
 	_run.call_deferred()
 
 func _it(key: String, value: String) -> void:
-	_items.append("%s=%s" % [key, value])
 	print("R98BRKS %s=%s" % [key, value])
 
 func _tm(t: Transform2D) -> String:

@@ -116,7 +116,6 @@ func _sample(sink: Array, n: int) -> String:
 
 class QF:
 	extends Node2D
-	var owner_ref
 	var q_pending := false
 	var q_every := false
 	var queue_from_draw := false
@@ -141,10 +140,8 @@ class QF:
 class QH:
 	extends Node2D
 	var draws := 0
-	var pfs: Array = []
 	func _draw() -> void:
 		draws += 1
-		pfs.append(Engine.get_process_frames())
 
 class QHC:
 	extends Node2D
@@ -170,7 +167,6 @@ class QHC:
 
 func _arm_qflush() -> void:
 	var t := QF.new()
-	t.owner_ref = self
 	t.set_physics_process(true)
 	root.add_child(t)
 	await _frames(1)

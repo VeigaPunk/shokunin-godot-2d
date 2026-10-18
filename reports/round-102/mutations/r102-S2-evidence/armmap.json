@@ -1,0 +1,542 @@
+[
+ {
+  "patch": "stree",
+  "hunk": 1,
+  "old_start": 256,
+  "old_len": 20,
+  "new_len": 12,
+  "enclosing": [
+   "_arm_census",
+   "_pub"
+  ],
+  "deleted": [
+   "func it_valid(key: String, value: String) -> void:",
+   "\t_it(key, value)",
+   "",
+   "",
+   "func _tree_names() -> String:",
+   "\treturn _ord(root.get_children().map(func(n): return str(n.name)))",
+   "",
+   ""
+  ],
+  "added": [],
+  "callsite_arms": {
+   "it_valid": [
+    "_arm_group_flags",
+    "_arm_defer_ladder",
+    "_arm_defer_slots",
+    "_arm_defer_order",
+    "_arm_scene_probe"
+   ],
+   "_tree_names": []
+  }
+ },
+ {
+  "patch": "stree",
+  "hunk": 2,
+  "old_start": 420,
+  "old_len": 11,
+  "new_len": 11,
+  "enclosing": [
+   "_arm_group_flags"
+  ],
+  "deleted": [
+   "\tit_valid(\"cap_members_t0\", _ord(_tags(get_nodes_in_group(\"g2\"))))",
+   "\tit_connected(\"cap_d_membership\", d.is_in_group(\"g2\"))",
+   "\tit_connected(\"cap_e_membership\", e.is_in_group(\"g2\"))"
+  ],
+  "added": [
+   "\t_it(\"cap_members_t0\", _ord(_tags(get_nodes_in_group(\"g2\"))))",
+   "\t_it(\"cap_d_membership\", _v(d.is_in_group(\"g2\")))",
+   "\t_it(\"cap_e_membership\", _v(e.is_in_group(\"g2\")))"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "stree",
+  "hunk": 3,
+  "old_start": 432,
+  "old_len": 7,
+  "new_len": 7,
+  "enclosing": [
+   "_arm_group_flags"
+  ],
+  "deleted": [
+   "\tit_valid(\"drev_members\", _ord(_tags(get_nodes_in_group(\"g3\"))))"
+  ],
+  "added": [
+   "\t_it(\"drev_members\", _ord(_tags(get_nodes_in_group(\"g3\"))))"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "stree",
+  "hunk": 4,
+  "old_start": 447,
+  "old_len": 30,
+  "new_len": 30,
+  "enclosing": [
+   "_arm_group_flags"
+  ],
+  "deleted": [
+   "\tit_valid(\"uniq_direct_1\", _snap())",
+   "\tit_valid(\"uniq_direct_2_same_args\", _snap())",
+   "\tit_valid(\"uniq_direct_3_new_args\", _snap())",
+   "\tit_valid(\"uniq_def_t0\", _snap())",
+   "\tit_valid(\"uniq_def_t1\", _snap())",
+   "\tit_valid(\"uniq_def_next_frame\", _snap())",
+   "\tit_valid(\"plain_deferred_twice\", _snap())"
+  ],
+  "added": [
+   "\t_it(\"uniq_direct_1\", _snap())",
+   "\t_it(\"uniq_direct_2_same_args\", _snap())",
+   "\t_it(\"uniq_direct_3_new_args\", _snap())",
+   "\t_it(\"uniq_def_t0\", _snap())",
+   "\t_it(\"uniq_def_t1\", _snap())",
+   "\t_it(\"uniq_def_next_frame\", _snap())",
+   "\t_it(\"plain_deferred_twice\", _snap())"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "stree",
+  "hunk": 5,
+  "old_start": 481,
+  "old_len": 26,
+  "new_len": 22,
+  "enclosing": [
+   "_arm_group_flags",
+   "_arm_group_lifecycle"
+  ],
+  "deleted": [
+   "\tit_valid(\"set_def_capture\", \"%s/%s\" % [_v(n1.position), _v(n2.position)])",
+   "\tit_valid(\"notify\", _snap())",
+   "\tit_paused(p.paused_seen)",
+   "\tit_paused(p.paused_seen)",
+   "\tit_valid(\"missing_method\", \"silent\")",
+   "func it_paused(n: int) -> void:",
+   "\t_it(\"paused_seen\", str(n))",
+   "",
+   ""
+  ],
+  "added": [
+   "\t_it(\"set_def_capture\", \"%s/%s\" % [_v(n1.position), _v(n2.position)])",
+   "\t_it(\"notify\", _snap())",
+   "\t_it(\"paused_seen\", str(p.paused_seen))",
+   "\t_it(\"paused_seen\", str(p.paused_seen))",
+   "\t_it(\"missing_method\", \"silent\")"
+  ],
+  "callsite_arms": {
+   "it_paused": [
+    "_arm_group_flags",
+    "_arm_group_setters"
+   ]
+  }
+ },
+ {
+  "patch": "stree",
+  "hunk": 6,
+  "old_start": 559,
+  "old_len": 7,
+  "new_len": 7,
+  "enclosing": [
+   "_arm_group_setters"
+  ],
+  "deleted": [
+   "\tit_paused(a.paused_seen)"
+  ],
+  "added": [
+   "\t_it(\"paused_seen\", str(a.paused_seen))"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "stree",
+  "hunk": 7,
+  "old_start": 669,
+  "old_len": 12,
+  "new_len": 12,
+  "enclosing": [
+   "_arm_signal_flags"
+  ],
+  "deleted": [
+   "\tit_connected(\"osd_connected_t0\", s5.sig_a.is_connected(s5.on_a))",
+   "\tit_connected(\"osd_connected_t1\", s5.sig_a.is_connected(s5.on_a))"
+  ],
+  "added": [
+   "\t_it(\"osd_connected_t0\", _v(s5.sig_a.is_connected(s5.on_a)))",
+   "\t_it(\"osd_connected_t1\", _v(s5.sig_a.is_connected(s5.on_a)))"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "stree",
+  "hunk": 8,
+  "old_start": 684,
+  "old_len": 7,
+  "new_len": 7,
+  "enclosing": [
+   "_arm_signal_flags"
+  ],
+  "deleted": [
+   "\tit_connected(\"rc_after_one_disconnect\", s6.sig_a.is_connected(s6.on_a))"
+  ],
+  "added": [
+   "\t_it(\"rc_after_one_disconnect\", _v(s6.sig_a.is_connected(s6.on_a)))"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "stree",
+  "hunk": 9,
+  "old_start": 701,
+  "old_len": 7,
+  "new_len": 7,
+  "enclosing": [
+   "_arm_signal_flags"
+  ],
+  "deleted": [
+   "\tit_connected(\"cross_t0\", s8.sig_a.is_connected(s8.on_a))"
+  ],
+  "added": [
+   "\t_it(\"cross_t0\", _v(s8.sig_a.is_connected(s8.on_a)))"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "stree",
+  "hunk": 10,
+  "old_start": 713,
+  "old_len": 17,
+  "new_len": 12,
+  "enclosing": [
+   "_arm_defer_ladder",
+   "_arm_signal_flags"
+  ],
+  "deleted": [
+   "func it_connected(key: String, v: bool) -> void:",
+   "\t_it(key, _v(v))",
+   "",
+   "",
+   "\t# r97-boundary corrected the frozen universal: a deferred call queued from",
+   "\t# _process/_physics_process flushes BEFORE that frame's process_frame",
+   "\t# signal; one queued from this coroutine body (`cd`) lands within the same",
+   "\t# idle frame \u2014 this arm's separate df_log does not pin its position inside",
+   "\t# the signal window (boundary \u00a72.3)."
+  ],
+  "added": [
+   "\t# (general flush-position law: header laws block; boundary \u00a72.3) \u2014 one",
+   "\t# queued from this coroutine body (`cd`) lands within the same idle frame;",
+   "\t# this arm's separate df_log does not pin its position inside the signal",
+   "\t# window."
+  ],
+  "callsite_arms": {
+   "it_connected": [
+    "_arm_group_flags",
+    "_arm_signal_flags"
+   ]
+  }
+ },
+ {
+  "patch": "stree",
+  "hunk": 11,
+  "old_start": 733,
+  "old_len": 13,
+  "new_len": 13,
+  "enclosing": [
+   "_arm_defer_ladder"
+  ],
+  "deleted": [
+   "\tit_valid(\"ladder\", _ord(log))",
+   "\tit_valid(\"df_log\", _ord(DFNODE.log))",
+   "\tit_valid(\"no_wait\", _ord(DFNODE.log))"
+  ],
+  "added": [
+   "\t_it(\"ladder\", _ord(log))",
+   "\t_it(\"df_log\", _ord(DFNODE.log))",
+   "\t_it(\"no_wait\", _ord(DFNODE.log))"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "stree",
+  "hunk": 12,
+  "old_start": 747,
+  "old_len": 15,
+  "new_len": 15,
+  "enclosing": [
+   "_arm_defer_ladder"
+  ],
+  "deleted": [
+   "\tit_valid(\"phys_defer_same_frame\", _v(PHYSR[\"defer_in_same_frame\"]))",
+   "\tit_valid(\"phys_co_in_log\", _v(PHYSR[\"co_in_log\"]))",
+   "\tit_valid(\"nested\", _ord(DFNODE.log))",
+   "\tit_valid(\"nested_t1\", _ord(DFNODE.log))"
+  ],
+  "added": [
+   "\t_it(\"phys_defer_same_frame\", _v(PHYSR[\"defer_in_same_frame\"]))",
+   "\t_it(\"phys_co_in_log\", _v(PHYSR[\"co_in_log\"]))",
+   "\t_it(\"nested\", _ord(DFNODE.log))",
+   "\t_it(\"nested_t1\", _ord(DFNODE.log))"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "stree",
+  "hunk": 13,
+  "old_start": 806,
+  "old_len": 47,
+  "new_len": 47,
+  "enclosing": [
+   "_arm_defer_slots"
+  ],
+  "deleted": [
+   "\tit_valid(\"t0\", _snap())",
+   "\tit_valid(\"after_pf\", _snap())",
+   "\tit_valid(\"set_deferred_t0\", _v(s2.position == Vector2(5, 5)))",
+   "\tit_valid(\"set_deferred_t1\", _v(s2.position == Vector2(5, 5)))",
+   "\tit_valid(\"detached\", _snap())",
+   "\tit_valid(\"queue_free\", _snap())",
+   "\tit_valid(\"queue_free_valid\", _v(is_instance_valid(s4)))",
+   "\tit_valid(\"free_dropped\", _snap())",
+   "\tit_valid(\"slots_t0\", _ord(DFNODE.log))",
+   "\tit_valid(\"slots_t1\", _ord(DFNODE.log))",
+   "\tit_valid(\"slot_meta\", str(DFNODE.get_meta(\"dfm\", \"none\")))"
+  ],
+  "added": [
+   "\t_it(\"t0\", _snap())",
+   "\t_it(\"after_pf\", _snap())",
+   "\t_it(\"set_deferred_t0\", _v(s2.position == Vector2(5, 5)))",
+   "\t_it(\"set_deferred_t1\", _v(s2.position == Vector2(5, 5)))",
+   "\t_it(\"detached\", _snap())",
+   "\t_it(\"queue_free\", _snap())",
+   "\t_it(\"queue_free_valid\", _v(is_instance_valid(s4)))",
+   "\t_it(\"free_dropped\", _snap())",
+   "\t_it(\"slots_t0\", _ord(DFNODE.log))",
+   "\t_it(\"slots_t1\", _ord(DFNODE.log))",
+   "\t_it(\"slot_meta\", str(DFNODE.get_meta(\"dfm\", \"none\")))"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "stree",
+  "hunk": 14,
+  "old_start": 871,
+  "old_len": 14,
+  "new_len": 14,
+  "enclosing": [
+   "_arm_defer_order"
+  ],
+  "deleted": [
+   "\tit_valid(\"frame1\", \"%s | df=%s\" % [_ord(DLOG), _ord(DFNODE.log)])",
+   "\tit_valid(\"frame2\", \"%s | df=%s\" % [_ord(DLOG), _ord(DFNODE.log)])"
+  ],
+  "added": [
+   "\t_it(\"frame1\", \"%s | df=%s\" % [_ord(DLOG), _ord(DFNODE.log)])",
+   "\t_it(\"frame2\", \"%s | df=%s\" % [_ord(DLOG), _ord(DFNODE.log)])"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "stree",
+  "hunk": 15,
+  "old_start": 886,
+  "old_len": 21,
+  "new_len": 21,
+  "enclosing": [
+   "_arm_defer_order"
+  ],
+  "deleted": [
+   "\tit_valid(\"emit_t0\", \"%s | ord=%s\" % [_ord(DLOG), _ord(ORDER)])",
+   "\tit_valid(\"emit_t1\", \"%s | ord=%s\" % [_ord(DLOG), _ord(ORDER)])",
+   "\tit_valid(\"frame4\", \"%s | df=%s\" % [_ord(DLOG), _ord(DFNODE.log)])",
+   "\tit_valid(\"early_t1\", _ord(DFNODE.log))"
+  ],
+  "added": [
+   "\t_it(\"emit_t0\", \"%s | ord=%s\" % [_ord(DLOG), _ord(ORDER)])",
+   "\t_it(\"emit_t1\", \"%s | ord=%s\" % [_ord(DLOG), _ord(ORDER)])",
+   "\t_it(\"frame4\", \"%s | df=%s\" % [_ord(DLOG), _ord(DFNODE.log)])",
+   "\t_it(\"early_t1\", _ord(DFNODE.log))"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "stree",
+  "hunk": 16,
+  "old_start": 910,
+  "old_len": 32,
+  "new_len": 32,
+  "enclosing": [
+   "_arm_scene_probe"
+  ],
+  "deleted": [
+   "\tit_valid(\"current_scene_t0\", \"null\" if current_scene == null else \"set\")",
+   "\tit_valid(\"file_t0\", _csname())",
+   "\tit_valid(\"file_children_t0\", str(root.get_child_count()))",
+   "\tit_valid(\"file_t1\", _csname())",
+   "\tit_valid(\"file_t5\", _csname())",
+   "\tit_valid(\"file_children_t5\", str(root.get_child_count()))",
+   "\tit_valid(\"packed_loaded\", _v(ps != null))",
+   "\tit_valid(\"packed_t0\", _csname())",
+   "\tit_valid(\"packed_t1\", _csname())",
+   "\tit_valid(\"packed_t3\", _csname())",
+   "\tit_valid(\"packed_children_t3\", str(root.get_child_count()))",
+   "\tit_valid(\"node_t0\", _csname())",
+   "\tit_valid(\"node_t2\", \"AdHoc\" if current_scene == ad else _csname())",
+   "\tit_valid(\"node_children_t2\", str(root.get_child_count()))",
+   "\tit_valid(\"reload_exists\", _v(has_method(\"reload_current_scene\")))"
+  ],
+  "added": [
+   "\t_it(\"current_scene_t0\", \"null\" if current_scene == null else \"set\")",
+   "\t_it(\"file_t0\", _csname())",
+   "\t_it(\"file_children_t0\", str(root.get_child_count()))",
+   "\t_it(\"file_t1\", _csname())",
+   "\t_it(\"file_t5\", _csname())",
+   "\t_it(\"file_children_t5\", str(root.get_child_count()))",
+   "\t_it(\"packed_loaded\", _v(ps != null))",
+   "\t_it(\"packed_t0\", _csname())",
+   "\t_it(\"packed_t1\", _csname())",
+   "\t_it(\"packed_t3\", _csname())",
+   "\t_it(\"packed_children_t3\", str(root.get_child_count()))",
+   "\t_it(\"node_t0\", _csname())",
+   "\t_it(\"node_t2\", \"AdHoc\" if current_scene == ad else _csname())",
+   "\t_it(\"node_children_t2\", str(root.get_child_count()))",
+   "\t_it(\"reload_exists\", _v(has_method(\"reload_current_scene\")))"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "scene_io",
+  "hunk": 1,
+  "old_start": 243,
+  "old_len": 7,
+  "new_len": 7,
+  "enclosing": [
+   "_arm_pack_basic"
+  ],
+  "deleted": [
+   "\tvar child := _mk_child(root, \"Child\", Vector2(3, 4))"
+  ],
+  "added": [
+   "\t_mk_child(root, \"Child\", Vector2(3, 4))"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "scene_io",
+  "hunk": 2,
+  "old_start": 390,
+  "old_len": 7,
+  "new_len": 7,
+  "enclosing": [
+   "_arm_det"
+  ],
+  "deleted": [
+   "\tvar e2 := ResourceSaver.save(b, p2)"
+  ],
+  "added": [
+   "\tResourceSaver.save(b, p2)"
+  ],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "scene_io",
+  "hunk": 3,
+  "old_start": 509,
+  "old_len": 7,
+  "new_len": 6,
+  "enclosing": [
+   "_arm_cache",
+   "_arm_takeover"
+  ],
+  "deleted": [
+   "\tl1 = null"
+  ],
+  "added": [],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "scene_io",
+  "hunk": 4,
+  "old_start": 540,
+  "old_len": 12,
+  "new_len": 6,
+  "enclosing": [
+   "_arm_cache",
+   "_arm_subres"
+  ],
+  "deleted": [
+   "\tcached = null",
+   "\tstale = null",
+   "\trepl = null",
+   "\tign = null",
+   "\tign2 = null",
+   "\tign3 = null"
+  ],
+  "added": [],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "scene_io",
+  "hunk": 5,
+  "old_start": 616,
+  "old_len": 8,
+  "new_len": 6,
+  "enclosing": [
+   "_arm_subres"
+  ],
+  "deleted": [
+   "\tspr.texture = null",
+   "\tgt = null"
+  ],
+  "added": [],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "scene_io",
+  "hunk": 6,
+  "old_start": 697,
+  "old_len": 7,
+  "new_len": 6,
+  "enclosing": [
+   "_arm_editstate",
+   "_arm_extres"
+  ],
+  "deleted": [
+   "\tloaded = null"
+  ],
+  "added": [],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "scene_io",
+  "hunk": 7,
+  "old_start": 733,
+  "old_len": 7,
+  "new_len": 6,
+  "enclosing": [
+   "_arm_editstate",
+   "_arm_refuse"
+  ],
+  "deleted": [
+   "\tback = null"
+  ],
+  "added": [],
+  "callsite_arms": {}
+ },
+ {
+  "patch": "scene_io",
+  "hunk": 8,
+  "old_start": 775,
+  "old_len": 7,
+  "new_len": 6,
+  "enclosing": [
+   "_arm_refuse"
+  ],
+  "deleted": [
+   "\tloaded = null"
+  ],
+  "added": [],
+  "callsite_arms": {}
+ }
+]

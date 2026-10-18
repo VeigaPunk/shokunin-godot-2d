@@ -243,7 +243,7 @@ func _arm_pack_basic() -> void:
 	_ensure_base()
 	var root := _mk_root("Root")
 	root.position = Vector2(10, 20)
-	var child := _mk_child(root, "Child", Vector2(3, 4))
+	_mk_child(root, "Child", Vector2(3, 4))
 	var ps := _pack(root)
 	var st := ps.get_state()
 	var pcounts := PackedStringArray()
@@ -390,7 +390,7 @@ func _arm_det() -> void:
 	var p2 := BASE + "/det2.tscn"
 	var p3 := BASE + "/det3.tscn"
 	var e1 := ResourceSaver.save(a, p1)
-	var e2 := ResourceSaver.save(b, p2)
+	ResourceSaver.save(b, p2)
 	var e3 := ResourceSaver.save(a, p3)
 	var text_a := _text(p1)
 	var mk_pinned := func() -> PackedScene:
@@ -509,7 +509,6 @@ func _arm_takeover() -> void:
 		_b(ResourceLoader.exists(p)), _b(not ResourceLoader.exists(BASE + "/nope.tres")),
 		_b(ResourceLoader.has_cached(p)), _b(ResourceLoader.get_cached_ref(p) != null),
 		_b(ResourceLoader.get_dependencies(p).is_empty())])
-	l1 = null
 	_emit("takeover")
 
 func _arm_cache() -> void:
@@ -540,12 +539,6 @@ func _arm_cache() -> void:
 		_err(e2), stale_colors, _b(repl_is_cached), repl_colors, _b(after_repl_is_repl),
 		ign3_colors, _b(reuse_mode), str(cached.colors),
 		_b(ResourceLoader.exists(BASE)), _b(ResourceLoader.exists(""))])
-	cached = null
-	stale = null
-	repl = null
-	ign = null
-	ign2 = null
-	ign3 = null
 	_emit("cache")
 
 func _arm_subres() -> void:
@@ -616,8 +609,6 @@ func _arm_subres() -> void:
 	i2.free()
 	j1.free()
 	j2.free()
-	spr.texture = null
-	gt = null
 	root.free()
 	root2.free()
 	root3.free()
@@ -697,7 +688,6 @@ func _arm_extres() -> void:
 	inst.free()
 	inst2.free()
 	root4.free()
-	loaded = null
 	_emit("extres")
 
 func _arm_editstate() -> void:
@@ -733,7 +723,6 @@ func _arm_editstate() -> void:
 		_b(inst2.get_scene_instance_load_placeholder())])
 	inst2.free()
 	root.free()
-	back = null
 	_emit("editstate")
 
 func _arm_refuse() -> void:
@@ -775,7 +764,6 @@ func _arm_refuse() -> void:
 		_err(pack_null_err), _b(empty.can_instantiate()), _b(inst_empty == null)])
 	_p("relative_save=%s relative_file_created=%s relative_in_project_dir=%s deleted=%s set_path_collision_refused=%s" % [
 		_err(e_rel), _b(rel_exists), _b(in_project_dir), _b(not FileAccess.file_exists(rel_name)), _b(collide_refused)])
-	loaded = null
 	root.free()
 	_emit("refuse")
 

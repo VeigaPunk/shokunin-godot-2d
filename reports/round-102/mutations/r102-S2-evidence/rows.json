@@ -1,0 +1,322 @@
+[
+ {
+  "index": 354,
+  "name": "r96_scene_io_census",
+  "script": "scene_io_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS scene_io_lattice census ps_methods=_get_bundled_scene,_set_bundled_scene,can_instantiate,get_state,instantiate,pack ps_props=bundled ps_consts=GEN_EDIT_STATE_DISABLED=0,GEN_EDIT_STATE_INSTANCE=1,GEN_EDIT_STATE_MAIN=2,GEN_EDIT_STATE_MAIN_INHERITED=3 saver_methods=add_resource_format_saver,get_recognized_extensions,get_resource_id_for_path,remove_resource_format_saver,save,set_uid saver_flags=FLAG_NONE=0,FLAG_RELATIVE_PATHS=1,FLAG_BUNDLE_RESOURCES=2,FLAG_CHANGE_PATH=4,FLAG_OMIT_EDITOR_PROPERTIES=8,FLAG_SAVE_BIG_ENDIAN=16,FLAG_COMPRESS=32,FLAG_REPLACE_SUBRESOURCE_PATHS=64 loader_methods=add_resource_format_loader,exists,get_cached_ref,get_dependencies,get_recognized_extensions_for_type,get_resource_uid,has_cached,list_directory,load,load_threaded_get,load_threaded_get_status,load_threaded_request,remove_resource_format_loader,set_abort_on_missing_resources loader_modes=THREAD_LOAD_INVALID_RESOURCE=0,THREAD_LOAD_IN_PROGRESS=1,THREAD_LOAD_FAILED=2,THREAD_LOAD_LOADED=3,CACHE_MODE_IGNORE=0,CACHE_MODE_REUSE=1,CACHE_MODE_REPLACE=2,CACHE_MODE_IGNORE_DEEP=3,CACHE_MODE_REPLACE_DEEP=4 uid_methods=add_id,create_id,create_id_for_path,ensure_path,get_id_path,has_id,id_to_text,path_to_uid,remove_id,set_id,text_to_id,uid_to_path uid_consts=INVALID_ID=-1 res_props=Resource,resource_local_to_scene,resource_name,resource_path,resource_scene_unique_id ss_methods=get_base_scene_state,get_connection_binds,get_connection_count,get_connection_flags,get_connection_method,get_connection_signal,get_connection_source,get_connection_target,get_connection_unbinds,get_node_count,get_node_groups,get_node_index,get_node_instance,get_node_instance_placeholder,get_node_name,get_node_owner_path,get_node_path,get_node_property_count,get_node_property_name,get_node_property_value,get_node_type,get_path,is_node_instance_placeholder empty_can_instantiate=false pack_is_instance_method=true",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 355,
+  "name": "r96_scene_io_pack_basic",
+  "script": "scene_io_lattice.gd",
+  "flags": [
+   "--arm=pack_basic"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS scene_io_lattice pack_basic save=OK(0) can=true nodes=2 names=Root,Child pcounts=1,1 types=Node2D,Node2D state_path_empty=true header=[gd_scene format=3] has_uid=false has_unique_id=true size_in_176_194=true sha_len=64 inst_name=Root inst_pos=(10.0, 20.0) kids=1 kid_name=Child kid_pos=(3.0, 4.0) kid_owner_root=true scene_file_is_path=true back_path_is_path=true resave=OK(0) resave_same_in_process=true load_cached_identity=true",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 356,
+  "name": "r96_scene_io_ownership",
+  "script": "scene_io_lattice.gd",
+  "flags": [
+   "--arm=ownership"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS scene_io_lattice ownership save=OK(0) packed_nodes=2 packed_names=Root,Owned orphan_dropped=true deep_dropped=true bad_owner_refused=true self_owner_refused=true cleared_owner_null=true child_of_tree_nodes=1 unparented_nodes=2 inst_child_owner_root=true owner_paths=Root:.:,Owned:./Owned:.",
+  "expected_errors": [
+   "ERROR: Invalid owner. Owner must be an ancestor in the tree.",
+   "ERROR: Condition \"p_owner == this\" is true."
+  ],
+  "required_stderr": []
+ },
+ {
+  "index": 357,
+  "name": "r96_scene_io_formats",
+  "script": "scene_io_lattice.gd",
+  "flags": [
+   "--arm=formats"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS scene_io_lattice formats grad_tres=OK(0) size=101 sha=94ca8c1804aa166ebfce76ff354bc9adbcf5fb0ea108436dedf560fd7ba2356a header=[gd_resource type=\"Gradient\" format=3] colors_match=true grad_res=OK(0) size=354 sha=6f13538bfb452af9193d4ba487ccdf755afda3db8d4f5034c3f149c703e3ef76 magic=RSRC colors_match=true text_eq_bin=false grad_refused=tscn=File unrecognized(15),tres.bak=File unrecognized(15),resx=File unrecognized(15),json=File unrecognized(15) refused_files_absent=true scene_scn=OK(0) scene_res=OK(0) scn_eq_res=true both_reload=true scene_tres_refused=File unrecognized(15)",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 358,
+  "name": "r96_scene_io_det",
+  "script": "scene_io_lattice.gd",
+  "flags": [
+   "--arm=det"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS scene_io_lattice det save=OK(0) same_obj_resave=OK(0) unpinned_sha_len=64 two_builds_same=false subid_minted=true subid_settable=true bundle_keys=conn_count,conns,editable_instances,id_paths,names,node_count,node_ids,node_paths,nodes,variants,version bundle_version=3 node_ids_len=2 pinned_save=OK(0) pinned_save2=OK(0) pinned_sha=a9041c7939a77470f126e51458f7bb14e9a5b1a36fba46bbcbf5c8a572b84fb9 two_pinned_builds_same=true pinned_unique_ids=true instantiate_ok=true",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 359,
+  "name": "r96_scene_io_uid",
+  "script": "scene_io_lattice.gd",
+  "flags": [
+   "--arm=uid"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS scene_io_lattice uid create_id_text_prefix=true create_id_unregistered=true get_id_path_unknown_empty=true roundtrip=103876737118377468 roundtrip_text=uid://bqk3m5n7qar1 invalid_text=-1 invalid_text_back=uid://<invalid> invalid_id=-1 tres_save=OK(0) header_has_uid=false saver_id_before=-1 loader_uid_before=-1 loader_uid_after_add=4242 saver_id_after_add=-1 scene_save=OK(0) ext_line_has_uid=false header_has_uid=false any_uid_token=false",
+  "expected_errors": [
+   "ERROR: Unrecognized UID: \"uid://bqk3m5n7qar1\"."
+  ],
+  "required_stderr": []
+ },
+ {
+  "index": 360,
+  "name": "r96_scene_io_takeover",
+  "script": "scene_io_lattice.gd",
+  "flags": [
+   "--arm=takeover"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS scene_io_lattice takeover save=OK(0) path_after_save_empty=true load_after_save_is_new=true b_wins=true b_path_is_p=true a_path_empty=true c_wins=true b_displaced=true disk_sha=ad113a5cb9144c27c0461d59b0c4164804f769acb97990f688b978e3c3c98716 disk_unchanged=true exists=true exists_missing=true has_cached=true get_cached_ref=true deps_empty=true",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 361,
+  "name": "r96_scene_io_cache",
+  "script": "scene_io_lattice.gd",
+  "flags": [
+   "--arm=cache"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS scene_io_lattice cache save=OK(0) default_identity=true ignore_distinct=true ignore_path_kept=true ignore_two_distinct=true external_write=OK(0) stale_after_write=[(1.0, 0.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] repl_same_object=true repl_refreshed=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] after_repl_identity=true ignore_refreshed=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] reuse_is_repl=true cached_now_refreshed=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] exists_dir=false exists_empty=false",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 362,
+  "name": "r96_scene_io_subres",
+  "script": "scene_io_lattice.gd",
+  "flags": [
+   "--arm=subres"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS scene_io_lattice subres save=OK(0) subid=Gradient_643c0 subid_present=true shared_across_instances=true shared_with_source=true mutation_leaks=true local_save=OK(0) flag_in_file=true local_shared=false local_leak=false nest_save=OK(0) nested_reuses_subid=true dup_shallow_distinct=true dup_deep_distinct=true",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 363,
+  "name": "r96_scene_io_extres",
+  "script": "scene_io_lattice.gd",
+  "flags": [
+   "--arm=extres"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS scene_io_lattice extres ext_save=OK(0) save=OK(0) save2=OK(0) save_same_obj=OK(0) ext_line=true id_prefix=true id_differs_across_paths=true id_differs_other_path=true save_same_path=OK(0) id_stable_same_path=true same_path_bytes_identical=true gen_id_len=5 inst_is_loaded=true two_instances_share=true inst_path_is_ext=true deps=[\"user://r96/ext.tres\"] bundle_flag=OK(0) inlined_as_subresource=true no_ext_line=true nopath_save=OK(0) serialized_as_subresource=true no_ext_line=true relative_flag=OK(0) keeps_path=true",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 364,
+  "name": "r96_scene_io_editstate",
+  "script": "scene_io_lattice.gd",
+  "flags": [
+   "--arm=editstate"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS scene_io_lattice editstate save=OK(0) states=s0[kids=1,owner=true,name=EditRoot,ph=false,ed=false]|s1[kids=1,owner=true,name=EditRoot,ph=false,ed=false]|s2[kids=1,owner=true,name=EditRoot,ph=false,ed=false]|s3[kids=1,owner=true,name=EditRoot,ph=false,ed=false] scene_file_is_path=true part_of_edited=false editable_readback=true placeholder_readback=true unique_name_before=false unique_name_after=true root_placeholder=false",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 365,
+  "name": "r96_scene_io_refuse",
+  "script": "scene_io_lattice.gd",
+  "flags": [
+   "--arm=refuse"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS scene_io_lattice refuse save_missing_dir=Can't open(19) no_file=true save_null=Invalid parameter(31) save_empty_path=Invalid parameter(31) save_no_ext=File unrecognized(15) save_dir=File unrecognized(15) load_missing_null=true load_dir_null=true load_empty_null=true pack_null=Invalid parameter(31) empty_can_instantiate=false empty_instantiate_null=true relative_save=OK(0) relative_file_created=true relative_in_project_dir=true deleted=true set_path_collision_refused=true",
+  "expected_errors": [
+   "ERROR: Cannot save file 'user://r96_absent_dir_xyz/deep/x.tscn'.",
+   "ERROR: Can't save empty resource to path 'user://r96/null.tscn'.",
+   "ERROR: Can't save resource to empty path. Provide non-empty path or a Resource with non-empty resource_path.",
+   "ERROR: Cannot open file 'user://r96/nope.tscn'.",
+   "ERROR: Failed loading resource: user://r96/nope.tscn.",
+   "ERROR: Error loading resource: 'user://r96/nope.tscn'.",
+   "ERROR: Resource file not found: user://r96 (expected type: unknown)",
+   "ERROR: Error loading resource: 'user://r96'.",
+   "ERROR: Resource file not found: res:// (expected type: unknown)",
+   "ERROR: Error loading resource: ''.",
+   "ERROR: Parameter \"p_scene\" is null.",
+   "ERROR: Failed to instantiate scene state of \"\", node count is 0. Make sure the PackedScene resource is valid.",
+   "ERROR: Another resource is loaded from path 'user://r96/collide.tres' (possible cyclic resource inclusion)."
+  ],
+  "required_stderr": []
+ },
+ {
+  "index": 366,
+  "name": "r96_scene_io_edges",
+  "script": "scene_io_lattice.gd",
+  "flags": [
+   "--arm=edges"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS scene_io_lattice edges save=OK(0) inst_names=NameRoot,NameRoot added_names=NameRoot,@Node2D@2 auto_renamed=true state_path_is_p=true duplicate_cls=PackedScene packed_twice_same_object=false groups_save=OK(0) state_groups=[\"grp_a\", \"grp_b\"] inst_groups=grp_a,grp_b owner_paths=ORoot:.:,OChild:./OChild:.,OGrand:./OChild/OGrand:.",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 414,
+  "name": "stree_lattice_census",
+  "script": "stree_lattice.gd",
+  "flags": [
+   "--arm=census"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS stree_lattice census group_meths=[call_group,call_group_flags,get_first_node_in_group,get_node_count_in_group,get_nodes_in_group,has_group,notify_group,notify_group_flags,set_group,set_group_flags] group_sigs=[call_group(group:21,method:21),call_group_flags(flags:2,group:21,method:21),notify_group(group:21,notification:2),notify_group_flags(call_flags:2,group:21,notification:2),set_group(group:21,property:4,value:0),set_group_flags(call_flags:2,group:21,property:4,value:0)] group_flags=DEFAULT=0 REVERSE=1 DEFERRED=2 UNIQUE=4 connect_flags=DEFERRED=1 PERSIST=2 ONE_SHOT=4 REFERENCE_COUNTED=8 node_group_meths=[add_to_group,call_deferred_thread_group,get_groups,get_process_thread_group,get_process_thread_group_order,is_in_group,notify_deferred_thread_group,remove_from_group,set_deferred_thread_group,set_process_thread_group,set_process_thread_group_order] object_defer_meths=[call_deferred,set_deferred] scene_meths=[change_scene_to_file,change_scene_to_node,change_scene_to_packed,reload_current_scene,unload_current_scene] tree_cls=SceneTree root_cls=Window ticks=60 group_signal=process_frame=true physics_frame=true",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 415,
+  "name": "stree_lattice_group_order",
+  "script": "stree_lattice.gd",
+  "flags": [
+   "--arm=group_order"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS stree_lattice group_order add_order=[a,b,c,d] t0=[a,b,c,d] first=a last=d count=4 removed=[a,c] readd_d_then_b=[a,b,c,d] tree_order=[DF,a,b,c,d] after_reparent=[a,b,d,c] after_move_child=[b,d,c,a] tree_order2=[DF,b,d,c,a] rep1=[b,d,c,a] rep2=[b,d,c,a] nested=[b,d,c,a,p,ch] nested_tree=[DF,b,d,c,a,p] dup_add=[b,d,c,a,p,ch] dup_count=6 double_remove=[d,c,a,p,ch] membership=has=true nothas=false in=true groups_a=[grp] unknown=[] first=null rev=false",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 416,
+  "name": "stree_lattice_group_order_rev",
+  "script": "stree_lattice.gd",
+  "flags": [
+   "--arm=group_order",
+   "--rev"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS stree_lattice group_order add_order=[d,c,b,a] t0=[a,b,c,d] first=a last=d count=4 removed=[a,c] readd_d_then_b=[a,b,c,d] tree_order=[DF,a,b,c,d] after_reparent=[a,b,d,c] after_move_child=[b,d,c,a] tree_order2=[DF,b,d,c,a] rep1=[b,d,c,a] rep2=[b,d,c,a] nested=[b,d,c,a,p,ch] nested_tree=[DF,b,d,c,a,p] dup_add=[b,d,c,a,p,ch] dup_count=6 double_remove=[d,c,a,p,ch] membership=has=true nothas=false in=true groups_a=[grp] unknown=[] first=null rev=true",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 417,
+  "name": "stree_lattice_group_flags",
+  "script": "stree_lattice.gd",
+  "flags": [
+   "--arm=group_flags"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS stree_lattice group_flags direct=[direct1,direct1,direct1] reverse=[rev2,rev2,rev2] args=9/9 deferred_t0=[] deferred_t1=[def3,def3,def3] def_rev_t1=[dr4,dr4,dr4] cap_members_t0=[e] cap_t1=[cap1] cap_d_membership=false cap_e_membership=true drev_members=[f,h] drev_t1=[drev1,drev1] fifo=[q11,q11,q22,q22] uniq_direct_1=[u1] uniq_direct_2_same_args=[u2] uniq_direct_3_new_args=[u23] uniq_def_t0=[] uniq_def_t1=[ud1] uniq_def_next_frame=[ud2] plain_deferred_twice=[p1,p2] set_def_capture=(7.0000,7.0000)/(7.0000,7.0000) notify=[p.paused] paused_seen=1 paused_seen=2 missing_method=silent rev=false",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 418,
+  "name": "stree_lattice_group_lifecycle",
+  "script": "stree_lattice.gd",
+  "flags": [
+   "--arm=group_lifecycle"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS stree_lattice group_lifecycle snapshot=[a,b] live=[a,b,c] root_in_group=[root] root_groups=[rootgrp] parent_child=[a,b,c,p,ch] child_stays=[a,b,c,ch] after_free=[b,c,ch] after_queue_free_t0=[b,c,ch] after_queue_free_t1=[c,ch] weird_group=[s] weird_groups=[a/b.c] multi_groups=[a/b.c]/true",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 419,
+  "name": "stree_lattice_group_setters",
+  "script": "stree_lattice.gd",
+  "flags": [
+   "--arm=group_setters"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS stree_lattice group_setters set_group=(9.0000,9.0000)/(9.0000,9.0000) set_group_flags=(3.0000,3.0000)/(3.0000,3.0000) set_group_deferred_t0=(3.0000,3.0000)/(3.0000,3.0000) set_group_deferred_t1=(4.0000,4.0000)/(4.0000,4.0000) missing_prop=silent paused_seen=0 unknown_group=(4.0000,4.0000) rev=false",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 420,
+  "name": "stree_lattice_signal_order",
+  "script": "stree_lattice.gd",
+  "flags": [
+   "--arm=signal_order"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS stree_lattice signal_order connect_order=[a1,b2] conn_n=2 flags_default=0 after_disconnect=[b3] reconnect_order=[b4,a5] byname_connected=false byname_order=[b6,a7] bind_order=[a1,b2] bind_conn_n=2 no_listeners=[] await_before=[] await_same_frame=[w1] await_next_frame=[w1] await_two=[w1,w2] rev=false",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 421,
+  "name": "stree_lattice_signal_flags",
+  "script": "stree_lattice.gd",
+  "flags": [
+   "--arm=signal_flags"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS stree_lattice signal_flags mixed_t0=[a1] mixed_t1=[b2] defer_two_t0=[] defer_two_t1=[a1,a2] disc_t0_connected=false disc_t1_ran=[a1] oneshot=[a1] oneshot_connected=false osd_connected_t0=false osd_second_emit=[] osd_flush=[a1] osd_connected_t1=false rc_conn_n=1 rc_emit=[a1] rc_after_one_disconnect=true rc_emit2=[a2] persist=[a1] persist_flags=2 cross_t0=true cross_t1=[a1,b2] cross_rev_t1=[b3,a4] rev=false",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 422,
+  "name": "stree_lattice_defer_ladder",
+  "script": "stree_lattice.gd",
+  "flags": [
+   "--arm=defer_ladder"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS stree_lattice defer_ladder ladder=[t0,t0_end,co_pf,after_pf1,after_pf2] df_log=[cd] no_wait=[no_wait] phys_defer_same_frame=true phys_co_in_log=true nested=[outer,inner] nested_t1=[outer,inner] rev=false",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 423,
+  "name": "stree_lattice_defer_slots",
+  "script": "stree_lattice.gd",
+  "flags": [
+   "--arm=defer_slots"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS stree_lattice defer_slots t0=[] after_pf=[node1,tree] set_deferred_t0=false set_deferred_t1=true detached=[detached1] queue_free=[s41] queue_free_valid=false free_dropped=[] slots_t0=[] slots_t1=[A,B] slot_meta=z rev=false",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 424,
+  "name": "stree_lattice_defer_order",
+  "script": "stree_lattice.gd",
+  "flags": [
+   "--arm=defer_order"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS stree_lattice defer_order frame1=[pf_sig,resume] | df=[] frame2=[queued,pf_sig,resume2] | df=[cd] emit_t0=[] | ord=[] emit_t1=[pf_sig] | ord=[a1] frame4=[sig_frame,pf_sig] | df=[from_sig] early_t1=[early] rev=false",
+  "expected_errors": [],
+  "required_stderr": []
+ },
+ {
+  "index": 425,
+  "name": "stree_lattice_scene_probe",
+  "script": "stree_lattice.gd",
+  "flags": [
+   "--arm=scene_probe"
+  ],
+  "expected_exit": 0,
+  "evidence": "PASS stree_lattice scene_probe current_scene_t0=null file_t0=null file_children_t0=1 file_t1=null file_t5=SceneA tag=A file_children_t5=2 packed_loaded=true packed_t0=null packed_t1=SceneB tag=B packed_t3=SceneB tag=B packed_children_t3=2 node_t0=null node_t2=AdHoc node_children_t2=2 reload_exists=true rev=false",
+  "expected_errors": [],
+  "required_stderr": []
+ }
+]

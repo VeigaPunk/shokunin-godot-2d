@@ -1258,3 +1258,33 @@
   .shokunin/game-dev-2d/corpus/ citations census (scout); r62 timeout-probe
   hold_open_new_bound arm red in BOTH runs (deterministic host class, round-
   unrelated); 3D side-round deferred via L0 (3D lane under parallel r104).
+
+- ROUND 102 (2026-10-18): export launch matrix + timeout-probe old-bound repair
+  + simplifier-queue/stale-cite folds. ADMIT-WITH-FINDINGS at ⟨COMMIT⟩ (+8 CASES,
+  CASES 528->536; receipts 553 PASS, 2 by-design reject-arm print lines, battery
+  + timeout probe meta PASS x2). 64-seat swarm opencode-go-7, 61+ completed.
+- ATTRIBUTION CORRECTION (r101 record, append-only): the timeout-probe redness
+  r101 attributed to the hold_open arm was the OLD arm — failing conjunct
+  slow_clean_old_bound.marker_observed at the 0.75s bound (both r101 runs);
+  hold arm green all along (2-seat independent recomputation over 50 receipts:
+  46/46 pre-r101 PASS). Host spawn->marker latency drift ~0.39s (r22) -> ~0.8s
+  (r101+); bound re-derived 1.25s (counterfactuals 1.0->4/4, 1.25->4/4 captures,
+  1.4->2/2; replica r102-D3 sha 8f93033e…). r101's "run2 540 PASS/7 FAIL" count
+  semantics note: 2 of the 7 were by-design reject-arm print lines (godot_error_
+  unrelated / stream_reject), so true r101 failures were 5 (3 pre-fold legacy +
+  3 folded ytrans... recorded as landed; timeout probe; error-clause meta pre-F2).
+- LAWS: bounds that gate on startup latency must be re-derived when the host's
+  spawn->first-output drift crosses them — pin the LATENCY MARGIN, not the
+  constant (r102 bound law). Godot export filters are case-INSENSITIVE (mut08:
+  *.GD == *.gd, byte-identical artifacts). A pinned source-sha row is a receipt
+  of the file at a point in time: file folds MUST land with the re-pin in the
+  same commit (B2 companion) or the row dies. Fold queues apply order-free when
+  hunks are disjoint (S0 reverse-order proof).
+- ROUTED (r103+): whole-blob row-count gate for foreign lines outside pinned
+  spans (r100-critic F1 family instance 2, mut09 evidence); godot-error/stream
+  probe reject-arm print lines are informational (count-semantics law: cite
+  probe meta verdicts, not per-arm lines); S4 lessons old-absolute citation
+  family policy call (operator); QUALITY.md scribe note (file absent — census
+  routed); mut01_launch registry-spec + mut06 path bug (seat staging); 3D
+  side-round STILL deferred (3D lane at r106 under parallel session) — must
+  land before 2D r105.

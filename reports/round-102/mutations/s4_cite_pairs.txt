@@ -1,0 +1,1797 @@
+### SCORECARD.md:8
+BEFORE | depth | unscored | `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-stream-attribution --probe-crash-exit --probe-timeout` → 74/74 PASS; named non-author `corpus/lessons/r49-fresh-after-reconnect-non-author.json`: after late callback reconnection and edge8 release held4/[6]/Value6, fresh focused edge9 left press changes 4→3 with receipts `[6,3]`/Value3; 64 prior tuples unchanged, nine opt-ins stable comparable classifications; author raw separate; work commit cited r49 report | r49 |
+AFTER  | depth | unscored | `python corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-stream-attribution --probe-crash-exit --probe-timeout` → 74/74 PASS; named non-author `corpus/lessons/r49-fresh-after-reconnect-non-author.json`: after late callback reconnection and edge8 release held4/[6]/Value6, fresh focused edge9 left press changes 4→3 with receipts `[6,3]`/Value3; 64 prior tuples unchanged, nine opt-ins stable comparable classifications; author raw separate; work commit cited r49 report | r49 |
+
+### SCORECARD.md:9
+BEFORE | coverage | unscored | `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-stream-attribution --probe-crash-exit --probe-timeout` → named non-author 96/96 PASS, 85 ordinary+meta rows; `corpus/lessons/r61-crash-non-author.json`: spontaneous SIGABRT −6 with own ERROR marker classifies True under scoped exact-match allowlist, self SIGKILL −9 True unmodified, meta row's four mismatch discriminations + marker-presence all reject. r62: `corpus/lessons/r62-pipe-eof-timeout.md` — descendant-held-pipe TIMEOUT misattribution pinned (hold arm `child_exit_at_timeout=0` + `post_exit_write_captured` reparenting-gated + 7 discriminations; detach control child-exit-bound). All 92 prior records stable on the 7-field tuple; verifier kernel-side ppid-flip trace. r63: `corpus/lessons/r63-signature-spoof-boundary.md` — merged-stream presence-only signature clause pinned as tracked known-accepting forgery boundary (release arm PASS on post-death descendant signature; hold arm rejects via error axis only; 10 discriminations incl. kernel-corroborated write_ppid + withheld-banner anchor; fabricated-ppid slip closed). All 94 prior records stable; verifier 6/6 forgery spot-checks, zero leaks. Work commit `de78edb`; no signal-origin/production claim | r63 |
+AFTER  | coverage | unscored | `python corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-stream-attribution --probe-crash-exit --probe-timeout` → named non-author 96/96 PASS, 85 ordinary+meta rows; `corpus/lessons/r61-crash-non-author.json`: spontaneous SIGABRT −6 with own ERROR marker classifies True under scoped exact-match allowlist, self SIGKILL −9 True unmodified, meta row's four mismatch discriminations + marker-presence all reject. r62: `corpus/lessons/r62-pipe-eof-timeout.md` — descendant-held-pipe TIMEOUT misattribution pinned (hold arm `child_exit_at_timeout=0` + `post_exit_write_captured` reparenting-gated + 7 discriminations; detach control child-exit-bound). All 92 prior records stable on the 7-field tuple; verifier kernel-side ppid-flip trace. r63: `corpus/lessons/r63-signature-spoof-boundary.md` — merged-stream presence-only signature clause pinned as tracked known-accepting forgery boundary (release arm PASS on post-death descendant signature; hold arm rejects via error axis only; 10 discriminations incl. kernel-corroborated write_ppid + withheld-banner anchor; fabricated-ppid slip closed). All 94 prior records stable; verifier 6/6 forgery spot-checks, zero leaks. Work commit `de78edb`; no signal-origin/production claim | r63 |
+
+### SCORECARD.md:10
+BEFORE | calibration | unscored | `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-stream-attribution --probe-crash-exit --probe-timeout` → named non-author 81/81 PASS; `corpus/lessons/r56-pushframe-non-author.json`: after push+frame observer3→4/action stays true; after direct clear+next frame observer remains4/action false, numeric3/[6,3]/Value3 and focus/callback stable. All 71 prior tuples and nine opt-ins unchanged; separate fault and two omissions reject early. R55 omit-await ineffective, so no frame-necessity claim. Initial nil-observer author failure, critic wrong guard and verifier setup failures retained adverse; no HSlider internal consumption, OS timing or general provenance claim; work commit cited r56 report | r56 |
+AFTER  | calibration | unscored | `python corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-stream-attribution --probe-crash-exit --probe-timeout` → named non-author 81/81 PASS; `corpus/lessons/r56-pushframe-non-author.json`: after push+frame observer3→4/action stays true; after direct clear+next frame observer remains4/action false, numeric3/[6,3]/Value3 and focus/callback stable. All 71 prior tuples and nine opt-ins unchanged; separate fault and two omissions reject early. R55 omit-await ineffective, so no frame-necessity claim. Initial nil-observer author failure, critic wrong guard and verifier setup failures retained adverse; no HSlider internal consumption, OS timing or general provenance claim; work commit cited r56 report | r56 |
+
+### PROVINCE.md:6
+BEFORE - corpus fixtures under .shokunin/game-dev-2d/corpus/ (seeded from games-engine-mechanics r15, provenance in seed.md)
+AFTER  - corpus fixtures under corpus/ (seeded from games-engine-mechanics r15, provenance in seed.md)
+
+### PROVINCE.md:12
+BEFORE Only writes `.shokunin/game-dev-2d/**` and its own reports. Domain source trees are read-only.
+AFTER  Only writes this repository's tree (`./**`) and its own reports. Domain source trees are read-only.
+
+### corpus/lessons/r1-headless-verification.md:22
+BEFORE The first run failed 7/15 cases; the repaired scratch preparation passed 15/15, including the injected failure, under Godot 4.7.2. Counts: `python -c 'import json; from pathlib import Path; p=Path(".shokunin/game-dev-2d/corpus/lessons"); print(*[(f.name, sum(r["verdict"]=="PASS" for r in json.loads(f.read_text())["results"]), len(json.loads(f.read_text())["results"])) for f in [p/"r1-initial.json",p/"r1-passing.json"]])'`. The count is case detection, not a product-quality score.
+AFTER  The first run failed 7/15 cases; the repaired scratch preparation passed 15/15, including the injected failure, under Godot 4.7.2. Counts: `python -c 'import json; from pathlib import Path; p=Path("corpus/lessons"); print(*[(f.name, sum(r["verdict"]=="PASS" for r in json.loads(f.read_text())["results"]), len(json.loads(f.read_text())["results"])) for f in [p/"r1-initial.json",p/"r1-passing.json"]])'`. The count is case detection, not a product-quality score.
+
+### corpus/lessons/r1-headless-verification.md:26
+BEFORE 1. Keep all 29 seeded files read-only. Run `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing` from repo root (Godot 4.7.2 on PATH).
+AFTER  1. Keep all 29 seeded files read-only. Run `python corpus/fixtures/run_battery.py --probe-failing` from repo root (Godot 4.7.2 on PATH).
+
+### corpus/lessons/r10-export-launch.md:3
+BEFORE Reproduce on this host (Godot 4.7.2 Linux/X11): `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch` → independent 32/32 PASS in `r10-battery-verifier.json`, paired export/launch details in `r10-launch-verifier.json`. Named non-author verifier: `.shokunin/game-dev-2d/reports/r10-launch-verifier.md`. `--fault-injection` remains meta PASS in `r10-fault-regression.json`.
+AFTER  Reproduce on this host (Godot 4.7.2 Linux/X11): `python corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch` → independent 32/32 PASS in `r10-battery-verifier.json`, paired export/launch details in `r10-launch-verifier.json`. Named non-author verifier: `reports/r10-launch-verifier.md`. `--fault-injection` remains meta PASS in `r10-fault-regression.json`.
+
+### corpus/lessons/r11-real-godot-diagnostics.md:3
+BEFORE Reproduce on Godot 4.7.2: `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error` → independent **33/33 PASS** (`r11-battery-verifier.json`); paired subprocess record `r11-godot-error-verifier.json`. Named non-author verifier `.shokunin/game-dev-2d/reports/r11-godot-error-verifier.md`. `--fault-injection` remains meta PASS (`r11-fault-regression.json`); launch regression in `r11-launch-regression.json`.
+AFTER  Reproduce on Godot 4.7.2: `python corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error` → independent **33/33 PASS** (`r11-battery-verifier.json`); paired subprocess record `r11-godot-error-verifier.json`. Named non-author verifier `reports/r11-godot-error-verifier.md`. `--fault-injection` remains meta PASS (`r11-fault-regression.json`); launch regression in `r11-launch-regression.json`.
+
+### corpus/lessons/r12-headless-audio.md:3
+BEFORE Reproduce with Godot 4.7.2: `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error`. Independent named non-author verifier `r12-audio-reverify` replayed **35/35 PASS** in `r12-battery-verifier.json`; fault-classification regression meta PASS in `r12-fault-regression.json`. The in-memory WAV fixture generates 44,100 sample bytes (16-bit mono, 22,050 Hz), attaches `AudioStreamPlayer` to the tree, observes 12 process frames, and checks live `is_playing()` plus playback-position advancement >0.001 s.
+AFTER  Reproduce with Godot 4.7.2: `python corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error`. Independent named non-author verifier `r12-audio-reverify` replayed **35/35 PASS** in `r12-battery-verifier.json`; fault-classification regression meta PASS in `r12-fault-regression.json`. The in-memory WAV fixture generates 44,100 sample bytes (16-bit mono, 22,050 Hz), attaches `AudioStreamPlayer` to the tree, observes 12 process frames, and checks live `is_playing()` plus playback-position advancement >0.001 s.
+
+### corpus/lessons/r13-headless-tween-flash.md:3
+BEFORE Reproduce on Godot 4.7.2 with `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error`: named non-author verifier independently **37/37 PASS** (`r13-battery-verifier.json`); fault classification meta PASS (`r13-fault-regression.json`). Initial author replay at a 36-frame observation cap failed the positive before it could return to baseline; a 90-frame cap passed. Critic caught a separate exact expected-error mismatch with the detailed negative diagnostic; executor corrected only the case-owned comma-terminated allowed prefix, then reran 31/31. Reports `reports/r13-juice-*.md` retain these adverse steps.
+AFTER  Reproduce on Godot 4.7.2 with `python corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error`: named non-author verifier independently **37/37 PASS** (`r13-battery-verifier.json`); fault classification meta PASS (`r13-fault-regression.json`). Initial author replay at a 36-frame observation cap failed the positive before it could return to baseline; a 90-frame cap passed. Critic caught a separate exact expected-error mismatch with the detailed negative diagnostic; executor corrected only the case-owned comma-terminated allowed prefix, then reran 31/31. Reports `reports/r13-juice-*.md` retain these adverse steps.
+
+### corpus/lessons/r14-audio-leak-warning.md:3
+BEFORE Reproduce with Godot 4.7.2: `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-audio-warning` → independent non-author verifier **38/38 PASS** (`r14-warning-verifier.json`), including 31 ordinary cases, four unrelated-error probes, export launch, actual-Godot error, and the new audio warning meta record. `--fault-injection` meta PASS (`r14-fault-regression.json`). Named verifier `.shokunin/game-dev-2d/reports/r14-warning-verifier.md`.
+AFTER  Reproduce with Godot 4.7.2: `python corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-audio-warning` → independent non-author verifier **38/38 PASS** (`r14-warning-verifier.json`), including 31 ordinary cases, four unrelated-error probes, export launch, actual-Godot error, and the new audio warning meta record. `--fault-injection` meta PASS (`r14-fault-regression.json`). Named verifier `reports/r14-warning-verifier.md`.
+
+### corpus/lessons/r15-health-gauge.md:3
+BEFORE Reproduce on Godot 4.7.2: `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-audio-warning` → named non-author verifier **40/40 PASS** (33 ordinary plus seven opt-in meta records), raw `r15-gauge-verifier.json`; `--fault-injection` meta PASS in `r15-fault-regression.json`. Verifier report `.shokunin/game-dev-2d/reports/r15-gauge-verifier.md`.
+AFTER  Reproduce on Godot 4.7.2: `python corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-audio-warning` → named non-author verifier **40/40 PASS** (33 ordinary plus seven opt-in meta records), raw `r15-gauge-verifier.json`; `--fault-injection` meta PASS in `r15-fault-regression.json`. Verifier report `reports/r15-gauge-verifier.md`.
+
+### corpus/lessons/r16-gauge-clamp.md:3
+BEFORE Reproduce on Godot 4.7.2 using `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-audio-warning`. Named non-author verifier independent fresh scratch replay **40/40 PASS** (31 base cases + two scratch mutations + seven opt-in probes) in `r16-clamp-verifier.json`; `--fault-injection` meta PASS in `r16-fault-regression.json`. This extends r15's same fixture, not a new game-feature case.
+AFTER  Reproduce on Godot 4.7.2 using `python corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-audio-warning`. Named non-author verifier independent fresh scratch replay **40/40 PASS** (31 base cases + two scratch mutations + seven opt-in probes) in `r16-clamp-verifier.json`; `--fault-injection` meta PASS in `r16-fault-regression.json`. This extends r15's same fixture, not a new game-feature case.
+
+### corpus/lessons/r18-camera-limit.md:3
+BEFORE Named non-author `r18-limit-verifier` independently ran `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-audio-warning`: 42/42 PASS (`r18-limit-verifier.json`, 33 authored cases + two mutations + seven opt-in). Separate `--fault-injection` meta PASS (`r18-fault-regression.json`). Godot 4.7.2, default fixture visible viewport width 64, right limit 1000, parent target moved (0,0)→(2000,0): the current Camera2D screen-center assertion passed at the viewport-adjusted right clamp x=968. The far-bound control retains enabled limits but raises the right bound to 100000; observed center (2000,0) and exit 2 with exactly the expected right-boundary assertion. This is **not** a disabled-limit test. The same assertion remained against the authored boundary 1000.
+AFTER  Named non-author `r18-limit-verifier` independently ran `python corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-audio-warning`: 42/42 PASS (`r18-limit-verifier.json`, 33 authored cases + two mutations + seven opt-in). Separate `--fault-injection` meta PASS (`r18-fault-regression.json`). Godot 4.7.2, default fixture visible viewport width 64, right limit 1000, parent target moved (0,0)→(2000,0): the current Camera2D screen-center assertion passed at the viewport-adjusted right clamp x=968. The far-bound control retains enabled limits but raises the right bound to 100000; observed center (2000,0) and exit 2 with exactly the expected right-boundary assertion. This is **not** a disabled-limit test. The same assertion remained against the authored boundary 1000.
+
+### corpus/lessons/r19-stream-attribution.md:6
+BEFORE python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-stream-attribution --godot /usr/bin/godot
+AFTER  python corpus/fixtures/run_battery.py --probe-stream-attribution --godot /usr/bin/godot
+
+### corpus/lessons/r19-stream-attribution.md:18
+BEFORE Evidence artifact (executor): `.shokunin/game-dev-2d/corpus/live/runs/20261012T231841765607Z/stream-attribution-verdicts.json`. Parent re-run: `.../20261012T231855322812Z/stream-attribution-verdicts.json`. Both record `same_script=true`, both script paths `res://stream_attribution_probe.gd`, `accept_emitted_stdout_marker`, `reject_emitted_stdout_marker`, `accept_lacks_stderr_diagnostic`, `reject_emitted_stderr_diagnostic`, `same_exit_zero`, meta **`verdict: PASS`**. Fixture always `print`s the stdout marker; only the reject flag adds `printerr` of the stderr diagnostic. Rejection is therefore **stream attribution**, not exit-code difference.
+AFTER  Evidence artifact (executor): `corpus/live/runs/20261012T231841765607Z/stream-attribution-verdicts.json`. Parent re-run: `.../20261012T231855322812Z/stream-attribution-verdicts.json`. Both record `same_script=true`, both script paths `res://stream_attribution_probe.gd`, `accept_emitted_stdout_marker`, `reject_emitted_stdout_marker`, `accept_lacks_stderr_diagnostic`, `reject_emitted_stderr_diagnostic`, `same_exit_zero`, meta **`verdict: PASS`**. Fixture always `print`s the stdout marker; only the reject flag adds `printerr` of the stderr diagnostic. Rejection is therefore **stream attribution**, not exit-code difference.
+
+### corpus/lessons/r2-camera-headless.md:3
+BEFORE Reproduce: `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing` (Godot 4.7.2). The committed independent replay is `r2-camera-verifier.json`; named verifier: `r2-camera-verifier`, report `../../reports/r2-camera-verifier.md` (repository path `.shokunin/game-dev-2d/reports/r2-camera-verifier.md`).
+AFTER  Reproduce: `python corpus/fixtures/run_battery.py --probe-failing` (Godot 4.7.2). The committed independent replay is `r2-camera-verifier.json`; named verifier: `r2-camera-verifier`, report `../../reports/r2-camera-verifier.md` (repository path `reports/r2-camera-verifier.md`).
+
+### corpus/lessons/r3-ui-headless.md:3
+BEFORE Reproduce: `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing` with Godot 4.7.2. Named non-author verifier `r3-ui-verifier` independently replayed 19/19 in `r3-ui-verifier.json`; report `.shokunin/game-dev-2d/reports/r3-ui-verifier.md`.
+AFTER  Reproduce: `python corpus/fixtures/run_battery.py --probe-failing` with Godot 4.7.2. Named non-author verifier `r3-ui-verifier` independently replayed 19/19 in `r3-ui-verifier.json`; report `reports/r3-ui-verifier.md`.
+
+### corpus/lessons/r4-level-headless.md:3
+BEFORE Reproduce: `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing` on Godot 4.7.2. Named final non-author verifier `r4-level-verifier-final`, report `.shokunin/game-dev-2d/reports/r4-level-verifier-final.md`, committed 21/21 raw replay `r4-level-verifier.json`. Earlier `r4-level-verifier` initially held a verdict due to RID/resource leaks; adding level to tree and freeing after a frame cleared the positive output; its later replay report also confirms 21/21.
+AFTER  Reproduce: `python corpus/fixtures/run_battery.py --probe-failing` on Godot 4.7.2. Named final non-author verifier `r4-level-verifier-final`, report `reports/r4-level-verifier-final.md`, committed 21/21 raw replay `r4-level-verifier.json`. Earlier `r4-level-verifier` initially held a verdict due to RID/resource leaks; adding level to tree and freeing after a frame cleared the positive output; its later replay report also confirms 21/21.
+
+### corpus/lessons/r5-animation-headless.md:3
+BEFORE Reproduce: `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing` on Godot 4.7.2. Named non-author verifier `r5-anim-verifier`, report `.shokunin/game-dev-2d/reports/r5-anim-verifier.md`, committed independent 23/23 raw result `r5-animation-verifier.json`.
+AFTER  Reproduce: `python corpus/fixtures/run_battery.py --probe-failing` on Godot 4.7.2. Named non-author verifier `r5-anim-verifier`, report `reports/r5-anim-verifier.md`, committed independent 23/23 raw result `r5-animation-verifier.json`.
+
+### corpus/lessons/r6-export-headless.md:3
+BEFORE Reproduce: `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing` (Godot 4.7.2 and installed matching Linux template). Named final non-author verifier `r6-export-verifier-final`; report `.shokunin/game-dev-2d/reports/r6-export-verifier-final.md`, raw independent 25/25 record `r6-export-verifier.json`. Prior `r6-export-verifier.md` HOLD caught negative-copy sidecars; corrected runner excludes positive `out` and asserts entire negative output directory remains empty. Initial HOLD remains evidence.
+AFTER  Reproduce: `python corpus/fixtures/run_battery.py --probe-failing` (Godot 4.7.2 and installed matching Linux template). Named final non-author verifier `r6-export-verifier-final`; report `reports/r6-export-verifier-final.md`, raw independent 25/25 record `r6-export-verifier.json`. Prior `r6-export-verifier.md` HOLD caught negative-copy sidecars; corrected runner excludes positive `out` and asserts entire negative output directory remains empty. Initial HOLD remains evidence.
+
+### corpus/lessons/r7-fault-classification.md:3
+BEFORE Reproduce on Godot 4.7.2: `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --fault-injection` → meta PASS in independent `r7-fault-verifier.json`; and `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing` → 25/25 in independent `r7-normal-verifier.json`. Named non-author verifier `r7-fault-verifier`, report `.shokunin/game-dev-2d/reports/r7-fault-verifier.md`.
+AFTER  Reproduce on Godot 4.7.2: `python corpus/fixtures/run_battery.py --fault-injection` → meta PASS in independent `r7-fault-verifier.json`; and `python corpus/fixtures/run_battery.py --probe-failing` → 25/25 in independent `r7-normal-verifier.json`. Named non-author verifier `r7-fault-verifier`, report `reports/r7-fault-verifier.md`.
+
+### corpus/lessons/r8-runtime-contact.md:3
+BEFORE Reproduce on Godot 4.7.2 with `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing`. Independent named non-author verifier `r8-contact-verifier`: committed `r8-contact-verifier.json`, 27/27 PASS (25 retained). Direct copied-project no-collision also exited 2 with expected assertion; scratch extra collidable tile at `(2,2)` caused a fail-closed contact attribution, not a false positive. Reports under `.shokunin/game-dev-2d/reports/r8-contact-*.md`.
+AFTER  Reproduce on Godot 4.7.2 with `python corpus/fixtures/run_battery.py --probe-failing`. Independent named non-author verifier `r8-contact-verifier`: committed `r8-contact-verifier.json`, 27/27 PASS (25 retained). Direct copied-project no-collision also exited 2 with expected assertion; scratch extra collidable tile at `(2,2)` caused a fail-closed contact attribution, not a false positive. Reports under `reports/r8-contact-*.md`.
+
+### corpus/lessons/r9-diagnostic-calibration.md:3
+BEFORE Reproduce on Godot 4.7.2: `python .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error` → independent 31 records PASS, consisting of the prior 27 cases and four opt-in classifier checks (`r9-diagnostic-verifier.json`). `--fault-injection` remains meta PASS (`r9-fault-regression.json`). Named non-author verifier: `.shokunin/game-dev-2d/reports/r9-diagnostic-verifier.md`.
+AFTER  Reproduce on Godot 4.7.2: `python corpus/fixtures/run_battery.py --probe-failing --probe-unrelated-error` → independent 31 records PASS, consisting of the prior 27 cases and four opt-in classifier checks (`r9-diagnostic-verifier.json`). `--fault-injection` remains meta PASS (`r9-fault-regression.json`). Named non-author verifier: `reports/r9-diagnostic-verifier.md`.
+
+### corpus/lessons/r16-export-adverse.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/runs/20261012T184136853021Z/scratch",
+AFTER    "scratch": "corpus/live/runs/20261012T184136853021Z/scratch",
+
+### corpus/lessons/r24-export-adverse.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r24-bottom-executor/20261013T012020522893Z/scratch",
+AFTER    "scratch": "corpus/live/r24-bottom-executor/20261013T012020522893Z/scratch",
+
+### corpus/lessons/r25-direct-target-pair.json:5
+BEFORE     "run_root_arg": ".shokunin/game-dev-2d/corpus/live/r25-pair-reviewer/pairs/runroot-relative-0",
+AFTER      "run_root_arg": "corpus/live/r25-pair-reviewer/pairs/runroot-relative-0",
+
+### corpus/lessons/r25-direct-target-pair.json:11
+BEFORE       ".shokunin/game-dev-2d/corpus/live/r25-pair-reviewer/pairs/project",
+AFTER        "corpus/live/r25-pair-reviewer/pairs/project",
+
+### corpus/lessons/r25-direct-target-pair.json:14
+BEFORE       ".shokunin/game-dev-2d/corpus/live/r25-pair-reviewer/pairs/runroot-relative-0/export/fixture.x86_64"
+AFTER        "corpus/live/r25-pair-reviewer/pairs/runroot-relative-0/export/fixture.x86_64"
+
+### corpus/lessons/r25-direct-target-pair.json:33
+BEFORE       ".shokunin/game-dev-2d/corpus/live/r25-pair-reviewer/pairs/project",
+AFTER        "corpus/live/r25-pair-reviewer/pairs/project",
+
+### corpus/lessons/r25-direct-target-pair.json:55
+BEFORE       ".shokunin/game-dev-2d/corpus/live/r25-pair-reviewer/pairs/project",
+AFTER        "corpus/live/r25-pair-reviewer/pairs/project",
+
+### corpus/lessons/r25-direct-target-pair.json:71
+BEFORE     "run_root_arg": ".shokunin/game-dev-2d/corpus/live/r25-pair-reviewer/pairs/runroot-relative-3",
+AFTER      "run_root_arg": "corpus/live/r25-pair-reviewer/pairs/runroot-relative-3",
+
+### corpus/lessons/r25-direct-target-pair.json:77
+BEFORE       ".shokunin/game-dev-2d/corpus/live/r25-pair-reviewer/pairs/project",
+AFTER        "corpus/live/r25-pair-reviewer/pairs/project",
+
+### corpus/lessons/r25-direct-target-pair.json:80
+BEFORE       ".shokunin/game-dev-2d/corpus/live/r25-pair-reviewer/pairs/runroot-relative-3/export/fixture.x86_64"
+AFTER        "corpus/live/r25-pair-reviewer/pairs/runroot-relative-3/export/fixture.x86_64"
+
+### corpus/lessons/r25-export-launch-adverse.json:13
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/positive",
+AFTER          "corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/positive",
+
+### corpus/lessons/r25-export-launch-adverse.json:16
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/positive/out/fixture-launch.x86_64"
+AFTER          "corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/positive/out/fixture-launch.x86_64"
+
+### corpus/lessons/r25-export-launch-adverse.json:67
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/positive/out/fixture-launch.x86_64",
+AFTER          "corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/positive/out/fixture-launch.x86_64",
+
+### corpus/lessons/r25-export-launch-adverse.json:70
+BEFORE       "launch_cwd": ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/positive/out",
+AFTER        "launch_cwd": "corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/positive/out",
+
+### corpus/lessons/r25-export-launch-adverse.json:87
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/negative",
+AFTER          "corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/negative",
+
+### corpus/lessons/r25-export-launch-adverse.json:90
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/negative/out/fixture-launch.x86_64"
+AFTER          "corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/negative/out/fixture-launch.x86_64"
+
+### corpus/lessons/r25-export-launch-adverse.json:141
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/negative/out/fixture-launch.x86_64",
+AFTER          "corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/negative/out/fixture-launch.x86_64",
+
+### corpus/lessons/r25-export-launch-adverse.json:144
+BEFORE       "launch_cwd": ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/negative/out",
+AFTER        "launch_cwd": "corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch/negative/out",
+
+### corpus/lessons/r25-export-launch-verifier2.json:13
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r25-verifier2-relative/20261013T013730764108Z/export-launch/positive",
+AFTER          "corpus/live/r25-verifier2-relative/20261013T013730764108Z/export-launch/positive",
+
+### corpus/lessons/r25-export-launch-verifier2.json:124
+BEFORE       "launch_cwd": ".shokunin/game-dev-2d/corpus/live/r25-verifier2-relative/20261013T013730764108Z/export-launch/positive/out",
+AFTER        "launch_cwd": "corpus/live/r25-verifier2-relative/20261013T013730764108Z/export-launch/positive/out",
+
+### corpus/lessons/r25-export-launch-verifier2.json:149
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r25-verifier2-relative/20261013T013730764108Z/export-launch/negative",
+AFTER          "corpus/live/r25-verifier2-relative/20261013T013730764108Z/export-launch/negative",
+
+### corpus/lessons/r25-export-launch-verifier2.json:260
+BEFORE       "launch_cwd": ".shokunin/game-dev-2d/corpus/live/r25-verifier2-relative/20261013T013730764108Z/export-launch/negative/out",
+AFTER        "launch_cwd": "corpus/live/r25-verifier2-relative/20261013T013730764108Z/export-launch/negative/out",
+
+### corpus/lessons/r25-export-pair-verifier.json:18
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative"
+AFTER          "corpus/live/r25-verifier-relative"
+
+### corpus/lessons/r25-export-pair-verifier.json:99
+BEFORE     "full": "diff --git i/.shokunin/game-dev-2d/corpus/fixtures/run_battery.py w/.shokunin/game-dev-2d/corpus/fixtures/run_battery.py\nindex 1a36adb..1204fff 100644\n--- i/.shokunin/game-dev-2d/corpus/fixtures/run_battery.py\n+++ w/.shokunin/game-dev-2d/corpus/fixtures/run_battery.py\n@@ -232,7 +232,7 @@ def main():\n             out_dir = export_project / \"out\"\n             out_dir.mkdir(exist_ok=True)\n             assert not any(out_dir.iterdir()), \"export output directory must start empty\"\n-            export_path = out_dir / \"fixture.x86_64\"\n+            export_path = (out_dir / \"fixture.x86_64\").resolve()\n             command = [args.godot, \"--headless\", \"--path\", str(export_project),\n                        \"--export-debug\", preset_name, str(export_path)]\n         else:\n",
+AFTER      "full": "diff --git i/corpus/fixtures/run_battery.py w/corpus/fixtures/run_battery.py\nindex 1a36adb..1204fff 100644\n--- i/corpus/fixtures/run_battery.py\n+++ w/corpus/fixtures/run_battery.py\n@@ -232,7 +232,7 @@ def main():\n             out_dir = export_project / \"out\"\n             out_dir.mkdir(exist_ok=True)\n             assert not any(out_dir.iterdir()), \"export output directory must start empty\"\n-            export_path = out_dir / \"fixture.x86_64\"\n+            export_path = (out_dir / \"fixture.x86_64\").resolve()\n             command = [args.godot, \"--headless\", \"--path\", str(export_project),\n                        \"--export-debug\", preset_name, str(export_path)]\n         else:\n",
+
+### corpus/lessons/r25-export-pair-verifier.json:159
+BEFORE       "details": ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch-verdicts.json"
+AFTER        "details": "corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch-verdicts.json"
+
+### corpus/lessons/r25-export-verifier.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/scratch",
+AFTER    "scratch": "corpus/live/r25-verifier-relative/20261013T013226596396Z/scratch",
+
+### corpus/lessons/r25-export-verifier.json:1453
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r25-verifier-relative/20261013T013226596396Z/export-launch-verdicts.json",
+
+### corpus/lessons/r25-export-verifier.json:1460
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r25-verifier-relative/20261013T013226596396Z/godot-error-verdicts.json",
+
+### corpus/lessons/r25-export-verifier.json:1469
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r25-verifier-relative/20261013T013226596396Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r25-export-verifier.json:1478
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r25-verifier-relative/20261013T013226596396Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r25-export-verifier.json:1487
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r25-verifier-relative/20261013T013226596396Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r25-verifier-relative/20261013T013226596396Z/timeout-verdicts.json",
+
+### corpus/lessons/r25-export-verifier2.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r25-verifier2-relative/20261013T013730764108Z/scratch",
+AFTER    "scratch": "corpus/live/r25-verifier2-relative/20261013T013730764108Z/scratch",
+
+### corpus/lessons/r25-export-verifier2.json:1453
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r25-verifier2-relative/20261013T013730764108Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r25-verifier2-relative/20261013T013730764108Z/export-launch-verdicts.json",
+
+### corpus/lessons/r25-export-verifier2.json:1460
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r25-verifier2-relative/20261013T013730764108Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r25-verifier2-relative/20261013T013730764108Z/godot-error-verdicts.json",
+
+### corpus/lessons/r25-export-verifier2.json:1469
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r25-verifier2-relative/20261013T013730764108Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r25-verifier2-relative/20261013T013730764108Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r25-export-verifier2.json:1478
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r25-verifier2-relative/20261013T013730764108Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r25-verifier2-relative/20261013T013730764108Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r25-export-verifier2.json:1487
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r25-verifier2-relative/20261013T013730764108Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r25-verifier2-relative/20261013T013730764108Z/timeout-verdicts.json",
+
+### corpus/lessons/r25-pair-before-1.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r25-pair-reviewer/runner-runs-relative-0/20261013T012812194584Z/scratch",
+AFTER    "scratch": "corpus/live/r25-pair-reviewer/runner-runs-relative-0/20261013T012812194584Z/scratch",
+
+### corpus/lessons/r25-pair-before-4.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r25-pair-reviewer/runner-runs-relative-3/20261013T012936870078Z/scratch",
+AFTER    "scratch": "corpus/live/r25-pair-reviewer/runner-runs-relative-3/20261013T012936870078Z/scratch",
+
+### corpus/lessons/r29-focus-verifier.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r29-named-verifier/full/20261013T043845183877Z/scratch",
+AFTER    "scratch": "corpus/live/r29-named-verifier/full/20261013T043845183877Z/scratch",
+
+### corpus/lessons/r29-focus-verifier.json:1531
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r29-named-verifier/full/20261013T043845183877Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r29-named-verifier/full/20261013T043845183877Z/export-launch-verdicts.json",
+
+### corpus/lessons/r29-focus-verifier.json:1538
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r29-named-verifier/full/20261013T043845183877Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r29-named-verifier/full/20261013T043845183877Z/godot-error-verdicts.json",
+
+### corpus/lessons/r29-focus-verifier.json:1547
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r29-named-verifier/full/20261013T043845183877Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r29-named-verifier/full/20261013T043845183877Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r29-focus-verifier.json:1556
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r29-named-verifier/full/20261013T043845183877Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r29-named-verifier/full/20261013T043845183877Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r29-focus-verifier.json:1565
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r29-named-verifier/full/20261013T043845183877Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r29-named-verifier/full/20261013T043845183877Z/timeout-verdicts.json",
+
+### corpus/lessons/r35-group-absence-verifier.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r35-group-absence-verifier/full/20261013T053548607212Z/scratch",
+AFTER    "scratch": "corpus/live/r35-group-absence-verifier/full/20261013T053548607212Z/scratch",
+
+### corpus/lessons/r35-group-absence-verifier.json:1691
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r35-group-absence-verifier/full/20261013T053548607212Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r35-group-absence-verifier/full/20261013T053548607212Z/export-launch-verdicts.json",
+
+### corpus/lessons/r35-group-absence-verifier.json:1698
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r35-group-absence-verifier/full/20261013T053548607212Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r35-group-absence-verifier/full/20261013T053548607212Z/godot-error-verdicts.json",
+
+### corpus/lessons/r35-group-absence-verifier.json:1707
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r35-group-absence-verifier/full/20261013T053548607212Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r35-group-absence-verifier/full/20261013T053548607212Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r35-group-absence-verifier.json:1716
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r35-group-absence-verifier/full/20261013T053548607212Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r35-group-absence-verifier/full/20261013T053548607212Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r35-group-absence-verifier.json:1725
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r35-group-absence-verifier/full/20261013T053548607212Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r35-group-absence-verifier/full/20261013T053548607212Z/timeout-verdicts.json",
+
+### corpus/lessons/r43-second-loss-verifier.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r43-second-loss-verifier/runs/20261013T071853230789Z/scratch",
+AFTER    "scratch": "corpus/live/r43-second-loss-verifier/runs/20261013T071853230789Z/scratch",
+
+### corpus/lessons/r43-second-loss-verifier.json:1890
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r43-second-loss-verifier/runs/20261013T071853230789Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r43-second-loss-verifier/runs/20261013T071853230789Z/export-launch-verdicts.json",
+
+### corpus/lessons/r43-second-loss-verifier.json:1897
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r43-second-loss-verifier/runs/20261013T071853230789Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r43-second-loss-verifier/runs/20261013T071853230789Z/godot-error-verdicts.json",
+
+### corpus/lessons/r43-second-loss-verifier.json:1906
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r43-second-loss-verifier/runs/20261013T071853230789Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r43-second-loss-verifier/runs/20261013T071853230789Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r43-second-loss-verifier.json:1915
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r43-second-loss-verifier/runs/20261013T071853230789Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r43-second-loss-verifier/runs/20261013T071853230789Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r43-second-loss-verifier.json:1924
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r43-second-loss-verifier/runs/20261013T071853230789Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r43-second-loss-verifier/runs/20261013T071853230789Z/timeout-verdicts.json",
+
+### corpus/lessons/r44-second-restore-verifier.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r44-second-restore-verifier/runs/20261013T073342315142Z/scratch",
+AFTER    "scratch": "corpus/live/r44-second-restore-verifier/runs/20261013T073342315142Z/scratch",
+
+### corpus/lessons/r44-second-restore-verifier.json:1908
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r44-second-restore-verifier/runs/20261013T073342315142Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r44-second-restore-verifier/runs/20261013T073342315142Z/export-launch-verdicts.json",
+
+### corpus/lessons/r44-second-restore-verifier.json:1915
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r44-second-restore-verifier/runs/20261013T073342315142Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r44-second-restore-verifier/runs/20261013T073342315142Z/godot-error-verdicts.json",
+
+### corpus/lessons/r44-second-restore-verifier.json:1924
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r44-second-restore-verifier/runs/20261013T073342315142Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r44-second-restore-verifier/runs/20261013T073342315142Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r44-second-restore-verifier.json:1933
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r44-second-restore-verifier/runs/20261013T073342315142Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r44-second-restore-verifier/runs/20261013T073342315142Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r44-second-restore-verifier.json:1942
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r44-second-restore-verifier/runs/20261013T073342315142Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r44-second-restore-verifier/runs/20261013T073342315142Z/timeout-verdicts.json",
+
+### corpus/lessons/r45-double-restore-disconnect-verifier.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r45-double-restore-disconnect-verifier/runs/20261013T074300807196Z/scratch",
+AFTER    "scratch": "corpus/live/r45-double-restore-disconnect-verifier/runs/20261013T074300807196Z/scratch",
+
+### corpus/lessons/r45-double-restore-disconnect-verifier.json:1931
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r45-double-restore-disconnect-verifier/runs/20261013T074300807196Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r45-double-restore-disconnect-verifier/runs/20261013T074300807196Z/export-launch-verdicts.json",
+
+### corpus/lessons/r45-double-restore-disconnect-verifier.json:1938
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r45-double-restore-disconnect-verifier/runs/20261013T074300807196Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r45-double-restore-disconnect-verifier/runs/20261013T074300807196Z/godot-error-verdicts.json",
+
+### corpus/lessons/r45-double-restore-disconnect-verifier.json:1947
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r45-double-restore-disconnect-verifier/runs/20261013T074300807196Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r45-double-restore-disconnect-verifier/runs/20261013T074300807196Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r45-double-restore-disconnect-verifier.json:1956
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r45-double-restore-disconnect-verifier/runs/20261013T074300807196Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r45-double-restore-disconnect-verifier/runs/20261013T074300807196Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r45-double-restore-disconnect-verifier.json:1965
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r45-double-restore-disconnect-verifier/runs/20261013T074300807196Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r45-double-restore-disconnect-verifier/runs/20261013T074300807196Z/timeout-verdicts.json",
+
+### corpus/lessons/r46-mid-disconnect-verifier.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r46-mid-disconnect-verifier/runs/20261013T075557459322Z/scratch",
+AFTER    "scratch": "corpus/live/r46-mid-disconnect-verifier/runs/20261013T075557459322Z/scratch",
+
+### corpus/lessons/r46-mid-disconnect-verifier.json:1954
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r46-mid-disconnect-verifier/runs/20261013T075557459322Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r46-mid-disconnect-verifier/runs/20261013T075557459322Z/export-launch-verdicts.json",
+
+### corpus/lessons/r46-mid-disconnect-verifier.json:1961
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r46-mid-disconnect-verifier/runs/20261013T075557459322Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r46-mid-disconnect-verifier/runs/20261013T075557459322Z/godot-error-verdicts.json",
+
+### corpus/lessons/r46-mid-disconnect-verifier.json:1970
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r46-mid-disconnect-verifier/runs/20261013T075557459322Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r46-mid-disconnect-verifier/runs/20261013T075557459322Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r46-mid-disconnect-verifier.json:1979
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r46-mid-disconnect-verifier/runs/20261013T075557459322Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r46-mid-disconnect-verifier/runs/20261013T075557459322Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r46-mid-disconnect-verifier.json:1988
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r46-mid-disconnect-verifier/runs/20261013T075557459322Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r46-mid-disconnect-verifier/runs/20261013T075557459322Z/timeout-verdicts.json",
+
+### corpus/lessons/r47-reconnect-verifier.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r47-reconnect-verifier/runs/20261013T081039988235Z/scratch",
+AFTER    "scratch": "corpus/live/r47-reconnect-verifier/runs/20261013T081039988235Z/scratch",
+
+### corpus/lessons/r47-reconnect-verifier.json:1973
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r47-reconnect-verifier/runs/20261013T081039988235Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r47-reconnect-verifier/runs/20261013T081039988235Z/export-launch-verdicts.json",
+
+### corpus/lessons/r47-reconnect-verifier.json:1980
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r47-reconnect-verifier/runs/20261013T081039988235Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r47-reconnect-verifier/runs/20261013T081039988235Z/godot-error-verdicts.json",
+
+### corpus/lessons/r47-reconnect-verifier.json:1989
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r47-reconnect-verifier/runs/20261013T081039988235Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r47-reconnect-verifier/runs/20261013T081039988235Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r47-reconnect-verifier.json:1998
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r47-reconnect-verifier/runs/20261013T081039988235Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r47-reconnect-verifier/runs/20261013T081039988235Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r47-reconnect-verifier.json:2007
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r47-reconnect-verifier/runs/20261013T081039988235Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r47-reconnect-verifier/runs/20261013T081039988235Z/timeout-verdicts.json",
+
+### corpus/lessons/r48-late-reconnect-verifier.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r48-late-reconnect-verifier/runs/20261013T082736843799Z/scratch",
+AFTER    "scratch": "corpus/live/r48-late-reconnect-verifier/runs/20261013T082736843799Z/scratch",
+
+### corpus/lessons/r48-late-reconnect-verifier.json:1996
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r48-late-reconnect-verifier/runs/20261013T082736843799Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r48-late-reconnect-verifier/runs/20261013T082736843799Z/export-launch-verdicts.json",
+
+### corpus/lessons/r48-late-reconnect-verifier.json:2003
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r48-late-reconnect-verifier/runs/20261013T082736843799Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r48-late-reconnect-verifier/runs/20261013T082736843799Z/godot-error-verdicts.json",
+
+### corpus/lessons/r48-late-reconnect-verifier.json:2012
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r48-late-reconnect-verifier/runs/20261013T082736843799Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r48-late-reconnect-verifier/runs/20261013T082736843799Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r48-late-reconnect-verifier.json:2021
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r48-late-reconnect-verifier/runs/20261013T082736843799Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r48-late-reconnect-verifier/runs/20261013T082736843799Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r48-late-reconnect-verifier.json:2030
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r48-late-reconnect-verifier/runs/20261013T082736843799Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r48-late-reconnect-verifier/runs/20261013T082736843799Z/timeout-verdicts.json",
+
+### corpus/lessons/r49-fresh-after-reconnect-non-author.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r49-fresh-after-reconnect-verifier/runs/20261013T084246724914Z/scratch",
+AFTER    "scratch": "corpus/live/r49-fresh-after-reconnect-verifier/runs/20261013T084246724914Z/scratch",
+
+### corpus/lessons/r49-fresh-after-reconnect-non-author.json:2015
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r49-fresh-after-reconnect-verifier/runs/20261013T084246724914Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r49-fresh-after-reconnect-verifier/runs/20261013T084246724914Z/export-launch-verdicts.json",
+
+### corpus/lessons/r49-fresh-after-reconnect-non-author.json:2022
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r49-fresh-after-reconnect-verifier/runs/20261013T084246724914Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r49-fresh-after-reconnect-verifier/runs/20261013T084246724914Z/godot-error-verdicts.json",
+
+### corpus/lessons/r49-fresh-after-reconnect-non-author.json:2031
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r49-fresh-after-reconnect-verifier/runs/20261013T084246724914Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r49-fresh-after-reconnect-verifier/runs/20261013T084246724914Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r49-fresh-after-reconnect-non-author.json:2040
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r49-fresh-after-reconnect-verifier/runs/20261013T084246724914Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r49-fresh-after-reconnect-verifier/runs/20261013T084246724914Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r49-fresh-after-reconnect-non-author.json:2049
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r49-fresh-after-reconnect-verifier/runs/20261013T084246724914Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r49-fresh-after-reconnect-verifier/runs/20261013T084246724914Z/timeout-verdicts.json",
+
+### corpus/lessons/r49-fresh-after-reconnect-verifier.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r49-fresh-after-reconnect-executor/runs/full/20261013T083655014417Z/scratch",
+AFTER    "scratch": "corpus/live/r49-fresh-after-reconnect-executor/runs/full/20261013T083655014417Z/scratch",
+
+### corpus/lessons/r49-fresh-after-reconnect-verifier.json:2015
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r49-fresh-after-reconnect-executor/runs/full/20261013T083655014417Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r49-fresh-after-reconnect-executor/runs/full/20261013T083655014417Z/export-launch-verdicts.json",
+
+### corpus/lessons/r49-fresh-after-reconnect-verifier.json:2022
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r49-fresh-after-reconnect-executor/runs/full/20261013T083655014417Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r49-fresh-after-reconnect-executor/runs/full/20261013T083655014417Z/godot-error-verdicts.json",
+
+### corpus/lessons/r49-fresh-after-reconnect-verifier.json:2031
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r49-fresh-after-reconnect-executor/runs/full/20261013T083655014417Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r49-fresh-after-reconnect-executor/runs/full/20261013T083655014417Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r49-fresh-after-reconnect-verifier.json:2040
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r49-fresh-after-reconnect-executor/runs/full/20261013T083655014417Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r49-fresh-after-reconnect-executor/runs/full/20261013T083655014417Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r49-fresh-after-reconnect-verifier.json:2049
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r49-fresh-after-reconnect-executor/runs/full/20261013T083655014417Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r49-fresh-after-reconnect-executor/runs/full/20261013T083655014417Z/timeout-verdicts.json",
+
+### corpus/lessons/r50-release-non-author.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r50-release-verifier/runs/20261013T085656904219Z/scratch",
+AFTER    "scratch": "corpus/live/r50-release-verifier/runs/20261013T085656904219Z/scratch",
+
+### corpus/lessons/r50-release-non-author.json:2038
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r50-release-verifier/runs/20261013T085656904219Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r50-release-verifier/runs/20261013T085656904219Z/export-launch-verdicts.json",
+
+### corpus/lessons/r50-release-non-author.json:2045
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r50-release-verifier/runs/20261013T085656904219Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r50-release-verifier/runs/20261013T085656904219Z/godot-error-verdicts.json",
+
+### corpus/lessons/r50-release-non-author.json:2054
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r50-release-verifier/runs/20261013T085656904219Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r50-release-verifier/runs/20261013T085656904219Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r50-release-non-author.json:2063
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r50-release-verifier/runs/20261013T085656904219Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r50-release-verifier/runs/20261013T085656904219Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r50-release-non-author.json:2072
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r50-release-verifier/runs/20261013T085656904219Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r50-release-verifier/runs/20261013T085656904219Z/timeout-verdicts.json",
+
+### corpus/lessons/r50-release-repaired-non-author.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r50-release-repaired-verifier/runs/20261013T090126394379Z/scratch",
+AFTER    "scratch": "corpus/live/r50-release-repaired-verifier/runs/20261013T090126394379Z/scratch",
+
+### corpus/lessons/r50-release-repaired-non-author.json:2038
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r50-release-repaired-verifier/runs/20261013T090126394379Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r50-release-repaired-verifier/runs/20261013T090126394379Z/export-launch-verdicts.json",
+
+### corpus/lessons/r50-release-repaired-non-author.json:2045
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r50-release-repaired-verifier/runs/20261013T090126394379Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r50-release-repaired-verifier/runs/20261013T090126394379Z/godot-error-verdicts.json",
+
+### corpus/lessons/r50-release-repaired-non-author.json:2054
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r50-release-repaired-verifier/runs/20261013T090126394379Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r50-release-repaired-verifier/runs/20261013T090126394379Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r50-release-repaired-non-author.json:2063
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r50-release-repaired-verifier/runs/20261013T090126394379Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r50-release-repaired-verifier/runs/20261013T090126394379Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r50-release-repaired-non-author.json:2072
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r50-release-repaired-verifier/runs/20261013T090126394379Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r50-release-repaired-verifier/runs/20261013T090126394379Z/timeout-verdicts.json",
+
+### corpus/lessons/r51-provenance-non-author.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r51-provenance-verifier/runs/20261013T092534215147Z/scratch",
+AFTER    "scratch": "corpus/live/r51-provenance-verifier/runs/20261013T092534215147Z/scratch",
+
+### corpus/lessons/r51-provenance-non-author.json:2061
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r51-provenance-verifier/runs/20261013T092534215147Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r51-provenance-verifier/runs/20261013T092534215147Z/export-launch-verdicts.json",
+
+### corpus/lessons/r51-provenance-non-author.json:2068
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r51-provenance-verifier/runs/20261013T092534215147Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r51-provenance-verifier/runs/20261013T092534215147Z/godot-error-verdicts.json",
+
+### corpus/lessons/r51-provenance-non-author.json:2077
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r51-provenance-verifier/runs/20261013T092534215147Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r51-provenance-verifier/runs/20261013T092534215147Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r51-provenance-non-author.json:2086
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r51-provenance-verifier/runs/20261013T092534215147Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r51-provenance-verifier/runs/20261013T092534215147Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r51-provenance-non-author.json:2095
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r51-provenance-verifier/runs/20261013T092534215147Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r51-provenance-verifier/runs/20261013T092534215147Z/timeout-verdicts.json",
+
+### corpus/lessons/r52-route-non-author.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r52-route-verifier/runs/20261013T094310757366Z/scratch",
+AFTER    "scratch": "corpus/live/r52-route-verifier/runs/20261013T094310757366Z/scratch",
+
+### corpus/lessons/r52-route-non-author.json:2084
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r52-route-verifier/runs/20261013T094310757366Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r52-route-verifier/runs/20261013T094310757366Z/export-launch-verdicts.json",
+
+### corpus/lessons/r52-route-non-author.json:2091
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r52-route-verifier/runs/20261013T094310757366Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r52-route-verifier/runs/20261013T094310757366Z/godot-error-verdicts.json",
+
+### corpus/lessons/r52-route-non-author.json:2100
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r52-route-verifier/runs/20261013T094310757366Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r52-route-verifier/runs/20261013T094310757366Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r52-route-non-author.json:2109
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r52-route-verifier/runs/20261013T094310757366Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r52-route-verifier/runs/20261013T094310757366Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r52-route-non-author.json:2118
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r52-route-verifier/runs/20261013T094310757366Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r52-route-verifier/runs/20261013T094310757366Z/timeout-verdicts.json",
+
+### corpus/lessons/r53-composite-non-author.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r53-named-verifier/runs/20261013T100445520979Z/scratch",
+AFTER    "scratch": "corpus/live/r53-named-verifier/runs/20261013T100445520979Z/scratch",
+
+### corpus/lessons/r53-composite-non-author.json:2107
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r53-named-verifier/runs/20261013T100445520979Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r53-named-verifier/runs/20261013T100445520979Z/export-launch-verdicts.json",
+
+### corpus/lessons/r53-composite-non-author.json:2114
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r53-named-verifier/runs/20261013T100445520979Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r53-named-verifier/runs/20261013T100445520979Z/godot-error-verdicts.json",
+
+### corpus/lessons/r53-composite-non-author.json:2123
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r53-named-verifier/runs/20261013T100445520979Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r53-named-verifier/runs/20261013T100445520979Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r53-composite-non-author.json:2132
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r53-named-verifier/runs/20261013T100445520979Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r53-named-verifier/runs/20261013T100445520979Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r53-composite-non-author.json:2141
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r53-named-verifier/runs/20261013T100445520979Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r53-named-verifier/runs/20261013T100445520979Z/timeout-verdicts.json",
+
+### corpus/lessons/r54-order-non-author.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r54-named-verifier/runs/20261013T102112995097Z/scratch",
+AFTER    "scratch": "corpus/live/r54-named-verifier/runs/20261013T102112995097Z/scratch",
+
+### corpus/lessons/r54-order-non-author.json:2130
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r54-named-verifier/runs/20261013T102112995097Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r54-named-verifier/runs/20261013T102112995097Z/export-launch-verdicts.json",
+
+### corpus/lessons/r54-order-non-author.json:2137
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r54-named-verifier/runs/20261013T102112995097Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r54-named-verifier/runs/20261013T102112995097Z/godot-error-verdicts.json",
+
+### corpus/lessons/r54-order-non-author.json:2146
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r54-named-verifier/runs/20261013T102112995097Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r54-named-verifier/runs/20261013T102112995097Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r54-order-non-author.json:2155
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r54-named-verifier/runs/20261013T102112995097Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r54-named-verifier/runs/20261013T102112995097Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r54-order-non-author.json:2164
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r54-named-verifier/runs/20261013T102112995097Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r54-named-verifier/runs/20261013T102112995097Z/timeout-verdicts.json",
+
+### corpus/lessons/r55-frame-non-author.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r55-frame-verifier/repaired/runs/20261013T104045228956Z/scratch",
+AFTER    "scratch": "corpus/live/r55-frame-verifier/repaired/runs/20261013T104045228956Z/scratch",
+
+### corpus/lessons/r55-frame-non-author.json:2153
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r55-frame-verifier/repaired/runs/20261013T104045228956Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r55-frame-verifier/repaired/runs/20261013T104045228956Z/export-launch-verdicts.json",
+
+### corpus/lessons/r55-frame-non-author.json:2160
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r55-frame-verifier/repaired/runs/20261013T104045228956Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r55-frame-verifier/repaired/runs/20261013T104045228956Z/godot-error-verdicts.json",
+
+### corpus/lessons/r55-frame-non-author.json:2169
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r55-frame-verifier/repaired/runs/20261013T104045228956Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r55-frame-verifier/repaired/runs/20261013T104045228956Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r55-frame-non-author.json:2178
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r55-frame-verifier/repaired/runs/20261013T104045228956Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r55-frame-verifier/repaired/runs/20261013T104045228956Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r55-frame-non-author.json:2187
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r55-frame-verifier/repaired/runs/20261013T104045228956Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r55-frame-verifier/repaired/runs/20261013T104045228956Z/timeout-verdicts.json",
+
+### corpus/lessons/r56-pushframe-non-author.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r56-named-verifier-20261013T105550Z/full/20261013T105550668723Z/scratch",
+AFTER    "scratch": "corpus/live/r56-named-verifier-20261013T105550Z/full/20261013T105550668723Z/scratch",
+
+### corpus/lessons/r56-pushframe-non-author.json:2176
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r56-named-verifier-20261013T105550Z/full/20261013T105550668723Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r56-named-verifier-20261013T105550Z/full/20261013T105550668723Z/export-launch-verdicts.json",
+
+### corpus/lessons/r56-pushframe-non-author.json:2183
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r56-named-verifier-20261013T105550Z/full/20261013T105550668723Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r56-named-verifier-20261013T105550Z/full/20261013T105550668723Z/godot-error-verdicts.json",
+
+### corpus/lessons/r56-pushframe-non-author.json:2192
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r56-named-verifier-20261013T105550Z/full/20261013T105550668723Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r56-named-verifier-20261013T105550Z/full/20261013T105550668723Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r56-pushframe-non-author.json:2201
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r56-named-verifier-20261013T105550Z/full/20261013T105550668723Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r56-named-verifier-20261013T105550Z/full/20261013T105550668723Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r56-pushframe-non-author.json:2210
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r56-named-verifier-20261013T105550Z/full/20261013T105550668723Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r56-named-verifier-20261013T105550Z/full/20261013T105550668723Z/timeout-verdicts.json",
+
+### corpus/lessons/r57-save-non-author.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r57-save-verifier/corrected-seven-flag-runs/20261013T131017016504Z/scratch",
+AFTER    "scratch": "corpus/live/r57-save-verifier/corrected-seven-flag-runs/20261013T131017016504Z/scratch",
+
+### corpus/lessons/r57-save-non-author.json:2230
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r57-save-verifier/corrected-seven-flag-runs/20261013T131017016504Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r57-save-verifier/corrected-seven-flag-runs/20261013T131017016504Z/export-launch-verdicts.json",
+
+### corpus/lessons/r57-save-non-author.json:2237
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r57-save-verifier/corrected-seven-flag-runs/20261013T131017016504Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r57-save-verifier/corrected-seven-flag-runs/20261013T131017016504Z/godot-error-verdicts.json",
+
+### corpus/lessons/r57-save-non-author.json:2246
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r57-save-verifier/corrected-seven-flag-runs/20261013T131017016504Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r57-save-verifier/corrected-seven-flag-runs/20261013T131017016504Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r57-save-non-author.json:2255
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r57-save-verifier/corrected-seven-flag-runs/20261013T131017016504Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r57-save-verifier/corrected-seven-flag-runs/20261013T131017016504Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r57-save-non-author.json:2264
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r57-save-verifier/corrected-seven-flag-runs/20261013T131017016504Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r57-save-verifier/corrected-seven-flag-runs/20261013T131017016504Z/timeout-verdicts.json",
+
+### corpus/lessons/r58-process-evidence-non-author.json:20
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-evidence-non-author.json:41
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-evidence-non-author.json:67
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER    "scratch": "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:15
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:40
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:65
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:90
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:115
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:140
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:165
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:192
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:220
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:248
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:274
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:299
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:327
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:360
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:388
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:415
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:444
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:471
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:503
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:531
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:563
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:591
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:623
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:651
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:681
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:708
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:737
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:764
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:794
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:819
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:846
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:875
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:902
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:931
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:958
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:987
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:1014
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:1490
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:1786
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/missing-preset-scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/missing-preset-scratch",
+
+### corpus/lessons/r58-process-non-author.json:1855
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:1884
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:1916
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:1948
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:1977
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2006
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2037
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2066
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2100
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2132
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2159
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2191
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2223
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2252
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2286
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2320
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2354
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2384
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2418
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2449
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2485
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2517
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2553
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2589
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2625
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2661
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2697
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2733
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2769
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2801
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2837
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2869
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2896
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2925
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2950
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:2976
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:3001
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/save-process-verdicts.json",
+AFTER        "artifact": "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/save-process-verdicts.json",
+
+### corpus/lessons/r58-process-non-author.json:3058
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:3131
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+AFTER          "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/scratch",
+
+### corpus/lessons/r58-process-non-author.json:3155
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/export-launch-verdicts.json",
+
+### corpus/lessons/r58-process-non-author.json:3162
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/godot-error-verdicts.json",
+
+### corpus/lessons/r58-process-non-author.json:3171
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r58-process-non-author.json:3180
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r58-process-non-author.json:3189
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r58-process-verifier/full-runs/20261013T132838657775Z/timeout-verdicts.json",
+
+### corpus/lessons/r61-crash-non-author.json:4
+BEFORE   "scratch": ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER    "scratch": "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:15
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:40
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:65
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:90
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:115
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:140
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:165
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:192
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:220
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:248
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:274
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:299
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:327
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:360
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:388
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:415
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:444
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:471
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:503
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:531
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:563
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:591
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:623
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:651
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:681
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:708
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:737
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:764
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:794
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:819
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:846
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:875
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:902
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:931
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:958
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:987
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:1014
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:1043
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:1070
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:1570
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:1878
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/missing-preset-scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/missing-preset-scratch",
+
+### corpus/lessons/r61-crash-non-author.json:1949
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:1978
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2010
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2042
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2071
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2100
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2131
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2160
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2194
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2226
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2253
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2285
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2317
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2346
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2380
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2414
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2448
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2478
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2512
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2543
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2579
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2611
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2647
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2683
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2719
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2755
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2791
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2827
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2863
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2895
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2931
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2963
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:2990
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:3019
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:3044
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:3070
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:3102
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:3157
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:3178
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/save-process-verdicts.json",
+AFTER        "artifact": "corpus/live/r61-verifier/runs/20261013T230731579744Z/save-process-verdicts.json",
+
+### corpus/lessons/r61-crash-non-author.json:3252
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:3325
+BEFORE         ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+AFTER          "corpus/live/r61-verifier/runs/20261013T230731579744Z/scratch",
+
+### corpus/lessons/r61-crash-non-author.json:3349
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/export-launch-verdicts.json",
+AFTER        "artifact": "corpus/live/r61-verifier/runs/20261013T230731579744Z/export-launch-verdicts.json",
+
+### corpus/lessons/r61-crash-non-author.json:3356
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/godot-error-verdicts.json",
+AFTER        "artifact": "corpus/live/r61-verifier/runs/20261013T230731579744Z/godot-error-verdicts.json",
+
+### corpus/lessons/r61-crash-non-author.json:3365
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/stream-attribution-verdicts.json",
+AFTER        "artifact": "corpus/live/r61-verifier/runs/20261013T230731579744Z/stream-attribution-verdicts.json",
+
+### corpus/lessons/r61-crash-non-author.json:3374
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/crash-exit-verdicts.json",
+AFTER        "artifact": "corpus/live/r61-verifier/runs/20261013T230731579744Z/crash-exit-verdicts.json",
+
+### corpus/lessons/r61-crash-non-author.json:3383
+BEFORE       "artifact": ".shokunin/game-dev-2d/corpus/live/r61-verifier/runs/20261013T230731579744Z/timeout-verdicts.json",
+AFTER        "artifact": "corpus/live/r61-verifier/runs/20261013T230731579744Z/timeout-verdicts.json",
+
+### NOT-REPAIRABLE-BY-SUBSTITUTION (absolute old-root receipts): 384 lines
+LEAVE corpus/lessons/r10-battery-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r10-battery-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r10-battery-verifier.json:1045 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r10-launch-verifier.json:13 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r10-launch-verifier.json:16 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r10-launch-verifier.json:97 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r10-launch-verifier.json:100 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r10-launch-verifier.json:125 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r10-launch-verifier.json:128 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r10-launch-verifier.json:209 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r10-launch-verifier.json:212 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r11-battery-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r11-battery-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r11-battery-verifier.json:1064 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r11-battery-verifier.json:1071 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r11-godot-error-verifier.json:19 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r11-godot-error-verifier.json:45 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r11-launch-regression.json:13 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r11-launch-regression.json:16 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r11-launch-regression.json:100 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r11-launch-regression.json:103 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r11-launch-regression.json:128 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r11-launch-regression.json:131 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r11-launch-regression.json:215 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r11-launch-regression.json:218 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r12-battery-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r12-battery-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r12-battery-verifier.json:1118 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r12-battery-verifier.json:1125 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r12-cleanup-author.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r12-cleanup-author.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r12-initial-hold.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r12-initial-hold.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r12-initial-hold.json:1120 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r12-initial-hold.json:1127 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r13-battery-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r13-battery-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r13-battery-verifier.json:1172 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r13-battery-verifier.json:1179 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r14-warning-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r14-warning-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r14-warning-verifier.json:1203 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r14-warning-verifier.json:1210 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r15-gauge-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r15-gauge-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r15-gauge-verifier.json:1258 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r15-gauge-verifier.json:1265 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r16-clamp-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r16-export-adverse.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r16-parent-retry.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r17-battery-control.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r18-limit-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r18-limit-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r18-limit-verifier.json:1313 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r18-limit-verifier.json:1320 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r19-stream-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r19-stream-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r19-stream-verifier.json:1301 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r19-stream-verifier.json:1308 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r19-stream-verifier.json:1317 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r2-camera-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r2-camera-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r20-top-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r20-top-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r20-top-verifier.json:1339 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r20-top-verifier.json:1346 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r20-top-verifier.json:1355 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r21-crash-detail.json:16 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r21-crash-detail.json:39 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r21-crash-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r21-crash-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r21-crash-verifier.json:1358 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r21-crash-verifier.json:1365 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r21-crash-verifier.json:1374 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r21-crash-verifier.json:1383 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r22-timeout-detail.json:14 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r22-timeout-detail.json:37 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r22-timeout-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r22-timeout-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r22-timeout-verifier.json:1377 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r22-timeout-verifier.json:1384 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r22-timeout-verifier.json:1393 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r22-timeout-verifier.json:1402 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r22-timeout-verifier.json:1411 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r23-left-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r23-left-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r23-left-verifier.json:1415 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r23-left-verifier.json:1422 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r23-left-verifier.json:1431 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r23-left-verifier.json:1440 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r23-left-verifier.json:1449 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r24-bottom-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r24-bottom-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r24-bottom-verifier.json:1453 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r24-bottom-verifier.json:1460 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r24-bottom-verifier.json:1469 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r24-bottom-verifier.json:1478 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r24-bottom-verifier.json:1487 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r24-export-adverse.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-direct-target-pair.json:27 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-direct-target-pair.json:36 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-direct-target-pair.json:49 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-direct-target-pair.json:58 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-export-launch-verifier2.json:16 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r25-export-launch-verifier2.json:121 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r25-export-launch-verifier2.json:152 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r25-export-launch-verifier2.json:257 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r25-export-pair-verifier.json:9 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-export-pair-verifier.json:27 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-export-pair-verifier.json:29 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-export-pair-verifier.json:36 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-export-pair-verifier.json:39 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-export-pair-verifier.json:116 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-export-pair-verifier.json:119 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-export-pair-verifier.json:122 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-export-pair-verifier.json:125 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-export-pair-verifier.json:149 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-export-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-export-verifier2.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-pair-before-1.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-pair-before-2.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-pair-before-2.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r25-pair-before-3.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r25-pair-before-3.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r25-pair-before-4.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r26-timeout-detail.json:14 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r26-timeout-detail.json:41 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r26-timeout-detail.json:67 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r26-timeout-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r26-timeout-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r26-timeout-verifier.json:1453 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r26-timeout-verifier.json:1460 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r26-timeout-verifier.json:1469 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r26-timeout-verifier.json:1478 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r26-timeout-verifier.json:1487 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r27-button-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r27-button-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r27-button-verifier.json:1507 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r27-button-verifier.json:1514 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r27-button-verifier.json:1523 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r27-button-verifier.json:1532 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r27-button-verifier.json:1541 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r28-repeat-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r28-repeat-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r28-repeat-verifier.json:1507 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r28-repeat-verifier.json:1514 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r28-repeat-verifier.json:1523 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r28-repeat-verifier.json:1532 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r28-repeat-verifier.json:1541 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r29-focus-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r3-ui-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r3-ui-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r30-edge-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r30-edge-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r30-edge-verifier.json:1531 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r30-edge-verifier.json:1538 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r30-edge-verifier.json:1547 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r30-edge-verifier.json:1556 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r30-edge-verifier.json:1565 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r31-focus-loss-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r31-focus-loss-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r31-focus-loss-verifier.json:1551 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r31-focus-loss-verifier.json:1558 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r31-focus-loss-verifier.json:1567 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r31-focus-loss-verifier.json:1576 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r31-focus-loss-verifier.json:1585 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r32-checkbox-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r32-checkbox-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r32-checkbox-verifier.json:1609 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r32-checkbox-verifier.json:1616 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r32-checkbox-verifier.json:1625 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r32-checkbox-verifier.json:1634 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r32-checkbox-verifier.json:1643 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r33-checkbox-edge-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r33-checkbox-edge-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r33-checkbox-edge-verifier.json:1609 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r33-checkbox-edge-verifier.json:1616 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r33-checkbox-edge-verifier.json:1625 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r33-checkbox-edge-verifier.json:1634 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r33-checkbox-edge-verifier.json:1643 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r34-button-group-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r34-button-group-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r34-button-group-verifier.json:1668 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r34-button-group-verifier.json:1675 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r34-button-group-verifier.json:1684 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r34-button-group-verifier.json:1693 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r34-button-group-verifier.json:1702 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r35-group-absence-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r36-slider-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r36-slider-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r36-slider-verifier.json:1746 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r36-slider-verifier.json:1753 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r36-slider-verifier.json:1762 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r36-slider-verifier.json:1771 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r36-slider-verifier.json:1780 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r37-focus-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r37-focus-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r37-focus-verifier.json:1767 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r37-focus-verifier.json:1774 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r37-focus-verifier.json:1783 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r37-focus-verifier.json:1792 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r37-focus-verifier.json:1801 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r38-edge-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r38-edge-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r38-edge-verifier.json:1767 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r38-edge-verifier.json:1774 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r38-edge-verifier.json:1783 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r38-edge-verifier.json:1792 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r38-edge-verifier.json:1801 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r39-repeat-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r39-repeat-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r39-repeat-verifier.json:1806 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r39-repeat-verifier.json:1813 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r39-repeat-verifier.json:1822 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r39-repeat-verifier.json:1831 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r39-repeat-verifier.json:1840 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r4-level-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r4-level-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r40-repeat-focus-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r40-repeat-focus-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r40-repeat-focus-verifier.json:1828 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r40-repeat-focus-verifier.json:1835 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r40-repeat-focus-verifier.json:1844 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r40-repeat-focus-verifier.json:1853 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r40-repeat-focus-verifier.json:1862 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r41-focus-handoff-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r41-focus-handoff-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r41-focus-handoff-verifier.json:1850 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r41-focus-handoff-verifier.json:1857 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r41-focus-handoff-verifier.json:1866 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r41-focus-handoff-verifier.json:1875 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r41-focus-handoff-verifier.json:1884 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r42-focus-restore-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r42-focus-restore-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r42-focus-restore-verifier.json:1868 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r42-focus-restore-verifier.json:1875 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r42-focus-restore-verifier.json:1884 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r42-focus-restore-verifier.json:1893 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r42-focus-restore-verifier.json:1902 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r43-second-loss-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r44-second-restore-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r45-double-restore-disconnect-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r46-mid-disconnect-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r47-reconnect-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r48-late-reconnect-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r49-fresh-after-reconnect-non-author.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r49-fresh-after-reconnect-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r5-animation-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r5-animation-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r50-release-non-author.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r50-release-repaired-non-author.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r51-provenance-non-author.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r52-route-non-author.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r53-composite-non-author.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r54-order-non-author.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r55-frame-non-author.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r56-pushframe-non-author.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r57-save-non-author.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r57-save-non-author.json:2080 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-evidence-non-author.json:4 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-evidence-non-author.json:9 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-evidence-non-author.json:14 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-evidence-non-author.json:30 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-evidence-non-author.json:35 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-evidence-non-author.json:52 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r58-process-evidence-non-author.json:57 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r58-process-non-author.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-non-author.json:1493 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r58-process-non-author.json:1789 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r58-process-non-author.json:2874 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-non-author.json:2883 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-non-author.json:2902 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-non-author.json:2930 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-non-author.json:2939 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-non-author.json:2956 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-non-author.json:2965 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-non-author.json:2982 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r58-process-non-author.json:2991 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:15 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:40 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:65 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:90 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:115 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:140 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:165 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:192 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:220 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:248 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:274 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:299 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:327 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:360 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:388 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:415 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:444 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:471 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:503 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:531 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:563 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:591 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:623 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:651 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:681 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:708 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:737 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:764 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:794 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:819 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:846 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:875 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:902 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:931 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:958 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:987 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:1014 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:1043 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:1070 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:1558 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:1561 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:1860 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:1863 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:1930 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:1959 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:1991 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2023 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2052 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2081 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2112 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2141 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2175 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2207 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2234 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2266 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2298 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2327 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2361 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2395 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2429 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2459 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2493 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2524 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2560 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2592 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2628 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2664 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2700 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2736 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2772 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2808 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2844 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2876 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2912 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2944 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2949 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:2958 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:2971 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:2977 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:3000 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:3005 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:3014 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:3025 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:3031 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:3040 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:3051 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:3057 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:3066 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:3076 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:3133 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:3206 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r59-audio-non-author.json:3230 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:3237 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:3246 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:3255 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r59-audio-non-author.json:3264 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r6-export-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r6-export-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r7-normal-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r7-normal-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r8-contact-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r8-contact-verifier.json:4 old_root_exists=False mapped_current_exists=False
+LEAVE corpus/lessons/r9-diagnostic-verifier.json:3 old_root_exists=True mapped_current_exists=True
+LEAVE corpus/lessons/r9-diagnostic-verifier.json:4 old_root_exists=False mapped_current_exists=False

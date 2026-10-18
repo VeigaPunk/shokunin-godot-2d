@@ -354,9 +354,8 @@ func _arm_point_cap() -> void:
 	ex.exclude = [made[0].get_rid()]
 	_it("excl_first", _ord(dss.intersect_point(ex, CAP)))
 	_it("far_out", _ord(dss.intersect_point(_pt(Vector2(500, 500)), CAP)))
-	var pile: Array = []
 	for i in 40:
-		pile.append(_mk_body("p%d" % i, Vector2(1000 + i * 2, 0), Vector2(200, 40)))
+		_mk_body("p%d" % i, Vector2(1000 + i * 2, 0), Vector2(200, 40))
 	await _frames(2)
 	_it("pile40_default", "n%d" % dss.intersect_point(_pt(Vector2(1000, 0))).size())
 	_it("pile40_cap0", "n%d" % dss.intersect_point(_pt(Vector2(1000, 0)), 0).size())
@@ -367,7 +366,7 @@ func _arm_point_cap() -> void:
 # --------------------------------------------------------------- 6. point edges
 
 func _arm_point_edge() -> void:
-	var box := _mk_body("box", Vector2(100, 0), Vector2(40, 40))
+	_mk_body("box", Vector2(100, 0), Vector2(40, 40))
 	var circ := _mk_body("circ", Vector2(300, 0), Vector2(0, 0))
 	var cs: CollisionShape2D = circ.get_child(0)
 	cs.shape = _circle(20)
@@ -496,22 +495,20 @@ func _arm_order_core() -> void:
 	_it("repeat_stable", str(first == _ord(dss.intersect_point(_pt(Vector2(16, 0)), CAP))))
 	_it("set", _setstr(dss.intersect_point(_pt(Vector2(16, 0)), CAP)))
 	_it("shape_same_order", str(_ord(dss.intersect_shape(_sh(_rect(Vector2(60, 60)), Transform2D(0, Vector2(16, 0))), CAP)) == first))
-	var made2: Array = []
-	_pile(["a2", "b2", "c2", "d2", "e2"], 0.0, 1000.0, made2)
+	_pile(["a2", "b2", "c2", "d2", "e2"], 0.0, 1000.0, [])
 	await _frames(2)
 	_it("pile_b", _ord(dss.intersect_point(_pt(Vector2(16, 1000)), CAP)))
 	_it("layout_changes_order", str(_ord(dss.intersect_point(_pt(Vector2(16, 1000)), CAP)) != first))
 	_it("pile_a_after_insert", _ord(dss.intersect_point(_pt(Vector2(16, 0)), CAP)))
 	_it("insert_perturbs", str(_ord(dss.intersect_point(_pt(Vector2(16, 0)), CAP)) != first))
-	var made3: Array = []
-	_pile(["e3", "d3", "c3", "b3", "a3"], 0.0, 2000.0, made3)
+	_pile(["e3", "d3", "c3", "b3", "a3"], 0.0, 2000.0, [])
 	await _frames(2)
 	_it("pile_rev", _ord(dss.intersect_point(_pt(Vector2(16, 2000)), CAP)))
 	made[2].queue_free()
 	await _frames(2)
 	_it("after_free", _ord(dss.intersect_point(_pt(Vector2(16, 0)), CAP)))
 	_it("free_perturbs", str(_ord(dss.intersect_point(_pt(Vector2(16, 0)), CAP)) != first))
-	var fresh := _mk_body("f", Vector2(16, 0), Vector2(40, 40))
+	_mk_body("f", Vector2(16, 0), Vector2(40, 40))
 	await _frames(2)
 	_it("after_readd", _ord(dss.intersect_point(_pt(Vector2(16, 0)), CAP)))
 	_it("readd_set", _setstr(dss.intersect_point(_pt(Vector2(16, 0)), CAP)))
@@ -568,7 +565,7 @@ func _arm_layer_forms() -> void:
 	var sa := _sh(_rect(Vector2(40, 40)), Transform2D(0, Vector2(300, 0)))
 	sa.collide_with_areas = true
 	_it("shape_area_on", _ord(dss.intersect_shape(sa, CAP)))
-	var cast := _sh(_circle(20), Transform2D(0, Vector2(700, 0)), Vector2(400, 0))
+	_sh(_circle(20), Transform2D(0, Vector2(700, 0)), Vector2(400, 0))
 	_it("cast_srv_ignored", str(dss.cast_motion(_sh(_circle(20), Transform2D(0, Vector2(860, 0)), Vector2(80, 0)))))
 	_it("server_tier_visible", str(_ord(dss.intersect_point(_pt(Vector2(900, 0)), CAP)) == "[?#0]"))
 	_it("canvas_absent", str(_ord(dss.intersect_point(_pt(Vector2(1100, 0)), CAP)) == "[]"))
@@ -582,7 +579,7 @@ func _arm_layer_forms() -> void:
 func _arm_cast_rest() -> void:
 	var w1 := _mk_body("w1", Vector2(100, 0), Vector2(4, 400))
 	var w2 := _mk_body("w2", Vector2(300, 0), Vector2(4, 400))
-	var ar := _mk_body("ar", Vector2(200, 0), Vector2(4, 400), "area")
+	_mk_body("ar", Vector2(200, 0), Vector2(4, 400), "area")
 	await _frames(2)
 	var dss := _dss()
 	var c := _circle(8)
@@ -626,7 +623,7 @@ func _arm_cast_rest() -> void:
 	_it("ri_zero_motion", _ri_line(dss.get_rest_info(_sh(c, Transform2D(0, Vector2(96, 0)), Vector2.ZERO))))
 	# collide_shape: flattened contact pairs, cap counts PAIRS
 	var b1 := _mk_body("b1", Vector2(100, 0), Vector2(4, 400))
-	var b2 := _mk_body("b2", Vector2(112, 0), Vector2(4, 400))
+	_mk_body("b2", Vector2(112, 0), Vector2(4, 400))
 	await _frames(2)
 	var cs := dss.collide_shape(_sh(c, Transform2D(0, Vector2(106, 0)), Vector2.ZERO))
 	var pts: PackedStringArray = []

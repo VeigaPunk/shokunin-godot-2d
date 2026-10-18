@@ -1,0 +1,12 @@
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -4096,7 +4096,8 @@
+             and all(
+                 any(r["case"].startswith(p) for r in results)
+                 for p in ("stree_lattice_", "r98_canvas_", "r98b_", "r98c_",
+-                          "r99_audio_", "r99b_", "r100_gui_", "r100b_", "r101_seqfull_", "r101_ytrans_", "export_prod_"))),
++                          "r99_audio_", "r99b_", "r100_gui_", "r100b_", "r101_seqfull_", "r101_ytrans_", "export_prod_",
++                          "export_launch_"))),
+     }
+     # Harness-side hygiene: reap any lingering surface descendants (all arms
+     # self-exit in well under a second; never gated).

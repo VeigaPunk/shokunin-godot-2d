@@ -1,0 +1,24 @@
+{
+  "rules": {
+    "corpus": [
+      ".shokunin/game-dev-2d/corpus/",
+      "corpus/"
+    ],
+    "reports": [
+      ".shokunin/game-dev-2d/reports/",
+      "reports/"
+    ],
+    "explicit": 1
+  },
+  "tiers_run": {
+    "t1": true,
+    "t2": true
+  },
+  "apply": false,
+  "include_shared": false,
+  "changed_lines": 353,
+  "changed_files": 52,
+  "abs_leave_lines": 384,
+  "rel_targets_resolved_after": "81/367",
+  "pairs_file": "s4_cite_pairs.txt"
+}

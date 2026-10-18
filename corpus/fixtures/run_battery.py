@@ -796,7 +796,7 @@ CASES = [
     ('r93_anim_blend_interleaved', 'r93b_anim.gd', ['--arm=blend'], 0,
      'PASS r93b_anim blend finished_010=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] finished_020=[100.0,200.0,300.0,400.0,500.0] interleaved=[100.0,144.444442749023,188.888900756836,233.333343505859,277.777801513672,322.222229003906,366.666687011719,411.111114501953,455.555572509766,500.0] interleaved_eq_plain=true hard_after_frame=500.0'),
     # --- r94 block: CPUParticles2D + GPUParticles2D emission lattice -----
-    # Probe particles_lattice.gd sha256 0701e813e50cdb50e05f0df0194d0baf94c1240f361e941949414dd5c52c00a9
+    # Probe particles_lattice.gd sha256 afd2aa88876abc7a0923066b024c825aa111d3e471ee0e3a304a58f9e494a125 (folded at r102, r101-simp3 queue)
     # — folded variant of the frozen r94-scout probe
     # (corpus/live/r94-scout/probes/particles_lattice.gd sha256
     # e6a2e0f55c6bbeaa…, 741 lines). Fixture folds (r94-boundary e741cf8
@@ -879,11 +879,11 @@ CASES = [
     # multi-hit order k(k-1) cycle law -----------------------------------
     # Two probes, both byte-copies of the frozen lane artifacts:
     #   dss_lattice.gd sha256
-    #   77ae4adb8a47ccf50b5da345720247c035418e31872a117d17cd98913f479627
-    #   (corpus/live/r95-scout/probes/dss_lattice.gd, identical bytes)
+    #   c128e9ccf3b3f512c6bda0a11d52348b3a5936a5ea4a32ada78c85967b951b5f
+    #   (folded from corpus/live/r95-scout/probes/dss_lattice.gd; fold: reports/round-101/r101-simp3.md)
     #   r95b_order.gd sha256
-    #   4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490
-    #   (corpus/live/r95-boundary/probes/r95b_order.gd, identical bytes)
+    #   b367559e831e5e9f9ab9e386591dd0035e24fb4e5ea2efc2c533e11aec2bdcf7
+    #   (folded from corpus/live/r95-boundary/probes/r95b_order.gd; fold: reports/round-101/r101-simp3.md)
     # Boundary-surviving encoding (r95-boundary verdicts applied):
     #   * The 13 non-order-vector dss_lattice rows pin their full PASS
     #     lines; the four order-vector cells (point_cap, point_cap_rev,
@@ -1278,8 +1278,8 @@ CASES = [
     ('stree_lattice_scene_probe', 'stree_lattice.gd', ['--arm=scene_probe'], 0,
      'PASS stree_lattice scene_probe current_scene_t0=null file_t0=null file_children_t0=1 file_t1=null file_t5=SceneA tag=A file_children_t5=2 packed_loaded=true packed_t0=null packed_t1=SceneB tag=B packed_t3=SceneB tag=B packed_children_t3=2 node_t0=null node_t2=AdHoc node_children_t2=2 reload_exists=true rev=false'),    # --- r98 block: the CanvasItem draw/transform lattice --------------
     # 32 rows: 15 r98-scout cells (frozen probe canvas_lattice.gd, BYTE-COPY
-    # sha256 866480a1aaa0a385…) + 16 r98-boundary cells (frozen attack probe
-    # r98b_attack.gd sha256 2e71c7158c4f53db… + the one-off r98b_rksenum.gd)
+    # sha256 8bfddb748d1be3d2…) + 16 r98-boundary cells (frozen attack probe
+    # r98b_attack.gd sha256 7021e53c0fcc3d7f… + the one-off r98b_rksenum.gd)
     # + 1 r98-author cell (r98c_flush.gd).
     #
     # Boundary-driven encoding decisions (r98-boundary REFUTED-SCOPE findings):
@@ -1401,11 +1401,11 @@ CASES = [
      'PASS r98c flush multitick_frames_ge2=1 draws_eq_ticks=1 draws_gt_frames=1 max_draws_per_pf_ge2=1 same_pf=1 d_pf_delta=0 d_phf_delta=0 selfq_draws=1 sync_coalesce_n=1 hide_sync_n=0 hide_ticksep_n=1 hide_ticksep_same_frame=1 hidden_across_tick_n=0 show_after_tick_n=1 bounded=1'),
     # --- r99 block: the headless in-engine audio surface (r88's
     # "headless-null audio" verdict refuted) ------------------------------
-    # Fixture audio_lattice.gd is a BYTE-COPY of the frozen r99-scout probe
+    # Fixture audio_lattice.gd was folded at r102 from the frozen r99-scout probe
     # (corpus/live/r99-scout/probes/audio_lattice.gd sha256
-    # 165571c410d506f14915326fd0806e9ff01e5056631620f565c9a7836a920baf, 773
+    # 91161bf5a6ff9ea5d7a91e975c634ad7acfed676e87eef5988b9a07023c478a6, 773
     # lines; identical bytes in the scout's proj/ and r99-boundary's
-    # probes/). It is deliberately NOT folded: r99-boundary F1 measured the
+    # probes/). The fold preserves the launch-mode scope argument: r99-boundary F1 measured the
     # probe's block waits as wall-time AND frame-capped, so every wall window
     # collapses under `--fixed-fps` (which disables real-time sync: 100k-233k
     # fps) and 14-16/18 cells flip there. That is a LAUNCH-MODE scope, not a
@@ -1663,7 +1663,7 @@ CASES = [
     ('r101_ytrans_ycop', 'r101_ytrans.gd', ["--arm=ycop", "--offy=1000"], 0,
      'PASS r101_ytrans ycop offy=1000.0000 a_t2_absy=[0.0000|0.0000|0.0000|0.0000|0.0000] a_t2_cross_clean=true dy_meas=0.0000 a_t4_absy=[0.0000|0.0000|0.0000|0.0000|0.0000] a_t4_cross_clean=true b_t2_absy=[1000.0000|1000.0000|1000.0000|1000.0000|1000.0000] b_t2_cross_clean=true n_between=0 n_origin=5 n_at_b=5'),
     ('r101_ytrans_census', 'r101_ytrans.gd', ["--arm=census"], 0,
-     'PASS r101_ytrans census r95b_offy_tokens=0 r95b_lines=778 r95b_sha256=4f7e945e1b16f241d510e1b1aa7c7fc1aafca6369626e3910bb36cf62d9e2490 replacement_arm=ytrans'),
+     'PASS r101_ytrans census r95b_offy_tokens=0 r95b_lines=776 r95b_sha256=b367559e831e5e9f9ab9e386591dd0035e24fb4e5ea2efc2c533e11aec2bdcf7 replacement_arm=ytrans'),
     # r101 — C1: export_prod capability lattice (see reports/round-101/r101-E0-spec.md).
     # det_a must run immediately before det_b: det_b byte-compares against det_a's
     # a.pck in the shared out dir (fails reason=det_a_artifact_missing otherwise).
@@ -1691,6 +1691,23 @@ CASES = [
      'PASS export_prod refusal nested_exit=1 class=invalid_export_preset_name preset_listing=true artifacts=0'),
     ('export_prod_templates_missing_class', 'export_prod.gd', ["--arm=notemplates"], 0,
      'PASS export_prod notemplates nested_exit=1 class=no_export_template release_template_named=true artifacts=0'),
+    # r102 — C1: export_launch launch matrix (see reports/round-102/r102-E0-spec.md).
+    ('export_launch_embed_boot', 'export_launch.gd', ["--arm=embed"], 0,
+     'PASS export_launch embed_boot boot=true frames=[1,2,3] extra=false exit=0 cwd=isolated'),
+    ('export_launch_embed_self_contained', 'export_launch.gd', ["--arm=embed"], 0,
+     'PASS export_launch embed_census artifacts=1 sidecar_pck=0 tail_magic=47445043'),
+    ('export_launch_embed_mainpack_refusal', 'export_launch.gd', ["--arm=embed"], 0,
+     'PASS export_launch embed_refusal rc=1 class=path_overrides_disabled hint=disable_path_overrides_no'),
+    ('export_launch_stock_boot', 'export_launch.gd', ["--arm=stock"], 0,
+     'PASS export_launch stock_boot boot=true frames=[1,2,3] extra=false exit=0 sidecar=cwd'),
+    ('export_launch_stock_sidecar_census', 'export_launch.gd', ["--arm=stock"], 0,
+     'PASS export_launch stock_census artifacts=2 pck_exists=true pck_magic=47445043'),
+    ('export_launch_stock_mainpack_refusal', 'export_launch.gd', ["--arm=probe"], 0,
+     'PASS export_launch refusal rc=1 class=path_overrides_disabled hint=disable_path_overrides_no'),
+    ('export_launch_editor_mainpack_contrast', 'export_launch.gd', ["--arm=probe"], 0,
+     'PASS export_launch editor_boot boot=true frames=[1,2,3] extra=false exit=0'),
+    ('export_launch_stock_missing_sidecar', 'export_launch.gd', ["--arm=probe"], 0,
+     'PASS export_launch hole rc=124 class=project_data_missing pck_hint=true stdout_bytes=0'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),    ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
     # r63 KNOWN-ACCEPTING FORGERY ROW: the child withholds the signature; a
@@ -4078,6 +4095,14 @@ def main():
             for r in census_rows
             if r["case"].startswith(("r101_seqfull_", "r101_ytrans_", "export_prod_"))
             for e in r["entries"]),
+        # r102 author: the export_launch family carries no allowlist entries
+        # (nested diagnostics redirected to scratch logs) — vacuous-but-honest,
+        # same named-by-round shape as r87-r101.
+        "r102_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith("export_launch_")
+            for e in r["entries"]),
         # r100-critic F1 (harness ceiling): no gate could see a duplicated,
         # dropped, or renamed CASES row — a 25-tuple drop-mutant still ran
         # PASS 491/491 with the per-round gates vacuously true over zero
@@ -4096,7 +4121,8 @@ def main():
             and all(
                 any(r["case"].startswith(p) for r in results)
                 for p in ("stree_lattice_", "r98_canvas_", "r98b_", "r98c_",
-                          "r99_audio_", "r99b_", "r100_gui_", "r100b_", "r101_seqfull_", "r101_ytrans_", "export_prod_"))),
+                          "r99_audio_", "r99b_", "r100_gui_", "r100b_", "r101_seqfull_", "r101_ytrans_", "export_prod_",
+                          "export_launch_"))),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
     # self-exit in well under a second; never gated).
@@ -5314,7 +5340,12 @@ def main():
     if args.probe_timeout:
         marker_text = "TIMEOUT_PROBE: expected signature"
         script_path = "res://timeout_probe.gd"
-        old_timeout_seconds = 0.75
+        # r102: 0.75 -> 1.25 — host spawn->marker latency drifted ~0.39s (r22 era)
+        # to ~0.8s (r101+), so the 0.75s bound killed the marker pre-capture in both
+        # r101 runs (failing conjunct: slow_clean_old_bound.marker_observed; the hold
+        # arm was green). Counterfactuals measured (r102-D3): 1.0 -> 4/4, 1.25 -> 4/4
+        # marker captures with timed_out still true; 1.4 -> 2/2.
+        old_timeout_seconds = 1.25
         measured_delay_seconds = 1.5
         timeout_seconds = 3.0
         cleanup_seconds = 3

@@ -1,0 +1,198 @@
+{
+ "scene_io": [
+  {
+   "hunk": 1,
+   "line": 246,
+   "deleted": "\tvar child := _mk_child(root, \"Child\", Vector2(3, 4))",
+   "var": "child",
+   "func": "_arm_pack_basic",
+   "func_span": [
+    242,
+    279
+   ],
+   "reads_before": 0,
+   "reads_after": 0
+  },
+  {
+   "hunk": 2,
+   "line": 393,
+   "deleted": "\tvar e2 := ResourceSaver.save(b, p2)",
+   "var": "e2",
+   "func": "_arm_det",
+   "func_span": [
+    372,
+    437
+   ],
+   "reads_before": 0,
+   "reads_after": 0
+  },
+  {
+   "hunk": 3,
+   "line": 512,
+   "deleted": "\tl1 = null",
+   "var": "l1",
+   "func": "_arm_takeover",
+   "func_span": [
+    488,
+    514
+   ],
+   "reads_before": 1,
+   "reads_after": 0
+  },
+  {
+   "hunk": 4,
+   "line": 543,
+   "deleted": "\tcached = null",
+   "var": "cached",
+   "func": "_arm_cache",
+   "func_span": [
+    515,
+    550
+   ],
+   "reads_before": 4,
+   "reads_after": 0
+  },
+  {
+   "hunk": 4,
+   "line": 544,
+   "deleted": "\tstale = null",
+   "var": "stale",
+   "func": "_arm_cache",
+   "func_span": [
+    515,
+    550
+   ],
+   "reads_before": 1,
+   "reads_after": 0
+  },
+  {
+   "hunk": 4,
+   "line": 545,
+   "deleted": "\trepl = null",
+   "var": "repl",
+   "func": "_arm_cache",
+   "func_span": [
+    515,
+    550
+   ],
+   "reads_before": 4,
+   "reads_after": 0
+  },
+  {
+   "hunk": 4,
+   "line": 546,
+   "deleted": "\tign = null",
+   "var": "ign",
+   "func": "_arm_cache",
+   "func_span": [
+    515,
+    550
+   ],
+   "reads_before": 1,
+   "reads_after": 0
+  },
+  {
+   "hunk": 4,
+   "line": 547,
+   "deleted": "\tign2 = null",
+   "var": "ign2",
+   "func": "_arm_cache",
+   "func_span": [
+    515,
+    550
+   ],
+   "reads_before": 1,
+   "reads_after": 0
+  },
+  {
+   "hunk": 4,
+   "line": 548,
+   "deleted": "\tign3 = null",
+   "var": "ign3",
+   "func": "_arm_cache",
+   "func_span": [
+    515,
+    550
+   ],
+   "reads_before": 1,
+   "reads_after": 0
+  },
+  {
+   "hunk": 5,
+   "line": 619,
+   "deleted": "\tspr.texture = null",
+   "var": "spr.texture",
+   "func": "_arm_subres",
+   "func_span": [
+    551,
+    625
+   ],
+   "reads_before": 0,
+   "reads_after": 0
+  },
+  {
+   "hunk": 5,
+   "line": 620,
+   "deleted": "\tgt = null",
+   "var": "gt",
+   "func": "_arm_subres",
+   "func_span": [
+    551,
+    625
+   ],
+   "reads_before": 2,
+   "reads_after": 0
+  },
+  {
+   "hunk": 6,
+   "line": 700,
+   "deleted": "\tloaded = null",
+   "var": "loaded",
+   "func": "_arm_extres",
+   "func_span": [
+    626,
+    702
+   ],
+   "reads_before": 3,
+   "reads_after": 0
+  },
+  {
+   "hunk": 7,
+   "line": 736,
+   "deleted": "\tback = null",
+   "var": "back",
+   "func": "_arm_editstate",
+   "func_span": [
+    703,
+    738
+   ],
+   "reads_before": 3,
+   "reads_after": 0
+  },
+  {
+   "hunk": 8,
+   "line": 778,
+   "deleted": "\tloaded = null",
+   "var": "loaded",
+   "func": "_arm_refuse",
+   "func_span": [
+    739,
+    781
+   ],
+   "reads_before": 0,
+   "reads_after": 0
+  }
+ ],
+ "stree_residue": {
+  "it_valid": 0,
+  "it_connected": 0,
+  "it_paused": 0,
+  "_tree_names": 0
+ },
+ "stree_old_counts": {
+  "it_valid": 52,
+  "it_connected": 7,
+  "it_paused": 4,
+  "_tree_names": 1
+ }
+}

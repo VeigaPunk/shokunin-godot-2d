@@ -1,0 +1,24 @@
+SOURCE=/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/fixtures/run_battery.py
+EXPR_BYTES=322 PREFIX_N=11
+PREFIXES: ('stree_lattice_', 'r98_canvas_', 'r98b_', 'r98c_', 'r99_audio_', 'r99b_', 'r100_gui_', 'r100b_', 'r101_seqfull_', 'r101_ytrans_', 'export_prod_')
+expr has export_launch_: False
+MODE=PRE-SPLICE (prefix absent; prop = curated patch)
+REAL_CASES_N=528 UNIQUE=528
+existing_export_launch_named: []
+export_prod_n: 12
+CELL A cur tuple, no launch rows (baseline)                     -> True
+CELL B1 cur tuple, full launch splice simulated                 -> True
+CELL B2 cur tuple, launch drop-mutant (dropped from both)       -> True
+CELL C prop tuple, full launch splice                           -> True
+CELL D prop tuple, rows absent (tuple-only splice)              -> False
+CELL E prop tuple, rows renamed export_lanch_*                  -> False
+CELL F prop tuple, rows named r102_export_launch_s0N            -> False
+CELL G prop tuple, PARTIAL drop (3 of 6 rows left)              -> True
+CELL H prop tuple, row named exactly export_launch              -> False
+I  probe_export_launch.startswith('export_launch_') = False
+I2 nested arm labels matching prefix (not top-level results): ['export_launch_positive', 'export_launch_missing_startup_event']
+REAL_R101_ROWS=546
+CELL J1 cur tuple over REAL r101 results                        -> True
+CELL J2 prop tuple over REAL r101 results (no launch rows yet)  -> False
+CELL J3 prop tuple over REAL r101 results + simulated launch rows -> True
+MATRIX: {'A': True, 'B1': True, 'B2': True, 'C': True, 'D': False, 'E': False, 'F': False, 'G': True, 'H': False, 'J1': True, 'J2': False, 'J3': True}

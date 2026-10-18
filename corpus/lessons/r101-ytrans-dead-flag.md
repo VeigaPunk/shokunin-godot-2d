@@ -89,3 +89,13 @@ phases. Fold: the PASS lines pin phase-invariant fields only; `ladder`,
 order law at offy≠0 is a mode-envelope diagnostic, not a row pin (r87
 `api_press` precedent). Falsification lives in `dy_resid` (a skipped
 translation is nonzero), the count fields, and the ysep gap cell.
+
+## r102 dated correction (append-only)
+
+The census row's tripwire sha changed by design at r102: r95b_order.gd was
+folded (r101-simp3 queue, 10 folds) — lines 778→776, sha256
+4f7e945e…→b367559e831e5e9f9ab9e386591dd0035e24fb4e5ea2efc2c533e11aec2bdcf7.
+The `r101_ytrans_census` CASES pin was re-anchored in the same commit; the
+`r95b_offy_tokens=0` clause is unchanged (folds removed no offy-relevant
+code). The defect class this lesson teaches (a pinned sha is a receipt of the
+file at a point in time, not a constant) is exactly why the row exists.

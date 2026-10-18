@@ -53,7 +53,6 @@ extends SceneTree
 #    navmesh silently.
 #  - map_get_random_point() is random per call (not pinnable).
 
-const SETTLE := 10
 const SYNC_BOUND := 48
 
 var _exit_code := 0
@@ -848,11 +847,10 @@ func _arm_link() -> void:
 func _arm_teardown_crash() -> void:
 	var map := _new_map()
 	var a := NavigationServer2D.agent_create()
-	var hits: Array[Vector2] = []
 	NavigationServer2D.agent_set_map(a, map)
 	NavigationServer2D.agent_set_avoidance_enabled(a, true)
-	NavigationServer2D.agent_set_avoidance_callback(a, func(v: Vector2) -> void:
-		hits.append(v))
+	NavigationServer2D.agent_set_avoidance_callback(a, func(_v: Vector2) -> void:
+		pass)
 	await _await_frames(3)
 	print("NAV_LATTICE_TEARDOWN_CRASH armed=live_cb has_cb=",
 		NavigationServer2D.agent_has_avoidance_callback(a))
@@ -868,11 +866,10 @@ func _arm_teardown_crash() -> void:
 func _arm_teardown_clean() -> void:
 	var map := _new_map()
 	var a := NavigationServer2D.agent_create()
-	var hits: Array[Vector2] = []
 	NavigationServer2D.agent_set_map(a, map)
 	NavigationServer2D.agent_set_avoidance_enabled(a, true)
-	NavigationServer2D.agent_set_avoidance_callback(a, func(v: Vector2) -> void:
-		hits.append(v))
+	NavigationServer2D.agent_set_avoidance_callback(a, func(_v: Vector2) -> void:
+		pass)
 	await _await_frames(3)
 	NavigationServer2D.agent_set_avoidance_callback(a, Callable())
 	await _await_frames(1)

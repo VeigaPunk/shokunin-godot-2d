@@ -1,0 +1,28 @@
+{
+ "seat": "r102-ver8 C3 verifier",
+ "slice": "S1 first third = P1-P3 (nav_lattice, canvas_lattice, r98b_attack), 41 rows",
+ "folded_shas_full": {
+  "nav_lattice.gd": "b23887e5b05d830629689010baf8bf5ed044e32548831945fe134983cd07450e",
+  "canvas_lattice.gd": "8bfddb748d1be3d2a528c2c9afcfcf06a65487b9cc1ad31649dacdf7212835a0",
+  "r98b_attack.gd": "7021e53c0fcc3d7f94055a797d1829e8fc40fc995518f39213be1135876728e2"
+ },
+ "verdicts": {
+  "base_rep1": "41/41 PASS",
+  "base_rep2": "41/41 PASS",
+  "t1_rep1": "41/41 PASS",
+  "t1_rep2": "41/41 PASS",
+  "superset_fold_simp1_rep1": "60/60 PASS",
+  "superset_fold_simp1_rep2": "60/60 PASS"
+ },
+ "rc_diffs": 0,
+ "cmp_vs_S1_foldcheck": "identical 3/3",
+ "reverse_apply_check": "rc=0 (my trees + S1 tree)",
+ "stable_field_violations_in_slice": 1,
+ "violation_detail": "nav_lattice_query settle 5 vs 4, not reproduced in 6+6 interleaved A/B; outside pinned signature",
+ "teeth": {
+  "mutA_r98b_rksenum": "FAIL (expected)",
+  "mutB_r98_canvas_census": "FAIL (expected)"
+ },
+ "launches_note": "run_battery.py never executed",
+ "evidence_root": "/var/tmp/r102-ver8/"
+}

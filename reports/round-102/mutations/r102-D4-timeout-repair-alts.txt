@@ -1,0 +1,12 @@
+# Alternative (cheapest, loses the started-script nuance on purpose):
+-        old_rejects = (old_positive["timed_out"] and old_positive["marker_observed"]
++        old_rejects = (old_positive["timed_out"]
+                        and old_positive["inner_classification"] is False
+                        and old_positive["direct_child_alive_after_cleanup"] is False)
+# `marker_observed` stays in the arm record, reported but not gated.
+
+# Alternative C (recalibrate the pair; fragile under load spikes):
+-        old_timeout_seconds = 0.75
++        old_timeout_seconds = 1.0
+# measured startup band 0.63-0.88s leaves only ~120-370ms margin; rejected as
+# less robust than the self-calibrating envelope above.

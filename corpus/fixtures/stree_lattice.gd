@@ -256,18 +256,10 @@ func _pub(groups: PackedStringArray) -> String:
 	return _ord(out)
 
 
-func it_valid(key: String, value: String) -> void:
-	_it(key, value)
-
-
 func _csname() -> String:
 	if current_scene == null:
 		return "null"
 	return "%s tag=%s" % [str(current_scene.name), str(current_scene.get("tag"))]
-
-
-func _tree_names() -> String:
-	return _ord(root.get_children().map(func(n): return str(n.name)))
 
 
 # ------------------------------------------------------------------ arms
@@ -420,11 +412,11 @@ func _arm_group_flags() -> void:
 	call_group_flags(SceneTree.GROUP_CALL_DEFERRED, "g2", "_push", "cap")
 	d.remove_from_group("g2")
 	e.add_to_group("g2")
-	it_valid("cap_members_t0", _ord(_tags(get_nodes_in_group("g2"))))
+	_it("cap_members_t0", _ord(_tags(get_nodes_in_group("g2"))))
 	await process_frame
 	_it("cap_t1", _snap())
-	it_connected("cap_d_membership", d.is_in_group("g2"))
-	it_connected("cap_e_membership", e.is_in_group("g2"))
+	_it("cap_d_membership", _v(d.is_in_group("g2")))
+	_it("cap_e_membership", _v(e.is_in_group("g2")))
 	# --- deferred reverse on a two-member group
 	var f := _mk("f")
 	var h := _mk("h")
@@ -432,7 +424,7 @@ func _arm_group_flags() -> void:
 	h.add_to_group("g3")
 	call_group_flags(SceneTree.GROUP_CALL_DEFERRED | SceneTree.GROUP_CALL_REVERSE, "g3", "_push", "drev")
 	await process_frame
-	it_valid("drev_members", _ord(_tags(get_nodes_in_group("g3"))))
+	_it("drev_members", _ord(_tags(get_nodes_in_group("g3"))))
 	_it("drev_t1", _snap())
 	# --- two queued calls flush FIFO
 	var i1 := _mk("i")
@@ -447,30 +439,30 @@ func _arm_group_flags() -> void:
 	var k1 := _mk("k")
 	k1.add_to_group("g5")
 	call_group_flags(SceneTree.GROUP_CALL_UNIQUE, "g5", "_push", "u")
-	it_valid("uniq_direct_1", _snap())
+	_it("uniq_direct_1", _snap())
 	call_group_flags(SceneTree.GROUP_CALL_UNIQUE, "g5", "_push", "u")
-	it_valid("uniq_direct_2_same_args", _snap())
+	_it("uniq_direct_2_same_args", _snap())
 	call_group_flags(SceneTree.GROUP_CALL_UNIQUE, "g5", "_push", "u2")
-	it_valid("uniq_direct_3_new_args", _snap())
+	_it("uniq_direct_3_new_args", _snap())
 	# --- UNIQUE + DEFERRED DOES dedup inside the frame; the key expires at the frame end
 	var l1 := _mk("l")
 	l1.add_to_group("g6")
 	call_group_flags(SceneTree.GROUP_CALL_UNIQUE | SceneTree.GROUP_CALL_DEFERRED, "g6", "_push", "ud")
 	call_group_flags(SceneTree.GROUP_CALL_UNIQUE | SceneTree.GROUP_CALL_DEFERRED, "g6", "_push", "ud")
 	call_group_flags(SceneTree.GROUP_CALL_UNIQUE | SceneTree.GROUP_CALL_DEFERRED, "g6", "_push", "ud")
-	it_valid("uniq_def_t0", _snap())
+	_it("uniq_def_t0", _snap())
 	await process_frame
-	it_valid("uniq_def_t1", _snap())
+	_it("uniq_def_t1", _snap())
 	call_group_flags(SceneTree.GROUP_CALL_UNIQUE | SceneTree.GROUP_CALL_DEFERRED, "g6", "_push", "ud")
 	await process_frame
-	it_valid("uniq_def_next_frame", _snap())
+	_it("uniq_def_next_frame", _snap())
 	# --- plain DEFERRED does NOT dedup the same call twice
 	var m1 := _mk("m")
 	m1.add_to_group("g7")
 	call_group_flags(SceneTree.GROUP_CALL_DEFERRED, "g7", "_push", "p")
 	call_group_flags(SceneTree.GROUP_CALL_DEFERRED, "g7", "_push", "p")
 	await process_frame
-	it_valid("plain_deferred_twice", _snap())
+	_it("plain_deferred_twice", _snap())
 	# --- set_group_flags DEFERRED uses the same capture-time law
 	var n1 := _mk("n")
 	var n2 := _mk("n2")
@@ -481,24 +473,20 @@ func _arm_group_flags() -> void:
 	set_group_flags(SceneTree.GROUP_CALL_DEFERRED, "g8", "position", Vector2(7, 7))
 	n2.remove_from_group("g8")
 	await process_frame
-	it_valid("set_def_capture", "%s/%s" % [_v(n1.position), _v(n2.position)])
+	_it("set_def_capture", "%s/%s" % [_v(n1.position), _v(n2.position)])
 	# --- notify_group: Node._notification on every member
 	var p := _mk("p")
 	p.add_to_group("np")
 	notify_group("np", Node.NOTIFICATION_PAUSED)
-	it_valid("notify", _snap())
-	it_paused(p.paused_seen)
+	_it("notify", _snap())
+	_it("paused_seen", str(p.paused_seen))
 	notify_group_flags(SceneTree.GROUP_CALL_REVERSE, "np", Node.NOTIFICATION_PAUSED)
-	it_paused(p.paused_seen)
+	_it("paused_seen", str(p.paused_seen))
 	# --- missing method on a group call is a silent skip
 	call_group("g1", "no_such_method", 1)
-	it_valid("missing_method", "silent")
+	_it("missing_method", "silent")
 	_it("rev", _v(_rev))
 	_pass()
-
-
-func it_paused(n: int) -> void:
-	_it("paused_seen", str(n))
 
 
 func _arm_group_lifecycle() -> void:
@@ -559,7 +547,7 @@ func _arm_group_setters() -> void:
 	_it("set_group_deferred_t1", "%s/%s" % [_v(a.position), _v(b.position)])
 	set_group("sg", "no_such_prop", 1)
 	_it("missing_prop", "silent")
-	it_paused(a.paused_seen)
+	_it("paused_seen", str(a.paused_seen))
 	# set_group with an out-of-group name is a no-op
 	set_group("nope", "position", Vector2(0, 0))
 	_it("unknown_group", "%s" % _v(a.position))
@@ -669,12 +657,12 @@ func _arm_signal_flags() -> void:
 	s5.tag = "s5"
 	s5.sig_a.connect(s5.on_a, Object.CONNECT_DEFERRED | Object.CONNECT_ONE_SHOT)
 	s5.sig_a.emit()
-	it_connected("osd_connected_t0", s5.sig_a.is_connected(s5.on_a))
+	_it("osd_connected_t0", _v(s5.sig_a.is_connected(s5.on_a)))
 	s5.sig_a.emit()
 	_it("osd_second_emit", _snap())
 	await process_frame
 	_it("osd_flush", _snap())
-	it_connected("osd_connected_t1", s5.sig_a.is_connected(s5.on_a))
+	_it("osd_connected_t1", _v(s5.sig_a.is_connected(s5.on_a)))
 	# REFERENCE_COUNTED tolerates a duplicate connect and needs N disconnects
 	var s6 := _mk("s6")
 	s6.tag = "s6"
@@ -684,7 +672,7 @@ func _arm_signal_flags() -> void:
 	s6.sig_a.emit()
 	_it("rc_emit", _snap())
 	s6.sig_a.disconnect(s6.on_a)
-	it_connected("rc_after_one_disconnect", s6.sig_a.is_connected(s6.on_a))
+	_it("rc_after_one_disconnect", _v(s6.sig_a.is_connected(s6.on_a)))
 	s6.sig_a.emit()
 	_it("rc_emit2", _snap())
 	# PERSIST is serialization-only
@@ -701,7 +689,7 @@ func _arm_signal_flags() -> void:
 	s8.sig_b.connect(s8.on_b, Object.CONNECT_DEFERRED)
 	s8.sig_a.emit()
 	s8.sig_b.emit()
-	it_connected("cross_t0", s8.sig_a.is_connected(s8.on_a))
+	_it("cross_t0", _v(s8.sig_a.is_connected(s8.on_a)))
 	await process_frame
 	_it("cross_t1", _snap())
 	# reversed emit order is visible in the flush order
@@ -713,17 +701,12 @@ func _arm_signal_flags() -> void:
 	_pass()
 
 
-func it_connected(key: String, v: bool) -> void:
-	_it(key, _v(v))
-
-
 func _arm_defer_ladder() -> void:
 	# L10 — the timing ladder. `await process_frame` resumes AT the signal.
-	# r97-boundary corrected the frozen universal: a deferred call queued from
-	# _process/_physics_process flushes BEFORE that frame's process_frame
-	# signal; one queued from this coroutine body (`cd`) lands within the same
-	# idle frame — this arm's separate df_log does not pin its position inside
-	# the signal window (boundary §2.3).
+	# (general flush-position law: header laws block; boundary §2.3) — one
+	# queued from this coroutine body (`cd`) lands within the same idle frame;
+	# this arm's separate df_log does not pin its position inside the signal
+	# window.
 	var log: Array = []
 	log.push_back("t0")
 	DFNODE.call_deferred("cb", "cd")
@@ -733,13 +716,13 @@ func _arm_defer_ladder() -> void:
 	log.push_back("after_pf1")
 	await process_frame
 	log.push_back("after_pf2")
-	it_valid("ladder", _ord(log))
-	it_valid("df_log", _ord(DFNODE.log))
+	_it("ladder", _ord(log))
+	_it("df_log", _ord(DFNODE.log))
 	# control: with no process_frame await at all, the deferred call still lands
 	DFNODE.log.clear()
 	DFNODE.call_deferred("cb", "no_wait")
 	await process_frame
-	it_valid("no_wait", _ord(DFNODE.log))
+	_it("no_wait", _ord(DFNODE.log))
 	# physics_frame: its position in the frame is phase-dependent, but the
 	# deferred call queued from its continuation always lands in the SAME frame
 	# as that continuation, before the next `process_frame` signal.
@@ -747,15 +730,15 @@ func _arm_defer_ladder() -> void:
 	# The physics-continuation's frame INDEX is phase-coupled and bimodal (1 or 2
 	# frames), so only the in-frame ordering is pinned: the deferred call queued
 	# from the physics continuation lands in the SAME frame as that continuation.
-	it_valid("phys_defer_same_frame", _v(PHYSR["defer_in_same_frame"]))
-	it_valid("phys_co_in_log", _v(PHYSR["co_in_log"]))
+	_it("phys_defer_same_frame", _v(PHYSR["defer_in_same_frame"]))
+	_it("phys_co_in_log", _v(PHYSR["co_in_log"]))
 	# a deferred call queued from inside a deferred callback runs in the SAME flush
 	DFNODE.log.clear()
 	DFNODE.call_deferred("outer")
 	await process_frame
-	it_valid("nested", _ord(DFNODE.log))
+	_it("nested", _ord(DFNODE.log))
 	await process_frame
-	it_valid("nested_t1", _ord(DFNODE.log))
+	_it("nested_t1", _ord(DFNODE.log))
 	_it("rev", _v(_rev))
 	_pass()
 
@@ -806,47 +789,47 @@ func _arm_defer_slots() -> void:
 	s.tag = "s"
 	s.call_deferred("_push", "node")
 	DFNODE.call_deferred("cb", "tree")
-	it_valid("t0", _snap())
+	_it("t0", _snap())
 	await process_frame
-	it_valid("after_pf", _snap())
+	_it("after_pf", _snap())
 	# set_deferred lands at the same flush point
 	var s2 := _mk("s2")
 	s2.tag = "s2"
 	s2.set_deferred("position", Vector2(5, 5))
-	it_valid("set_deferred_t0", _v(s2.position == Vector2(5, 5)))
+	_it("set_deferred_t0", _v(s2.position == Vector2(5, 5)))
 	await process_frame
-	it_valid("set_deferred_t1", _v(s2.position == Vector2(5, 5)))
+	_it("set_deferred_t1", _v(s2.position == Vector2(5, 5)))
 	# a node out of the tree still gets its deferred call
 	var s3 := _mk("s3")
 	s3.tag = "s3"
 	G.remove_child(s3)
 	s3.call_deferred("_push", "detached")
 	await process_frame
-	it_valid("detached", _snap())
+	_it("detached", _snap())
 	# queue_free: the deferred call still runs, the node is gone next frame
 	var s4 := _mk("s4")
 	s4.tag = "s4"
 	s4.call_deferred("_push", "s4")
 	s4.queue_free()
 	await process_frame
-	it_valid("queue_free", _snap())
-	it_valid("queue_free_valid", _v(is_instance_valid(s4)))
+	_it("queue_free", _snap())
+	_it("queue_free_valid", _v(is_instance_valid(s4)))
 	# immediate free: the deferred call is dropped
 	var s5 := _mk("s5")
 	s5.tag = "s5"
 	s5.call_deferred("_push", "s5")
 	s5.free()
 	await process_frame
-	it_valid("free_dropped", _snap())
+	_it("free_dropped", _snap())
 	# FIFO within one object, and set_deferred on the same object
 	DFNODE.log.clear()
 	DFNODE.call_deferred("slot_a")
 	DFNODE.call_deferred("slot_b")
 	DFNODE.call_deferred("slot_meta")
-	it_valid("slots_t0", _ord(DFNODE.log))
+	_it("slots_t0", _ord(DFNODE.log))
 	await process_frame
-	it_valid("slots_t1", _ord(DFNODE.log))
-	it_valid("slot_meta", str(DFNODE.get_meta("dfm", "none")))
+	_it("slots_t1", _ord(DFNODE.log))
+	_it("slot_meta", str(DFNODE.get_meta("dfm", "none")))
 	# cleanup: the detached and queue-freed nodes are not under G any more
 	if is_instance_valid(s3):
 		s3.free()
@@ -871,14 +854,14 @@ func _arm_defer_order() -> void:
 	DFNODE.log.clear()
 	await process_frame
 	DLOG.push_back("resume")
-	it_valid("frame1", "%s | df=%s" % [_ord(DLOG), _ord(DFNODE.log)])
+	_it("frame1", "%s | df=%s" % [_ord(DLOG), _ord(DFNODE.log)])
 	DLOG.clear()
 	DFNODE.log.clear()
 	DFNODE.call_deferred("cb", "cd")
 	DLOG.push_back("queued")
 	await process_frame
 	DLOG.push_back("resume2")
-	it_valid("frame2", "%s | df=%s" % [_ord(DLOG), _ord(DFNODE.log)])
+	_it("frame2", "%s | df=%s" % [_ord(DLOG), _ord(DFNODE.log)])
 	# a deferred SIGNAL emitted mid-frame lands in the same flush
 	var s := _mk("s")
 	s.tag = "s"
@@ -886,21 +869,21 @@ func _arm_defer_order() -> void:
 	DLOG.clear()
 	ORDER.clear()
 	s.sig_a.emit()
-	it_valid("emit_t0", "%s | ord=%s" % [_ord(DLOG), _ord(ORDER)])
+	_it("emit_t0", "%s | ord=%s" % [_ord(DLOG), _ord(ORDER)])
 	await process_frame
-	it_valid("emit_t1", "%s | ord=%s" % [_ord(DLOG), _ord(ORDER)])
+	_it("emit_t1", "%s | ord=%s" % [_ord(DLOG), _ord(ORDER)])
 	# a deferred call queued from inside the process_frame signal still flushes
 	DLOG.clear()
 	DFNODE.log.clear()
 	DFNODE.call_deferred("cb", "from_sig")
 	DLOG.push_back("sig_frame")
 	await process_frame
-	it_valid("frame4", "%s | df=%s" % [_ord(DLOG), _ord(DFNODE.log)])
+	_it("frame4", "%s | df=%s" % [_ord(DLOG), _ord(DFNODE.log)])
 	# a deferred call queued at t0 of a frame and awaited twice
 	DFNODE.log.clear()
 	DFNODE.call_deferred("cb", "early")
 	await process_frame
-	it_valid("early_t1", _ord(DFNODE.log))
+	_it("early_t1", _ord(DFNODE.log))
 	process_frame.disconnect(_tree_pf_cb)
 	_it("rev", _v(_rev))
 	_pass()
@@ -910,32 +893,32 @@ func _arm_scene_probe() -> void:
 	# SceneTree.change_scene_to_* under `--script` (the battery launch shape).
 	# The loaded scene node is created by the tree at the END of the frame that
 	# completes the change; no instance ids are printed (byte-stability).
-	it_valid("current_scene_t0", "null" if current_scene == null else "set")
+	_it("current_scene_t0", "null" if current_scene == null else "set")
 	change_scene_to_file("res://r97_scene_a.tscn")
-	it_valid("file_t0", _csname())
-	it_valid("file_children_t0", str(root.get_child_count()))
+	_it("file_t0", _csname())
+	_it("file_children_t0", str(root.get_child_count()))
 	await process_frame
-	it_valid("file_t1", _csname())
+	_it("file_t1", _csname())
 	await _frames(4)
-	it_valid("file_t5", _csname())
-	it_valid("file_children_t5", str(root.get_child_count()))
+	_it("file_t5", _csname())
+	_it("file_children_t5", str(root.get_child_count()))
 	var ps: PackedScene = load("res://r97_scene_b.tscn")
-	it_valid("packed_loaded", _v(ps != null))
+	_it("packed_loaded", _v(ps != null))
 	change_scene_to_packed(ps)
-	it_valid("packed_t0", _csname())
+	_it("packed_t0", _csname())
 	await process_frame
-	it_valid("packed_t1", _csname())
+	_it("packed_t1", _csname())
 	await _frames(2)
-	it_valid("packed_t3", _csname())
-	it_valid("packed_children_t3", str(root.get_child_count()))
+	_it("packed_t3", _csname())
+	_it("packed_children_t3", str(root.get_child_count()))
 	# a free-standing node change (no resource load)
 	var ad := Node2D.new()
 	ad.name = "AdHoc"
 	change_scene_to_node(ad)
-	it_valid("node_t0", _csname())
+	_it("node_t0", _csname())
 	await _frames(2)
-	it_valid("node_t2", "AdHoc" if current_scene == ad else _csname())
-	it_valid("node_children_t2", str(root.get_child_count()))
-	it_valid("reload_exists", _v(has_method("reload_current_scene")))
+	_it("node_t2", "AdHoc" if current_scene == ad else _csname())
+	_it("node_children_t2", str(root.get_child_count()))
+	_it("reload_exists", _v(has_method("reload_current_scene")))
 	_it("rev", _v(_rev))
 	_pass()
