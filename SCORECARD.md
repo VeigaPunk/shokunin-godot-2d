@@ -294,9 +294,9 @@ opencode-go-7/deepseek-v4.1-flash, 60/64 (4 provider-400 casualties orphaned
 with scenarios covered). Bounded: r62 timeout-probe arm red both runs
 (round-unrelated host class); 3 legacy rows red under pre-fold pins, folded
 pins verified against their receipts; VER-13 dead-code + scout stale-cite
-census routed. Work commit ⟨COMMIT⟩.
+census routed. Work commit ac4eb8d4.
 
-| r101 | game-dev-2d | export_prod capability + F2 replay pins + --offy repair | ADMIT-with-findings | ⟨COMMIT⟩ |
+| r101 | game-dev-2d | export_prod capability + F2 replay pins + --offy repair | ADMIT-with-findings | ac4eb8d4 |
 
 ## Capabilities
 

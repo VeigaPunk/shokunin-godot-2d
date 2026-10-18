@@ -1225,7 +1225,7 @@
   Documentation-only change; no round run, no axis moved.
 
 - ROUND 101 (2026-10-18): export_prod capability lattice + r100b full-replay
-  pins + --offy dead-flag repair. ADMIT-WITH-FINDINGS at ⟨COMMIT⟩ (+20 CASES,
+  pins + --offy dead-flag repair. ADMIT-WITH-FINDINGS at ac4eb8d4 (+20 CASES,
   CASES 509->528; r95b family 52->51 net +5; 20/20 new rows PASS in-battery
   run 2, run 1 caught the phase fold pre-landing). 64-seat swarm on
   opencode-go-7/deepseek-v4.1-flash (60/64; E3/E5/E6/E9 died on provider 400
