@@ -1,8 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-DESCENDANT_PIPE_PROBE: expected signature
-DESCENDANT_PIPE_SURFACEFORGE child=clean signature=genuine clause_surface=descendant_post_exit
-DESCENDANT_PIPE godot_pid=2038246
-DESCENDANT_PIPE spawned_pid=2038400
-ERROR: SAVE EXPECTED NEGATIVE: malformed JSON rejected signature=JSON_PARSE_ERROR
-DESCENDANT_PIPE_ALLOWFORGE write_ppid=1573

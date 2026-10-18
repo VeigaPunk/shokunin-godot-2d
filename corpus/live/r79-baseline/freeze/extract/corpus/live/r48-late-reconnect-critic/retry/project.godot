@@ -1,4 +1,0 @@
-[application]
-config/name="r48 retry"
-[rendering]
-renderer/rendering_method="gl_compatibility"

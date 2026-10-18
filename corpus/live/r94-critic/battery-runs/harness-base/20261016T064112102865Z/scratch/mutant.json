@@ -1,9 +1,0 @@
-{
-  "variant": "base",
-  "dead_entry": false,
-  "cases": [
-    "mechanic",
-    "r94_particles_census",
-    "r94_particles_ppm"
-  ]
-}

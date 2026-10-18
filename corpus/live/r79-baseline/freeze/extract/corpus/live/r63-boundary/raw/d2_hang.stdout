@@ -1,8 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-DEPTH_PROBE: expected signature
-DEPTH_PROBE godot_pid=1065240
-DEPTH_PROBE spawned_pid=1065278
-INTERMEDIATE pid=1065278 gc_pid=1065279
-INTERMEDIATE_EXIT
-GC_ORPHANED pid=1065279 ppid_now=1573

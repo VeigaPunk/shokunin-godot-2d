@@ -1,6 +1,0 @@
-R66 child_pid=2332455
-DESCENDANT_PIPE spawned_pid=2332456
-R66_SURFACE_PROBE: expected signature
-SCRIPT 
-ERROR: R66 residual fragment
-R66 write_ppid=1573

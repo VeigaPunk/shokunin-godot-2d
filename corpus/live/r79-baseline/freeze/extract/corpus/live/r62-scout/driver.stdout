@@ -1,7 +1,0 @@
-runner sha256 d705bca719fcdf24009f2302866ecf8066d49baa2adbc81dbd044c77b3bc5019
-extracted run_process sha256 88728b2303f64fc48b094d358f0a217ae7b07aaf85b446b014e35c31d76207c5
-extracted classify_process sha256 749fa0607e7707e614c1ab157a6f8e756dfc2f460746e6d218e6734ad8fa72c3
-clean: elapsed=0.662s exit=0 error=None classify0=True desc_line=False godot_alive=False desc_alive=None
-hold: elapsed=3.002s exit=None error='TIMEOUT after 3.0 seconds' classify0=False desc_line=True godot_alive=False desc_alive=True
-detach: elapsed=0.55s exit=0 error=None classify0=True desc_line=False godot_alive=False desc_alive=True
-wrote /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/live/r62-scout/r62-scout-tree-verdicts.json

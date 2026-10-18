@@ -1,5 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-R29_OWNER step=1 focused_before=true focused_after=true button_has_focus=true receipts=1 text=Activated 1
-R29_OWNER step=2 focused_before=true focused_after=true button_has_focus=true receipts=2 text=Activated 2
-PASS button_activation in_tree=true initial=Ready step_texts=[Activated 1,Activated 2] receipts=[1,2]

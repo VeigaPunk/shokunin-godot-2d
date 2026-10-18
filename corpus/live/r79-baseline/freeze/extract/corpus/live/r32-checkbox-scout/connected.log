@@ -1,7 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-CHECKBOX edge=press1 checked=false receipts=[] label=Off
-CHECKBOX edge=release1 focused=true checked=true receipts=[true] label=On
-CHECKBOX edge=press2 checked=true receipts=[true] label=On
-CHECKBOX edge=release2 focused=true checked=false receipts=[true, false] label=Off
-PASS checkbox_toggle initial=false focus=true states=[true,false] toggled=[true,false] labels=[On,Off]

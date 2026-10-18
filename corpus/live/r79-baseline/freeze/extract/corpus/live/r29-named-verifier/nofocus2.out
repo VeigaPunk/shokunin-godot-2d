@@ -1,7 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-BUTTON_FOCUS step=1 focused=false button_has_focus=false receipts=0 text=Ready
-ERROR: UI BUTTON ASSERTION FAILED: expected step1 text=Activated 1 receipts=1, got receipts=0 text=Ready
-   at: push_error (core/variant/variant_utility.cpp:1023)
-   GDScript backtrace (most recent call first):
-       [0] run (res://button_activation.gd:65)

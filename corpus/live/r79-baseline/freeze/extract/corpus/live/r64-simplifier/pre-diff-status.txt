@@ -1,7 +1,0 @@
-?? corpus/live/r64-author/
-?? corpus/live/r64-baseline/
-?? corpus/live/r64-reviewer/
-?? corpus/live/r64-scout/
-?? corpus/live/r64-scribe/
-?? corpus/live/r64-simplifier/
-?? reports/round-64/

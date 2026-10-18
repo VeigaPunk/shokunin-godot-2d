@@ -1,6 +1,0 @@
-== unused-binding scan: corpus/fixtures/love_battery.py
-dynamic-access sites: none
-   main:173 bound-but-never-read: c_stderr
-   main:173 bound-but-never-read: c_code
-   main:145 throwaway (underscore): _
-unused non-underscore bindings: 2

@@ -1,4 +1,0 @@
-FAIL fault_hang: exit=None error='TIMEOUT after 0.25 seconds'
-PASS fault_clean_expected_negative: exit=2 error=None
-FAIL fault_unrelated_error: exit=2 error=None
-PASS fault injection: .shokunin/game-dev-2d/corpus/live/r60-verifier/fault/20261013T165549045604Z/fault-verdicts.json

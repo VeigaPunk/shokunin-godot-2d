@@ -1,3 +1,0 @@
-FAIL     self_wire_reorders           reorder_self|wire_topology  'midline_splice' != pinned 'prefix_reorder' (idx h=1891 c=1904 t=1918)
-totals: cases=55 pass=54 fail=1 launch_ok=True done_marker=True exit=0
-FAIL battery: corpus/live/r72-simplifier/del-measure/r72/vD/runs-dirty2/pygame-20261014T145140390376Z/verdicts.json

@@ -1,7 +1,0 @@
-mode=flush exit=0 eof_ms=254.43
-  PYGAME-IOCHILD-1: wait_ms=45.76 got='PYGAME-IOCHILD-1'
-  PYGAME-IOCHILD-2: wait_ms=245.85 got='PYGAME-IOCHILD-2'
-mode=buf exit=0 eof_ms=255.58
-  PYGAME-IOCHILD-1: wait_ms=247.0 got='PYGAME-IOCHILD-1'
-  PYGAME-IOCHILD-2: wait_ms=255.53 got='PYGAME-IOCHILD-2'
-capture_exit=0

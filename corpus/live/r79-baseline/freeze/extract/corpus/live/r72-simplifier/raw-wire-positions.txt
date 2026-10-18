@@ -1,7 +1,0 @@
-source: corpus/live/r72-simplifier/runs-landed/pygame-20261014T144626306766Z/probe.stdout.txt
-REORDER-HEAD@1904 REORDER-CHILD@1890 REORDER-TAIL@1917 -> child-first=True
-  line 15: REORDER-CHILD
-  line 16: REORDER-HEAD
-  line 17: REORDER-TAIL
-  line 18: PYGAME-ARM reorder_self | bufsize=131072 fd1_isatty=False descendant=p
-  line 19: PYGAME_PROBE_DONE

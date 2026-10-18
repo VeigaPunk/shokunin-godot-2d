@@ -1,9 +1,0 @@
-=== env matrix (python3 -c init+set_mode, exit codes) ===
-T1 both-dummy DISPLAY=:0       -> exit=0 DRIVER=dummy INIT=(5,0)
-T2 no-env (wayland present)    -> exit=0 DRIVER=wayland REAL window flags=0x1010002
-T3 SDL_VIDEODRIVER=dummy only  -> exit=0 INIT=(5,0) (host audio reachable)
-T4 bare env,no DSP/WL,no SDL_* -> pygame.error: No available video device
-T5 dummy+PYGAME_HIDE_SUPPORT_PROMPT=1 -> exit=0, no banner
-bogus SDL_VIDEODRIVER          -> pygame.error: bogus not available (exit nonzero)
-bogus SDL_AUDIODRIVER+vid dummy-> INIT=(4,1) graceful, mixer None
-wayland get_wm_info()          -> SIGSEGV exit=139 (2/2 repro); dummy -> {} clean

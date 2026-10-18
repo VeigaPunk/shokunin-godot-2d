@@ -1,3 +1,0 @@
-python=3.14.7 child sleeps 5000ms between writes
-rep0: first_visible_ms={'A1': 5005.1, 'A2': 5005.1} exit_ms=5006.6
-rep1: first_visible_ms={'A1': 5005.4, 'A2': 5005.4} exit_ms=5006.8

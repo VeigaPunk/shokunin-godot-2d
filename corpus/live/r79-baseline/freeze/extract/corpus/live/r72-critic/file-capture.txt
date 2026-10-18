@@ -1,3 +1,0 @@
-CHILD
-HEAD
-TAIL

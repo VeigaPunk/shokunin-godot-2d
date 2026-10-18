@@ -1,5 +1,0 @@
-R66 child_pid=2331263
-DESCENDANT_PIPE spawned_pid=2331264
-R66_SURFACE_PROBE: expected signature
-ERROR: SAVE PROCESS EXPECTED NEGATIVE: missing file rejected signature=FILE_NOT_FOUND,
-R66 write_ppid=1573

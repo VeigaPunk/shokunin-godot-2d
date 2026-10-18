@@ -1,7 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-EDGE press1 checked=false receipts=[] label=Ready
-EDGE release1 checked=true receipts=[true] label=On
-EDGE press2 checked=true receipts=[true] label=On
-EDGE release2 checked=false receipts=[true, false] label=Off
-PASS connected press-only/release-only checks

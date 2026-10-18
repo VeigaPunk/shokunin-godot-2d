@@ -1,4 +1,0 @@
-Earlier first connected attempt, Godot 4.7.2. Initial unbounded command was terminated by parent after >3 minutes; not PASS. Captured output before the successful rerun:
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC)
-SCRIPT ERROR: Trying to assign an array of type "Array" to a variable of type "Array[bool]".
- at: run (res://checkbox_toggle.gd:51)

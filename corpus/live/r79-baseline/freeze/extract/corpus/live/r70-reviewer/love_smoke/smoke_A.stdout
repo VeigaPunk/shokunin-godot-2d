@@ -1,3 +1,0 @@
-SMOKE load t=0.005
-SMOKE popen got=PIPE_CHILD_SENTINEL
-SMOKE done steps=20 dt_last=0.001052 elapsed=0.021

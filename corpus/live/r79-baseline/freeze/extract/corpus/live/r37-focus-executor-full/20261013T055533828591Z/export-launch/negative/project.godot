@@ -1,4 +1,0 @@
-[application]
-config/name="MechanicOneShotTest"
-config/features=PackedStringArray("4.7")
-run/main_scene="res://export_launch.tscn"

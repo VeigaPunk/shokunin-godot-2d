@@ -1,6 +1,0 @@
-R66 child_pid=2331351
-DESCENDANT_PIPE spawned_pid=2331352
-R66_SURFACE_PROBE: expected signature
-ERR
-OR: R66 newline-split diagnostic
-R66 write_ppid=1573

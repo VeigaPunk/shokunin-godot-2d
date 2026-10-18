@@ -1,4 +1,0 @@
-[application]
-config/name="r27 button probe"
-[rendering]
-renderer/rendering_method="gl_compatibility"

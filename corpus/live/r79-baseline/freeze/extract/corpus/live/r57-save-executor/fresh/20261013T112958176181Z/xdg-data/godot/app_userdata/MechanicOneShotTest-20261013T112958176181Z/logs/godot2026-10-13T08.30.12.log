@@ -1,6 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-ERROR: ANIMATION ASSERTION FAILED: expected animated property x=60 after bounded advance, got 0.0
-   at: push_error (core/variant/variant_utility.cpp:1023)
-   GDScript backtrace (most recent call first):
-       [0] _initialize (res://animation_property.gd:31)

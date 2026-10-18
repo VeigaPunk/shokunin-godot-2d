@@ -1,1 +1,0 @@
-{"case": "vg_pipefull_hold_guarded", "outcome": "MemoryError", "note": "uncapped `captured` bytearray hit RLIMIT_AS inside the verbatim gate loop \u2014 unbounded post-death pump is a memory-exhaustion surface of the gated read"}

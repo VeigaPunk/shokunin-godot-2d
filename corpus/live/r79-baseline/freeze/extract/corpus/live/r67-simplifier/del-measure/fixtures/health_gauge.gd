@@ -1,1 +1,0 @@
-/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/fixtures/health_gauge.gd

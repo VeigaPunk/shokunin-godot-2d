@@ -1,3 +1,0 @@
-== cross-layer cell (text pending + raw binary write-through) ==
-len 140013 X-HEAD at 140000 X-TAIL at 140006 first byte b'B'
-tail region: b'BBBBBBBX-HEADX-TAIL\n'

@@ -1,7 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-BOUNDARY_MIDLINE godot_pid=3265203
-BOUNDARY_MIDLINE spawned_pid=3265455
-ERROR: BOUNDARY_MIDLINE forged splice
-BOUNDARY_MIDLINE write_ppid=3265203
-BOUNDARY_MIDLINE: expected signature

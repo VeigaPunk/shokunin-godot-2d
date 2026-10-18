@@ -1,6 +1,0 @@
-BOUNDARY n=0 pending_total=7 edge=131072 topology=reorder head_idx=6 inj_idx=0 tail_idx=13 total_bytes=20 rc=0
-BOUNDARY n=131064 pending_total=131071 edge=131072 topology=reorder head_idx=6 inj_idx=0 tail_idx=131077 total_bytes=131084 rc=0
-BOUNDARY n=131065 pending_total=131072 edge=131072 topology=reorder head_idx=6 inj_idx=0 tail_idx=131078 total_bytes=131085 rc=0
-BOUNDARY n=131066 pending_total=131073 edge=131072 topology=splice head_idx=0 inj_idx=7 tail_idx=131079 total_bytes=131086 rc=0
-BOUNDARY n=131071 pending_total=131078 edge=131072 topology=splice head_idx=0 inj_idx=7 tail_idx=131084 total_bytes=131091 rc=0
-BOUNDARY n=131072 pending_total=131079 edge=131072 topology=splice head_idx=0 inj_idx=131079 tail_idx=131085 total_bytes=131092 rc=0

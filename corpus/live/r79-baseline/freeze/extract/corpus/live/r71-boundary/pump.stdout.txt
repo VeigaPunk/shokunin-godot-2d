@@ -1,5 +1,0 @@
-PYGAME-ARM pump_free | frames=300 tick120 total_ms=2417.5 queued_after=8
-PYGAME-ARM pump_free_post | retrieved_without_pump=1
-PYGAME-ARM queue_cap | posted_ok=65535 fail_at=65535 fail_msg='Event queue is full (65535 events)' post_ms=21.0 drained=65535
-PYGAME-ARM queue_cap_repost | post_after_drain=True
-PUMP_PROBE_DONE

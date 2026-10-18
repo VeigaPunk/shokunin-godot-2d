@@ -1,2 +1,0 @@
-ERROR: DESCENDANT_PIPE_ERRFORGE unrelated injected diagnostic
-DESCENDANT_PIPE_ERRFORGE write_ppid=1573

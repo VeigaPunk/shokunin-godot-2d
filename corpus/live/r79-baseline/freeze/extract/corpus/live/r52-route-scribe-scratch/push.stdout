@@ -1,4 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-R52_EDGE10 observer_before=3 observer_after=4 action_pressed=true value=3.0 receipts=[6.0, 3.0] label=Value 3 owner=true callback=true
-ERROR: SLIDER input-state post-release assertion failed: ui_left remains pressed
-exit 2

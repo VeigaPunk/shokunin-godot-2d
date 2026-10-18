@@ -1,6 +1,0 @@
-STRUCT A_no_prior_E           edge=131072 verdict=released(big-first) head_idx=-1 inj_idx=131072 tail_idx=131078 total_bytes=131085 rc=0
-STRUCT A2_no_prior_E-1        edge=131072 verdict=withheld head_idx=-1 inj_idx=0 tail_idx=131077 total_bytes=131084 rc=0
-STRUCT B_head_one_E-7         edge=131072 verdict=withheld head_idx=6 inj_idx=0 tail_idx=131078 total_bytes=131085 rc=0
-STRUCT C_head_one_E-6         edge=131072 verdict=released(head-first) head_idx=0 inj_idx=7 tail_idx=131079 total_bytes=131086 rc=0
-STRUCT H_head_two_sum_E-7     edge=131072 verdict=withheld head_idx=6 inj_idx=0 tail_idx=131078 total_bytes=131085 rc=0
-STRUCT H2_head_two_sum_E-6    edge=131072 verdict=released(head-first) head_idx=0 inj_idx=60007 tail_idx=131079 total_bytes=131086 rc=0

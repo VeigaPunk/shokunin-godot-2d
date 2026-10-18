@@ -1,7 +1,0 @@
-landed rows: 90 verdict: PASS
-vA: rows=90 verdict=PASS row-verdicts-identical=True ladder_discr=8 all_true=True
-   window landed=[0, 40, 80, 120, 160] missed=[240] mixed=[]
-vB: rows=90 verdict=PASS row-verdicts-identical=True ladder_discr=8 all_true=True
-   window landed=[0, 40, 80, 120, 160] missed=[240] mixed=[]
-vC: rows=90 verdict=PASS row-verdicts-identical=True ladder_discr=8 all_true=True
-   window landed=[0, 40, 80, 120, 160] missed=[240] mixed=[]

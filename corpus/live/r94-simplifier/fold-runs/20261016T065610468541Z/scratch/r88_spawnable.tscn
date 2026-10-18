@@ -1,4 +1,0 @@
-[gd_scene format=3]
-
-[node name="SpawnableOne" type="Node2D"]
-position = Vector2(33, 44)

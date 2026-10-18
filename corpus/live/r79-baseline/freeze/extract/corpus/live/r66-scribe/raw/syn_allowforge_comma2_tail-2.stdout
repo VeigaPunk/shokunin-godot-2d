@@ -1,5 +1,0 @@
-R66 child_pid=2331271
-DESCENDANT_PIPE spawned_pid=2331272
-R66_SURFACE_PROBE: expected signature
-ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1,FORGED_SUFFIX receipts=9
-R66 write_ppid=1573

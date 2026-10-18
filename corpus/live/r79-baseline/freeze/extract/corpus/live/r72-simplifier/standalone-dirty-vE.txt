@@ -1,3 +1,0 @@
-PYGAME-ARM popen | l1=CHILD-MARK-1 l2=CHILD-MARK-2 l1_wait_ms=5.48 l2_wait_ms=120.08 close_wait_ms=1.46 total_ms=127.06 rest_len=0 ret=0
-PYGAME-ARM popen_buf | l1=CHILD-MARK-1 l2=CHILD-MARK-2 l1_wait_ms=5.13 l2_wait_ms=120.08 close_wait_ms=1.47 total_ms=126.7 rest_len=0 ret=0
-PYGAME-ARM reorder_self | bufsize=131072 fd1_isatty=False descendant=printf

@@ -1,2 +1,0 @@
-1b48060bb886baff5fc4393b45b685580c362f43460d6ed022857d68b3ce2c70  corpus/fixtures/pygame_probe.py
-0a579819658ee9be9dbd3e6fb81414a036f712a5d03358c7b57a8481a2cec47f  corpus/fixtures/pygame_battery.py

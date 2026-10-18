@@ -1,3 +1,0 @@
-Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
-
-PAIR focused={"has_focus":true,"owner":"@Button@2"} focus_receipts=1 focus_text=Activated 1 unfocused={"has_focus":false,"owner":"<none>"} final_receipts=1 final_text=Activated 1

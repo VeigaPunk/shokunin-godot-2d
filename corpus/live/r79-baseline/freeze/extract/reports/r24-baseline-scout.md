@@ -1,7 +1,0 @@
-# Round 24 baseline scout — read-only
-
-- Immutable baseline is `HEAD=3b23caa25f00d3929a863ba9d3515be9aa5bb760` (`game-dev-2d r23: report Camera2D left coverage`). I read artifacts only via `git show HEAD:<path>` and did not alter or run fixtures.
-- HEAD `run_battery.py` contains 38 declared CASES entries (the round-23 LOG classifies the standing ordinary suite as 37 cases); latest committed full replay `corpus/lessons/r23-left-verifier.json` has 48 records, all PASS, consistent with round-23 outcome of 37 ordinary + 2 mutants + 9 opt-in. Its camera records are the existing follow/no-follow plus right, top, and left positive/far-bound pairs; no bottom-edge pair.
-- Immutable HEAD blob SHA-256: `corpus/fixtures/run_battery.py` `3f449c02d9539270875fd1a2bda01e37df7e39083fcfc1203f2e87836eef822f`; `corpus/fixtures/camera_limit.gd` `4d86b802205b06527fd84af9f187dd7ad89ea34d12b42995a06620536d3c69ec`; `corpus/lessons/r23-left-verifier.json` `71932c0980f1309f0fce6dfe15aa5b82ed00a2f5b0e0637ded4d53292aad41db`; `corpus/lessons/r23-fault-verifier.json` `cd49178d1f70d6a05dc89abffb6d9f756f22cb258b9f1854133597e4592849de`.
-- The baseline Camera2D script derives top center as `limit_top + viewport_half_height`; bottom should use the opposite sign (`limit_bottom - dynamic viewport half-height`). This is a read-only coverage baseline, not evidence that the proposed runtime pair works.
-- Existing worktree has a modified LOG and untracked older live scratch directories. I did not change them. No fixture was executed, no source or seeded control was edited.

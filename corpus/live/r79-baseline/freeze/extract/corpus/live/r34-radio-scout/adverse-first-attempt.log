@@ -1,1 +1,0 @@
-First attempt before reviewer-equivalent focus loop: B action succeeded. For A, script made extra b.grab_focus() after B then requested A focus; observed release A=false/B=true, receipts appended B:true; this was not valid transition evidence. Corrected by matching reviewer loop exactly: each target focus + frame immediately before action; focus-owner assertions confirmed.

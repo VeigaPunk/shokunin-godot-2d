@@ -1,3 +1,0 @@
-EXIT 2
-BUTTON_FOCUS edge=release1 focused=true button_has_focus=true receipts=0 text=Ready
-ERROR: UI BUTTON ASSERTION FAILED: expected release1 text=Activated 1 receipts=1, got focused=true receipts=0 text=Ready

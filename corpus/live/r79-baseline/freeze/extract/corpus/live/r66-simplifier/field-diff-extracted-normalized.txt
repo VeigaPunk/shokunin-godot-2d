@@ -1,6 +1,0 @@
-mismatches after normalization: ['crash_spontaneous_sigabrt', 'probe_descendant_error_spoof', 'probe_descendant_pipe_eof', 'probe_descendant_signature_spoof', 'tween_flash']
-  crash_spontaneous_sigabrt output first diff @ 698 : tengine/godot/issues', 'Load address: 558b<PID>', '', '[1] 7f7ccc03e6f0 (libc.so VS tengine/godot/issues', 'Load address: 55ce6b905000', '', '[1] 7f636383e6f0 (libc
-  probe_descendant_error_spoof gated_genuine_reps first diff @ 722 : RRFORGE child_error=genuine_pre_exit', 'DESCENDANT_PIPE godot_pid=<PID>', 'ERROR VS RRFORGE child_error=genuine_pre_exit', 'ERROR: DESCENDANT_PIPE_ERRFORGE unrelate
-  probe_descendant_pipe_eof detached_control_descendant_pid first diff @ 2 : 1952981 VS 1969613
-  probe_descendant_signature_spoof forged_release_descendant_pid first diff @ 2 : 1953099 VS 1969655
-  tween_flash output first diff @ 151 : SS tween_flash transient_modulate=(0.7046, 0.7909, 0.8879, 1.0) baseline_modulat VS SS tween_flash transient_modulate=(0.7045, 0.791, 0.8879, 1.0) baseline_modulate

@@ -1,4 +1,0 @@
-FAIL fault_hang: exit=None error='TIMEOUT after 0.25 seconds'
-PASS fault_clean_expected_negative: exit=2 error=None
-FAIL fault_unrelated_error: exit=2 error=None
-PASS fault injection: corpus/live/r69-author/fault-runs/20261014T121545357767Z/fault-verdicts.json

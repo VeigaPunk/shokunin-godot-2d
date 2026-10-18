@@ -1,4 +1,0 @@
-?? corpus/live/r64-baseline/frozen/
-?? corpus/live/r65-baseline/
-?? corpus/live/r65-reviewer/
-?? corpus/live/r65-simplifier/

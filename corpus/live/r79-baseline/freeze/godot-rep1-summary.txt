@@ -1,4 +1,0 @@
-rows: 88 verdict: PASS file_sha256: 1b244c74e2183b5c3d66af0a194146e46f89d201983680100b62cd6055c67237
-scratch: corpus/live/r79-baseline/freeze/godot-runs/20261014T235028993722Z/scratch
-non-PASS rows: []
-seeded: 81 meta: 7
