@@ -336,9 +336,9 @@ opencode-go lane. Work commit 752cdc32.
 | calibration | **improved** | in-battery gate-evasion probe green x2 (10 shapes + 4 controls, §6a re-declared under P2); companion disposition executed (12 adoptions gate-validated; s03/s05/s07/s06 retired with evidence; r101 orphan README corrected) |
 
 `r104-adjudicator.md`: ADMIT-WITH-FINDINGS. 48-seat devin swarm (p4 fallback).
-Work commit ⟨COMMIT⟩.
+Work commit 5f924226.
 
-| r104 | game-dev-2d | res_uid lattice + tab-PASS gate + evasion probe + adoptions | ADMIT-with-findings | ⟨COMMIT⟩ |
+| r104 | game-dev-2d | res_uid lattice + tab-PASS gate + evasion probe + adoptions | ADMIT-with-findings | 5f924226 |
 
 ## Capabilities
 

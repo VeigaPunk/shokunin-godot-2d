@@ -1309,7 +1309,7 @@
   3D side-round BEFORE r105 (3D lane observed at r106 under parallel session).
 
 - ROUND 104 (2026-10-19): res_uid lattice + gate tab-PASS tightening + evasion
-  probe + companion adoptions. ADMIT-WITH-FINDINGS at ⟨COMMIT⟩ (+33 rows net:
+  probe + companion adoptions. ADMIT-WITH-FINDINGS at 5f924226 (+33 rows net:
   552->585; 23 res_uid + 12 adoptions green; receipt-shape gate 0 flags x2;
   evasion probe green x2 (10 shapes, 6 flagged); timeout probe green). 48-seat
   devin swarm (contracted p4 fallback after two operator-interrupted hyper
