@@ -1,0 +1,219 @@
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -2020,6 +2020,188 @@
+     return {"audited": audited, "flags": flags}
+ 
+ 
++# r104 C3 (S0): gate-evasion replay PROBE. The r103 W10 receipt-shape gate's
++# boundary was measured once, offline (10 synthetic shapes over a stored run:
++# 4 flagged). This probe carries that measurement INTO the battery: every run
++# rebuilds the same K=10 shapes from its OWN stored rows, replays each against
++# receipt_shape_flag, and FAILs on any class drift — a shape that stops
++# flagging is a hole regression, and a shape that starts flagging (or whose
++# reason set moves) is calibration drift that must be re-declared here, the
++# same floor-not-ceiling discipline as RECEIPT_MULTI_PASS_GRAMMAR. Four
++# unmutated base rows ride along as discrimination controls: they differ from
++# their tampered twin in the injected bytes only, so a green control and a
++# flagged shape in the same pair cannot both be produced by a coarse gate.
++#
++# The tampered row keeps its BASE case name on purpose: the gate's own
++# probe-artifact rule (receipt_shape_flag F5) returns [] for any case that is
++# not a CASES row, so a renamed twin would be silently out of account.
++#
++# `expected_reasons` semantics: a tuple is the EXACT flag-reason set the shape
++# must produce; `()` declares the shape accounted-silent by design, with the
++# class named in GATE_EVASION_ACCOUNTED_CLASSES. A tightening that closes one
++# of those classes turns the run red until the row is re-declared — deliberate,
++# not accidental.
++#
++# A shape whose base case is absent from the run is recorded in `skipped`, not
++# flagged: family presence is already gated by `cases_integrity`, and the
++# historical runs predating a family must stay replayable. A base row that IS
++# present but not green, or carries no stored output, is a flag (fail-closed).
++GATE_EVASION_FORGED_BANNER = (
++    "Godot Engine v9.9.9.stable.official.deadbeefcafe "
++    "- https://godotengine.org")
++GATE_EVASION_ACCOUNTED_CLASSES = {
++    "s1a_banner_forged_out_of_census":
++        "banner-shaped line outside every declared span/DIAG window: the "
++        "non-grammar account binds PASS lines and anchor multiplicity, not "
++        "arbitrary out-of-census lines (r103 G0 residual 7.1)",
++    "s1b_banner_duplicate_in_diag_window":
++        "the row's DIAG-window closure admits any RECEIPT_BANNER_RE line, so "
++        "an exact banner duplicate inside the window is accounted",
++    "s2a_diag_shaped_foreign_into_plain_row":
++        "DIAG-window closure only binds rows that already carry a *_DIAG "
++        "line; a DIAG-shaped line in a row with no DIAG account is out of "
++        "census (r103 G0 residual 7.1)",
++    "s2b_diag_shaped_foreign_into_diag_row":
++        "any RECEIPT_DIAG_RE line is legal inside a DIAG window, payload "
++        "unbound",
++    "s4a_tab_leading_pass_line":
++        "pass-line census is `line.startswith(\"PASS \")`; a tab-prefixed "
++        "PASS line is not a PASS line to the census (r103 routed tab-PASS "
++        "hardening candidate)",
++    "s4d_tab_after_pass_token":
++        "same census: `PASS\\t...` is not `PASS ...`",
++}
++GATE_EVASION_SHAPES = (
++    # (name, base_case, ops, expected_reasons)
++    ("s1a_banner_forged_out_of_census", "r100b_seq_clean",
++     (("insert", 2, GATE_EVASION_FORGED_BANNER),), ()),
++    ("s1b_banner_duplicate_in_diag_window", "export_launch_embed_boot",
++     (("insert", 4, "!BANNER!"),), ()),
++    ("s2a_diag_shaped_foreign_into_plain_row", "input_route",
++     (("append", None, "EXPORT_LAUNCH_DIAG embed forged=true"),), ()),
++    ("s2b_diag_shaped_foreign_into_diag_row", "export_launch_embed_boot",
++     (("insert", 6, "EXPORT_LAUNCH_DIAG embed forged=1"),), ()),
++    ("s3a_pass_flood_five_into_single_pass_row", "input_route",
++     (("append", None, "PASS flooded=1 extra=true"),
++      ("append", None, "PASS flooded=2 extra=true"),
++      ("append", None, "PASS flooded=3 extra=true"),
++      ("append", None, "PASS flooded=4 extra=true"),
++      ("append", None, "PASS flooded=5 extra=true")),
++     ("unaccounted_pass_lines",)),
++    ("s3b_pass_flood_one_into_grammar_row", "r100b_seq_clean",
++     (("append", None, "PASS r100_gui forged=1"),),
++     ("pass_line_grammar_mismatch",)),
++    ("s4a_tab_leading_pass_line", "input_route",
++     (("append", None, "\tPASS forged=true"),), ()),
++    ("s4b_trailing_space_pass_duplicate", "input_route",
++     (("append", None, "!LAST_LINE!"),),
++     ("anchor_line_multiplicity", "unaccounted_pass_lines")),
++    ("s4c_trailing_nbsp_pass_line", "input_route",
++     (("append", None, "PASS forged=true\u00a0"),),
++     ("unaccounted_pass_lines",)),
++    ("s4d_tab_after_pass_token", "input_route",
++     (("append", None, "PASS\tforged=true"),), ()),
++)
++GATE_EVASION_CONTROLS = ("r100b_seq_clean", "input_route",
++                         "export_launch_embed_boot", "export_prod_base_pck")
++# Floor-not-ceiling, same discipline as the r79-r103 expected_errors gates: a
++# run whose stored rows no longer supply this many bases fails the probe rather
++# than passing it vacuously over a shrunken catalog.
++GATE_EVASION_MIN_SHAPES = 8
++
++
++def gate_evasion_replay(rows):
++    """Rebuild the stored evasion catalog from `rows` and replay it.
++
++    Returns {"shapes": [...], "controls": [...], "skipped": [...],
++    "flags": [...]}; `flags` empty == every constructed shape flagged exactly
++    as classified and every control stayed silent. Fail-closed on a base row
++    that is present but not green or has no stored output.
++    """
++    by_case = {}
++    for row in rows:
++        if isinstance(row, dict) and row.get("case") not in by_case:
++            by_case[row.get("case")] = row
++    shapes, controls, skipped, flags = [], [], [], []
++
++    def base_of(case, name):
++        row = by_case.get(case)
++        if row is None:
++            skipped.append({"shape": name, "case": case,
++                            "why": "base_case_absent_from_run"})
++            return None
++        if row.get("verdict") != "PASS":
++            flags.append({"shape": name, "why": "probe_base_row_not_green",
++                          "case": case, "verdict": row.get("verdict")})
++            return None
++        if not isinstance(row.get("output"), list):
++            flags.append({"shape": name, "why": "probe_base_row_no_output",
++                          "case": case})
++            return None
++        return row
++
++    def shape_row(row, ops):
++        lines = list(row["output"])
++        for kind, idx, line in ops:
++            if kind == "insert":
++                lines.insert(idx, line)
++            else:
++                lines.append(line)
++        out = dict(row)
++        out["output"] = lines
++        return out
++
++    for name, base_case, ops, expected in GATE_EVASION_SHAPES:
++        row = base_of(base_case, name)
++        if row is None:
++            continue
++        banner = next((line for line in row["output"]
++                       if RECEIPT_BANNER_RE.match(line)), None)
++        resolved = []
++        for kind, idx, line in ops:
++            if line == "!BANNER!":
++                if banner is None:
++                    flags.append({"shape": name, "why": "probe_banner_absent",
++                                  "case": base_case})
++                    resolved = None
++                    break
++                line = banner
++            elif line == "!LAST_LINE!":
++                line = row["output"][-1] + " "
++            resolved.append((kind, idx, line))
++        if resolved is None:
++            continue
++        observed = tuple(sorted({flag.get("why") for flag
++                                 in receipt_shape_flag(shape_row(row, resolved))}))
++        expected = tuple(sorted(expected))
++        shapes.append({"shape": name, "base_case": base_case,
++                       "expected_reasons": list(expected),
++                       "observed_reasons": list(observed),
++                       "flagged": bool(observed)})
++        if observed != expected:
++            flags.append({"shape": name, "why": "shape_class_drift",
++                          "case": base_case,
++                          "expected": list(expected),
++                          "observed": list(observed),
++                          "accounted_class":
++                              GATE_EVASION_ACCOUNTED_CLASSES.get(name)})
++    for case in GATE_EVASION_CONTROLS:
++        row = base_of(case, "control:" + case)
++        if row is None:
++            continue
++        observed = tuple(sorted({flag.get("why") for flag
++                                 in receipt_shape_flag(row)}))
++        controls.append({"case": case, "observed_reasons": list(observed)})
++        if observed:
++            flags.append({"shape": "control", "why": "control_not_silent",
++                          "case": case, "observed": list(observed)})
++    if len(shapes) < GATE_EVASION_MIN_SHAPES:
++        flags.append({"shape": "catalog", "why": "shape_catalog_floor",
++                      "observed": len(shapes),
++                      "declared": GATE_EVASION_MIN_SHAPES})
++    return {"shapes": shapes, "controls": controls, "skipped": skipped,
++            "flags": flags}
++
+ def main():
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument("--probe-failing", action="store_true", help="also mutate scratch scene B and prove detection")
+@@ -5771,6 +5953,27 @@
+           f"audited={receipt_audit['audited']} flags={len(receipt_audit['flags'])}",
+           flush=True)
+ 
++    # r104 C3 (S0): gate-evasion replay PROBE — replays the K=10 stored
++    # synthetic shapes plus 4 green controls against receipt_shape_flag over
++    # this run's own rows; green only if every shape flags as classified
++    # (see gate_evasion_replay). Appended AFTER the receipt-shape audit so the
++    # probe's own meta row is not itself part of the shape account.
++    evasion_replay = gate_evasion_replay(results)
++    results.append({"case": "probe_gate_evasion_replay",
++                    "verdict": "PASS" if not evasion_replay["flags"] else "FAIL",
++                    "shape_count": len(evasion_replay["shapes"]),
++                    "control_count": len(evasion_replay["controls"]),
++                    "skipped": evasion_replay["skipped"],
++                    "shapes": evasion_replay["shapes"],
++                    "controls": evasion_replay["controls"],
++                    "flags": evasion_replay["flags"][:20],
++                    "accounted_classes": GATE_EVASION_ACCOUNTED_CLASSES,
++                    "bounded_claim": "the stored catalog's classes only: 6 of 10 shapes are declared accounted-silent (out-of-census banner/DIAG content, tab-PASS census invisibility) and a drift there is reported as a class change to re-declare, not as a gate defect; shapes are built from this run's own rows, so the probe is a per-run regression pin on the gate's boundary, not a fresh adversary search"})
++    print(f"{results[-1]['verdict']} gate-evasion replay: "
++          f"shapes={len(evasion_replay['shapes'])} "
++          f"flagged={sum(1 for s in evasion_replay['shapes'] if s['flagged'])} "
++          f"flags={len(evasion_replay['flags'])}", flush=True)
++
+     payload = {"godot": args.godot, "seed": str(HERE), "scratch": str(scratch),
+                "probe_failing": args.probe_failing, "results": results,
+                "verdict": "PASS" if all(r["verdict"] == "PASS" for r in results) else "FAIL"}

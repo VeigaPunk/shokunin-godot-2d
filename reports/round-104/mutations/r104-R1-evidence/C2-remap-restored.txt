@@ -1,0 +1,9 @@
+[r104R1d] import_exists=true
+[r104R1d] dest_exists=true
+[r104R1d] load_src_null=false
+[r104R1d] load_src_class=CompressedTexture2D
+[r104R1d] load_dest_null=false
+[r104R1d] load_dest_class=CompressedTexture2D
+[r104R1d] load_dest_respath=res://.godot/imported/tiny.png-4c2a616b3090ed27619d4dea97b52b2a.ctex
+[r104R1d] exists_src=true
+[r104R1d] exists_dest=true

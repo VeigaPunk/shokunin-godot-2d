@@ -1,0 +1,15 @@
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -1901,7 +1901,11 @@
+         return [{"case": case, "why": "fail_closed_missing_signature"}]
+     anchors = [s.split("\n")[0].strip() for s in sigs]
+     flags = []
+-    pass_lines = [line for line in output if line.startswith("PASS ")]
++    # r104-R2 (C2a): the census takes every PASS-prefixed line, not only the
++    # canonical "PASS " form. `PASS\tforged=…` and `\tPASS forged=…` are
++    # invisible to this census AND to the anchored-pin rules below, so a
++    # forged TAB-separated PASS line appends to any single-PASS row unflagged.
++    pass_lines = [line for line in output if line.lstrip().startswith("PASS")]
+     grammar = RECEIPT_MULTI_PASS_GRAMMAR.get(case)
+     if grammar is not None:
+         observed = []

@@ -1,0 +1,18 @@
+### w07 census
+PASS res_uid_w07 census methods=id_to_text/1,text_to_id/1,create_id/0,create_id_for_path/1,has_id/1,add_id/2,set_id/2,get_id_path/1,remove_id/1,uid_to_path/1,path_to_uid/1,ensure_path/1 consts=INVALID_ID=-1 invalid=-1 invalid_text=uid://<invalid> cache_modes=CACHE_MODE_IGNORE=0,CACHE_MODE_REUSE=1,CACHE_MODE_REPLACE=2,CACHE_MODE_IGNORE_DEEP=3,CACHE_MODE_REPLACE_DEEP=4
+PASS res_uid_w07 census loader_has_uid=1 loader_has_exists=1 loader_has_remap=1
+### w07 custfile
+PASS res_uid_w07 custfile uid_text=<none> stripped_len=6 uid_file_bytes=-1 from_text=-1 loader_uid=-1 text_eq_loader=1 loader_text=uid://<invalid>
+PASS res_uid_w07 custfile path_of_loader= path_of_text= loader_path_matches=0 uid_cache_exists=0 uid_cache_bytes=-1
+### w07 cache
+PASS res_uid_w07 cache save=0 same_default=1 same_ignore=0 same_reuse=1 same_replace=1 same_after_replace=1
+PASS res_uid_w07 cache uid=-1 uid_text=uid://<invalid> id_path= id_path_is_user=0
+### w07 collision
+PASS res_uid_w07 collision id=7770001 first=user://w07/col_a.tres second=user://w07/col_a.tres has=1 after_remove=0 path_after_remove= text=uid://f2xpp
+### w07 nouid
+PASS res_uid_w07 nouid companion_exists=0 loader_uid=-1 loader_text=uid://<invalid> unknown_path= unknown_text=uid://oin4bdu4qg36 bad_round=1807894457343258375
+### w07 stale
+PASS res_uid_w07 stale moved=1 path_before=user://w07/move_a.tres path_after_move=user://w07/move_a.tres uid_of_old_path=6260003 uid_of_new_path=-1 same=0
+### w07 importremap
+PASS res_uid_w07 importremap import_exists=0 uid_line= path_line= text_to_id=-1 loader_uid=-1 text_eq=1
+PASS res_uid_w07 importremap loader_text=uid://<invalid> id_path= remap=res:// remap_exists=0 remap_bytes=-1 loaded_cls=<null> loaded_path=<null>

@@ -1,0 +1,26 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+[r104R1b] canon=t=uid://bq1a2b3c4d5e6 i=3563164315850256711 back=uid://bq1a2b3c4d5e6 stable=true idstable=true
+[r104R1b] canon=t=uid://cq7f8g9h0j1k2 i=5962285837902618511 back=uid://cq7f8hah0j1k2 stable=false idstable=true
+[r104R1b] canon=t=uid://0 i=25 back=uid://0 stable=true idstable=true
+[r104R1b] canon=t=uid://a i=0 back=uid://a stable=true idstable=true
+[r104R1b] canon=t=uid://b i=1 back=uid://b stable=true idstable=true
+[r104R1b] canon=t=uid://zzzzzzzzzzzzz i=6128179328542129927 back=uid://ctkshoiimsrhf stable=false idstable=true
+[r104R1b] canon=t=uid://ctkshoiimsrhf i=6128179328542129927 back=uid://ctkshoiimsrhf stable=true idstable=true
+[r104R1b] canon=t=uid://cq7f8hah0j1k2 i=5962285837902618511 back=uid://cq7f8hah0j1k2 stable=true idstable=true
+[r104R1b] canon=t=uid://1 i=26 back=uid://1 stable=true idstable=true
+[r104R1b] canon=t=uid://v i=21 back=uid://v stable=true idstable=true
+[r104R1b] canon=t=uid://10 i=909 back=uid://10 stable=true idstable=true
+[r104R1b] canon=t=uid://ba i=34 back=uid://ba stable=true idstable=true
+[r104R1b] canon=t=uid://ab i=1 back=uid://b stable=false idstable=true
+[r104R1b] canon=t=uid://aa i=0 back=uid://a stable=false idstable=true
+[r104R1b] canon=t=uid://10000000000000 i=3571867273499803399 back=uid://bq5ieq0tbicxb stable=false idstable=true
+[r104R1b] case=t=uid://A -> -1
+[r104R1b] case=t=uid://B -> -1
+[r104R1b] case=t=uid://BQ1A2B3C4D5E6 -> -1
+[r104R1b] case=t=UID://b -> -1
+[r104R1b] long=t=uid://zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz -> 6802805401096822535 back=uid://c36lhf8iy6vsx
+[r104R1b] long=t=uid://10000000000000000000000000000000000000000 -> 2815764349790723847 back=uid://bgd8hy62jmwt0
+[r104R1b] id_to_text(-1)=uid://<invalid>
+[r104R1b] text_to_id(uid://<invalid>)=-1
+PASS res_uid_scr2 arm=canon

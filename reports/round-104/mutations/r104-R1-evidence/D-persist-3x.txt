@@ -1,0 +1,6 @@
+[r104R1c] resolve=uid://bq1a2b3c4d5e6 has=true path=res://scene.tscn
+[r104R1c] resolve=uid://cq7f8g9h0j1k2 has=true path=res://sub/deep.gd
+[r104R1c] resolve=uid://bq1a2b3c4d5e6 has=true path=res://scene.tscn
+[r104R1c] resolve=uid://cq7f8g9h0j1k2 has=true path=res://sub/deep.gd
+[r104R1c] resolve=uid://bq1a2b3c4d5e6 has=true path=res://scene.tscn
+[r104R1c] resolve=uid://cq7f8g9h0j1k2 has=true path=res://sub/deep.gd

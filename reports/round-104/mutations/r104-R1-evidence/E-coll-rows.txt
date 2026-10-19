@@ -1,0 +1,2 @@
+[r104R1d] count=3
+[r104R1d] all=res://beta.gd -> uid://bq1a2b3c4d5e6 ;; res://res_uid_scr3.gd -> uid://bub516p7abt3a ;; res://res_uid_scr4.gd -> uid://diun71jv361dt

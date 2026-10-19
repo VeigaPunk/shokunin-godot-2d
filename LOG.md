@@ -1307,3 +1307,18 @@
 - ROUTED (r104+): tab-PASS grammar tightening; mut05 full gate-replay wiring
   (catalog vs verdicts); VER-13 hygiene (now also covered by the F6 account);
   3D side-round BEFORE r105 (3D lane observed at r106 under parallel session).
+
+- ROUND 104 (2026-10-19): res_uid lattice + gate tab-PASS tightening + evasion
+  probe + companion adoptions. ADMIT-WITH-FINDINGS at ⟨COMMIT⟩ (+33 rows net:
+  552->585; 23 res_uid + 12 adoptions green; receipt-shape gate 0 flags x2;
+  evasion probe green x2 (10 shapes, 6 flagged); timeout probe green). 48-seat
+  devin swarm (contracted p4 fallback after two operator-interrupted hyper
+  attempts). FOLDS: P2 census `^[ \t]*PASS(?![A-Za-z0-9_-])` (6/10 shapes flag,
+  0 FP / 39,806 lines); §6a probe re-declaration; XDG isolation for res_uid
+  family (partial); s11_pack de-sha (root-drift law); sidecar rc envelope
+  (bimodal 124/1). RETIRED pre-close: SEVEN res_uid rows (scratch-project uid
+  cache shared across rows defeats seat-isolated arms; XDG insufficient —
+  state is in the project dir) + s01_createid (fixture pins seat constants,
+  self-reports matches_pinned=false) — harness/fixture fixes routed to r105.
+  Receipts: runs 3+4 green on all landed rows (s02_deleted retired post-run;
+  re-run precluded by operator reboot — disclosed).

@@ -26,3 +26,15 @@ consolidates all their scenarios into the 12 registered rows. Keeping runnable
 but unregistered fixtures in `corpus/fixtures/` would recreate the census/hygiene
 drift class (B2), so they retire here. A future round may register any of them
 with the pins already in their shards — that is additive coverage, not repair.
+
+## r104 disposition (2026-10-18)
+
+Adopted with fresh measured pins (12 rows registered): s01, s02, s04, s09,
+s10, s11 (all six moved back to corpus/fixtures/). The r101 README's
+"provider-orphaned/broken" claims were WRONG for s03/s05/s09 — r104-S1
+re-measured them healthy on HEAD; the true disposition per r104-S2 §5-6:
+s03 RETIRE (quota-blind scratch probe + 15-30s nested export vs the 8s row
+bound, unsatisfiable by design), s05/s07 RETIRE (S2 measured: not
+gate-accountable on HEAD), s06 REPAIR-PENDING (GDScript typing defect at
+:370 blocks classification; repair is a fixture edit, outside r104 seat
+ownership). Retired fixtures stay here as evidence.

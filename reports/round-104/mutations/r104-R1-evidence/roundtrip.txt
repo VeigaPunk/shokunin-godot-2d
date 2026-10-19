@@ -1,0 +1,41 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+[r104R1] has_id_before=false
+[r104R1] get_id_path_before=
+[r104R1] create_id=852174802705548197
+[r104R1] create_id_text=uid://me2gu3qmg2f6
+[r104R1] create_id_invalid=false
+[r104R1] has_id_after_add=true
+[r104R1] get_id_path_after_add=res://assets/thing.gd
+ERROR: Unrecognized UID: "uid://ctkshoiimsrhf".
+   at: get_id_path (core/io/resource_uid.cpp:214)
+   GDScript backtrace (most recent call first):
+       [0] _arm_roundtrip (res://res_uid_scr1.gd:67)
+       [1] _initialize (res://res_uid_scr1.gd:17)
+[r104R1] get_id_path_unknown=
+[r104R1] has_id_unknown=false
+ERROR: Condition "unique_ids.has(p_id)" is true.
+   at: add_id (core/io/resource_uid.cpp:164)
+   GDScript backtrace (most recent call first):
+       [0] _arm_roundtrip (res://res_uid_scr1.gd:70)
+       [1] _initialize (res://res_uid_scr1.gd:17)
+[r104R1] get_id_path_after_second_add=res://assets/thing.gd
+ERROR: Condition "!unique_ids.has(p_id)" is true.
+   at: set_id (core/io/resource_uid.cpp:178)
+   GDScript backtrace (most recent call first):
+       [0] _arm_roundtrip (res://res_uid_scr1.gd:74)
+       [1] _initialize (res://res_uid_scr1.gd:17)
+ERROR: Unrecognized UID: "uid://bq1a2b3c4d5e6".
+   at: get_id_path (core/io/resource_uid.cpp:214)
+   GDScript backtrace (most recent call first):
+       [0] _arm_roundtrip (res://res_uid_scr1.gd:75)
+       [1] _initialize (res://res_uid_scr1.gd:17)
+[r104R1] after_set_id=
+[r104R1] has_id_after_remove=false
+ERROR: Unrecognized UID: "uid://bq1a2b3c4d5e6".
+   at: get_id_path (core/io/resource_uid.cpp:214)
+   GDScript backtrace (most recent call first):
+       [0] _arm_roundtrip (res://res_uid_scr1.gd:82)
+       [1] _initialize (res://res_uid_scr1.gd:17)
+[r104R1] two_ids_same_path=|res://assets/thing.gd
+PASS res_uid_scr1 arm=roundtrip

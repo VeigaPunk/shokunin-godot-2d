@@ -1,0 +1,15 @@
+[r104R1h] load_cache_mode_arg_hint={ "name": "cache_mode", "class_name": &"ResourceLoader.CacheMode", "type": 2, "hint": 0, "hint_string": "", "usage": 65542 }
+[r104R1h] enums=ThreadLoadStatus|CacheMode
+[r104R1h] enum=CACHE_MODE_IGNORE=0
+[r104R1h] enum=CACHE_MODE_REUSE=1
+[r104R1h] enum=CACHE_MODE_REPLACE=2
+[r104R1h] enum=CACHE_MODE_IGNORE_DEEP=3
+[r104R1h] enum=CACHE_MODE_REPLACE_DEEP=4
+[r104R1h] v1=999
+[r104R1h] ignore_deep_v=777
+[r104R1h] ignore_deep_same_rid=false
+[r104R1h] replace_deep_v=777
+[r104R1h] replace_deep_same_rid_as_ignore_deep=false
+[r104R1h] reuse_after_replace_deep_v=777
+[r104R1h] reuse_after_replace_deep_same_rid=true
+PASS res_uid_scr8 arm=modes

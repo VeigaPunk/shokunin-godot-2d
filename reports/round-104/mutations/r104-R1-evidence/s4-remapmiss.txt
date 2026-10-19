@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+[r104R1d] import_exists=true
+[r104R1d] dest_exists=true
+[r104R1d] load_src_null=false
+[r104R1d] load_src_class=CompressedTexture2D
+[r104R1d] load_dest_null=false
+[r104R1d] load_dest_class=CompressedTexture2D
+[r104R1d] load_dest_respath=res://.godot/imported/tiny.png-4c2a616b3090ed27619d4dea97b52b2a.ctex
+[r104R1d] exists_src=true
+[r104R1d] exists_dest=true
+PASS res_uid_scr4 arm=remapmiss

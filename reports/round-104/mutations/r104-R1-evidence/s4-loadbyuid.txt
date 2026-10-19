@@ -1,0 +1,39 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+[r104R1d] load=uid://cfo35nu5y4frk null=false class=CompressedTexture2D path=res://tiny.png
+[r104R1d] exists=uid://cfo35nu5y4frk -> true
+ERROR: res://scene.tscn:6 - Parse Error: [ext_resource] referenced non-existent resource at: res://scene.tscn.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+   GDScript backtrace (most recent call first):
+       [0] _arm_loadbyuid (res://res_uid_scr4.gd:25)
+       [1] _initialize (res://res_uid_scr4.gd:15)
+[r104R1d] load=uid://bq1a2b3c4d5e6 null=false class=PackedScene path=res://scene.tscn
+[r104R1d] exists=uid://bq1a2b3c4d5e6 -> true
+ERROR: Unrecognized UID: "uid://ctkshoiimsrhf".
+   at: get_id_path (core/io/resource_uid.cpp:214)
+   GDScript backtrace (most recent call first):
+       [0] _arm_loadbyuid (res://res_uid_scr4.gd:25)
+       [1] _initialize (res://res_uid_scr4.gd:15)
+ERROR: Condition "local_path.is_empty()" is true. Returning: Ref<ResourceLoader::LoadToken>()
+   at: _load_start (core/io/resource_loader.cpp:752)
+   GDScript backtrace (most recent call first):
+       [0] _arm_loadbyuid (res://res_uid_scr4.gd:25)
+       [1] _initialize (res://res_uid_scr4.gd:15)
+ERROR: Error loading resource: 'uid://zzzzzzzzzzzzz'.
+   at: load (core/core_bind.cpp:82)
+   GDScript backtrace (most recent call first):
+       [0] _arm_loadbyuid (res://res_uid_scr4.gd:25)
+       [1] _initialize (res://res_uid_scr4.gd:15)
+[r104R1d] load=uid://zzzzzzzzzzzzz null=true class=- path=-
+ERROR: Unrecognized UID: "uid://ctkshoiimsrhf".
+   at: get_id_path (core/io/resource_uid.cpp:214)
+   GDScript backtrace (most recent call first):
+       [0] _arm_loadbyuid (res://res_uid_scr4.gd:27)
+       [1] _initialize (res://res_uid_scr4.gd:15)
+[r104R1d] exists=uid://zzzzzzzzzzzzz -> false
+[r104R1d] load=uid://cq7f8g9h0j1k2 null=false class=GDScript path=res://sub/deep.gd
+[r104R1d] exists=uid://cq7f8g9h0j1k2 -> true
+[r104R1d] file_exists_uid=true
+Unicode parsing error, some characters were replaced with � (U+FFFD): Invalid UTF-8 leading byte (89)
+[r104R1d] get_file_as_string_uid_len=8
+PASS res_uid_scr4 arm=loadbyuid

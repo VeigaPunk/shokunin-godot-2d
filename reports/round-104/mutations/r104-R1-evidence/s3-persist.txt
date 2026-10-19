@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+[r104R1c] cachebin_exists=true
+[r104R1c] resolve=uid://bq1a2b3c4d5e6 has=true path=res://scene.tscn
+[r104R1c] resolve=uid://cq7f8g9h0j1k2 has=true path=res://sub/deep.gd
+[r104R1c] uidfile_thing=uid://bq1a2b3c4d5e6
+[r104R1c] uidfile_deep=uid://cq7f8g9h0j1k2
+[r104R1c] uidfile_scr_gd_exists=false
+PASS res_uid_scr3 arm=persist

@@ -1,0 +1,19 @@
+[r104R1i] single_char_values=a=0 b=1 c=2 d=3 e=4 f=5 g=6 h=7 i=8 j=9 k=10 l=11 m=12 n=13 o=14 p=15 q=16 r=17 s=18 t=19 u=20 v=21 w=22 x=23 y=24 z=25 0=25 1=26 2=27 3=28 4=29 5=30 6=31 7=32 8=33 9=34
+[r104R1i] rejected_single_chars=�                              ! " # $ % & ' ( ) * + , - . ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` { | } ~ 
+[r104R1i] pos=a = 0  text=uid://a
+[r104R1i] pos=b = 1  text=uid://b
+[r104R1i] pos=aa = 0  text=uid://a
+[r104R1i] pos=ab = 1  text=uid://b
+[r104R1i] pos=ba = 34  text=uid://ba
+[r104R1i] pos=bb = 35  text=uid://bb
+[r104R1i] pos=a0 = 25  text=uid://0
+[r104R1i] pos=0a = 850  text=uid://0a
+[r104R1i] pos=10 = 909  text=uid://10
+[r104R1i] pos=0 = 25  text=uid://0
+[r104R1i] pos=1 = 26  text=uid://1
+[r104R1i] pos=z = 25  text=uid://0
+[r104R1i] pos=zz = 875  text=uid://00
+[r104R1i] pos=100 = 30931  text=uid://100
+[r104R1i] pos=vvv = 25011  text=uid://vvv
+[r104R1i] canonical_emission=0->uid://a 1->uid://b 24->uid://y 25->uid://0 26->uid://1 27->uid://2 31->uid://6 32->uid://7 33->uid://8 34->uid://ba 35->uid://bb 1023->uid://5d 1024->uid://5e 32767->uid://3l0 32768->uid://3l1
+PASS res_uid_scr9 arm=alphabet

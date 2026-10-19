@@ -1,0 +1,15 @@
+[r104R1e] exists=res://bad1.gd file=true
+[r104R1e] uidtext=res://bad1.gd = [uid://] id=0
+ERROR: Unrecognized UID: "uid://a".
+[r104R1e] resolve=uid:// has=false path=
+[r104R1e] load=res://bad1.gd null=false
+[r104R1e] exists=res://bad2.gd file=true
+[r104R1e] uidtext=res://bad2.gd = [not-a-uid] id=-1
+ERROR: Invalid UID.
+[r104R1e] resolve=not-a-uid has=false path=
+[r104R1e] load=res://bad2.gd null=false
+[r104R1e] exists=res://bad3.gd file=true
+[r104R1e] uidtext=res://bad3.gd = [] id=-1
+ERROR: Invalid UID.
+[r104R1e] resolve= has=false path=
+[r104R1e] load=res://bad3.gd null=false

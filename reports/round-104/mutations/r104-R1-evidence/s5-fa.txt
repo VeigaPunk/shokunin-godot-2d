@@ -1,0 +1,6 @@
+[r104R1e] fa_exists=true
+[r104R1e] fa_len=8
+[r104R1e] fa_bytes_hex=efbfbd504e470d0a1a0a
+[r104R1e] fa_open_len=69
+[r104R1e] png_len=69
+[r104R1e] ctex_len=92

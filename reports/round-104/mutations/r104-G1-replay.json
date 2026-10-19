@@ -1,0 +1,170 @@
+{
+ "head": {
+  "battery": "/var/tmp/r104-G1-impl/run_battery_head.py",
+  "controls": {
+   "green_launch": [],
+   "green_prod": [],
+   "green_seq": [],
+   "green_simple": []
+  },
+  "evasions": {
+   "s1a_banner_forged_seq": [],
+   "s1b_banner_dup_launch": [],
+   "s2a_diag_other_family_simple": [],
+   "s2b_diag_forged_launch": [],
+   "s3a_flood5_simple": [
+    "unaccounted_pass_lines"
+   ],
+   "s3b_flood1_seq": [
+    "pass_line_grammar_mismatch"
+   ],
+   "s4a_tab_lead_simple": [],
+   "s4b_trail_space_simple": [
+    "anchor_line_multiplicity",
+    "unaccounted_pass_lines"
+   ],
+   "s4c_trail_nbsp_simple": [
+    "unaccounted_pass_lines"
+   ],
+   "s4d_tab_after_pass_simple": []
+  },
+  "runs": {
+   "20261018T200239625248Z": {
+    "flags": 4,
+    "rows": 524,
+    "whys": [
+     "anchor_line_multiplicity",
+     "pass_line_unanchored"
+    ]
+   },
+   "20261018T202131127599Z": {
+    "flags": 2,
+    "rows": 527,
+    "whys": [
+     "anchor_line_multiplicity",
+     "pass_line_unanchored"
+    ]
+   },
+   "20261018T212500022987Z": {
+    "flags": 0,
+    "rows": 538,
+    "whys": []
+   },
+   "20261018T213443471189Z": {
+    "flags": 0,
+    "rows": 538,
+    "whys": []
+   },
+   "20261019T001435805887Z": {
+    "flags": 15,
+    "rows": 554,
+    "whys": [
+     "foreign_in_diag_window"
+    ]
+   },
+   "20261019T003019776183Z": {
+    "flags": 0,
+    "rows": 554,
+    "whys": []
+   },
+   "20261019T004115354212Z": {
+    "flags": 0,
+    "rows": 554,
+    "whys": []
+   },
+   "20261019T005558434174Z": {
+    "flags": 0,
+    "rows": 554,
+    "whys": []
+   }
+  },
+  "sha256": "2af2bc841ccb416e5fb0e1bbaadc08627e2d4768a8822f6956e867d905a3d0fe"
+ },
+ "mut": {
+  "battery": "/var/tmp/r104-G1-impl/run_battery_mut.py",
+  "controls": {
+   "green_launch": [],
+   "green_prod": [],
+   "green_seq": [],
+   "green_simple": []
+  },
+  "evasions": {
+   "s1a_banner_forged_seq": [],
+   "s1b_banner_dup_launch": [],
+   "s2a_diag_other_family_simple": [],
+   "s2b_diag_forged_launch": [],
+   "s3a_flood5_simple": [
+    "unaccounted_pass_lines"
+   ],
+   "s3b_flood1_seq": [
+    "pass_line_grammar_mismatch"
+   ],
+   "s4a_tab_lead_simple": [
+    "pass_line_separator",
+    "unaccounted_pass_lines"
+   ],
+   "s4b_trail_space_simple": [
+    "anchor_line_multiplicity",
+    "unaccounted_pass_lines"
+   ],
+   "s4c_trail_nbsp_simple": [
+    "unaccounted_pass_lines"
+   ],
+   "s4d_tab_after_pass_simple": [
+    "pass_line_separator",
+    "unaccounted_pass_lines"
+   ]
+  },
+  "runs": {
+   "20261018T200239625248Z": {
+    "flags": 4,
+    "rows": 524,
+    "whys": [
+     "anchor_line_multiplicity",
+     "pass_line_unanchored"
+    ]
+   },
+   "20261018T202131127599Z": {
+    "flags": 2,
+    "rows": 527,
+    "whys": [
+     "anchor_line_multiplicity",
+     "pass_line_unanchored"
+    ]
+   },
+   "20261018T212500022987Z": {
+    "flags": 0,
+    "rows": 538,
+    "whys": []
+   },
+   "20261018T213443471189Z": {
+    "flags": 0,
+    "rows": 538,
+    "whys": []
+   },
+   "20261019T001435805887Z": {
+    "flags": 15,
+    "rows": 554,
+    "whys": [
+     "foreign_in_diag_window"
+    ]
+   },
+   "20261019T003019776183Z": {
+    "flags": 0,
+    "rows": 554,
+    "whys": []
+   },
+   "20261019T004115354212Z": {
+    "flags": 0,
+    "rows": 554,
+    "whys": []
+   },
+   "20261019T005558434174Z": {
+    "flags": 0,
+    "rows": 554,
+    "whys": []
+   }
+  },
+  "sha256": "da1ef37fff98dba95b2b80fa33ede0319cbe797f420a1e2397fcbd24222dbc5b"
+ }
+}

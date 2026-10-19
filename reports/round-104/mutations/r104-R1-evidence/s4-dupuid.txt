@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+[r104R1d] uidfile=res://assets/thing.gd = uid://bq1a2b3c4d5e6
+[r104R1d] uidfile=res://sub/deep.gd = uid://cq7f8hah0j1k2
+[r104R1d] shared_id=3563164315850256711
+[r104R1d] shared_has=true
+[r104R1d] shared_path=res://scene.tscn
+[r104R1d] deep_path=res://sub/deep.gd
+PASS res_uid_scr4 arm=dupuid

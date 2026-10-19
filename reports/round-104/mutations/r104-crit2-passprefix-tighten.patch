@@ -1,0 +1,25 @@
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -1901,7 +1901,21 @@
+         return [{"case": case, "why": "fail_closed_missing_signature"}]
+     anchors = [s.split("\n")[0].strip() for s in sigs]
+     flags = []
+-    pass_lines = [line for line in output if line.startswith("PASS ")]
++    # r104 C2 fold: the census reads every PASS-prefixed line, not just the
++    # canonical `PASS ` token. A line that starts with PASS but is not the
++    # canonical receipt prefix (PASS<tab>, PASS=, PASSENGER, bare PASS, and
++    # lead-whitespace forms) is a forgery surface: it is invisible to the
++    # `PASS `-only census, so the account below never sees it. Flag it
++    # explicitly, then keep the account on the canonical subset so the
++    # grammar/one-line checks are unchanged. The span and DIAG windows
++    # deliberately stay on `PASS `: widening them would TOLERATE forged
++    # PASS-word lines that the landed gate flags as foreign (measured).
++    pass_prefix = [line for line in output if line.lstrip().startswith("PASS")]
++    for line in pass_prefix:
++        if not line.startswith("PASS "):
++            flags.append({"case": case, "why": "pass_prefix_noncanonical",
++                          "line": line[:80]})
++    pass_lines = [line for line in pass_prefix if line.startswith("PASS ")]
+     grammar = RECEIPT_MULTI_PASS_GRAMMAR.get(case)
+     if grammar is not None:
+         observed = []

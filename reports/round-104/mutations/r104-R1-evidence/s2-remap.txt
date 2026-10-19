@@ -1,0 +1,35 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+[r104R1b] import_file_exists=true
+[r104R1b] import_text_len=916
+[r104R1b] import_line=[remap]
+[r104R1b] import_line=uid="uid://cfo35nu5y4frk"
+[r104R1b] import_line=path="res://.godot/imported/tiny.png-4c2a616b3090ed27619d4dea97b52b2a.ctex"
+[r104R1b] import_line=[deps]
+[r104R1b] import_line=source_file="res://tiny.png"
+[r104R1b] import_line=dest_files=["res://.godot/imported/tiny.png-4c2a616b3090ed27619d4dea97b52b2a.ctex"]
+[r104R1b] import_line=[params]
+[r104R1b] load_imported_null=false
+[r104R1b] load_imported_class=CompressedTexture2D
+[r104R1b] load_imported_path=res://tiny.png
+[r104R1b] imported_ignore_null=false
+[r104R1b] load_as_Image_null=false
+[r104R1b] load_as_Image_class=CompressedTexture2D
+[r104R1b] dest_files_parsed=res://.godot/imported/tiny.png-4c2a616b3090ed27619d4dea97b52b2a.ctex
+ERROR: Unable to open file: res://res:/.godot/imported/tiny.png-4c2a616b3090ed27619d4dea97b52b2a.ctex.
+   at: _load_data (scene/resources/compressed_texture.cpp:45)
+   GDScript backtrace (most recent call first):
+       [0] _arm_remap (res://res_uid_scr2.gd:100)
+       [1] _initialize (res://res_uid_scr2.gd:17)
+ERROR: Failed loading resource: res://res:/.godot/imported/tiny.png-4c2a616b3090ed27619d4dea97b52b2a.ctex.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _arm_remap (res://res_uid_scr2.gd:100)
+       [1] _initialize (res://res_uid_scr2.gd:17)
+ERROR: Error loading resource: 'res://res://.godot/imported/tiny.png-4c2a616b3090ed27619d4dea97b52b2a.ctex'.
+   at: load (core/core_bind.cpp:82)
+   GDScript backtrace (most recent call first):
+       [0] _arm_remap (res://res_uid_scr2.gd:100)
+       [1] _initialize (res://res_uid_scr2.gd:17)
+[r104R1b] load_dest_null=true
+PASS res_uid_scr2 arm=remap

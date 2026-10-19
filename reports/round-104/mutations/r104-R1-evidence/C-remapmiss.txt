@@ -1,0 +1,13 @@
+[r104R1d] import_exists=true
+[r104R1d] dest_exists=false
+ERROR: Unable to open file: res://.godot/imported/tiny.png-4c2a616b3090ed27619d4dea97b52b2a.ctex.
+ERROR: Failed loading resource: res://.godot/imported/tiny.png-4c2a616b3090ed27619d4dea97b52b2a.ctex.
+ERROR: Failed loading resource: res://tiny.png.
+ERROR: Error loading resource: 'res://tiny.png'.
+[r104R1d] load_src_null=true
+ERROR: Unable to open file: res://.godot/imported/tiny.png-4c2a616b3090ed27619d4dea97b52b2a.ctex.
+ERROR: Failed loading resource: res://.godot/imported/tiny.png-4c2a616b3090ed27619d4dea97b52b2a.ctex.
+ERROR: Error loading resource: 'res://.godot/imported/tiny.png-4c2a616b3090ed27619d4dea97b52b2a.ctex'.
+[r104R1d] load_dest_null=true
+[r104R1d] exists_src=true
+[r104R1d] exists_dest=false

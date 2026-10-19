@@ -327,6 +327,19 @@ opencode-go lane. Work commit 752cdc32.
 
 | r103 | game-dev-2d | export_div surface + receipt-shape gate + simp gaps | ADMIT-with-findings | 752cdc32 |
 
+## Round 104 verdict — 2026-10-19
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | +35 rows landed (23 res_uid + 12 companion adoptions), green x2; 7 res_uid rows retired pre-close (shared-scratch uid-cache class, fixes routed); CASES 552->585 |
+| depth | **improved** | tab-PASS tightening measured (P2: 6/10 evasion shapes flag, 0 FP over 39,806 lines + 5 green runs); 6/6 unflagged shapes proven verdict-harmless; tightening closes a census blind spot, not a live PASS path (stated honestly) |
+| calibration | **improved** | in-battery gate-evasion probe green x2 (10 shapes + 4 controls, §6a re-declared under P2); companion disposition executed (12 adoptions gate-validated; s03/s05/s07/s06 retired with evidence; r101 orphan README corrected) |
+
+`r104-adjudicator.md`: ADMIT-WITH-FINDINGS. 48-seat devin swarm (p4 fallback).
+Work commit ⟨COMMIT⟩.
+
+| r104 | game-dev-2d | res_uid lattice + tab-PASS gate + evasion probe + adoptions | ADMIT-with-findings | ⟨COMMIT⟩ |
+
 ## Capabilities
 
 | Capability | What it can now do | Evidence pointer | First-working round |

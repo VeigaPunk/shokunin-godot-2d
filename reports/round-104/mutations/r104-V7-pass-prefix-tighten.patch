@@ -1,0 +1,19 @@
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -1854,6 +1854,7 @@
+ RECEIPT_SEQ_RE = re.compile(r"^SEQ_[A-Z_]+\b")
+ RECEIPT_PROGRESS_RE = re.compile(r"^\[ *\d+% *\]")
+ RECEIPT_ANSI_ONLY_RE = re.compile(r"^(?:\x1b\[[0-9;]*m)+$")
++_PASS_RE = re.compile(r"^\s*PASS\b")
+ 
+ 
+ def receipt_allowed_error(line, allowed):
+@@ -1901,7 +1902,7 @@
+         return [{"case": case, "why": "fail_closed_missing_signature"}]
+     anchors = [s.split("\n")[0].strip() for s in sigs]
+     flags = []
+-    pass_lines = [line for line in output if line.startswith("PASS ")]
++    pass_lines = [line for line in output if _PASS_RE.match(line)]
+     grammar = RECEIPT_MULTI_PASS_GRAMMAR.get(case)
+     if grammar is not None:
+         observed = []

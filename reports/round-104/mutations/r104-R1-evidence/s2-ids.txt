@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+[r104R1b] thing_gd_text=extends Resource\nclass_name R104Thing\nvar v := 1\n
+[r104R1b] scene_text_len=213
+[r104R1b] scene_line=[gd_scene load_steps=2 format=3 uid="uid://bq1a2b3c4d5e6"]
+[r104R1b] scene_line=[ext_resource type="Script" uid="uid://bq1a2b3c4d5e6" path="res://assets/thing.gd" id="1_x"]
+[r104R1b] scene_line=[node name="Root" type="Node"]
+ERROR: res://scene.tscn:6 - Parse Error: [ext_resource] referenced non-existent resource at: res://scene.tscn.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+   GDScript backtrace (most recent call first):
+       [0] _arm_ids (res://res_uid_scr2.gd:148)
+       [1] _initialize (res://res_uid_scr2.gd:19)
+[r104R1b] scene_load_null=false
+[r104R1b] scene_root=PackedScene
+PASS res_uid_scr2 arm=ids

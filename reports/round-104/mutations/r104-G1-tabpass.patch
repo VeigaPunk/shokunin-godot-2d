@@ -1,0 +1,36 @@
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -1855,6 +1855,16 @@
+ RECEIPT_PROGRESS_RE = re.compile(r"^\[ *\d+% *\]")
+ RECEIPT_ANSI_ONLY_RE = re.compile(r"^(?:\x1b\[[0-9;]*m)+$")
+ 
++# r104 G1 (routed from the r103 adjudicator): the pass-line census must see
++# every PASS-shaped line, not only the canonical `PASS ` form. Measured over
++# all 8 stored runs on disk (4483 rows / 39806 stdout lines): zero lines are
++# PASS-shaped with a separator other than a single space and zero carry
++# leading whitespace, so this widening is a floor for the receipt grammar.
++# A `PASS`-followed-by-word-character token (PASSED, PASS_B) is a different
++# token and is not censused here.
++RECEIPT_PASS_LINE_RE = re.compile(r"^[ \t]*PASS(?![A-Za-z0-9_-])")
++RECEIPT_PASS_CANONICAL_RE = re.compile(r"^PASS ")
++
+ 
+ def receipt_allowed_error(line, allowed):
+     # Mirrors classify_process's allowlist semantics verbatim (exact entry,
+@@ -1901,7 +1911,15 @@
+         return [{"case": case, "why": "fail_closed_missing_signature"}]
+     anchors = [s.split("\n")[0].strip() for s in sigs]
+     flags = []
+-    pass_lines = [line for line in output if line.startswith("PASS ")]
++    pass_lines = [line for line in output if RECEIPT_PASS_LINE_RE.match(line)]
++    # r104 G1: a PASS-shaped line that is not the canonical `PASS <receipt>`
++    # form (TAB/NBSP/EOL separator, or leading whitespace) is a forged receipt
++    # line. Flagged before the accounting clauses so the reason is explicit;
++    # the widened census above then feeds the grammar and count clauses too.
++    for line in pass_lines:
++        if not RECEIPT_PASS_CANONICAL_RE.match(line):
++            flags.append({"case": case, "why": "pass_line_separator",
++                          "line": line[:80]})
+     grammar = RECEIPT_MULTI_PASS_GRAMMAR.get(case)
+     if grammar is not None:
+         observed = []

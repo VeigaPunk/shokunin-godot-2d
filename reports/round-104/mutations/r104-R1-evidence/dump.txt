@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+[r104R1] resource_uid_methods=add_id|create_id|create_id_for_path|ensure_path|get_id_path|has_id|id_to_text|path_to_uid|remove_id|set_id|text_to_id|uid_to_path
+[r104R1] singleton=true
+[r104R1] singleton_class=ResourceUID
+[r104R1] uid_prefix_const=uid://
+PASS res_uid_scr1 arm=dump

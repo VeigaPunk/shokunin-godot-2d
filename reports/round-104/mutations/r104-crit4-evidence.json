@@ -1,0 +1,495 @@
+{
+ "capture_dir": "/var/tmp/r104-C4",
+ "rows": {
+  "s01": {
+   "capture": "r3_s01.out",
+   "bytes": 3647,
+   "lines": 54,
+   "sha256": "9cbef6f04d3563fcc6cfef3c9e19327077435c9faa79f8c1e47b935afe696b12",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s01 magic=GDPC version=4 engine=4.7.2 flags=2 file_base=112 entries=14 bytes=4432 floor=4276 md5_ok=14/14 census_engine=14 census_equal=true ce",
+   "standalone_flags": []
+  },
+  "s01:rep1": {
+   "capture": "run_s01.out",
+   "bytes": 3647,
+   "lines": 54,
+   "sha256": "c8d84853849139bce3f2f11bc6f43f6186a41c35077788366b05434a9cb56015",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s01 magic=GDPC version=4 engine=4.7.2 flags=2 file_base=112 entries=14 bytes=4432 floor=4276 md5_ok=14/14 census_engine=14 census_equal=true ce",
+   "standalone_flags": []
+  },
+  "s01:rep4": {
+   "capture": "r4_s01.out",
+   "bytes": 4025,
+   "lines": 65,
+   "sha256": "49ea242c056cf84a69c7ae3b513901909e3ca412e47552dc9b171b8978d6aeb5",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s01 magic=GDPC version=4 engine=4.7.2 flags=2 file_base=112 entries=14 bytes=4432 floor=4276 md5_ok=14/14 census_engine=14 census_equal=true ce",
+   "standalone_flags": []
+  },
+  "s01:rep5": {
+   "capture": "r5_s01.out",
+   "bytes": 1721,
+   "lines": 24,
+   "sha256": "faee7fd0e344e054f3a3dda57c8c2b49df484a52d122a9e989e8deba0ed76eef",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "ERROR: EXPORT_PROD_S01 ASSERTION FAILED: R7a declared census mismatch matched=12/14 extras=1",
+   "standalone_flags": [
+    "signature_absent"
+   ]
+  },
+  "s01:rep6": {
+   "capture": "r6_s01.out",
+   "bytes": 1359,
+   "lines": 17,
+   "sha256": "a88a87e23627f0b338ecb424c6227d89da133fa3dc097eeb5372cca8e962c939",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "ERROR: EXPORT_PROD_S01 ASSERTION FAILED: R5 size=0 too small to hold a header",
+   "standalone_flags": [
+    "signature_absent"
+   ]
+  },
+  "s02": {
+   "capture": "r3_s02.out",
+   "bytes": 3041,
+   "lines": 21,
+   "sha256": "8aed4400921b9fa4e6fc1c069e5ef91cf82408c121152637a59263929d277727",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "EXPORT_PROD_S02 total_seconds=2.184",
+   "standalone_flags": []
+  },
+  "s02:rep1": {
+   "capture": "run_s02.out",
+   "bytes": 3041,
+   "lines": 21,
+   "sha256": "ebc29f16089a6ca19888b3bce3dd5e0ec66bfde639c2523ddc4ffb1682bf8a8a",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "EXPORT_PROD_S02 total_seconds=2.124",
+   "standalone_flags": []
+  },
+  "s02:rep4": {
+   "capture": "r4_s02.out",
+   "bytes": 593,
+   "lines": 6,
+   "sha256": "c9b2df15f578c1e1cfae0c25128c54461d305ba6c8bd0d3edb6040c62b14f7f0",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "EXPORT_PROD_S02 total_seconds=2.218",
+   "standalone_flags": [
+    "signature_absent"
+   ]
+  },
+  "s02:rep6": {
+   "capture": "r6_s02.out",
+   "bytes": 2944,
+   "lines": 21,
+   "sha256": "9d851a90ba3941293c055755ef9598ae3ab9a32498b0f06817cfe57c99e56e71",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "EXPORT_PROD_S02 total_seconds=2.180",
+   "standalone_flags": [
+    "signature_absent"
+   ]
+  },
+  "s04": {
+   "capture": "r3_s04.out",
+   "bytes": 418,
+   "lines": 5,
+   "sha256": "98359fc86ff55e819f7955f3678235f5818f4f12da80410b17b010695c23ba5e",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s04 swap=true pck_magic=GDPC pack_rc=0 pack_swapped=3 pack_default=0 direct_rc=0 direct_default=3 direct_swapped=0",
+   "standalone_flags": [
+    "foreign_line"
+   ]
+  },
+  "s04:rep1": {
+   "capture": "run_s04.out",
+   "bytes": 418,
+   "lines": 5,
+   "sha256": "d0ae23287c4520105f4687e9694d6bc23600de1c246003e73a7b11fc7c19cd29",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s04 swap=true pck_magic=GDPC pack_rc=0 pack_swapped=3 pack_default=0 direct_rc=0 direct_default=3 direct_swapped=0",
+   "standalone_flags": [
+    "foreign_line"
+   ]
+  },
+  "s04:rep5": {
+   "capture": "r5_s04.out",
+   "bytes": 418,
+   "lines": 5,
+   "sha256": "c0ff723f912bb00f649fe662a8321f1df0b305bef05237ea5c547d7a8353bafa",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s04 swap=true pck_magic=GDPC pack_rc=0 pack_swapped=3 pack_default=0 direct_rc=0 direct_default=3 direct_swapped=0",
+   "standalone_flags": [
+    "foreign_line"
+   ]
+  },
+  "s04:rep6": {
+   "capture": "r6_s04.out",
+   "bytes": 418,
+   "lines": 5,
+   "sha256": "4bb541e1bc40539f9f106ccdd06b352d1e276d437d5992a011bd3fbfd4d762ae",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s04 swap=true pck_magic=GDPC pack_rc=0 pack_swapped=3 pack_default=0 direct_rc=0 direct_default=3 direct_swapped=0",
+   "standalone_flags": [
+    "foreign_line"
+   ]
+  },
+  "s05": {
+   "capture": "run_s05.out",
+   "bytes": 101,
+   "lines": 2,
+   "sha256": "1fb0f12cefe41f881cb436e6731d981084b95f8db9b1d6f3e25ac930f360a32e",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "",
+   "standalone_flags": [
+    "signature_absent"
+   ]
+  },
+  "s05:err": {
+   "capture": "run_s05.err",
+   "bytes": 340,
+   "lines": 4,
+   "sha256": "d8552476eb8ac190ed134976e4eb85a06a6372bf99e775a756fa4b9c10d67cf8",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "SCRIPT ERROR: Parse Error: Invalid argument for \"_emit_pack()\" function: argument 2 should be \"Packe",
+   "last_line": "   at: load (modules/gdscript/gdscript_resource_format.cpp:46)",
+   "standalone_flags": null
+  },
+  "s06": {
+   "capture": "run_s06.out",
+   "bytes": 4764,
+   "lines": 49,
+   "sha256": "7b6cbaab923c11323ee24f00b9945738d486ddb8b1f0317c4035458369879f05",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "ERROR: EXPORT_PROD_S06 ASSERTION FAILED: entry_row_7 got=project.binary|0|e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 expected=project.bina",
+   "standalone_flags": []
+  },
+  "s06:err": {
+   "capture": "run_s06.err",
+   "bytes": 1137,
+   "lines": 21,
+   "sha256": "61e8c89d195d0637ff43d48b168e8f357c2cbca8fd599f4a182a486f2d7a65a4",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "SCRIPT ERROR: Trying to assign an array of type \"Array\" to a variable of type \"Array[String]\".",
+   "last_line": "       [3] _run (res://export_prod_s06.gd:287)",
+   "standalone_flags": null
+  },
+  "s07": {
+   "capture": "r1_s07.out",
+   "bytes": 2140,
+   "lines": 22,
+   "sha256": "bb8ff6de2e49fc53ab2c398c85e186ae9c749652c672ee9f3c8746c3058fe54d",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s07 arms=11 refusals=8 controls=2 bounded_no_refusal=1 mutants=7/7 rejection_class=exact-bytes-rc-artifact",
+   "standalone_flags": []
+  },
+  "s07:rep2": {
+   "capture": "r2_s07.out",
+   "bytes": 3751,
+   "lines": 42,
+   "sha256": "189ea47459f29c9dd06382e9b5e3d544e160fdd13b9ac28c9bb5ba799783e07d",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "s07 ASSERTION FAILED: known_path rc=1 expected 0; known_path artifact bytes=-1 magic=; known_path pack receipts missing; no_args rc=0 expected 1; no_args does n",
+   "standalone_flags": [
+    "signature_absent"
+   ]
+  },
+  "s08": {
+   "capture": "r3_s08.out",
+   "bytes": 1221,
+   "lines": 14,
+   "sha256": "2a248f5e60ce62c0b83a25c39e22564b34183a6162d4871b671636139a642dd9",
+   "pass_lines": 4,
+   "pass_prefix_lines": 4,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s08 done arms=control_exe,missing_exe,missing_pack",
+   "standalone_flags": [
+    "foreign_line"
+   ]
+  },
+  "s08:rep1": {
+   "capture": "run_s08.out",
+   "bytes": 1221,
+   "lines": 14,
+   "sha256": "78f036739aaba9fef00ea29dfce42adedd8f6aeea03d9cd1ee36ae856cb76c85",
+   "pass_lines": 4,
+   "pass_prefix_lines": 4,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s08 done arms=control_exe,missing_exe,missing_pack",
+   "standalone_flags": [
+    "foreign_line"
+   ]
+  },
+  "s08:rep2": {
+   "capture": "r2_s08.out",
+   "bytes": 1221,
+   "lines": 14,
+   "sha256": "aa60bf01bf9e6b1b2b5fc409f3028c0e1f664d08f1f5f9c4a5a5a8d059000ec7",
+   "pass_lines": 4,
+   "pass_prefix_lines": 4,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s08 done arms=control_exe,missing_exe,missing_pack",
+   "standalone_flags": [
+    "foreign_line"
+   ]
+  },
+  "s08:rep5": {
+   "capture": "r5_s08.out",
+   "bytes": 1221,
+   "lines": 14,
+   "sha256": "34b3a5c98c4646c1c09f1770b969fb281818740e2679c1a405a501993c36a953",
+   "pass_lines": 4,
+   "pass_prefix_lines": 4,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s08 done arms=control_exe,missing_exe,missing_pack",
+   "standalone_flags": [
+    "foreign_line"
+   ]
+  },
+  "s08:rep6": {
+   "capture": "r6_s08.out",
+   "bytes": 1221,
+   "lines": 14,
+   "sha256": "ab5766c2e7f0bcdf6273301136b909dba434678ed85cc762fa8233d72188dffd",
+   "pass_lines": 4,
+   "pass_prefix_lines": 4,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s08 done arms=control_exe,missing_exe,missing_pack",
+   "standalone_flags": [
+    "foreign_line"
+   ]
+  },
+  "s09": {
+   "capture": "s09.out",
+   "bytes": 602,
+   "lines": 3,
+   "sha256": "a74f2b9a0ff5e3b0511a4902e27005a8b8b96bbabb8898a41a18c88b94fb67de",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "ERROR: EXPORT_PROD_S09 ASSERTION FAILED: census mismatch: entries=12, dot_n=3, remap=[39, 45, 49, 97], paths=[\".godot/exported/133200997/export-3ad5c15c4f3250da",
+   "standalone_flags": [
+    "signature_absent"
+   ]
+  },
+  "s09:negative": {
+   "capture": "s09neg.out",
+   "bytes": 166,
+   "lines": 3,
+   "sha256": "f5c14246d8a4960d9af47c2558dcc448ebc18a565b1fb4f569453ffacf581835",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "ERROR: EXPORT_PROD_S09 ASSERTION FAILED: pack too small: 0 bytes",
+   "standalone_flags": [
+    "signature_absent"
+   ]
+  },
+  "s10": {
+   "capture": "run_s10.out",
+   "bytes": 3376,
+   "lines": 55,
+   "sha256": "f8b34c93203ea45a9c43c335f136b3fea42982b00774f43301c3d7f09f1f0aef",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "FAIL export_prod_s10 failures=6 count: file_count=9 log_count: stored_lines=9 uid:sidecar_text:  uid:script_match: uid://1925607530165064467 vs sidecar none uid",
+   "standalone_flags": [
+    "signature_absent",
+    "foreign_line"
+   ]
+  },
+  "s10:err": {
+   "capture": "run_s10.err",
+   "bytes": 943,
+   "lines": 18,
+   "sha256": "a974c420081c1b947c335af19d72437e59812d1b21e1f8cbdbb7a2ec60c36fa0",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "ERROR: Condition \"len == 0\" is true. Returning: FAILED",
+   "last_line": "       [2] _initialize (res://export_prod_s10.gd:92)",
+   "standalone_flags": null
+  },
+  "s11:all": {
+   "capture": "s11_all.out",
+   "bytes": 306,
+   "lines": 3,
+   "sha256": "d9b5d59e3057c102715b0012312ef901498035355bb4ec4664954065b2357a6a",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "FAIL export_prod_s11 all reasons=pck_project_binary_bytes=0,pck_project_binary_bytes=0,pck_project_binary_bytes=0,pck_project_binary_bytes=0,pck_project_binary_",
+   "standalone_flags": [
+    "signature_absent"
+   ]
+  },
+  "s11:alt_main": {
+   "capture": "s11_alt_main.out",
+   "bytes": 176,
+   "lines": 3,
+   "sha256": "64e1d6c9ff8f7248d920d90e6a4561dfa5d15b4f25ae0e57803d88bbc1523a6d",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "FAIL export_prod_s11 alt_main reasons=pck_project_binary_bytes=0 evidence=",
+   "standalone_flags": [
+    "signature_absent"
+   ]
+  },
+  "s11:corrupt": {
+   "capture": "s11_corrupt.out",
+   "bytes": 250,
+   "lines": 3,
+   "sha256": "59e8f97ee66904eea760e3ae1999deafdfa82682e426214fbc9cf21a590b2f00",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s11 corrupt bad_rc=0 missing_rc=0 bad_error=true missing_error=true bad_receipts=0 missing_receipts=0 exit0_trap=true export=reused",
+   "standalone_flags": []
+  },
+  "s11:default": {
+   "capture": "run_s11.out",
+   "bytes": 153,
+   "lines": 3,
+   "sha256": "792ac42a42d0d2b411e457aaf651aa8d350e878156e77a0661d3a3b56aa73c3d",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "FAIL export_prod_s11  reasons=unknown_arm evidence=",
+   "standalone_flags": [
+    "signature_absent"
+   ]
+  },
+  "s11:early_quit": {
+   "capture": "s11_early_quit.out",
+   "bytes": 178,
+   "lines": 3,
+   "sha256": "1338613f461669e12dd0ded5a8bed206eb43586d19211c1c05f97f3e487945dd",
+   "pass_lines": 0,
+   "pass_prefix_lines": 0,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "FAIL export_prod_s11 early_quit reasons=pck_project_binary_bytes=0 evidence=",
+   "standalone_flags": [
+    "signature_absent"
+   ]
+  },
+  "s11:hang0": {
+   "capture": "s11_hang0.out",
+   "bytes": 229,
+   "lines": 3,
+   "sha256": "3e931254cbf01e23348aff451b6a07e2b602164f252f68005fa64e2772a04d66",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s11 hang0 rc=124 timeout_bound_s=3 frames_gt0=true exit_receipts=0 quit_after_zero_disables=true export=reused",
+   "standalone_flags": []
+  },
+  "s11:ladder": {
+   "capture": "s11_ladder.out",
+   "bytes": 186,
+   "lines": 3,
+   "sha256": "8877d7da96b96bcd666e8ceae3ff3d3c407ff81cc8cc59ae177fa173aa6da7e6",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s11 ladder n1=1 n2=2 n3=3 n4=4 exit_frames_match=true export=reused",
+   "standalone_flags": []
+  },
+  "s11:launch": {
+   "capture": "s11_launch.out",
+   "bytes": 252,
+   "lines": 3,
+   "sha256": "f4a17cdee4d9b6c95f036c545c06e047e548bc0aaac8c8f3f285b299bf52ff3a",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s11 launch rc=0 quit_after=5 frames=5 exit_frames=5 exact_receipt=true ready_lines=1 stderr_bytes=0 export=reused cwd_project_files=0",
+   "standalone_flags": []
+  },
+  "s11:pack": {
+   "capture": "s11_pack.out",
+   "bytes": 317,
+   "lines": 3,
+   "sha256": "6305dce3f4775ae295c7d7e550a3699751e3827ae704236761f5a2aa8d73209f",
+   "pass_lines": 1,
+   "pass_prefix_lines": 1,
+   "pass_tab_lines": 0,
+   "first_line": "Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org",
+   "last_line": "PASS export_prod_s11 pack magic=GDPC pck_bytes=2008 sha256=bab1a5b80e75102743b5d412f1a13e3ffb16e9069b595490f37c31adf32d3a8a dircount=7 project_binary_bytes=164 ",
+   "standalone_flags": []
+  }
+ },
+ "note": "captures are the raw HEAD stdout/stderr of the orphaned companions; regenerate with run_all.sh / run_s11.sh / run_s11b.sh under /var/tmp/r104-C4 (scratch, not committed). sha256 is over the raw bytes, so several rows differ only by an embedded run-id."
+}

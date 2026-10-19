@@ -1,0 +1,23 @@
+CASES rows measured: 552 (of 554; 2 export-class skipped -> see shard S5)
+min 649  p25 878  p50 959  p75 1433  p90 2378  p99 5300  max 7432  mean 1380
+total 761.8 s
+  <1s     314   56.9%
+  1-2s    162   29.3%
+  2-3s     33    6.0%
+  3-5s     34    6.2%
+  >=5s      9    1.6%
+
+ROWS >= 5000 ms
+      7432  phys2d_backends_lattice                      phys2d_backends.gd       ['--arm=lattice']
+      6147  r99_audio_pan_law                            audio_lattice.gd         ['--arm=pan_law']
+      6142  export_launch_editor_mainpack_contrast       export_launch.gd         ['--arm=probe']
+      6049  export_launch_stock_missing_sidecar          export_launch.gd         ['--arm=probe']
+      5970  export_div_s05_ctb                           export_div_s05.gd        ['--arm=ctb']
+      5300  export_div_s05_store                         export_div_s05.gd        ['--arm=store']
+      5216  export_div_s04_encdir                        export_div_s04.gd        ['--arm=encdir']
+      5011  export_prod_main_scene_swap                  export_prod.gd           ['--arm=swap']
+      5010  export_div_s01_ext                           export_div_s01.gd        ['--arm=ext']
+
+rows > 8000 ms: 0
+exit-match 546/552
+exit mismatches: ['causal', 'export_div_s02_xdg_override', 'keyup', 'mutant_broken_scene_route', 'release', 'wrong_key']

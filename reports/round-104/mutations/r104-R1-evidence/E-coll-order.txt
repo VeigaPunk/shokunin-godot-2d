@@ -1,0 +1,6 @@
+--- alpha-first
+WARNING: UID duplicate detected between res://beta.gd and res://alpha.gd.
+[alpha-first] [r104R1d] all=res://beta.gd -> uid://bq1a2b3c4d5e6 ;; res://res_uid_scr3.gd -> uid://bub516p7abt3a ;; res://res_uid_scr4.gd -> uid://diun71jv361dt
+--- beta-first
+WARNING: UID duplicate detected between res://beta.gd and res://alpha.gd.
+[beta-first] [r104R1d] all=res://beta.gd -> uid://bq1a2b3c4d5e6 ;; res://res_uid_scr3.gd -> uid://bub516p7abt3a ;; res://res_uid_scr4.gd -> uid://diun71jv361dt

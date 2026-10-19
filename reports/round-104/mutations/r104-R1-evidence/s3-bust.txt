@@ -1,0 +1,11 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+[r104R1c] v1=1
+[r104R1c] reuse_after_disk_change_same_rid=true
+[r104R1c] reuse_after_disk_change_v=1
+[r104R1c] ignore_after_disk_change_v=999
+[r104R1c] ignore_after_disk_change_same_rid=false
+[r104R1c] replace_after_disk_change_v=999
+[r104R1c] reuse_after_replace_v=999
+[r104R1c] reuse_after_replace_same_rid_as_replace=true
+PASS res_uid_scr3 arm=bust

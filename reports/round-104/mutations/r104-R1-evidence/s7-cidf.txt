@@ -1,0 +1,19 @@
+[r104R1g] cidf=path=[res://a.gd] i1=5340329465616663425 i2=5340329465616663425 deterministic=true text=uid://cic5pfwherff2
+[r104R1g] cidf_registered=path=[res://a.gd] has=false
+[r104R1g] cidf=path=[res://b.gd] i1=5864545443246752590 i2=5864545443246752590 deterministic=true text=uid://cps3ha4mng22m
+[r104R1g] cidf_registered=path=[res://b.gd] has=false
+[r104R1g] cidf=path=[res://sub/deep.gd] i1=6314396076686473876 i2=6314396076686473876 deterministic=true text=uid://cv70gfbwu6hfw
+[r104R1g] cidf_registered=path=[res://sub/deep.gd] has=false
+[r104R1g] cidf=path=[res://assets/thing.gd] i1=7819409213968401341 i2=7819409213968401341 deterministic=true text=uid://djn1r6t7e8dqj
+[r104R1g] cidf_registered=path=[res://assets/thing.gd] has=false
+[r104R1g] cidf=path=[] i1=4765421368012209141 i2=4765421368012209141 deterministic=true text=uid://b85n18rmm7fkn
+[r104R1g] cidf_registered=path=[] has=false
+ERROR: Unrecognized UID: "uid://x".
+ERROR: Unrecognized UID: "uid://x".
+[r104R1g] cidf=path=[uid://x] i1=4994386111129788790 i2=4994386111129788790 deterministic=true text=uid://cdfk2r3884iq5
+[r104R1g] cidf_registered=path=[uid://x] has=false
+[r104R1g] cidf_nope=8866418037156014316
+[r104R1g] create_id_distinct=8190281634667759801 3536972823274993262 true
+[r104R1g] ensure_path_unreg=res://not-there.gd
+[r104R1g] ensure_path_then_has=false
+PASS res_uid_scr7 arm=cidf

@@ -1,0 +1,5 @@
+[r104R1c] deep_uidfile_text=uid://cq7f8hah0j1k2
+[r104R1c] deep_uidfile_absent=false
+[r104R1c] old_deep_id=5962285837902618511
+[r104R1c] old_deep_has=true
+[r104R1c] old_deep_path=res://sub/deep.gd

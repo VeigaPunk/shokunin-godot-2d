@@ -1,0 +1,32 @@
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -4426,6 +4426,20 @@
+             sum(1 for r in results if r["case"].startswith("export_div_"))
+             == sum(1 for c in CASES if c[0].startswith("export_div_"))
+             >= 1),
++        # r104 W4: the r103 count floor is family-local. Measured: dropping
++        # one CASES row TOGETHER WITH its results row leaves cases_integrity
++        # green (uniqueness holds, every registered prefix still has a row);
++        # only a family with its own count floor catches that. The res_uid_
++        # family (C1) and the export_prod_ family (which the r101 adopted
++        # companions join under the existing prefix) each get the same floor.
++        "r104_res_uid_count_floor": (
++            sum(1 for r in results if r["case"].startswith("res_uid_"))
++            == sum(1 for c in CASES if c[0].startswith("res_uid_"))
++            >= 1),
++        "r104_export_prod_count_floor": (
++            sum(1 for r in results if r["case"].startswith("export_prod_"))
++            == sum(1 for c in CASES if c[0].startswith("export_prod_"))
++            >= 1),
+         # r100-critic F1 (harness ceiling): no gate could see a duplicated,
+         # dropped, or renamed CASES row — a 25-tuple drop-mutant still ran
+         # PASS 491/491 with the per-round gates vacuously true over zero
+@@ -4445,7 +4459,7 @@
+                 any(r["case"].startswith(p) for r in results)
+                 for p in ("stree_lattice_", "r98_canvas_", "r98b_", "r98c_",
+                           "r99_audio_", "r99b_", "r100_gui_", "r100b_", "r101_seqfull_", "r101_ytrans_", "export_prod_",
+-                          "export_launch_", "export_div_"))),
++                          "export_launch_", "export_div_", "res_uid_"))),
+     }
+     # Harness-side hygiene: reap any lingering surface descendants (all arms
+     # self-exit in well under a second; never gated).

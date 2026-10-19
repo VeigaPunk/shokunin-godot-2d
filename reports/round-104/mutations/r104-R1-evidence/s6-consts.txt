@@ -1,0 +1,11 @@
+[r104R1f] int_consts=INVALID_ID
+[r104R1f] const=INVALID_ID=-1
+[r104R1f] invalid_id=-1
+ERROR: Invalid UID.
+[r104R1f] get_id_path_invalid=
+[r104R1f] has_id_invalid=false
+[r104R1f] id_to_text_0=uid://a
+[r104R1f] id_to_text_1=uid://b
+[r104R1f] id_to_text_2p63m1=uid://d4n4ub6itg400
+[r104R1f] text_to_id_roundtrip_max=9223372036854775807
+PASS res_uid_scr6 arm=consts

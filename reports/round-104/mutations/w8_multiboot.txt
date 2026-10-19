@@ -1,0 +1,12 @@
+crash_probe_crash          rep1   1690.1 ms rc=-6 err=None
+crash_probe_crash          rep2   1470.3 ms rc=-6 err=None
+crash_probe_sigkill        rep1    839.3 ms rc=-9 err=None
+crash_probe_sigkill        rep2    831.9 ms rc=-9 err=None
+stream_probe_sig           rep1    911.5 ms rc=0 err=None
+stream_probe_sig           rep2    905.5 ms rc=0 err=None
+godot_error_probe          rep1    888.9 ms rc=1 err=None
+godot_error_probe          rep2    919.8 ms rc=1 err=None
+descendant_pipe_hold       rep1   6919.2 ms rc=0 err=None
+descendant_pipe_hold       rep2   6882.8 ms rc=0 err=None
+descendant_pipe_detach     rep1    867.6 ms rc=0 err=None
+descendant_pipe_detach     rep2    872.9 ms rc=0 err=None

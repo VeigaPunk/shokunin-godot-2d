@@ -1,0 +1,6 @@
+[r104R1c] cachebin_exists=false
+[r104R1c] resolve=uid://bq1a2b3c4d5e6 has=false path=
+[r104R1c] resolve=uid://cq7f8g9h0j1k2 has=false path=
+[r104R1c] uidfile_thing=uid://bq1a2b3c4d5e6
+[r104R1c] uidfile_deep=uid://cq7f8g9h0j1k2
+[r104R1c] uidfile_scr_gd_exists=false

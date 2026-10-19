@@ -1,0 +1,11 @@
+--- corpus/fixtures/run_battery.py	2026-10-18 22:21:40.215341117 -0300
++++ b/corpus/fixtures/run_battery.py	2026-10-18 22:35:14.689829758 -0300
+@@ -1901,7 +1901,7 @@
+         return [{"case": case, "why": "fail_closed_missing_signature"}]
+     anchors = [s.split("\n")[0].strip() for s in sigs]
+     flags = []
+-    pass_lines = [line for line in output if line.startswith("PASS ")]
++    pass_lines = [line for line in output if line.lstrip().startswith("PASS")]
+     grammar = RECEIPT_MULTI_PASS_GRAMMAR.get(case)
+     if grammar is not None:
+         observed = []

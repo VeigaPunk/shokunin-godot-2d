@@ -1,0 +1,27 @@
+### s04 persist (replay from R1 scratch) ###
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+RES_UID_DIAG persist root=/var/tmp/r104-R1/xcheck/scr2
+RES_UID_DIAG persist nested_editor='/usr/bin/godot' '--headless' '--path' '/var/tmp/r104-R1/xcheck/scr2/uid_s04/persist/proj' '--editor' '--quit'
+RES_UID_DIAG persist uid_text=uid://2d51xruyh7j8
+RES_UID_DIAG persist nested_reader_cache='/usr/bin/godot' '--headless' '--path' '/var/tmp/r104-R1/xcheck/scr2/uid_s04/persist/proj' '--script' 'res://reader.gd'
+RES_UID_DIAG persist reader_cache_rc=0
+RES_UID_DIAG persist nested_reader_nocache='/usr/bin/godot' '--headless' '--path' '/var/tmp/r104-R1/xcheck/scr2/uid_s04/persist/proj' '--script' 'res://reader.gd'
+RES_UID_DIAG persist reader_nocache_rc=0
+PASS res_uid s04 arm=persist cache_version=1 cache_records=1 cache_id_match=true roundtrip=true reader_has=true reader_path=res://alpha.gd nocache_has=false uidfile_only_authority=false
+### s04 classes ###
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+RES_UID_DIAG classes root=/var/tmp/r104-R1/xcheck/scr2
+RES_UID_DIAG classes nested_misuse='/usr/bin/godot' '--headless' '--path' '/var/tmp/r104-R1/xcheck/scr2/uid_s04/classes/proj' '--script' 'res://misuse.gd'
+RES_UID_DIAG classes misuse_rc=0
+PASS res_uid s04 arm=classes create_distinct=true create_positive=true text_roundtrip=true invalid_text=-1 empty_text=-1 uidroot_text=0 invalid_id_text=uid://<invalid> path_echo=true cidf_deterministic=true cidf_pure=true same_path_two_ids=true dup_add_keeps_first=true dup_add_err=true set_unknown_err=true remove_unknown_err=true ghost_has=false
+### s04 collision ###
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+RES_UID_DIAG collision root=/var/tmp/r104-R1/xcheck/scr2
+RES_UID_DIAG collision nested_editor_dup='/usr/bin/godot' '--headless' '--path' '/var/tmp/r104-R1/xcheck/scr2/uid_s04/collision/proj' '--editor' '--quit'
+RES_UID_DIAG collision dup_warning=WARNING: UID duplicate detected between res://beta.gd and res://alpha.gd.
+RES_UID_DIAG collision nested_reader_dup='/usr/bin/godot' '--headless' '--path' '/var/tmp/r104-R1/xcheck/scr2/uid_s04/collision/proj' '--script' 'res://reader.gd'
+RES_UID_DIAG collision reader_dup_rc=0
+PASS res_uid s04 arm=collision dup_warn=true pair=res://alpha.gd,res://beta.gd records=1 dup_records=1 dup_text_roundtrip=true winner_in_pair=true reader_matches_winner=true

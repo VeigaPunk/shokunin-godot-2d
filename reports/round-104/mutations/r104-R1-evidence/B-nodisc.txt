@@ -1,0 +1,6 @@
+[r104R1c] deep_uidfile_text=
+[r104R1c] deep_uidfile_absent=true
+[r104R1c] old_deep_id=-1
+[r104R1c] old_deep_has=false
+ERROR: Invalid UID.
+[r104R1c] old_deep_path=

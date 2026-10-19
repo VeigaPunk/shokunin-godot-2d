@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.arch_linux.ed1daf0bf (2026-08-17 01:18:38 UTC) - https://godotengine.org
+
+[r104R1b] gd_default_identity=true
+[r104R1b] tres_reuse_rid_equal=true
+[r104R1b] tres_ignore_rid_vs_reuse=false
+[r104R1b] tres_ignore_equals_reuse=false
+[r104R1b] tres_reuse_after_ignore_vs_first=true
+[r104R1b] tres_reuse_after_ignore_vs_ignore=false
+[r104R1b] tres_replace_rid_vs_reuse=true
+[r104R1b] tres_reuse_after_replace_vs_replace=true
+[r104R1b] tres_has_cached=true
+[r104R1b] load_arg=path type=4 hint=0 hint_string=
+[r104R1b] load_arg=type_hint type=4 hint=0 hint_string=
+[r104R1b] load_arg=cache_mode type=2 hint=0 hint_string=
+PASS res_uid_scr2 arm=cache

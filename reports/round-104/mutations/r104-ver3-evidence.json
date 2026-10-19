@@ -1,0 +1,505 @@
+{
+ "module": "/var/tmp/r104-ver3/head_run_battery.py",
+ "receipt_shape_flag": true,
+ "receipt_shape_audit": true,
+ "CASES": 552,
+ "grammar_rows": 19,
+ "stored_runs": {
+  "20261018T213443471189Z": {
+   "stored_verdict": "PASS",
+   "rows": 554,
+   "pass_rows": 554,
+   "audited": 538,
+   "flag_count": 0,
+   "flags_non_dead": []
+  },
+  "20261018T212500022987Z": {
+   "stored_verdict": "PASS",
+   "rows": 554,
+   "pass_rows": 554,
+   "audited": 538,
+   "flag_count": 0,
+   "flags_non_dead": []
+  },
+  "20261018T202131127599Z": {
+   "stored_verdict": "FAIL",
+   "rows": 546,
+   "pass_rows": 542,
+   "audited": 527,
+   "flag_count": 10,
+   "flags_non_dead": [
+    {
+     "case": "r101_ytrans_census",
+     "why": "pass_line_unanchored",
+     "line": "PASS r101_ytrans census r95b_offy_tokens=0 r95b_lines=778 r95b_sha256=4f7e945e1b"
+    },
+    {
+     "case": "r101_ytrans_census",
+     "why": "anchor_line_multiplicity",
+     "observed": 0,
+     "declared": 1
+    }
+   ]
+  },
+  "20261019T005558434174Z": {
+   "stored_verdict": "PASS",
+   "rows": 571,
+   "pass_rows": 571,
+   "audited": 554,
+   "flag_count": 0,
+   "flags_non_dead": []
+  }
+ },
+ "discrimination_shapes": [
+  {
+   "shape": "A1 foreign line inside SEQ span",
+   "expect": "foreign_in_span",
+   "caught": true,
+   "flags_non_dead": [
+    {
+     "case": "r101_seqfull_clean",
+     "why": "foreign_in_span",
+     "line": "FOREIGN_EXTRA injected=into_span"
+    }
+   ],
+   "bare_predicate": {
+    "ok": true,
+    "flags": [
+     {
+      "case": "r101_seqfull_clean",
+      "why": "foreign_in_span",
+      "line": "FOREIGN_EXTRA injected=into_span"
+     }
+    ]
+   }
+  },
+  {
+   "shape": "A2 forged PASS line after span",
+   "expect": "pass_line_unanchored",
+   "caught": false,
+   "flags_non_dead": [
+    {
+     "case": "r101_seqfull_clean",
+     "why": "pass_line_grammar_mismatch",
+     "observed": 15,
+     "declared": 14
+    }
+   ],
+   "bare_predicate": {
+    "ok": true,
+    "flags": [
+     {
+      "case": "r101_seqfull_clean",
+      "why": "pass_line_grammar_mismatch",
+      "observed": 15,
+      "declared": 14
+     }
+    ]
+   }
+  },
+  {
+   "shape": "A3 forged PASS line before span",
+   "expect": "pass_line_unanchored",
+   "caught": false,
+   "flags_non_dead": [
+    {
+     "case": "r101_seqfull_clean",
+     "why": "pass_line_grammar_mismatch",
+     "observed": 15,
+     "declared": 14
+    }
+   ],
+   "bare_predicate": {
+    "ok": true,
+    "flags": [
+     {
+      "case": "r101_seqfull_clean",
+      "why": "pass_line_grammar_mismatch",
+      "observed": 15,
+      "declared": 14
+     }
+    ]
+   }
+  },
+  {
+   "shape": "A4 output field dropped",
+   "expect": "fail_closed_missing_output",
+   "caught": true,
+   "flags_non_dead": [
+    {
+     "case": "mechanic",
+     "why": "fail_closed_missing_output"
+    }
+   ],
+   "bare_predicate": {
+    "ok": false,
+    "exception": "TypeError: 'NoneType' object is not iterable"
+   }
+  },
+  {
+   "shape": "A5 verdict flipped PASS->FAIL (gate scope)",
+   "expect": "pass_line",
+   "caught": false,
+   "flags_non_dead": [],
+   "bare_predicate": {
+    "ok": true,
+    "flags": []
+   }
+  },
+  {
+   "shape": "A6 export artifact bytes != pin bytes",
+   "expect": "derived_evidence_unbound",
+   "caught": false,
+   "flags_non_dead": [],
+   "bare_predicate": {
+    "ok": true,
+    "flags": []
+   }
+  },
+  {
+   "shape": "A7 export artifact digest malformed",
+   "expect": "derived_evidence_unbound",
+   "caught": false,
+   "flags_non_dead": [],
+   "bare_predicate": {
+    "ok": true,
+    "flags": []
+   }
+  },
+  {
+   "shape": "A8 declared diagnostic-pinned forgery",
+   "expect": "pass_line",
+   "caught": true,
+   "flags_non_dead": [
+    {
+     "case": "save_process_missing",
+     "why": "unaccounted_pass_lines",
+     "observed": 2,
+     "declared": 1
+    }
+   ],
+   "bare_predicate": {
+    "ok": true,
+    "flags": [
+     {
+      "case": "save_process_missing",
+      "why": "unaccounted_pass_lines",
+      "observed": 2,
+      "declared": 1
+     }
+    ]
+   }
+  },
+  {
+   "shape": "A9 TAB-prefixed PASS line",
+   "expect": "pass_line",
+   "caught": false,
+   "flags_non_dead": [],
+   "bare_predicate": {
+    "ok": true,
+    "flags": []
+   }
+  },
+  {
+   "shape": "A10 duplicated anchor line",
+   "expect": "anchor_line_multiplicity",
+   "caught": true,
+   "flags_non_dead": [
+    {
+     "case": "mechanic",
+     "why": "unaccounted_pass_lines",
+     "observed": 2,
+     "declared": 1
+    },
+    {
+     "case": "mechanic",
+     "why": "anchor_line_multiplicity",
+     "observed": 2,
+     "declared": 1
+    }
+   ],
+   "bare_predicate": {
+    "ok": true,
+    "flags": [
+     {
+      "case": "mechanic",
+      "why": "unaccounted_pass_lines",
+      "observed": 2,
+      "declared": 1
+     },
+     {
+      "case": "mechanic",
+      "why": "anchor_line_multiplicity",
+      "observed": 2,
+      "declared": 1
+     }
+    ]
+   }
+  },
+  {
+   "shape": "A11 non-text output line",
+   "expect": "fail_closed_non_text_line",
+   "caught": true,
+   "flags_non_dead": [
+    {
+     "case": "mechanic",
+     "why": "fail_closed_non_text_line"
+    }
+   ],
+   "bare_predicate": {
+    "ok": true,
+    "flags": [
+     {
+      "case": "mechanic",
+      "why": "fail_closed_non_text_line"
+     }
+    ]
+   }
+  },
+  {
+   "shape": "A12 grammar row dropped from record set",
+   "expect": "dead_shape_allowlist_entry",
+   "caught": true,
+   "flags_non_dead": [],
+   "bare_predicate": null
+  }
+ ],
+ "evasion_matrix": {
+  "gate_a_in_battery_caught": "4/12",
+  "gate_b_standalone_caught": "12/12",
+  "shapes": [
+   {
+    "shape": "s1a_banner_forged_seq",
+    "gate_a_flags": [],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "r100b_seq_clean",
+     "flags": [
+      "banner_shape"
+     ]
+    },
+    "a_caught": false,
+    "b_caught": true
+   },
+   {
+    "shape": "s1b_banner_dup_launch",
+    "gate_a_flags": [],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "export_launch_embed_boot",
+     "flags": [
+      "banner_shape",
+      "pass_multiplicity"
+     ]
+    },
+    "a_caught": false,
+    "b_caught": true
+   },
+   {
+    "shape": "s2a_diag_other_family_simple",
+    "gate_a_flags": [],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "input_route",
+     "flags": [
+      "foreign_line"
+     ]
+    },
+    "a_caught": false,
+    "b_caught": true
+   },
+   {
+    "shape": "s2b_diag_forged_launch",
+    "gate_a_flags": [],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "export_launch_embed_boot",
+     "flags": [
+      "pass_multiplicity"
+     ]
+    },
+    "a_caught": false,
+    "b_caught": true
+   },
+   {
+    "shape": "s3a_flood5_simple",
+    "gate_a_flags": [
+     {
+      "case": "input_route",
+      "why": "unaccounted_pass_lines",
+      "observed": 6,
+      "declared": 1
+     }
+    ],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "input_route",
+     "flags": [
+      "unaccounted_pass_line",
+      "pass_multiplicity"
+     ]
+    },
+    "a_caught": true,
+    "b_caught": true
+   },
+   {
+    "shape": "s3b_flood1_seq",
+    "gate_a_flags": [
+     {
+      "case": "r100b_seq_clean",
+      "why": "pass_line_grammar_mismatch",
+      "observed": 15,
+      "declared": 14
+     }
+    ],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "r100b_seq_clean",
+     "flags": [
+      "unaccounted_pass_line",
+      "pass_multiplicity"
+     ]
+    },
+    "a_caught": true,
+    "b_caught": true
+   },
+   {
+    "shape": "s4a_tab_lead_simple",
+    "gate_a_flags": [],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "input_route",
+     "flags": [
+      "unaccounted_pass_line",
+      "pass_multiplicity"
+     ]
+    },
+    "a_caught": false,
+    "b_caught": true
+   },
+   {
+    "shape": "s4b_trail_space_simple",
+    "gate_a_flags": [
+     {
+      "case": "input_route",
+      "why": "unaccounted_pass_lines",
+      "observed": 2,
+      "declared": 1
+     },
+     {
+      "case": "input_route",
+      "why": "anchor_line_multiplicity",
+      "observed": 2,
+      "declared": 1
+     }
+    ],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "input_route",
+     "flags": [
+      "pass_multiplicity"
+     ]
+    },
+    "a_caught": true,
+    "b_caught": true
+   },
+   {
+    "shape": "s4c_trail_nbsp_simple",
+    "gate_a_flags": [
+     {
+      "case": "input_route",
+      "why": "unaccounted_pass_lines",
+      "observed": 2,
+      "declared": 1
+     }
+    ],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "input_route",
+     "flags": [
+      "unaccounted_pass_line",
+      "pass_multiplicity"
+     ]
+    },
+    "a_caught": true,
+    "b_caught": true
+   },
+   {
+    "shape": "s4d_tab_after_pass_simple",
+    "gate_a_flags": [],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "input_route",
+     "flags": [
+      "unaccounted_pass_line",
+      "pass_multiplicity"
+     ]
+    },
+    "a_caught": false,
+    "b_caught": true
+   },
+   {
+    "shape": "V3a_export_bytes_tamper",
+    "gate_a_flags": [],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "export_readiness",
+     "flags": [
+      "artifact_binding"
+     ]
+    },
+    "a_caught": false,
+    "b_caught": true
+   },
+   {
+    "shape": "V3b_export_digest_tamper",
+    "gate_a_flags": [],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "export_readiness",
+     "flags": []
+    },
+    "a_caught": false,
+    "b_caught": true
+   }
+  ],
+  "green_controls": {
+   "launch": {
+    "gate_a_flags": [],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "export_launch_embed_boot",
+     "flags": [
+      "pass_multiplicity"
+     ]
+    }
+   },
+   "prod": {
+    "gate_a_flags": [],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "export_prod_base_pck",
+     "flags": [
+      "pass_multiplicity"
+     ]
+    }
+   },
+   "seq": {
+    "gate_a_flags": [],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "r100b_seq_clean",
+     "flags": []
+    }
+   },
+   "simple": {
+    "gate_a_flags": [],
+    "gate_b_flags": {
+     "row": 0,
+     "case": "input_route",
+     "flags": []
+    }
+   }
+  }
+ }
+}
