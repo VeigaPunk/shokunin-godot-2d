@@ -323,9 +323,9 @@ commit adf1e693.
 
 `r103-adjudicator.md`: ADMIT-WITH-FINDINGS. 3 provider attempts (key 7 starved,
 key 4 insufficient funds, key 2 completed 58/58) — all within the scheduled
-opencode-go lane. Work commit ⟨COMMIT⟩.
+opencode-go lane. Work commit 752cdc32.
 
-| r103 | game-dev-2d | export_div surface + receipt-shape gate + simp gaps | ADMIT-with-findings | ⟨COMMIT⟩ |
+| r103 | game-dev-2d | export_div surface + receipt-shape gate + simp gaps | ADMIT-with-findings | 752cdc32 |
 
 ## Capabilities
 

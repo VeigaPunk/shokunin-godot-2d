@@ -1290,7 +1290,7 @@
   land before 2D r105.
 
 - ROUND 103 (2026-10-18): export_div divergence surface + receipt-shape META
-  gate + simplifier gaps/print law. ADMIT-WITH-FINDINGS at ⟨COMMIT⟩ (+16 CASES,
+  gate + simplifier gaps/print law. ADMIT-WITH-FINDINGS at 752cdc32 (+16 CASES,
   CASES 536->552; receipts 570 PASS / 0 FAIL x2; gate audited=554 flags=0 x2).
   PROVIDER BATTLE (disclosed): attempt 1 opencode-go-7 starved ~2h (59
   skeletons + real patches landed); attempt 2 opencode-go-4 instant 402
