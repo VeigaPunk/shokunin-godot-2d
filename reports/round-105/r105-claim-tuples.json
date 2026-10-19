@@ -1,0 +1,92 @@
+{
+ "res_uid_text": [
+  "res_uid_text",
+  "res_uid.gd",
+  [
+   "--arm=text"
+  ],
+  0,
+  "PASS res_uid text decode=uid://a=0,uid://9=34,uid://z=25,uid://0=25,uid://bqk3m5n7qar1=103876737118377468,uid://b=1,uid://=0,uid://aaaa=0 alias_empty_eq_aaaa=true alias_0_eq_z=true a0=0 z25=25 roundtrip_int63max=true first_bad=none pow2_63_overflows=true pow2_63_val=-9223372036854775808 int64_max=9223372036854775807 minted_positive=true minted_le_int64max=true minted_text_shape=uid minted_roundtrip=true invalid_text_id=-1 invalid_text_back=uid://<invalid> empty_text_id=-1 invalid_const=-1"
+ ],
+ "res_uid_s04_persist": [
+  "res_uid_s04_persist",
+  "res_uid_s04.gd",
+  [
+   "--arm=persist"
+  ],
+  0,
+  "PASS res_uid s04 arm=persist cache_records=1 cache_declared=1 cache_consistent=true cache_id_match=true roundtrip=true reader_has=true reader_path=res://alpha.gd nocache_has=false uidfile_only_authority=false"
+ ],
+ "res_uid_s04_collision": [
+  "res_uid_s04_collision",
+  "res_uid_s04.gd",
+  [
+   "--arm=collision"
+  ],
+  0,
+  "PASS res_uid s04 arm=collision dup_warn=true pair=res://alpha.gd,res://beta.gd records=1 dup_records=1 dup_text_roundtrip=true winner_in_pair=true reader_matches_winner=true"
+ ],
+ "r105_tile_rid_exact": [
+  "r105_tile_rid_exact",
+  "r105_tile_rid.gd",
+  [
+   "--arm=exact"
+  ],
+  0,
+  "PASS r105_tile_rid exact quad=1 c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=5,0 c21_is_layer=1 c21_collider_class=TileMapLayer c21_has=1 c21_coords=21,0"
+ ],
+ "r105_tile_rid_chunked": [
+  "r105_tile_rid_chunked",
+  "r105_tile_rid.gd",
+  [
+   "--arm=chunked"
+  ],
+  0,
+  "PASS r105_tile_rid chunked quad=16 c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=0,0 c15_is_layer=1 c15_collider_class=TileMapLayer c15_has=1 c15_coords=0,0 c21_is_layer=1 c21_collider_class=TileMapLayer c21_has=1 c21_coords=1,0 same_quad_agree=1 cross_quad_diverge=1"
+ ],
+ "r105_tile_rid_kinematic": [
+  "r105_tile_rid_kinematic",
+  "r105_tile_rid.gd",
+  [
+   "--arm=kinematic"
+  ],
+  0,
+  "PASS r105_tile_rid kinematic quad=1 kinematic_use=1 c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=5,0"
+ ],
+ "r105_tile_rid_wrongrid": [
+  "r105_tile_rid_wrongrid",
+  "r105_tile_rid.gd",
+  [
+   "--arm=wrongrid"
+  ],
+  0,
+  "PASS r105_tile_rid wrongrid c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=5,0 own_has=0 own_coords=0,0"
+ ],
+ "r105_phys_replay_digest": [
+  "r105_phys_replay_digest",
+  "r105_phys_replay.gd",
+  [
+   "--arm=digest"
+  ],
+  0,
+  "PASS r105_phys_replay digest bodies=8 above=true max_speed_ok=true char_inrange=true"
+ ],
+ "r105_phys_replay_inproc": [
+  "r105_phys_replay_inproc",
+  "r105_phys_replay.gd",
+  [
+   "--arm=inproc"
+  ],
+  0,
+  "PASS r105_phys_replay inproc equal=true bodies=8 above=true max_speed_ok=true char_inrange=true"
+ ],
+ "r105_phys_replay_perturb": [
+  "r105_phys_replay_perturb",
+  "r105_phys_replay.gd",
+  [
+   "--arm=perturb"
+  ],
+  0,
+  "PASS r105_phys_replay perturb differs=true bodies=8 above=true max_speed_ok=true char_inrange=true"
+ ]
+}

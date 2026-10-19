@@ -1322,3 +1322,88 @@
   self-reports matches_pinned=false) — harness/fixture fixes routed to r105.
   Receipts: runs 3+4 green on all landed rows (s02_deleted retired post-run;
   re-run precluded by operator reboot — disclosed).
+
+## Round 105 (2026-10-19) — claims and implementation evidence
+
+Declared claims (distinct axes): **C1 coverage** — restore res_uid rows through
+load-bearing per-row isolation; **C2 calibration** — mine rejected/HOLD/errata
+into a lesson-backed admission bar; **C3 depth** — curated SOURCES capability and
+three executable, source-linked knowledge entries. Depth is the presumptive
+lowest axis by the oldest axis-table evidence (r49 vs coverage r61/calibration
+r56); numeric scores remain unscored, so this is an explicit proxy, not a score.
+No claim is exploratory. C1's runtime fix, C2's class→criterion mapping and C3's
+fixture/source evidence can each be checked independently (QUALITY is the shared
+admission infrastructure, not the behavioural premise of the other claims).
+
+- Motivating evidence: STATE dossier `.ufo/waves/kaika-w1/game-dev-2d-state.md`
+  §§3–5 (in fleet-ledger worktree), r104 routing at `LOG.md:1319-1324`, ART dossier
+  `game-dev-2d-art.md` C1/C2. Lowest-axis score/rubric gap is preserved, not invented.
+- C1: `corpus/fixtures/run_battery.py` now copies a pristine project per res_uid
+  row, isolates XDG_DATA_HOME and RES_UID_ROOT, re-admits eight retired rows and
+  reverses their order on request. `res_uid_s01.gd` derives independent stability,
+  round-trip and registration invariants instead of seat-pinned ID constants.
+  21→29 res_uid CASES; total 585→600 (8 res_uid + 7 r105 fixture rows).
+  `corpus/lessons/r105-res-uid-isolation.md`; shared-cache probe reproduces
+  Unrecognized-UID and has_cache mismatch in three rows, isolated twins PASS.
+- C2: `corpus/lessons/round-105.md` mines 28 distinct mistake classes, all mapped
+  to `corpus/QUALITY.md` Q1–Q22 (22 criteria; mint-table convention retained).
+  M27 corrects r104's "23 res_uid" to **21 landed** (AST at e8990516); M28 corrects
+  its "per-row XDG" description to per-run. M9's dossier range r96–r99 is corrected
+  to r98–r100; M13 is r52, not r53. Original records retained.
+- C3: `corpus/SOURCES.md` 0→31 opened rows (A=30/B=1; mined=10/queued=19/rejected=2);
+  all seven contract census commands clean (malformed=0, no duplicate/enum/inflation/
+  dead used-by findings). Row quotes/access dates in lesson §Gate. Three new
+  knowledge entries (2→5 total; 0→3 with complete headers): tile collider-RID
+  attribution, UID runtime authority, physics replay boundary. K1 and K3 advance
+  previously uncovered Frontier ground; K2 curates prior lesson knowledge.
+- Named correction: r92 `tilemap_lattice.gd` passed the mover's RID and its
+  allowlisted "Parameter found is null" return, not the collider RID. Its
+  "unreachable from script" comment is refuted by `r105_tile_rid.gd` exact and
+  kinematic arms. K1 documents the correction; historical fixture untouched.
+  Physics replay: 40/40 executor runs identical on this host, perturbation differs;
+  engine docs explicitly give no determinism guarantee. No global guarantee claimed.
+- Re-verification: two serial full batteries, forward then reversed res_uid order,
+  **622/622 PASS each**, 29/29 res_uid and 7/7 r105 each, zero FAIL; receipt-shape
+  audited=602 flags=0 and evasion replay shapes=10 flagged=6 flags=0 each.
+  Runs `20261019T222403023946Z` / `20261019T223712920825Z`, 783s / 765s.
+  `reports/round-105/r105-battery-receipts.json` persists exact focus signatures,
+  order and shared-control diagnostics; `r105-receipts.py` records the extraction.
+  Runner blob under test: `5ec364bf908e1da436a91cc752bc95e79e47eb99`.
+- Supporting contract repairs (not extra claims): appended coverage map + Frontier
+  (`corpus/README.md`), Core/Frontier/Adjacent + isolation clarification
+  (`PROVINCE.md`), canonical SHONEN seed regenerated (no [x], SKILL box untouched).
+- L2: one batched dispatch of 10 leaves (planner, connector, 4 executor, scribe,
+  scout, reviewer, critic), no model overrides. ResUidExec died resource_exhausted
+  after 31m40s before writes; fresh ResUidExec2 completed. Seat outputs persisted
+  in `reports/round-105/r105-R105*.md`; within-lane review is not non-author
+  verification. Orchestrator admission remains pending.
+- No push: current standing operator rule overrides MISSION's push instruction.
+  Fleet report is written last in fleet-ledger for integrator commit; lane never
+  writes MANIFEST or L0 side channel. No domain/sibling checkout edits.
+
+### Round 105 review corrections (before work commit)
+
+The 622/622 runs above are **initial**, not the final corrective replay: final
+review found a duplicate nested export meta row, missing verdict-level blob
+provenance, and an overbroad inference from seeded vs unseeded projects. These
+were fixed, not suppressed. `probe_res_uid_shared` now retains a clean-shared
+8/8 PASS baseline (no cache before or after), a separate fresh project's actual
+`export_readiness` writer record (cache created), and raw reader failures.
+This measures **earlier export-writer→UID-reader cache-regime interference**;
+within-UID row-order leakage was NOT observed in the clean-shared arm. Per-row
+cache-less template execution supplies the documented precondition, not a proof
+that sharing alone always breaks UID rows. Createid gained distinct-path
+inequality and a constant-return mutant was rejected. The nested export honors
+`append_result=False`, so final full result count is expected 621, not 622.
+The run payload now binds eight source Git blobs at startup (`source_blobs`).
+
+Both final-review reports are persisted; Q18 now compares CASES identities and
+multiplicity rather than total results including meta rows; Q4 explicitly
+grandfathers the two legacy knowledge files; K1's quadrant formula is limited
+to the measured horizontal cells; K3's different-scenario critic probe is not
+claimed as independent reproduction. Exact claim tuples are linked from each
+new knowledge entry. M29–M31 capture these newly found control/pin/meta mistakes,
+so final C2 measurement is **31 classes / 22 criteria**, not the initial 28.
+Final full replays and the measured work commit are recorded in the round-105
+record entry after this work commit; initial receipts remain as
+`reports/round-105/r105-initial-battery-receipts.json`.

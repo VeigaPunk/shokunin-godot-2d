@@ -1,0 +1,7 @@
+rows: 31
+malformed: 0
+tiers: A=30 B=1 
+statuses: mined=10 queued=19 rejected=2 
+duplicate ids (expect no lines):
+enum/tier violations (expect no lines):
+mined used-by missing (expect no lines):

@@ -1,0 +1,1078 @@
+[
+ {
+  "run": "20261019T222403023946Z",
+  "battery_verdict": "PASS",
+  "rows": 622,
+  "pass": 622,
+  "fail": 0,
+  "res_uid_rows": 29,
+  "res_uid_pass": 29,
+  "r105_rows": 7,
+  "r105_pass": 7,
+  "res_uid_execution_order": [
+   "res_uid_text",
+   "res_uid_path",
+   "res_uid_collide",
+   "res_uid_cache",
+   "res_uid_modes",
+   "res_uid_import",
+   "res_uid_persist",
+   "res_uid_missing",
+   "res_uid_s01_census",
+   "res_uid_s01_roundtrip",
+   "res_uid_s01_pathtouid",
+   "res_uid_s01_createid",
+   "res_uid_s01_collide",
+   "res_uid_s01_diag",
+   "res_uid_s02_reuse",
+   "res_uid_s02_ignore",
+   "res_uid_s02_replace",
+   "res_uid_s02_deep",
+   "res_uid_s02_deleted",
+   "res_uid_s02_resdir",
+   "res_uid_s02_xproc_seed",
+   "res_uid_s03_resolve",
+   "res_uid_s03_missing",
+   "res_uid_s03_refuse",
+   "res_uid_s03_cache",
+   "res_uid_s03_uidcache",
+   "res_uid_s04_persist",
+   "res_uid_s04_classes",
+   "res_uid_s04_collision"
+  ],
+  "focus_rows": [
+   {
+    "order": 551,
+    "case": "res_uid_text",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid text decode=uid://a=0,uid://9=34,uid://z=25,uid://0=25,uid://bqk3m5n7qar1=103876737118377468,uid://b=1,uid://=0,uid://aaaa=0 alias_empty_eq_aaaa=true alias_0_eq_z=true a0=0 z25=25 roundtrip_int63max=true first_bad=none pow2_63_overflows=true pow2_63_val=-9223372036854775808 int64_max=9223372036854775807 minted_positive=true minted_le_int64max=true minted_text_shape=uid minted_roundtrip=true invalid_text_id=-1 invalid_text_back=uid://<invalid> empty_text_id=-1 invalid_const=-1",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.893,
+    "isolated_project": "res_uid_text"
+   },
+   {
+    "order": 552,
+    "case": "res_uid_path",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid path save=OK after_save_shape=path ensure_shape=path after_ensure_shape=path after_ensure_same=true echo_proj_is_path=true echo_missing_is_path=true ghost_back_empty=true bad_back_empty=true empty_back_empty=true unknown_uid_to_path_empty=true ghost_text_shape=uid create_for_path_deterministic=true registered=false id_path_empty=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.919,
+    "isolated_project": "res_uid_path"
+   },
+   {
+    "order": 553,
+    "case": "res_uid_collide",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid collide two_ids_one_path fwd_ia_kept=true fwd_ib_kept=true rev_shape=uid rev_is_ib=true rev_is_ia=false one_id_two_paths fwd_keeps_first=true set_id_unregistered_registers=false set_id_registered_retargets=true remove_id_registered_clears=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.881,
+    "isolated_project": "res_uid_collide"
+   },
+   {
+    "order": 554,
+    "case": "res_uid_cache",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid cache same_path=true same_uid=true loaders_same=true uid_load_path_is_p=true uid_load_path_shape=path has_cached path=true uid=true exists_path=true exists_uid=true get_resource_uid_is_custom=true get_resource_uid_uidarg_is_custom=true missing_load_null=true missing_has_cached=false missing_exists=false unregistered_tres path_to_uid_echo=true get_resource_uid=-1 load_ok=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.97,
+    "isolated_project": "res_uid_cache"
+   },
+   {
+    "order": 555,
+    "case": "res_uid_modes",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid modes modes_same_as_l0=reuse:s1/u1,replace:s1/u1,ignore:s0/u1,repl_deep:s1/u1,ign_deep:s0/u1 stale_reuse_same=true stale_reuse_col=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] replace_same_obj=true replace_col=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] uid_after_replace_same=true uid_path_kept=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.906,
+    "isolated_project": "res_uid_modes"
+   },
+   {
+    "order": 556,
+    "case": "res_uid_import",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid import import_code=0 cache_written=true import_file_written=true reader_code=0 uid_is_uid=true same_by_uid=true exists_uid=true cls=CompressedTexture2D",
+    "signature_in_output": true,
+    "elapsed_seconds": 3.793,
+    "isolated_project": "res_uid_import"
+   },
+   {
+    "order": 557,
+    "case": "res_uid_persist",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid persist cache_bytes=32 reader_code=0 uid_is_uid=true back_is_target=true has_id=true id_path_is_target=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 1.256,
+    "isolated_project": "res_uid_persist"
+   },
+   {
+    "order": 558,
+    "case": "res_uid_missing",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid missing ghost_has_id=false ghost_path_empty=true ghost_uid_to_path_empty=true bogus_in_range=true bogus_has_id=false bogus_path_empty=true absent_path_echo_is_path=true unknown_uid_load_null=true unknown_uid_exists=false id_zero_encodes=uid://a id_zero_has_id=false",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.522,
+    "isolated_project": "res_uid_missing"
+   },
+   {
+    "order": 559,
+    "case": "res_uid_s01_census",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s01 census uid_sigs=id_to_text(id:int)->String|text_to_id(text_id:String)->int|create_id()->int|create_id_for_path(path:String)->int|has_id(id:int)->bool|add_id(id:int,path:String)->Nil|set_id(id:int,path:String)->Nil|get_id_path(id:int)->String|remove_id(id:int)->Nil|uid_to_path(uid:String)->String|path_to_uid(path:String)->String|ensure_path(path_or_uid:String)->String saver_sigs=set_uid(resource:String,uid:int)->int|get_resource_id_for_path(path:String,generate:bool)->int loader_sigs=has_cached(path:String)->bool|get_cached_ref(path:String)->Object|exists(path:String,type_hint:String)->bool|get_resource_uid(path:String)->int uid_consts=INVALID_ID=-1",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.474,
+    "isolated_project": "res_uid_s01_census"
+   },
+   {
+    "order": 560,
+    "case": "res_uid_s01_roundtrip",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s01 roundtrip tok=uid://bqk3m5n7qar1 tok_id=103876737118377468 tok_id_text=uid://bqk3m5n7qar1 roundtrip=true invalid_id=-1 id_to_text_-1=uid://<invalid> id_to_text_0=uid://a id_to_text_1=uid://b id_to_text_max=uid://d4n4ub6itg400 text_to_id_empty_payload=0 text_to_id_single=23 malformed=<empty>=-1,uid://=0,uid://x=23,not-a-uid=-1,bqk3m5n7qar1=-1,uid://@@@@=-1 sid_unregistered=true id_text_stable=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.485,
+    "isolated_project": "res_uid_s01_roundtrip"
+   },
+   {
+    "order": 561,
+    "case": "res_uid_s01_pathtouid",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s01 pathtouid ptu_missing=res://zzz_absent_e1.gd ptu_missing_is_path=true ptu_noside=res://project.godot ptu_noside_is_path=true sidecar_written=true sidecar_text=uid://bqk3m5n7qar1 sidecar_readback=uid://bqk3m5n7qar1 ptu_sidecar=res://e1_sidecar_probe.gd sidecar_honoured=false sidecar_get_resource_uid=-1 ensure_plain=not-a-uid ensure_path_arg=res://project.godot ensure_missing=res://zzz_absent_e1.gd exists_missing=false get_resource_uid_missing=-1",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.47,
+    "isolated_project": "res_uid_s01_pathtouid"
+   },
+   {
+    "order": 562,
+    "case": "res_uid_s01_createid",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s01 createid cfp_res_stable=true cfp_res_roundtrip=true cfp_res_registered=false cfp_user_stable=true cfp_user_roundtrip=true cfp_user_registered=false create_id_distinct=true create_id_unregistered=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.504,
+    "isolated_project": "res_uid_s01_createid"
+   },
+   {
+    "order": 563,
+    "case": "res_uid_s01_collide",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s01 collide add=res://e1_x1.gd dup_add_refused=true set_id_overrides=true two_ids_same_path=true a_path=res://e1_x3.gd b_path=res://e1_x3.gd ptu_x3=uid://t1fa remove_a_has=false remove_b_has=true ptu_x3_after_remove_a=res://e1_x3.gd add_invalid_has=true add_invalid_ptu=res://e1_x4.gd",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.544,
+    "isolated_project": "res_uid_s01_collide"
+   },
+   {
+    "order": 564,
+    "case": "res_uid_s01_diag",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s01 diag diag_queried_id=103876737118377468 diag_queried_tok=uid://bqk3m5n7qar1 invalid_id=-1 get_id_path_invalid_empty=true invalid_has_id=false has_cache=false",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.518,
+    "isolated_project": "res_uid_s01_diag"
+   },
+   {
+    "order": 565,
+    "case": "res_uid_s02_reuse",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 reuse cached=true has_cached=true reuse_same=true explicit_reuse_same=true ref_same=true iid_stable=true path=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.484,
+    "isolated_project": "res_uid_s02_reuse"
+   },
+   {
+    "order": 566,
+    "case": "res_uid_s02_ignore",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 ignore distinct=true cache_kept=true ref_kept=true two_distinct=true path_kept=true reuse_after_is_orig=true has_cached=true content=v2",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.52,
+    "isolated_project": "res_uid_s02_ignore"
+   },
+   {
+    "order": 567,
+    "case": "res_uid_s02_replace",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 replace same=true refreshed=v2 alias_refreshed=v2 reuse_after_same=true cached_now=v2",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.524,
+    "isolated_project": "res_uid_s02_replace"
+   },
+   {
+    "order": 568,
+    "case": "res_uid_s02_deep",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 deep igd_distinct=true igd_cache_kept=true igd_ref_is_orig=true rpd_same=true reuse_is_rpd=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.526,
+    "isolated_project": "res_uid_s02_deep"
+   },
+   {
+    "order": 569,
+    "case": "res_uid_s02_deleted",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 deleted removed=true reuse_stale=v3 reuse_same=true repl_stale=v3 repl_same=true repl_evicted=false ign_null=true cached_deleted_exists=true never_exists=false has_cached=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.486,
+    "isolated_project": "res_uid_s02_deleted"
+   },
+   {
+    "order": 570,
+    "case": "res_uid_s02_resdir",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 resdir wrote=true reuse_same=true ign_distinct=true ign_path_kept=true repl_same=true repl_refreshed=v2 alias_refreshed=v2",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.468,
+    "isolated_project": "res_uid_s02_resdir"
+   },
+   {
+    "order": 571,
+    "case": "res_uid_s02_xproc_seed",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 xproc_seed wrote=v1 loaded=v1 cached=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.503,
+    "isolated_project": "res_uid_s02_xproc_seed"
+   },
+   {
+    "order": 572,
+    "case": "res_uid_s03_resolve",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s03 resolve exists_source=true load_class=Resource load_name=s03_dest load_path=res://asset.png has_cached=true exists_import_file=false import_parse_err=0 import_dest=res://gen/dest.tres import_type=Resource import_uid=<none> dest_exists=true dest_class=Resource dest_name=s03_dest dest_path=res://gen/dest.tres dest_same_instance_as_source=false uid_source=-1 uid_dest=-1 typed_resource_class=Resource typed_textfile_class=Resource typed_exists_resource=true typed_exists_textfile=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.963,
+    "isolated_project": "res_uid_s03_resolve"
+   },
+   {
+    "order": 573,
+    "case": "res_uid_s03_missing",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s03 missing m0_exists=true m0_load=Resource m0_errors=0 m1_exists=true m1_load=<null> m1_errors=3 m2_exists=true m2_load=<null> m2_errors=4 m3_exists=false m3_load=<null> m3_errors=2 m4_exists=true m4_load=<null> m4_errors=3 m5_exists=true m5_load=Resource m5_errors=0",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.955,
+    "isolated_project": "res_uid_s03_missing"
+   },
+   {
+    "order": 574,
+    "case": "res_uid_s03_refuse",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s03 refuse e_plain=false l_plain=<null> e_dir=false l_dir=<null> e_root=false l_root=<null> e_absent=false l_absent=<null> e_import=false l_import=<null> e_user=false l_user=<null> e_subplain=false l_subplain=<null> e_noscheme=true l_noscheme=Resource uid_plain=-1 uid_absent=-1 uid_dir=-1 uid_root=-1 uid_import=-1",
+    "signature_in_output": true,
+    "elapsed_seconds": 1.016,
+    "isolated_project": "res_uid_s03_refuse"
+   },
+   {
+    "order": 575,
+    "case": "res_uid_s03_cache",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s03 cache reuse_default_identity=true reuse_explicit_identity=true replace_identity=true ignore_identity=false has_cached=true ignore_name=s03_dest ignore_path=res://asset.png cached_name=s03_dest retarget_load_name=s03_other cached_name_after_retarget=s03_dest",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.918,
+    "isolated_project": "res_uid_s03_cache"
+   },
+   {
+    "order": 576,
+    "case": "res_uid_s03_uidcache",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s03 uidcache uid_source=1311768467294899695 uid_text=uid://sxovuchqei7p uid_expected=1311768467294899695 exists=true load_class=Resource load_name=s03_dest import_uid_field=<none>",
+    "signature_in_output": true,
+    "elapsed_seconds": 1.071,
+    "isolated_project": "res_uid_s03_uidcache"
+   },
+   {
+    "order": 577,
+    "case": "res_uid_s04_persist",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid s04 arm=persist cache_records=1 cache_declared=1 cache_consistent=true cache_id_match=true roundtrip=true reader_has=true reader_path=res://alpha.gd nocache_has=false uidfile_only_authority=false",
+    "signature_in_output": true,
+    "elapsed_seconds": 3.16,
+    "isolated_project": "res_uid_s04_persist"
+   },
+   {
+    "order": 578,
+    "case": "res_uid_s04_classes",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid s04 arm=classes create_distinct=true create_positive=true text_roundtrip=true invalid_text=-1 empty_text=-1 uidroot_text=0 invalid_id_text=uid://<invalid> path_echo=true cidf_deterministic=true cidf_pure=true same_path_two_ids=true dup_add_keeps_first=true dup_add_err=true set_unknown_err=true remove_unknown_err=true ghost_has=false",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.917,
+    "isolated_project": "res_uid_s04_classes"
+   },
+   {
+    "order": 579,
+    "case": "res_uid_s04_collision",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid s04 arm=collision dup_warn=true pair=res://alpha.gd,res://beta.gd records=1 dup_records=1 dup_text_roundtrip=true winner_in_pair=true reader_matches_winner=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 2.772,
+    "isolated_project": "res_uid_s04_collision"
+   },
+   {
+    "order": 580,
+    "case": "r105_tile_rid_exact",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_tile_rid exact quad=1 c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=5,0 c21_is_layer=1 c21_collider_class=TileMapLayer c21_has=1 c21_coords=21,0",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.57,
+    "isolated_project": null
+   },
+   {
+    "order": 581,
+    "case": "r105_tile_rid_chunked",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_tile_rid chunked quad=16 c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=0,0 c15_is_layer=1 c15_collider_class=TileMapLayer c15_has=1 c15_coords=0,0 c21_is_layer=1 c21_collider_class=TileMapLayer c21_has=1 c21_coords=1,0 same_quad_agree=1 cross_quad_diverge=1",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.621,
+    "isolated_project": null
+   },
+   {
+    "order": 582,
+    "case": "r105_tile_rid_kinematic",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_tile_rid kinematic quad=1 kinematic_use=1 c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=5,0",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.592,
+    "isolated_project": null
+   },
+   {
+    "order": 583,
+    "case": "r105_tile_rid_wrongrid",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_tile_rid wrongrid c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=5,0 own_has=0 own_coords=0,0",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.561,
+    "isolated_project": null
+   },
+   {
+    "order": 584,
+    "case": "r105_phys_replay_digest",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_phys_replay digest bodies=8 above=true max_speed_ok=true char_inrange=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 2.503,
+    "isolated_project": null
+   },
+   {
+    "order": 585,
+    "case": "r105_phys_replay_inproc",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_phys_replay inproc equal=true bodies=8 above=true max_speed_ok=true char_inrange=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 4.481,
+    "isolated_project": null
+   },
+   {
+    "order": 586,
+    "case": "r105_phys_replay_perturb",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_phys_replay perturb differs=true bodies=8 above=true max_speed_ok=true char_inrange=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 4.513,
+    "isolated_project": null
+   }
+  ],
+  "probe_res_uid_shared": {
+   "case": "probe_res_uid_shared",
+   "verdict": "PASS",
+   "isolated_all_pass": true,
+   "isolated_rows": [
+    {
+     "case": "res_uid_path",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_collide",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_cache",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_missing",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_s01_createid",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_s01_collide",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_s01_diag",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_s02_deleted",
+     "verdict": "PASS"
+    }
+   ],
+   "shared_rows": [
+    {
+     "case": "res_uid_path",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "FAIL",
+     "reproduced_uid_mismatch_class": true,
+     "class_lines": [
+      "ERROR: Unrecognized UID: \"uid://hvbibqfgkfs2\".",
+      "ERROR: Unrecognized UID: \"uid://kyw1yb4ld6yg\".",
+      "ERROR: Unrecognized UID: \"uid://dvl0oxn5thg7t\"."
+     ],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_collide",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "PASS",
+     "reproduced_uid_mismatch_class": false,
+     "class_lines": [],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_cache",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "PASS",
+     "reproduced_uid_mismatch_class": false,
+     "class_lines": [],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_missing",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "FAIL",
+     "reproduced_uid_mismatch_class": true,
+     "class_lines": [
+      "ERROR: Unrecognized UID: \"uid://cyboaop0c2vi8\".",
+      "ERROR: Unrecognized UID: \"uid://cyboaop0c2vi8\".",
+      "ERROR: Unrecognized UID: \"uid://i6bg5pc0581p\".",
+      "ERROR: Unrecognized UID: \"uid://bqk3m5n7qar1\".",
+      "ERROR: Unrecognized UID: \"uid://bqk3m5n7qar1\"."
+     ],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_s01_createid",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "PASS",
+     "reproduced_uid_mismatch_class": false,
+     "class_lines": [],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_s01_collide",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "PASS",
+     "reproduced_uid_mismatch_class": false,
+     "class_lines": [],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_s01_diag",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "FAIL",
+     "reproduced_uid_mismatch_class": true,
+     "class_lines": [
+      "PASS res_uid_s01 diag diag_queried_id=103876737118377468 diag_queried_tok=uid://bqk3m5n7qar1 invalid_id=-1 get_id_path_invalid_empty=true invalid_has_id=false has_cache=true"
+     ],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_s02_deleted",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "PASS",
+     "reproduced_uid_mismatch_class": false,
+     "class_lines": [],
+     "shared_exit": 0,
+     "shared_error": null
+    }
+   ],
+   "reproduced_rows": [
+    "res_uid_path",
+    "res_uid_missing",
+    "res_uid_s01_diag"
+   ],
+   "diagnostic_class": "ERROR: Unrecognized UID: \"<uid>\"., FAIL res_uid ... mismatch, or res_uid_s01_diag has_cache=true vs the isolated has_cache=false pin",
+   "shared_uid_cache_present": true,
+   "shared_uid_cache_seed_verdict": "PASS",
+   "shared_uid_cache_seed_elapsed_seconds": null
+  }
+ },
+ {
+  "run": "20261019T223712920825Z",
+  "battery_verdict": "PASS",
+  "rows": 622,
+  "pass": 622,
+  "fail": 0,
+  "res_uid_rows": 29,
+  "res_uid_pass": 29,
+  "r105_rows": 7,
+  "r105_pass": 7,
+  "res_uid_execution_order": [
+   "res_uid_s04_collision",
+   "res_uid_s04_classes",
+   "res_uid_s04_persist",
+   "res_uid_s03_uidcache",
+   "res_uid_s03_cache",
+   "res_uid_s03_refuse",
+   "res_uid_s03_missing",
+   "res_uid_s03_resolve",
+   "res_uid_s02_xproc_seed",
+   "res_uid_s02_resdir",
+   "res_uid_s02_deleted",
+   "res_uid_s02_deep",
+   "res_uid_s02_replace",
+   "res_uid_s02_ignore",
+   "res_uid_s02_reuse",
+   "res_uid_s01_diag",
+   "res_uid_s01_collide",
+   "res_uid_s01_createid",
+   "res_uid_s01_pathtouid",
+   "res_uid_s01_roundtrip",
+   "res_uid_s01_census",
+   "res_uid_missing",
+   "res_uid_persist",
+   "res_uid_import",
+   "res_uid_modes",
+   "res_uid_cache",
+   "res_uid_collide",
+   "res_uid_path",
+   "res_uid_text"
+  ],
+  "focus_rows": [
+   {
+    "order": 551,
+    "case": "res_uid_s04_collision",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid s04 arm=collision dup_warn=true pair=res://alpha.gd,res://beta.gd records=1 dup_records=1 dup_text_roundtrip=true winner_in_pair=true reader_matches_winner=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 3.762,
+    "isolated_project": "res_uid_s04_collision"
+   },
+   {
+    "order": 552,
+    "case": "res_uid_s04_classes",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid s04 arm=classes create_distinct=true create_positive=true text_roundtrip=true invalid_text=-1 empty_text=-1 uidroot_text=0 invalid_id_text=uid://<invalid> path_echo=true cidf_deterministic=true cidf_pure=true same_path_two_ids=true dup_add_keeps_first=true dup_add_err=true set_unknown_err=true remove_unknown_err=true ghost_has=false",
+    "signature_in_output": true,
+    "elapsed_seconds": 1.837,
+    "isolated_project": "res_uid_s04_classes"
+   },
+   {
+    "order": 553,
+    "case": "res_uid_s04_persist",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid s04 arm=persist cache_records=1 cache_declared=1 cache_consistent=true cache_id_match=true roundtrip=true reader_has=true reader_path=res://alpha.gd nocache_has=false uidfile_only_authority=false",
+    "signature_in_output": true,
+    "elapsed_seconds": 4.508,
+    "isolated_project": "res_uid_s04_persist"
+   },
+   {
+    "order": 554,
+    "case": "res_uid_s03_uidcache",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s03 uidcache uid_source=1311768467294899695 uid_text=uid://sxovuchqei7p uid_expected=1311768467294899695 exists=true load_class=Resource load_name=s03_dest import_uid_field=<none>",
+    "signature_in_output": true,
+    "elapsed_seconds": 1.674,
+    "isolated_project": "res_uid_s03_uidcache"
+   },
+   {
+    "order": 555,
+    "case": "res_uid_s03_cache",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s03 cache reuse_default_identity=true reuse_explicit_identity=true replace_identity=true ignore_identity=false has_cached=true ignore_name=s03_dest ignore_path=res://asset.png cached_name=s03_dest retarget_load_name=s03_other cached_name_after_retarget=s03_dest",
+    "signature_in_output": true,
+    "elapsed_seconds": 1.534,
+    "isolated_project": "res_uid_s03_cache"
+   },
+   {
+    "order": 556,
+    "case": "res_uid_s03_refuse",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s03 refuse e_plain=false l_plain=<null> e_dir=false l_dir=<null> e_root=false l_root=<null> e_absent=false l_absent=<null> e_import=false l_import=<null> e_user=false l_user=<null> e_subplain=false l_subplain=<null> e_noscheme=true l_noscheme=Resource uid_plain=-1 uid_absent=-1 uid_dir=-1 uid_root=-1 uid_import=-1",
+    "signature_in_output": true,
+    "elapsed_seconds": 1.726,
+    "isolated_project": "res_uid_s03_refuse"
+   },
+   {
+    "order": 557,
+    "case": "res_uid_s03_missing",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s03 missing m0_exists=true m0_load=Resource m0_errors=0 m1_exists=true m1_load=<null> m1_errors=3 m2_exists=true m2_load=<null> m2_errors=4 m3_exists=false m3_load=<null> m3_errors=2 m4_exists=true m4_load=<null> m4_errors=3 m5_exists=true m5_load=Resource m5_errors=0",
+    "signature_in_output": true,
+    "elapsed_seconds": 1.606,
+    "isolated_project": "res_uid_s03_missing"
+   },
+   {
+    "order": 558,
+    "case": "res_uid_s03_resolve",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s03 resolve exists_source=true load_class=Resource load_name=s03_dest load_path=res://asset.png has_cached=true exists_import_file=false import_parse_err=0 import_dest=res://gen/dest.tres import_type=Resource import_uid=<none> dest_exists=true dest_class=Resource dest_name=s03_dest dest_path=res://gen/dest.tres dest_same_instance_as_source=false uid_source=-1 uid_dest=-1 typed_resource_class=Resource typed_textfile_class=Resource typed_exists_resource=true typed_exists_textfile=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 1.724,
+    "isolated_project": "res_uid_s03_resolve"
+   },
+   {
+    "order": 559,
+    "case": "res_uid_s02_xproc_seed",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 xproc_seed wrote=v1 loaded=v1 cached=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.843,
+    "isolated_project": "res_uid_s02_xproc_seed"
+   },
+   {
+    "order": 560,
+    "case": "res_uid_s02_resdir",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 resdir wrote=true reuse_same=true ign_distinct=true ign_path_kept=true repl_same=true repl_refreshed=v2 alias_refreshed=v2",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.846,
+    "isolated_project": "res_uid_s02_resdir"
+   },
+   {
+    "order": 561,
+    "case": "res_uid_s02_deleted",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 deleted removed=true reuse_stale=v3 reuse_same=true repl_stale=v3 repl_same=true repl_evicted=false ign_null=true cached_deleted_exists=true never_exists=false has_cached=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.86,
+    "isolated_project": "res_uid_s02_deleted"
+   },
+   {
+    "order": 562,
+    "case": "res_uid_s02_deep",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 deep igd_distinct=true igd_cache_kept=true igd_ref_is_orig=true rpd_same=true reuse_is_rpd=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.854,
+    "isolated_project": "res_uid_s02_deep"
+   },
+   {
+    "order": 563,
+    "case": "res_uid_s02_replace",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 replace same=true refreshed=v2 alias_refreshed=v2 reuse_after_same=true cached_now=v2",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.836,
+    "isolated_project": "res_uid_s02_replace"
+   },
+   {
+    "order": 564,
+    "case": "res_uid_s02_ignore",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 ignore distinct=true cache_kept=true ref_kept=true two_distinct=true path_kept=true reuse_after_is_orig=true has_cached=true content=v2",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.858,
+    "isolated_project": "res_uid_s02_ignore"
+   },
+   {
+    "order": 565,
+    "case": "res_uid_s02_reuse",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s02 reuse cached=true has_cached=true reuse_same=true explicit_reuse_same=true ref_same=true iid_stable=true path=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.802,
+    "isolated_project": "res_uid_s02_reuse"
+   },
+   {
+    "order": 566,
+    "case": "res_uid_s01_diag",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s01 diag diag_queried_id=103876737118377468 diag_queried_tok=uid://bqk3m5n7qar1 invalid_id=-1 get_id_path_invalid_empty=true invalid_has_id=false has_cache=false",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.857,
+    "isolated_project": "res_uid_s01_diag"
+   },
+   {
+    "order": 567,
+    "case": "res_uid_s01_collide",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s01 collide add=res://e1_x1.gd dup_add_refused=true set_id_overrides=true two_ids_same_path=true a_path=res://e1_x3.gd b_path=res://e1_x3.gd ptu_x3=uid://t1fa remove_a_has=false remove_b_has=true ptu_x3_after_remove_a=res://e1_x3.gd add_invalid_has=true add_invalid_ptu=res://e1_x4.gd",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.853,
+    "isolated_project": "res_uid_s01_collide"
+   },
+   {
+    "order": 568,
+    "case": "res_uid_s01_createid",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s01 createid cfp_res_stable=true cfp_res_roundtrip=true cfp_res_registered=false cfp_user_stable=true cfp_user_roundtrip=true cfp_user_registered=false create_id_distinct=true create_id_unregistered=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.835,
+    "isolated_project": "res_uid_s01_createid"
+   },
+   {
+    "order": 569,
+    "case": "res_uid_s01_pathtouid",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s01 pathtouid ptu_missing=res://zzz_absent_e1.gd ptu_missing_is_path=true ptu_noside=res://project.godot ptu_noside_is_path=true sidecar_written=true sidecar_text=uid://bqk3m5n7qar1 sidecar_readback=uid://bqk3m5n7qar1 ptu_sidecar=res://e1_sidecar_probe.gd sidecar_honoured=false sidecar_get_resource_uid=-1 ensure_plain=not-a-uid ensure_path_arg=res://project.godot ensure_missing=res://zzz_absent_e1.gd exists_missing=false get_resource_uid_missing=-1",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.892,
+    "isolated_project": "res_uid_s01_pathtouid"
+   },
+   {
+    "order": 570,
+    "case": "res_uid_s01_roundtrip",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s01 roundtrip tok=uid://bqk3m5n7qar1 tok_id=103876737118377468 tok_id_text=uid://bqk3m5n7qar1 roundtrip=true invalid_id=-1 id_to_text_-1=uid://<invalid> id_to_text_0=uid://a id_to_text_1=uid://b id_to_text_max=uid://d4n4ub6itg400 text_to_id_empty_payload=0 text_to_id_single=23 malformed=<empty>=-1,uid://=0,uid://x=23,not-a-uid=-1,bqk3m5n7qar1=-1,uid://@@@@=-1 sid_unregistered=true id_text_stable=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.891,
+    "isolated_project": "res_uid_s01_roundtrip"
+   },
+   {
+    "order": 571,
+    "case": "res_uid_s01_census",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid_s01 census uid_sigs=id_to_text(id:int)->String|text_to_id(text_id:String)->int|create_id()->int|create_id_for_path(path:String)->int|has_id(id:int)->bool|add_id(id:int,path:String)->Nil|set_id(id:int,path:String)->Nil|get_id_path(id:int)->String|remove_id(id:int)->Nil|uid_to_path(uid:String)->String|path_to_uid(path:String)->String|ensure_path(path_or_uid:String)->String saver_sigs=set_uid(resource:String,uid:int)->int|get_resource_id_for_path(path:String,generate:bool)->int loader_sigs=has_cached(path:String)->bool|get_cached_ref(path:String)->Object|exists(path:String,type_hint:String)->bool|get_resource_uid(path:String)->int uid_consts=INVALID_ID=-1",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.82,
+    "isolated_project": "res_uid_s01_census"
+   },
+   {
+    "order": 572,
+    "case": "res_uid_missing",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid missing ghost_has_id=false ghost_path_empty=true ghost_uid_to_path_empty=true bogus_in_range=true bogus_has_id=false bogus_path_empty=true absent_path_echo_is_path=true unknown_uid_load_null=true unknown_uid_exists=false id_zero_encodes=uid://a id_zero_has_id=false",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.841,
+    "isolated_project": "res_uid_missing"
+   },
+   {
+    "order": 573,
+    "case": "res_uid_persist",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid persist cache_bytes=32 reader_code=0 uid_is_uid=true back_is_target=true has_id=true id_path_is_target=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 1.702,
+    "isolated_project": "res_uid_persist"
+   },
+   {
+    "order": 574,
+    "case": "res_uid_import",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid import import_code=0 cache_written=true import_file_written=true reader_code=0 uid_is_uid=true same_by_uid=true exists_uid=true cls=CompressedTexture2D",
+    "signature_in_output": true,
+    "elapsed_seconds": 3.351,
+    "isolated_project": "res_uid_import"
+   },
+   {
+    "order": 575,
+    "case": "res_uid_modes",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid modes modes_same_as_l0=reuse:s1/u1,replace:s1/u1,ignore:s0/u1,repl_deep:s1/u1,ign_deep:s0/u1 stale_reuse_same=true stale_reuse_col=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] replace_same_obj=true replace_col=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] uid_after_replace_same=true uid_path_kept=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.502,
+    "isolated_project": "res_uid_modes"
+   },
+   {
+    "order": 576,
+    "case": "res_uid_cache",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid cache same_path=true same_uid=true loaders_same=true uid_load_path_is_p=true uid_load_path_shape=path has_cached path=true uid=true exists_path=true exists_uid=true get_resource_uid_is_custom=true get_resource_uid_uidarg_is_custom=true missing_load_null=true missing_has_cached=false missing_exists=false unregistered_tres path_to_uid_echo=true get_resource_uid=-1 load_ok=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.595,
+    "isolated_project": "res_uid_cache"
+   },
+   {
+    "order": 577,
+    "case": "res_uid_collide",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid collide two_ids_one_path fwd_ia_kept=true fwd_ib_kept=true rev_shape=uid rev_is_ib=true rev_is_ia=false one_id_two_paths fwd_keeps_first=true set_id_unregistered_registers=false set_id_registered_retargets=true remove_id_registered_clears=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.89,
+    "isolated_project": "res_uid_collide"
+   },
+   {
+    "order": 578,
+    "case": "res_uid_path",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid path save=OK after_save_shape=path ensure_shape=path after_ensure_shape=path after_ensure_same=true echo_proj_is_path=true echo_missing_is_path=true ghost_back_empty=true bad_back_empty=true empty_back_empty=true unknown_uid_to_path_empty=true ghost_text_shape=uid create_for_path_deterministic=true registered=false id_path_empty=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.701,
+    "isolated_project": "res_uid_path"
+   },
+   {
+    "order": 579,
+    "case": "res_uid_text",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS res_uid text decode=uid://a=0,uid://9=34,uid://z=25,uid://0=25,uid://bqk3m5n7qar1=103876737118377468,uid://b=1,uid://=0,uid://aaaa=0 alias_empty_eq_aaaa=true alias_0_eq_z=true a0=0 z25=25 roundtrip_int63max=true first_bad=none pow2_63_overflows=true pow2_63_val=-9223372036854775808 int64_max=9223372036854775807 minted_positive=true minted_le_int64max=true minted_text_shape=uid minted_roundtrip=true invalid_text_id=-1 invalid_text_back=uid://<invalid> empty_text_id=-1 invalid_const=-1",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.709,
+    "isolated_project": "res_uid_text"
+   },
+   {
+    "order": 580,
+    "case": "r105_tile_rid_exact",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_tile_rid exact quad=1 c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=5,0 c21_is_layer=1 c21_collider_class=TileMapLayer c21_has=1 c21_coords=21,0",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.897,
+    "isolated_project": null
+   },
+   {
+    "order": 581,
+    "case": "r105_tile_rid_chunked",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_tile_rid chunked quad=16 c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=0,0 c15_is_layer=1 c15_collider_class=TileMapLayer c15_has=1 c15_coords=0,0 c21_is_layer=1 c21_collider_class=TileMapLayer c21_has=1 c21_coords=1,0 same_quad_agree=1 cross_quad_diverge=1",
+    "signature_in_output": true,
+    "elapsed_seconds": 1.031,
+    "isolated_project": null
+   },
+   {
+    "order": 582,
+    "case": "r105_tile_rid_kinematic",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_tile_rid kinematic quad=1 kinematic_use=1 c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=5,0",
+    "signature_in_output": true,
+    "elapsed_seconds": 0.942,
+    "isolated_project": null
+   },
+   {
+    "order": 583,
+    "case": "r105_tile_rid_wrongrid",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_tile_rid wrongrid c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=5,0 own_has=0 own_coords=0,0",
+    "signature_in_output": true,
+    "elapsed_seconds": 1.015,
+    "isolated_project": null
+   },
+   {
+    "order": 584,
+    "case": "r105_phys_replay_digest",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_phys_replay digest bodies=8 above=true max_speed_ok=true char_inrange=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 2.908,
+    "isolated_project": null
+   },
+   {
+    "order": 585,
+    "case": "r105_phys_replay_inproc",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_phys_replay inproc equal=true bodies=8 above=true max_speed_ok=true char_inrange=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 4.893,
+    "isolated_project": null
+   },
+   {
+    "order": 586,
+    "case": "r105_phys_replay_perturb",
+    "verdict": "PASS",
+    "actual_exit": 0,
+    "signature": "PASS r105_phys_replay perturb differs=true bodies=8 above=true max_speed_ok=true char_inrange=true",
+    "signature_in_output": true,
+    "elapsed_seconds": 4.617,
+    "isolated_project": null
+   }
+  ],
+  "probe_res_uid_shared": {
+   "case": "probe_res_uid_shared",
+   "verdict": "PASS",
+   "isolated_all_pass": true,
+   "isolated_rows": [
+    {
+     "case": "res_uid_s02_deleted",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_s01_diag",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_s01_collide",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_s01_createid",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_missing",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_cache",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_collide",
+     "verdict": "PASS"
+    },
+    {
+     "case": "res_uid_path",
+     "verdict": "PASS"
+    }
+   ],
+   "shared_rows": [
+    {
+     "case": "res_uid_s02_deleted",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "PASS",
+     "reproduced_uid_mismatch_class": false,
+     "class_lines": [],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_s01_diag",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "FAIL",
+     "reproduced_uid_mismatch_class": true,
+     "class_lines": [
+      "PASS res_uid_s01 diag diag_queried_id=103876737118377468 diag_queried_tok=uid://bqk3m5n7qar1 invalid_id=-1 get_id_path_invalid_empty=true invalid_has_id=false has_cache=true"
+     ],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_s01_collide",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "PASS",
+     "reproduced_uid_mismatch_class": false,
+     "class_lines": [],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_s01_createid",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "PASS",
+     "reproduced_uid_mismatch_class": false,
+     "class_lines": [],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_missing",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "FAIL",
+     "reproduced_uid_mismatch_class": true,
+     "class_lines": [
+      "ERROR: Unrecognized UID: \"uid://byoug0rgdsrah\".",
+      "ERROR: Unrecognized UID: \"uid://byoug0rgdsrah\".",
+      "ERROR: Unrecognized UID: \"uid://i6bg5pc0581p\".",
+      "ERROR: Unrecognized UID: \"uid://bqk3m5n7qar1\".",
+      "ERROR: Unrecognized UID: \"uid://bqk3m5n7qar1\"."
+     ],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_cache",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "PASS",
+     "reproduced_uid_mismatch_class": false,
+     "class_lines": [],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_collide",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "PASS",
+     "reproduced_uid_mismatch_class": false,
+     "class_lines": [],
+     "shared_exit": 0,
+     "shared_error": null
+    },
+    {
+     "case": "res_uid_path",
+     "isolated_verdict": "PASS",
+     "shared_verdict": "FAIL",
+     "reproduced_uid_mismatch_class": true,
+     "class_lines": [
+      "ERROR: Unrecognized UID: \"uid://cdtt4ti8s7iss\".",
+      "ERROR: Unrecognized UID: \"uid://bbh4x16d4rlf4\".",
+      "ERROR: Unrecognized UID: \"uid://cugbu58gfwuku\"."
+     ],
+     "shared_exit": 0,
+     "shared_error": null
+    }
+   ],
+   "reproduced_rows": [
+    "res_uid_s01_diag",
+    "res_uid_missing",
+    "res_uid_path"
+   ],
+   "diagnostic_class": "ERROR: Unrecognized UID: \"<uid>\"., FAIL res_uid ... mismatch, or res_uid_s01_diag has_cache=true vs the isolated has_cache=false pin",
+   "shared_uid_cache_present": true,
+   "shared_uid_cache_seed_verdict": "PASS",
+   "shared_uid_cache_seed_elapsed_seconds": null
+  }
+ }
+]

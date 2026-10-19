@@ -1760,6 +1760,9 @@ CASES = [
     # seat-isolated design (Unrecognized-UID ERROR class, runs 1-3 with XDG
     # isolation tried). Harness fix (per-row scratch project or fixture-side
     # cache reset) routed to r105; 23 res_uid rows remain green.
+    # r105: the retired rows are re-admitted below after per-row project, XDG_DATA_HOME,
+    # and RES_UID_ROOT isolation. Their shared-project behavior remains an explicit
+    # opt-in control; see corpus/lessons/r105-res-uid-isolation.md.
     # r104 C1 (W4): ResourceLoader / ResourceUID lattice family — one CASES
     # row per arm; the 5th field is the byte-exact PASS line measured on this
     # host with XDG_DATA_HOME isolated. Every row is single-PASS and shape-
@@ -1775,18 +1778,32 @@ CASES = [
     #   res_uid_s02.gd --arm=xproc_read FAIL reason=cross_process_or_l5_law_mismatch
     ('res_uid_text', 'res_uid.gd', ["--arm=text"], 0,
      'PASS res_uid text decode=uid://a=0,uid://9=34,uid://z=25,uid://0=25,uid://bqk3m5n7qar1=103876737118377468,uid://b=1,uid://=0,uid://aaaa=0 alias_empty_eq_aaaa=true alias_0_eq_z=true a0=0 z25=25 roundtrip_int63max=true first_bad=none pow2_63_overflows=true pow2_63_val=-9223372036854775808 int64_max=9223372036854775807 minted_positive=true minted_le_int64max=true minted_text_shape=uid minted_roundtrip=true invalid_text_id=-1 invalid_text_back=uid://<invalid> empty_text_id=-1 invalid_const=-1'),
+    ('res_uid_path', 'res_uid.gd', ["--arm=path"], 0,
+     'PASS res_uid path save=OK after_save_shape=path ensure_shape=path after_ensure_shape=path after_ensure_same=true echo_proj_is_path=true echo_missing_is_path=true ghost_back_empty=true bad_back_empty=true empty_back_empty=true unknown_uid_to_path_empty=true ghost_text_shape=uid create_for_path_deterministic=true registered=false id_path_empty=true'),
+    ('res_uid_collide', 'res_uid.gd', ["--arm=collide"], 0,
+     'PASS res_uid collide two_ids_one_path fwd_ia_kept=true fwd_ib_kept=true rev_shape=uid rev_is_ib=true rev_is_ia=false one_id_two_paths fwd_keeps_first=true set_id_unregistered_registers=false set_id_registered_retargets=true remove_id_registered_clears=true'),
+    ('res_uid_cache', 'res_uid.gd', ["--arm=cache"], 0,
+     'PASS res_uid cache same_path=true same_uid=true loaders_same=true uid_load_path_is_p=true uid_load_path_shape=path has_cached path=true uid=true exists_path=true exists_uid=true get_resource_uid_is_custom=true get_resource_uid_uidarg_is_custom=true missing_load_null=true missing_has_cached=false missing_exists=false unregistered_tres path_to_uid_echo=true get_resource_uid=-1 load_ok=true'),
     ('res_uid_modes', 'res_uid.gd', ["--arm=modes"], 0,
      'PASS res_uid modes modes_same_as_l0=reuse:s1/u1,replace:s1/u1,ignore:s0/u1,repl_deep:s1/u1,ign_deep:s0/u1 stale_reuse_same=true stale_reuse_col=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] replace_same_obj=true replace_col=[(0.0, 1.0, 0.0, 1.0), (0.0, 0.0, 0.0, 1.0)] uid_after_replace_same=true uid_path_kept=true'),
     ('res_uid_import', 'res_uid.gd', ["--arm=import"], 0,
      'PASS res_uid import import_code=0 cache_written=true import_file_written=true reader_code=0 uid_is_uid=true same_by_uid=true exists_uid=true cls=CompressedTexture2D'),
     ('res_uid_persist', 'res_uid.gd', ["--arm=persist"], 0,
      'PASS res_uid persist cache_bytes=32 reader_code=0 uid_is_uid=true back_is_target=true has_id=true id_path_is_target=true'),
+    ('res_uid_missing', 'res_uid.gd', ["--arm=missing"], 0,
+     'PASS res_uid missing ghost_has_id=false ghost_path_empty=true ghost_uid_to_path_empty=true bogus_in_range=true bogus_has_id=false bogus_path_empty=true absent_path_echo_is_path=true unknown_uid_load_null=true unknown_uid_exists=false id_zero_encodes=uid://a id_zero_has_id=false'),
     ('res_uid_s01_census', 'res_uid_s01.gd', ["--arm=census"], 0,
      'PASS res_uid_s01 census uid_sigs=id_to_text(id:int)->String|text_to_id(text_id:String)->int|create_id()->int|create_id_for_path(path:String)->int|has_id(id:int)->bool|add_id(id:int,path:String)->Nil|set_id(id:int,path:String)->Nil|get_id_path(id:int)->String|remove_id(id:int)->Nil|uid_to_path(uid:String)->String|path_to_uid(path:String)->String|ensure_path(path_or_uid:String)->String saver_sigs=set_uid(resource:String,uid:int)->int|get_resource_id_for_path(path:String,generate:bool)->int loader_sigs=has_cached(path:String)->bool|get_cached_ref(path:String)->Object|exists(path:String,type_hint:String)->bool|get_resource_uid(path:String)->int uid_consts=INVALID_ID=-1'),
     ('res_uid_s01_roundtrip', 'res_uid_s01.gd', ["--arm=roundtrip"], 0,
      'PASS res_uid_s01 roundtrip tok=uid://bqk3m5n7qar1 tok_id=103876737118377468 tok_id_text=uid://bqk3m5n7qar1 roundtrip=true invalid_id=-1 id_to_text_-1=uid://<invalid> id_to_text_0=uid://a id_to_text_1=uid://b id_to_text_max=uid://d4n4ub6itg400 text_to_id_empty_payload=0 text_to_id_single=23 malformed=<empty>=-1,uid://=0,uid://x=23,not-a-uid=-1,bqk3m5n7qar1=-1,uid://@@@@=-1 sid_unregistered=true id_text_stable=true'),
     ('res_uid_s01_pathtouid', 'res_uid_s01.gd', ["--arm=pathtouid"], 0,
      'PASS res_uid_s01 pathtouid ptu_missing=res://zzz_absent_e1.gd ptu_missing_is_path=true ptu_noside=res://project.godot ptu_noside_is_path=true sidecar_written=true sidecar_text=uid://bqk3m5n7qar1 sidecar_readback=uid://bqk3m5n7qar1 ptu_sidecar=res://e1_sidecar_probe.gd sidecar_honoured=false sidecar_get_resource_uid=-1 ensure_plain=not-a-uid ensure_path_arg=res://project.godot ensure_missing=res://zzz_absent_e1.gd exists_missing=false get_resource_uid_missing=-1'),
+    ('res_uid_s01_createid', 'res_uid_s01.gd', ["--arm=createid"], 0,
+     'PASS res_uid_s01 createid cfp_res_stable=true cfp_res_roundtrip=true cfp_res_registered=false cfp_user_stable=true cfp_user_roundtrip=true cfp_user_registered=false cfp_paths_differ=true create_id_distinct=true create_id_unregistered=true'),
+    ('res_uid_s01_collide', 'res_uid_s01.gd', ["--arm=collide"], 0,
+     'PASS res_uid_s01 collide add=res://e1_x1.gd dup_add_refused=true set_id_overrides=true two_ids_same_path=true a_path=res://e1_x3.gd b_path=res://e1_x3.gd ptu_x3=uid://t1fa remove_a_has=false remove_b_has=true ptu_x3_after_remove_a=res://e1_x3.gd add_invalid_has=true add_invalid_ptu=res://e1_x4.gd'),
+    ('res_uid_s01_diag', 'res_uid_s01.gd', ["--arm=diag"], 0,
+     'PASS res_uid_s01 diag diag_queried_id=103876737118377468 diag_queried_tok=uid://bqk3m5n7qar1 invalid_id=-1 get_id_path_invalid_empty=true invalid_has_id=false has_cache=false'),
     ('res_uid_s02_reuse', 'res_uid_s02.gd', ["--arm=reuse"], 0,
      'PASS res_uid_s02 reuse cached=true has_cached=true reuse_same=true explicit_reuse_same=true ref_same=true iid_stable=true path=true'),
     ('res_uid_s02_ignore', 'res_uid_s02.gd', ["--arm=ignore"], 0,
@@ -1795,6 +1812,8 @@ CASES = [
      'PASS res_uid_s02 replace same=true refreshed=v2 alias_refreshed=v2 reuse_after_same=true cached_now=v2'),
     ('res_uid_s02_deep', 'res_uid_s02.gd', ["--arm=deep"], 0,
      'PASS res_uid_s02 deep igd_distinct=true igd_cache_kept=true igd_ref_is_orig=true rpd_same=true reuse_is_rpd=true'),
+    ('res_uid_s02_deleted', 'res_uid_s02.gd', ["--arm=deleted"], 0,
+     'PASS res_uid_s02 deleted removed=true reuse_stale=v3 reuse_same=true repl_stale=v3 repl_same=true repl_evicted=false ign_null=true cached_deleted_exists=true never_exists=false has_cached=true'),
     ('res_uid_s02_resdir', 'res_uid_s02.gd', ["--arm=resdir"], 0,
      'PASS res_uid_s02 resdir wrote=true reuse_same=true ign_distinct=true ign_path_kept=true repl_same=true repl_refreshed=v2 alias_refreshed=v2'),
     ('res_uid_s02_xproc_seed', 'res_uid_s02.gd', ["--arm=xproc_seed"], 0,
@@ -1815,6 +1834,16 @@ CASES = [
      'PASS res_uid s04 arm=classes create_distinct=true create_positive=true text_roundtrip=true invalid_text=-1 empty_text=-1 uidroot_text=0 invalid_id_text=uid://<invalid> path_echo=true cidf_deterministic=true cidf_pure=true same_path_two_ids=true dup_add_keeps_first=true dup_add_err=true set_unknown_err=true remove_unknown_err=true ghost_has=false'),
     ('res_uid_s04_collision', 'res_uid_s04.gd', ["--arm=collision"], 0,
      'PASS res_uid s04 arm=collision dup_warn=true pair=res://alpha.gd,res://beta.gd records=1 dup_records=1 dup_text_roundtrip=true winner_in_pair=true reader_matches_winner=true'),
+    # r105: sibling receipts measured against the claims in
+    # corpus/knowledge/2026-10-19-tilemaplayer-body-rid-attribution.md and
+    # corpus/knowledge/2026-10-19-physics-replay-boundary.md.
+    ('r105_tile_rid_exact', 'r105_tile_rid.gd', ['--arm=exact'], 0, 'PASS r105_tile_rid exact quad=1 c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=5,0 c21_is_layer=1 c21_collider_class=TileMapLayer c21_has=1 c21_coords=21,0'),
+    ('r105_tile_rid_chunked', 'r105_tile_rid.gd', ['--arm=chunked'], 0, 'PASS r105_tile_rid chunked quad=16 c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=0,0 c15_is_layer=1 c15_collider_class=TileMapLayer c15_has=1 c15_coords=0,0 c21_is_layer=1 c21_collider_class=TileMapLayer c21_has=1 c21_coords=1,0 same_quad_agree=1 cross_quad_diverge=1'),
+    ('r105_tile_rid_kinematic', 'r105_tile_rid.gd', ['--arm=kinematic'], 0, 'PASS r105_tile_rid kinematic quad=1 kinematic_use=1 c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=5,0'),
+    ('r105_tile_rid_wrongrid', 'r105_tile_rid.gd', ['--arm=wrongrid'], 0, 'PASS r105_tile_rid wrongrid c5_is_layer=1 c5_collider_class=TileMapLayer c5_has=1 c5_coords=5,0 own_has=0 own_coords=0,0'),
+    ('r105_phys_replay_digest', 'r105_phys_replay.gd', ['--arm=digest'], 0, 'PASS r105_phys_replay digest bodies=8 above=true max_speed_ok=true char_inrange=true'),
+    ('r105_phys_replay_inproc', 'r105_phys_replay.gd', ['--arm=inproc'], 0, 'PASS r105_phys_replay inproc equal=true bodies=8 above=true max_speed_ok=true char_inrange=true'),
+    ('r105_phys_replay_perturb', 'r105_phys_replay.gd', ['--arm=perturb'], 0, 'PASS r105_phys_replay perturb differs=true bodies=8 above=true max_speed_ok=true char_inrange=true'),
     # r104 C3b: orphaned-companion ADOPTIONS (r104-S2 §5, gate-validated x2;
     # s03/s05/s07/s06 retired — evidence in orphaned-fixtures/ + r104-S2 §6).
     ("export_prod_s11_pack", "export_prod_s11.gd", ["--arm=pack"], 0,
@@ -1850,6 +1879,18 @@ CASES = [
     # forged signature accepted; see meta probe_descendant_signature_spoof.
     ("descendant_pipe_forged_signature_release", "descendant_pipe_probe.gd", ["--spawn-forge-release"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
 ]
+
+RES_UID_SCRIPT_NAMES = frozenset({
+    "res_uid.gd", "res_uid_s01.gd", "res_uid_s02.gd",
+    "res_uid_s03.gd", "res_uid_s04.gd",
+})
+RES_UID_REJOINED_CASE_NAMES = frozenset({
+    "res_uid_path", "res_uid_collide", "res_uid_cache", "res_uid_missing",
+    "res_uid_s01_createid", "res_uid_s01_collide", "res_uid_s01_diag",
+    "res_uid_s02_deleted",
+})
+RES_UID_SHARED_CACHE_WRITER_CASE = next(
+    case for case in CASES if case[0] == "export_readiness")
 
 
 # r103 author (W10): receipt-shape META gate. Evaluated over the stored
@@ -2326,9 +2367,24 @@ def main():
     parser.add_argument("--probe-midlineforge-ladder", action="store_true", help="run the midlineforge descendant-write offset ladder across the 200ms signature gap (fabrication-window bound measurement)")
     parser.add_argument("--probe-midlineforge-gapladder", action="store_true", help="run the midlineforge crossed gap ladder — fixed 80ms write offset across signature gaps {50,100,200,400,800}ms plus crossed cells (300,400)/(300,800)/(600,800) (pins the fabrication bound's referent: gap-relative vs absolute)")
     parser.add_argument("--probe-audio-warning", action="store_true", help="classify captured r12 leaked and clean audio outputs with the production audio verdict")
+    parser.add_argument("--res-uid-order", choices=("forward", "reversed"), default="forward",
+                        help="run res_uid rows forward (default) or reversed relative to each other")
+    parser.add_argument("--probe-res-uid-shared", action="store_true",
+                        help="run the eight re-admitted res_uid rows against one shared scratch as a cross-row control")
     parser.add_argument("--godot", default="godot")
     parser.add_argument("--runs", type=Path, default=HERE.parent / "live" / "runs")
     args = parser.parse_args()
+    source_blob_files = (
+        "run_battery.py", "res_uid.gd", "res_uid_s01.gd",
+        "res_uid_s02.gd", "res_uid_s03.gd", "res_uid_s04.gd",
+        "r105_tile_rid.gd", "r105_phys_replay.gd",
+    )
+    source_blobs = {}
+    for source_name in source_blob_files:
+        source_bytes = (HERE / source_name).read_bytes()
+        git_blob_header = b"blob " + str(len(source_bytes)).encode("ascii") + b"\0"
+        source_blobs["corpus/fixtures/" + source_name] = hashlib.sha1(
+            git_blob_header + source_bytes).hexdigest()
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     run_dir = args.runs / stamp
     scratch = run_dir / "scratch"
@@ -2354,7 +2410,12 @@ def main():
     anchor = "    await process_frame\n    var old := current_scene"
     assert anchor in text, "causal fixture changed; cannot apply scratch-only readiness fix"
     chain.write_text(text.replace(anchor, "    await process_frame\n    await process_frame\n    var old := current_scene", 1))
+    # Keep an immutable post-staging template: every res_uid arm starts from the
+    # same project state, while the ordinary battery scratch remains untouched.
+    res_uid_template = run_dir / "res-uid-template"
+    shutil.copytree(scratch, res_uid_template)
     results = []
+    shared_res_uid_dir = run_dir / "res-uid-shared"
 
     def run_process(command, timeout_seconds, env=None):
         try:
@@ -2500,9 +2561,30 @@ def main():
         results.append(meta)
         print(f"{meta['verdict']} captured r12 audio-warning classifier probe", flush=True)
 
-    def execute(name, script, flags, expected_exit, evidence, mutate=False):
+    def execute(name, script, flags, expected_exit, evidence, mutate=False, *,
+                project_override=None, xdg_override=None,
+                res_uid_root_override=None, append_result=True,
+                print_result=True):
+        execution_project = scratch
+        env = None
+        if script in RES_UID_SCRIPT_NAMES:
+            if project_override is None:
+                execution_project = run_dir / "res-uid-isolated" / name
+                execution_project.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copytree(res_uid_template, execution_project)
+                user_data = (run_dir / "xdg-data" / "res_uid" / name).resolve()
+                uid_root = (run_dir / "res-uid-root" / name).resolve()
+            else:
+                execution_project = Path(project_override).resolve()
+                user_data = Path(xdg_override).resolve()
+                uid_root = Path(res_uid_root_override).resolve()
+            user_data.mkdir(parents=True, exist_ok=True)
+            uid_root.mkdir(parents=True, exist_ok=True)
+            env = os.environ.copy()
+            env["XDG_DATA_HOME"] = str(user_data)
+            env["RES_UID_ROOT"] = str(uid_root)
         if script in ("__godot_export__", "__godot_export_missing__"):
-            export_project = scratch
+            export_project = project_override or scratch
             preset_name = "Linux/X11"
             if script == "__godot_export_missing__":
                 export_project = run_dir / "missing-preset-scratch"
@@ -2520,18 +2602,19 @@ def main():
             process_flags = {"writer": [], "reader": ["--reader"], "missing": ["--missing"]}[mode]
             command = [args.godot, "--headless", "--path", str(scratch), "--script", script_path, "--", *process_flags]
         else:
-            command = [args.godot, "--headless", "--path", str(scratch), "--script", "res://" + script, "--", *flags]
+            command = [args.godot, "--headless", "--path", str(execution_project),
+                       "--script", "res://" + script, "--", *flags]
         timeout_seconds = 60 if script.startswith("__godot_export") else 8
-        env = None
-        if script == "save_roundtrip.gd" or script.startswith("__save_process_") or script in ("res_uid.gd", "res_uid_s01.gd", "res_uid_s02.gd", "res_uid_s03.gd", "res_uid_s04.gd"):
-            # r104: res_uid.gd arms write user:// state (uid_cache, .tres); without
-            # per-row XDG isolation later arms read earlier rows' registrations
-            # (cross-arm pollution: Unrecognized-UID ERROR class, run 1).
+        if script == "save_roundtrip.gd" or script.startswith("__save_process_"):
+            # Keep the established shared user-data scope for save_roundtrip;
+            # res_uid rows take the per-row branch above.
             user_data = (run_dir / "xdg-data").resolve()
             user_data.mkdir(exist_ok=True)
             env = os.environ.copy()
             env["XDG_DATA_HOME"] = str(user_data)
+        execution_started = time.monotonic()
         proc_stdout, proc_stderr, code, error = run_process_streams(command, timeout_seconds, env=env)
+        execution_elapsed = time.monotonic() - execution_started
         output = proc_stdout + proc_stderr
         export_record = None
         if script == "__godot_export__":
@@ -2543,7 +2626,7 @@ def main():
                         and "savepack" in candidate_output
                         and export_path.is_file() and export_path.stat().st_size > 0)
             passed = classify_export(output)
-            if args.probe_unrelated_error:
+            if args.probe_unrelated_error and append_result:
                 clean_verdict = classify_export(output)
                 injected_output = output + "\nERROR: unrelated injected diagnostic\n"
                 injected_verdict = classify_export(injected_output)
@@ -2575,7 +2658,7 @@ def main():
                 return (classify_process(code, error, candidate_output, expected_exit, evidence, (evidence,))
                         and not any(out_dir.iterdir()))
             passed = classify_export(output)
-            if args.probe_unrelated_error:
+            if args.probe_unrelated_error and append_result:
                 clean_verdict = classify_export(output)
                 injected_output = output + "\nERROR: unrelated injected diagnostic\n"
                 injected_verdict = classify_export(injected_output)
@@ -2817,6 +2900,39 @@ def main():
                 'r92_tilemap_physics': (
                     'ERROR: Parameter "found" is null.',
                 ),
+                'res_uid_path': (
+                    'ERROR: Invalid UID.',
+                ),
+                'res_uid_collide': (
+                    'ERROR: Condition "unique_ids.has(p_id)" is true.',
+                    'ERROR: Condition "!unique_ids.has(p_id)" is true.',
+                ),
+                'res_uid_cache': (
+                    "ERROR: Cannot open file 'user://r104e0/absent_zzz.tres'.",
+                    'ERROR: Failed loading resource: user://r104e0/absent_zzz.tres.',
+                    "ERROR: Error loading resource: 'user://r104e0/absent_zzz.tres'.",
+                ),
+                'res_uid_missing': (
+                    'ERROR: Condition "local_path.is_empty()" is true. Returning: Ref<ResourceLoader::LoadToken>()',
+                    "ERROR: Error loading resource: 'uid://bqk3m5n7qar1'.",
+                ),
+                # r104 re-admissions: these are the fixture's intended engine
+                # refusals; the r104 expected-errors floor below proves each
+                # declared line still fires.
+                'res_uid_s01_collide': (
+                    'ERROR: Condition "unique_ids.has(p_id)" is true.',
+                ),
+                'res_uid_s01_diag': (
+                    'ERROR: Invalid UID.',
+                ),
+                'res_uid_s02_deleted': (
+                    "ERROR: Cannot open file 'user://res_uid_s02/v1.tres'.",
+                    'ERROR: Failed loading resource: user://res_uid_s02/v1.tres.',
+                    "ERROR: Error loading resource: 'user://res_uid_s02/v1.tres'.",
+                ),
+                'r105_tile_rid_wrongrid': (
+                    'ERROR: Parameter "found" is null.',
+                ),
                 # r96: ownership deliberately pokes the non-ancestor and
                 # self-owner refusals; refuse exercises the save/load
                 # refusal surface — each line is a deterministic engine
@@ -2963,15 +3079,172 @@ def main():
                   "expected_exit": expected_exit, "actual_exit": code, "signature": evidence,
                   "verdict": "PASS" if passed else "FAIL",
                   "error": error, "output": output.strip().splitlines()}
+        if script in RES_UID_SCRIPT_NAMES:
+            record["scratch_project"] = str(execution_project)
+            record["res_uid_root"] = env["RES_UID_ROOT"]
+        if name.startswith(("res_uid_", "r105_")):
+            record["elapsed_seconds"] = round(execution_elapsed, 3)
         record["expected_errors"] = list(expected_errors)
         record["required_stderr"] = list(required_stderr)
         if export_record is not None:
             record["export_artifact"] = export_record
-        results.append(record)
-        print(f"{record['verdict']} {name}: exit={code} signature={evidence!r}", flush=True)
+        if append_result:
+            results.append(record)
+        if print_result:
+            print(f"{record['verdict']} {name}: exit={code} signature={evidence!r}", flush=True)
+        return record
 
-    for case in CASES:
+    cases_to_run = CASES
+    if args.res_uid_order == "reversed":
+        reversed_res_uid_cases = iter(reversed(
+            [case for case in CASES if case[0].startswith("res_uid_")]))
+        cases_to_run = [
+            next(reversed_res_uid_cases) if case[0].startswith("res_uid_") else case
+            for case in CASES
+        ]
+    for case in cases_to_run:
         execute(*case)
+    if args.probe_res_uid_shared:
+        isolated_by_case = {row["case"]: row for row in results}
+        shared_cases = [case for case in CASES
+                        if case[0] in RES_UID_REJOINED_CASE_NAMES]
+        if args.res_uid_order == "reversed":
+            shared_cases.reverse()
+        rejoined_count = len(RES_UID_REJOINED_CASE_NAMES)
+        isolated_rows = [isolated_by_case.get(case[0]) for case in shared_cases]
+        isolated_all_pass = (
+            len(shared_cases) == rejoined_count
+            and all(row is not None and row["verdict"] == "PASS"
+                    for row in isolated_rows))
+
+        clean_shared_dir = shared_res_uid_dir / "clean"
+        clean_shared_dir.mkdir(parents=True, exist_ok=True)
+        clean_shared_project = clean_shared_dir / "project"
+        shutil.copytree(res_uid_template, clean_shared_project)
+        clean_uid_cache_path = (
+            clean_shared_project / ".godot" / "uid_cache.bin")
+        clean_cache_present_before = clean_uid_cache_path.is_file()
+        clean_shared_rows = [
+            execute(*case,
+                    project_override=clean_shared_project,
+                    xdg_override=clean_shared_dir / "xdg-data",
+                    res_uid_root_override=clean_shared_dir / "res-uid-root",
+                    append_result=False, print_result=False)
+            for case in shared_cases
+        ]
+        clean_cache_present_after = clean_uid_cache_path.is_file()
+        clean_shared_all_pass = (
+            not clean_cache_present_before and not clean_cache_present_after
+            and len(clean_shared_rows) == rejoined_count
+            and all(row["verdict"] == "PASS" for row in clean_shared_rows))
+
+        seeded_shared_dir = shared_res_uid_dir / "seeded"
+        seeded_shared_dir.mkdir(parents=True, exist_ok=True)
+        seeded_shared_project = seeded_shared_dir / "project"
+        shutil.copytree(res_uid_template, seeded_shared_project)
+        seeded_uid_cache_path = (
+            seeded_shared_project / ".godot" / "uid_cache.bin")
+        cache_writer = execute(
+            *RES_UID_SHARED_CACHE_WRITER_CASE,
+            project_override=seeded_shared_project,
+            append_result=False, print_result=False)
+        seeded_cache_present = seeded_uid_cache_path.is_file()
+        seeded_shared_rows = [
+            execute(*case,
+                    project_override=seeded_shared_project,
+                    xdg_override=seeded_shared_dir / "xdg-data",
+                    res_uid_root_override=seeded_shared_dir / "res-uid-root",
+                    append_result=False, print_result=False)
+            for case in shared_cases
+        ]
+        cache_writer_evidence = {
+            "case": cache_writer["case"],
+            "script": cache_writer["script"],
+            "verdict": cache_writer["verdict"],
+            "actual_exit": cache_writer["actual_exit"],
+            "error": cache_writer["error"],
+            "output": cache_writer["output"],
+            "uid_cache_path": str(seeded_uid_cache_path),
+            "uid_cache_present": seeded_cache_present,
+        }
+
+        def uid_mismatch_class_lines(row):
+            lines = [
+                line for line in row.get("output", [])
+                if line.strip().startswith("ERROR: Unrecognized UID:")
+                or (line.strip().startswith("FAIL res_uid")
+                    and "mismatch" in line.lower())
+            ]
+            expected_pin = CASES_SIG_BY_CASE.get(row["case"], "")
+            if row["case"] == "res_uid_s01_diag" and "has_cache=false" in expected_pin:
+                cache_mismatch = next((
+                    line for line in row.get("output", [])
+                    if line.strip().startswith("PASS res_uid_s01 diag ")
+                    and "has_cache=true" in line
+                ), None)
+                if cache_mismatch is not None:
+                    lines.append(cache_mismatch)
+            return lines
+
+        seeded_comparisons = []
+        for row in seeded_shared_rows:
+            isolated = isolated_by_case.get(row["case"])
+            class_lines = uid_mismatch_class_lines(row)
+            reproduced = (
+                isolated is not None and isolated["verdict"] == "PASS"
+                and row["verdict"] != "PASS" and bool(class_lines))
+            seeded_comparisons.append({
+                "case": row["case"],
+                "isolated_verdict": isolated.get("verdict") if isolated else None,
+                "seeded_shared_verdict": row["verdict"],
+                "reproduced_uid_mismatch_class": reproduced,
+                "class_lines": class_lines,
+                "seeded_shared_exit": row["actual_exit"],
+                "seeded_shared_error": row["error"],
+            })
+        reproduced_rows = [
+            row["case"] for row in seeded_comparisons
+            if row["reproduced_uid_mismatch_class"]
+        ]
+        cache_writer_pass = (
+            cache_writer["case"] == "export_readiness"
+            and cache_writer["script"] == "__godot_export__"
+            and cache_writer["verdict"] == "PASS"
+            and seeded_cache_present)
+        shared_pass = (
+            isolated_all_pass and clean_shared_all_pass
+            and cache_writer_pass and bool(reproduced_rows))
+        shared_probe = {
+            "case": "probe_res_uid_shared",
+            "verdict": "PASS" if shared_pass else "FAIL",
+            "isolated_all_pass": isolated_all_pass,
+            "isolated_rows": [
+                row if row is not None else {"case": case[0], "verdict": None}
+                for case, row in zip(shared_cases, isolated_rows)
+            ],
+            "clean_shared_all_pass": clean_shared_all_pass,
+            "clean_shared_uid_cache_present_before": clean_cache_present_before,
+            "clean_shared_uid_cache_present_after": clean_cache_present_after,
+            "clean_shared_project": str(clean_shared_project),
+            "clean_shared_xdg_data_home": str(clean_shared_dir / "xdg-data"),
+            "clean_shared_res_uid_root": str(clean_shared_dir / "res-uid-root"),
+            "clean_shared_rows": clean_shared_rows,
+            "cache_writer": cache_writer_evidence,
+            "seeded_shared_uid_cache_present": seeded_cache_present,
+            "seeded_shared_project": str(seeded_shared_project),
+            "seeded_shared_xdg_data_home": str(seeded_shared_dir / "xdg-data"),
+            "seeded_shared_res_uid_root": str(seeded_shared_dir / "res-uid-root"),
+            "seeded_shared_rows": seeded_shared_rows,
+            "seeded_shared_comparisons": seeded_comparisons,
+            "reproduced_rows": reproduced_rows,
+            "diagnostic_class": (
+                'ERROR: Unrecognized UID: "<uid>"., FAIL res_uid ... mismatch, '
+                'or res_uid_s01_diag has_cache=true vs the isolated has_cache=false pin'),
+        }
+        results.append(shared_probe)
+        print(f"{shared_probe['verdict']} probe_res_uid_shared: "
+              f"clean_shared_all_pass={clean_shared_all_pass} "
+              f"reproduced_rows={reproduced_rows}", flush=True)
     process_records = {r["case"]: r for r in results if r["case"] in {
         "save_process_writer", "save_process_reader", "save_process_missing"}}
     def process_evidence(record, role):
@@ -4732,10 +5005,24 @@ def main():
             sum(1 for r in results if r["case"].startswith("res_uid_"))
             == sum(1 for c in CASES if c[0].startswith("res_uid_"))
             >= 1),
+        "r104_res_uid_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith("res_uid_")
+            for e in r["entries"]),
         "r104_export_prod_count_floor": (
             sum(1 for r in results if r["case"].startswith("export_prod_"))
             == sum(1 for c in CASES if c[0].startswith("export_prod_"))
             >= 1),
+        "r105_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith("r105_")
+            for e in r["entries"]),
+        "r105_case_count_floor": (
+            sum(1 for r in results if r["case"].startswith("r105_"))
+            == sum(1 for c in CASES if c[0].startswith("r105_"))
+            == 7),
         # r100-critic F1 (harness ceiling): no gate could see a duplicated,
         # dropped, or renamed CASES row — a 25-tuple drop-mutant still ran
         # PASS 491/491 with the per-round gates vacuously true over zero
@@ -4754,8 +5041,7 @@ def main():
             and all(
                 any(r["case"].startswith(p) for r in results)
                 for p in ("stree_lattice_", "r98_canvas_", "r98b_", "r98c_",
-                          "r99_audio_", "r99b_", "r100_gui_", "r100b_", "r101_seqfull_", "r101_ytrans_", "export_prod_",
-                          "export_launch_", "export_div_", "res_uid_"))),
+                          "export_launch_", "export_div_", "res_uid_", "r105_"))),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
     # self-exit in well under a second; never gated).
@@ -6103,6 +6389,7 @@ def main():
           f"flags={len(evasion_replay['flags'])}", flush=True)
 
     payload = {"godot": args.godot, "seed": str(HERE), "scratch": str(scratch),
+               "source_blobs": source_blobs,
                "probe_failing": args.probe_failing, "results": results,
                "verdict": "PASS" if all(r["verdict"] == "PASS" for r in results) else "FAIL"}
     (run_dir / "verdicts.json").write_text(json.dumps(payload, indent=2) + "\n")

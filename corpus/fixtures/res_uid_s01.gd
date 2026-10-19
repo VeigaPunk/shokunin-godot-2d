@@ -190,23 +190,25 @@ func _arm_pathtouid() -> void:
 	_emit("pathtouid")
 
 func _arm_createid() -> void:
-	# U4 — create_id_for_path is a pure path hash for an unregistered path and
-	# never registers.  CFP_EXPECT is the measured cross-process constant.
+	# U4 — create_id_for_path is a deterministic path hash for an unregistered
+	# path. Check it with independent in-process invariants rather than a
+	# seat-environment constant: repeatability, cross-path distinction,
+	# id/text round-trip, and no registration for both res:// and user:// paths.
 	var a := ResourceUID.create_id_for_path(CFP_RES)
 	var b := ResourceUID.create_id_for_path(CFP_RES)
 	var ua := ResourceUID.create_id_for_path(CFP_USER)
 	var ub := ResourceUID.create_id_for_path(CFP_USER)
 	var c1 := ResourceUID.create_id()
 	var c2 := ResourceUID.create_id()
-	_p("cfp_res=%d cfp_res_text=%s cfp_res_matches_pinned=%s stable=%s" % [
-		a, ResourceUID.id_to_text(a), _b(a == 8476142776992359011), _b(a == b)])
-	_p("cfp_res_registered=%s cfp_res_path_to_uid=%s" % [
-		_b(ResourceUID.has_id(a)), ResourceUID.path_to_uid(CFP_RES)])
-	_p("cfp_user=%d cfp_user_matches_pinned=%s stable=%s user_registered=%s" % [
-		ua, _b(ua == 4163091229239537790), _b(ua == ub), _b(ResourceUID.has_id(ua))])
+	_p("cfp_res_stable=%s cfp_res_roundtrip=%s cfp_res_registered=%s" % [
+		_b(a == b), _b(ResourceUID.text_to_id(ResourceUID.id_to_text(a)) == a),
+		_b(ResourceUID.has_id(a))])
+	_p("cfp_user_stable=%s cfp_user_roundtrip=%s cfp_user_registered=%s" % [
+		_b(ua == ub), _b(ResourceUID.text_to_id(ResourceUID.id_to_text(ua)) == ua),
+		_b(ResourceUID.has_id(ua))])
+	_p("cfp_paths_differ=%s" % _b(a != ua))
 	_p("create_id_distinct=%s create_id_unregistered=%s" % [
 		_b(c1 != c2), _b(not ResourceUID.has_id(c1))])
-	_p("cfp_text_roundtrip=%s" % ResourceUID.id_to_text(ResourceUID.text_to_id(ResourceUID.id_to_text(a))))
 	_emit("createid")
 
 func _arm_collide() -> void:
