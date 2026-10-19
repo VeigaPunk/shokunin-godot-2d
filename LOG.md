@@ -1407,3 +1407,22 @@ so final C2 measurement is **31 classes / 22 criteria**, not the initial 28.
 Final full replays and the measured work commit are recorded in the round-105
 record entry after this work commit; initial receipts remain as
 `reports/round-105/r105-initial-battery-receipts.json`.
+
+### Round 105 committed replay — scheduling harm found, iteration rejected
+
+The first replay at work commit `7d9d9741` returned **FAIL** (619/621 results
+PASS; all 600 CASES PASS). The new shared-cache probe ran after the CASES loop,
+inside the existing detached-orphan `sleep 8` lifetime window. Its extra work
+made `probe_descendant_pipe_eof.detached_descendant_orphaned_alive=false`,
+cascading into `probe_error_clause_surface.prior_meta_rows_stable_29_discriminations=false`.
+This is a regression of this round, **not an environmental flake**; no retry of
+unchanged code is admission evidence. Reversed run was not launched (`&&`).
+
+Evidence: `reports/round-105/r105-scheduling-failure.json` (exact failed guards,
+source blob binding) and `r105-pre-scheduling-fix-receipts.json` (focus rows all
+PASS, all 600 CASES multiplicity clean). Fix is scheduling the shared probe
+before the crash/descendant CASES tail, preserving the original finite lifetime,
+all pins and both failed discriminations. M32→Q23 captures the missed adjacency
+rule. C2's final measured inventory becomes **32 classes / 23 criteria**.
+This rejected iteration remains in the ledger; only corrected committed replays
+can establish no-axis-harm for the round's deliverable.

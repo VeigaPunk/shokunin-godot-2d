@@ -1,0 +1,29 @@
+== rev e8990516
+-- C1 coverage: res_uid CASES rows / total CASES (AST)
+res_uid 21 r105 0 total 585
+-- C2 calibration: QUALITY criteria rows / mined classes / classes captured by a Q row
+0
+0
+0
+-- C3 depth: knowledge entries / entries with all 3 headers / SOURCES rows
+2
+0
+0
+== rev 7d9d9741
+-- C1 coverage: res_uid CASES rows / total CASES (AST)
+res_uid 29 r105 7 total 600
+-- C2 calibration: QUALITY criteria rows / mined classes / classes captured by a Q row
+22
+31
+31
+-- C3 depth: knowledge entries / entries with all 3 headers / SOURCES rows
+5
+3
+31
+rows: 31
+malformed: 0
+tiers: A=30 B=1 
+statuses: mined=10 queued=19 rejected=2 
+duplicate ids (expect no lines):
+enum/tier violations (expect no lines):
+mined used-by missing (expect no lines):

@@ -1,0 +1,119 @@
+{
+ "measured_commit": "7d9d9741",
+ "source_blobs": {
+  "corpus/fixtures/run_battery.py": "ee1b439791787128313549d428714192a6825ec2",
+  "corpus/fixtures/res_uid.gd": "4bb02839bb4622b61fc81e5ea5ea4f554921682b",
+  "corpus/fixtures/res_uid_s01.gd": "a85f10f28abcd72d2b32c9c19bd5cb28d6ea1aac",
+  "corpus/fixtures/res_uid_s02.gd": "295336fbb121f50616a76b5efa62d072bafb94fd",
+  "corpus/fixtures/res_uid_s03.gd": "71bad141a52f8733163bd1c5ebb1148b68b479fd",
+  "corpus/fixtures/res_uid_s04.gd": "d42d5839cbcfc904f6a4a3efd7ebeb8213aac346",
+  "corpus/fixtures/r105_tile_rid.gd": "b861d62208982f7998d1f7e0fdbe51441591a629",
+  "corpus/fixtures/r105_phys_replay.gd": "e646d1264231d755a6ef3f4016a163d1d753f61c"
+ },
+ "battery_verdict": "FAIL",
+ "failed_discriminations": {
+  "probe_descendant_pipe_eof": {
+   "detached_descendant_orphaned_alive": false
+  },
+  "probe_error_clause_surface": {
+   "prior_meta_rows_stable_29_discriminations": false
+  }
+ },
+ "failed_rows": [
+  {
+   "case": "probe_descendant_pipe_eof",
+   "verdict": "FAIL",
+   "hold_arm": {
+    "case": "descendant_pipe_hold_arm",
+    "bound_seconds": 3.0,
+    "timed_out": true,
+    "child_exit_at_timeout": 0,
+    "actual_exit": null,
+    "error": "TIMEOUT after 3.0 seconds",
+    "marker_observed": true,
+    "post_exit_write_captured": true,
+    "godot_pid": 3083428,
+    "descendant_pid": 3083467,
+    "godot_alive_at_return": false,
+    "descendant_alive_at_return": true,
+    "inner_classification": false,
+    "elapsed_seconds": 3.003
+   },
+   "detached_control_descendant_pid": 3082677,
+   "discriminations": {
+    "hold_timed_out_with_child_dead": true,
+    "hold_post_exit_write_captured": true,
+    "hold_misattributed_rejects": true,
+    "hold_descendant_orphaned_alive": true,
+    "detached_case_passes_clean": true,
+    "detached_lacks_post_exit_write": true,
+    "detached_descendant_orphaned_alive": false
+   }
+  },
+  {
+   "case": "probe_error_clause_surface",
+   "verdict": "FAIL",
+   "discriminations": {
+    "allowforge_clean_exit0_record": true,
+    "allowforge_signature_present": true,
+    "allowforge_forged_error_captured": true,
+    "allowforge_write_post_orphan": true,
+    "allowforge_rejects_without_allowlist": true,
+    "allowforge_absorbed_by_matching_allowlist": true,
+    "allowforge_rejects_under_foreign_allowlist": true,
+    "allowforge_counterfactual_passes_without_error": true,
+    "allowlist_shape_matrix_all_expected": true,
+    "splitforge_clean_exit0_record": true,
+    "splitforge_signature_present": true,
+    "splitforge_forged_bytes_in_record": true,
+    "splitforge_no_error_line_captured": true,
+    "splitforge_evades_merged_scan": true,
+    "splitforge_contiguous_twin_rejects": true,
+    "splitforge_write_post_orphan": true,
+    "seamforge_clean_exit0_record": true,
+    "seamforge_signature_present": true,
+    "seamforge_fabricated_line_in_merged": true,
+    "seamforge_fabricated_line_rejects": true,
+    "seamforge_line_in_neither_stream": true,
+    "seamforge_split_run_also_rejects_post_merge": true,
+    "seamforge_write_post_orphan": true,
+    "midlineforge_error_spliced_into_signature": true,
+    "midlineforge_signature_destroyed": true,
+    "midlineforge_rejects": true,
+    "midlineforge_counterfactual_defeated": true,
+    "midlineforge_write_pre_death": true,
+    "surface_verdicts_follow_merged_line_presence": true,
+    "census_covers_all_allowlisted_rows": true,
+    "census_bare_classifier_consistent": true,
+    "census_allowlisted_reproduces_verdicts": true,
+    "detached_control_row_still_passes": true,
+    "prior_meta_rows_stable_29_discriminations": false,
+    "phys2d_expected_errors_all_matched": true,
+    "r87_expected_errors_all_matched": true,
+    "r88_expected_errors_all_matched": true,
+    "r89_expected_errors_all_matched": true,
+    "r90_expected_errors_all_matched": true,
+    "r91_expected_errors_all_matched": true,
+    "r92_expected_errors_all_matched": true,
+    "r93_expected_errors_all_matched": true,
+    "r94_expected_errors_all_matched": true,
+    "r95_expected_errors_all_matched": true,
+    "r96_expected_errors_all_matched": true,
+    "r97_expected_errors_all_matched": true,
+    "r98_expected_errors_all_matched": true,
+    "r99_expected_errors_all_matched": true,
+    "r100_expected_errors_all_matched": true,
+    "r101_expected_errors_all_matched": true,
+    "r102_expected_errors_all_matched": true,
+    "r103_expected_errors_all_matched": true,
+    "r103_export_div_count_floor": true,
+    "r104_res_uid_count_floor": true,
+    "r104_res_uid_expected_errors_all_matched": true,
+    "r104_export_prod_count_floor": true,
+    "r105_expected_errors_all_matched": true,
+    "r105_case_count_floor": true,
+    "cases_integrity": true
+   }
+  }
+ ]
+}

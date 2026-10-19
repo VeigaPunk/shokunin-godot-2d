@@ -2354,6 +2354,150 @@ def gate_evasion_replay(rows):
     return {"shapes": shapes, "controls": controls, "skipped": skipped,
             "flags": flags}
 
+def run_shared_res_uid_probe(args, results, res_uid_template,
+                             shared_res_uid_dir, execute):
+    if args.probe_res_uid_shared:
+        isolated_by_case = {row["case"]: row for row in results}
+        shared_cases = [case for case in CASES
+                        if case[0] in RES_UID_REJOINED_CASE_NAMES]
+        if args.res_uid_order == "reversed":
+            shared_cases.reverse()
+        rejoined_count = len(RES_UID_REJOINED_CASE_NAMES)
+        isolated_rows = [isolated_by_case.get(case[0]) for case in shared_cases]
+        isolated_all_pass = (
+            len(shared_cases) == rejoined_count
+            and all(row is not None and row["verdict"] == "PASS"
+                    for row in isolated_rows))
+
+        clean_shared_dir = shared_res_uid_dir / "clean"
+        clean_shared_dir.mkdir(parents=True, exist_ok=True)
+        clean_shared_project = clean_shared_dir / "project"
+        shutil.copytree(res_uid_template, clean_shared_project)
+        clean_uid_cache_path = (
+            clean_shared_project / ".godot" / "uid_cache.bin")
+        clean_cache_present_before = clean_uid_cache_path.is_file()
+        clean_shared_rows = [
+            execute(*case,
+                    project_override=clean_shared_project,
+                    xdg_override=clean_shared_dir / "xdg-data",
+                    res_uid_root_override=clean_shared_dir / "res-uid-root",
+                    append_result=False, print_result=False)
+            for case in shared_cases
+        ]
+        clean_cache_present_after = clean_uid_cache_path.is_file()
+        clean_shared_all_pass = (
+            not clean_cache_present_before and not clean_cache_present_after
+            and len(clean_shared_rows) == rejoined_count
+            and all(row["verdict"] == "PASS" for row in clean_shared_rows))
+
+        seeded_shared_dir = shared_res_uid_dir / "seeded"
+        seeded_shared_dir.mkdir(parents=True, exist_ok=True)
+        seeded_shared_project = seeded_shared_dir / "project"
+        shutil.copytree(res_uid_template, seeded_shared_project)
+        seeded_uid_cache_path = (
+            seeded_shared_project / ".godot" / "uid_cache.bin")
+        cache_writer = execute(
+            *RES_UID_SHARED_CACHE_WRITER_CASE,
+            project_override=seeded_shared_project,
+            append_result=False, print_result=False)
+        seeded_cache_present = seeded_uid_cache_path.is_file()
+        seeded_shared_rows = [
+            execute(*case,
+                    project_override=seeded_shared_project,
+                    xdg_override=seeded_shared_dir / "xdg-data",
+                    res_uid_root_override=seeded_shared_dir / "res-uid-root",
+                    append_result=False, print_result=False)
+            for case in shared_cases
+        ]
+        cache_writer_evidence = {
+            "case": cache_writer["case"],
+            "script": cache_writer["script"],
+            "verdict": cache_writer["verdict"],
+            "actual_exit": cache_writer["actual_exit"],
+            "error": cache_writer["error"],
+            "output": cache_writer["output"],
+            "uid_cache_path": str(seeded_uid_cache_path),
+            "uid_cache_present": seeded_cache_present,
+        }
+
+        def uid_mismatch_class_lines(row):
+            lines = [
+                line for line in row.get("output", [])
+                if line.strip().startswith("ERROR: Unrecognized UID:")
+                or (line.strip().startswith("FAIL res_uid")
+                    and "mismatch" in line.lower())
+            ]
+            expected_pin = CASES_SIG_BY_CASE.get(row["case"], "")
+            if row["case"] == "res_uid_s01_diag" and "has_cache=false" in expected_pin:
+                cache_mismatch = next((
+                    line for line in row.get("output", [])
+                    if line.strip().startswith("PASS res_uid_s01 diag ")
+                    and "has_cache=true" in line
+                ), None)
+                if cache_mismatch is not None:
+                    lines.append(cache_mismatch)
+            return lines
+
+        seeded_comparisons = []
+        for row in seeded_shared_rows:
+            isolated = isolated_by_case.get(row["case"])
+            class_lines = uid_mismatch_class_lines(row)
+            reproduced = (
+                isolated is not None and isolated["verdict"] == "PASS"
+                and row["verdict"] != "PASS" and bool(class_lines))
+            seeded_comparisons.append({
+                "case": row["case"],
+                "isolated_verdict": isolated.get("verdict") if isolated else None,
+                "seeded_shared_verdict": row["verdict"],
+                "reproduced_uid_mismatch_class": reproduced,
+                "class_lines": class_lines,
+                "seeded_shared_exit": row["actual_exit"],
+                "seeded_shared_error": row["error"],
+            })
+        reproduced_rows = [
+            row["case"] for row in seeded_comparisons
+            if row["reproduced_uid_mismatch_class"]
+        ]
+        cache_writer_pass = (
+            cache_writer["case"] == "export_readiness"
+            and cache_writer["script"] == "__godot_export__"
+            and cache_writer["verdict"] == "PASS"
+            and seeded_cache_present)
+        shared_pass = (
+            isolated_all_pass and clean_shared_all_pass
+            and cache_writer_pass and bool(reproduced_rows))
+        shared_probe = {
+            "case": "probe_res_uid_shared",
+            "verdict": "PASS" if shared_pass else "FAIL",
+            "isolated_all_pass": isolated_all_pass,
+            "isolated_rows": [
+                row if row is not None else {"case": case[0], "verdict": None}
+                for case, row in zip(shared_cases, isolated_rows)
+            ],
+            "clean_shared_all_pass": clean_shared_all_pass,
+            "clean_shared_uid_cache_present_before": clean_cache_present_before,
+            "clean_shared_uid_cache_present_after": clean_cache_present_after,
+            "clean_shared_project": str(clean_shared_project),
+            "clean_shared_xdg_data_home": str(clean_shared_dir / "xdg-data"),
+            "clean_shared_res_uid_root": str(clean_shared_dir / "res-uid-root"),
+            "clean_shared_rows": clean_shared_rows,
+            "cache_writer": cache_writer_evidence,
+            "seeded_shared_uid_cache_present": seeded_cache_present,
+            "seeded_shared_project": str(seeded_shared_project),
+            "seeded_shared_xdg_data_home": str(seeded_shared_dir / "xdg-data"),
+            "seeded_shared_res_uid_root": str(seeded_shared_dir / "res-uid-root"),
+            "seeded_shared_rows": seeded_shared_rows,
+            "seeded_shared_comparisons": seeded_comparisons,
+            "reproduced_rows": reproduced_rows,
+            "diagnostic_class": (
+                'ERROR: Unrecognized UID: "<uid>"., FAIL res_uid ... mismatch, '
+                'or res_uid_s01_diag has_cache=true vs the isolated has_cache=false pin'),
+        }
+        results.append(shared_probe)
+        print(f"{shared_probe['verdict']} probe_res_uid_shared: "
+              f"clean_shared_all_pass={clean_shared_all_pass} "
+              f"reproduced_rows={reproduced_rows}", flush=True)
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--probe-failing", action="store_true", help="also mutate scratch scene B and prove detection")
@@ -3102,149 +3246,18 @@ def main():
             next(reversed_res_uid_cases) if case[0].startswith("res_uid_") else case
             for case in CASES
         ]
-    for case in cases_to_run:
+    last_res_uid_index = max(
+        (index for index, case in enumerate(cases_to_run)
+         if case[0].startswith("res_uid_")),
+        default=-1)
+    if args.probe_res_uid_shared and last_res_uid_index < 0:
+        run_shared_res_uid_probe(
+            args, results, res_uid_template, shared_res_uid_dir, execute)
+    for case_index, case in enumerate(cases_to_run):
         execute(*case)
-    if args.probe_res_uid_shared:
-        isolated_by_case = {row["case"]: row for row in results}
-        shared_cases = [case for case in CASES
-                        if case[0] in RES_UID_REJOINED_CASE_NAMES]
-        if args.res_uid_order == "reversed":
-            shared_cases.reverse()
-        rejoined_count = len(RES_UID_REJOINED_CASE_NAMES)
-        isolated_rows = [isolated_by_case.get(case[0]) for case in shared_cases]
-        isolated_all_pass = (
-            len(shared_cases) == rejoined_count
-            and all(row is not None and row["verdict"] == "PASS"
-                    for row in isolated_rows))
-
-        clean_shared_dir = shared_res_uid_dir / "clean"
-        clean_shared_dir.mkdir(parents=True, exist_ok=True)
-        clean_shared_project = clean_shared_dir / "project"
-        shutil.copytree(res_uid_template, clean_shared_project)
-        clean_uid_cache_path = (
-            clean_shared_project / ".godot" / "uid_cache.bin")
-        clean_cache_present_before = clean_uid_cache_path.is_file()
-        clean_shared_rows = [
-            execute(*case,
-                    project_override=clean_shared_project,
-                    xdg_override=clean_shared_dir / "xdg-data",
-                    res_uid_root_override=clean_shared_dir / "res-uid-root",
-                    append_result=False, print_result=False)
-            for case in shared_cases
-        ]
-        clean_cache_present_after = clean_uid_cache_path.is_file()
-        clean_shared_all_pass = (
-            not clean_cache_present_before and not clean_cache_present_after
-            and len(clean_shared_rows) == rejoined_count
-            and all(row["verdict"] == "PASS" for row in clean_shared_rows))
-
-        seeded_shared_dir = shared_res_uid_dir / "seeded"
-        seeded_shared_dir.mkdir(parents=True, exist_ok=True)
-        seeded_shared_project = seeded_shared_dir / "project"
-        shutil.copytree(res_uid_template, seeded_shared_project)
-        seeded_uid_cache_path = (
-            seeded_shared_project / ".godot" / "uid_cache.bin")
-        cache_writer = execute(
-            *RES_UID_SHARED_CACHE_WRITER_CASE,
-            project_override=seeded_shared_project,
-            append_result=False, print_result=False)
-        seeded_cache_present = seeded_uid_cache_path.is_file()
-        seeded_shared_rows = [
-            execute(*case,
-                    project_override=seeded_shared_project,
-                    xdg_override=seeded_shared_dir / "xdg-data",
-                    res_uid_root_override=seeded_shared_dir / "res-uid-root",
-                    append_result=False, print_result=False)
-            for case in shared_cases
-        ]
-        cache_writer_evidence = {
-            "case": cache_writer["case"],
-            "script": cache_writer["script"],
-            "verdict": cache_writer["verdict"],
-            "actual_exit": cache_writer["actual_exit"],
-            "error": cache_writer["error"],
-            "output": cache_writer["output"],
-            "uid_cache_path": str(seeded_uid_cache_path),
-            "uid_cache_present": seeded_cache_present,
-        }
-
-        def uid_mismatch_class_lines(row):
-            lines = [
-                line for line in row.get("output", [])
-                if line.strip().startswith("ERROR: Unrecognized UID:")
-                or (line.strip().startswith("FAIL res_uid")
-                    and "mismatch" in line.lower())
-            ]
-            expected_pin = CASES_SIG_BY_CASE.get(row["case"], "")
-            if row["case"] == "res_uid_s01_diag" and "has_cache=false" in expected_pin:
-                cache_mismatch = next((
-                    line for line in row.get("output", [])
-                    if line.strip().startswith("PASS res_uid_s01 diag ")
-                    and "has_cache=true" in line
-                ), None)
-                if cache_mismatch is not None:
-                    lines.append(cache_mismatch)
-            return lines
-
-        seeded_comparisons = []
-        for row in seeded_shared_rows:
-            isolated = isolated_by_case.get(row["case"])
-            class_lines = uid_mismatch_class_lines(row)
-            reproduced = (
-                isolated is not None and isolated["verdict"] == "PASS"
-                and row["verdict"] != "PASS" and bool(class_lines))
-            seeded_comparisons.append({
-                "case": row["case"],
-                "isolated_verdict": isolated.get("verdict") if isolated else None,
-                "seeded_shared_verdict": row["verdict"],
-                "reproduced_uid_mismatch_class": reproduced,
-                "class_lines": class_lines,
-                "seeded_shared_exit": row["actual_exit"],
-                "seeded_shared_error": row["error"],
-            })
-        reproduced_rows = [
-            row["case"] for row in seeded_comparisons
-            if row["reproduced_uid_mismatch_class"]
-        ]
-        cache_writer_pass = (
-            cache_writer["case"] == "export_readiness"
-            and cache_writer["script"] == "__godot_export__"
-            and cache_writer["verdict"] == "PASS"
-            and seeded_cache_present)
-        shared_pass = (
-            isolated_all_pass and clean_shared_all_pass
-            and cache_writer_pass and bool(reproduced_rows))
-        shared_probe = {
-            "case": "probe_res_uid_shared",
-            "verdict": "PASS" if shared_pass else "FAIL",
-            "isolated_all_pass": isolated_all_pass,
-            "isolated_rows": [
-                row if row is not None else {"case": case[0], "verdict": None}
-                for case, row in zip(shared_cases, isolated_rows)
-            ],
-            "clean_shared_all_pass": clean_shared_all_pass,
-            "clean_shared_uid_cache_present_before": clean_cache_present_before,
-            "clean_shared_uid_cache_present_after": clean_cache_present_after,
-            "clean_shared_project": str(clean_shared_project),
-            "clean_shared_xdg_data_home": str(clean_shared_dir / "xdg-data"),
-            "clean_shared_res_uid_root": str(clean_shared_dir / "res-uid-root"),
-            "clean_shared_rows": clean_shared_rows,
-            "cache_writer": cache_writer_evidence,
-            "seeded_shared_uid_cache_present": seeded_cache_present,
-            "seeded_shared_project": str(seeded_shared_project),
-            "seeded_shared_xdg_data_home": str(seeded_shared_dir / "xdg-data"),
-            "seeded_shared_res_uid_root": str(seeded_shared_dir / "res-uid-root"),
-            "seeded_shared_rows": seeded_shared_rows,
-            "seeded_shared_comparisons": seeded_comparisons,
-            "reproduced_rows": reproduced_rows,
-            "diagnostic_class": (
-                'ERROR: Unrecognized UID: "<uid>"., FAIL res_uid ... mismatch, '
-                'or res_uid_s01_diag has_cache=true vs the isolated has_cache=false pin'),
-        }
-        results.append(shared_probe)
-        print(f"{shared_probe['verdict']} probe_res_uid_shared: "
-              f"clean_shared_all_pass={clean_shared_all_pass} "
-              f"reproduced_rows={reproduced_rows}", flush=True)
+        if args.probe_res_uid_shared and case_index == last_res_uid_index:
+            run_shared_res_uid_probe(
+                args, results, res_uid_template, shared_res_uid_dir, execute)
     process_records = {r["case"]: r for r in results if r["case"] in {
         "save_process_writer", "save_process_reader", "save_process_missing"}}
     def process_evidence(record, role):

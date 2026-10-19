@@ -304,3 +304,47 @@ reversed: clean_shared_all_pass=True; cache_before=false; cache_after=false;
 
 Artifacts: `/var/tmp/gd2d-r105/R105ResUidExec2/runs-shared-final-review/20261019T230949732056Z/selected-dev-results.json` and
 `/var/tmp/gd2d-r105/R105ResUidExec2/runs-shared-reversed-final-review/20261019T231009822307Z/selected-dev-results.json`.
+
+## M32 descendant-tail scheduling correction (appended, 2026-10-19)
+
+[obs] L1's committed run `7d9d9741` failed
+`probe_descendant_pipe_eof`: `detached_descendant_orphaned_alive=false`.
+`probe_res_uid_shared` had been placed after all CASES, so its clean/seeded
+shared runs delayed the descendant-tail meta probe beyond the fixture's
+`sleep 8` liveness window.
+
+The shared probe is now a helper invoked immediately after the last
+`res_uid_` CASES row (with the same boundary in forward and reversed order),
+before the following R105/export/crash/descendant CASES. The crash and
+descendant tail and its meta sequence are otherwise unchanged.
+
+Targeted regression command:
+
+```sh
+timeout --signal=TERM --kill-after=2s 300s python3 /var/tmp/gd2d-r105/R105ResUidExec2/dev_runner.py forward /var/tmp/gd2d-r105/R105ResUidExec2/runs-tail-regression-final3 1 tail
+```
+
+[obs] The selected run kept the shared probe, save-process rows, spontaneous
+crash rows, detached descendant control, and forged-signature release row in
+one runner path. `probe_res_uid_shared`, `probe_save_independent_process`,
+`probe_spontaneous_crash_classification`, `probe_descendant_pipe_eof`,
+`probe_descendant_signature_spoof`, `probe_descendant_error_spoof`, and
+`probe_while_live_signature_gate` all PASSed. The decisive pipe result was
+`detached_descendant_orphaned_alive=true`; all seven pipe discriminations were
+true. The selected run ended with `DEV_FAILURES []` and no duplicate cases.
+Run record:
+`/var/tmp/gd2d-r105/R105ResUidExec2/runs-tail-regression-final3/20261019T233259626451Z/selected-dev-results.json`.
+
+[obs] An initial filtered regression attempt continued through the full
+`probe_error_clause_surface`. Its `prior_meta_rows_stable_29_discriminations`
+was true, but the overall surface meta correctly failed its omitted-family
+floors (`r103_export_div_count_floor`, `r104_export_prod_count_floor`,
+`r105_case_count_floor`, `cases_integrity`) because this targeted CASES list is
+not the full battery. The final targeted run stops after the relevant
+descendant-error-spoof guard instead; no production gate or pin was weakened.
+
+The runner blob in the preceding source list is superseded by the M32
+scheduling fix: current `corpus/fixtures/run_battery.py` is
+`bbc4e9f96915317047373f1b9fbc7f125793de26`. The other seven
+`source_blobs` values are unchanged. Corrected expected full receipt count
+remains 621; no post-M32 full battery was run.
