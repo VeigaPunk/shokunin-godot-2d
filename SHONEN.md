@@ -4,7 +4,7 @@ Promotion to shokunin requires all of:
 
 - [ ] SKILL.md contains real decision tables, error patterns, checklists, cited sources
 - [~] At least one end-to-end domain task executed and logged in LOG.md
-  `LOG.md` round-105; `reports/round-105/r105-battery-receipts.json` (two serial 622/622 runs).
+  `LOG.md` round-105 final record; `reports/round-105/r105-battery-receipts.json` (two serial 621/621 runs at ff32e252).
 - [~] Instructions executable by an agent without oral context
   `corpus/knowledge/2026-10-19-*.md` recheck lines; `reports/round-105/r105-count.sh`.
 - [~] No cross-domain bleed (PROVINCE.md still accurate)

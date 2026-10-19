@@ -345,6 +345,7 @@ Work commit 5f924226.
 | Capability | What it can now do | Evidence pointer | First-working round |
 |---|---|---|---|
 | headless production export | build a production-shaped Godot 4.7.2 project to PCK / ZIP with the installed templates, census the pack (magic/EOCD/entries), prove warm-warm byte determinism, pin preset + templates-missing refusal classes, and run the product via `--main-pack` + `--quit-after` | `corpus/lessons/r101-export-capability.md` + `reports/round-101/r101-E0-spec.md` (12 rows, 12/12 PASS ×2 in-battery) | r101 |
+| curated source registry | retain opened, scoped/tiered learning sources with explicit rejects/flips, study paths and search logs; connect mined rows to knowledge and reproduce the complete frozen contract census | `corpus/SOURCES.md`; `sh reports/round-105/r105-sources-census.sh` → 31 rows, malformed 0, A=30/B=1, mined=10/queued=19/rejected=2, no duplicate/enum/tier/dead-path findings; `corpus/lessons/round-105.md` §Gate | r105 |
 
 Rows enter only through a round that demonstrates the capability running (`AXES.md` §Capabilities); none enter through this rollout.
 
@@ -364,3 +365,48 @@ declared as a conservative fleet default, not calibrated from history.
 Saturation is *plausible* on coverage of the in-engine headless 2D API; the
 export/build-product surface opened at r101 (C1) and non-headless/platform
 surfaces remain open — the lane is **not** saturated at r101.
+
+## Round 105 verdict — 2026-10-19 (self-verdict, outside verification pending)
+
+Declared claims: C1 **coverage** (UID project isolation/re-admission), C2
+**calibration** (mine mistakes into QUALITY), C3 **depth** (SOURCES capability +
+three source-linked executable knowledge entries). Depth satisfies the lowest-axis
+obligation by the explicit stale-evidence proxy (r49 vs r56/r61); all three numeric
+scores remain `unscored`, so numeric score deltas are undefined, not fabricated.
+This table refreshes the obsolete r49–r61 evidence above; no axis is retired.
+
+Measured implementation commits: initial `7d9d9741`; scheduling correction
+`ff32e252` (final measured code). Baseline `e8990516`. Counting command:
+`sh reports/round-105/r105-count.sh e8990516` then the same with `ff32e252`.
+Committed output: `reports/round-105/r105-measurements.txt`.
+
+| claim / axis | score delta | before → after / self-verdict | evidence |
+|---|---|---|---|
+| C1 / coverage | unscored → unscored (no numeric rubric) | **improved**: res_uid CASES 21→29, total CASES 585→600; 29/29 UID rows PASS in both orders, distinct-path createid pin + constant-return mutant rejection; clean-shared baseline 8/8 vs export-writer-seeded interference in three rows | `corpus/lessons/r105-res-uid-isolation.md`; `reports/round-105/r105-battery-receipts.json` (final ff32e252 source blobs) |
+| C2 / calibration | unscored → unscored | **improved**: 0→32 grounded M classes, 0→23 QUALITY criteria, 32/32 mapped to valid Q ids; M29–M32 capture errors made and caught this round, including the rejected scheduling-harm iteration | `corpus/lessons/round-105.md` §Mistakes; `corpus/QUALITY.md`; count script C2 block @ff32e252 |
+| C3 / depth | unscored → unscored | **improved**: knowledge entries 2→5, complete-header entries 0→3; SOURCES rows 0→31, census clean; K1/K3 advance uncovered body-RID attribution/replay boundary; K2 curates prior UID authority evidence | three `corpus/knowledge/2026-10-19-*.md`; source census script/output; 7/7 new fixture rows PASS ×2 @ff32e252 |
+
+Final replay evidence: runs `20261019T233501498056Z` (forward) and
+`20261019T234607282166Z` (reversed), **621/621 PASS ×2** = 600 CASES + 21 unique
+meta rows. No missing/duplicate CASES or meta names; eight runtime-captured source
+Git blobs agree with the tested committed bytes; every focus signature matches.
+Shape audited=602 flags=0; evasion 10 shapes / 6 flagged / 0 probe flags, both.
+No prior CASES pin was rewritten. The prior `7d9d9741` FAIL is retained and
+rejected (`r105-scheduling-failure.json`); it is not averaged into the final pass.
+
+Capability acquisition: **curated source registry** enters above only after the
+frozen SOURCES census demonstrated clean. No exploratory claim, promotion or
+outside taste judgment is asserted. Fresh outside spot-check remains pending:
+at least one admit/reject, three source re-opens, every count command.
+
+### Current plan (appended correction to the obsolete `planned: r64` field)
+
+planned: r106 — depth: clean-checkout import→export→launch, `clean_checkout_`
+CASES 0→2 (positive pipeline + missing-preset negative); AST prefix census,
+serial receipts and actual exported-artifact startup required (ART C3,
+`corpus/README.md` §Frontier; S006/S007/S024). The old r64 plan is historical.
+
+Saturation/stagnation: the r101 declaration remains the operative declaration
+(N=5); r105 is not stagnant (new capability), no lowest-axis waiver used.
+The placeholder Saturation heading and numeric-score rubric gap remain explicitly
+routed contract defects rather than a silently invented score.

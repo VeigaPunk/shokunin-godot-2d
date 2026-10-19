@@ -348,3 +348,22 @@ scheduling fix: current `corpus/fixtures/run_battery.py` is
 `bbc4e9f96915317047373f1b9fbc7f125793de26`. The other seven
 `source_blobs` values are unchanged. Corrected expected full receipt count
 remains 621; no post-M32 full battery was run.
+
+## Final committed full-battery replays (L1, appended)
+
+Measured corrected implementation **ff32e252**, after the scheduling fix.
+Forward run `20261019T233501498056Z`, reversed run `20261019T234607282166Z`:
+**621/621 PASS each**, 600 CASES + 21 unique meta rows; no missing/duplicate
+CASES or meta names; res_uid 29/29, r105 7/7, all exact signatures matched.
+Eight `source_blobs` were captured before staging and match the committed files.
+The res_uid execution lists are exact reverses. Both previously failed
+descendant/error-surface discriminations are now true under the unchanged bounds.
+No unchanged-code retry was used to clear the rejected 7d9d9741 iteration.
+
+Clean-shared 8/8 PASS with cache absent before/after, actual export writer
+PASS with cache created, seeded-reader class reproduced in path/missing/s01_diag,
+both orders. Shape gate: 602 audited, 0 flags; evasion replay: 10 shapes, 0 flags.
+Persistent final evidence: `reports/round-105/r105-battery-receipts.json`
+(includes raw control arms/writer output, source blobs, multiplicity and meta
+regression guards); extraction `r105-receipts.py`. Total two-run wall 1325s.
+The earlier 622-row and failed-621-row evidence remains, explicitly non-final.

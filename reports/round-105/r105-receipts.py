@@ -63,6 +63,17 @@ for path in sys.argv[1:]:
         "cases_bad_multiplicity": {k: counts[k] for k in case_names if counts[k] != 1},
         "meta_rows": sum(v for k, v in counts.items() if k not in case_names),
         "duplicate_result_names": {k: v for k, v in counts.items() if v != 1},
+        "meta_verdicts": {r["case"]: r["verdict"] for r in rows if r["case"] not in case_names},
+        "regression_guards": {
+            r["case"]: r["discriminations"] for r in rows
+            if r["case"] in ("probe_descendant_pipe_eof", "probe_error_clause_surface")
+        },
+        "receipt_shape_gate": next(r for r in rows if r["case"] == "probe_receipt_shape_gate"),
+        "gate_evasion_replay": {
+            k: v for r in rows if r["case"] == "probe_gate_evasion_replay"
+            for k, v in r.items()
+            if k in ("case", "verdict", "shape_count", "control_count", "flags", "accounted_classes")
+        },
         "rows": len(rows),
         "pass": verdicts.count("PASS"),
         "fail": verdicts.count("FAIL"),

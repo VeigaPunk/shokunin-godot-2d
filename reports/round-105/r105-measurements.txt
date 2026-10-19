@@ -27,3 +27,14 @@ statuses: mined=10 queued=19 rejected=2
 duplicate ids (expect no lines):
 enum/tier violations (expect no lines):
 mined used-by missing (expect no lines):
+== rev ff32e252
+-- C1 coverage: res_uid CASES rows / total CASES (AST)
+res_uid 29 r105 7 total 600
+-- C2 calibration: QUALITY criteria rows / mined classes / classes captured by a Q row
+23
+32
+32
+-- C3 depth: knowledge entries / entries with all 3 headers / SOURCES rows
+5
+3
+31

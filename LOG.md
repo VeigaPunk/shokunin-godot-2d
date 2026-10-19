@@ -1426,3 +1426,41 @@ all pins and both failed discriminations. M32→Q23 captures the missed adjacenc
 rule. C2's final measured inventory becomes **32 classes / 23 criteria**.
 This rejected iteration remains in the ledger; only corrected committed replays
 can establish no-axis-harm for the round's deliverable.
+
+### Round 105 final record — corrected implementation ff32e252
+
+Final two serial full replays at **ff32e252** (runner blob
+`bbc4e9f96915317047373f1b9fbc7f125793de26`):
+`20261019T233501498056Z` forward and `20261019T234607282166Z` reversed,
+**621/621 PASS each** (600 CASES + 21 unique meta names), 0 FAIL.
+29/29 res_uid and 7/7 r105 each; exact reverse UID order and every focus
+signature confirmed. Eight startup-captured source blobs match committed code.
+Both M32-failed meta discriminations now true, with original bounds/pins intact.
+Shape 602 audited / 0 flags; evasion 10 shapes / 0 replay flags, both runs.
+No-axis-harm is supported by these final full receipts, not the rejected run.
+Persistent evidence `reports/round-105/r105-battery-receipts.json`; all checks
+and extraction commands in `r105-receipts.py` and the isolation lesson's final section.
+
+Measured before→after, `sh reports/round-105/r105-count.sh e8990516` and
+`sh reports/round-105/r105-count.sh ff32e252`:
+C1 coverage 21→29 res_uid, total CASES 585→600;
+C2 calibration 0→32 mistake classes, 0→23 quality criteria, 32/32 captured;
+C3 depth knowledge 2→5, complete-header entries 0→3, SOURCES 0→31.
+Frozen source census clean; the actual shared validator
+`bash /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate /home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/game-dev-2d-shokunin --today 2026-10-19 --verbose`
+also returned **exit 0 / ok** (`reports/round-105/r105-fleet-source-validation.txt`).
+S015/S031 recheck draft values were already corrected `—`→`180d` and recorded in
+lesson §Gate. SOURCES capability enters the scorecard only after those clean runs.
+
+Per-axis self-verdicts: coverage **improved**, calibration **improved**, depth
+**improved**; other axes no harm observed/none claimed. Trends: expansion
+**improved** (K1/K3 frontier), quality **improved** (wrong-RID interpretation
+corrected, tested invariants, final green rechecks), discernment **unchanged /
+pending outside spot-check** (lane-created criteria are not outside taste).
+The orchestrator must still verify ≥1 admit/reject, ≥3 source rows and all counts;
+no promotion/[x] is asserted. Numeric scores remain an inherited rubric defect,
+not a fabricated delta. The current r106 plan is appended in SCORECARD.
+
+All lane changes landed in `7d9d9741` (work) and `ff32e252` (scheduling repair);
+this record commit carries final receipts, scorecard and appended evidence.
+No push, no sibling/domain writes, no ledger commit by this lane.

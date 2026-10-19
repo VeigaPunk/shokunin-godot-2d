@@ -164,3 +164,11 @@ S015/S031 `recheck` draft values `—`→`180d`; S028/S029 revision anchors boun
 not edits to previously committed registry rows. Final reviewer/critic findings
 and corrected controls are preserved in the seat reports; fresh full receipts
 supersede the initial two runs' duplicate-meta / missing-run-byte provenance.
+
+### Outside spot-check
+
+**Pending orchestrator non-author verification:** ≥1 admit and ≥1 reject,
+≥3 registry rows re-opened, every counting command re-run. R105FinalReviewer
+and R105FinalCritic are still this lane; their source re-opens and disagreement
+lessons improve the bar but do not certify outside discernment. SHONEN stays
+unchecked/self-asserted, never `[x]`.

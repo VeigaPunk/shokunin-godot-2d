@@ -87,3 +87,13 @@ Exact five-field tuples and byte-exact PASS signatures:
 | gameplay invariants | `r105_phys_replay_digest` | `r105_phys_replay.gd`, `--arm=digest`, 0 |
 | host-observed in-process equality | `r105_phys_replay_inproc` | `r105_phys_replay.gd`, `--arm=inproc`, 0 |
 | perturbation discrimination | `r105_phys_replay_perturb` | `r105_phys_replay.gd`, `--arm=perturb`, 0 |
+
+### Invariant bounds and resolution (Q17)
+
+Fixture constants and predicates (`r105_phys_replay.gd:28-35,154-175`):
+8 rigid bodies; every box center `y < 480 px`; final maximum box speed
+`< 1200 px/s`; character `170 < x < 600 px` and `y < 480 px`; 240 physics ticks
+at 120 TPS; perturbation `dx = 1e-4 px`. [obs] PASS records those inequalities,
+not numeric distances to each bound. [unk] Exact final speed/position margins
+were not emitted and are not inferred from `true` booleans. The SHA-256 diagnostic
+hashes binary double state bytes; no universal determinism tolerance is claimed.
