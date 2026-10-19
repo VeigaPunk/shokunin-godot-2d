@@ -313,6 +313,20 @@ commit adf1e693.
 
 | r102 | game-dev-2d | export launch matrix + timeout-probe repair + simplifier/stale-cite folds | ADMIT-with-findings | adf1e693 |
 
+## Round 103 verdict — 2026-10-18
+
+| axis | verdict | evidence |
+|---|---|---|
+| coverage | **improved** | +16 `export_div` rows (s01 x5, s02 x2, s03 x3, s04 x3, s05 x3 arms); 16/16 PASS x2 in-battery (570/0 both runs); counting: `grep -c '^PASS export_div' <log>` = 16 |
+| depth | **improved** | receipt-shape META gate (W10): 0 flags over 554 audited rows x2; measured evasion boundary (4/10 flag, 6 accounted/harmless); folds F4 (CASES pin lookup) F5 (probe-artifact skip) F6 (derived-evidence account) |
+| calibration | **improved** | 3 simplifier gap folds (-10 net lines; cross-run 542/549 byte-identical); probe reject-arm designed-verb prints; s01 NUL-safe decode (3 stderr warnings -> 0, receipts unchanged) |
+
+`r103-adjudicator.md`: ADMIT-WITH-FINDINGS. 3 provider attempts (key 7 starved,
+key 4 insufficient funds, key 2 completed 58/58) — all within the scheduled
+opencode-go lane. Work commit ⟨COMMIT⟩.
+
+| r103 | game-dev-2d | export_div surface + receipt-shape gate + simp gaps | ADMIT-with-findings | ⟨COMMIT⟩ |
+
 ## Capabilities
 
 | Capability | What it can now do | Evidence pointer | First-working round |

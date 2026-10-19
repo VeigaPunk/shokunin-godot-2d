@@ -1,0 +1,45 @@
+{
+ "base_run": "corpus/live/runs/20261018T212500022987Z/verdicts.json",
+ "control": "mechanic",
+ "variants": {
+  "A1_mut09_in_span": [
+   "foreign_line"
+  ],
+  "A2_mut09_post_span": [
+   "foreign_line"
+  ],
+  "A3_mut09_pre_span": [
+   "foreign_line"
+  ],
+  "A4_pass_flood": [
+   "unaccounted_pass_line",
+   "pass_multiplicity"
+  ],
+  "A5_banner_spoof": [
+   "banner_shape"
+  ],
+  "A6_cross_script_splice": [
+   "foreign_line"
+  ],
+  "C1_output_dropped": [
+   "schema:output",
+   "output_unreplayable"
+  ],
+  "C2_output_null": [
+   "output_unreplayable"
+  ],
+  "C3_error_on_pass": [
+   "exit_or_error_state"
+  ],
+  "C4_exit_tamper": [
+   "exit_or_error_state"
+  ],
+  "C5_signature_rewrite": [
+   "signature_absent"
+  ],
+  "C6_artifact_binding": [
+   "artifact_binding"
+  ],
+  "control_unmodified": []
+ }
+}

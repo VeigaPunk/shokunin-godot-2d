@@ -1,0 +1,181 @@
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -1717,6 +1717,147 @@
+     # forged signature accepted; see meta probe_descendant_signature_spoof.
+     ("descendant_pipe_forged_signature_release", "descendant_pipe_probe.gd", ["--spawn-forge-release"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
+ ]
++# ---------------------------------------------------------------------------
++# r103 G1 (C2 depth): receipt-shape meta-gate over STORED verdict records.
++#
++# The per-round gates are ceiling-shaped: they read the CASES table or the
++# allowlist census, never the receipts the battery actually stored. The
++# r102-mut9 span-foreign measurement (a foreign stdout line injected inside a
++# launched process's pinned receipt span leaves code+signature verdicts
++# byte-identical) is the measured instance of the class this predicate
++# decides — from stored data only. It never re-runs a fixture, never touches
++# classify_process, and never widens a row's accepted output.
++#
++# A PASS-prefixed stdout line is ACCOUNTED iff some registered pin (own row or
++# any other row's pin — the shared sub-receipt families pin their cells
++# independently) is contained in it, or it is contained in such a pin, or it
++# matches one declared allowlist pattern below.
++# ---------------------------------------------------------------------------
++RECEIPT_PASS_LINE_ALLOWLIST = (
++    # Measured on the r103 target run (run 20261018T213443471189Z): exactly one
++    # PASS-prefixed stdout line in the whole battery is not a registered pin of
++    # any row — the save_process_missing fixture's own stdout receipt, for an
++    # expected-negative row whose pin is the ERROR string ("ERROR: SAVE PROCESS
++    # EXPECTED NEGATIVE: ..."). Data, never a predicate widening: an injected
++    # line not matching this pattern still flags, and a forged line that does
++    # match it is admitted (declared ceiling, same reading as the r97
++    # allowlist-as-preemptor finding).
++    re.compile(r"^PASS save_process missing=true pid=[0-9]+ path=\S+$"),
++)
++
++
++def receipt_pin_corpus(results):
++    """Every registered signature pin of every stored row: the str pins plus
++    each admissible alternative of the mode-envelope rows whose evidence is a
++    tuple of admissible payloads."""
++    pins = set()
++    for record in results:
++        signature = record.get("signature")
++        if isinstance(signature, str):
++            pins.add(signature)
++        elif isinstance(signature, list):
++            pins.update(pin for pin in signature if isinstance(pin, str))
++    return pins
++
++
++def receipt_shape_violations(record, pins):
++    """r103 G1: shape-violation labels of ONE stored verdict record.
++
++      * "shape:<field>"   — a required field is missing or carries a foreign
++        type. Fail closed: an unreadable receipt is a defect, not a pass.
++      * "replay"          — the stored verdict disagrees with the classifier's
++        own exit+signature verdict recomputed from the stored fields. Records
++        carrying an export_artifact are exempt: their pin is REWRITTEN from
++        the measured artifact (executor path above) and their verdict is
++        decided by the export path, so the generic clause does not decide them
++        (measured: the export_readiness record).
++      * "artifact:<field>"— an export_artifact-bearing record must carry a
++        well-formed artifact record AND its rewritten pin's byte claim must
++        equal the artifact's byte count.
++      * "pass_line:<line>"— a PASS-prefixed stdout line that no registered pin
++        accounts for (r102-mut9 span-foreign class, PASS-shaped injections).
++      * "span:<head>"     — a multi-line pin does not appear as a contiguous
++        window of the stored stdout lines (a foreign line spliced INSIDE the
++        pinned span; r102-mut9 attack A1 on a span-pinned row). A single-line
++        pin has no interior, so this clause is silent for it by construction.
++
++    The accounting and span clauses bind PASS receipts only: a FAIL record has
++    already reddened the battery, and its unmatched fixture line is that
++    failure, not an extra shape defect.
++    """
++    violations = []
++    shape_checks = (
++        ("case", isinstance(record.get("case"), str)),
++        ("signature", isinstance(record.get("signature"), (str, list))),
++        ("expected_exit", isinstance(record.get("expected_exit"), int)),
++        ("actual_exit", isinstance(record.get("actual_exit"), int)),
++        ("error", record.get("error") is None or isinstance(record.get("error"), str)),
++        ("verdict", record.get("verdict") in ("PASS", "FAIL")),
++        ("output", isinstance(record.get("output"), list)
++         and all(isinstance(line, str) for line in record["output"])),
++    )
++    for field, ok in shape_checks:
++        if not ok:
++            violations.append("shape:" + field)
++    if violations:
++        return violations
++    signature = record["signature"]
++    own_pins = [signature] if isinstance(signature, str) else list(signature)
++    if not all(isinstance(pin, str) for pin in own_pins) or not own_pins:
++        return violations + ["shape:signature"]
++    output = record["output"]
++    text = "\n".join(output)
++    if "export_artifact" in record:
++        artifact = record["export_artifact"]
++        if not (isinstance(artifact, dict)
++                and isinstance(artifact.get("artifact_bytes"), int)
++                and artifact["artifact_bytes"] >= 0
++                and artifact.get("artifacts_deleted") in (True, False)
++                and isinstance(artifact.get("products_created"), list)
++                and all(isinstance(p, str) for p in artifact["products_created"])
++                and (artifact["artifact_bytes"] == 0 or (
++                    isinstance(artifact.get("artifact_sha256"), str)
++                    and re.fullmatch(r"[0-9a-f]{64}", artifact["artifact_sha256"])))):
++            violations.append("artifact:record")
++        else:
++            for pin in own_pins:
++                claimed = re.search(r"executable_bytes=([0-9]+)", pin)
++                if claimed is None:
++                    violations.append("artifact:pin_bytes")
++                elif int(claimed.group(1)) != artifact["artifact_bytes"]:
++                    violations.append("artifact:pin_mismatch")
++    else:
++        replayed = (record["actual_exit"] == record["expected_exit"]
++                    and record["error"] is None
++                    and any(pin in text for pin in own_pins))
++        if record["verdict"] != ("PASS" if replayed else "FAIL"):
++            violations.append("replay")
++    if record["verdict"] != "PASS":
++        # The accounting and span clauses are RECEIPT-TRUST checks: they bind
++        # the receipts the battery reports green. A FAIL row already reds the
++        # battery, and its unmatched fixture line is the failure itself, not
++        # an extra shape defect. (Measured: run 20261018T202131127599Z carries
++        # three real FAIL rows — the intermittent device census — whose
++        # unmatched `PASS input_lattice ...` lines would otherwise be
++        # double-reported here.) Shape preconditions and the replay clause
++        # above still covered this record.
++        return violations
++    for line in output:
++        if not line.startswith("PASS "):
++            continue
++        if any(pin in line or line in pin for pin in pins):
++            continue
++        if any(pattern.match(line) for pattern in RECEIPT_PASS_LINE_ALLOWLIST):
++            continue
++        violations.append("pass_line:" + line[:80])
++    for pin in own_pins:
++        if "\n" not in pin:
++            continue
++        width = pin.count("\n") + 1
++        if not any("\n".join(output[i:i + width]) == pin
++                   for i in range(len(output) - width + 1)):
++            violations.append("span:" + pin.split("\n", 1)[0][:80])
++    return violations
+ 
+ 
+ def main():
+@@ -5432,6 +5573,30 @@
+                         "inner_classifications": [r["inner_classification"] for r in probe_results]})
+         print(f"{probe_payload['verdict']} timeout probe: {artifact}")
+ 
++    # r103 G1 (C2 depth): receipt-shape meta-gate over every stored record.
++    # Evaluated here, after the last row is appended, so it covers the whole
++    # battery (the sf_discriminations block closes before the r103 late probes
++    # run). Violations are carried as data as well as gated: a non-empty flag
++    # dict fails this row and therefore the battery. Reads stored records only.
++    receipt_pins = receipt_pin_corpus(results)
++    receipt_shape_flags = {
++        r["case"]: receipt_shape_violations(r, receipt_pins)
++        for r in results if "signature" in r}
++    receipt_shape_flags = {case: labels
++                           for case, labels in receipt_shape_flags.items() if labels}
++    results.append({
++        "case": "probe_receipt_shape_meta_gate",
++        "verdict": "PASS" if not receipt_shape_flags else "FAIL",
++        "mode": "stored_record_receipt_shape_meta_gate",
++        "rows_checked": sum(1 for r in results if "signature" in r),
++        "flags": receipt_shape_flags,
++        "gate_scope": "PASS receipts (accounting/span clauses); shape preconditions and the replay clause apply to every signature-bearing record",
++        "pass_line_allowlist": [p.pattern for p in RECEIPT_PASS_LINE_ALLOWLIST],
++        "bounded_claim": "the gate decides receipt shape from stored verdict records alone (no re-run, no classifier change): exit+signature replay per record, fail-closed shape preconditions, PASS-line accounting against the registered pin corpus plus one declared exception, contiguous-window closure for multi-line pins, and pin-vs-artifact byte agreement on export rows. Ceiling: a PASS-shaped foreign line that byte-equals another row's registered pin is admitted (pin-corpus relative by design), and a single-line pin has no interior for the span clause to close — the r102-mut9 row-design requirement (pin a span or an output-bytes binding) is unchanged by this gate"})
++    print(f"{results[-1]['verdict']} receipt-shape meta gate "
++          f"({results[-1]['rows_checked']} records, "
++          f"{len(receipt_shape_flags)} flagged)", flush=True)
++
+     payload = {"godot": args.godot, "seed": str(HERE), "scratch": str(scratch),
+                "probe_failing": args.probe_failing, "results": results,
+                "verdict": "PASS" if all(r["verdict"] == "PASS" for r in results) else "FAIL"}

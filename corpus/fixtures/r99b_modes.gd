@@ -400,7 +400,6 @@ func _arm_splitcycle() -> String:
 	var first := -1.0
 	var prev := -1.0
 	var seq: Array[String] = []
-	var pairs: Dictionary = {}
 	var frames := 0
 	while true:
 		await process_frame

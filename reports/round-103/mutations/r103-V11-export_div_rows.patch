@@ -1,0 +1,19 @@
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -1708,6 +1708,16 @@
+      'PASS export_launch editor_boot boot=true frames=[1,2,3] extra=false exit=0'),
+     ('export_launch_stock_missing_sidecar', 'export_launch.gd', ["--arm=probe"], 0,
+      'PASS export_launch hole rc=124 class=project_data_missing pck_hint=true stdout_bytes=0'),
++    # r103 — C1: export_div_ family (see reports/round-103/r103-E0-spec.md,
++    # r103-ver11.md). Order is load-bearing: arm=xdg reuses arm=iso's exported
++    # binary and reads back arm=iso's xdgA store (adjacent-row pattern, cf. r102
++    # export_launch neg). Both pins stop before the `proj=` host path AND before
++    # xdg_a_store= (measured standalone: `[<missing>]`), so the rows are run-dir /
++    # row-order independent substrings of the merged output.
++    ('export_div_s02_user_iso', 'export_div_s02.gd', ["--arm=iso"], 0,
++     'PASS export_div s02 arm=iso r1_read=none r1_exit=0 r2_read=run1 r2_exit=0 store=[run1,run2] store_under_xdg=true userdir_under_xdg=true home_store_absent=true'),
++    ('export_div_s02_xdg_override', 'export_div_s02.gd', ["--arm=xdg"], 0,
++     'PASS export_div s02 arm=xdg r3_read=none r3_exit=0 store_b=[run3] store_b_under_xdg=true r3_userdir_under_xdg=true r4_read=none r4_exit=0 store_c=[run4] r4_userdir_under_home=true'),
+     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
+     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),    ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
+     # r63 KNOWN-ACCEPTING FORGERY ROW: the child withholds the signature; a

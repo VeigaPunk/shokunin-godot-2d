@@ -1,0 +1,273 @@
+diff --git a/corpus/fixtures/run_battery.py b/corpus/fixtures/run_battery.py
+index f7dd8f33..6b49f353 100644
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -1719,6 +1719,245 @@ CASES = [
+ ]
+ 
+ 
++# r103 author (W10): receipt-shape META gate. Evaluated over the stored
++# per-row stdout records of THIS run — the classifiers (classify_process /
++# classify_streams) are not touched. A PASS row's receipt is a shape claim as
++# well as a content claim: the verdict-level pin is a substring predicate
++# (`signature in output`), so a foreign line appended before/inside/after the
++# pinned span, or an extra PASS-line, is invisible at the verdict layer
++# (r100-critic F1 family; r102-mut9 A1-A3 measured against the landed
++# export_launch fixtures). The account tables below were measured over the two
++# r102 green runs (554 stored rows each; reports/round-103/r103-ver13.md):
++# they are carried as data and must be extended deliberately — a new
++# multi-PASS row, or a row whose anchor line is not unique, fails the gate
++# until declared (same floor-not-ceiling discipline as the r79-r102
++# expected_errors gates).
++RECEIPT_MULTI_PASS_GRAMMAR = {
++    "r100b_seq_clean": (("r100_gui", "census"), ("r100_gui", "routing"),
++                        ("r100_gui", "hover"), ("r100_gui", "motion"),
++                        ("r100_gui", "localpos"), ("r100_gui", "cursor"),
++                        ("r100_gui", "clip"), ("r100_gui", "drag"),
++                        ("r100_gui", "touch"), ("r100_gui", "subvp"),
++                        ("r100_gui", "warp"), ("r100_gui", "focus"),
++                        ("r100_gui", "render"), ("r100_gui", "osmeta")),
++    "r100b_seq_noclean": (("r100_gui", "census"), ("r100_gui", "routing"),
++                          ("r100_gui", "hover"), ("r100_gui", "motion"),
++                          ("r100_gui", "localpos"), ("r100_gui", "cursor"),
++                          ("r100_gui", "clip"), ("r100_gui", "drag"),
++                          ("r100_gui", "touch"), ("r100_gui", "subvp"),
++                          ("r100_gui", "warp"), ("r100_gui", "focus"),
++                          ("r100_gui", "render"), ("r100_gui", "osmeta")),
++    "r101_seqfull_clean": (("r100_gui", "census"), ("r100_gui", "routing"),
++                           ("r100_gui", "hover"), ("r100_gui", "motion"),
++                           ("r100_gui", "localpos"), ("r100_gui", "cursor"),
++                           ("r100_gui", "clip"), ("r100_gui", "drag"),
++                           ("r100_gui", "touch"), ("r100_gui", "subvp"),
++                           ("r100_gui", "warp"), ("r100_gui", "focus"),
++                           ("r100_gui", "render"), ("r100_gui", "osmeta")),
++    "r101_seqfull_noclean": (("r100_gui", "census"), ("r100_gui", "routing"),
++                             ("r100_gui", "hover"), ("r100_gui", "motion"),
++                             ("r100_gui", "localpos"), ("r100_gui", "cursor"),
++                             ("r100_gui", "clip"), ("r100_gui", "drag"),
++                             ("r100_gui", "touch"), ("r100_gui", "subvp"),
++                             ("r100_gui", "warp"), ("r100_gui", "focus"),
++                             ("r100_gui", "render"), ("r100_gui", "osmeta")),
++    "export_prod_base_pck": (("export_prod", "subdir"),
++                             ("export_prod", "filter"),
++                             ("export_prod", "base")),
++    "export_prod_subdir_census": (("export_prod", "subdir"),
++                                  ("export_prod", "filter"),
++                                  ("export_prod", "base")),
++    "export_prod_include_exclude_filter": (("export_prod", "subdir"),
++                                           ("export_prod", "filter"),
++                                           ("export_prod", "base")),
++    "export_prod_main_scene_swap": (("export_prod", "swap"),
++                                    ("export_prod", "quitframes")),
++    "export_prod_mainpack_quit_after_frames": (("export_prod", "swap"),
++                                               ("export_prod", "quitframes")),
++    "export_prod_resource_remap_census": (("export_prod", "remap"),
++                                          ("export_prod", "iconuid")),
++    "export_prod_icon_uid_census": (("export_prod", "remap"),
++                                    ("export_prod", "iconuid")),
++    "export_launch_embed_boot": (("export_launch", "embed_boot"),
++                                 ("export_launch", "embed_census"),
++                                 ("export_launch", "embed_refusal")),
++    "export_launch_embed_self_contained": (("export_launch", "embed_boot"),
++                                           ("export_launch", "embed_census"),
++                                           ("export_launch", "embed_refusal")),
++    "export_launch_embed_mainpack_refusal": (("export_launch", "embed_boot"),
++                                             ("export_launch", "embed_census"),
++                                             ("export_launch", "embed_refusal")),
++    "export_launch_stock_boot": (("export_launch", "stock_boot"),
++                                 ("export_launch", "stock_census")),
++    "export_launch_stock_sidecar_census": (("export_launch", "stock_boot"),
++                                           ("export_launch", "stock_census")),
++    "export_launch_stock_mainpack_refusal": (("export_launch", "refusal"),
++                                             ("export_launch", "editor_boot"),
++                                             ("export_launch", "hole")),
++    "export_launch_editor_mainpack_contrast": (("export_launch", "refusal"),
++                                               ("export_launch", "editor_boot"),
++                                               ("export_launch", "hole")),
++    "export_launch_stock_missing_sidecar": (("export_launch", "refusal"),
++                                            ("export_launch", "editor_boot"),
++                                            ("export_launch", "hole")),
++}
++RECEIPT_ANCHOR_MULTIPLICITY = {"r98b_qorder_flat": 2}
++RECEIPT_BANNER_RE = re.compile(r"^Godot Engine v")
++RECEIPT_DIAG_RE = re.compile(r"^[A-Z][A-Z0-9_]*_DIAG\b")
++RECEIPT_SEQ_RE = re.compile(r"^SEQ_[A-Z_]+\b")
++RECEIPT_PROGRESS_RE = re.compile(r"^\[ *\d+% *\]")
++RECEIPT_ANSI_ONLY_RE = re.compile(r"^(?:\x1b\[[0-9;]*m)+$")
++
++
++def receipt_allowed_error(line, allowed):
++    # Mirrors classify_process's allowlist semantics verbatim (exact entry,
++    # ","-suffixed prefix with a single ERROR:, and the r60 chain-incomplete
++    # special case) so the gate reads allowlisted diagnostics the same way the
++    # classifier does, without touching it.
++    stripped = line.strip()
++    if stripped == allowed:
++        return True
++    if allowed.endswith(","):
++        return stripped.startswith(allowed) and stripped.count("ERROR:") == 1
++    if allowed == "ERROR: chain incomplete":
++        return (stripped.startswith("ERROR: chain incomplete collections=")
++                and "scene=SceneB:<Node#" in stripped
++                and "old_alive=false" in stripped
++                and stripped.count("ERROR:") == 1)
++    return False
++
++
++def receipt_shape_flag(row):
++    """Shape flags for one stored row ([] = shape-accounted)."""
++    case = row.get("case")
++    output = row.get("output")
++    if not all(isinstance(line, str) for line in output):
++        return [{"case": case, "why": "fail_closed_non_text_line"}]
++    signature = row.get("signature")
++    sigs = signature if isinstance(signature, list) else [signature]
++    if not sigs or not all(isinstance(s, str) and s for s in sigs):
++        return [{"case": case, "why": "fail_closed_missing_signature"}]
++    anchors = [s.split("\n")[0].strip() for s in sigs]
++    flags = []
++    pass_lines = [line for line in output if line.startswith("PASS ")]
++    grammar = RECEIPT_MULTI_PASS_GRAMMAR.get(case)
++    if grammar is not None:
++        observed = []
++        for line in pass_lines:
++            tokens = line.split(" ")
++            observed.append((tokens[1] if len(tokens) > 1 else "",
++                             tokens[2] if len(tokens) > 2 else ""))
++        if sorted(observed) != sorted(grammar):
++            flags.append({"case": case, "why": "pass_line_grammar_mismatch",
++                          "observed": len(observed), "declared": len(grammar)})
++    else:
++        # Non-grammar rows carry at most one receipt PASS line, and that line
++        # must contain the row's own pin — except diagnostic-pinned rows
++        # (anchor is an allowlisted ERROR: line, e.g. save_process_missing's
++        # expected_errors entry), where the PASS receipt is a separate
++        # designed verb and the pin binds the diagnostic instead.
++        pin_lines = [line for line in output
++                     if any(anchor in line for anchor in anchors)]
++        diagnostic_pinned = any("ERROR:" in line for line in pin_lines)
++        if len(pass_lines) > 1:
++            flags.append({"case": case, "why": "unaccounted_pass_lines",
++                          "observed": len(pass_lines), "declared": 1})
++        elif pass_lines and not diagnostic_pinned:
++            for line in pass_lines:
++                if not any(anchor in line for anchor in anchors):
++                    flags.append({"case": case, "why": "pass_line_unanchored",
++                                  "line": line[:80]})
++    if "export_artifact" in row:
++        # Derived-evidence row: `signature` is built by the harness
++        # ("EXPORT PASS preset=... executable_bytes=N"), never printed by the
++        # fixture — bind it to the artifact census it claims instead of
++        # demanding a printed anchor line.
++        match = re.search(r"executable_bytes=(\d+)$", sigs[0])
++        artifact = row.get("export_artifact") or {}
++        if (not match or int(match.group(1)) != artifact.get("artifact_bytes")
++                or not re.fullmatch(r"[0-9a-f]{64}",
++                                    artifact.get("artifact_sha256") or "")):
++            flags.append({"case": case, "why": "derived_evidence_unbound"})
++    else:
++        hits = sum(1 for anchor in anchors for line in output
++                   if anchor in line)
++        if hits != RECEIPT_ANCHOR_MULTIPLICITY.get(case, 1):
++            flags.append({"case": case, "why": "anchor_line_multiplicity",
++                          "observed": hits,
++                          "declared": RECEIPT_ANCHOR_MULTIPLICITY.get(case, 1)})
++    # Declared-span closure: a row that embeds a SEQ_BEGIN..SEQ_END span echoes
++    # the pinned sequence into its receipt, so foreign content is decidable
++    # inside the window (any line that is not an accounted PASS line or a SEQ_
++    # structural line) and in the post-span tail (only an engine-error block
++    # whose ERROR: line the row's own expected_errors admits, plus
++    # banner/blank/PASS/SEQ_ lines, may follow).
++    begins = [i for i, line in enumerate(output) if line.startswith("SEQ_BEGIN")]
++    ends = [i for i, line in enumerate(output) if line.startswith("SEQ_END")]
++    if begins or ends:
++        if len(begins) != 1 or len(ends) != 1 or ends[0] <= begins[0]:
++            flags.append({"case": case, "why": "seq_marker_shape",
++                          "observed": [len(begins), len(ends)]})
++        else:
++            allowed = tuple(row.get("expected_errors") or ())
++            for line in output[begins[0] + 1:ends[0]]:
++                if not (line.startswith("PASS ") or RECEIPT_SEQ_RE.match(line)):
++                    flags.append({"case": case, "why": "foreign_in_span",
++                                  "line": line[:80]})
++            in_error_block = False
++            for line in output[ends[0] + 1:]:
++                if (line.startswith("PASS ") or RECEIPT_SEQ_RE.match(line)
++                        or RECEIPT_BANNER_RE.match(line) or line.strip() == ""):
++                    in_error_block = False
++                elif in_error_block and line.startswith(("   ", "\t")):
++                    continue
++                elif any(receipt_allowed_error(line, entry)
++                         for entry in allowed):
++                    in_error_block = True
++                else:
++                    flags.append({"case": case, "why": "foreign_after_span",
++                                  "line": line[:80]})
++    # Diagnostic-window closure: a row that declares a `*_DIAG` designed verb
++    # takes the whole-receipt account — banner/blank, accounted PASS lines,
++    # `*_DIAG` diagnostics, export progress lines and ANSI-only lines. The
++    # r102 export_launch / export_prod family sits here, so a foreign line
++    # injected before, inside or after its DIAG window flags.
++    if any(RECEIPT_DIAG_RE.match(line) for line in output):
++        for line in output:
++            if (line.startswith("PASS ") or RECEIPT_BANNER_RE.match(line)
++                    or RECEIPT_DIAG_RE.match(line) or line.strip() == ""
++                    or RECEIPT_PROGRESS_RE.match(line)
++                    or RECEIPT_ANSI_ONLY_RE.match(line.strip())):
++                continue
++            flags.append({"case": case, "why": "foreign_in_diag_window",
++                          "line": line[:80]})
++    return flags
++
++
++def receipt_shape_audit(rows):
++    audited = 0
++    flags = []
++    present_cases = {row.get("case") for row in rows}
++    for row in rows:
++        if row.get("verdict") != "PASS":
++            continue
++        output = row.get("output")
++        if "script" in row and not isinstance(output, list):
++            flags.append({"case": row.get("case"),
++                          "why": "fail_closed_missing_output"})
++            continue
++        if not isinstance(output, list):
++            continue          # harness-built meta rows carry no stdout receipt
++        audited += 1
++        flags.extend(receipt_shape_flag(row))
++    # Dead-entry floor (r79 critic C2 shape): a grammar row that vanished from
++    # the record set — dropped, renamed, or never run — fails the gate instead
++    # of passing silently. Presence is over all rows, so a row that FAILed
++    # normally is not double-counted here.
++    for case in sorted(set(RECEIPT_MULTI_PASS_GRAMMAR) - present_cases):
++        flags.append({"case": case, "why": "dead_shape_allowlist_entry"})
++    return {"audited": audited, "flags": flags}
++
++
+ def main():
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument("--probe-failing", action="store_true", help="also mutate scratch scene B and prove detection")
+@@ -5432,6 +5671,22 @@ def main():
+                         "inner_classifications": [r["inner_classification"] for r in probe_results]})
+         print(f"{probe_payload['verdict']} timeout probe: {artifact}")
+ 
++    # r103 author (W10): receipt-shape META gate over the rows this run stored
++    # (see receipt_shape_audit): unaccounted PASS lines, foreign content
++    # inside a declared span or diagnostic window, non-unique anchor lines,
++    # missing receipt fields, and dead shape-allowlist entries surface as a
++    # FAIL meta row; the classifiers are untouched.
++    receipt_audit = receipt_shape_audit(results)
++    results.append({"case": "probe_receipt_shape_gate",
++                    "verdict": "PASS" if not receipt_audit["flags"] else "FAIL",
++                    "audited_rows": receipt_audit["audited"],
++                    "flag_count": len(receipt_audit["flags"]),
++                    "flags": receipt_audit["flags"][:20],
++                    "bounded_claim": "stored per-row stdout receipts only: classification text that never reaches the record (r102-mut9 whole-stream closure, canned-receipt ceiling) stays invisible; the shape tables are carried as data and extended deliberately"})
++    print(f"{results[-1]['verdict']} receipt-shape gate: "
++          f"audited={receipt_audit['audited']} flags={len(receipt_audit['flags'])}",
++          flush=True)
++
+     payload = {"godot": args.godot, "seed": str(HERE), "scratch": str(scratch),
+                "probe_failing": args.probe_failing, "results": results,
+                "verdict": "PASS" if all(r["verdict"] == "PASS" for r in results) else "FAIL"}

@@ -5,7 +5,6 @@ extends SceneTree
 # Prints one final `PASS r100_gui <cell> ...` line. No object ids / RIDs / timestamps.
 # Cells: census routing hover motion localpos cursor drag touch subvp warp focus render osmeta
 
-var arm := ""
 var _nodes: Array = []
 
 class Sink extends Control:
@@ -73,9 +72,6 @@ class Sink extends Control:
 
 
 func _initialize() -> void:
-	for a in OS.get_cmdline_user_args():
-		if a.begins_with("--arm="):
-			arm = a.substr(6)
 	call_deferred("_run")
 
 
@@ -86,8 +82,7 @@ func _run() -> void:
 		if a == "--clean=1":
 			do_clean = 1
 	for a in seq_arms:
-		arm = a
-		match arm:
+		match a:
 			"census":
 				await _cell_census()
 			"routing":

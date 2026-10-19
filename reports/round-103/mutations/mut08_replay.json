@@ -1,0 +1,847 @@
+{
+ "meta": {
+  "date_utc": "Mon Oct 19 12:02:11 AM UTC 2026",
+  "uptime": "21:02:11 up 1 day, 21:02,  1 user,  load average: 8.15, 7.78, 4.64",
+  "loadavg": "8.15 7.78 4.64 9/2353 918299",
+  "git_head": "6e3e87f7b34252b1fd1deaeb8f8adef85efac849",
+  "predicate": {
+   "source_path": "/var/tmp/r103-g0/proto_gate.py",
+   "source_sha256": "416fe7975aef573e9c2faa08aae6c8917ac75ee3bffebf8620ec2bc6d41c2ccb",
+   "splice_rule": "drop everything from the module-level driver line '\\nreport={}' to EOF; append '\\n' and exec from scratch copy",
+   "imported_sha256": "c7164506b59d8ba0207516b104d95e4328e25bd9353118fd03e71ee2d7bc5615",
+   "imported_bytes": 3815,
+   "callable": "gate_row(r, family_used)"
+  },
+  "inputs": {
+   "mut09_json": {
+    "path": "reports/round-102/mutations/mut09_export_launch_span_attack.json",
+    "sha256": "1b0955c681de21ee183b9738af49ae307ad73f3289af8fadfca082c3c17bc5b3"
+   },
+   "w4_census_json": {
+    "path": "reports/round-103/mutations/r103-w4-census.json",
+    "sha256": "3d75774e39b74535d4d8c99d2ac8d2965bd77d879daf5a200ca778d3556402cb"
+   },
+   "runs": {
+    "r101-run1": "corpus/live/runs/20261018T200239625248Z/verdicts.json",
+    "r101-run2": "corpus/live/runs/20261018T202131127599Z/verdicts.json",
+    "r102-run1": "corpus/live/runs/20261018T212500022987Z/verdicts.json",
+    "r102-run2": "corpus/live/runs/20261018T213443471189Z/verdicts.json"
+   }
+  },
+  "note": "no battery run; no Godot; records synthesized from stored bytes; no classifier change"
+ },
+ "replay": {
+  "family_L_launch_capture_span_pin": {
+   "span": "EXPORT_LAUNCH_READY scene=fixture\nFRAME 1\nFRAME 2\nFRAME 3\nFRAME 4\nFRAME 5",
+   "variants": {
+    "base": {
+     "flags": [],
+     "stdout_sha256": "b089fc3f8b34d5d5856f08e8d900d37fad6dfda56e6709a2e9853ef6f65c3fe1",
+     "stdout_lines": 8
+    },
+    "A1": {
+     "flags": [
+      "multiline_pin_occurrences=0",
+      "multiline_span_inexact"
+     ],
+     "stdout_sha256": "adad5ae210b97404144297a6b904139a572c35cc44517e4e0787b6431be657ad",
+     "stdout_lines": 9
+    },
+    "A2": {
+     "flags": [],
+     "stdout_sha256": "a2095e39ed87a00192abc8134c4c0498affc873cd5425a321b70675fe68127e6",
+     "stdout_lines": 9
+    },
+    "A3": {
+     "flags": [],
+     "stdout_sha256": "bf2a6bd67205183695a18465d8941978581215ab1cb8135ca97d3458dabf0466",
+     "stdout_lines": 9
+    }
+   }
+  },
+  "family_B_fixture_receipt_pinned": {
+   "pin": "PASS export_launch s02 arm=embed embed=true pck_sibling=false trailer_gdpc=true trailer_size_consistent=true pack_magic_at_start=true bin_gt_template=true quit_after=5 frames=[1,2,3,4,5] extra=false marker_lines=1 exit=0",
+   "records": {
+    "pristine": {
+     "flags": [],
+     "receipt_line": "PASS export_launch s02 arm=embed embed=true pck_sibling=false trailer_gdpc=true trailer_size_consistent=true pack_magic_at_start=true bin_gt_template=true quit_after=5 frames=[1,2,3,4,5] extra=false marker_lines=1 exit=0 bin_bytes=73521464 template_bytes=73519416 pack_bytes=2036 proj=/var/tmp/r102-w8/fx/root-pristine/embed/proj"
+    },
+    "attacked": {
+     "flags": [],
+     "receipt_line": "PASS export_launch s02 arm=embed embed=true pck_sibling=false trailer_gdpc=true trailer_size_consistent=true pack_magic_at_start=true bin_gt_template=true quit_after=5 frames=[1,2,3,4,5] extra=false marker_lines=1 exit=0 bin_bytes=73521544 template_bytes=73519416 pack_bytes=2116 proj=/var/tmp/r102-w8/fx/root-mutant/embed/proj"
+    }
+   }
+  },
+  "family_C_fixture_runlog_span_pin": {
+   "span": "LAUNCH_S02_MARKER boot=true\nLAUNCH_S02_FRAME 1\nLAUNCH_S02_FRAME 2\nLAUNCH_S02_FRAME 3\nLAUNCH_S02_FRAME 4\nLAUNCH_S02_FRAME 5",
+   "records": {
+    "pristine": {
+     "flags": [],
+     "span_lines": 6,
+     "foreign_in_run_log": false
+    },
+    "attacked": {
+     "flags": [
+      "multiline_pin_occurrences=0",
+      "multiline_span_inexact"
+     ],
+     "span_lines": 7,
+     "foreign_in_run_log": true
+    }
+   }
+  }
+ },
+ "green_sweep": {
+  "r101-run1": {
+   "file": "corpus/live/runs/20261018T200239625248Z/verdicts.json",
+   "rows": 546,
+   "verdict": "FAIL",
+   "output_none_silently_exempt": 16,
+   "zero_pass_with_output": 48,
+   "flagged_raw": 27,
+   "flagged_cases_raw": {
+    "save_process_missing": [
+     "pass_line_unaccounted"
+    ],
+    "input_lattice_census": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_pre_frame": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_api_press": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_dev_joy": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_phys_peer": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_press_phys": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_release_edge": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_ui_ns": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_exact": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_axisdev": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "r92_tilemap_nav": [
+     "own_pin_pass_line_absent"
+    ],
+    "r93_tween_interp_grid_a": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_interp_grid_b": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_phys_manual_step": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_finished": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_running": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_manual": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_mixfree": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_finfree_played": [
+     "pass_line_unaccounted"
+    ],
+    "r100b_seq_clean": [
+     "pass_line_unaccounted"
+    ],
+    "r100b_seq_noclean": [
+     "pass_line_unaccounted"
+    ],
+    "r101_ytrans_y1000": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "r101_ytrans_ym1000": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "r101_ytrans_ycop": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ]
+   },
+   "flagged_equipped": 25,
+   "flagged_cases_equipped": {
+    "save_process_missing": [
+     "pass_line_unaccounted"
+    ],
+    "input_lattice_census": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_pre_frame": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_api_press": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_dev_joy": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_phys_peer": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_press_phys": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_release_edge": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_ui_ns": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_exact": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_axisdev": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "r92_tilemap_nav": [
+     "own_pin_pass_line_absent"
+    ],
+    "r93_tween_interp_grid_a": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_interp_grid_b": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_phys_manual_step": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_finished": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_running": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_manual": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_mixfree": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_finfree_played": [
+     "pass_line_unaccounted"
+    ],
+    "r101_ytrans_y1000": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "r101_ytrans_ym1000": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "r101_ytrans_ycop": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ]
+   },
+   "equipped_residual_classes": {
+    "A_pin_has_no_pass_payload": [
+     "r93_anim_blend_finished",
+     "r93_anim_blend_running",
+     "r93_anim_process_manual",
+     "r93_anim_process_stable",
+     "r93_tween_interp_grid_a",
+     "r93_tween_interp_grid_b",
+     "r93_tween_phys_manual_step",
+     "r93_tween_process_stable",
+     "r99b_finfree_played",
+     "r99b_mixfree",
+     "save_process_missing"
+    ],
+    "B_list_pin_payload_variant_absent": [
+     "input89_edges_axisdev",
+     "input89_edges_exact",
+     "input_lattice_api_press",
+     "input_lattice_census",
+     "input_lattice_dev_joy",
+     "input_lattice_phys_peer",
+     "input_lattice_pre_frame",
+     "input_lattice_press_phys",
+     "input_lattice_release_edge",
+     "input_lattice_ui_ns",
+     "r101_ytrans_y1000",
+     "r101_ytrans_ycop",
+     "r101_ytrans_ym1000",
+     "r92_tilemap_nav"
+    ]
+   }
+  },
+  "r101-run2": {
+   "file": "corpus/live/runs/20261018T202131127599Z/verdicts.json",
+   "rows": 546,
+   "verdict": "FAIL",
+   "output_none_silently_exempt": 16,
+   "zero_pass_with_output": 48,
+   "flagged_raw": 24,
+   "flagged_cases_raw": {
+    "save_process_missing": [
+     "pass_line_unaccounted"
+    ],
+    "input_lattice_census": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_pre_frame": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_api_press": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_dev_joy": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_phys_peer": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_press_phys": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_release_edge": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_ui_ns": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_exact": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_axisdev": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "r92_tilemap_nav": [
+     "own_pin_pass_line_absent"
+    ],
+    "r93_tween_interp_grid_a": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_interp_grid_b": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_phys_manual_step": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_finished": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_running": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_manual": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_mixfree": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_finfree_played": [
+     "pass_line_unaccounted"
+    ],
+    "r100b_seq_clean": [
+     "pass_line_unaccounted"
+    ],
+    "r100b_seq_noclean": [
+     "pass_line_unaccounted"
+    ]
+   },
+   "flagged_equipped": 22,
+   "flagged_cases_equipped": {
+    "save_process_missing": [
+     "pass_line_unaccounted"
+    ],
+    "input_lattice_census": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_pre_frame": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_api_press": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_dev_joy": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_phys_peer": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_press_phys": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_release_edge": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_ui_ns": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_exact": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_axisdev": [
+     "pass_line_unaccounted",
+     "own_pin_pass_line_absent"
+    ],
+    "r92_tilemap_nav": [
+     "own_pin_pass_line_absent"
+    ],
+    "r93_tween_interp_grid_a": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_interp_grid_b": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_phys_manual_step": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_finished": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_running": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_manual": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_mixfree": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_finfree_played": [
+     "pass_line_unaccounted"
+    ]
+   },
+   "equipped_residual_classes": {
+    "A_pin_has_no_pass_payload": [
+     "r93_anim_blend_finished",
+     "r93_anim_blend_running",
+     "r93_anim_process_manual",
+     "r93_anim_process_stable",
+     "r93_tween_interp_grid_a",
+     "r93_tween_interp_grid_b",
+     "r93_tween_phys_manual_step",
+     "r93_tween_process_stable",
+     "r99b_finfree_played",
+     "r99b_mixfree",
+     "save_process_missing"
+    ],
+    "B_list_pin_payload_variant_absent": [
+     "input89_edges_axisdev",
+     "input89_edges_exact",
+     "input_lattice_api_press",
+     "input_lattice_census",
+     "input_lattice_dev_joy",
+     "input_lattice_phys_peer",
+     "input_lattice_pre_frame",
+     "input_lattice_press_phys",
+     "input_lattice_release_edge",
+     "input_lattice_ui_ns",
+     "r92_tilemap_nav"
+    ]
+   }
+  },
+  "r102-run1": {
+   "file": "corpus/live/runs/20261018T212500022987Z/verdicts.json",
+   "rows": 554,
+   "verdict": "PASS",
+   "output_none_silently_exempt": 16,
+   "zero_pass_with_output": 48,
+   "flagged_raw": 23,
+   "flagged_cases_raw": {
+    "save_process_missing": [
+     "pass_line_unaccounted"
+    ],
+    "input_lattice_pre_frame": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_api_press": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_dev_joy": [
+     "pass_line_unaccounted"
+    ],
+    "input_lattice_phys_peer": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_press_phys": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_release_edge": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_ui_ns": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_exact": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_axisdev": [
+     "pass_line_unaccounted"
+    ],
+    "r92_tilemap_nav": [
+     "own_pin_pass_line_absent"
+    ],
+    "r93_tween_interp_grid_a": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_interp_grid_b": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_phys_manual_step": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_finished": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_running": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_manual": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_mixfree": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_finfree_played": [
+     "pass_line_unaccounted"
+    ],
+    "r100b_seq_clean": [
+     "pass_line_unaccounted"
+    ],
+    "r100b_seq_noclean": [
+     "pass_line_unaccounted"
+    ]
+   },
+   "flagged_equipped": 21,
+   "flagged_cases_equipped": {
+    "save_process_missing": [
+     "pass_line_unaccounted"
+    ],
+    "input_lattice_pre_frame": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_api_press": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_dev_joy": [
+     "pass_line_unaccounted"
+    ],
+    "input_lattice_phys_peer": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_press_phys": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_release_edge": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_ui_ns": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_exact": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_axisdev": [
+     "pass_line_unaccounted"
+    ],
+    "r92_tilemap_nav": [
+     "own_pin_pass_line_absent"
+    ],
+    "r93_tween_interp_grid_a": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_interp_grid_b": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_phys_manual_step": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_finished": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_running": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_manual": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_mixfree": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_finfree_played": [
+     "pass_line_unaccounted"
+    ]
+   },
+   "equipped_residual_classes": {
+    "A_pin_has_no_pass_payload": [
+     "input89_edges_axisdev",
+     "input_lattice_dev_joy",
+     "r93_anim_blend_finished",
+     "r93_anim_blend_running",
+     "r93_anim_process_manual",
+     "r93_anim_process_stable",
+     "r93_tween_interp_grid_a",
+     "r93_tween_interp_grid_b",
+     "r93_tween_phys_manual_step",
+     "r93_tween_process_stable",
+     "r99b_finfree_played",
+     "r99b_mixfree",
+     "save_process_missing"
+    ],
+    "B_list_pin_payload_variant_absent": [
+     "input89_edges_exact",
+     "input_lattice_api_press",
+     "input_lattice_phys_peer",
+     "input_lattice_pre_frame",
+     "input_lattice_press_phys",
+     "input_lattice_release_edge",
+     "input_lattice_ui_ns",
+     "r92_tilemap_nav"
+    ]
+   }
+  },
+  "r102-run2": {
+   "file": "corpus/live/runs/20261018T213443471189Z/verdicts.json",
+   "rows": 554,
+   "verdict": "PASS",
+   "output_none_silently_exempt": 16,
+   "zero_pass_with_output": 48,
+   "flagged_raw": 23,
+   "flagged_cases_raw": {
+    "save_process_missing": [
+     "pass_line_unaccounted"
+    ],
+    "input_lattice_pre_frame": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_api_press": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_dev_joy": [
+     "pass_line_unaccounted"
+    ],
+    "input_lattice_phys_peer": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_press_phys": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_release_edge": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_ui_ns": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_exact": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_axisdev": [
+     "pass_line_unaccounted"
+    ],
+    "r92_tilemap_nav": [
+     "own_pin_pass_line_absent"
+    ],
+    "r93_tween_interp_grid_a": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_interp_grid_b": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_phys_manual_step": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_finished": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_running": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_manual": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_mixfree": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_finfree_played": [
+     "pass_line_unaccounted"
+    ],
+    "r100b_seq_clean": [
+     "pass_line_unaccounted"
+    ],
+    "r100b_seq_noclean": [
+     "pass_line_unaccounted"
+    ]
+   },
+   "flagged_equipped": 21,
+   "flagged_cases_equipped": {
+    "save_process_missing": [
+     "pass_line_unaccounted"
+    ],
+    "input_lattice_pre_frame": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_api_press": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_dev_joy": [
+     "pass_line_unaccounted"
+    ],
+    "input_lattice_phys_peer": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_press_phys": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_release_edge": [
+     "own_pin_pass_line_absent"
+    ],
+    "input_lattice_ui_ns": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_exact": [
+     "own_pin_pass_line_absent"
+    ],
+    "input89_edges_axisdev": [
+     "pass_line_unaccounted"
+    ],
+    "r92_tilemap_nav": [
+     "own_pin_pass_line_absent"
+    ],
+    "r93_tween_interp_grid_a": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_interp_grid_b": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r93_tween_phys_manual_step": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_finished": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_blend_running": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_manual": [
+     "pass_line_unaccounted"
+    ],
+    "r93_anim_process_stable": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_mixfree": [
+     "pass_line_unaccounted"
+    ],
+    "r99b_finfree_played": [
+     "pass_line_unaccounted"
+    ]
+   },
+   "equipped_residual_classes": {
+    "A_pin_has_no_pass_payload": [
+     "input89_edges_axisdev",
+     "input_lattice_dev_joy",
+     "r93_anim_blend_finished",
+     "r93_anim_blend_running",
+     "r93_anim_process_manual",
+     "r93_anim_process_stable",
+     "r93_tween_interp_grid_a",
+     "r93_tween_interp_grid_b",
+     "r93_tween_phys_manual_step",
+     "r93_tween_process_stable",
+     "r99b_finfree_played",
+     "r99b_mixfree",
+     "save_process_missing"
+    ],
+    "B_list_pin_payload_variant_absent": [
+     "input89_edges_exact",
+     "input_lattice_api_press",
+     "input_lattice_phys_peer",
+     "input_lattice_pre_frame",
+     "input_lattice_press_phys",
+     "input_lattice_release_edge",
+     "input_lattice_ui_ns",
+     "r92_tilemap_nav"
+    ]
+   }
+  }
+ },
+ "allowlist_folded": {
+  "per_script_lines_added": 41,
+  "scripts": {
+   "r100b_seq.gd": 19,
+   "r101_seqfull.gd": 19,
+   "export_prod.gd": 7,
+   "export_launch.gd": 8
+  }
+ },
+ "elapsed_s": 0.08
+}

@@ -1,0 +1,223 @@
+{
+ "green": [
+  {
+   "run": "corpus/live/runs/20261018T212500022987Z/verdicts.json",
+   "audited": 538,
+   "flag_count": 0,
+   "flags": []
+  },
+  {
+   "run": "corpus/live/runs/20261018T213443471189Z/verdicts.json",
+   "audited": 538,
+   "flag_count": 0,
+   "flags": []
+  }
+ ],
+ "adversaries": [
+  {
+   "test": "A1_diag_foreign_in_span",
+   "expected": "foreign_in_diag_window",
+   "flags": 1,
+   "flagged_rows": [
+    "export_launch_stock_boot"
+   ],
+   "whys": [
+    "foreign_in_diag_window"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A2_diag_foreign_post_span",
+   "expected": "foreign_in_diag_window",
+   "flags": 1,
+   "flagged_rows": [
+    "export_launch_stock_boot"
+   ],
+   "whys": [
+    "foreign_in_diag_window"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A3_diag_foreign_pre_span",
+   "expected": "foreign_in_diag_window",
+   "flags": 1,
+   "flagged_rows": [
+    "export_launch_stock_boot"
+   ],
+   "whys": [
+    "foreign_in_diag_window"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A4_diag_forged_pass_line",
+   "expected": "unaccounted_pass_lines",
+   "flags": 1,
+   "flagged_rows": [
+    "export_prod_main_scene_swap"
+   ],
+   "whys": [
+    "pass_line_grammar_mismatch"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A5_seq_foreign_in_span",
+   "expected": "foreign_in_span",
+   "flags": 1,
+   "flagged_rows": [
+    "r101_seqfull_clean"
+   ],
+   "whys": [
+    "foreign_in_span"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A6_seq_foreign_after_span",
+   "expected": "foreign_after_span",
+   "flags": 1,
+   "flagged_rows": [
+    "r101_seqfull_clean"
+   ],
+   "whys": [
+    "foreign_after_span"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A7_seq_forged_pass_in_span",
+   "expected": "pass_line_grammar_mismatch",
+   "flags": 1,
+   "flagged_rows": [
+    "r101_seqfull_clean"
+   ],
+   "whys": [
+    "pass_line_grammar_mismatch"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A8_multi_pass_swap",
+   "expected": "pass_line_grammar_mismatch",
+   "flags": 1,
+   "flagged_rows": [
+    "r101_seqfull_clean"
+   ],
+   "whys": [
+    "pass_line_grammar_mismatch"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A9_fail_closed_missing_output",
+   "expected": "fail_closed_missing_output",
+   "flags": 1,
+   "flagged_rows": [
+    "mechanic"
+   ],
+   "whys": [
+    "fail_closed_missing_output"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A10_fail_closed_missing_signature",
+   "expected": "fail_closed_missing_signature",
+   "flags": 1,
+   "flagged_rows": [
+    "mechanic"
+   ],
+   "whys": [
+    "fail_closed_missing_signature"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A11_duplicate_anchor_line",
+   "expected": "anchor_line_multiplicity",
+   "flags": 2,
+   "flagged_rows": [
+    "input_lattice_release_edge"
+   ],
+   "whys": [
+    "anchor_line_multiplicity",
+    "unaccounted_pass_lines"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A11b_fail_closed_non_text_line",
+   "expected": "fail_closed_non_text_line",
+   "flags": 1,
+   "flagged_rows": [
+    "mechanic"
+   ],
+   "whys": [
+    "fail_closed_non_text_line"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A11c_diag_pinned_forged_pass",
+   "expected": "unaccounted_pass_lines",
+   "flags": 1,
+   "flagged_rows": [
+    "save_process_missing"
+   ],
+   "whys": [
+    "unaccounted_pass_lines"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A12_dead_allowlist_entry",
+   "expected": "dead_shape_allowlist_entry",
+   "flags": 1,
+   "flagged_rows": [
+    "export_launch_stock_boot"
+   ],
+   "whys": [
+    "dead_shape_allowlist_entry"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "A13_derived_evidence_unbound",
+   "expected": "derived_evidence_unbound",
+   "flags": 1,
+   "flagged_rows": [
+    "export_readiness"
+   ],
+   "whys": [
+    "derived_evidence_unbound"
+   ],
+   "verdict": "FLAGGED",
+   "killed": true
+  },
+  {
+   "test": "N1_ceiling_record_identical",
+   "expected": null,
+   "flags": 0,
+   "flagged_rows": [],
+   "whys": [],
+   "verdict": "SILENT",
+   "killed": false
+  }
+ ]
+}

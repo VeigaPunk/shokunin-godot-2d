@@ -1288,3 +1288,22 @@
   routed); mut01_launch registry-spec + mut06 path bug (seat staging); 3D
   side-round STILL deferred (3D lane at r106 under parallel session) — must
   land before 2D r105.
+
+- ROUND 103 (2026-10-18): export_div divergence surface + receipt-shape META
+  gate + simplifier gaps/print law. ADMIT-WITH-FINDINGS at ⟨COMMIT⟩ (+16 CASES,
+  CASES 536->552; receipts 570 PASS / 0 FAIL x2; gate audited=554 flags=0 x2).
+  PROVIDER BATTLE (disclosed): attempt 1 opencode-go-7 starved ~2h (59
+  skeletons + real patches landed); attempt 2 opencode-go-4 instant 402
+  Insufficient account funds; attempt 3 opencode-go-2 completed 58/58. All
+  within the scheduled opencode-go lane; no unscheduled provider substituted.
+- LAWS: a gate reading mutable records races their field assignment — read
+  pins from CASES (F4). Probe artifacts (mutant twins/ctrls) are not battery
+  receipts — audit only CASES rows (F5). Inline-derived evidence rows
+  (__godot_export__) cannot bind span checks — account them explicitly (F6).
+  get_string_from_utf8 on pack bytes emits engine stderr warnings per NUL —
+  decode names NUL-sliced ASCII (fixtures). Gate boundary measured: shape
+  layer catches floods/whitespace-PASS; banner/diag forgery stays at the
+  verdict layer; tab-PASS is grammar-invisible (hardening candidate, routed).
+- ROUTED (r104+): tab-PASS grammar tightening; mut05 full gate-replay wiring
+  (catalog vs verdicts); VER-13 hygiene (now also covered by the F6 account);
+  3D side-round BEFORE r105 (3D lane observed at r106 under parallel session).

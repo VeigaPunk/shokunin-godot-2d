@@ -1708,6 +1708,46 @@ CASES = [
      'PASS export_launch editor_boot boot=true frames=[1,2,3] extra=false exit=0'),
     ('export_launch_stock_missing_sidecar', 'export_launch.gd', ["--arm=probe"], 0,
      'PASS export_launch hole rc=124 class=project_data_missing pck_hint=true stdout_bytes=0'),
+    # r103 — C1: export_div_ family (see reports/round-103/r103-E0-spec.md,
+    # r103-ver11.md). Order is load-bearing: arm=xdg reuses arm=iso's exported
+    # binary and reads back arm=iso's xdgA store (adjacent-row pattern, cf. r102
+    # export_launch neg). Both pins stop before the `proj=` host path AND before
+    # xdg_a_store= (measured standalone: `[<missing>]`), so the rows are run-dir /
+    # row-order independent substrings of the merged output.
+    ('export_div_s02_user_iso', 'export_div_s02.gd', ["--arm=iso"], 0,
+     'PASS export_div s02 arm=iso r1_read=none r1_exit=0 r2_read=run1 r2_exit=0 store=[run1,run2] store_under_xdg=true userdir_under_xdg=true home_store_absent=true'),
+    ('export_div_s02_xdg_override', 'export_div_s02.gd', ["--arm=xdg"], 0,
+     'PASS export_div s02 arm=xdg r3_read=none r3_exit=0 store_b=[run3] store_b_under_xdg=true r3_userdir_under_xdg=true r4_read=none r4_exit=0 store_c=[run4] r4_userdir_under_home=true'),
+    # r103 — C1: export_div_ family (E0-spec + E1/E3/E4/E5 shard receipts;
+    # the s02 pair above carries load-bearing adjacency per r103-V11).
+    ('export_div_s01_pack', 'export_div_s01.gd', ["--arm=pack"], 0,
+     'PASS export_div s01 arm=pack cli_pack magic=47445043 files=1 binary=0 data_only=true hdr_ok=true pbin=yes nondata=absent entries=7'),
+    ('export_div_s01_zip', 'export_div_s01.gd', ["--arm=zip"], 0,
+     'PASS export_div s01 arm=zip zip_fmt magic=504b0304 files=1 binary=0 data_only=true pck_magic=47445043 names_covered=7/7 pbin=yes'),
+    ('export_div_s01_ext', 'export_div_s01.gd', ["--arm=ext"], 0,
+     'PASS export_div s01 arm=ext ext_ignored ext=pck release_magic=7f454c46 cli_magic=47445043 release_trailer=true'),
+    ('export_div_s01_ident', 'export_div_s01.gd', ["--arm=ident"], 0,
+     'PASS export_div s01 arm=ident sidecar_identity sha256_equal=true files=2 sidecar=1 cli_files=1 bin_gt_1m=true'),
+    ('export_div_s01_embed', 'export_div_s01.gd', ["--arm=embed"], 0,
+     'PASS export_div s01 arm=embed payload_identity entries_equal=true entry_bytes_equal=true data_equal=true framing=differs trailer=true entries=7'),
+    ('export_div_s03_seq', 'export_div_s03.gd', ["--arm=seq"], 0,
+     'PASS export_div s03 arm=seq order=ab a_exit=0 b_exit=0 a_bytes=2000 a_format=4 a_entries=8 a_beacon=true a_beacon_size=15 a_beacon_bytes=true a_foreign_name=false a_foreign_beacon=false b_bytes=2004 b_format=4 b_entries=8 b_beacon=true b_beacon_size=15 b_beacon_bytes=true b_foreign_name=false b_foreign_beacon=false both_present=true'),
+    ('export_div_s03_order', 'export_div_s03.gd', ["--arm=order"], 0,
+     'PASS export_div s03 arm=order order=ba b_exit=0 a_exit=0 b_bytes=2004 b_format=4 b_entries=8 b_beacon=true b_beacon_size=15 b_beacon_bytes=true b_foreign_name=false b_foreign_beacon=false a_bytes=2000 a_format=4 a_entries=8 a_beacon=true a_beacon_size=15 a_beacon_bytes=true a_foreign_name=false a_foreign_beacon=false ref=seq ref_a_match=true ref_b_match=true'),
+    ('export_div_s03_repeat', 'export_div_s03.gd', ["--arm=repeat"], 0,
+     'PASS export_div s03 arm=repeat preset=PckOnly r1_exit=0 r2_exit=0 r1_bytes=2000 r1_format=4 r1_entries=8 r1_beacon=true r1_beacon_size=15 r1_beacon_bytes=true r1_foreign_name=false r1_foreign_beacon=false r2_bytes=2000 r2_format=4 r2_entries=8 r2_beacon=true r2_beacon_size=15 r2_beacon_bytes=true r2_foreign_name=false r2_foreign_beacon=false sha_match=true'),
+    ('export_div_s04_pck', 'export_div_s04.gd', ["--arm=pck"], 0,
+     'PASS export_div s04 arm=pck bytes=1944 ver=4 triple=4.7.2 flags=2 file_base=112 law=112 table_ofs=1472 count=7 pad_zero=true md5_rel=7 md5_abs=0 align16=7 tail=0 marks=GDSC,ECFG'),
+    ('export_div_s04_embed', 'export_div_s04.gd', ["--arm=embed"], 0,
+     'PASS export_div s04 arm=embed trailer_size=1940 pck_start_mod16=8 bytes=1940 ver=4 triple=4.7.2 flags=2 file_base=104 law=104 table_ofs=1464 count=7 pad_zero=true md5_rel=7 md5_abs=0 align16=7 tail=4 marks=GDSC,ECFG'),
+    ('export_div_s04_encdir', 'export_div_s04.gd', ["--arm=encdir"], 0,
+     'PASS export_div s04 arm=encdir keyless_bytes=1944 keyless_flags=3 keyless_count=7 keyless_md5_rel=7 keyless_records=plaintext keyed_bytes=1996 keyed_flags=3 keyed_count=7 keyed_records=ciphertext keyed_uid_mark=false'),
+    ('export_div_s05_store', 'export_div_s05.gd', ["--arm=store"], 0,
+     'PASS export_div s05 arm=store store_created=true store_bytes_nonzero=true marker_applied=true entries=9 scen=bin res=bin remaps=3 pack_eq=true store_untouched=true marker_kept=true'),
+    ('export_div_s05_heal', 'export_div_s05.gd', ["--arm=heal"], 0,
+     'PASS export_div s05 arm=heal default_store_bytes=17728 corrupt_export_exit=0 refusal_class_ok=true heal_eq_default=true heal_bytes=17728 entries=9 scen=bin res=bin remaps=3 pack_eq=true'),
+    ('export_div_s05_ctb', 'export_div_s05.gd', ["--arm=ctb"], 0,
+     'PASS export_div s05 arm=ctb entries=7 scen=text res=text remaps=1 no_ovr_scen=text script_compiled=true ovr_scen=text ovr_res=text ovr_cfg_packed=false pack_eq=true runtime_exit=0 runtime_ctb=true'),
     ("crash_spontaneous_sigabrt", "spontaneous_crash_probe.gd", ["--spontaneous-crash"], -6, "SPONTANEOUS_CRASH_PROBE: expected signature"),
     ("crash_self_sigkill", "spontaneous_crash_probe.gd", ["--spontaneous-sigkill"], -9, "SPONTANEOUS_CRASH_PROBE: expected signature"),    ("descendant_pipe_detached_control", "descendant_pipe_probe.gd", ["--spawn-detach"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
     # r63 KNOWN-ACCEPTING FORGERY ROW: the child withholds the signature; a
@@ -1717,6 +1757,267 @@ CASES = [
     # forged signature accepted; see meta probe_descendant_signature_spoof.
     ("descendant_pipe_forged_signature_release", "descendant_pipe_probe.gd", ["--spawn-forge-release"], 0, "DESCENDANT_PIPE_PROBE: expected signature"),
 ]
+
+
+# r103 author (W10): receipt-shape META gate. Evaluated over the stored
+# per-row stdout records of THIS run — the classifiers (classify_process /
+# classify_streams) are not touched. A PASS row's receipt is a shape claim as
+# well as a content claim: the verdict-level pin is a substring predicate
+# (`signature in output`), so a foreign line appended before/inside/after the
+# pinned span, or an extra PASS-line, is invisible at the verdict layer
+# (r100-critic F1 family; r102-mut9 A1-A3 measured against the landed
+# export_launch fixtures). The account tables below were measured over the two
+# r102 green runs (554 stored rows each; reports/round-103/r103-ver13.md):
+# they are carried as data and must be extended deliberately — a new
+# multi-PASS row, or a row whose anchor line is not unique, fails the gate
+# until declared (same floor-not-ceiling discipline as the r79-r102
+# expected_errors gates).
+CASES_SIG_BY_CASE = {c[0]: c[4] for c in CASES}
+# r103 F6: __godot_export__ rows derive evidence inline at execution
+# (VER-13); their CASES 5th field is vestigial — span checks skip them until
+# the VER-13 hygiene follow-up lands.
+RECEIPT_SHAPE_DERIVED_EVIDENCE = {"export_readiness", "export_preset_missing"}
+
+
+RECEIPT_MULTI_PASS_GRAMMAR = {
+    "r100b_seq_clean": (("r100_gui", "census"), ("r100_gui", "routing"),
+                        ("r100_gui", "hover"), ("r100_gui", "motion"),
+                        ("r100_gui", "localpos"), ("r100_gui", "cursor"),
+                        ("r100_gui", "clip"), ("r100_gui", "drag"),
+                        ("r100_gui", "touch"), ("r100_gui", "subvp"),
+                        ("r100_gui", "warp"), ("r100_gui", "focus"),
+                        ("r100_gui", "render"), ("r100_gui", "osmeta")),
+    "r100b_seq_noclean": (("r100_gui", "census"), ("r100_gui", "routing"),
+                          ("r100_gui", "hover"), ("r100_gui", "motion"),
+                          ("r100_gui", "localpos"), ("r100_gui", "cursor"),
+                          ("r100_gui", "clip"), ("r100_gui", "drag"),
+                          ("r100_gui", "touch"), ("r100_gui", "subvp"),
+                          ("r100_gui", "warp"), ("r100_gui", "focus"),
+                          ("r100_gui", "render"), ("r100_gui", "osmeta")),
+    "r101_seqfull_clean": (("r100_gui", "census"), ("r100_gui", "routing"),
+                           ("r100_gui", "hover"), ("r100_gui", "motion"),
+                           ("r100_gui", "localpos"), ("r100_gui", "cursor"),
+                           ("r100_gui", "clip"), ("r100_gui", "drag"),
+                           ("r100_gui", "touch"), ("r100_gui", "subvp"),
+                           ("r100_gui", "warp"), ("r100_gui", "focus"),
+                           ("r100_gui", "render"), ("r100_gui", "osmeta")),
+    "r101_seqfull_noclean": (("r100_gui", "census"), ("r100_gui", "routing"),
+                             ("r100_gui", "hover"), ("r100_gui", "motion"),
+                             ("r100_gui", "localpos"), ("r100_gui", "cursor"),
+                             ("r100_gui", "clip"), ("r100_gui", "drag"),
+                             ("r100_gui", "touch"), ("r100_gui", "subvp"),
+                             ("r100_gui", "warp"), ("r100_gui", "focus"),
+                             ("r100_gui", "render"), ("r100_gui", "osmeta")),
+    "export_prod_base_pck": (("export_prod", "subdir"),
+                             ("export_prod", "filter"),
+                             ("export_prod", "base")),
+    "export_prod_subdir_census": (("export_prod", "subdir"),
+                                  ("export_prod", "filter"),
+                                  ("export_prod", "base")),
+    "export_prod_include_exclude_filter": (("export_prod", "subdir"),
+                                           ("export_prod", "filter"),
+                                           ("export_prod", "base")),
+    "export_prod_main_scene_swap": (("export_prod", "swap"),
+                                    ("export_prod", "quitframes")),
+    "export_prod_mainpack_quit_after_frames": (("export_prod", "swap"),
+                                               ("export_prod", "quitframes")),
+    "export_prod_resource_remap_census": (("export_prod", "remap"),
+                                          ("export_prod", "iconuid")),
+    "export_prod_icon_uid_census": (("export_prod", "remap"),
+                                    ("export_prod", "iconuid")),
+    "export_launch_embed_boot": (("export_launch", "embed_boot"),
+                                 ("export_launch", "embed_census"),
+                                 ("export_launch", "embed_refusal")),
+    "export_launch_embed_self_contained": (("export_launch", "embed_boot"),
+                                           ("export_launch", "embed_census"),
+                                           ("export_launch", "embed_refusal")),
+    "export_launch_embed_mainpack_refusal": (("export_launch", "embed_boot"),
+                                             ("export_launch", "embed_census"),
+                                             ("export_launch", "embed_refusal")),
+    "export_launch_stock_boot": (("export_launch", "stock_boot"),
+                                 ("export_launch", "stock_census")),
+    "export_launch_stock_sidecar_census": (("export_launch", "stock_boot"),
+                                           ("export_launch", "stock_census")),
+    "export_launch_stock_mainpack_refusal": (("export_launch", "refusal"),
+                                             ("export_launch", "editor_boot"),
+                                             ("export_launch", "hole")),
+    "export_launch_editor_mainpack_contrast": (("export_launch", "refusal"),
+                                               ("export_launch", "editor_boot"),
+                                               ("export_launch", "hole")),
+    "export_launch_stock_missing_sidecar": (("export_launch", "refusal"),
+                                            ("export_launch", "editor_boot"),
+                                            ("export_launch", "hole")),
+}
+RECEIPT_ANCHOR_MULTIPLICITY = {"r98b_qorder_flat": 2}
+RECEIPT_BANNER_RE = re.compile(r"^Godot Engine v")
+RECEIPT_DIAG_RE = re.compile(r"^[A-Z][A-Z0-9_]*_DIAG\b")
+RECEIPT_SEQ_RE = re.compile(r"^SEQ_[A-Z_]+\b")
+RECEIPT_PROGRESS_RE = re.compile(r"^\[ *\d+% *\]")
+RECEIPT_ANSI_ONLY_RE = re.compile(r"^(?:\x1b\[[0-9;]*m)+$")
+
+
+def receipt_allowed_error(line, allowed):
+    # Mirrors classify_process's allowlist semantics verbatim (exact entry,
+    # ","-suffixed prefix with a single ERROR:, and the r60 chain-incomplete
+    # special case) so the gate reads allowlisted diagnostics the same way the
+    # classifier does, without touching it.
+    stripped = line.strip()
+    if stripped == allowed:
+        return True
+    if allowed.endswith(","):
+        return stripped.startswith(allowed) and stripped.count("ERROR:") == 1
+    if allowed == "ERROR: chain incomplete":
+        return (stripped.startswith("ERROR: chain incomplete collections=")
+                and "scene=SceneB:<Node#" in stripped
+                and "old_alive=false" in stripped
+                and stripped.count("ERROR:") == 1)
+    return False
+
+
+def receipt_shape_flag(row):
+    """Shape flags for one stored row ([] = shape-accounted)."""
+    case = row.get("case")
+    output = row.get("output")
+    if not all(isinstance(line, str) for line in output):
+        return [{"case": case, "why": "fail_closed_non_text_line"}]
+    # r103 fold F4: read the pin from CASES (the source of truth) instead of
+    # the mutable record — r87-r92 era records only acquire their serialized
+    # "signature" list AFTER the gate evaluates, so record-reads race the
+    # field assignment and fail-closed misfired on 8 green rows (run 1).
+    # F5: records whose case is not a CASES row at all (probe-failing mutant
+    # twins + their ctrl rows, e.g. mutant_broken_scene_route) are probe
+    # artifacts, not battery receipts — skip, fail-closed only binds real rows.
+    if case not in CASES_SIG_BY_CASE:
+        return []
+    if case in RECEIPT_SHAPE_DERIVED_EVIDENCE:
+        # F6: the __godot_export__ rows overwrite evidence inline at execution
+        # (VER-13 documented; the CASES 5th field is vestigial there). Their
+        # shape is bound by the export branch's own classification until the
+        # VER-13 follow-up lands; the span check cannot bind a derived pin.
+        return []
+    pin = CASES_SIG_BY_CASE.get(case)
+    sigs = [pin] if isinstance(pin, str) else (pin or [])
+    if not sigs or not all(isinstance(s, str) and s for s in sigs):
+        return [{"case": case, "why": "fail_closed_missing_signature"}]
+    anchors = [s.split("\n")[0].strip() for s in sigs]
+    flags = []
+    pass_lines = [line for line in output if line.startswith("PASS ")]
+    grammar = RECEIPT_MULTI_PASS_GRAMMAR.get(case)
+    if grammar is not None:
+        observed = []
+        for line in pass_lines:
+            tokens = line.split(" ")
+            observed.append((tokens[1] if len(tokens) > 1 else "",
+                             tokens[2] if len(tokens) > 2 else ""))
+        if sorted(observed) != sorted(grammar):
+            flags.append({"case": case, "why": "pass_line_grammar_mismatch",
+                          "observed": len(observed), "declared": len(grammar)})
+    else:
+        # Non-grammar rows carry at most one receipt PASS line, and that line
+        # must contain the row's own pin — except diagnostic-pinned rows
+        # (anchor is an allowlisted ERROR: line, e.g. save_process_missing's
+        # expected_errors entry), where the PASS receipt is a separate
+        # designed verb and the pin binds the diagnostic instead.
+        pin_lines = [line for line in output
+                     if any(anchor in line for anchor in anchors)]
+        diagnostic_pinned = any("ERROR:" in line for line in pin_lines)
+        if len(pass_lines) > 1:
+            flags.append({"case": case, "why": "unaccounted_pass_lines",
+                          "observed": len(pass_lines), "declared": 1})
+        elif pass_lines and not diagnostic_pinned:
+            for line in pass_lines:
+                if not any(anchor in line for anchor in anchors):
+                    flags.append({"case": case, "why": "pass_line_unanchored",
+                                  "line": line[:80]})
+    if "export_artifact" in row:
+        # Derived-evidence row: `signature` is built by the harness
+        # ("EXPORT PASS preset=... executable_bytes=N"), never printed by the
+        # fixture — bind it to the artifact census it claims instead of
+        # demanding a printed anchor line.
+        match = re.search(r"executable_bytes=(\d+)$", sigs[0])
+        artifact = row.get("export_artifact") or {}
+        if (not match or int(match.group(1)) != artifact.get("artifact_bytes")
+                or not re.fullmatch(r"[0-9a-f]{64}",
+                                    artifact.get("artifact_sha256") or "")):
+            flags.append({"case": case, "why": "derived_evidence_unbound"})
+    else:
+        hits = sum(1 for anchor in anchors for line in output
+                   if anchor in line)
+        if hits != RECEIPT_ANCHOR_MULTIPLICITY.get(case, 1):
+            flags.append({"case": case, "why": "anchor_line_multiplicity",
+                          "observed": hits,
+                          "declared": RECEIPT_ANCHOR_MULTIPLICITY.get(case, 1)})
+    # Declared-span closure: a row that embeds a SEQ_BEGIN..SEQ_END span echoes
+    # the pinned sequence into its receipt, so foreign content is decidable
+    # inside the window (any line that is not an accounted PASS line or a SEQ_
+    # structural line) and in the post-span tail (only an engine-error block
+    # whose ERROR: line the row's own expected_errors admits, plus
+    # banner/blank/PASS/SEQ_ lines, may follow).
+    begins = [i for i, line in enumerate(output) if line.startswith("SEQ_BEGIN")]
+    ends = [i for i, line in enumerate(output) if line.startswith("SEQ_END")]
+    if begins or ends:
+        if len(begins) != 1 or len(ends) != 1 or ends[0] <= begins[0]:
+            flags.append({"case": case, "why": "seq_marker_shape",
+                          "observed": [len(begins), len(ends)]})
+        else:
+            allowed = tuple(row.get("expected_errors") or ())
+            for line in output[begins[0] + 1:ends[0]]:
+                if not (line.startswith("PASS ") or RECEIPT_SEQ_RE.match(line)):
+                    flags.append({"case": case, "why": "foreign_in_span",
+                                  "line": line[:80]})
+            in_error_block = False
+            for line in output[ends[0] + 1:]:
+                if (line.startswith("PASS ") or RECEIPT_SEQ_RE.match(line)
+                        or RECEIPT_BANNER_RE.match(line) or line.strip() == ""):
+                    in_error_block = False
+                elif in_error_block and line.startswith(("   ", "\t")):
+                    continue
+                elif any(receipt_allowed_error(line, entry)
+                         for entry in allowed):
+                    in_error_block = True
+                else:
+                    flags.append({"case": case, "why": "foreign_after_span",
+                                  "line": line[:80]})
+    # Diagnostic-window closure: a row that declares a `*_DIAG` designed verb
+    # takes the whole-receipt account — banner/blank, accounted PASS lines,
+    # `*_DIAG` diagnostics, export progress lines and ANSI-only lines. The
+    # r102 export_launch / export_prod family sits here, so a foreign line
+    # injected before, inside or after its DIAG window flags.
+    if any(RECEIPT_DIAG_RE.match(line) for line in output):
+        for line in output:
+            if (line.startswith("PASS ") or RECEIPT_BANNER_RE.match(line)
+                    or RECEIPT_DIAG_RE.match(line) or line.strip() == ""
+                    or RECEIPT_PROGRESS_RE.match(line)
+                    or RECEIPT_ANSI_ONLY_RE.match(line.strip())):
+                continue
+            flags.append({"case": case, "why": "foreign_in_diag_window",
+                          "line": line[:80]})
+    return flags
+
+
+def receipt_shape_audit(rows):
+    audited = 0
+    flags = []
+    present_cases = {row.get("case") for row in rows}
+    for row in rows:
+        if row.get("verdict") != "PASS":
+            continue
+        output = row.get("output")
+        if "script" in row and not isinstance(output, list):
+            flags.append({"case": row.get("case"),
+                          "why": "fail_closed_missing_output"})
+            continue
+        if not isinstance(output, list):
+            continue          # harness-built meta rows carry no stdout receipt
+        audited += 1
+        flags.extend(receipt_shape_flag(row))
+    # Dead-entry floor (r79 critic C2 shape): a grammar row that vanished from
+    # the record set — dropped, renamed, or never run — fails the gate instead
+    # of passing silently. Presence is over all rows, so a row that FAILed
+    # normally is not double-counted here.
+    for case in sorted(set(RECEIPT_MULTI_PASS_GRAMMAR) - present_cases):
+        flags.append({"case": case, "why": "dead_shape_allowlist_entry"})
+    return {"audited": audited, "flags": flags}
 
 
 def main():
@@ -4103,6 +4404,28 @@ def main():
             for r in census_rows
             if r["case"].startswith("export_launch_")
             for e in r["entries"]),
+        # r103 W5: the export_div_ family ships with no expected_errors
+        # entries today (nested Godot export output is redirected to
+        # scratch logs, never echoed - the export_prod.gd evidence rule),
+        # so this gate is vacuous-but-honest for it, carried so a future
+        # allowlist entry under the prefix cannot die silently; same
+        # named-by-round / covers-round-prefixes shape as r87-r102.
+        "r103_expected_errors_all_matched": all(
+            not e["dead_in_run"]
+            for r in census_rows
+            if r["case"].startswith(("export_div_",))
+            for e in r["entries"]),
+        # r103 W5b: export_div_ family count floor - the results==CASES
+        # coupling makes any CASES/results divergence red (splice defect);
+        # the trailing floor fires a full-family drop (0==0 but !>=1) and,
+        # once frozen to the exact registered count via --min-rows N, a
+        # synchronized partial drop below N. A synchronized drop that
+        # keeps >= N rows with CASES+results shrunk together is invisible
+        # by construction; freezing N to the exact count closes it.
+        "r103_export_div_count_floor": (
+            sum(1 for r in results if r["case"].startswith("export_div_"))
+            == sum(1 for c in CASES if c[0].startswith("export_div_"))
+            >= 1),
         # r100-critic F1 (harness ceiling): no gate could see a duplicated,
         # dropped, or renamed CASES row — a 25-tuple drop-mutant still ran
         # PASS 491/491 with the per-round gates vacuously true over zero
@@ -4122,7 +4445,7 @@ def main():
                 any(r["case"].startswith(p) for r in results)
                 for p in ("stree_lattice_", "r98_canvas_", "r98b_", "r98c_",
                           "r99_audio_", "r99b_", "r100_gui_", "r100b_", "r101_seqfull_", "r101_ytrans_", "export_prod_",
-                          "export_launch_"))),
+                          "export_launch_", "export_div_"))),
     }
     # Harness-side hygiene: reap any lingering surface descendants (all arms
     # self-exit in well under a second; never gated).
@@ -4644,7 +4967,7 @@ def main():
                       "inner_classification": inner, "raw_output": output,
                       "raw_output_lines": output.strip().splitlines()}
             probe_results.append(record)
-            print(f"{'PASS' if inner else 'FAIL'} {label}: exit={code} classification={inner}", flush=True)
+            print(f"{'PASS' if inner and not flags else 'REJECT-ARM (designed)' if not inner and flags else 'FAIL'} {label}: exit={code} classification={inner}", flush=True)
         clean, fault = probe_results
         def exact_error_lines(record, diagnostic):
             return [line.strip() for line in record["raw_output_lines"]
@@ -4717,7 +5040,7 @@ def main():
                 "raw_stderr_lines": stderr.strip().splitlines() if stderr else [],
             }
             probe_results.append(record)
-            print(f"{'PASS' if inner else 'FAIL'} {label}: exit={code} classification={inner}", flush=True)
+            print(f"{'PASS' if inner and not flags else 'REJECT-ARM (designed)' if not inner and flags else 'FAIL'} {label}: exit={code} classification={inner}", flush=True)
 
         accept, reject = probe_results
 
@@ -5431,6 +5754,22 @@ def main():
                         "artifact": str(artifact),
                         "inner_classifications": [r["inner_classification"] for r in probe_results]})
         print(f"{probe_payload['verdict']} timeout probe: {artifact}")
+
+    # r103 author (W10): receipt-shape META gate over the rows this run stored
+    # (see receipt_shape_audit): unaccounted PASS lines, foreign content
+    # inside a declared span or diagnostic window, non-unique anchor lines,
+    # missing receipt fields, and dead shape-allowlist entries surface as a
+    # FAIL meta row; the classifiers are untouched.
+    receipt_audit = receipt_shape_audit(results)
+    results.append({"case": "probe_receipt_shape_gate",
+                    "verdict": "PASS" if not receipt_audit["flags"] else "FAIL",
+                    "audited_rows": receipt_audit["audited"],
+                    "flag_count": len(receipt_audit["flags"]),
+                    "flags": receipt_audit["flags"][:20],
+                    "bounded_claim": "stored per-row stdout receipts only: classification text that never reaches the record (r102-mut9 whole-stream closure, canned-receipt ceiling) stays invisible; the shape tables are carried as data and extended deliberately"})
+    print(f"{results[-1]['verdict']} receipt-shape gate: "
+          f"audited={receipt_audit['audited']} flags={len(receipt_audit['flags'])}",
+          flush=True)
 
     payload = {"godot": args.godot, "seed": str(HERE), "scratch": str(scratch),
                "probe_failing": args.probe_failing, "results": results,

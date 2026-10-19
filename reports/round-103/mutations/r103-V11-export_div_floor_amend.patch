@@ -1,0 +1,39 @@
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -4116,15 +4116,30 @@
+             for e in r["entries"]),
+         # r103 W5b: export_div_ family count floor - the results==CASES
+         # coupling makes any CASES/results divergence red (splice defect);
+-        # the trailing floor fires a full-family drop (0==0 but !>=1) and,
+-        # once frozen to the exact registered count via --min-rows N, a
+-        # synchronized partial drop below N. A synchronized drop that
+-        # keeps >= N rows with CASES+results shrunk together is invisible
+-        # by construction; freezing N to the exact count closes it.
++        # the trailing floor is FROZEN (r103 V11) to the registered family
++        # count N=2 - one row per landed s02 arm - so a full-family drop
++        # (0==0 but !>=2), a partial drop (1 of 2), and a synchronized
++        # CASES+results shrink below N all fire. Superset-safe: adding a
++        # row later never re-reds a landed round; re-freeze N in the same
++        # splice that lands any new export_div_ row.
+         "r103_export_div_count_floor": (
+             sum(1 for r in results if r["case"].startswith("export_div_"))
+             == sum(1 for c in CASES if c[0].startswith("export_div_"))
+-            >= 1),
++            >= 2),
++        # r103 V11 (floor-gate plan): the count floor above cannot see a
++        # CASES+results co-shrink that keeps the count at or above the
++        # floor with a swapped name (a copy-pasted sibling row name, a
++        # mistyped suffix) - 2 == 2 >= 2 stays green. This gate pins the
++        # frozen ROW-NAME set from the C1 row tuples: every frozen name
++        # must be registered in CASES and must have run. Superset-safe by
++        # construction (new rows added later never re-red a landed
++        # round); fail-closed on an empty family (all() over one frozen
++        # name is False, never a vacuous True).
++        "r103_export_div_row_names": all(
++            name in {c[0] for c in CASES}
++            and any(r["case"] == name for r in results)
++            for name in ("export_div_s02_user_iso",
++                         "export_div_s02_xdg_override")),
+         # r100-critic F1 (harness ceiling): no gate could see a duplicated,
+         # dropped, or renamed CASES row — a 25-tuple drop-mutant still ran
+         # PASS 491/491 with the per-round gates vacuously true over zero

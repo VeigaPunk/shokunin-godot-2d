@@ -1,0 +1,6185 @@
+{
+ "cases": {
+  "animation_property": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS"
+   ]
+  },
+  "animation_stuck": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "audio_bus_route": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS audio_bus_route"
+   ]
+  },
+  "audio_bus_route_invalid_control": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "audio_no_play": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "audio_playback": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS audio_playback"
+   ]
+  },
+  "button_activation": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS button_activation"
+   ]
+  },
+  "button_activation_disconnected": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "button_activation_focus_loss": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS button_activation_focus_loss"
+   ]
+  },
+  "button_activation_unfocused": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "button_group_selection": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS button_group_selection"
+   ]
+  },
+  "button_group_selection_disconnected": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "button_group_selection_ungroup_b": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "camera_bottom_limit": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_limit"
+   ]
+  },
+  "camera_far_bottom_bound": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "camera_far_bound": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "camera_far_left_bound": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "camera_far_top_bound": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "camera_follow": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_follow"
+   ]
+  },
+  "camera_left_limit": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_limit"
+   ]
+  },
+  "camera_limit": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_limit"
+   ]
+  },
+  "camera_no_follow": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "camera_proc_cam_comp": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_cam_phase": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_cam_space": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_cam_subpixel": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_cam_zoom_center": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_cl_draworder": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_cl_follow": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_cl_phase": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_cl_stack": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_par_2d": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_par_layer": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_par_phase": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_vp_render_indep": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_vp_subcam": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_proc_vp_worlds": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_proc"
+   ]
+  },
+  "camera_top_limit": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS camera_limit"
+   ]
+  },
+  "causal": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS positive"
+   ]
+  },
+  "checkbox_toggle": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS checkbox_toggle"
+   ]
+  },
+  "checkbox_toggle_disconnected": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "contact_no_collision": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "contact_runtime": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS"
+   ]
+  },
+  "crash_self_sigkill": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "crash_spontaneous_sigabrt": {
+   "maxcrash": 4,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "descendant_pipe_detached_control": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "descendant_pipe_forged_signature_release": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "dss_lattice_cast_rest": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_excl_space": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_fresh": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_layer_forms": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_order_core": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_order_core_rev": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_point_canvas": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_point_cap": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_point_cap_rev": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_point_edge": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_ray_flags": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_ray_geom": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_ray_order": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_ray_order_rev": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_shape": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "dss_lattice_shape_rev": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS dss_lattice"
+   ]
+  },
+  "ei_bound_refusal": {
+   "maxcrash": 0,
+   "maxerr": 4,
+   "maxpass": 0,
+   "tags": []
+  },
+  "export_launch_editor_mainpack_contrast": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 3,
+   "tags": [
+    "PASS export_launch"
+   ]
+  },
+  "export_launch_embed_boot": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 3,
+   "tags": [
+    "PASS export_launch"
+   ]
+  },
+  "export_launch_embed_mainpack_refusal": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 3,
+   "tags": [
+    "PASS export_launch"
+   ]
+  },
+  "export_launch_embed_self_contained": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 3,
+   "tags": [
+    "PASS export_launch"
+   ]
+  },
+  "export_launch_stock_boot": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 2,
+   "tags": [
+    "PASS export_launch"
+   ]
+  },
+  "export_launch_stock_mainpack_refusal": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 3,
+   "tags": [
+    "PASS export_launch"
+   ]
+  },
+  "export_launch_stock_missing_sidecar": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 3,
+   "tags": [
+    "PASS export_launch"
+   ]
+  },
+  "export_launch_stock_sidecar_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 2,
+   "tags": [
+    "PASS export_launch"
+   ]
+  },
+  "export_preset_missing": {
+   "maxcrash": 0,
+   "maxerr": 2,
+   "maxpass": 0,
+   "tags": []
+  },
+  "export_prod_base_pck": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 3,
+   "tags": [
+    "PASS export_prod"
+   ]
+  },
+  "export_prod_det_a": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS export_prod"
+   ]
+  },
+  "export_prod_det_b": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS export_prod"
+   ]
+  },
+  "export_prod_icon_uid_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 2,
+   "tags": [
+    "PASS export_prod"
+   ]
+  },
+  "export_prod_include_exclude_filter": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 3,
+   "tags": [
+    "PASS export_prod"
+   ]
+  },
+  "export_prod_main_scene_swap": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 2,
+   "tags": [
+    "PASS export_prod"
+   ]
+  },
+  "export_prod_mainpack_quit_after_frames": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 2,
+   "tags": [
+    "PASS export_prod"
+   ]
+  },
+  "export_prod_resource_remap_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 2,
+   "tags": [
+    "PASS export_prod"
+   ]
+  },
+  "export_prod_subdir_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 3,
+   "tags": [
+    "PASS export_prod"
+   ]
+  },
+  "export_prod_templates_missing_class": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS export_prod"
+   ]
+  },
+  "export_prod_unknown_preset_refusal": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS export_prod"
+   ]
+  },
+  "export_prod_zip_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS export_prod"
+   ]
+  },
+  "export_readiness": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "geo2d_lattice_atlasempty": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_bridge": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_contain": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_edge": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_joins": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_lineempty": {
+   "maxcrash": 1,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "geo2d_lattice_offdeg": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_offempty": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_ops": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_pipedges": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_polyendpoly": {
+   "maxcrash": 0,
+   "maxerr": 2,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_pred": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_ring": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_ring2": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_ring4": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_ringhits": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "geo2d_lattice_trig": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS geo2d_lattice"
+   ]
+  },
+  "health_gauge": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS health_gauge"
+   ]
+  },
+  "health_gauge_disconnected": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "input89_edges_axisdev": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input89_edges"
+   ]
+  },
+  "input89_edges_exact": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input89_edges"
+   ]
+  },
+  "input_lattice_acc_flush": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_acc_off": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_api_press": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_burst": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_conflict": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_dev_joy": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_dispatch_order": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_dz_ladder": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_echo_edge": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_imap_erase": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_imap_mid_cb": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_joy_axis": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_key_map": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_mouse_hdls": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_null_edge": {
+   "maxcrash": 0,
+   "maxerr": 4,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_phys_peer": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_pre_frame": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_press_idle": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_press_phys": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_reentrant": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_release_edge": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_lattice_ui_ns": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS input_lattice"
+   ]
+  },
+  "input_route": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS"
+   ]
+  },
+  "keyup": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS keyup"
+   ]
+  },
+  "level_collision": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS"
+   ]
+  },
+  "mechanic": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS"
+   ]
+  },
+  "mutant_broken_scene_route": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "mutant_level_collision_removed": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "nav_lattice_agent": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS nav_lattice"
+   ]
+  },
+  "nav_lattice_avoid": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS nav_lattice"
+   ]
+  },
+  "nav_lattice_bake": {
+   "maxcrash": 0,
+   "maxerr": 2,
+   "maxpass": 1,
+   "tags": [
+    "PASS nav_lattice"
+   ]
+  },
+  "nav_lattice_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS nav_lattice"
+   ]
+  },
+  "nav_lattice_link": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS nav_lattice"
+   ]
+  },
+  "nav_lattice_path": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS nav_lattice"
+   ]
+  },
+  "nav_lattice_query": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS nav_lattice"
+   ]
+  },
+  "nav_lattice_region": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS nav_lattice"
+   ]
+  },
+  "nav_lattice_sync": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS nav_lattice"
+   ]
+  },
+  "nav_lattice_teardown_clean": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS nav_lattice"
+   ]
+  },
+  "nav_lattice_teardown_crash": {
+   "maxcrash": 1,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "negative_overlap": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "negative_route": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS"
+   ]
+  },
+  "negative_signal": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "negative_transition": {
+   "maxcrash": 0,
+   "maxerr": 2,
+   "maxpass": 1,
+   "tags": [
+    "PASS"
+   ]
+  },
+  "overlap": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS"
+   ]
+  },
+  "phys2d_backends_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_backends"
+   ]
+  },
+  "phys2d_backends_dummy_degenerate": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_backends"
+   ]
+  },
+  "phys2d_backends_dummy_timeout": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_backends"
+   ]
+  },
+  "phys2d_backends_gate_duality": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_backends"
+   ]
+  },
+  "phys2d_backends_gate_matrix": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_backends"
+   ]
+  },
+  "phys2d_backends_jolt3d_live": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_backends"
+   ]
+  },
+  "phys2d_backends_lattice": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_backends"
+   ]
+  },
+  "phys2d_backends_xcheck": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_backends"
+   ]
+  },
+  "phys2d_events_area_dss_in_cb": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_area_edge": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_area_free_rid": {
+   "maxcrash": 0,
+   "maxerr": 5,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_area_monitoring_deferred": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_area_monitoring_direct": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_area_node_position": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_area_queue_free": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_area_srv_set_state": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_cm_deferred_cb": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_cm_max0": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_cm_max0_cb": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_cm_off": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_cm_on": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_cm_toggle_cb": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_edge_node": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_edge_node_srv": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_edge_revert": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_edge_srv": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_rb_dss_in_cb": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_rb_free_rid": {
+   "maxcrash": 0,
+   "maxerr": 5,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_rb_node_position": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_rb_queue_free": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_events_rb_srv_set_state": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_events"
+   ]
+  },
+  "phys2d_joints_area_body_gate": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_area_entry_order": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_area_lattice": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_joint_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_joint_disable_coll": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_joint_freed_rid": {
+   "maxcrash": 0,
+   "maxerr": 7,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_joint_groove": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_joint_node_anchor": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_joint_node_clear": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_joint_node_freed_rid": {
+   "maxcrash": 0,
+   "maxerr": 7,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_joint_pin_clear": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_joint_pin_params": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_joint_pin_tiers": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_joint_spring_env": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_joint_unset_refusal": {
+   "maxcrash": 0,
+   "maxerr": 12,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_layer_dyn_pair": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_layer_flip_cb": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_layer_flip_mid": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_layer_or_table": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_joints_layer_zero_table": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_joints"
+   ]
+  },
+  "phys2d_motion_bds_windows": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_btm_embed": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_btm_from": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_btm_from2": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_btm_hit": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_btm_margin": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_btm_recflag": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_ccd_edge": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_ccd_gap": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_ccd_ladder": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_ccd_spin": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_cont_cap": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_cont_persist": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_cont_windows": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_dss_embed": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_dss_motion": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_dss_purity": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_dss_shapes": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_dss_wrongarg": {
+   "maxcrash": 0,
+   "maxerr": 7,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_mac_chain": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_mac_embed": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_mac_hit": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_mac_maxcol": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_mac_miss": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_mac_nodecomp": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_mac_rigid": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_mac_test_only": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "phys2d_motion_tm_hit": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS phys2d_motion"
+   ]
+  },
+  "probe_crash_exit": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_descendant_error_spoof": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_descendant_pipe_eof": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_descendant_signature_spoof": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_error_clause_surface": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_export_launch": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_godot_error": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_save_independent_process": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_spontaneous_crash_classification": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_stream_attribution": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_timeout": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_unrelated_error_export_preset_missing": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_unrelated_error_export_readiness": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_unrelated_error_mutant_broken_scene_route": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_unrelated_error_mutant_level_collision_removed": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "probe_while_live_signature_gate": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "r100_gui_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100_gui_clip": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100_gui_cursor": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100_gui_drag": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100_gui_focus": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100_gui_hover": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100_gui_localpos": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100_gui_motion": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100_gui_osmeta": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100_gui_render": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100_gui_routing": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100_gui_subvp": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100_gui_touch": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100_gui_warp": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100b_emul_state": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100b_emul"
+   ]
+  },
+  "r100b_phase_coalesce": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100b_phase"
+   ]
+  },
+  "r100b_phase_cursorphase": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100b_phase"
+   ]
+  },
+  "r100b_phase_dblclick": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100b_phase"
+   ]
+  },
+  "r100b_phase_dragphase": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100b_phase"
+   ]
+  },
+  "r100b_phase_flushpos": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100b_phase"
+   ]
+  },
+  "r100b_phase_hoverphase": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100b_phase"
+   ]
+  },
+  "r100b_phase_orderin": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100b_phase"
+   ]
+  },
+  "r100b_phase_velphase": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r100b_phase"
+   ]
+  },
+  "r100b_seq_clean": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 14,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r100b_seq_noclean": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 14,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r101_seqfull_clean": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 14,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r101_seqfull_noclean": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 14,
+   "tags": [
+    "PASS r100_gui"
+   ]
+  },
+  "r101_ytrans_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r101_ytrans"
+   ]
+  },
+  "r101_ytrans_y0": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r101_ytrans"
+   ]
+  },
+  "r101_ytrans_y1000": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r101_ytrans"
+   ]
+  },
+  "r101_ytrans_ycop": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r101_ytrans"
+   ]
+  },
+  "r101_ytrans_ym1000": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r101_ytrans"
+   ]
+  },
+  "r101_ytrans_ysep": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r101_ytrans"
+   ]
+  },
+  "r87_edge_jpbe": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS r87_edge"
+   ]
+  },
+  "r88_surfaces_audio_pos": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r88_surfaces"
+   ]
+  },
+  "r88_surfaces_light_props": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r88_surfaces"
+   ]
+  },
+  "r88_surfaces_mp_loopback": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r88_surfaces"
+   ]
+  },
+  "r88_surfaces_mp_offline": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r88_surfaces"
+   ]
+  },
+  "r88_surfaces_mp_spawner": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r88_surfaces"
+   ]
+  },
+  "r88_surfaces_sprite_meta": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r88_surfaces"
+   ]
+  },
+  "r88_surfaces_sprite_phys": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS r88_surfaces"
+   ]
+  },
+  "r88_surfaces_vis_not": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r88_surfaces"
+   ]
+  },
+  "r90_lattice_comread": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r90_lattice"
+   ]
+  },
+  "r90_lattice_comrefuse": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS r90_lattice"
+   ]
+  },
+  "r90_lattice_contacts": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r90_lattice"
+   ]
+  },
+  "r90_lattice_damp": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r90_lattice"
+   ]
+  },
+  "r90_lattice_freezelock": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r90_lattice"
+   ]
+  },
+  "r90_lattice_gravity": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r90_lattice"
+   ]
+  },
+  "r90_lattice_impedge": {
+   "maxcrash": 0,
+   "maxerr": 3,
+   "maxpass": 1,
+   "tags": [
+    "PASS r90_lattice"
+   ]
+  },
+  "r90_lattice_impulse": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r90_lattice"
+   ]
+  },
+  "r90_lattice_lag": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r90_lattice"
+   ]
+  },
+  "r90_lattice_order": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r90_lattice"
+   ]
+  },
+  "r90_lattice_props": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r90_lattice"
+   ]
+  },
+  "r90_lattice_write": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r90_lattice"
+   ]
+  },
+  "r92_tilemap_atlas": {
+   "maxcrash": 0,
+   "maxerr": 2,
+   "maxpass": 1,
+   "tags": [
+    "PASS tilemap_lattice"
+   ]
+  },
+  "r92_tilemap_cells": {
+   "maxcrash": 0,
+   "maxerr": 5,
+   "maxpass": 1,
+   "tags": [
+    "PASS tilemap_lattice"
+   ]
+  },
+  "r92_tilemap_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS tilemap_lattice"
+   ]
+  },
+  "r92_tilemap_custom": {
+   "maxcrash": 0,
+   "maxerr": 4,
+   "maxpass": 1,
+   "tags": [
+    "PASS tilemap_lattice"
+   ]
+  },
+  "r92_tilemap_encoding": {
+   "maxcrash": 0,
+   "maxerr": 2,
+   "maxpass": 1,
+   "tags": [
+    "PASS tilemap_lattice"
+   ]
+  },
+  "r92_tilemap_fixinvalid": {
+   "maxcrash": 0,
+   "maxerr": 4,
+   "maxpass": 1,
+   "tags": [
+    "PASS tilemap_lattice"
+   ]
+  },
+  "r92_tilemap_nav": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS tilemap_lattice"
+   ]
+  },
+  "r92_tilemap_nullts_crash": {
+   "maxcrash": 4,
+   "maxerr": 0,
+   "maxpass": 0,
+   "tags": []
+  },
+  "r92_tilemap_pattern": {
+   "maxcrash": 0,
+   "maxerr": 2,
+   "maxpass": 1,
+   "tags": [
+    "PASS tilemap_lattice"
+   ]
+  },
+  "r92_tilemap_physics": {
+   "maxcrash": 0,
+   "maxerr": 2,
+   "maxpass": 1,
+   "tags": [
+    "PASS tilemap_lattice"
+   ]
+  },
+  "r92_tilemap_quadrant": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS tilemap_lattice"
+   ]
+  },
+  "r92_tilemap_srcids": {
+   "maxcrash": 0,
+   "maxerr": 3,
+   "maxpass": 1,
+   "tags": [
+    "PASS tilemap_lattice"
+   ]
+  },
+  "r92_tilemap_terrain": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS tilemap_lattice"
+   ]
+  },
+  "r92_tilemap_timing": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS tilemap_lattice"
+   ]
+  },
+  "r93_anim_await_offbyone": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r93b_anim"
+   ]
+  },
+  "r93_anim_blend_finished": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_anim_blend_interleaved": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r93b_anim"
+   ]
+  },
+  "r93_anim_blend_running": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_anim_deferred_flush": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r93b_anim"
+   ]
+  },
+  "r93_anim_manual_clock_control": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r93b_anim"
+   ]
+  },
+  "r93_anim_manual_clock_interleaved": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r93b_anim"
+   ]
+  },
+  "r93_anim_method_callback": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_anim_overshoot": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r93b_anim"
+   ]
+  },
+  "r93_anim_phys_delta": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r93b_anim"
+   ]
+  },
+  "r93_anim_physics_tick": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r93b_anim"
+   ]
+  },
+  "r93_anim_process_manual": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_anim_process_stable": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_anim_seek": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_anim_track_interp": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_tween_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_tween_chain": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_tween_interp_grid_a": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_tween_interp_grid_b": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_tween_interp_value": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_tween_manual_step": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_tween_phys_manual_step": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r93_tween_process_stable": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS anim_lattice"
+   ]
+  },
+  "r94_particles_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_convert": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_amount_mid": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_contam": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_expl": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_lifetime": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_lt_mid": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_never": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_oneshot_flag": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_oneshot_off": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_pause": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_request": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_restart": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_retrigger": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_speed_mid": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_speed_pre": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_cpu_stop": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_gpu_headless": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r94_particles_ppm": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS particles_lattice"
+   ]
+  },
+  "r95b_order_canon": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_cap40_p0": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_cap40_p1": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_cap40_p2": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_celloff_x0": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_celloff_x1000": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_free_ab": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_free_ba": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_layers_k0": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_layers_k1": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_period_k5": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_periodx_k10": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_periodx_k2": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_periodx_k3": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_periodx_k4": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_periodx_k5": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_periodx_k5s8": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_periodx_k6": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_periodx_k7": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_periodx_k8": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_perm0": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_perm1": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_perm2": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_perm3": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_perm4": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_perm5": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_perm6": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_perm7": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_readd_a": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_rigid": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_scoutrev": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_twopiles": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_warm_k32": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r95b_order_warm_keep8": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r95b_order"
+   ]
+  },
+  "r96_scene_io_cache": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS scene_io_lattice"
+   ]
+  },
+  "r96_scene_io_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS scene_io_lattice"
+   ]
+  },
+  "r96_scene_io_det": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS scene_io_lattice"
+   ]
+  },
+  "r96_scene_io_edges": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS scene_io_lattice"
+   ]
+  },
+  "r96_scene_io_editstate": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS scene_io_lattice"
+   ]
+  },
+  "r96_scene_io_extres": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS scene_io_lattice"
+   ]
+  },
+  "r96_scene_io_formats": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS scene_io_lattice"
+   ]
+  },
+  "r96_scene_io_ownership": {
+   "maxcrash": 0,
+   "maxerr": 2,
+   "maxpass": 1,
+   "tags": [
+    "PASS scene_io_lattice"
+   ]
+  },
+  "r96_scene_io_pack_basic": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS scene_io_lattice"
+   ]
+  },
+  "r96_scene_io_refuse": {
+   "maxcrash": 0,
+   "maxerr": 13,
+   "maxpass": 1,
+   "tags": [
+    "PASS scene_io_lattice"
+   ]
+  },
+  "r96_scene_io_subres": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS scene_io_lattice"
+   ]
+  },
+  "r96_scene_io_takeover": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS scene_io_lattice"
+   ]
+  },
+  "r96_scene_io_uid": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS scene_io_lattice"
+   ]
+  },
+  "r96b_cache_deep_ign_deep": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_cache"
+   ]
+  },
+  "r96b_cache_deep_ignore": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_cache"
+   ]
+  },
+  "r96b_cache_deep_repl_deep": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_cache"
+   ]
+  },
+  "r96b_cache_deep_replace": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_cache"
+   ]
+  },
+  "r96b_cache_deep_reuse": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_cache"
+   ]
+  },
+  "r96b_cache_ignoredeep": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_cache"
+   ]
+  },
+  "r96b_cache_repl_uncached": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_cache"
+   ]
+  },
+  "r96b_cache_reuse_delay": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_cache"
+   ]
+  },
+  "r96b_cache_reuse_delete": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_cache"
+   ]
+  },
+  "r96b_cache_threaded": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_cache"
+   ]
+  },
+  "r96b_id_extother": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_id_extshift": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_id_fingerB": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_id_mint_two": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_id_seq2obj": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_id_seqA2": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_id_seqAB2": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_id_subcontent": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_id_subextra0": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_id_subextra3": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_id_subpath": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_id_subsame": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_id_subsamepath": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_id_twoext": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_id"
+   ]
+  },
+  "r96b_phase_ph0": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_phase"
+   ]
+  },
+  "r96b_phase_ph1": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_phase"
+   ]
+  },
+  "r96b_phase_ph2": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_phase"
+   ]
+  },
+  "r96b_phase_ph30": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_phase"
+   ]
+  },
+  "r96b_phase_ph5": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_phase"
+   ]
+  },
+  "r96b_phase_pph0": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_phase"
+   ]
+  },
+  "r96b_phase_pph1": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_phase"
+   ]
+  },
+  "r96b_phase_pph2": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_phase"
+   ]
+  },
+  "r96b_phase_pph30": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_phase"
+   ]
+  },
+  "r96b_phase_pph5": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_phase"
+   ]
+  },
+  "r96b_seed_seedcheck": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_seed"
+   ]
+  },
+  "r96b_seq_extbundle": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_seq"
+   ]
+  },
+  "r96b_seq_extgen": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_seq"
+   ]
+  },
+  "r96b_seq_extpin": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_seq"
+   ]
+  },
+  "r96b_seq_extseq": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_seq"
+   ]
+  },
+  "r96b_seq_minimal": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_seq"
+   ]
+  },
+  "r96b_var_conn": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_var"
+   ]
+  },
+  "r96b_var_groups": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_var"
+   ]
+  },
+  "r96b_var_idstat_breadth": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_var"
+   ]
+  },
+  "r96b_var_idstat_u31_gate": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_var"
+   ]
+  },
+  "r96b_var_lever": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_var"
+   ]
+  },
+  "r96b_var_meta": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_var"
+   ]
+  },
+  "r96b_var_rich": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r96b_var"
+   ]
+  },
+  "r98_canvas_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_clip": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_draw_refusal": {
+   "maxcrash": 0,
+   "maxerr": 2,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_draw_state": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_draw_surface": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_modulate": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_notify": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_queue": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_redraw_context": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_redraw_triggers": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_vis_chain": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_xform_global": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_xform_mirror": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_xform_skew": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98_canvas_zorder": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS canvas_lattice"
+   ]
+  },
+  "r98b_clipmatrix": {
+   "maxcrash": 0,
+   "maxerr": 6,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_epssweep": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_gskew": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_latch_canon": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_latch_imm": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_latch_second": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_latch_t1": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_latch_t3": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_notifyphase": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_qflush_same_frame": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_qflush_suppress": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_qorder_flat": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_qorder_tree": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_rksenum": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b_rksenum"
+   ]
+  },
+  "r98b_skewgrid": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98b_visphase": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98b"
+   ]
+  },
+  "r98c_flush": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r98c"
+   ]
+  },
+  "r99_audio_advance": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_autoplay": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_bus": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_bus_peak": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_finish": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_gen": {
+   "maxcrash": 0,
+   "maxerr": 2,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_gen2d": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_gen_peak": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_loop_degenerate": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_loop_pts": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_mixblock": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_p2d": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_pan_law": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_pause": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_peak_calib": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_poly": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99_audio_stoppos": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99_audio"
+   ]
+  },
+  "r99b_finfree_played": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99b"
+   ]
+  },
+  "r99b_mixfree": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99b"
+   ]
+  },
+  "r99b_startphase": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS r99b"
+   ]
+  },
+  "release": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS release"
+   ]
+  },
+  "route_toggle": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS"
+   ]
+  },
+  "save_corrupt_negative": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "save_process_missing": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 1,
+   "tags": [
+    "PASS save_process"
+   ]
+  },
+  "save_process_reader": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS save_process"
+   ]
+  },
+  "save_process_writer": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS save_process"
+   ]
+  },
+  "save_roundtrip": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS save_roundtrip"
+   ]
+  },
+  "scene_signal": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS"
+   ]
+  },
+  "slider_adjust": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS slider_adjust"
+   ]
+  },
+  "slider_adjust_disconnected": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_no_focus": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS slider_adjust_repeat"
+   ]
+  },
+  "slider_adjust_repeat_right_disconnected": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right_focus_handoff": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right_focus_restore": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS slider_adjust_repeat_focus_restore"
+   ]
+  },
+  "slider_adjust_repeat_right_no_focus": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right_second_focus_loss": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right_second_focus_restore": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS slider_adjust_repeat_second_focus_restore"
+   ]
+  },
+  "slider_adjust_repeat_right_second_focus_restore_clear_frame_then_push_release": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right_second_focus_restore_clear_then_push_release": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right_second_focus_restore_composite_push_and_clear": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right_second_focus_restore_disconnect_after_first": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right_second_focus_restore_disconnected": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right_second_focus_restore_observe_parsed_release": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right_second_focus_restore_observe_push_input_release": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right_second_focus_restore_press_after_late_reconnect": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS slider_adjust_repeat_second_focus_restore_press_after_late_reconnect"
+   ]
+  },
+  "slider_adjust_repeat_right_second_focus_restore_push_frame_then_clear_release": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right_second_focus_restore_reconnect_after_final_left": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "slider_adjust_repeat_right_second_focus_restore_reconnect_after_first_left": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS slider_adjust_repeat_second_focus_restore_reconnect"
+   ]
+  },
+  "slider_adjust_repeat_right_second_focus_restore_release_after_late_reconnect_press": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "stree_lattice_census": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS stree_lattice"
+   ]
+  },
+  "stree_lattice_defer_ladder": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS stree_lattice"
+   ]
+  },
+  "stree_lattice_defer_order": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS stree_lattice"
+   ]
+  },
+  "stree_lattice_defer_slots": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS stree_lattice"
+   ]
+  },
+  "stree_lattice_group_flags": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS stree_lattice"
+   ]
+  },
+  "stree_lattice_group_lifecycle": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS stree_lattice"
+   ]
+  },
+  "stree_lattice_group_order": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS stree_lattice"
+   ]
+  },
+  "stree_lattice_group_order_rev": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS stree_lattice"
+   ]
+  },
+  "stree_lattice_group_setters": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS stree_lattice"
+   ]
+  },
+  "stree_lattice_scene_probe": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS stree_lattice"
+   ]
+  },
+  "stree_lattice_signal_flags": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS stree_lattice"
+   ]
+  },
+  "stree_lattice_signal_order": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS stree_lattice"
+   ]
+  },
+  "transition": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS"
+   ]
+  },
+  "tween_flash": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS tween_flash"
+   ]
+  },
+  "tween_no_start": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "ui_signal_disconnected": {
+   "maxcrash": 0,
+   "maxerr": 1,
+   "maxpass": 0,
+   "tags": []
+  },
+  "ui_signal_hud": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS ui_signal"
+   ]
+  },
+  "wrong_key": {
+   "maxcrash": 0,
+   "maxerr": 0,
+   "maxpass": 1,
+   "tags": [
+    "PASS"
+   ]
+  }
+ },
+ "generated_at": "2026-10-18",
+ "generated_by": "reports/round-103/mutations/r103-w2-account.py",
+ "key_vocab": {
+  "BUTTON_FOCUS": [
+   "button_has_focus",
+   "edge",
+   "focused",
+   "receipts",
+   "step",
+   "text"
+  ],
+  "BUTTON_GROUP": [
+   "A",
+   "B",
+   "label",
+   "receipts"
+  ],
+  "BUTTON_GROUP_DISCONNECTED": [
+   "A",
+   "B",
+   "label",
+   "receipts"
+  ],
+  "BUTTON_GROUP_UNGROUPED": [
+   "A",
+   "B",
+   "label",
+   "receipts"
+  ],
+  "CHECKBOX": [
+   "label",
+   "press",
+   "receipts",
+   "release_state"
+  ],
+  "CHECKBOX_DISCONNECTED": [
+   "label",
+   "press",
+   "receipts",
+   "release_state"
+  ],
+  "DESCENDANT_PIPE": [
+   "godot_pid",
+   "spawned_pid"
+  ],
+  "DESCENDANT_PIPE_FORGE": [
+   "child_signature",
+   "write_ppid"
+  ],
+  "EXPORT_LAUNCH_DIAG": [
+   "nested",
+   "project",
+   "root",
+   "userns_tmp_isolation"
+  ],
+  "EXPORT_PROD_DIAG": [
+   "XDG_DATA_HOME",
+   "disk_uid",
+   "nested",
+   "project",
+   "root",
+   "userns_tmp_isolation"
+  ],
+  "HEALTH_GAUGE_NEGATIVE": [
+   "actual_value",
+   "receipts"
+  ],
+  "NAV_LATTICE_TEARDOWN_CRASH": [
+   "armed",
+   "has_cb"
+  ],
+  "OBSERVED": [
+   "boundary",
+   "center",
+   "expected_clamp",
+   "target",
+   "top_test"
+  ],
+  "R101Y": [
+   "a_t2_absy",
+   "a_t2_cross_clean",
+   "a_t2_relpos",
+   "a_t2_vec",
+   "a_t4_absy",
+   "a_t4_cross_clean",
+   "a_t4_with_b_relpos",
+   "a_t4_with_b_vec",
+   "a_t6_with_b_vec",
+   "add_order",
+   "b_t2_absy",
+   "b_t2_cross_clean",
+   "b_t2_relpos",
+   "b_t2_vec",
+   "b_t4_vec",
+   "distinct_ticks",
+   "dy_meas",
+   "dy_resid",
+   "env",
+   "ladder",
+   "last_change_tick",
+   "n_at_0",
+   "n_at_b",
+   "n_at_pile",
+   "n_at_q",
+   "n_at_y",
+   "n_between",
+   "n_origin",
+   "offy",
+   "pf",
+   "proc",
+   "qoffy",
+   "r95b_lines",
+   "r95b_offy_tokens",
+   "r95b_sha256",
+   "replacement_arm",
+   "self_offy_tokens",
+   "self_sha256",
+   "t2_absy",
+   "t2_relpos",
+   "t2_relpos_eq_canon",
+   "t2_vec",
+   "t2_vec_eq_canon",
+   "t64_absy",
+   "t64_relpos"
+  ],
+  "R79": [
+   "arm",
+   "engine2d",
+   "godot",
+   "separate_thread"
+  ],
+  "R80": [
+   "arm",
+   "engine2d",
+   "godot",
+   "separate_thread"
+  ],
+  "R81": [
+   "arm",
+   "engine2d",
+   "godot",
+   "sep_thread",
+   "tps"
+  ],
+  "R83": [
+   "acc",
+   "arm",
+   "godot",
+   "tps"
+  ],
+  "R85": [
+   "arm",
+   "godot",
+   "tps",
+   "tscale",
+   "vp"
+  ],
+  "R87E": [
+   "acc",
+   "arm",
+   "godot",
+   "tps"
+  ],
+  "R88S": [
+   "chan",
+   "cm",
+   "col",
+   "cull",
+   "dl",
+   "en2",
+   "frames",
+   "h",
+   "mask",
+   "mo",
+   "mode",
+   "n",
+   "neg_wait",
+   "occ",
+   "pl",
+   "pos_wait",
+   "raw_order",
+   "raw_uid",
+   "rc",
+   "sdf",
+   "sh",
+   "spawned_srv",
+   "srv_children",
+   "status",
+   "sync_wait",
+   "ts",
+   "uid",
+   "uid_c",
+   "uid_s",
+   "wait"
+  ],
+  "R89": [
+   "a",
+   "adj_clip",
+   "adj_inter",
+   "adj_merge",
+   "atlas1",
+   "atlas3",
+   "atlas_sq",
+   "bow",
+   "bresenham",
+   "call",
+   "center",
+   "circle_ladder",
+   "clip",
+   "clip_bow",
+   "clip_bs",
+   "clip_emptyL",
+   "clip_emptyR",
+   "clip_one",
+   "clip_rev",
+   "clip_sb",
+   "clip_self",
+   "clip_two",
+   "closed_endbutt",
+   "closed_endjoined",
+   "closed_endpolygon",
+   "closest",
+   "col",
+   "col3",
+   "colliders",
+   "corner",
+   "cw",
+   "d1",
+   "dec_area",
+   "decomp",
+   "default_join_polygon",
+   "default_polyline",
+   "degenerate",
+   "delaunay",
+   "diag",
+   "drop_center",
+   "dup",
+   "e2",
+   "e4",
+   "edge",
+   "end",
+   "excl",
+   "excl_bs",
+   "excl_emptyR",
+   "excl_sb",
+   "excl_self",
+   "frames",
+   "hits",
+   "hull",
+   "hull_degen",
+   "in",
+   "inside",
+   "inter",
+   "inter_bs",
+   "inter_emptyL",
+   "inter_emptyR",
+   "inter_sb",
+   "inter_self",
+   "isect",
+   "join",
+   "line_default",
+   "line_m2_joined",
+   "line_mt_joined",
+   "line_rd_butt",
+   "line_rd_joined",
+   "line_rd_round",
+   "line_rd_square",
+   "line_sq_joined",
+   "match",
+   "merge",
+   "merge_bs",
+   "merge_emptyL",
+   "merge_emptyR",
+   "merge_sb",
+   "merge_self",
+   "miss",
+   "nmethods",
+   "off_m2_mt",
+   "off_m2_rd",
+   "off_m2_sq",
+   "off_p2_mt",
+   "off_p2_rd",
+   "off_p2_sq",
+   "one",
+   "op",
+   "open_endpolygon",
+   "out",
+   "outside_corner",
+   "ovl_clip",
+   "ovl_excl",
+   "ovl_inter",
+   "pic",
+   "pip",
+   "pip_corner",
+   "pip_degen",
+   "pip_right",
+   "pip_right_cw",
+   "poly_area",
+   "poly_collapse",
+   "poly_m2_mt",
+   "poly_m2_rd",
+   "poly_m2_sq",
+   "poly_p2_mt",
+   "poly_p2_rd",
+   "poly_p2_sq",
+   "poly_zero",
+   "rest",
+   "result",
+   "rev",
+   "ring",
+   "seg",
+   "segseg",
+   "self_hit",
+   "sic",
+   "sig",
+   "size",
+   "slabs",
+   "sq",
+   "startinside",
+   "tangent",
+   "tps",
+   "tri",
+   "tri_area",
+   "tri_idx",
+   "tri_ladder",
+   "two",
+   "uncap",
+   "vel",
+   "vertex",
+   "wall"
+  ],
+  "R89I": [
+   "axany",
+   "axis0",
+   "axis5",
+   "census",
+   "control",
+   "dz_ax0",
+   "dz_ui_accept",
+   "eia_avail",
+   "eia_both",
+   "eia_dev0",
+   "eia_dev5",
+   "eia_sW",
+   "eia_sW_vs_wW",
+   "eia_wW",
+   "eia_wW_vs_sW",
+   "inex",
+   "just_after_flush",
+   "poll_after_shiftW_release",
+   "poll_dev0",
+   "poll_dev0_06",
+   "poll_dev0_neg",
+   "poll_dev5",
+   "poll_plainW",
+   "poll_plainW_released",
+   "poll_release",
+   "poll_shiftW_on_plainW_binding",
+   "raw0",
+   "sW_eia_ex",
+   "strength0"
+  ],
+  "R90": [
+   "a",
+   "acc",
+   "auto_com",
+   "auto_mode",
+   "auto_set0",
+   "auto_set4",
+   "b",
+   "back_auto",
+   "c",
+   "cb",
+   "cb0",
+   "cb0_rel",
+   "cb1",
+   "cb2",
+   "cb3",
+   "cb4",
+   "cblast",
+   "cbpf_dh",
+   "coml_prop",
+   "custom_com",
+   "custom_mode",
+   "custom_set0",
+   "custom_set4",
+   "cvel",
+   "d",
+   "d_angular_damp",
+   "d_angular_damp_mode",
+   "d_can_sleep",
+   "d_center_of_mass",
+   "d_center_of_mass_local",
+   "d_center_of_mass_mode",
+   "d_constant_force",
+   "d_constant_torque",
+   "d_contact_monitor",
+   "d_continuous_cd",
+   "d_custom_integrator",
+   "d_freeze",
+   "d_freeze_mode",
+   "d_gravity_scale",
+   "d_inertia",
+   "d_linear_damp",
+   "d_linear_damp_mode",
+   "d_lock_rotation",
+   "d_mass",
+   "d_max_contacts_reported",
+   "d_sleeping",
+   "eng",
+   "entered",
+   "enum",
+   "exp",
+   "exp_dvy_gdt",
+   "exp_dy",
+   "f1",
+   "f2",
+   "f3",
+   "f30",
+   "f60",
+   "g",
+   "gdt",
+   "gdt2",
+   "gscale0",
+   "gscale_neg",
+   "iI",
+   "im",
+   "inertia0",
+   "inertia33_mass1",
+   "inertia33_mass4",
+   "inertia5",
+   "methods",
+   "mode",
+   "ncb",
+   "nprops",
+   "obs0_rel",
+   "pf_delta",
+   "pos",
+   "post",
+   "props",
+   "ps_adamp",
+   "ps_gravity",
+   "ps_ldamp",
+   "ps_tps",
+   "rest",
+   "rot_com",
+   "set",
+   "sleep",
+   "step",
+   "tick_dh",
+   "tld",
+   "tps",
+   "ty",
+   "u_angular_damp",
+   "u_center_of_mass",
+   "u_center_of_mass_local",
+   "u_constant_force",
+   "u_constant_torque",
+   "u_freeze_mode",
+   "u_inertia",
+   "u_linear_damp",
+   "u_sleeping",
+   "vy",
+   "y"
+  ],
+  "R92": [
+   "BOTTOM_RIGHT_CORNER",
+   "BOTTOM_RIGHT_SIDE",
+   "BOTTOM_SIDE",
+   "HALF_OFFSET_SQUARE",
+   "HEXAGON",
+   "ISOMETRIC",
+   "MATCH_CORNERS",
+   "MATCH_SIDES",
+   "RIGHT_CORNER",
+   "TOP_RIGHT_CORNER",
+   "TileData",
+   "TileMapPattern",
+   "TileSet",
+   "TileSetAtlasSource",
+   "about_to_call_tile_data",
+   "add_colliding",
+   "add_negative",
+   "add_null",
+   "after_src_1_0",
+   "after_src_2_0",
+   "after_used",
+   "alt_bytes",
+   "alt_count",
+   "alt_id",
+   "alt_id_created",
+   "alt_list",
+   "arr_roundtrip_atlas",
+   "arr_roundtrip_src",
+   "arr_roundtrip_used",
+   "atlas_1_0",
+   "atlas_3_2",
+   "atlas_defaults",
+   "auto_id",
+   "bad_atlas_readback",
+   "bad_atlas_td",
+   "bad_set_used",
+   "bad_src_in_used",
+   "bad_src_readback",
+   "bad_terrain_used",
+   "before_used",
+   "by_index_0",
+   "by_index_1",
+   "class",
+   "class_method_counts",
+   "clear_rect",
+   "clear_used_n",
+   "cm",
+   "col_vis",
+   "collider",
+   "collision_enabled",
+   "color_0",
+   "connect_atlas_0_0",
+   "connect_atlas_1_0",
+   "connect_atlas_2_0",
+   "connect_dirt_atlas_0_0",
+   "connect_dirt_used",
+   "connect_src_0_0",
+   "connect_used",
+   "coords_for_untracked_body",
+   "count",
+   "count_1",
+   "count_after_colliding",
+   "count_after_null",
+   "cross_layer_atlas",
+   "cross_layer_used",
+   "custom_data_layers",
+   "data_immediate_control",
+   "default_hp",
+   "default_quad",
+   "default_tag",
+   "disabled_f1",
+   "disabled_same_frame",
+   "dup_hp",
+   "dup_is_distinct",
+   "dup_layers",
+   "empty",
+   "empty_alt",
+   "empty_arr_len",
+   "empty_at_1_1",
+   "empty_atlas",
+   "empty_bytes_len",
+   "empty_flip_h",
+   "empty_flip_v",
+   "empty_is_empty",
+   "empty_rect",
+   "empty_size",
+   "empty_source",
+   "empty_td",
+   "empty_transpose",
+   "empty_used",
+   "enabled_f1",
+   "enabled_same_frame",
+   "enum_neighbor",
+   "enum_terrainset",
+   "enum_tileshape",
+   "erase_absent_ok",
+   "erase_f1",
+   "erase_same_frame",
+   "erase_src",
+   "erase_used_n",
+   "erase_used_n2",
+   "explicit_5",
+   "ghost",
+   "grid_size",
+   "has_2",
+   "has_5",
+   "has_alt_0",
+   "has_alt_1",
+   "has_alt_7",
+   "has_body_rid",
+   "has_cell_0_0",
+   "has_hp",
+   "has_layer_hp",
+   "has_source_0",
+   "has_tile_00",
+   "has_tile_10_after",
+   "has_tile_11",
+   "hp_7",
+   "hp_after_remove",
+   "hp_wrongtype",
+   "hp_wrongtype_still",
+   "id_index_0",
+   "id_index_1",
+   "ids",
+   "ids_after_refusals",
+   "index_of_hp",
+   "index_of_missing",
+   "invalid_source",
+   "is_empty",
+   "is_layer",
+   "kinematic_body_tracked",
+   "kinematic_coords",
+   "kinematic_use",
+   "layer_defaults",
+   "layer_hp",
+   "layer_nav_enabled",
+   "layer_nav_vis",
+   "layer_no_collision_priority",
+   "layer_props",
+   "layer_tag",
+   "layers_0",
+   "layers_2",
+   "layers_after_remove",
+   "local_to_map_16_16",
+   "local_to_map_8_8",
+   "local_to_map_neg",
+   "m",
+   "map_pattern_0_0_0_0",
+   "map_pattern_10_10_1_0",
+   "map_to_local_1_1",
+   "map_to_local_neg",
+   "margins",
+   "mat_null",
+   "missing",
+   "mode_default",
+   "mode_set",
+   "move_f1",
+   "move_f2",
+   "move_same_frame",
+   "moved_back",
+   "moved_ids",
+   "name_0",
+   "names",
+   "nav_enabled",
+   "nav_layer_defaults",
+   "nav_layer_set",
+   "nav_layers",
+   "nav_map_valid",
+   "nav_poly_default",
+   "nav_poly_set",
+   "nav_vis",
+   "neighbors_invalid4",
+   "neighbors_valid8",
+   "next_after_auto",
+   "next_after_explicit",
+   "next_source_id",
+   "no_terrain_used",
+   "normal",
+   "notify_f1",
+   "notify_same_frame",
+   "occl",
+   "occlusion_layers",
+   "one_bytes",
+   "one_bytes_len",
+   "padding",
+   "path_used",
+   "peering_left",
+   "peering_right",
+   "peering_right_corner_valid",
+   "peering_right_valid",
+   "phys_layers",
+   "phys_quad",
+   "physics_layers",
+   "poly_oneway",
+   "poly_oneway_set",
+   "poly_pt0",
+   "polys_0",
+   "polys_1",
+   "prio",
+   "quad16_far",
+   "quad16_near",
+   "quad16_spread",
+   "quad2_f1_far",
+   "quad2_near",
+   "quad2_same_frame_far",
+   "quad2_spread",
+   "quad_restored",
+   "quad_set",
+   "rect_after_3",
+   "regions_after_plain_cell",
+   "regions_disabled_f1",
+   "regions_disabled_same_frame",
+   "regions_empty",
+   "regions_erased_f1",
+   "regions_erased_same_frame",
+   "regions_f1",
+   "regions_f2",
+   "regions_reenabled",
+   "regions_same_frame",
+   "removed_fixed_used",
+   "removed_ids",
+   "removed_used",
+   "rend_quad",
+   "rendering_quad_untouched",
+   "same_frame_td",
+   "same_frame_used_has",
+   "separation",
+   "set_atlas_5_4",
+   "set_f1",
+   "set_f2",
+   "set_flip_h",
+   "set_flip_v",
+   "set_rect",
+   "set_same_frame_physics",
+   "set_same_frame_td",
+   "set_same_frame_used",
+   "set_transpose",
+   "set_used",
+   "sets_0",
+   "sets_1",
+   "shape",
+   "short_arr_len",
+   "short_arr_used",
+   "sid_explicit_7",
+   "sid_first",
+   "size",
+   "sources",
+   "sparse_hole_src",
+   "sparse_size",
+   "sparse_used",
+   "src_0_0",
+   "src_3_2",
+   "src_after_set",
+   "src_class",
+   "stride",
+   "surrounding",
+   "tag_after_remove",
+   "tag_alpha",
+   "td_3_2",
+   "td_alt_distinct",
+   "td_class",
+   "td_missing",
+   "td_terrain",
+   "td_terrain_default",
+   "td_terrain_set",
+   "td_terrain_set_default",
+   "terrain_sets",
+   "terrains_0",
+   "terrains_2",
+   "tex_region",
+   "tile0",
+   "tile0_again",
+   "tile1_no_polygon",
+   "tile_layout",
+   "tile_offset_axis",
+   "tile_shape",
+   "tile_size_in_atlas",
+   "tiles",
+   "tiles_after_2",
+   "tiles_after_dup",
+   "tiles_after_remove",
+   "tiles_list",
+   "tileset_null",
+   "tomb_clear_bytes",
+   "tomb_clear_len",
+   "tomb_clear_set_bytes",
+   "tomb_clear_set_len",
+   "tomb_erase_bytes",
+   "tomb_erase_len",
+   "tomb_erase_used",
+   "tomb_reset_bytes",
+   "tomb_reset_len",
+   "tomb_set_bytes",
+   "travel",
+   "truncated_len",
+   "truncated_used",
+   "ts_defaults",
+   "two_arr_equals_bytes",
+   "two_arr_len",
+   "two_bytes",
+   "two_bytes_len",
+   "type_0",
+   "update_erase_f1",
+   "update_erase_same_frame",
+   "update_set_same_frame",
+   "use_kinematic",
+   "used",
+   "used_after_3",
+   "used_after_set",
+   "used_by_id_bad",
+   "used_by_id_src",
+   "uv_clipping",
+   "value1",
+   "x_draw_rev",
+   "y_sort_origin"
+  ],
+  "R95": [
+   "add_order",
+   "add_same_frame",
+   "add_t0_point",
+   "add_t0_ray",
+   "add_t0_shape",
+   "after_free",
+   "after_readd",
+   "areas",
+   "areas_on",
+   "areas_only",
+   "base",
+   "baseline",
+   "bodies",
+   "body_rid",
+   "bottom",
+   "box_bottom",
+   "box_left",
+   "box_left_in",
+   "box_right",
+   "box_right_in",
+   "box_top",
+   "canvas_absent",
+   "cap0",
+   "cap1",
+   "cap2",
+   "cap3",
+   "cap32_truncates",
+   "cap5",
+   "cap_default",
+   "cast_srv_ignored",
+   "circ_center",
+   "circ_left",
+   "circ_left_in",
+   "circ_top",
+   "cm_areas_on",
+   "cm_base",
+   "cm_excl_both",
+   "cm_excl_w1",
+   "cm_from_inside",
+   "cm_inside_matches_later_wall",
+   "cm_inside_skips_overlap",
+   "cm_mask2",
+   "cm_negative",
+   "cm_to_wall1",
+   "cm_zero",
+   "corner_diag",
+   "corner_start_away",
+   "cs_cap1",
+   "cs_cap2",
+   "cs_empty",
+   "cs_excl_b1",
+   "cs_mask2",
+   "cs_n",
+   "cs_pts",
+   "cs_rep",
+   "default_q",
+   "defaults",
+   "dss_cls",
+   "dss_identity",
+   "dss_methods",
+   "dss_sigs",
+   "dup_rid",
+   "empty",
+   "end_at_face",
+   "end_eps_before",
+   "excl",
+   "excl_area",
+   "excl_first",
+   "excl_wall",
+   "far_out",
+   "free_deferred",
+   "free_perturbs",
+   "free_t0",
+   "free_t1",
+   "from_left_away",
+   "from_left_through",
+   "from_right_away",
+   "from_right_through",
+   "graze_inside",
+   "graze_top",
+   "insert_perturbs",
+   "inside",
+   "inside_area_on",
+   "inside_off",
+   "inside_on",
+   "keys",
+   "last_added_wins",
+   "layer_change_t0",
+   "layer_change_t1",
+   "layer_offset_ignored",
+   "layer_q",
+   "layer_q_at_default_spot",
+   "layer_scoped",
+   "layout_changes_order",
+   "mask",
+   "mask0",
+   "mask2",
+   "multi_c0",
+   "multi_c1",
+   "multi_c2",
+   "multi_set",
+   "n",
+   "nearest",
+   "nobodies",
+   "node_move_deferred",
+   "node_move_t0_new",
+   "node_move_t0_old",
+   "node_move_t1_new",
+   "node_move_t1_old",
+   "node_world_ok",
+   "null_rid_inert",
+   "outside_on",
+   "pile40_cap0",
+   "pile40_cap64",
+   "pile40_default",
+   "pile_a_after_insert",
+   "pile_b",
+   "pile_rev",
+   "point_half_open",
+   "point_vis",
+   "pos",
+   "pre_free",
+   "pt",
+   "pt_canvas",
+   "ray",
+   "ray_area_off",
+   "ray_area_on",
+   "ray_backface",
+   "ray_create",
+   "ray_sb",
+   "ray_sees_default",
+   "ray_shape_rid_inert",
+   "ray_srv",
+   "readd_set",
+   "rep1",
+   "rep2",
+   "rep3",
+   "repeat_stable",
+   "rev",
+   "reverse",
+   "ri_empty",
+   "ri_keys",
+   "ri_m200",
+   "ri_m200_excl_w1",
+   "ri_m290",
+   "ri_m300",
+   "ri_m400",
+   "ri_m400_excl_w1",
+   "ri_m50",
+   "ri_m600",
+   "ri_mask2",
+   "ri_offaxis",
+   "ri_zero_motion",
+   "right",
+   "root_view",
+   "rot_left",
+   "rot_right",
+   "rot_top",
+   "s_box_bottom",
+   "s_box_right",
+   "s_circ_top",
+   "s_rot_right",
+   "same_space",
+   "server_tele_t0_new",
+   "server_tele_t0_old",
+   "server_tier_visible",
+   "server_write_live",
+   "set",
+   "sh",
+   "shape",
+   "shape_area_off",
+   "shape_area_on",
+   "shape_layer_agnostic",
+   "shape_rid",
+   "shape_rid_inert",
+   "shape_rid_is_body_rid",
+   "shape_same_order",
+   "shape_sees_both",
+   "shape_srv",
+   "shifted_default_q",
+   "shifted_layer_q",
+   "space_scoped",
+   "sv_view",
+   "tie",
+   "tie_add_order",
+   "tie_minus_first",
+   "tie_minus_second",
+   "to",
+   "top",
+   "touch",
+   "touch_in",
+   "touch_out",
+   "vis_off",
+   "visible_irrelevant",
+   "zero_len_face",
+   "zero_len_out"
+  ],
+  "R95B": [
+   "a_t2_relpos",
+   "a_t2_vec",
+   "a_t4_with_b_relpos",
+   "a_t4_with_b_vec",
+   "a_t6_with_b_vec",
+   "add_order",
+   "add_order_head",
+   "b_t2_relpos",
+   "b_t2_vec",
+   "b_t4_vec",
+   "cycle_len",
+   "cycle_len_dense",
+   "distinct_ticks",
+   "end_pt_eq_sh",
+   "end_sh_vec",
+   "env",
+   "expected_kk1",
+   "freed",
+   "fresh_id",
+   "ids",
+   "k",
+   "keep",
+   "ladder",
+   "last_change_tick",
+   "map",
+   "maxsteps",
+   "n0",
+   "n32",
+   "n64",
+   "n_ticks",
+   "off",
+   "perm",
+   "pf",
+   "proc",
+   "pt0_distinct",
+   "pt0_ladder",
+   "pt0_relpos",
+   "pt0_t2_eq_sh",
+   "pt0_t2_relpos",
+   "pt0_t2_vec",
+   "pt0_vec",
+   "ptL_vec",
+   "pt_eq_sh",
+   "pt_stable_interleaved",
+   "relpos32_t32",
+   "relpos64_head",
+   "scout_row_rev_t2_vec",
+   "sep2d",
+   "sep2d_has",
+   "set",
+   "set32_distinct",
+   "set32_ladder",
+   "set32_t2",
+   "set32_t32",
+   "set64",
+   "sh_len",
+   "sh_relpos",
+   "sh_vec",
+   "spacing",
+   "t0_pidx",
+   "t0_vec",
+   "t10_bodypos",
+   "t10_relpos",
+   "t16_vec",
+   "t1_bodypos",
+   "t1_relpos",
+   "t1_vec",
+   "t2_bodypos",
+   "t2_pt_eq_sh",
+   "t2_relpos",
+   "t2_relpos_equals_canon",
+   "t2_sh_vec",
+   "t2_vec",
+   "t2_vec_matches_scout_row",
+   "t32_vec",
+   "t3_bodypos",
+   "t3_vec",
+   "t5_bodypos",
+   "t64_relpos",
+   "t64_vec",
+   "t_last_vec",
+   "which"
+  ],
+  "R96": [
+   "engine",
+   "format",
+   "groups",
+   "groups_text",
+   "head",
+   "id",
+   "name",
+   "parent",
+   "path",
+   "scene_text",
+   "t1",
+   "t3",
+   "t4",
+   "text",
+   "text_a",
+   "text_local",
+   "text_pin",
+   "tres_head",
+   "tres_text",
+   "type",
+   "unique_id"
+  ],
+  "R96B": [
+   "A",
+   "B",
+   "C",
+   "D",
+   "cached_dep_col",
+   "ch_col",
+   "ch_same",
+   "connections",
+   "dep_obj_col",
+   "ext_id",
+   "ext_line",
+   "extra",
+   "format",
+   "from",
+   "g0s0",
+   "g0s1",
+   "g1s0",
+   "g1s1",
+   "gen1",
+   "groups",
+   "id",
+   "id1",
+   "id2",
+   "ids1",
+   "ids1b",
+   "ids2",
+   "k",
+   "lines",
+   "method",
+   "mode",
+   "name",
+   "obj1",
+   "obj2",
+   "parent",
+   "path",
+   "pinned_sha",
+   "pre",
+   "r0s1",
+   "r1s0",
+   "r1s1",
+   "same_process_same",
+   "sample",
+   "sc_same",
+   "seq",
+   "signal",
+   "sub_id",
+   "sub_line",
+   "text",
+   "text1_uonly",
+   "text_pinned",
+   "text_uonly",
+   "to",
+   "type",
+   "unique_id",
+   "use_process",
+   "vals"
+  ],
+  "R97": [
+   "DEFERRED",
+   "ONE_SHOT",
+   "PERSIST",
+   "REFERENCE_COUNTED",
+   "REVERSE",
+   "UNIQUE",
+   "add_order",
+   "after_disconnect",
+   "after_free",
+   "after_move_child",
+   "after_pf",
+   "after_queue_free_t0",
+   "after_queue_free_t1",
+   "after_reparent",
+   "args",
+   "await_before",
+   "await_next_frame",
+   "await_same_frame",
+   "await_two",
+   "bind_conn_n",
+   "bind_order",
+   "byname_connected",
+   "byname_order",
+   "cap_d_membership",
+   "cap_e_membership",
+   "cap_members_t0",
+   "cap_t1",
+   "child_stays",
+   "conn_n",
+   "connect_flags",
+   "connect_order",
+   "count",
+   "cross_rev_t1",
+   "cross_t0",
+   "cross_t1",
+   "current_scene_t0",
+   "def_rev_t1",
+   "defer_two_t0",
+   "defer_two_t1",
+   "deferred_t0",
+   "deferred_t1",
+   "detached",
+   "df",
+   "df_log",
+   "direct",
+   "disc_t0_connected",
+   "disc_t1_ran",
+   "double_remove",
+   "drev_members",
+   "drev_t1",
+   "dup_add",
+   "dup_count",
+   "early_t1",
+   "emit_t0",
+   "emit_t1",
+   "fifo",
+   "file_children_t0",
+   "file_children_t5",
+   "file_t0",
+   "file_t1",
+   "file_t5",
+   "first",
+   "flags_default",
+   "frame1",
+   "frame2",
+   "frame4",
+   "free_dropped",
+   "group_flags",
+   "group_meths",
+   "group_signal",
+   "group_sigs",
+   "groups_a",
+   "in",
+   "ladder",
+   "last",
+   "live",
+   "membership",
+   "missing_method",
+   "missing_prop",
+   "mixed_t0",
+   "mixed_t1",
+   "multi_groups",
+   "nested",
+   "nested_t1",
+   "nested_tree",
+   "no_listeners",
+   "no_wait",
+   "node_children_t2",
+   "node_group_meths",
+   "node_t0",
+   "node_t2",
+   "nothas",
+   "notify",
+   "object_defer_meths",
+   "oneshot",
+   "oneshot_connected",
+   "ord",
+   "osd_connected_t0",
+   "osd_connected_t1",
+   "osd_flush",
+   "osd_second_emit",
+   "packed_children_t3",
+   "packed_loaded",
+   "packed_t0",
+   "packed_t1",
+   "packed_t3",
+   "parent_child",
+   "paused_seen",
+   "persist",
+   "persist_flags",
+   "phys_co_in_log",
+   "phys_defer_same_frame",
+   "physics_frame",
+   "plain_deferred_twice",
+   "queue_free",
+   "queue_free_valid",
+   "rc_after_one_disconnect",
+   "rc_conn_n",
+   "rc_emit",
+   "rc_emit2",
+   "readd_d_then_b",
+   "reconnect_order",
+   "reload_exists",
+   "removed",
+   "rep1",
+   "rep2",
+   "rev",
+   "reverse",
+   "root_cls",
+   "root_groups",
+   "root_in_group",
+   "scene_meths",
+   "set_def_capture",
+   "set_deferred_t0",
+   "set_deferred_t1",
+   "set_group",
+   "set_group_deferred_t0",
+   "set_group_deferred_t1",
+   "set_group_flags",
+   "slot_meta",
+   "slots_t0",
+   "slots_t1",
+   "snapshot",
+   "t0",
+   "tag",
+   "ticks",
+   "tree_cls",
+   "tree_order",
+   "tree_order2",
+   "uniq_def_next_frame",
+   "uniq_def_t0",
+   "uniq_def_t1",
+   "uniq_direct_1",
+   "uniq_direct_2_same_args",
+   "uniq_direct_3_new_args",
+   "unknown",
+   "unknown_group",
+   "weird_group",
+   "weird_groups"
+  ],
+  "R98": [
+   "add_n",
+   "add_same",
+   "and_draw",
+   "apply_scale",
+   "behind",
+   "bit0",
+   "bit1",
+   "bit2",
+   "c_after_parent",
+   "c_self",
+   "c_self_after_parent",
+   "canvas",
+   "child_hide_in_tree",
+   "cl_node",
+   "cl_node_back",
+   "cmove_c",
+   "cmove_p",
+   "coalesce_n",
+   "consts",
+   "control_n",
+   "ctor",
+   "default",
+   "defaults",
+   "deg45",
+   "draw_n",
+   "draws",
+   "draws_total",
+   "edit_pivot",
+   "events_tail",
+   "first",
+   "from_draw_n",
+   "front_index",
+   "getter",
+   "gp_local",
+   "grot_local_deg",
+   "gscale_local",
+   "has_global_modulate",
+   "has_global_z",
+   "has_pivot",
+   "hidden_n",
+   "hidden_queue_n",
+   "hidden_same",
+   "hide_before_flush_n",
+   "hide_hidden_sig",
+   "hide_in_tree",
+   "hide_noop",
+   "hide_notif",
+   "hide_prop",
+   "hide_sig",
+   "light",
+   "local_notify_default",
+   "m45",
+   "m90",
+   "material_null",
+   "matrix_same",
+   "mcl",
+   "mouse",
+   "move_c",
+   "move_default",
+   "move_default_c",
+   "move_p",
+   "ms",
+   "mx_grot",
+   "mx_gscale",
+   "mx_gskew",
+   "my_grot",
+   "my_gscale",
+   "neg_cast",
+   "nontransform_n",
+   "norm",
+   "notif_ok",
+   "notify_default",
+   "nu_grot_deg",
+   "nu_gskew",
+   "ok_n",
+   "only",
+   "order",
+   "out_n",
+   "outadd_n",
+   "outside_refused",
+   "oversample",
+   "p_modulate",
+   "parent_flag_isolated",
+   "parent_isolated",
+   "proc_n",
+   "proc_refused",
+   "proc_same",
+   "prop",
+   "props",
+   "raw_neg",
+   "readd_n",
+   "refused_stays",
+   "rel",
+   "reparent",
+   "reparent_back",
+   "requeue",
+   "restore_in_tree",
+   "restore_n",
+   "rid",
+   "rks",
+   "rs_getters",
+   "same",
+   "screen_eq",
+   "show_in_tree",
+   "show_n",
+   "show_notif",
+   "show_sig",
+   "sig_ok",
+   "sigs",
+   "table",
+   "top",
+   "top_is",
+   "translate",
+   "trigger_n",
+   "upm",
+   "vis_layer",
+   "vp",
+   "wc",
+   "xform_same",
+   "ysort",
+   "z_read",
+   "zero_grot",
+   "zero_gscale",
+   "zero_gskew",
+   "zrel"
+  ],
+  "R98B": [
+   "back_frame",
+   "back_tick",
+   "cl_node",
+   "cl_node_back",
+   "coalesce_draws",
+   "coalesce_eq",
+   "combos",
+   "control_n",
+   "ctor_fail_n",
+   "ctor_fail_nz",
+   "ctor_fail_z",
+   "d_n",
+   "d_pf_delta",
+   "distinct_draw_pf",
+   "draws_total",
+   "eps",
+   "eps_exact",
+   "err_lines_expected",
+   "first_fail",
+   "flat",
+   "frames_with_tick",
+   "gr_global",
+   "gr_local",
+   "gr_local_skew",
+   "gr_local_uniform",
+   "gr_rt",
+   "gr_rt_uniform",
+   "gs_global",
+   "gs_local",
+   "gs_local_rot",
+   "gs_local_uniform",
+   "gs_rt",
+   "gs_rt_uniform",
+   "gsc_global",
+   "gsc_local",
+   "gsc_rt",
+   "hidden_across_tick_n",
+   "hidden_queue_n",
+   "hide_hidden_sig",
+   "hide_in_tree",
+   "hide_noop",
+   "hide_notif",
+   "hide_same_frame",
+   "hide_sig",
+   "hide_span_pf",
+   "hide_ticksep_n",
+   "local_zero",
+   "max_const",
+   "max_draws_per_pf",
+   "move_frame",
+   "move_tick",
+   "neg",
+   "neg_prop",
+   "nontransform_n",
+   "ok2",
+   "recover",
+   "rep_frame",
+   "rep_tick",
+   "restore_in_tree",
+   "restore_n",
+   "rev",
+   "rev_groups",
+   "rev_stable",
+   "rks_fail_n",
+   "rks_fail_nz",
+   "rks_fail_z",
+   "rot4",
+   "s",
+   "same_pf",
+   "second_n",
+   "selfq_draws",
+   "show_after_tick_n",
+   "show_notif",
+   "stag_groups",
+   "stagger",
+   "stagger_off",
+   "stagoff_groups",
+   "stay3",
+   "stay99",
+   "stay_after_neg",
+   "stay_repeat",
+   "tick_draws_total",
+   "tick_hidden_queue_n",
+   "tick_hide_noop",
+   "tick_restore_n",
+   "tick_show_notif",
+   "tick_wait",
+   "ticks_window",
+   "tree",
+   "tree_groups",
+   "tree_stable",
+   "trigger_n",
+   "var",
+   "y_2_5",
+   "y_m0_5",
+   "z_ctor_eq00",
+   "z_ctor_eq01",
+   "z_tf00",
+   "z_tf01",
+   "zero_rot_skew"
+  ],
+  "R98BRKS": [
+   "combos",
+   "ctor",
+   "ex1",
+   "ex2",
+   "ex3",
+   "fail_list",
+   "max_abs_diff",
+   "nz_fail_n",
+   "rks",
+   "rsk_eq",
+   "sign_pairs",
+   "t"
+  ],
+  "R98C": [
+   "bounded",
+   "d_pf_delta",
+   "d_phf_delta",
+   "draws_eq_ticks",
+   "draws_gt_frames",
+   "hidden_across_tick_n",
+   "hide_sync_n",
+   "hide_ticksep_n",
+   "hide_ticksep_same_frame",
+   "max_draws_per_pf_ge2",
+   "multitick_frames_ge2",
+   "same_pf",
+   "selfq_draws",
+   "show_after_tick_n",
+   "sync_coalesce_n"
+  ],
+  "SEQ_BEGIN": [
+   "cells",
+   "clean",
+   "pins"
+  ],
+  "SEQ_CENSUS": [
+   "divergent",
+   "divergent_n",
+   "identical"
+  ],
+  "SEQ_DONE": [
+   "clean"
+  ],
+  "SEQ_END": [
+   "digest"
+  ],
+  "SLIDER_CLEAR_FRAME_THEN_PUSH_RELEASE": [
+   "Labels",
+   "callback_connected",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_CLEAR_THEN_PUSH_RELEASE": [
+   "Labels",
+   "callback_connected",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_COMPOSITE_PUSH_AND_CLEAR": [
+   "Labels",
+   "callback_connected",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_DISCONNECTED": [
+   "label",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_DOUBLE_RESTORE_DISCONNECTED": [
+   "Label",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_LATE_RECONNECT": [
+   "Label",
+   "connected",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_MID_DISCONNECT": [
+   "Label",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_NO_FOCUS": [
+   "focus_owner",
+   "label",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_PARSED_RELEASE_OBSERVER": [
+   "Labels",
+   "callback_connected",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_PUSH_FRAME_THEN_CLEAR_RELEASE": [
+   "Labels",
+   "callback_connected",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_PUSH_INPUT_RELEASE": [
+   "Labels",
+   "callback_connected",
+   "observer_delta",
+   "pressed",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_RELEASE_AFTER_LATE_RECONNECT_PRESS": [
+   "Labels",
+   "callback_connected",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_REPEAT_DISCONNECTED": [
+   "label",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_REPEAT_FOCUS_HANDOFF": [
+   "label",
+   "owner_other",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_REPEAT_NO_FOCUS": [
+   "focus_owner",
+   "label",
+   "receipts",
+   "values"
+  ],
+  "SLIDER_REPEAT_SECOND_FOCUS_LOSS": [
+   "Labels",
+   "receipts",
+   "values"
+  ],
+  "ei=-1": [
+   "pressed"
+  ],
+  "ei=-2": [
+   "pressed"
+  ],
+  "ei=0": [
+   "pressed"
+  ],
+  "ei=1": [
+   "pressed"
+  ],
+  "ei=100": [
+   "pressed"
+  ],
+  "ei=31": [
+   "pressed"
+  ],
+  "ei=32": [
+   "pressed"
+  ],
+  "ei=33": [
+   "pressed"
+  ],
+  "ei=42": [
+   "pressed"
+  ]
+ },
+ "scripts": {
+  "button_activation.gd": [
+   "BUTTON_FOCUS"
+  ],
+  "button_group_selection.gd": [
+   "BUTTON_GROUP",
+   "BUTTON_GROUP_DISCONNECTED",
+   "BUTTON_GROUP_UNGROUPED"
+  ],
+  "camera_limit.gd": [
+   "OBSERVED"
+  ],
+  "camera_proc.gd": [
+   "R85"
+  ],
+  "canvas_lattice.gd": [
+   "R98"
+  ],
+  "checkbox_toggle.gd": [
+   "CHECKBOX",
+   "CHECKBOX_DISCONNECTED"
+  ],
+  "descendant_pipe_probe.gd": [
+   "DESCENDANT_PIPE",
+   "DESCENDANT_PIPE_FORGE",
+   "DESCENDANT_PIPE_PROBE"
+  ],
+  "dss_lattice.gd": [
+   "R95"
+  ],
+  "ei_bound.gd": [
+   "ei=-1",
+   "ei=-2",
+   "ei=0",
+   "ei=1",
+   "ei=100",
+   "ei=31",
+   "ei=32",
+   "ei=33",
+   "ei=42"
+  ],
+  "export_launch.gd": [
+   "EXPORT_LAUNCH_DIAG"
+  ],
+  "export_prod.gd": [
+   "EXPORT_PROD_DIAG"
+  ],
+  "geo2d_lattice.gd": [
+   "R89"
+  ],
+  "health_gauge.gd": [
+   "HEALTH_GAUGE_NEGATIVE"
+  ],
+  "input89_edges.gd": [
+   "R89I"
+  ],
+  "input_lattice.gd": [
+   "R83"
+  ],
+  "nav_lattice.gd": [
+   "NAV_LATTICE_TEARDOWN_CRASH"
+  ],
+  "phys2d_events.gd": [
+   "R79"
+  ],
+  "phys2d_joints.gd": [
+   "R81"
+  ],
+  "phys2d_motion.gd": [
+   "R80"
+  ],
+  "r100b_seq.gd": [
+   "SEQ_DONE"
+  ],
+  "r101_seqfull.gd": [
+   "SEQ_BEGIN",
+   "SEQ_CENSUS",
+   "SEQ_END"
+  ],
+  "r101_ytrans.gd": [
+   "R101Y"
+  ],
+  "r87_edge.gd": [
+   "R87E"
+  ],
+  "r88_surfaces.gd": [
+   "R88S",
+   "arm=audio_pos",
+   "arm=light_props",
+   "arm=mp_loopback",
+   "arm=mp_offline",
+   "arm=mp_spawner",
+   "arm=sprite_meta",
+   "arm=sprite_phys",
+   "arm=vis_not"
+  ],
+  "r95b_order.gd": [
+   "R95B"
+  ],
+  "r96b_cache.gd": [
+   "R96B"
+  ],
+  "r96b_id.gd": [
+   "R96B"
+  ],
+  "r96b_phase.gd": [
+   "R96B"
+  ],
+  "r96b_seed.gd": [
+   "R96B"
+  ],
+  "r96b_seq.gd": [
+   "R96B"
+  ],
+  "r96b_var.gd": [
+   "R96B"
+  ],
+  "r98b_attack.gd": [
+   "R98B"
+  ],
+  "r98b_rksenum.gd": [
+   "R98BRKS"
+  ],
+  "r98c_flush.gd": [
+   "R98C"
+  ],
+  "rb_lattice.gd": [
+   "R90"
+  ],
+  "scene_io_lattice.gd": [
+   "R96"
+  ],
+  "slider_adjust.gd": [
+   "SLIDER_CLEAR_FRAME_THEN_PUSH_RELEASE",
+   "SLIDER_CLEAR_THEN_PUSH_RELEASE",
+   "SLIDER_COMPOSITE_PUSH_AND_CLEAR",
+   "SLIDER_DISCONNECTED",
+   "SLIDER_DOUBLE_RESTORE_DISCONNECTED",
+   "SLIDER_LATE_RECONNECT",
+   "SLIDER_MID_DISCONNECT",
+   "SLIDER_NO_FOCUS",
+   "SLIDER_PARSED_RELEASE_OBSERVER",
+   "SLIDER_PUSH_FRAME_THEN_CLEAR_RELEASE",
+   "SLIDER_PUSH_INPUT_RELEASE",
+   "SLIDER_RELEASE_AFTER_LATE_RECONNECT_PRESS",
+   "SLIDER_REPEAT_DISCONNECTED",
+   "SLIDER_REPEAT_FOCUS_HANDOFF",
+   "SLIDER_REPEAT_NO_FOCUS",
+   "SLIDER_REPEAT_SECOND_FOCUS_LOSS"
+  ],
+  "spontaneous_crash_probe.gd": [
+   "SPONTANEOUS_CRASH_PROBE:"
+  ],
+  "stree_lattice.gd": [
+   "R97"
+  ],
+  "tilemap_lattice.gd": [
+   "R92",
+   "arm=atlas",
+   "arm=cells",
+   "arm=census",
+   "arm=custom",
+   "arm=encoding",
+   "arm=fixinvalid",
+   "arm=nav",
+   "arm=nullts",
+   "arm=pattern",
+   "arm=physics",
+   "arm=quadrant",
+   "arm=srcids",
+   "arm=terrain",
+   "arm=timing"
+  ]
+ }
+}

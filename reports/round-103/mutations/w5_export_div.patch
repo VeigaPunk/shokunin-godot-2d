@@ -1,0 +1,38 @@
+--- a/corpus/fixtures/run_battery.py
++++ b/corpus/fixtures/run_battery.py
+@@ -4103,6 +4103,26 @@
+             for r in census_rows
+             if r["case"].startswith("export_launch_")
+             for e in r["entries"]),
++        # r103 W5: the export_div_ family ships with no expected_errors
++        # entries today (nested Godot export output is redirected to
++        # scratch logs, never echoed - the export_prod.gd evidence rule),
++        # so this gate is vacuous-but-honest for it, carried so a future
++        # allowlist entry under the prefix cannot die silently; same
++        # named-by-round / covers-round-prefixes shape as r87-r102.
++        "r103_expected_errors_all_matched": all(
++            not e["dead_in_run"]
++            for r in census_rows
++            if r["case"].startswith(("export_div_",))
++            for e in r["entries"]),
++        # r103 W5: export_div_ family count floor - every registered row
++        # ran (execution-loop splice defects) and the family is non-empty
++        # (a full-family drop from CASES and results together still fires).
++        # A partial drop with CASES and results shrunk together is invisible
++        # here by construction; freeze --min-rows N once the row set lands.
++        "r103_export_div_count_floor": (
++            sum(1 for r in results if r["case"].startswith("export_div_"))
++            == sum(1 for c in CASES if c[0].startswith("export_div_"))
++            >= 1),
+         # r100-critic F1 (harness ceiling): no gate could see a duplicated,
+         # dropped, or renamed CASES row — a 25-tuple drop-mutant still ran
+         # PASS 491/491 with the per-round gates vacuously true over zero
+@@ -4122,7 +4142,7 @@
+                 any(r["case"].startswith(p) for r in results)
+                 for p in ("stree_lattice_", "r98_canvas_", "r98b_", "r98c_",
+                           "r99_audio_", "r99b_", "r100_gui_", "r100b_", "r101_seqfull_", "r101_ytrans_", "export_prod_",
+-                          "export_launch_"))),
++                          "export_launch_", "export_div_"))),
+     }
+     # Harness-side hygiene: reap any lingering surface descendants (all arms
+     # self-exit in well under a second; never gated).
