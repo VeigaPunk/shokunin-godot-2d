@@ -1,0 +1,70 @@
+Round-105 closure-counter evidence
+
+Scope: metadata counters only; no corpus files were changed. C1/C3 are the existing r105-count.sh calculations. C2 reads both tables from the requested Git revision. Its metadata-backed count verifies a criterion why -> matching lesson M-row -> resolvable evidence path/line chain only; it does not establish substantive grounding.
+
+Command: sh reports/round-105/r105-count.sh b0d2c499
+== rev b0d2c499
+-- C1 coverage: res_uid CASES rows / total CASES (AST)
+res_uid 29 r105 7 total 600
+-- C2 calibration: QUALITY criteria / inherited baseline / lesson-derived criteria / mapped rows
+measured_revision: b0d2c4990ccf02e3074e85c9eeb40a10bdc1b4cb
+QUALITY_criterion_rows: 23
+inherited_contract_baseline_rows_Q1-Q3: 3
+lesson_derived_criteria_rows_Q4-Q23: 20
+syntactic_mapping_rows: 32
+joined_valid_mapping_rows: 32
+metadata_lesson_backed_mapping_rows: 32
+metadata_unbacked_mapping_rows: 0
+metadata_unbacked_criterion_ids: none
+metadata_scope: criterion why -> matching lesson M-row -> resolvable evidence path/line; not substantive grounding
+unresolved_criterion_ids: none
+malformed_capture_rows: none
+-- C3 depth: knowledge entries / entries with all 3 headers / SOURCES rows
+5
+3
+31
+
+Command: sh reports/round-105/r105-count.sh e8990516
+== rev e8990516
+-- C1 coverage: res_uid CASES rows / total CASES (AST)
+res_uid 21 r105 0 total 585
+-- C2 calibration: QUALITY criteria / inherited baseline / lesson-derived criteria / mapped rows
+measured_revision: e89905162b3a630a599607279681b30572010724
+QUALITY_criterion_rows: 0
+inherited_contract_baseline_rows_Q1-Q3: 0
+lesson_derived_criteria_rows_Q4-Q23: 0
+syntactic_mapping_rows: 0
+joined_valid_mapping_rows: 0
+metadata_lesson_backed_mapping_rows: 0
+metadata_unbacked_mapping_rows: 0
+metadata_unbacked_criterion_ids: none
+metadata_scope: criterion why -> matching lesson M-row -> resolvable evidence path/line; not substantive grounding
+missing_inputs (all C2 measurements zero): corpus/QUALITY.md, corpus/lessons/round-105.md
+unresolved_criterion_ids: none
+malformed_capture_rows: none
+-- C3 depth: knowledge entries / entries with all 3 headers / SOURCES rows
+2
+0
+0
+
+Command: python3 reports/round-105/r105-mapped-criteria.py b0d2c499 --self-test-invalid Q999
+measured_revision: b0d2c4990ccf02e3074e85c9eeb40a10bdc1b4cb
+QUALITY_criterion_rows: 23
+inherited_contract_baseline_rows_Q1-Q3: 3
+lesson_derived_criteria_rows_Q4-Q23: 20
+syntactic_mapping_rows: 32
+joined_valid_mapping_rows: 32
+metadata_lesson_backed_mapping_rows: 32
+metadata_unbacked_mapping_rows: 0
+metadata_unbacked_criterion_ids: none
+metadata_scope: criterion why -> matching lesson M-row -> resolvable evidence path/line; not substantive grounding
+unresolved_criterion_ids: none
+malformed_capture_rows: none
+-- in-memory invalid-criterion mutation (no corpus write)
+mutation: append Q999 to captured-by on M1
+syntactic_mapping_rows: 32 -> 32
+joined_valid_mapping_rows: 32 -> 31
+diagnostic: Q999 via M1
+repository_corpus_mutated: no
+
+Not run: Godot/full battery, source-validation command. No build, lint, or formatting checks were run.

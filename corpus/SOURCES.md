@@ -54,3 +54,27 @@
 
 - No unopened leads this round: every S001–S031 row was opened on 2026-10-19. A lead becomes a row only after the row's author opens it.
 - Reserved for next round: `uid-changes-coming-to-godot-4.4` article (referenced inside S015's body but not opened as a source); godot-docs PR 11803 (the documentation change that closed S025); godot-proposals discussions on deterministic physics if a replay-depth round needs them.
+
+## Search-log named-set reconciliation (append-only)
+
+This reconciles the sweep counts without rewriting the earlier search notes or source rows:
+
+- Sweep 1's unique set is S001–S025: 25 identified, 24 included, 1 rejected (S015).
+- Corrected Sweep 2's unique set is S026–S030: 5 identified, 5 included, 0 excluded. S031 belongs only to Sweep 3.
+- Sweep 3's unique set is S031: 1 identified, 0 included, 1 rejected.
+- The S025 negative-claim note re-screens the existing Sweep 1 row; it is not a new unique identification.
+
+These named sets are pairwise disjoint and partition the 31 registry IDs. The registry disposition is 29 non-rejected rows and 2 rejected rows (S015, S031). Exact audit command, run from the lane root:
+
+```sh
+python3 -c 'import pathlib,re; text=pathlib.Path("corpus/SOURCES.md").read_text(); rows=[(m.group(1),m.group(2)) for m in re.finditer(r"^\|\s*(S\d{3})\s*\|.*?\|\s*(queued|mined|rejected)\s*\|",text,re.M)]; ids=[i for i,_ in rows]; groups=[set("S%03d"%n for n in range(1,26)),set("S%03d"%n for n in range(26,31)),set(["S031"])]; union=set().union(*groups); overlaps=sum(map(len,groups))-len(union); missing=sorted(set(ids)-union); extra=sorted(union-set(ids)); rejected={i for i,status in rows if status=="rejected"}; print("registry: rows={} unique={} range={}..{}".format(len(ids),len(set(ids)),ids[0],ids[-1])); print("named sets: Sweep1=S001..S025 (25); Sweep2=S026..S030 (5); Sweep3=S031 (1)"); print("partition: union={} overlaps={} missing={} extra={}".format(len(union),overlaps,missing,extra)); print("registry disposition: nonrejected={} rejected={} ({})".format(len(set(ids)-rejected),len(rejected),",".join(sorted(rejected))))'
+```
+
+Output:
+
+```text
+registry: rows=31 unique=31 range=S001..S031
+named sets: Sweep1=S001..S025 (25); Sweep2=S026..S030 (5); Sweep3=S031 (1)
+partition: union=31 overlaps=0 missing=[] extra=[]
+registry disposition: nonrejected=29 rejected=2 (S015,S031)
+```

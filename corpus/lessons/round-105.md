@@ -172,3 +172,17 @@ supersede the initial two runs' duplicate-meta / missing-run-byte provenance.
 and R105FinalCritic are still this lane; their source re-opens and disagreement
 lessons improve the bar but do not certify outside discernment. SHONEN stays
 unchecked/self-asserted, never `[x]`.
+
+## Append-only metadata corrections
+
+### QUALITY provenance
+
+Parent-approved correction to the blanket opening statement in `corpus/QUALITY.md`: Q1–Q3 are mandatory inherited baseline criteria, not new lesson-derived criteria. Their provenance is the canonical mint template `.tower/worktrees/kaika/kimi-shokunin-canon/templates/mint/corpus/QUALITY.md:20-22`, with `CORPUS.md:24-26` and `PROTOCOL.md:469-471` as the original cited sources. Q4–Q23 are 20 lesson-derived criteria; the unchanged total is 23. No new Q rows or retroactive lessons are asserted.
+
+### SOURCES named-set reconciliation
+
+The appended correction in `corpus/SOURCES.md` separates the counts: Sweep 1 S001–S025 identified 25 / included 24 / rejected 1; corrected Sweep 2 S026–S030 identified 5 / included 5 / excluded 0; Sweep 3 S031 identified 1 / included 0 / rejected 1. S025's negative-claim note is a re-screen of its existing row, not a new unique identification. The disjoint sets total 31 unique IDs, matching the registry's 29 non-rejected and 2 rejected rows.
+
+### Outside spot-check and disposition
+
+The persistent outside review `reports/round-105/r105-outside-review.md` agrees with admitting K1/K2 and rejecting ART C4/C5/S031. The critic `reports/round-105/r105-outside-critic.md` agrees with the sampled source checks but finds the frozen C2/C3 dependency: C2 QUALITY criteria created the admission prerequisite for C3 knowledge entries, so the declared claims are not causally separable. Parent disposition is REJECT/HONEST STOP for round 105 as declared. No promotion and no post-hoc claim narrowing are made; preserved runtime observations and receipts are not erased or reinterpreted by this metadata correction.

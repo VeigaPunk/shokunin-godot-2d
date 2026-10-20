@@ -1464,3 +1464,60 @@ not a fabricated delta. The current r106 plan is appended in SCORECARD.
 All lane changes landed in `7d9d9741` (work) and `ff32e252` (scheduling repair);
 this record commit carries final receipts, scorecard and appended evidence.
 No push, no sibling/domain writes, no ledger commit by this lane.
+
+### Round 105 outside adjudication — REJECT AS DECLARED / HONEST STOP
+
+The orchestrator Main rejects the frozen claim set. W3ReviewGameDev2d recommends
+ADMIT (`reports/round-105/r105-outside-review.md`), while
+W3CriticGameDev2d identifies the binding causal-separability defect
+(`reports/round-105/r105-outside-critic.md` §§C2–C3): C2 creates QUALITY, and C3
+includes knowledge admissions that require that new bar. Therefore C3 cannot
+verify as declared without C2 landing. My earlier assertion at LOG:1334-1336
+that the bar was merely shared infrastructure did not remove the dependency.
+This appended correction supersedes the round-level admission implication of
+the prior self-verdicts; it does not rewrite the frozen claims.
+
+**Disposition: REJECTED / HONEST STOP for round 105 as declared.** No post-hoc
+narrowing of C3 to SOURCES only, no deletion of knowledge, no invented numeric
+rubric, no promotion or automatic next-round progression. Keep all verified
+artifacts: UID 21→29, CASES 585→600, two committed 621/621 receipts, 31 source
+rows, three knowledge notes, and the earlier harmed/repaired scheduling iteration.
+The failure is claim-set conformance, not a claim that those observations are false.
+
+The fresh outside reviewer agrees with admits K1/K2 and rejects ART C4/C5/S031,
+reopens source rows and reruns counts; the critic corroborates sampled sources
+and scoped runtime facts while dissenting on admission. Thus the previously
+pending outside corpus spot-check is supplied, but agreement on candidate taste
+does not cure round-level causal dependence. Expansion/quality remain positive
+artifact signals; no averaging of them into round admission is allowed.
+
+### Round 105 reachable closure corrections (metadata/counter only)
+
+Append-only QUALITY provenance now distinguishes **3 inherited mandatory
+baseline rows Q1–Q3** from **20 lesson-derived rows Q4–Q23**. Total remains 23;
+this is not 23 newly learned criteria or fabricated replacement rows. Canonical
+template/protocol citations in the corpus correction are relative to fleet root
+`/home/vgpnk/Projects/shokunin`, not the lane root.
+
+`r105-count.sh` now joins every captured-by Q ID to QUALITY at the measured
+revision, using `reports/round-105/r105-mapped-criteria.py`. On b0d2c499:
+32 syntactically mapped rows, 32 all-IDs-existing rows, 32 metadata-backed rows.
+Metadata-backed means a resolvable criterion-why→lesson M-row→evidence pointer,
+**not substantive grounding**. Baseline e8990516 produces zero C2 counts.
+The in-memory Q999 negative leaves syntax at 32 but reduces the valid join to 31,
+with `Q999 via M1`; no corpus mutation. Exact commands/output:
+`reports/round-105/r105-closure-counter-checks.txt`.
+
+The SOURCES append reconciles disjoint named sets: Sweep1 S001–S025 (25),
+Sweep2 S026–S030 (5), Sweep3 S031 (1); union 31, overlaps 0, missing/extra none,
+29 non-rejected and 2 rejected. The S025 note is a re-screen, not an extra
+identification. Source rows are unchanged. Final actual-registry validation
+with `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate`
+returned `ok` / exit 0 after these metadata changes.
+
+Only scoped counter, invalid-criterion negative and source validation were
+re-run; no Godot/full battery was needed or claimed for this metadata closure.
+Runtime source/fixtures and all old receipts remain preserved. Evidence age
+remains only a work-selection heuristic, not proof of the lowest scalar axis;
+the unscored obligation is left to the operator, not repaired by inventing a
+rubric. **Final disposition remains REJECT AS DECLARED / HONEST STOP.**

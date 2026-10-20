@@ -410,3 +410,48 @@ Saturation/stagnation: the r101 declaration remains the operative declaration
 (N=5); r105 is not stagnant (new capability), no lowest-axis waiver used.
 The placeholder Saturation heading and numeric-score rubric gap remain explicitly
 routed contract defects rather than a silently invented score.
+
+## Round 105 outside disposition — REJECTED AS DECLARED / HONEST STOP
+
+Main (orchestrator) selects rejection after outside review and critic dissent.
+W3ReviewGameDev2d recommends admission and agrees on sampled corpus admits and
+rejects; W3CriticGameDev2d finds the frozen C2/C3 dependency. Both evidence records
+are preserved under `reports/round-105/r105-outside-{review,critic}.md`.
+
+**The round's claims remain exactly as declared.** C2 creates the QUALITY bar
+required to admit the knowledge component of C3; calling the bar shared
+infrastructure did not make these claims causally separable. The earlier
+per-axis self-verdicts and runnable capability evidence do not establish
+round admission. No retrospective narrowing to a source-only C3 is made.
+
+| frozen claim | outside disposition |
+|---|---|
+| C1 coverage | measured improvement corroborated: UID 21→29, CASES 585→600, two 621/621 receipts; no new runtime harm found |
+| C2 calibration | mistake/bar evidence remains useful; baseline criterion provenance and mapped-counter accuracy corrected separately; cannot cure the frozen C2/C3 dependency |
+| C3 depth + source capability | source census and three knowledge observations retained; as declared, knowledge admission depends on C2, so not an independently admissible claim |
+
+Artifact trends: expansion and quality show verified positive knowledge signals;
+outside spot-check agrees on sampled admits/rejects. **Round-level verdict:
+REJECT / HONEST STOP**, not an average of positive trends. No numeric rubric is
+invented, no promotion is granted, and the earlier r106 plan is not authorization
+to advance. Parent adjudication controls closure.
+
+### Closure measurement correction (no new claim or criterion credit)
+
+The 23 QUALITY rows comprise 3 inherited contract baselines (Q1–Q3) and
+20 lesson-derived criteria (Q4–Q23), as clarified append-only in QUALITY and the
+round lesson. No Q rows were added by this closure correction.
+
+Corrected counter `sh reports/round-105/r105-count.sh b0d2c499` reports mappings
+separately: syntactic 32, all-Q-IDs-existing join 32, metadata-pointer-backed 32.
+The last is metadata resolution, not substantive grounding. In-memory Q999
+negative (`python3 reports/round-105/r105-mapped-criteria.py b0d2c499 --self-test-invalid Q999`)
+keeps syntactic 32 while valid join drops to 31 and names `Q999 via M1`.
+Baseline e8990516 is zero throughout C2. Evidence:
+`reports/round-105/r105-closure-counter-checks.txt`.
+
+SOURCES remains 31 rows, with corrected disjoint search sets 25+5+1 and no
+duplicate identification credit; actual shared validator is clean (exit 0).
+All runtime/fixture/receipt measurements are unchanged. These reachable
+metadata/counter repairs **do not cure the frozen causal-dependence defect**:
+round 105 remains **REJECTED / HONEST STOP**, with no promotion or claim rescope.

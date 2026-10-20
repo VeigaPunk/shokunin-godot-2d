@@ -64,3 +64,7 @@ grep -c '<entry_field>' <receipt>                                    # Q16: no s
 python3 -c "import ast;t=ast.parse(open('corpus/fixtures/run_battery.py').read());print([len(n.value.elts) for n in ast.walk(t) if isinstance(n,ast.Assign) and any(getattr(x,'id',None)=='CASES' for x in n.targets) and isinstance(n.value,ast.List)])"  # Q18: CASES count
 grep -cE '\[(obs|inf|unk)\]' corpus/knowledge/<entry>.md             # Q20: labels present
 ```
+
+## Provenance correction (append-only)
+
+Parent-approved clarification of the opening blanket sentence: Q1–Q3 are mandatory inherited baseline criteria, not new lesson-derived criteria. The canonical mint template `.tower/worktrees/kaika/kimi-shokunin-canon/templates/mint/corpus/QUALITY.md:20-22` provides these three baseline rows and assigns their provenance to `CORPUS.md` / `PROTOCOL.md`. The canonical originals are `.tower/worktrees/kaika/kimi-shokunin-canon/skills/shokunin/protocol/CORPUS.md:24-26` (source citation and falsifiability/opinion requirements) and `.tower/worktrees/kaika/kimi-shokunin-canon/skills/shokunin/protocol/PROTOCOL.md:469-471` (domain specialization; never generic agent advice). Q4–Q23 are 20 lesson-derived criteria; the total remains 23. This append creates no new Q row and asserts no retroactive lesson for Q1–Q3.
