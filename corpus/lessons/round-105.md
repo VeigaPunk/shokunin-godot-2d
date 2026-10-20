@@ -186,3 +186,20 @@ The appended correction in `corpus/SOURCES.md` separates the counts: Sweep 1 S00
 ### Outside spot-check and disposition
 
 The persistent outside review `reports/round-105/r105-outside-review.md` agrees with admitting K1/K2 and rejecting ART C4/C5/S031. The critic `reports/round-105/r105-outside-critic.md` agrees with the sampled source checks but finds the frozen C2/C3 dependency: C2 QUALITY criteria created the admission prerequisite for C3 knowledge entries, so the declared claims are not causally separable. Parent disposition is REJECT/HONEST STOP for round 105 as declared. No promotion and no post-hoc claim narrowing are made; preserved runtime observations and receipts are not erased or reinterpreted by this metadata correction.
+
+### Counter simplicity correction
+
+Parent integration review found the new generic evidence-path resolver and
+metadata-backed metric unnecessary for the requested captured-by ID join.
+Both are removed, including resolver caches and the test-only CLI; the old
+metadata-backed measurement is **withdrawn**, not a grounding claim.
+Only the two explicit Git blobs, Q IDs, captured-by Q IDs, syntax/join counts
+and named unknown IDs remain. Q1–Q3 baseline3 and Q4–Q23 lesson-derived20 are
+labels for the existing rows, not new learned-criterion credit.
+
+The Q999 negative remains external/in-memory and still must show syntax32,
+join-valid31 and `Q999 via M1`. Exact current recipe/output is
+`reports/round-105/r105-simple-counter-checks.txt`; the earlier CLI/evidence is
+preserved as history. No runtime/knowledge/receipt change or Godot rerun.
+This scope repair does not cure C2/C3 causal dependence: **REJECT AS DECLARED /
+HONEST STOP** remains the parent's disposition.

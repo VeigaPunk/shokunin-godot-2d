@@ -1521,3 +1521,24 @@ Runtime source/fixtures and all old receipts remain preserved. Evidence age
 remains only a work-selection heuristic, not proof of the lowest scalar axis;
 the unscored obligation is left to the operator, not repaired by inventing a
 rubric. **Final disposition remains REJECT AS DECLARED / HONEST STOP.**
+
+### Round 105 counter simplification — unnecessary metric withdrawn
+
+Parent integration review correctly rejected the 329-line closure counter as
+broader than the requested ID join. The helper is replaced by a small local
+counter reading only the two explicit QUALITY/round-105 lesson Git blobs.
+Generic path/reference resolution, BARE_PATHS, caches and the metadata-backed
+metric are removed. **The prior metadata-backed count is withdrawn as an
+unneeded proxy, not retained as grounding evidence.**
+
+Only Q-id syntax, all-IDs-existing joins and named unknown IDs remain, plus
+the explicit inherited-baseline/lesson-derived labels. The former
+`--self-test-invalid` CLI is removed; the meaningful Q999 negative is external,
+using the ordinary parsing function on in-memory text. Historical checks and
+notes remain unchanged; current commands/output are in
+`reports/round-105/r105-simple-counter-checks.txt`.
+
+No new criterion, evidence-strength score, runtime change or battery rerun.
+UID/knowledge/source/621-row receipts remain intact. The parent disposition
+remains **REJECT AS DECLARED / HONEST STOP**; simplifying the counter does not
+repair the frozen C2/C3 dependency.

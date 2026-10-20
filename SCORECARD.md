@@ -455,3 +455,18 @@ duplicate identification credit; actual shared validator is clean (exit 0).
 All runtime/fixture/receipt measurements are unchanged. These reachable
 metadata/counter repairs **do not cure the frozen causal-dependence defect**:
 round 105 remains **REJECTED / HONEST STOP**, with no promotion or claim rescope.
+
+### Counter scope correction — metadata-backed proxy withdrawn
+
+The earlier metadata-backed metric is withdrawn: no evidence-path walker,
+generic pointer resolver, blob cache or grounding proxy remains in the counter.
+Its sole inputs are the QUALITY and round-105 lesson Git blobs. Outputs are
+criterion/M-row counts, explicit baseline3/lesson-derived20 labels, syntactic
+mapping rows, existing-Q-ID join-valid rows and named unknown IDs. These do not
+claim substantive grounding.
+
+The test-only CLI is removed. An external in-memory Q999 negative demonstrates
+syntax32/valid31 with `Q999 via M1`; the old test-mode command above is historical,
+not the current interface. Current reproduction:
+`reports/round-105/r105-simple-counter-checks.txt`. No counts are converted into
+new learned-criterion credit. **Round 105 remains REJECTED / HONEST STOP.**

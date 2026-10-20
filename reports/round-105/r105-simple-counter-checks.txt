@@ -1,0 +1,62 @@
+Round-105 minimal two-blob counter — L1 checks
+
+Only Q-id syntax/existence joins are measured. The old metadata-backed metric,
+path resolver/cache, and --self-test-invalid CLI are removed. Prior evidence
+r105-closure-counter-checks.txt remains historical and unchanged. No runtime,
+fixture, knowledge, SOURCE row or 621-pass receipt was changed.
+
+Command 1 (lane root):
+sh reports/round-105/r105-count.sh 546db8d7
+
+Output:
+== rev 546db8d7
+-- C1 coverage: res_uid CASES rows / total CASES (AST)
+res_uid 29 r105 7 total 600
+-- C2 calibration: QUALITY criteria / inherited baseline / lesson-derived criteria / mapped rows
+measured_revision: 546db8d771a189e4455813efbad59fa70cbc8c2c
+QUALITY_criterion_rows: 23
+inherited_contract_baseline_rows_Q1-Q3: 3
+lesson_derived_criteria_rows_Q4-Q23: 20
+lesson_mistake_rows: 32
+syntactic_mapping_rows: 32
+joined_valid_mapping_rows: 32
+unknown_criterion_ids: none
+mapping_scope: Q-id syntax and existence join only; no grounding claim
+-- C3 depth: knowledge entries / entries with all 3 headers / SOURCES rows
+5
+3
+31
+Exit 0.
+
+Command 2 (external negative; ordinary parsing function, no test CLI):
+python3 - <<'PY'
+import re
+import runpy
+import subprocess
+import sys
+sys.dont_write_bytecode = True
+counter = runpy.run_path('reports/round-105/r105-mapped-criteria.py')
+quality, lesson = [subprocess.check_output(['git', 'show', '546db8d7:' + path], text=True) for path in ('corpus/QUALITY.md', 'corpus/lessons/round-105.md')]
+before = counter['count_mappings'](quality, lesson)
+mutated, hits = re.subn(r'^(\| M1 \|.*?\| )Q7( \| )', r'\g<1>Q7,Q999\g<2>', lesson, count=1, flags=re.M)
+after = counter['count_mappings'](quality, mutated)
+assert hits == 1
+assert before['syntactic_rows'] == after['syntactic_rows'] == 32
+assert before['joined_valid_rows'] == 32 and after['joined_valid_rows'] == 31
+assert counter['unknown_diagnostics'](after['unknown']) == 'Q999 via M1'
+print('syntactic_mapping_rows: 32 -> 32')
+print('joined_valid_mapping_rows: 32 -> 31')
+print('unknown_criterion_ids: Q999 via M1')
+print('repository_corpus_mutated: no')
+PY
+
+Output:
+syntactic_mapping_rows: 32 -> 32
+joined_valid_mapping_rows: 32 -> 31
+unknown_criterion_ids: Q999 via M1
+repository_corpus_mutated: no
+Exit 0.
+
+No Godot/full battery or broader checks were rerun for this simplification.
+Grounding and admission are not outputs of this counter. Round 105 remains
+REJECT AS DECLARED / HONEST STOP under the parent's adjudication.
