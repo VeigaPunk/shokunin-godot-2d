@@ -1542,3 +1542,14 @@ No new criterion, evidence-strength score, runtime change or battery rerun.
 UID/knowledge/source/621-row receipts remain intact. The parent disposition
 remains **REJECT AS DECLARED / HONEST STOP**; simplifying the counter does not
 repair the frozen C2/C3 dependency.
+
+
+## 2026-11-12: publish reviewed curation notes
+
+Published 5 independently reviewed original reading note(s) from the saved curation copies. The note text and source/rights boundaries are preserved exactly. Notes carrying publication holds were excluded. This entry records publication only, not source-code reuse, capability admission, training, or assimilation. No private receipts or source captures are included.
+
+- `considerthese/2026-11-11-png-color-precedence.md`: source `Shokunin-2D-PNG-Color-Precedence-2026-11-11.md`; SHA-256 `e9cfb73a971a4b48f576eebe4af5b7b5d5a9856a2276b78c2af9a7169de2d337`.
+- `considerthese/2026-11-12-png-pixel-aspect.md`: source `Shokunin-2D-PNG-Pixel-Aspect-2026-11-12.md`; SHA-256 `b36b4b9e11baf1939941b77bd8c9e7c9960ae0ac03cbcecf17f53661f39ad5f5`.
+- `considerthese/2026-11-12-tween-stop-lifetime.md`: source `Shokunin-2D-Tween-Stop-Lifetime-2026-11-12.md`; SHA-256 `c10a1f979446bbe9277370ba943565c5d6fda3e8ba4c64c11e995a06ba35688f`.
+- `considerthese/2026-11-12-svg-distance-calibration.md`: source `Shokunin-2D-SVG-Distance-Calibration-2026-11-12.md`; SHA-256 `d24d54e83a0453b5603ff7590b4898e21aaa11ac2b74302d3f7f2490c249bd70`.
+- `considerthese/2026-11-12-resource-duplication-graph.md`: source `Shokunin-2D-Resource-Duplication-Graph-2026-11-12.md`; SHA-256 `9680e0cf966292e04ef5a094f3e019173e7f01bc41022a5f81e9e9d8bd336dae`.
